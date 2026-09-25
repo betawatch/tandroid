@@ -10,9 +10,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.td;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class a0 {
     public static volatile a0[] e = new a0[4];
@@ -61,7 +61,7 @@ public final class a0 {
             int indexOf = arrayList.indexOf(c10);
             arrayList.remove(c10);
             NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
-            yc.a0(xVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new ai.s1(this, indexOf, c10, 12), new gg.t(this, str, c10, 8)).j();
+            xc.a0(xVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new ai.s1(this, indexOf, c10, 12), new gg.t(this, str, c10, 8)).j();
         }
     }
 

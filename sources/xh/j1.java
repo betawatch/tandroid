@@ -43,10 +43,10 @@ import org.telegram.ui.n50;
 import w7.a6;
 import w7.y5;
 import yh.q7;
-import yh.t5;
+import yh.s5;
 import yh.w7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class j1 extends FrameLayout {
     public static final int[] l0 = {-2781403, -3635939};
@@ -441,10 +441,10 @@ public class j1 extends FrameLayout {
             this.N = null;
         }
         i(starGift, starGift.getDocument());
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) t5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) s5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
         f1 f1Var = this.e;
         f1Var.d(stargiftattributebackdrop);
-        f1Var.e((TL_stars.starGiftAttributePattern) t5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
+        f1Var.e((TL_stars.starGiftAttributePattern) s5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
         boolean z18 = starGift.auction;
         int[] iArr = l0;
         d6 d6Var = this.b;
@@ -681,10 +681,10 @@ public class j1 extends FrameLayout {
             this.N = null;
         }
         i(savedStarGift, savedStarGift.gift.getDocument());
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) t5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) s5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
         f1 f1Var = this.e;
         f1Var.d(stargiftattributebackdrop);
-        f1Var.e((TL_stars.starGiftAttributePattern) t5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class));
+        f1Var.e((TL_stars.starGiftAttributePattern) s5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class));
         f1Var.g(null);
         this.H.setVisibility(8);
         this.I.setVisibility(8);
@@ -714,7 +714,7 @@ public class j1 extends FrameLayout {
         w9Var.setLayoutParams(layoutParams);
         if (this.j0 == savedStarGift) {
             b1Var.setVisibility(0);
-            b1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(rr.h).withEndAction(new u2.i0(11, this, savedStarGift)).start();
+            b1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(rr.h).withEndAction(new u2.p0(10, this, savedStarGift)).start();
         } else {
             b1Var.setAlpha(savedStarGift.unsaved ? 1.0f : 0.0f);
             b1Var.setScaleX(savedStarGift.unsaved ? 1.0f : 0.4f);
@@ -896,7 +896,7 @@ public class j1 extends FrameLayout {
             if (this.c0.gift.resell_amount == null) {
                 k1Var.setColor(h6.v0(h6.Li, d6Var));
                 k1Var.setStrokeColor(0);
-                k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) t5.l(this.c0.gift.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) s5.l(this.c0.gift.attributes, TL_stars.starGiftAttributeBackdrop.class));
                 k1Var.b(org.telegram.messenger.f0.h(this.c0.gift.num, ',', new StringBuilder("#")), true);
                 return;
             }
@@ -931,7 +931,7 @@ public class j1 extends FrameLayout {
         if (this.e0 || this.g0) {
             k1Var.setVisibility(0);
             k1Var.setColor(h6.v0(h6.Li, d6Var));
-            k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) t5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) s5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
             k1Var.setStrokeColor(0);
             k1Var.b(org.telegram.messenger.f0.h(this.W.num, ',', new StringBuilder("#")), true);
             return;
@@ -948,7 +948,7 @@ public class j1 extends FrameLayout {
             k1Var.setVisibility(0);
             k1Var.setColor(h6.v0(h6.Li, d6Var));
             k1Var.setStrokeColor(0);
-            k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) t5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) s5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
             k1Var.b(LocaleController.formatString(R.string.Gift2Limited1OfRibbon, AndroidUtilities.formatWholeNumber(this.W.availability_issued, 0)), true);
             return;
         }
@@ -1257,7 +1257,7 @@ public class j1 extends FrameLayout {
         k1Var.setVisibility(0);
         k1Var.setColor(h6.v0(h6.Li, this.b));
         k1Var.setStrokeColor(0);
-        k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) t5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
+        k1Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) s5.l(this.W.attributes, TL_stars.starGiftAttributeBackdrop.class));
         k1Var.b(LocaleController.formatString(R.string.Gift2Limited1OfRibbon, AndroidUtilities.formatWholeNumber(i10, 0)), true);
     }
 }

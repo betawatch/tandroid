@@ -14,7 +14,7 @@ import org.telegram.messenger.IMapsProvider;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
     public final /* synthetic */ int a;
@@ -477,34 +477,34 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                 }
                 break;
             case 25:
-                ej0 ej0Var = (ej0) this.b;
-                org.telegram.ui.Components.wl0 wl0Var6 = ej0Var.f;
+                dj0 dj0Var = (dj0) this.b;
+                org.telegram.ui.Components.wl0 wl0Var6 = dj0Var.f;
                 if (wl0Var6 != null) {
                     int childCount13 = wl0Var6.getChildCount();
                     for (int i27 = 0; i27 < childCount13; i27++) {
-                        ej0Var.d0(ej0Var.f.getChildAt(i27));
+                        dj0Var.d0(dj0Var.f.getChildAt(i27));
                     }
-                    int hiddenChildCount = ej0Var.f.getHiddenChildCount();
+                    int hiddenChildCount = dj0Var.f.getHiddenChildCount();
                     for (int i28 = 0; i28 < hiddenChildCount; i28++) {
-                        ej0Var.d0(ej0Var.f.V(i28));
+                        dj0Var.d0(dj0Var.f.V(i28));
                     }
-                    int cachedChildCount = ej0Var.f.getCachedChildCount();
+                    int cachedChildCount = dj0Var.f.getCachedChildCount();
                     for (int i29 = 0; i29 < cachedChildCount; i29++) {
-                        ej0Var.d0(ej0Var.f.P(i29));
+                        dj0Var.d0(dj0Var.f.P(i29));
                     }
-                    int attachedScrapChildCount = ej0Var.f.getAttachedScrapChildCount();
+                    int attachedScrapChildCount = dj0Var.f.getAttachedScrapChildCount();
                     for (int i30 = 0; i30 < attachedScrapChildCount; i30++) {
-                        ej0Var.d0(ej0Var.f.O(i30));
+                        dj0Var.d0(dj0Var.f.O(i30));
                     }
-                    ej0Var.f.getRecycledViewPool().a();
+                    dj0Var.f.getRecycledViewPool().a();
                 }
-                ig.f fVar = ej0Var.c0;
+                ig.f fVar = dj0Var.c0;
                 if (fVar != null) {
                     fVar.g = true;
                 }
-                View subtitleTextView = ej0Var.b0.getSubtitleTextView();
+                View subtitleTextView = dj0Var.b0.getSubtitleTextView();
                 if (subtitleTextView instanceof org.telegram.ui.ActionBar.h5) {
-                    ((org.telegram.ui.ActionBar.h5) subtitleTextView).setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Pi, ej0Var.getResourceProvider()));
+                    ((org.telegram.ui.ActionBar.h5) subtitleTextView).setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Pi, dj0Var.getResourceProvider()));
                     break;
                 }
                 break;

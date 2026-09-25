@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -44,7 +44,7 @@ public final class f extends Handler {
                 qb.b bVar = ((n2.b) this.c).i;
                 int i11 = aVar.d;
                 bVar.getClass();
-                if (!(b5Var instanceof s0) && !(b5Var instanceof FileNotFoundException) && !(b5Var instanceof g2.u) && !(b5Var instanceof y2.l)) {
+                if (!(b5Var instanceof s0) && !(b5Var instanceof FileNotFoundException) && !(b5Var instanceof g2.u) && !(b5Var instanceof y2.k)) {
                     int i12 = g2.j.b;
                     while (b5Var != null) {
                         if (!(b5Var instanceof g2.j) || ((g2.j) b5Var).a != 2008) {

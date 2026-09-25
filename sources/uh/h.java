@@ -31,9 +31,9 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t8;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.yb;
-import u2.i0;
+import u2.p0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
@@ -55,7 +55,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public float X;
     public float Y;
     public final i a;
-    public final i0 b;
+    public final p0 b;
     public final LinearGradient f;
     public final d[] w;
     public final Drawable x;
@@ -79,8 +79,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public final ObjectAnimator Z = ObjectAnimator.ofFloat(this, e0, 1.0f).setDuration(560L);
     public final ObjectAnimator a0 = ObjectAnimator.ofFloat(this, f0, 1.0f).setDuration(240L);
 
-    public h(i iVar, u1 u1Var, ArrayList arrayList, i0 i0Var) {
-        this.b = i0Var;
+    public h(i iVar, u1 u1Var, ArrayList arrayList, p0 p0Var) {
+        this.b = p0Var;
         this.a = iVar;
         this.y = u1Var;
         this.E = u1Var.getMessageObject();
@@ -573,13 +573,13 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     @Override // android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         ObjectAnimator objectAnimator = this.Z;
-        i0 i0Var = this.b;
+        p0 p0Var = this.b;
         if (animator == objectAnimator) {
             this.y.setHideSideButtonByQuickShare(false);
             this.M = true;
             invalidateSelf();
             if (this.N) {
-                i0Var.run();
+                p0Var.run();
                 return;
             }
             return;
@@ -592,7 +592,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 ybVar.a.setVisibility(0);
             }
             if (this.M) {
-                i0Var.run();
+                p0Var.run();
             }
         }
     }

@@ -24,7 +24,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ok extends sl0 {
     public long E;
@@ -39,7 +39,7 @@ public final class ok extends sl0 {
     public final /* synthetic */ pk X;
     public final Context r;
     public kk v;
-    public uc w;
+    public kd w;
     public long x;
     public gg.q0 y;
     public ArrayList s = new ArrayList();
@@ -229,9 +229,9 @@ public final class ok extends sl0 {
         pk pkVar = this.X;
         ik ikVar = pkVar.v;
         ek ekVar = pkVar.r;
-        uc ucVar = this.w;
-        if (ucVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ucVar);
+        kd kdVar = this.w;
+        if (kdVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(kdVar);
             this.w = null;
         }
         if (TextUtils.isEmpty(str)) {
@@ -243,9 +243,9 @@ public final class ok extends sl0 {
             }
             l();
         } else {
-            uc ucVar2 = new uc(14, this, str);
-            this.w = ucVar2;
-            AndroidUtilities.runOnUIThread(ucVar2, 300L);
+            kd kdVar2 = new kd(13, this, str);
+            this.w = kdVar2;
+            AndroidUtilities.runOnUIThread(kdVar2, 300L);
         }
         if (pkVar.W || !ikVar.d.isEmpty()) {
             return;

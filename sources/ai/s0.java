@@ -39,8 +39,8 @@ import org.telegram.ui.Components.ly0;
 import org.telegram.ui.Components.vn0;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.eu0;
 import org.telegram.ui.jt;
@@ -56,7 +56,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.zf0;
 import org.telegram.ui.zk0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -165,7 +165,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     int i12 = -e6Var2.r1;
                     e6Var2.r1 = i12;
                     AndroidUtilities.shakeViewSpring(view, i12);
-                    new yc(e6Var2.c1, d6Var2).t("Wait until current upload is complete", null).j();
+                    new xc(e6Var2.c1, d6Var2).t("Wait until current upload is complete", null).j();
                     break;
                 } else {
                     Activity findActivity = AndroidUtilities.findActivity(context2);
@@ -444,7 +444,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     replaceTags.replace(0, 1, (CharSequence) replaceTags.toString().substring(0, 1).toUpperCase());
                     spannableStringBuilder = replaceTags;
                 }
-                yc.a0(wkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new wq0(wkVar, 25)).j();
+                xc.a0(wkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new wq0(wkVar, 25)).j();
                 m1Var4.d(true);
                 break;
             case 13:
@@ -500,7 +500,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     dVar2.setLoading(true);
                     org.telegram.ui.t3 t3Var = new org.telegram.ui.t3(zf0Var, 10);
                     FileLog.d("LoginBilling, querying done purchases...");
-                    BillingController.getInstance().queryPurchases("inapp", new g6(zf0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new vn0(zf0Var, oVar, t3Var, tL_inputStorePaymentAuthCode, 22)));
+                    BillingController.getInstance().queryPurchases("inapp", new g6(zf0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new vn0(zf0Var, oVar, t3Var, tL_inputStorePaymentAuthCode, 23)));
                     break;
                 }
                 break;

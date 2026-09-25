@@ -16,9 +16,9 @@ import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ou;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public class kb extends View {
     public boolean E;
@@ -33,7 +33,7 @@ public class kb extends View {
     public LinearGradient f;
     public final Matrix h;
     public final org.telegram.ui.Cells.z n;
-    public final zc r;
+    public final yc r;
     public final boolean s;
     public final boolean v;
     public final boolean w;
@@ -49,7 +49,7 @@ public class kb extends View {
         this.h = new Matrix();
         org.telegram.ui.Cells.z f02 = org.telegram.ui.ActionBar.h6.f0(1174405119, 2, -1);
         this.n = f02;
-        this.r = new zc(this);
+        this.r = new yc(this);
         this.s = false;
         this.v = false;
         this.E = false;
@@ -93,18 +93,18 @@ public class kb extends View {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
         org.telegram.ui.Cells.z zVar = this.n;
-        zc zcVar = this.r;
+        yc ycVar = this.r;
         if (action == 0) {
             if (getParent() instanceof View) {
                 View view = (View) getParent();
                 Objects.requireNonNull(view);
-                zcVar.f = new ou(1, view);
+                ycVar.f = new ou(1, view);
             }
-            zcVar.c(true);
+            ycVar.c(true);
             zVar.setHotspot(motionEvent.getX(), motionEvent.getY());
             zVar.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            zcVar.c(false);
+            ycVar.c(false);
             zVar.setState(new int[0]);
         }
         super.dispatchTouchEvent(motionEvent);

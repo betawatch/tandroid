@@ -18,14 +18,14 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ck0;
 import org.telegram.ui.d50;
 import org.telegram.ui.d60;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -112,9 +112,9 @@ public final /* synthetic */ class t7 implements View.OnClickListener {
                 try {
                     AndroidUtilities.addToClipboard(str);
                     if (this.b == profileActivity.O3) {
-                        yc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessHoursCopied)).j();
+                        xc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessHoursCopied)).j();
                     } else {
-                        yc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessLocationCopied)).j();
+                        xc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessLocationCopied)).j();
                     }
                     break;
                 } catch (Exception e) {
@@ -133,8 +133,8 @@ public final /* synthetic */ class t7 implements View.OnClickListener {
                 } else {
                     wf1Var.getNotificationsController().muteDialog(j3, tL_forumTopic.id, false);
                     wf1Var.finishPreviewFragment();
-                    if (yc.a(wf1Var)) {
-                        yc.z(wf1Var, 4, 0, wf1Var.getResourceProvider()).j();
+                    if (xc.a(wf1Var)) {
+                        xc.z(wf1Var, 4, 0, wf1Var.getResourceProvider()).j();
                         break;
                     }
                 }

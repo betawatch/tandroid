@@ -7,7 +7,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j7 implements Runnable {
     public final /* synthetic */ int a;
@@ -95,7 +95,7 @@ public final /* synthetic */ class j7 implements Runnable {
                 if (e3Var != null) {
                     e3Var.dismiss();
                 }
-                yh.t5.y(this.d, false).S();
+                yh.s5.y(this.d, false).S();
                 org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null) {
                     U.presentFragment(wn.R9(this.c));

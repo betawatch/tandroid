@@ -31,9 +31,9 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 import v7.s6;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class e extends DefaultHandler implements y2.o {
+public final class e extends DefaultHandler implements y2.n {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
     public static final Pattern c = Pattern.compile("CC([1-4])=.*");
     public static final Pattern d = Pattern.compile("([1-9]|[1-5][0-9]|6[0-3])=.*");
@@ -2905,7 +2905,7 @@ public final class e extends DefaultHandler implements y2.o {
         return new la.h(arrayList, arrayList2, arrayList3, 3);
     }
 
-    @Override // y2.o
+    @Override // y2.n
     public final Object n2(Uri uri, g2.k kVar) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();

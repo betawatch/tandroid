@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import x2.r;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class k {
-    public final y2.n a;
+    public final y2.m a;
     public final t b;
     public final int[] c;
     public final int d;
@@ -28,14 +28,14 @@ public final class k {
     public boolean n;
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, l2.k] */
-    public k(p pVar, y2.n nVar, m2.c cVar, t tVar, int i10, int[] iArr, r rVar, int i11, g2.h hVar, long j3, int i12, boolean z10, ArrayList arrayList, n nVar2) {
-        m2.m mVar;
+    public k(p pVar, y2.m mVar, m2.c cVar, t tVar, int i10, int[] iArr, r rVar, int i11, g2.h hVar, long j3, int i12, boolean z10, ArrayList arrayList, n nVar) {
+        m2.m mVar2;
         i[] iVarArr;
         s sVar;
         c3.o iVar;
         v2.d dVar;
         ?? obj = new Object();
-        obj.a = nVar;
+        obj.a = mVar;
         obj.k = cVar;
         obj.b = tVar;
         obj.c = iArr;
@@ -45,8 +45,8 @@ public final class k {
         obj.l = i10;
         obj.f = j3;
         obj.g = i12;
-        n nVar3 = nVar2;
-        obj.h = nVar3;
+        n nVar2 = nVar;
+        obj.h = nVar2;
         long d = cVar.d(i10);
         ArrayList a2 = obj.a();
         obj.i = new i[rVar.length()];
@@ -54,16 +54,16 @@ public final class k {
         int i14 = 0;
         k kVar = obj;
         while (i14 < kVar.i.length) {
-            m2.m mVar2 = (m2.m) a2.get(rVar.h(i14));
-            m2.b j10 = tVar.j(mVar2.b);
+            m2.m mVar3 = (m2.m) a2.get(rVar.h(i14));
+            m2.b j10 = tVar.j(mVar3.b);
             i[] iVarArr2 = kVar.i;
-            m2.b bVar = j10 == null ? (m2.b) mVar2.b.get(i13) : j10;
-            s sVar2 = mVar2.a;
+            m2.b bVar = j10 == null ? (m2.b) mVar3.b.get(i13) : j10;
+            s sVar2 = mVar3.a;
             pVar.getClass();
             String str = sVar2.q;
             if (!r0.l(str)) {
                 if (str != null && (str.startsWith("video/webm") || str.startsWith("audio/webm") || str.startsWith("application/webm") || str.startsWith("video/x-matroska") || str.startsWith("audio/x-matroska") || str.startsWith("application/x-matroska"))) {
-                    mVar = mVar2;
+                    mVar2 = mVar3;
                     sVar = sVar2;
                     iVarArr = iVarArr2;
                     iVar = new u3.d((qb.b) pVar.c, pVar.b ? 1 : 3);
@@ -73,49 +73,49 @@ public final class k {
                     iVar = new g3.a(1);
                 } else {
                     int i15 = z10 ? 4 : 0;
-                    mVar = mVar2;
+                    mVar2 = mVar3;
                     int i16 = pVar.b ? i15 : i15 | 32;
                     iVarArr = iVarArr2;
                     sVar = sVar2;
-                    iVar = new w3.i((qb.b) pVar.c, i16, null, arrayList, nVar3);
+                    iVar = new w3.i((qb.b) pVar.c, i16, null, arrayList, nVar2);
                 }
                 dVar = new v2.d(iVar, i11, sVar);
                 v2.d dVar2 = dVar;
                 int i17 = i14;
                 long j11 = d;
-                iVarArr[i17] = new i(j11, mVar, bVar, dVar2, 0L, mVar.d());
+                iVarArr[i17] = new i(j11, mVar2, bVar, dVar2, 0L, mVar2.d());
                 i14 = i17 + 1;
                 kVar = this;
-                nVar3 = nVar2;
+                nVar2 = nVar;
                 d = j11;
                 i13 = 0;
             } else if (pVar.b) {
                 iVar = new z3.h(((qb.b) pVar.c).x(sVar2), sVar2);
             } else {
                 dVar = null;
-                mVar = mVar2;
+                mVar2 = mVar3;
                 iVarArr = iVarArr2;
                 v2.d dVar22 = dVar;
                 int i172 = i14;
                 long j112 = d;
-                iVarArr[i172] = new i(j112, mVar, bVar, dVar22, 0L, mVar.d());
+                iVarArr[i172] = new i(j112, mVar2, bVar, dVar22, 0L, mVar2.d());
                 i14 = i172 + 1;
                 kVar = this;
-                nVar3 = nVar2;
+                nVar2 = nVar;
                 d = j112;
                 i13 = 0;
             }
-            mVar = mVar2;
+            mVar2 = mVar3;
             sVar = sVar2;
             iVarArr = iVarArr2;
             dVar = new v2.d(iVar, i11, sVar);
             v2.d dVar222 = dVar;
             int i1722 = i14;
             long j1122 = d;
-            iVarArr[i1722] = new i(j1122, mVar, bVar, dVar222, 0L, mVar.d());
+            iVarArr[i1722] = new i(j1122, mVar2, bVar, dVar222, 0L, mVar2.d());
             i14 = i1722 + 1;
             kVar = this;
-            nVar3 = nVar2;
+            nVar2 = nVar;
             d = j1122;
             i13 = 0;
         }

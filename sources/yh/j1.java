@@ -16,34 +16,37 @@ import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.l21;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k1 implements Runnable {
+public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ KeyEvent.Callback b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ k1(x2 x2Var, TL_stars.StarGift starGift, ArrayList arrayList, Runnable runnable) {
-        this.a = 2;
-        this.b = x2Var;
-        this.e = starGift;
-        this.d = arrayList;
-        this.c = runnable;
+    public /* synthetic */ j1(KeyEvent.Callback callback, Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = callback;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                x3.S0((x3) this.b, (MessageObject) this.c, (ArrayList) this.d, (TL_stars.StarGift) this.e);
+                x3.R0((x3) this.b, (TLObject) this.c, (tg.r) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 1:
+                x3.S0((x3) this.b, (MessageObject) this.c, (ArrayList) this.d, (TL_stars.StarGift) this.e);
+                break;
+            case 2:
                 x3 x3Var = (x3) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                TLObject tLObject = (TLObject) this.d;
-                TL_stars.InputSavedStarGift inputSavedStarGift = (TL_stars.InputSavedStarGift) this.e;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
+                TLObject tLObject = (TLObject) this.c;
+                TL_stars.InputSavedStarGift inputSavedStarGift = (TL_stars.InputSavedStarGift) this.d;
                 if (tL_error != null || !(tLObject instanceof TLRPC.Updates)) {
                     x3Var.getBulletinFactory().d0(tL_error, false);
                     break;
@@ -51,14 +54,14 @@ public final /* synthetic */ class k1 implements Runnable {
                     x3Var.q0 = true;
                     x3Var.l1 = null;
                     x3Var.r1(inputSavedStarGift, (TLRPC.Updates) tLObject, new b1(x3Var, 5));
-                    Utilities.stageQueue.postRunnable(new u2.i0(19, x3Var, tLObject));
+                    Utilities.stageQueue.postRunnable(new u2.p0(18, x3Var, tLObject));
                     break;
                 }
             default:
                 x2 x2Var = (x2) this.b;
-                TL_stars.StarGift starGift = (TL_stars.StarGift) this.e;
+                TL_stars.StarGift starGift = (TL_stars.StarGift) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
-                Runnable runnable = (Runnable) this.c;
+                Runnable runnable = (Runnable) this.e;
                 org.telegram.ui.Components.p6 p6Var = x2Var.H;
                 x2Var.h0 = false;
                 if (starGift != null) {
@@ -115,11 +118,11 @@ public final /* synthetic */ class k1 implements Runnable {
         }
     }
 
-    public /* synthetic */ k1(x3 x3Var, Object obj, Object obj2, TLObject tLObject, int i10) {
-        this.a = i10;
+    public /* synthetic */ j1(TLObject tLObject, TLRPC.TL_error tL_error, TL_stars.InputSavedStarGift inputSavedStarGift, x3 x3Var) {
+        this.a = 2;
         this.b = x3Var;
-        this.c = obj;
-        this.d = obj2;
-        this.e = tLObject;
+        this.e = tL_error;
+        this.c = tLObject;
+        this.d = inputSavedStarGift;
     }
 }

@@ -5,11 +5,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -39,7 +39,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 o1Var.c(this.d);
                 if (!"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error.text)) {
                     if (!"GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
-                        new yc(o1Var.b, new d()).d0(tL_error, true);
+                        new xc(o1Var.b, new d()).d0(tL_error, true);
                         break;
                     } else {
                         d2 d2Var = o1Var.P;
@@ -71,8 +71,8 @@ public final /* synthetic */ class p0 implements Runnable {
                 long j12 = this.c;
                 boolean isDialogMuted = messagesController.isDialogMuted(j11, j12);
                 NotificationsController.getInstance(i10).muteDialog(j11, j12, !isDialogMuted);
-                if (yc.a(m2Var)) {
-                    yc.z(m2Var, !isDialogMuted ? 3 : 4, !isDialogMuted ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, d6Var).j();
+                if (xc.a(m2Var)) {
+                    xc.z(m2Var, !isDialogMuted ? 3 : 4, !isDialogMuted ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, d6Var).j();
                     break;
                 }
                 break;

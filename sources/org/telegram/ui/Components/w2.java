@@ -33,7 +33,7 @@ import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.z1, d5, org.telegram.ui.Cells.s5, ImageReceiver.ImageReceiverDelegate, ej, org.telegram.ui.ActionBar.l1, ml0, MessagesStorage.BooleanCallback, ll0, nl0 {
     public final /* synthetic */ int a;
@@ -119,7 +119,7 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.z1, d
             }
             HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
             if (hashMap.size() + 1 > ChatAttachAlertPhotoLayout.N(chatAttachAlertPhotoLayout)) {
-                new yc(wiVar.r1, chatAttachAlertPhotoLayout.a).t(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BusinessRepliesToastLimit", m2Var.getMessagesController().config.quickReplyMessagesLimit.get(), new Object[0])), null).j();
+                new xc(wiVar.r1, chatAttachAlertPhotoLayout.a).t(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BusinessRepliesToastLimit", m2Var.getMessagesController().config.quickReplyMessagesLimit.get(), new Object[0])), null).j();
                 return;
             }
             boolean containsKey = hashMap.containsKey(Integer.valueOf(photoEntry.imageId));
@@ -196,34 +196,34 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.z1, d
     @Override // org.telegram.ui.Components.ml0
     public boolean d(int i10, View view) {
         z5 z5Var;
-        uv uvVar = (uv) this.c;
+        tv tvVar = (tv) this.c;
         Context context = (Context) this.b;
-        if (!(view instanceof lv) || (z5Var = ((lv) view).c) == null) {
+        if (!(view instanceof kv) || (z5Var = ((kv) view).c) == null) {
             return false;
         }
-        org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(uvVar.getContext(), true, true);
+        org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(tvVar.getContext(), true, true);
         e1Var.setItemHeight(48);
         e1Var.setPadding(AndroidUtilities.dp(26.0f), 0, AndroidUtilities.dp(26.0f), 0);
         e1Var.setText(LocaleController.getString(R.string.Copy));
         e1Var.getTextView().setTextSize(1, 14.4f);
         e1Var.getTextView().setTypeface(AndroidUtilities.bold());
-        e1Var.setOnClickListener(new et(1, uvVar, z5Var));
+        e1Var.setOnClickListener(new et(1, tvVar, z5Var));
         LinearLayout linearLayout = new LinearLayout(context);
-        Drawable mutate = uvVar.getContext().getDrawable(R.drawable.popup_fixed_alert).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(uvVar.getThemedColor(org.telegram.ui.ActionBar.h6.G8), PorterDuff.Mode.MULTIPLY));
+        Drawable mutate = tvVar.getContext().getDrawable(R.drawable.popup_fixed_alert).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(tvVar.getThemedColor(org.telegram.ui.ActionBar.h6.G8), PorterDuff.Mode.MULTIPLY));
         linearLayout.setBackground(mutate);
         linearLayout.addView(e1Var);
         org.telegram.ui.ActionBar.m1 m1Var = new org.telegram.ui.ActionBar.m1(linearLayout, -2, -2);
-        uvVar.G = m1Var;
+        tvVar.G = m1Var;
         m1Var.setClippingEnabled(true);
-        uvVar.G.g();
-        uvVar.G.setInputMethodMode(2);
-        uvVar.G.setSoftInputMode(0);
-        uvVar.G.setOutsideTouchable(true);
-        uvVar.G.setAnimationStyle(R.style.PopupAnimation);
+        tvVar.G.g();
+        tvVar.G.setInputMethodMode(2);
+        tvVar.G.setSoftInputMode(0);
+        tvVar.G.setOutsideTouchable(true);
+        tvVar.G.setAnimationStyle(R.style.PopupAnimation);
         int[] iArr = new int[2];
         view.getLocationInWindow(iArr);
-        uvVar.G.showAtLocation(view, 51, (view.getMeasuredWidth() / 2) + (iArr[0] - AndroidUtilities.dp(49.0f)), iArr[1] - AndroidUtilities.dp(52.0f));
+        tvVar.G.showAtLocation(view, 51, (view.getMeasuredWidth() / 2) + (iArr[0] - AndroidUtilities.dp(49.0f)), iArr[1] - AndroidUtilities.dp(52.0f));
         try {
             view.performHapticFeedback(0, 1);
         } catch (Exception unused) {

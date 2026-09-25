@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ob implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ qb a;
@@ -38,7 +38,7 @@ public final class ob implements org.telegram.ui.Cells.t0 {
                 ub.A0(ubVar, (TLRPC.TL_messages_exportedChatInvite) obj, ubVar.z0);
                 return;
             } else {
-                org.telegram.messenger.f0.p(R.string.LinkHashExpired, org.telegram.ui.Components.yc.a0(ubVar), R.raw.linkbroken, 36);
+                org.telegram.messenger.f0.p(R.string.LinkHashExpired, org.telegram.ui.Components.xc.a0(ubVar), R.raw.linkbroken, 36);
                 return;
             }
         }

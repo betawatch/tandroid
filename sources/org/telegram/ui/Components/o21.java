@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class o21 {
     public final int a;
@@ -34,7 +34,7 @@ public final class o21 {
     public final Paint n;
     public final Path o;
     public final RectF p;
-    public final zc q;
+    public final yc q;
     public Runnable r;
     public long s;
     public final h9 f = new h9((org.telegram.ui.ActionBar.d6) null);
@@ -50,7 +50,7 @@ public final class o21 {
         this.b = view;
         this.c = d6Var;
         this.d = z10;
-        this.q = new zc(view);
+        this.q = new yc(view);
         this.g = new ImageReceiver(view);
         path.rewind();
         path.moveTo(-AndroidUtilities.dp(1.75f), -AndroidUtilities.dp(4.0f));
@@ -195,30 +195,30 @@ public final class o21 {
             if (this.p.contains(motionEvent.getX(), motionEvent.getY() - (z10 ? this.b.getPaddingTop() : 0))) {
                 z11 = true;
                 action = motionEvent.getAction();
-                zc zcVar = this.q;
+                yc ycVar = this.q;
                 if (action != 0) {
-                    zcVar.c(z11);
+                    ycVar.c(z11);
                 } else if (motionEvent.getAction() == 2) {
-                    if (zcVar.h && !z11) {
-                        zcVar.c(false);
+                    if (ycVar.h && !z11) {
+                        ycVar.c(false);
                     }
                 } else if (motionEvent.getAction() == 1) {
-                    if (zcVar.h && (runnable = this.r) != null) {
+                    if (ycVar.h && (runnable = this.r) != null) {
                         runnable.run();
                     }
-                    zcVar.c(false);
+                    ycVar.c(false);
                 } else if (motionEvent.getAction() == 3) {
-                    zcVar.c(false);
+                    ycVar.c(false);
                 }
-                return zcVar.h;
+                return ycVar.h;
             }
         }
         z11 = false;
         action = motionEvent.getAction();
-        zc zcVar2 = this.q;
+        yc ycVar2 = this.q;
         if (action != 0) {
         }
-        return zcVar2.h;
+        return ycVar2.h;
     }
 
     public final void e(org.telegram.ui.Cells.b1 b1Var) {

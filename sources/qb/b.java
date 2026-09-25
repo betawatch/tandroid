@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executors;
+import ki.w;
 import org.json.JSONObject;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MediaController;
@@ -58,7 +59,7 @@ import org.telegram.ui.Components.z5;
 import org.telegram.ui.hv0;
 import r2.u;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, l1, u, u5.a, z3.k {
     public final /* synthetic */ int a;
@@ -67,7 +68,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         this.a = i10;
     }
 
-    public static k4.d K3(y2.g gVar, b0 b0Var) {
+    public static k4.d K3(w wVar, b0 b0Var) {
         IOException iOException = (IOException) b0Var.c;
         if (!(iOException instanceof x)) {
             return null;
@@ -76,10 +77,10 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         if (i10 != 403 && i10 != 404 && i10 != 410 && i10 != 416 && i10 != 500 && i10 != 503) {
             return null;
         }
-        if (gVar.a(1)) {
+        if (wVar.a(1)) {
             return new k4.d(1, 300000L);
         }
-        if (gVar.a(2)) {
+        if (wVar.a(2)) {
             return new k4.d(2, 60000L);
         }
         return null;
@@ -87,7 +88,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
 
     public static long M3(b0 b0Var) {
         Throwable th2 = (IOException) b0Var.c;
-        if ((th2 instanceof b2.s0) || (th2 instanceof FileNotFoundException) || (th2 instanceof g2.u) || (th2 instanceof y2.l)) {
+        if ((th2 instanceof b2.s0) || (th2 instanceof FileNotFoundException) || (th2 instanceof g2.u) || (th2 instanceof y2.k)) {
             return -9223372036854775807L;
         }
         int i10 = g2.j.b;

@@ -45,7 +45,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b7 implements org.telegram.ui.Components.nl0, org.telegram.ui.Components.yj0, org.telegram.ui.Components.d5, LanguageDetector.StringCallback, v4, org.telegram.ui.ActionBar.z1, MessagesStorage.LongCallback, org.telegram.ui.Components.ll0, MessagesController.NewMessageCallback, ky, mg1, org.telegram.ui.Components.voip.j3, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -339,7 +339,7 @@ public final /* synthetic */ class b7 implements org.telegram.ui.Components.nl0,
         if (MessageObject.getPeerId(message.peer_id) != oo0Var.l0.id || !(message.action instanceof TLRPC.TL_messageActionPaymentSent)) {
             return false;
         }
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(oo0Var, b5Var, activity, message, 26));
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(oo0Var, b5Var, activity, message, 27));
         return true;
     }
 

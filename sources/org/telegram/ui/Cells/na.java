@@ -10,9 +10,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class na implements Runnable {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class na implements Runnable {
                 break;
             case 3:
                 org.telegram.ui.ActionBar.m2 m2Var2 = (org.telegram.ui.ActionBar.m2) this.b;
-                yc.a0(m2Var2).d0((TLRPC.TL_error) this.c, false);
+                xc.a0(m2Var2).d0((TLRPC.TL_error) this.c, false);
                 break;
             case 4:
                 w0 w0Var2 = (w0) this.b;

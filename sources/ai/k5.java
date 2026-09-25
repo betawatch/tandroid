@@ -10,10 +10,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.t31;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -54,10 +54,10 @@ public final /* synthetic */ class k5 implements View.OnClickListener {
                 TL_stories.StoryItem storyItem = e6Var.O1.a;
                 a5 a5Var = e6Var.c1;
                 org.telegram.ui.ActionBar.d6 d6Var2 = this.c;
-                yc ycVar = new yc(a5Var, d6Var2);
+                xc xcVar = new xc(a5Var, d6Var2);
                 y1 y1Var = new y1(jcVar, 1);
                 int i12 = t31.v;
-                t31.K(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), ycVar, d6Var2, new byte[0], null, y1Var);
+                t31.K(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), xcVar, d6Var2, new byte[0], null, y1Var);
                 v5 v5Var2 = e6Var.t1;
                 if (v5Var2 != null) {
                     v5Var2.a();

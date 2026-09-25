@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class e9 extends org.telegram.ui.ActionBar.m2 {
     public static final int[][] c0 = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
@@ -46,7 +46,7 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
     public org.telegram.ui.ActionBar.k H;
     public w2 I;
     public b9 J;
-    public gd K;
+    public fd K;
     public boolean L;
     public ValueAnimator M;
     public float N;
@@ -216,9 +216,9 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
         w8Var.addView(this.actionBar);
         w8Var.addView(this.H);
         w8Var.addView(this.e, w7.y5.c(-1.0f, -1));
-        gd gdVar = new gd(w8Var);
-        this.K = gdVar;
-        gdVar.h = new p8(this, 0);
+        fd fdVar = new fd(w8Var);
+        this.K = fdVar;
+        fdVar.h = new p8(this, 0);
         this.fragmentView = w8Var;
         return w8Var;
     }
@@ -266,7 +266,7 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
         }
         int i11 = 1;
         if (e0()) {
-            new yc(this.y, this.resourceProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.PremiumAvatarToast), new p8(this, i11))).j();
+            new xc(this.y, this.resourceProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.PremiumAvatarToast), new p8(this, i11))).j();
             return;
         }
         w2 w2Var = this.I;

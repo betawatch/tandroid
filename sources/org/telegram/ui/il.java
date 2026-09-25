@@ -8,7 +8,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class il extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G = 0;
@@ -109,7 +109,7 @@ public final class il extends org.telegram.ui.Components.w9 {
             case 3:
                 org.telegram.ui.Components.voip.h hVar2 = (org.telegram.ui.Components.voip.h) this.I;
                 super.onDraw(canvas);
-                if (((org.telegram.ui.Components.b60) this.J).h0) {
+                if (((org.telegram.ui.Components.b60) this.J).k0) {
                     float min = Math.min(getWidth(), getHeight()) * 0.5f;
                     RectF rectF3 = AndroidUtilities.rectTmp;
                     rectF3.set(0.0f, 0.0f, getWidth(), getHeight());

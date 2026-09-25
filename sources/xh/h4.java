@@ -39,9 +39,9 @@ import org.telegram.ui.ny0;
 import org.telegram.ui.to0;
 import w7.y5;
 import yh.k5;
-import yh.t5;
+import yh.s5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class h4 extends bb {
     public static final /* synthetic */ int k0 = 0;
@@ -229,7 +229,7 @@ public final class h4 extends bb {
                 a2Var2.q(400L);
                 long clientUserId = UserConfig.getInstance(h4Var.currentAccount).getClientUserId();
                 zf.b bVar = tL_starGiftUnique.resale_ton_only ? zf.b.b : zf.b.a;
-                t5.x(h4Var.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new to0(h4Var, a2Var2, bVar, tL_starGiftUnique, clientUserId));
+                s5.x(h4Var.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new to0(h4Var, a2Var2, bVar, tL_starGiftUnique, clientUserId));
                 return;
             }
             if (!z10) {
@@ -456,7 +456,7 @@ public final class h4 extends bb {
 
     public static void V(h4 h4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, yh.a3 a3Var, nf.e eVar) {
         eVar.d();
-        t5.x(h4Var.currentAccount, a3Var.a).h(a3Var.b, tL_starGiftUnique, j3, null, true, new org.telegram.tgnet.e(h4Var, eVar, tL_starGiftUnique, 6));
+        s5.x(h4Var.currentAccount, a3Var.a).h(a3Var.b, tL_starGiftUnique, j3, null, true, new org.telegram.tgnet.e(h4Var, eVar, tL_starGiftUnique, 6));
     }
 
     public static void W(h4 h4Var, g4 g4Var, Context context) {

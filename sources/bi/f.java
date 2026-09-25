@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.b4;
 import org.telegram.ui.Components.c40;
 import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.ew;
+import org.telegram.ui.Components.dw;
 import org.telegram.ui.Components.in0;
 import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.lp;
@@ -44,7 +44,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.nm;
 import org.telegram.ui.ro;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -127,13 +127,13 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 8:
-                ki.h hVar = (ki.h) obj;
-                hVar.L = z10;
-                hVar.M = hVar.p();
-                hVar.N = 0;
-                hVar.O = 0;
-                hVar.j.b("torch requested: enabled=" + z10 + ", available=" + hVar.p() + ", cameraId=" + hVar.o + ", facing=" + hVar.C);
-                hVar.a();
+                ki.i iVar = (ki.i) obj;
+                iVar.M = z10;
+                iVar.N = iVar.q();
+                iVar.O = 0;
+                iVar.P = 0;
+                iVar.j.b("torch requested: enabled=" + z10 + ", available=" + iVar.q() + ", cameraId=" + iVar.o + ", facing=" + iVar.D);
+                iVar.a();
                 break;
             case 9:
                 ((FileLoader) obj).lambda$onNetworkChanged$4(z10);
@@ -206,9 +206,9 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 23:
-                ew ewVar = (ew) obj;
+                dw dwVar = (dw) obj;
                 if (!z10) {
-                    ewVar.E.setVisibility(8);
+                    dwVar.E.setVisibility(8);
                     break;
                 }
                 break;

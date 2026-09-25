@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,7 +69,7 @@ public final /* synthetic */ class ua implements Runnable {
                         if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
                             fa faVar = lcVar.q0;
                             if (faVar != null) {
-                                new org.telegram.ui.Components.yc(faVar.container, dVar).d0(tL_error, true);
+                                new org.telegram.ui.Components.xc(faVar.container, dVar).d0(tL_error, true);
                                 a0Var.run();
                                 break;
                             }
@@ -157,13 +157,13 @@ public final /* synthetic */ class ua implements Runnable {
                 break;
             default:
                 ((boolean[]) obj2)[0] = true;
-                ((yh.t5) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.c, this.d, (TLRPC.TL_textWithEntities) tLObject, (xh.n4) obj);
+                ((yh.s5) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.c, this.d, (TLRPC.TL_textWithEntities) tLObject, (xh.n4) obj);
                 break;
         }
     }
 
-    public /* synthetic */ ua(yh.t5 t5Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, xh.n4 n4Var) {
-        this.e = t5Var;
+    public /* synthetic */ ua(yh.s5 s5Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, xh.n4 n4Var) {
+        this.e = s5Var;
         this.f = zArr;
         this.h = starGift;
         this.b = z10;

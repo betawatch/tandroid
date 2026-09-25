@@ -113,8 +113,8 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.PhotoViewer;
 import p4.x;
 import p4.z;
@@ -127,7 +127,7 @@ import w7.d9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class b implements h, f0, s, OnCompleteListener, com.google.android.gms.internal.clearcut.h, cf.b, f6.a, g2.g, n, m, v3, a0, Continuation {
     public static volatile b d;
@@ -904,7 +904,7 @@ public class b implements h, f0, s, OnCompleteListener, com.google.android.gms.i
             if (t12.E == null || t12.e0 == null || !t12.Q1()) {
                 return;
             }
-            new yc(t12.e0, new ai.d()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
+            new xc(t12.e0, new ai.d()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
         }
     }
 

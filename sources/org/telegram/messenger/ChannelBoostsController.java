@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class ChannelBoostsController {
     public static final int BOOSTS_FOR_LEVEL_1 = 1;
@@ -20,7 +20,7 @@ public class ChannelBoostsController {
     private final int currentAccount;
     private final MessagesController messagesController;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class CanApplyBoost {
         public boolean alreadyActive;
         public int boostCount = 0;
@@ -146,7 +146,7 @@ public class ChannelBoostsController {
         }
         org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
         if (tL_error == null || R == null || !"CHANNEL_PRIVATE".equals(tL_error.text)) {
-            org.telegram.ui.Components.yc.X().d0(tL_error, false);
+            org.telegram.ui.Components.xc.X().d0(tL_error, false);
         } else {
             LaunchActivity launchActivity = LaunchActivity.G1;
             if (launchActivity == null || !launchActivity.isFinishing()) {

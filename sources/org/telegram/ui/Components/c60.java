@@ -53,7 +53,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class c60 extends h60 implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] h1 = {285904780, -1394191079};
@@ -763,7 +763,7 @@ public final class c60 extends h60 implements NotificationCenter.NotificationCen
             }
             TextureView textureView = new TextureView(getContext());
             this.q0 = textureView;
-            textureView.setSurfaceTextureListener(new ki.c(this, 1));
+            textureView.setSurfaceTextureListener(new ki.d(this, 1));
             this.h.addView(this.q0, w7.y5.c(-1.0f, -1));
             this.T0 = true;
             this.b1 = z10;

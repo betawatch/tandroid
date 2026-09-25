@@ -12,7 +12,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.wn0;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class k extends FrameLayout {
     public final j a;
@@ -50,7 +50,7 @@ public final class k extends FrameLayout {
         ViewGroup.LayoutParams layoutParams = jVar.getLayoutParams();
         layoutParams.width = -1;
         jVar.setLayoutParams(layoutParams);
-        AndroidUtilities.runOnUIThread(new wn0(26, this, onClickListener), 500L);
+        AndroidUtilities.runOnUIThread(new wn0(25, this, onClickListener), 500L);
     }
 
     public j getEndCloseView() {

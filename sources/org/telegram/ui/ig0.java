@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ig0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                     if (str2 == null || !str2.contains("SESSION_PASSWORD_NEEDED")) {
                         if (str2 != null) {
                             if (BuildVars.DEBUG_VERSION) {
-                                org.telegram.ui.Components.yc.a0(qg0Var).c0(str2, false);
+                                org.telegram.ui.Components.xc.a0(qg0Var).c0(str2, false);
                                 break;
                             }
                         }
@@ -161,7 +161,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                             CharSequence[] charSequenceArr = new CharSequence[2];
                             charSequenceArr[0] = string;
                             charSequenceArr[c10] = string2;
-                            DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.jr0
+                            DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.kr0
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public final void onClick(DialogInterface dialogInterface, int i14) {
                                     Drawable[] drawableArr2 = PhotoViewer.U8;
@@ -175,7 +175,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                                         AndroidUtilities.addToClipboard(str3);
                                         String string3 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                         if (AndroidUtilities.shouldShowClipboardToast()) {
-                                            new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string3).j();
+                                            new org.telegram.ui.Components.xc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string3).j();
                                         }
                                     }
                                 }
@@ -207,7 +207,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                         CharSequence[] charSequenceArr2 = new CharSequence[2];
                         charSequenceArr2[0] = string3;
                         charSequenceArr2[c10] = string22;
-                        DialogInterface.OnClickListener onClickListener2 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.jr0
+                        DialogInterface.OnClickListener onClickListener2 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.kr0
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i14) {
                                 Drawable[] drawableArr2 = PhotoViewer.U8;
@@ -221,7 +221,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                                     AndroidUtilities.addToClipboard(str3);
                                     String string32 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                     if (AndroidUtilities.shouldShowClipboardToast()) {
-                                        new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string32).j();
+                                        new org.telegram.ui.Components.xc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string32).j();
                                     }
                                 }
                             }
@@ -252,7 +252,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                     CharSequence[] charSequenceArr22 = new CharSequence[2];
                     charSequenceArr22[0] = string32;
                     charSequenceArr22[c10] = string222;
-                    DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.jr0
+                    DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.kr0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i14) {
                             Drawable[] drawableArr2 = PhotoViewer.U8;
@@ -266,7 +266,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                                 AndroidUtilities.addToClipboard(str3);
                                 String string322 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                 if (AndroidUtilities.shouldShowClipboardToast()) {
-                                    new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string322).j();
+                                    new org.telegram.ui.Components.xc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string322).j();
                                 }
                             }
                         }

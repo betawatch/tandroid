@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class pp0 {
     public boolean f;
@@ -15,7 +15,7 @@ public final class pp0 {
     public Path i;
     public Paint j;
     public Drawable k;
-    public final org.telegram.ui.Components.zc l;
+    public final org.telegram.ui.Components.yc l;
     public boolean m;
     public final org.telegram.ui.Components.e6 n;
     public int o;
@@ -30,7 +30,7 @@ public final class pp0 {
 
     public pp0(qp0 qp0Var) {
         this.r = qp0Var;
-        this.l = new org.telegram.ui.Components.zc(qp0Var);
+        this.l = new org.telegram.ui.Components.yc(qp0Var);
         this.n = new org.telegram.ui.Components.e6(qp0Var, 0L, 320L, org.telegram.ui.Components.rr.h);
     }
 

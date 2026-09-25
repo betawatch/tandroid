@@ -26,7 +26,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class aw0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public static DispatchQueue u0;
@@ -165,7 +165,7 @@ public class aw0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
         if (this.v == null) {
             z81 z81Var2 = new z81(getContext());
             this.v = z81Var2;
-            z81Var2.n = new nv(this, 22);
+            z81Var2.n = new mv(this, 22);
             if (getMeasuredWidth() != 0 && getMeasuredHeight() != 0) {
                 z81 z81Var3 = this.v;
                 int measuredWidth = getMeasuredWidth();

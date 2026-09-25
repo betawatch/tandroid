@@ -11,9 +11,9 @@ import rg.z1;
 import yh.k7;
 import yh.o2;
 import yh.p2;
-import yh.r5;
+import yh.z5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class d0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -127,7 +127,7 @@ public final class d0 extends AnimatorListenerAdapter {
                 o00Var.setScaleY(1.0f);
                 break;
             case 12:
-                ((r5) this.b).run();
+                ((z5) this.b).run();
                 break;
             case 13:
                 zg.t tVar = (zg.t) this.b;

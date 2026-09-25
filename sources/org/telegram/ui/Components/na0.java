@@ -30,7 +30,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class na0 extends org.telegram.ui.ActionBar.m2 implements cv0, mg.b, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.ActionBar.f2 E;
@@ -527,9 +527,10 @@ public final class na0 extends org.telegram.ui.ActionBar.m2 implements cv0, mg.b
                                 }
                                 na0Var2.getMessagesController().getStoriesController().n0(na0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, 20);
-                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 27);
-                                (z18 ? yc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i17, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : yc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i17, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new cv(21, na0Var2, zArr2);
+                                int i23 = 20;
+                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, i23);
+                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 28);
+                                (z18 ? xc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i17, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : xc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i17, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new vw(i23, na0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -682,9 +683,10 @@ public final class na0 extends org.telegram.ui.ActionBar.m2 implements cv0, mg.b
                                 }
                                 na0Var2.getMessagesController().getStoriesController().n0(na0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, 20);
-                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 27);
-                                (z18 ? yc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : yc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new cv(21, na0Var2, zArr2);
+                                int i23 = 20;
+                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, i23);
+                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 28);
+                                (z18 ? xc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : xc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new vw(i23, na0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -834,9 +836,10 @@ public final class na0 extends org.telegram.ui.ActionBar.m2 implements cv0, mg.b
                                 }
                                 na0Var2.getMessagesController().getStoriesController().n0(na0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, 20);
-                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 27);
-                                (z18 ? yc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : yc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new cv(21, na0Var2, zArr2);
+                                int i23 = 20;
+                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, i23);
+                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 28);
+                                (z18 ? xc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : xc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new vw(i23, na0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -993,9 +996,10 @@ public final class na0 extends org.telegram.ui.ActionBar.m2 implements cv0, mg.b
                                 }
                                 na0Var2.getMessagesController().getStoriesController().n0(na0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, 20);
-                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 27);
-                                (z18 ? yc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : yc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new cv(21, na0Var2, zArr2);
+                                int i23 = 20;
+                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, i23);
+                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 28);
+                                (z18 ? xc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : xc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new vw(i23, na0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -1147,9 +1151,10 @@ public final class na0 extends org.telegram.ui.ActionBar.m2 implements cv0, mg.b
                                 }
                                 na0Var2.getMessagesController().getStoriesController().n0(na0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, 20);
-                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 27);
-                                (z18 ? yc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : yc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new cv(21, na0Var2, zArr2);
+                                int i23 = 20;
+                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, i23);
+                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 28);
+                                (z18 ? xc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : xc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new vw(i23, na0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -1373,9 +1378,10 @@ public final class na0 extends org.telegram.ui.ActionBar.m2 implements cv0, mg.b
                                 }
                                 na0Var2.getMessagesController().getStoriesController().n0(na0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, 20);
-                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 27);
-                                (z18 ? yc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : yc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new cv(21, na0Var2, zArr2);
+                                int i232 = 20;
+                                na0Var2.U = new ci.y0(na0Var2, arrayList, z18, i232);
+                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(na0Var2, zArr2, arrayList, zArr, 28);
+                                (z18 ? xc.a0(na0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), l5Var).j() : xc.a0(na0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, l5Var).j()).v = new vw(i232, na0Var2, zArr2);
                                 break;
                             }
                             break;

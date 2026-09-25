@@ -13,9 +13,9 @@ import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.hj;
 import org.telegram.ui.Components.hl;
 import org.telegram.ui.Components.j40;
+import org.telegram.ui.Components.jv;
 import org.telegram.ui.Components.kj;
 import org.telegram.ui.Components.kn;
-import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.l00;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.o00;
@@ -26,8 +26,8 @@ import org.telegram.ui.Components.qk;
 import org.telegram.ui.Components.rb0;
 import org.telegram.ui.Components.sa0;
 import org.telegram.ui.Components.sb0;
+import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.uv;
 import org.telegram.ui.Components.vn;
 import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.wi;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.zj;
 import org.telegram.ui.hx;
 import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class r extends s4.s0 {
     public final /* synthetic */ int a;
@@ -337,7 +337,7 @@ public final class r extends s4.s0 {
                 ((li.e) this.b).f++;
                 break;
             case 12:
-                ((ki.n) this.b).run();
+                ((ki.h0) this.b).run();
                 break;
             case 13:
                 ((org.telegram.ui.Components.e0) this.b).r0();
@@ -457,11 +457,11 @@ public final class r extends s4.s0 {
                 }
                 break;
             case 25:
-                uv uvVar = (uv) this.b;
-                kv kvVar = uvVar.f;
-                if (kvVar != null && uvVar.h.K1 && kvVar.w) {
-                    kvVar.w = false;
-                    kvVar.invalidate();
+                tv tvVar = (tv) this.b;
+                jv jvVar = tvVar.f;
+                if (jvVar != null && tvVar.h.K1 && jvVar.w) {
+                    jvVar.w = false;
+                    jvVar.invalidate();
                     break;
                 }
                 break;

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -32,10 +32,10 @@ public final /* synthetic */ class t3 implements Utilities.Callback {
                 ((v3) obj2).K.o0 = ((Integer) obj).intValue() - AndroidUtilities.navigationBarHeight > AndroidUtilities.dp(20.0f);
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(18, (bc) obj2, (TL_stories.TL_premium_boostsStatus) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(17, (bc) obj2, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(24, (je) obj2, (TL_stories.TL_premium_boostsStatus) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(23, (je) obj2, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
             case 3:
                 ((jq) obj2).e.S = (String) obj;
@@ -80,9 +80,9 @@ public final /* synthetic */ class t3 implements Utilities.Callback {
                 vi0Var.d0.animate().translationY((z10 ? Math.min(vi0Var.c0, (vi0Var.F.getHeight() - num.intValue()) - vi0Var.d0.getMeasuredHeight()) : vi0Var.c0) - vi0Var.d0.getTop()).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
                 break;
             case 12:
-                lj0 lj0Var = (lj0) obj2;
-                lj0Var.j0 = (String) obj;
-                w5 w5Var = lj0Var.t0;
+                kj0 kj0Var = (kj0) obj2;
+                kj0Var.j0 = (String) obj;
+                w5 w5Var = kj0Var.t0;
                 AndroidUtilities.cancelRunOnUIThread(w5Var);
                 AndroidUtilities.runOnUIThread(w5Var, 100L);
                 break;
@@ -193,7 +193,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback {
                 }
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new ix0(21, (q21) obj2, (TLRPC.TL_exportedContactToken) obj));
+                AndroidUtilities.runOnUIThread(new jx0(20, (q21) obj2, (TLRPC.TL_exportedContactToken) obj));
                 break;
             case 23:
                 StickersActivity.b0((StickersActivity) obj2, (View) obj);

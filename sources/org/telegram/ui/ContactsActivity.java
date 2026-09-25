@@ -48,7 +48,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements le.e, NotificationCenter.NotificationCenterDelegate, xg0, ph.d {
     public boolean E;
@@ -884,7 +884,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements le
         if (user.bot) {
             if (user.bot_nochats) {
                 try {
-                    org.telegram.ui.Components.yc.a0(this).t(LocaleController.getString(R.string.BotCantJoinGroups), null).j();
+                    org.telegram.ui.Components.xc.a0(this).t(LocaleController.getString(R.string.BotCantJoinGroups), null).j();
                     return;
                 } catch (Exception e) {
                     FileLog.e(e);

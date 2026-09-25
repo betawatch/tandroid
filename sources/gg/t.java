@@ -35,10 +35,10 @@ import org.telegram.ui.Components.f51;
 import org.telegram.ui.Components.m01;
 import org.telegram.ui.Components.o01;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -126,14 +126,14 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject2 = (TLObject) this.d;
                 if (tL_error != null) {
                     dVar.a.a(0.0f);
-                    yc.b0(tL_error);
+                    xc.b0(tL_error);
                     return;
                 } else if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
                     dVar.finishFragment();
                     return;
                 } else {
                     dVar.a.a(0.0f);
-                    ok.p(R.string.UnknownError, yc.a0(dVar), null);
+                    ok.p(R.string.UnknownError, xc.a0(dVar), null);
                     return;
                 }
             case 6:
@@ -142,11 +142,11 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject3 = (TLObject) this.d;
                 if (tL_error2 != null) {
                     nVar.e.a(0.0f);
-                    yc.b0(tL_error2);
+                    xc.b0(tL_error2);
                     return;
                 } else if (tLObject3 instanceof TLRPC.TL_boolFalse) {
                     nVar.e.a(0.0f);
-                    ok.p(R.string.UnknownError, yc.a0(nVar), null);
+                    ok.p(R.string.UnknownError, xc.a0(nVar), null);
                     return;
                 } else {
                     if (nVar.E != null) {
@@ -187,14 +187,14 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject5 = (TLObject) this.d;
                 if (tL_error3 != null) {
                     x0Var.a.a(0.0f);
-                    yc.b0(tL_error3);
+                    xc.b0(tL_error3);
                     return;
                 } else if (!(tLObject5 instanceof TLRPC.TL_boolFalse)) {
                     x0Var.finishFragment();
                     return;
                 } else {
                     x0Var.a.a(0.0f);
-                    ok.p(R.string.UnknownError, yc.a0(x0Var), null);
+                    ok.p(R.string.UnknownError, xc.a0(x0Var), null);
                     return;
                 }
             case 11:
@@ -337,35 +337,35 @@ public final /* synthetic */ class t implements Runnable {
                 CountDownLatch countDownLatch = (CountDownLatch) this.d;
                 qVar.getClass();
                 try {
-                    qVar.d();
+                    qVar.f();
                     return;
                 } finally {
                     handlerThread.quitSafely();
                     countDownLatch.countDown();
                 }
             case 23:
-                ki.r0 r0Var = (ki.r0) this.b;
+                ki.s0 s0Var = (ki.s0) this.b;
                 ki.t tVar = (ki.t) this.c;
                 File file = (File) this.d;
-                Handler handler = r0Var.h;
+                Handler handler = s0Var.h;
                 try {
                     tVar.d(file);
-                    r0Var.f();
+                    s0Var.f();
                     long e = w7.k.e(file) / 1000;
-                    r0Var.l.b("preview snapshot completed: durationMs=" + e + ", size=" + file.length() + ", elapsedMs=" + ki.r0.e(r0Var.I));
-                    handler.post(new ki.d0(r0Var, e, i10));
+                    s0Var.l.b("preview snapshot completed: durationMs=" + e + ", size=" + file.length() + ", elapsedMs=" + ki.s0.e(s0Var.I));
+                    handler.post(new ki.d0(s0Var, e, i10));
                     return;
                 } catch (Exception e7) {
-                    handler.post(new ki.c0(r0Var, e7, 3));
+                    handler.post(new ki.c0(s0Var, e7, 3));
                     return;
                 }
             case 24:
-                ki.r0 r0Var2 = (ki.r0) this.b;
-                ki.n0 n0Var = (ki.n0) this.c;
+                ki.s0 s0Var2 = (ki.s0) this.b;
+                ki.o0 o0Var = (ki.o0) this.c;
                 File file2 = (File) this.d;
-                ki.o0 o0Var = r0Var2.d;
-                long j10 = n0Var.a;
-                o01 o01Var = (o01) o0Var;
+                ki.p0 p0Var = s0Var2.d;
+                long j10 = o0Var.a;
+                o01 o01Var = (o01) p0Var;
                 synchronized (o01Var) {
                     if (o01Var.d) {
                         return;

@@ -108,7 +108,7 @@ import r0.n;
 import s4.m0;
 import vh.k;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utilities.Callback2Return, ll0, z1, t9, dc, k, n, yk0, Utilities.Callback5, v1, CameraController.VideoTakeCallback, Continuation, OnCompleteListener {
     public final /* synthetic */ int a;
@@ -497,7 +497,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                                             if (indexOf > 0) {
                                                                 trim = trim.substring(0, indexOf);
                                                             }
-                                                            org.telegram.ui.Components.yc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
+                                                            org.telegram.ui.Components.xc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
                                                             break;
                                                         default:
                                                             qy qyVar3 = hxVar2.O0;
@@ -509,7 +509,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                                             if (indexOf2 > 0) {
                                                                 trim = trim.substring(0, indexOf2);
                                                             }
-                                                            org.telegram.ui.Components.yc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
+                                                            org.telegram.ui.Components.xc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
                                                             break;
                                                     }
                                                 }
@@ -538,7 +538,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                                             if (indexOf > 0) {
                                                                 trim = trim.substring(0, indexOf);
                                                             }
-                                                            org.telegram.ui.Components.yc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
+                                                            org.telegram.ui.Components.xc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
                                                             break;
                                                         default:
                                                             qy qyVar3 = hxVar2.O0;
@@ -550,7 +550,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                                             if (indexOf2 > 0) {
                                                                 trim = trim.substring(0, indexOf2);
                                                             }
-                                                            org.telegram.ui.Components.yc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
+                                                            org.telegram.ui.Components.xc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
                                                             break;
                                                     }
                                                 }
@@ -888,7 +888,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                                     if (indexOf > 0) {
                                                         trim = trim.substring(0, indexOf);
                                                     }
-                                                    org.telegram.ui.Components.yc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
+                                                    org.telegram.ui.Components.xc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
                                                     break;
                                                 default:
                                                     qy qyVar3 = hxVar2.O0;
@@ -900,7 +900,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                                     if (indexOf2 > 0) {
                                                         trim = trim.substring(0, indexOf2);
                                                     }
-                                                    org.telegram.ui.Components.yc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
+                                                    org.telegram.ui.Components.xc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
                                                     break;
                                             }
                                         }
@@ -929,7 +929,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                                     if (indexOf > 0) {
                                                         trim = trim.substring(0, indexOf);
                                                     }
-                                                    org.telegram.ui.Components.yc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
+                                                    org.telegram.ui.Components.xc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
                                                     break;
                                                 default:
                                                     qy qyVar3 = hxVar2.O0;
@@ -941,7 +941,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                                     if (indexOf2 > 0) {
                                                         trim = trim.substring(0, indexOf2);
                                                     }
-                                                    org.telegram.ui.Components.yc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
+                                                    org.telegram.ui.Components.xc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
                                                     break;
                                             }
                                         }
@@ -1322,7 +1322,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                             if (indexOf > 0) {
                                                 trim = trim.substring(0, indexOf);
                                             }
-                                            org.telegram.ui.Components.yc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
+                                            org.telegram.ui.Components.xc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
                                             break;
                                         default:
                                             qy qyVar3 = hxVar2.O0;
@@ -1334,7 +1334,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                             if (indexOf2 > 0) {
                                                 trim = trim.substring(0, indexOf2);
                                             }
-                                            org.telegram.ui.Components.yc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
+                                            org.telegram.ui.Components.xc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
                                             break;
                                     }
                                 }
@@ -1363,7 +1363,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                             if (indexOf > 0) {
                                                 trim = trim.substring(0, indexOf);
                                             }
-                                            org.telegram.ui.Components.yc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
+                                            org.telegram.ui.Components.xc.a0(qyVar2).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, trim)), null, null).j();
                                             break;
                                         default:
                                             qy qyVar3 = hxVar2.O0;
@@ -1375,7 +1375,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ml0, Utili
                                             if (indexOf2 > 0) {
                                                 trim = trim.substring(0, indexOf2);
                                             }
-                                            org.telegram.ui.Components.yc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
+                                            org.telegram.ui.Components.xc.a0(qyVar3).V(Arrays.asList(user2), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, trim)), null, null).j();
                                             break;
                                     }
                                 }

@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c90 implements Runnable {
     public final /* synthetic */ int a;
@@ -63,14 +63,14 @@ public final /* synthetic */ class c90 implements Runnable {
     /* JADX WARN: Type inference failed for: r13v7 */
     /* JADX WARN: Type inference failed for: r14v26, types: [org.telegram.messenger.g2] */
     /* JADX WARN: Type inference failed for: r15v2, types: [org.telegram.ui.yi1] */
-    /* JADX WARN: Type inference failed for: r6v32, types: [ai.e4] */
+    /* JADX WARN: Type inference failed for: r5v34, types: [ai.e4] */
     /* JADX WARN: Type inference failed for: r8v1, types: [android.content.Context, org.telegram.ui.LaunchActivity] */
     /* JADX WARN: Type inference failed for: r8v19, types: [org.telegram.ui.ActionBar.m2, org.telegram.ui.ProfileActivity] */
     /* JADX WARN: Type inference failed for: r8v5, types: [org.telegram.ui.zb0] */
     @Override // java.lang.Runnable
     public final void run() {
         oo0 oo0Var;
-        org.telegram.ui.Components.yc b10;
+        org.telegram.ui.Components.xc b10;
         int i10;
         int i11;
         int i12;
@@ -82,7 +82,7 @@ public final /* synthetic */ class c90 implements Runnable {
         String str;
         org.telegram.ui.ActionBar.d6 d6Var;
         int i17 = this.a;
-        int i18 = 8;
+        int i18 = 7;
         TLRPC.TL_wallPaper tL_wallPaper = null;
         final int i19 = 1;
         final ?? r13 = 0;
@@ -96,13 +96,13 @@ public final /* synthetic */ class c90 implements Runnable {
         switch (i17) {
             case 0:
                 ?? r82 = (LaunchActivity) obj5;
-                m80 m80Var = (m80) obj3;
+                n80 n80Var = (n80) obj3;
                 TLObject tLObject = (TLObject) obj4;
                 TLRPC.TL_wallPaper tL_wallPaper2 = (TLRPC.TL_wallPaper) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 Pattern pattern = LaunchActivity.B1;
                 try {
-                    m80Var.run();
+                    n80Var.run();
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -189,7 +189,7 @@ public final /* synthetic */ class c90 implements Runnable {
                 LaunchActivity launchActivity3 = (LaunchActivity) obj5;
                 TLObject tLObject3 = (TLObject) obj4;
                 org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) obj;
-                m80 m80Var2 = (m80) obj3;
+                n80 n80Var2 = (n80) obj3;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 Pattern pattern2 = LaunchActivity.B1;
                 if (tLObject3 instanceof TLRPC.TL_theme) {
@@ -213,7 +213,7 @@ public final /* synthetic */ class c90 implements Runnable {
                                 }
                             }
                             try {
-                                m80Var2.run();
+                                n80Var2.run();
                             } catch (Exception e7) {
                                 FileLog.e(e7);
                             }
@@ -239,7 +239,7 @@ public final /* synthetic */ class c90 implements Runnable {
                 }
                 if (r132 != 0) {
                     try {
-                        m80Var2.run();
+                        n80Var2.run();
                     } catch (Exception e10) {
                         FileLog.e(e10);
                     }
@@ -273,7 +273,7 @@ public final /* synthetic */ class c90 implements Runnable {
                     if (tLObject4 instanceof TLRPC.TL_payments_paymentFormStars) {
                         xh.p4 p4Var = launchActivity4.Y0;
                         launchActivity4.Y0 = null;
-                        yh.t5.y(i20, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject4, new tb0(r83, 1), new f90(p4Var, i19));
+                        yh.s5.y(i20, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject4, new tb0(r83, 1), new f90(p4Var, i19));
                         break;
                     } else {
                         if (tLObject4 instanceof TLRPC.PaymentForm) {
@@ -611,29 +611,29 @@ public final /* synthetic */ class c90 implements Runnable {
                     } else {
                         String str7 = tL_error8.text;
                         zf0Var.e = str7;
-                        new org.telegram.ui.Components.yc(r03.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, str7));
+                        new org.telegram.ui.Components.xc(r03.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, str7));
                         break;
                     }
                 } else {
-                    new org.telegram.ui.Components.yc(r03.Z, null).H(R.raw.error, LocaleController.getString(R.string.UnknownError));
+                    new org.telegram.ui.Components.xc(r03.Z, null).H(R.raw.error, LocaleController.getString(R.string.UnknownError));
                     break;
                 }
             case 10:
-                ej0 ej0Var = (ej0) obj5;
+                dj0 dj0Var = (dj0) obj5;
                 TLRPC.TL_error tL_error9 = (TLRPC.TL_error) obj2;
                 jg.b bVar = (jg.b) obj3;
                 String str8 = (String) obj4;
                 TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = (TL_stats.TL_loadAsyncGraph) obj;
-                ej0Var.y = true;
+                dj0Var.y = true;
                 if (tL_error9 != null || bVar == null) {
-                    ej0Var.g0();
+                    dj0Var.g0();
                     break;
                 } else {
-                    ej0Var.v.put(str8, bVar);
-                    ea1 ea1Var = ej0Var.r;
+                    dj0Var.v.put(str8, bVar);
+                    ea1 ea1Var = dj0Var.r;
                     ea1Var.e = bVar;
                     ea1Var.c = tL_loadAsyncGraph.x;
-                    ej0Var.g0();
+                    dj0Var.g0();
                     break;
                 }
             case 11:
@@ -762,7 +762,7 @@ public final /* synthetic */ class c90 implements Runnable {
                 TLRPC.TL_error tL_error12 = (TLRPC.TL_error) obj2;
                 ?? r04 = ((qx0) obj5).d;
                 if (((TLObject) obj4) instanceof TLRPC.TL_boolTrue) {
-                    org.telegram.ui.Components.qc Q = org.telegram.ui.Components.yc.a0(r04).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.PrivacyBirthdaySetDone));
+                    org.telegram.ui.Components.qc Q = org.telegram.ui.Components.xc.a0(r04).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.PrivacyBirthdaySetDone));
                     Q.j = 5000;
                     Q.j();
                     break;
@@ -790,7 +790,7 @@ public final /* synthetic */ class c90 implements Runnable {
                             break;
                         }
                     } else {
-                        org.telegram.messenger.f0.p(R.string.UnknownError, org.telegram.ui.Components.yc.a0(r04), R.raw.error, 36);
+                        org.telegram.messenger.f0.p(R.string.UnknownError, org.telegram.ui.Components.xc.a0(r04), R.raw.error, 36);
                         break;
                     }
                 }
@@ -814,7 +814,6 @@ public final /* synthetic */ class c90 implements Runnable {
                     r84.showDialog(a2Var3);
                     break;
                 }
-                break;
             case 19:
                 ProfileActivity profileActivity = (ProfileActivity) obj5;
                 TLObject tLObject10 = (TLObject) obj4;
@@ -832,7 +831,7 @@ public final /* synthetic */ class c90 implements Runnable {
                     String format = LocaleController.getInstance().getFormatterBoostExpired().format(new Date(tL_collectibleInfo.purchase_date * 1000));
                     String formatCurrency = BillingController.getInstance().formatCurrency(tL_collectibleInfo.crypto_amount, tL_collectibleInfo.crypto_currency);
                     String formatCurrency2 = BillingController.getInstance().formatCurrency(tL_collectibleInfo.amount, tL_collectibleInfo.currency);
-                    org.telegram.ui.Components.qc w10 = new org.telegram.ui.Components.yc(pz0Var.w, profileActivity.z0).w(R.drawable.filled_username, AndroidUtilities.withLearnMore(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FragmentChannelUsername, str9, format, formatCurrency, TextUtils.isEmpty(formatCurrency2) ? "" : a4.a.q("(", formatCurrency2, ")"))), new ix0(i18, profileActivity, tL_collectibleInfo)));
+                    org.telegram.ui.Components.qc w10 = new org.telegram.ui.Components.xc(pz0Var.w, profileActivity.z0).w(R.drawable.filled_username, AndroidUtilities.withLearnMore(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FragmentChannelUsername, str9, format, formatCurrency, TextUtils.isEmpty(formatCurrency2) ? "" : a4.a.q("(", formatCurrency2, ")"))), new jx0(i18, profileActivity, tL_collectibleInfo)));
                     ov ovVar = new ov(29, profileActivity, tL_collectibleInfo);
                     org.telegram.ui.Components.ub ubVar = w10.e;
                     if (ubVar != null) {
@@ -841,7 +840,7 @@ public final /* synthetic */ class c90 implements Runnable {
                     w10.k(false);
                     break;
                 } else {
-                    org.telegram.ui.Components.yc.b0(tL_error13);
+                    org.telegram.ui.Components.xc.b0(tL_error13);
                     break;
                 }
             case 20:
@@ -854,7 +853,7 @@ public final /* synthetic */ class c90 implements Runnable {
                     d20.a(profileActivity2.getParentActivity(), 1, str10, user3, (TL_fragment.TL_collectibleInfo) tLObject11, profileActivity2.z0);
                     break;
                 } else {
-                    org.telegram.ui.Components.yc.b0(tL_error14);
+                    org.telegram.ui.Components.xc.b0(tL_error14);
                     break;
                 }
             case 21:
@@ -948,14 +947,14 @@ public final /* synthetic */ class c90 implements Runnable {
             case 27:
                 TLObject tLObject15 = (TLObject) obj4;
                 MessagesController messagesController3 = (MessagesController) obj5;
-                ?? r62 = (ai.e4) obj3;
+                ?? r52 = (ai.e4) obj3;
                 tg.f fVar = (tg.f) obj;
                 TLRPC.TL_error tL_error18 = (TLRPC.TL_error) obj2;
                 if (tLObject15 instanceof TLRPC.TL_payments_checkedGiftCode) {
                     TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = (TLRPC.TL_payments_checkedGiftCode) tLObject15;
                     messagesController3.putChats(tL_payments_checkedGiftCode.chats, false);
                     messagesController3.putUsers(tL_payments_checkedGiftCode.users, false);
-                    r62.run(tL_payments_checkedGiftCode);
+                    r52.run(tL_payments_checkedGiftCode);
                 }
                 fVar.run(tL_error18);
                 break;
@@ -973,7 +972,7 @@ public final /* synthetic */ class c90 implements Runnable {
                     BillingController billingController = BillingController.getInstance();
                     Activity parentActivity2 = m2Var3.getParentActivity();
                     AccountInstance accountInstance = AccountInstance.getInstance(i22);
-                    of.b bVar2 = new of.b(7, (boolean) r13);
+                    of.b bVar2 = new of.b(i18, (boolean) r13);
                     bVar2.U(z4Var.e0.h);
                     billingController.launchBillingFlow(parentActivity2, accountInstance, tL_inputStorePaymentGiftPremium, Collections.singletonList(bVar2.B()));
                     break;
@@ -1039,12 +1038,12 @@ public final /* synthetic */ class c90 implements Runnable {
         this.e = callback2;
     }
 
-    public /* synthetic */ c90(LaunchActivity launchActivity, TLObject tLObject, org.telegram.ui.ActionBar.a2 a2Var, m80 m80Var, TLRPC.TL_error tL_error) {
+    public /* synthetic */ c90(LaunchActivity launchActivity, TLObject tLObject, org.telegram.ui.ActionBar.a2 a2Var, n80 n80Var, TLRPC.TL_error tL_error) {
         this.a = 3;
         this.b = launchActivity;
         this.d = tLObject;
         this.e = a2Var;
-        this.c = m80Var;
+        this.c = n80Var;
         this.f = tL_error;
     }
 

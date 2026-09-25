@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.SystemClock;
 import android.view.TextureView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class y50 extends TextureView {
     public final /* synthetic */ int a;
@@ -19,17 +19,17 @@ public final class y50 extends TextureView {
 
     @Override // android.view.View
     public void invalidate() {
-        ki.q0 q0Var;
+        ki.r0 r0Var;
         switch (this.a) {
             case 0:
                 b60 b60Var = (b60) this.b;
-                if (!b60Var.x0 && (q0Var = b60Var.O) != null && q0Var.a == 3) {
-                    b60Var.x0 = true;
+                if (!b60Var.A0 && (r0Var = b60Var.R) != null && r0Var.a == 3) {
+                    b60Var.A0 = true;
                     try {
-                        b60Var.v0 = SystemClock.elapsedRealtimeNanos();
-                        b60Var.v();
+                        b60Var.y0 = SystemClock.elapsedRealtimeNanos();
+                        b60Var.w();
                     } finally {
-                        b60Var.x0 = false;
+                        b60Var.A0 = false;
                     }
                 }
                 super.invalidate();

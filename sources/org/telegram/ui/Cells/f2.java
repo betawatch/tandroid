@@ -41,11 +41,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.w80;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class f2 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public final int E;
@@ -72,7 +72,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
     public boolean b;
     public e2 b0;
     public final w80 c;
-    public zc c0;
+    public yc c0;
     public final int d;
     public boolean d0;
     public Object e;
@@ -536,9 +536,9 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
             }
             canvas.save();
             float f7 = this.g0;
-            zc zcVar = this.c0;
-            if (zcVar != null) {
-                f7 *= zcVar.a(0.1f);
+            yc ycVar = this.c0;
+            if (ycVar != null) {
+                f7 *= ycVar.a(0.1f);
             }
             canvas.scale(f7, f7, getMeasuredWidth() / 2, getMeasuredHeight() / 2);
             imageReceiver.draw(canvas);
@@ -1376,17 +1376,17 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
     @Override // android.view.View
     public void setPressed(boolean z10) {
         super.setPressed(z10);
-        zc zcVar = this.c0;
-        if (zcVar != null) {
-            zcVar.c(z10 || this.W);
+        yc ycVar = this.c0;
+        if (ycVar != null) {
+            ycVar.c(z10 || this.W);
         }
     }
 
     public void setScaled(boolean z10) {
         this.W = z10;
-        zc zcVar = this.c0;
-        if (zcVar != null) {
-            zcVar.c(isPressed() || this.W);
+        yc ycVar = this.c0;
+        if (ycVar != null) {
+            ycVar.c(isPressed() || this.W);
         }
     }
 

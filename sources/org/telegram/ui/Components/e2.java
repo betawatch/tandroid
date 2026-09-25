@@ -22,7 +22,7 @@ import org.telegram.messenger.SecureDocument;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e2 implements cd0, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy, org.telegram.ui.ActionBar.z1, OnFailureListener, Utilities.Callback2Return {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class e2 implements cd0, MediaDataController.Keywor
                 yh.a3 a3Var = (yh.a3) c3Var.o.get(c3Var.q);
                 if (a3Var != null) {
                     zf.a aVar = a3Var.c;
-                    yh.t5 x10 = yh.t5.x(this.b, c3Var.q);
+                    yh.s5 x10 = yh.s5.x(this.b, c3Var.q);
                     zf.a l4 = x10.e ? zf.a.l(x10.p()) : null;
                     if (l4 != null && aVar.b > l4.b) {
                         zf.b bVar = c3Var.q;
@@ -228,7 +228,7 @@ public final /* synthetic */ class e2 implements cd0, MediaDataController.Keywor
             H.W(new cs0(zr0Var));
             H.l(R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new xh.u1(zr0Var, 0), h);
             H.l(R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new gg.e1(zr0Var, i12, publicUsername, tL_starGiftCollection, context, d6Var, m2Var, 15), !TextUtils.isEmpty(publicUsername));
-            H.l(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new u2.i0(12, zr0Var, tL_starGiftCollection), h);
+            H.l(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new u2.p0(11, zr0Var, tL_starGiftCollection), h);
             H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new xh.u1(zr0Var, 1), h);
             H.m(h, R.drawable.msg_delete, LocaleController.getString(R.string.Gift2CollectionsDelete), true, new org.telegram.ui.wl0(zr0Var, i10, tL_starGiftCollection, 14));
             zr0Var.I = H;

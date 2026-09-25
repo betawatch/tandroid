@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class r8 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -186,7 +186,7 @@ public final class r8 extends AnimatorListenerAdapter {
                 break;
             case 18:
                 super.onAnimationEnd(animator);
-                ((lv) this.b).d = null;
+                ((kv) this.b).d = null;
                 break;
             case 19:
                 ((lz) this.b).W = null;
@@ -216,7 +216,7 @@ public final class r8 extends AnimatorListenerAdapter {
                 break;
             case 24:
                 b60 b60Var = (b60) this.b;
-                if (animator == b60Var.T) {
+                if (animator == b60Var.W) {
                     b60Var.c(true);
                     b60Var.setVisibility(4);
                     break;

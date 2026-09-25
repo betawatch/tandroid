@@ -67,6 +67,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.s50;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.da;
+import org.telegram.ui.web.o1;
 import org.xmlpull.v1.XmlPullParserException;
 import rg.q1;
 import u2.f0;
@@ -93,7 +94,7 @@ import z7.x;
 import z7.y;
 import z7.zf;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class a implements i, r {
     public final /* synthetic */ int a;
@@ -600,8 +601,8 @@ public class a implements i, r {
     public void j(e2.h hVar) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
-            u2.j0 j0Var = (u2.j0) it.next();
-            e2.d0.U(j0Var.a, new i0(0, hVar, j0Var.b));
+            i0 i0Var = (i0) it.next();
+            e2.d0.U(i0Var.a, new o1(29, hVar, i0Var.b));
         }
     }
 
@@ -680,7 +681,7 @@ public class a implements i, r {
         a0 a0Var = ((m4.k0) this.d).g;
         Handler handler = a0Var.l;
         m4.r rVar = (m4.r) this.c;
-        e2.d0.U(handler, new ki.n(a0Var, rVar, new c9(this, this.b, list, rVar, 6)));
+        e2.d0.U(handler, new ki.h0(a0Var, rVar, new c9(this, this.b, list, rVar, 6)));
     }
 
     public void p(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10) {

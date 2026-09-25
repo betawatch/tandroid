@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class o2 {
     public final p2 a;
-    public k1 d;
+    public j1 d;
     public int f;
     public int g;
     public float j;
@@ -33,7 +33,7 @@ public final class o2 {
     }
 
     public final void b() {
-        k1 k1Var;
+        j1 j1Var;
         boolean z10 = this.e;
         p2 p2Var = this.a;
         if (!z10) {
@@ -132,10 +132,10 @@ public final class o2 {
             }
         }
         p2Var.H = null;
-        if (this.e || (k1Var = this.d) == null) {
+        if (this.e || (j1Var = this.d) == null) {
             return;
         }
-        k1Var.run();
+        j1Var.run();
     }
 
     public final void c(float f7, float f10) {

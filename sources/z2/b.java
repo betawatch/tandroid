@@ -4,27 +4,27 @@ import java.io.IOException;
 import java.util.ConcurrentModificationException;
 import k4.d;
 import org.telegram.ui.y61;
-import y2.h;
-import y2.j;
-import y2.m;
+import y2.g;
+import y2.i;
+import y2.l;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class b implements h, y61 {
+public final class b implements g, y61 {
     public final Object a;
 
     public /* synthetic */ b(Object obj) {
         this.a = obj;
     }
 
-    @Override // y2.h
-    public d m(j jVar, long j3, long j10, IOException iOException, int i10) {
+    @Override // y2.g
+    public d m(i iVar, long j3, long j10, IOException iOException, int i10) {
         ((l2.d) this.a).a.x(iOException);
-        return m.e;
+        return l.e;
     }
 
-    @Override // y2.h
-    public void o(j jVar, long j3, long j10) {
+    @Override // y2.g
+    public void o(i iVar, long j3, long j10) {
         boolean z10;
         l2.d dVar = (l2.d) this.a;
         synchronized (c.b) {
@@ -37,11 +37,11 @@ public final class b implements h, y61 {
         }
     }
 
-    @Override // y2.h
-    public void E(j jVar, long j3, long j10, boolean z10) {
+    @Override // y2.g
+    public void E(i iVar, long j3, long j10, boolean z10) {
     }
 
-    @Override // y2.h
-    public /* synthetic */ void n(j jVar, long j3, long j10, int i10) {
+    @Override // y2.g
+    public /* synthetic */ void n(i iVar, long j3, long j10, int i10) {
     }
 }

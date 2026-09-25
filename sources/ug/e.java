@@ -29,13 +29,13 @@ import org.telegram.ui.Components.voip.o;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.ny0;
 import s4.c1;
-import u2.i0;
+import u2.p0;
 import vg.c0;
 import vg.d0;
 import vg.r;
 import vg.t;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class e extends vl0 {
     public final d6 c;
@@ -250,7 +250,7 @@ public abstract class e extends vl0 {
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append((CharSequence) chat.title);
             spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), h6.gc, 0, new i0(7, q1Var2, chat), d6Var), textView.getPaint().getFontMetricsInt(), false));
+            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), h6.gc, 0, new p0(6, q1Var2, chat), d6Var), textView.getPaint().getFontMetricsInt(), false));
             w9Var2.e(chat, new h9(chat));
             frameLayout.setOnClickListener(new ny0(23, q1Var2, chat));
         } else {

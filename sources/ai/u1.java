@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.cv;
 import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.vw;
 import org.telegram.ui.Components.w21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sq;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -109,7 +109,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                     arrayList3.add(Long.valueOf(j3));
                     arrayList4.add(0);
                     final ArrayList arrayList6 = new ArrayList();
-                    final cv cvVar = new cv(29, qj0Var, arrayList6);
+                    final vw vwVar = new vw(28, qj0Var, arrayList6);
                     if (ChatObject.isChannel(chat)) {
                         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
                         tL_channels_getParticipants.limit = MessagesController.getInstance(i14).chatReadMarkSizeThreshold;
@@ -127,7 +127,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                         final ArrayList arrayList7 = arrayList3;
                                         final ArrayList arrayList8 = arrayList6;
                                         final ArrayList arrayList9 = arrayList4;
-                                        final cv cvVar2 = cvVar;
+                                        final vw vwVar2 = vwVar;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.oj0
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -145,7 +145,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        cvVar2.run();
+                                                        vwVar2.run();
                                                         break;
                                                     default:
                                                         TLObject tLObject4 = tLObject2;
@@ -160,7 +160,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        cvVar2.run();
+                                                        vwVar2.run();
                                                         break;
                                                 }
                                             }
@@ -172,7 +172,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                         final ArrayList arrayList10 = arrayList3;
                                         final ArrayList arrayList11 = arrayList6;
                                         final ArrayList arrayList12 = arrayList4;
-                                        final cv cvVar3 = cvVar;
+                                        final vw vwVar3 = vwVar;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.oj0
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -190,7 +190,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        cvVar3.run();
+                                                        vwVar3.run();
                                                         break;
                                                     default:
                                                         TLObject tLObject4 = tLObject2;
@@ -205,7 +205,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        cvVar3.run();
+                                                        vwVar3.run();
                                                         break;
                                                 }
                                             }
@@ -229,7 +229,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                         final ArrayList arrayList7 = arrayList3;
                                         final ArrayList arrayList8 = arrayList6;
                                         final ArrayList arrayList9 = arrayList4;
-                                        final cv cvVar2 = cvVar;
+                                        final vw vwVar2 = vwVar;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.oj0
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -247,7 +247,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        cvVar2.run();
+                                                        vwVar2.run();
                                                         break;
                                                     default:
                                                         TLObject tLObject4 = tLObject2;
@@ -262,7 +262,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        cvVar2.run();
+                                                        vwVar2.run();
                                                         break;
                                                 }
                                             }
@@ -274,7 +274,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                         final ArrayList arrayList10 = arrayList3;
                                         final ArrayList arrayList11 = arrayList6;
                                         final ArrayList arrayList12 = arrayList4;
-                                        final cv cvVar3 = cvVar;
+                                        final vw vwVar3 = vwVar;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.oj0
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -292,7 +292,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        cvVar3.run();
+                                                        vwVar3.run();
                                                         break;
                                                     default:
                                                         TLObject tLObject4 = tLObject2;
@@ -307,7 +307,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        cvVar3.run();
+                                                        vwVar3.run();
                                                         break;
                                                 }
                                             }
@@ -338,17 +338,17 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                             arrayList7.add(inputPeer);
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(23, w0Var, arrayList7));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(22, w0Var, arrayList7));
                     break;
                 }
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new w21((yh.t5) obj2, tLObject, this.b, (Utilities.Callback) obj, 10));
+                AndroidUtilities.runOnUIThread(new w21((yh.s5) obj2, tLObject, this.b, (Utilities.Callback) obj, 10));
                 break;
             default:
-                yh.s5 s5Var = (yh.s5) obj2;
-                s5Var.getClass();
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(s5Var, tLObject, (MessagesController) obj, tL_error, this.b));
+                yh.r5 r5Var = (yh.r5) obj2;
+                r5Var.getClass();
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(r5Var, tLObject, (MessagesController) obj, tL_error, this.b));
                 break;
         }
     }

@@ -76,7 +76,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.s71;
 import org.telegram.ui.qg0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class ConnectionsManager extends BaseController {
     private static final int CORE_POOL_SIZE;
@@ -131,7 +131,7 @@ public class ConnectionsManager extends BaseController {
     private AtomicInteger lastRequestToken;
     private final ConcurrentHashMap<Integer, RequestCallbacks> requestCallbacks;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class GoogleDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -286,12 +286,12 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public interface INativeTlTest {
         boolean test(long j3);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class MozillaDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -420,7 +420,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class RequestCallbacks {
         public Runnable onCancelled;
         public RequestDelegateInternal onComplete;
@@ -434,7 +434,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class ResolveHostByNameTask extends AsyncTask<Void, Void, ResolvedDomain> {
         private ArrayList<Long> addresses = new ArrayList<>();
         private String currentHostName;
@@ -563,7 +563,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class ResolvedDomain {
         public ArrayList<String> addresses;
         long ttl;
@@ -1501,7 +1501,7 @@ public class ConnectionsManager extends BaseController {
             oi.f fVar2 = fVar;
             le.b bVar2 = new le.b(this, 9);
             if (bVar.a == 3 && bVar.f() && requestTimeDelegate != null) {
-                AndroidUtilities.runOnUIThread(new h5(fVar2, bVar2, bVar, requestTimeDelegate, 25));
+                AndroidUtilities.runOnUIThread(new h5(fVar2, bVar2, bVar, requestTimeDelegate, 26));
                 return 0L;
             }
             if (requestTimeDelegate != null) {

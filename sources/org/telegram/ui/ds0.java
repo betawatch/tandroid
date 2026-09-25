@@ -36,7 +36,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.d5, GenericProvider, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.ll0, org.telegram.ui.Components.ml0, qv0, MessagesStorage.BooleanCallback, m11, OnSuccessListener, pa.a, OnFailureListener, t5.b {
     public final /* synthetic */ int a;
@@ -347,7 +347,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
                 ab1.m((ab1) this.b, (qy) this.c);
                 break;
             case 12:
-                ThemeActivity.X((ThemeActivity) this.b, (n81) this.c);
+                ThemeActivity.X((ThemeActivity) this.b, (p81) this.c);
                 break;
             case 15:
                 yb1 yb1Var = (yb1) this.b;
@@ -467,7 +467,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
         y1Var.B0 = false;
         FileLog.e(exc);
         if (Build.VERSION.SDK_INT >= 24 && (exc instanceof mb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && y1Var.isAttachedToWindow()) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(12, y1Var, bitmap), 2000L);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(11, y1Var, bitmap), 2000L);
         } else {
             y1Var.C0 = true;
         }

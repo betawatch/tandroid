@@ -3,9 +3,9 @@ package xh;
 import android.content.Context;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class t0 extends z4 {
     public final /* synthetic */ r1 x0;
@@ -17,11 +17,11 @@ public final class t0 extends z4 {
     }
 
     @Override // xh.z4
-    public final yc X() {
+    public final xc X() {
         d6 d6Var;
         r1 r1Var = this.x0;
         org.telegram.ui.ActionBar.c3 c3Var = r1Var.container;
         d6Var = r1Var.resourcesProvider;
-        return new yc(c3Var, d6Var);
+        return new xc(c3Var, d6Var);
     }
 }

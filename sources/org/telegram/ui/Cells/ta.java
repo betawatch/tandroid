@@ -16,11 +16,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ta implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -58,7 +58,7 @@ public final /* synthetic */ class ta implements View.OnClickListener {
                 pqVar.setWidth(AndroidUtilities.dp(12.0f));
                 spannableString.setSpan(pqVar, 0, spannableString.length(), 33);
                 AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString);
-                yc.a0(qyVar).M(LocaleController.getString(z10 ? R.string.UnconfirmedAuthConfirmedBot : R.string.UnconfirmedAuthConfirmed), replaceSingleTag, R.raw.contact_check).j();
+                xc.a0(qyVar).M(LocaleController.getString(z10 ? R.string.UnconfirmedAuthConfirmedBot : R.string.UnconfirmedAuthConfirmed), replaceSingleTag, R.raw.contact_check).j();
                 MessagesController.getInstance(i11).getUnconfirmedAuthController().confirm(arrayList, new ai.i(8));
                 MessagesController.getInstance(i11).getUnconfirmedAuthController().cleanup();
                 break;

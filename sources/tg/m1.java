@@ -1,7 +1,6 @@
 package tg;
 
 import ai.n8;
-import ai.s5;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -59,8 +58,8 @@ import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.wt;
 import org.telegram.ui.Components.xa;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.j20;
@@ -71,9 +70,9 @@ import w7.a6;
 import w7.y5;
 import xh.r1;
 import yh.h7;
-import yh.t5;
+import yh.s5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class m1 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static f1 G0;
@@ -283,7 +282,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             s.j(i10, null, new b1(this, 0));
         }
         if (i11 == 0 || i11 == 2) {
-            t5.y(i10, false).V();
+            s5.y(i10, false).V();
         }
     }
 
@@ -382,7 +381,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             }
             if (i10 == 0 || i10 == 2) {
                 if (UserObject.areGiftsDisabled(j3)) {
-                    new yc(m1Var.container, d6Var).Q(R.raw.error, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserDisallowedGifts, DialogObject.getShortName(j3)))).j();
+                    new xc(m1Var.container, d6Var).Q(R.raw.error, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserDisallowedGifts, DialogObject.getShortName(j3)))).j();
                     return;
                 }
                 r1 r1Var = new r1(m1Var.getContext(), i11, j3, s.c(s.b(1, m1Var.r0)), new b1(m1Var, true ? 1 : 0));
@@ -436,7 +435,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         String str;
         FrameLayout frameLayout = m1Var.e0;
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            qc Q = new yc(frameLayout, m1Var.resourcesProvider).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.PrivacyBirthdaySetDone));
+            qc Q = new xc(frameLayout, m1Var.resourcesProvider).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.PrivacyBirthdaySetDone));
             Q.j = 5000;
             Q.j();
             return;
@@ -451,7 +450,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             MessagesStorage.getInstance(m1Var.currentAccount).updateUserInfo(userFull, false);
         }
         if (tL_error == null || (str = tL_error.text) == null || !str.startsWith("FLOOD_WAIT_")) {
-            org.telegram.messenger.f0.p(R.string.UnknownError, new yc(frameLayout, m1Var.resourcesProvider), R.raw.error, 36);
+            org.telegram.messenger.f0.p(R.string.UnknownError, new xc(frameLayout, m1Var.resourcesProvider), R.raw.error, 36);
         } else if (m1Var.getContext() != null) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m1Var.getContext(), 0, m1Var.resourcesProvider);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle);
@@ -591,7 +590,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             userFull.flags2 |= 32;
             userFull.birthday = tL_birthday;
         }
-        ConnectionsManager.getInstance(m1Var.currentAccount).sendRequest(updatebirthday, new s5(m1Var, userFull, tL_birthday2, 20), 1024);
+        ConnectionsManager.getInstance(m1Var.currentAccount).sendRequest(updatebirthday, new ai.s5(m1Var, userFull, tL_birthday2, 20), 1024);
         MessagesController.getInstance(m1Var.currentAccount).invalidateContentSettings();
         MessagesController.getInstance(m1Var.currentAccount).removeSuggestion(0L, "BIRTHDAY_SETUP");
         NotificationCenter.getInstance(m1Var.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
@@ -871,7 +870,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 if (arrayList2.size() == 1) {
                     long j3 = ((TLRPC.User) arrayList2.get(0)).id;
                     if (UserObject.areGiftsDisabled(j3)) {
-                        new yc(this.container, this.resourcesProvider).Q(R.raw.error, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserDisallowedGifts, DialogObject.getShortName(j3)))).j();
+                        new xc(this.container, this.resourcesProvider).Q(R.raw.error, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserDisallowedGifts, DialogObject.getShortName(j3)))).j();
                         return;
                     }
                     r1 r1Var = new r1(getContext(), this.currentAccount, j3, c10, new b1(this, r5 ? 1 : 0));
@@ -912,7 +911,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     public final void f0() {
-        new yc(this.container, this.resourcesProvider).Q(R.raw.chats_infotip, 36, this.X == 4 ? LocaleController.formatPluralStringComma("UserSelectorLimit", Z()) : LocaleController.getString(R.string.BoostingSelectUpToWarningUsers)).k(true);
+        new xc(this.container, this.resourcesProvider).Q(R.raw.chats_infotip, 36, this.X == 4 ? LocaleController.formatPluralStringComma("UserSelectorLimit", Z()) : LocaleController.getString(R.string.BoostingSelectUpToWarningUsers)).k(true);
         try {
             this.container.performHapticFeedback(3, 2);
         } catch (Exception unused) {

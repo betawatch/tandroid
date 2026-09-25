@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f60 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -217,7 +217,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -311,7 +311,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -401,7 +401,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -491,7 +491,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -581,7 +581,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -648,20 +648,20 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                 }
                 break;
             case 10:
-                ej0 ej0Var = (ej0) this.b;
-                long j3 = ej0Var.b;
-                if (!ej0Var.n.isStory()) {
-                    if (ej0Var.getParentLayout().getFragmentStack().size() > 1) {
-                        org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) ej0Var.getParentLayout().getFragmentStack().get(ej0Var.getParentLayout().getFragmentStack().size() - 2);
+                dj0 dj0Var = (dj0) this.b;
+                long j3 = dj0Var.b;
+                if (!dj0Var.n.isStory()) {
+                    if (dj0Var.getParentLayout().getFragmentStack().size() > 1) {
+                        org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) dj0Var.getParentLayout().getFragmentStack().get(dj0Var.getParentLayout().getFragmentStack().size() - 2);
                         if ((m2Var instanceof wn) && ((wn) m2Var).e.id == j3) {
-                            ej0Var.finishFragment();
+                            dj0Var.finishFragment();
                             break;
                         }
                     }
                     Bundle e = v7.j.e(j3, "chat_id");
-                    e.putInt("message_id", ej0Var.c);
+                    e.putInt("message_id", dj0Var.c);
                     e.putBoolean("need_remove_previous_same_chat_activity", false);
-                    ej0Var.presentFragment(new wn(e));
+                    dj0Var.presentFragment(new wn(e));
                     break;
                 }
                 break;

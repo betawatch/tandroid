@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class yz0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -201,7 +201,7 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
             linearLayout.addView(dVar, w7.y5.k(16.0f, 10.0f, 16.0f, 8.0f, -1, 48));
             j10.customView = linearLayout;
             j10.show();
-            j10.setOnDismissListener(new dh(27, zArr, vz0Var));
+            j10.setOnDismissListener(new fh(26, zArr, vz0Var));
             return;
         }
         if (i10 == 47) {
@@ -265,7 +265,7 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
                             profileActivity8.finishFragment();
                             Activity parentActivity2 = profileActivity8.getParentActivity();
                             if (parentActivity2 != null) {
-                                new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(parentActivity2), profileActivity8.z0).Q(R.raw.ic_delete, 36, LocaleController.getPluralString("TopicsDeleted", 1)).j();
+                                new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(parentActivity2), profileActivity8.z0).Q(R.raw.ic_delete, 36, LocaleController.getPluralString("TopicsDeleted", 1)).j();
                             }
                             a2Var2.dismiss();
                             break;
@@ -563,7 +563,7 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
                             profileActivity82.finishFragment();
                             Activity parentActivity2 = profileActivity82.getParentActivity();
                             if (parentActivity2 != null) {
-                                new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(parentActivity2), profileActivity82.z0).Q(R.raw.ic_delete, 36, LocaleController.getPluralString("TopicsDeleted", 1)).j();
+                                new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(parentActivity2), profileActivity82.z0).Q(R.raw.ic_delete, 36, LocaleController.getPluralString("TopicsDeleted", 1)).j();
                             }
                             a2Var22.dismiss();
                             break;
@@ -872,7 +872,7 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
                             profileActivity82.finishFragment();
                             Activity parentActivity2 = profileActivity82.getParentActivity();
                             if (parentActivity2 != null) {
-                                new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(parentActivity2), profileActivity82.z0).Q(R.raw.ic_delete, 36, LocaleController.getPluralString("TopicsDeleted", 1)).j();
+                                new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(parentActivity2), profileActivity82.z0).Q(R.raw.ic_delete, 36, LocaleController.getPluralString("TopicsDeleted", 1)).j();
                             }
                             a2Var22.dismiss();
                             break;

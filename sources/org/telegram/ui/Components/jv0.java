@@ -82,7 +82,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class jv0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Cells.o2 {
     public static final int[] d2 = {0, 1, 2, 4};
@@ -1440,7 +1440,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(storyItem);
         storiesController.c0(i10, j3, arrayList);
-        yc.a0(jv0Var.v1).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", 1, str)), LocaleController.getString(R.string.UndoNoCaps), xmVar).j();
+        xc.a0(jv0Var.v1).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", 1, str)), LocaleController.getString(R.string.UndoNoCaps), xmVar).j();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1450,7 +1450,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
 
     public static /* synthetic */ void h(jv0 jv0Var, TL_stories.StoryItem storyItem) {
         jv0Var.getStoriesController().o0(jv0Var.j1, new ArrayList(Collections.singletonList(storyItem)), false, null);
-        yc.a0(jv0Var.v1).G(R.raw.chats_archived, 5000, LocaleController.formatPluralString("StoryArchived", 1, new Object[0])).j();
+        xc.a0(jv0Var.v1).G(R.raw.chats_archived, 5000, LocaleController.formatPluralString("StoryArchived", 1, new Object[0])).j();
     }
 
     public static void i(jv0 jv0Var, long j3, int i10, String str) {
@@ -1471,7 +1471,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
 
     public static void j(jv0 jv0Var, TL_stories.StoryItem storyItem, ai.e9 e9Var) {
         jv0Var.getStoriesController().c(e9Var.a, jv0Var.j1, storyItem);
-        AndroidUtilities.runOnUIThread(new wn0(7, jv0Var, e9Var), 100L);
+        AndroidUtilities.runOnUIThread(new wn0(6, jv0Var, e9Var), 100L);
     }
 
     public static void m(jv0 jv0Var, HashSet hashSet, TL_stories.StoryItem storyItem, y70 y70Var, ai.e9 e9Var) {
@@ -1489,7 +1489,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
             storiesController.c0(i10, j3, arrayList);
             formatString = LocaleController.formatString(R.string.StoryRemovedFromAlbumX, e9Var.b);
         }
-        yc.a0(jv0Var.v1).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
+        xc.a0(jv0Var.v1).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
         y70Var.u();
     }
 
@@ -1580,7 +1580,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
         cu0Var.G.setScaleY(0.8f);
         cu0Var.G.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
         cu0Var.invalidate();
-        wn0 wn0Var2 = new wn0(6, cu0Var, br0Var);
+        wn0 wn0Var2 = new wn0(5, cu0Var, br0Var);
         cu0Var.H = wn0Var2;
         AndroidUtilities.runOnUIThread(wn0Var2, 4000L);
     }
@@ -1990,7 +1990,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
                                     long j11 = jv0Var.j1;
                                     ArrayList arrayList4 = arrayList3;
                                     storiesController.s(j11, arrayList4);
-                                    yc.a0(m2Var2).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", arrayList4.size(), new Object[0])).j();
+                                    xc.a0(m2Var2).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", arrayList4.size(), new Object[0])).j();
                                     jv0Var.L(false);
                                     break;
                                 default:
@@ -2105,7 +2105,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
                         long j112 = jv0Var.j1;
                         ArrayList arrayList42 = arrayList5;
                         storiesController.s(j112, arrayList42);
-                        yc.a0(m2Var2).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", arrayList42.size(), new Object[0])).j();
+                        xc.a0(m2Var2).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", arrayList42.size(), new Object[0])).j();
                         jv0Var.L(false);
                         break;
                     default:
@@ -2494,7 +2494,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
                     Context context = getContext();
                     int id2 = messageObject.getId();
                     ai.u9 a2 = ai.u9.a(this.k0[0].h);
-                    a2.e = new nv(d9Var, 19);
+                    a2.e = new mv(d9Var, 19);
                     if ((m2Var instanceof ProfileActivity) && ((ProfileActivity) m2Var).s1) {
                         i12 = AndroidUtilities.dp(68.0f);
                     }
@@ -3399,7 +3399,7 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
         }
         org.telegram.ui.ActionBar.m2 m2Var = this.v1;
         if (z10 && arrayList.size() > m2Var.getMessagesController().storiesPinnedToTopCountMax) {
-            yc.a0(m2Var).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinLimit", m2Var.getMessagesController().storiesPinnedToTopCountMax, new Object[0]))).j();
+            xc.a0(m2Var).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinLimit", m2Var.getMessagesController().storiesPinnedToTopCountMax, new Object[0]))).j();
             return;
         }
         ai.d9 d9Var = rt0Var.s;
@@ -3444,11 +3444,11 @@ public abstract class jv0 extends FrameLayout implements NotificationCenter.Noti
             z11 = z12;
         }
         if (z11) {
-            yc.a0(m2Var).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinLimit", m2Var.getMessagesController().storiesPinnedToTopCountMax, new Object[0]))).j();
+            xc.a0(m2Var).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinLimit", m2Var.getMessagesController().storiesPinnedToTopCountMax, new Object[0]))).j();
         } else if (z10) {
-            yc.a0(m2Var).M(AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinned", arrayList.size(), new Object[0])), LocaleController.formatPluralString("StoriesPinnedText", arrayList.size(), new Object[0]), R.raw.ic_pin).j();
+            xc.a0(m2Var).M(AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinned", arrayList.size(), new Object[0])), LocaleController.formatPluralString("StoriesPinnedText", arrayList.size(), new Object[0]), R.raw.ic_pin).j();
         } else {
-            yc.a0(m2Var).Q(R.raw.ic_unpin, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesUnpinned", arrayList.size(), new Object[0]))).j();
+            xc.a0(m2Var).Q(R.raw.ic_unpin, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesUnpinned", arrayList.size(), new Object[0]))).j();
         }
     }
 

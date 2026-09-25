@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.net.Uri;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements Utilities.Callback0Return {
     public final /* synthetic */ i4 a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class g0 implements Utilities.Callback0Return {
         i4 i4Var = this.a;
         nf.e eVar = this.d;
         if (eVar != null) {
-            eVar.c = new org.telegram.ui.ActionBar.a6(4, i4Var, eVar);
+            eVar.c = new org.telegram.ui.ActionBar.a6(3, i4Var, eVar);
         } else {
             v3 v3Var = i4Var.K;
             if (v3Var != null) {

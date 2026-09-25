@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class vg extends View implements x70 {
     public boolean E;
@@ -36,7 +36,7 @@ public abstract class vg extends View implements x70 {
     public float N;
     public final pq[] O;
     public final e6 P;
-    public final zc Q;
+    public final yc Q;
     public boolean R;
     public final u1.a S;
     public boolean T;
@@ -79,7 +79,7 @@ public abstract class vg extends View implements x70 {
         this.L = new Paint(1);
         this.O = new pq[1];
         this.P = new e6(this, 0L, 420L, rrVar);
-        this.Q = new zc(this);
+        this.Q = new yc(this);
         this.S = new u1.a();
         this.V = new e6(this, 0L, 420L, rrVar);
         this.W = new e6(this, 0L, 500L, rrVar);

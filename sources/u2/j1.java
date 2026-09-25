@@ -3,9 +3,9 @@ package u2;
 import java.util.Arrays;
 import v7.n7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class j1 implements y2.j {
+public final class j1 implements y2.i {
     public final g2.m a;
     public final g2.b0 b;
     public byte[] c;
@@ -16,7 +16,7 @@ public final class j1 implements y2.j {
         this.b = new g2.b0(hVar);
     }
 
-    @Override // y2.j
+    @Override // y2.i
     public final void a() {
         g2.b0 b0Var = this.b;
         b0Var.b = 0L;
@@ -41,7 +41,7 @@ public final class j1 implements y2.j {
         }
     }
 
-    @Override // y2.j
+    @Override // y2.i
     public final void D() {
     }
 }

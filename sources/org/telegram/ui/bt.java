@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bt implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -57,9 +57,8 @@ public final /* synthetic */ class bt implements Utilities.Callback {
         int i10 = this.a;
         int i11 = 3;
         int i12 = 4;
-        int i13 = 2;
-        int i14 = 0;
-        int i15 = 1;
+        int i13 = 0;
+        int i14 = 1;
         Object obj2 = this.c;
         Object obj3 = this.b;
         switch (i10) {
@@ -148,26 +147,26 @@ public final /* synthetic */ class bt implements Utilities.Callback {
                 }
                 break;
             case 6:
-                lj0 lj0Var = (lj0) obj3;
+                kj0 kj0Var = (kj0) obj3;
                 String str = (String) obj2;
                 List<TLRPC.User> list = (List) obj;
                 HashSet hashSet = new HashSet();
-                ArrayList arrayList = lj0Var.f0;
+                ArrayList arrayList = kj0Var.f0;
                 arrayList.clear();
                 if (list != null) {
                     for (TLRPC.User user2 : list) {
-                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && lj0Var.R(user2)) {
+                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && kj0Var.R(user2)) {
                             arrayList.add(user2);
                             hashSet.add(Long.valueOf(user2.id));
                         }
                     }
                 }
-                Boolean bool2 = lj0Var.r0;
+                Boolean bool2 = kj0Var.r0;
                 if (bool2 == null || !bool2.booleanValue()) {
-                    lj0Var.U(true, true);
+                    kj0Var.U(true, true);
                     break;
                 } else {
-                    bt btVar = new bt(7, lj0Var, hashSet);
+                    bt btVar = new bt(7, kj0Var, hashSet);
                     MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                     if (str == null || str.isEmpty()) {
@@ -176,25 +175,25 @@ public final /* synthetic */ class bt implements Utilities.Callback {
                         TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                         tL_contacts_search.q = str;
                         tL_contacts_search.limit = 50;
-                        i14 = connectionsManager.sendRequest(tL_contacts_search, new ui1(i11, messagesController, btVar));
+                        i13 = connectionsManager.sendRequest(tL_contacts_search, new ui1(i11, messagesController, btVar));
                     }
-                    lj0Var.m0 = i14;
+                    kj0Var.m0 = i13;
                     break;
                 }
                 break;
             case 7:
-                lj0 lj0Var2 = (lj0) obj3;
+                kj0 kj0Var2 = (kj0) obj3;
                 HashSet hashSet2 = (HashSet) obj2;
                 List<TLRPC.User> list2 = (List) obj;
                 if (list2 != null) {
                     for (TLRPC.User user3 : list2) {
-                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && lj0Var2.R(user3)) {
-                            lj0Var2.f0.add(user3);
+                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && kj0Var2.R(user3)) {
+                            kj0Var2.f0.add(user3);
                             hashSet2.add(Long.valueOf(user3.id));
                         }
                     }
                 }
-                lj0Var2.U(true, true);
+                kj0Var2.U(true, true);
                 break;
             case 8:
                 wj0 wj0Var = (wj0) obj3;
@@ -202,13 +201,13 @@ public final /* synthetic */ class bt implements Utilities.Callback {
                 TLRPC.User user4 = (TLRPC.User) obj;
                 if (user4 == null) {
                     wj0Var.R.setImageDrawable(null);
-                    wj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is not on Telegram. **Invite >**", new xi0(i15, wj0Var, str2)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+                    wj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is not on Telegram. **Invite >**", new sj0(i13, wj0Var, str2)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
                 } else {
                     Drawable mutate = wj0Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
                     mutate.setColorFilter(new PorterDuffColorFilter(wj0Var.getThemedColor(org.telegram.ui.ActionBar.h6.v6), PorterDuff.Mode.SRC_IN));
                     wj0Var.R.setImageDrawable(mutate);
                     if (user4.contact) {
-                        wj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is already in your contacts. **View >**", new xi0(i13, wj0Var, user4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+                        wj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is already in your contacts. **View >**", new sj0(i14, wj0Var, user4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
                     } else {
                         wj0Var.v.setText("This phone number is on Telegram.");
                     }
@@ -220,18 +219,18 @@ public final /* synthetic */ class bt implements Utilities.Callback {
                 org.telegram.ui.Components.w9[] w9VarArr = (org.telegram.ui.Components.w9[]) obj2;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
                 if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
-                    for (int i16 = 0; i16 < arrayList2.size(); i16++) {
-                        String str3 = (String) arrayList2.get(i16);
-                        int i17 = 0;
+                    for (int i15 = 0; i15 < arrayList2.size(); i15++) {
+                        String str3 = (String) arrayList2.get(i15);
+                        int i16 = 0;
                         while (true) {
-                            if (i17 < tL_messages_stickerSet.packs.size()) {
-                                if (tL_messages_stickerSet.packs.get(i17).documents.isEmpty() || !TextUtils.equals(tL_messages_stickerSet.packs.get(i17).emoticon, str3)) {
-                                    i17++;
+                            if (i16 < tL_messages_stickerSet.packs.size()) {
+                                if (tL_messages_stickerSet.packs.get(i16).documents.isEmpty() || !TextUtils.equals(tL_messages_stickerSet.packs.get(i16).emoticon, str3)) {
+                                    i16++;
                                 } else {
-                                    long longValue = tL_messages_stickerSet.packs.get(i17).documents.get(0).longValue();
-                                    for (int i18 = 0; i18 < tL_messages_stickerSet.documents.size(); i18++) {
-                                        if (tL_messages_stickerSet.documents.get(i18).id == longValue) {
-                                            document = tL_messages_stickerSet.documents.get(i18);
+                                    long longValue = tL_messages_stickerSet.packs.get(i16).documents.get(0).longValue();
+                                    for (int i17 = 0; i17 < tL_messages_stickerSet.documents.size(); i17++) {
+                                        if (tL_messages_stickerSet.documents.get(i17).id == longValue) {
+                                            document = tL_messages_stickerSet.documents.get(i17);
                                         }
                                     }
                                 }
@@ -239,7 +238,7 @@ public final /* synthetic */ class bt implements Utilities.Callback {
                         }
                         document = null;
                         if (document != null) {
-                            w9VarArr[i16].l(ImageLocation.getForDocument(document), "40_40", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 40), document), "40_40", Emoji.getEmojiBigDrawable(str3), null);
+                            w9VarArr[i15].l(ImageLocation.getForDocument(document), "40_40", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 40), document), "40_40", Emoji.getEmojiBigDrawable(str3), null);
                         }
                     }
                     break;
@@ -363,19 +362,19 @@ public final /* synthetic */ class bt implements Utilities.Callback {
                 break;
             case 19:
                 ThemeActivity themeActivity2 = (ThemeActivity) obj3;
-                n81 n81Var = (n81) obj2;
+                p81 p81Var = (p81) obj2;
                 if (((Boolean) obj).booleanValue()) {
-                    n81Var.run();
+                    p81Var.run();
                     break;
                 } else {
-                    org.telegram.ui.Components.yc.a0(themeActivity2).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
+                    org.telegram.ui.Components.xc.a0(themeActivity2).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
                     break;
                 }
             case 20:
                 org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) obj3;
                 org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj;
                 z1Var.getClass();
-                ((org.telegram.ui.web.h1[]) obj2)[0].finishFragment();
+                ((org.telegram.ui.web.g1[]) obj2)[0].finishFragment();
                 Utilities.Callback callback = z1Var.e;
                 if (callback != null) {
                     z1Var.finishFragment();
@@ -415,15 +414,15 @@ public final /* synthetic */ class bt implements Utilities.Callback {
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj2;
                 String str6 = (String) obj;
                 yh.j5 j5Var = zr0Var.e;
-                int i19 = tL_starGiftCollection.collection_id;
+                int i18 = tL_starGiftCollection.collection_id;
                 j5Var.getClass();
                 TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
-                int i20 = j5Var.a;
-                updatestargiftcollection.peer = MessagesController.getInstance(i20).getInputPeer(j5Var.b);
-                updatestargiftcollection.collection_id = i19;
+                int i19 = j5Var.a;
+                updatestargiftcollection.peer = MessagesController.getInstance(i19).getInputPeer(j5Var.b);
+                updatestargiftcollection.collection_id = i18;
                 updatestargiftcollection.flags |= 1;
                 updatestargiftcollection.title = str6;
-                ConnectionsManager.getInstance(i20).sendRequest(updatestargiftcollection, null);
+                ConnectionsManager.getInstance(i19).sendRequest(updatestargiftcollection, null);
                 tL_starGiftCollection.title = str6;
                 zr0Var.f(true);
                 break;
@@ -437,7 +436,7 @@ public final /* synthetic */ class bt implements Utilities.Callback {
                 }
                 z4Var.dismiss();
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.giftsToUserSent, new Object[0]);
-                AndroidUtilities.runOnUIThread(new xh.q4(i14, user5), 250L);
+                AndroidUtilities.runOnUIThread(new xh.q4(i13, user5), 250L);
                 MessagesController.getInstance(z4Var.Y).getMainSettings().edit().putBoolean("show_gift_for_" + j10, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j10, true).apply();
                 break;
             case 26:

@@ -4,7 +4,7 @@ import ai.o1;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
-import ki.r0;
+import ki.s0;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileUploadOperation;
 import org.telegram.messenger.MediaDataController;
@@ -25,7 +25,7 @@ import org.telegram.ui.wf1;
 import org.telegram.ui.wn;
 import yh.x3;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,13 +71,13 @@ public final /* synthetic */ class g0 implements Runnable {
                 fVar2.q(p10, 1008, new hg.r(p10, str3, j12, j11));
                 return;
             case 3:
-                r0 r0Var = (r0) this.d;
-                ki.n0 n0Var = (ki.n0) this.e;
+                s0 s0Var = (s0) this.d;
+                ki.o0 o0Var = (ki.o0) this.e;
                 long j13 = this.b;
                 long j14 = this.c;
-                synchronized (r0Var.f) {
-                    if (!n0Var.d && !n0Var.e) {
-                        ((o01) r0Var.d).a(n0Var.a, n0Var.b, j13, j14);
+                synchronized (s0Var.f) {
+                    if (!o0Var.d && !o0Var.e) {
+                        ((o01) s0Var.d).a(o0Var.a, o0Var.b, j13, j14);
                         return;
                     }
                     return;

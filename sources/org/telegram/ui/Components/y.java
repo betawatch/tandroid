@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class y extends bb {
     public final FrameLayout X;
@@ -332,7 +332,7 @@ public final class y extends bb {
             if (!"TONES_SAVED_TOO_MANY".equalsIgnoreCase(tL_error.text)) {
                 org.telegram.ui.Cells.c1.r(frameLayout, d6Var, tL_error, false);
             } else {
-                e0.o0(yVar.currentAccount, new yc(frameLayout, d6Var));
+                e0.o0(yVar.currentAccount, new xc(frameLayout, d6Var));
             }
         }
     }

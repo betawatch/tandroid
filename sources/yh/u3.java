@@ -42,7 +42,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public class u3 extends FrameLayout {
     public final LinearLayout.LayoutParams[] E;
@@ -822,8 +822,8 @@ public class u3 extends FrameLayout {
         n90[] n90VarArr = this.y;
         TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = this.V;
         if (z14) {
-            stargiftattributebackdropArr[0] = (TL_stars.starGiftAttributeBackdrop) t5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            g(0, (TL_stars.starGiftAttributePattern) t5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class), false);
+            stargiftattributebackdropArr[0] = (TL_stars.starGiftAttributeBackdrop) s5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            g(0, (TL_stars.starGiftAttributePattern) s5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class), false);
             n90VarArr[0].setTextSize(1, 13.0f);
             ub1Var.setVisibility(z13 ? 0 : 8);
             t3[] t3VarArr = this.I;
@@ -888,7 +888,7 @@ public class u3 extends FrameLayout {
         }
         e(0, stargiftattributebackdropArr[0]);
         w7.a1(this.d[0].getImageReceiver(), starGift, 160);
-        this.e[0] = (TL_stars.starGiftAttributeModel) t5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+        this.e[0] = (TL_stars.starGiftAttributeModel) s5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
         d(this.U);
     }
 
@@ -1082,9 +1082,9 @@ public class u3 extends FrameLayout {
     }
 
     public void setPreviewingAttributes(ArrayList<TL_stars.StarGiftAttribute> arrayList) {
-        this.W = new com.google.android.gms.common.api.internal.r(t5.m(arrayList, TL_stars.starGiftAttributeModel.class));
-        this.a0 = new com.google.android.gms.common.api.internal.r(t5.m(arrayList, TL_stars.starGiftAttributePattern.class));
-        this.b0 = new com.google.android.gms.common.api.internal.r(t5.m(arrayList, TL_stars.starGiftAttributeBackdrop.class));
+        this.W = new com.google.android.gms.common.api.internal.r(s5.m(arrayList, TL_stars.starGiftAttributeModel.class));
+        this.a0 = new com.google.android.gms.common.api.internal.r(s5.m(arrayList, TL_stars.starGiftAttributePattern.class));
+        this.b0 = new com.google.android.gms.common.api.internal.r(s5.m(arrayList, TL_stars.starGiftAttributeBackdrop.class));
         this.y[1].setTextSize(1, 14.0f);
         this.H.setVisibility(8);
         this.s0 = 0.0f;

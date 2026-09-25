@@ -29,11 +29,11 @@ import org.telegram.ui.d60;
 import org.telegram.ui.gn0;
 import org.telegram.ui.jl;
 import org.telegram.ui.jm0;
+import org.telegram.ui.sj0;
 import org.telegram.ui.wl0;
 import org.telegram.ui.wn;
-import org.telegram.ui.xi0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class l0 implements Runnable {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x0108 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x011b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x011a A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -235,7 +235,7 @@ public final /* synthetic */ class l0 implements Runnable {
                             recognize = MrzRecognizer.recognize(loadBitmap, gn0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
                             if (recognize == null) {
                                 try {
-                                    AndroidUtilities.runOnUIThread(new xi0(8, gn0Var, recognize));
+                                    AndroidUtilities.runOnUIThread(new sj0(7, gn0Var, recognize));
                                     z17 = true;
                                 } catch (Throwable th3) {
                                     th = th3;

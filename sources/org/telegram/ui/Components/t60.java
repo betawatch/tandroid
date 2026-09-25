@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class t60 extends g90 {
     public final /* synthetic */ x60 L;
@@ -20,7 +20,7 @@ public final class t60 extends g90 {
         c70 c70Var = this.L.c;
         org.telegram.ui.ActionBar.c3 c3Var = c70Var.container;
         d6Var = ((org.telegram.ui.ActionBar.e3) c70Var).resourcesProvider;
-        qc Q = new yc(c3Var, d6Var).Q(i10, 36, spannableStringBuilder);
+        qc Q = new xc(c3Var, d6Var).Q(i10, 36, spannableStringBuilder);
         Q.r = false;
         Q.k(true);
     }

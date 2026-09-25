@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class c9 extends org.telegram.ui.Components.uq0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.e3 b1;
@@ -29,7 +29,7 @@ public final class c9 extends org.telegram.ui.Components.uq0 {
                 long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
                 formatString = (j3 == 0 || j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j3, true));
             }
-            org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.yc(this.b1.topBulletinContainer, this.resourcesProvider).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
+            org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.xc(this.b1.topBulletinContainer, this.resourcesProvider).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
             Q.r = false;
             Q.j();
         }

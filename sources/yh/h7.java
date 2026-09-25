@@ -31,14 +31,14 @@ import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ab0;
 import org.telegram.ui.jk;
 import org.telegram.ui.pn0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class h7 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ai.d1 X;
@@ -169,17 +169,17 @@ public final class h7 extends bb implements NotificationCenter.NotificationCente
                 return;
             }
             long j3 = h7Var.Z.id;
-            t5 y3 = t5.y(h7Var.currentAccount, false);
+            s5 y3 = s5.y(h7Var.currentAccount, false);
             TL_stars.TL_starsGiftOption tL_starsGiftOption = (TL_stars.TL_starsGiftOption) G.G;
             o80 o80Var = new o80(h7Var, G, j3, 2);
             int i11 = y3.a;
             if (!MessagesController.getInstance(i11).starsPurchaseAvailable()) {
                 org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                 if (R == null || R.getContext() == null) {
-                    t5.e0(context, null);
+                    s5.e0(context, null);
                     return;
                 } else {
-                    t5.e0(R.getContext(), R.getResourceProvider());
+                    s5.e0(R.getContext(), R.getResourceProvider());
                     return;
                 }
             }
@@ -203,7 +203,7 @@ public final class h7 extends bb implements NotificationCenter.NotificationCente
             TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars = new TLRPC.TL_inputInvoiceStars();
             tL_inputInvoiceStars.purpose = tL_inputStorePaymentStarsGift2;
             TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-            JSONObject p5 = ei.k3.p(t5.I(), false);
+            JSONObject p5 = ei.k3.p(s5.I(), false);
             if (p5 != null) {
                 TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
                 tL_payments_getPaymentForm.theme_params = tL_dataJSON;
@@ -231,23 +231,23 @@ public final class h7 extends bb implements NotificationCenter.NotificationCente
         }
         if (!bool.booleanValue()) {
             if (str != null) {
-                hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, yc.a0(U), R.raw.error, 36);
+                hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, xc.a0(U), R.raw.error, 36);
             }
         } else {
-            qc K = yc.a0(U).K(R.raw.stars_send, LocaleController.getString(R.string.StarsGiftSentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftSentPopupInfo", (int) v51Var.B, UserObject.getForcedFirstName(h7Var.Z))), LocaleController.getString(R.string.ViewInChat), new pn0(j3, 2));
+            qc K = xc.a0(U).K(R.raw.stars_send, LocaleController.getString(R.string.StarsGiftSentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftSentPopupInfo", (int) v51Var.B, UserObject.getForcedFirstName(h7Var.Z))), LocaleController.getString(R.string.ViewInChat), new pn0(j3, 2));
             K.j = 5000;
             K.k(true);
             if (ab0Var != null) {
                 ab0Var.c(true);
             }
-            t5.y(h7Var.currentAccount, false).T(true);
+            s5.y(h7Var.currentAccount, false).T(true);
         }
     }
 
     public final void R(ArrayList arrayList, j61 j61Var) {
         arrayList.add(v51.k(this.X));
         com.google.android.gms.internal.vision.e2.n(R.string.TelegramStarsChoose, arrayList);
-        ArrayList u10 = t5.y(this.currentAccount, false).u();
+        ArrayList u10 = s5.y(this.currentAccount, false).u();
         if (u10 == null || u10.isEmpty()) {
             arrayList.add(v51.n(31));
             arrayList.add(v51.n(31));

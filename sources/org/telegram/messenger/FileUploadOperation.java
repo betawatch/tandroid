@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
@@ -68,7 +68,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j3, long j10);
 
@@ -77,7 +77,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;

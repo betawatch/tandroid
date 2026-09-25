@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                     if ((uRLSpanArr.length <= 0 || length != 0 || i13 <= 0) && (uriParseSafe == null || uriParseSafe.getScheme() == null)) {
                         org.telegram.ui.web.k.b(activity, str2);
                         org.telegram.ui.web.y0 webView = m3Var.getWebView();
-                        String str3 = org.telegram.ui.web.o1.a().b;
+                        String str3 = org.telegram.ui.web.n1.a().b;
                         if (str3 != null) {
                             StringBuilder v = a4.a.v(str3);
                             v.append(URLEncoder.encode(str2));
@@ -162,6 +162,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         org.telegram.ui.Components.lj0 lj0Var = ybVar.a;
                         lj0Var.setScaleX(1.25f);
                         lj0Var.setScaleY(1.25f);
+                        int i17 = 2;
                         if (diceValue == 1) {
                             lj0Var.setImageResource(R.drawable.dice1);
                         } else if (diceValue == 2) {
@@ -181,11 +182,11 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         }
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.StakeDiceToast));
                         spannableStringBuilder2.append((CharSequence) yh.w7.M0(j3));
-                        spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) org.telegram.ui.Components.bd.b(LocaleController.getString(R.string.StakeDiceToastChange), new n81(i11, wnVar2, ocVar), wnVar2.getResourceProvider(), null));
+                        spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) org.telegram.ui.Components.ad.b(LocaleController.getString(R.string.StakeDiceToastChange), new p81(i17, wnVar2, ocVar), wnVar2.getResourceProvider(), null));
                         AndroidUtilities.removeFromParent(ybVar.b);
-                        org.telegram.ui.Components.ad adVar = new org.telegram.ui.Components.ad(wnVar2.getContext(), null);
-                        ybVar.b = adVar;
-                        adVar.setSingleLine();
+                        org.telegram.ui.Components.zc zcVar = new org.telegram.ui.Components.zc(wnVar2.getContext(), null);
+                        ybVar.b = zcVar;
+                        zcVar.setSingleLine();
                         ybVar.b.setTypeface(Typeface.SANS_SERIF);
                         ybVar.b.setTextSize(1, 15.0f);
                         ybVar.b.setEllipsize(TextUtils.TruncateAt.END);
@@ -200,7 +201,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         ocVar2.e(LocaleController.getString(R.string.StakeDiceToastButton));
                         ocVar2.a = new ai.j(ocVar, j3, 27);
                         ybVar.setButton(ocVar2);
-                        org.telegram.ui.Components.yc.a0(wnVar2).b(ybVar, 2750).j();
+                        org.telegram.ui.Components.xc.a0(wnVar2).b(ybVar, 2750).j();
                         break;
                     }
                 }
@@ -318,13 +319,13 @@ public final /* synthetic */ class z implements Utilities.Callback {
                     g11 g11Var = new g11();
                     e11Var.e.add(g11Var);
                     TLRPC.Document document = (TLRPC.Document) entry.getValue();
-                    g11Var.setDelegate(new f11(new Runnable[]{new ix0(19, e11Var, g11Var)}));
+                    g11Var.setDelegate(new f11(new Runnable[]{new jx0(18, e11Var, g11Var)}));
                     g11Var.setImage(ImageLocation.getForDocument(document), "80_80", null, null, tL_messages_stickerSet, 0);
                     g11Var.onAttachedToWindow();
                     hashMap2.put(num2, g11Var);
                 }
-                for (int i17 = 0; i17 < arrayList2.size(); i17++) {
-                    Integer num3 = (Integer) arrayList2.get(i17);
+                for (int i18 = 0; i18 < arrayList2.size(); i18++) {
+                    Integer num3 = (Integer) arrayList2.get(i18);
                     num3.getClass();
                     e11Var.d.add((g11) hashMap2.get(num3));
                 }
@@ -334,14 +335,14 @@ public final /* synthetic */ class z implements Utilities.Callback {
             case 12:
                 ArrayList arrayList3 = (ArrayList) obj2;
                 Runnable runnable2 = (Runnable) obj;
-                int i18 = ((a71) obj4).V;
-                ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i18).getStickerSets(5);
+                int i19 = ((a71) obj4).V;
+                ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i19).getStickerSets(5);
                 HashSet hashSet = new HashSet();
                 String translitSafe = AndroidUtilities.translitSafe((String) obj3);
                 String g10 = v7.j.g(" ", translitSafe);
                 if (stickerSets != null) {
-                    for (int i19 = 0; i19 < stickerSets.size(); i19++) {
-                        TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = stickerSets.get(i19);
+                    for (int i20 = 0; i20 < stickerSets.size(); i20++) {
+                        TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = stickerSets.get(i20);
                         if (tL_messages_stickerSet2 != null && (stickerSet2 = tL_messages_stickerSet2.set) != null && stickerSet2.title != null && tL_messages_stickerSet2.documents != null && !hashSet.contains(Long.valueOf(stickerSet2.id))) {
                             String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet2.set.title);
                             if (translitSafe2.startsWith(translitSafe) || translitSafe2.contains(g10)) {
@@ -352,7 +353,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         }
                     }
                 }
-                ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i18).getFeaturedEmojiSets();
+                ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i19).getFeaturedEmojiSets();
                 if (featuredEmojiSets != null) {
                     while (i12 < featuredEmojiSets.size()) {
                         TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i12);
@@ -360,7 +361,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                             String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title);
                             if (translitSafe3.startsWith(translitSafe) || translitSafe3.contains(g10)) {
                                 if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                                    TLRPC.TL_messages_stickerSet stickerSet3 = MediaDataController.getInstance(i18).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true);
+                                    TLRPC.TL_messages_stickerSet stickerSet3 = MediaDataController.getInstance(i19).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true);
                                     arrayList = stickerSet3 != null ? stickerSet3.documents : null;
                                 } else {
                                     arrayList = stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered ? ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents : stickerSetCovered.covers;

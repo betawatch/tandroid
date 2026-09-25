@@ -59,7 +59,7 @@ import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q5 implements MessagesStorage.StringCallback, ec, androidx.car.app.utils.b, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.z1, SuccessContinuation, no0, cl, m4.j0, i9.p, cd0, org.telegram.ui.ActionBar.q0, ky, org.telegram.ui.Components.d5 {
     public final /* synthetic */ int a;
@@ -135,22 +135,22 @@ public final /* synthetic */ class q5 implements MessagesStorage.StringCallback,
             case 14:
                 m4.a0 a0Var = (m4.a0) obj4;
                 Handler handler = a0Var.l;
-                ki.n nVar = new ki.n(a0Var, (m4.r) obj3, new gg.t(a0Var, (m4.o0) obj2, (m4.s) obj, 26));
+                ki.h0 h0Var = new ki.h0(a0Var, (m4.r) obj3, new gg.t(a0Var, (m4.o0) obj2, (m4.s) obj, 26));
                 m4.k1 k1Var = new m4.k1(0);
                 String str = e2.d0.a;
                 i9.c0 c0Var = new i9.c0();
-                e2.d0.U(handler, new a3.k0(c0Var, nVar, k1Var, i11));
+                e2.d0.U(handler, new a3.k0(c0Var, h0Var, k1Var, i11));
                 return c0Var;
             default:
                 m4.a0 a0Var2 = (m4.a0) obj4;
                 m4.r rVar = (m4.r) obj3;
                 List list = (List) obj;
                 Handler handler2 = a0Var2.l;
-                ki.n nVar2 = new ki.n(a0Var2, rVar, new h5(a0Var2, (m4.y0) obj2, rVar, list, 24));
+                ki.h0 h0Var2 = new ki.h0(a0Var2, rVar, new h5(a0Var2, (m4.y0) obj2, rVar, list, 25));
                 m4.k1 k1Var2 = new m4.k1(0);
                 String str2 = e2.d0.a;
                 i9.c0 c0Var2 = new i9.c0();
-                e2.d0.U(handler2, new a3.k0(c0Var2, nVar2, k1Var2, i11));
+                e2.d0.U(handler2, new a3.k0(c0Var2, h0Var2, k1Var2, i11));
                 return c0Var2;
         }
     }
@@ -350,7 +350,7 @@ public final /* synthetic */ class q5 implements MessagesStorage.StringCallback,
         }
         i9.u n10 = a0Var.n(rVar);
         if (resultReceiver != null) {
-            n10.a(new ki.n(6, n10, resultReceiver), i9.q.a);
+            n10.a(new ki.h0(5, n10, resultReceiver), i9.q.a);
         }
     }
 

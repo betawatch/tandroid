@@ -6,39 +6,39 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oa0 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ m80 c;
+    public final /* synthetic */ n80 c;
     public final /* synthetic */ Long d;
 
-    public /* synthetic */ oa0(LaunchActivity launchActivity, m80 m80Var, Long l4, int i10) {
+    public /* synthetic */ oa0(LaunchActivity launchActivity, n80 n80Var, Long l4, int i10) {
         this.a = i10;
         this.b = launchActivity;
-        this.c = m80Var;
+        this.c = n80Var;
         this.d = l4;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        org.telegram.ui.Components.yc X;
+        org.telegram.ui.Components.xc X;
         int i10;
         int i11;
-        org.telegram.ui.Components.yc X2;
+        org.telegram.ui.Components.xc X2;
         int i12;
         int i13;
         int i14 = this.a;
         Long l4 = this.d;
-        m80 m80Var = this.c;
+        n80 n80Var = this.c;
         LaunchActivity launchActivity = this.b;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
         switch (i14) {
             case 0:
                 Pattern pattern = LaunchActivity.B1;
                 try {
-                    m80Var.run();
+                    n80Var.run();
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -53,14 +53,14 @@ public final /* synthetic */ class oa0 implements Utilities.Callback {
                             break;
                         }
                     } else {
-                        X = org.telegram.ui.Components.yc.X();
+                        X = org.telegram.ui.Components.xc.X();
                         if (X != null) {
                             i10 = R.raw.story_bomb1;
                             i11 = R.string.StoryNotFound;
                         }
                     }
                 } else {
-                    X = org.telegram.ui.Components.yc.X();
+                    X = org.telegram.ui.Components.xc.X();
                     if (X != null) {
                         i10 = R.raw.story_bomb2;
                         i11 = R.string.StoryNotFound;
@@ -71,7 +71,7 @@ public final /* synthetic */ class oa0 implements Utilities.Callback {
             default:
                 Pattern pattern2 = LaunchActivity.B1;
                 try {
-                    m80Var.run();
+                    n80Var.run();
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
@@ -86,14 +86,14 @@ public final /* synthetic */ class oa0 implements Utilities.Callback {
                             break;
                         }
                     } else {
-                        X2 = org.telegram.ui.Components.yc.X();
+                        X2 = org.telegram.ui.Components.xc.X();
                         if (X2 != null) {
                             i12 = R.raw.story_bomb1;
                             i13 = R.string.StoryNotFound;
                         }
                     }
                 } else {
-                    X2 = org.telegram.ui.Components.yc.X();
+                    X2 = org.telegram.ui.Components.xc.X();
                     if (X2 != null) {
                         i12 = R.raw.story_bomb2;
                         i13 = R.string.StoryNotFound;

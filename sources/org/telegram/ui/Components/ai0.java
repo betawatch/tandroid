@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotchInfoUtils;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ai0 implements ci0 {
     public Bitmap a;
@@ -39,11 +39,11 @@ public final class ai0 implements ci0 {
     }
 
     @Override // org.telegram.ui.Components.ci0
-    public final void c(nv nvVar, Canvas canvas) {
+    public final void c(mv mvVar, Canvas canvas) {
         Canvas canvas2;
         int i10;
         int i11;
-        di0 di0Var = (di0) nvVar.b;
+        di0 di0Var = (di0) mvVar.b;
         di0 di0Var2 = this.i;
         Paint paint = di0Var2.a;
         Bitmap bitmap = this.a;

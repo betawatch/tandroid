@@ -17,9 +17,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class m8 {
     public int a;
@@ -38,7 +38,7 @@ public final class m8 {
     public t01 n;
     public t01 o;
     public boolean p;
-    public final zc q;
+    public final yc q;
     public int r;
     public Drawable s;
     public Drawable t;
@@ -64,7 +64,7 @@ public final class m8 {
         this.l = h9Var;
         h9 h9Var2 = new h9((org.telegram.ui.ActionBar.d6) null);
         this.m = h9Var2;
-        this.q = new zc(n8Var);
+        this.q = new yc(n8Var);
         this.i = z10;
         this.j = j3;
         if (j3 >= 0) {

@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class br0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -433,7 +433,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                     if (photoViewer20.m4 == null || (of2 = photoViewer20.l4.g5) == null) {
                         of2 = MessageSuggestionParams.of(photoViewer20.l4.p5.messageOwner.suggested_post);
                     }
-                    if (!yh.t5.U(photoViewer20.T, of2.amount)) {
+                    if (!yh.s5.U(photoViewer20.T, of2.amount)) {
                         wn wnVar2 = photoViewer20.l4;
                         if (wnVar2 != null) {
                             wnVar2.Tb(of2);

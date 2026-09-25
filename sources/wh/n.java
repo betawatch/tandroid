@@ -26,9 +26,8 @@ import org.telegram.ui.Components.u00;
 import org.telegram.ui.Components.ug0;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.yr0;
-import u2.i0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class n implements f5 {
     public final boolean a;
@@ -312,7 +311,7 @@ public abstract class n implements f5 {
             if (this.y) {
                 AndroidUtilities.hideKeyboard(this.g.getParentActivity().getCurrentFocus());
             }
-            AndroidUtilities.runOnUIThread(new i0(8, this, (g5) view), this.y ? 100L : 0L);
+            AndroidUtilities.runOnUIThread(new u2.p0(7, this, (g5) view), this.y ? 100L : 0L);
         }
     }
 

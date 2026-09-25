@@ -20,7 +20,7 @@ import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.s90;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class k7 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public long a;
@@ -67,8 +67,8 @@ public final class k7 extends LinearLayout implements NotificationCenter.Notific
         boolean z11;
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
         int i10 = this.b;
-        t5 y3 = t5.y(i10, false);
-        t5 y10 = this.d ? t5.y(i10, true) : null;
+        s5 y3 = s5.y(i10, false);
+        s5 y10 = this.d ? s5.y(i10, true) : null;
         long j3 = 0;
         zf.a i11 = zf.a.i(0L, zf.b.b);
         o00 o00Var = this.c;

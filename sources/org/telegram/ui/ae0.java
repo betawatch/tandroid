@@ -29,7 +29,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ae0 extends org.telegram.ui.Components.fw0 {
     public boolean E;
@@ -842,7 +842,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         while (true) {
             xd0 xd0Var = this.a;
             if (i10 >= xd0Var.f.length) {
-                xd0Var.postDelayed(new m80(17, this, runnable), (r2.length * 75) + 400);
+                xd0Var.postDelayed(new n80(16, this, runnable), (r2.length * 75) + 400);
                 return;
             } else {
                 xd0Var.postDelayed(new org.telegram.ui.Components.ld(this, i10, 18), i10 * 75);

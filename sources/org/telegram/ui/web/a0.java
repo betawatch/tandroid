@@ -36,11 +36,11 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.s90;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -257,7 +257,7 @@ public final /* synthetic */ class a0 implements Runnable {
                     }
                     b1 b1Var5 = y0Var.Q;
                     if (b1Var5 != null) {
-                        new yc(b1Var5, b1Var5.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str12))).k(true);
+                        new xc(b1Var5, b1Var5.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str12))).k(true);
                         break;
                     }
                 } catch (Exception e) {

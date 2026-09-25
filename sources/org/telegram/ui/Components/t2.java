@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,8 +32,8 @@ public final /* synthetic */ class t2 implements Runnable {
             case 0:
                 int i10 = this.b;
                 t2 t2Var = new t2(i10, this.c, this.d, this.e, this.f, 1);
-                if (!yh.t5.y(i10, false).e) {
-                    yh.t5 y3 = yh.t5.y(i10, false);
+                if (!yh.s5.y(i10, false).e) {
+                    yh.s5 y3 = yh.s5.y(i10, false);
                     y3.e = false;
                     y3.q(false, true, t2Var);
                     y3.e = true;
@@ -44,7 +44,7 @@ public final /* synthetic */ class t2 implements Runnable {
                 }
             default:
                 int i11 = this.b;
-                long j3 = yh.t5.y(i11, false).p().amount;
+                long j3 = yh.s5.y(i11, false).p().amount;
                 long j10 = this.c;
                 Utilities.Callback callback = this.e;
                 long j11 = this.f;

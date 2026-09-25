@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class bj1 extends org.telegram.ui.Components.vl0 {
     public final /* synthetic */ WallpapersListActivity E;
@@ -30,7 +30,7 @@ public final class bj1 extends org.telegram.ui.Components.vl0 {
     public int v;
     public boolean w;
     public String x;
-    public n81 y;
+    public p81 y;
 
     public bj1(WallpapersListActivity wallpapersListActivity, Context context) {
         this.E = wallpapersListActivity;
@@ -47,9 +47,9 @@ public final class bj1 extends org.telegram.ui.Components.vl0 {
         if (str != null && this.n != null) {
             str = a4.a.r(this.n, " ", str, new StringBuilder("#color"));
         }
-        n81 n81Var = this.y;
-        if (n81Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(n81Var);
+        p81 p81Var = this.y;
+        if (p81Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(p81Var);
             this.y = null;
         }
         boolean isEmpty = TextUtils.isEmpty(str);
@@ -77,9 +77,9 @@ public final class bj1 extends org.telegram.ui.Components.vl0 {
                 this.h = str;
                 l();
             } else {
-                n81 n81Var2 = new n81(24, this, str);
-                this.y = n81Var2;
-                AndroidUtilities.runOnUIThread(n81Var2, 500L);
+                p81 p81Var2 = new p81(23, this, str);
+                this.y = p81Var2;
+                AndroidUtilities.runOnUIThread(p81Var2, 500L);
             }
         }
         l();

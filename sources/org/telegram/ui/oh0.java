@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class oh0 extends org.telegram.ui.Components.uq0 {
     public final /* synthetic */ ph0 b1;
@@ -28,7 +28,7 @@ public final class oh0 extends org.telegram.ui.Components.uq0 {
                 long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
                 formatString = (j3 == 0 || j3 == sh0Var.getUserConfig().getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, sh0Var.getMessagesController().getPeerName(j3, true));
             }
-            org.telegram.ui.Components.qc Q = org.telegram.ui.Components.yc.a0(sh0Var).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
+            org.telegram.ui.Components.qc Q = org.telegram.ui.Components.xc.a0(sh0Var).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
             Q.r = false;
             Q.k(true);
         }

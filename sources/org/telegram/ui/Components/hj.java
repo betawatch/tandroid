@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class hj extends oi implements NotificationCenter.NotificationCenterDelegate, le.e {
     public String E;
@@ -218,7 +218,7 @@ public final class hj extends oi implements NotificationCenter.NotificationCente
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new uc(10, hjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new kd(9, hjVar, arrayList));
                         return;
                 }
             }
@@ -353,7 +353,7 @@ public final class hj extends oi implements NotificationCenter.NotificationCente
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new uc(10, hjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new kd(9, hjVar, arrayList));
                         return;
                 }
             }
@@ -488,7 +488,7 @@ public final class hj extends oi implements NotificationCenter.NotificationCente
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new uc(10, hjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new kd(9, hjVar, arrayList));
                         return;
                 }
             }
@@ -628,7 +628,7 @@ public final class hj extends oi implements NotificationCenter.NotificationCente
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new uc(10, hjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new kd(9, hjVar, arrayList));
                         return;
                 }
             }
@@ -650,7 +650,7 @@ public final class hj extends oi implements NotificationCenter.NotificationCente
         ls lsVar = new ls(context);
         this.x = lsVar;
         lsVar.setPadding(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f));
-        lsVar.setOnAnimatedHeightChangedListener(new uc(11, this, wiVar));
+        lsVar.setOnAnimatedHeightChangedListener(new kd(10, this, wiVar));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.y = frameLayout2;
         lsVar.addView(frameLayout2);

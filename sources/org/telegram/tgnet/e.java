@@ -18,10 +18,10 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.bd;
 import org.telegram.ui.Components.e0;
 import org.telegram.ui.Components.y;
-import org.telegram.ui.n81;
+import org.telegram.ui.Components.zc;
+import org.telegram.ui.p81;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 import org.telegram.ui.web.b1;
 import org.telegram.ui.web.g0;
@@ -31,7 +31,7 @@ import yh.a0;
 import yh.w0;
 import yh.x3;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -48,8 +48,8 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        bd bdVar;
-        bd bdVar2;
+        ad adVar;
+        ad adVar2;
         switch (this.a) {
             case 0:
                 ((ConnectionsManager) this.b).lambda$sendRequestTypedAndProcessUpdates$5((Executor) this.c, (Utilities.Callback2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
@@ -78,7 +78,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                     if (g0Var != null) {
                         g0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new n81(28, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new p81(27, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 5:
@@ -94,14 +94,14 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 CharSequence replaceTags = AndroidUtilities.replaceTags(charSequence);
                 float x10 = ((View) ((View) view.getParent()).getParent()).getX() + ((View) view.getParent()).getX() + view.getX();
                 float y3 = ((View) ((View) view.getParent()).getParent()).getY() + ((View) view.getParent()).getY() + view.getY();
-                if (view instanceof ad) {
-                    Layout layout = ((ad) view).getLayout();
+                if (view instanceof zc) {
+                    Layout layout = ((zc) view).getLayout();
                     CharSequence text = layout.getText();
                     if (text instanceof Spanned) {
                         Spanned spanned = (Spanned) text;
-                        bd[] bdVarArr = (bd[]) spanned.getSpans(0, text.length(), bd.class);
-                        if (bdVarArr.length > 0 && (bdVar = bdVarArr[0]) != null) {
-                            x10 += layout.getPrimaryHorizontal(spanned.getSpanStart(bdVar)) + (bdVarArr[0].a() / 2);
+                        ad[] adVarArr = (ad[]) spanned.getSpans(0, text.length(), ad.class);
+                        if (adVarArr.length > 0 && (adVar = adVarArr[0]) != null) {
+                            x10 += layout.getPrimaryHorizontal(spanned.getSpanStart(adVar)) + (adVarArr[0].a() / 2);
                             y3 += layout.getLineTop(layout.getLineForOffset(r8));
                         }
                     }
@@ -150,14 +150,14 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 CharSequence replaceTags2 = AndroidUtilities.replaceTags(charSequence2);
                 float x11 = ((View) ((View) view2.getParent()).getParent()).getX() + ((View) view2.getParent()).getX() + view2.getX();
                 float y10 = ((View) ((View) view2.getParent()).getParent()).getY() + ((View) view2.getParent()).getY() + view2.getY();
-                if (view2 instanceof ad) {
-                    Layout layout2 = ((ad) view2).getLayout();
+                if (view2 instanceof zc) {
+                    Layout layout2 = ((zc) view2).getLayout();
                     CharSequence text2 = layout2.getText();
                     if (text2 instanceof Spanned) {
                         Spanned spanned2 = (Spanned) text2;
-                        bd[] bdVarArr2 = (bd[]) spanned2.getSpans(0, text2.length(), bd.class);
-                        if (bdVarArr2.length > 0 && (bdVar2 = bdVarArr2[0]) != null) {
-                            x11 += layout2.getPrimaryHorizontal(spanned2.getSpanStart(bdVar2)) + (bdVarArr2[0].a() / 2);
+                        ad[] adVarArr2 = (ad[]) spanned2.getSpans(0, text2.length(), ad.class);
+                        if (adVarArr2.length > 0 && (adVar2 = adVarArr2[0]) != null) {
+                            x11 += layout2.getPrimaryHorizontal(spanned2.getSpanStart(adVar2)) + (adVarArr2[0].a() / 2);
                             y10 += layout2.getLineTop(layout2.getLineForOffset(r8));
                         }
                     }

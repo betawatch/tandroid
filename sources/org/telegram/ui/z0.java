@@ -39,7 +39,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements org.telegram.ui.Components.no0, ei.o4, nh1, r0.n, org.telegram.ui.ActionBar.z1, rg.t, org.telegram.ui.Components.be0, org.telegram.ui.Components.ll0, org.telegram.ui.Components.dw0, ai.ec, CameraView.CameraViewDelegate, Utilities.Callback5, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.xj0, MessagesStorage.BooleanCallback, org.telegram.ui.Cells.f0 {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class z0 implements org.telegram.ui.Components.no0,
 
     @Override // org.telegram.ui.nh1
     public void a(int i10, ArrayList arrayList) {
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(6, (m4) this.b, arrayList), 100L);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(5, (m4) this.b, arrayList), 100L);
     }
 
     @Override // org.telegram.ui.Components.no0
@@ -242,9 +242,9 @@ public final /* synthetic */ class z0 implements org.telegram.ui.Components.no0,
                 boolean[] zArr = {false};
                 float[] fArr = {0.0f};
                 boolean[] zArr2 = {false};
-                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(o6Var, q6Var, fArr, zArr2, 1);
+                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(o6Var, q6Var, fArr, zArr2, 2);
                 long[] jArr = {-1};
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5(o6Var, zArr, jArr, n6Var, 2), 150L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5(o6Var, zArr, jArr, n6Var, 3), 150L);
                 z6 z6Var = o6Var.d;
                 l6 l6Var = new l6(fArr, zArr2, l5Var, i12);
                 m6 m6Var = new m6(zArr, q6Var, jArr, n6Var, 0);

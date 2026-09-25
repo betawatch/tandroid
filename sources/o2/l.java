@@ -18,7 +18,7 @@ import java.util.Map;
 import u2.d0;
 import u2.h1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
@@ -95,9 +95,9 @@ public final class l extends u2.a {
     @Override // u2.a
     public final void k() {
         p2.c cVar = this.o;
-        y2.m mVar = cVar.h;
-        if (mVar != null) {
-            mVar.a();
+        y2.l lVar = cVar.h;
+        if (lVar != null) {
+            lVar.a();
         }
         Uri uri = cVar.v;
         if (uri != null) {
@@ -131,11 +131,11 @@ public final class l extends u2.a {
         cVar.r = this;
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
-        y2.p pVar = new y2.p(((g2.g) cVar.a.a).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, cVar.b.H());
+        y2.o oVar = new y2.o(((g2.g) cVar.a.a).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, cVar.b.H());
         e2.d.g(cVar.h == null);
-        y2.m mVar = new y2.m("DefaultHlsPlaylistTracker:MultivariantPlaylist");
-        cVar.h = mVar;
-        mVar.f(pVar, cVar, cVar.c.L3(pVar.c));
+        y2.l lVar = new y2.l("DefaultHlsPlaylistTracker:MultivariantPlaylist");
+        cVar.h = lVar;
+        lVar.f(oVar, cVar, cVar.c.L3(oVar.c));
     }
 
     @Override // u2.a

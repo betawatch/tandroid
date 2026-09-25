@@ -19,11 +19,11 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public abstract class u0 {
     public static SpannableStringBuilder a(MessageObject messageObject, String str, String str2, boolean z10, boolean z11) {
@@ -141,7 +141,7 @@ public abstract class u0 {
             if (!(m2Var instanceof qy)) {
                 m2Var.finishFragment();
             }
-            f(yc.X(), i10, isChannelAndNotMegaGroup);
+            f(xc.X(), i10, isChannelAndNotMegaGroup);
             return;
         }
         for (int size = list.size() - 2; size > i11; size--) {
@@ -169,7 +169,7 @@ public abstract class u0 {
         });
     }
 
-    public static void f(yc ycVar, int i10, boolean z10) {
+    public static void f(xc xcVar, int i10, boolean z10) {
         String string;
         int i11 = i10 == 2 ? R.raw.timer_toast : R.raw.contact_check;
         int i12 = i10 == 2 ? 24 : 36;
@@ -180,6 +180,6 @@ public abstract class u0 {
         } else {
             string = LocaleController.getString(R.string.CommunityCommunityPending);
         }
-        ycVar.G(i11, i12, string).j();
+        xcVar.G(i11, i12, string).j();
     }
 }

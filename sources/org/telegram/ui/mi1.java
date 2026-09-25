@@ -74,7 +74,7 @@ import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class mi1 implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate, rf.a {
     public static mi1 n1;
@@ -1076,68 +1076,67 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Failed to find 'out' block for switch in B:14:0x003d. Please report as an issue. */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0802  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x080b  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0837  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0911 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0918  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x092a  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0950  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0961  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x096c  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x09ec  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x09f9  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0a0e  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0a53  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x063e  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0a6f  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0b3c  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0b8d  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x0b85  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0aa8  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x0ad0  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x0aef  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x0ac5  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0a7d  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x0bb2 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x0bc2 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0bdc  */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x0bf9  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x0cbe  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x0d01  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x0d1c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:308:0x0d27  */
-    /* JADX WARN: Removed duplicated region for block: B:310:0x0d2c  */
-    /* JADX WARN: Removed duplicated region for block: B:315:0x0d5d  */
+    /* JADX WARN: Failed to find 'out' block for switch in B:15:0x0041. Please report as an issue. */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x07f4  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x07fd  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0827  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x0902 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0909  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x091b  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0941  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0952  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x095d  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x09e3  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x09f0  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0a05  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x0a4a  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x062e  */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x0a66  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0b33  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x0b84  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0b7c  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x0a9f  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0ac7  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x0ae6  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x0abc  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0a74  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0ba9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x0bb9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x0bd3  */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x0bf0  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x0cb7  */
+    /* JADX WARN: Removed duplicated region for block: B:298:0x0cfa  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x0d15 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x0d20  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x0d25  */
+    /* JADX WARN: Removed duplicated region for block: B:315:0x0d56  */
     /* JADX WARN: Removed duplicated region for block: B:318:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x0d40  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x0c6e  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x0bf0  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x09e2  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x08ca  */
-    /* JADX WARN: Removed duplicated region for block: B:375:0x07bd  */
-    /* JADX WARN: Removed duplicated region for block: B:377:0x074b  */
-    /* JADX WARN: Removed duplicated region for block: B:388:0x072e  */
-    /* JADX WARN: Removed duplicated region for block: B:397:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x072c  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x073d  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x07ba  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x07cd  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x07dc  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x07e8  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x0d39  */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x0c65  */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x0be7  */
+    /* JADX WARN: Removed duplicated region for block: B:340:0x09d9  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x08ba  */
+    /* JADX WARN: Removed duplicated region for block: B:378:0x07ac  */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x073b  */
+    /* JADX WARN: Removed duplicated region for block: B:391:0x071e  */
+    /* JADX WARN: Removed duplicated region for block: B:400:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x071c  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x072d  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x07aa  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x07bc  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x07cb  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x07d7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void H() {
-        Integer num;
         boolean z10;
         int i10;
         boolean z11;
         boolean z12;
-        int i11;
         boolean z13;
-        int i12;
+        TLRPC.User user;
+        int i11;
         int childsHight;
         org.telegram.ui.Components.voip.v1 v1Var;
         org.telegram.ui.Components.voip.v1 v1Var2;
@@ -1145,7 +1144,7 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
         boolean z15;
         org.telegram.ui.Components.voip.t2 t2Var;
         VideoSink videoSink;
-        int i13;
+        int i12;
         boolean z16;
         TL_phone.PhoneCall phoneCall;
         VoIPService.SharedUIParams sharedUIParams;
@@ -1163,29 +1162,28 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
         if (this.G0 || this.E0) {
             return;
         }
-        int i14 = 0;
+        int i13 = 0;
         boolean z20 = this.q0 != -1;
         VoIPServiceState sharedState = VoIPService.getSharedState();
         VoIPService sharedInstance = VoIPService.getSharedInstance();
-        int i15 = this.p0;
-        TLRPC.User user = this.d;
-        if (i15 == 1 || i15 == 2) {
-            num = 1;
+        int i14 = this.p0;
+        TLRPC.User user2 = this.d;
+        if (i14 == 1 || i14 == 2) {
             this.F.b(LocaleController.getString(R.string.VoipConnecting), true, z20);
         } else {
-            if (i15 != 3) {
-                if (i15 == 4) {
-                    num = 1;
+            if (i14 != 3) {
+                int i15 = 20;
+                if (i14 == 4) {
                     this.F.b(LocaleController.getString(R.string.VoipFailed), false, z20);
                     VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                     String lastError = sharedInstance2 != null ? sharedInstance2.getLastError() : Instance.ERROR_UNKNOWN;
                     if (TextUtils.equals(lastError, Instance.ERROR_UNKNOWN)) {
                         AndroidUtilities.runOnUIThread(new wh1(this, 3), 1000L);
                     } else if (TextUtils.equals(lastError, Instance.ERROR_INCOMPATIBLE)) {
-                        y(AndroidUtilities.replaceTags(LocaleController.formatString("VoipPeerIncompatible", R.string.VoipPeerIncompatible, ContactsController.formatName(user.first_name, user.last_name))));
+                        y(AndroidUtilities.replaceTags(LocaleController.formatString("VoipPeerIncompatible", R.string.VoipPeerIncompatible, ContactsController.formatName(user2.first_name, user2.last_name))));
                     } else if (TextUtils.equals(lastError, Instance.ERROR_PEER_OUTDATED)) {
                         if (this.U0) {
-                            String formatString = LocaleController.formatString("VoipPeerVideoOutdated", R.string.VoipPeerVideoOutdated, UserObject.getFirstName(user));
+                            String formatString = LocaleController.formatString("VoipPeerVideoOutdated", R.string.VoipPeerVideoOutdated, UserObject.getFirstName(user2));
                             boolean[] zArr = new boolean[1];
                             org.telegram.ui.ActionBar.w3 w3Var = new org.telegram.ui.ActionBar.w3(this.b, 0, null);
                             boolean[] zArr2 = new boolean[3];
@@ -1196,7 +1194,7 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                             w3Var.n0 = string;
                             w3Var.o0 = uh1Var;
                             String string2 = LocaleController.getString(R.string.VoipPeerVideoOutdatedMakeVoice);
-                            ds0 ds0Var = new ds0(20, this, zArr);
+                            ds0 ds0Var = new ds0(i15, this, zArr);
                             w3Var.l0 = string2;
                             w3Var.m0 = ds0Var;
                             w3Var.show();
@@ -1208,11 +1206,11 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                             w3Var.setCanceledOnTouchOutside(true);
                             w3Var.setOnDismissListener(new ei.e0(this, zArr, 12));
                         } else {
-                            y(AndroidUtilities.replaceTags(LocaleController.formatString("VoipPeerOutdated", R.string.VoipPeerOutdated, UserObject.getFirstName(user))));
+                            y(AndroidUtilities.replaceTags(LocaleController.formatString("VoipPeerOutdated", R.string.VoipPeerOutdated, UserObject.getFirstName(user2))));
                         }
                     } else if (TextUtils.equals(lastError, Instance.ERROR_PRIVACY)) {
-                        y(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.CallNotAvailable, ContactsController.formatName(user.first_name, user.last_name))));
-                        org.telegram.ui.Components.e5.l0(this.b, this.a, user.id);
+                        y(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.CallNotAvailable, ContactsController.formatName(user2.first_name, user2.last_name))));
+                        org.telegram.ui.Components.e5.l0(this.b, this.a, user2.id);
                     } else if (TextUtils.equals(lastError, Instance.ERROR_AUDIO_IO)) {
                         y("Error initializing audio hardware");
                     } else if (TextUtils.equals(lastError, Instance.ERROR_LOCALIZED)) {
@@ -1222,13 +1220,12 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                     } else {
                         AndroidUtilities.runOnUIThread(new wh1(this, 1), 1000L);
                     }
-                } else if (i15 != 5) {
-                    switch (i15) {
+                } else if (i14 != 5) {
+                    switch (i14) {
                         case 11:
                             boolean z21 = sharedInstance != null && sharedInstance.hasRate();
                             this.d0.c();
                             if (!z21 || this.G0) {
-                                num = 1;
                                 AndroidUtilities.runOnUIThread(new wh1(this, 0), 200L);
                                 break;
                             } else {
@@ -1244,7 +1241,7 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                     this.U.setAlpha(1.0f);
                                     this.U.setLayoutParams(marginLayoutParams);
                                     this.j0.animate().alpha(0.0f).setDuration(80L).start();
-                                    AndroidUtilities.runOnUIThread(new n81(21, this, sharedInstance), 2L);
+                                    AndroidUtilities.runOnUIThread(new p81(i15, this, sharedInstance), 2L);
                                 } else {
                                     this.j0.setVisibility(8);
                                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.U.getLayoutParams();
@@ -1259,7 +1256,7 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                     layoutParams.gravity = 80;
                                     this.U.setLayoutParams(layoutParams);
                                     this.U.animate().alpha(1.0f).setDuration(250L).start();
-                                    this.U.a(new vh1(this, sharedInstance, i14), false);
+                                    this.U.a(new vh1(this, sharedInstance, i13), false);
                                 }
                                 this.Q.setVisibility(0);
                                 org.telegram.ui.Components.voip.p1 p1Var = this.Q;
@@ -1279,7 +1276,6 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                 Property property4 = View.TRANSLATION_Y;
                                 animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ObjectAnimator.ofFloat(m1Var, (Property<org.telegram.ui.Components.voip.m1, Float>) property4, AndroidUtilities.dp(24.0f), 0.0f));
                                 animatorSet.setInterpolator(org.telegram.ui.Components.rr.f);
-                                Integer num2 = 1;
                                 animatorSet.setDuration(250L);
                                 int i18 = 0;
                                 while (i18 < o1VarArr.length) {
@@ -1290,10 +1286,8 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                     animatorSet2.setStartDelay(i18 * 16);
                                     animatorSet2.start();
                                     i18++;
-                                    property4 = property4;
-                                    num2 = num2;
+                                    animatorSet = animatorSet;
                                 }
-                                num = num2;
                                 animatorSet.start();
                                 if (this.C0) {
                                     this.C0 = false;
@@ -1346,16 +1340,14 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                         case 12:
                             if (this.q0 != 12) {
                                 this.F.b(LocaleController.getString(R.string.VoipExchangingKeys), true, z20);
+                                break;
                             }
-                            num = 1;
                             break;
                         case 13:
                             this.F.b(LocaleController.getString(R.string.VoipWaiting), true, z20);
-                            num = 1;
                             break;
                         case 14:
                             this.F.b(LocaleController.getString(R.string.VoipRequesting), true, z20);
-                            num = 1;
                             break;
                         case 15:
                             this.e0.setRetryMod(false);
@@ -1369,25 +1361,20 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                 this.F.b(LocaleController.getString(R.string.VoipInVideoCallBranding), false, z20);
                                 this.e0.setTranslationY(-AndroidUtilities.dp(60.0f));
                             }
-                            num = 1;
                             z10 = false;
                             break;
                         case 16:
                             if (this.q0 != 16) {
                                 this.F.b(LocaleController.getString(R.string.VoipRinging), true, z20);
+                                break;
                             }
-                            num = 1;
                             break;
                         case 17:
                             this.F.b(LocaleController.getString(R.string.VoipBusy), false, z20);
                             this.e0.setRetryMod(true);
                             this.n0 = false;
                             this.m0 = false;
-                            num = 1;
                             z10 = false;
-                            break;
-                        default:
-                            num = 1;
                             break;
                     }
                     if (this.o0 == null) {
@@ -1465,17 +1452,19 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                 }
                                 if (!z19 && this.e0.getTag() != null) {
                                     this.e0.animate().setListener(null).cancel();
-                                    i11 = 8;
-                                    this.e0.animate().setListener(new ai1(this, i11)).alpha(0.0f);
+                                    this.e0.animate().setListener(new ai1(this, 8)).alpha(0.0f);
                                     this.e0.setEnabled(z19);
-                                    this.e0.setTag(z19 ? num : null);
+                                    this.e0.setTag(z19 ? 1 : null);
                                     this.u0.setLockOnScreen(this.J0);
                                     z13 = this.p0 != 3 && (this.n0 || this.m0);
                                     this.z0 = z13;
                                     if (!z13 && !this.x0) {
                                         A(true);
                                     }
-                                    if (this.x0 && this.z0 && !this.R0 && sharedInstance != null) {
+                                    if (this.x0 || !this.z0 || this.R0 || sharedInstance == null) {
+                                        user = user2;
+                                    } else {
+                                        user = user2;
                                         AndroidUtilities.runOnUIThread(this.S0, 3000L);
                                         this.R0 = true;
                                     }
@@ -1509,21 +1498,17 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                         }
                                         this.M0.animate().translationY((-AndroidUtilities.dp(16.0f)) - (this.x0 ? AndroidUtilities.dp(80.0f) : 0)).setDuration(150L).setInterpolator(org.telegram.ui.Components.rr.f).start();
                                     } else {
-                                        ImageView imageView = this.H;
-                                        if (z23) {
-                                            i11 = 0;
-                                        }
-                                        imageView.setVisibility(i11);
+                                        this.H.setVisibility(z23 ? 0 : 8);
                                         this.H.setAlpha(z23 ? 1.0f : 0.0f);
                                         this.I.setVisibility(z24 ? 0 : 8);
                                         this.I.setAlpha(z24 ? 1.0f : 0.0f);
                                         this.M0.setTranslationY((-AndroidUtilities.dp(16.0f)) - (this.x0 ? AndroidUtilities.dp(80.0f) : 0));
                                     }
-                                    i12 = this.p0;
-                                    if (i12 != 10 && i12 != 11) {
+                                    i11 = this.p0;
+                                    if (i11 != 10 && i11 != 11) {
                                         D(z20);
                                     }
-                                    if (i14 != 0) {
+                                    if (i13 != 0) {
                                         this.F.e(z20);
                                     }
                                     this.F.d(z10, z20);
@@ -1585,7 +1570,7 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                                 } else {
                                                     this.M0.a(R.drawable.calls_mute_mini, LocaleController.getString(R.string.VoipMyMicrophoneState), "self-muted");
                                                 }
-                                                if ((!this.n0 || this.m0) && (((i13 = this.p0) == 3 || i13 == 5) && sharedInstance.getCallDuration() > 500)) {
+                                                if ((!this.n0 || this.m0) && (((i12 = this.p0) == 3 || i12 == 5) && sharedInstance.getCallDuration() > 500)) {
                                                     if (sharedInstance.getRemoteAudioState() != 0) {
                                                         org.telegram.ui.Components.voip.i2 i2Var2 = this.M0;
                                                         i2Var2.a(R.drawable.calls_mute_mini, LocaleController.formatString("VoipUserMicrophoneIsOff", R.string.VoipUserMicrophoneIsOff, i2Var2.b(UserObject.getFirstName(user))), "muted");
@@ -1698,7 +1683,7 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                         org.telegram.ui.Components.voip.v1 v1Var3 = this.Z;
                                         v1Var3.c0 = true;
                                         v1Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).setInterpolator(org.telegram.ui.Components.rr.f).setStartDelay(150L).withEndAction(new wh1(this, 4)).start();
-                                        this.Z.setTag(num);
+                                        this.Z.setTag(1);
                                     } else if (!z12 && this.Z.getTag() != null) {
                                         this.Z.setIsActive(false);
                                         this.Z.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setListener(new ai1(this, 5)).setDuration(150L).setInterpolator(org.telegram.ui.Components.rr.f).start();
@@ -1761,9 +1746,8 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                     }
                                 }
                             }
-                            i11 = 8;
                             this.e0.setEnabled(z19);
-                            this.e0.setTag(z19 ? num : null);
+                            this.e0.setTag(z19 ? 1 : null);
                             this.u0.setLockOnScreen(this.J0);
                             if (this.p0 != 3) {
                             }
@@ -1772,9 +1756,8 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                                 A(true);
                             }
                             if (this.x0) {
-                                AndroidUtilities.runOnUIThread(this.S0, 3000L);
-                                this.R0 = true;
                             }
+                            user = user2;
                             int i192 = this.p0;
                             if (i192 == 11) {
                             }
@@ -1782,11 +1765,11 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                             }
                             if (z20) {
                             }
-                            i12 = this.p0;
-                            if (i12 != 10) {
+                            i11 = this.p0;
+                            if (i11 != 10) {
                                 D(z20);
                             }
-                            if (i14 != 0) {
+                            if (i13 != 0) {
                             }
                             this.F.d(z10, z20);
                             if (this.y.getVisibility() == 0) {
@@ -1866,9 +1849,8 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                     }
                     if (z20) {
                     }
-                    i11 = 8;
                     this.e0.setEnabled(z19);
-                    this.e0.setTag(z19 ? num : null);
+                    this.e0.setTag(z19 ? 1 : null);
                     this.u0.setLockOnScreen(this.J0);
                     if (this.p0 != 3) {
                     }
@@ -1877,6 +1859,7 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                     }
                     if (this.x0) {
                     }
+                    user = user2;
                     int i1922 = this.p0;
                     if (i1922 == 11) {
                     }
@@ -1884,10 +1867,10 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                     }
                     if (z20) {
                     }
-                    i12 = this.p0;
-                    if (i12 != 10) {
+                    i11 = this.p0;
+                    if (i11 != 10) {
                     }
-                    if (i14 != 0) {
+                    if (i13 != 0) {
                     }
                     this.F.d(z10, z20);
                     if (this.y.getVisibility() == 0) {
@@ -1943,7 +1926,6 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                     }
                 }
             }
-            num = 1;
             E(z20);
             if (this.p0 == 5) {
                 boolean z26 = this.s0;
@@ -1952,21 +1934,21 @@ public final class mi1 implements VoIPService.StateListener, NotificationCenter.
                 }
                 z10 = z26;
                 z19 = false;
-                i14 = 0;
+                i13 = 0;
                 if (this.o0 == null) {
                 }
             } else {
-                i14 = 1;
                 this.s0 = true;
                 z19 = false;
                 z10 = false;
+                i13 = 1;
                 if (this.o0 == null) {
                 }
             }
         }
         z19 = false;
         z10 = false;
-        i14 = 0;
+        i13 = 0;
         if (this.o0 == null) {
         }
     }

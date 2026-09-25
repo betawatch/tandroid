@@ -33,7 +33,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ye implements Runnable {
     public final /* synthetic */ int a;
@@ -145,7 +145,7 @@ public final /* synthetic */ class ye implements Runnable {
                     }
                 } else if (tL_error2 == null || !"GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
                     if (tL_error2 != null) {
-                        org.telegram.ui.Components.yc.a0(wnVar3).d0(tL_error2, false);
+                        org.telegram.ui.Components.xc.a0(wnVar3).d0(tL_error2, false);
                         break;
                     }
                 } else {
@@ -417,26 +417,26 @@ public final /* synthetic */ class ye implements Runnable {
                 }
             case 10:
                 ((boolean[]) obj6)[0] = true;
-                ((yh.t5) obj7).Z((String) obj3, (TLRPC.ChatInvite) obj5, new yh.e4((boolean[]) obj4, (Utilities.Callback2) obj2, (Utilities.Callback) obj));
+                ((yh.s5) obj7).Z((String) obj3, (TLRPC.ChatInvite) obj5, new yh.e4((boolean[]) obj4, (Utilities.Callback2) obj2, (Utilities.Callback) obj));
                 break;
             case 11:
-                yh.t5 t5Var = (yh.t5) obj7;
+                yh.s5 s5Var = (yh.s5) obj7;
                 TLObject tLObject10 = (TLObject) obj6;
                 MessageObject messageObject3 = (MessageObject) obj5;
                 TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) obj4;
                 Utilities.Callback callback3 = (Utilities.Callback) obj3;
-                org.telegram.ui.Components.yc ycVar = (org.telegram.ui.Components.yc) obj2;
+                org.telegram.ui.Components.xc xcVar = (org.telegram.ui.Components.xc) obj2;
                 TLRPC.TL_error tL_error8 = (TLRPC.TL_error) obj;
                 if (tLObject10 instanceof TLRPC.TL_payments_paymentFormStars) {
-                    t5Var.a0(messageObject3, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject10, callback3);
+                    s5Var.a0(messageObject3, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject10, callback3);
                     break;
                 } else {
                     callback3.run(Boolean.FALSE);
-                    hg.c.q(R.string.UnknownErrorCode, new Object[]{tL_error8 != null ? tL_error8.text : "FAILED_GETTING_FORM"}, ycVar, R.raw.error, 36);
+                    hg.c.q(R.string.UnknownErrorCode, new Object[]{tL_error8 != null ? tL_error8.text : "FAILED_GETTING_FORM"}, xcVar, R.raw.error, 36);
                     break;
                 }
             case 12:
-                yh.t5 t5Var2 = (yh.t5) obj7;
+                yh.s5 s5Var2 = (yh.s5) obj7;
                 List list2 = (List) obj6;
                 org.telegram.ui.Components.o80 o80Var = (org.telegram.ui.Components.o80) obj5;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) obj4;
@@ -457,7 +457,7 @@ public final /* synthetic */ class ye implements Runnable {
                         tL_inputStorePaymentStarsGift.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
                         tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentStarsGift;
-                        ConnectionsManager.getInstance(t5Var2.a).sendRequest(tL_payments_canPurchaseStore2, new dh1(oVar, hVar2, o80Var, activity, tL_inputStorePaymentStarsGift, list2, 4));
+                        ConnectionsManager.getInstance(s5Var2.a).sendRequest(tL_payments_canPurchaseStore2, new dh1(oVar, hVar2, o80Var, activity, tL_inputStorePaymentStarsGift, list2, 4));
                         break;
                     }
                 }

@@ -8,11 +8,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q4 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ t5 b;
+    public final /* synthetic */ s5 b;
     public final /* synthetic */ Utilities.Callback2 c;
     public final /* synthetic */ Context d;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
@@ -22,8 +22,8 @@ public final /* synthetic */ class q4 implements RequestDelegate {
     public final /* synthetic */ TLObject i;
     public final /* synthetic */ TLObject j;
 
-    public /* synthetic */ q4(t5 t5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.b = t5Var;
+    public /* synthetic */ q4(s5 s5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.b = s5Var;
         this.c = callback2;
         this.d = context;
         this.e = d6Var;
@@ -46,8 +46,8 @@ public final /* synthetic */ class q4 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ q4(t5 t5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
-        this.b = t5Var;
+    public /* synthetic */ q4(s5 s5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
+        this.b = s5Var;
         this.c = callback2;
         this.d = context;
         this.e = d6Var;

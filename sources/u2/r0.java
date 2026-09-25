@@ -6,9 +6,9 @@ import java.util.Collections;
 import java.util.Map;
 import v7.n7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class r0 implements y2.j {
+public final class r0 implements y2.i {
     public final Uri a;
     public final g2.b0 b;
     public final la.h c;
@@ -34,12 +34,12 @@ public final class r0 implements y2.j {
         this.s = b(0L);
     }
 
-    @Override // y2.j
+    @Override // y2.i
     public final void D() {
         this.h = true;
     }
 
-    @Override // y2.j
+    @Override // y2.i
     public final void a() {
         g2.h hVar;
         c3.o oVar;
@@ -61,7 +61,7 @@ public final class r0 implements y2.j {
                 if (open != -1) {
                     open += j3;
                     u0 u0Var = this.x;
-                    u0Var.H.post(new p0(u0Var, 0));
+                    u0Var.H.post(new o0(u0Var, 0));
                 }
                 long j10 = open;
                 this.x.J = p3.b.d(this.b.a.getResponseHeaders());

@@ -26,7 +26,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((TranslateController) this.b).lambda$detectStoryLanguage$33((TL_stories.StoryItem) this.c, (TranslateController.StoryKey) this.d);
                 break;
             case 7:
-                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.b, (org.telegram.ui.Components.ad[]) this.c, (oi.b) this.d);
+                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.b, (org.telegram.ui.Components.zc[]) this.c, (oi.b) this.d);
                 break;
             case 8:
                 ((BetaUpdaterController) this.b).lambda$checkForUpdate$1((String) this.c, (Runnable) this.d);

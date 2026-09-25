@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ea1;
 import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class j61 extends og.b {
     public h61 H;
@@ -645,7 +645,7 @@ public class j61 extends og.b {
                     ew0 ew0Var = (ew0) view;
                     ew0Var.b(G.z, null, G.p);
                     ew0Var.setMinAllowedIndex((int) G.B);
-                    ew0Var.setCallback(new nv(G, 27));
+                    ew0Var.setCallback(new mv(G, 27));
                     break;
                 case 15:
                     org.telegram.ui.Cells.z7 z7Var = (org.telegram.ui.Cells.z7) view;
@@ -1051,7 +1051,7 @@ public class j61 extends og.b {
                     v8Var.setIcon(G.t ? R.drawable.permission_locked : 0);
                     if (i13 == 40) {
                         if (!TextUtils.isEmpty(G.o)) {
-                            v8Var.a(new wn0(21, G, v8Var), G.o.toString(), G.f);
+                            v8Var.a(new wn0(20, G, v8Var), G.o.toString(), G.f);
                             break;
                         } else {
                             LinearLayout linearLayout = v8Var.f;

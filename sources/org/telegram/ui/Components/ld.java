@@ -25,7 +25,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.mi1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ld implements Runnable {
     public final /* synthetic */ int a;
@@ -286,7 +286,7 @@ public final /* synthetic */ class ld implements Runnable {
                     sharedInstance.setAudioOutput(i18);
                     d60Var.y3 = Integer.valueOf(i18);
                 }
-                yc ycVar = new yc(d60Var.topBulletinContainer, new ai.a1());
+                xc xcVar = new xc(d60Var.topBulletinContainer, new ai.a1());
                 Resources resources = d60Var.getContext().getResources();
                 if (i18 == 2) {
                     i10 = R.drawable.msg_voice_bluetooth;
@@ -296,7 +296,7 @@ public final /* synthetic */ class ld implements Runnable {
                     VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                     i10 = (sharedInstance2 == null || !sharedInstance2.isHeadsetPlugged()) ? R.drawable.msg_voice_phone : R.drawable.msg_voice_headphones;
                 }
-                ycVar.L(resources.getDrawable(i10).mutate(), org.telegram.ui.d60.g1(i18)).k(d60Var.n1());
+                xcVar.L(resources.getDrawable(i10).mutate(), org.telegram.ui.d60.g1(i18)).k(d60Var.n1());
                 break;
             case 15:
                 org.telegram.ui.d60 d60Var2 = ((org.telegram.ui.g50) obj).b;
@@ -305,7 +305,7 @@ public final /* synthetic */ class ld implements Runnable {
                     sharedInstance3.setAudioOutput(i18);
                     d60Var2.y3 = Integer.valueOf(i18);
                 }
-                yc ycVar2 = new yc(d60Var2.topBulletinContainer, new ai.a1());
+                xc xcVar2 = new xc(d60Var2.topBulletinContainer, new ai.a1());
                 Resources resources2 = d60Var2.getContext().getResources();
                 if (i18 == 2) {
                     i11 = R.drawable.msg_voice_bluetooth;
@@ -315,7 +315,7 @@ public final /* synthetic */ class ld implements Runnable {
                     VoIPService sharedInstance4 = VoIPService.getSharedInstance();
                     i11 = (sharedInstance4 == null || !sharedInstance4.isHeadsetPlugged()) ? R.drawable.msg_voice_phone : R.drawable.msg_voice_headphones;
                 }
-                ycVar2.L(resources2.getDrawable(i11).mutate(), org.telegram.ui.d60.g1(i18)).k(d60Var2.n1());
+                xcVar2.L(resources2.getDrawable(i11).mutate(), org.telegram.ui.d60.g1(i18)).k(d60Var2.n1());
                 break;
             case 16:
                 org.telegram.ui.z60 z60Var = (org.telegram.ui.z60) obj;

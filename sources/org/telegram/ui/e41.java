@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class e41 extends org.telegram.ui.Components.vl0 {
     public final Context c;
@@ -73,15 +73,15 @@ public final class e41 extends org.telegram.ui.Components.vl0 {
         org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
         eaVar.setEnabled(a2);
         if (i10 == 2) {
-            eaVar.c(LocaleController.getString(R.string.RoundVideoOutputResolution), a4.a.o(((ki.p0) pi.e.c.a()).a, "p", new StringBuilder()), false, true);
+            eaVar.c(LocaleController.getString(R.string.RoundVideoOutputResolution), a4.a.o(((ki.q0) pi.e.c.a()).a, "p", new StringBuilder()), false, true);
             return;
         }
         if (i10 == 3) {
             String string = LocaleController.getString(R.string.RoundVideoCameraResolution);
-            ki.l0 l0Var = (ki.l0) pi.e.d.a();
-            eaVar.c(string, l0Var == ki.l0.a ? LocaleController.getString(R.string.RoundVideoCameraResolutionHigh) : l0Var == ki.l0.b ? LocaleController.getString(R.string.RoundVideoCameraResolutionMedium) : LocaleController.getString(R.string.RoundVideoCameraResolutionLow), false, true);
+            ki.m0 m0Var = (ki.m0) pi.e.d.a();
+            eaVar.c(string, m0Var == ki.m0.a ? LocaleController.getString(R.string.RoundVideoCameraResolutionHigh) : m0Var == ki.m0.b ? LocaleController.getString(R.string.RoundVideoCameraResolutionMedium) : LocaleController.getString(R.string.RoundVideoCameraResolutionLow), false, true);
         } else if (i10 == 4) {
-            eaVar.c(LocaleController.getString(R.string.RoundVideoFrameRate), a4.a.o(((ki.m0) pi.e.e.a()).a, " FPS", new StringBuilder()), false, true);
+            eaVar.c(LocaleController.getString(R.string.RoundVideoFrameRate), a4.a.o(((ki.n0) pi.e.e.a()).a, " FPS", new StringBuilder()), false, true);
         } else {
             eaVar.c(LocaleController.getString(R.string.RoundVideoBitrate), f41.U(pi.e.f.a()), false, false);
         }

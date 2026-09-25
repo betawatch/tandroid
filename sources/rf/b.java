@@ -8,10 +8,10 @@ import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.fd;
+import org.telegram.ui.Components.ed;
 import org.telegram.ui.web.q0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b {
     public final /* synthetic */ int a;
@@ -51,11 +51,11 @@ public final /* synthetic */ class b {
                                         eVar2.d = null;
                                     }
                                     cf.c cVar = eVar2.h;
-                                    if (((fd) cVar.e) != null) {
+                                    if (((ed) cVar.e) != null) {
                                         ((View) cVar.a).setBackground(null);
                                         cVar.e = null;
                                     }
-                                    if (((fd) cVar.d) == null && ((fd) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
+                                    if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
                                         bitmap2.recycle();
                                         cVar.c = null;
                                     }
@@ -130,11 +130,11 @@ public final /* synthetic */ class b {
                                         eVar22.d = null;
                                     }
                                     cf.c cVar = eVar22.h;
-                                    if (((fd) cVar.e) != null) {
+                                    if (((ed) cVar.e) != null) {
                                         ((View) cVar.a).setBackground(null);
                                         cVar.e = null;
                                     }
-                                    if (((fd) cVar.d) == null && ((fd) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
+                                    if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap2 = (Bitmap) cVar.c) != null) {
                                         bitmap2.recycle();
                                         cVar.c = null;
                                     }
@@ -185,11 +185,11 @@ public final /* synthetic */ class b {
                 break;
             case 2:
                 cf.c cVar = this.b.h;
-                if (((fd) cVar.e) != null) {
+                if (((ed) cVar.e) != null) {
                     ((View) cVar.a).setBackground(null);
                     cVar.e = null;
                 }
-                if (((fd) cVar.d) == null && ((fd) cVar.e) == null && (bitmap = (Bitmap) cVar.c) != null) {
+                if (((ed) cVar.d) == null && ((ed) cVar.e) == null && (bitmap = (Bitmap) cVar.c) != null) {
                     bitmap.recycle();
                     cVar.c = null;
                 }
@@ -227,11 +227,11 @@ public final /* synthetic */ class b {
                                         eVar22.d = null;
                                     }
                                     cf.c cVar3 = eVar22.h;
-                                    if (((fd) cVar3.e) != null) {
+                                    if (((ed) cVar3.e) != null) {
                                         ((View) cVar3.a).setBackground(null);
                                         cVar3.e = null;
                                     }
-                                    if (((fd) cVar3.d) == null && ((fd) cVar3.e) == null && (bitmap2 = (Bitmap) cVar3.c) != null) {
+                                    if (((ed) cVar3.d) == null && ((ed) cVar3.e) == null && (bitmap2 = (Bitmap) cVar3.c) != null) {
                                         bitmap2.recycle();
                                         cVar3.c = null;
                                     }

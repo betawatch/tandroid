@@ -28,14 +28,14 @@ import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class t0 implements gi.e {
     public final Context a;
     public final d6 b;
-    public final yc c;
+    public final xc c;
     public final int d;
     public final long e;
     public final TLRPC.Chat f;
@@ -52,10 +52,10 @@ public final class t0 implements gi.e {
     public final a0.i g = new a0.i();
     public ArrayList j = new ArrayList();
 
-    public t0(Context context, d6 d6Var, yc ycVar, int i10, long j3) {
+    public t0(Context context, d6 d6Var, xc xcVar, int i10, long j3) {
         this.a = context;
         this.b = d6Var;
-        this.c = ycVar;
+        this.c = xcVar;
         this.d = i10;
         this.e = j3;
         this.f = MessagesController.getInstance(i10).getChat(Long.valueOf(j3));

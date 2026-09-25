@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class g60 {
     public static void a(org.telegram.ui.ActionBar.a2 a2Var, nf.e eVar, TLObject tLObject, final int i10, Context context, TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug, TLRPC.TL_error tL_error) {
@@ -49,12 +49,12 @@ public abstract class g60 {
                 if (tL_error == null || (U = LaunchActivity.U()) == null) {
                     return;
                 }
-                org.telegram.ui.Components.yc.a0(U).d0(tL_error, false);
+                org.telegram.ui.Components.xc.a0(U).d0(tL_error, false);
                 return;
             }
             org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
             if (U2 != null) {
-                org.telegram.messenger.f0.p(R.string.LinkIsNoActive, org.telegram.ui.Components.yc.a0(U2), R.raw.error, 36);
+                org.telegram.messenger.f0.p(R.string.LinkIsNoActive, org.telegram.ui.Components.xc.a0(U2), R.raw.error, 36);
                 return;
             }
             return;

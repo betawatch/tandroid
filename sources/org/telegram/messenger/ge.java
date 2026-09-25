@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.y70;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ge implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -46,8 +46,8 @@ public final /* synthetic */ class ge implements Runnable {
                 boolean z10 = notificationsSettings.getBoolean(f0.i(j3, j10, sb2), true);
                 notificationsSettings.edit().putBoolean(f0.i(j3, j10, new StringBuilder("sound_enabled_")), !z10).apply();
                 y70Var2.u();
-                if (org.telegram.ui.Components.yc.a(m2Var)) {
-                    org.telegram.ui.Components.yc.S(z10 ? 1 : 0, m2Var, d6Var).j();
+                if (org.telegram.ui.Components.xc.a(m2Var)) {
+                    org.telegram.ui.Components.xc.S(z10 ? 1 : 0, m2Var, d6Var).j();
                     break;
                 }
                 break;

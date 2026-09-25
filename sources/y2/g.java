@@ -1,28 +1,15 @@
 package y2;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+import java.io.IOException;
+
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class g {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
+public interface g {
+    void E(i iVar, long j3, long j10, boolean z10);
 
-    public g(int i10, int i11, int i12, int i13) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-    }
+    k4.d m(i iVar, long j3, long j10, IOException iOException, int i10);
 
-    public final boolean a(int i10) {
-        if (i10 == 1) {
-            if (this.a - this.b <= 1) {
-                return false;
-            }
-        } else if (this.c - this.d <= 1) {
-            return false;
-        }
-        return true;
-    }
+    void n(i iVar, long j3, long j10, int i10);
+
+    void o(i iVar, long j3, long j10);
 }

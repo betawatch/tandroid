@@ -71,7 +71,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PopupNotificationActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class NotificationsController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     public static final String EXTRA_VOICE_REPLY = "extra_voice_reply";
@@ -148,7 +148,7 @@ public class NotificationsController extends BaseController implements Notificat
     private static final DispatchQueue notificationsQueue = new DispatchQueue("notificationsQueue");
     public static long globalSecretChatId = DialogObject.makeEncryptedDialogId(1);
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class 1NotificationHolder {
         TLRPC.Chat chat;
         long dialogId;
@@ -203,7 +203,7 @@ public class NotificationsController extends BaseController implements Notificat
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class DialogKey {
         final long dialogId;
         final boolean story;
@@ -216,7 +216,7 @@ public class NotificationsController extends BaseController implements Notificat
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class StoryNotification {
         public long date;
         final HashMap<Integer, Pair<Long, Long>> dateByIds;

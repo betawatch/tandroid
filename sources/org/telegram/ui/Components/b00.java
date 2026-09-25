@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b00 implements ll0, ml0 {
     public final /* synthetic */ l00 a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class b00 implements ll0, ml0 {
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0208  */
     /* JADX WARN: Removed duplicated region for block: B:103:0x020f  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x023b  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x023a  */
     /* JADX WARN: Removed duplicated region for block: B:113:0x0216  */
     /* JADX WARN: Removed duplicated region for block: B:114:0x020b  */
     /* JADX WARN: Removed duplicated region for block: B:116:0x01eb  */
@@ -162,19 +162,19 @@ public final /* synthetic */ class b00 implements ll0, ml0 {
                                         }
                                     }
                                     y70 H = y70.H(qyVar, j00Var);
-                                    dw dwVar = new dw(3, (byte) 0);
+                                    cw cwVar = new cw(3, (byte) 0);
                                     Paint paint = new Paint(1);
-                                    dwVar.c = paint;
-                                    dwVar.b = new RectF();
+                                    cwVar.c = paint;
+                                    cwVar.b = new RectF();
                                     paint.setColor(pwVar.b.getThemedColor(org.telegram.ui.ActionBar.h6.G8));
-                                    H.W(dwVar);
+                                    H.W(cwVar);
                                     H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.aj(pwVar, 23), qyVar.getMessagesController().getDialogFilters().size() > 1);
                                     boolean z17 = z10;
                                     H.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new ci.y0(pwVar, z17, dialogFilter, 25), false);
                                     H.l(z12 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z12 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new ci.y0(pwVar, arrayList, z12, 26), dialogFilter == null && !arrayList.isEmpty());
-                                    H.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.tt(8, pwVar, arrayList), z16);
+                                    H.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.tt(7, pwVar, arrayList), z16);
                                     H.l(R.drawable.msg_share, org.telegram.ui.b10.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.sq(pwVar, zArr, dialogFilter2, 3), z11);
-                                    H.m(!z17, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.tt(9, pwVar, dialogFilter));
+                                    H.m(!z17, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.tt(8, pwVar, dialogFilter));
                                     H.s = 96;
                                     H.i = 3;
                                     H.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
@@ -194,21 +194,21 @@ public final /* synthetic */ class b00 implements ll0, ml0 {
                             while (i11 < arrayList.size()) {
                             }
                             y70 H2 = y70.H(qyVar, j00Var);
-                            dw dwVar2 = new dw(3, (byte) 0);
+                            cw cwVar2 = new cw(3, (byte) 0);
                             Paint paint2 = new Paint(1);
-                            dwVar2.c = paint2;
-                            dwVar2.b = new RectF();
+                            cwVar2.c = paint2;
+                            cwVar2.b = new RectF();
                             paint2.setColor(pwVar.b.getThemedColor(org.telegram.ui.ActionBar.h6.G8));
-                            H2.W(dwVar2);
+                            H2.W(cwVar2);
                             H2.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.aj(pwVar, 23), qyVar.getMessagesController().getDialogFilters().size() > 1);
                             boolean z172 = z10;
                             H2.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new ci.y0(pwVar, z172, dialogFilter, 25), false);
                             if (dialogFilter == null) {
                             }
                             H2.l(z12 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z12 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new ci.y0(pwVar, arrayList, z12, 26), dialogFilter == null && !arrayList.isEmpty());
-                            H2.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.tt(8, pwVar, arrayList), z162);
+                            H2.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.tt(7, pwVar, arrayList), z162);
                             H2.l(R.drawable.msg_share, org.telegram.ui.b10.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.sq(pwVar, zArr, dialogFilter2, 3), z11);
-                            H2.m(!z172, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.tt(9, pwVar, dialogFilter));
+                            H2.m(!z172, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.tt(8, pwVar, dialogFilter));
                             H2.s = 96;
                             H2.i = 3;
                             H2.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
@@ -231,21 +231,21 @@ public final /* synthetic */ class b00 implements ll0, ml0 {
                     while (i11 < arrayList.size()) {
                     }
                     y70 H22 = y70.H(qyVar, j00Var);
-                    dw dwVar22 = new dw(3, (byte) 0);
+                    cw cwVar22 = new cw(3, (byte) 0);
                     Paint paint22 = new Paint(1);
-                    dwVar22.c = paint22;
-                    dwVar22.b = new RectF();
+                    cwVar22.c = paint22;
+                    cwVar22.b = new RectF();
                     paint22.setColor(pwVar.b.getThemedColor(org.telegram.ui.ActionBar.h6.G8));
-                    H22.W(dwVar22);
+                    H22.W(cwVar22);
                     H22.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.aj(pwVar, 23), qyVar.getMessagesController().getDialogFilters().size() > 1);
                     boolean z1722 = z10;
                     H22.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new ci.y0(pwVar, z1722, dialogFilter, 25), false);
                     if (dialogFilter == null) {
                     }
                     H22.l(z12 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z12 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new ci.y0(pwVar, arrayList, z12, 26), dialogFilter == null && !arrayList.isEmpty());
-                    H22.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.tt(8, pwVar, arrayList), z1622);
+                    H22.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.tt(7, pwVar, arrayList), z1622);
                     H22.l(R.drawable.msg_share, org.telegram.ui.b10.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.sq(pwVar, zArr2, dialogFilter2, 3), z11);
-                    H22.m(!z1722, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.tt(9, pwVar, dialogFilter));
+                    H22.m(!z1722, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.tt(8, pwVar, dialogFilter));
                     H22.s = 96;
                     H22.i = 3;
                     H22.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));

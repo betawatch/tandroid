@@ -15,9 +15,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class c1 {
     public static boolean a(MessageObject messageObject) {
@@ -101,7 +101,7 @@ public abstract /* synthetic */ class c1 {
     }
 
     public static void r(FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.TL_error tL_error, boolean z10) {
-        new yc(frameLayout, d6Var).d0(tL_error, z10);
+        new xc(frameLayout, d6Var).d0(tL_error, z10);
     }
 
     public static void s(String str, int i10, ArrayList arrayList) {

@@ -35,7 +35,7 @@ import org.telegram.ui.Components.hw0;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.tq0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ int a;
@@ -466,23 +466,23 @@ public final /* synthetic */ class s2 implements Runnable {
                         qVar.a = size;
                         qVar.f = i23;
                         qVar.g = z12;
-                        SurfaceTexture surfaceTexture = qVar.m;
+                        SurfaceTexture surfaceTexture = qVar.n;
                         if (surfaceTexture != null) {
                             surfaceTexture.setDefaultBufferSize(size.getWidth(), size.getHeight());
                         }
-                        qVar.e();
-                        ki.a0 a0Var = qVar.w;
+                        qVar.g();
+                        ki.a0 a0Var = qVar.x;
                         if (a0Var != null) {
-                            a0Var.u(size, i23);
+                            a0Var.v(size, i23);
                         }
-                        ki.l lVar = qVar.e;
+                        ki.m mVar = qVar.e;
                         StringBuilder sb2 = new StringBuilder("GL input updated: input=");
                         sb2.append(size);
                         sb2.append(", crop=");
                         sb2.append(i23);
                         sb2.append(", filter=");
                         sb2.append(qVar.f == qVar.c ? "NEAREST" : "LINEAR");
-                        lVar.b(sb2.toString());
+                        mVar.b(sb2.toString());
                     } catch (Throwable th7) {
                         countDownLatch.countDown();
                         throw th7;

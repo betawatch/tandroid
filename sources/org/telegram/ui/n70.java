@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class n70 extends org.telegram.ui.Components.vl0 {
     public final Context c;
@@ -65,7 +65,7 @@ public final class n70 extends org.telegram.ui.Components.vl0 {
         } else {
             o70Var.b.e(true, true);
         }
-        tt ttVar2 = new tt(28, n70Var, str);
+        tt ttVar2 = new tt(27, n70Var, str);
         n70Var.f = ttVar2;
         AndroidUtilities.runOnUIThread(ttVar2, 300L);
     }

@@ -58,7 +58,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class j8 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public static j8 T0;
@@ -100,7 +100,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
     public final b8 T;
     public final org.telegram.ui.ActionBar.h5 U;
     public final org.telegram.ui.ActionBar.u0 V;
-    public final fd W;
+    public final ed W;
     public final org.telegram.ui.ActionBar.a1 X;
     public boolean Y;
     public final org.telegram.ui.ActionBar.e1[] Z;
@@ -268,9 +268,9 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
         u0Var.setAdditionalYOffset(-AndroidUtilities.dp(224.0f));
         u0Var.setContentDescription(LocaleController.getString(R.string.AccDescrPlayerSpeed));
         u0Var.setDelegate(new z6(this, i17));
-        fd fdVar = new fd();
-        this.W = fdVar;
-        u0Var.setIcon(fdVar);
+        ed edVar = new ed();
+        this.W = edVar;
+        u0Var.setIcon(edVar);
         float[] fArr = {1.0f, 1.5f, 2.0f};
         org.telegram.ui.ActionBar.a1 a1Var = new org.telegram.ui.ActionBar.a1(getContext(), d6Var);
         this.X = a1Var;
@@ -661,7 +661,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
         }
         j8Var.v0(playingMessageObject, false, new ai.f(24), false);
         j8Var.y0(false);
-        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileUnsaved, new yc((FrameLayout) j8Var.containerView, d6Var), R.raw.ic_delete, 36);
+        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileUnsaved, new xc((FrameLayout) j8Var.containerView, d6Var), R.raw.ic_delete, 36);
     }
 
     public static void E(j8 j8Var, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -671,7 +671,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
         }
         j8Var.v0(playingMessageObject, true, new ai.f(24), false);
         j8Var.y0(true);
-        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileSaved, new yc((FrameLayout) j8Var.containerView, d6Var), R.raw.saved_messages, 36);
+        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileSaved, new xc((FrameLayout) j8Var.containerView, d6Var), R.raw.saved_messages, 36);
     }
 
     public static void F(j8 j8Var, float[] fArr) {
@@ -713,7 +713,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
     }
 
     public static void G(j8 j8Var) {
-        new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider).t(LocaleController.formatString(R.string.UnknownErrorCode, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+        new xc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider).t(LocaleController.formatString(R.string.UnknownErrorCode, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
     }
 
     public static void H(j8 j8Var, TLRPC.TL_error tL_error) {
@@ -789,7 +789,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
             }
             i10 = 36;
             y70Var.u();
-            org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
+            org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new xc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
         }
         k10 = org.telegram.messenger.f0.k(messageObject);
         if (k10 != null) {
@@ -803,13 +803,13 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
         org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
         if (R != null) {
             i10 = 36;
-            yc.a0(R).Q(R.raw.forward, 36, clientUserId == UserConfig.getInstance(j8Var.currentAccount).getClientUserId() ? LocaleController.getString(R.string.FwdMessageToSavedMessages) : clientUserId > 0 ? LocaleController.formatString(R.string.FwdMessageToUser, DialogObject.getShortName(clientUserId)) : LocaleController.formatString(R.string.FwdMessageToGroup, DialogObject.getShortName(clientUserId))).j();
+            xc.a0(R).Q(R.raw.forward, 36, clientUserId == UserConfig.getInstance(j8Var.currentAccount).getClientUserId() ? LocaleController.getString(R.string.FwdMessageToSavedMessages) : clientUserId > 0 ? LocaleController.formatString(R.string.FwdMessageToUser, DialogObject.getShortName(clientUserId)) : LocaleController.formatString(R.string.FwdMessageToGroup, DialogObject.getShortName(clientUserId))).j();
             y70Var.u();
-            org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
+            org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new xc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
         }
         i10 = 36;
         y70Var.u();
-        org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
+        org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new xc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
     }
 
     public static void P(j8 j8Var) {
@@ -887,7 +887,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
     }
 
     public static void n(j8 j8Var) {
-        new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider).t(LocaleController.formatString(R.string.UnknownErrorCode, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
+        new xc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider).t(LocaleController.formatString(R.string.UnknownErrorCode, "CLIENT_MESSAGE_NOT_FOUND"), null).j();
     }
 
     public static /* synthetic */ void o(j8 j8Var, org.telegram.ui.ActionBar.a2 a2Var, TLObject tLObject) {
@@ -940,7 +940,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
 
     public static void q(j8 j8Var, y70 y70Var) {
         j8Var.y0(true);
-        new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider).Q(R.raw.saved_messages, 36, LocaleController.getString(R.string.AudioSaveToMyProfileSaved)).j();
+        new xc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider).Q(R.raw.saved_messages, 36, LocaleController.getString(R.string.AudioSaveToMyProfileSaved)).j();
         y70Var.u();
     }
 
@@ -1047,7 +1047,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
         qyVar.finishFragment();
         org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
         if (R != null) {
-            yc.a0(R).Q(R.raw.forward, 36, (arrayList2.size() == 1 && ((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId == UserConfig.getInstance(j8Var.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.FwdMessageToSavedMessages) : (arrayList2.size() != 1 || ((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId <= 0) ? (arrayList2.size() != 1 || ((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId >= 0) ? LocaleController.formatPluralStringComma("FwdMessageToManyChats", arrayList2.size()) : LocaleController.formatString(R.string.FwdMessageToGroup, DialogObject.getShortName(((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId)) : LocaleController.formatString(R.string.FwdMessageToUser, DialogObject.getShortName(((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId))).j();
+            xc.a0(R).Q(R.raw.forward, 36, (arrayList2.size() == 1 && ((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId == UserConfig.getInstance(j8Var.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.FwdMessageToSavedMessages) : (arrayList2.size() != 1 || ((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId <= 0) ? (arrayList2.size() != 1 || ((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId >= 0) ? LocaleController.formatPluralStringComma("FwdMessageToManyChats", arrayList2.size()) : LocaleController.formatString(R.string.FwdMessageToGroup, DialogObject.getShortName(((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId)) : LocaleController.formatString(R.string.FwdMessageToUser, DialogObject.getShortName(((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId))).j();
         }
     }
 
@@ -1088,7 +1088,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
         j8Var.s.l();
         y70Var.u();
         j8Var.y0(false);
-        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileUnsaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.ic_delete, 36);
+        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileUnsaved, new xc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.ic_delete, 36);
     }
 
     public static void w(j8 j8Var, TLRPC.TL_error tL_error) {
@@ -1098,7 +1098,7 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
     public static void x(j8 j8Var) {
         FrameLayout frameLayout = (FrameLayout) j8Var.containerView;
         org.telegram.ui.ActionBar.d6 d6Var = j8Var.resourcesProvider;
-        new yc(frameLayout, d6Var).o(xc.F, d6Var).j();
+        new xc(frameLayout, d6Var).o(wc.F, d6Var).j();
     }
 
     public static /* synthetic */ void y(final j8 j8Var, boolean z10, MessageObject messageObject, final boolean z11, final Runnable runnable, long j3, TLRPC.Document document, TLRPC.TL_error tL_error) {
@@ -1254,10 +1254,10 @@ public final class j8 extends org.telegram.ui.ActionBar.e3 implements Notificati
         org.telegram.ui.ActionBar.u0 u0Var = this.V;
         if (u0Var != null) {
             int themedColor = getThemedColor(Math.abs(MediaController.getInstance().getPlaybackSpeed(true) - 1.0f) < 0.05f ? org.telegram.ui.ActionBar.h6.x7 : org.telegram.ui.ActionBar.h6.Qh);
-            fd fdVar = this.W;
-            if (fdVar != null) {
-                ((o6) fdVar.c).r(themedColor);
-                Paint paint = (Paint) fdVar.b;
+            ed edVar = this.W;
+            if (edVar != null) {
+                ((o6) edVar.c).r(themedColor);
+                Paint paint = (Paint) edVar.b;
                 if (paint != null) {
                     paint.setColor(themedColor);
                 }

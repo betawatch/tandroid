@@ -2,7 +2,7 @@ package u2;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class s0 implements b1 {
     public final int a;
@@ -18,19 +18,19 @@ public final class s0 implements b1 {
         int i10 = this.a;
         u0 u0Var = this.b;
         u0Var.K[i10].z();
-        y2.m mVar = u0Var.x;
+        y2.l lVar = u0Var.x;
         int L3 = u0Var.d.L3(u0Var.U);
-        IOException iOException = mVar.c;
+        IOException iOException = lVar.c;
         if (iOException != null) {
             throw iOException;
         }
-        y2.i iVar = mVar.b;
-        if (iVar != null) {
+        y2.h hVar = lVar.b;
+        if (hVar != null) {
             if (L3 == Integer.MIN_VALUE) {
-                L3 = iVar.a;
+                L3 = hVar.a;
             }
-            IOException iOException2 = iVar.e;
-            if (iOException2 != null && iVar.f > L3) {
+            IOException iOException2 = hVar.e;
+            if (iOException2 != null && hVar.f > L3) {
                 throw iOException2;
             }
         }

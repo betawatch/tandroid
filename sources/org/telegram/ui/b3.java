@@ -12,9 +12,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
-public final class b3 implements org.telegram.ui.Cells.ba, mj0, org.telegram.ui.Components.mz0 {
+public final class b3 implements org.telegram.ui.Cells.ba, lj0, org.telegram.ui.Components.mz0 {
     public int E = -1;
     public int F = -1;
     public int G = -1;
@@ -166,7 +166,7 @@ public final class b3 implements org.telegram.ui.Cells.ba, mj0, org.telegram.ui.
         return this.d;
     }
 
-    @Override // org.telegram.ui.mj0
+    @Override // org.telegram.ui.lj0
     public final View getParentView() {
         View view = this.L;
         return view != null ? view : this.b;

@@ -12,7 +12,7 @@ import org.telegram.ui.gn0;
 import org.telegram.ui.in;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e2.h {
     public final /* synthetic */ int a = 3;
@@ -33,7 +33,7 @@ public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e
     @Override // e2.h
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.c;
-        ((u2.k0) obj).f(aVar.b, (u2.f0) aVar.c, (u2.t) this.d, (u2.b0) this.e, (IOException) this.f, this.b);
+        ((u2.j0) obj).f(aVar.b, (u2.f0) aVar.c, (u2.t) this.d, (u2.b0) this.e, (IOException) this.f, this.b);
     }
 
     @Override // org.telegram.ui.ActionBar.z1

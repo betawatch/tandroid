@@ -9,14 +9,14 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.kj0;
+import org.telegram.ui.jj0;
 import org.telegram.ui.ky;
 import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b0 implements kj0, ky {
+public final /* synthetic */ class b0 implements jj0, ky {
     public final /* synthetic */ b1 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -41,7 +41,7 @@ public final /* synthetic */ class b0 implements kj0, ky {
         return false;
     }
 
-    @Override // org.telegram.ui.kj0
+    @Override // org.telegram.ui.jj0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;

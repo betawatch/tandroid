@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.q71;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class DownloadController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     public static final int AUTODOWNLOAD_TYPE_AUDIO = 2;
@@ -71,7 +71,7 @@ public class DownloadController extends BaseController implements NotificationCe
     private ArrayList<DownloadObject> videoDownloadQueue;
     public Preset wifiPreset;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public interface FileDownloadProgressListener {
         int getObserverTag();
 
@@ -1419,7 +1419,7 @@ public class DownloadController extends BaseController implements NotificationCe
         this.observersByTag.put(fileDownloadProgressListener.getObserverTag(), str);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class Preset {
         public boolean enabled;
         public boolean lessCallData;

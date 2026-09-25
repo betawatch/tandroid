@@ -7,11 +7,11 @@ import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class lh0 {
     public int a;
-    public final zc b;
+    public final yc b;
     public final e6 e;
     public Drawable i;
     public Drawable j;
@@ -38,7 +38,7 @@ public final class lh0 {
 
     public lh0(oh0 oh0Var) {
         this.y = oh0Var;
-        this.b = new zc(oh0Var);
+        this.b = new yc(oh0Var);
         this.e = new e6(oh0Var, 0L, 250L, rr.f);
     }
 
@@ -110,7 +110,7 @@ public final class lh0 {
 
     public lh0(oh0 oh0Var, mh0 mh0Var) {
         this.y = oh0Var;
-        this.b = new zc(oh0Var);
+        this.b = new yc(oh0Var);
         this.e = new e6(oh0Var, 0L, 250L, rr.f);
         d(0, mh0Var.b, mh0Var.c);
         c(LocaleController.getString(mh0Var.a));

@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class UserInfoActivity extends org.telegram.ui.Components.m61 implements NotificationCenter.NotificationCenterDelegate {
     public String E;
@@ -68,7 +68,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.m61 implements 
         if (tL_error == null) {
             if (tLObject2 instanceof TLRPC.TL_boolFalse) {
                 userInfoActivity.v.a(0.0f);
-                org.telegram.messenger.ok.p(R.string.UnknownError, org.telegram.ui.Components.yc.a0(userInfoActivity), null);
+                org.telegram.messenger.ok.p(R.string.UnknownError, org.telegram.ui.Components.xc.a0(userInfoActivity), null);
                 return;
             }
             userInfoActivity.P = true;
@@ -83,7 +83,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.m61 implements 
         userInfoActivity.v.a(0.0f);
         boolean z10 = tLObject instanceof TL_account.updateBirthday;
         if (!z10 || (str = tL_error.text) == null || !str.startsWith("FLOOD_WAIT_")) {
-            org.telegram.ui.Components.yc.b0(tL_error);
+            org.telegram.ui.Components.xc.b0(tL_error);
         } else if (userInfoActivity.getParentActivity() != null) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(userInfoActivity.getParentActivity(), 0, userInfoActivity.resourceProvider);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle);

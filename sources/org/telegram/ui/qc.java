@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class qc extends View {
     public final Paint a;
@@ -20,7 +20,7 @@ public final class qc extends View {
     public final Path f;
     public boolean h;
     public boolean n;
-    public final org.telegram.ui.Components.zc r;
+    public final org.telegram.ui.Components.yc r;
     public boolean s;
     public final org.telegram.ui.Components.e6 v;
     public final /* synthetic */ rc w;
@@ -36,7 +36,7 @@ public final class qc extends View {
         this.d = new Paint(1);
         this.e = new Path();
         this.f = new Path();
-        this.r = new org.telegram.ui.Components.zc(this);
+        this.r = new org.telegram.ui.Components.yc(this);
         this.v = new org.telegram.ui.Components.e6(this, 0L, 320L, org.telegram.ui.Components.rr.h);
         paint.setStyle(Paint.Style.STROKE);
     }

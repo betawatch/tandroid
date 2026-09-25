@@ -84,7 +84,7 @@ import org.telegram.ui.ar0;
 import org.telegram.ui.st0;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCenter.NotificationCenterDelegate {
     public final g1 A0;
@@ -1263,7 +1263,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         view.setScaleX(scaleX * 0.5f);
         view.setScaleY(0.5f * scaleY);
         view.setAlpha(0.0f);
-        view.animate().scaleX(scaleX).scaleY(scaleY).alpha(1.0f).setInterpolator(new OvershootInterpolator(3.0f)).setDuration(240L).withEndAction(new org.telegram.ui.web.f1(11, this, (y1) view)).start();
+        view.animate().scaleX(scaleX).scaleY(scaleY).alpha(1.0f).setInterpolator(new OvershootInterpolator(3.0f)).setDuration(240L).withEndAction(new org.telegram.ui.web.o1(10, this, (y1) view)).start();
     }
 
     @Override // qg.n1

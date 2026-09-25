@@ -9,9 +9,9 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class u3 {
     public final RectF a = new RectF();
@@ -24,7 +24,7 @@ public final class u3 {
     public final float[] h;
     public float i;
     public ValueAnimator j;
-    public final zc k;
+    public final yc k;
     public final Paint l;
     public final RectF m;
     public final Path n;
@@ -50,7 +50,7 @@ public final class u3 {
         this.b = v3Var;
         this.c = l3Var;
         this.d = j3Var;
-        this.k = new zc(v3Var);
+        this.k = new yc(v3Var);
         paint.setColor(l3Var.r);
     }
 

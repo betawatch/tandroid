@@ -12,7 +12,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yi implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class yi implements Utilities.CallbackReturn {
                 imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new fq(svgThumb), (Object) null, 0);
                 view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.q8(imageReceiver, 1));
                 imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
-                return new fd(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
+                return new ed(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
             case 2:
                 int i10 = ((SparseIntArray) this.b).get(((Integer) obj).intValue(), -1);
                 if (i10 == -1) {

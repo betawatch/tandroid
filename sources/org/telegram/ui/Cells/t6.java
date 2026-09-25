@@ -23,12 +23,11 @@ import org.telegram.ui.Components.ShutterButton;
 import org.telegram.ui.Components.b70;
 import org.telegram.ui.Components.c70;
 import org.telegram.ui.Components.ce0;
-import org.telegram.ui.Components.cv;
 import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.f00;
 import org.telegram.ui.Components.fc0;
+import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.fu;
-import org.telegram.ui.Components.gd;
 import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.ku;
 import org.telegram.ui.Components.l00;
@@ -44,6 +43,7 @@ import org.telegram.ui.Components.u81;
 import org.telegram.ui.Components.v50;
 import org.telegram.ui.Components.v81;
 import org.telegram.ui.Components.vn;
+import org.telegram.ui.Components.vw;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xm0;
 import org.telegram.ui.Components.yl0;
@@ -52,7 +52,7 @@ import org.telegram.ui.pw;
 import org.telegram.ui.v30;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class t6 implements Runnable {
     public final /* synthetic */ int a;
@@ -196,10 +196,10 @@ public final class t6 implements Runnable {
                 }
                 return;
             case 6:
-                gd gdVar = (gd) this.b;
-                gdVar.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                gdVar.f.performHapticFeedback(0);
-                Runnable runnable = gdVar.j;
+                fd fdVar = (fd) this.b;
+                fdVar.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                fdVar.f.performHapticFeedback(0);
+                Runnable runnable = fdVar.j;
                 if (runnable != null) {
                     runnable.run();
                     return;
@@ -320,7 +320,7 @@ public final class t6 implements Runnable {
                 TextureView textureView = ((v50) this.b).H0.q0;
                 if (textureView != null) {
                     try {
-                        AndroidUtilities.runOnUIThread(new cv(14, this, textureView.getBitmap(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f))));
+                        AndroidUtilities.runOnUIThread(new vw(13, this, textureView.getBitmap(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f))));
                         return;
                     } catch (Exception e) {
                         FileLog.e(e);

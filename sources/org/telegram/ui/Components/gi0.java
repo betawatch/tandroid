@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class gi0 extends View {
     public int E;
@@ -47,7 +47,7 @@ public final class gi0 extends View {
     public final Paint v;
     public final Paint w;
     public final Path x;
-    public final zc y;
+    public final yc y;
 
     public gi0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
@@ -63,7 +63,7 @@ public final class gi0 extends View {
         this.v = new Paint(1);
         this.w = new Paint(1);
         this.x = new Path();
-        this.y = new zc(this);
+        this.y = new yc(this);
         this.E = -1;
         this.a = d6Var;
         this.r = context.getResources().getDrawable(R.drawable.files_music).mutate();
@@ -106,22 +106,22 @@ public final class gi0 extends View {
         }
         int action = motionEvent.getAction();
         RectF rectF = this.s;
-        zc zcVar = this.y;
+        yc ycVar = this.y;
         if (action == 0) {
-            zcVar.c(rectF.contains(motionEvent.getX(), motionEvent.getY()));
-        } else if (motionEvent.getAction() == 2 && zcVar.h) {
+            ycVar.c(rectF.contains(motionEvent.getX(), motionEvent.getY()));
+        } else if (motionEvent.getAction() == 2 && ycVar.h) {
             if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                zcVar.c(false);
+                ycVar.c(false);
             }
         } else if (motionEvent.getAction() == 3) {
-            zcVar.c(false);
+            ycVar.c(false);
         } else if (motionEvent.getAction() == 1) {
-            if (zcVar.h) {
+            if (ycVar.h) {
                 performClick();
             }
-            zcVar.c(false);
+            ycVar.c(false);
         }
-        return zcVar.h;
+        return ycVar.h;
     }
 
     @Override // android.view.View

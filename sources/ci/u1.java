@@ -54,7 +54,7 @@ import org.telegram.ui.oo0;
 import org.telegram.ui.wn;
 import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
@@ -162,17 +162,17 @@ public final /* synthetic */ class u1 implements Runnable {
                 ii.k4.f((org.telegram.ui.ActionBar.m2) this.c, (Context) this.d, (org.telegram.ui.ActionBar.d6) this.e, (ii.u3) this.f, this.b);
                 return;
             case 4:
-                ki.r0 r0Var = (ki.r0) this.c;
+                ki.s0 s0Var = (ki.s0) this.c;
                 boolean z14 = this.b;
                 ?? r32 = (ki.t) this.d;
-                ki.n0 n0Var = (ki.n0) this.e;
+                ki.o0 o0Var = (ki.o0) this.e;
                 File file3 = (File) this.f;
-                r0Var.getClass();
+                s0Var.getClass();
                 long nanoTime = System.nanoTime();
                 try {
                     try {
-                        r0Var.f();
-                        long j3 = r0Var.D;
+                        s0Var.f();
+                        long j3 = s0Var.D;
                         if (z14) {
                             try {
                                 synchronized (r32) {
@@ -185,17 +185,17 @@ public final /* synthetic */ class u1 implements Runnable {
                                         throw th2;
                                     }
                                 }
-                                r0Var.f();
-                                r0Var.j(n0Var, 1);
+                                s0Var.f();
+                                s0Var.j(o0Var, 1);
                                 file = r32.a;
                                 try {
-                                    r0Var.c(true);
-                                    a3.z a2 = w7.k.a(file3, r0Var.P, r0Var.F, r0Var.G, true);
+                                    s0Var.c(true);
+                                    a3.z a2 = w7.k.a(file3, s0Var.P, s0Var.F, s0Var.G, true);
                                     j3 = a2.b;
-                                    r0Var.l.b("resume trim remux completed: requested=" + r0Var.F + ".." + r0Var.G + ", actualStartMs=" + a2.a + ", retainedDurationMs=" + j3 + ", outputSize=" + r0Var.P.a.length() + ", elapsedMs=" + ki.r0.e(nanoTime));
+                                    s0Var.l.b("resume trim remux completed: requested=" + s0Var.F + ".." + s0Var.G + ", actualStartMs=" + a2.a + ", retainedDurationMs=" + j3 + ", outputSize=" + s0Var.P.a.length() + ", elapsedMs=" + ki.s0.e(nanoTime));
                                 } catch (Exception e7) {
                                     e = e7;
-                                    r0Var.h.post(new ki.c0(r0Var, e, 1));
+                                    s0Var.h.post(new ki.c0(s0Var, e, 1));
                                     if (file3 != null) {
                                         w7.k.c(file3);
                                     }
@@ -208,7 +208,7 @@ public final /* synthetic */ class u1 implements Runnable {
                             } catch (Exception e10) {
                                 e = e10;
                                 file = null;
-                                r0Var.h.post(new ki.c0(r0Var, e, 1));
+                                s0Var.h.post(new ki.c0(s0Var, e, 1));
                                 if (file3 != null) {
                                 }
                                 if (file == null) {
@@ -229,12 +229,12 @@ public final /* synthetic */ class u1 implements Runnable {
                         } else {
                             file = null;
                         }
-                        r0Var.f();
-                        r0Var.Q = null;
+                        s0Var.f();
+                        s0Var.Q = null;
                         if (!z14) {
-                            r0Var.l.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + ki.r0.e(nanoTime));
+                            s0Var.l.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + ki.s0.e(nanoTime));
                         }
-                        r0Var.h.post(new ki.d0(r0Var, j3, 0));
+                        s0Var.h.post(new ki.d0(s0Var, j3, 0));
                         if (file3 != null) {
                             w7.k.c(file3);
                         }
@@ -613,12 +613,12 @@ public final /* synthetic */ class u1 implements Runnable {
         this.f = obj4;
     }
 
-    public /* synthetic */ u1(ki.r0 r0Var, boolean z10, ki.t tVar, ki.n0 n0Var, File file) {
+    public /* synthetic */ u1(ki.s0 s0Var, boolean z10, ki.t tVar, ki.o0 o0Var, File file) {
         this.a = 4;
-        this.c = r0Var;
+        this.c = s0Var;
         this.b = z10;
         this.d = tVar;
-        this.e = n0Var;
+        this.e = o0Var;
         this.f = file;
     }
 

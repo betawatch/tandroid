@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class q extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final TL_aicompose.AiComposeTone X;
@@ -215,7 +215,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
                 }
                 sb2.append(str);
                 sb2.append(TextUtils.isEmpty(publicUsername) ? LocaleController.formatString(R.string.AIEditorCreatedBy, UserObject.getUserName(user)) : LocaleController.formatString(R.string.AIEditorCreatedBy, v7.j.g("@", publicUsername)));
-                arrayList.add(v51.B(AndroidUtilities.replaceSingleLink(sb2.toString(), qVar.getThemedColor(org.telegram.ui.ActionBar.h6.gc), new org.telegram.ui.dh(26, qVar, tL_aiComposeTone))));
+                arrayList.add(v51.B(AndroidUtilities.replaceSingleLink(sb2.toString(), qVar.getThemedColor(org.telegram.ui.ActionBar.h6.gc), new org.telegram.ui.fh(25, qVar, tL_aiComposeTone))));
             }
         }
         arrayList.add(v51.C(AndroidUtilities.dp(32.0f)));
@@ -226,7 +226,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
         qVar.e0.setLoading(false);
         if (tL_error != null) {
             if ("TONES_SAVED_TOO_MANY".equalsIgnoreCase(tL_error.text)) {
-                e0.o0(qVar.currentAccount, new yc(frameLayout, d6Var));
+                e0.o0(qVar.currentAccount, new xc(frameLayout, d6Var));
                 return;
             } else {
                 org.telegram.ui.Cells.c1.r(frameLayout, d6Var, tL_error, false);
@@ -237,7 +237,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
         qVar.dismiss();
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
         if (U != null) {
-            yc.a0(U).p(aiComposeTone.emoji_id, LocaleController.getString(R.string.AIEditorToneAddedTitle), LocaleController.formatString(R.string.AIEditorToneAddedText, aiComposeTone.title)).j();
+            xc.a0(U).p(aiComposeTone.emoji_id, LocaleController.getString(R.string.AIEditorToneAddedTitle), LocaleController.formatString(R.string.AIEditorToneAddedText, aiComposeTone.title)).j();
         }
     }
 

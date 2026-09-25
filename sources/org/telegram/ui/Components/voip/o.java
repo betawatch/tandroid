@@ -24,11 +24,11 @@ import org.telegram.ui.rg;
 import org.telegram.ui.wl0;
 import yh.k7;
 import yh.m7;
+import yh.v5;
 import yh.w3;
-import yh.w5;
 import yh.w7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -224,7 +224,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ((w3) this.b).dismiss();
                 break;
             case 26:
-                ((w5) this.b).run();
+                ((v5) this.b).run();
                 break;
             case 27:
                 if (((k7) ((j20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {

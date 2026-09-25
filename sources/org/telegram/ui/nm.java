@@ -23,7 +23,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class nm implements org.telegram.ui.Components.og {
     public int a;
@@ -275,7 +275,7 @@ public final class nm implements org.telegram.ui.Components.og {
                 }
             }
             if (z11) {
-                org.telegram.ui.Components.qc M = org.telegram.ui.Components.yc.a0(wnVar).M(LocaleController.getString(R.string.SwipeToReplyHint), LocaleController.getString(R.string.SwipeToReplyHintMessage), R.raw.hint_swipe_reply);
+                org.telegram.ui.Components.qc M = org.telegram.ui.Components.xc.a0(wnVar).M(LocaleController.getString(R.string.SwipeToReplyHint), LocaleController.getString(R.string.SwipeToReplyHintMessage), R.raw.hint_swipe_reply);
                 org.telegram.ui.Components.lj0 lj0Var = ((org.telegram.ui.Components.nc) M.e).a;
                 lj0Var.setScaleX(1.8f);
                 lj0Var.setScaleY(1.8f);

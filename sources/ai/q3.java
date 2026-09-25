@@ -11,8 +11,8 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.t00;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
@@ -20,7 +20,7 @@ import org.telegram.ui.ba1;
 import org.telegram.ui.ca1;
 import org.telegram.ui.tt;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -104,7 +104,7 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                     return false;
                 }
                 if (AndroidUtilities.addToClipboard(messageObject.sponsoredUrl)) {
-                    new yc(org.telegram.ui.Components.lb.a(photoViewer.E), dVar).k(false).j();
+                    new xc(org.telegram.ui.Components.lb.a(photoViewer.E), dVar).k(false).j();
                 }
                 return true;
             case 5:

@@ -1,100 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.view.MotionEvent;
+import android.widget.TextView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
-public abstract class rv implements NotificationCenter.NotificationCenterDelegate {
-    public final ArrayList a;
-    public ArrayList b;
-    public ArrayList[] c;
-    public final int d;
-    public boolean e = false;
-    public final /* synthetic */ uv f;
+public final class rv extends LinkMovementMethod {
+    public final /* synthetic */ int a;
 
-    public rv(int i10, ArrayList arrayList, uv uvVar) {
-        this.f = uvVar;
-        this.d = i10;
-        this.a = arrayList == null ? new ArrayList() : arrayList;
-    }
-
-    public final void a(int i10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        ArrayList<Long> arrayList;
-        if (i10 >= 0) {
-            ArrayList[] arrayListArr = this.c;
-            if (i10 >= arrayListArr.length) {
-                return;
-            }
-            if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents == null) {
-                arrayListArr[i10] = new ArrayList(12);
-                for (int i11 = 0; i11 < 12; i11++) {
-                    this.c[i10].add(null);
-                }
-                return;
-            }
-            arrayListArr[i10] = new ArrayList();
-            for (int i12 = 0; i12 < tL_messages_stickerSet.documents.size(); i12++) {
-                TLRPC.Document document = tL_messages_stickerSet.documents.get(i12);
-                if (document == null) {
-                    this.c[i10].add(null);
-                } else {
-                    qx qxVar = new qx();
-                    long j3 = document.id;
-                    for (int i13 = 0; i13 < tL_messages_stickerSet.packs.size() && ((arrayList = tL_messages_stickerSet.packs.get(i13).documents) == null || !arrayList.contains(Long.valueOf(j3))); i13++) {
+    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
+    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                try {
+                    boolean onTouchEvent = super.onTouchEvent(textView, spannable, motionEvent);
+                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
                     }
-                    qxVar.a = tL_messages_stickerSet;
-                    qxVar.b = document.id;
-                    this.c[i10].add(qxVar);
-                    if (this.f.H) {
-                        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-                        if (this.c[i10].size() >= ((stickerSet == null || stickerSet.emojis) ? 16 : 10)) {
-                            return;
-                        }
-                    } else {
-                        continue;
-                    }
+                    Selection.removeSelection(spannable);
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return false;
                 }
-            }
+                break;
+            case 1:
+                try {
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return false;
+                }
+            default:
+                try {
+                    boolean onTouchEvent2 = super.onTouchEvent(textView, spannable, motionEvent);
+                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
+                    }
+                    Selection.removeSelection(spannable);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    return false;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        TLRPC.StickerSet stickerSet;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        if (i10 == NotificationCenter.groupStickersDidLoad) {
-            for (int i12 = 0; i12 < this.b.size(); i12++) {
-                if (this.b.get(i12) == null) {
-                    TLRPC.TL_messages_stickerSet stickerSet2 = MediaDataController.getInstance(this.d).getStickerSet((TLRPC.InputStickerSet) this.a.get(i12), true);
-                    if (this.b.size() == 1 && stickerSet2 != null && (stickerSet = stickerSet2.set) != null && !stickerSet.emojis) {
-                        uv uvVar = this.f;
-                        uvVar.dismiss();
-                        Context context = uvVar.getContext();
-                        org.telegram.ui.ActionBar.m2 m2Var = uvVar.c;
-                        TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
-                        org.telegram.ui.ActionBar.m2 m2Var2 = uvVar.c;
-                        org.telegram.ui.jk jkVar = m2Var2 instanceof org.telegram.ui.wn ? ((org.telegram.ui.wn) m2Var2).Y : null;
-                        d6Var = ((org.telegram.ui.ActionBar.e3) uvVar).resourcesProvider;
-                        new fy0(context, m2Var, inputStickerSet, null, jkVar, d6Var).show();
-                        return;
-                    }
-                    this.b.set(i12, stickerSet2);
-                    if (stickerSet2 != null) {
-                        a(i12, stickerSet2);
-                    }
-                }
-            }
-            uv uvVar2 = ((ev) this).h;
-            uvVar2.a0();
-            ci.v vVar = uvVar2.h;
-            if (vVar == null || vVar.getAdapter() == null) {
-                return;
-            }
-            vVar.getAdapter().l();
-        }
+        return false;
     }
 }

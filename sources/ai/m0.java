@@ -30,7 +30,7 @@ import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.vn;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PremiumPreviewFragment;
@@ -45,7 +45,7 @@ import org.telegram.ui.ro;
 import org.telegram.ui.wn;
 import org.telegram.ui.zb0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -58,14 +58,14 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
         this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:132:0x02ce  */
-    /* JADX WARN: Removed duplicated region for block: B:410:0x0852  */
-    /* JADX WARN: Removed duplicated region for block: B:425:0x088f  */
-    /* JADX WARN: Removed duplicated region for block: B:427:0x0896  */
-    /* JADX WARN: Removed duplicated region for block: B:441:0x08c6  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x02d1  */
+    /* JADX WARN: Removed duplicated region for block: B:410:0x0855  */
+    /* JADX WARN: Removed duplicated region for block: B:425:0x0892  */
+    /* JADX WARN: Removed duplicated region for block: B:427:0x0899  */
+    /* JADX WARN: Removed duplicated region for block: B:441:0x08c9  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00f8  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0139  */
     @Override // org.telegram.messenger.Utilities.Callback2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -86,9 +86,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
         yh.v2 v2Var2;
         yh.v2 v2Var3;
         int i11;
-        boolean z11 = true;
         switch (this.a) {
             case 0:
+                boolean z11 = true;
                 r3 r3Var = (r3) this.b;
                 TL_phone.getGroupCallStars getgroupcallstars = (TL_phone.getGroupCallStars) this.c;
                 TL_phone.groupCallStars groupcallstars = (TL_phone.groupCallStars) obj;
@@ -225,7 +225,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                                                 l6Var.run(Boolean.TRUE, tL_messageMediaWebPage.webpage);
                                                 break;
                                             } else {
-                                                wnVar.getMessagesStorage().getStorageQueue().postRunnable(new org.telegram.ui.ActionBar.l5((Object) wnVar, (Object) tL_messageMediaWebPage, (Object) tL_webPageAttributeStory, (Object) l6Var, 10));
+                                                wnVar.getMessagesStorage().getStorageQueue().postRunnable(new org.telegram.ui.ActionBar.l5(wnVar, tL_messageMediaWebPage, tL_webPageAttributeStory, l6Var, 11));
                                                 break;
                                             }
                                         }
@@ -582,14 +582,14 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                             a0Var.dismiss();
                             wn R9 = wn.R9(-a0Var.b0.id);
                             U.presentFragment(R9);
-                            U.whenFullyVisible(new org.telegram.ui.web.f1(27, R9, tL_starsGiveawayOption));
+                            U.whenFullyVisible(new org.telegram.ui.web.o1(26, R9, tL_starsGiveawayOption));
                             if (ab0Var != null) {
                                 ab0Var.c(true);
                                 break;
                             }
                         } else if (str3 != null) {
                             a0Var.dismiss();
-                            hg.c.q(R.string.UnknownErrorCode, new Object[]{str3}, yc.a0(U), R.raw.error, 36);
+                            hg.c.q(R.string.UnknownErrorCode, new Object[]{str3}, xc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }
@@ -734,9 +734,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 arrayList18.add(new yh.n2(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new org.telegram.ui.wl0(x2Var, i28, starGift, 15)));
                 arrayList18.add(new yh.n2(4, 0.0f, 0.0f, i11, i28, -90, null, null));
-                yh.k1 k1Var = new yh.k1(x2Var, starGift, arrayList17, runnable);
+                yh.j1 j1Var = new yh.j1(x2Var, starGift, arrayList17, runnable, 3);
                 yh.p2 p2Var = o2Var.a;
-                o2Var.d = k1Var;
+                o2Var.d = j1Var;
                 o2Var.e = false;
                 o2Var.c = 0;
                 o2Var.l = false;

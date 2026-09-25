@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ks0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 a;
@@ -590,7 +590,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                     ks0 ks0Var = ks0.this;
                                     PhotoViewer photoViewer3 = ks0Var.b;
                                     int[] iArr = new int[1];
-                                    final kr0 kr0Var = new kr0(ks0Var, new int[1], iArr, z27, z28, z29);
+                                    final lr0 lr0Var = new lr0(ks0Var, new int[1], iArr, z27, z28, z29);
                                     int i65 = 0;
                                     while (true) {
                                         ArrayList arrayList3 = arrayList2;
@@ -618,13 +618,13 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                                         public final void run(Object obj) {
                                                             switch (i66) {
                                                                 case 0:
-                                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                                     break;
                                                                 case 1:
-                                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                                     break;
                                                                 default:
-                                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                                     break;
                                                             }
                                                         }
@@ -636,13 +636,13 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                                         public final void run(Object obj) {
                                                             switch (i67) {
                                                                 case 0:
-                                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                                     break;
                                                                 case 1:
-                                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                                     break;
                                                                 default:
-                                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                                     break;
                                                             }
                                                         }
@@ -656,13 +656,13 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                                     public final void run(Object obj) {
                                                         switch (i68) {
                                                             case 0:
-                                                                AndroidUtilities.runOnUIThread(kr0Var);
+                                                                AndroidUtilities.runOnUIThread(lr0Var);
                                                                 break;
                                                             case 1:
-                                                                AndroidUtilities.runOnUIThread(kr0Var);
+                                                                AndroidUtilities.runOnUIThread(lr0Var);
                                                                 break;
                                                             default:
-                                                                AndroidUtilities.runOnUIThread(kr0Var);
+                                                                AndroidUtilities.runOnUIThread(lr0Var);
                                                                 break;
                                                         }
                                                     }
@@ -762,7 +762,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         ks0 ks0Var = ks0.this;
                         PhotoViewer photoViewer3 = ks0Var.b;
                         int[] iArr = new int[1];
-                        final kr0 kr0Var = new kr0(ks0Var, new int[1], iArr, z272, z282, z292);
+                        final lr0 lr0Var = new lr0(ks0Var, new int[1], iArr, z272, z282, z292);
                         int i65 = 0;
                         while (true) {
                             ArrayList arrayList3 = arrayList2;
@@ -790,13 +790,13 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                             public final void run(Object obj) {
                                                 switch (i66) {
                                                     case 0:
-                                                        AndroidUtilities.runOnUIThread(kr0Var);
+                                                        AndroidUtilities.runOnUIThread(lr0Var);
                                                         break;
                                                     case 1:
-                                                        AndroidUtilities.runOnUIThread(kr0Var);
+                                                        AndroidUtilities.runOnUIThread(lr0Var);
                                                         break;
                                                     default:
-                                                        AndroidUtilities.runOnUIThread(kr0Var);
+                                                        AndroidUtilities.runOnUIThread(lr0Var);
                                                         break;
                                                 }
                                             }
@@ -808,13 +808,13 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                             public final void run(Object obj) {
                                                 switch (i67) {
                                                     case 0:
-                                                        AndroidUtilities.runOnUIThread(kr0Var);
+                                                        AndroidUtilities.runOnUIThread(lr0Var);
                                                         break;
                                                     case 1:
-                                                        AndroidUtilities.runOnUIThread(kr0Var);
+                                                        AndroidUtilities.runOnUIThread(lr0Var);
                                                         break;
                                                     default:
-                                                        AndroidUtilities.runOnUIThread(kr0Var);
+                                                        AndroidUtilities.runOnUIThread(lr0Var);
                                                         break;
                                                 }
                                             }
@@ -828,13 +828,13 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                         public final void run(Object obj) {
                                             switch (i68) {
                                                 case 0:
-                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                     break;
                                                 case 1:
-                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                     break;
                                                 default:
-                                                    AndroidUtilities.runOnUIThread(kr0Var);
+                                                    AndroidUtilities.runOnUIThread(lr0Var);
                                                     break;
                                             }
                                         }
@@ -1616,7 +1616,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         }
                         nu0 nu0Var = photoViewer2.e0;
                         if (nu0Var != null) {
-                            org.telegram.ui.Components.yc.Z(nu0Var, d6Var).o(org.telegram.ui.Components.xc.y, d6Var).j();
+                            org.telegram.ui.Components.xc.Z(nu0Var, d6Var).o(org.telegram.ui.Components.wc.y, d6Var).j();
                             return;
                         }
                         return;
@@ -1819,7 +1819,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         }, 32L);
                         PhotoViewer.S(photoViewer2);
                         i15 = photoViewer2.T;
-                        MessagesController.getInstance(i15).getTranslateController().translatePhoto(messageObject62, new sr0(photoViewer2, 3));
+                        MessagesController.getInstance(i15).getTranslateController().translatePhoto(messageObject62, new tr0(photoViewer2, 3));
                         return;
                     }
                     if (i10 == 20) {

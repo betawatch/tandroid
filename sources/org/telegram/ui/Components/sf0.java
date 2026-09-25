@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class sf0 extends vl0 {
     public final Context c;
@@ -148,7 +148,7 @@ public final class sf0 extends vl0 {
             paint2.setColor(-1);
             v5Var.c = gf0Var;
             v5Var.addView(gf0Var, w7.y5.d(-1, 40.0f, 19, 96.0f, 0.0f, 24.0f, 0.0f));
-            v5Var.setSeekBarDelegate(new nv(this, 11));
+            v5Var.setSeekBarDelegate(new mv(this, 11));
             u5Var = v5Var;
         } else {
             org.telegram.ui.Cells.u5 u5Var2 = new org.telegram.ui.Cells.u5(context);

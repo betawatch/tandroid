@@ -49,9 +49,9 @@ import qg.n2;
 import qg.w1;
 import w7.y8;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class d implements e2, y2.h, le.e, j, l2.h, ro0, le.g, ah.j, u81, com.google.android.gms.common.api.internal.s, w1, r4.c, com.google.android.gms.common.api.internal.o, n5.b, OnCompleteListener {
+public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, com.google.android.gms.common.api.internal.s, w1, r4.c, com.google.android.gms.common.api.internal.o, n5.b, OnCompleteListener {
     public Object a;
 
     public /* synthetic */ d(Object obj) {
@@ -73,9 +73,9 @@ public final class d implements e2, y2.h, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
         ((le.k) this.a).i(f7);
     }
 
-    @Override // y2.h
-    public void E(y2.j jVar, long j3, long j10, boolean z10) {
-        ((l2.g) this.a).w((y2.p) jVar, j10);
+    @Override // y2.g
+    public void E(y2.i iVar, long j3, long j10, boolean z10) {
+        ((l2.g) this.a).w((y2.o) iVar, j10);
     }
 
     public void F(HashMap hashMap) {
@@ -262,27 +262,27 @@ public final class d implements e2, y2.h, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x0056  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0059  */
-    @Override // y2.h
+    @Override // y2.g
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public k4.d m(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
-        y2.p pVar = (y2.p) jVar;
+        y2.o oVar = (y2.o) iVar;
         l2.g gVar = (l2.g) this.a;
-        long j12 = pVar.a;
-        Uri uri = pVar.d.c;
+        long j12 = oVar.a;
+        Uri uri = oVar.d.c;
         u2.t tVar = new u2.t(j10);
-        int i11 = pVar.c;
+        int i11 = oVar.c;
         gVar.m.getClass();
-        if (!(iOException instanceof s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof g2.u) && !(iOException instanceof y2.l)) {
+        if (!(iOException instanceof s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof g2.u) && !(iOException instanceof y2.k)) {
             int i12 = g2.j.b;
             for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
                 if (!(th2 instanceof g2.j) || ((g2.j) th2).a != 2008) {
                 }
             }
             j11 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
-            k4.d dVar = j11 != -9223372036854775807L ? y2.m.f : new k4.d(0, j11, false);
+            k4.d dVar = j11 != -9223372036854775807L ? y2.l.f : new k4.d(0, j11, false);
             gVar.q.r(tVar, i11, iOException, !dVar.a());
             return dVar;
         }
@@ -298,34 +298,34 @@ public final class d implements e2, y2.h, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
         return 0;
     }
 
-    @Override // y2.h
-    public void n(y2.j jVar, long j3, long j10, int i10) {
+    @Override // y2.g
+    public void n(y2.i iVar, long j3, long j10, int i10) {
         u2.t tVar;
-        y2.p pVar = (y2.p) jVar;
+        y2.o oVar = (y2.o) iVar;
         l2.g gVar = (l2.g) this.a;
         if (i10 == 0) {
-            long j11 = pVar.a;
-            tVar = new u2.t(pVar.b);
+            long j11 = oVar.a;
+            tVar = new u2.t(oVar.b);
         } else {
-            long j12 = pVar.a;
-            Uri uri = pVar.d.c;
+            long j12 = oVar.a;
+            Uri uri = oVar.d.c;
             tVar = new u2.t(j10);
         }
-        gVar.q.s(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+        gVar.q.s(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
     }
 
-    @Override // y2.h
-    public void o(y2.j jVar, long j3, long j10) {
+    @Override // y2.g
+    public void o(y2.i iVar, long j3, long j10) {
         int i10;
         long j11;
-        y2.p pVar = (y2.p) jVar;
+        y2.o oVar = (y2.o) iVar;
         l2.g gVar = (l2.g) this.a;
-        long j12 = pVar.a;
-        Uri uri = pVar.d.c;
+        long j12 = oVar.a;
+        Uri uri = oVar.d.c;
         u2.t tVar = new u2.t(j10);
         gVar.m.getClass();
-        gVar.q.p(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-        m2.c cVar = (m2.c) pVar.f;
+        gVar.q.p(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        m2.c cVar = (m2.c) oVar.f;
         m2.c cVar2 = gVar.H;
         int size = cVar2 == null ? 0 : cVar2.m.size();
         long j13 = cVar.b(0).b;
@@ -351,7 +351,7 @@ public final class d implements e2, y2.h, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
             }
             int i12 = gVar.M;
             gVar.M = i12 + 1;
-            if (i12 < gVar.m.L3(pVar.c)) {
+            if (i12 < gVar.m.L3(oVar.c)) {
                 gVar.D.postDelayed(gVar.v, Math.min((gVar.M - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000));
                 return;
             } else {
@@ -368,10 +368,10 @@ public final class d implements e2, y2.h, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
         gVar.O += i10;
         synchronized (gVar.t) {
             try {
-                if (pVar.b.a.equals(gVar.F)) {
+                if (oVar.b.a.equals(gVar.F)) {
                     Uri uri2 = gVar.H.k;
                     if (uri2 == null) {
-                        uri2 = y8.a(pVar.d.c);
+                        uri2 = y8.a(oVar.d.c);
                     }
                     gVar.F = uri2;
                 }

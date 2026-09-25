@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class r80 extends org.telegram.ui.ActionBar.e3 {
     public static final /* synthetic */ int r = 0;
@@ -32,7 +32,7 @@ public final class r80 extends org.telegram.ui.ActionBar.e3 {
     public final TLRPC.Chat e;
     public final TextView f;
     public final RadialProgressView h;
-    public yc n;
+    public xc n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Removed duplicated region for block: B:101:0x0129  */
@@ -379,11 +379,11 @@ public final class r80 extends org.telegram.ui.ActionBar.e3 {
                 l80 l80Var = new l80(r80Var, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, j3, 1);
                 r80Var2 = r80Var;
                 AndroidUtilities.runOnUIThread(l80Var);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5((Object) r80Var2, (Object) tL_error, (Object) updates, (Object) tL_messages_importChatInvite, 25));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5(r80Var2, tL_error, updates, tL_messages_importChatInvite, 26));
             }
         }
         r80Var2 = r80Var;
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5((Object) r80Var2, (Object) tL_error, (Object) updates, (Object) tL_messages_importChatInvite, 25));
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5(r80Var2, tL_error, updates, tL_messages_importChatInvite, 26));
     }
 
     public static void n(r80 r80Var, TLRPC.TL_error tL_error, TLRPC.Updates updates, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
@@ -529,7 +529,7 @@ public final class r80 extends org.telegram.ui.ActionBar.e3 {
         return TextUtils.ellipsize(str.trim(), textView.getPaint(), AndroidUtilities.dp(120.0f), TextUtils.TruncateAt.END);
     }
 
-    public static void w(Context context, org.telegram.ui.ActionBar.m2 m2Var, yc ycVar, boolean z10) {
+    public static void w(Context context, org.telegram.ui.ActionBar.m2 m2Var, xc xcVar, boolean z10) {
         if (context == null) {
             if (m2Var != null) {
                 m2Var.getContext();
@@ -537,13 +537,13 @@ public final class r80 extends org.telegram.ui.ActionBar.e3 {
             }
             return;
         }
-        if (ycVar == null) {
-            ycVar = yc.a0(m2Var);
+        if (xcVar == null) {
+            xcVar = xc.a0(m2Var);
         }
         nc ncVar = new nc(context, m2Var.getResourceProvider());
         ncVar.a.f(R.raw.timer_3, 28, 28, null);
         ncVar.b.setText(LocaleController.getString(R.string.RequestToJoinSent));
         ncVar.c.setText(z10 ? LocaleController.getString(R.string.RequestToJoinChannelSentDescription) : LocaleController.getString(R.string.RequestToJoinGroupSentDescription));
-        ycVar.b(ncVar, 2750).j();
+        xcVar.b(ncVar, 2750).j();
     }
 }

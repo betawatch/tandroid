@@ -69,7 +69,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class qg0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public static final int t0;
@@ -205,7 +205,7 @@ public final class qg0 extends org.telegram.ui.ActionBar.m2 implements Notificat
             EditText attachedEditText = jd0Var.getAttachedEditText();
             org.telegram.ui.Components.rn rnVar = new org.telegram.ui.Components.rn(attachedEditText, atomicReference, false, 2);
             jd0Var.a(1.0f);
-            org.telegram.ui.Components.vn0 vn0Var = new org.telegram.ui.Components.vn0(jd0Var, view, attachedEditText, rnVar, 17);
+            org.telegram.ui.Components.vn0 vn0Var = new org.telegram.ui.Components.vn0(jd0Var, view, attachedEditText, rnVar, 18);
             atomicReference.set(vn0Var);
             view.postDelayed(vn0Var, 2000L);
             view.setTag(R.id.timeout_callback, vn0Var);

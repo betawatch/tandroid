@@ -79,7 +79,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class od1 extends org.telegram.ui.ActionBar.m2 implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.j40 A0;
@@ -3905,7 +3905,7 @@ public class od1 extends org.telegram.ui.ActionBar.m2 implements DownloadControl
             this.A0.setExtraTranslationY(AndroidUtilities.dp(6.0f));
             this.k0.addView(this.A0, w7.y5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
         }
-        AndroidUtilities.runOnUIThread(new n81(7, this, globalMainSettings), 500L);
+        AndroidUtilities.runOnUIThread(new p81(6, this, globalMainSettings), 500L);
     }
 
     public final void f1(int i10, boolean z10, boolean z11) {

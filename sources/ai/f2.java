@@ -35,9 +35,9 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.uv;
+import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -50,7 +50,7 @@ import org.telegram.ui.sa1;
 import org.telegram.ui.sd;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 sa saVar = (sa) this.c;
                 jc jcVar = e6Var.J0;
                 if (saVar.b == null) {
-                    org.telegram.ui.Components.qc Q = new yc(e6Var.c1, e6Var.B0).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
+                    org.telegram.ui.Components.qc Q = new xc(e6Var.c1, e6Var.B0).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
                     Q.a = 3;
                     Q.k(true);
                     break;
@@ -133,7 +133,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 v5 v5Var = (v5) this.b;
                 db dbVar = (db) this.c;
                 e6 e6Var3 = v5Var.l;
-                uv alert = dbVar.getAlert();
+                tv alert = dbVar.getAlert();
                 if (alert != null && (x5Var = e6Var3.Q1) != null) {
                     ((ac) x5Var).h(alert);
                     e6Var3.t1.a();
@@ -202,7 +202,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.b;
                 wn wnVar = (wn) this.c;
                 AndroidUtilities.addToClipboard(tL_businessChatLink.link);
-                yc.a0(wnVar).k(false).j();
+                xc.a0(wnVar).k(false).j();
                 break;
             case 11:
                 hg.m0.Q((hg.m0) this.b, (TL_account.TL_connectedBot) this.c);

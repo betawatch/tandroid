@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -46,7 +46,7 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                 int[] iArr = (int[]) this.h;
                 Runnable runnable2 = (Runnable) this.r;
                 if (!UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) {
-                    new yc(frameLayout, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.MessageScheduledRepeatPremium), new ai.f(22))).j();
+                    new xc(frameLayout, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.MessageScheduledRepeatPremium), new ai.f(22))).j();
                     break;
                 } else {
                     y70 F = y70.F(e3Var.container, d6Var, frameLayout2);

@@ -11,7 +11,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.vw;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cx0;
 import org.telegram.ui.h31;
@@ -19,7 +19,7 @@ import org.telegram.ui.p60;
 import org.telegram.ui.qy;
 import org.telegram.ui.wl0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hi implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -87,24 +87,24 @@ public final /* synthetic */ class hi implements RequestDelegate {
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj4;
                 byte[] bArr = (byte[]) obj3;
                 org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj2;
-                wn0 wn0Var = (wn0) obj;
+                vw vwVar = (vw) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new h31(m2Var, context2, d6Var, wn0Var, 1), 200L);
+                        AndroidUtilities.runOnUIThread(new h31(m2Var, context2, d6Var, vwVar, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new wl0(m2Var, i11, wn0Var, 7), 200L);
+                            AndroidUtilities.runOnUIThread(new wl0(m2Var, i11, vwVar, 7), 200L);
                             break;
                         }
                     } else {
-                        AndroidUtilities.runOnUIThread(new h31(m2Var, context2, d6Var, wn0Var, 0), 200L);
+                        AndroidUtilities.runOnUIThread(new h31(m2Var, context2, d6Var, vwVar, 0), 200L);
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new ai.z8(tLObject, context2, d6Var, bArr, m2Var, wn0Var, 11));
+                    AndroidUtilities.runOnUIThread(new ai.z8(tLObject, context2, d6Var, bArr, m2Var, vwVar, 11));
                     break;
                 }
                 break;
@@ -121,13 +121,13 @@ public final /* synthetic */ class hi implements RequestDelegate {
         this.c = context;
     }
 
-    public /* synthetic */ hi(Context context, org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, org.telegram.ui.ActionBar.m2 m2Var, wn0 wn0Var, int i10) {
+    public /* synthetic */ hi(Context context, org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, org.telegram.ui.ActionBar.m2 m2Var, vw vwVar, int i10) {
         this.a = 6;
         this.d = context;
         this.e = d6Var;
         this.f = bArr;
         this.g = m2Var;
-        this.c = wn0Var;
+        this.c = vwVar;
         this.b = i10;
     }
 

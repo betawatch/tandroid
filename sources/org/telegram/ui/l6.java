@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l6 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -26,9 +26,8 @@ public final /* synthetic */ class l6 implements Utilities.Callback2 {
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         int i10 = this.a;
-        int i11 = 7;
-        final int i12 = 1;
-        final int i13 = 0;
+        final int i11 = 1;
+        final int i12 = 0;
         Object obj3 = this.d;
         Object obj4 = this.c;
         Object obj5 = this.b;
@@ -62,10 +61,10 @@ public final /* synthetic */ class l6 implements Utilities.Callback2 {
                 org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) obj3;
                 org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj;
                 final Long l4 = (Long) obj2;
-                Utilities.doCallbacks(new ai.e4(qyVar, l4, ldVar, m2Var, 11), new z(qyVar, a2Var, l4, i11), new Utilities.Callback() { // from class: org.telegram.ui.xv
+                Utilities.doCallbacks(new ai.e4(qyVar, l4, ldVar, m2Var, 11), new z(qyVar, a2Var, l4, 7), new Utilities.Callback() { // from class: org.telegram.ui.xv
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj6) {
-                        switch (i13) {
+                        switch (i12) {
                             case 0:
                                 Runnable runnable = (Runnable) obj6;
                                 qy qyVar2 = qyVar;
@@ -100,7 +99,7 @@ public final /* synthetic */ class l6 implements Utilities.Callback2 {
                 }, new Utilities.Callback() { // from class: org.telegram.ui.xv
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj6) {
-                        switch (i12) {
+                        switch (i11) {
                             case 0:
                                 Runnable runnable = (Runnable) obj6;
                                 qy qyVar2 = qyVar;
@@ -142,23 +141,23 @@ public final /* synthetic */ class l6 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (passkeys == null) {
                     if (tL_error != null) {
-                        new org.telegram.ui.Components.yc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0(str, false);
+                        new org.telegram.ui.Components.xc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0(str, false);
                         break;
                     }
                 } else {
                     e3Var.dismiss();
-                    while (i13 < passkeys.passkeys.size()) {
-                        if (TextUtils.equals(passkeys.passkeys.get(i13).id, passkey.id)) {
-                            passkeys.passkeys.remove(i13);
-                            i13--;
+                    while (i12 < passkeys.passkeys.size()) {
+                        if (TextUtils.equals(passkeys.passkeys.get(i12).id, passkey.id)) {
+                            passkeys.passkeys.remove(i12);
+                            i12--;
                         }
-                        i13++;
+                        i12++;
                     }
                     org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                     if (U != null) {
                         PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
                         U.presentFragment(passkeysActivity);
-                        AndroidUtilities.runOnUIThread(new xi0(i11, passkeysActivity, passkey), 150L);
+                        AndroidUtilities.runOnUIThread(new sj0(6, passkeysActivity, passkey), 150L);
                         break;
                     }
                 }

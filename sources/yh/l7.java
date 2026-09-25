@@ -25,13 +25,13 @@ import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xa;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.j20;
 import org.telegram.ui.jk;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class l7 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final long X;
@@ -59,7 +59,7 @@ public final class l7 extends bb implements NotificationCenter.NotificationCente
         this.b0 = runnable;
         TLRPC.InputPeer inputPeer = j10 == 0 ? null : MessagesController.getInstance(this.currentAccount).getInputPeer(j10);
         this.c0 = inputPeer;
-        boolean isReady = (inputPeer == null || !AppGlobalConfig.getInstance(t5.y(this.currentAccount, false).a).starsSpendTopUpInvoiceDisabled.get()) ? true : BillingController.getInstance().isReady();
+        boolean isReady = (inputPeer == null || !AppGlobalConfig.getInstance(s5.y(this.currentAccount, false).a).starsSpendTopUpInvoiceDisabled.get()) ? true : BillingController.getInstance().isReady();
         this.d0 = isReady;
         fixNavigationBar();
         wl0 wl0Var = this.d;
@@ -78,7 +78,7 @@ public final class l7 extends bb implements NotificationCenter.NotificationCente
         j20 j20Var = new j20(context, this.currentAccount, d6Var);
         TextView textView = (TextView) j20Var.e;
         this.Y = j20Var;
-        ((TextView) j20Var.b).setText(LocaleController.formatPluralString("StarsNeededTitle", (int) Math.max(0L, j3 - t5.y(this.currentAccount, false).p().amount), new Object[0]));
+        ((TextView) j20Var.b).setText(LocaleController.formatPluralString("StarsNeededTitle", (int) Math.max(0L, j3 - s5.y(this.currentAccount, false).p().amount), new Object[0]));
         int i12 = 7;
         if (i10 == 1) {
             str2 = "StarsNeededTextBuySubscription";
@@ -155,7 +155,7 @@ public final class l7 extends bb implements NotificationCenter.NotificationCente
             if (findActivity == null) {
                 return;
             }
-            t5.y(l7Var.currentAccount, false).f(findActivity, (TL_stars.TL_starsTopupOption) G.G, new ai.m0(25, l7Var, G), l7Var.c0);
+            s5.y(l7Var.currentAccount, false).f(findActivity, (TL_stars.TL_starsTopupOption) G.G, new ai.m0(25, l7Var, G), l7Var.c0);
         }
     }
 
@@ -164,11 +164,11 @@ public final class l7 extends bb implements NotificationCenter.NotificationCente
             return;
         }
         if (bool.booleanValue()) {
-            new yc((FrameLayout) l7Var.containerView, l7Var.resourcesProvider).M(LocaleController.getString(R.string.StarsAcquired), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsAcquiredInfo", (int) v51Var.B, new Object[0])), R.raw.stars_topup).j();
+            new xc((FrameLayout) l7Var.containerView, l7Var.resourcesProvider).M(LocaleController.getString(R.string.StarsAcquired), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsAcquiredInfo", (int) v51Var.B, new Object[0])), R.raw.stars_topup).j();
             l7Var.a0.c(true);
-            t5.y(l7Var.currentAccount, false).T(true);
+            s5.y(l7Var.currentAccount, false).T(true);
         } else if (str != null) {
-            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new yc((FrameLayout) l7Var.containerView, l7Var.resourcesProvider), R.raw.error, 36);
+            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new xc((FrameLayout) l7Var.containerView, l7Var.resourcesProvider), R.raw.error, 36);
         }
     }
 
@@ -181,7 +181,7 @@ public final class l7 extends bb implements NotificationCenter.NotificationCente
             com.google.android.gms.internal.vision.e2.n(R.string.TelegramStarsChoose, arrayList);
         }
         int i10 = 0;
-        ArrayList z11 = t5.y(this.currentAccount, false).z();
+        ArrayList z11 = s5.y(this.currentAccount, false).z();
         if (z10) {
             if (z11 == null || z11.isEmpty()) {
                 arrayList.add(v51.n(31));
@@ -279,7 +279,7 @@ public final class l7 extends bb implements NotificationCenter.NotificationCente
             if (j61Var != null) {
                 j61Var.N(true);
             }
-            long j3 = t5.y(this.currentAccount, false).p().amount;
+            long j3 = s5.y(this.currentAccount, false).p().amount;
             TextView textView = (TextView) this.Y.b;
             long j10 = this.X;
             textView.setText(LocaleController.formatPluralStringComma("StarsNeededTitle", (int) (j10 - j3)));
@@ -316,10 +316,10 @@ public final class l7 extends bb implements NotificationCenter.NotificationCente
     public final void show() {
         jk jkVar;
         if (!this.d0) {
-            org.telegram.messenger.f0.p(R.string.PaymentInvoiceDisabledStarsText, new yc(lb.a(getContext()), this.resourcesProvider), R.raw.stars_topup, 36);
+            org.telegram.messenger.f0.p(R.string.PaymentInvoiceDisabledStarsText, new xc(lb.a(getContext()), this.resourcesProvider), R.raw.stars_topup, 36);
             return;
         }
-        if (t5.y(this.currentAccount, false).p().amount >= this.X) {
+        if (s5.y(this.currentAccount, false).p().amount >= this.X) {
             Runnable runnable = this.b0;
             if (runnable != null) {
                 runnable.run();

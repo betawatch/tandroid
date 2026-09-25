@@ -43,7 +43,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.gd;
+import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.lp0;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.qq;
@@ -52,7 +52,7 @@ import org.telegram.ui.Components.t01;
 import org.telegram.ui.Components.u00;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class t7 extends FrameLayout {
     public static long E0;
@@ -112,7 +112,7 @@ public class t7 extends FrameLayout {
     public final Paint t0;
     public final org.telegram.ui.Components.e6 u0;
     public t7 v;
-    public gd v0;
+    public fd v0;
     public float w;
     public boolean w0;
     public float x;
@@ -650,10 +650,10 @@ public class t7 extends FrameLayout {
             if (t7Var.v0 != null) {
                 RectF rectF4 = AndroidUtilities.rectTmp;
                 rectF4.set(dp, f18, t7Var.P.b.width() + dp, t7Var.P.b.height() + f18);
-                gd gdVar = t7Var.v0;
-                gdVar.i = false;
-                gdVar.c = 0;
-                gdVar.a(rectF4);
+                fd fdVar = t7Var.v0;
+                fdVar.i = false;
+                fdVar.c = 0;
+                fdVar.a(rectF4);
             }
             canvas2.restore();
         }
@@ -1252,8 +1252,8 @@ public class t7 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        gd gdVar = this.v0;
-        if (gdVar == null || !gdVar.b(motionEvent)) {
+        fd fdVar = this.v0;
+        if (fdVar == null || !fdVar.b(motionEvent)) {
             return super.onTouchEvent(motionEvent);
         }
         return true;
@@ -1326,9 +1326,9 @@ public class t7 extends FrameLayout {
             if (this.R) {
                 this.P.l = true;
             }
-            gd gdVar = new gd(this);
-            this.v0 = gdVar;
-            gdVar.h = new g(this, 6);
+            fd fdVar = new fd(this);
+            this.v0 = fdVar;
+            fdVar.h = new g(this, 6);
         }
     }
 

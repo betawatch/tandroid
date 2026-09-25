@@ -86,13 +86,13 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.web.b1;
 import v7.m8;
 import w7.y5;
 import zg.q0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
@@ -721,13 +721,13 @@ public final /* synthetic */ class k0 implements Runnable {
                 }
             case 23:
                 i9.c0 c0Var2 = (i9.c0) this.b;
-                ki.n nVar = (ki.n) this.c;
+                ki.h0 h0Var = (ki.h0) this.c;
                 k1 k1Var = (k1) this.d;
                 try {
                     if (c0Var2.a instanceof i9.a) {
                         return;
                     }
-                    nVar.run();
+                    h0Var.run();
                     c0Var2.m(k1Var);
                     return;
                 } catch (Throwable th4) {
@@ -766,7 +766,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.d;
                 k3 k3Var = f3Var.d;
                 if (!(tLObject8 instanceof TLRPC.TL_boolTrue)) {
-                    new yc(k3Var.p0, k3Var.E).Y(tL_error2).k(true);
+                    new xc(k3Var.p0, k3Var.E).Y(tL_error2).k(true);
                     return;
                 }
                 b3 b3Var = k3Var.x;
@@ -778,7 +778,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.c;
                 TLRPC.User user3 = (TLRPC.User) this.d;
                 AndroidUtilities.addToClipboard(connectedbotstarref.url);
-                yc.a0(e4Var).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user3))), R.raw.copy).j();
+                xc.a0(e4Var).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user3))), R.raw.copy).j();
                 return;
             case 28:
                 e4.A0((e4) this.b, (TLObject) this.c, (a2) this.d);

@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yg implements Utilities.Callback0Return {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class yg implements Utilities.Callback0Return {
                             if (k11Var2 != null) {
                                 AndroidUtilities.removeFromParent(k11Var2);
                             }
-                            org.telegram.ui.Components.k11 k11Var3 = new org.telegram.ui.Components.k11(wnVar.getParentActivity(), new org.telegram.ui.ActionBar.a6(26, wnVar, r2));
+                            org.telegram.ui.Components.k11 k11Var3 = new org.telegram.ui.Components.k11(wnVar.getParentActivity(), new org.telegram.ui.ActionBar.a6(25, wnVar, r2));
                             wnVar.v0 = k11Var3;
                             org.telegram.ui.Components.k11[] k11VarArr = {k11Var3};
                             pm pmVar = wnVar.X0;

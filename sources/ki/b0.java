@@ -5,24 +5,24 @@ import android.os.SystemClock;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r0 b;
+    public final /* synthetic */ s0 b;
 
-    public /* synthetic */ b0(r0 r0Var, int i10) {
+    public /* synthetic */ b0(s0 s0Var, int i10) {
         this.a = i10;
-        this.b = r0Var;
+        this.b = s0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                r0 r0Var = this.b;
-                t tVar = r0Var.P;
-                File file = r0Var.Q;
+                s0 s0Var = this.b;
+                t tVar = s0Var.P;
+                File file = s0Var.Q;
                 if (tVar != null) {
                     try {
                         synchronized (tVar) {
@@ -43,57 +43,57 @@ public final /* synthetic */ class b0 implements Runnable {
                 }
                 return;
             case 1:
-                r0 r0Var2 = this.b;
-                if (r0Var2.V == 3) {
-                    r0Var2.o();
+                s0 s0Var2 = this.b;
+                if (s0Var2.V == 3) {
+                    s0Var2.o();
                     return;
                 }
                 return;
             case 2:
-                r0 r0Var3 = this.b;
-                r0Var3.A = false;
-                r0Var3.l.b("recording segment stopped: state=" + hg.c.C(r0Var3.V) + ", retainedDurationMs=" + r0Var3.D);
-                if (r0Var3.z) {
-                    r0Var3.z = false;
-                    r0Var3.h();
-                    return;
-                }
-                if (r0Var3.x) {
-                    r0Var3.x = false;
-                    r0Var3.i.execute(new s4(r0Var3, r0Var3.P, r0Var3.y, r0Var3.O, 6));
-                    return;
-                }
-                if (r0Var3.V != 4) {
-                    return;
-                }
-                try {
-                    File createTempFile = File.createTempFile("round_video_preview_", ".mp4", r0Var3.a.getCacheDir());
-                    r0Var3.Q = createTempFile;
-                    r0Var3.I = System.nanoTime();
-                    r0Var3.l.b("preview snapshot started: file=" + createTempFile.getName());
-                    r0Var3.i.execute(new gg.t(r0Var3, r0Var3.P, createTempFile, 23));
-                    return;
-                } catch (IOException e) {
-                    r0Var3.g(e);
-                    return;
-                }
-            default:
-                r0 r0Var4 = this.b;
-                int i10 = r0Var4.V;
+                s0 s0Var3 = this.b;
+                int i10 = s0Var3.V;
                 if (i10 == 2 || i10 == 6) {
-                    r0Var4.E = SystemClock.elapsedRealtime();
-                    r0Var4.l.b("recording started: retainedDurationMs=" + r0Var4.D);
-                    r0Var4.u(3);
-                    long j3 = r0Var4.n - r0Var4.D;
+                    s0Var3.E = SystemClock.elapsedRealtime();
+                    s0Var3.l.b("recording started: retainedDurationMs=" + s0Var3.D);
+                    s0Var3.u(3);
+                    long j3 = s0Var3.n - s0Var3.D;
                     if (j3 <= 0) {
-                        r0Var4.o();
+                        s0Var3.o();
                         return;
                     } else {
-                        r0Var4.h.postDelayed(r0Var4.S, j3);
+                        s0Var3.h.postDelayed(s0Var3.S, j3);
                         return;
                     }
                 }
                 return;
+            default:
+                s0 s0Var4 = this.b;
+                s0Var4.A = false;
+                s0Var4.l.b("recording segment stopped: state=" + hg.c.C(s0Var4.V) + ", retainedDurationMs=" + s0Var4.D);
+                if (s0Var4.z) {
+                    s0Var4.z = false;
+                    s0Var4.h();
+                    return;
+                }
+                if (s0Var4.x) {
+                    s0Var4.x = false;
+                    s0Var4.i.execute(new s4(s0Var4, s0Var4.P, s0Var4.y, s0Var4.O, 6));
+                    return;
+                }
+                if (s0Var4.V != 4) {
+                    return;
+                }
+                try {
+                    File createTempFile = File.createTempFile("round_video_preview_", ".mp4", s0Var4.a.getCacheDir());
+                    s0Var4.Q = createTempFile;
+                    s0Var4.I = System.nanoTime();
+                    s0Var4.l.b("preview snapshot started: file=" + createTempFile.getName());
+                    s0Var4.i.execute(new gg.t(s0Var4, s0Var4.P, createTempFile, 23));
+                    return;
+                } catch (IOException e) {
+                    s0Var4.g(e);
+                    return;
+                }
         }
     }
 }

@@ -12,9 +12,9 @@ import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.Components.n90;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.st0;
-import yh.t5;
+import yh.s5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class v implements Runnable {
                 nf.f.s(((yh.g) obj).getParentActivity(), LocaleController.getString(i11));
                 break;
             case 5:
-                ConnectionsManager.getInstance(((t5) obj).a).cancelRequest(i11, true);
+                ConnectionsManager.getInstance(((s5) obj).a).cancelRequest(i11, true);
                 break;
             default:
                 zg.f fVar = (zg.f) obj;

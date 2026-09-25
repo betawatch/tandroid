@@ -5,12 +5,14 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPPreNotificationService;
@@ -24,13 +26,13 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.df;
-import org.telegram.ui.dh;
+import org.telegram.ui.fh;
 import org.telegram.ui.je;
 import org.telegram.ui.wn;
 import org.telegram.ui.yc;
 import org.telegram.ui.zl;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -201,7 +203,7 @@ public final /* synthetic */ class v1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((org.telegram.ui.ActionBar.g6) this.b, tLObject, (org.telegram.ui.ActionBar.g6) this.c, 6));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5(this.b, (Object) tL_error, tLObject, this.c, 3));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5((org.telegram.ui.h8) this.b, tL_error, tLObject, (Calendar) this.c, 4));
                 break;
             case 23:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.r1((yc) this.b, tLObject, (org.telegram.ui.ActionBar.g6) this.c, 10));
@@ -222,19 +224,19 @@ public final /* synthetic */ class v1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.r1((wn) this.b, tLObject, (TLRPC.User) this.c, 20));
                 break;
             case 27:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5((org.telegram.ui.ActionBar.m2) this.b, tLObject, (TLObject) tL_error, this.c, 9));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5((wn) this.b, tLObject, tL_error, (MessagesStorage) this.c, 10));
                 break;
             case 28:
                 wn wnVar2 = (wn) this.b;
                 TLRPC.TL_messages_sendScheduledMessages tL_messages_sendScheduledMessages = (TLRPC.TL_messages_sendScheduledMessages) this.c;
                 if (tL_error != null) {
                     if (tL_error.text != null) {
-                        AndroidUtilities.runOnUIThread(new dh(5, wnVar2, tL_error));
+                        AndroidUtilities.runOnUIThread(new fh(4, wnVar2, tL_error));
                         break;
                     }
                 } else {
                     wnVar2.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(new dh(4, wnVar2, tL_messages_sendScheduledMessages));
+                    AndroidUtilities.runOnUIThread(new fh(3, wnVar2, tL_messages_sendScheduledMessages));
                     break;
                 }
                 break;

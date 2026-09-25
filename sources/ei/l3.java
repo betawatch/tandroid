@@ -62,8 +62,8 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.hw0;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xm;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
@@ -72,16 +72,16 @@ import org.telegram.ui.d60;
 import org.telegram.ui.dn;
 import org.telegram.ui.gr0;
 import org.telegram.ui.in;
-import org.telegram.ui.m80;
+import org.telegram.ui.jr0;
+import org.telegram.ui.n80;
 import org.telegram.ui.qy;
 import org.telegram.ui.um;
 import org.telegram.ui.wn;
-import org.telegram.ui.wr0;
 import org.telegram.ui.xi;
 import org.telegram.ui.yg0;
 import org.telegram.ui.zf0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l3 implements Runnable {
     public final /* synthetic */ int a;
@@ -110,7 +110,7 @@ public final /* synthetic */ class l3 implements Runnable {
         String lowerCase;
         org.telegram.ui.ActionBar.m2 R;
         boolean z11;
-        yc a02;
+        xc a02;
         int i10;
         ArrayList<TLRPC.User> arrayList;
         ArrayList<TLRPC.Chat> arrayList2;
@@ -458,7 +458,7 @@ public final /* synthetic */ class l3 implements Runnable {
                         break;
                     }
                 } else if (tL_error != null) {
-                    yc.a0(m2Var).d0(tL_error, false);
+                    xc.a0(m2Var).d0(tL_error, false);
                     break;
                 }
                 break;
@@ -657,7 +657,7 @@ public final /* synthetic */ class l3 implements Runnable {
                 TLObject tLObject4 = (TLObject) this.d;
                 int i35 = this.b;
                 String str2 = (String) this.e;
-                m80 m80Var = (m80) this.f;
+                n80 n80Var = (n80) this.f;
                 org.telegram.ui.ActionBar.m2 m2Var4 = (org.telegram.ui.ActionBar.m2) hg.c.g(1, launchActivity2.d0);
                 try {
                     if (tLObject4 instanceof TL_chatlists.chatlist_ChatlistInvite) {
@@ -721,17 +721,17 @@ public final /* synthetic */ class l3 implements Runnable {
                             }
                             d10Var.S();
                             m2Var4.showDialog(d10Var);
-                            m80Var.run();
+                            n80Var.run();
                             break;
                         } else {
-                            a02 = yc.a0(m2Var4);
+                            a02 = xc.a0(m2Var4);
                             i10 = R.string.NoFolderFound;
                         }
                     } else {
-                        a02 = yc.a0(m2Var4);
+                        a02 = xc.a0(m2Var4);
                         i10 = R.string.NoFolderFound;
                     }
-                    m80Var.run();
+                    n80Var.run();
                 } catch (Exception e11) {
                     FileLog.e(e11);
                     return;
@@ -740,14 +740,14 @@ public final /* synthetic */ class l3 implements Runnable {
                 break;
             case 26:
                 LaunchActivity launchActivity3 = (LaunchActivity) this.c;
-                m80 m80Var2 = (m80) this.d;
+                n80 n80Var2 = (n80) this.d;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.e;
                 TLRPC.Updates updates2 = (TLRPC.Updates) this.f;
                 int i36 = this.b;
                 ArrayList arrayList18 = launchActivity3.d0;
                 if (!launchActivity3.isFinishing()) {
                     try {
-                        m80Var2.run();
+                        n80Var2.run();
                     } catch (Exception e12) {
                         FileLog.e(e12);
                     }
@@ -839,7 +839,7 @@ public final /* synthetic */ class l3 implements Runnable {
                             n2Var.O = k2Var.j;
                             n2Var.P = k2Var.k;
                             arrayList20.add(k2Var);
-                            AndroidUtilities.runOnUIThread(new wr0(n2Var, arrayList20, gr0Var, k2Var, 23));
+                            AndroidUtilities.runOnUIThread(new jr0(n2Var, arrayList20, gr0Var, k2Var, 24));
                             n2Var.E = k2Var;
                             n2Var.y = true;
                             n2Var.x = false;
@@ -866,7 +866,7 @@ public final /* synthetic */ class l3 implements Runnable {
                         n2Var.E = null;
                         n2Var.y = true;
                         n2Var.x = false;
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(13, n2Var, arrayList20));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(12, n2Var, arrayList20));
                         break;
                     }
                 }

@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yq implements Runnable {
     public final /* synthetic */ String[] a;
@@ -111,25 +111,25 @@ public final /* synthetic */ class yq implements Runnable {
                     if (equalsIgnoreCase) {
                         MessagesController messagesController2 = MessagesController.getInstance(i12);
                         boolean isPremium = UserConfig.getInstance(i12).isPremium();
-                        yc ycVar = new yc(e3Var2.topBulletinContainer, d6Var2);
+                        xc xcVar = new xc(e3Var2.topBulletinContainer, d6Var2);
                         int i13 = R.raw.error;
                         String string = LocaleController.getString(R.string.CreateManagedBotLimitTitle);
                         SpannableStringBuilder replaceSingleLink = AndroidUtilities.replaceSingleLink(isPremium ? LocaleController.formatString(R.string.CreateManagedBotLimitText, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get())) : LocaleController.formatString(R.string.CreateManagedBotLimitTextPremium, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get()), Integer.valueOf(messagesController2.config.botsCreateLimitDefault.get())), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var2), new yp(e3Var2, 2));
-                        uc ucVar = new uc(23, e3Var2, context);
+                        kd kdVar = new kd(22, e3Var2, context);
                         if (replaceSingleLink == null) {
                             replaceSingleLink = new SpannableStringBuilder(replaceSingleLink);
                         }
                         int charSequenceIndexOf = AndroidUtilities.charSequenceIndexOf(replaceSingleLink, "@BotFather");
                         if (charSequenceIndexOf >= 0) {
-                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(d6Var2, ucVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
+                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(d6Var2, kdVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
                         }
-                        qc M = ycVar.M(string, replaceSingleLink, i13);
+                        qc M = xcVar.M(string, replaceSingleLink, i13);
                         M.j = 8000;
                         M.j();
                     } else {
                         String str = tL_error.text;
                         if (str != null && str.startsWith("FLOOD_WAIT_")) {
-                            new yc(e3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.CreateManagedBotLimitTitle), LocaleController.formatString(R.string.CreateManagedBotLimitTextTime, LocaleController.formatDuration(Integer.parseInt(tL_error.text.substring(11)))), R.raw.error).j();
+                            new xc(e3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.CreateManagedBotLimitTitle), LocaleController.formatString(R.string.CreateManagedBotLimitTextTime, LocaleController.formatDuration(Integer.parseInt(tL_error.text.substring(11)))), R.raw.error).j();
                         } else if ("MANAGER_PERMISSION_MISSING".equalsIgnoreCase(tL_error.text)) {
                             TLRPC.User user3 = user;
                             if (TextUtils.isEmpty(UserObject.getPublicUsername(user3))) {
@@ -137,7 +137,7 @@ public final /* synthetic */ class yq implements Runnable {
                             } else {
                                 userName = "@" + UserObject.getPublicUsername(user3);
                             }
-                            new yc(e3Var2.topBulletinContainer, d6Var2).Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var2))).j();
+                            new xc(e3Var2.topBulletinContainer, d6Var2).Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var2))).j();
                         } else {
                             org.telegram.ui.Cells.c1.r(e3Var2.topBulletinContainer, d6Var2, tL_error, false);
                         }

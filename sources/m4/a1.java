@@ -20,7 +20,7 @@ import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.Set;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class a1 extends Binder implements j {
     public final WeakReference a;
@@ -43,7 +43,7 @@ public final class a1 extends Binder implements j {
         }
         i9.w wVar = (i9.w) z0Var.h(a0Var, rVar, i10);
         i9.c0 c0Var = new i9.c0();
-        wVar.a(new h5(a0Var, c0Var, hVar, wVar, 23), i9.q.a);
+        wVar.a(new h5(a0Var, c0Var, hVar, wVar, 24), i9.q.a);
         return c0Var;
     }
 
@@ -366,7 +366,7 @@ public final class a1 extends Binder implements j {
                                 this.c.add(rVar);
                                 try {
                                     try {
-                                        e2.d0.U(a0Var3.l, new h5(this, rVar, a0Var3, G04, 22));
+                                        e2.d0.U(a0Var3.l, new h5(this, rVar, a0Var3, G04, 23));
                                     } catch (Throwable th2) {
                                         th = th2;
                                         throw th;
@@ -638,7 +638,7 @@ public final class a1 extends Binder implements j {
                     try {
                         a0 a0Var4 = (a0) this.a.get();
                         if (a0Var4 != null && !a0Var4.j()) {
-                            e2.d0.U(a0Var4.l, new ki.n(7, this, G024));
+                            e2.d0.U(a0Var4.l, new ki.h0(6, this, G024));
                             return true;
                         }
                         return true;
@@ -737,7 +737,7 @@ public final class a1 extends Binder implements j {
                         if (a0Var5 != null && !a0Var5.j()) {
                             r t17 = this.b.t(G034.asBinder());
                             if (t17 != null) {
-                                e2.d0.U(a0Var5.l, new ki.n(8, this, t17));
+                                e2.d0.U(a0Var5.l, new ki.h0(7, this, t17));
                             }
                             return true;
                         }

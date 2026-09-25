@@ -16,7 +16,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class je0 extends org.telegram.ui.Components.fw0 {
     public final EditTextBoldCursor a;
@@ -192,7 +192,7 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         if (obj.length() != 0) {
             this.h = true;
             this.y.n1(0, true);
-            Utilities.globalQueue.postRunnable(new m80(19, this, obj));
+            Utilities.globalQueue.postRunnable(new n80(18, this, obj));
         } else {
             qg0 qg0Var = this.y;
             if (qg0Var.getParentActivity() == null) {

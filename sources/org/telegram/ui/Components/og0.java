@@ -26,7 +26,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class og0 implements rf.a {
     public static final tv0 n0 = new tv0(new fa0(10), new fa0(11));
@@ -463,7 +463,7 @@ public final class og0 implements rf.a {
         this.l0 = textureView;
         textureView.setVisibility(4);
         this.l0.setOpaque(false);
-        this.l0.setSurfaceTextureListener(new ki.c(this, 2));
+        this.l0.setSurfaceTextureListener(new ki.d(this, 2));
         return this.l0;
     }
 

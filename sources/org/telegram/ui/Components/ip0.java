@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class ip0 extends org.telegram.ui.ActionBar.m1 {
     public boolean A;
@@ -92,7 +92,7 @@ public abstract class ip0 extends org.telegram.ui.ActionBar.m1 {
                     ((hp0) childAt).a.a(false, true);
                 }
             }
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5(chatActivityEnterView, qv0Var2, iArr, hp0Var, 18), isSelected ? 0L : 200L);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5(chatActivityEnterView, qv0Var2, iArr, hp0Var, 19), isSelected ? 0L : 200L);
             return;
         }
         try {
@@ -124,7 +124,7 @@ public abstract class ip0 extends org.telegram.ui.ActionBar.m1 {
         if (wnVar != null) {
             fp0 fp0Var = ffVar.B;
             org.telegram.ui.un unVar = wnVar.ea;
-            wn0 wn0Var2 = new wn0(3, ffVar, wnVar);
+            wn0 wn0Var2 = new wn0(2, ffVar, wnVar);
             yo0 yo0Var = new yo0(context, unVar);
             Drawable drawable = context.getDrawable(R.drawable.msg_premium_prolfilestar);
             w9 w9Var = yo0Var.a;
@@ -139,7 +139,7 @@ public abstract class ip0 extends org.telegram.ui.ActionBar.m1 {
             f7.e.addCallback(new gp0(ffVar, f7));
             f7.j();
         }
-        wn0 wn0Var3 = new wn0(4, ffVar, windowManager);
+        wn0 wn0Var3 = new wn0(3, ffVar, windowManager);
         ffVar.C = wn0Var3;
         AndroidUtilities.runOnUIThread(wn0Var3, 2500L);
     }

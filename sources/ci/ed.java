@@ -30,9 +30,9 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ar0;
 import org.telegram.ui.j51;
 import org.telegram.ui.jf0;
-import org.telegram.ui.lr0;
+import org.telegram.ui.mr0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ed implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -159,7 +159,7 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                     Bitmap b10 = k2Var2 == null ? n2Var2.I : (!z13 || bitmap3 == null) ? k2Var2.b() : n2Var2.e(bitmap3);
                     MediaController.PhotoEntry photoEntry3 = (MediaController.PhotoEntry) photoViewer.g7.get(photoViewer.P4);
                     if (thanosEffect == null) {
-                        Utilities.themeQueue.postRunnable(new lr0(photoViewer, b10, 0));
+                        Utilities.themeQueue.postRunnable(new mr0(photoViewer, b10, 0));
                         photoViewer.p5.f();
                         photoViewer.e0.invalidate();
                         break;
@@ -228,7 +228,7 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                             bitmap2 = bitmap;
                         }
                         if (bitmap2 == null) {
-                            Utilities.themeQueue.postRunnable(new lr0(photoViewer, b10, 1));
+                            Utilities.themeQueue.postRunnable(new mr0(photoViewer, b10, 1));
                             photoViewer.p5.f();
                             photoViewer.e0.invalidate();
                             break;
@@ -238,7 +238,7 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                                 bitmap2 = PhotoViewer.I0(bitmap2, cropState, new int[]{photoViewer.C4.getOrientation(), photoViewer.C4.getInvert()}, true);
                             }
                             if (bitmap2 == null) {
-                                Utilities.themeQueue.postRunnable(new lr0(photoViewer, b10, 2));
+                                Utilities.themeQueue.postRunnable(new mr0(photoViewer, b10, 2));
                                 photoViewer.p5.f();
                                 photoViewer.e0.invalidate();
                                 break;
@@ -286,7 +286,7 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                                 matrix3.postScale(f23, f23, f10 / f7, f11 / f7);
                                 matrix3.postTranslate(photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.k1(photoViewer.u4) - f16) / f7)), photoViewer.Y5 + f12 + Math.max(0, (int) ((photoViewer.i1() - f17) / f7)));
                                 photoViewer.p5.V = true;
-                                Utilities.themeQueue.postRunnable(new lr0(photoViewer, b10, 3));
+                                Utilities.themeQueue.postRunnable(new mr0(photoViewer, b10, 3));
                                 ar0 ar0Var = new ar0(photoViewer, 13);
                                 jf0 jf0Var = new jf0(photoViewer, b10, ar0Var, 18);
                                 th thVar = new th(28);

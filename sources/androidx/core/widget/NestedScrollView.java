@@ -50,7 +50,7 @@ import u0.g;
 import u0.h;
 import w7.p7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements m {
     public static final float T = (float) (Math.log(0.78d) / Math.log(0.9d));

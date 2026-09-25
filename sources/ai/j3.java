@@ -30,7 +30,7 @@ import org.telegram.ui.Components.td;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.wu;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.au0;
@@ -46,7 +46,7 @@ import org.telegram.ui.xq0;
 import org.telegram.ui.yq0;
 import org.telegram.ui.zs0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                 e6 e6Var = (e6) this.c;
                 boolean z10 = this.b;
                 MessagesController.getInstance(e6Var.C2).setStoryQuality(!z10);
-                new yc(e6Var.c1, e6Var.B0).M(LocaleController.getString(!z10 ? R.string.StoryQualityIncreasedTitle : R.string.StoryQualityDecreasedTitle), LocaleController.getString(!z10 ? R.string.StoryQualityIncreasedMessage : R.string.StoryQualityDecreasedMessage), R.raw.chats_infotip).j();
+                new xc(e6Var.c1, e6Var.B0).M(LocaleController.getString(!z10 ? R.string.StoryQualityIncreasedTitle : R.string.StoryQualityDecreasedTitle), LocaleController.getString(!z10 ? R.string.StoryQualityIncreasedMessage : R.string.StoryQualityDecreasedMessage), R.raw.chats_infotip).j();
                 v5 v5Var = e6Var.t1;
                 if (v5Var != null) {
                     v5Var.a();

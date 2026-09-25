@@ -22,7 +22,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class dy extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ lz E;
@@ -246,7 +246,7 @@ public final class dy extends FrameLayout implements NotificationCenter.Notifica
                 if (m2Var == null) {
                     m2Var = new ai.y3(this, 6);
                 }
-                uv.W(m2Var, stickerSetById2, true, null, new yp(this, 14));
+                tv.W(m2Var, stickerSetById2, true, null, new yp(this, 14));
                 this.n = null;
             }
             if (this.r == null || (stickerSetById = MediaDataController.getInstance(i12).getStickerSetById(this.r.id)) == null || stickerSetById.set == null) {
@@ -257,10 +257,10 @@ public final class dy extends FrameLayout implements NotificationCenter.Notifica
                 m2Var2 = new ai.y3(this, 6);
             }
             org.telegram.ui.ActionBar.m2 m2Var3 = m2Var2;
-            cv cvVar = new cv(3, this, stickerSetById);
-            Pattern pattern = uv.V;
+            vw vwVar = new vw(2, this, stickerSetById);
+            Pattern pattern = tv.V;
             if (m2Var3.getFragmentView() != null) {
-                MediaDataController.getInstance(m2Var3.getCurrentAccount()).toggleStickerSet(m2Var3.getFragmentView().getContext(), stickerSetById, 0, m2Var3, true, true, cvVar, false);
+                MediaDataController.getInstance(m2Var3.getCurrentAccount()).toggleStickerSet(m2Var3.getFragmentView().getContext(), stickerSetById, 0, m2Var3, true, true, vwVar, false);
             }
             this.r = null;
         }

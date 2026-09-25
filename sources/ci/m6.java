@@ -63,7 +63,7 @@ import org.telegram.ui.w21;
 import org.telegram.ui.y70;
 import org.telegram.ui.ys;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class m6 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -267,38 +267,38 @@ public final class m6 extends FrameLayout {
                     profileActivity.r5.draw(canvas);
                     canvas.restore();
                     if (profileActivity.n5 != f7) {
-                        org.telegram.ui.Components.gd gdVar = (org.telegram.ui.Components.gd) this.b;
-                        if (gdVar != null && (zVar = gdVar.e) != null) {
+                        org.telegram.ui.Components.fd fdVar = (org.telegram.ui.Components.fd) this.b;
+                        if (fdVar != null && (zVar = fdVar.e) != null) {
                             zVar.setState(StateSet.NOTHING);
                             zVar.jumpToCurrentState();
                             break;
                         }
                     } else {
-                        if (((org.telegram.ui.Components.gd) this.b) == null) {
-                            org.telegram.ui.Components.gd gdVar2 = new org.telegram.ui.Components.gd(this);
-                            this.b = gdVar2;
-                            gdVar2.h = new il0(this, 29);
+                        if (((org.telegram.ui.Components.fd) this.b) == null) {
+                            org.telegram.ui.Components.fd fdVar2 = new org.telegram.ui.Components.fd(this);
+                            this.b = fdVar2;
+                            fdVar2.h = new il0(this, 29);
                         }
                         float dp9 = (1.0f - profileActivity.n5) * AndroidUtilities.dp(28.0f);
                         float textWidth = h5VarArr[c10].getTextWidth();
                         float max = Math.max(textWidth, profileActivity.T != null ? (AndroidUtilities.dp(f11) + textWidth + AndroidUtilities.dp(4.0f)) * profileActivity.T.getVisibilityFactor() : 0.0f) + dp9;
                         RectF rectF4 = AndroidUtilities.rectTmp;
                         rectF4.set(x11 - AndroidUtilities.dp(4.0f), measuredHeight2 - AndroidUtilities.dp(f10), x11 + max + AndroidUtilities.dp(4.0f), measuredHeight2 + AndroidUtilities.dp(f10));
-                        org.telegram.ui.Components.gd gdVar3 = (org.telegram.ui.Components.gd) this.b;
-                        gdVar3.i = r92;
-                        gdVar3.c = r92;
-                        gdVar3.a(rectF4);
-                        org.telegram.ui.Components.gd gdVar4 = (org.telegram.ui.Components.gd) this.b;
-                        gdVar4.n = true;
+                        org.telegram.ui.Components.fd fdVar3 = (org.telegram.ui.Components.fd) this.b;
+                        fdVar3.i = r92;
+                        fdVar3.c = r92;
+                        fdVar3.a(rectF4);
+                        org.telegram.ui.Components.fd fdVar4 = (org.telegram.ui.Components.fd) this.b;
+                        fdVar4.n = true;
                         int k10 = i0.a.k(-1, 50);
-                        gdVar4.g.setColor((int) r92);
-                        org.telegram.ui.Cells.z zVar2 = gdVar4.e;
+                        fdVar4.g.setColor((int) r92);
+                        org.telegram.ui.Cells.z zVar2 = fdVar4.e;
                         if (zVar2 != null) {
                             org.telegram.ui.ActionBar.h6.B1(zVar2, k10, true);
                         }
-                        org.telegram.ui.Components.gd gdVar5 = (org.telegram.ui.Components.gd) this.b;
-                        gdVar5.c(canvas, gdVar5.g);
-                        org.telegram.ui.Cells.z zVar3 = gdVar5.e;
+                        org.telegram.ui.Components.fd fdVar5 = (org.telegram.ui.Components.fd) this.b;
+                        fdVar5.c(canvas, fdVar5.g);
+                        org.telegram.ui.Cells.z zVar3 = fdVar5.e;
                         if (zVar3 != null) {
                             zVar3.draw(canvas);
                             break;
@@ -853,10 +853,10 @@ public final class m6 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.Components.gd gdVar;
+        org.telegram.ui.Components.fd fdVar;
         switch (this.a) {
             case 19:
-                return (((ProfileActivity) this.c).n5 == 0.0f && (gdVar = (org.telegram.ui.Components.gd) this.b) != null && gdVar.b(motionEvent)) || super.onInterceptTouchEvent(motionEvent);
+                return (((ProfileActivity) this.c).n5 == 0.0f && (fdVar = (org.telegram.ui.Components.fd) this.b) != null && fdVar.b(motionEvent)) || super.onInterceptTouchEvent(motionEvent);
             default:
                 return super.onInterceptTouchEvent(motionEvent);
         }
@@ -1110,7 +1110,7 @@ public final class m6 extends FrameLayout {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         DisplayMetrics displayMetrics;
         float f7;
-        org.telegram.ui.Components.gd gdVar;
+        org.telegram.ui.Components.fd fdVar;
         switch (this.a) {
             case 2:
                 mg.i iVar = (mg.i) this.c;
@@ -1140,7 +1140,7 @@ public final class m6 extends FrameLayout {
                 }
                 return onTouchEvent;
             case 19:
-                return (((ProfileActivity) this.c).n5 == 0.0f && (gdVar = (org.telegram.ui.Components.gd) this.b) != null && gdVar.b(motionEvent)) || super.onTouchEvent(motionEvent);
+                return (((ProfileActivity) this.c).n5 == 0.0f && (fdVar = (org.telegram.ui.Components.fd) this.b) != null && fdVar.b(motionEvent)) || super.onTouchEvent(motionEvent);
             case 21:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
                 if (secretMediaViewer.m0 == 0 && secretMediaViewer.J0 == 0) {

@@ -7,7 +7,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class s7 implements Utilities.Callback2 {
                 long j3 = t7Var.f;
                 int i13 = 0;
                 if (j3 == 0) {
-                    t5 y3 = t5.y(i11, t7Var.e);
+                    s5 y3 = s5.y(i11, t7Var.e);
                     ArrayList arrayList2 = y3.q[i12];
                     int size = arrayList2.size();
                     int i14 = 0;

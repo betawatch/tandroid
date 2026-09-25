@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class m70 extends b71 implements NotificationCenter.NotificationCenterDelegate {
     public final a0.i T;
@@ -165,7 +165,7 @@ public class m70 extends b71 implements NotificationCenter.NotificationCenterDel
                     }
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", str));
                     m70Var.dismiss();
-                    yc.j(m2Var).j();
+                    xc.j(m2Var).j();
                 }
             }
             if (chatFull == null || (tL_chatInviteExported = chatFull.exported_invite) == null) {
@@ -257,7 +257,7 @@ public class m70 extends b71 implements NotificationCenter.NotificationCenterDel
         } else {
             a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, sb2, chat.title));
         }
-        alertDialog$Builder.k(LocaleController.getString(R.string.Add), new nv(m70Var, 7));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Add), new mv(m70Var, 7));
         hg.c.p(R.string.Cancel, alertDialog$Builder, null);
     }
 
@@ -272,7 +272,7 @@ public class m70 extends b71 implements NotificationCenter.NotificationCenterDel
                 return;
             }
             ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", m70Var.z0.link));
-            yc.j(m70Var.q0).j();
+            xc.j(m70Var.q0).j();
             m70Var.dismiss();
         }
         m70Var.y0 = false;
@@ -321,7 +321,7 @@ public class m70 extends b71 implements NotificationCenter.NotificationCenterDel
         if (m2Var instanceof org.telegram.ui.wn) {
             boolean P9 = ((org.telegram.ui.wn) m2Var).P9();
             this.w0 = true;
-            AndroidUtilities.runOnUIThread(new cv(17, this, h2Var), P9 ? 200L : 0L);
+            AndroidUtilities.runOnUIThread(new vw(16, this, h2Var), P9 ? 200L : 0L);
         } else {
             this.w0 = true;
             setFocusable(true);

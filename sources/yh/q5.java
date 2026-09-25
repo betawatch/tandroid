@@ -1,15 +1,15 @@
 package yh;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s5 b;
+    public final /* synthetic */ r5 b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ q5(s5 s5Var, long j3, int i10) {
+    public /* synthetic */ q5(r5 r5Var, long j3, int i10) {
         this.a = i10;
-        this.b = s5Var;
+        this.b = r5Var;
         this.c = j3;
     }
 
@@ -17,12 +17,12 @@ public final /* synthetic */ class q5 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                s5 s5Var = this.b;
-                s5Var.q.d0(s5Var.b, s5Var.c, this.c, true, true, s5Var.n);
+                r5 r5Var = this.b;
+                r5Var.q.d0(r5Var.b, r5Var.c, this.c, true, true, r5Var.n);
                 break;
             default:
-                s5 s5Var2 = this.b;
-                s5Var2.q.d0(s5Var2.b, s5Var2.c, this.c, true, true, s5Var2.n);
+                r5 r5Var2 = this.b;
+                r5Var2.q.d0(r5Var2.b, r5Var2.c, this.c, true, true, r5Var2.n);
                 break;
         }
     }

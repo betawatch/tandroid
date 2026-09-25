@@ -11,12 +11,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.a71;
-import yh.r5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class p extends a71 {
     public boolean d2;
@@ -48,14 +47,14 @@ public final class p extends a71 {
         if (linkedHashMap.containsKey(l4)) {
             arrayList.remove(l4);
             z5 z5Var = (z5) linkedHashMap.remove(l4);
-            z5Var.setRemoved(new r5(5, this, z5Var));
+            z5Var.setRemoved(new yh.z5(4, this, z5Var));
             qVar.W(z5Var);
             qVar.b.x(l4, true);
             qVar.Y(false);
             return;
         }
         if (linkedHashMap.size() - (linkedHashMap.containsKey(-1L) ? 1 : 0) >= i10) {
-            yc.a0(qVar).t(LocaleController.formatPluralString("ReactionMaxCountError", i10, new Object[0]), null).j();
+            xc.a0(qVar).t(LocaleController.formatPluralString("ReactionMaxCountError", i10, new Object[0]), null).j();
             return;
         }
         try {

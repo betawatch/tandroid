@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class yr0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class yr0 extends AnimatorListenerAdapter {
                 PhotoViewer photoViewer2 = this.c;
                 photoViewer2.B3 = false;
                 photoViewer2.i4.run();
-                AndroidUtilities.runOnUIThread(new xi0(21, this, this.b), 100L);
+                AndroidUtilities.runOnUIThread(new sj0(20, this, this.b), 100L);
                 break;
         }
     }

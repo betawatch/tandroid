@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wm implements kl0 {
     public final /* synthetic */ int a = 1;
@@ -58,7 +58,7 @@ public final /* synthetic */ class wm implements kl0 {
                     while (true) {
                         int[] iArr = vnVar.T0;
                         if (i12 >= iArr.length) {
-                            F.c(R.drawable.msg_customize, LocaleController.getString(R.string.PollV2PollDurationOptionCustom), new org.telegram.ui.ActionBar.l5(vnVar, context, view, d6Var, 19), false);
+                            F.c(R.drawable.msg_customize, LocaleController.getString(R.string.PollV2PollDurationOptionCustom), new org.telegram.ui.ActionBar.l5(vnVar, context, view, d6Var, 20), false);
                             F.t = false;
                             F.s = 0;
                             F.Z();
@@ -291,13 +291,13 @@ public final /* synthetic */ class wm implements kl0 {
                 }
                 break;
             default:
-                uv.n((uv) this.c, (ArrayList) this.d, (org.telegram.ui.ActionBar.m2) this.e, this.b, view, i10);
+                tv.n((tv) this.c, (ArrayList) this.d, (org.telegram.ui.ActionBar.m2) this.e, this.b, view, i10);
                 break;
         }
     }
 
-    public /* synthetic */ wm(uv uvVar, ArrayList arrayList, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.c = uvVar;
+    public /* synthetic */ wm(tv tvVar, ArrayList arrayList, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.c = tvVar;
         this.d = arrayList;
         this.e = m2Var;
         this.b = d6Var;

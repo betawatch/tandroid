@@ -14,11 +14,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.gn0;
-import org.telegram.ui.m80;
+import org.telegram.ui.n80;
 import org.telegram.ui.qg0;
 import org.telegram.ui.zf0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jb implements Runnable {
     public final /* synthetic */ int a;
@@ -145,7 +145,7 @@ public final /* synthetic */ class jb implements Runnable {
                 break;
             case 2:
                 LaunchActivity launchActivity = (LaunchActivity) obj8;
-                m80 m80Var = (m80) obj7;
+                n80 n80Var = (n80) obj7;
                 TLObject tLObject = (TLObject) obj6;
                 TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) obj5;
                 TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
@@ -154,7 +154,7 @@ public final /* synthetic */ class jb implements Runnable {
                 String str4 = (String) obj;
                 Pattern pattern = LaunchActivity.B1;
                 try {
-                    m80Var.run();
+                    n80Var.run();
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -168,7 +168,7 @@ public final /* synthetic */ class jb implements Runnable {
                 LaunchActivity launchActivity2 = (LaunchActivity) obj8;
                 TLObject tLObject2 = (TLObject) obj7;
                 int[] iArr3 = (int[]) obj6;
-                m80 m80Var2 = (m80) obj5;
+                n80 n80Var2 = (n80) obj5;
                 Integer num = (Integer) obj4;
                 Integer num2 = (Integer) obj3;
                 Long l4 = (Long) obj2;
@@ -178,12 +178,12 @@ public final /* synthetic */ class jb implements Runnable {
                     TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
                     if (!tL_messages_chats.chats.isEmpty()) {
                         MessagesController.getInstance(launchActivity2.O).putChats(tL_messages_chats.chats, false);
-                        iArr3[0] = launchActivity2.v0(this.b, m80Var2, num, num2, l4, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
+                        iArr3[0] = launchActivity2.v0(this.b, n80Var2, num, num2, l4, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
                         break;
                     }
                 }
                 try {
-                    m80Var2.run();
+                    n80Var2.run();
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
@@ -205,12 +205,12 @@ public final /* synthetic */ class jb implements Runnable {
                     if (!(tLObject3 instanceof TLRPC.TL_boolFalse)) {
                         if (tL_error != null) {
                             zf0Var.e = tL_error.text;
-                            new org.telegram.ui.Components.yc(qg0Var.Z, null).d0(tL_error, false);
+                            new org.telegram.ui.Components.xc(qg0Var.Z, null).d0(tL_error, false);
                             break;
                         }
                     } else {
                         zf0Var.e = "RESPONSE_FALSE";
-                        new org.telegram.ui.Components.yc(qg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "RESPONSE_FALSE"));
+                        new org.telegram.ui.Components.xc(qg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "RESPONSE_FALSE"));
                         break;
                     }
                 } else {
@@ -222,9 +222,9 @@ public final /* synthetic */ class jb implements Runnable {
                 }
                 break;
             default:
-                yh.t5 t5Var = (yh.t5) obj8;
+                yh.s5 s5Var = (yh.s5) obj8;
                 ((boolean[]) obj7)[0] = true;
-                t5Var.a0((MessageObject) obj6, (TLRPC.InputInvoice) obj5, (TLRPC.TL_payments_paymentFormStars) obj4, new yh.a5(t5Var, (boolean[]) obj3, this.b, (Utilities.Callback) obj2, (Utilities.Callback) obj));
+                s5Var.a0((MessageObject) obj6, (TLRPC.InputInvoice) obj5, (TLRPC.TL_payments_paymentFormStars) obj4, new yh.a5(s5Var, (boolean[]) obj3, this.b, (Utilities.Callback) obj2, (Utilities.Callback) obj));
                 break;
         }
     }
@@ -268,9 +268,9 @@ public final /* synthetic */ class jb implements Runnable {
         this.s = tL_payments_canPurchaseStore;
     }
 
-    public /* synthetic */ jb(yh.t5 t5Var, boolean[] zArr, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
+    public /* synthetic */ jb(yh.s5 s5Var, boolean[] zArr, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
         this.a = 5;
-        this.c = t5Var;
+        this.c = s5Var;
         this.d = zArr;
         this.e = messageObject;
         this.f = inputInvoice;

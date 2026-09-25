@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
@@ -80,7 +80,7 @@ public class FastDateParser implements DateParser, Serializable {
     private static final Strategy SECOND_STRATEGY = new NumberStrategy(13);
     private static final Strategy MILLISECOND_STRATEGY = new NumberStrategy(14);
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class CopyQuotedStrategy extends Strategy {
         private final String formatField;
 
@@ -105,7 +105,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class TextStrategy extends Strategy {
         private final int field;
         private final Map<String, Integer> keyValues;
@@ -146,7 +146,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class TimeZoneStrategy extends Strategy {
         private static final int ID = 0;
         private static final int LONG_DST = 3;
@@ -533,7 +533,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class NumberStrategy extends Strategy {
         private final int field;
 
@@ -569,7 +569,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static abstract class Strategy {
         private Strategy() {
         }

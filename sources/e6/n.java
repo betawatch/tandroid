@@ -16,13 +16,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.f0;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.po;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cg1;
 import org.telegram.ui.n11;
 import v7.a9;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l2.h, po {
     public final /* synthetic */ int a;
@@ -226,7 +226,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         boolean z10 = !profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.g1);
         profileActivity.getNotificationsController().muteDialog(this.b, profileActivity.g1, z10);
         if (profileActivity.fragmentView != null) {
-            yc.A(profileActivity, z10, null).j();
+            xc.A(profileActivity, z10, null).j();
         }
         profileActivity.a5();
         profileActivity.g5(true);
@@ -288,8 +288,8 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         boolean z10 = notificationsSettings.getBoolean(f0.i(j3, profileActivity.g1, sb2), true);
         boolean z11 = !z10;
         notificationsSettings.edit().putBoolean(f0.i(j3, profileActivity.g1, new StringBuilder("sound_enabled_")), z11).apply();
-        if (yc.a(profileActivity)) {
-            yc.S(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
+        if (xc.a(profileActivity)) {
+            xc.S(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
         }
     }
 
@@ -338,15 +338,15 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
             if (profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.g1)) {
                 n();
             }
-            if (yc.a(profileActivity)) {
-                yc.z(profileActivity, 4, i10, profileActivity.z0).j();
+            if (xc.a(profileActivity)) {
+                xc.z(profileActivity, 4, i10, profileActivity.z0).j();
                 return;
             }
             return;
         }
         profileActivity.getNotificationsController().muteUntil(this.b, profileActivity.g1, i10);
-        if (yc.a(profileActivity)) {
-            yc.z(profileActivity, 5, i10, profileActivity.z0).j();
+        if (xc.a(profileActivity)) {
+            xc.z(profileActivity, 5, i10, profileActivity.z0).j();
         }
         profileActivity.a5();
         profileActivity.g5(true);

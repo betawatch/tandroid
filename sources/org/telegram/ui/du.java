@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class du implements org.telegram.ui.Components.dw0, org.telegram.ui.ActionBar.z1, MessagesController.ErrorDelegate, org.telegram.ui.Components.dh0, Utilities.Callback5, org.telegram.ui.Components.be0, org.telegram.ui.ActionBar.k1, org.telegram.ui.Components.hl0, gg.b2, org.telegram.ui.Components.ml0, r0.n, org.telegram.ui.Components.ll0, vt, le.e, nj0 {
+public final /* synthetic */ class du implements org.telegram.ui.Components.dw0, org.telegram.ui.ActionBar.z1, MessagesController.ErrorDelegate, org.telegram.ui.Components.dh0, Utilities.Callback5, org.telegram.ui.Components.be0, org.telegram.ui.ActionBar.k1, org.telegram.ui.Components.hl0, gg.b2, org.telegram.ui.Components.ml0, r0.n, org.telegram.ui.Components.ll0, vt, le.e, mj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -108,7 +108,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
         mg0Var.setSelection(mg0Var.length());
     }
 
-    @Override // org.telegram.ui.nj0
+    @Override // org.telegram.ui.mj0
     public void b(Canvas canvas) {
         ((Layout) this.b).draw(canvas);
     }
@@ -148,7 +148,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
                             break;
                         }
                     } else {
-                        hc0Var.e = org.telegram.ui.Components.yc.a0(hc0Var).L(new org.telegram.ui.Components.y9(0.1f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Y5, false)), LocaleController.getString(R.string.LiteBatteryRestricted)).j();
+                        hc0Var.e = org.telegram.ui.Components.xc.a0(hc0Var).L(new org.telegram.ui.Components.y9(0.1f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Y5, false)), LocaleController.getString(R.string.LiteBatteryRestricted)).j();
                         break;
                     }
                 }
@@ -165,19 +165,19 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
             case 13:
                 break;
             case 23:
-                final ej0 ej0Var = (ej0) this.b;
-                if (i10 >= ej0Var.I && i10 < ej0Var.J) {
+                final dj0 dj0Var = (dj0) this.b;
+                if (i10 >= dj0Var.I && i10 < dj0Var.J) {
                     try {
                         view.performHapticFeedback(0, 2);
                     } catch (Exception unused) {
                     }
-                    final MessageObject messageObject = (MessageObject) ej0Var.x.get(i10 - ej0Var.I);
+                    final MessageObject messageObject = (MessageObject) dj0Var.x.get(i10 - dj0Var.I);
                     final long dialogId = MessageObject.getDialogId(messageObject.messageOwner);
                     final boolean isUserDialog = DialogObject.isUserDialog(dialogId);
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = new ArrayList();
                     ArrayList arrayList3 = new ArrayList();
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ej0Var.getParentActivity(), 0, ej0Var.getResourceProvider());
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dj0Var.getParentActivity(), 0, dj0Var.getResourceProvider());
                     if (messageObject.isStory()) {
                         arrayList.add(LocaleController.getString(isUserDialog ? R.string.OpenProfile : R.string.OpenChannel2));
                         arrayList3.add(Integer.valueOf(isUserDialog ? R.drawable.msg_openprofile : R.drawable.msg_channel));
@@ -188,10 +188,10 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
                     arrayList2.add(0);
                     CharSequence[] charSequenceArr = (CharSequence[]) arrayList.toArray(new CharSequence[arrayList2.size()]);
                     int[] intArray = AndroidUtilities.toIntArray(arrayList3);
-                    DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.zi0
+                    DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.yi0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i11) {
-                            org.telegram.ui.ActionBar.m2 m2Var = ej0.this;
+                            org.telegram.ui.ActionBar.m2 m2Var = dj0.this;
                             m2Var.getClass();
                             MessageObject messageObject2 = messageObject;
                             boolean isStory = messageObject2.isStory();
@@ -218,7 +218,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
                     a2Var.P = charSequenceArr;
                     a2Var.Q = intArray;
                     a2Var.M = onClickListener;
-                    ej0Var.showDialog(a2Var);
+                    dj0Var.showDialog(a2Var);
                     break;
                 }
                 break;

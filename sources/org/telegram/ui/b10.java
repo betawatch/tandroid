@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class b10 extends org.telegram.ui.ActionBar.m2 {
     public int E;
@@ -228,7 +228,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
         }
     }
 
-    public static void r0(TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.Components.yc ycVar) {
+    public static void r0(TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.Components.xc xcVar) {
         if (tL_error == null || TextUtils.isEmpty(tL_error.text)) {
             return;
         }
@@ -237,11 +237,11 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
             return;
         }
         if ("PEERS_LIST_EMPTY".equals(tL_error.text)) {
-            org.telegram.messenger.ok.p(R.string.FolderLinkNoChatsError, ycVar, null);
+            org.telegram.messenger.ok.p(R.string.FolderLinkNoChatsError, xcVar, null);
             return;
         }
         if ("USER_CHANNELS_TOO_MUCH".equals(tL_error.text)) {
-            org.telegram.messenger.ok.p(R.string.FolderLinkOtherAdminLimitError, ycVar, null);
+            org.telegram.messenger.ok.p(R.string.FolderLinkOtherAdminLimitError, xcVar, null);
             return;
         }
         if ("CHANNELS_TOO_MUCH".equals(tL_error.text)) {
@@ -257,13 +257,13 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
             return;
         }
         if ("INVITE_SLUG_EXPIRED".equals(tL_error.text)) {
-            org.telegram.messenger.ok.p(R.string.NoFolderFound, ycVar, null);
+            org.telegram.messenger.ok.p(R.string.NoFolderFound, xcVar, null);
             return;
         }
         if ("FILTER_INCLUDE_TOO_MUCH".equals(tL_error.text)) {
             new rg.j0(4, m2Var.getCurrentAccount(), m2Var.getContext(), m2Var, null).show();
         } else if (!"DIALOG_FILTERS_TOO_MUCH".equals(tL_error.text)) {
-            org.telegram.messenger.ok.p(R.string.UnknownError, ycVar, null);
+            org.telegram.messenger.ok.p(R.string.UnknownError, xcVar, null);
         } else {
             new rg.j0(3, m2Var.getCurrentAccount(), m2Var.getContext(), m2Var, null).show();
         }
@@ -848,7 +848,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
 
     public final void s0(Runnable runnable, boolean z10) {
         CharSequence[] charSequenceArr = {this.w};
-        t0(this.r, this.y, charSequenceArr[0].toString(), getMediaDataController().getEntities(charSequenceArr, false), true ^ this.x, this.E, this.F, this.G, this.H, this.s, false, this.h, true, z10, this, new tt(15, this, runnable));
+        t0(this.r, this.y, charSequenceArr[0].toString(), getMediaDataController().getEntities(charSequenceArr, false), true ^ this.x, this.E, this.F, this.G, this.H, this.s, false, this.h, true, z10, this, new tt(14, this, runnable));
     }
 
     public final void u0(boolean z10) {

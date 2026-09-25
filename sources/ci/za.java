@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.uv0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class za implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -141,15 +141,15 @@ public final /* synthetic */ class za implements Utilities.Callback2 {
                 Integer num = (Integer) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (!profileActivity.M3()) {
-                    if (org.telegram.ui.Components.yc.a(profileActivity)) {
+                    if (org.telegram.ui.Components.xc.a(profileActivity)) {
                         int intValue = num.intValue();
                         boolean z12 = this.b;
                         if (intValue == 1) {
-                            org.telegram.ui.Components.yc.l(null, profileActivity, z12).j();
+                            org.telegram.ui.Components.xc.l(null, profileActivity, z12).j();
                         } else if (num.intValue() == 2) {
-                            org.telegram.ui.Components.yc.l(DialogObject.getShortName(profileActivity.e1), profileActivity, z12).j();
+                            org.telegram.ui.Components.xc.l(DialogObject.getShortName(profileActivity.e1), profileActivity, z12).j();
                         } else if (tL_error != null) {
-                            org.telegram.ui.Components.yc.b0(tL_error);
+                            org.telegram.ui.Components.xc.b0(tL_error);
                         }
                     }
                     FlagSecureReason flagSecureReason = profileActivity.X1;

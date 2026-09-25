@@ -21,7 +21,7 @@ import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.lj0;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class p1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final List w = Arrays.asList(new m1(0, 1, 20, 0), new m1(0, 2, 20, 40), new m1(1, 0, 0, 20), new m1(1, 2, 60, 40), new m1(2, 0, 40, 20), new m1(2, 1, 40, 60));

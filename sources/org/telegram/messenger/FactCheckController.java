@@ -36,7 +36,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.s51;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class FactCheckController {
     private static org.telegram.ui.ActionBar.a2 currentDialog;
@@ -49,7 +49,7 @@ public class FactCheckController {
     private final ArrayList<Key> loading = new ArrayList<>();
     private final Runnable loadMissingRunnable = new f1(this, 19);
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class Key {
         public final long dialogId;
         public final long hash;
@@ -141,7 +141,7 @@ public class FactCheckController {
             if (U != null) {
                 boolean z11 = tL_textWithEntities == null || TextUtils.isEmpty(tL_textWithEntities.text);
                 if (z11 || !z10) {
-                    f0.p(z11 ? R.string.FactCheckDeleted : R.string.FactCheckEdited, org.telegram.ui.Components.yc.a0(U), z11 ? R.raw.ic_delete : R.raw.contact_check, 36);
+                    f0.p(z11 ? R.string.FactCheckDeleted : R.string.FactCheckEdited, org.telegram.ui.Components.xc.a0(U), z11 ? R.raw.ic_delete : R.raw.contact_check, 36);
                 }
             }
         }

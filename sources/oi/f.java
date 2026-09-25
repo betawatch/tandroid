@@ -46,7 +46,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import ki.n;
+import ki.h0;
 import l.b0;
 import l.l;
 import m4.a0;
@@ -60,12 +60,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.h10;
 import org.telegram.ui.Components.o91;
+import org.telegram.ui.web.k1;
 import org.telegram.ui.web.l1;
-import org.telegram.ui.web.m1;
 import y9.t0;
 import zd.e0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class f implements n5.b {
     public static volatile f e;
@@ -85,11 +85,11 @@ public final class f implements n5.b {
         this.a = file;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         hashMap.putAll(J(bufferedReader));
-        m1 m1Var = (m1) hashMap.get("content-type");
-        String str = m1Var == null ? null : (String) m1Var.b.get("boundary");
+        l1 l1Var = (l1) hashMap.get("content-type");
+        String str = l1Var == null ? null : (String) l1Var.b.get("boundary");
         if (str != null) {
             int length = str.length() + 2;
-            l1 l1Var = null;
+            k1 k1Var = null;
             while (true) {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {
@@ -97,22 +97,22 @@ public final class f implements n5.b {
                 }
                 jArr[0] = jArr[0] + readLine.getBytes().length + 2;
                 if (readLine.length() == length && readLine.substring(2).equals(str)) {
-                    if (l1Var != null) {
-                        l1Var.d = (jArr[0] - length) - 2;
-                        arrayList.add(l1Var);
-                        m1 m1Var2 = (m1) l1Var.a.get("content-location");
-                        hashMap2.put(m1Var2 == null ? null : m1Var2.a, l1Var);
+                    if (k1Var != null) {
+                        k1Var.d = (jArr[0] - length) - 2;
+                        arrayList.add(k1Var);
+                        l1 l1Var2 = (l1) k1Var.a.get("content-location");
+                        hashMap2.put(l1Var2 == null ? null : l1Var2.a, k1Var);
                     }
-                    l1Var = new l1();
-                    l1Var.b = (File) this.a;
-                    l1Var.a.putAll(J(bufferedReader));
-                    l1Var.c = jArr[0];
+                    k1Var = new k1();
+                    k1Var.b = (File) this.a;
+                    k1Var.a.putAll(J(bufferedReader));
+                    k1Var.c = jArr[0];
                 }
             }
-            if (l1Var != null && l1Var.c != 0 && l1Var.d != 0) {
-                arrayList.add(l1Var);
-                m1 m1Var3 = (m1) l1Var.a.get("content-location");
-                hashMap2.put(m1Var3 != null ? m1Var3.a : null, l1Var);
+            if (k1Var != null && k1Var.c != 0 && k1Var.d != 0) {
+                arrayList.add(k1Var);
+                l1 l1Var3 = (l1) k1Var.a.get("content-location");
+                hashMap2.put(l1Var3 != null ? l1Var3.a : null, k1Var);
             }
         }
         bufferedReader.close();
@@ -152,25 +152,25 @@ public final class f implements n5.b {
     }
 
     public static void e(String str, String str2, HashMap hashMap) {
-        m1 m1Var = new m1();
+        l1 l1Var = new l1();
         String[] split = str2.split(";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         for (int i10 = 0; i10 < split.length; i10++) {
             String trim = split[i10].trim();
             if (!trim.isEmpty()) {
                 int indexOf = trim.indexOf(61);
                 if (i10 == 0 || indexOf < 0) {
-                    m1Var.a = trim;
+                    l1Var.a = trim;
                 } else {
                     String trim2 = trim.substring(0, indexOf).trim();
                     String trim3 = trim.substring(indexOf + 1).trim();
                     if (trim3.length() >= 2 && trim3.charAt(0) == '\"' && trim3.charAt(trim3.length() - 1) == '\"') {
                         trim3 = e2.i(1, 1, trim3);
                     }
-                    m1Var.b.put(trim2, trim3);
+                    l1Var.b.put(trim2, trim3);
                 }
             }
         }
-        hashMap.put(str.trim().toLowerCase(), m1Var);
+        hashMap.put(str.trim().toLowerCase(), l1Var);
     }
 
     public boolean A(r rVar) {
@@ -676,7 +676,7 @@ public final class f implements n5.b {
             }
             AtomicBoolean atomicBoolean2 = new AtomicBoolean(true);
             m4.e eVar2 = eVar;
-            d0.U(a0Var.l, new n(a0Var, t(eVar.a), new m3(this, dVar, atomicBoolean2, eVar2, atomicBoolean, 10)));
+            d0.U(a0Var.l, new h0(a0Var, t(eVar.a), new m3(this, dVar, atomicBoolean2, eVar2, atomicBoolean, 10)));
             atomicBoolean2.set(false);
             eVar = eVar2;
         }

@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class zb0 {
     public final LaunchActivity a;
@@ -46,9 +46,9 @@ public final class zb0 {
         this.d = z10;
     }
 
-    public static org.telegram.ui.Components.yc b() {
+    public static org.telegram.ui.Components.xc b() {
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-        return U == null ? org.telegram.ui.Components.yc.X() : org.telegram.ui.Components.yc.a0(U);
+        return U == null ? org.telegram.ui.Components.xc.X() : org.telegram.ui.Components.xc.a0(U);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:102:0x0144, code lost:
@@ -481,7 +481,7 @@ public final class zb0 {
         }
         k();
         TLRPC.User[] userArr = {null};
-        MessagesController.getInstance(this.b).getUserNameResolver().resolve(str, new z(this, userArr, new org.telegram.ui.Components.vn0(this, U, userArr, tL_requestPeerTypeCreateBot, 15), 10));
+        MessagesController.getInstance(this.b).getUserNameResolver().resolve(str, new z(this, userArr, new org.telegram.ui.Components.vn0(this, U, userArr, tL_requestPeerTypeCreateBot, 16), 10));
     }
 
     public final boolean i(Uri uri, String str) {
@@ -549,7 +549,7 @@ public final class zb0 {
             FiltersSetupActivity filtersSetupActivity = new FiltersSetupActivity();
             m(new FiltersSetupActivity());
             if ("create".equalsIgnoreCase(str2)) {
-                AndroidUtilities.runOnUIThread(new m80(13, this, filtersSetupActivity), 300L);
+                AndroidUtilities.runOnUIThread(new n80(12, this, filtersSetupActivity), 300L);
             }
             if ("show-tags".equalsIgnoreCase(str2)) {
                 o("showTagsRow");
@@ -1179,7 +1179,7 @@ public final class zb0 {
                                         return true;
                                     }
                                     if ("gift".equalsIgnoreCase(str2)) {
-                                        yh.t5.w(i13).u();
+                                        yh.s5.w(i13).u();
                                         tg.m1.e0(1, BirthdayController.getInstance(i13).getState());
                                         return true;
                                     }

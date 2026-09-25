@@ -27,7 +27,7 @@ import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import v7.m8;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class a0 {
     public static final k1 B = new k1(1);
@@ -88,7 +88,7 @@ public class a0 {
         this.j = new l1(Process.myUid(), context.getPackageName(), a1Var, bundle, ((n4.r) k0Var.k.b).c.b);
         e1 e1Var = new e1(b1Var);
         this.t = e1Var;
-        e2.d0.U(handler, new ki.n(5, this, e1Var));
+        e2.d0.U(handler, new ki.h0(4, this, e1Var));
         this.w = 3000L;
         this.n = new u(this, 2);
         e2.d0.U(handler, new u(this, 3));
@@ -366,7 +366,7 @@ public class a0 {
             return true;
         }
         i9.c0 c0Var = new i9.c0();
-        this.o.post(new ki.n(3, this, c0Var));
+        this.o.post(new ki.h0(2, this, c0Var));
         try {
             return ((Boolean) c0Var.get()).booleanValue();
         } catch (InterruptedException | ExecutionException e) {

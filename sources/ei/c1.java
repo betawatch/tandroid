@@ -26,9 +26,9 @@ import org.telegram.ui.wf1;
 import org.telegram.ui.wn;
 import org.telegram.ui.zf0;
 import yh.l7;
-import yh.t5;
+import yh.s5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -219,7 +219,7 @@ public final /* synthetic */ class c1 implements View.OnClickListener {
                 if (e0Var.s.W) {
                     int i12 = this.c;
                     if (!MessagesController.getInstance(i12).isFrozen()) {
-                        t5 x10 = t5.x(i12, e0Var.H.a);
+                        s5 x10 = s5.x(i12, e0Var.H.a);
                         zf.a l4 = x10.e ? zf.a.l(x10.p()) : null;
                         if (!e0Var.c && (l4 == null || l4.b < e0Var.H.b)) {
                             zf.a aVar = e0Var.H;

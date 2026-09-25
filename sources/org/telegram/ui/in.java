@@ -98,7 +98,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.SecretMediaViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class in implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ wn a;
@@ -377,7 +377,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
         }
         int[] iArr = new int[1];
         xi xiVar = new xi(wnVar, id2, u1Var, 2);
-        xiVar.b = new dh(0, wnVar, iArr);
+        xiVar.b = new org.telegram.ui.ActionBar.a6(29, wnVar, iArr);
         wnVar.zb = xiVar;
         xiVar.d();
         iArr[0] = wnVar.getConnectionsManager().sendRequestTyped(getrichmessage, new org.telegram.messenger.a(), new hg(wnVar, xiVar, iArr, u1Var, messageObject));
@@ -506,7 +506,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
         SpannableString spannableString = new SpannableString(charSequence);
         spannableString.setSpan(new CodeHighlighting.Span(false, 0, null, textLayoutBlock.language, charSequence), 0, spannableString.length(), 33);
         AndroidUtilities.addToClipboard(spannableString);
-        org.telegram.messenger.ok.o(R.string.CodeCopied, org.telegram.ui.Components.yc.a0(this.a));
+        org.telegram.messenger.ok.o(R.string.CodeCopied, org.telegram.ui.Components.xc.a0(this.a));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -615,7 +615,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                 } else {
                     h0Var = h0Var2;
                 }
-                qcVar = org.telegram.ui.Components.yc.v(wnVar.getParentActivity(), wnVar, null, 1, j10, 1, wnVar.getThemedColor(org.telegram.ui.ActionBar.h6.Fi), wnVar.getThemedColor(org.telegram.ui.ActionBar.h6.Hi), 5000, false, h0Var);
+                qcVar = org.telegram.ui.Components.xc.v(wnVar.getParentActivity(), wnVar, null, 1, j10, 1, wnVar.getThemedColor(org.telegram.ui.ActionBar.h6.Fi), wnVar.getThemedColor(org.telegram.ui.ActionBar.h6.Hi), 5000, false, h0Var);
                 qcVar.k = true;
                 qcVar.k(qcVar.e instanceof org.telegram.ui.Components.bc);
             }
@@ -668,7 +668,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
         wn wnVar = this.a;
         if (isForwarded) {
             long peerDialogId = DialogObject.getPeerDialogId(u1Var.getMessageObject().getFromPeer());
-            org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(wnVar);
+            org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(wnVar);
             int i12 = R.raw.passcode_lock_close;
             int i13 = R.string.TodoCompleteForbiddenForward;
             i11 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
@@ -680,11 +680,11 @@ public final class in implements org.telegram.ui.Cells.l1 {
                 wnVar.getSendMessagesHelper().toggleTodo(ChatObject.getSendAsPeerId(wnVar.e, wnVar.Z7, true), u1Var.getMessageObject(), todoItem, z10, null);
                 return true;
             }
-            org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.TodoPremiumRequired), new tm(this, 9))).k(true);
+            org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.TodoPremiumRequired), new tm(this, 9))).k(true);
             return false;
         }
         long peerDialogId2 = DialogObject.getPeerDialogId(u1Var.getMessageObject().getFromPeer());
-        org.telegram.ui.Components.yc a03 = org.telegram.ui.Components.yc.a0(wnVar);
+        org.telegram.ui.Components.xc a03 = org.telegram.ui.Components.xc.a0(wnVar);
         int i14 = R.raw.passcode_lock_close;
         int i15 = R.string.TodoCompleteForbidden;
         i10 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
@@ -1012,7 +1012,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                     if (streamVolume == 0) {
                         audioManager.adjustStreamVolume(3, streamVolume, 1);
                         if (!messageObject.isOutOwner()) {
-                            org.telegram.ui.Components.yc.a0(this.a).w(R.drawable.tooltip_sound, LocaleController.getString(R.string.VoiceOnceTurnOnSound)).k(true);
+                            org.telegram.ui.Components.xc.a0(this.a).w(R.drawable.tooltip_sound, LocaleController.getString(R.string.VoiceOnceTurnOnSound)).k(true);
                             return false;
                         }
                     }
@@ -1334,14 +1334,14 @@ public final class in implements org.telegram.ui.Cells.l1 {
             wnVar2.zb = xiVar;
         }
         i10 = ((org.telegram.ui.ActionBar.m2) this.a).currentAccount;
-        yh.t5 y3 = yh.t5.y(i10, false);
+        yh.s5 y3 = yh.s5.y(i10, false);
         Objects.requireNonNull(xiVar);
         aj ajVar = new aj(xiVar, 7);
         Context context = LaunchActivity.G1;
         if (context == null) {
             context = ApplicationLoader.applicationContext;
         }
-        org.telegram.ui.ActionBar.d6 I = yh.t5.I();
+        org.telegram.ui.ActionBar.d6 I = yh.s5.I();
         if (messageObject != null && context != null) {
             long dialogId = messageObject.getDialogId();
             int id2 = messageObject.getId();
@@ -1742,9 +1742,9 @@ public final class in implements org.telegram.ui.Cells.l1 {
                         sb2.append("?option=");
                         sb2.append(new String(Base64.encode(pollAnswer3.option, 9)));
                         z16 = false;
-                        G.c(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), new xi0(27, dw0Var2, sb2.toString()), false);
+                        G.c(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), new sj0(26, dw0Var2, sb2.toString()), false);
                     }
-                    G.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new xi0(28, dw0Var2, pollAnswer3), z16);
+                    G.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new sj0(27, dw0Var2, pollAnswer3), z16);
                     TLRPC.Peer peer = pollAnswer3.added_by;
                     if (peer != null) {
                         long peerDialogId = DialogObject.getPeerDialogId(peer);
@@ -1756,7 +1756,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                         if (!dw0Var2.H.isForwarded()) {
                             TLRPC.Poll poll2 = tL_messageMediaPoll3.poll;
                             if (!poll2.closed && (poll2.creator || (peerDialogId == clientUserId && currentTime < j3))) {
-                                G.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new xi0(29, dw0Var2, bArr2), true);
+                                G.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new sj0(28, dw0Var2, bArr2), true);
                             }
                         }
                         G.k();
@@ -2280,7 +2280,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
         }
         if (messageObject2.isReplyToStory() && (storyItem = (message3 = messageObject2.messageOwner).replyStory) != null) {
             if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                org.telegram.messenger.f0.p(R.string.StoryNotFound, org.telegram.ui.Components.yc.a0(wnVar), R.raw.story_bomb1, 36);
+                org.telegram.messenger.f0.p(R.string.StoryNotFound, org.telegram.ui.Components.xc.a0(wnVar), R.raw.story_bomb1, 36);
                 return;
             }
             storyItem.dialogId = DialogObject.getPeerDialogId(message3.reply_to.peer);
@@ -2312,7 +2312,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                 if (message2 != null) {
                 }
                 TLRPC.Message message5 = messageObject2.messageOwner;
-                org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message5 == null && (messageReplyHeader3 = message5.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
+                org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message5 == null && (messageReplyHeader3 = message5.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
             }
             if (message4 != null && (messageReplyHeader = message4.reply_to) != null && messageReplyHeader.quote) {
                 String str3 = messageReplyHeader.quote_text;
@@ -2466,7 +2466,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                             message2 = messageObject2.messageOwner;
                             if (message2 != null || (messageReplyHeader4 = message2.reply_to) == null || TextUtils.isEmpty(messageReplyHeader4.quote_text) || !messageObject2.replyTextEllipsized || messageObject2.replyTextRevealed || messageObject2.shouldDrawWithoutBackground()) {
                                 TLRPC.Message message52 = messageObject2.messageOwner;
-                                org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message52 == null && (messageReplyHeader3 = message52.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
+                                org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message52 == null && (messageReplyHeader3 = message52.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
                             } else {
                                 messageObject2.replyTextRevealed = true;
                                 wnVar.qc(messageObject2, true);
@@ -2484,7 +2484,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                     if (message2 != null) {
                     }
                     TLRPC.Message message522 = messageObject2.messageOwner;
-                    org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message522 == null && (messageReplyHeader3 = message522.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
+                    org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message522 == null && (messageReplyHeader3 = message522.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
                 }
                 str2 = str;
                 j3 = j102;
@@ -2497,7 +2497,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                 if (message2 != null) {
                 }
                 TLRPC.Message message5222 = messageObject2.messageOwner;
-                org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message5222 == null && (messageReplyHeader3 = message5222.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
+                org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message5222 == null && (messageReplyHeader3 = message5222.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
             }
             num = null;
         }
@@ -2518,7 +2518,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
         if (message2 != null) {
         }
         TLRPC.Message message52222 = messageObject2.messageOwner;
-        org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message52222 == null && (messageReplyHeader3 = message52222.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
+        org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString((message52222 == null && (messageReplyHeader3 = message52222.reply_to) != null && messageReplyHeader3.quote) ? (chat == null || !chat.megagroup) ? ChatObject.isChannel(chat) ? R.string.QuotePrivateChannel : R.string.QuotePrivate : R.string.QuotePrivateGroup : (chat == null && chat.megagroup) ? R.string.ReplyPrivateGroup : ChatObject.isChannel(chat) ? R.string.ReplyPrivateChannel : R.string.ReplyPrivate)).k(true);
     }
 
     public final void c(TLRPC.User user) {
@@ -2833,12 +2833,12 @@ public final class in implements org.telegram.ui.Cells.l1 {
                 sb2.append(de1Var2.G.getId());
                 sb2.append("?task=");
                 sb2.append(todoItem2.id);
-                F.c(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), new n81(10, de1Var2, sb2.toString()), false);
+                F.c(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), new p81(9, de1Var2, sb2.toString()), false);
             } else {
                 messageObject = primaryMessageObject;
                 ae1Var3 = ae1Var2;
             }
-            F.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new n81(11, de1Var2, todoItem2), false);
+            F.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new p81(10, de1Var2, todoItem2), false);
         } else {
             messageObject = primaryMessageObject;
             ae1Var3 = ae1Var2;
@@ -3314,13 +3314,13 @@ public final class in implements org.telegram.ui.Cells.l1 {
                     i11 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
                     replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("TranscriptionTrialLeft", org.telegram.ui.Components.r31.h(i11), new Object[0]));
                 }
-                org.telegram.ui.Components.yc.a0(wnVar).G(R.raw.transcribe, 6, replaceTags).k(true);
+                org.telegram.ui.Components.xc.a0(wnVar).G(R.raw.transcribe, 6, replaceTags).k(true);
                 wnVar.fragmentView.performHapticFeedback(3, 2);
                 return;
             }
             if (i10 == 2 || i10 == 3) {
                 String formatDateTime2 = LocaleController.formatDateTime(wnVar.getMessagesController().transcribeAudioTrialCooldownUntil, true);
-                org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(wnVar);
+                org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(wnVar);
                 int i16 = R.raw.transcribe;
                 SpannableStringBuilder append = new SpannableStringBuilder().append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("TranscriptionTrialEnd", wnVar.getMessagesController().transcribeAudioTrialWeeklyNumber, new Object[0]))).append((CharSequence) " ").append(i10 == 2 ? AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.TranscriptionTrialEndBuy), new tm(this, i14)) : wnVar.getMessagesController().transcribeAudioTrialCooldownUntil <= 0 ? "" : AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.TranscriptionTrialEndWaitOrBuy, formatDateTime2), new tm(this, i13)));
                 a02.getClass();
@@ -3545,7 +3545,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                 arrayList4.add(l4);
             }
         }
-        uh.h hVar = new uh.h(iVar2, u1Var, arrayList4, new u2.i0(6, iVar2, b10));
+        uh.h hVar = new uh.h(iVar2, u1Var, arrayList4, new u2.p0(5, iVar2, b10));
         hVar.setBounds(0, 0, iVar2.getMeasuredWidth(), iVar2.getMeasuredHeight());
         hVar.setCallback(iVar2);
         if (hashMap.containsKey(b10)) {
@@ -3567,7 +3567,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
         boolean a10 = w7.d0.a(a2, 7);
         wn wnVar = this.a;
         if (a10) {
-            org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.e_hand_2, 36, qh.i.b(messageObject, a2)).j();
+            org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.e_hand_2, 36, qh.i.b(messageObject, a2)).j();
             return;
         }
         if (i10 < 0 && !arrayList.isEmpty()) {
@@ -4051,25 +4051,25 @@ public final class in implements org.telegram.ui.Cells.l1 {
         MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet(inputStickerSet, true);
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(inputStickerSet);
-        org.telegram.ui.Components.uv uvVar = new org.telegram.ui.Components.uv(wnVar, wnVar.getParentActivity(), wnVar.ea, arrayList);
-        org.telegram.ui.Components.kv kvVar = uvVar.f;
-        kvVar.getClass();
-        ImageReceiver imageReceiver = new ImageReceiver(kvVar);
-        kvVar.v = imageReceiver;
-        if (kvVar.d) {
+        org.telegram.ui.Components.tv tvVar = new org.telegram.ui.Components.tv(wnVar, wnVar.getParentActivity(), wnVar.ea, arrayList);
+        org.telegram.ui.Components.jv jvVar = tvVar.f;
+        jvVar.getClass();
+        ImageReceiver imageReceiver = new ImageReceiver(jvVar);
+        jvVar.v = imageReceiver;
+        if (jvVar.d) {
             imageReceiver.onAttachedToWindow();
         }
-        kvVar.w = true;
-        kvVar.x.d(1.0f, true);
-        kvVar.v.setImage(ImageLocation.getForDocument(document), "140_140", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document), "140_140", DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.h6.m6, 0.2f, true), 0L, null, null, 0);
-        kvVar.v.setLayerNum(7);
-        kvVar.v.setAllowStartLottieAnimation(true);
-        kvVar.v.setAllowStartAnimation(true);
-        kvVar.v.setAutoRepeat(1);
-        kvVar.v.setAllowDecodeSingleFrame(true);
-        kvVar.v.setParentView(kvVar);
-        uvVar.setCalcMandatoryInsets(wnVar.x9());
-        wnVar.showDialog(uvVar);
+        jvVar.w = true;
+        jvVar.x.d(1.0f, true);
+        jvVar.v.setImage(ImageLocation.getForDocument(document), "140_140", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document), "140_140", DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.h6.m6, 0.2f, true), 0L, null, null, 0);
+        jvVar.v.setLayerNum(7);
+        jvVar.v.setAllowStartLottieAnimation(true);
+        jvVar.v.setAllowStartAnimation(true);
+        jvVar.v.setAutoRepeat(1);
+        jvVar.v.setAllowDecodeSingleFrame(true);
+        jvVar.v.setParentView(jvVar);
+        tvVar.setCalcMandatoryInsets(wnVar.x9());
+        wnVar.showDialog(tvVar);
         return true;
     }
 
@@ -4897,7 +4897,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                                 }
                                 f14.K0.setInterpolator(new DecelerateInterpolator());
                                 photoBackgroundDrawable.b = 0;
-                                photoBackgroundDrawable.a = new ix0(27, f14, vu0Var);
+                                photoBackgroundDrawable.a = new jx0(26, f14, vu0Var);
                                 f14.K0.start();
                                 return;
                             }
@@ -4906,9 +4906,9 @@ public final class in implements org.telegram.ui.Cells.l1 {
                         if (MessageObject.isAnimatedEmoji(messageObject5.getDocument()) && MessageObject.getInputStickerSet(messageObject5.getDocument()) != null) {
                             ArrayList arrayList = new ArrayList(1);
                             arrayList.add(MessageObject.getInputStickerSet(messageObject5.getDocument()));
-                            org.telegram.ui.Components.uv uvVar = new org.telegram.ui.Components.uv(wnVar2, wnVar2.getParentActivity(), wnVar2.ea, arrayList);
-                            uvVar.setCalcMandatoryInsets(wnVar2.x9());
-                            wnVar2.showDialog(uvVar);
+                            org.telegram.ui.Components.tv tvVar = new org.telegram.ui.Components.tv(wnVar2, wnVar2.getParentActivity(), wnVar2.ea, arrayList);
+                            tvVar.setCalcMandatoryInsets(wnVar2.x9());
+                            wnVar2.showDialog(tvVar);
                             return;
                         }
                         if (messageObject5.getInputStickerSet() != null) {
@@ -5049,7 +5049,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
                                 a2Var.setOnCancelListener(new gh(0, zArr));
                                 a2Var.q(150L);
                                 MessageObject messageObject6 = messageObject;
-                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(wnVar2, messageObject6, a2Var, zArr, 8);
+                                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(wnVar2, messageObject6, a2Var, zArr, 9);
                                 messageObject2 = messageObject6;
                                 wnVar = wnVar2;
                                 new Thread(l5Var).start();
@@ -5133,7 +5133,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
     public final void x2() {
         wn wnVar = this.a;
         if (!wnVar.getUserConfig().isPremium()) {
-            org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralStringComma("UnlockSimilarChannelsPremium", wnVar.getMessagesController().recommendedChannelsLimitPremium), new tm(this, 4))).j();
+            org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralStringComma("UnlockSimilarChannelsPremium", wnVar.getMessagesController().recommendedChannelsLimitPremium), new tm(this, 4))).j();
             return;
         }
         Bundle bundle = new Bundle();
@@ -5204,7 +5204,7 @@ public final class in implements org.telegram.ui.Cells.l1 {
         e4Var2.e = true;
         e4Var2.q(12.0f);
         wnVar.A1 = e4Var2;
-        e4Var2.l0 = new dh(12, this, e4Var2);
+        e4Var2.l0 = new fh(11, this, e4Var2);
         e4Var2.s(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FactCheckToast, str)));
         wnVar.X0.addView(wnVar.A1, w7.y5.d(-1, 520.0f, 55, 16.0f, 0.0f, 16.0f, 0.0f));
         wnVar.X0.post(new i2.a0(this, u1Var, i11, i10, 4));

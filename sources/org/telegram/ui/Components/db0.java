@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.text.style.ReplacementSpan;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class db0 extends ReplacementSpan {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class db0 extends ReplacementSpan {
             case 0:
                 return ((fb0) this.b).x;
             case 1:
-                return (int) ((org.telegram.ui.lj0) this.b).n0;
+                return (int) ((org.telegram.ui.kj0) this.b).n0;
             default:
                 return (int) ((tg.m1) this.b).t0;
         }

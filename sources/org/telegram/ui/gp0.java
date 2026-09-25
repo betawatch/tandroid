@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class gp0 extends org.telegram.ui.Components.vl0 {
     public final /* synthetic */ Context c;
@@ -160,7 +160,7 @@ public final class gp0 extends org.telegram.ui.Components.vl0 {
                 arrayList2.clear();
                 hashMap.clear();
                 i11 = ((org.telegram.ui.ActionBar.m2) tp0Var).currentAccount;
-                ArrayList arrayList3 = yh.t5.y(i11, false).I;
+                ArrayList arrayList3 = yh.s5.y(i11, false).I;
                 arrayList2.add(LocaleController.getString(R.string.Gift2TabMine));
                 int i15 = 0;
                 int i16 = 0;

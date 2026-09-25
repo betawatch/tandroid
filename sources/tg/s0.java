@@ -18,12 +18,12 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.j20;
 import org.telegram.ui.ny0;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class s0 extends bb {
     public final ArrayList X;
@@ -80,7 +80,7 @@ public final class s0 extends bb {
         if (view instanceof xg.l) {
             xg.l lVar = (xg.l) view;
             if (lVar.getBoost().cooldown_until_date > 0) {
-                new yc(s0Var.container, s0Var.resourcesProvider).G(R.raw.chats_infotip, 5, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, new Object[0]))).k(true);
+                new xc(s0Var.container, s0Var.resourcesProvider).G(R.raw.chats_infotip, 5, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, new Object[0]))).k(true);
                 return;
             }
             if (arrayList.contains(lVar.getBoost())) {

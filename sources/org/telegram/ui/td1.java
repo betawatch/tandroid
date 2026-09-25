@@ -23,11 +23,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class td1 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public String E;
-    public n81 F;
+    public p81 F;
     public boolean G;
     public SpannableStringBuilder H;
     public final boolean I;
@@ -140,9 +140,9 @@ public final class td1 extends org.telegram.ui.ActionBar.m2 implements Notificat
 
     public final boolean Z(String str, boolean z10) {
         String str2;
-        n81 n81Var = this.F;
-        if (n81Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(n81Var);
+        p81 p81Var = this.F;
+        if (p81Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(p81Var);
             this.F = null;
             this.E = null;
             if (this.y != 0) {
@@ -201,9 +201,9 @@ public final class td1 extends org.telegram.ui.ActionBar.m2 implements Notificat
             }
             a0(org.telegram.ui.ActionBar.h6.F6, LocaleController.getString(R.string.SetUrlChecking));
             this.E = str;
-            n81 n81Var2 = new n81(8, this, str);
-            this.F = n81Var2;
-            AndroidUtilities.runOnUIThread(n81Var2, 300L);
+            p81 p81Var2 = new p81(7, this, str);
+            this.F = p81Var2;
+            AndroidUtilities.runOnUIThread(p81Var2, 300L);
         }
         return true;
     }
@@ -392,7 +392,7 @@ public final class td1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         linearLayout2.addView(this.e, w7.y5.n(-1, -2));
         org.telegram.ui.Cells.e9 e9Var2 = new org.telegram.ui.Cells.e9(context);
         this.d = e9Var2;
-        e9Var2.getTextView().setMovementMethod(new org.telegram.ui.Components.sv(2));
+        e9Var2.getTextView().setMovementMethod(new org.telegram.ui.Components.rv(2));
         this.d.getTextView().setHighlightColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.K6, false));
         if (z10) {
             this.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));

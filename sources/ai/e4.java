@@ -31,8 +31,8 @@ import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.vn;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.a71;
 import org.telegram.ui.ad;
@@ -42,7 +42,7 @@ import org.telegram.ui.sq;
 import org.telegram.ui.wn;
 import org.telegram.ui.xk0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj2;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
                 if (storyItem == null) {
-                    org.telegram.ui.Components.qc Q = new yc(g5Var.z0.c1, d6Var).Q(R.raw.story_bomb2, 36, LocaleController.getString(R.string.StoryNotFound));
+                    org.telegram.ui.Components.qc Q = new xc(g5Var.z0.c1, d6Var).Q(R.raw.story_bomb2, 36, LocaleController.getString(R.string.StoryNotFound));
                     Q.a = 3;
                     Q.k(true);
                     break;
@@ -133,7 +133,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                     l9Var.c0(i14, j3, arrayList);
                     formatString = LocaleController.formatString(R.string.StoryRemovedFromAlbumX, e9Var.b);
                 }
-                new yc(e6Var2.c1, d6Var2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
+                new xc(e6Var2.c1, d6Var2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
                 v5 v5Var = e6Var2.t1;
                 if (v5Var != null) {
                     v5Var.a();
@@ -398,7 +398,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 r1Var.dismiss();
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new u2.i0(10, c1Var, tL_error));
+                    AndroidUtilities.runOnUIThread(new u2.p0(9, c1Var, tL_error));
                     break;
                 } else {
                     r1Var.dismiss();

@@ -1,18 +1,14 @@
 package ki;
 
-import java.io.File;
-
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
-public final class n0 {
-    public final long a;
-    public final File b;
-    public volatile long c;
-    public volatile boolean d;
-    public volatile boolean e;
+public enum n0 {
+    b(30),
+    c(60);
 
-    public n0(long j3, File file) {
-        this.a = j3;
-        this.b = file;
+    public final int a;
+
+    n0(int i10) {
+        this.a = i10;
     }
 }

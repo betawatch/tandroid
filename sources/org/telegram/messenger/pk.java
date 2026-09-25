@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pk implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class pk implements Runnable {
                 ((TranslateController) this.d).lambda$detectStoryLanguage$31((TL_stories.StoryItem) this.c, (String) this.e, (TranslateController.StoryKey) this.b);
                 break;
             case 4:
-                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.ad[]) this.c, (oi.b) this.e, (Activity) this.b);
+                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.zc[]) this.c, (oi.b) this.e, (Activity) this.b);
                 break;
             case 5:
                 CodeHighlighting.lambda$highlightEditable$1((String) this.d, (String) this.c, (SpannableString) this.e, (Utilities.Callback) this.b);

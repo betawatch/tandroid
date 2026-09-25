@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.IOException;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -212,15 +212,15 @@ public final class q4 implements Runnable {
                 eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 24:
-                ki.r0 r0Var = (ki.r0) this.b;
-                if (r0Var.V == 5 && (f0Var = r0Var.R) != null && r0Var.w) {
+                ki.s0 s0Var = (ki.s0) this.b;
+                if (s0Var.V == 5 && (f0Var = s0Var.R) != null && s0Var.w) {
                     long J0 = f0Var.J0();
-                    long j3 = r0Var.F;
-                    if (J0 < j3 || J0 >= r0Var.G) {
-                        r0Var.R.W0(5, j3);
+                    long j3 = s0Var.F;
+                    if (J0 < j3 || J0 >= s0Var.G) {
+                        s0Var.R.W0(5, j3);
                     }
-                    r0Var.c.getClass();
-                    r0Var.h.postDelayed(this, 33L);
+                    s0Var.c.getClass();
+                    s0Var.h.postDelayed(this, 33L);
                     return;
                 }
                 return;

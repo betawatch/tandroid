@@ -64,7 +64,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.fd;
+import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.pk0;
@@ -77,7 +77,7 @@ import y9.s0;
 import z3.d;
 import zg.o0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class c implements pk0, d, e, n5.b, q9.b {
     public Object a;
@@ -869,36 +869,36 @@ public final class c implements pk0, d, e, n5.b, q9.b {
         if (((Bitmap) this.c) == bitmap) {
             return;
         }
-        if (((fd) this.e) != null) {
+        if (((ed) this.e) != null) {
             view.setBackground(null);
             this.e = null;
         }
-        if (((fd) this.d) == null && ((fd) this.e) == null && (bitmap2 = (Bitmap) this.c) != null) {
+        if (((ed) this.d) == null && ((ed) this.e) == null && (bitmap2 = (Bitmap) this.c) != null) {
             bitmap2.recycle();
             this.c = null;
         }
         z();
         this.c = bitmap;
-        fd fdVar = new fd((Bitmap) this.c);
-        this.e = fdVar;
-        view.setBackground(fdVar);
+        ed edVar = new ed((Bitmap) this.c);
+        this.e = edVar;
+        view.setBackground(edVar);
         if (view2 != null) {
-            fd fdVar2 = new fd((Bitmap) this.c);
-            this.d = fdVar2;
-            view2.setBackground(fdVar2);
+            ed edVar2 = new ed((Bitmap) this.c);
+            this.d = edVar2;
+            view2.setBackground(edVar2);
         }
     }
 
     public void z() {
         Bitmap bitmap;
-        if (((fd) this.d) != null) {
+        if (((ed) this.d) != null) {
             this.d = null;
             View view = (View) this.b;
             if (view != null) {
                 view.setBackground(null);
             }
         }
-        if (((fd) this.d) == null && ((fd) this.e) == null && (bitmap = (Bitmap) this.c) != null) {
+        if (((ed) this.d) == null && ((ed) this.e) == null && (bitmap = (Bitmap) this.c) != null) {
             bitmap.recycle();
             this.c = null;
         }

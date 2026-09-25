@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class sg extends FrameLayout {
     public final Drawable E;
@@ -909,15 +909,15 @@ public final class sg extends FrameLayout {
                     if (!MediaController.getInstance().isRecordingPaused() || (chatActivityEnterView.h1.getAudioLeft() <= 0.01f && chatActivityEnterView.h1.getAudioRight() >= 0.99f)) {
                         pgVar.run();
                     } else {
-                        uc ucVar = new uc(5, this, pgVar);
+                        kd kdVar = new kd(4, this, pgVar);
                         if (MessagesController.getGlobalMainSettings().getBoolean("trimvoicehint", true)) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, chatActivityEnterView.W3);
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.RecordingTrimTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.RecordingTrimText);
-                            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(ucVar, 19));
+                            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(kdVar, 19));
                             hg.c.p(R.string.Cancel, alertDialog$Builder, null);
                         } else {
-                            ucVar.run();
+                            kdVar.run();
                         }
                     }
                 }

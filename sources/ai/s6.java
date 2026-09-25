@@ -13,10 +13,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.fb0;
 import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class s6 implements ml0 {
     public final /* synthetic */ jc a;
@@ -84,13 +84,13 @@ public final class s6 implements ml0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 k7 k7Var2 = s6Var.b;
-                                hg.c.q(R.string.StoryHidFromToast, new Object[]{str3}, new yc(k7Var2, k7Var2.s), R.raw.ic_ban, 36);
+                                hg.c.q(R.string.StoryHidFromToast, new Object[]{str3}, new xc(k7Var2, k7Var2.s), R.raw.ic_ban, 36);
                                 o6Var2.a(k7Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 k7 k7Var3 = s6Var.b;
-                                hg.c.q(R.string.StoryShownBackToToast, new Object[]{str3}, new yc(k7Var3, k7Var3.s), R.raw.contact_check, 36);
+                                hg.c.q(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(k7Var3, k7Var3.s), R.raw.contact_check, 36);
                                 o6Var2.a(k7Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }
@@ -119,13 +119,13 @@ public final class s6 implements ml0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 k7 k7Var2 = s6Var.b;
-                                hg.c.q(R.string.StoryHidFromToast, new Object[]{str3}, new yc(k7Var2, k7Var2.s), R.raw.ic_ban, 36);
+                                hg.c.q(R.string.StoryHidFromToast, new Object[]{str3}, new xc(k7Var2, k7Var2.s), R.raw.ic_ban, 36);
                                 o6Var2.a(k7Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 k7 k7Var3 = s6Var.b;
-                                hg.c.q(R.string.StoryShownBackToToast, new Object[]{str3}, new yc(k7Var3, k7Var3.s), R.raw.contact_check, 36);
+                                hg.c.q(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(k7Var3, k7Var3.s), R.raw.contact_check, 36);
                                 o6Var2.a(k7Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }
@@ -147,7 +147,7 @@ public final class s6 implements ml0 {
                             case 0:
                                 messagesController.blockPeer(user.id);
                                 k7 k7Var2 = this.b.b;
-                                new yc(k7Var2, k7Var2.s).e(true).j();
+                                new xc(k7Var2, k7Var2.s).e(true).j();
                                 o6Var.a(k7Var2.d(storyView) ? 1.0f : 0.5f, true);
                                 break;
                             default:
@@ -157,7 +157,7 @@ public final class s6 implements ml0 {
                                 storiesController.j0(user2.id, false, true);
                                 messagesController2.unblockPeer(user2.id);
                                 k7 k7Var3 = this.b.b;
-                                new yc(k7Var3, k7Var3.s).e(false).j();
+                                new xc(k7Var3, k7Var3.s).e(false).j();
                                 o6Var.a(k7Var3.d(storyView) ? 1.0f : 0.5f, true);
                                 break;
                         }
@@ -177,7 +177,7 @@ public final class s6 implements ml0 {
                             case 0:
                                 messagesController.blockPeer(user.id);
                                 k7 k7Var2 = this.b.b;
-                                new yc(k7Var2, k7Var2.s).e(true).j();
+                                new xc(k7Var2, k7Var2.s).e(true).j();
                                 o6Var.a(k7Var2.d(storyView) ? 1.0f : 0.5f, true);
                                 break;
                             default:
@@ -187,7 +187,7 @@ public final class s6 implements ml0 {
                                 storiesController.j0(user2.id, false, true);
                                 messagesController2.unblockPeer(user2.id);
                                 k7 k7Var3 = this.b.b;
-                                new yc(k7Var3, k7Var3.s).e(false).j();
+                                new xc(k7Var3, k7Var3.s).e(false).j();
                                 o6Var.a(k7Var3.d(storyView) ? 1.0f : 0.5f, true);
                                 break;
                         }

@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class jh0 extends FrameLayout {
     public final w9 E;
@@ -65,7 +65,7 @@ public final class jh0 extends FrameLayout {
         this.a = qyVar;
         int currentAccount = qyVar.getCurrentAccount();
         this.b = currentAccount;
-        r61 r61Var = new r61(context, currentAccount, 0, false, new d(this, 18), new nv(this, 12), null, null);
+        r61 r61Var = new r61(context, currentAccount, 0, false, new d(this, 18), new mv(this, 12), null, null);
         this.c = r61Var;
         r61Var.j(new ii.n3(3, this, qyVar));
         addView(r61Var, w7.y5.e(-1, -1, 119));
@@ -420,7 +420,7 @@ public final class jh0 extends FrameLayout {
         }
         this.P = true;
         MessagesController.getGlobalMainSettings().edit().putInt("searchpostsnew", MessagesController.getGlobalMainSettings().getInt("searchpostsnew", 0) + 1).apply();
-        yh.t5.y(this.b, false).p();
+        yh.s5.y(this.b, false).p();
     }
 
     @Override // android.view.View, android.view.ViewParent

@@ -9,9 +9,8 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.wl0;
-import yh.r5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -75,7 +74,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                         qVar3.finishFragment();
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new r5(4, qVar3, tL_error), qVar3.Q == null ? 200L : 0L);
+                        AndroidUtilities.runOnUIThread(new yh.z5(3, qVar3, tL_error), qVar3.Q == null ? 200L : 0L);
                         break;
                     }
                 }

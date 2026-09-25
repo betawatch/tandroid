@@ -50,9 +50,9 @@ import w7.a6;
 import w7.y5;
 import yh.j5;
 import yh.k5;
-import yh.t5;
+import yh.s5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public abstract class s2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final HashMap T = new HashMap();
@@ -113,11 +113,11 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         } else {
             this.c = j3;
         }
-        t5.y(i10, false).Q(this.c);
+        s5.y(i10, false).Q(this.c);
         int i12 = 1;
-        k5 G = t5.y(i10, false).G(this.c, true);
+        k5 G = s5.y(i10, false).G(this.c, true);
         this.d = G;
-        j5 F = t5.y(i10, false).F(this.c, true);
+        j5 F = s5.y(i10, false).F(this.c, true);
         this.e = F;
         F.g = G;
         G.o = true;

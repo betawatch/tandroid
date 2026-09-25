@@ -20,7 +20,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class wz extends DispatchQueue {
     public final int[] E;
@@ -48,7 +48,7 @@ public final class wz extends DispatchQueue {
     public final SurfaceTexture a;
     public long a0;
     public EGL10 b;
-    public final nv b0;
+    public final mv b0;
     public EGLDisplay c;
     public boolean c0;
     public EGLContext d;
@@ -208,7 +208,7 @@ public final class wz extends DispatchQueue {
     }
 
     public final void f(zz zzVar) {
-        postRunnable(new cv(9, this, zzVar));
+        postRunnable(new vw(8, this, zzVar));
     }
 
     public final void finish() {
@@ -463,7 +463,7 @@ public final class wz extends DispatchQueue {
         super.run();
     }
 
-    public wz(SurfaceTexture surfaceTexture, nv nvVar, ci.k8 k8Var, ja jaVar, int i10, int i11) {
+    public wz(SurfaceTexture surfaceTexture, mv mvVar, ci.k8 k8Var, ja jaVar, int i10, int i11) {
         super("VideoFilterGLThread", false);
         this.y = new float[16];
         this.E = new int[1];
@@ -471,7 +471,7 @@ public final class wz extends DispatchQueue {
         this.a = surfaceTexture;
         this.n = i10;
         this.r = i11;
-        this.b0 = nvVar;
+        this.b0 = mvVar;
         this.H = jaVar;
         boolean z10 = jaVar != null;
         this.G = z10;

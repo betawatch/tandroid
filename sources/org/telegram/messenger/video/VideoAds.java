@@ -26,6 +26,7 @@ import ei.m2;
 import gg.t;
 import j$.util.Objects;
 import java.util.ArrayList;
+import ki.h0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
@@ -56,21 +57,21 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.t01;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.t31;
 import rg.x0;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
     private int between_delay;
     private qc bulletin;
-    private yc bulletinFactory;
+    private xc bulletinFactory;
     private long bulletinShowTime;
     private final VideoAdsCache cache;
     private final int currentAccount;
@@ -94,7 +95,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 1);
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class AdLayout extends nb {
         public final ImageView buttonView;
         public final w9 imageView;
@@ -153,7 +154,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -284,7 +285,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -298,7 +299,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -326,14 +327,14 @@ public class VideoAds {
         }
     }
 
-    private VideoAds(int i10, long j3, int i11, yc ycVar, VideoAdsCache videoAdsCache) {
+    private VideoAds(int i10, long j3, int i11, xc xcVar, VideoAdsCache videoAdsCache) {
         this.lastTime = 0L;
         this.currentAccount = i10;
         this.dialogId = j3;
         this.msg_id = i11;
         this.cache = videoAdsCache;
         this.lastTime = System.currentTimeMillis();
-        init(ycVar);
+        init(xcVar);
     }
 
     private void checkPopupShownCallback() {
@@ -350,8 +351,8 @@ public class VideoAds {
         cached.evictAll();
     }
 
-    private void init(yc ycVar) {
-        this.bulletinFactory = ycVar;
+    private void init(xc xcVar) {
+        this.bulletinFactory = xcVar;
         this.lastTime = System.currentTimeMillis();
         this.first = true;
         VideoAdsCache videoAdsCache = this.cache;
@@ -392,7 +393,7 @@ public class VideoAds {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$load$1(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new ki.n(15, this, tLObject));
+        AndroidUtilities.runOnUIThread(new h0(14, this, tLObject));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -420,7 +421,7 @@ public class VideoAds {
     public void lambda$show$14(Context context, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, y70 y70Var) {
         int i10 = this.currentAccount;
         long j3 = this.dialogId;
-        yc ycVar = this.bulletinFactory;
+        xc xcVar = this.bulletinFactory;
         a1 a1Var = new a1();
         d dVar = new d(this, 0);
         Objects.requireNonNull(y70Var);
@@ -433,7 +434,7 @@ public class VideoAds {
         byte[] bArr = tL_sponsoredMessage.random_id;
         tL_messages_reportSponsoredMessage.random_id = bArr;
         tL_messages_reportSponsoredMessage.option = new byte[0];
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_reportSponsoredMessage, new z70(context, a1Var, j3, bArr, aVar, ycVar, dVar, i10));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_reportSponsoredMessage, new z70(context, a1Var, j3, bArr, aVar, xcVar, dVar, i10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -526,11 +527,11 @@ public class VideoAds {
                 }, false);
             }
             if (tL_sponsoredMessage.can_report) {
-                y70Var.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new ki.n(17, context2, a1Var), false);
+                y70Var.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new h0(16, context2, a1Var), false);
                 Context context3 = context2;
                 y70 y70Var3 = y70Var;
                 y70Var = y70Var3;
-                y70Var.c(R.drawable.msg_block2, LocaleController.getString(R.string.ReportAd), new ai.h5(this, context3, tL_sponsoredMessage, y70Var3, 28), false);
+                y70Var.c(R.drawable.msg_block2, LocaleController.getString(R.string.ReportAd), new ai.h5(this, context3, tL_sponsoredMessage, y70Var3, 29), false);
                 if (!MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked()) {
                     y70Var.k();
                     final int i12 = 0;
@@ -561,7 +562,7 @@ public class VideoAds {
             this.currentMenu = y70Var;
             this.currentMenuTranslationY = adLayout.getTranslationY();
             callback.run(Boolean.TRUE);
-            y70Var.p = new ki.n(16, this, callback);
+            y70Var.p = new h0(15, this, callback);
             y70Var.Z();
             checkPopupShownCallback();
             return;
@@ -861,7 +862,7 @@ public class VideoAds {
         });
     }
 
-    public static VideoAds make(int i10, long j3, int i11, yc ycVar) {
+    public static VideoAds make(int i10, long j3, int i11, xc xcVar) {
         VideoAdsLocation videoAdsLocation = new VideoAdsLocation(i10, j3);
         LruCache<VideoAdsLocation, VideoAdsCache> lruCache = cached;
         VideoAdsCache videoAdsCache = lruCache.get(videoAdsLocation);
@@ -869,7 +870,7 @@ public class VideoAds {
             videoAdsCache = new VideoAdsCache(i11);
             lruCache.put(videoAdsLocation, videoAdsCache);
         }
-        return new VideoAds(i10, j3, i11, ycVar, videoAdsCache);
+        return new VideoAds(i10, j3, i11, xcVar, videoAdsCache);
     }
 
     private void schedule() {
@@ -989,7 +990,7 @@ public class VideoAds {
             }
         }, 3, true);
         this.premiumSheet = x0Var2;
-        x0Var2.setOnDismissListener(new ki.n(14, this, x0Var2));
+        x0Var2.setOnDismissListener(new h0(13, this, x0Var2));
         x0Var2.show();
         checkPopupShownCallback();
     }
@@ -1079,7 +1080,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;

@@ -35,7 +35,7 @@ import org.telegram.ui.Components.yb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -82,9 +82,9 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
                 y0Var.d(sb2.toString());
                 break;
             case 4:
-                org.telegram.ui.web.h1 h1Var = (org.telegram.ui.web.h1) obj2;
-                h1Var.e = (ArrayList) obj;
-                l61 l61Var = h1Var.a;
+                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) obj2;
+                g1Var.e = (ArrayList) obj;
+                l61 l61Var = g1Var.a;
                 if (l61Var.G) {
                     l61Var.Y2.N(true);
                     break;
@@ -311,7 +311,7 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
                 paint3.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
                 break;
             case 27:
-                yh.t5.a((yh.t5) obj2, (TL_stars.StarGifts) obj);
+                yh.s5.a((yh.s5) obj2, (TL_stars.StarGifts) obj);
                 break;
             case 28:
                 ((org.telegram.ui.ActionBar.e3) obj2).dismiss(((Boolean) obj).booleanValue());

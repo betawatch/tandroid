@@ -5,12 +5,12 @@ import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.r80;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                 } else {
                     qyVar.getNotificationsController().setDialogNotificationsSettings(j10, 0L, 3);
                 }
-                yc.A(qyVar, !isDialogMuted, null).j();
+                xc.A(qyVar, !isDialogMuted, null).j();
                 qyVar.finishPreviewFragment();
                 break;
             case 3:

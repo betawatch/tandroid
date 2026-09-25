@@ -115,7 +115,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.yg0;
 import yf.r;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class MessagesController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     public static int DIALOG_FILTER_FLAG_BOTS = 16;
@@ -659,7 +659,7 @@ public class MessagesController extends BaseController implements NotificationCe
     private static volatile MessagesController[] Instance = new MessagesController[4];
     private static final Object[] lockObjects = new Object[4];
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class 1 extends CacheFetcher<Integer, TLRPC.TL_help_appConfig> {
         public 1() {
         }
@@ -795,7 +795,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class 4 extends CacheFetcher<Integer, TLRPC.messages_AvailableEffects> {
         public 4() {
         }
@@ -946,7 +946,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class 5 extends CacheFetcher<Void, TL_account.TL_webBrowserSettings> {
         public 5(int i10) {
             super(i10);
@@ -1075,7 +1075,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class ChannelRecommendations {
         public final ArrayList<TLObject> chats = new ArrayList<>();
         public int more;
@@ -1090,7 +1090,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class CommonChatsList {
         public ArrayList<TLRPC.Chat> chats;
         public final int currentAccount;
@@ -1183,7 +1183,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class CommunityPeerDialog {
         public final TLRPC.Chat chat;
         public final TLRPC.Dialog dialog;
@@ -1210,7 +1210,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class CommunityPeersDialog {
         public final ArrayList<CommunityPeerDialog> chatsYouAreIn = new ArrayList<>();
         public final ArrayList<CommunityPeerDialog> chatsYouCanView = new ArrayList<>();
@@ -1222,7 +1222,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class DiceFrameSuccess {
         public int frame;
         public int num;
@@ -1241,12 +1241,12 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public interface ErrorDelegate {
         boolean run(TLRPC.TL_error tL_error);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class FaqSearchResult {
         public int num;
         public String[] path;
@@ -1289,24 +1289,24 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public interface IsInChatCheckedCallback {
         void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public interface MessagesLoadedCallback {
         void onError();
 
         void onMessagesLoaded(boolean z10);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public interface NewMessageCallback {
         boolean onMessageReceived(TLRPC.Message message);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class PeerColor {
         public int channelLvl;
         public int groupLvl;
@@ -1661,7 +1661,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class PeerColors {
         public static final int TYPE_NAME = 0;
         public static final int TYPE_PROFILE = 1;
@@ -1922,14 +1922,14 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class PrintingUser {
         public TLRPC.SendMessageAction action;
         public long lastTime;
         public long userId;
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class ReadTask {
         public long dialogId;
         public int maxDate;
@@ -1946,7 +1946,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class SavedMusicIds {
         public final int currentAccount;
         public final HashSet<Long> ids = new HashSet<>();
@@ -1992,7 +1992,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class SavedMusicList {
         public final int currentAccount;
         public final long dialogId;
@@ -2153,7 +2153,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class SendAsPeersInfo {
         private long loadTime;
         private boolean loading;
@@ -2167,7 +2167,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class SponsoredMessagesInfo {
         public long loadTime;
         public boolean loading;
@@ -2178,7 +2178,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class UnreadCounts {
         public boolean hasUnmutedUnreadDialogs;
         public int mentionCount;
@@ -2187,7 +2187,7 @@ public class MessagesController extends BaseController implements NotificationCe
         public int unreadCount;
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class UserActionUpdatesPts extends TLRPC.Updates {
         private UserActionUpdatesPts() {
         }
@@ -2197,7 +2197,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class UserActionUpdatesSeq extends TLRPC.Updates {
         private UserActionUpdatesSeq() {
         }
@@ -9710,9 +9710,9 @@ public class MessagesController extends BaseController implements NotificationCe
     public static TLRPC.TL_emojiStatusCollectible emojiStatusCollectibleFromGift(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = new TLRPC.TL_emojiStatusCollectible();
         tL_emojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
-        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) yh.t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) yh.t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) yh.t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) yh.s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) yh.s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) yh.s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         tL_emojiStatusCollectible.title = tL_starGiftUnique.title + " #" + tL_starGiftUnique.num;
         if (stargiftattributemodel != null) {
             tL_emojiStatusCollectible.document_id = stargiftattributemodel.document.id;
@@ -11464,7 +11464,7 @@ public class MessagesController extends BaseController implements NotificationCe
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
         if (!bool.booleanValue()) {
             if (U != null) {
-                org.telegram.ui.Components.yc.a0(U).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
+                org.telegram.ui.Components.xc.a0(U).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
                 return;
             }
             return;
@@ -11472,7 +11472,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.sensitiveAgreed.add(Long.valueOf(j3));
         setContentSettings(true);
         if (U != null) {
-            org.telegram.ui.Components.yc.a0(U).P(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new td(0, U)), true)).k(true);
+            org.telegram.ui.Components.xc.a0(U).P(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new td(0, U)), true)).k(true);
         }
         zArr[0] = true;
         if (runnable != null) {
@@ -14299,7 +14299,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         this.fullUsers.k(userFull, user.id);
         getTranslateController().updateDialogFull(user.id);
-        yh.t5.y(this.currentAccount, false).R(userFull);
+        yh.s5.y(this.currentAccount, false).R(userFull);
         this.loadingFullUsers.remove(Long.valueOf(user.id));
         this.loadedFullUsers.put(user.id, System.currentTimeMillis());
         String str = user.first_name + user.last_name + UserObject.getPublicUsername(user);
@@ -15980,7 +15980,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (m2Var instanceof wn) {
                     ((wn) m2Var).qb();
                 }
-                org.telegram.ui.Components.yc.a0(m2Var).t(LocaleController.getString(R.string.NoUsernameFound), null).j();
+                org.telegram.ui.Components.xc.a0(m2Var).t(LocaleController.getString(R.string.NoUsernameFound), null).j();
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -18400,7 +18400,7 @@ public class MessagesController extends BaseController implements NotificationCe
                         i18 = size;
                         if (update instanceof TL_update.TL_updateMonoForumNoPaidException) {
                             TL_update.TL_updateMonoForumNoPaidException tL_updateMonoForumNoPaidException = (TL_update.TL_updateMonoForumNoPaidException) update;
-                            yh.t5.w(this.currentAccount).b0(tL_updateMonoForumNoPaidException.channel_id, DialogObject.getPeerDialogId(tL_updateMonoForumNoPaidException.saved_peer_id), tL_updateMonoForumNoPaidException.exception);
+                            yh.s5.w(this.currentAccount).b0(tL_updateMonoForumNoPaidException.channel_id, DialogObject.getPeerDialogId(tL_updateMonoForumNoPaidException.saved_peer_id), tL_updateMonoForumNoPaidException.exception);
                         } else if (update instanceof TL_update.TL_updatePeerWallpaper) {
                             ChatThemeController.getInstance(this.currentAccount).processUpdate((TL_update.TL_updatePeerWallpaper) update);
                         } else if (update instanceof TL_update.TL_updateUserEmojiStatus) {
@@ -18611,8 +18611,8 @@ public class MessagesController extends BaseController implements NotificationCe
                                                 if (update instanceof TL_update.TL_updateStarsBalance) {
                                                     TL_update.TL_updateStarsBalance tL_updateStarsBalance = (TL_update.TL_updateStarsBalance) update;
                                                     boolean z19 = tL_updateStarsBalance.balance instanceof TL_stars.TL_starsTonAmount;
-                                                    yh.t5.y(this.currentAccount, z19).k0(tL_updateStarsBalance.balance);
-                                                    yh.t5.y(this.currentAccount, z19).T(false);
+                                                    yh.s5.y(this.currentAccount, z19).k0(tL_updateStarsBalance.balance);
+                                                    yh.s5.y(this.currentAccount, z19).T(false);
                                                 } else if (update instanceof TL_update.TL_updateUser) {
                                                     TL_update.TL_updateUser tL_updateUser = (TL_update.TL_updateUser) update;
                                                     TLRPC.User user7 = getUser(Long.valueOf(tL_updateUser.user_id));
@@ -19091,10 +19091,10 @@ public class MessagesController extends BaseController implements NotificationCe
                                                             } else if (update instanceof TL_update.TL_updateMessageReactions) {
                                                                 TL_update.TL_updateMessageReactions tL_updateMessageReactions = (TL_update.TL_updateMessageReactions) update;
                                                                 long peerId = MessageObject.getPeerId(tL_updateMessageReactions.peer);
-                                                                long D = yh.t5.w(this.currentAccount).D(tL_updateMessageReactions.msg_id, peerId);
+                                                                long D = yh.s5.w(this.currentAccount).D(tL_updateMessageReactions.msg_id, peerId);
                                                                 if (D != 0) {
                                                                     c10 = 2;
-                                                                    MessageObject.addPaidReactions(this.currentAccount, tL_updateMessageReactions.reactions, (int) D, yh.t5.w(this.currentAccount).B(yh.m5.a(tL_updateMessageReactions.msg_id, peerId), tL_updateMessageReactions.reactions), true);
+                                                                    MessageObject.addPaidReactions(this.currentAccount, tL_updateMessageReactions.reactions, (int) D, yh.s5.w(this.currentAccount).B(yh.m5.a(tL_updateMessageReactions.msg_id, peerId), tL_updateMessageReactions.reactions), true);
                                                                 } else {
                                                                     c10 = 2;
                                                                 }
@@ -19993,7 +19993,7 @@ public class MessagesController extends BaseController implements NotificationCe
             if (this.fullUsers.f(user.id) == null) {
                 this.fullUsers.k(userFull, user.id);
                 getTranslateController().updateDialogFull(user.id);
-                yh.t5.y(this.currentAccount, false).R(userFull);
+                yh.s5.y(this.currentAccount, false).R(userFull);
                 int indexOfKey = this.blockePeers.indexOfKey(user.id);
                 if (userFull.blocked) {
                     if (indexOfKey < 0) {
@@ -22340,7 +22340,7 @@ public class MessagesController extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$setContentSettings$503(TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            org.telegram.ui.Components.yc.b0(tL_error);
+            org.telegram.ui.Components.xc.b0(tL_error);
         }
     }
 
@@ -35808,7 +35808,7 @@ public class MessagesController extends BaseController implements NotificationCe
         getFileLoader().uploadFile(this.uploadingAvatar, false, true, 16777216);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class ChatlistUpdatesStat {
         long lastRequestTime;
         TL_chatlists.TL_chatlists_chatlistUpdates lastValue;
@@ -36929,7 +36929,7 @@ public class MessagesController extends BaseController implements NotificationCe
         updateEmojiStatus(0L, emojiStatus, starGift);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class DialogFilter {
         private static int dialogFilterPointer = 10;
         public int color;
@@ -37599,7 +37599,7 @@ public class MessagesController extends BaseController implements NotificationCe
         getConnectionsManager().sendRequest(tL_channels_updateEmojiStatus, null);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class EmojiSound {
         public long accessHash;
         public byte[] fileReference;
@@ -38499,7 +38499,7 @@ public class MessagesController extends BaseController implements NotificationCe
         return getInputUser(getUser(Long.valueOf(j3)));
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class DialogPhotos {
         public static final int STEP = 80;
         public final long dialogId;

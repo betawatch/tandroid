@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ub1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -371,7 +371,7 @@ public final class ub1 extends LinearLayout {
                 int i14 = (i13 - i11) / 2;
                 for (int i15 = 0; i15 < getChildCount(); i15++) {
                     View childAt = getChildAt(i15);
-                    if (childAt != ((org.telegram.ui.Components.cw) this.b).s.F && childAt != null) {
+                    if (childAt != ((org.telegram.ui.Components.bw) this.b).s.F && childAt != null) {
                         childAt.layout(paddingLeft, i14 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i14);
                         paddingLeft = org.telegram.messenger.f0.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
                     }
@@ -463,7 +463,7 @@ public final class ub1 extends LinearLayout {
                 super.onMeasure(i10, i11);
                 break;
             case 6:
-                super.onMeasure(Math.max(View.MeasureSpec.getSize(i10), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(((org.telegram.ui.Components.cw) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
+                super.onMeasure(Math.max(View.MeasureSpec.getSize(i10), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(((org.telegram.ui.Components.bw) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
                 break;
             case 11:
                 super.onMeasure(i10, i11);

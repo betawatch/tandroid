@@ -46,7 +46,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterView.OnItemSelectedListener {
     public static final /* synthetic */ int d0 = 0;
@@ -139,7 +139,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
             this.K = null;
         }
         frameLayout.addView(this.d, w7.y5.d(-1, 58.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.d.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
+        this.d.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.qj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -211,7 +211,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         }
         frameLayout.addView(this.e, w7.y5.d(-1, 58.0f, 51, 0.0f, 68.0f, 0.0f, 0.0f));
         final int i14 = 2;
-        this.e.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
+        this.e.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.qj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -291,7 +291,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         this.W.setFocusable(false);
         this.W.setGravity(17);
         final int i15 = 2;
-        frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.qj0
+        frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.pj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -389,7 +389,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         linearLayout2.addView(this.O, w7.y5.k(-9.0f, 0.0f, 0.0f, 0.0f, 55, 36));
         this.O.addTextChangedListener(new m0(this, 11));
         final int i18 = 3;
-        this.O.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
+        this.O.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.qj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -468,7 +468,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         this.Q.setContentDescription(LocaleController.getString(R.string.PhoneNumber));
         linearLayout2.addView(this.Q, w7.y5.n(-1, 36));
         this.Q.addTextChangedListener(new xr(this, 2));
-        this.Q.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
+        this.Q.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.qj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -552,7 +552,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         this.U.addView(this.S, w7.y5.t(21, 21, 16, 0, 0, 9, 0));
         this.U.addView(this.T, w7.y5.q(-2, -2, 16));
         final int i19 = 3;
-        this.U.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.qj0
+        this.U.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.pj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -642,7 +642,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         spannableStringBuilder.append((CharSequence) "  ");
         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.AddContactQr));
         this.n.g(spannableStringBuilder, false, true);
-        this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.qj0
+        this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.pj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -719,7 +719,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         this.r.getEditText().setImeOptions(5);
         this.r.setHint("Notes");
         this.f.addView(this.r, w7.y5.d(-1, 58.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.r.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.rj0
+        this.r.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.qj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -904,7 +904,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         AndroidUtilities.updateViewVisibilityAnimated(this.X, true, 1.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(this.Y, false, 1.0f, false);
         this.Z.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{24.0f}, this.M.getThemedColor(org.telegram.ui.ActionBar.h6.Oh)));
-        this.Z.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.qj0
+        this.Z.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.pj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -1090,7 +1090,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
     @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         super.dismiss();
-        AndroidUtilities.runOnUIThread(new pj0(this, 0), 50L);
+        AndroidUtilities.runOnUIThread(new oj0(this, 0), 50L);
     }
 
     @Override // org.telegram.ui.ActionBar.e3
@@ -1184,7 +1184,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         super.show();
         this.d.getEditText().requestFocus();
         this.d.getEditText().setSelection(this.d.getEditText().length());
-        AndroidUtilities.runOnUIThread(new pj0(this, 1), 50L);
+        AndroidUtilities.runOnUIThread(new oj0(this, 1), 50L);
     }
 
     public final void t(CharSequence charSequence) {
@@ -1332,7 +1332,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         ViewPropertyAnimator alpha = this.n.animate().alpha(!z11 ? 1.0f : 0.0f);
         org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
         final int i10 = 0;
-        alpha.setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: org.telegram.ui.sj0
+        alpha.setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: org.telegram.ui.rj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -1377,7 +1377,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         }).start();
         this.h.setVisibility(0);
         final int i11 = 1;
-        this.h.animate().alpha(!z11 ? 1.0f : 0.0f).setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: org.telegram.ui.sj0
+        this.h.animate().alpha(!z11 ? 1.0f : 0.0f).setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: org.telegram.ui.rj0
             public final /* synthetic */ wj0 b;
 
             {
@@ -1422,7 +1422,7 @@ public final class wj0 extends org.telegram.ui.ActionBar.e3 implements AdapterVi
         }).start();
         this.r.setVisibility(0);
         final int i12 = 2;
-        this.r.animate().alpha(z11 ? 1.0f : 0.0f).setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: org.telegram.ui.sj0
+        this.r.animate().alpha(z11 ? 1.0f : 0.0f).setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: org.telegram.ui.rj0
             public final /* synthetic */ wj0 b;
 
             {

@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.l21;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class z1 extends FrameLayout implements l0, NotificationCenter.NotificationCenterDelegate {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -130,7 +130,7 @@ public final class z1 extends FrameLayout implements l0, NotificationCenter.Noti
                 this.n.setImage(null, null, y1Var, null, premiumPromo, 1);
                 FileLoader.getInstance(this.s).loadFile(document, premiumPromo, 3, 0);
                 this.R = document;
-                Utilities.globalQueue.postRunnable(new org.telegram.ui.web.f1(20, this, document));
+                Utilities.globalQueue.postRunnable(new org.telegram.ui.web.o1(19, this, document));
                 if (i11 != 1) {
                     ra.a aVar = new ra.a(2);
                     aVar.c = new RectF();

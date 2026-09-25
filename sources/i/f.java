@@ -3,14 +3,14 @@ package i;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import ii.u0;
-import org.telegram.ui.Components.fd;
+import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.q31;
 import org.telegram.ui.Components.xo0;
 import yh.l3;
 import zg.m0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class f implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class f implements Drawable.Callback {
                 ((xo0) this.b).b.run();
                 break;
             case 4:
-                ((fd) this.b).invalidateSelf();
+                ((ed) this.b).invalidateSelf();
                 break;
             case 5:
                 ((q31) this.b).invalidateSelf();
@@ -80,7 +80,7 @@ public final class f implements Drawable.Callback {
             case 3:
                 break;
             case 4:
-                ((fd) this.b).scheduleSelf(runnable, j3);
+                ((ed) this.b).scheduleSelf(runnable, j3);
                 break;
             case 5:
                 break;
@@ -123,7 +123,7 @@ public final class f implements Drawable.Callback {
             case 3:
                 break;
             case 4:
-                ((fd) this.b).unscheduleSelf(runnable);
+                ((ed) this.b).unscheduleSelf(runnable);
                 break;
             case 5:
                 break;

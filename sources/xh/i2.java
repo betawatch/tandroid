@@ -17,16 +17,16 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.mb0;
 import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zr0;
+import org.telegram.ui.jr0;
 import org.telegram.ui.sx;
-import org.telegram.ui.wr0;
 import w7.y5;
 import yh.j5;
-import yh.t5;
+import yh.s5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ o2 a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                     ConnectionsManager.getInstance(i10).sendRequest(savestargift, null, 64);
                 }
                 if (o2Var.e.m(savedStarGift, z11, true)) {
-                    yc.a0(zr0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
+                    xc.a0(zr0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
                 }
                 if (z10) {
                     return;
@@ -158,7 +158,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                                 Object obj8 = arrayList.get(i14);
                                 i14++;
                                 int i15 = size2;
-                                if (t5.k((TL_stars.SavedStarGift) obj8, savedStarGift)) {
+                                if (s5.k((TL_stars.SavedStarGift) obj8, savedStarGift)) {
                                     linearLayout = linearLayout2;
                                     z12 = true;
                                     break;
@@ -217,7 +217,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                             zr0Var2 = zr0Var;
                             j1Var2 = j1Var;
                             z10 = false;
-                            I.c(z14 ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z14 ? R.string.Gift2Unpin : R.string.Gift2Pin), new wr0(o2Var2, savedStarGift, j1Var2, view, 26), false);
+                            I.c(z14 ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z14 ? R.string.Gift2Unpin : R.string.Gift2Pin), new jr0(o2Var2, savedStarGift, j1Var2, view, 27), false);
                             I.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new d2(o2Var2, 0), savedStarGift.pinned_to_top);
                         } else {
                             o2Var2 = o2Var;
@@ -264,7 +264,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                                 }
                             }, z10);
                         }
-                        I.l(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new u2.i0(13, o2Var2, str2), str2 != null);
+                        I.l(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new u2.p0(12, o2Var2, str2), str2 != null);
                         final int i18 = 1;
                         I.l(R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: xh.e2
                             @Override // java.lang.Runnable

@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class k1 implements d0, y2.h {
+public final class k1 implements d0, y2.g {
     public final g2.m a;
     public final g2.g b;
     public final g2.c0 c;
@@ -17,7 +17,7 @@ public final class k1 implements d0, y2.h {
     public final p1 f;
     public final ArrayList h = new ArrayList();
     public final long n;
-    public final y2.m r;
+    public final y2.l r;
     public final b2.s s;
     public final boolean v;
     public boolean w;
@@ -34,12 +34,12 @@ public final class k1 implements d0, y2.h {
         this.e = aVar;
         this.v = z10;
         this.f = new p1(new b2.l1("", sVar));
-        this.r = aVar2 != null ? new y2.m(aVar2) : new y2.m("SingleSampleMediaPeriod");
+        this.r = aVar2 != null ? new y2.l(aVar2) : new y2.l("SingleSampleMediaPeriod");
     }
 
-    @Override // y2.h
-    public final void E(y2.j jVar, long j3, long j10, boolean z10) {
-        Uri uri = ((j1) jVar).b.c;
+    @Override // y2.g
+    public final void E(y2.i iVar, long j3, long j10, boolean z10) {
+        Uri uri = ((j1) iVar).b.c;
         t tVar = new t(j10);
         this.d.getClass();
         this.e.o(tVar, 1, -1, null, 0, null, 0L, this.n);
@@ -83,18 +83,18 @@ public final class k1 implements d0, y2.h {
 
     /* JADX WARN: Removed duplicated region for block: B:35:0x0074  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x007a  */
-    @Override // y2.h
+    @Override // y2.g
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d m(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         k4.d dVar;
-        Uri uri = ((j1) jVar).b.c;
+        Uri uri = ((j1) iVar).b.c;
         t tVar = new t(j10);
         String str = e2.d0.a;
         this.d.getClass();
-        if (!(iOException instanceof b2.s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof g2.u) && !(iOException instanceof y2.l)) {
+        if (!(iOException instanceof b2.s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof g2.u) && !(iOException instanceof y2.k)) {
             int i11 = g2.j.b;
             for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
                 if (!(th2 instanceof g2.j) || ((g2.j) th2).a != 2008) {
@@ -103,11 +103,11 @@ public final class k1 implements d0, y2.h {
             j11 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
             boolean z10 = j11 != -9223372036854775807L || i10 >= 3;
             if (this.v || !z10) {
-                dVar = j11 == -9223372036854775807L ? new k4.d(0, j11, false) : y2.m.f;
+                dVar = j11 == -9223372036854775807L ? new k4.d(0, j11, false) : y2.l.f;
             } else {
                 e2.a.o("SingleSampleMediaPeriod", "Loading failed, treating as end-of-stream.", iOException);
                 this.w = true;
-                dVar = y2.m.e;
+                dVar = y2.l.e;
             }
             k4.d dVar2 = dVar;
             this.e.q(tVar, 1, -1, this.s, 0, null, 0L, this.n, iOException, !dVar2.a());
@@ -125,10 +125,10 @@ public final class k1 implements d0, y2.h {
         return dVar22;
     }
 
-    @Override // y2.h
-    public final void n(y2.j jVar, long j3, long j10, int i10) {
+    @Override // y2.g
+    public final void n(y2.i iVar, long j3, long j10, int i10) {
         t tVar;
-        j1 j1Var = (j1) jVar;
+        j1 j1Var = (j1) iVar;
         g2.b0 b0Var = j1Var.b;
         if (i10 == 0) {
             tVar = new t(j1Var.a);
@@ -139,9 +139,9 @@ public final class k1 implements d0, y2.h {
         this.e.s(tVar, 1, -1, this.s, 0, null, 0L, this.n, i10);
     }
 
-    @Override // y2.h
-    public final void o(y2.j jVar, long j3, long j10) {
-        j1 j1Var = (j1) jVar;
+    @Override // y2.g
+    public final void o(y2.i iVar, long j3, long j10) {
+        j1 j1Var = (j1) iVar;
         this.y = (int) j1Var.b.b;
         byte[] bArr = j1Var.c;
         bArr.getClass();
@@ -158,8 +158,8 @@ public final class k1 implements d0, y2.h {
         if (this.w) {
             return false;
         }
-        y2.m mVar = this.r;
-        if (mVar.d() || mVar.c()) {
+        y2.l lVar = this.r;
+        if (lVar.d() || lVar.c()) {
             return false;
         }
         g2.h createDataSource = this.b.createDataSource();
@@ -169,7 +169,7 @@ public final class k1 implements d0, y2.h {
         }
         j1 j1Var = new j1(createDataSource, this.a);
         this.d.getClass();
-        mVar.f(j1Var, this, 3);
+        lVar.f(j1Var, this, 3);
         return true;
     }
 

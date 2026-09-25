@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h21 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class h21 implements Runnable {
             case 2:
                 int i10 = R.raw.default_pattern;
                 w21 w21Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new ix0(20, w21Var2, SvgHelper.getBitmap(i10, w21Var2.w.getWidth(), w21Var2.w.getHeight(), -16777216)));
+                AndroidUtilities.runOnUIThread(new jx0(19, w21Var2, SvgHelper.getBitmap(i10, w21Var2.w.getWidth(), w21Var2.w.getHeight(), -16777216)));
                 break;
             case 3:
                 w21 w21Var3 = this.b;

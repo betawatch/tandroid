@@ -5,17 +5,17 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class o6 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     public float T;
     public float U;
-    public final org.telegram.ui.Components.zc V;
+    public final org.telegram.ui.Components.yc V;
     public boolean W;
 
     public o6(q6 q6Var, Context context) {
         super(context, q6Var.G1);
-        this.V = new org.telegram.ui.Components.zc(this);
+        this.V = new org.telegram.ui.Components.yc(this);
         this.W = true;
     }
 
@@ -35,13 +35,13 @@ public final class o6 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
-        org.telegram.ui.Components.zc zcVar = this.V;
+        org.telegram.ui.Components.yc ycVar = this.V;
         if (action == 0) {
             this.T = motionEvent.getX();
             this.U = motionEvent.getY();
-            zcVar.c(this.W);
+            ycVar.c(this.W);
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            zcVar.c(false);
+            ycVar.c(false);
         }
         return super.dispatchTouchEvent(motionEvent);
     }

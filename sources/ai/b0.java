@@ -36,7 +36,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.gd;
+import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.rr;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.s51;
 import org.telegram.ui.hx;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public abstract class b0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, le.e {
     public boolean A0;
@@ -59,7 +59,7 @@ public abstract class b0 extends FrameLayout implements NotificationCenter.Notif
     public float G0;
     public final Paint H;
     public ValueAnimator H0;
-    public final gd I;
+    public final fd I;
     public float I0;
     public ci.e4 J;
     public OvershootInterpolator J0;
@@ -136,8 +136,8 @@ public abstract class b0 extends FrameLayout implements NotificationCenter.Notif
         Paint paint = new Paint();
         this.G = new Paint(1);
         this.H = new Paint(1);
-        gd gdVar = new gd(this);
-        this.I = gdVar;
+        fd fdVar = new fd(this);
+        this.I = fdVar;
         this.N = -1.0f;
         this.O = -1;
         this.P = new ArrayList();
@@ -165,10 +165,10 @@ public abstract class b0 extends FrameLayout implements NotificationCenter.Notif
         qVar.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
         qVar.setClipToPadding(false);
         qVar.setClipChildren(false);
-        gdVar.h = new a3.d(hxVar, 2);
+        fdVar.h = new a3.d(hxVar, 2);
         f fVar = new f(hxVar, 0);
-        gdVar.l = true;
-        gdVar.j = fVar;
+        fdVar.l = true;
+        fdVar.j = fVar;
         qVar.j(new r(hxVar, 0));
         s4.j jVar = new s4.j();
         this.R = jVar;
@@ -1337,14 +1337,14 @@ public abstract class b0 extends FrameLayout implements NotificationCenter.Notif
             int y3 = (int) qVar.getY();
             int x11 = (int) (qVar.getX() + dp);
             int y10 = (int) (qVar.getY() + qVar.getHeight());
-            gd gdVar = this.I;
-            gdVar.getClass();
+            fd fdVar = this.I;
+            fdVar.getClass();
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(x10, y3, x11, y10);
-            gdVar.i = false;
-            gdVar.c = 0;
-            gdVar.a(rectF);
-            if (gdVar.b(motionEvent)) {
+            fdVar.i = false;
+            fdVar.c = 0;
+            fdVar.a(rectF);
+            if (fdVar.b(motionEvent)) {
                 return true;
             }
         }

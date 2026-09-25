@@ -29,10 +29,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class a0 extends FrameLayout {
     public long E;
@@ -679,11 +679,11 @@ public final class a0 extends FrameLayout {
         super.setPressed(z10);
         ca caVar = this.O;
         if (z10 && caVar.H == null) {
-            caVar.H = new zc(this, 1.5f, 5.0f);
+            caVar.H = new yc(this, 1.5f, 5.0f);
         }
-        zc zcVar = caVar.H;
-        if (zcVar != null) {
-            zcVar.c(z10);
+        yc ycVar = caVar.H;
+        if (ycVar != null) {
+            ycVar.c(z10);
         }
     }
 

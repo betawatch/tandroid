@@ -28,7 +28,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mi1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class et implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,14 +60,14 @@ public final /* synthetic */ class et implements View.OnClickListener {
                 m2Var.presentFragment(new org.telegram.ui.z6());
                 break;
             case 1:
-                uv.o((uv) this.b, (z5) this.c);
+                tv.o((tv) this.b, (z5) this.c);
                 break;
             case 2:
                 cz czVar = (cz) this.b;
                 org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) this.c;
                 lz lzVar = czVar.v;
-                uw uwVar = lzVar.D0;
-                if (uwVar.indexOfChild(o8Var) != -1 && (T = uwVar.T(o8Var)) != null) {
+                tw twVar = lzVar.D0;
+                if (twVar.indexOfChild(o8Var) != -1 && (T = twVar.T(o8Var)) != null) {
                     if (T.b() == lzVar.f1) {
                         if (lzVar.h1 != null) {
                             my myVar = lzVar.t1;
@@ -91,7 +91,7 @@ public final /* synthetic */ class et implements View.OnClickListener {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(czVar.c);
                         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentStickersAlertTitle);
                         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentStickersAlertMessage);
-                        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new nv(czVar, i11));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new mv(czVar, i11));
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                         org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
                         a2Var.show();
@@ -266,9 +266,9 @@ public final /* synthetic */ class et implements View.OnClickListener {
                 break;
             case 16:
                 CharSequence charSequence = (CharSequence) this.b;
-                yh.r5 r5Var = (yh.r5) this.c;
+                yh.z5 z5Var = (yh.z5) this.c;
                 AndroidUtilities.addToClipboard(charSequence);
-                r5Var.run();
+                z5Var.run();
                 break;
             case 17:
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.b;

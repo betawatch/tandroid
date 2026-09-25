@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.z1, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.f, e2.h, x2.m, org.telegram.ui.ky {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
     @Override // e2.h
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.b;
-        ((u2.k0) obj).c(aVar.b, (u2.f0) this.c, (u2.b0) this.d);
+        ((u2.j0) obj).c(aVar.b, (u2.f0) this.c, (u2.b0) this.d);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0077  */
@@ -339,7 +339,7 @@ public final /* synthetic */ class s50 implements d5, org.telegram.ui.ActionBar.
                 ai.u8 u8Var = (ai.u8) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
                 u8Var.F(arrayList);
-                yc.a0(jv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                xc.a0(jv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
                 jv0Var.L(false);
                 break;
             case 4:

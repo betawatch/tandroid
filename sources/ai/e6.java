@@ -88,7 +88,7 @@ import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.ct;
 import org.telegram.ui.Components.cu;
-import org.telegram.ui.Components.fd;
+import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.j40;
 import org.telegram.ui.Components.le;
 import org.telegram.ui.Components.lj0;
@@ -99,7 +99,7 @@ import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cz;
@@ -110,7 +110,7 @@ import org.telegram.ui.wn;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public abstract class e6 extends aw0 implements NotificationCenter.NotificationCenterDelegate {
     public final ImageView A0;
@@ -707,7 +707,7 @@ public abstract class e6 extends aw0 implements NotificationCenter.NotificationC
             } else if (Math.abs(jc.B1 - 2.0f) < 0.05f) {
                 e6Var.D3.setSubtext(LocaleController.getString(R.string.VideoSpeedVeryFast));
             } else {
-                e6Var.D3.setSubtext(LocaleController.formatString(R.string.VideoSpeedCustom, fd.a(jc.B1) + "x"));
+                e6Var.D3.setSubtext(LocaleController.formatString(R.string.VideoSpeedCustom, ed.a(jc.B1) + "x"));
             }
         }
         e6Var.C3.a(jc.B1, z10);
@@ -810,7 +810,7 @@ public abstract class e6 extends aw0 implements NotificationCenter.NotificationC
             AndroidUtilities.shakeViewSpring(a4Var, i11);
             BotWebViewVibrationEffect.APP_ERROR.vibrate();
             String userName = e6Var.B1 >= 0 ? UserObject.getUserName(MessagesController.getInstance(e6Var.C2).getUser(Long.valueOf(e6Var.B1))) : "";
-            (MessagesController.getInstance(e6Var.C2).premiumFeaturesBlocked() ? new yc(a5Var, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedRepliesNonPremium, userName))) : new yc(a5Var, d6Var).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedRepliesNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new c3(e6Var, 5))).j();
+            (MessagesController.getInstance(e6Var.C2).premiumFeaturesBlocked() ? new xc(a5Var, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedRepliesNonPremium, userName))) : new xc(a5Var, d6Var).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedRepliesNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new c3(e6Var, 5))).j();
             return;
         }
         if (e6Var.J3 != null && e6Var.K3 != null) {
@@ -1836,7 +1836,7 @@ public abstract class e6 extends aw0 implements NotificationCenter.NotificationC
     public final void Z0() {
         a5 a5Var = this.c1;
         org.telegram.ui.ActionBar.d6 d6Var = this.B0;
-        ok.p(R.string.UnsupportedAttachment, new yc(a5Var, d6Var), d6Var);
+        ok.p(R.string.UnsupportedAttachment, new xc(a5Var, d6Var), d6Var);
     }
 
     public final void a1() {
@@ -4296,7 +4296,7 @@ public abstract class e6 extends aw0 implements NotificationCenter.NotificationC
             currentPeerView.s0();
         }
         if (z10) {
-            org.telegram.ui.Components.qc I = new yc(this.c1, this.B0).I(R.raw.forward, LocaleController.getString(R.string.MessageSent), LocaleController.getString(R.string.ViewInChat), 5000, false, new c3(this, 2));
+            org.telegram.ui.Components.qc I = new xc(this.c1, this.B0).I(R.raw.forward, LocaleController.getString(R.string.MessageSent), LocaleController.getString(R.string.ViewInChat), 5000, false, new c3(this, 2));
             I.r = false;
             I.k(false);
         }

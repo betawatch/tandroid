@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yp implements Runnable {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class yp implements Runnable {
                 imageView.setAlpha(1.0f);
                 break;
             case 12:
-                ((pv) obj).a(true, true);
+                ((ov) obj).a(true, true);
                 break;
             case 13:
                 jx jxVar = (jx) obj;
@@ -137,7 +137,7 @@ public final /* synthetic */ class yp implements Runnable {
                 gz gzVar = ezVar.w;
                 int i13 = gzVar.M;
                 lz lzVar = gzVar.Q;
-                uw uwVar = lzVar.D0;
+                tw twVar = lzVar.D0;
                 if (i13 == ezVar.b) {
                     arrayList2.remove(arrayList);
                     gzVar.E = ezVar.c;
@@ -148,10 +148,10 @@ public final /* synthetic */ class yp implements Runnable {
                     gzVar.J = ezVar.n;
                     gzVar.K = new ArrayList(arrayList);
                     lzVar.G0.e(false);
-                    s4.h0 adapter = uwVar.getAdapter();
+                    s4.h0 adapter = twVar.getAdapter();
                     gz gzVar2 = lzVar.z0;
                     if (adapter != gzVar2) {
-                        uwVar.setAdapter(gzVar2);
+                        twVar.setAdapter(gzVar2);
                     }
                     gzVar.l();
                     break;
@@ -231,7 +231,7 @@ public final /* synthetic */ class yp implements Runnable {
                                     nwVar.performHapticFeedback(3, 1);
                                 } catch (Exception unused2) {
                                 }
-                                qc I = yc.a0(qyVar).I(R.raw.filter_reorder, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LimitReachedReorderFolder, LocaleController.getString(R.string.FilterAllChats))), LocaleController.getString(R.string.PremiumMore), 5000, false, new org.telegram.ui.aj(nwVar, 22));
+                                qc I = xc.a0(qyVar).I(R.raw.filter_reorder, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LimitReachedReorderFolder, LocaleController.getString(R.string.FilterAllChats))), LocaleController.getString(R.string.PremiumMore), 5000, false, new org.telegram.ui.aj(nwVar, 22));
                                 I.k(true);
                                 qyVar.n3 = I;
                                 break;
@@ -297,12 +297,12 @@ public final /* synthetic */ class yp implements Runnable {
                 break;
             case 25:
                 b60 b60Var = (b60) obj;
-                ki.q0 q0Var = b60Var.O;
-                if (q0Var != null && q0Var.a == 3) {
+                ki.r0 r0Var = b60Var.R;
+                if (r0Var != null && r0Var.a == 3) {
                     long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
-                    long j10 = b60Var.v0;
+                    long j10 = b60Var.y0;
                     if (j10 == 0 || elapsedRealtimeNanos - j10 >= 70000000) {
-                        b60Var.v();
+                        b60Var.w();
                         break;
                     }
                 }

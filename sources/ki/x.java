@@ -2,42 +2,20 @@ package ki;
 
 import android.opengl.GLES20;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
-public class x {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
+public final class x extends u {
+    public final int f;
+    public final int g;
+    public final int h;
 
-    public x(String str, String str2) {
-        int a2 = a0.a(35633, str);
-        this.b = a2;
-        int a10 = a0.a(35632, str2);
-        this.c = a10;
-        int glCreateProgram = GLES20.glCreateProgram();
-        GLES20.glAttachShader(glCreateProgram, a2);
-        GLES20.glAttachShader(glCreateProgram, a10);
-        GLES20.glBindAttribLocation(glCreateProgram, 0, "aPosition");
-        GLES20.glBindAttribLocation(glCreateProgram, 1, "aTextureCoord");
-        GLES20.glLinkProgram(glCreateProgram);
-        int[] iArr = new int[1];
-        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
-        if (iArr[0] == 0) {
-            String glGetProgramInfoLog = GLES20.glGetProgramInfoLog(glCreateProgram);
-            GLES20.glDeleteProgram(glCreateProgram);
-            throw new IllegalStateException(v7.j.g("Unable to link program: ", glGetProgramInfoLog));
-        }
-        this.a = glCreateProgram;
-        this.d = 1;
-        int glGetUniformLocation = GLES20.glGetUniformLocation(glCreateProgram, "sTexture");
-        GLES20.glUseProgram(glCreateProgram);
-        GLES20.glUniform1i(glGetUniformLocation, 0);
-    }
-
-    public final void a() {
-        GLES20.glDeleteProgram(this.a);
-        GLES20.glDeleteShader(this.b);
-        GLES20.glDeleteShader(this.c);
+    public x() {
+        super("#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nvarying vec2 vScreenTextureCoord;\nuniform samplerExternalOES sTexture;\nuniform sampler2D hTexture;\nuniform vec2 sampleStepX;\nuniform vec2 sampleStepY;\nuniform float historyWeight;\nvoid main() {\n    vec3 current = texture2D(sTexture, vTextureCoord).rgb * 0.25;\n    current += (texture2D(sTexture, vTextureCoord + sampleStepX).rgb\n            + texture2D(sTexture, vTextureCoord - sampleStepX).rgb\n            + texture2D(sTexture, vTextureCoord + sampleStepY).rgb\n            + texture2D(sTexture, vTextureCoord - sampleStepY).rgb) * 0.125;\n    current += (texture2D(sTexture, vTextureCoord + sampleStepX + sampleStepY).rgb\n            + texture2D(sTexture, vTextureCoord + sampleStepX - sampleStepY).rgb\n            + texture2D(sTexture, vTextureCoord - sampleStepX + sampleStepY).rgb\n            + texture2D(sTexture, vTextureCoord - sampleStepX - sampleStepY).rgb) * 0.0625;\n    vec3 history = texture2D(hTexture, vScreenTextureCoord).rgb;\n    float difference = dot(abs(current - history), vec3(0.333333));\n    float motion = smoothstep(0.035, 0.18, difference);\n    float weight = mix(historyWeight, historyWeight * 0.65, motion);\n    gl_FragColor = vec4(mix(current, history, weight), 1.0);\n}\n", 0);
+        int glGetUniformLocation = GLES20.glGetUniformLocation(this.a, "hTexture");
+        this.f = GLES20.glGetUniformLocation(this.a, "sampleStepX");
+        this.g = GLES20.glGetUniformLocation(this.a, "sampleStepY");
+        this.h = GLES20.glGetUniformLocation(this.a, "historyWeight");
+        GLES20.glUseProgram(this.a);
+        GLES20.glUniform1i(glGetUniformLocation, 1);
     }
 }

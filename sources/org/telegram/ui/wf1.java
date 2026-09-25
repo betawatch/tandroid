@@ -55,7 +55,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class wf1 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.ch, xg0 {
     public static final HashSet n1 = new HashSet();
@@ -266,7 +266,7 @@ public class wf1 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
         Activity parentActivity = wf1Var.getParentActivity();
         boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(wf1Var.g());
         int i10 = org.telegram.ui.Components.r80.r;
-        org.telegram.ui.Components.r80.w(parentActivity, wf1Var, org.telegram.ui.Components.yc.a0(wf1Var), isChannelAndNotMegaGroup);
+        org.telegram.ui.Components.r80.w(parentActivity, wf1Var, org.telegram.ui.Components.xc.a0(wf1Var), isChannelAndNotMegaGroup);
         wf1Var.O0(true);
         return false;
     }
@@ -2140,7 +2140,7 @@ public class wf1 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
             if (this.y0 == null || !z10 || chatFull == null || chatFull.call != null || this.fragmentView == null || getParentActivity() == null) {
                 return;
             }
-            org.telegram.messenger.f0.p(R.string.LinkHashExpired, org.telegram.ui.Components.yc.a0(this), R.raw.linkbroken, 36);
+            org.telegram.messenger.f0.p(R.string.LinkHashExpired, org.telegram.ui.Components.xc.a0(this), R.raw.linkbroken, 36);
             this.y0 = null;
         }
     }

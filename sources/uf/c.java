@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import u2.i0;
+import u2.p0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile long g;
@@ -65,7 +65,7 @@ public final class c {
             f(true);
             this.f = true;
         }
-        Utilities.globalQueue.postRunnable(new i0(3, this, new ArrayList(this.e)));
+        Utilities.globalQueue.postRunnable(new p0(2, this, new ArrayList(this.e)));
     }
 
     public final TLRPC.Document c(long j3) {

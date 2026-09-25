@@ -48,7 +48,6 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.l5;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Components.cn0;
 import org.telegram.ui.Components.cu;
@@ -62,7 +61,7 @@ import org.telegram.ui.Components.vn0;
 import org.telegram.ui.Components.y70;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -454,8 +453,8 @@ public final /* synthetic */ class v implements Utilities.Callback2 {
                     z10 = false;
                     I.c(R.drawable.msg_channel, LocaleController.getString(R.string.SponsoredMessageSponsorReportable), new m2(I, J3, 8), false);
                 }
-                I.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new l5(eo0Var, qyVar, eo0Var.J0, I, 29), z10);
-                I.c(R.drawable.msg_block2, LocaleController.getString(R.string.ReportAd), new vn0(eo0Var, qyVar, tL_sponsoredPeer, I, 0), z10);
+                I.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new vn0(eo0Var, qyVar, eo0Var.J0, I, 0), z10);
+                I.c(R.drawable.msg_block2, LocaleController.getString(R.string.ReportAd), new vn0(eo0Var, qyVar, tL_sponsoredPeer, I, 1), z10);
                 I.k();
                 I.c(R.drawable.msg_cancel, LocaleController.getString(R.string.RemoveAds), new cn0(eo0Var, qyVar, I, 1), z10);
                 I.V(LocaleController.isRTL ? 3 : 5);

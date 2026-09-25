@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class lz0 extends a71 {
     public final /* synthetic */ r61[] d2;
@@ -28,7 +28,7 @@ public final class lz0 extends a71 {
             return true;
         }
         i10 = ((org.telegram.ui.ActionBar.m2) this.e2).currentAccount;
-        return yh.t5.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
+        return yh.s5.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
     }
 
     @Override // org.telegram.ui.a71
@@ -47,7 +47,7 @@ public final class lz0 extends a71 {
         r61[] r61VarArr = this.d2;
         if (tL_starGiftUnique != null) {
             i10 = ((org.telegram.ui.ActionBar.m2) profileActivity).currentAccount;
-            TL_stars.SavedStarGift n10 = yh.t5.y(i10, false).n(tL_starGiftUnique.id);
+            TL_stars.SavedStarGift n10 = yh.s5.y(i10, false).n(tL_starGiftUnique.id);
             if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
                 MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
                 Context context = getContext();

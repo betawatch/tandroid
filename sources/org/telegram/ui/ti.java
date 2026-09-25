@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ti implements Runnable {
     public final /* synthetic */ boolean a;
@@ -38,7 +38,7 @@ public final class ti implements Runnable {
                 if (this.b) {
                     wnVar.h8(new si(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
                 } else {
-                    wnVar.h8(new dh(10, this, this.r));
+                    wnVar.h8(new fh(9, this, this.r));
                 }
                 wnVar.A7(true);
             }

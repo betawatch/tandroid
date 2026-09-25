@@ -25,7 +25,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import ki.n;
+import ki.h0;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -33,7 +33,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.g10;
 import org.telegram.ui.Components.h10;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class k implements g10 {
     public static final Object v = new Object();
@@ -148,7 +148,7 @@ public final class k implements g10 {
                                 jVar.e = true;
                                 kVar.k(1, andUpdate, null);
                             }
-                            kVar.j.execute(new n(12, kVar, jVar));
+                            kVar.j.execute(new h0(11, kVar, jVar));
                         }
                         try {
                             accept.close();

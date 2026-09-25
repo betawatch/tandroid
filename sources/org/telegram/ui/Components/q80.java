@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class q80 extends org.telegram.ui.wn {
     public boolean Pc;
@@ -51,11 +51,11 @@ public final class q80 extends org.telegram.ui.wn {
         long j3 = this.Rc;
         TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j3));
         if (ChatObject.canManageMyTag(chat)) {
-            qc J = yc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.h0(this, j3, chat, 21));
+            qc J = xc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.h0(this, j3, chat, 21));
             J.r = false;
             J.k(true);
         } else {
-            qc Q = yc.a0(this).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.JoinedGroup));
+            qc Q = xc.a0(this).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.JoinedGroup));
             Q.r = false;
             Q.k(true);
         }

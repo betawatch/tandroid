@@ -42,7 +42,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -287,7 +287,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                             zf0Var.e = tL_error2.text;
                             zf0Var.f = false;
                             dVar.setLoading(false);
-                            new org.telegram.ui.Components.yc(qg0Var2.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, tL_error2.text));
+                            new org.telegram.ui.Components.xc(qg0Var2.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, tL_error2.text));
                             break;
                         } else {
                             qg0Var2.u1(0, true, null, true);
@@ -372,7 +372,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                     }
                 }
             case 6:
-                AndroidUtilities.runOnUIThread(new xi0(3, (bt) this.c, MessagesStorage.getInstance(((wj0) this.b).currentAccount).getUser(((TLRPC.TL_contact) this.d).user_id)));
+                AndroidUtilities.runOnUIThread(new sj0(2, (bt) this.c, MessagesStorage.getInstance(((wj0) this.b).currentAccount).getUser(((TLRPC.TL_contact) this.d).user_id)));
                 break;
             case 7:
                 wj0.m((wj0) this.b, (TLObject) this.c, (bt) this.d);
@@ -384,7 +384,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = kk0Var.n;
                 String lowerCase = str4.trim().toLowerCase();
                 if (lowerCase.length() == 0) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(kk0Var, new ArrayList(), new ArrayList(), new ArrayList(), 25));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(kk0Var, new ArrayList(), new ArrayList(), new ArrayList(), 26));
                     break;
                 } else {
                     String translitString2 = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -508,7 +508,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                         arrayList6 = arrayList;
                         i23 = 1;
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(kk0Var, arrayList8, arrayList9, arrayList7, 25));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(kk0Var, arrayList8, arrayList9, arrayList7, 26));
                     break;
                 }
                 break;
@@ -644,9 +644,9 @@ public final /* synthetic */ class jf0 implements Runnable {
             case 16:
                 oo0 oo0Var = (oo0) this.b;
                 TLRPC.TL_payments_validatedRequestedInfo tL_payments_validatedRequestedInfo = (TLRPC.TL_payments_validatedRequestedInfo) this.d;
-                xi0 xi0Var = (xi0) this.c;
+                sj0 sj0Var = (sj0) this.c;
                 oo0Var.E0 = tL_payments_validatedRequestedInfo;
-                xi0Var.run();
+                sj0Var.run();
                 oo0Var.D0(false);
                 oo0Var.H0(true, false);
                 break;
@@ -676,7 +676,7 @@ public final /* synthetic */ class jf0 implements Runnable {
             case 19:
                 PhotoViewer photoViewer3 = (PhotoViewer) this.b;
                 boolean[] zArr = (boolean[]) this.d;
-                vr0 vr0Var = (vr0) this.c;
+                wr0 wr0Var = (wr0) this.c;
                 Drawable[] drawableArr2 = PhotoViewer.U8;
                 if (!zArr[0]) {
                     ImageView imageView = photoViewer3.x3;
@@ -688,7 +688,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                         surfaceView.setVisibility(4);
                     }
                     zArr[0] = true;
-                    vr0Var.run();
+                    wr0Var.run();
                     break;
                 }
                 break;
@@ -767,10 +767,10 @@ public final /* synthetic */ class jf0 implements Runnable {
                 TLRPC.TL_error tL_error6 = (TLRPC.TL_error) this.d;
                 TLObject tLObject6 = (TLObject) this.c;
                 if (tL_error6 != null) {
-                    org.telegram.ui.Components.yc.b0(tL_error6);
+                    org.telegram.ui.Components.xc.b0(tL_error6);
                     break;
                 } else if (!(tLObject6 instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.messenger.ok.p(R.string.UnknownError, org.telegram.ui.Components.yc.a0(premiumPreviewFragment), null);
+                    org.telegram.messenger.ok.p(R.string.UnknownError, org.telegram.ui.Components.xc.a0(premiumPreviewFragment), null);
                     break;
                 }
                 break;
@@ -822,7 +822,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                 profileActivity2.N3();
                 break;
             case 25:
-                org.telegram.ui.Components.yc.D((ub) this.b, (TLRPC.User) this.d, ((TLRPC.Chat) this.c).title).j();
+                org.telegram.ui.Components.xc.D((ub) this.b, (TLRPC.User) this.d, ((TLRPC.Chat) this.c).title).j();
                 break;
             case 26:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;

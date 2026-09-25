@@ -46,7 +46,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class SecretMediaViewer implements NotificationCenter.NotificationCenterDelegate, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer x1;
@@ -163,9 +163,9 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
     public boolean k0 = true;
     public final PhotoBackgroundDrawable l0 = new PhotoBackgroundDrawable();
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class PhotoBackgroundDrawable extends ColorDrawable {
-        public ix0 a;
+        public jx0 a;
         public int b;
 
         public PhotoBackgroundDrawable() {
@@ -174,13 +174,13 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
 
         @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
         public final void draw(Canvas canvas) {
-            ix0 ix0Var;
+            jx0 jx0Var;
             super.draw(canvas);
             if (getAlpha() != 0) {
-                if (this.b != 2 || (ix0Var = this.a) == null) {
+                if (this.b != 2 || (jx0Var = this.a) == null) {
                     invalidateSelf();
                 } else {
-                    ix0Var.run();
+                    jx0Var.run();
                     this.a = null;
                 }
                 this.b++;

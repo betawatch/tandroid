@@ -63,7 +63,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class ChatAttachAlertPhotoLayout extends oi implements NotificationCenter.NotificationCenterDelegate {
     public static boolean q1;
@@ -1356,7 +1356,7 @@ public class ChatAttachAlertPhotoLayout extends oi implements NotificationCenter
         this.b.X0.setTitle("");
         this.F.h1(0, 0);
         if (z10) {
-            this.E.post(new uc(17, this, oiVar));
+            this.E.post(new kd(16, this, oiVar));
         }
         V();
         m0();
@@ -1442,7 +1442,7 @@ public class ChatAttachAlertPhotoLayout extends oi implements NotificationCenter
             layoutParams.width = i10;
             layoutParams.height = dp;
             this.P.setLayoutParams(layoutParams);
-            AndroidUtilities.runOnUIThread(new uc(18, this, layoutParams));
+            AndroidUtilities.runOnUIThread(new kd(17, this, layoutParams));
         }
     }
 
@@ -1620,11 +1620,11 @@ public class ChatAttachAlertPhotoLayout extends oi implements NotificationCenter
                 return false;
             }
             if (!wiVar.a1()) {
-                org.telegram.messenger.ok.p(R.string.GlobalAttachPhotoRestricted, new yc(wiVar.r1, d6Var), null);
+                org.telegram.messenger.ok.p(R.string.GlobalAttachPhotoRestricted, new xc(wiVar.r1, d6Var), null);
                 return true;
             }
         } else if (!wiVar.a1()) {
-            org.telegram.messenger.ok.p(R.string.GlobalAttachVideoRestricted, new yc(wiVar.r1, d6Var), null);
+            org.telegram.messenger.ok.p(R.string.GlobalAttachVideoRestricted, new xc(wiVar.r1, d6Var), null);
             return true;
         }
         return true;

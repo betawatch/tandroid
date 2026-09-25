@@ -57,7 +57,7 @@ import org.telegram.ui.Components.uf0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.i5;
-import org.telegram.ui.ix0;
+import org.telegram.ui.jx0;
 import org.telegram.ui.l4;
 import org.telegram.ui.n41;
 import org.telegram.ui.nw;
@@ -66,9 +66,9 @@ import org.telegram.ui.qy;
 import v7.e8;
 import w7.pa;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2.o, SuccessContinuation {
+public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2.n, SuccessContinuation {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -241,7 +241,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
     }
 
     @Override // p2.s
-    public y2.o H() {
+    public y2.n H() {
         return new z0(17, ((p2.s) this.b).H(), (List) this.c);
     }
 
@@ -255,7 +255,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
     }
 
     @Override // p2.s
-    public y2.o K(p2.o oVar, p2.l lVar) {
+    public y2.n K(p2.o oVar, p2.l lVar) {
         return new z0(17, ((p2.s) this.b).K(oVar, lVar), (List) this.c);
     }
 
@@ -387,9 +387,9 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         return 0;
     }
 
-    @Override // y2.o
+    @Override // y2.n
     public Object n2(Uri uri, g2.k kVar) {
-        t2.a aVar = (t2.a) ((y2.o) this.b).n2(uri, kVar);
+        t2.a aVar = (t2.a) ((y2.n) this.b).n2(uri, kVar);
         List list = (List) this.c;
         return (list == null || list.isEmpty()) ? aVar : (t2.a) aVar.a(list);
     }
@@ -414,7 +414,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
             return;
         }
         secretMediaViewer.b0 = i10 - 1;
-        AndroidUtilities.runOnUIThread(new ix0(28, this, (File) this.b), 100L);
+        AndroidUtilities.runOnUIThread(new jx0(27, this, (File) this.b), 100L);
     }
 
     @Override // org.telegram.ui.Components.p71

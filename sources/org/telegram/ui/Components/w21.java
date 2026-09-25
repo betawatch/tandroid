@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w21 implements Runnable {
     public final /* synthetic */ int a;
@@ -184,7 +184,7 @@ public final /* synthetic */ class w21 implements Runnable {
                         if (chatFull != null) {
                             if (chatFull.call == null) {
                                 if (m2Var.getParentActivity() != null) {
-                                    org.telegram.messenger.f0.p(R.string.InviteExpired, yc.a0(m2Var), R.raw.linkbroken, 36);
+                                    org.telegram.messenger.f0.p(R.string.InviteExpired, xc.a0(m2Var), R.raw.linkbroken, 36);
                                     break;
                                 }
                             } else {
@@ -203,7 +203,7 @@ public final /* synthetic */ class w21 implements Runnable {
                 ai.l lVar = new ai.l(photoViewer, (String) obj2, photoEntry, j13, 8);
                 if (photoViewer.D2) {
                     Bitmap createBitmap = Bitmap.createBitmap(photoViewer.C2.getWidth(), photoViewer.C2.getHeight(), Bitmap.Config.ARGB_8888);
-                    AndroidUtilities.getBitmapFromSurface(photoViewer.C2, createBitmap, new org.telegram.ui.xi0(18, lVar, createBitmap));
+                    AndroidUtilities.getBitmapFromSurface(photoViewer.C2, createBitmap, new org.telegram.ui.sj0(17, lVar, createBitmap));
                     break;
                 } else {
                     TextureView textureView = photoViewer.B2;
@@ -219,7 +219,7 @@ public final /* synthetic */ class w21 implements Runnable {
             case 6:
                 yh.x3 x3Var = (yh.x3) obj3;
                 Utilities.Callback callback = (Utilities.Callback) obj;
-                if (((yh.t5) obj2).e) {
+                if (((yh.s5) obj2).e) {
                     x3Var.v1(j3, callback);
                     break;
                 } else {
@@ -239,37 +239,37 @@ public final /* synthetic */ class w21 implements Runnable {
                 x3Var2.v1(j3, (Utilities.Callback) obj);
                 break;
             case 9:
-                ((yh.t5) obj2).d0((MessageObject) obj, ((yh.b4) obj3).a, this.b, true, true, null);
+                ((yh.s5) obj2).d0((MessageObject) obj, ((yh.b4) obj3).a, this.b, true, true, null);
                 break;
             case 10:
-                yh.t5 t5Var = (yh.t5) obj3;
+                yh.s5 s5Var = (yh.s5) obj3;
                 TLObject tLObject2 = (TLObject) obj2;
                 Utilities.Callback callback2 = (Utilities.Callback) obj;
                 if (tLObject2 instanceof TL_stars.starGiftUpgradePreview) {
                     TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) tLObject2;
-                    t5Var.M.put(Long.valueOf(j3), stargiftupgradepreview);
+                    s5Var.M.put(Long.valueOf(j3), stargiftupgradepreview);
                     callback2.run(stargiftupgradepreview);
                     break;
                 } else {
-                    t5Var.getClass();
+                    s5Var.getClass();
                     callback2.run(null);
                     break;
                 }
             case 11:
-                yh.t5 t5Var2 = (yh.t5) obj3;
+                yh.s5 s5Var2 = (yh.s5) obj3;
                 Utilities.Callback callback3 = (Utilities.Callback) obj2;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-                if (t5Var2.e) {
-                    t5Var2.H(starGift, this.b, null, true, callback3);
+                if (s5Var2.e) {
+                    s5Var2.H(starGift, this.b, null, true, callback3);
                     break;
                 } else {
-                    yh.t5.e("NO_BALANCE");
+                    yh.s5.e("NO_BALANCE");
                     callback3.run(null);
                     break;
                 }
             case 12:
                 CharSequence charSequence = (CharSequence) obj;
-                yc a02 = yc.a0((org.telegram.ui.wn) obj3);
+                xc a02 = xc.a0((org.telegram.ui.wn) obj3);
                 TLRPC.Document document = ((TL_stars.StarGift) obj2).sticker;
                 String string = LocaleController.getString(R.string.StarsGiftCompleted);
                 if (charSequence == null) {
@@ -278,7 +278,7 @@ public final /* synthetic */ class w21 implements Runnable {
                 a02.s(document, string, charSequence).k(true);
                 break;
             default:
-                ((yh.t5) obj3).h0((LaunchActivity) obj2, j3, (String) obj);
+                ((yh.s5) obj3).h0((LaunchActivity) obj2, j3, (String) obj);
                 break;
         }
     }

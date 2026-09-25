@@ -10,7 +10,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a81 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.c81
                     @Override // java.lang.Runnable
                     public final void run() {
-                        org.telegram.ui.Components.yc a02;
+                        org.telegram.ui.Components.xc a02;
                         int i11;
                         int i12;
                         switch (i10) {
@@ -41,11 +41,11 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                                 SessionsActivity sessionsActivity2 = sessionsActivity;
                                 if (sessionsActivity2.getParentActivity() != null) {
                                     if (tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                        a02 = org.telegram.ui.Components.yc.a0(sessionsActivity2);
+                                        a02 = org.telegram.ui.Components.xc.a0(sessionsActivity2);
                                         i11 = R.raw.contact_check;
                                         i12 = R.string.AllWebSessionsTerminated;
                                     } else {
-                                        a02 = org.telegram.ui.Components.yc.a0(sessionsActivity2);
+                                        a02 = org.telegram.ui.Components.xc.a0(sessionsActivity2);
                                         i11 = R.raw.error;
                                         i12 = R.string.UnknownError;
                                     }
@@ -57,7 +57,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                             case 1:
                                 SessionsActivity sessionsActivity3 = sessionsActivity;
                                 if (sessionsActivity3.getParentActivity() != null && tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.yc.a0(sessionsActivity3), R.raw.contact_check, 36);
+                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.xc.a0(sessionsActivity3), R.raw.contact_check, 36);
                                     sessionsActivity3.k0(false);
                                     break;
                                 }
@@ -65,7 +65,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                             default:
                                 SessionsActivity sessionsActivity4 = sessionsActivity;
                                 if (sessionsActivity4.getParentActivity() != null && tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.yc.a0(sessionsActivity4), R.raw.contact_check, 36);
+                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.xc.a0(sessionsActivity4), R.raw.contact_check, 36);
                                     sessionsActivity4.k0(false);
                                     break;
                                 }
@@ -89,7 +89,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.c81
                     @Override // java.lang.Runnable
                     public final void run() {
-                        org.telegram.ui.Components.yc a02;
+                        org.telegram.ui.Components.xc a02;
                         int i112;
                         int i122;
                         switch (i12) {
@@ -97,11 +97,11 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                                 SessionsActivity sessionsActivity22 = sessionsActivity2;
                                 if (sessionsActivity22.getParentActivity() != null) {
                                     if (tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                        a02 = org.telegram.ui.Components.yc.a0(sessionsActivity22);
+                                        a02 = org.telegram.ui.Components.xc.a0(sessionsActivity22);
                                         i112 = R.raw.contact_check;
                                         i122 = R.string.AllWebSessionsTerminated;
                                     } else {
-                                        a02 = org.telegram.ui.Components.yc.a0(sessionsActivity22);
+                                        a02 = org.telegram.ui.Components.xc.a0(sessionsActivity22);
                                         i112 = R.raw.error;
                                         i122 = R.string.UnknownError;
                                     }
@@ -113,7 +113,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                             case 1:
                                 SessionsActivity sessionsActivity3 = sessionsActivity2;
                                 if (sessionsActivity3.getParentActivity() != null && tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.yc.a0(sessionsActivity3), R.raw.contact_check, 36);
+                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.xc.a0(sessionsActivity3), R.raw.contact_check, 36);
                                     sessionsActivity3.k0(false);
                                     break;
                                 }
@@ -121,7 +121,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                             default:
                                 SessionsActivity sessionsActivity4 = sessionsActivity2;
                                 if (sessionsActivity4.getParentActivity() != null && tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.yc.a0(sessionsActivity4), R.raw.contact_check, 36);
+                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.xc.a0(sessionsActivity4), R.raw.contact_check, 36);
                                     sessionsActivity4.k0(false);
                                     break;
                                 }
@@ -145,7 +145,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.c81
                     @Override // java.lang.Runnable
                     public final void run() {
-                        org.telegram.ui.Components.yc a02;
+                        org.telegram.ui.Components.xc a02;
                         int i112;
                         int i122;
                         switch (i14) {
@@ -153,11 +153,11 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                                 SessionsActivity sessionsActivity22 = sessionsActivity3;
                                 if (sessionsActivity22.getParentActivity() != null) {
                                     if (tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                        a02 = org.telegram.ui.Components.yc.a0(sessionsActivity22);
+                                        a02 = org.telegram.ui.Components.xc.a0(sessionsActivity22);
                                         i112 = R.raw.contact_check;
                                         i122 = R.string.AllWebSessionsTerminated;
                                     } else {
-                                        a02 = org.telegram.ui.Components.yc.a0(sessionsActivity22);
+                                        a02 = org.telegram.ui.Components.xc.a0(sessionsActivity22);
                                         i112 = R.raw.error;
                                         i122 = R.string.UnknownError;
                                     }
@@ -169,7 +169,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                             case 1:
                                 SessionsActivity sessionsActivity32 = sessionsActivity3;
                                 if (sessionsActivity32.getParentActivity() != null && tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.yc.a0(sessionsActivity32), R.raw.contact_check, 36);
+                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.xc.a0(sessionsActivity32), R.raw.contact_check, 36);
                                     sessionsActivity32.k0(false);
                                     break;
                                 }
@@ -177,7 +177,7 @@ public final /* synthetic */ class a81 implements RequestDelegate {
                             default:
                                 SessionsActivity sessionsActivity4 = sessionsActivity3;
                                 if (sessionsActivity4.getParentActivity() != null && tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
-                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.yc.a0(sessionsActivity4), R.raw.contact_check, 36);
+                                    org.telegram.messenger.f0.p(R.string.AllSessionsTerminated, org.telegram.ui.Components.xc.a0(sessionsActivity4), R.raw.contact_check, 36);
                                     sessionsActivity4.k0(false);
                                     break;
                                 }

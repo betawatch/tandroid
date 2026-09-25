@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wl0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class wl0 implements Runnable {
         boolean z10;
         FrameLayout frameLayout;
         String str;
-        org.telegram.ui.Components.yc a02;
+        org.telegram.ui.Components.xc a02;
         int i10;
         int i11 = this.a;
         int i12 = this.b;
@@ -164,10 +164,10 @@ public final /* synthetic */ class wl0 implements Runnable {
                 ProfileActivity profileActivity = (ProfileActivity) obj2;
                 AndroidUtilities.addToClipboard((String) obj);
                 if (i12 == profileActivity.W2) {
-                    a02 = org.telegram.ui.Components.yc.a0(profileActivity);
+                    a02 = org.telegram.ui.Components.xc.a0(profileActivity);
                     i10 = R.string.BioCopied;
                 } else {
-                    a02 = org.telegram.ui.Components.yc.a0(profileActivity);
+                    a02 = org.telegram.ui.Components.xc.a0(profileActivity);
                     i10 = R.string.TextCopied;
                 }
                 org.telegram.messenger.ok.o(i10, a02);
@@ -182,13 +182,13 @@ public final /* synthetic */ class wl0 implements Runnable {
                 }
                 break;
             case 7:
-                org.telegram.ui.Components.yc.a0((org.telegram.ui.ActionBar.m2) obj2).c(LocaleController.getString(R.string.AdHidden)).j();
+                org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.m2) obj2).c(LocaleController.getString(R.string.AdHidden)).j();
                 MessagesController.getInstance(i12).disableAds(false);
-                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.wn0) obj);
+                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.vw) obj);
                 break;
             case 8:
                 ((org.telegram.messenger.video.a) obj2).run();
-                ((org.telegram.ui.Components.yc) obj).c(LocaleController.getString(R.string.AdHidden)).j();
+                ((org.telegram.ui.Components.xc) obj).c(LocaleController.getString(R.string.AdHidden)).j();
                 MessagesController.getInstance(i12).disableAds(false);
                 break;
             case 9:
@@ -369,23 +369,23 @@ public final /* synthetic */ class wl0 implements Runnable {
                 ((Utilities.Callback3) obj).run(LocaleController.formatString(R.string.Gift2RarityHint, ei.l.G0(i12)), (yh.n3) obj2, Boolean.FALSE);
                 break;
             case 17:
-                yh.t5 t5Var = (yh.t5) obj2;
+                yh.s5 s5Var = (yh.s5) obj2;
                 TLObject tLObject2 = (TLObject) obj;
-                boolean[] zArr = t5Var.r;
-                ArrayList[] arrayListArr = t5Var.q;
-                int i21 = t5Var.a;
-                t5Var.t[i12] = false;
+                boolean[] zArr = s5Var.r;
+                ArrayList[] arrayListArr = s5Var.q;
+                int i21 = s5Var.a;
+                s5Var.t[i12] = false;
                 if (tLObject2 instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
                     MessagesController.getInstance(i21).putUsers(starsStatus.users, false);
                     MessagesController.getInstance(i21).putChats(starsStatus.chats, false);
                     arrayListArr[i12].addAll(starsStatus.history);
                     zArr[i12] = !arrayListArr[i12].isEmpty() || zArr[i12];
-                    boolean[] zArr2 = t5Var.u;
+                    boolean[] zArr2 = s5Var.u;
                     boolean z11 = (starsStatus.flags & 1) == 0;
                     zArr2[i12] = z11;
-                    t5Var.s[i12] = z11 ? null : starsStatus.next_offset;
-                    t5Var.k0(starsStatus.balance);
+                    s5Var.s[i12] = z11 ? null : starsStatus.next_offset;
+                    s5Var.k0(starsStatus.balance);
                     NotificationCenter.getInstance(i21).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starTransactionsLoaded, new Object[0]);
                     break;
                 }

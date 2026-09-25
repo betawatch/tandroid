@@ -1,35 +1,23 @@
 package ki;
 
-import android.opengl.GLES20;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
-public final class z extends x {
+public final class z {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
     public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
+    public final ByteBuffer f;
 
-    public z() {
-        super(AndroidUtilities.readRes(R.raw.round_blur_vert), "precision mediump float;\nvarying vec2 vTextureCoord;\nuniform sampler2D sTexture;\nuniform sampler2D nTexture;\nuniform sampler2D obTexture;\nuniform sampler2D nbTexture;\nuniform sampler2D oldBackground;\nuniform sampler2D newBackground;\nuniform sampler2D maskTexture;\nuniform float oldBlur;\nuniform float newBlur;\nuniform float mixValue;\nuniform float outsideEffect;\nvoid main() {\n    vec4 oldFrame = mix(texture2D(sTexture, vTextureCoord),\n            texture2D(obTexture, vTextureCoord), oldBlur);\n    vec4 newFrame = mix(texture2D(nTexture, vTextureCoord),\n            texture2D(nbTexture, vTextureCoord), newBlur);\n    vec3 camera = mix(oldFrame.rgb, newFrame.rgb, mixValue);\n    vec3 background = mix(texture2D(oldBackground, vTextureCoord).rgb,\n            texture2D(newBackground, vTextureCoord).rgb, mixValue) * 0.25;\n    float mask = texture2D(maskTexture, vTextureCoord).a;\n    vec3 composited = mix(background, camera, mask);\n    gl_FragColor = vec4(mix(camera, composited, outsideEffect), 1.0);\n}\n");
-        int glGetUniformLocation = GLES20.glGetUniformLocation(this.a, "nTexture");
-        int glGetUniformLocation2 = GLES20.glGetUniformLocation(this.a, "obTexture");
-        int glGetUniformLocation3 = GLES20.glGetUniformLocation(this.a, "nbTexture");
-        int glGetUniformLocation4 = GLES20.glGetUniformLocation(this.a, "oldBackground");
-        int glGetUniformLocation5 = GLES20.glGetUniformLocation(this.a, "newBackground");
-        int glGetUniformLocation6 = GLES20.glGetUniformLocation(this.a, "maskTexture");
-        this.e = GLES20.glGetUniformLocation(this.a, "oldBlur");
-        this.f = GLES20.glGetUniformLocation(this.a, "newBlur");
-        this.g = GLES20.glGetUniformLocation(this.a, "mixValue");
-        this.h = GLES20.glGetUniformLocation(this.a, "outsideEffect");
-        GLES20.glUseProgram(this.a);
-        GLES20.glUniform1i(glGetUniformLocation, 1);
-        GLES20.glUniform1i(glGetUniformLocation2, 2);
-        GLES20.glUniform1i(glGetUniformLocation3, 3);
-        GLES20.glUniform1i(glGetUniformLocation4, 4);
-        GLES20.glUniform1i(glGetUniformLocation5, 5);
-        GLES20.glUniform1i(glGetUniformLocation6, 6);
+    public z(int i10, int i11, int i12, int i13, int i14, ByteBuffer byteBuffer) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = i14;
+        this.f = byteBuffer;
     }
 }

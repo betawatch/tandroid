@@ -100,17 +100,17 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.n81;
+import org.telegram.ui.jr0;
+import org.telegram.ui.p81;
 import org.telegram.ui.q9;
 import org.telegram.ui.u9;
-import org.telegram.ui.wr0;
 import org.telegram.ui.xo0;
 import w7.c6;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public abstract class b1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean P0 = true;
@@ -409,7 +409,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         if (y0Var == null) {
             return;
         }
-        NotificationCenter.getInstance(i10).doOnIdle(new wr0(y0Var, daVar, str, jSONObject, 21));
+        NotificationCenter.getInstance(i10).doOnIdle(new jr0(y0Var, daVar, str, jSONObject, 22));
     }
 
     public final void A() {
@@ -437,11 +437,11 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:871:0x07bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:905:0x07ba, code lost:
     
         r5.vibrate();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:872:0x07c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:906:0x07bd, code lost:
     
         return;
      */
@@ -452,12 +452,12 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
     	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
      */
-    /* JADX WARN: Removed duplicated region for block: B:390:0x0d3e  */
-    /* JADX WARN: Removed duplicated region for block: B:396:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:436:0x0e1e  */
-    /* JADX WARN: Removed duplicated region for block: B:438:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:650:0x11f8  */
-    /* JADX WARN: Removed duplicated region for block: B:652:0x1204  */
+    /* JADX WARN: Removed duplicated region for block: B:389:0x0d39  */
+    /* JADX WARN: Removed duplicated region for block: B:395:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x0e19  */
+    /* JADX WARN: Removed duplicated region for block: B:439:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:652:0x11f3  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x11ff  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -465,8 +465,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         char c10;
         int i10;
         int i11;
-        final int i12;
         BotWebViewVibrationEffect botWebViewVibrationEffect;
+        final int i12;
         q9 q9Var;
         final b1 b1Var;
         final b1 b1Var2;
@@ -477,11 +477,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         long j3;
         int i13;
         TLRPC.User user;
+        JSONObject jSONObject;
         long j10;
         String str3;
         boolean z10;
         boolean z11;
         boolean z12;
+        JSONArray jSONArray;
         String str4;
         String str5;
         String str6;
@@ -987,10 +989,10 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         return;
                     }
                     try {
-                        JSONObject jSONObject = new JSONObject(str2);
-                        String string = jSONObject.getString("req_id");
-                        String string2 = jSONObject.getString("method");
-                        String obj = jSONObject.get("params").toString();
+                        JSONObject jSONObject2 = new JSONObject(str2);
+                        String string = jSONObject2.getString("req_id");
+                        String string2 = jSONObject2.getString("method");
+                        String obj = jSONObject2.get("params").toString();
                         int i14 = this.M;
                         y0 y0Var = this.a;
                         TL_bots.invokeWebViewCustomMethod invokewebviewcustommethod = new TL_bots.invokeWebViewCustomMethod();
@@ -1022,13 +1024,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     return;
                 case 3:
                     try {
-                        JSONObject jSONObject2 = new JSONObject(str2);
-                        Uri parse = Uri.parse(jSONObject2.optString("url"));
-                        String optString = jSONObject2.optString("try_browser");
+                        JSONObject jSONObject3 = new JSONObject(str2);
+                        Uri parse = Uri.parse(jSONObject3.optString("url"));
+                        String optString = jSONObject3.optString("try_browser");
                         if (MessagesController.getInstance(this.M).webAppAllowedProtocols == null || !MessagesController.getInstance(this.M).webAppAllowedProtocols.contains(parse.getScheme())) {
                             return;
                         }
-                        H(parse, optString, jSONObject2.optBoolean("try_instant_view"), true, false);
+                        H(parse, optString, jSONObject3.optBoolean("try_instant_view"), true, false);
                         return;
                     } catch (Exception e7) {
                         FileLog.e(e7);
@@ -1042,9 +1044,9 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         this.l0 = ei.l0.c(getContext(), this.M, this.U.id);
                     }
                     try {
-                        JSONObject jSONObject3 = new JSONObject(str2);
-                        String string3 = jSONObject3.getString("url");
-                        String string4 = jSONObject3.getString("file_name");
+                        JSONObject jSONObject4 = new JSONObject(str2);
+                        String string3 = jSONObject4.getString("url");
+                        String string4 = jSONObject4.getString("file_name");
                         if (this.l0.d(string3) != null) {
                             this.l0.b(string3, string4);
                             y(daVar, "file_download_requested", B("downloading", "status"));
@@ -1075,16 +1077,16 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                 }
                             }
                             if (System.currentTimeMillis() - b1Var.f0 > 3000) {
-                                JSONObject jSONObject4 = new JSONObject(str2);
-                                String optString2 = jSONObject4.optString("title", null);
-                                String string5 = jSONObject4.getString("message");
-                                JSONArray jSONArray = jSONObject4.getJSONArray("buttons");
+                                JSONObject jSONObject5 = new JSONObject(str2);
+                                String optString2 = jSONObject5.optString("title", null);
+                                String string5 = jSONObject5.getString("message");
+                                JSONArray jSONArray2 = jSONObject5.getJSONArray("buttons");
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b1Var.getContext());
                                 alertDialog$Builder.l(optString2);
                                 alertDialog$Builder.g(string5);
                                 ArrayList arrayList = new ArrayList();
-                                for (int i16 = 0; i16 < jSONArray.length(); i16++) {
-                                    arrayList.add(new z0(jSONArray.getJSONObject(i16)));
+                                for (int i16 = 0; i16 < jSONArray2.length(); i16++) {
+                                    arrayList.add(new z0(jSONArray2.getJSONObject(i16)));
                                 }
                                 if (arrayList.size() <= 3) {
                                     final AtomicBoolean atomicBoolean = new AtomicBoolean();
@@ -1355,22 +1357,20 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     }
                 case 7:
                     b1Var = this;
-                    long j13 = 0;
                     if (b1Var.U != null && System.currentTimeMillis() - b1Var.P <= 10000) {
                         try {
-                            JSONObject jSONObject5 = new JSONObject(str2);
-                            j3 = Long.parseLong(jSONObject5.getString("custom_emoji_id"));
-                            try {
-                                i13 = jSONObject5.getInt("duration");
-                            } catch (Exception unused) {
-                                j13 = j3;
-                                j3 = j13;
-                                i13 = 0;
-                                user = b1Var.U;
-                                if (user != null) {
-                                }
-                            }
+                            jSONObject = new JSONObject(str2);
+                            j3 = Long.parseLong(jSONObject.getString("custom_emoji_id"));
+                        } catch (Exception unused) {
+                            j3 = 0;
+                        }
+                        try {
+                            i13 = jSONObject.getInt("duration");
                         } catch (Exception unused2) {
+                            i13 = 0;
+                            user = b1Var.U;
+                            if (user != null) {
+                            }
                         }
                         user = b1Var.U;
                         if (user != null) {
@@ -1623,18 +1623,18 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     return;
                 case 23:
                     try {
-                        JSONArray jSONArray2 = new JSONArray(str2);
-                        z11 = jSONArray2.optBoolean(0, true);
-                        try {
-                            z12 = jSONArray2.optBoolean(1, true);
-                        } catch (Exception unused6) {
-                            z12 = true;
-                            h("allowScroll " + z11 + " " + z12);
-                            if (getParent() instanceof p4) {
-                            }
-                        }
-                    } catch (Exception unused7) {
+                        jSONArray = new JSONArray(str2);
+                        z11 = jSONArray.optBoolean(0, true);
+                    } catch (Exception unused6) {
                         z11 = true;
+                    }
+                    try {
+                        z12 = jSONArray.optBoolean(1, true);
+                    } catch (Exception unused7) {
+                        z12 = true;
+                        h("allowScroll " + z11 + " " + z12);
+                        if (getParent() instanceof p4) {
+                        }
                     }
                     h("allowScroll " + z11 + " " + z12);
                     if (getParent() instanceof p4) {
@@ -2028,7 +2028,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     }
                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
                     try {
-                        str11 = new JSONObject(str2).getString("reason");
+                        str12 = new JSONObject(str2).getString("reason");
                     } catch (Exception unused11) {
                     }
                     f();
@@ -2049,16 +2049,16 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         w(daVar);
                         return;
                     }
-                    final Runnable[] runnableArr = {new n81(27, this, daVar)};
+                    final Runnable[] runnableArr = {new p81(26, this, daVar)};
                     AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), d6Var);
-                    if (TextUtils.isEmpty(str11)) {
+                    if (TextUtils.isEmpty(str12)) {
                         alertDialog$Builder3.l(LocaleController.getString(R.string.BotAllowBiometryTitle));
                         i12 = 0;
                         alertDialog$Builder3.g(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotAllowBiometryMessage, UserObject.getUserName(this.U))));
                     } else {
                         i12 = 0;
                         alertDialog$Builder3.l(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotAllowBiometryMessage, UserObject.getUserName(this.U))));
-                        alertDialog$Builder3.g(str11);
+                        alertDialog$Builder3.g(str12);
                     }
                     alertDialog$Builder3.k(LocaleController.getString(R.string.Allow), new org.telegram.ui.ActionBar.z1(this) { // from class: org.telegram.ui.web.y
                         public final /* synthetic */ b1 b;
@@ -2272,17 +2272,17 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     return;
                 case '7':
                     try {
-                        str12 = new JSONObject(str2).optString("req_id");
+                        str11 = new JSONObject(str2).optString("req_id");
                     } catch (Exception e38) {
                         FileLog.e(e38);
                     }
-                    if (str12 == null) {
+                    if (str11 == null) {
                         return;
                     }
                     TL_bots.getRequestedWebViewButton getrequestedwebviewbutton = new TL_bots.getRequestedWebViewButton();
                     getrequestedwebviewbutton.bot = MessagesController.getInstance(this.M).getInputUser(this.U);
-                    getrequestedwebviewbutton.webapp_req_id = str12;
-                    ConnectionsManager.getInstance(this.M).sendRequestTyped(getrequestedwebviewbutton, new a3.b(1), new u(this, daVar, str12, 0));
+                    getrequestedwebviewbutton.webapp_req_id = str11;
+                    ConnectionsManager.getInstance(this.M).sendRequestTyped(getrequestedwebviewbutton, new a3.b(1), new u(this, daVar, str11, 0));
                     return;
                 case '8':
                     ei.a1 z30 = this.c.z();
@@ -3161,7 +3161,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public final void j(String str) {
-        new yc(this, this.e).Q(R.raw.error, 36, str).j();
+        new xc(this, this.e).Q(R.raw.error, 36, str).j();
     }
 
     public final int k(int i10) {

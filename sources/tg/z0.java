@@ -48,12 +48,12 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.ug0;
 import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.j20;
 import org.telegram.ui.ui1;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class z0 extends bb {
     public final ci.d X;
@@ -506,7 +506,7 @@ public final class z0 extends bb {
         String formatPluralString = i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.formatPluralString("BoostingSelectUpToWarningCountriesPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).giveawayCountriesMax, new Object[0]) : LocaleController.formatPluralString("BoostingSelectUpToWarningChannelsGroupsPlural", (int) s.f(), new Object[0]) : LocaleController.getString(R.string.BoostingSelectUpToWarningUsers);
         l lVar = this.u0;
         if (lVar != null) {
-            new yc(lVar.c.container, lVar.b).Q(R.raw.chats_infotip, 36, formatPluralString).k(true);
+            new xc(lVar.c.container, lVar.b).Q(R.raw.chats_infotip, 36, formatPluralString).k(true);
         }
     }
 

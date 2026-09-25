@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cy implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -106,7 +106,7 @@ public final /* synthetic */ class cy implements View.OnClickListener {
                             if (m2Var == null) {
                                 m2Var = new ai.y3(dyVar, 6);
                             }
-                            uv.W(m2Var, stickerSet5, true, null, new yp(dyVar, 14));
+                            tv.W(m2Var, stickerSet5, true, null, new yp(dyVar, 14));
                             break;
                         } else {
                             NotificationCenter.getInstance(i12).addObserver(dyVar, NotificationCenter.groupStickersDidLoad);
@@ -144,10 +144,10 @@ public final /* synthetic */ class cy implements View.OnClickListener {
                                 m2Var2 = new ai.y3(dyVar, 6);
                             }
                             org.telegram.ui.ActionBar.m2 m2Var3 = m2Var2;
-                            cv cvVar = new cv(3, dyVar, stickerSet7);
-                            Pattern pattern = uv.V;
+                            vw vwVar = new vw(2, dyVar, stickerSet7);
+                            Pattern pattern = tv.V;
                             if (m2Var3.getFragmentView() != null) {
-                                MediaDataController.getInstance(m2Var3.getCurrentAccount()).toggleStickerSet(m2Var3.getFragmentView().getContext(), stickerSet7, 0, m2Var3, true, true, cvVar, false);
+                                MediaDataController.getInstance(m2Var3.getCurrentAccount()).toggleStickerSet(m2Var3.getFragmentView().getContext(), stickerSet7, 0, m2Var3, true, true, vwVar, false);
                                 break;
                             }
                         } else {

@@ -23,11 +23,11 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.t31;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class q4 extends oi implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -370,10 +370,10 @@ public final class q4 extends oi implements NotificationCenter.NotificationCente
             if (i10 == R.id.menu_report_bot) {
                 int i13 = this.F;
                 Context context = getContext();
-                yc ycVar = new yc(lb.a(getContext()), this.a);
+                xc xcVar = new xc(lb.a(getContext()), this.a);
                 long j3 = this.v;
                 int i14 = t31.v;
-                t31.K(i13, context, j3, false, false, new ArrayList(), ycVar, null, new byte[0], null, null);
+                t31.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
             }
         }
     }

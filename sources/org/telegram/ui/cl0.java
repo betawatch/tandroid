@@ -28,12 +28,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class cl0 {
     public static org.telegram.ui.ActionBar.e3 a;
 
-    public static org.telegram.ui.Components.yc a() {
+    public static org.telegram.ui.Components.xc a() {
         Context context;
         Context context2;
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
@@ -56,7 +56,7 @@ public abstract class cl0 {
                 } else {
                     context2 = U.getParentActivity();
                 }
-                return new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(context2), null);
+                return new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(context2), null);
             }
         }
         HashSet hashSet2 = i4.b1;
@@ -78,10 +78,10 @@ public abstract class cl0 {
                 } else {
                     context = U.getParentActivity();
                 }
-                return new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(context), null);
+                return new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(context), null);
             }
         }
-        return (U == null || U.getLastSheet() == null || U.getLastSheet().getBulletinFactory() == null) ? org.telegram.ui.Components.yc.a0(U) : U.getLastSheet().getBulletinFactory();
+        return (U == null || U.getLastSheet() == null || U.getLastSheet().getBulletinFactory() == null) ? org.telegram.ui.Components.xc.a0(U) : U.getLastSheet().getBulletinFactory();
     }
 
     public static void b(boolean z10, final int i10, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult, String str, TLRPC.UrlAuthResult urlAuthResult2, String str2, boolean z11, org.telegram.ui.web.b1 b1Var) {

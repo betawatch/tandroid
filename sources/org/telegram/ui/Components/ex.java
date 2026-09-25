@@ -4,9 +4,9 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
-public final class ex extends uv {
+public final class ex extends tv {
     public final /* synthetic */ TLRPC.StickerSet W;
     public final /* synthetic */ lz X;
 
@@ -17,7 +17,7 @@ public final class ex extends uv {
         this.W = stickerSet;
     }
 
-    @Override // org.telegram.ui.Components.uv
+    @Override // org.telegram.ui.Components.tv
     public final void X(boolean z10) {
         lz lzVar = this.X;
         ArrayList arrayList = lzVar.p1;
@@ -30,7 +30,7 @@ public final class ex extends uv {
         lzVar.T();
     }
 
-    @Override // org.telegram.ui.Components.uv, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    @Override // org.telegram.ui.Components.tv, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
     public final void dismiss() {
         this.X.v2 = false;
         super.dismiss();

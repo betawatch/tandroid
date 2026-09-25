@@ -11,7 +11,7 @@ import org.telegram.ui.cj1;
 import org.telegram.ui.dj1;
 import org.telegram.ui.ds0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jh implements Utilities.Callback2 {
     public final /* synthetic */ int a = 1;
@@ -45,7 +45,7 @@ public final /* synthetic */ class jh implements Utilities.Callback2 {
                 dVar.setLoading(false);
                 if (!(urlAuthResult instanceof TLRPC.TL_urlAuthResultAccepted)) {
                     if (tL_error == null) {
-                        new org.telegram.ui.Components.yc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0("NO_TOKEN", false);
+                        new org.telegram.ui.Components.xc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0("NO_TOKEN", false);
                         break;
                     } else {
                         org.telegram.ui.Cells.c1.r(e3Var.topBulletinContainer, e3Var.getResourcesProvider(), tL_error, false);
@@ -54,7 +54,7 @@ public final /* synthetic */ class jh implements Utilities.Callback2 {
                 } else {
                     String queryParameter = Uri.parse("?" + Uri.parse(((TLRPC.TL_urlAuthResultAccepted) urlAuthResult).url).getFragment()).getQueryParameter("tgWebAuthToken");
                     if (queryParameter == null) {
-                        new org.telegram.ui.Components.yc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0("NO_TOKEN", false);
+                        new org.telegram.ui.Components.xc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0("NO_TOKEN", false);
                         break;
                     } else {
                         int i10 = this.b;
@@ -76,7 +76,7 @@ public final /* synthetic */ class jh implements Utilities.Callback2 {
                             break;
                         } catch (Exception e) {
                             FileLog.e(e);
-                            new org.telegram.ui.Components.yc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0(e.getMessage(), false);
+                            new org.telegram.ui.Components.xc(e3Var.topBulletinContainer, e3Var.getResourcesProvider()).c0(e.getMessage(), false);
                             return;
                         }
                     }

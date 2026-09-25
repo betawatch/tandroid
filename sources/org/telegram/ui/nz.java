@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nz implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class nz implements RequestDelegate {
                                 yz yzVar2 = yzVar;
                                 yzVar2.F = 0;
                                 if (tL_error == null) {
-                                    org.telegram.messenger.f0.p(R.string.FilterInviteNameEdited, org.telegram.ui.Components.yc.a0(yzVar2), R.raw.contact_check, 36);
+                                    org.telegram.messenger.f0.p(R.string.FilterInviteNameEdited, org.telegram.ui.Components.xc.a0(yzVar2), R.raw.contact_check, 36);
                                     break;
                                 }
                                 break;
@@ -53,7 +53,7 @@ public final /* synthetic */ class nz implements RequestDelegate {
                                 yz yzVar22 = yzVar2;
                                 yzVar22.F = 0;
                                 if (tL_error == null) {
-                                    org.telegram.messenger.f0.p(R.string.FilterInviteNameEdited, org.telegram.ui.Components.yc.a0(yzVar22), R.raw.contact_check, 36);
+                                    org.telegram.messenger.f0.p(R.string.FilterInviteNameEdited, org.telegram.ui.Components.xc.a0(yzVar22), R.raw.contact_check, 36);
                                     break;
                                 }
                                 break;

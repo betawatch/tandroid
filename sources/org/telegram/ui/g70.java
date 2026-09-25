@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class g70 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.u40 {
     public TLRPC.FileLocation E;
@@ -570,7 +570,7 @@ public final class g70 extends org.telegram.ui.ActionBar.m2 implements Notificat
             CountDownLatch countDownLatch = new CountDownLatch(1);
             ArrayList arrayList2 = new ArrayList();
             g70Var = this;
-            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new org.telegram.ui.Components.vn0(g70Var, arrayList2, arrayList, countDownLatch, 11));
+            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new org.telegram.ui.Components.vn0(g70Var, arrayList2, arrayList, countDownLatch, 12));
             try {
                 countDownLatch.await();
             } catch (Exception e) {

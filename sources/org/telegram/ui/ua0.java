@@ -9,10 +9,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ua0 implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ m80 a;
+    public final /* synthetic */ n80 a;
     public final /* synthetic */ String b;
     public final /* synthetic */ org.telegram.ui.ActionBar.m2 c;
     public final /* synthetic */ long d;
@@ -20,9 +20,9 @@ public final class ua0 implements MessagesController.MessagesLoadedCallback {
     public final /* synthetic */ Bundle f;
     public final /* synthetic */ LaunchActivity g;
 
-    public ua0(LaunchActivity launchActivity, m80 m80Var, String str, org.telegram.ui.ActionBar.m2 m2Var, long j3, Integer num, Bundle bundle) {
+    public ua0(LaunchActivity launchActivity, n80 n80Var, String str, org.telegram.ui.ActionBar.m2 m2Var, long j3, Integer num, Bundle bundle) {
         this.g = launchActivity;
-        this.a = m80Var;
+        this.a = n80Var;
         this.b = str;
         this.c = m2Var;
         this.d = j3;

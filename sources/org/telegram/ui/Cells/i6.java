@@ -37,16 +37,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.af0;
-import org.telegram.ui.Components.gd;
+import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.a10;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class i6 extends a0 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.x5 {
     public final op A0;
@@ -62,7 +62,7 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
     public long H;
     public boolean H0;
     public String I;
-    public final zc I0;
+    public final yc I0;
     public int J;
     public final Paint J0;
     public TLRPC.FileLocation K;
@@ -82,7 +82,7 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
     public int S;
     public int T;
     public int U;
-    public gd V;
+    public fd V;
     public StaticLayout W;
     public int a0;
     public int b0;
@@ -117,7 +117,7 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
     public TLRPC.TL_sponsoredPeer x;
     public Paint x0;
     public TLRPC.User y;
-    public final zc y0;
+    public final yc y0;
     public final RectF z0;
 
     public i6(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -128,10 +128,10 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
         rr rrVar = rr.f;
         this.u0 = new ai.ca(null, false);
         this.v0 = new RectF();
-        this.y0 = new zc(this);
+        this.y0 = new yc(this);
         this.z0 = new RectF();
         this.H0 = true;
-        this.I0 = new zc(this);
+        this.I0 = new yc(this);
         this.J0 = new Paint(1);
         this.K0 = new RectF();
         this.w = d6Var;
@@ -361,25 +361,25 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
             f11 = 4.0f;
         }
         if (this.W != null) {
-            gd gdVar = this.V;
+            fd fdVar = this.V;
             int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.U8, false);
             int w03 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.W8, false);
-            gdVar.g.setColor(w02);
-            z zVar = gdVar.e;
+            fdVar.g.setColor(w02);
+            z zVar = fdVar.e;
             if (zVar != null) {
                 org.telegram.ui.ActionBar.h6.B1(zVar, w03, true);
             }
             RectF rectF4 = AndroidUtilities.rectTmp;
             rectF4.set(this.a0, i11, this.W.getWidth() + r4, AndroidUtilities.dp(f10) + i11);
             rectF4.inset(-AndroidUtilities.dp(16.0f), -AndroidUtilities.dp(f11));
-            gd gdVar2 = this.V;
-            gdVar2.i = false;
-            gdVar2.c = 0;
-            gdVar2.a(rectF4);
-            gd gdVar3 = this.V;
-            gdVar3.n = true;
-            gdVar3.c(canvas2, gdVar3.g);
-            z zVar2 = gdVar3.e;
+            fd fdVar2 = this.V;
+            fdVar2.i = false;
+            fdVar2.c = 0;
+            fdVar2.a(rectF4);
+            fd fdVar3 = this.V;
+            fdVar3.n = true;
+            fdVar3.c(canvas2, fdVar3.g);
+            z zVar2 = fdVar3.e;
             if (zVar2 != null) {
                 zVar2.draw(canvas2);
             }
@@ -536,23 +536,23 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        gd gdVar;
+        fd fdVar;
         if (this.p0 && this.C0 != null && this.y != null) {
             boolean contains = this.K0.contains(motionEvent.getX(), motionEvent.getY());
             int action = motionEvent.getAction();
-            zc zcVar = this.I0;
+            yc ycVar = this.I0;
             if (action == 0 || motionEvent.getAction() == 2) {
-                zcVar.c(contains);
+                ycVar.c(contains);
             } else {
                 if (motionEvent.getAction() == 1) {
-                    if (zcVar.h) {
+                    if (ycVar.h) {
                         this.C0.run(this.y);
                     }
-                    zcVar.c(false);
+                    ycVar.c(false);
                     return true;
                 }
                 if (motionEvent.getAction() == 3) {
-                    zcVar.c(false);
+                    ycVar.c(false);
                     return true;
                 }
             }
@@ -563,19 +563,19 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
         if (this.x != null && this.D0 != null) {
             boolean contains2 = this.v0.contains(motionEvent.getX(), motionEvent.getY());
             int action2 = motionEvent.getAction();
-            zc zcVar2 = this.y0;
+            yc ycVar2 = this.y0;
             if (action2 == 0 || motionEvent.getAction() == 2) {
-                zcVar2.c(contains2);
+                ycVar2.c(contains2);
             } else {
                 if (motionEvent.getAction() == 1) {
-                    if (zcVar2.h) {
+                    if (ycVar2.h) {
                         this.D0.run(this, this.x);
                     }
-                    zcVar2.c(false);
+                    ycVar2.c(false);
                     return true;
                 }
                 if (motionEvent.getAction() == 3) {
-                    zcVar2.c(false);
+                    ycVar2.c(false);
                     return true;
                 }
             }
@@ -583,7 +583,7 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
             }
             return true;
         }
-        if (((this.y == null && this.E == null) || !this.u0.a(motionEvent, this)) && ((gdVar = this.V) == null || !gdVar.b(motionEvent))) {
+        if (((this.y == null && this.E == null) || !this.u0.a(motionEvent, this)) && ((fdVar = this.V) == null || !fdVar.b(motionEvent))) {
             return super.onTouchEvent(motionEvent);
         }
         return true;
@@ -654,9 +654,9 @@ public final class i6 extends a0 implements NotificationCenter.NotificationCente
                         this.O = AndroidUtilities.dp(AndroidUtilities.leftBaseline);
                     }
                     if (this.V == null) {
-                        gd gdVar = new gd(this);
-                        this.V = gdVar;
-                        gdVar.h = new g(this, 5);
+                        fd fdVar = new fd(this);
+                        this.V = fdVar;
+                        fdVar.h = new g(this, 5);
                     }
                 }
             }

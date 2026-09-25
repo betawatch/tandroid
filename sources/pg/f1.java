@@ -28,7 +28,7 @@ import org.telegram.ui.Components.uv0;
 import v7.a7;
 import w7.l6;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class f1 extends TextureView {
     public e1 a;
@@ -733,7 +733,7 @@ public class f1 extends TextureView {
         if (d1Var == null) {
             return;
         }
-        d1Var.postRunnable(new org.telegram.ui.web.f1(8, this, runnable));
+        d1Var.postRunnable(new org.telegram.ui.web.o1(7, this, runnable));
     }
 
     public m getCurrentBrush() {

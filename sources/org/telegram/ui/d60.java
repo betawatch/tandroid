@@ -94,7 +94,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class d60 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, le.e {
     public static d60 D3;
@@ -1195,7 +1195,7 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
         a2Var.dismiss();
         if (!(tLObject instanceof TL_phone.exportedGroupCallInvite)) {
             if (tL_error != null) {
-                new org.telegram.ui.Components.yc(d60Var.topBulletinContainer, new ai.a1()).d0(tL_error, false);
+                new org.telegram.ui.Components.xc(d60Var.topBulletinContainer, new ai.a1()).d0(tL_error, false);
                 return;
             }
             return;
@@ -1890,7 +1890,7 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
         if (atomicInteger.incrementAndGet() != i10 || hashSet.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(d60Var, hashSet, call, str, 8));
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(d60Var, hashSet, call, str, 9));
     }
 
     public static /* synthetic */ void w(d60 d60Var, HashSet hashSet, ChatObject.Call call, String str) {
@@ -5315,7 +5315,7 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
                 this.P2 = true;
                 j60Var.r = false;
                 if (!arrayList2.isEmpty()) {
-                    AndroidUtilities.runOnUIThread(new tt(21, this, arrayList2));
+                    AndroidUtilities.runOnUIThread(new tt(20, this, arrayList2));
                 }
             }
             boolean z11 = !v30Var.b;

@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class z60 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, le.e, View.OnClickListener, ph.d {
     public boolean E;
@@ -219,7 +219,7 @@ public class z60 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                     AndroidUtilities.shakeViewSpring(g4Var, i14);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
                     String userName = j3 >= 0 ? UserObject.getUserName(MessagesController.getInstance(z60Var.currentAccount).getUser(Long.valueOf(j3))) : "";
-                    (MessagesController.getInstance(z60Var.currentAccount).premiumFeaturesBlocked() ? org.telegram.ui.Components.yc.a0(z60Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : org.telegram.ui.Components.yc.a0(z60Var).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new p60(z60Var, 2))).j();
+                    (MessagesController.getInstance(z60Var.currentAccount).premiumFeaturesBlocked() ? org.telegram.ui.Components.xc.a0(z60Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : org.telegram.ui.Components.xc.a0(z60Var).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new p60(z60Var, 2))).j();
                     return;
                 }
                 org.telegram.ui.Components.n30 n30Var5 = (org.telegram.ui.Components.n30) z60Var.Z.f(j3);
@@ -244,7 +244,7 @@ public class z60 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                         if (z60Var.R && user.bot) {
                             if (j10 == 0 && user.bot_nochats) {
                                 try {
-                                    org.telegram.ui.Components.yc.a0(z60Var).t(LocaleController.getString(R.string.BotCantJoinGroups), null).j();
+                                    org.telegram.ui.Components.xc.a0(z60Var).t(LocaleController.getString(R.string.BotCantJoinGroups), null).j();
                                     return;
                                 } catch (Exception e) {
                                     FileLog.e(e);

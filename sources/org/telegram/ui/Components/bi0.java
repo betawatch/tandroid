@@ -14,7 +14,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotchInfoUtils;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class bi0 implements ci0 {
     public final float f;
@@ -65,7 +65,7 @@ public final class bi0 implements ci0 {
     }
 
     @Override // org.telegram.ui.Components.ci0
-    public final void c(nv nvVar, Canvas canvas) {
+    public final void c(mv mvVar, Canvas canvas) {
         float f7;
         float f10;
         float f11;
@@ -117,7 +117,7 @@ public final class bi0 implements ci0 {
             beginRecording.translate(f18, f19);
             int ilerp = (int) ((1.0f - AndroidUtilities.ilerp(di0Var.e, 0.5f, 1.0f)) * 255.0f);
             int b10 = w7.q.b(ilerp, 0, 255);
-            di0.a((di0) nvVar.b, beginRecording);
+            di0.a((di0) mvVar.b, beginRecording);
             this.b.endRecording();
             float f20 = this.f;
             float z10 = com.google.android.gms.internal.vision.e2.z(f20, 1.0f, 2.0f, com.google.android.gms.internal.vision.e2.x(di0Var.f, 0.5f, f20, (f20 / 4.0f) + 1.0f));

@@ -10,17 +10,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.og0;
 import org.telegram.ui.Components.vr;
 import org.telegram.ui.Components.wu;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -145,7 +145,7 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 int i16 = xh.m.A0;
                 break;
             case 25:
-                ad[] adVarArr = xh.v.p0;
+                zc[] zcVarArr = xh.v.p0;
                 break;
             case 26:
                 int i17 = xh.c0.f0;

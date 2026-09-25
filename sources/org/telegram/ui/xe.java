@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xe implements Runnable {
     public final /* synthetic */ int a;
@@ -20,25 +20,25 @@ public final /* synthetic */ class xe implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.yc a02;
+        org.telegram.ui.Components.xc a02;
         int i10;
         switch (this.a) {
             case 0:
                 this.c.dismiss();
                 AndroidUtilities.addToClipboard(this.d);
-                a02 = org.telegram.ui.Components.yc.a0(this.b);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
                 i10 = R.string.RelativeDateCopied;
                 break;
             case 1:
                 this.c.dismiss();
                 AndroidUtilities.addToClipboard(this.d);
-                a02 = org.telegram.ui.Components.yc.a0(this.b);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
                 i10 = R.string.CardNumberCopied;
                 break;
             default:
                 this.c.dismiss();
                 AndroidUtilities.addToClipboard("@" + this.d);
-                a02 = org.telegram.ui.Components.yc.a0(this.b);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
                 i10 = R.string.UsernameCopied;
                 break;
         }

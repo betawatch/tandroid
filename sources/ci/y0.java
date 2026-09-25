@@ -44,16 +44,16 @@ import org.telegram.ui.Components.jh0;
 import org.telegram.ui.Components.mc0;
 import org.telegram.ui.Components.na0;
 import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.uv;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.b10;
 import org.telegram.ui.cp;
-import org.telegram.ui.dh;
 import org.telegram.ui.ep;
+import org.telegram.ui.fh;
 import org.telegram.ui.in;
 import org.telegram.ui.l80;
 import org.telegram.ui.mp;
@@ -64,7 +64,7 @@ import org.telegram.ui.rp;
 import org.telegram.ui.wn;
 import org.telegram.ui.yz;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
@@ -284,149 +284,149 @@ public final /* synthetic */ class y0 implements Runnable {
                 ii.k4.k((org.telegram.ui.ActionBar.m2) obj2, z10, new ii.h4(w3Var, i13));
                 return;
             case 7:
-                ki.g gVar = (ki.g) obj;
-                ki.k0 k0Var = gVar.a;
-                ki.r0 r0Var = (ki.r0) ((k2.u) obj2).b;
-                int i19 = r0Var.V;
+                ki.h hVar = (ki.h) obj;
+                ki.l0 l0Var = hVar.a;
+                ki.s0 s0Var = (ki.s0) ((k2.u) obj2).b;
+                int i19 = s0Var.V;
                 if (i19 == 7 || i19 == 8 || i19 == 9 || i19 == 10) {
                     return;
                 }
-                ki.m0 m0Var = gVar.c;
-                ki.l0 l0Var = gVar.b;
-                r0Var.p = k0Var;
-                r0Var.q = l0Var;
-                r0Var.r = m0Var;
-                r0Var.s = gVar.f;
-                if (k0Var != ki.k0.a) {
-                    if (gVar.g) {
+                ki.n0 n0Var = hVar.c;
+                ki.m0 m0Var = hVar.b;
+                s0Var.p = l0Var;
+                s0Var.q = m0Var;
+                s0Var.r = n0Var;
+                s0Var.s = hVar.f;
+                if (l0Var != ki.l0.a) {
+                    if (hVar.g) {
                         i10 = 2;
-                        r0Var.W = i10;
-                        r0Var.m();
-                        ki.l lVar = r0Var.l;
+                        s0Var.W = i10;
+                        s0Var.m();
+                        ki.m mVar = s0Var.l;
                         StringBuilder sb3 = new StringBuilder("camera configured: facing=");
-                        sb3.append(k0Var);
-                        sb3.append(", mode=");
                         sb3.append(l0Var);
+                        sb3.append(", mode=");
+                        sb3.append(m0Var);
                         sb3.append(", preview=");
-                        sb3.append(gVar.d);
+                        sb3.append(hVar.d);
                         sb3.append(", recording=");
-                        sb3.append(gVar.e);
+                        sb3.append(hVar.e);
                         sb3.append(", fps=");
-                        sb3.append(m0Var.a);
+                        sb3.append(n0Var.a);
                         sb3.append(", maxZoom=");
-                        sb3.append(r0Var.s);
+                        sb3.append(s0Var.s);
                         sb3.append(", flash=");
-                        int i20 = r0Var.W;
+                        int i20 = s0Var.W;
                         sb3.append(i20 == 1 ? i20 != 2 ? i20 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
                         sb3.append(", switch=");
                         sb3.append(z10);
-                        lVar.b(sb3.toString());
+                        mVar.b(sb3.toString());
                         if (z10) {
                         }
-                        r0Var.v = false;
-                        FrameLayout frameLayout = ((b60) r0Var.c.a).x;
+                        s0Var.v = false;
+                        FrameLayout frameLayout = ((b60) s0Var.c.a).x;
                         frameLayout.animate().cancel();
                         frameLayout.setRotationY(-90.0f);
                         frameLayout.animate().rotationY(0.0f).setDuration(140L).start();
-                        r0Var.n();
+                        s0Var.n();
                         return;
                     }
                     i10 = 1;
-                    r0Var.W = i10;
-                    r0Var.m();
-                    ki.l lVar2 = r0Var.l;
+                    s0Var.W = i10;
+                    s0Var.m();
+                    ki.m mVar2 = s0Var.l;
                     StringBuilder sb32 = new StringBuilder("camera configured: facing=");
-                    sb32.append(k0Var);
-                    sb32.append(", mode=");
                     sb32.append(l0Var);
+                    sb32.append(", mode=");
+                    sb32.append(m0Var);
                     sb32.append(", preview=");
-                    sb32.append(gVar.d);
+                    sb32.append(hVar.d);
                     sb32.append(", recording=");
-                    sb32.append(gVar.e);
+                    sb32.append(hVar.e);
                     sb32.append(", fps=");
-                    sb32.append(m0Var.a);
+                    sb32.append(n0Var.a);
                     sb32.append(", maxZoom=");
-                    sb32.append(r0Var.s);
+                    sb32.append(s0Var.s);
                     sb32.append(", flash=");
-                    int i202 = r0Var.W;
+                    int i202 = s0Var.W;
                     sb32.append(i202 == 1 ? i202 != 2 ? i202 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
                     sb32.append(", switch=");
                     sb32.append(z10);
-                    lVar2.b(sb32.toString());
+                    mVar2.b(sb32.toString());
                     if (z10) {
                     }
-                    r0Var.v = false;
-                    FrameLayout frameLayout2 = ((b60) r0Var.c.a).x;
+                    s0Var.v = false;
+                    FrameLayout frameLayout2 = ((b60) s0Var.c.a).x;
                     frameLayout2.animate().cancel();
                     frameLayout2.setRotationY(-90.0f);
                     frameLayout2.animate().rotationY(0.0f).setDuration(140L).start();
-                    r0Var.n();
+                    s0Var.n();
                     return;
                 }
-                if (r0Var.e != null) {
+                if (s0Var.e != null) {
                     i10 = 3;
-                    r0Var.W = i10;
-                    r0Var.m();
-                    ki.l lVar22 = r0Var.l;
+                    s0Var.W = i10;
+                    s0Var.m();
+                    ki.m mVar22 = s0Var.l;
                     StringBuilder sb322 = new StringBuilder("camera configured: facing=");
-                    sb322.append(k0Var);
-                    sb322.append(", mode=");
                     sb322.append(l0Var);
+                    sb322.append(", mode=");
+                    sb322.append(m0Var);
                     sb322.append(", preview=");
-                    sb322.append(gVar.d);
+                    sb322.append(hVar.d);
                     sb322.append(", recording=");
-                    sb322.append(gVar.e);
+                    sb322.append(hVar.e);
                     sb322.append(", fps=");
-                    sb322.append(m0Var.a);
+                    sb322.append(n0Var.a);
                     sb322.append(", maxZoom=");
-                    sb322.append(r0Var.s);
+                    sb322.append(s0Var.s);
                     sb322.append(", flash=");
-                    int i2022 = r0Var.W;
+                    int i2022 = s0Var.W;
                     sb322.append(i2022 == 1 ? i2022 != 2 ? i2022 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
                     sb322.append(", switch=");
                     sb322.append(z10);
-                    lVar22.b(sb322.toString());
-                    if (!z10 || r0Var.v) {
-                        r0Var.v = false;
-                        FrameLayout frameLayout22 = ((b60) r0Var.c.a).x;
+                    mVar22.b(sb322.toString());
+                    if (!z10 || s0Var.v) {
+                        s0Var.v = false;
+                        FrameLayout frameLayout22 = ((b60) s0Var.c.a).x;
                         frameLayout22.animate().cancel();
                         frameLayout22.setRotationY(-90.0f);
                         frameLayout22.animate().rotationY(0.0f).setDuration(140L).start();
-                        r0Var.n();
+                        s0Var.n();
                         return;
                     }
                     return;
                 }
                 i10 = 1;
-                r0Var.W = i10;
-                r0Var.m();
-                ki.l lVar222 = r0Var.l;
+                s0Var.W = i10;
+                s0Var.m();
+                ki.m mVar222 = s0Var.l;
                 StringBuilder sb3222 = new StringBuilder("camera configured: facing=");
-                sb3222.append(k0Var);
-                sb3222.append(", mode=");
                 sb3222.append(l0Var);
+                sb3222.append(", mode=");
+                sb3222.append(m0Var);
                 sb3222.append(", preview=");
-                sb3222.append(gVar.d);
+                sb3222.append(hVar.d);
                 sb3222.append(", recording=");
-                sb3222.append(gVar.e);
+                sb3222.append(hVar.e);
                 sb3222.append(", fps=");
-                sb3222.append(m0Var.a);
+                sb3222.append(n0Var.a);
                 sb3222.append(", maxZoom=");
-                sb3222.append(r0Var.s);
+                sb3222.append(s0Var.s);
                 sb3222.append(", flash=");
-                int i20222 = r0Var.W;
+                int i20222 = s0Var.W;
                 sb3222.append(i20222 == 1 ? i20222 != 2 ? i20222 != 3 ? BuildConfig.BETA_URL : "SCREEN" : "TORCH" : "NONE");
                 sb3222.append(", switch=");
                 sb3222.append(z10);
-                lVar222.b(sb3222.toString());
+                mVar222.b(sb3222.toString());
                 if (z10) {
                 }
-                r0Var.v = false;
-                FrameLayout frameLayout222 = ((b60) r0Var.c.a).x;
+                s0Var.v = false;
+                FrameLayout frameLayout222 = ((b60) s0Var.c.a).x;
                 frameLayout222.animate().cancel();
                 frameLayout222.setRotationY(-90.0f);
                 frameLayout222.animate().rotationY(0.0f).setDuration(140L).start();
-                r0Var.n();
+                s0Var.n();
                 return;
             case 8:
                 ((CameraController) obj2).lambda$initCamera$4(z10, (Runnable) obj);
@@ -497,7 +497,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 wn wnVar = ((in) obj2).a;
                 wnVar.zb.b();
                 if (!(tLObject2 instanceof TLRPC.TL_messages_stickerSet)) {
-                    org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString(z10 ? R.string.AddEmojiNotFound : R.string.AddStickersNotFound)).k(true);
+                    org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString(z10 ? R.string.AddEmojiNotFound : R.string.AddStickersNotFound)).k(true);
                     return;
                 }
                 i11 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
@@ -518,9 +518,9 @@ public final /* synthetic */ class y0 implements Runnable {
                 } else {
                     ArrayList arrayList11 = new ArrayList(1);
                     arrayList11.add(tL_inputStickerSetID);
-                    uv uvVar = new uv(wnVar, wnVar.getParentActivity(), wnVar.ea, arrayList11);
-                    uvVar.setCalcMandatoryInsets(wnVar.x9());
-                    wnVar.showDialog(uvVar);
+                    tv tvVar = new tv(wnVar, wnVar.getParentActivity(), wnVar.ea, arrayList11);
+                    tvVar.setCalcMandatoryInsets(wnVar.x9());
+                    wnVar.showDialog(tvVar);
                     return;
                 }
             case 15:
@@ -544,7 +544,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 }
                 chat.join_request = false;
                 rpVar.P = true;
-                rpVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new mp(npVar, i14), new dh(22, npVar, chat));
+                rpVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new mp(npVar, i14), new fh(21, npVar, chat));
                 return;
             case 17:
                 AnimatedPhoneNumberEditText.j((AnimatedPhoneNumberEditText) obj2, z10, (String) obj);

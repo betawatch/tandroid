@@ -57,7 +57,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class uq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int a1 = 0;
@@ -981,7 +981,7 @@ public class uq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                 this.I.h1(0, this.p0 - wl0Var.getPaddingTop());
                 AtomicReference atomicReference = new AtomicReference();
                 bq0 bq0Var = new bq0(this, dialog, atomicReference, view);
-                atomicReference.set(new vn0(this, atomicReference, bq0Var, dialog, 1));
+                atomicReference.set(new vn0(this, atomicReference, bq0Var, dialog, 2));
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(this.currentAccount);
                 int i11 = NotificationCenter.topicsDidLoaded;
                 notificationCenter.addObserver(bq0Var, i11);
@@ -1204,7 +1204,7 @@ public class uq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
         boolean premiumFeaturesBlocked = MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked();
         int i11 = 1;
         FrameLayout frameLayout = this.v;
-        (premiumFeaturesBlocked ? new yc(frameLayout, this.resourcesProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : new yc(frameLayout, this.resourcesProvider).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new pp0(this, i11))).j();
+        (premiumFeaturesBlocked ? new xc(frameLayout, this.resourcesProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : new xc(frameLayout, this.resourcesProvider).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new pp0(this, i11))).j();
     }
 
     public final void Y0() {
@@ -1963,7 +1963,7 @@ public class uq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                                         }
                                         if (m2Var != null) {
                                             uq0Var.dismiss();
-                                            m2Var.presentFragment(new org.telegram.ui.ej0(messageObject3));
+                                            m2Var.presentFragment(new org.telegram.ui.dj0(messageObject3));
                                             break;
                                         }
                                         break;
@@ -1975,7 +1975,7 @@ public class uq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                                         }
                                         if (m2Var2 != null) {
                                             uq0Var2.dismiss();
-                                            m2Var2.presentFragment(new org.telegram.ui.ej0(messageObject3));
+                                            m2Var2.presentFragment(new org.telegram.ui.dj0(messageObject3));
                                             break;
                                         }
                                         break;
@@ -2063,7 +2063,7 @@ public class uq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                                         }
                                         if (m2Var != null) {
                                             uq0Var.dismiss();
-                                            m2Var.presentFragment(new org.telegram.ui.ej0(messageObject4));
+                                            m2Var.presentFragment(new org.telegram.ui.dj0(messageObject4));
                                             break;
                                         }
                                         break;
@@ -2075,7 +2075,7 @@ public class uq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                                         }
                                         if (m2Var2 != null) {
                                             uq0Var2.dismiss();
-                                            m2Var2.presentFragment(new org.telegram.ui.ej0(messageObject4));
+                                            m2Var2.presentFragment(new org.telegram.ui.dj0(messageObject4));
                                             break;
                                         }
                                         break;

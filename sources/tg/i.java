@@ -24,11 +24,11 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.lu;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import rg.q1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class i {
     public static void a(a2 a2Var, boolean z10) {
@@ -73,9 +73,9 @@ public abstract class i {
         }
         String format = LocaleController.getInstance().getFormatterBoostExpired().format(new Date(Long.parseLong(tL_error.text.replace("PREMIUM_SUB_ACTIVE_UNTIL_", "")) * 1000));
         SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("GiftPremiumActivateErrorText", R.string.GiftPremiumActivateErrorText), h6.Gi, 0, runnable);
-        yc ycVar = new yc(frameLayout, d6Var);
+        xc xcVar = new xc(frameLayout, d6Var);
         int i10 = R.raw.chats_infotip;
-        ycVar.M(LocaleController.getString(R.string.GiftPremiumActivateErrorTitle), AndroidUtilities.replaceCharSequence("%1$s", replaceSingleTag, AndroidUtilities.replaceTags("**" + format + "**")), i10).j();
+        xcVar.M(LocaleController.getString(R.string.GiftPremiumActivateErrorTitle), AndroidUtilities.replaceCharSequence("%1$s", replaceSingleTag, AndroidUtilities.replaceTags("**" + format + "**")), i10).j();
         try {
             frameLayout.performHapticFeedback(3, 2);
         } catch (Exception unused) {
@@ -298,7 +298,7 @@ public abstract class i {
         if (m2Var == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new pg.l0(yc.a0(m2Var), z10, chat, m2Var.getResourceProvider()), 300L);
+        AndroidUtilities.runOnUIThread(new pg.l0(xc.a0(m2Var), z10, chat, m2Var.getResourceProvider()), 300L);
     }
 
     public static void g(int i10) {

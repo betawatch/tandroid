@@ -41,8 +41,8 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zr0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -51,9 +51,10 @@ import org.telegram.ui.f90;
 import org.telegram.ui.g60;
 import org.telegram.ui.gh;
 import org.telegram.ui.i4;
+import org.telegram.ui.jr0;
 import org.telegram.ui.k9;
 import org.telegram.ui.kf;
-import org.telegram.ui.m80;
+import org.telegram.ui.n80;
 import org.telegram.ui.oo0;
 import org.telegram.ui.p60;
 import org.telegram.ui.qg0;
@@ -65,12 +66,11 @@ import org.telegram.ui.va0;
 import org.telegram.ui.wf1;
 import org.telegram.ui.wl0;
 import org.telegram.ui.wn;
-import org.telegram.ui.wr0;
 import org.telegram.ui.zf0;
 import xh.p4;
-import yh.t5;
+import yh.s5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -93,18 +93,18 @@ public final /* synthetic */ class e1 implements Runnable {
         this.n = albumEntry3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x0310, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x0311, code lost:
     
-        if (r7.chat.has_geo != false) goto L88;
+        if (r8.chat.has_geo != false) goto L88;
      */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        m80 m80Var;
+        n80 n80Var;
         oo0 oo0Var;
-        yc a02;
+        xc a02;
         int i10;
         int i11;
         int i12 = this.a;
@@ -271,14 +271,14 @@ public final /* synthetic */ class e1 implements Runnable {
                     if (!MediaDataController.getInstance(i13).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
                         MediaDataController.getInstance(i13).toggleStickerSet(null, tLObject5, 2, null, false, false);
                     }
-                    AndroidUtilities.runOnUIThread(new wn0(11, tLObject5, document), 250L);
+                    AndroidUtilities.runOnUIThread(new wn0(10, tLObject5, document), 250L);
                     break;
                 } else if (tL_error2 != null) {
                     if (FileRefController.isFileRefError(tL_error2.text)) {
                         FileRefController.getInstance(i13).requestReference(obj4, tL_stickers_addStickerToSet);
                         break;
                     } else {
-                        yc.b0(tL_error2);
+                        xc.b0(tL_error2);
                         break;
                     }
                 }
@@ -291,7 +291,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj3;
                 TLObject tLObject6 = (TLObject) obj2;
                 org.telegram.ui.ActionBar.a2 a2Var2 = (org.telegram.ui.ActionBar.a2) obj5;
-                m80 m80Var2 = (m80) obj4;
+                n80 n80Var2 = (n80) obj4;
                 String str2 = (String) obj;
                 ArrayList arrayList4 = launchActivity.d0;
                 if (!launchActivity.isFinishing()) {
@@ -331,11 +331,11 @@ public final /* synthetic */ class e1 implements Runnable {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", chatInvite.chat.id);
                             if (arrayList4.isEmpty() || MessagesController.getInstance(i13).checkCanOpenChat(bundle, (m2) hg.c.g(1, arrayList4))) {
-                                m80Var = m80Var2;
+                                n80Var = n80Var2;
                                 boolean[] zArr = new boolean[1];
                                 a2Var2.setOnCancelListener(new gh(i14, zArr));
                                 if (!chatInvite.chat.forum) {
-                                    MessagesController.getInstance(i13).ensureMessagesLoaded(-chatInvite.chat.id, 0, new va0(launchActivity, m80Var, zArr, bundle, chatInvite));
+                                    MessagesController.getInstance(i13).ensureMessagesLoaded(-chatInvite.chat.id, 0, new va0(launchActivity, n80Var, zArr, bundle, chatInvite));
                                     break;
                                 } else {
                                     Bundle bundle2 = new Bundle();
@@ -343,9 +343,9 @@ public final /* synthetic */ class e1 implements Runnable {
                                     launchActivity.p0(wf1.F0(launchActivity, bundle2));
                                 }
                             } else {
-                                m80Var = m80Var2;
+                                n80Var = n80Var2;
                             }
-                            m80Var2 = m80Var;
+                            n80Var2 = n80Var;
                         }
                         TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
                         if (tL_starsSubscriptionPricing == null || chatInvite.can_refulfill_subscription) {
@@ -354,11 +354,11 @@ public final /* synthetic */ class e1 implements Runnable {
                         } else {
                             long j3 = tL_starsSubscriptionPricing.amount;
                             MessagesController.getInstance(i13).putChat(chatInvite.chat, false);
-                            t5.y(launchActivity.O, false).j0(str2, chatInvite, new fi.o0(launchActivity, j3, 2));
+                            s5.y(launchActivity.O, false).j0(str2, chatInvite, new fi.o0(launchActivity, j3, 2));
                         }
                     }
                     try {
-                        m80Var2.run();
+                        n80Var2.run();
                         break;
                     } catch (Exception e) {
                         FileLog.e(e);
@@ -371,15 +371,15 @@ public final /* synthetic */ class e1 implements Runnable {
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj3;
                 TLObject tLObject7 = (TLObject) obj2;
                 TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = (TLRPC.TL_inputInvoiceSlug) obj5;
-                m80 m80Var3 = (m80) obj4;
+                n80 n80Var3 = (n80) obj4;
                 String str3 = (String) obj;
                 ArrayList arrayList6 = launchActivity2.d0;
                 if (tL_error4 != null) {
                     if ("SUBSCRIPTION_ALREADY_ACTIVE".equalsIgnoreCase(tL_error4.text)) {
-                        a02 = yc.a0((m2) hg.c.g(1, arrayList6));
+                        a02 = xc.a0((m2) hg.c.g(1, arrayList6));
                         i10 = R.string.PaymentInvoiceSubscriptionLinkAlreadyPaid;
                     } else {
-                        a02 = yc.a0((m2) hg.c.g(1, arrayList6));
+                        a02 = xc.a0((m2) hg.c.g(1, arrayList6));
                         i10 = R.string.PaymentInvoiceLinkInvalid;
                     }
                     ok.p(i10, a02, null);
@@ -387,7 +387,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     if (tLObject7 instanceof TLRPC.TL_payments_paymentFormStars) {
                         p4 p4Var = launchActivity2.Y0;
                         launchActivity2.Y0 = null;
-                        t5.y(launchActivity2.O, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new s80(m80Var3, 1), new f90(p4Var, i15));
+                        s5.y(launchActivity2.O, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new s80(n80Var3, 1), new f90(p4Var, i15));
                         break;
                     } else {
                         if (tLObject7 instanceof TLRPC.PaymentForm) {
@@ -408,7 +408,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     }
                 }
                 try {
-                    m80Var3.run();
+                    n80Var3.run();
                     break;
                 } catch (Exception e7) {
                     FileLog.e(e7);
@@ -439,7 +439,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 FileLog.d(w10.toString());
                 if (hVar.a != 0) {
                     zf0Var.e = "BILLING_" + BillingController.getResponseCodeString(hVar.a);
-                    new yc(qg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, BillingController.getResponseCodeString(hVar.a)));
+                    new xc(qg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, BillingController.getResponseCodeString(hVar.a)));
                     break;
                 } else if (list != null && !list.isEmpty()) {
                     c5.o oVar = (c5.o) list.get(0);
@@ -467,7 +467,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     break;
                 } else {
                     zf0Var.e = "PRODUCT_NOT_FOUND";
-                    new yc(qg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "PRODUCT_NOT_FOUND"));
+                    new xc(qg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "PRODUCT_NOT_FOUND"));
                     break;
                 }
                 break;
@@ -483,7 +483,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     H.W(profileActivity.a.V0(view, false));
                     H.w = false;
                     H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new wl0(profileActivity, str8, i13, 5), false);
-                    H.l(R.drawable.msg_translate, LocaleController.getString(R.string.TranslateMessage), new wr0(profileActivity, strArr, str9, str8, 8), zArr2[0]);
+                    H.l(R.drawable.msg_translate, LocaleController.getString(R.string.TranslateMessage), new jr0(profileActivity, strArr, str9, str8, 9), zArr2[0]);
                     H.Z();
                     break;
                 }
@@ -609,24 +609,24 @@ public final /* synthetic */ class e1 implements Runnable {
         this.n = str;
     }
 
-    public /* synthetic */ e1(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, org.telegram.ui.ActionBar.a2 a2Var, m80 m80Var, String str) {
+    public /* synthetic */ e1(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, org.telegram.ui.ActionBar.a2 a2Var, n80 n80Var, String str) {
         this.a = 9;
         this.d = launchActivity;
         this.f = tL_error;
         this.h = tLObject;
         this.b = i10;
         this.c = a2Var;
-        this.e = m80Var;
+        this.e = n80Var;
         this.n = str;
     }
 
-    public /* synthetic */ e1(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, m80 m80Var, int i10, String str) {
+    public /* synthetic */ e1(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, n80 n80Var, int i10, String str) {
         this.a = 10;
         this.d = launchActivity;
         this.f = tL_error;
         this.h = tLObject;
         this.c = tL_inputInvoiceSlug;
-        this.e = m80Var;
+        this.e = n80Var;
         this.b = i10;
         this.n = str;
     }

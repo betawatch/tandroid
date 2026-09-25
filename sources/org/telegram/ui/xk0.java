@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xk0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -64,11 +64,11 @@ public final /* synthetic */ class xk0 implements Utilities.Callback2 {
                 org.telegram.ui.ActionBar.d6 d6Var2 = b1Var.e;
                 if (updates == null) {
                     if (tL_error == null) {
-                        new org.telegram.ui.Components.yc(b1Var, d6Var2).c0("UNKNOWN_BUTTON", false);
+                        new org.telegram.ui.Components.xc(b1Var, d6Var2).c0("UNKNOWN_BUTTON", false);
                         b1Var.y(daVar, "requested_chat_failed", org.telegram.ui.web.b1.B(str2, "req_id"));
                         break;
                     } else {
-                        new org.telegram.ui.Components.yc(b1Var, d6Var2).d0(tL_error, false);
+                        new org.telegram.ui.Components.xc(b1Var, d6Var2).d0(tL_error, false);
                         b1Var.y(daVar, "requested_chat_failed", org.telegram.ui.web.b1.B(str2, "req_id"));
                         break;
                     }

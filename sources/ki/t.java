@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class t {
     public final File a;
     public final int b;
     public final boolean c;
-    public final l d;
+    public final m d;
     public final ah.b e;
     public MP4Builder i;
     public MediaFormat j;
@@ -35,11 +35,11 @@ public final class t {
     public long q = Long.MIN_VALUE;
     public final MediaCodec.BufferInfo t = new MediaCodec.BufferInfo();
 
-    public t(File file, int i10, boolean z10, l lVar, ah.b bVar) {
+    public t(File file, int i10, boolean z10, m mVar, ah.b bVar) {
         this.a = file;
         this.b = i10;
         this.c = z10;
-        this.d = lVar;
+        this.d = mVar;
         this.e = bVar;
     }
 
@@ -272,15 +272,15 @@ public final class t {
             return;
         }
         ah.b bVar = this.e;
-        r0 r0Var = (r0) bVar.b;
-        n0 n0Var = (n0) bVar.c;
-        synchronized (r0Var.f) {
+        s0 s0Var = (s0) bVar.b;
+        o0 o0Var = (o0) bVar.c;
+        synchronized (s0Var.f) {
             try {
-                long j10 = n0Var.c;
+                long j10 = o0Var.c;
                 long j11 = j3 - j10;
-                if (j11 > 0 && !n0Var.d) {
-                    n0Var.c = j3;
-                    r0Var.j.execute(new a3.g0(r0Var, n0Var, j10, j11, 3));
+                if (j11 > 0 && !o0Var.d) {
+                    o0Var.c = j3;
+                    s0Var.j.execute(new a3.g0(s0Var, o0Var, j10, j11, 3));
                 }
             } finally {
             }

@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -179,7 +179,7 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
             case 6:
                 r3 r3Var = e6Var.L0;
                 if (!e6Var.D0(false)) {
-                    yh.t5 y3 = yh.t5.y(e6Var.C2, false);
+                    yh.s5 y3 = yh.s5.y(e6Var.C2, false);
                     if (y3.e && y3.f.amount <= 0) {
                         r3Var.k(e6Var.D0(false));
                         break;

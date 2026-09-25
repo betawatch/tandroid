@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.hg;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -28,7 +28,7 @@ import org.telegram.ui.qy;
 import org.telegram.ui.xz0;
 import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -96,7 +96,7 @@ public final /* synthetic */ class h3 implements Runnable {
                         }
                     }
                 };
-                org.telegram.ui.Components.qc V = new yc(e6Var.d1, e6Var.B0).V(Arrays.asList(tLObject), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, aVar);
+                org.telegram.ui.Components.qc V = new xc(e6Var.d1, e6Var.B0).V(Arrays.asList(tLObject), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, aVar);
                 V.a = 2;
                 V.k(true);
                 return;
@@ -134,7 +134,7 @@ public final /* synthetic */ class h3 implements Runnable {
                     return;
                 }
                 if (!tL_error.text.equalsIgnoreCase("PREMIUM_ACCOUNT_REQUIRED")) {
-                    yc X = yc.X();
+                    xc X = xc.X();
                     if (X != null) {
                         X.d0(tL_error, false);
                     }

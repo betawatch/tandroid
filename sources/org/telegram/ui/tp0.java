@@ -39,7 +39,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class tp0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public final ah.c E;
@@ -138,7 +138,7 @@ public final class tp0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         cVar6.e = bVar;
         cVar6.d = bVar2;
         this.a = false;
-        yh.t5.y(this.currentAccount, false).V();
+        yh.s5.y(this.currentAccount, false).V();
         yh.k5 k5Var = new yh.k5(this.currentAccount, 0L, false);
         this.b = k5Var;
         k5Var.f(8, false);
@@ -164,7 +164,7 @@ public final class tp0 extends org.telegram.ui.ActionBar.m2 implements Notificat
     public static void U(tp0 tp0Var, boolean[] zArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, qo0 qo0Var, yh.a3 a3Var, nf.e eVar) {
         zArr[0] = true;
         eVar.d();
-        yh.t5.x(tp0Var.currentAccount, a3Var.a).h(a3Var.b, tL_starGiftUnique, j3, null, true, new ai.m0(18, eVar, qo0Var));
+        yh.s5.x(tp0Var.currentAccount, a3Var.a).h(a3Var.b, tL_starGiftUnique, j3, null, true, new ai.m0(18, eVar, qo0Var));
     }
 
     public static void V(tp0 tp0Var, zf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, qo0 qo0Var, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
@@ -240,12 +240,12 @@ public final class tp0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                 }
                 np0 np0Var = this.h;
                 if (np0Var.h >= 0) {
-                    org.telegram.ui.Components.yc.a0(this.H).L(op0.a(this.currentAccount, this.h.h), LocaleController.getString(z11 ? R.string.ChannelColorApplied : R.string.UserColorApplied)).j();
+                    org.telegram.ui.Components.xc.a0(this.H).L(op0.a(this.currentAccount, this.h.h), LocaleController.getString(z11 ? R.string.ChannelColorApplied : R.string.UserColorApplied)).j();
                 } else {
                     if (np0Var.s == null) {
                         return;
                     }
-                    org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(this.H);
+                    org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(this.H);
                     TLRPC.TL_peerColorCollectible tL_peerColorCollectible = this.h.s;
                     int i10 = op0.j;
                     if (!org.telegram.ui.ActionBar.h6.I.q() || (arrayList = tL_peerColorCollectible.dark_colors) == null) {
@@ -266,9 +266,9 @@ public final class tp0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                 }
                 np0 np0Var2 = this.n;
                 if (np0Var2.h >= 0) {
-                    org.telegram.ui.Components.yc.a0(this.H).L(op0.c(this.currentAccount, this.n.h), LocaleController.getString(z11 ? R.string.ChannelProfileColorApplied : R.string.UserProfileColorApplied)).j();
+                    org.telegram.ui.Components.xc.a0(this.H).L(op0.c(this.currentAccount, this.n.h), LocaleController.getString(z11 ? R.string.ChannelProfileColorApplied : R.string.UserProfileColorApplied)).j();
                 } else if (np0Var2.n != 0) {
-                    org.telegram.ui.Components.yc a03 = org.telegram.ui.Components.yc.a0(this.H);
+                    org.telegram.ui.Components.xc a03 = org.telegram.ui.Components.xc.a0(this.H);
                     TLRPC.Document f7 = org.telegram.ui.Components.q5.f(this.currentAccount, this.n.n);
                     String string = LocaleController.getString(z11 ? R.string.ChannelProfileColorEmojiApplied : R.string.UserProfileColorEmojiApplied);
                     a03.getClass();
@@ -286,7 +286,7 @@ public final class tp0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                     ybVar.b.setMaxLines(3);
                     a03.b(ybVar, 2750).j();
                 } else {
-                    org.telegram.messenger.f0.p(z11 ? R.string.ChannelProfileColorResetApplied : R.string.UserProfileColorResetApplied, org.telegram.ui.Components.yc.a0(this.H), R.raw.contact_check, 36);
+                    org.telegram.messenger.f0.p(z11 ? R.string.ChannelProfileColorResetApplied : R.string.UserProfileColorResetApplied, org.telegram.ui.Components.xc.a0(this.H), R.raw.contact_check, 36);
                 }
             }
             this.H = null;
@@ -940,7 +940,7 @@ public final class tp0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         qo0 qo0Var = new qo0(this, 0);
         long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         zf.b bVar = tL_starGiftUnique.resale_ton_only ? zf.b.b : zf.b.a;
-        yh.t5.x(this.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new to0(this, bVar, tL_starGiftUnique, clientUserId, qo0Var));
+        yh.s5.x(this.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new to0(this, bVar, tL_starGiftUnique, clientUserId, qo0Var));
     }
 
     public final void z0() {

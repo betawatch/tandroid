@@ -29,7 +29,7 @@ import org.telegram.ui.Components.wz;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.n60;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class l4 implements Utilities.Callback {
                 waVar.getClass();
                 if (LaunchActivity.C1) {
                     if (arrayList == null || arrayList.size() == 0) {
-                        ok.p(R.string.UnknownError, new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(waVar.getContext()), null), null);
+                        ok.p(R.string.UnknownError, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(waVar.getContext()), null), null);
                     } else {
                         LinearLayout linearLayout = new LinearLayout(waVar.getContext());
                         linearLayout.setOrientation(1);

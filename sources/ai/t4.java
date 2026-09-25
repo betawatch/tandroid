@@ -12,9 +12,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t4 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -34,7 +34,7 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
     public final void run(Object obj) {
         zg.k0 k0Var;
         TLRPC.Document f7;
-        yc ycVar;
+        xc xcVar;
         int i10;
         int i11;
         int i12 = this.a;
@@ -95,7 +95,7 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
                     }
                 }
                 if (l4.longValue() <= 0) {
-                    org.telegram.ui.Components.qc q6 = new yc(e6Var.c1, e6Var.B0).q(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new a3.d(u4Var, 6));
+                    org.telegram.ui.Components.qc q6 = new xc(e6Var.c1, e6Var.B0).q(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new a3.d(u4Var, 6));
                     q6.j = 5000;
                     q6.j();
                 }
@@ -112,22 +112,22 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
                 if (((Boolean) obj).booleanValue()) {
                     storyItem.pinned = z10;
                     if (e6Var2.C1) {
-                        new yc(a5Var, d6Var).Q(z10 ? R.raw.contact_check : R.raw.chats_archived, 36, LocaleController.getString(z10 ? R.string.StoryPinnedToProfile : R.string.StoryArchivedFromProfile)).j();
+                        new xc(a5Var, d6Var).Q(z10 ? R.raw.contact_check : R.raw.chats_archived, 36, LocaleController.getString(z10 ? R.string.StoryPinnedToProfile : R.string.StoryArchivedFromProfile)).j();
                         break;
                     } else if (z10) {
-                        new yc(a5Var, d6Var).M(LocaleController.getString(R.string.StoryPinnedToPosts), LocaleController.getString(R.string.StoryPinnedToPostsDescription), R.raw.contact_check).j();
+                        new xc(a5Var, d6Var).M(LocaleController.getString(R.string.StoryPinnedToPosts), LocaleController.getString(R.string.StoryPinnedToPostsDescription), R.raw.contact_check).j();
                         break;
                     } else {
-                        ycVar = new yc(a5Var, d6Var);
+                        xcVar = new xc(a5Var, d6Var);
                         i10 = R.raw.chats_archived;
                         i11 = R.string.StoryUnpinnedFromPosts;
                     }
                 } else {
-                    ycVar = new yc(a5Var, d6Var);
+                    xcVar = new xc(a5Var, d6Var);
                     i10 = R.raw.error;
                     i11 = R.string.UnknownError;
                 }
-                org.telegram.messenger.f0.p(i11, ycVar, i10, 36);
+                org.telegram.messenger.f0.p(i11, xcVar, i10, 36);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;

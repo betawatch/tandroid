@@ -30,6 +30,7 @@ import java.util.TreeMap;
 import n2.g;
 import n2.k;
 import n2.m;
+import n2.o;
 import n2.x;
 import n7.z0;
 import nf.f;
@@ -56,12 +57,11 @@ import org.telegram.ui.hv0;
 import org.telegram.ui.mn;
 import q9.d;
 import r0.r;
-import y2.o;
 import ye.h;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
-public final class a implements b, bg.a, q, cf.b, c, n, ui, o, n2.n, d, og, l1, t0, r, xf.a {
+public final class a implements b, bg.a, q, cf.b, c, n, ui, y2.n, n2.n, d, og, l1, t0, r, xf.a {
     public static a b;
     public final /* synthetic */ int a;
 
@@ -244,7 +244,7 @@ public final class a implements b, bg.a, q, cf.b, c, n, ui, o, n2.n, d, og, l1, 
         if (sVar.v == null) {
             return null;
         }
-        return new n2.o(new g(6001, new x()));
+        return new o(new g(6001, new x()));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -374,7 +374,7 @@ public final class a implements b, bg.a, q, cf.b, c, n, ui, o, n2.n, d, og, l1, 
         return false;
     }
 
-    @Override // y2.o
+    @Override // y2.n
     public Object n2(Uri uri, g2.k kVar) {
         return Long.valueOf(d0.T(new BufferedReader(new InputStreamReader(kVar)).readLine()));
     }

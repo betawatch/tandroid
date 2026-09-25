@@ -12,7 +12,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagePreviewParams;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ca extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -114,11 +114,11 @@ public final class ca extends AnimatorListenerAdapter {
                 }
                 break;
             case 1:
-                zc zcVar = (zc) this.c;
-                if (animator == zcVar.g) {
-                    zcVar.g = null;
-                    zcVar.i = this.b ? 1.0f : 0.0f;
-                    zcVar.b();
+                yc ycVar = (yc) this.c;
+                if (animator == ycVar.g) {
+                    ycVar.g = null;
+                    ycVar.i = this.b ? 1.0f : 0.0f;
+                    ycVar.b();
                     break;
                 }
                 break;
@@ -182,14 +182,14 @@ public final class ca extends AnimatorListenerAdapter {
                 }
                 break;
             case 7:
-                aw awVar = (aw) this.c;
-                ew ewVar = awVar.J;
-                if (ewVar.U && !awVar.h) {
-                    if (!this.b && !awVar.n) {
-                        awVar.setBackground(null);
+                zv zvVar = (zv) this.c;
+                dw dwVar = zvVar.J;
+                if (dwVar.U && !zvVar.h) {
+                    if (!this.b && !zvVar.n) {
+                        zvVar.setBackground(null);
                         break;
-                    } else if (awVar.getBackground() == null) {
-                        awVar.setBackground(org.telegram.ui.ActionBar.h6.Y(ewVar.k(), 8, 8));
+                    } else if (zvVar.getBackground() == null) {
+                        zvVar.setBackground(org.telegram.ui.ActionBar.h6.Y(dwVar.k(), 8, 8));
                         break;
                     }
                 }

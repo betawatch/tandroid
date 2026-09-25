@@ -25,7 +25,7 @@ import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.gh0;
 import org.telegram.ui.Components.jh0;
 import org.telegram.ui.Components.wf0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
@@ -36,7 +36,7 @@ import org.telegram.ui.sa1;
 import org.telegram.ui.wn;
 import org.telegram.ui.yb0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -205,7 +205,7 @@ public final /* synthetic */ class j implements Runnable {
                 }
                 break;
             case 19:
-                org.telegram.ui.Components.qc Q = yc.a0((org.telegram.ui.z6) obj).Q(R.raw.ic_delete, 36, LocaleController.formatString(R.string.CacheWasCleared, AndroidUtilities.formatFileSize(j3)));
+                org.telegram.ui.Components.qc Q = xc.a0((org.telegram.ui.z6) obj).Q(R.raw.ic_delete, 36, LocaleController.formatString(R.string.CacheWasCleared, AndroidUtilities.formatFileSize(j3)));
                 Q.r = false;
                 Q.j();
                 break;

@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aw implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -18,14 +18,14 @@ public final /* synthetic */ class aw implements Runnable {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ aw(TLObject tLObject, Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, org.telegram.ui.Components.yc ycVar, org.telegram.messenger.video.d dVar) {
+    public /* synthetic */ aw(TLObject tLObject, Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, org.telegram.messenger.video.d dVar) {
         this.b = tLObject;
         this.d = context;
         this.e = a1Var;
         this.c = j3;
         this.f = bArr;
         this.h = aVar;
-        this.n = ycVar;
+        this.n = xcVar;
         this.r = dVar;
     }
 
@@ -40,12 +40,12 @@ public final /* synthetic */ class aw implements Runnable {
                 ai.a1 a1Var = (ai.a1) this.e;
                 byte[] bArr = (byte[]) this.f;
                 org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.h;
-                org.telegram.ui.Components.yc ycVar = (org.telegram.ui.Components.yc) this.n;
+                org.telegram.ui.Components.xc xcVar = (org.telegram.ui.Components.xc) this.n;
                 org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
                 TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.b;
                 t31 t31Var = new t31(context, a1Var, this.c, bArr);
                 t31Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
-                t31Var.s = new m31(aVar, ycVar, context, a1Var, dVar);
+                t31Var.s = new m31(aVar, xcVar, context, a1Var, dVar);
                 t31Var.show();
                 break;
             default:

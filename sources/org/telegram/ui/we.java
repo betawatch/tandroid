@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class we implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.ll0 {
     public final /* synthetic */ int a;
@@ -326,7 +326,7 @@ public final /* synthetic */ class we implements org.telegram.ui.ActionBar.z1, o
                     if (i11 >= size) {
                         k31Var.e0.addAll(hashSet);
                         k31Var.o();
-                        org.telegram.ui.Components.yc.a0(k31Var.h).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new org.telegram.ui.Components.w21(k31Var, hashSet, arrayList, j3, 0), new org.telegram.ui.Components.wn0(k31Var, arrayList, thVar, 13)).j();
+                        org.telegram.ui.Components.xc.a0(k31Var.h).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new org.telegram.ui.Components.w21(k31Var, hashSet, arrayList, j3, 0), new org.telegram.ui.Components.wn0(k31Var, arrayList, thVar, 12)).j();
                         a2Var.dismiss();
                         break;
                     } else {

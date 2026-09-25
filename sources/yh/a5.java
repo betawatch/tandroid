@@ -2,18 +2,18 @@ package yh;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a5 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ t5 b;
+    public final /* synthetic */ s5 b;
     public final /* synthetic */ boolean[] c;
     public final /* synthetic */ int d;
     public final /* synthetic */ Utilities.Callback e;
     public final /* synthetic */ Utilities.Callback f;
 
-    public /* synthetic */ a5(t5 t5Var, int i10, Utilities.Callback callback, boolean[] zArr, Utilities.Callback callback2) {
-        this.b = t5Var;
+    public /* synthetic */ a5(s5 s5Var, int i10, Utilities.Callback callback, boolean[] zArr, Utilities.Callback callback2) {
+        this.b = s5Var;
         this.d = i10;
         this.e = callback;
         this.c = zArr;
@@ -57,8 +57,8 @@ public final /* synthetic */ class a5 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ a5(t5 t5Var, boolean[] zArr, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
-        this.b = t5Var;
+    public /* synthetic */ a5(s5 s5Var, boolean[] zArr, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
+        this.b = s5Var;
         this.c = zArr;
         this.d = i10;
         this.e = callback;

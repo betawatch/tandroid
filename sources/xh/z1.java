@@ -10,10 +10,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.uq0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.zr0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class z1 extends uq0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.m2 b1;
@@ -28,8 +28,8 @@ public final class z1 extends uq0 {
 
     @Override // org.telegram.ui.Components.uq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        yc a02;
-        if (z10 && (a02 = yc.a0(this.b1)) != null) {
+        xc a02;
+        if (z10 && (a02 = xc.a0(this.b1)) != null) {
             if (iVar.m() == 1) {
                 long j3 = iVar.j(0);
                 if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {

@@ -13,7 +13,7 @@ import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class j10 {
     public int a;
@@ -30,7 +30,7 @@ public final class j10 {
         this.d = new Rect();
         this.f = new RectF();
         this.b = u1Var;
-        this.e = new zc(u1Var, 0.8f, 1.4f);
+        this.e = new yc(u1Var, 0.8f, 1.4f);
     }
 
     public void a(Canvas canvas, boolean z10) {
@@ -156,7 +156,7 @@ public final class j10 {
         Rect rect = (Rect) this.d;
         float centerX = rect.centerX();
         float centerY = rect.centerY();
-        ((zc) this.e).c(z10);
+        ((yc) this.e).c(z10);
         if (z10 && (zVar = (org.telegram.ui.Cells.z) this.g) != null) {
             zVar.setHotspot(centerX, centerY);
         }

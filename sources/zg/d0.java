@@ -17,9 +17,9 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.cu;
-import yh.r5;
+import yh.z5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class d0 extends cu {
     public final d6 c;
@@ -112,16 +112,16 @@ public abstract class d0 extends cu {
     public final void n(boolean z10) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
         for (b bVar : (b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)) {
-            r5 r5Var = new r5(7, this, bVar);
+            z5 z5Var = new z5(6, this, bVar);
             if (z10) {
                 setCursorVisible(false);
                 ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 0);
                 ofInt.addUpdateListener(new a(bVar, this, 1));
-                ofInt.addListener(new pg.d0(r5Var, 12));
+                ofInt.addListener(new pg.d0(z5Var, 12));
                 ofInt.setDuration(200L);
                 ofInt.start();
             } else {
-                r5Var.run();
+                z5Var.run();
             }
         }
     }

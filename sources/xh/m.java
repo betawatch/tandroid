@@ -44,7 +44,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -53,10 +53,10 @@ import org.telegram.ui.wn;
 import w7.a6;
 import w7.y5;
 import yh.l7;
-import yh.t5;
+import yh.s5;
 import yh.w7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class m extends bb implements GiftAuctionController.OnAuctionUpdateListener {
     public static final /* synthetic */ int A0 = 0;
@@ -314,7 +314,7 @@ public final class m extends bb implements GiftAuctionController.OnAuctionUpdate
             mVar.X(value);
         } else {
             AndroidUtilities.shakeView(mVar.a0);
-            new yc(mVar.container, mVar.resourcesProvider).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("Gift2AuctionMinimumBidIncreased", minimumBid, new Object[0]))).j();
+            new xc(mVar.container, mVar.resourcesProvider).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("Gift2AuctionMinimumBidIncreased", minimumBid, new Object[0]))).j();
         }
     }
 
@@ -348,11 +348,11 @@ public final class m extends bb implements GiftAuctionController.OnAuctionUpdate
             textView2.setMaxLines(5);
             mVar.Y();
             qc.f(frameLayout, mcVar, 2750).j();
-            t5.y(mVar.currentAccount, false).q(false, true, null);
+            s5.y(mVar.currentAccount, false).q(false, true, null);
         }
         if (str != null) {
             mVar.Y();
-            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new yc(frameLayout, mVar.resourcesProvider), R.raw.error, 36);
+            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new xc(frameLayout, mVar.resourcesProvider), R.raw.error, 36);
         }
     }
 
@@ -463,7 +463,7 @@ public final class m extends bb implements GiftAuctionController.OnAuctionUpdate
             j10 -= j3;
         }
         long j11 = j10;
-        if (t5.y(this.currentAccount, false).e && t5.y(this.currentAccount, false).q(false, false, null).amount < j11) {
+        if (s5.y(this.currentAccount, false).e && s5.y(this.currentAccount, false).q(false, false, null).amount < j11) {
             new l7(getContext(), this.resourcesProvider, j11, 14, null, null, 0L).show();
             return;
         }

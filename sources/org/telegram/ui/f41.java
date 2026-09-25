@@ -10,10 +10,10 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class f41 extends org.telegram.ui.ActionBar.m2 {
-    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1150000, 2000000};
+    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
     public org.telegram.ui.Components.wl0 a;
     public e41 b;
 
@@ -22,7 +22,7 @@ public final class f41 extends org.telegram.ui.ActionBar.m2 {
             return (i10 / MediaController.VIDEO_BITRATE_480) + " Mbps";
         }
         if (i10 > 1000000) {
-            return String.format(Locale.US, "%.2f Mbps", Float.valueOf(i10 / 1000000.0f));
+            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i10 / 1000000.0f));
         }
         return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
     }

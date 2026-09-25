@@ -47,7 +47,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class hl extends oi implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int E0 = 0;
@@ -176,7 +176,7 @@ public final class hl extends oi implements NotificationCenter.NotificationCente
         f0Var.setWillNotDraw(false);
         View view = new View(context);
         this.M = view;
-        view.setBackgroundDrawable(new fd(org.telegram.ui.ActionBar.h6.A0().q()));
+        view.setBackgroundDrawable(new ed(org.telegram.ui.ActionBar.h6.A0().q()));
         fl flVar = new fl(context, 0);
         this.s = flVar;
         flVar.setTranslationX(-AndroidUtilities.dp(80.0f));
@@ -918,7 +918,7 @@ public final class hl extends oi implements NotificationCenter.NotificationCente
                 ExifInterface exifInterface = new ExifInterface(file.getAbsolutePath());
                 float[] fArr = new float[2];
                 if (exifInterface.getLatLong(fArr)) {
-                    AndroidUtilities.runOnUIThread(new uc(16, this, fArr));
+                    AndroidUtilities.runOnUIThread(new kd(15, this, fArr));
                     return;
                 }
                 Location lastLocation2 = getLastLocation();

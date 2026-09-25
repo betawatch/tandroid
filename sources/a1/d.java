@@ -62,7 +62,7 @@ import org.telegram.ui.Components.kd0;
 import org.telegram.ui.Components.vn;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.wz0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.zz0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
@@ -86,11 +86,11 @@ import v0.i;
 import w7.y5;
 import x2.m;
 import x2.o;
-import yh.t5;
+import yh.s5;
 import yh.u;
 import zg.o0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, ky, z1, d5, cd0, MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback, Utilities.Callback2Return, m, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ int a;
@@ -283,7 +283,7 @@ public final /* synthetic */ class d implements OnFailureListener, ky, z1, d5, c
                 hashSet2.addAll(hashSet);
                 wf1Var.U0(true, false);
                 int i12 = 4;
-                yc.a0(wf1Var).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new ue1(wf1Var, i12), new qd1(wf1Var, (ArrayList) obj2, (Runnable) obj, i12)).j();
+                xc.a0(wf1Var).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new ue1(wf1Var, i12), new qd1(wf1Var, (ArrayList) obj2, (Runnable) obj, i12)).j();
                 wf1Var.C0();
                 a2Var.dismiss();
                 break;
@@ -319,7 +319,7 @@ public final /* synthetic */ class d implements OnFailureListener, ky, z1, d5, c
                 AndroidUtilities.runOnUIThread(new u(list, (Utilities.Callback2) this.e, (TLRPC.TL_inputStorePaymentStarsTopup) this.b, (TL_stars.TL_starsTopupOption) this.c, (Activity) this.d, 7));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new z8((t5) this.e, list, (m0) this.b, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.c, hVar, (Activity) this.d, 18));
+                AndroidUtilities.runOnUIThread(new z8((s5) this.e, list, (m0) this.b, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.c, hVar, (Activity) this.d, 18));
                 break;
         }
     }

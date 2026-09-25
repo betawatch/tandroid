@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class ly0 {
     public static void a(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -92,7 +92,7 @@ public abstract class ly0 {
         alertDialog$Builder.n(frameLayout);
         a2Var.G = 4;
         alertDialog$Builder.k(LocaleController.getString(z10 ? R.string.Done : R.string.Create), new ca.b(jy0Var, callback2, context, z10, 5));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new nv(jy0Var, 25));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new mv(jy0Var, 25));
         org.telegram.ui.ActionBar.a2 o9 = alertDialog$Builder.o();
         o9.h0 = false;
         jy0Var.setOnEditorActionListener(new e1(o9, 8));

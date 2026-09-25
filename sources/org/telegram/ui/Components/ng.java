@@ -25,10 +25,10 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class ng extends cu {
-    public gd c;
+    public fd c;
     public final /* synthetic */ ChatActivityEnterView d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -267,10 +267,10 @@ public abstract class ng extends cu {
         if (!chatActivityEnterView.E3 && chatActivityEnterView.B3 == null) {
             if (!chatActivityEnterView.z0 && !chatActivityEnterView.r0()) {
                 if (this.c == null) {
-                    gd gdVar = new gd(this);
-                    this.c = gdVar;
+                    fd fdVar = new fd(this);
+                    this.c = fdVar;
                     final int i10 = 0;
-                    gdVar.h = new Runnable(this) { // from class: org.telegram.ui.Components.lg
+                    fdVar.h = new Runnable(this) { // from class: org.telegram.ui.Components.lg
                         public final /* synthetic */ ng b;
 
                         {
@@ -296,16 +296,16 @@ public abstract class ng extends cu {
                         }
                     };
                 }
-                gd gdVar2 = this.c;
+                fd fdVar2 = this.c;
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
-                gdVar2.getClass();
+                fdVar2.getClass();
                 RectF rectF = AndroidUtilities.rectTmp;
                 float f7 = 0;
                 rectF.set(f7, f7, measuredWidth, measuredHeight);
-                gdVar2.i = false;
-                gdVar2.c = 0;
-                gdVar2.a(rectF);
+                fdVar2.i = false;
+                fdVar2.c = 0;
+                fdVar2.a(rectF);
                 return this.c.b(motionEvent);
             }
             if (chatActivityEnterView.t0() && motionEvent.getAction() == 0) {

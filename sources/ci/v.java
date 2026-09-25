@@ -14,12 +14,12 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.uv;
+import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.g20;
 import org.telegram.ui.nt;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class v extends wl0 {
     public final /* synthetic */ int X2 = 0;
@@ -66,9 +66,9 @@ public final class v extends wl0 {
                 break;
             default:
                 Paint paint = (Paint) obj;
-                uv uvVar = (uv) callback;
-                org.telegram.ui.Components.e6 e6Var = uvVar.M;
-                if (e6Var != null && uvVar.K >= 0 && uvVar.L >= 0 && uvVar.n != null && this.G) {
+                tv tvVar = (tv) callback;
+                org.telegram.ui.Components.e6 e6Var = tvVar.M;
+                if (e6Var != null && tvVar.K >= 0 && tvVar.L >= 0 && tvVar.n != null && this.G) {
                     float d = e6Var.d(0.0f, false);
                     if (d > 0.0f) {
                         int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -76,7 +76,7 @@ public final class v extends wl0 {
                         for (int i13 = 0; i13 < getChildCount(); i13++) {
                             View childAt = getChildAt(i13);
                             int R = RecyclerView.R(childAt);
-                            if (R != -1 && R >= uvVar.K && R <= uvVar.L) {
+                            if (R != -1 && R >= tvVar.K && R <= tvVar.L) {
                                 i11 = Math.min(i11, childAt.getTop() + ((int) childAt.getTranslationY()));
                                 i12 = Math.max(i12, childAt.getBottom() + ((int) childAt.getTranslationY()));
                             }
@@ -128,9 +128,9 @@ public final class v extends wl0 {
                 }
                 break;
             case 2:
-                uv uvVar = (uv) this.Z2;
-                uvVar.f.a();
-                viewGroup = ((org.telegram.ui.ActionBar.e3) uvVar).containerView;
+                tv tvVar = (tv) this.Z2;
+                tvVar.f.a();
+                viewGroup = ((org.telegram.ui.ActionBar.e3) tvVar).containerView;
                 viewGroup.invalidate();
                 break;
         }
@@ -142,9 +142,9 @@ public final class v extends wl0 {
         switch (this.X2) {
             case 2:
                 super.onDetachedFromWindow();
-                uv uvVar = (uv) this.Z2;
-                viewGroup = ((org.telegram.ui.ActionBar.e3) uvVar).containerView;
-                org.telegram.ui.Components.z5.release(viewGroup, (LongSparseArray<org.telegram.ui.Components.q5>) uvVar.b);
+                tv tvVar = (tv) this.Z2;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) tvVar).containerView;
+                org.telegram.ui.Components.z5.release(viewGroup, (LongSparseArray<org.telegram.ui.Components.q5>) tvVar.b);
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -178,8 +178,8 @@ public final class v extends wl0 {
                 return super.onInterceptTouchEvent(motionEvent2);
             default:
                 nt q6 = nt.q();
-                uv uvVar = (uv) this.Z2;
-                return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, uvVar.h, uvVar.N, this.p2);
+                tv tvVar = (tv) this.Z2;
+                return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, tvVar.h, tvVar.N, this.p2);
         }
     }
 
@@ -192,7 +192,7 @@ public final class v extends wl0 {
                 break;
             case 2:
                 super.onLayout(z10, i10, i11, i12, i13);
-                ((uv) this.Z2).f.a();
+                ((tv) this.Z2).f.a();
                 break;
             default:
                 super.onLayout(z10, i10, i11, i12, i13);
@@ -205,7 +205,7 @@ public final class v extends wl0 {
         switch (this.X2) {
             case 2:
                 View.MeasureSpec.getSize(i10);
-                ((uv) this.Z2).y.y1(40);
+                ((tv) this.Z2).y.y1(40);
                 super.onMeasure(i10, i11);
                 break;
             default:
@@ -244,9 +244,9 @@ public final class v extends wl0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(uv uvVar, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public v(tv tvVar, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, d6Var);
-        this.Z2 = uvVar;
+        this.Z2 = tvVar;
         this.Y2 = new Paint(1);
     }
 

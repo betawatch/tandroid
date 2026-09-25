@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class jq extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -105,7 +105,7 @@ public final class jq extends EditTextBoldCursor {
                             View view3 = lzVar.D0;
                             View view4 = lzVar.P;
                             qy qyVar = lzVar.j0;
-                            ow owVar = lzVar.h0;
+                            nw nwVar = lzVar.h0;
                             AnimatorSet animatorSet = lzVar.M0;
                             if (animatorSet != null) {
                                 animatorSet.cancel();
@@ -128,7 +128,7 @@ public final class jq extends EditTextBoldCursor {
                                         yyVar = lzVar.o0;
                                         view = lzVar.p0;
                                         c0Var = lzVar.i0;
-                                        view2 = owVar;
+                                        view2 = nwVar;
                                     } else {
                                         yyVar = lzVar.G0;
                                         view = lzVar.B0;
@@ -185,16 +185,16 @@ public final class jq extends EditTextBoldCursor {
                                         view2.setPadding(0, 0, 0, lzVar.p2);
                                     } else if (view2 == view4) {
                                         view2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), lzVar.p2);
-                                    } else if (view2 == owVar) {
+                                    } else if (view2 == nwVar) {
                                         view2.setPadding(0, lzVar.b1, 0, lzVar.p2);
                                     }
-                                    if (view2 == owVar) {
+                                    if (view2 == nwVar) {
                                         boolean z10 = lzVar.n0.x.size() > 0;
                                         qyVar.K = z10;
                                         if (z10) {
                                             qyVar.G("", true);
-                                            if (owVar.getAdapter() != qyVar) {
-                                                owVar.setAdapter(qyVar);
+                                            if (nwVar.getAdapter() != qyVar) {
+                                                nwVar.setAdapter(qyVar);
                                             }
                                         }
                                     }

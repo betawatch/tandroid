@@ -12,10 +12,10 @@ import org.telegram.ui.Components.dy;
 import org.telegram.ui.Components.hu;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.kd0;
-import org.telegram.ui.Components.pv;
+import org.telegram.ui.Components.ov;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class y3 extends org.telegram.ui.ActionBar.m2 {
     public final /* synthetic */ int a;
@@ -91,7 +91,7 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
         ViewGroup viewGroup2;
         switch (this.a) {
             case 5:
-                viewGroup = ((org.telegram.ui.ActionBar.e3) ((pv) this.b).x).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) ((ov) this.b).x).containerView;
                 return viewGroup;
             case 6:
                 return ((dy) this.b).E.r;
@@ -110,7 +110,7 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
         ViewGroup viewGroup;
         switch (this.a) {
             case 5:
-                viewGroup = ((org.telegram.ui.ActionBar.e3) ((pv) this.b).x).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) ((ov) this.b).x).containerView;
                 return (FrameLayout) viewGroup;
             case 6:
                 return ((dy) this.b).E.r;
@@ -194,7 +194,7 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
             default:
                 return super.getResourceProvider();
             case 5:
-                d6Var2 = ((org.telegram.ui.ActionBar.e3) ((pv) this.b).x).resourcesProvider;
+                d6Var2 = ((org.telegram.ui.ActionBar.e3) ((ov) this.b).x).resourcesProvider;
                 return d6Var2;
             case 6:
                 return ((dy) this.b).E.Z1;

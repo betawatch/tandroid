@@ -3,19 +3,19 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class n31 implements p31 {
     public final /* synthetic */ org.telegram.ui.ActionBar.m2 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
-    public final /* synthetic */ org.telegram.ui.Components.wn0 d;
+    public final /* synthetic */ org.telegram.ui.Components.vw d;
 
-    public n31(org.telegram.ui.ActionBar.m2 m2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.wn0 wn0Var) {
+    public n31(org.telegram.ui.ActionBar.m2 m2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.vw vwVar) {
         this.a = m2Var;
         this.b = context;
         this.c = d6Var;
-        this.d = wn0Var;
+        this.d = vwVar;
     }
 
     @Override // org.telegram.ui.p31
@@ -25,7 +25,7 @@ public final class n31 implements p31 {
 
     @Override // org.telegram.ui.p31
     public final void b() {
-        AndroidUtilities.runOnUIThread(new ix0(26, this.a, this.d), 200L);
+        AndroidUtilities.runOnUIThread(new jx0(25, this.a, this.d), 200L);
     }
 
     @Override // org.telegram.ui.p31

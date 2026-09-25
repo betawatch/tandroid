@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.rr;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class s4 extends View {
     public final org.telegram.ui.Components.e6 E;
@@ -32,7 +32,7 @@ public final class s4 extends View {
     public boolean e;
     public boolean f;
     public View.OnClickListener h;
-    public final org.telegram.ui.Components.zc n;
+    public final org.telegram.ui.Components.yc n;
     public int r;
     public String s;
     public float v;
@@ -50,7 +50,7 @@ public final class s4 extends View {
         this.c = paint2;
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
         this.d = o6Var;
-        this.n = new org.telegram.ui.Components.zc(this);
+        this.n = new org.telegram.ui.Components.yc(this);
         this.r = -1;
         rr rrVar = rr.h;
         this.y = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
@@ -336,18 +336,18 @@ public final class s4 extends View {
         View.OnClickListener onClickListener;
         boolean z10 = motionEvent.getX() >= this.v - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getX() <= this.v + ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() >= this.w - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() <= this.w + ((float) AndroidUtilities.dp(14.0f));
         int action = motionEvent.getAction();
-        org.telegram.ui.Components.zc zcVar = this.n;
+        org.telegram.ui.Components.yc ycVar = this.n;
         if (action == 0) {
-            zcVar.c(z10);
+            ycVar.c(z10);
         } else if (motionEvent.getAction() == 1) {
-            if (zcVar.h && z10 && (onClickListener = this.h) != null) {
+            if (ycVar.h && z10 && (onClickListener = this.h) != null) {
                 onClickListener.onClick(this);
             }
-            zcVar.c(false);
+            ycVar.c(false);
         } else if (motionEvent.getAction() == 3) {
-            zcVar.c(false);
+            ycVar.c(false);
         }
-        return zcVar.h || super.onTouchEvent(motionEvent);
+        return ycVar.h || super.onTouchEvent(motionEvent);
     }
 
     public void setOnCheckboxClick(View.OnClickListener onClickListener) {

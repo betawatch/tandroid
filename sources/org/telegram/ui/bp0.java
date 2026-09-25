@@ -9,7 +9,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class bp0 extends FrameLayout {
     public long a;
@@ -47,8 +47,8 @@ public final class bp0 extends FrameLayout {
         boolean z10 = i10 % 3 == 1;
         setPadding(z10 ? AndroidUtilities.dp(4.0f) : 0, 0, z10 ? AndroidUtilities.dp(4.0f) : 0, 0);
         c(tL_starGiftUnique.getDocument(), tL_starGiftUnique);
-        this.b = (TL_stars.starGiftAttributeBackdrop) yh.t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        this.c = (TL_stars.starGiftAttributePattern) yh.t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        this.b = (TL_stars.starGiftAttributeBackdrop) yh.s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        this.c = (TL_stars.starGiftAttributePattern) yh.s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.b;
         xh.f1 f1Var = this.e;
         f1Var.d(stargiftattributebackdrop);

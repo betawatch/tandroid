@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class e0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Cells.j3 A0;
@@ -285,7 +285,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
     public static void T(e0 e0Var, TL_aicompose.AiComposeTone aiComposeTone) {
         e0Var.u0.tones.add(0, aiComposeTone);
         e0Var.s0();
-        new yc(e0Var.G0, e0Var.resourcesProvider).p(aiComposeTone.emoji_id, LocaleController.formatString(R.string.AIEditorToneCreatedTitle, aiComposeTone.title), LocaleController.getString(R.string.AIEditorToneCreatedText)).j();
+        new xc(e0Var.G0, e0Var.resourcesProvider).p(aiComposeTone.emoji_id, LocaleController.formatString(R.string.AIEditorToneCreatedTitle, aiComposeTone.title), LocaleController.getString(R.string.AIEditorToneCreatedText)).j();
     }
 
     public static void U(e0 e0Var, TL_aicompose.AiComposeTone aiComposeTone) {
@@ -309,7 +309,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                 return;
             }
             if (e0Var.u0.getSavedTonesCount() + 1 > (UserConfig.getInstance(e0Var.currentAccount).isPremium() ? MessagesController.getInstance(e0Var.currentAccount).config.aicomposeToneSavedLimitPremium.get() : MessagesController.getInstance(e0Var.currentAccount).config.aicomposeToneSavedLimitDefault.get())) {
-                o0(e0Var.currentAccount, new yc(e0Var.G0, e0Var.resourcesProvider));
+                o0(e0Var.currentAccount, new xc(e0Var.G0, e0Var.resourcesProvider));
                 return;
             }
             y yVar = new y(e0Var.getContext(), e0Var.resourcesProvider);
@@ -323,7 +323,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         e0Var.Q0 = -1;
         e0Var.R0 = false;
         if (tL_error != null && ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) || "AICOMPOSE_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text))) {
-            new yc(frameLayout, e0Var.resourcesProvider).M(LocaleController.getString(R.string.AIEditorLimitTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.AIEditorLimitText)), R.raw.star_premium_2).j();
+            new xc(frameLayout, e0Var.resourcesProvider).M(LocaleController.getString(R.string.AIEditorLimitTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.AIEditorLimitText)), R.raw.star_premium_2).j();
             e0Var.K0 = true;
             e0Var.p0(true);
             return;
@@ -484,7 +484,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         e0Var.Q0 = -1;
         e0Var.R0 = false;
         if (tL_error != null && ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) || "AICOMPOSE_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text))) {
-            new yc(frameLayout, e0Var.resourcesProvider).M(LocaleController.getString(R.string.AIEditorLimitTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.AIEditorLimitText)), R.raw.star_premium_2).j();
+            new xc(frameLayout, e0Var.resourcesProvider).M(LocaleController.getString(R.string.AIEditorLimitTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.AIEditorLimitText)), R.raw.star_premium_2).j();
             e0Var.K0 = true;
             e0Var.p0(true);
             return;
@@ -674,13 +674,13 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         }
     }
 
-    public static void o0(int i10, yc ycVar) {
-        if (ycVar.W() == null) {
+    public static void o0(int i10, xc xcVar) {
+        if (xcVar.W() == null) {
             return;
         }
         MessagesController messagesController = MessagesController.getInstance(i10);
         boolean isPremium = UserConfig.getInstance(i10).isPremium();
-        ycVar.M(LocaleController.getString(R.string.AIEditorStyleLimitTitle), AndroidUtilities.replaceSingleTag(!isPremium ? LocaleController.formatString(R.string.AIEditorStyleLimitTextPremium, Integer.valueOf(messagesController.config.aicomposeToneSavedLimitDefault.get()), Integer.valueOf(messagesController.config.aicomposeToneSavedLimitPremium.get())) : LocaleController.formatString(R.string.AIEditorStyleLimitText, Integer.valueOf(messagesController.config.aicomposeToneSavedLimitPremium.get())), new pg(ycVar, 1)), !isPremium ? R.raw.star_premium_2 : R.raw.error).j();
+        xcVar.M(LocaleController.getString(R.string.AIEditorStyleLimitTitle), AndroidUtilities.replaceSingleTag(!isPremium ? LocaleController.formatString(R.string.AIEditorStyleLimitTextPremium, Integer.valueOf(messagesController.config.aicomposeToneSavedLimitDefault.get()), Integer.valueOf(messagesController.config.aicomposeToneSavedLimitPremium.get())) : LocaleController.formatString(R.string.AIEditorStyleLimitText, Integer.valueOf(messagesController.config.aicomposeToneSavedLimitPremium.get())), new pg(xcVar, 1)), !isPremium ? R.raw.star_premium_2 : R.raw.error).j();
     }
 
     @Override // org.telegram.ui.Components.bb

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class nz0 extends kq {
     public final /* synthetic */ boolean[] d1;
@@ -21,8 +21,8 @@ public final class nz0 extends kq {
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         if (!z10 && z11 && this.d1[0]) {
             ProfileActivity profileActivity = this.f1;
-            if (org.telegram.ui.Components.yc.a(profileActivity)) {
-                org.telegram.ui.Components.yc.C(profileActivity, this.e1.first_name).j();
+            if (org.telegram.ui.Components.xc.a(profileActivity)) {
+                org.telegram.ui.Components.xc.C(profileActivity, this.e1.first_name).j();
             }
         }
     }

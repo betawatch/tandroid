@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class gz extends vl0 {
     public int L;
@@ -52,7 +52,7 @@ public final class gz extends vl0 {
     public gz(lz lzVar, Context context) {
         this.Q = lzVar;
         this.h = context;
-        fz fzVar = new fz(context, lzVar.c1, new d(this, 12), new nv(this, 3), lzVar.Z1);
+        fz fzVar = new fz(context, lzVar.c1, new d(this, 12), new mv(this, 3), lzVar.Z1);
         this.c = fzVar;
         fzVar.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
         fzVar.setClipToPadding(false);

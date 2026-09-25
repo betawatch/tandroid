@@ -50,7 +50,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.Components.u40, NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_chatBannedRights A0;
@@ -153,7 +153,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     public static void U(ro roVar, FrameLayout frameLayout, View view) {
         if (!roVar.G0) {
             TLRPC.ChatFull chatFull = roVar.y0;
-            org.telegram.ui.Components.yc.a0(roVar).Q(R.raw.topics, 36, (chatFull == null || chatFull.linked_chat_id == 0) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("ChannelTopicsForbidden", roVar.getMessagesController().forumUpgradeParticipantsMin, new Object[0])) : AndroidUtilities.replaceTags(LocaleController.getString("ChannelTopicsDiscussionForbidden", R.string.ChannelTopicsDiscussionForbidden))).j();
+            org.telegram.ui.Components.xc.a0(roVar).Q(R.raw.topics, 36, (chatFull == null || chatFull.linked_chat_id == 0) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("ChannelTopicsForbidden", roVar.getMessagesController().forumUpgradeParticipantsMin, new Object[0])) : AndroidUtilities.replaceTags(LocaleController.getString("ChannelTopicsDiscussionForbidden", R.string.ChannelTopicsDiscussionForbidden))).j();
             try {
                 frameLayout.performHapticFeedback(3);
                 return;
@@ -225,7 +225,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         j0Var.H1(j3);
         TLRPC.Chat chat = roVar.getMessagesController().getChat(Long.valueOf(-j3));
         if (chat != null) {
-            j0Var.Q0 = new dh(14, roVar, chat);
+            j0Var.Q0 = new fh(13, roVar, chat);
         }
         roVar.showDialog(j0Var);
     }

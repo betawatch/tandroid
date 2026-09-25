@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.uv;
+import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.wm;
 import org.telegram.ui.Components.xy0;
 import org.telegram.ui.FiltersSetupActivity;
@@ -26,7 +26,7 @@ import org.telegram.ui.wy;
 import org.telegram.ui.z10;
 import org.telegram.ui.zy;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final /* synthetic */ class q1 implements View.OnTouchListener {
                 }
                 break;
             case 3:
-                s10 = nt.q().s(motionEvent, r0.h, (wm) this.c, r0.N, ((uv) this.b).resourcesProvider);
+                s10 = nt.q().s(motionEvent, r0.h, (wm) this.c, r0.N, ((tv) this.b).resourcesProvider);
                 break;
             case 4:
                 s11 = nt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.j) this.c, r0.getPreviewDelegate(), ((xy0) this.b).b);

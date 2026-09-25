@@ -36,7 +36,7 @@ import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.zz0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class a0 extends bb {
     public static final int[] w0 = {21600, 43200, 86400, 129600, 172800, 259200};
@@ -86,7 +86,7 @@ public final class a0 extends bb {
         this.q0 = b1Var;
         this.waitingKeyboard = true;
         this.smoothKeyboardAnimationEnabled = true;
-        boolean j10 = t5.y(i10, true).j();
+        boolean j10 = s5.y(i10, true).j();
         if (j3 > 0 && MessagesController.getInstance(i10).getUserFull(j3) == null && (user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3))) != null) {
             MessagesController.getInstance(i10).loadFullUser(user, 0, false);
         }
@@ -236,7 +236,7 @@ public final class a0 extends bb {
         if (j3 > 0) {
             int i10 = a0Var.currentAccount;
             zf.b bVar = zf.b.a;
-            t5 x10 = t5.x(i10, bVar);
+            s5 x10 = s5.x(i10, bVar);
             zf.a l4 = x10.e ? zf.a.l(x10.p()) : null;
             zf.a g10 = z10 ? zf.a.g(j3, bVar) : zf.a.i(a0Var.m0.b + aVar.b, bVar);
             if (l4 == null || l4.b < g10.b) {
@@ -261,7 +261,7 @@ public final class a0 extends bb {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r14v4 */
-    /* JADX WARN: Type inference failed for: r14v5, types: [org.telegram.ui.Components.ad[], org.telegram.ui.Components.yz0[]] */
+    /* JADX WARN: Type inference failed for: r14v5, types: [org.telegram.ui.Components.yz0[], org.telegram.ui.Components.zc[]] */
     /* JADX WARN: Type inference failed for: r14v8 */
     public static void Q(final a0 a0Var, int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j3) {
         String str;
@@ -273,7 +273,7 @@ public final class a0 extends bb {
                 org.telegram.ui.b.b(i10);
                 return;
             }
-            t5 x10 = t5.x(i10, a0Var.m0.a);
+            s5 x10 = s5.x(i10, a0Var.m0.a);
             zf.a l4 = x10.e ? zf.a.l(x10.p()) : null;
             zf.b bVar = zf.b.a;
             zf.b bVar2 = zf.b.b;

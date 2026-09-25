@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.bt;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class i2 {
     public static final HashMap e = new HashMap();
@@ -155,7 +155,7 @@ public final class i2 {
 
     public static void g(h2 h2Var, ImageReceiver imageReceiver, Runnable runnable) {
         i2 i2Var;
-        l1 l1Var;
+        k1 k1Var;
         Bitmap decodeStream;
         if (h2Var == null || (i2Var = h2Var.a) == null) {
             return;
@@ -164,17 +164,17 @@ public final class i2 {
         try {
             if (i2Var.b != null) {
                 Iterator it = h2Var.c.iterator();
-                l1Var = null;
+                k1Var = null;
                 while (it.hasNext()) {
-                    l1Var = (l1) ((HashMap) i2Var.b.c).get((String) it.next());
-                    if (l1Var != null) {
+                    k1Var = (k1) ((HashMap) i2Var.b.c).get((String) it.next());
+                    if (k1Var != null) {
                         break;
                     }
                 }
             } else {
-                l1Var = null;
+                k1Var = null;
             }
-            if (l1Var == null) {
+            if (k1Var == null) {
                 if (hashMap.containsKey(h2Var.b)) {
                     imageReceiver.setImageBitmap((Bitmap) hashMap.get(h2Var.b));
                     return;
@@ -185,7 +185,7 @@ public final class i2 {
                 ArrayList arrayList = (ArrayList) f.get(h2Var.b);
                 if (arrayList == null) {
                     f.put(h2Var.b, new ArrayList());
-                    new i1(new bt(21, i2Var, h2Var)).execute(h2Var.b);
+                    new h1(new bt(21, i2Var, h2Var)).execute(h2Var.b);
                     return;
                 }
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -196,17 +196,17 @@ public final class i2 {
                 arrayList.add(new Pair(imageReceiver, runnable));
                 return;
             }
-            m1 m1Var = (m1) l1Var.a.get("content-type");
-            if ((m1Var == null ? null : m1Var.a).contains("svg")) {
+            l1 l1Var = (l1) k1Var.a.get("content-type");
+            if ((l1Var == null ? null : l1Var.a).contains("svg")) {
                 if (h2Var.d > 0 && h2Var.e > 0) {
-                    decodeStream = SvgHelper.getBitmap((InputStream) l1Var.a(), AndroidUtilities.dp(h2Var.d), AndroidUtilities.dp(h2Var.e), false);
+                    decodeStream = SvgHelper.getBitmap((InputStream) k1Var.a(), AndroidUtilities.dp(h2Var.d), AndroidUtilities.dp(h2Var.e), false);
                 }
                 return;
             }
             if (h2Var.d <= 0 || h2Var.e <= 0) {
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
-                BitmapFactory.decodeStream(l1Var.a(), null, options);
+                BitmapFactory.decodeStream(k1Var.a(), null, options);
                 int i11 = h2Var.d;
                 if (i11 == 0 && h2Var.e == 0) {
                     h2Var.d = options.outWidth;
@@ -218,7 +218,7 @@ public final class i2 {
                 }
                 runnable.run();
             }
-            decodeStream = BitmapFactory.decodeStream(l1Var.a());
+            decodeStream = BitmapFactory.decodeStream(k1Var.a());
             imageReceiver.setImageBitmap(decodeStream);
         } catch (Exception e7) {
             FileLog.e(e7);

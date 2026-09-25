@@ -42,7 +42,7 @@ import org.webrtc.EglRenderer;
 import org.webrtc.VideoFileRenderer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,46 +78,55 @@ public final /* synthetic */ class cn0 implements Runnable {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v11 */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r1v18 */
+    /* JADX WARN: Type inference failed for: r1v20 */
+    /* JADX WARN: Type inference failed for: r7v18 */
+    /* JADX WARN: Type inference failed for: r7v19 */
+    /* JADX WARN: Type inference failed for: r7v20 */
     @Override // java.lang.Runnable
     public final void run() {
         is0 is0Var;
-        ArrayList arrayList;
         long peerId;
         org.telegram.ui.ActionBar.m2 m2Var;
+        int i10;
+        ?? r12;
         boolean z10;
         String str;
         Uri uri;
         String stickerExt;
-        int i10;
         int i11;
+        int i12;
         String absolutePath;
         String absolutePath2;
         boolean z11;
         org.telegram.ui.web.m2 m2Var2;
         Object obj;
-        int i12 = this.a;
-        int i13 = 2;
+        int i13 = this.a;
+        int i14 = 2;
         String str2 = null;
         Object obj2 = null;
         Boolean bool = null;
         str2 = null;
+        int i15 = 0;
         boolean z12 = true;
         z12 = true;
-        int i14 = 0;
         Object obj3 = this.d;
         Object obj4 = this.c;
         Object obj5 = this.b;
-        switch (i12) {
+        switch (i13) {
             case 0:
                 in0 in0Var = (in0) obj5;
-                ArrayList arrayList2 = (ArrayList) obj4;
-                ArrayList<MessageObject> arrayList3 = (ArrayList) obj3;
-                int i15 = in0Var.d;
-                for (int i16 = 0; i16 < arrayList2.size(); i16++) {
-                    DownloadController.getInstance(i15).onDownloadComplete((MessageObject) arrayList2.get(i16));
+                ArrayList arrayList = (ArrayList) obj4;
+                ArrayList<MessageObject> arrayList2 = (ArrayList) obj3;
+                int i16 = in0Var.d;
+                for (int i17 = 0; i17 < arrayList.size(); i17++) {
+                    DownloadController.getInstance(i16).onDownloadComplete((MessageObject) arrayList.get(i17));
                 }
-                if (!arrayList3.isEmpty()) {
-                    DownloadController.getInstance(i15).deleteRecentFiles(arrayList3);
+                if (!arrayList2.isEmpty()) {
+                    DownloadController.getInstance(i16).deleteRecentFiles(arrayList2);
                 }
                 in0Var.O = false;
                 in0Var.d(true);
@@ -129,7 +138,7 @@ public final /* synthetic */ class cn0 implements Runnable {
                 if (UserConfig.getInstance(eo0Var.K0.H0).isPremium()) {
                     qyVar.getMessagesController().disableAds(true);
                     eo0Var.T();
-                    yc.a0(qyVar).c(LocaleController.getString(R.string.AdHidden)).j();
+                    xc.a0(qyVar).c(LocaleController.getString(R.string.AdHidden)).j();
                 } else {
                     new rg.x0((org.telegram.ui.ActionBar.m2) qyVar, 3, true).show();
                 }
@@ -155,7 +164,7 @@ public final /* synthetic */ class cn0 implements Runnable {
             case 4:
                 nt0 nt0Var = (nt0) obj5;
                 jv0 jv0Var3 = nt0Var.d;
-                e5.S(jv0Var3.getContext(), jv0Var3.v1, (org.telegram.ui.ActionBar.d6) obj4, new nv(nt0Var, 21));
+                e5.S(jv0Var3.getContext(), jv0Var3.v1, (org.telegram.ui.ActionBar.d6) obj4, new mv(nt0Var, 21));
                 ((y70) obj3).u();
                 break;
             case 5:
@@ -172,26 +181,26 @@ public final /* synthetic */ class cn0 implements Runnable {
                 } else {
                     ut0Var.h = true;
                 }
-                int i17 = 0;
+                int i18 = 0;
                 while (true) {
                     cu0[] cu0VarArr = jv0Var4.k0;
-                    if (i17 >= cu0VarArr.length) {
+                    if (i18 >= cu0VarArr.length) {
                         ut0Var.e = false;
                         ut0Var.f = true;
                         ut0Var.l();
                         break;
                     } else {
-                        cu0 cu0Var = cu0VarArr[i17];
+                        cu0 cu0Var = cu0VarArr[i18];
                         if (cu0Var.F == 6 && (is0Var = cu0Var.h) != null && (ut0Var.f || h == 0)) {
                             jv0Var4.z(is0Var, 0, null);
                         }
-                        i17++;
+                        i18++;
                     }
                 }
                 break;
             case 6:
                 au0 au0Var = (au0) obj5;
-                ArrayList arrayList4 = (ArrayList) obj4;
+                ArrayList arrayList3 = (ArrayList) obj4;
                 org.telegram.ui.ActionBar.m2 m2Var4 = au0Var.s.v1;
                 String lowerCase = ((String) obj3).trim().toLowerCase();
                 if (lowerCase.length() == 0) {
@@ -202,30 +211,30 @@ public final /* synthetic */ class cn0 implements Runnable {
                     if (lowerCase.equals(translitString) || translitString.length() == 0) {
                         translitString = null;
                     }
-                    int i18 = (translitString != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i18];
+                    int i19 = (translitString != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i19];
                     strArr[0] = lowerCase;
                     if (translitString != null) {
                         strArr[1] = translitString;
                     }
+                    ArrayList arrayList4 = new ArrayList();
                     ArrayList arrayList5 = new ArrayList();
-                    ArrayList arrayList6 = new ArrayList();
-                    int size = arrayList4.size();
-                    int i19 = 0;
-                    while (i19 < size) {
-                        TLObject tLObject2 = (TLObject) arrayList4.get(i19);
+                    int size = arrayList3.size();
+                    int i20 = 0;
+                    while (i20 < size) {
+                        TLObject tLObject2 = (TLObject) arrayList3.get(i20);
                         if (tLObject2 instanceof TLRPC.ChatParticipant) {
-                            arrayList = arrayList4;
                             peerId = ((TLRPC.ChatParticipant) tLObject2).user_id;
                         } else {
-                            arrayList = arrayList4;
                             if (tLObject2 instanceof TLRPC.ChannelParticipant) {
                                 peerId = MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject2).peer);
                             }
                             m2Var = m2Var4;
-                            i19++;
-                            arrayList4 = arrayList;
+                            i10 = i19;
+                            i20++;
+                            i19 = i10;
                             m2Var4 = m2Var;
+                            i15 = 0;
                         }
                         TLRPC.User user = m2Var4.getMessagesController().getUser(Long.valueOf(peerId));
                         if (user.id != m2Var4.getUserConfig().getClientUserId()) {
@@ -234,56 +243,58 @@ public final /* synthetic */ class cn0 implements Runnable {
                             if (lowerCase2.equals(translitString2)) {
                                 translitString2 = null;
                             }
-                            char c10 = 0;
-                            int i20 = 0;
-                            while (i20 < i18) {
+                            boolean z13 = false;
+                            while (i15 < i19) {
                                 m2Var = m2Var4;
-                                String str4 = strArr[i20];
+                                String str4 = strArr[i15];
                                 if (lowerCase2.startsWith(str4) || org.telegram.messenger.f0.w(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || org.telegram.messenger.f0.w(" ", str4, translitString2)))) {
-                                    c10 = 1;
+                                    r12 = 1;
                                 } else {
                                     String publicUsername = UserObject.getPublicUsername(user);
-                                    if (publicUsername != null && publicUsername.startsWith(str4)) {
-                                        c10 = 2;
-                                    }
+                                    r12 = (publicUsername == null || !publicUsername.startsWith(str4)) ? z13 : 2;
                                 }
-                                if (c10 != 0) {
-                                    if (c10 == 1) {
-                                        arrayList5.add(AndroidUtilities.generateSearchName(user.first_name, user.last_name, str4));
+                                if (r12 != 0) {
+                                    i10 = i19;
+                                    if (r12 == 1) {
+                                        arrayList4.add(AndroidUtilities.generateSearchName(user.first_name, user.last_name, str4));
                                     } else {
-                                        arrayList5.add(AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(user), null, "@" + str4));
+                                        arrayList4.add(AndroidUtilities.generateSearchName("@" + UserObject.getPublicUsername(user), null, "@" + str4));
                                     }
-                                    arrayList6.add(tLObject2);
-                                    i19++;
-                                    arrayList4 = arrayList;
-                                    m2Var4 = m2Var;
-                                } else {
+                                    arrayList5.add(tLObject2);
                                     i20++;
+                                    i19 = i10;
                                     m2Var4 = m2Var;
+                                    i15 = 0;
+                                } else {
+                                    i15++;
+                                    m2Var4 = m2Var;
+                                    z13 = r12;
                                 }
                             }
                         }
                         m2Var = m2Var4;
-                        i19++;
-                        arrayList4 = arrayList;
+                        i10 = i19;
+                        i20++;
+                        i19 = i10;
                         m2Var4 = m2Var;
+                        i15 = 0;
                     }
-                    AndroidUtilities.runOnUIThread(new cn0((Object) au0Var, (Object) arrayList5, (Object) arrayList6, 7));
+                    AndroidUtilities.runOnUIThread(new cn0((Object) au0Var, (Object) arrayList4, (Object) arrayList5, 7));
                     break;
                 }
                 break;
             case 7:
                 au0 au0Var2 = (au0) obj5;
-                ArrayList arrayList7 = (ArrayList) obj4;
-                ArrayList arrayList8 = (ArrayList) obj3;
+                ArrayList arrayList6 = (ArrayList) obj4;
+                ArrayList arrayList7 = (ArrayList) obj3;
                 jv0 jv0Var5 = au0Var2.s;
                 if (jv0Var5.V0) {
-                    au0Var2.d = arrayList7;
+                    au0Var2.d = arrayList6;
                     au0Var2.r--;
                     if (!ChatObject.isChannel(au0Var2.n)) {
-                        ArrayList arrayList9 = au0Var2.e.g;
-                        arrayList9.clear();
-                        arrayList9.addAll(arrayList8);
+                        ArrayList arrayList8 = au0Var2.e.g;
+                        arrayList8.clear();
+                        arrayList8.addAll(arrayList7);
                     }
                     if (au0Var2.r == 0) {
                         int i21 = 0;
@@ -308,42 +319,43 @@ public final /* synthetic */ class cn0 implements Runnable {
                 break;
             case 8:
                 fu0 fu0Var = (fu0) obj5;
-                ArrayList arrayList10 = (ArrayList) obj4;
+                ArrayList arrayList9 = (ArrayList) obj4;
                 fu0Var.getClass();
                 String lowerCase3 = ((String) obj3).trim().toLowerCase();
+                int i22 = 9;
                 if (lowerCase3.length() == 0) {
-                    AndroidUtilities.runOnUIThread(new wn0(10, fu0Var, new ArrayList()));
+                    AndroidUtilities.runOnUIThread(new wn0(i22, fu0Var, new ArrayList()));
                     break;
                 } else {
                     String translitString3 = LocaleController.getInstance().getTranslitString(lowerCase3);
                     if (!lowerCase3.equals(translitString3) && translitString3.length() != 0) {
                         str2 = translitString3;
                     }
-                    int i22 = (str2 != null ? 1 : 0) + 1;
-                    String[] strArr2 = new String[i22];
+                    int i23 = (str2 != null ? 1 : 0) + 1;
+                    String[] strArr2 = new String[i23];
                     strArr2[0] = lowerCase3;
                     if (str2 != null) {
                         strArr2[1] = str2;
                     }
-                    ArrayList arrayList11 = new ArrayList();
-                    for (int i23 = 0; i23 < arrayList10.size(); i23++) {
-                        MessageObject messageObject = (MessageObject) arrayList10.get(i23);
-                        int i24 = 0;
+                    ArrayList arrayList10 = new ArrayList();
+                    for (int i24 = 0; i24 < arrayList9.size(); i24++) {
+                        MessageObject messageObject = (MessageObject) arrayList9.get(i24);
+                        int i25 = 0;
                         while (true) {
-                            if (i24 < i22) {
-                                String str5 = strArr2[i24];
+                            if (i25 < i23) {
+                                String str5 = strArr2[i25];
                                 String documentName = messageObject.getDocumentName();
                                 if (documentName != null && documentName.length() != 0) {
                                     if (documentName.toLowerCase().contains(str5)) {
-                                        arrayList11.add(messageObject);
+                                        arrayList10.add(messageObject);
                                     } else if (fu0Var.r != 4) {
                                         continue;
                                     } else {
                                         TLRPC.Document document = messageObject.type == 0 ? MessageObject.getMedia(messageObject.messageOwner).webpage.document : MessageObject.getMedia(messageObject.messageOwner).document;
-                                        int i25 = 0;
+                                        int i26 = 0;
                                         while (true) {
-                                            if (i25 < document.attributes.size()) {
-                                                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i25);
+                                            if (i26 < document.attributes.size()) {
+                                                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i26);
                                                 if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
                                                     String str6 = documentAttribute.performer;
                                                     z10 = str6 != null ? str6.toLowerCase().contains(str5) : false;
@@ -351,22 +363,22 @@ public final /* synthetic */ class cn0 implements Runnable {
                                                         z10 = str.toLowerCase().contains(str5);
                                                     }
                                                 } else {
-                                                    i25++;
+                                                    i26++;
                                                 }
                                             } else {
                                                 z10 = false;
                                             }
                                         }
                                         if (z10) {
-                                            arrayList11.add(messageObject);
+                                            arrayList10.add(messageObject);
                                         }
                                     }
                                 }
-                                i24++;
+                                i25++;
                             }
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new wn0(10, fu0Var, arrayList11));
+                    AndroidUtilities.runOnUIThread(new wn0(i22, fu0Var, arrayList10));
                     break;
                 }
                 break;
@@ -407,15 +419,15 @@ public final /* synthetic */ class cn0 implements Runnable {
                 break;
             case 13:
                 fy0 fy0Var2 = (fy0) obj5;
-                ArrayList arrayList12 = (ArrayList) obj4;
-                ArrayList arrayList13 = (ArrayList) obj3;
-                ArrayList arrayList14 = new ArrayList();
+                ArrayList arrayList11 = (ArrayList) obj4;
+                ArrayList arrayList12 = (ArrayList) obj3;
+                ArrayList arrayList13 = new ArrayList();
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
-                int size2 = arrayList12.size();
+                int size2 = arrayList11.size();
                 while (true) {
-                    if (i14 < size2) {
-                        Object obj6 = arrayList12.get(i14);
+                    if (i15 < size2) {
+                        Object obj6 = arrayList11.get(i15);
                         if ((obj6 instanceof Uri) && (stickerExt = MediaController.getStickerExt((uri = (Uri) obj6))) != null) {
                             boolean equals = "tgs".equals(stickerExt);
                             if (bool == null) {
@@ -436,82 +448,82 @@ public final /* synthetic */ class cn0 implements Runnable {
                                         importingSticker2.mimeType = "application/x-tgsticker";
                                     } else {
                                         BitmapFactory.decodeFile(copyFileToCache, options);
-                                        int i26 = options.outWidth;
-                                        if ((i26 == 512 && (i10 = options.outHeight) > 0 && i10 <= 512) || (options.outHeight == 512 && i26 > 0 && i26 <= 512)) {
+                                        int i27 = options.outWidth;
+                                        if ((i27 == 512 && (i11 = options.outHeight) > 0 && i11 <= 512) || (options.outHeight == 512 && i27 > 0 && i27 <= 512)) {
                                             importingSticker2.mimeType = "image/".concat(stickerExt);
                                             importingSticker2.validated = true;
                                         }
                                     }
-                                    if (arrayList13 != null && arrayList13.size() == size2 && (arrayList13.get(i14) instanceof String)) {
-                                        importingSticker2.emoji = (String) arrayList13.get(i14);
+                                    if (arrayList12 != null && arrayList12.size() == size2 && (arrayList12.get(i15) instanceof String)) {
+                                        importingSticker2.emoji = (String) arrayList12.get(i15);
                                     } else {
                                         importingSticker2.emoji = "#️⃣";
                                     }
-                                    arrayList14.add(importingSticker2);
-                                    if (arrayList14.size() >= 200) {
+                                    arrayList13.add(importingSticker2);
+                                    if (arrayList13.size() >= 200) {
                                         bool = bool2;
                                     }
                                 }
                                 bool = bool2;
                             }
                         }
-                        i14++;
+                        i15++;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new cn0(fy0Var2, arrayList14, bool, 10));
+                AndroidUtilities.runOnUIThread(new cn0(fy0Var2, arrayList13, bool, 10));
                 break;
             case 14:
                 q51 q51Var = (q51) obj5;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj4;
                 TLObject tLObject3 = (TLObject) obj3;
                 SparseArray sparseArray = q51Var.f;
-                ArrayList arrayList15 = q51Var.e;
-                ArrayList arrayList16 = q51Var.n;
+                ArrayList arrayList14 = q51Var.e;
+                ArrayList arrayList15 = q51Var.n;
                 SparseArray sparseArray2 = q51Var.d;
                 q51Var.r = false;
                 if (tL_error2 != null || !(tLObject3 instanceof TLRPC.TL_messages_featuredStickers)) {
                     q51Var.s = true;
                     break;
                 } else {
-                    ArrayList<TLRPC.StickerSetCovered> arrayList17 = ((TLRPC.TL_messages_featuredStickers) tLObject3).sets;
-                    if (arrayList17.size() < 40) {
+                    ArrayList<TLRPC.StickerSetCovered> arrayList16 = ((TLRPC.TL_messages_featuredStickers) tLObject3).sets;
+                    if (arrayList16.size() < 40) {
                         q51Var.s = true;
                     }
-                    if (!arrayList17.isEmpty()) {
-                        if (arrayList16.isEmpty()) {
-                            int i27 = q51Var.w;
-                            q51Var.w = i27 + 1;
-                            sparseArray2.put(i27, -1);
+                    if (!arrayList16.isEmpty()) {
+                        if (arrayList15.isEmpty()) {
+                            int i28 = q51Var.w;
+                            q51Var.w = i28 + 1;
+                            sparseArray2.put(i28, -1);
                         }
-                        arrayList16.addAll(arrayList17);
-                        int size3 = arrayList15.size();
-                        for (int i28 = 0; i28 < arrayList17.size(); i28++) {
-                            TLRPC.StickerSetCovered stickerSetCovered = arrayList17.get(i28);
+                        arrayList15.addAll(arrayList16);
+                        int size3 = arrayList14.size();
+                        for (int i29 = 0; i29 < arrayList16.size(); i29++) {
+                            TLRPC.StickerSetCovered stickerSetCovered = arrayList16.get(i29);
                             if (!stickerSetCovered.covers.isEmpty() || stickerSetCovered.cover != null) {
-                                arrayList15.add(stickerSetCovered);
+                                arrayList14.add(stickerSetCovered);
                                 sparseArray.put(q51Var.w, stickerSetCovered);
-                                int i29 = q51Var.w;
-                                q51Var.w = i29 + 1;
-                                int i30 = size3 + 1;
-                                sparseArray2.put(i29, Integer.valueOf(size3));
+                                int i30 = q51Var.w;
+                                q51Var.w = i30 + 1;
+                                int i31 = size3 + 1;
+                                sparseArray2.put(i30, Integer.valueOf(size3));
                                 if (stickerSetCovered.covers.isEmpty()) {
                                     sparseArray2.put(q51Var.w, stickerSetCovered.cover);
-                                    i11 = 1;
+                                    i12 = 1;
                                 } else {
-                                    i11 = (int) Math.ceil(stickerSetCovered.covers.size() / q51Var.v);
-                                    for (int i31 = 0; i31 < stickerSetCovered.covers.size(); i31++) {
-                                        sparseArray2.put(q51Var.w + i31, stickerSetCovered.covers.get(i31));
+                                    i12 = (int) Math.ceil(stickerSetCovered.covers.size() / q51Var.v);
+                                    for (int i32 = 0; i32 < stickerSetCovered.covers.size(); i32++) {
+                                        sparseArray2.put(q51Var.w + i32, stickerSetCovered.covers.get(i32));
                                     }
                                 }
-                                int i32 = 0;
+                                int i33 = 0;
                                 while (true) {
-                                    int i33 = q51Var.v * i11;
-                                    if (i32 < i33) {
-                                        sparseArray.put(q51Var.w + i32, stickerSetCovered);
-                                        i32++;
+                                    int i34 = q51Var.v * i12;
+                                    if (i33 < i34) {
+                                        sparseArray.put(q51Var.w + i33, stickerSetCovered);
+                                        i33++;
                                     } else {
-                                        q51Var.w = i33 + q51Var.w;
-                                        size3 = i30;
+                                        q51Var.w = i34 + q51Var.w;
+                                        size3 = i31;
                                     }
                                 }
                             }
@@ -569,30 +581,30 @@ public final /* synthetic */ class cn0 implements Runnable {
                 if (q71Var.b()) {
                     a81Var2.b = new d6(new File(q71Var.d.getPath()), true, 0L, 0, null, null, null, 0L, 0, true, 0, 0, null, 0, true);
                 } else {
-                    int i34 = UserConfig.selectedAccount;
+                    int i35 = UserConfig.selectedAccount;
                     try {
-                        i34 = Utilities.parseInt((CharSequence) q71Var.d.getQueryParameter("account")).intValue();
+                        i35 = Utilities.parseInt((CharSequence) q71Var.d.getQueryParameter("account")).intValue();
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
-                    int i35 = i34;
+                    int i36 = i35;
                     try {
-                        obj2 = FileLoader.getInstance(i35).getParentObject(Utilities.parseInt((CharSequence) q71Var.d.getQueryParameter("rid")).intValue());
+                        obj2 = FileLoader.getInstance(i36).getParentObject(Utilities.parseInt((CharSequence) q71Var.d.getQueryParameter("rid")).intValue());
                     } catch (Exception e7) {
                         FileLog.e(e7);
                     }
                     Object obj7 = obj2;
                     TLRPC.Document document2 = q71Var.g;
-                    if (FileLoader.getInstance(i35).isLoadingFile(FileLoader.getAttachFileName(document2))) {
+                    if (FileLoader.getInstance(i36).isLoadingFile(FileLoader.getAttachFileName(document2))) {
                         File directory2 = FileLoader.getDirectory(4);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(document2.dc_id);
                         sb3.append("_");
                         absolutePath2 = new File(directory2, a4.a.s(sb3, document2.id, ".temp")).getAbsolutePath();
                     } else {
-                        absolutePath2 = FileLoader.getInstance(i35).getPathToAttach(document2, false).getAbsolutePath();
+                        absolutePath2 = FileLoader.getInstance(i36).getPathToAttach(document2, false).getAbsolutePath();
                     }
-                    a81Var2.b = new d6(new File(absolutePath2), true, document2.size, 1, document2, null, obj7, 0L, i35, true);
+                    a81Var2.b = new d6(new File(absolutePath2), true, document2.size, 1, document2, null, obj7, 0L, i36, true);
                 }
                 a81Var2.c = a81Var2.b.d[4];
                 float f10 = a81Var2.h;
@@ -600,7 +612,7 @@ public final /* synthetic */ class cn0 implements Runnable {
                     a81Var2.e(messageObject3, f10, a81Var2.r);
                     a81Var2.h = 0.0f;
                 }
-                AndroidUtilities.runOnUIThread(new v71(a81Var2, i13));
+                AndroidUtilities.runOnUIThread(new v71(a81Var2, i14));
                 break;
             case 17:
                 org.telegram.ui.Components.voip.m0 m0Var = (org.telegram.ui.Components.voip.m0) obj5;
@@ -633,7 +645,7 @@ public final /* synthetic */ class cn0 implements Runnable {
                     if (b1Var == null) {
                         break;
                     } else {
-                        boolean z13 = org.telegram.ui.web.b1.P0;
+                        boolean z14 = org.telegram.ui.web.b1.P0;
                         b1Var.F(botWebViewContainer$BotWebViewProxy, b1Var.g(), str8, str9);
                         break;
                     }
@@ -686,9 +698,9 @@ public final /* synthetic */ class cn0 implements Runnable {
                                             if (!TextUtils.isEmpty(optString)) {
                                                 TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
                                                 tL_messages_requestUrlAuth.url = optString;
-                                                int i36 = tL_messages_requestUrlAuth.flags;
+                                                int i37 = tL_messages_requestUrlAuth.flags;
                                                 tL_messages_requestUrlAuth.in_app_origin = originHost;
-                                                tL_messages_requestUrlAuth.flags = i36 | 12;
+                                                tL_messages_requestUrlAuth.flags = i37 | 12;
                                                 ConnectionsManager.getInstance(b1Var2.M).sendRequest(tL_messages_requestUrlAuth, new ai.p3(b1Var2, tL_messages_requestUrlAuth, optString, originHost, 14), 2);
                                                 break;
                                             }
@@ -731,17 +743,18 @@ public final /* synthetic */ class cn0 implements Runnable {
                 }
                 break;
             case 22:
-                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) obj5;
-                ArrayList arrayList18 = (ArrayList) obj4;
+                org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) obj5;
+                ArrayList arrayList17 = (ArrayList) obj4;
                 String str12 = (String) obj3;
-                ArrayList arrayList19 = new ArrayList();
-                for (int i37 = 0; i37 < arrayList18.size(); i37++) {
-                    org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) arrayList18.get(i37);
-                    if (org.telegram.ui.web.g1.t(c1Var.c, str12) || ((m2Var2 = c1Var.d) != null && (org.telegram.ui.web.g1.t(m2Var2.c, str12) || org.telegram.ui.web.g1.t(c1Var.d.d, str12)))) {
-                        arrayList19.add(c1Var);
+                ArrayList arrayList18 = new ArrayList();
+                while (i15 < arrayList17.size()) {
+                    org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) arrayList17.get(i15);
+                    if (org.telegram.ui.web.f1.t(c1Var.c, str12) || ((m2Var2 = c1Var.d) != null && (org.telegram.ui.web.f1.t(m2Var2.c, str12) || org.telegram.ui.web.f1.t(c1Var.d.d, str12)))) {
+                        arrayList18.add(c1Var);
                     }
+                    i15++;
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(i14, g1Var, arrayList19));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.p81(29, f1Var, arrayList18));
                 break;
             case 23:
                 org.telegram.ui.web.i2 i2Var = (org.telegram.ui.web.i2) obj5;
@@ -749,10 +762,10 @@ public final /* synthetic */ class cn0 implements Runnable {
                 Bitmap bitmap = (Bitmap) obj3;
                 i2Var.getClass();
                 if (org.telegram.ui.web.i2.f != null) {
-                    char c11 = ((h2Var.d > 0 && h2Var.e > 0) || bitmap == null) ? (char) 0 : (char) 1;
+                    ?? r72 = ((h2Var.d > 0 && h2Var.e > 0) || bitmap == null) ? 0 : 1;
                     if (bitmap != null) {
                         i2Var.d.put(h2Var.b, bitmap);
-                        if (c11 != 0) {
+                        if (r72 != 0) {
                             int i38 = h2Var.d;
                             if (i38 == 0 && h2Var.e == 0) {
                                 h2Var.d = bitmap.getWidth();
@@ -764,15 +777,15 @@ public final /* synthetic */ class cn0 implements Runnable {
                             }
                         }
                     }
-                    ArrayList arrayList20 = (ArrayList) org.telegram.ui.web.i2.f.remove(h2Var.b);
-                    if (arrayList20 != null) {
-                        int size4 = arrayList20.size();
-                        while (i14 < size4) {
-                            Object obj8 = arrayList20.get(i14);
-                            i14++;
+                    ArrayList arrayList19 = (ArrayList) org.telegram.ui.web.i2.f.remove(h2Var.b);
+                    if (arrayList19 != null) {
+                        int size4 = arrayList19.size();
+                        while (i15 < size4) {
+                            Object obj8 = arrayList19.get(i15);
+                            i15++;
                             Pair pair = (Pair) obj8;
                             ((ImageReceiver) pair.first).setImageBitmap(bitmap);
-                            if (c11 != 0 && (obj = pair.second) != null) {
+                            if (r72 != 0 && (obj = pair.second) != null) {
                                 ((Runnable) obj).run();
                             }
                         }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class yi0 extends Path {
     public final org.telegram.ui.Cells.u1 a;
@@ -226,7 +226,7 @@ public final class yi0 extends Path {
         this.l = new ArrayList();
         this.m = new ArrayList();
         this.a = null;
-        this.k = new e6(0.0f, new cv(27, u1Var, viewParent), 350L, 420L, rr.h);
+        this.k = new e6(0.0f, new vw(26, u1Var, viewParent), 350L, 420L, rr.h);
         this.b = i10;
         this.c = i14;
         this.d = i12;

@@ -16,12 +16,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ah0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.aj;
-import org.telegram.ui.m80;
 import org.telegram.ui.ms;
+import org.telegram.ui.n80;
 import org.telegram.ui.p60;
 import org.telegram.ui.sq;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ya implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -78,11 +78,11 @@ public final /* synthetic */ class ya implements RequestDelegate {
                 break;
             case 9:
                 Pattern pattern = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj, (m80) obj3, this.b, (String) obj2));
+                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj, (n80) obj3, this.b, (String) obj2));
                 break;
             case 10:
                 Pattern pattern2 = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj4, tL_error, tLObject, this.b, (org.telegram.ui.ActionBar.a2) obj, (m80) obj3, (String) obj2));
+                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj4, tL_error, tLObject, this.b, (org.telegram.ui.ActionBar.a2) obj, (n80) obj3, (String) obj2));
                 break;
             case 11:
                 AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.web.b1) obj4, (String) obj, tLObject, tL_error, this.b, (org.telegram.ui.web.y0) obj3, (da) obj2));

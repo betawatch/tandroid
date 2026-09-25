@@ -92,7 +92,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.zg1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class SendMessagesHelper extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     private static final int ERROR_TYPE_FILE_TOO_LARGE = 2;
@@ -122,7 +122,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     private final HashMap<Integer, Boolean> waitingForTodoUpdate;
     private final HashMap<String, byte[]> waitingForVote;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class DelayedMessageSendAfterRequest {
         public DelayedMessage delayedMessage;
         public MessageObject msgObj;
@@ -138,7 +138,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class ImportingHistory {
         public long dialogId;
         public double estimatedUploadSpeed;
@@ -157,7 +157,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         public ArrayList<String> uploadMedia = new ArrayList<>();
         public int timeUntilFinish = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
         public class 1 implements RequestDelegate {
             final /* synthetic */ TLRPC.TL_messages_initHistoryImport val$req;
 
@@ -192,7 +192,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
         }
 
-        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
         public class 2 implements RequestDelegate {
             final /* synthetic */ String val$path;
 
@@ -215,7 +215,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
         }
 
-        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
         public class 3 implements RequestDelegate {
             final /* synthetic */ TLRPC.TL_messages_startHistoryImport val$req;
 
@@ -349,7 +349,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class ImportingSticker {
         public boolean animated;
         public String emoji;
@@ -359,7 +359,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         public boolean validated;
         public VideoEditedInfo videoEditedInfo;
 
-        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
         public class 1 implements RequestDelegate {
             final /* synthetic */ Runnable val$onFinish;
 
@@ -411,7 +411,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class ImportingStickers {
         public double estimatedUploadSpeed;
         private long lastUploadSize;
@@ -428,7 +428,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         public ArrayList<ImportingSticker> uploadMedia = new ArrayList<>();
         public int timeUntilFinish = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
         public class 1 implements RequestDelegate {
             final /* synthetic */ TLRPC.TL_stickers_createStickerSet val$req;
 
@@ -570,7 +570,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class MediaSendPrepareWorker {
         public volatile String parentObject;
         public volatile TLRPC.TL_photo photo;
@@ -580,7 +580,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class SendMessageParams {
         public String caption;
         public TLRPC.PhotoSize cover;
@@ -744,7 +744,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class SendingMediaInfo {
         public boolean canDeleteAfter;
         public String caption;
@@ -2122,10 +2122,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             sendMessagesHelper.getMessagesStorage().markMessageAsSendError(message2, r22);
             message2.send_state = 2;
             if (tL_error != null && (str2 = tL_error.text) != null && str2.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                yh.t5.y(sendMessagesHelper.currentAccount, false);
-                message2.errorAllowedPriceStars = yh.t5.o(tLObject3);
+                yh.s5.y(sendMessagesHelper.currentAccount, false);
+                message2.errorAllowedPriceStars = yh.s5.o(tLObject3);
                 message2.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23));
-                yh.t5.y(sendMessagesHelper.currentAccount, false).f0(Arrays.asList(messageObject2));
+                yh.s5.y(sendMessagesHelper.currentAccount, false).f0(Arrays.asList(messageObject2));
                 sendMessagesHelper.getMessagesStorage().updateMessageCustomParams(MessageObject.getDialogId(message2), message2);
             }
             sendMessagesHelper.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageSendError, Integer.valueOf(message2.id));
@@ -3058,10 +3058,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 sendMessagesHelper.getMessagesStorage().markMessageAsSendError(message11, r82);
                 message11.send_state = 2;
                 if (r82 == 0 && tL_error2 != null && (str = tL_error2.text) != null && str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                    yh.t5.y(sendMessagesHelper.currentAccount, r22);
-                    message11.errorAllowedPriceStars = yh.t5.o(tLObject3);
+                    yh.s5.y(sendMessagesHelper.currentAccount, r22);
+                    message11.errorAllowedPriceStars = yh.s5.o(tLObject3);
                     message11.errorNewPriceStars = Long.parseLong(tL_error2.text.substring(23));
-                    yh.t5 y3 = yh.t5.y(sendMessagesHelper.currentAccount, r22);
+                    yh.s5 y3 = yh.s5.y(sendMessagesHelper.currentAccount, r22);
                     MessageObject[] messageObjectArr = new MessageObject[i10];
                     messageObjectArr[r22] = messageObject4;
                     y3.f0(Arrays.asList(messageObjectArr));
@@ -7593,7 +7593,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
         if (zf.c.c(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
             if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-                yh.t5.y(this.currentAccount, false).Y(messageObject, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new rj(this, str, list, 1), new yj());
+                yh.s5.y(this.currentAccount, false).Y(messageObject, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new rj(this, str, list, 1), new yj());
                 return;
             }
             if (tLObject instanceof TLRPC.PaymentForm) {
@@ -7859,7 +7859,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$sendMessage$16(ArrayList arrayList) {
-        yh.t5.y(this.currentAccount, false).f0(arrayList);
+        yh.s5.y(this.currentAccount, false).f0(arrayList);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -8042,8 +8042,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.Message message6 = (TLRPC.Message) arrayList.get(i24);
             sendMessagesHelper.getMessagesStorage().markMessageAsSendError(message6, i11 != 0 ? 1 : 0);
             if (tL_error != null && (str2 = tL_error.text) != null && str2.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                yh.t5.y(sendMessagesHelper.currentAccount, false);
-                message6.errorAllowedPriceStars = yh.t5.o(tL_messages_forwardMessages);
+                yh.s5.y(sendMessagesHelper.currentAccount, false);
+                message6.errorAllowedPriceStars = yh.s5.o(tL_messages_forwardMessages);
                 message6.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23)) / tL_messages_forwardMessages.id.size();
                 sendMessagesHelper.getMessagesStorage().updateMessageCustomParams(MessageObject.getDialogId(message6), message6);
             }
@@ -11376,7 +11376,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             putToSendingMessages(arrayList.get(i10).messageOwner, z10);
         }
         final int i11 = 0;
-        if (yh.t5.y(this.currentAccount, false).c(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.kk
+        if (yh.s5.y(this.currentAccount, false).c(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.kk
             public final /* synthetic */ SendMessagesHelper b;
 
             {
@@ -12986,7 +12986,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     tL_messageMediaDice.value = tL_messageMediaDice2.value;
                     tL_messageMediaDice.flags = tL_messageMediaDice2.flags;
                     tL_messageMediaDice.game_outcome = tL_messageMediaDice2.game_outcome;
-                    yh.t5.y(sendMessagesHelper3.currentAccount, true).P();
+                    yh.s5.y(sendMessagesHelper3.currentAccount, true).P();
                 } else {
                     TLRPC.MessageMedia messageMedia13 = message11.media;
                     TLRPC.Photo photo5 = messageMedia13.photo;
@@ -14569,11 +14569,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
         TLRPC.Message message = messageObject.messageOwner;
         putToSendingMessages(message, z11);
-        yh.t5 y3 = yh.t5.y(this.currentAccount, false);
+        yh.s5 y3 = yh.s5.y(this.currentAccount, false);
         ki kiVar = new ki(this, tLObject, messageObject, str, delayedMessage, z10, delayedMessage2, obj, hashMap, z11, 0);
         if (messageObject.messageOwner != null) {
             int id2 = messageObject.getId();
-            if (yh.t5.o(tLObject) > 0 && y3.Q.remove(Integer.valueOf(id2))) {
+            if (yh.s5.o(tLObject) > 0 && y3.Q.remove(Integer.valueOf(id2))) {
                 y3.R.put(Integer.valueOf(id2), kiVar);
                 return;
             }
@@ -14724,7 +14724,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         sendSticker(document, str, j3, charSequence, videoEditedInfo, messageObject, messageObject2, storyItem, mnVar, sendAnimationData, z10, i10, i11, z11, obj, sendMessageChatArguments, j10, j11, messageSuggestionParams, false);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class LocationProvider {
         private LocationProviderDelegate delegate;
         private GpsLocationListener gpsLocationListener;
@@ -14733,7 +14733,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         private Runnable locationQueryCancelRunnable;
         private GpsLocationListener networkLocationListener;
 
-        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
         public interface LocationProviderDelegate {
             void onLocationAcquired(Location location);
 
@@ -14820,7 +14820,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             this.delegate = locationProviderDelegate;
         }
 
-        /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+        /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
         public class GpsLocationListener implements LocationListener {
             private GpsLocationListener() {
             }
@@ -15857,7 +15857,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     arrayList9.add(tL_message);
                                     str3 = str2;
                                     iVar2 = iVar7;
-                                    yh.t5.y(this.currentAccount, false).d(messageObject4);
+                                    yh.s5.y(this.currentAccount, false).d(messageObject4);
                                     if (messageObject3.replyMessageObject != null) {
                                         int i30 = 0;
                                         while (i30 < arrayList.size()) {
@@ -15998,7 +15998,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 }
                                             }, 2);
                                             sendMessagesHelper = this;
-                                            if (yh.t5.y(sendMessagesHelper.currentAccount, false).c(tL_messages_forwardMessages, arrayList13, zhVar)) {
+                                            if (yh.s5.y(sendMessagesHelper.currentAccount, false).c(tL_messages_forwardMessages, arrayList13, zhVar)) {
                                                 zhVar.run();
                                             }
                                             if (i16 != arrayList.size() - 1) {
@@ -16070,7 +16070,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         }
                                     }, 2);
                                     sendMessagesHelper = this;
-                                    if (yh.t5.y(sendMessagesHelper.currentAccount, false).c(tL_messages_forwardMessages, arrayList13, zhVar)) {
+                                    if (yh.s5.y(sendMessagesHelper.currentAccount, false).c(tL_messages_forwardMessages, arrayList13, zhVar)) {
                                     }
                                     if (i16 != arrayList.size() - 1) {
                                     }
@@ -16156,7 +16156,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList9.add(tL_message);
                             str3 = str2;
                             iVar2 = iVar7;
-                            yh.t5.y(this.currentAccount, false).d(messageObject42);
+                            yh.s5.y(this.currentAccount, false).d(messageObject42);
                             if (messageObject3.replyMessageObject != null) {
                             }
                             arrayList10 = arrayList;
@@ -16218,7 +16218,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 }
                             }, 2);
                             sendMessagesHelper = this;
-                            if (yh.t5.y(sendMessagesHelper.currentAccount, false).c(tL_messages_forwardMessages, arrayList13, zhVar)) {
+                            if (yh.s5.y(sendMessagesHelper.currentAccount, false).c(tL_messages_forwardMessages, arrayList13, zhVar)) {
                             }
                             if (i16 != arrayList.size() - 1) {
                             }
@@ -16624,7 +16624,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return charSequence;
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class DelayedMessage {
         public TLRPC.InputFile coverFile;
         public TLRPC.PhotoSize coverPhotoSize;
@@ -16839,7 +16839,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (removeFromSendingMessages != null) {
                 getConnectionsManager().cancelRequest(removeFromSendingMessages.reqId, true);
             }
-            yh.t5 y3 = yh.t5.y(this.currentAccount, z10);
+            yh.s5 y3 = yh.s5.y(this.currentAccount, z10);
             yh.o5 o5Var = y3.N;
             ArrayList<Integer> arrayList5 = arrayList4;
             if (o5Var == null || o5Var.b != messageObject3.getDialogId()) {

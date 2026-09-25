@@ -41,7 +41,7 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.ug0;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ea1;
 import org.telegram.ui.f81;
@@ -54,7 +54,7 @@ import org.telegram.ui.ui1;
 import org.telegram.ui.xd;
 import org.telegram.ui.yd;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class g extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public final CharSequence E;
@@ -401,7 +401,7 @@ public final class g extends org.telegram.ui.ActionBar.m2 implements Notificatio
             }
             twoStepVerificationActivity.o0();
             twoStepVerificationActivity.finishFragment();
-            yc.b0(tL_error);
+            xc.b0(tL_error);
             return;
         }
         twoStepVerificationActivity.o0();
@@ -486,7 +486,7 @@ public final class g extends org.telegram.ui.ActionBar.m2 implements Notificatio
             gVar.j0.addAll(starsStatus.history);
             gVar.i0 = starsStatus.history.isEmpty() || starsStatus.next_offset == null;
         } else if (tL_error != null) {
-            yc.b0(tL_error);
+            xc.b0(tL_error);
             gVar.i0 = true;
         }
         gVar.h0 = false;
@@ -841,11 +841,11 @@ public final class g extends org.telegram.ui.ActionBar.m2 implements Notificatio
         int currentTime = getConnectionsManager().getCurrentTime();
         int i10 = 1;
         if (this.G > currentTime) {
-            this.a0 = yc.a0(this).Q(R.raw.timer_3, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotStarsWithdrawalToast, j0(this.G - currentTime)))).j();
+            this.a0 = xc.a0(this).Q(R.raw.timer_3, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotStarsWithdrawalToast, j0(this.G - currentTime)))).j();
             return;
         }
         if (this.P < getMessagesController().starsRevenueWithdrawalMin) {
-            yc.a0(this).L(getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate(), AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("BotStarsWithdrawMinLimit", (int) getMessagesController().starsRevenueWithdrawalMin, new Object[0]), new b(this, i10))).j();
+            xc.a0(this).L(getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate(), AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("BotStarsWithdrawMinLimit", (int) getMessagesController().starsRevenueWithdrawalMin, new Object[0]), new b(this, i10))).j();
             return;
         }
         long j3 = this.P;

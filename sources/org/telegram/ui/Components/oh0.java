@@ -28,7 +28,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class oh0 extends View {
     public float E;
@@ -200,7 +200,7 @@ public final class oh0 extends View {
             m(0, arrayList);
             m(1, arrayList);
         }
-        AndroidUtilities.runOnUIThread(new cv(25, this, arrayList));
+        AndroidUtilities.runOnUIThread(new vw(24, this, arrayList));
     }
 
     public final void e() {
@@ -438,7 +438,7 @@ public final class oh0 extends View {
             lh0 lh0Var5 = (lh0) arrayList.get(i13);
             boolean z12 = lh0Var5.p;
             float f22 = max;
-            zc zcVar = lh0Var5.b;
+            yc ycVar = lh0Var5.b;
             float f23 = f20;
             RectF rectF = lh0Var5.d;
             if (z12) {
@@ -564,7 +564,7 @@ public final class oh0 extends View {
                         if (this.w != null) {
                             RectF rectF5 = AndroidUtilities.rectTmp;
                             rectF5.set(rectF);
-                            rectF5.inset((1.0f - zcVar.a(0.04f)) * (rectF.width() / 2.0f), (1.0f - zcVar.a(0.04f)) * (rectF.height() / 2.0f));
+                            rectF5.inset((1.0f - ycVar.a(0.04f)) * (rectF.width() / 2.0f), (1.0f - ycVar.a(0.04f)) * (rectF.height() / 2.0f));
                             rectF5.inset(-1.0f, -1.0f);
                             path.addRoundRect(rectF5, roundRadius, roundRadius, Path.Direction.CCW);
                         }
@@ -598,7 +598,7 @@ public final class oh0 extends View {
         while (i14 < size) {
             lh0 lh0Var10 = (lh0) arrayList.get(i14);
             boolean z16 = lh0Var10.p;
-            zc zcVar2 = lh0Var10.b;
+            yc ycVar2 = lh0Var10.b;
             RectF rectF6 = lh0Var10.d;
             if (z16) {
                 f12 = clamp012;
@@ -606,7 +606,7 @@ public final class oh0 extends View {
             } else {
                 RectF rectF7 = AndroidUtilities.rectTmp;
                 rectF7.set(rectF6);
-                rectF7.inset((1.0f - zcVar2.a(0.04f)) * (rectF6.width() / 2.0f), (1.0f - zcVar2.a(0.04f)) * (rectF6.height() / 2.0f));
+                rectF7.inset((1.0f - ycVar2.a(0.04f)) * (rectF6.width() / 2.0f), (1.0f - ycVar2.a(0.04f)) * (rectF6.height() / 2.0f));
                 Paint paint = this.b;
                 int alpha = paint.getAlpha();
                 float b10 = (int) (lh0Var10.b() * clamp012 * alpha);
@@ -850,7 +850,7 @@ public final class oh0 extends View {
                             RectF rectF = lh0Var5.d;
                             ProfileActivity.Y(((org.telegram.ui.by0) nh0Var).b, i13, rectF.left, rectF.top);
                         } else {
-                            postDelayed(new cv(26, this, lh0Var5), i12);
+                            postDelayed(new vw(25, this, lh0Var5), i12);
                         }
                     }
                 }

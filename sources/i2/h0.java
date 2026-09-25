@@ -29,7 +29,7 @@ import org.telegram.ui.wf1;
 import org.telegram.ui.wn;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -97,8 +97,8 @@ public final /* synthetic */ class h0 implements Runnable {
             case 10:
                 b60 b60Var = (b60) ((l.d) this.b).a;
                 il ilVar = b60Var.E;
-                if (b60Var.i0) {
-                    b60Var.i0 = false;
+                if (b60Var.l0) {
+                    b60Var.l0 = false;
                     ilVar.animate().cancel();
                     ilVar.animate().alpha(0.0f).setDuration(100L).setInterpolator(new DecelerateInterpolator()).start();
                     return;

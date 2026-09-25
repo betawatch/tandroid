@@ -18,7 +18,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class yb1 extends org.telegram.ui.Components.vl0 {
     public final Context c;
@@ -216,7 +216,7 @@ public final class yb1 extends org.telegram.ui.Components.vl0 {
                 themeActivity.O0 = false;
                 return;
             } else if (i10 == themeActivity.L) {
-                eaVar.c(LocaleController.getString(R.string.SearchEngine), org.telegram.ui.web.o1.a().a, themeActivity.P0, false);
+                eaVar.c(LocaleController.getString(R.string.SearchEngine), org.telegram.ui.web.n1.a().a, themeActivity.P0, false);
                 return;
             } else {
                 if (i10 == themeActivity.M) {

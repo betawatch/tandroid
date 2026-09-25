@@ -4,7 +4,7 @@ import android.graphics.SurfaceTexture;
 import android.os.Looper;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tz implements Runnable {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class tz implements Runnable {
                 break;
             default:
                 wz wzVar = this.b;
-                nv nvVar = wzVar.b0;
+                mv mvVar = wzVar.b0;
                 SurfaceTexture surfaceTexture = wzVar.w;
-                i71 i71Var = (i71) nvVar.b;
+                i71 i71Var = (i71) mvVar.b;
                 if (i71Var.a != null) {
                     i71Var.a.T(new Surface(surfaceTexture));
                     break;

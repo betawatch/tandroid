@@ -77,7 +77,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ej1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.y2, le.e {
     public static final /* synthetic */ int O2 = 0;
@@ -2523,7 +2523,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         wiVar.d1.m(1.0f, -((wiVar.containerView.getWidth() - ((u0Var.getWidth() / 2.0f) + u0Var.getX())) - AndroidUtilities.dp(14.0f)));
         wiVar.d1.setTranslationY(wiVar.a1.getTranslationY());
         ci.e4 e4Var3 = wiVar.d1;
-        e4Var3.l0 = new uc(6, wiVar, e4Var2);
+        e4Var3.l0 = new kd(5, wiVar, e4Var2);
         wiVar.containerView.addView(e4Var3, w7.y5.d(-1, 60.0f, 48, 0.0f, 46.0f, 0.0f, 0.0f));
         wiVar.d1.u();
     }
@@ -3350,7 +3350,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
 
     public final void O1(org.telegram.ui.ActionBar.m2 m2Var) {
         if ((m2Var instanceof org.telegram.ui.wn) && ChatObject.isChannelAndNotMegaGroup(((org.telegram.ui.wn) m2Var).e)) {
-            new yc(this.r1, this.resourcesProvider).f(MessagesController.getInstance(this.J1).captionLengthLimitPremium, new uc(7, this, m2Var)).j();
+            new xc(this.r1, this.resourcesProvider).f(MessagesController.getInstance(this.J1).captionLengthLimitPremium, new kd(6, this, m2Var)).j();
         }
     }
 
@@ -5593,7 +5593,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             if (messageSuggestionParams == null) {
                 messageSuggestionParams = MessageSuggestionParams.of(this.H1.messageOwner.suggested_post);
             }
-            if (!yh.t5.U(i10, messageSuggestionParams.amount)) {
+            if (!yh.s5.U(i10, messageSuggestionParams.amount)) {
                 wnVar.Tb(messageSuggestionParams);
                 return;
             }

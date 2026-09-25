@@ -62,7 +62,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_channelLocation A0;
@@ -591,7 +591,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
         layoutParams.gravity = 83;
         k0 k0Var = new k0(this, context, 11);
         this.S = k0Var;
-        k0Var.setBackgroundDrawable(new org.telegram.ui.Components.fd(n0()));
+        k0Var.setBackgroundDrawable(new org.telegram.ui.Components.ed(n0()));
         MessageObject messageObject2 = this.B0;
         if ((messageObject2 == null && (i14 == 0 || i14 == 1)) || (messageObject2 != null && i14 == 3)) {
             org.telegram.ui.Components.fl flVar = new org.telegram.ui.Components.fl(context, 1);
@@ -661,7 +661,6 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                     if (cd0Var.G) {
                                         cd0Var.F[0].e(1, true);
                                     }
-                                    int i19 = 15;
                                     if (sharingLocationInfo != null && sharingLocationInfo.proximityMeters > 0) {
                                         cd0Var.c.setImageResource(R.drawable.msg_location_alert);
                                         IMapsProvider.ICircle iCircle = cd0Var.O;
@@ -670,7 +669,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                             cd0Var.O = null;
                                         }
                                         cd0Var.G = true;
-                                        cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i17), new m80(15, cd0Var, sharingLocationInfo));
+                                        cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i17), new n80(14, cd0Var, sharingLocationInfo));
                                         break;
                                     } else {
                                         IMapsProvider.ICircle iCircle2 = cd0Var.O;
@@ -682,7 +681,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         TLRPC.User user = DialogObject.isUserDialog(cd0Var.e0) ? cd0Var.getMessagesController().getUser(Long.valueOf(cd0Var.e0)) : null;
                                         Activity parentActivity = cd0Var.getParentActivity();
                                         kc0 kc0Var = new kc0(cd0Var, i18);
-                                        ow owVar = new ow(i19, cd0Var, user);
+                                        ow owVar = new ow(15, cd0Var, user);
                                         mc0 mc0Var = new mc0(cd0Var, 2);
                                         org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
                                         pi0Var.a = null;
@@ -701,12 +700,12 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                         mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                         mutate2.getPadding(rect2);
-                                        int i20 = rect2.left;
-                                        pi0Var.x = i20;
+                                        int i19 = rect2.left;
+                                        pi0Var.x = i19;
                                         org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
                                         pi0Var.v = li0Var;
                                         li0Var.setBackgroundDrawable(mutate2);
-                                        li0Var.setPadding(i20, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i20, 0);
+                                        li0Var.setPadding(i19, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i19, 0);
                                         li0Var.setVisibility(4);
                                         pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
                                         pi0Var.O = LocaleController.getUseImperialSystemType();
@@ -876,7 +875,6 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                     if (cd0Var.G) {
                                         cd0Var.F[0].e(1, true);
                                     }
-                                    int i19 = 15;
                                     if (sharingLocationInfo != null && sharingLocationInfo.proximityMeters > 0) {
                                         cd0Var.c.setImageResource(R.drawable.msg_location_alert);
                                         IMapsProvider.ICircle iCircle = cd0Var.O;
@@ -885,7 +883,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                             cd0Var.O = null;
                                         }
                                         cd0Var.G = true;
-                                        cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i17), new m80(15, cd0Var, sharingLocationInfo));
+                                        cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i17), new n80(14, cd0Var, sharingLocationInfo));
                                         break;
                                     } else {
                                         IMapsProvider.ICircle iCircle2 = cd0Var.O;
@@ -897,7 +895,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         TLRPC.User user = DialogObject.isUserDialog(cd0Var.e0) ? cd0Var.getMessagesController().getUser(Long.valueOf(cd0Var.e0)) : null;
                                         Activity parentActivity = cd0Var.getParentActivity();
                                         kc0 kc0Var = new kc0(cd0Var, i18);
-                                        ow owVar = new ow(i19, cd0Var, user);
+                                        ow owVar = new ow(15, cd0Var, user);
                                         mc0 mc0Var = new mc0(cd0Var, 2);
                                         org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
                                         pi0Var.a = null;
@@ -916,12 +914,12 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                         mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                         mutate2.getPadding(rect2);
-                                        int i20 = rect2.left;
-                                        pi0Var.x = i20;
+                                        int i19 = rect2.left;
+                                        pi0Var.x = i19;
                                         org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
                                         pi0Var.v = li0Var;
                                         li0Var.setBackgroundDrawable(mutate2);
-                                        li0Var.setPadding(i20, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i20, 0);
+                                        li0Var.setPadding(i19, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i19, 0);
                                         li0Var.setVisibility(4);
                                         pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
                                         pi0Var.O = LocaleController.getUseImperialSystemType();
@@ -1114,7 +1112,6 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                             if (cd0Var.G) {
                                 cd0Var.F[0].e(1, true);
                             }
-                            int i192 = 15;
                             if (sharingLocationInfo != null && sharingLocationInfo.proximityMeters > 0) {
                                 cd0Var.c.setImageResource(R.drawable.msg_location_alert);
                                 IMapsProvider.ICircle iCircle = cd0Var.O;
@@ -1123,7 +1120,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                     cd0Var.O = null;
                                 }
                                 cd0Var.G = true;
-                                cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i172), new m80(15, cd0Var, sharingLocationInfo));
+                                cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i172), new n80(14, cd0Var, sharingLocationInfo));
                                 break;
                             } else {
                                 IMapsProvider.ICircle iCircle2 = cd0Var.O;
@@ -1135,7 +1132,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 TLRPC.User user = DialogObject.isUserDialog(cd0Var.e0) ? cd0Var.getMessagesController().getUser(Long.valueOf(cd0Var.e0)) : null;
                                 Activity parentActivity = cd0Var.getParentActivity();
                                 kc0 kc0Var = new kc0(cd0Var, i182);
-                                ow owVar = new ow(i192, cd0Var, user);
+                                ow owVar = new ow(15, cd0Var, user);
                                 mc0 mc0Var = new mc0(cd0Var, 2);
                                 org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
                                 pi0Var.a = null;
@@ -1154,12 +1151,12 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                 mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                 mutate2.getPadding(rect2);
-                                int i202 = rect2.left;
-                                pi0Var.x = i202;
+                                int i192 = rect2.left;
+                                pi0Var.x = i192;
                                 org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
                                 pi0Var.v = li0Var;
                                 li0Var.setBackgroundDrawable(mutate2);
-                                li0Var.setPadding(i202, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i202, 0);
+                                li0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
                                 li0Var.setVisibility(4);
                                 pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
                                 pi0Var.O = LocaleController.getUseImperialSystemType();
@@ -1345,7 +1342,6 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                             if (cd0Var.G) {
                                 cd0Var.F[0].e(1, true);
                             }
-                            int i192 = 15;
                             if (sharingLocationInfo != null && sharingLocationInfo.proximityMeters > 0) {
                                 cd0Var.c.setImageResource(R.drawable.msg_location_alert);
                                 IMapsProvider.ICircle iCircle = cd0Var.O;
@@ -1354,7 +1350,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                     cd0Var.O = null;
                                 }
                                 cd0Var.G = true;
-                                cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i172), new m80(15, cd0Var, sharingLocationInfo));
+                                cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i172), new n80(14, cd0Var, sharingLocationInfo));
                                 break;
                             } else {
                                 IMapsProvider.ICircle iCircle2 = cd0Var.O;
@@ -1366,7 +1362,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 TLRPC.User user = DialogObject.isUserDialog(cd0Var.e0) ? cd0Var.getMessagesController().getUser(Long.valueOf(cd0Var.e0)) : null;
                                 Activity parentActivity = cd0Var.getParentActivity();
                                 kc0 kc0Var = new kc0(cd0Var, i182);
-                                ow owVar = new ow(i192, cd0Var, user);
+                                ow owVar = new ow(15, cd0Var, user);
                                 mc0 mc0Var = new mc0(cd0Var, 2);
                                 org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
                                 pi0Var.a = null;
@@ -1385,12 +1381,12 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                 mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                 mutate2.getPadding(rect2);
-                                int i202 = rect2.left;
-                                pi0Var.x = i202;
+                                int i192 = rect2.left;
+                                pi0Var.x = i192;
                                 org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
                                 pi0Var.v = li0Var;
                                 li0Var.setBackgroundDrawable(mutate2);
-                                li0Var.setPadding(i202, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i202, 0);
+                                li0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
                                 li0Var.setVisibility(4);
                                 pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
                                 pi0Var.O = LocaleController.getUseImperialSystemType();
@@ -1571,7 +1567,6 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                             if (cd0Var.G) {
                                 cd0Var.F[0].e(1, true);
                             }
-                            int i192 = 15;
                             if (sharingLocationInfo != null && sharingLocationInfo.proximityMeters > 0) {
                                 cd0Var.c.setImageResource(R.drawable.msg_location_alert);
                                 IMapsProvider.ICircle iCircle = cd0Var.O;
@@ -1580,7 +1575,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                     cd0Var.O = null;
                                 }
                                 cd0Var.G = true;
-                                cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i172), new m80(15, cd0Var, sharingLocationInfo));
+                                cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i172), new n80(14, cd0Var, sharingLocationInfo));
                                 break;
                             } else {
                                 IMapsProvider.ICircle iCircle2 = cd0Var.O;
@@ -1592,7 +1587,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 TLRPC.User user = DialogObject.isUserDialog(cd0Var.e0) ? cd0Var.getMessagesController().getUser(Long.valueOf(cd0Var.e0)) : null;
                                 Activity parentActivity = cd0Var.getParentActivity();
                                 kc0 kc0Var = new kc0(cd0Var, i182);
-                                ow owVar = new ow(i192, cd0Var, user);
+                                ow owVar = new ow(15, cd0Var, user);
                                 mc0 mc0Var = new mc0(cd0Var, 2);
                                 org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
                                 pi0Var.a = null;
@@ -1611,12 +1606,12 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                 mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                 mutate2.getPadding(rect2);
-                                int i202 = rect2.left;
-                                pi0Var.x = i202;
+                                int i192 = rect2.left;
+                                pi0Var.x = i192;
                                 org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
                                 pi0Var.v = li0Var;
                                 li0Var.setBackgroundDrawable(mutate2);
-                                li0Var.setPadding(i202, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i202, 0);
+                                li0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
                                 li0Var.setVisibility(4);
                                 pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
                                 pi0Var.O = LocaleController.getUseImperialSystemType();
@@ -1794,7 +1789,6 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                             if (cd0Var.G) {
                                 cd0Var.F[0].e(1, true);
                             }
-                            int i192 = 15;
                             if (sharingLocationInfo != null && sharingLocationInfo.proximityMeters > 0) {
                                 cd0Var.c.setImageResource(R.drawable.msg_location_alert);
                                 IMapsProvider.ICircle iCircle = cd0Var.O;
@@ -1803,7 +1797,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                     cd0Var.O = null;
                                 }
                                 cd0Var.G = true;
-                                cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i172), new m80(15, cd0Var, sharingLocationInfo));
+                                cd0Var.m0().k(0L, 25, 0, null, new mc0(cd0Var, i172), new n80(14, cd0Var, sharingLocationInfo));
                                 break;
                             } else {
                                 IMapsProvider.ICircle iCircle2 = cd0Var.O;
@@ -1815,7 +1809,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 TLRPC.User user = DialogObject.isUserDialog(cd0Var.e0) ? cd0Var.getMessagesController().getUser(Long.valueOf(cd0Var.e0)) : null;
                                 Activity parentActivity = cd0Var.getParentActivity();
                                 kc0 kc0Var = new kc0(cd0Var, i182);
-                                ow owVar = new ow(i192, cd0Var, user);
+                                ow owVar = new ow(15, cd0Var, user);
                                 mc0 mc0Var = new mc0(cd0Var, 2);
                                 org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
                                 pi0Var.a = null;
@@ -1834,12 +1828,12 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                 mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                 mutate2.getPadding(rect2);
-                                int i202 = rect2.left;
-                                pi0Var.x = i202;
+                                int i192 = rect2.left;
+                                pi0Var.x = i192;
                                 org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
                                 pi0Var.v = li0Var;
                                 li0Var.setBackgroundDrawable(mutate2);
-                                li0Var.setPadding(i202, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i202, 0);
+                                li0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
                                 li0Var.setVisibility(4);
                                 pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
                                 pi0Var.O = LocaleController.getUseImperialSystemType();
@@ -2992,7 +2986,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
             return false;
         }
         GLSurfaceView glSurfaceView = this.K.getGlSurfaceView();
-        glSurfaceView.queueEvent(new m80(14, this, glSurfaceView));
+        glSurfaceView.queueEvent(new n80(13, this, glSurfaceView));
         return true;
     }
 

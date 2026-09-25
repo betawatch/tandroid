@@ -18,9 +18,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URLDecoder;
 import java.util.ArrayList;
-import ki.l0;
 import ki.m0;
-import ki.p0;
+import ki.n0;
+import ki.q0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLoader;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.gt0;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.Components.uq0;
 import org.telegram.ui.Components.voip.e1;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.ze0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.cz0;
@@ -69,7 +69,7 @@ import pg.k1;
 import pg.m1;
 import pg.n1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -171,7 +171,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 wn wnVar = (wn) this.b;
                 String str5 = (String) this.c;
                 AndroidUtilities.addToClipboard(str5);
-                yc.a0(wnVar).i(LocaleController.formatString(R.string.ExactTextCopied, str5)).j();
+                xc.a0(wnVar).i(LocaleController.formatString(R.string.ExactTextCopied, str5)).j();
                 return;
             case 4:
                 ArrayList arrayList = (ArrayList) this.b;
@@ -183,8 +183,8 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     }
                 }
                 int i14 = i12;
-                if (yc.a(qyVar)) {
-                    yc.z(qyVar, i14, 0, null).j();
+                if (xc.a(qyVar)) {
+                    xc.z(qyVar, i14, 0, null).j();
                     return;
                 }
                 return;
@@ -293,13 +293,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 f41 f41Var = (f41) this.b;
                 switch (((e1) this.c).a) {
                     case 22:
-                        pi.e.c.b(i10 == 0 ? p0.b : p0.c);
+                        pi.e.c.b(i10 == 0 ? q0.b : q0.c);
                         break;
                     case 23:
-                        pi.e.d.b(l0.values()[i10]);
+                        pi.e.d.b(m0.values()[i10]);
                         break;
                     case 24:
-                        pi.e.e.b(i10 == 0 ? m0.b : m0.c);
+                        pi.e.e.b(i10 == 0 ? n0.b : n0.c);
                         break;
                     default:
                         pi.c cVar = pi.e.f;
@@ -316,7 +316,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
             case 12:
                 x71 x71Var = (x71) this.b;
                 ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                ok.o(R.string.TextCopied, new yc(x71Var.getContainer(), null));
+                ok.o(R.string.TextCopied, new xc(x71Var.getContainer(), null));
                 return;
             case 13:
                 yb1 yb1Var = (yb1) this.b;

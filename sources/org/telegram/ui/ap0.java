@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ap0 extends org.telegram.ui.Components.u51 {
     public static final /* synthetic */ int a = 0;
@@ -22,8 +22,8 @@ public final class ap0 extends org.telegram.ui.Components.u51 {
         bp0Var.a = savedStarGift.gift.id;
         bp0Var.setPadding(0, 0, 0, 0);
         bp0Var.c(savedStarGift.gift.getDocument(), savedStarGift.gift);
-        bp0Var.b = (TL_stars.starGiftAttributeBackdrop) yh.t5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        bp0Var.c = (TL_stars.starGiftAttributePattern) yh.t5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class);
+        bp0Var.b = (TL_stars.starGiftAttributeBackdrop) yh.s5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        bp0Var.c = (TL_stars.starGiftAttributePattern) yh.s5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class);
         f1Var.d(bp0Var.b);
         f1Var.e(bp0Var.c);
         if (k1Var != null) {

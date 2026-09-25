@@ -63,7 +63,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class z81 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.u40, xg0, le.e {
     public org.telegram.ui.Components.h9 E;
@@ -120,7 +120,7 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
             String str = obj2 instanceof z01 ? ((z01) obj2).h : obj2 instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj2).url : null;
             if (!TextUtils.isEmpty(str)) {
                 org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(z81Var, view);
-                H.c(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new n81(0, z81Var, str), false);
+                H.c(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new jx0(29, z81Var, str), false);
                 H.W(z81Var.c.V0(view, false));
                 H.Z();
                 return true;
@@ -522,13 +522,13 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
         Set<String> set = z81Var.getMessagesController().pendingSuggestions;
         int i23 = 1;
         if (set.contains("PREMIUM_GRACE")) {
-            arrayList.add(x81.a(LocaleController.getString(R.string.GraceSuggestionTitle), LocaleController.getString(R.string.GraceSuggestionMessage), null, null, LocaleController.getString(R.string.GraceSuggestionButton), new o81(z81Var, i11)));
+            arrayList.add(x81.a(LocaleController.getString(R.string.GraceSuggestionTitle), LocaleController.getString(R.string.GraceSuggestionMessage), null, null, LocaleController.getString(R.string.GraceSuggestionButton), new n81(z81Var, i11)));
             arrayList.add(org.telegram.ui.Components.v51.B(null));
         } else if (set.contains("VALIDATE_PHONE_NUMBER") && z81Var.getUserConfig().getCurrentUser() != null) {
-            arrayList.add(x81.a(LocaleController.formatString(R.string.CheckPhoneNumber, org.telegram.messenger.ok.h(new StringBuilder("+"), z81Var.getUserConfig().getCurrentUser().phone, gf.b.c())), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CheckPhoneNumberInfo), new m81(z81Var, i23)), LocaleController.getString(R.string.CheckPhoneNumberNo), new o81(z81Var, i23), yh.x3.g2(LocaleController.getString(R.string.CheckPhoneNumberYes2)), new o81(z81Var, 2)));
+            arrayList.add(x81.a(LocaleController.formatString(R.string.CheckPhoneNumber, org.telegram.messenger.ok.h(new StringBuilder("+"), z81Var.getUserConfig().getCurrentUser().phone, gf.b.c())), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CheckPhoneNumberInfo), new m81(z81Var, i23)), LocaleController.getString(R.string.CheckPhoneNumberNo), new n81(z81Var, i23), yh.x3.g2(LocaleController.getString(R.string.CheckPhoneNumberYes2)), new n81(z81Var, 2)));
             arrayList.add(org.telegram.ui.Components.v51.B(null));
         } else if (set.contains("VALIDATE_PASSWORD")) {
-            arrayList.add(x81.a(LocaleController.getString(R.string.YourPasswordHeader), LocaleController.getString(R.string.YourPasswordRemember), LocaleController.getString(R.string.YourPasswordRememberNo), new o81(z81Var, 3), LocaleController.getString(R.string.YourPasswordRememberYes), new o81(z81Var, i10)));
+            arrayList.add(x81.a(LocaleController.getString(R.string.YourPasswordHeader), LocaleController.getString(R.string.YourPasswordRemember), LocaleController.getString(R.string.YourPasswordRememberNo), new n81(z81Var, 3), LocaleController.getString(R.string.YourPasswordRememberYes), new n81(z81Var, i10)));
             arrayList.add(org.telegram.ui.Components.v51.B(null));
         }
         if (arrayList3.size() > 0) {
@@ -558,12 +558,12 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
         }
         CharSequence charSequence3 = "";
         if (z81Var.getMessagesController().starsPurchaseAvailable()) {
-            yh.t5 y3 = yh.t5.y(z81Var.currentAccount, false);
+            yh.s5 y3 = yh.s5.y(z81Var.currentAccount, false);
             arrayList.add(v81.a(12, -1071598, -1608430, R.drawable.settings_stars, LocaleController.getString(R.string.TelegramStars), null, (!y3.e || y3.p().amount <= 0) ? "" : yh.w7.J0(y3.p(), 0.85f, ' ')));
         }
-        yh.t5.y(z81Var.currentAccount, true).p();
-        if (ApplicationLoader.isBetaBuild() || ApplicationLoader.isStandaloneBuild() || ApplicationLoader.isHuaweiStoreBuild() || (yh.t5.y(z81Var.currentAccount, true).e && (yh.t5.y(z81Var.currentAccount, true).O(0) || yh.t5.y(z81Var.currentAccount, true).p().positive()))) {
-            yh.t5 y10 = yh.t5.y(z81Var.currentAccount, true);
+        yh.s5.y(z81Var.currentAccount, true).p();
+        if (ApplicationLoader.isBetaBuild() || ApplicationLoader.isStandaloneBuild() || ApplicationLoader.isHuaweiStoreBuild() || (yh.s5.y(z81Var.currentAccount, true).e && (yh.s5.y(z81Var.currentAccount, true).O(0) || yh.s5.y(z81Var.currentAccount, true).p().positive()))) {
+            yh.s5 y10 = yh.s5.y(z81Var.currentAccount, true);
             long j3 = y10.p().amount;
             int i26 = R.drawable.settings_gram_24;
             String string = LocaleController.getString(R.string.MyTON);
@@ -847,7 +847,7 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
                 TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
                 tL_help_dismissSuggestion.suggestion = "VALIDATE_PHONE_NUMBER";
                 tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                z81Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new p81(z81Var, i12));
+                z81Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new o81(z81Var, i12));
                 return;
             }
             if (i10 != 20) {
@@ -1444,7 +1444,7 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         this.y = frameLayout;
         this.x.addView(frameLayout, w7.y5.d(120, 120.0f, 49, 0.0f, 11.0f, 0.0f, 0.0f));
-        this.y.setOnClickListener(new o81(this, 5));
+        this.y.setOnClickListener(new n81(this, 5));
         w7.a6.a(this.y);
         this.E = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
@@ -1495,7 +1495,7 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.L.setPadding(AndroidUtilities.dp(21.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(10.0f));
         this.L.setGravity(17);
         this.L.setBackground(org.telegram.ui.ActionBar.h6.f0(getThemedColor(org.telegram.ui.ActionBar.h6.i6), 2, -1));
-        this.L.setOnClickListener(new o81(this, 6));
+        this.L.setOnClickListener(new n81(this, 6));
         this.N = new View(context);
         o0(true, false);
         this.c.Y2.N(false);

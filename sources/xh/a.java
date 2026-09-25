@@ -22,7 +22,7 @@ import org.telegram.ui.Components.zz0;
 import w7.y5;
 import yh.w7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class a extends u51 {
     public static final /* synthetic */ int a = 0;
@@ -49,7 +49,7 @@ public final class a extends u51 {
         String formatString = LocaleController.formatString(R.string.Gift2AuctionsAcquiredTop, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
         zz0 zz0Var = new zz0(bVar.getContext(), bVar.a);
         zz0Var.a(spannableStringBuilder).setFilled(true);
-        zz0Var.k(LocaleController.getString(R.string.Gift2AuctionsAcquiredRecipient), bVar.b, DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer), new u2.i0(9, bVar, onClickListener));
+        zz0Var.k(LocaleController.getString(R.string.Gift2AuctionsAcquiredRecipient), bVar.b, DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer), new u2.p0(8, bVar, onClickListener));
         zz0Var.f(tL_StarGiftAuctionAcquiredGift.date, LocaleController.getString(R.string.Gift2AuctionsAcquiredDate));
         zz0Var.e(LocaleController.getString(R.string.Gift2AuctionsAcquiredAcceptedBid), spannableStringBuilder2, formatString, null, null);
         bVar.addView(zz0Var, y5.c(-2.0f, -1));

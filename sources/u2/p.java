@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class p implements e0 {
     public final c5.g a;
@@ -238,7 +238,7 @@ public final class p implements e0 {
                         aVarArr[i10 + 1] = new l1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
                     }
                 }
-                a11 = new o0(aVarArr);
+                a11 = new n0(aVarArr);
             }
             b2.a0 a0Var3 = k0Var2.e;
             if (a0Var3.b != 0 || a0Var3.d != Long.MIN_VALUE || a0Var3.f) {

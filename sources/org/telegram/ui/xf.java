@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xf implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class xf implements View.OnClickListener {
             default:
                 wn wnVar2 = this.b;
                 if (wnVar2.getParentActivity() != null && wnVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.uv(wnVar2, wnVar2.getParentActivity(), wnVar2.ea, this.c).show();
+                    new org.telegram.ui.Components.tv(wnVar2, wnVar2.getParentActivity(), wnVar2.ea, this.c).show();
                     wnVar2.A7(true);
                     break;
                 }

@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cn0;
 import org.telegram.ui.db1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,36 +38,36 @@ public final /* synthetic */ class n8 implements RequestDelegate {
         final Comparator db1Var;
         final Comparator db1Var2;
         int i10 = this.a;
-        int i11 = 17;
-        int i12 = 2;
-        int i13 = 29;
+        int i11 = 12;
+        int i12 = 17;
+        int i13 = 27;
         int i14 = 5;
-        int i15 = 15;
-        int i16 = 27;
+        int i15 = 26;
+        int i16 = 28;
         final int i17 = 0;
         final int i18 = 1;
         Object obj = this.b;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new a3.d((ci.m9) obj, 12));
+                AndroidUtilities.runOnUIThread(new a3.d((ci.m9) obj, i11));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new a1.e(i15, (v8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new a1.e(15, (v8) obj, tLObject));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new a1.e(i11, (x8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new a1.e(i12, (x8) obj, tLObject));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new ba(i15, (ci.w1) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new ba(15, (ci.w1) obj, tLObject));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new ba(26, (ci.d8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new ba(i15, (ci.d8) obj, tLObject));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new ba(i16, (ci.l8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new ba(i13, (ci.l8) obj, tLObject));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new ba(28, (ci.u8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new ba(i16, (ci.u8) obj, tLObject));
                 break;
             case 7:
                 AndroidUtilities.runOnUIThread(new ci.y8(21, (ei.q4) obj, tL_error));
@@ -82,13 +82,13 @@ public final /* synthetic */ class n8 implements RequestDelegate {
             case 9:
                 gg.i0 i0Var = (gg.i0) obj;
                 i0Var.getClass();
-                AndroidUtilities.runOnUIThread(new ci.y8(26, i0Var, tLObject));
+                AndroidUtilities.runOnUIThread(new ci.y8(i15, i0Var, tLObject));
                 break;
             case 10:
                 AndroidUtilities.runOnUIThread(new gg.t((hg.d) obj, tL_error, tLObject, i14));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new gg.x1(i12, (hg.g) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new gg.x1(2, (hg.g) obj, tLObject));
                 break;
             case 12:
                 AndroidUtilities.runOnUIThread(new gg.t((hg.n) obj, tL_error, tLObject, 6));
@@ -103,13 +103,13 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new gg.x1(8, (hg.c2) obj, tLObject));
                 break;
             case 16:
-                AndroidUtilities.runOnUIThread(new gg.x1(12, (ii.x) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new gg.x1(i11, (ii.x) obj, tLObject));
                 break;
             case 17:
-                AndroidUtilities.runOnUIThread(new gg.x1(i11, (ii.b5) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new gg.x1(i12, (ii.b5) obj, tLObject));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(4, (org.telegram.ui.web.g2) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1((org.telegram.ui.web.g2) obj, tLObject, 3));
                 break;
             case 19:
                 tg.x0 x0Var = (tg.x0) obj;
@@ -158,7 +158,7 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new cn0((Object) x0Var, (Serializable) hashMap, arrayList, i16));
+                    AndroidUtilities.runOnUIThread(new cn0((Object) x0Var, (Serializable) hashMap, arrayList, i13));
                     break;
                 }
                 break;
@@ -220,10 +220,10 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                 }
                 break;
             case 21:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(i13, (tg.m1) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(i16, (tg.m1) obj, tLObject));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new u2.i0(i12, (uf.c) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new u2.p0(i18, (uf.c) obj, tLObject));
                 break;
             case 23:
                 AndroidUtilities.runOnUIThread(new tg.r((uf.d) obj, tLObject, tL_error, i18));
@@ -232,16 +232,16 @@ public final /* synthetic */ class n8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new tg.r((yh.g) obj, tLObject, tL_error, 9));
                 break;
             case 25:
-                AndroidUtilities.runOnUIThread(new u2.i0(14, (yh.l) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new u2.p0(13, (yh.l) obj, tLObject));
                 break;
             case 26:
-                AndroidUtilities.runOnUIThread(new u2.i0(i15, (yh.m) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new u2.p0(14, (yh.m) obj, tLObject));
                 break;
             case 27:
-                AndroidUtilities.runOnUIThread(new u2.i0(i16, tLObject, (ii.q1) obj));
+                AndroidUtilities.runOnUIThread(new u2.p0(i15, tLObject, (ii.q1) obj));
                 break;
             case 28:
-                AndroidUtilities.runOnUIThread(new u2.i0(i13, (yh.k5) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new u2.p0(i16, (yh.k5) obj, tLObject));
                 break;
             default:
                 yh.o8 o8Var = (yh.o8) obj;

@@ -69,7 +69,7 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ub extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public static int Q0 = 10;
@@ -464,7 +464,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                 spannableStringBuilder.append(messageObject.messageText);
             }
             AndroidUtilities.addToClipboard(spannableStringBuilder);
-            org.telegram.messenger.ok.o(R.string.MessageCopied, org.telegram.ui.Components.yc.a0(ubVar));
+            org.telegram.messenger.ok.o(R.string.MessageCopied, org.telegram.ui.Components.xc.a0(ubVar));
         } else if (intValue == 4) {
             String str = messageObject.messageOwner.attachPath;
             if (str != null && str.length() > 0 && !v7.j.s(str)) {
@@ -608,7 +608,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                             break;
                         case 16:
                             AndroidUtilities.addToClipboard(messageObject.messageOwner.media.phone_number);
-                            org.telegram.messenger.ok.o(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(ubVar));
+                            org.telegram.messenger.ok.o(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(ubVar));
                             break;
                         case 17:
                             try {
@@ -645,7 +645,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                                         tL_chatBannedRights.send_voices = true;
                                         tL_chatBannedRights.send_docs = true;
                                         tL_chatBannedRights.send_reactions = true;
-                                        ubVar.getMessagesController().setParticipantBannedRole(chat2.id, user3, null, ubVar.Z.banned_rights, true, ubVar.getFragmentForAlert(1), new org.telegram.ui.ActionBar.a6(16, ubVar, user3));
+                                        ubVar.getMessagesController().setParticipantBannedRole(chat2.id, user3, null, ubVar.Z.banned_rights, true, ubVar.getFragmentForAlert(1), new org.telegram.ui.ActionBar.a6(15, ubVar, user3));
                                         break;
                                     }
                                     break;
@@ -657,8 +657,8 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                                     break;
                                 case 35:
                                     ubVar.getMessagesController().deleteParticipantFromChat(chat2.id, ubVar.getMessagesController().getInputPeer(ubVar.Y.messageOwner.from_id), false, false, (Runnable) new xa(ubVar, 2));
-                                    if ((ubVar.Y.messageOwner.from_id instanceof TLRPC.TL_peerUser) && org.telegram.ui.Components.yc.a(ubVar) && (user = ubVar.getMessagesController().getUser(Long.valueOf(ubVar.Y.messageOwner.from_id.user_id))) != null) {
-                                        org.telegram.ui.Components.yc.D(ubVar, user, chat2.title).j();
+                                    if ((ubVar.Y.messageOwner.from_id instanceof TLRPC.TL_peerUser) && org.telegram.ui.Components.xc.a(ubVar) && (user = ubVar.getMessagesController().getUser(Long.valueOf(ubVar.Y.messageOwner.from_id.user_id))) != null) {
+                                        org.telegram.ui.Components.xc.D(ubVar, user, chat2.title).j();
                                         break;
                                     }
                                     break;
@@ -1051,7 +1051,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         r2 = new android.text.SpannableStringBuilder();
         r2.append((java.lang.CharSequence) org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.EventLogFilterGroupInfo)).append((java.lang.CharSequence) "\u2009").append((java.lang.CharSequence) r0).append((java.lang.CharSequence) "\u2009").append((java.lang.CharSequence) org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.ChannelAdministrators));
         r2.setSpan(new ci.ac(r22, 3), 0, r2.length(), 33);
-        r0 = org.telegram.ui.Components.yc.a0(r22).M(org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.ChannelAntiSpamUser), org.telegram.messenger.AndroidUtilities.replaceCharSequence("%s", org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.ChannelAntiSpamInfo2), r2), org.telegram.messenger.R.raw.msg_antispam);
+        r0 = org.telegram.ui.Components.xc.a0(r22).M(org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.ChannelAntiSpamUser), org.telegram.messenger.AndroidUtilities.replaceCharSequence("%s", org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.ChannelAntiSpamInfo2), r2), org.telegram.messenger.R.raw.msg_antispam);
         r0.j = 5000;
         r0.j();
      */

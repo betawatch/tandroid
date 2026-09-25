@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class j extends ImageView {
     public final float a;
-    public final org.telegram.ui.Components.zc b;
+    public final org.telegram.ui.Components.yc b;
 
     public j(Context context) {
         super(context);
-        this.b = new org.telegram.ui.Components.zc(this);
+        this.b = new org.telegram.ui.Components.yc(this);
         this.a = 0.2f;
     }
 

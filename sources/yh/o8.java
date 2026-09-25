@@ -52,7 +52,7 @@ import org.telegram.ui.ye;
 import org.telegram.ui.yf0;
 import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class o8 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -147,7 +147,7 @@ public final class o8 extends org.telegram.ui.ActionBar.e3 implements Notificati
             }
             this.E = j10;
         } else {
-            this.E = t5.y(i10, false).A(messageObject);
+            this.E = s5.y(i10, false).A(messageObject);
         }
         long j12 = this.E;
         this.F = j12 != UserObject.ANONYMOUS ? j12 : clientUserId;

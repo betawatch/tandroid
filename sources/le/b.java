@@ -64,7 +64,7 @@ import r2.v;
 import r2.w;
 import w7.m6;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements e, z, z0, e2.h, x0, q9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, n1, z1, i0, v1, j8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, v, t5.b {
     public final /* synthetic */ int a;
@@ -312,7 +312,7 @@ public final /* synthetic */ class b implements e, z, z0, e2.h, x0, q9.d, Vector
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new wn0(27, uVar, bitmap));
+        AndroidUtilities.runOnUIThread(new wn0(26, uVar, bitmap));
     }
 
     public /* synthetic */ b(s0 s0Var, r0 r0Var) {

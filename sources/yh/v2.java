@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class v2 extends FrameLayout {
     public final xh.f1 a;
@@ -74,9 +74,9 @@ public final class v2 extends FrameLayout {
     public final void a(TL_stars.StarGift starGift, boolean z10) {
         this.h = starGift;
         if (starGift != null) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) t5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) t5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
-            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) t5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) s5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) s5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
+            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) s5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
             xh.f1 f1Var = this.a;
             f1Var.d(stargiftattributebackdrop);
             f1Var.e(stargiftattributepattern);

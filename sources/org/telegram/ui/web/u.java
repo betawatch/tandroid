@@ -13,11 +13,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.dr;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lj0;
+import org.telegram.ui.kj0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         int i10;
-        lj0 lj0Var;
+        kj0 kj0Var;
         int i11 = this.a;
         String str = this.d;
         da daVar = this.c;
@@ -50,11 +50,11 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                 String str2 = this.d;
                 if (tL_buttonTypeRequestPeer == null) {
                     if (tL_error == null) {
-                        new yc(b1Var2, d6Var).c0("UNKNOWN_BUTTON", false);
+                        new xc(b1Var2, d6Var).c0("UNKNOWN_BUTTON", false);
                         b1Var2.y(daVar2, "requested_chat_failed", b1.B(str2, "req_id"));
                         break;
                     } else {
-                        new yc(b1Var2, d6Var).d0(tL_error, false);
+                        new xc(b1Var2, d6Var).d0(tL_error, false);
                         b1Var2.y(daVar2, "requested_chat_failed", b1.B(str2, "req_id"));
                         break;
                     }
@@ -67,21 +67,21 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                             Boolean bool = tL_requestPeerTypeUser.bot;
                             Boolean bool2 = tL_requestPeerTypeUser.premium;
                             b0 b0Var = new b0(b1Var2, zArr, str2, tL_buttonTypeRequestPeer, daVar2);
-                            lj0 lj0Var2 = lj0.u0;
+                            kj0 kj0Var2 = kj0.u0;
                             org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                             if (R == null) {
-                                lj0Var = null;
+                                kj0Var = null;
                             } else {
-                                lj0Var = lj0.u0;
-                                if (lj0Var == null) {
-                                    lj0 lj0Var3 = new lj0(R, i10, bool, bool2, b0Var);
-                                    lj0Var3.show();
-                                    lj0.u0 = lj0Var3;
-                                    lj0Var = lj0Var3;
+                                kj0Var = kj0.u0;
+                                if (kj0Var == null) {
+                                    kj0 kj0Var3 = new kj0(R, i10, bool, bool2, b0Var);
+                                    kj0Var3.show();
+                                    kj0.u0 = kj0Var3;
+                                    kj0Var = kj0Var3;
                                 }
                             }
-                            if (lj0Var != null) {
-                                lj0Var.setOnDismissListener(new c0(b1Var2, zArr, daVar2, str2));
+                            if (kj0Var != null) {
+                                kj0Var.setOnDismissListener(new c0(b1Var2, zArr, daVar2, str2));
                                 break;
                             }
                         } else {
@@ -112,7 +112,7 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                         TLRPC.User user = b1Var2.U;
                         e4 e4Var = new e4(b1Var2, daVar2, str2, tL_buttonTypeRequestPeer, 14);
                         d6 d6Var2 = b1Var2.e;
-                        dr.a(context, i12, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, e4Var, d6Var2, new yc(b1Var2, d6Var2));
+                        dr.a(context, i12, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, e4Var, d6Var2, new xc(b1Var2, d6Var2));
                         break;
                     }
                 }
@@ -123,11 +123,11 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                 d6 d6Var3 = b1Var.e;
                 if (updates == null) {
                     if (tL_error2 == null) {
-                        new yc(b1Var, d6Var3).c0("UNKNOWN_BUTTON", false);
+                        new xc(b1Var, d6Var3).c0("UNKNOWN_BUTTON", false);
                         b1Var.y(daVar, "requested_chat_failed", b1.B(str, "req_id"));
                         break;
                     } else {
-                        new yc(b1Var, d6Var3).d0(tL_error2, false);
+                        new xc(b1Var, d6Var3).d0(tL_error2, false);
                         b1Var.y(daVar, "requested_chat_failed", b1.B(str, "req_id"));
                         break;
                     }
@@ -142,11 +142,11 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                 d6 d6Var4 = b1Var.e;
                 if (updates2 == null) {
                     if (tL_error3 == null) {
-                        new yc(b1Var, d6Var4).c0("UNKNOWN_BUTTON", false);
+                        new xc(b1Var, d6Var4).c0("UNKNOWN_BUTTON", false);
                         b1Var.y(daVar, "requested_chat_failed", b1.B(str, "req_id"));
                         break;
                     } else {
-                        new yc(b1Var, d6Var4).d0(tL_error3, false);
+                        new xc(b1Var, d6Var4).d0(tL_error3, false);
                         b1Var.y(daVar, "requested_chat_failed", b1.B(str, "req_id"));
                         break;
                     }

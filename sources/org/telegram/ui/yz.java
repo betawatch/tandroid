@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class yz extends org.telegram.ui.ActionBar.m2 {
     public boolean E;
@@ -130,7 +130,7 @@ public final class yz extends org.telegram.ui.ActionBar.m2 {
                     if (yzVar.v != longValue || System.currentTimeMillis() - yzVar.w > 1500) {
                         yzVar.v = longValue;
                         yzVar.w = System.currentTimeMillis();
-                        org.telegram.ui.Components.yc.a0(yzVar).g(str, arrayList2).j();
+                        org.telegram.ui.Components.xc.a0(yzVar).g(str, arrayList2).j();
                         return;
                     }
                     return;

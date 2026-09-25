@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class xc implements ResultCallback {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final class xc implements ResultCallback {
 
     @Override // org.telegram.tgnet.ResultCallback
     public final void onComplete(Object obj) {
-        NotificationCenter.getInstance(this.a).doOnIdle(new org.telegram.ui.ActionBar.a6(20, this, (List) obj));
+        NotificationCenter.getInstance(this.a).doOnIdle(new org.telegram.ui.ActionBar.a6(19, this, (List) obj));
     }
 
     @Override // org.telegram.tgnet.ResultCallback

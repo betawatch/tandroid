@@ -49,7 +49,7 @@ import org.telegram.ui.bt;
 import org.telegram.ui.u6;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class z1 extends m61 implements NotificationCenter.NotificationCenterDelegate {
     public t3 d;
@@ -209,7 +209,7 @@ public final class z1 extends m61 implements NotificationCenter.NotificationCent
             arrayList.add(v51.B(null));
         }
         arrayList.size();
-        arrayList.add(v51.d(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), o1.a().a));
+        arrayList.add(v51.d(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), n1.a().a));
         hg.c.n(R.string.BrowserSettingsSearchEngineInfo, arrayList);
         if (BuildVars.DEBUG_PRIVATE_VERSION) {
             v51 i15 = v51.i(12, "adaptable colors");
@@ -591,10 +591,10 @@ public final class z1 extends m61 implements NotificationCenter.NotificationCent
             return;
         }
         if (i10 == 9) {
-            h1[] h1VarArr = {null};
-            org.telegram.ui.ActionBar.m2 h1Var = new h1(null, new bt(20, this, h1VarArr));
-            h1VarArr[0] = h1Var;
-            presentFragment(h1Var);
+            g1[] g1VarArr = {null};
+            org.telegram.ui.ActionBar.m2 g1Var = new g1(null, new bt(20, this, g1VarArr));
+            g1VarArr[0] = g1Var;
+            presentFragment(g1Var);
             return;
         }
         if (i10 == 5) {
@@ -703,7 +703,7 @@ public final class z1 extends m61 implements NotificationCenter.NotificationCent
             String str2 = y1Var.e;
             y70 F = y70.F((ViewGroup) this.fragmentView, null, y1Var);
             F.s = 40;
-            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new f1(i15, this, str2), false);
+            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new o1(i13, this, str2), false);
             F.Z();
             return;
         }
@@ -715,12 +715,12 @@ public final class z1 extends m61 implements NotificationCenter.NotificationCent
             AtomicReference atomicReference = new AtomicReference();
             LinearLayout linearLayout = new LinearLayout(getParentActivity());
             linearLayout.setOrientation(1);
-            ArrayList b10 = o1.b();
+            ArrayList b10 = n1.b();
             int size2 = b10.size();
             CharSequence[] charSequenceArr = new CharSequence[size2];
             int i19 = 0;
             while (i19 < size2) {
-                charSequenceArr[i19] = ((o1) b10.get(i19)).a;
+                charSequenceArr[i19] = ((n1) b10.get(i19)).a;
                 l6 l6Var = new l6(getParentActivity(), null);
                 l6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
                 l6Var.a(h6.w0(null, h6.g7, false), h6.w0(null, h6.E5, false));
@@ -775,7 +775,7 @@ public final class z1 extends m61 implements NotificationCenter.NotificationCent
             gradientDrawable.setCornerRadius(AndroidUtilities.dp(22.0f));
             gradientDrawable.setColor(h6.l1(0.06f, h6.v0(i20, resourceProvider)));
             editTextBoldCursor.setBackground(gradientDrawable);
-            l5 l5Var = new l5(editTextBoldCursor, i3Var, a2VarArr, currentFocus, 16);
+            l5 l5Var = new l5(editTextBoldCursor, i3Var, a2VarArr, currentFocus, 17);
             editTextBoldCursor.setOnEditorActionListener(new org.telegram.ui.Components.e1(l5Var, i12));
             LinearLayout linearLayout2 = new LinearLayout(parentActivity);
             linearLayout2.setOrientation(1);

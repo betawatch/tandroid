@@ -25,7 +25,7 @@ import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class rc implements Runnable {
     public final /* synthetic */ int a;
@@ -72,11 +72,11 @@ public final /* synthetic */ class rc implements Runnable {
                                 fVar.i = 0L;
                                 fVar.k = 0L;
                                 fVar.j = 0L;
-                                y2.r rVar = fVar.f;
-                                rVar.a.clear();
-                                rVar.c = -1;
-                                rVar.d = 0;
-                                rVar.e = 0;
+                                y2.q qVar = fVar.f;
+                                qVar.a.clear();
+                                qVar.c = -1;
+                                qVar.d = 0;
+                                qVar.e = 0;
                             }
                         }
                     }
@@ -208,7 +208,7 @@ public final /* synthetic */ class rc implements Runnable {
                 return;
             case 19:
                 AndroidUtilities.addToClipboard(((TL_account.TL_businessChatLink) this.b).link);
-                org.telegram.ui.Components.yc.a0(LaunchActivity.R()).k(false).j();
+                org.telegram.ui.Components.xc.a0(LaunchActivity.R()).k(false).j();
                 return;
             case 20:
                 hg.m0 m0Var = (hg.m0) this.b;

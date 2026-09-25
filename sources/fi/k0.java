@@ -48,13 +48,13 @@ import org.telegram.ui.Components.r80;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.t10;
 import org.telegram.ui.wf1;
 import org.telegram.ui.wn;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class k0 extends e3 implements NotificationCenter.NotificationCenterDelegate, le.e, o2 {
     public static final /* synthetic */ int V = 0;
@@ -95,12 +95,12 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
 
     public static void m(k0 k0Var, boolean z10, TLRPC.TL_error tL_error) {
         if (tL_error == null) {
-            u0.f(new yc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), 1, z10);
+            u0.f(new xc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), 1, z10);
             k0Var.d.D(0);
         } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
             c1.r((FrameLayout) k0Var.containerView, k0Var.resourcesProvider, tL_error, false);
         } else {
-            u0.f(new yc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), 2, z10);
+            u0.f(new xc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), 2, z10);
             k0Var.d.D(0);
         }
     }
@@ -117,7 +117,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
                 k0Var.x.d.Y2.N(false);
                 k0Var.d.D(2);
             } else {
-                org.telegram.messenger.f0.p(R.string.CommunityNoChatsToAdd, new yc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), R.raw.info, 36);
+                org.telegram.messenger.f0.p(R.string.CommunityNoChatsToAdd, new xc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), R.raw.info, 36);
             }
         }
     }
@@ -200,12 +200,12 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         if (b10 != 1 && b10 != 2) {
             if (b10 == 3) {
                 r80 r80Var = new r80(k0Var.getContext(), chat2, null, k0Var.s, k0Var.resourcesProvider);
-                r80Var.n = new yc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider);
+                r80Var.n = new xc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider);
                 r80Var.show();
                 return;
             } else {
                 if (b10 == 4) {
-                    org.telegram.messenger.f0.p(z10 ? R.string.CommunityHiddenChannelUnavailable : R.string.CommunityHiddenGroupUnavailable, new yc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), R.raw.e_hand_2, 36);
+                    org.telegram.messenger.f0.p(z10 ? R.string.CommunityHiddenChannelUnavailable : R.string.CommunityHiddenGroupUnavailable, new xc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), R.raw.e_hand_2, 36);
                     return;
                 }
                 return;
@@ -637,7 +637,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         this.L = new View(getContext());
         Context context2 = getContext();
         d6 d6Var = this.resourcesProvider;
-        t0 t0Var = new t0(context2, d6Var, new yc((FrameLayout) this.containerView, d6Var), this.currentAccount, j3);
+        t0 t0Var = new t0(context2, d6Var, new xc((FrameLayout) this.containerView, d6Var), this.currentAccount, j3);
         this.M = t0Var;
         t0Var.h = new b0(this, m2Var);
         this.e = j3;

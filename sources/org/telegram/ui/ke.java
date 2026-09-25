@@ -5,7 +5,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ke implements Runnable {
     public final /* synthetic */ int a;
@@ -53,12 +53,12 @@ public final /* synthetic */ class ke implements Runnable {
                 break;
             case 5:
                 wn wnVar4 = this.b;
-                org.telegram.ui.Components.qc v = org.telegram.ui.Components.yc.v(wnVar4.getParentActivity(), wnVar4, null, 1, this.c, 1, wnVar4.getThemedColor(org.telegram.ui.ActionBar.h6.Fi), wnVar4.getThemedColor(org.telegram.ui.ActionBar.h6.Hi), 5000, true, null);
+                org.telegram.ui.Components.qc v = org.telegram.ui.Components.xc.v(wnVar4.getParentActivity(), wnVar4, null, 1, this.c, 1, wnVar4.getThemedColor(org.telegram.ui.ActionBar.h6.Fi), wnVar4.getThemedColor(org.telegram.ui.ActionBar.h6.Hi), 5000, true, null);
                 v.k = true;
                 v.k(true);
                 break;
             case 6:
-                org.telegram.ui.Components.yc.a0(this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) this.c)), R.raw.stars_topup).k(true);
+                org.telegram.ui.Components.xc.a0(this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) this.c)), R.raw.stars_topup).k(true);
                 break;
             default:
                 this.b.presentFragment(new ProfileActivity(v7.j.e(this.c, "user_id"), null));

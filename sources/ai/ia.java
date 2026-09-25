@@ -38,9 +38,9 @@ import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public abstract class ia {
     public static p20 b;
@@ -311,8 +311,8 @@ public abstract class ia {
                 caVar.B = 1.0f;
             }
         }
-        zc zcVar = caVar.H;
-        float a2 = zcVar != null ? zcVar.a(0.08f) : 1.0f;
+        yc ycVar = caVar.H;
+        float a2 = ycVar != null ? ycVar.a(0.08f) : 1.0f;
         if (caVar.C != z17 && z17) {
             caVar.K = 1.0f;
             caVar.L = false;

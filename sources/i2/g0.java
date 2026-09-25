@@ -5,12 +5,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.kn0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.zf0;
 import org.telegram.ui.b10;
-import yh.t5;
+import yh.s5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 kn0Var.c(this.c, this.b, true);
                 break;
             case 3:
-                yc a02 = yc.a0((b10) this.d);
+                xc a02 = xc.a0((b10) this.d);
                 boolean z10 = this.b;
                 int i12 = z10 ? R.raw.folder_in : R.raw.folder_out;
                 int i13 = this.c;
@@ -55,15 +55,15 @@ public final /* synthetic */ class g0 implements Runnable {
                 M.j();
                 break;
             default:
-                t5 t5Var = (t5) this.d;
+                s5 s5Var = (s5) this.d;
                 if (!this.b) {
-                    t5Var.getClass();
+                    s5Var.getClass();
                     break;
                 } else {
-                    Set set = t5Var.Q;
+                    Set set = s5Var.Q;
                     int i14 = this.c;
                     set.remove(Integer.valueOf(i14));
-                    Runnable runnable = (Runnable) t5Var.R.remove(Integer.valueOf(i14));
+                    Runnable runnable = (Runnable) s5Var.R.remove(Integer.valueOf(i14));
                     if (runnable != null) {
                         runnable.run();
                         break;

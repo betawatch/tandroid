@@ -13,7 +13,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class s11 extends org.telegram.ui.Components.ga implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -70,7 +70,7 @@ public abstract class s11 extends org.telegram.ui.Components.ga implements Notif
                                 break;
                             } else {
                                 org.telegram.ui.Components.ds0 ds0Var2 = ds0Var;
-                                org.telegram.ui.Components.e5.S(ds0Var2.a, ds0Var2.b, ds0Var2.c, new org.telegram.ui.Components.nv(ds0Var2, 20));
+                                org.telegram.ui.Components.e5.S(ds0Var2.a, ds0Var2.b, ds0Var2.c, new org.telegram.ui.Components.mv(ds0Var2, 20));
                                 break;
                             }
                         } else {
@@ -204,7 +204,7 @@ public abstract class s11 extends org.telegram.ui.Components.ga implements Notif
                                 break;
                             } else {
                                 org.telegram.ui.Components.ds0 ds0Var2 = ds0Var;
-                                org.telegram.ui.Components.e5.S(ds0Var2.a, ds0Var2.b, ds0Var2.c, new org.telegram.ui.Components.nv(ds0Var2, 20));
+                                org.telegram.ui.Components.e5.S(ds0Var2.a, ds0Var2.b, ds0Var2.c, new org.telegram.ui.Components.mv(ds0Var2, 20));
                                 break;
                             }
                         } else {

@@ -4,7 +4,7 @@ import b2.s;
 import g2.b0;
 import v7.n7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class j extends e {
     public final d s;
@@ -17,12 +17,12 @@ public final class j extends e {
         this.s = dVar;
     }
 
-    @Override // y2.j
+    @Override // y2.i
     public final void D() {
         this.x = true;
     }
 
-    @Override // y2.j
+    @Override // y2.i
     public final void a() {
         if (this.w == 0) {
             this.s.a(this.v, -9223372036854775807L, -9223372036854775807L);

@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f31 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class f31 implements Runnable {
         switch (this.a) {
             case 0:
                 wn wnVar = this.b;
-                org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(wnVar);
+                org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(wnVar);
                 String string = LocaleController.getString(R.string.AdReported);
                 final int i10 = 1;
                 final Activity activity = this.c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class f31 implements Runnable {
                 break;
             case 1:
                 wn wnVar2 = this.b;
-                org.telegram.ui.Components.yc a03 = org.telegram.ui.Components.yc.a0(wnVar2);
+                org.telegram.ui.Components.xc a03 = org.telegram.ui.Components.xc.a0(wnVar2);
                 String string2 = LocaleController.getString(R.string.AdReported);
                 final int i11 = 0;
                 final Activity activity2 = this.c;
@@ -80,7 +80,7 @@ public final /* synthetic */ class f31 implements Runnable {
                 break;
             default:
                 wn wnVar3 = this.b;
-                org.telegram.ui.Components.yc a04 = org.telegram.ui.Components.yc.a0(wnVar3);
+                org.telegram.ui.Components.xc a04 = org.telegram.ui.Components.xc.a0(wnVar3);
                 String string3 = LocaleController.getString(R.string.AdReported);
                 final int i12 = 2;
                 final Activity activity3 = this.c;

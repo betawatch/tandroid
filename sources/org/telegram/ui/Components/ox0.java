@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ox0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -188,7 +188,7 @@ public final /* synthetic */ class ox0 implements View.OnClickListener {
                 frameLayout.addView(editTextBoldCursor, w7.y5.e(-1, 36, 51));
                 editTextBoldCursor.setOnEditorActionListener(new e1(alertDialog$Builder, 7));
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new nv(editTextBoldCursor, 23));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new mv(editTextBoldCursor, 23));
                 textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ImportStickersEnterNameInfo)));
                 textView.setTextSize(1, 14.0f);
                 textView.setPadding(AndroidUtilities.dp(23.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(23.0f), AndroidUtilities.dp(6.0f));

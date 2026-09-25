@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class ad extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.WallPaper E;
@@ -190,7 +190,7 @@ public class ad extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                         hcVar.H1(j3);
                         TLRPC.Chat chat = adVar.getMessagesController().getChat(Long.valueOf(-j3));
                         if (chat != null) {
-                            hcVar.Q0 = new org.telegram.ui.ActionBar.a6(19, adVar, chat);
+                            hcVar.Q0 = new org.telegram.ui.ActionBar.a6(18, adVar, chat);
                         }
                         adVar.showDialog(hcVar);
                         adVar.P.setLoading(false);
@@ -1065,7 +1065,7 @@ public class ad extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j11));
         if (chat == null) {
             FileLog.e("channel is null in ChannelColorAcitivity");
-            org.telegram.messenger.f0.p(R.string.UnknownError, org.telegram.ui.Components.yc.a0(this), R.raw.error, 36);
+            org.telegram.messenger.f0.p(R.string.UnknownError, org.telegram.ui.Components.xc.a0(this), R.raw.error, 36);
             return;
         }
         this.P.setLoading(true);

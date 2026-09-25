@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
     public static final a1 p = i0.y(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -30,7 +30,7 @@ public final class f implements c, c0 {
     public final n2.e c;
     public final x d;
     public final boolean e;
-    public final r f;
+    public final q f;
     public int g;
     public long h;
     public long i;
@@ -47,7 +47,7 @@ public final class f implements c, c0 {
         this.a = context == null ? null : context.getApplicationContext();
         this.b = k0.a(hashMap);
         this.c = new n2.e(26);
-        this.f = new r();
+        this.f = new q();
         this.d = xVar;
         this.e = true;
         if (context == null) {

@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a;
@@ -52,8 +52,8 @@ public final /* synthetic */ class pg implements Runnable {
                 }
                 break;
             case 1:
-                yc ycVar = (yc) obj;
-                new rg.x0(ycVar.W(), 42, ycVar.c).show();
+                xc xcVar = (xc) obj;
+                new rg.x0(xcVar.W(), 42, xcVar.c).show();
                 break;
             case 2:
                 AndroidUtilities.removeFromParent((ci.e4) obj);
@@ -140,10 +140,10 @@ public final /* synthetic */ class pg implements Runnable {
                 }
                 break;
             case 16:
-                jd jdVar = (jd) obj;
-                jdVar.getClass();
+                id idVar = (id) obj;
+                idVar.getClass();
                 if (LiteMode.isEnabled(512)) {
-                    jdVar.invalidateSelf();
+                    idVar.invalidateSelf();
                     break;
                 }
                 break;

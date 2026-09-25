@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class w8 extends aw0 {
     public float A0;
@@ -54,13 +54,13 @@ public final class w8 extends aw0 {
                 x8 x8Var = e9Var.a;
                 float f10 = x10 + x8Var.y;
                 float f11 = lerp + x8Var.E;
-                gd gdVar = e9Var.K;
+                fd fdVar = e9Var.K;
                 float f12 = x8Var.x;
-                gdVar.getClass();
+                fdVar.getClass();
                 rectF.set((int) (f10 - f12), (int) (f11 - f12), (int) (f10 + f12), (int) (f11 + f12));
-                gdVar.i = false;
-                gdVar.c = 0;
-                gdVar.a(rectF);
+                fdVar.i = false;
+                fdVar.c = 0;
+                fdVar.a(rectF);
                 canvas.restore();
             }
             canvas.restoreToCount(save);

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class i3 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -154,7 +154,7 @@ public final class i3 extends s4.s0 {
                 break;
             case 21:
                 if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(((lj0) this.b).Y.getEditText());
+                    AndroidUtilities.hideKeyboard(((kj0) this.b).Y.getEditText());
                     break;
                 }
                 break;
@@ -346,12 +346,12 @@ public final class i3 extends s4.s0 {
                 ((vi0) obj).K.invalidate();
                 break;
             case 20:
-                ej0 ej0Var = (ej0) obj;
-                int L02 = ej0Var.h.L0();
-                int abs = L02 != -1 ? Math.abs(ej0Var.h.N0() - L02) + 1 : 0;
+                dj0 dj0Var = (dj0) obj;
+                int L02 = dj0Var.h.L0();
+                int abs = L02 != -1 ? Math.abs(dj0Var.h.N0() - L02) + 1 : 0;
                 int h = recyclerView.getAdapter().h();
-                if (abs > 0 && !ej0Var.V && !ej0Var.E && !ej0Var.x.isEmpty() && L02 + abs >= h - 5 && ej0Var.y) {
-                    ej0Var.b0();
+                if (abs > 0 && !dj0Var.V && !dj0Var.E && !dj0Var.x.isEmpty() && L02 + abs >= h - 5 && dj0Var.y) {
+                    dj0Var.b0();
                     break;
                 }
                 break;

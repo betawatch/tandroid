@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class w1 extends vl0 {
     public String e;
@@ -234,9 +234,9 @@ public final class w1 extends vl0 {
             org.telegram.ui.Cells.f2 f2Var2 = new org.telegram.ui.Cells.f2(z1Var.getContext());
             f2Var2.getPhotoImage().setLayerNum(7);
             if (f2Var2.c0 == null) {
-                org.telegram.ui.Components.zc zcVar = new org.telegram.ui.Components.zc(f2Var2, 1.0f, 3.0f);
-                zcVar.e = 120L;
-                f2Var2.c0 = zcVar;
+                org.telegram.ui.Components.yc ycVar = new org.telegram.ui.Components.yc(f2Var2, 1.0f, 3.0f);
+                ycVar.e = 120L;
+                f2Var2.c0 = ycVar;
             }
             f2Var2.setIsKeyboard(true);
             f2Var2.setCanPreviewGif(true);

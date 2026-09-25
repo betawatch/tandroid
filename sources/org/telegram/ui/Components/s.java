@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, ll0, ad0, bd0, cd0, le.g, ImageReceiver.ImageReceiverDelegate, d5, r0.n, uh.a, t0.e, ml0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.r5, ai.fc, org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.k1, vh.k {
     public final /* synthetic */ int a;
@@ -131,7 +131,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, ll
                 ((hg) this.b).a.U0.r();
                 break;
             case 19:
-                ((uc) this.b).run();
+                ((kd) this.b).run();
                 MessagesController.getGlobalMainSettings().edit().putBoolean("trimvoicehint", false).apply();
                 break;
             case 23:

@@ -30,9 +30,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ne0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ix0;
+import org.telegram.ui.jx0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class w0 {
     public static final HashMap g = new HashMap();
@@ -367,7 +367,7 @@ public final class w0 {
         edit.apply();
     }
 
-    public final void m(boolean z10, final ix0 ix0Var) {
+    public final void m(boolean z10, final jx0 jx0Var) {
         final int i10 = 1;
         this.d = true;
         if (!z10 || a()) {
@@ -376,8 +376,8 @@ public final class w0 {
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();
             }
-            if (ix0Var != null) {
-                ix0Var.run();
+            if (jx0Var != null) {
+                jx0Var.run();
             }
         } else {
             Activity f7 = f();
@@ -411,7 +411,7 @@ public final class w0 {
                             case 0:
                                 w0 w0Var = this.b;
                                 if (!w0Var.a()) {
-                                    ne0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.g3(10, w0Var, ix0Var));
+                                    ne0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.g3(10, w0Var, jx0Var));
                                     break;
                                 } else {
                                     w0Var.d = true;
@@ -432,7 +432,7 @@ public final class w0 {
                                 while (it3.hasNext()) {
                                     ((Runnable) it3.next()).run();
                                 }
-                                Runnable runnable = ix0Var;
+                                Runnable runnable = jx0Var;
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -455,7 +455,7 @@ public final class w0 {
                         case 0:
                             w0 w0Var = this.b;
                             if (!w0Var.a()) {
-                                ne0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.g3(10, w0Var, ix0Var));
+                                ne0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.g3(10, w0Var, jx0Var));
                                 break;
                             } else {
                                 w0Var.d = true;
@@ -476,7 +476,7 @@ public final class w0 {
                             while (it3.hasNext()) {
                                 ((Runnable) it3.next()).run();
                             }
-                            Runnable runnable = ix0Var;
+                            Runnable runnable = jx0Var;
                             if (runnable != null) {
                                 runnable.run();
                                 break;

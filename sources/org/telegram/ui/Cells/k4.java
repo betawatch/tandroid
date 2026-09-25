@@ -29,9 +29,9 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class k4 {
     public int A;
@@ -49,7 +49,7 @@ public final class k4 {
     public r90 k;
     public final vh.f l;
     public int m;
-    public final zc n;
+    public final yc n;
     public j4 o;
     public boolean p;
     public t01 q;
@@ -68,7 +68,7 @@ public final class k4 {
         this.a = u1Var;
         this.l = vh.f.e(u1Var);
         this.j = new org.telegram.ui.Components.e6(u1Var, 0L, 350L, rr.h);
-        this.n = new zc(u1Var);
+        this.n = new yc(u1Var);
     }
 
     public final boolean a() {

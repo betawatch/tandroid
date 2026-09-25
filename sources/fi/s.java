@@ -21,11 +21,11 @@ import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.wn;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class s extends m2 implements le.e {
     public final le.c a;
@@ -83,7 +83,7 @@ public final class s extends m2 implements le.e {
         boolean z10 = true;
         z10 = true;
         setHasOwnBackground(true);
-        t0 t0Var = new t0(getParentActivity(), this.resourceProvider, yc.a0(this), this.currentAccount, this.b);
+        t0 t0Var = new t0(getParentActivity(), this.resourceProvider, xc.a0(this), this.currentAccount, this.b);
         this.v = t0Var;
         t0Var.h = new xa.c(this, 20);
         t0Var.d();

@@ -9,9 +9,9 @@ import org.telegram.ui.Components.h5;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.up;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class v {
     public final RectF a = new RectF();
@@ -23,7 +23,7 @@ public final class v {
     public final h5 g;
     public final e6 h;
     public final e6 i;
-    public final zc j;
+    public final yc j;
     public final Paint k;
     public final o6 l;
     public int m;
@@ -41,7 +41,7 @@ public final class v {
         this.g = new h5(xVar, 320L, rrVar, 0);
         this.h = new e6(xVar, 0L, 320L, rrVar);
         this.i = new e6(xVar, 0L, 320L, rrVar);
-        this.j = new zc(xVar);
+        this.j = new yc(xVar);
         this.k = new Paint(1);
         o6 o6Var = new o6(true, false, true, false);
         this.l = o6Var;

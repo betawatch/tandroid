@@ -179,7 +179,7 @@ import org.telegram.ui.yi1;
 import org.telegram.ui.zn;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class AndroidUtilities {
     public static Pattern BAD_CHARS_MESSAGE_LONG_PATTERN = null;
@@ -276,12 +276,12 @@ public class AndroidUtilities {
     public static final Paint strokeTop = new Paint(1);
     public static final Paint strokeBottom = new Paint(1);
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public interface IntColorCallback {
         void run(int i10);
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class LinkMovementMethodMy extends LinkMovementMethod {
         @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
         public boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
@@ -299,7 +299,7 @@ public class AndroidUtilities {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class LinkSpec {
         int end;
         int start;
@@ -309,7 +309,7 @@ public class AndroidUtilities {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class VcardData {
         String name;
         ArrayList<String> phones;
@@ -321,7 +321,7 @@ public class AndroidUtilities {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class VcardItem {
         public int type;
         public ArrayList<String> vcardData = new ArrayList<>();
@@ -3475,36 +3475,36 @@ public class AndroidUtilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void lambda$showProxyAlert$17(boolean[] zArr, long j3, org.telegram.ui.Components.ad[] adVarArr) {
+    public static void lambda$showProxyAlert$17(boolean[] zArr, long j3, org.telegram.ui.Components.zc[] zcVarArr) {
         zArr[0] = false;
         if (j3 == -1) {
-            adVarArr[0].setText(LocaleController.getString(R.string.Unavailable));
-            adVarArr[0].setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.p7, false));
+            zcVarArr[0].setText(LocaleController.getString(R.string.Unavailable));
+            zcVarArr[0].setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.p7, false));
         } else {
-            adVarArr[0].setText(LocaleController.formatString(R.string.Ping2, Long.valueOf(j3)));
-            adVarArr[0].setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.w6, false));
+            zcVarArr[0].setText(LocaleController.formatString(R.string.Ping2, Long.valueOf(j3)));
+            zcVarArr[0].setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.w6, false));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showProxyAlert$18(boolean[] zArr, org.telegram.ui.Components.ad[] adVarArr, long j3) {
-        runOnUIThread(new b4(zArr, j3, adVarArr, 3));
+    public static /* synthetic */ void lambda$showProxyAlert$18(boolean[] zArr, org.telegram.ui.Components.zc[] zcVarArr, long j3) {
+        runOnUIThread(new b4(zArr, j3, zcVarArr, 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void lambda$showProxyAlert$19(boolean[] zArr, org.telegram.ui.Components.ad[] adVarArr, oi.b bVar) {
+    public static void lambda$showProxyAlert$19(boolean[] zArr, org.telegram.ui.Components.zc[] zcVarArr, oi.b bVar) {
         if (zArr[0]) {
             return;
         }
         zArr[0] = true;
-        adVarArr[0].setText(LocaleController.getString(R.string.ProxyBottomSheetChecking) + "...");
-        adVarArr[0].b.d(false);
+        zcVarArr[0].setText(LocaleController.getString(R.string.ProxyBottomSheetChecking) + "...");
+        zcVarArr[0].b.d(false);
         try {
-            ConnectionsManager.getInstance(UserConfig.selectedAccount).checkProxy(bVar, new d(1, zArr, adVarArr));
+            ConnectionsManager.getInstance(UserConfig.selectedAccount).checkProxy(bVar, new d(1, zArr, zcVarArr));
         } catch (NumberFormatException unused) {
             zArr[0] = false;
-            adVarArr[0].setText(LocaleController.getString(R.string.Unavailable));
-            adVarArr[0].setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.p7, false));
+            zcVarArr[0].setText(LocaleController.getString(R.string.Unavailable));
+            zcVarArr[0].setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.p7, false));
         }
     }
 
@@ -3515,11 +3515,11 @@ public class AndroidUtilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void lambda$showProxyAlert$21(boolean[] zArr, org.telegram.ui.Components.ad[] adVarArr, oi.b bVar, Activity activity) {
+    public static void lambda$showProxyAlert$21(boolean[] zArr, org.telegram.ui.Components.zc[] zcVarArr, oi.b bVar, Activity activity) {
         if (zArr[0]) {
             return;
         }
-        g0 g0Var = new g0(zArr, adVarArr, bVar, 7);
+        g0 g0Var = new g0(zArr, zcVarArr, bVar, 7);
         SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
         if (globalMainSettings.getBoolean("proxycheckstatusip", false)) {
             g0Var.run();
@@ -5003,12 +5003,12 @@ public class AndroidUtilities {
         if (!TextUtils.isEmpty(str3)) {
             zz0Var.c(LocaleController.getString(R.string.UseProxyPassword), str3, null, null);
         }
-        org.telegram.ui.Components.ad[] adVarArr = new org.telegram.ui.Components.ad[1];
-        zz0Var.c(LocaleController.getString(R.string.ProxyStatus), "", null, adVarArr);
-        ((View) adVarArr[0].getParent()).setPadding(0, 0, 0, 0);
-        adVarArr[0].setDisablePaddingsOffsetY(true);
-        adVarArr[0].setPadding(dp(12.66f), dp(9.33f), dp(12.66f), dp(9.33f));
-        adVarArr[0].setText(replaceSingleLink(LocaleController.getString(R.string.ProxyBottomSheetCheckStatus), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gc, false), new pk(new boolean[1], adVarArr, bVar, activity, 4)));
+        org.telegram.ui.Components.zc[] zcVarArr = new org.telegram.ui.Components.zc[1];
+        zz0Var.c(LocaleController.getString(R.string.ProxyStatus), "", null, zcVarArr);
+        ((View) zcVarArr[0].getParent()).setPadding(0, 0, 0, 0);
+        zcVarArr[0].setDisablePaddingsOffsetY(true);
+        zcVarArr[0].setPadding(dp(12.66f), dp(9.33f), dp(12.66f), dp(9.33f));
+        zcVarArr[0].setText(replaceSingleLink(LocaleController.getString(R.string.ProxyBottomSheetCheckStatus), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gc, false), new pk(new boolean[1], zcVarArr, bVar, activity, 4)));
         if (!TextUtils.isEmpty(str4)) {
             xz0 a2 = zz0Var.a(LocaleController.getString(R.string.UseProxyTelegramInfo2));
             a2.setFilled(true);

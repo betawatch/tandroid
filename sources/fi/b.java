@@ -8,9 +8,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class b implements Utilities.Callback2 {
                     break;
                 } else {
                     fVar2.getClass();
-                    yc.a0(fVar2).d0(tL_error, false);
+                    xc.a0(fVar2).d0(tL_error, false);
                     break;
                 }
         }

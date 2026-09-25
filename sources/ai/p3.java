@@ -23,10 +23,11 @@ import org.telegram.ui.gn0;
 import org.telegram.ui.js0;
 import org.telegram.ui.kq;
 import org.telegram.ui.lo;
+import org.telegram.ui.rp;
 import org.telegram.ui.t31;
 import org.telegram.ui.wm0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -94,7 +95,7 @@ public final /* synthetic */ class p3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new m3(obVar, tL_chatInviteExported, tL_messages_exportedChatInvite, zArr, a2Var, 14));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5(obj4, obj, obj3, obj2, 11));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.l5((rp) obj4, (org.telegram.ui.ActionBar.a2[]) obj, (TLRPC.Chat) obj3, (org.telegram.ui.ActionBar.m2) obj2, 12));
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new m3((kq) obj4, tL_error, (TLRPC.InputCheckPasswordSRP) obj, (TwoStepVerificationActivity) obj3, (TLRPC.TL_channels_editCreator) obj2, 20));
@@ -137,10 +138,10 @@ public final /* synthetic */ class p3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new z8((yh.x3) obj4, tLObject, (tg.m1[]) obj, (Long) obj3, (tg.r) obj2, tL_error, 17));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new yh.u((yh.t5) obj4, (org.telegram.ui.ActionBar.a2) obj, tLObject, (TL_stars.InputSavedStarGift) obj3, (Utilities.Callback) obj2));
+                AndroidUtilities.runOnUIThread(new yh.u((yh.s5) obj4, (org.telegram.ui.ActionBar.a2) obj, tLObject, (TL_stars.InputSavedStarGift) obj3, (Utilities.Callback) obj2));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new z8((yh.t5) obj4, tLObject, (MessageObject) obj, (TLRPC.TL_inputInvoiceMessage) obj3, (aj) obj2, tL_error, 20));
+                AndroidUtilities.runOnUIThread(new z8((yh.s5) obj4, tLObject, (MessageObject) obj, (TLRPC.TL_inputInvoiceMessage) obj3, (aj) obj2, tL_error, 20));
                 break;
             default:
                 yh.j5 j5Var = (yh.j5) obj4;

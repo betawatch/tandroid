@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class m implements RequestDelegate {
         this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0178  */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -37,24 +37,26 @@ public final /* synthetic */ class m implements RequestDelegate {
         String[] strArr;
         TLObject tLObject2 = tLObject;
         int i11 = this.a;
-        int i12 = 22;
-        int i13 = 18;
-        int i14 = 25;
-        int i15 = 1;
-        int i16 = 2;
+        int i12 = 10;
+        int i13 = 22;
+        int i14 = 29;
+        int i15 = 17;
+        int i16 = 24;
+        int i17 = 2;
+        int i18 = 1;
         Object obj = this.b;
         switch (i11) {
             case 0:
-                AndroidUtilities.runOnUIThread(new r1((q) obj, tL_error, tLObject2, i16));
+                AndroidUtilities.runOnUIThread(new r1((q) obj, tL_error, tLObject2, 2));
                 break;
             case 1:
                 AndroidUtilities.runOnUIThread(new r1((k9) obj, tL_error, tLObject2, 6));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new aj((no) obj, 10));
+                AndroidUtilities.runOnUIThread(new aj((no) obj, i12));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new dh(i13, (rp) obj, tLObject2));
+                AndroidUtilities.runOnUIThread(new fh(i15, (rp) obj, tLObject2));
                 break;
             case 4:
                 pr prVar = (pr) obj;
@@ -62,13 +64,13 @@ public final /* synthetic */ class m implements RequestDelegate {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject2;
                     prVar.getMessagesController().processUpdates(updates, false);
                     if (!updates.chats.isEmpty()) {
-                        AndroidUtilities.runOnUIThread(new dh(23, prVar, updates), 1000L);
+                        AndroidUtilities.runOnUIThread(new fh(i13, prVar, updates), 1000L);
                         break;
                     }
                 }
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new es((ms) obj, i16));
+                AndroidUtilities.runOnUIThread(new es((ms) obj, 2));
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new fu((DataSettingsActivity) obj, 0));
@@ -86,53 +88,53 @@ public final /* synthetic */ class m implements RequestDelegate {
                     break;
                 }
             case 9:
-                AndroidUtilities.runOnUIThread(new tt(i14, (o70) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new tt(i16, (o70) obj, tL_error));
                 break;
             case 10:
-                AndroidUtilities.runOnUIThread(new m80(12, (zb0) obj, tLObject2));
+                AndroidUtilities.runOnUIThread(new n80(11, (zb0) obj, tLObject2));
                 break;
             case 11:
                 AndroidUtilities.runOnUIThread(new sq((bf0) obj, tLObject2, tL_error, 27));
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new m80(i12, (cf0) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new n80(21, (cf0) obj, tL_error));
                 break;
             case 13:
                 AndroidUtilities.runOnUIThread(new jf0(obj, (Object) tL_error, (Object) tLObject2, 0));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new jf0((KeyEvent.Callback) obj, tLObject2, (Object) tL_error, i16));
+                AndroidUtilities.runOnUIThread(new jf0((KeyEvent.Callback) obj, tLObject2, (Object) tL_error, 2));
                 break;
             case 15:
-                AndroidUtilities.runOnUIThread(new c10((NotificationsSettingsActivity) obj, 29));
+                AndroidUtilities.runOnUIThread(new c10((NotificationsSettingsActivity) obj, i14));
                 break;
             case 16:
                 bn0 bn0Var = (bn0) obj;
                 if (tL_error != null && tL_error.text != null) {
-                    AndroidUtilities.runOnUIThread(new xi0(11, bn0Var, tL_error));
+                    AndroidUtilities.runOnUIThread(new sj0(i12, bn0Var, tL_error));
                     break;
                 }
                 break;
             case 17:
-                AndroidUtilities.runOnUIThread(new jf0((PremiumPreviewFragment) obj, tL_error, tLObject2, i12));
+                AndroidUtilities.runOnUIThread(new jf0((PremiumPreviewFragment) obj, tL_error, tLObject2, i13));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new ix0(0, (PrivacyControlActivity) obj, tLObject2));
+                AndroidUtilities.runOnUIThread(new sj0(i14, (PrivacyControlActivity) obj, tLObject2));
                 break;
             case 19:
                 PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) obj;
                 if (tLObject2 != null) {
-                    AndroidUtilities.runOnUIThread(new ix0(i16, privacySettingsActivity, (TL_account.Password) tLObject2));
+                    AndroidUtilities.runOnUIThread(new jx0(i18, privacySettingsActivity, (TL_account.Password) tLObject2));
                     break;
                 }
                 break;
             case 20:
                 a11 a11Var = (a11) obj;
-                int i17 = a11Var.f;
+                int i19 = a11Var.f;
                 if (tLObject2 instanceof TLRPC.TL_messages_webPage) {
                     TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject2;
-                    MessagesController.getInstance(i17).putUsers(tL_messages_webPage.users, false);
-                    MessagesController.getInstance(i17).putChats(tL_messages_webPage.chats, false);
+                    MessagesController.getInstance(i19).putUsers(tL_messages_webPage.users, false);
+                    MessagesController.getInstance(i19).putChats(tL_messages_webPage.chats, false);
                     tLObject2 = tL_messages_webPage.webpage;
                 }
                 if (tLObject2 instanceof TLRPC.WebPage) {
@@ -141,12 +143,12 @@ public final /* synthetic */ class m implements RequestDelegate {
                     TL_iv.Page page = webPage.cached_page;
                     if (page != null) {
                         int size2 = page.blocks.size();
-                        int i18 = 0;
-                        while (i18 < size2) {
-                            TL_iv.PageBlock pageBlock = webPage.cached_page.blocks.get(i18);
+                        int i20 = 0;
+                        while (i20 < size2) {
+                            TL_iv.PageBlock pageBlock = webPage.cached_page.blocks.get(i20);
                             if (pageBlock instanceof TL_iv.pageBlockList) {
-                                if (i18 != 0) {
-                                    TL_iv.PageBlock pageBlock2 = webPage.cached_page.blocks.get(i18 - 1);
+                                if (i20 != 0) {
+                                    TL_iv.PageBlock pageBlock2 = webPage.cached_page.blocks.get(i20 - 1);
                                     if (pageBlock2 instanceof TL_iv.pageBlockParagraph) {
                                         str = i4.B(((TL_iv.pageBlockParagraph) pageBlock2).text).toString();
                                         TL_iv.pageBlockList pageblocklist = (TL_iv.pageBlockList) pageBlock;
@@ -160,20 +162,19 @@ public final /* synthetic */ class m implements RequestDelegate {
                                                 String charSequence = i4.B(tL_pageListItemText.text).toString();
                                                 if (!TextUtils.isEmpty(F) && !TextUtils.isEmpty(charSequence)) {
                                                     if (str != null) {
-                                                        strArr = new String[2];
+                                                        strArr = new String[i17];
                                                         strArr[0] = LocaleController.getString(R.string.SettingsSearchFaq);
-                                                        strArr[i15] = str;
+                                                        strArr[1] = str;
                                                     } else {
-                                                        strArr = new String[i15];
-                                                        strArr[0] = LocaleController.getString(R.string.SettingsSearchFaq);
+                                                        strArr = new String[]{LocaleController.getString(R.string.SettingsSearchFaq)};
                                                     }
                                                     arrayList.add(new MessagesController.FaqSearchResult(charSequence, strArr, F));
                                                     i10++;
-                                                    i15 = 1;
+                                                    i17 = 2;
                                                 }
                                             }
                                             i10++;
-                                            i15 = 1;
+                                            i17 = 2;
                                         }
                                     }
                                 }
@@ -186,12 +187,12 @@ public final /* synthetic */ class m implements RequestDelegate {
                             } else if (pageBlock instanceof TL_iv.pageBlockAnchor) {
                                 a11Var.E = webPage;
                             }
-                            i18++;
-                            i15 = 1;
+                            i20++;
+                            i17 = 2;
                         }
                         a11Var.E = webPage;
                     }
-                    AndroidUtilities.runOnUIThread(new ix0(i13, a11Var, arrayList));
+                    AndroidUtilities.runOnUIThread(new jx0(i15, a11Var, arrayList));
                 }
                 a11Var.F = false;
                 break;
@@ -203,9 +204,9 @@ public final /* synthetic */ class m implements RequestDelegate {
                 if (tL_error == null) {
                     TLRPC.TL_messages_inactiveChats tL_messages_inactiveChats = (TLRPC.TL_messages_inactiveChats) tLObject2;
                     ArrayList arrayList2 = new ArrayList();
-                    for (int i19 = 0; i19 < tL_messages_inactiveChats.chats.size(); i19++) {
-                        TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i19);
-                        int currentTime = (le1Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i19).intValue()) / 86400;
+                    for (int i21 = 0; i21 < tL_messages_inactiveChats.chats.size(); i21++) {
+                        TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i21);
+                        int currentTime = (le1Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i21).intValue()) / 86400;
                         String formatPluralString = currentTime < 30 ? LocaleController.formatPluralString("Days", currentTime, new Object[0]) : currentTime < 365 ? LocaleController.formatPluralString("Months", currentTime / 30, new Object[0]) : LocaleController.formatPluralString("Years", currentTime / 365, new Object[0]);
                         if (ChatObject.isMegagroup(chat)) {
                             arrayList2.add(LocaleController.formatString("InactiveChatSignature", R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]), formatPluralString));
@@ -222,7 +223,7 @@ public final /* synthetic */ class m implements RequestDelegate {
             case 23:
                 gh1 gh1Var = (gh1) obj;
                 gh1Var.getClass();
-                AndroidUtilities.runOnUIThread(new n81(20, gh1Var, tLObject2));
+                AndroidUtilities.runOnUIThread(new p81(19, gh1Var, tLObject2));
                 break;
             case 24:
                 int[][] iArr = WallpapersListActivity.k0;
@@ -231,7 +232,7 @@ public final /* synthetic */ class m implements RequestDelegate {
             default:
                 bj1 bj1Var = (bj1) obj;
                 if (tLObject2 != null) {
-                    AndroidUtilities.runOnUIThread(new n81(i14, bj1Var, tLObject2));
+                    AndroidUtilities.runOnUIThread(new p81(i16, bj1Var, tLObject2));
                     break;
                 }
                 break;

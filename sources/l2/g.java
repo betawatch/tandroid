@@ -24,12 +24,11 @@ import java.util.Map;
 import k2.u;
 import u2.d0;
 import v7.q7;
-import y2.p;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final class g extends u2.a {
-    public y2.m A;
+    public y2.l A;
     public c0 B;
     public b5 C;
     public Handler D;
@@ -55,14 +54,14 @@ public final class g extends u2.a {
     public final long o;
     public final long p;
     public final a5.a q;
-    public final y2.o r;
+    public final y2.n r;
     public final l.d s;
     public final Object t;
     public final SparseArray u;
     public final c v;
     public final c w;
     public final u x;
-    public final y2.n y;
+    public final y2.m y;
     public g2.h z;
 
     static {
@@ -71,7 +70,7 @@ public final class g extends u2.a {
 
     /* JADX WARN: Type inference failed for: r2v11, types: [l2.c] */
     /* JADX WARN: Type inference failed for: r2v12, types: [l2.c] */
-    public g(k0 k0Var, g2.g gVar, y2.o oVar, a5.a aVar, ob.a aVar2, n2.n nVar, qb.b bVar, long j3, long j10) {
+    public g(k0 k0Var, g2.g gVar, y2.n nVar, a5.a aVar, ob.a aVar2, n2.n nVar2, qb.b bVar, long j3, long j10) {
         this.P = k0Var;
         this.E = k0Var.c;
         f0 f0Var = k0Var.b;
@@ -81,9 +80,9 @@ public final class g extends u2.a {
         this.G = uri;
         this.H = null;
         this.i = gVar;
-        this.r = oVar;
+        this.r = nVar;
         this.j = aVar;
-        this.l = nVar;
+        this.l = nVar2;
         this.m = bVar;
         this.o = j3;
         this.p = j10;
@@ -167,10 +166,10 @@ public final class g extends u2.a {
         this.I = false;
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
-        p pVar = new p(this.z, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, this.r);
+        y2.o oVar = new y2.o(this.z, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, this.r);
         l.d dVar = this.s;
         this.m.getClass();
-        this.A.f(pVar, dVar, 3);
+        this.A.f(oVar, dVar, 3);
     }
 
     @Override // u2.a
@@ -222,7 +221,7 @@ public final class g extends u2.a {
             return;
         }
         this.z = this.i.createDataSource();
-        this.A = new y2.m("DashMediaSource");
+        this.A = new y2.l("DashMediaSource");
         this.D = e2.d0.o(null);
         A();
     }
@@ -244,9 +243,9 @@ public final class g extends u2.a {
     public final void q() {
         this.I = false;
         this.z = null;
-        y2.m mVar = this.A;
-        if (mVar != null) {
-            mVar.e(null);
+        y2.l lVar = this.A;
+        if (lVar != null) {
+            lVar.e(null);
             this.A = null;
         }
         this.J = 0L;
@@ -276,7 +275,7 @@ public final class g extends u2.a {
 
     public final void v() {
         boolean z10;
-        y2.m mVar = this.A;
+        y2.l lVar = this.A;
         d dVar = new d(this);
         synchronized (z2.c.b) {
             z10 = z2.c.c;
@@ -285,18 +284,18 @@ public final class g extends u2.a {
             dVar.a();
             return;
         }
-        if (mVar == null) {
-            mVar = new y2.m("SntpClient");
+        if (lVar == null) {
+            lVar = new y2.l("SntpClient");
         }
-        mVar.f(new t7.u(), new z2.b(dVar), 1);
+        lVar.f(new t7.u(), new z2.b(dVar), 1);
     }
 
-    public final void w(p pVar, long j3) {
-        long j10 = pVar.a;
-        Uri uri = pVar.d.c;
+    public final void w(y2.o oVar, long j3) {
+        long j10 = oVar.a;
+        Uri uri = oVar.d.c;
         u2.t tVar = new u2.t(j3);
         this.m.getClass();
-        this.q.o(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.q.o(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final void x(IOException iOException) {
@@ -718,11 +717,11 @@ public final class g extends u2.a {
         }
     }
 
-    public final void z(lf.g gVar, y2.o oVar) {
+    public final void z(lf.g gVar, y2.n nVar) {
         g2.h hVar = this.z;
         Uri parse = Uri.parse(gVar.c);
         Map map = Collections.EMPTY_MAP;
         e2.d.i(parse, "The uri must be set.");
-        this.A.f(new p(hVar, new g2.m(parse, 1, null, map, 0L, -1L, null, 1), 5, oVar), new d(this), 1);
+        this.A.f(new y2.o(hVar, new g2.m(parse, 1, null, map, 0L, -1L, null, 1), 5, nVar), new d(this), 1);
     }
 }

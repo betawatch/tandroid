@@ -9,6 +9,7 @@ import android.media.metrics.PlaybackMetrics;
 import android.media.metrics.PlaybackStateEvent;
 import android.media.metrics.TrackChangeEvent;
 import android.net.Uri;
+import android.os.Handler;
 import android.os.HandlerThread;
 import android.text.TextUtils;
 import android.view.View;
@@ -48,7 +49,7 @@ import org.telegram.ui.Components.ld;
 import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,20 +62,22 @@ public final /* synthetic */ class x1 implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(13:145|146|147|(3:194|195|(10:197|198|(2:189|190)|151|(1:153)|154|155|156|(1:(1:159))(7:161|162|163|164|165|166|167)|160))|149|(0)|151|(0)|154|155|156|(0)(0)|160) */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x0328, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(13:154|155|156|(3:203|204|(10:206|207|(2:198|199)|160|(1:162)|163|164|165|(1:(1:168))(7:170|171|172|173|174|175|176)|169))|158|(0)|160|(0)|163|164|165|(0)(0)|169) */
+    /* JADX WARN: Code restructure failed: missing block: B:196:0x0353, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x037a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:197:0x03a5, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x02f4  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0322  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x032a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x02e6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x03af  */
+    /* JADX WARN: Removed duplicated region for block: B:153:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x031f  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x034d  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0355 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x0311 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -391,6 +394,19 @@ public final /* synthetic */ class x1 implements Runnable {
                     } catch (Exception e12) {
                         e = e12;
                         str2 = null;
+                        FileLog.e(e);
+                        if (TextUtils.isEmpty(str2)) {
+                        }
+                        String replace = str2.replace('/', '_').replace('\\', '_');
+                        openInputStream = x3Var.getContext().getContentResolver().openInputStream(uri);
+                        if (openInputStream == null) {
+                        }
+                        str = str3;
+                        if (TextUtils.isEmpty(str)) {
+                            return;
+                        } else {
+                            return;
+                        }
                     }
                     if (query != null) {
                         try {
@@ -404,26 +420,23 @@ public final /* synthetic */ class x1 implements Runnable {
                                         FileLog.e(e);
                                         if (TextUtils.isEmpty(str2)) {
                                         }
-                                        String replace = str2.replace('/', '_').replace('\\', '_');
+                                        String replace2 = str2.replace('/', '_').replace('\\', '_');
                                         openInputStream = x3Var.getContext().getContentResolver().openInputStream(uri);
-                                        if (openInputStream != null) {
+                                        if (openInputStream == null) {
                                         }
                                         str = str3;
                                         if (TextUtils.isEmpty(str)) {
-                                            return;
-                                        } else {
-                                            return;
                                         }
                                     }
                                 }
                                 if (TextUtils.isEmpty(str2)) {
                                     str2 = "document_" + SharedConfig.getLastLocalId();
                                 }
-                                String replace2 = str2.replace('/', '_').replace('\\', '_');
+                                String replace22 = str2.replace('/', '_').replace('\\', '_');
                                 openInputStream = x3Var.getContext().getContentResolver().openInputStream(uri);
-                                if (openInputStream != null) {
+                                if (openInputStream == null) {
                                     try {
-                                        File file = new File(FileLoader.getDirectory(4), "rich_document_" + Math.abs(uri.hashCode()) + "_" + replace2);
+                                        File file = new File(FileLoader.getDirectory(4), "rich_document_" + Math.abs(uri.hashCode()) + "_" + replace22);
                                         FileOutputStream fileOutputStream = new FileOutputStream(file);
                                         try {
                                             AndroidUtilities.copyFile(openInputStream, fileOutputStream);
@@ -440,7 +453,14 @@ public final /* synthetic */ class x1 implements Runnable {
                                 }
                                 str = str3;
                             }
-                        } finally {
+                        } catch (Throwable th4) {
+                            try {
+                                query.close();
+                                throw th4;
+                            } catch (Throwable th5) {
+                                th4.addSuppressed(th5);
+                                throw th4;
+                            }
                         }
                     }
                     str2 = null;
@@ -448,9 +468,9 @@ public final /* synthetic */ class x1 implements Runnable {
                     }
                     if (TextUtils.isEmpty(str2)) {
                     }
-                    String replace22 = str2.replace('/', '_').replace('\\', '_');
+                    String replace222 = str2.replace('/', '_').replace('\\', '_');
                     openInputStream = x3Var.getContext().getContentResolver().openInputStream(uri);
-                    if (openInputStream != null) {
+                    if (openInputStream == null) {
                     }
                     str = str3;
                 }
@@ -625,35 +645,48 @@ public final /* synthetic */ class x1 implements Runnable {
                 ((k2.n) this.b).V((k2.k) this.c);
                 return;
             case 27:
-                ((ki.h) this.b).E((ki.k0) this.c);
+                ((ki.i) this.b).F((ki.l0) this.c);
                 return;
             case 28:
-                ki.h hVar = (ki.h) this.b;
+                ki.i iVar = (ki.i) this.b;
                 HandlerThread handlerThread = (HandlerThread) this.c;
-                hVar.g();
-                ki.k kVar = hVar.w;
-                if (kVar != null) {
-                    kVar.o();
-                    hVar.w = null;
+                iVar.d();
+                ki.l lVar = iVar.w;
+                if (lVar != null) {
+                    long l10 = lVar.l();
+                    ki.q qVar = iVar.v;
+                    if (qVar != null && l10 != Long.MAX_VALUE) {
+                        qVar.i = Math.max(0L, l10) * 1000;
+                        Handler handler = qVar.m;
+                        if (handler != null) {
+                            handler.removeCallbacks(qVar.e0);
+                        }
+                    }
+                }
+                iVar.h();
+                ki.l lVar2 = iVar.w;
+                if (lVar2 != null) {
+                    lVar2.q();
+                    iVar.w = null;
                 }
                 handlerThread.quitSafely();
                 return;
             default:
-                ki.q qVar = (ki.q) this.b;
+                ki.q qVar2 = (ki.q) this.b;
                 CountDownLatch countDownLatch = (CountDownLatch) this.c;
-                qVar.getClass();
+                qVar2.getClass();
                 try {
                     try {
-                        qVar.c();
-                        qVar.V = true;
-                    } finally {
-                        countDownLatch.countDown();
+                        qVar2.e();
+                        qVar2.Z = true;
+                    } catch (RuntimeException e14) {
+                        qVar2.d0 = e14;
+                        qVar2.f();
                     }
-                } catch (RuntimeException e14) {
-                    qVar.Z = e14;
-                    qVar.d();
+                    return;
+                } finally {
+                    countDownLatch.countDown();
                 }
-                return;
         }
     }
 }

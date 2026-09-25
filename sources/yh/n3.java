@@ -5,12 +5,12 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.bd;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.wl0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
-public final class n3 extends ad {
+public final class n3 extends zc {
     public final org.telegram.ui.ActionBar.d6 N;
     public String O;
     public int P;
@@ -28,7 +28,7 @@ public final class n3 extends ad {
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Emoji.replaceEmoji(str, getPaint().getFontMetricsInt(), false));
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) bd.b(ei.l.G0(i10), x0Var != null ? new wl0(this, x0Var, i10, 16) : null, this.N, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(ei.l.G0(i10), x0Var != null ? new wl0(this, x0Var, i10, 16) : null, this.N, null));
         setText(spannableStringBuilder);
         this.O = str;
         this.P = i10;

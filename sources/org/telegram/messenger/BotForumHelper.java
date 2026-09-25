@@ -20,9 +20,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.t51;
-import org.telegram.ui.oj0;
+import org.telegram.ui.nj0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class BotForumHelper extends BaseController {
     private static volatile BotForumHelper[] Instance = new BotForumHelper[4];
@@ -31,16 +31,16 @@ public class BotForumHelper extends BaseController {
     private final LongSparseArray<List<MessagesStorage.IntCallback>> pendingBotTopics;
     private final SharedPreferences preferences;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class BotDraftAnimationsPool {
-        private final DialogTopicIdKeyMap<oj0> animators = new DialogTopicIdKeyMap<>();
+        private final DialogTopicIdKeyMap<nj0> animators = new DialogTopicIdKeyMap<>();
         private final SparseIntArray ids = new SparseIntArray();
 
         public void bind(int i10, int i11) {
             this.ids.put(i11, i10);
         }
 
-        public oj0 getAnimator(long j3, int i10, boolean z10) {
+        public nj0 getAnimator(long j3, int i10, boolean z10) {
             if (i10 > 0) {
                 i10 = this.ids.get(i10, 0);
             }
@@ -48,13 +48,13 @@ public class BotForumHelper extends BaseController {
                 return null;
             }
             long j10 = i10;
-            oj0 oj0Var = this.animators.get(j3, 0L, j10);
-            if (oj0Var != null || !z10) {
-                return oj0Var;
+            nj0 nj0Var = this.animators.get(j3, 0L, j10);
+            if (nj0Var != null || !z10) {
+                return nj0Var;
             }
-            oj0 oj0Var2 = new oj0();
-            this.animators.put(j3, 0L, j10, oj0Var2);
-            return oj0Var2;
+            nj0 nj0Var2 = new nj0();
+            this.animators.put(j3, 0L, j10, nj0Var2);
+            return nj0Var2;
         }
 
         public void removeAnimator(long j3, int i10) {
@@ -68,7 +68,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class BotDraftMessage {
         private boolean canStop;
         private boolean keepOnStop;
@@ -90,7 +90,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class BotForumTextDraftDeleteNotification {
         public final long botTopicId;
         public final long botUserId;
@@ -103,7 +103,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class BotForumTextDraftUpdateNotification {
         public final long botTopicId;
         public final long botUserId;
@@ -118,7 +118,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class BotForumTopicCreateNotification {
         public final long dialogId;
         public final int topicId;
@@ -129,14 +129,14 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public enum SteamingSendButtonState {
         NO_STREAMING,
         BLOCKING,
         STOP
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class TypingBotSpan extends pq {
         public TypingBotSpan(t51 t51Var, int i10) {
             super(i10, t51Var);
@@ -520,7 +520,7 @@ public class BotForumHelper extends BaseController {
         getConnectionsManager().sendRequestTyped(tL_messages_setTyping, new l0(i10));
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class DialogTopicIdKeyMap<T> {
         private final LongSparseArray<LongSparseArray<LongSparseArray<T>>> map = new LongSparseArray<>();
 

@@ -13,10 +13,10 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import yh.k5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 s0Var.E = z10;
                 break;
             case 1:
-                yc ycVar = (yc) obj3;
+                xc xcVar = (xc) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
                 d6 d6Var = (d6) obj;
                 int i12 = R.raw.star_premium_2;
@@ -60,7 +60,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 } else {
                     string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
                 }
-                qc M = ycVar.M(string2, AndroidUtilities.replaceSingleTag(string, h6.Gi, 0, new tg.c(chat), d6Var), i12);
+                qc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, h6.Gi, 0, new tg.c(chat), d6Var), i12);
                 M.j = 5000;
                 M.j();
                 break;
@@ -94,9 +94,9 @@ public final /* synthetic */ class l0 implements Runnable {
         }
     }
 
-    public /* synthetic */ l0(yc ycVar, boolean z10, TLRPC.Chat chat, d6 d6Var) {
+    public /* synthetic */ l0(xc xcVar, boolean z10, TLRPC.Chat chat, d6 d6Var) {
         this.a = 1;
-        this.c = ycVar;
+        this.c = xcVar;
         this.b = z10;
         this.d = chat;
         this.e = d6Var;

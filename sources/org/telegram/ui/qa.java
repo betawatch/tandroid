@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class qa extends org.telegram.ui.ActionBar.m2 {
     public static final Paint H = new Paint(1);
@@ -350,7 +350,7 @@ public final class qa extends org.telegram.ui.ActionBar.m2 {
                     }
                 }
                 this.f = str;
-                org.telegram.ui.ActionBar.a6 a6Var2 = new org.telegram.ui.ActionBar.a6(15, this, str);
+                org.telegram.ui.ActionBar.a6 a6Var2 = new org.telegram.ui.ActionBar.a6(14, this, str);
                 this.h = a6Var2;
                 AndroidUtilities.runOnUIThread(a6Var2, 300L);
                 return true;

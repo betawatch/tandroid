@@ -17,7 +17,7 @@ import org.webrtc.VideoDecoder;
 import org.webrtc.VideoFrame;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
@@ -49,7 +49,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private final Object dimensionLock = new Object();
     private final Object renderedTextureMetadataLock = new Object();
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class DecodedTextureMetadata {
         final Integer decodeTimeMs;
         final long presentationTimestampUs;
@@ -60,7 +60,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class FrameInfo {
         final long decodeStartTimeMs;
         final int rotation;

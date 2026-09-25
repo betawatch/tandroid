@@ -21,7 +21,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.t01;
 import org.telegram.ui.g20;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class BotFullscreenButtons extends View {
     private final org.telegram.ui.Components.e6 animatedBack;
@@ -32,11 +32,11 @@ public class BotFullscreenButtons extends View {
     private final Paint backgroundPaint;
     private final Path backgroundPath;
     private RenderNode blurNode;
-    private final org.telegram.ui.Components.zc closeBounce;
+    private final org.telegram.ui.Components.yc closeBounce;
     private final RectF closeRect;
     private final RectF closeRectArea;
     private final t01 closeText;
-    private final org.telegram.ui.Components.zc collapseBounce;
+    private final org.telegram.ui.Components.yc collapseBounce;
     private final RectF collapseClickRect;
     private final RectF collapseRect;
     private final Paint downloadPaint;
@@ -47,10 +47,10 @@ public class BotFullscreenButtons extends View {
     private final Paint iconStrokePaint;
     private final RectF insets;
     private final RectF leftMenu;
-    private final org.telegram.ui.Components.zc menuBounce;
+    private final org.telegram.ui.Components.yc menuBounce;
     private final RectF menuClickRect;
     private final RectF menuRect;
-    private final org.telegram.ui.Components.zc nullBounce;
+    private final org.telegram.ui.Components.yc nullBounce;
     public Runnable onCloseClickListener;
     public Runnable onCollapseClickListener;
     public Runnable onMenuClickListener;
@@ -65,7 +65,7 @@ public class BotFullscreenButtons extends View {
     private Drawable verifiedForeground;
     public WebView webView;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class OptionsIcon extends Drawable {
         private final org.telegram.ui.Components.e6 animatedDownloading;
         private final Paint downloadPaint;
@@ -175,17 +175,17 @@ public class BotFullscreenButtons extends View {
         this.downloadPath = path;
         this.insets = new RectF();
         this.leftMenu = new RectF();
-        this.nullBounce = new org.telegram.ui.Components.zc((View) null);
+        this.nullBounce = new org.telegram.ui.Components.yc((View) null);
         this.closeRect = new RectF();
         this.closeRectArea = new RectF();
-        this.closeBounce = new org.telegram.ui.Components.zc(this);
+        this.closeBounce = new org.telegram.ui.Components.yc(this);
         this.rightMenu = new RectF();
         this.collapseRect = new RectF();
         this.collapseClickRect = new RectF();
-        this.collapseBounce = new org.telegram.ui.Components.zc(this);
+        this.collapseBounce = new org.telegram.ui.Components.yc(this);
         this.menuRect = new RectF();
         this.menuClickRect = new RectF();
-        this.menuBounce = new org.telegram.ui.Components.zc(this);
+        this.menuBounce = new org.telegram.ui.Components.yc(this);
         rr rrVar = rr.h;
         this.animatedBack = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
         this.preview = true;
@@ -212,7 +212,7 @@ public class BotFullscreenButtons extends View {
         path.close();
     }
 
-    private org.telegram.ui.Components.zc getBounce(int i10) {
+    private org.telegram.ui.Components.yc getBounce(int i10) {
         return i10 != 1 ? i10 != 2 ? i10 != 3 ? this.nullBounce : this.menuBounce : this.collapseBounce : this.closeBounce;
     }
 

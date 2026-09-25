@@ -50,7 +50,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class a71 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static String[] a2;
@@ -131,10 +131,10 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
     public final ci.r6 b0;
     public float b1;
     public int c;
-    public final org.telegram.ui.Components.ew[] c0;
+    public final org.telegram.ui.Components.dw[] c0;
     public final org.telegram.ui.ActionBar.m2 c1;
     public int d;
-    public org.telegram.ui.Components.ew d0;
+    public org.telegram.ui.Components.dw d0;
     public final int d1;
     public int e;
     public final s51 e0;
@@ -968,7 +968,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
             arrayList19.clear();
             if (i24 != 0 || i24 == 12 || i24 == 9 || i24 == 10) {
                 j3 = 13334;
-                yh.k5 G = yh.t5.y(i23, false).G(getDialogId(), true);
+                yh.k5 G = yh.s5.y(i23, false).G(getDialogId(), true);
                 G.a();
                 arrayList3 = new ArrayList();
                 ArrayList arrayList26 = G.l;
@@ -1289,7 +1289,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         if (i24 != 0) {
         }
         j3 = 13334;
-        yh.k5 G2 = yh.t5.y(i23, false).G(getDialogId(), true);
+        yh.k5 G2 = yh.s5.y(i23, false).G(getDialogId(), true);
         G2.a();
         arrayList3 = new ArrayList();
         ArrayList arrayList262 = G2.l;
@@ -2226,7 +2226,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         int i19;
         boolean z14;
         int i20;
-        org.telegram.ui.Components.aw awVar;
+        org.telegram.ui.Components.zv zvVar;
         int i21 = i10;
         int i22 = i12;
         this.J = new HashSet();
@@ -2237,7 +2237,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         this.M = paint2;
         this.S = new ArrayList();
         this.V = UserConfig.selectedAccount;
-        this.c0 = new org.telegram.ui.Components.ew[2];
+        this.c0 = new org.telegram.ui.Components.dw[2];
         this.v0 = new ArrayList();
         this.w0 = new SparseIntArray();
         this.x0 = new SparseIntArray();
@@ -2351,10 +2351,10 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                             i19 = i14;
                             z14 = false;
                             i20 = i21;
-                            w51Var = new w51(this, context, d6Var, z18, z14, i20, !z12 ? new ix0(29, this, m2Var) : null, i22, i10);
-                            awVar = w51Var.y;
-                            if (awVar != null) {
-                                awVar.setOnLongClickListener(new v(this, 7));
+                            w51Var = new w51(this, context, d6Var, z18, z14, i20, !z12 ? new jx0(28, this, m2Var) : null, i22, i10);
+                            zvVar = w51Var.y;
+                            if (zvVar != null) {
+                                zvVar.setOnLongClickListener(new v(this, 7));
                             }
                             w51Var.U = false;
                             if (i20 != i13) {
@@ -2377,9 +2377,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                     i19 = i14;
                     z14 = true;
                     i20 = i21;
-                    w51Var = new w51(this, context, d6Var, z18, z14, i20, !z12 ? new ix0(29, this, m2Var) : null, i22, i10);
-                    awVar = w51Var.y;
-                    if (awVar != null) {
+                    w51Var = new w51(this, context, d6Var, z18, z14, i20, !z12 ? new jx0(28, this, m2Var) : null, i22, i10);
+                    zvVar = w51Var.y;
+                    if (zvVar != null) {
                     }
                     w51Var.U = false;
                     if (i20 != i13) {
@@ -2397,9 +2397,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                 }
                 Integer num4 = num2;
                 i15 = i21;
-                org.telegram.ui.Components.ew[] ewVarArr = this.c0;
-                this.d0 = ewVarArr[0];
-                ewVarArr[1].setVisibility(8);
+                org.telegram.ui.Components.dw[] dwVarArr = this.c0;
+                this.d0 = dwVarArr[0];
+                dwVarArr[1].setVisibility(8);
                 s51 s51Var = new s51(context, num4, 1);
                 this.e0 = s51Var;
                 s51Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d7, d6Var));
@@ -2585,9 +2585,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         }
         Integer num42 = num2;
         i15 = i21;
-        org.telegram.ui.Components.ew[] ewVarArr2 = this.c0;
-        this.d0 = ewVarArr2[0];
-        ewVarArr2[1].setVisibility(8);
+        org.telegram.ui.Components.dw[] dwVarArr2 = this.c0;
+        this.d0 = dwVarArr2[0];
+        dwVarArr2[1].setVisibility(8);
         s51 s51Var3 = new s51(context, num42, 1);
         this.e0 = s51Var3;
         s51Var3.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d7, d6Var));

@@ -16,7 +16,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.y50;
 import org.telegram.ui.m51;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class f {
     public static HashMap n;
@@ -44,7 +44,7 @@ public final class f {
         this.d = m51Var;
         y50 y50Var = new y50(this, m51Var.getContext(), 1);
         this.e = y50Var;
-        y50Var.setSurfaceTextureListener(new ki.c(this, 5));
+        y50Var.setSurfaceTextureListener(new ki.d(this, 5));
         y50Var.setOpaque(false);
         m51Var.addView(y50Var);
     }

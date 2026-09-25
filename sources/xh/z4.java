@@ -1,6 +1,5 @@
 package xh;
 
-import ai.s5;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -46,16 +45,16 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bt;
 import org.telegram.ui.wn;
 import w7.y5;
-import yh.t5;
+import yh.s5;
 import yh.w7;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public class z4 extends bb implements NotificationCenter.NotificationCenterDelegate, GiftAuctionController.OnAuctionUpdateListener {
     public final boolean X;
@@ -447,7 +446,7 @@ public class z4 extends bb implements NotificationCenter.NotificationCenterDeleg
             z4Var.dismiss();
             AndroidUtilities.runOnUIThread(new q4(i10, user), 250L);
         } else if (!TextUtils.isEmpty(str)) {
-            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new yc(z4Var.topBulletinContainer, z4Var.resourcesProvider), R.raw.error, 36);
+            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new xc(z4Var.topBulletinContainer, z4Var.resourcesProvider), R.raw.error, 36);
         }
         z4Var.n0.setLoading(false);
     }
@@ -462,7 +461,7 @@ public class z4 extends bb implements NotificationCenter.NotificationCenterDeleg
             z4Var.dismiss();
             AndroidUtilities.runOnUIThread(new q4(2, user), 250L);
         } else if (!TextUtils.isEmpty(str)) {
-            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new yc(z4Var.topBulletinContainer, z4Var.resourcesProvider), R.raw.error, 36);
+            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new xc(z4Var.topBulletinContainer, z4Var.resourcesProvider), R.raw.error, 36);
         }
         z4Var.n0.setLoading(false);
     }
@@ -503,7 +502,7 @@ public class z4 extends bb implements NotificationCenter.NotificationCenterDeleg
         }
         final int i13 = 0;
         if (starGift != null) {
-            t5.y(i10, false).i(z4Var.c0, z4Var.p0, z4Var.q0, z4Var.Z, z4Var.W(), new n4(z4Var, i12));
+            s5.y(i10, false).i(z4Var.c0, z4Var.p0, z4Var.q0, z4Var.Z, z4Var.W(), new n4(z4Var, i12));
             return;
         }
         rg.k kVar = z4Var.e0;
@@ -522,7 +521,7 @@ public class z4 extends bb implements NotificationCenter.NotificationCenterDeleg
                 if (!(tLObject instanceof TLRPC.TL_premiumGiftCodeOption)) {
                     TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) tLObject;
                     if ("XTR".equalsIgnoreCase(tL_premiumGiftCodeOption.currency)) {
-                        t5.y(i10, false).g(z4Var.Z, tL_premiumGiftCodeOption, z4Var.W(), new Utilities.Callback2(z4Var) { // from class: xh.o4
+                        s5.y(i10, false).g(z4Var.Z, tL_premiumGiftCodeOption, z4Var.W(), new Utilities.Callback2(z4Var) { // from class: xh.o4
                             public final /* synthetic */ z4 b;
 
                             {
@@ -552,7 +551,7 @@ public class z4 extends bb implements NotificationCenter.NotificationCenterDeleg
                 if (tLObject instanceof TLRPC.TL_premiumGiftOption) {
                     TLRPC.TL_premiumGiftOption tL_premiumGiftOption = (TLRPC.TL_premiumGiftOption) tLObject;
                     if ("XTR".equalsIgnoreCase(tL_premiumGiftOption.currency)) {
-                        t5.y(i10, false).g(z4Var.Z, tL_premiumGiftOption, z4Var.W(), new Utilities.Callback2(z4Var) { // from class: xh.o4
+                        s5.y(i10, false).g(z4Var.Z, tL_premiumGiftOption, z4Var.W(), new Utilities.Callback2(z4Var) { // from class: xh.o4
                             public final /* synthetic */ z4 b;
 
                             {
@@ -602,7 +601,7 @@ public class z4 extends bb implements NotificationCenter.NotificationCenterDeleg
                     BillingController.getInstance().addResultListener(kVar.a.store_product, new d5(z4Var, i11));
                     TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentGiftPremium;
-                    ConnectionsManager.getInstance(i10).sendRequest(tL_payments_canPurchaseStore, new s5(z4Var, tL_inputStorePaymentGiftPremium, tL_payments_canPurchaseStore, 21));
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_payments_canPurchaseStore, new ai.s5(z4Var, tL_inputStorePaymentGiftPremium, tL_payments_canPurchaseStore, 21));
                     return;
                 }
                 return;
@@ -638,12 +637,12 @@ public class z4 extends bb implements NotificationCenter.NotificationCenterDeleg
         return null;
     }
 
-    public yc X() {
+    public xc X() {
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
         if (U == null) {
             return null;
         }
-        return yc.a0(U);
+        return xc.a0(U);
     }
 
     public final void Y(boolean z10) {
@@ -716,10 +715,10 @@ public class z4 extends bb implements NotificationCenter.NotificationCenterDeleg
         TL_stars.StarGift starGift = this.c0;
         pq[] pqVarArr = this.v0;
         if (starGift != null) {
-            long j3 = t5.y(i10, false).p().amount;
+            long j3 = s5.y(i10, false).p().amount;
             long j10 = starGift.stars + (this.q0 ? starGift.upgrade_stars : 0L) + (TextUtils.isEmpty(this.s0.getText()) ? 0L : this.j0);
             dVar.g(w7.V0(false, LocaleController.formatPluralStringComma(this.X ? "Gift2SendSelf" : "Gift2Send", (int) j10), pqVarArr), z10, true);
-            if (!t5.y(i10, false).e || j10 <= j3) {
+            if (!s5.y(i10, false).e || j10 <= j3) {
                 dVar.f(null, z10);
                 return;
             } else {

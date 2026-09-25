@@ -29,7 +29,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class zz0 extends TableLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -88,12 +88,12 @@ public final class zz0 extends TableLayout {
         addView(tableRow);
     }
 
-    public final TableRow c(CharSequence charSequence, CharSequence charSequence2, yz0[] yz0VarArr, ad[] adVarArr) {
-        ad adVar = new ad(getContext(), null);
-        adVar.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, this.a));
-        adVar.setTextSize(1, 14.0f);
-        adVar.setText(Emoji.replaceEmoji(charSequence2, adVar.getPaint().getFontMetricsInt(), false));
-        NotificationCenter.listenEmojiLoading(adVar);
+    public final TableRow c(CharSequence charSequence, CharSequence charSequence2, yz0[] yz0VarArr, zc[] zcVarArr) {
+        zc zcVar = new zc(getContext(), null);
+        zcVar.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, this.a));
+        zcVar.setTextSize(1, 14.0f);
+        zcVar.setText(Emoji.replaceEmoji(charSequence2, zcVar.getPaint().getFontMetricsInt(), false));
+        NotificationCenter.listenEmojiLoading(zcVar);
         TableRow tableRow = new TableRow(getContext());
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(-2, -1);
         yz0 yz0Var = new yz0(this, charSequence);
@@ -101,10 +101,10 @@ public final class zz0 extends TableLayout {
             yz0VarArr[0] = yz0Var;
         }
         tableRow.addView(yz0Var, layoutParams);
-        tableRow.addView(new wz0(this, adVar, false), new TableRow.LayoutParams(0, -1, 1.0f));
+        tableRow.addView(new wz0(this, zcVar, false), new TableRow.LayoutParams(0, -1, 1.0f));
         addView(tableRow);
-        if (adVarArr != null) {
-            adVarArr[0] = adVar;
+        if (zcVarArr != null) {
+            zcVarArr[0] = zcVar;
         }
         return tableRow;
     }
@@ -114,20 +114,20 @@ public final class zz0 extends TableLayout {
     }
 
     public final TableRow e(String str, CharSequence charSequence, String str2, Runnable runnable, Integer num) {
-        ad adVar = new ad(getContext(), null);
+        zc zcVar = new zc(getContext(), null);
         int i10 = org.telegram.ui.ActionBar.h6.G6;
         org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        adVar.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
-        adVar.setTextSize(1, 14.0f);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Emoji.replaceEmoji(charSequence, adVar.getPaint().getFontMetricsInt(), false));
+        zcVar.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        zcVar.setTextSize(1, 14.0f);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Emoji.replaceEmoji(charSequence, zcVar.getPaint().getFontMetricsInt(), false));
         if (str2 != null) {
-            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) bd.b(str2, runnable, d6Var, num));
+            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(str2, runnable, d6Var, num));
         }
-        adVar.setText(spannableStringBuilder);
-        NotificationCenter.listenEmojiLoading(adVar);
+        zcVar.setText(spannableStringBuilder);
+        NotificationCenter.listenEmojiLoading(zcVar);
         TableRow tableRow = new TableRow(getContext());
         tableRow.addView(new yz0(this, str), new TableRow.LayoutParams(-2, -1));
-        tableRow.addView(new wz0(this, adVar, false), new TableRow.LayoutParams(0, -1, 1.0f));
+        tableRow.addView(new wz0(this, zcVar, false), new TableRow.LayoutParams(0, -1, 1.0f));
         addView(tableRow);
         return tableRow;
     }
@@ -150,12 +150,12 @@ public final class zz0 extends TableLayout {
         n90Var.setSingleLine(true);
         n90Var.setDisablePaddingsOffsetY(true);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str2);
-        spannableStringBuilder.setSpan(new vc(3, runnable), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new uc(3, runnable), 0, spannableStringBuilder.length(), 33);
         n90Var.setText(spannableStringBuilder);
         i(n90Var, str);
     }
 
-    public final void h(String str, CharSequence charSequence, int i10, yh.r5 r5Var) {
+    public final void h(String str, CharSequence charSequence, int i10, yh.z5 z5Var) {
         FrameLayout frameLayout = new FrameLayout(getContext());
         frameLayout.setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(10.66f), AndroidUtilities.dp(9.33f));
         TextView textView = new TextView(getContext());
@@ -173,7 +173,7 @@ public final class zz0 extends TableLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         int i12 = org.telegram.ui.ActionBar.h6.v6;
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i12, d6Var), PorterDuff.Mode.SRC_IN));
-        imageView.setOnClickListener(new et(16, charSequence, r5Var));
+        imageView.setOnClickListener(new et(16, charSequence, z5Var));
         w7.a6.a(imageView);
         imageView.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.l1(0.1f, org.telegram.ui.ActionBar.h6.v0(i12, d6Var)), 7, -1));
         frameLayout.addView(imageView, w7.y5.e(30, 30, 21));
@@ -195,16 +195,16 @@ public final class zz0 extends TableLayout {
         boolean z11;
         Context context = getContext();
         org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        ad adVar = new ad(context, d6Var);
-        adVar.setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
-        adVar.setEllipsize(TextUtils.TruncateAt.END);
+        zc zcVar = new zc(context, d6Var);
+        zcVar.setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
+        zcVar.setEllipsize(TextUtils.TruncateAt.END);
         int i11 = org.telegram.ui.ActionBar.h6.gc;
-        adVar.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        adVar.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        adVar.setTextSize(1, 14.0f);
-        adVar.setSingleLine(true);
-        adVar.setDisablePaddingsOffsetY(true);
-        org.telegram.ui.g5 g5Var = new org.telegram.ui.g5(adVar, 24.0f, i10);
+        zcVar.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        zcVar.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        zcVar.setTextSize(1, 14.0f);
+        zcVar.setSingleLine(true);
+        zcVar.setDisablePaddingsOffsetY(true);
+        org.telegram.ui.g5 g5Var = new org.telegram.ui.g5(zcVar, 24.0f, i10);
         ImageReceiver imageReceiver = g5Var.b;
         if (j3 == UserObject.ANONYMOUS) {
             str3 = LocaleController.getString(R.string.StarsTransactionHidden);
@@ -245,16 +245,16 @@ public final class zz0 extends TableLayout {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x  " + ((Object) str3));
         spannableStringBuilder.setSpan(g5Var, 0, 1, 33);
         if (z11) {
-            spannableStringBuilder.setSpan(new vc(2, runnable), 3, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new uc(2, runnable), 3, spannableStringBuilder.length(), 33);
         }
         if (str != null) {
-            adVar.M = new bd(str, runnable2, d6Var);
+            zcVar.M = new ad(str, runnable2, d6Var);
         }
-        adVar.setText(spannableStringBuilder);
+        zcVar.setText(spannableStringBuilder);
         if (z10) {
             return null;
         }
-        return i(adVar, charSequence);
+        return i(zcVar, charSequence);
     }
 
     public final void k(String str, int i10, long j3, Runnable runnable) {
@@ -307,7 +307,7 @@ public final class zz0 extends TableLayout {
         spannableStringBuilder.setSpan(g5Var, 0, 1, 33);
         if (z10) {
             l90Var.setClickable(true);
-            spannableStringBuilder.setSpan(new vc(1, runnable), 3, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new uc(1, runnable), 3, spannableStringBuilder.length(), 33);
         }
         final int v02 = org.telegram.ui.ActionBar.h6.v0(i11, d6Var);
         final o5 o5Var = new o5(AndroidUtilities.dp(20.0f), l90Var);

@@ -39,7 +39,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.bh;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class x2 extends FrameLayout {
     public final org.telegram.ui.Components.y5 E;
@@ -549,8 +549,8 @@ public final class x2 extends FrameLayout {
                 if ((starGift2 != null ? starGift2 : null) != null) {
                     i14++;
                     TL_stars.StarGift starGift3 = starGift2 != null ? starGift2 : null;
-                    TL_stars.starGiftAttributePattern stargiftattributepattern2 = (TL_stars.starGiftAttributePattern) t5.l(starGift3.attributes, TL_stars.starGiftAttributePattern.class);
-                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = (TL_stars.starGiftAttributeBackdrop) t5.l(starGift3.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                    TL_stars.starGiftAttributePattern stargiftattributepattern2 = (TL_stars.starGiftAttributePattern) s5.l(starGift3.attributes, TL_stars.starGiftAttributePattern.class);
+                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = (TL_stars.starGiftAttributeBackdrop) s5.l(starGift3.attributes, TL_stars.starGiftAttributeBackdrop.class);
                     hashMap3.put(Integer.valueOf(stargiftattributebackdrop2.backdrop_id), Integer.valueOf(((Integer) Map.-EL.getOrDefault(hashMap3, Integer.valueOf(stargiftattributebackdrop2.backdrop_id), 0)).intValue() + 1));
                     hashMap4.put(Long.valueOf(stargiftattributepattern2.document.id), Integer.valueOf(((Integer) Map.-EL.getOrDefault(hashMap4, Long.valueOf(stargiftattributepattern2.document.id), 0)).intValue() + 1));
                 }
@@ -593,7 +593,7 @@ public final class x2 extends FrameLayout {
                             if (starGift4 == null) {
                                 starGift4 = null;
                             }
-                            stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) t5.l(starGift4.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                            stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) s5.l(starGift4.attributes, TL_stars.starGiftAttributeBackdrop.class);
                             if (stargiftattributebackdrop.backdrop_id == intValue) {
                                 break;
                             }
@@ -661,7 +661,7 @@ public final class x2 extends FrameLayout {
                             if (starGift5 == null) {
                                 starGift5 = null;
                             }
-                            TL_stars.starGiftAttributePattern stargiftattributepattern3 = (TL_stars.starGiftAttributePattern) t5.l(starGift5.attributes, TL_stars.starGiftAttributePattern.class);
+                            TL_stars.starGiftAttributePattern stargiftattributepattern3 = (TL_stars.starGiftAttributePattern) s5.l(starGift5.attributes, TL_stars.starGiftAttributePattern.class);
                             if (stargiftattributepattern3 != null) {
                                 l2VarArr = l2VarArr3;
                                 if (stargiftattributepattern3.document.id == longValue) {

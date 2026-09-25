@@ -38,7 +38,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.s51;
 import org.telegram.ui.il0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public class e4 extends View {
     public boolean A0;
@@ -94,7 +94,7 @@ public class e4 extends View {
     public Drawable n;
     public ValueAnimator n0;
     public float o0;
-    public final org.telegram.ui.Components.zc p0;
+    public final org.telegram.ui.Components.yc p0;
     public final Rect q0;
     public boolean r;
     public final RectF r0;
@@ -139,7 +139,7 @@ public class e4 extends View {
         this.e0 = AndroidUtilities.dp(2.0f);
         this.m0 = new il0(this, 26);
         this.o0 = 1.0f;
-        this.p0 = new org.telegram.ui.Components.zc(this, 2.0f, 5.0f);
+        this.p0 = new org.telegram.ui.Components.yc(this, 2.0f, 5.0f);
         this.q0 = new Rect();
         this.r0 = new RectF();
         this.s0 = new RectF();
@@ -855,10 +855,10 @@ public class e4 extends View {
                 float x11 = motionEvent.getX();
                 float y10 = motionEvent.getY();
                 int action = motionEvent.getAction();
-                org.telegram.ui.Components.zc zcVar = this.p0;
+                org.telegram.ui.Components.yc ycVar = this.p0;
                 if (action == 0) {
                     if (this.r0.contains(motionEvent.getX() - 0.0f, motionEvent.getY() - 0.0f)) {
-                        zcVar.c(true);
+                        ycVar.c(true);
                         org.telegram.ui.Cells.z zVar = this.a0;
                         if (zVar != null) {
                             zVar.setHotspot(x11, y10);
@@ -873,14 +873,14 @@ public class e4 extends View {
                     } else if (this.T) {
                         e(true);
                     }
-                    zcVar.c(false);
+                    ycVar.c(false);
                     org.telegram.ui.Cells.z zVar2 = this.a0;
                     if (zVar2 != null) {
                         zVar2.setState(new int[0]);
                         return true;
                     }
                 } else if (motionEvent.getAction() == 3) {
-                    zcVar.c(false);
+                    ycVar.c(false);
                     org.telegram.ui.Cells.z zVar3 = this.a0;
                     if (zVar3 != null) {
                         zVar3.setState(new int[0]);

@@ -52,7 +52,7 @@ import qb.b;
 import t7.u;
 import u2.e0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class s71 implements b2.z0, b2.w1, j2.b, NotificationCenter.NotificationCenterDelegate {
     public static int j0;
@@ -1199,7 +1199,7 @@ public class s71 implements b2.z0, b2.w1, j2.b, NotificationCenter.NotificationC
             pVar3.f = new i2.o(kVar, 0);
             i2.f0 a10 = pVar3.a();
             this.e = a10;
-            a10.m.a(new ki.h0(this, 1));
+            a10.m.a(new ki.i0(this, 1));
             this.e.X(this.w);
         }
     }
@@ -1342,7 +1342,7 @@ public class s71 implements b2.z0, b2.w1, j2.b, NotificationCenter.NotificationC
 
     @Override // b2.z0
     public final void onPlayerError(b2.u0 u0Var) {
-        AndroidUtilities.runOnUIThread(new wn0(22, this, u0Var));
+        AndroidUtilities.runOnUIThread(new wn0(21, this, u0Var));
     }
 
     @Override // b2.z0

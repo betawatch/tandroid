@@ -26,7 +26,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class ThemeEditorView {
     public static volatile ThemeEditorView n;
@@ -44,7 +44,7 @@ public class ThemeEditorView {
     public EditorAlert l;
     public org.telegram.ui.ActionBar.g6 m;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class EditorAlert extends org.telegram.ui.ActionBar.e3 {
         public static final /* synthetic */ int M = 0;
         public int E;

@@ -36,12 +36,12 @@ import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.g20;
 import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public abstract class o1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public n0 E;
@@ -235,7 +235,7 @@ public abstract class o1 extends FrameLayout implements NotificationCenter.Notif
     public static Integer a(o1 o1Var, Long l4) {
         o1Var.d0.run();
         o1Var.R = l4.longValue();
-        org.telegram.ui.Components.qc M = new yc(o1Var.b, new d()).M(o1Var.getStarsToastTitle(), o1Var.getStarsToastSubtitle(), R.raw.stars_topup);
+        org.telegram.ui.Components.qc M = new xc(o1Var.b, new d()).M(o1Var.getStarsToastTitle(), o1Var.getStarsToastSubtitle(), R.raw.stars_topup);
         boolean z10 = false;
         M.r = false;
         M.k(true);

@@ -111,7 +111,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class ChatActivityEnterView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, zv0, cy0, vy0, le.e, org.telegram.ui.ActionBar.x5 {
     public static final /* synthetic */ int n5 = 0;
@@ -243,7 +243,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public org.telegram.ui.mn V2;
     public Drawable V3;
     public int V4;
-    public uc W;
+    public kd W;
     public boolean W0;
     public boolean W1;
     public MessageObject W2;
@@ -422,7 +422,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public boolean z3;
     public boolean z4;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class RecordCircle extends View {
         public final float E;
         public float F;
@@ -987,7 +987,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public class SlideTextView extends View {
         public final int E;
         public final Path F;
@@ -1890,7 +1890,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                     }
                     if (document == null || !MessageObject.isFreeEmoji(document)) {
-                        yc.a0(m2Var).q(document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", R.string.PremiumMore), new ud(0, m2Var)).j();
+                        xc.a0(m2Var).q(document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", R.string.PremiumMore), new ud(0, m2Var)).j();
                         return true;
                     }
                 } else {
@@ -4902,7 +4902,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             tdVar.run();
             return;
         }
-        e5.o(this.P2, MessagesController.getInstance(this.Q).getUser(Long.valueOf(this.Q2)), new uc(4, this, tdVar), new td(this, 29));
+        e5.o(this.P2, MessagesController.getInstance(this.Q).getUser(Long.valueOf(this.Q2)), new kd(3, this, tdVar), new td(this, 29));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -7382,7 +7382,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) zf.c.a(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeUrl.class);
             if (tL_inlineButtonTypeCopy != null) {
                 AndroidUtilities.addToClipboard(tL_inlineButtonTypeCopy.copy_text);
-                yc.a0(wnVar).i(LocaleController.formatString(R.string.ExactTextCopied, tL_inlineButtonTypeCopy.copy_text)).k(true);
+                xc.a0(wnVar).i(LocaleController.formatString(R.string.ExactTextCopied, tL_inlineButtonTypeCopy.copy_text)).k(true);
                 return true;
             }
             if (keyboardButtonProto instanceof TL_keyboard.TL_keyboardButton) {
@@ -7505,14 +7505,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 Boolean bool = tL_requestPeerTypeUser.bot;
                                 Boolean bool2 = tL_requestPeerTypeUser.premium;
                                 ie ieVar = new ie(this, messageObject2, tL_buttonTypeRequestPeer);
-                                org.telegram.ui.lj0 lj0Var = org.telegram.ui.lj0.u0;
+                                org.telegram.ui.kj0 kj0Var = org.telegram.ui.kj0.u0;
                                 org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
-                                if (R == null || org.telegram.ui.lj0.u0 != null) {
+                                if (R == null || org.telegram.ui.kj0.u0 != null) {
                                     return false;
                                 }
-                                org.telegram.ui.lj0 lj0Var2 = new org.telegram.ui.lj0(R, i10, bool, bool2, ieVar);
-                                lj0Var2.show();
-                                org.telegram.ui.lj0.u0 = lj0Var2;
+                                org.telegram.ui.kj0 kj0Var2 = new org.telegram.ui.kj0(R, i10, bool, bool2, ieVar);
+                                kj0Var2.show();
+                                org.telegram.ui.kj0.u0 = kj0Var2;
                                 return false;
                             }
                             Bundle e7 = org.telegram.messenger.ok.e(15, "onlySelect", "dialogsType", true);
@@ -7641,13 +7641,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         TLRPC.MessageMedia messageMedia = messageObject2.messageOwner.media;
                         this.Y2 = ((messageMedia instanceof TLRPC.TL_messageMediaWebPage) || !messageMedia.manual) && ((i11 = messageObject2.type) == 0 || i11 == 19);
                         if (this.z2) {
-                            uc ucVar = new uc(3, this, charSequence2);
-                            this.W = ucVar;
-                            AndroidUtilities.runOnUIThread(ucVar, 200L);
+                            kd kdVar = new kd(2, this, charSequence2);
+                            this.W = kdVar;
+                            AndroidUtilities.runOnUIThread(kdVar, 200L);
                         } else {
-                            uc ucVar2 = this.W;
-                            if (ucVar2 != null) {
-                                AndroidUtilities.cancelRunOnUIThread(ucVar2);
+                            kd kdVar2 = this.W;
+                            if (kdVar2 != null) {
+                                AndroidUtilities.cancelRunOnUIThread(kdVar2);
                                 this.W = null;
                             }
                             setFieldText(charSequence2);
@@ -7736,9 +7736,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 if (afVar != null) {
                 }
             } else {
-                uc ucVar3 = this.W;
-                if (ucVar3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(ucVar3);
+                kd kdVar3 = this.W;
+                if (kdVar3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(kdVar3);
                     this.W = null;
                 }
                 ye yeVar = this.F1;
@@ -7893,7 +7893,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (wnVar == null || (of3 = wnVar.g5) == null) {
                 of3 = MessageSuggestionParams.of(this.Z1.messageOwner.suggested_post);
             }
-            if (!yh.t5.U(this.Q, of3.amount)) {
+            if (!yh.s5.U(this.Q, of3.amount)) {
                 if (wnVar != null) {
                     wnVar.Tb(of3);
                     return;
@@ -9267,7 +9267,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 aw0Var.requestLayout();
                 if (this.y4) {
-                    aw0Var.setForeground(new fd(this));
+                    aw0Var.setForeground(new ed(this));
                 }
                 qf qfVar = this.E0;
                 if (qfVar != null) {
@@ -9910,7 +9910,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.M.m(0.0f, (imageView.getWidth() / 2.0f) + AndroidUtilities.dp(4.0f));
             addView(this.M, w7.y5.d(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
             ci.e4 e4Var4 = this.M;
-            e4Var4.l0 = new uc(2, this, e4Var3);
+            e4Var4.l0 = new kd(1, this, e4Var3);
             e4Var4.d = 4000L;
             e4Var4.u();
             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) + 1).apply();
@@ -9965,7 +9965,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (wnVar == null || !ChatObject.isChannelAndNotMegaGroup(wnVar.e)) {
             return;
         }
-        yc.a0(wnVar).f(MessagesController.getInstance(this.Q).captionLengthLimitPremium, new td(this, 0)).j();
+        xc.a0(wnVar).f(MessagesController.getInstance(this.Q).captionLengthLimitPremium, new td(this, 0)).j();
     }
 
     public final boolean r0() {
@@ -10563,7 +10563,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public final void u1() {
         og ogVar = this.Z2;
         if ((ogVar == null || !ogVar.m()) && DialogObject.isChatDialog(this.Q2)) {
-            yc.a0(this.P2).G(R.raw.passcode_lock_close, 3, LocaleController.formatString("SendPlainTextRestrictionHint", R.string.SendPlainTextRestrictionHint, ChatObject.getAllowedSendString(this.R.getMessagesController().getChat(Long.valueOf(-this.Q2))))).j();
+            xc.a0(this.P2).G(R.raw.passcode_lock_close, 3, LocaleController.formatString("SendPlainTextRestrictionHint", R.string.SendPlainTextRestrictionHint, ChatObject.getAllowedSendString(this.R.getMessagesController().getChat(Long.valueOf(-this.Q2))))).j();
         }
     }
 

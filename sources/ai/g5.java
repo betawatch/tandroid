@@ -27,13 +27,13 @@ import org.telegram.ui.Components.b61;
 import org.telegram.ui.Components.c40;
 import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.na0;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y51;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.z51;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class g5 extends xa {
     public final /* synthetic */ jc x0;
@@ -64,7 +64,7 @@ public final class g5 extends xa {
             }
             a5 a5Var = e6Var.c1;
             org.telegram.ui.ActionBar.d6 d6Var = this.y0;
-            org.telegram.ui.Components.qc h = new yc(a5Var, d6Var).h(document, 2, new c5(this, this.x0, d6Var, 0));
+            org.telegram.ui.Components.qc h = new xc(a5Var, d6Var).h(document, 2, new c5(this, this.x0, d6Var, 0));
             if (h == null) {
                 return;
             }
@@ -100,7 +100,7 @@ public final class g5 extends xa {
             } else {
                 y51 y51Var = (y51) characterStyle;
                 AndroidUtilities.addToClipboard(y51Var.a.subSequence(y51Var.b, y51Var.c).toString());
-                ok.o(R.string.TextCopied, new yc(e6Var.c1, this.y0));
+                ok.o(R.string.TextCopied, new xc(e6Var.c1, this.y0));
                 return;
             }
         }
@@ -169,7 +169,7 @@ public final class g5 extends xa {
                     g5Var.G(uRLSpan, view);
                 } else if (i10 == 1) {
                     AndroidUtilities.addToClipboard(url);
-                    new yc(g5Var.z0.c1, d6Var2).k(false).j();
+                    new xc(g5Var.z0.c1, d6Var2).k(false).j();
                 }
             }
         };
@@ -211,7 +211,7 @@ public final class g5 extends xa {
                             long clientUserId = UserConfig.getInstance(e6Var2.C2).getClientUserId();
                             c6 c6Var = e6Var2.O1;
                             sendMessagesHelper.sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, null, clientUserId, null, null, null, null, null, null, false, 0, 0, 0, c6Var != null ? c6Var.a : null, null, false));
-                            new yc(e6Var2.c1, d6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryAudioAddToSavedMessagesToast), -1, 2, new f(25))).k(true);
+                            new xc(e6Var2.c1, d6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryAudioAddToSavedMessagesToast), -1, 2, new f(25))).k(true);
                             break;
                         default:
                             e6 e6Var3 = this.b.z0;
@@ -226,7 +226,7 @@ public final class g5 extends xa {
                                 MediaController.getInstance().currentSavedMusicList.add(document2);
                             }
                             ConnectionsManager.getInstance(e6Var3.C2).sendRequest(tL_account_saveMusic, null);
-                            new yc(e6Var3.c1, d6Var).Q(R.raw.ic_save_to_music, 36, LocaleController.getString(R.string.StoryAudioAddToProfileToast)).k(true);
+                            new xc(e6Var3.c1, d6Var).Q(R.raw.ic_save_to_music, 36, LocaleController.getString(R.string.StoryAudioAddToProfileToast)).k(true);
                             break;
                     }
                 }
@@ -249,7 +249,7 @@ public final class g5 extends xa {
                             long clientUserId = UserConfig.getInstance(e6Var2.C2).getClientUserId();
                             c6 c6Var = e6Var2.O1;
                             sendMessagesHelper.sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, null, clientUserId, null, null, null, null, null, null, false, 0, 0, 0, c6Var != null ? c6Var.a : null, null, false));
-                            new yc(e6Var2.c1, d6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryAudioAddToSavedMessagesToast), -1, 2, new f(25))).k(true);
+                            new xc(e6Var2.c1, d6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryAudioAddToSavedMessagesToast), -1, 2, new f(25))).k(true);
                             break;
                         default:
                             e6 e6Var3 = this.b.z0;
@@ -264,7 +264,7 @@ public final class g5 extends xa {
                                 MediaController.getInstance().currentSavedMusicList.add(document2);
                             }
                             ConnectionsManager.getInstance(e6Var3.C2).sendRequest(tL_account_saveMusic, null);
-                            new yc(e6Var3.c1, d6Var).Q(R.raw.ic_save_to_music, 36, LocaleController.getString(R.string.StoryAudioAddToProfileToast)).k(true);
+                            new xc(e6Var3.c1, d6Var).Q(R.raw.ic_save_to_music, 36, LocaleController.getString(R.string.StoryAudioAddToProfileToast)).k(true);
                             break;
                     }
                 }
@@ -287,7 +287,7 @@ public final class g5 extends xa {
             MessagesController.getInstance(e6Var.C2).getStoriesController().d0(saVar.b.longValue(), saVar.c.intValue(), new e4(this, saVar, jcVar, d6Var, 1));
             return;
         }
-        org.telegram.ui.Components.qc Q = new yc(e6Var.c1, d6Var).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
+        org.telegram.ui.Components.qc Q = new xc(e6Var.c1, d6Var).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
         Q.a = 3;
         Q.k(true);
     }

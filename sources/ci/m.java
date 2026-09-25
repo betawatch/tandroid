@@ -41,7 +41,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.t01;
 import org.telegram.ui.us0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public abstract class m extends FrameLayout {
     public final RectF A0;
@@ -92,7 +92,7 @@ public abstract class m extends FrameLayout {
     public final Paint e;
     public boolean e0;
     public final g f;
-    public final org.telegram.ui.Components.zc f0;
+    public final org.telegram.ui.Components.yc f0;
     public ObjectAnimator g0;
     public final Drawable h;
     public ah.c h0;
@@ -141,7 +141,7 @@ public abstract class m extends FrameLayout {
         this.N = -4;
         this.U = UserConfig.selectedAccount;
         this.c0 = new e(this, 0);
-        this.f0 = new org.telegram.ui.Components.zc(this, 1.0f, 3.0f);
+        this.f0 = new org.telegram.ui.Components.yc(this, 1.0f, 3.0f);
         this.n0 = new e(this, 1);
         rr rrVar = rr.h;
         this.v0 = new org.telegram.ui.Components.e6(this, 0L, 300L, rrVar);
@@ -553,10 +553,10 @@ public abstract class m extends FrameLayout {
         if (!this.e0 && (motionEvent.getAction() != 0 || !l(motionEvent.getX(), motionEvent.getY()))) {
             if (this.B0.contains(motionEvent.getX(), motionEvent.getY()) || this.p0) {
                 int action = motionEvent.getAction();
-                org.telegram.ui.Components.zc zcVar = this.f0;
+                org.telegram.ui.Components.yc ycVar = this.f0;
                 if (action != 0 || this.p0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        zcVar.c(false);
+                        ycVar.c(false);
                     }
                     return super.dispatchTouchEvent(motionEvent);
                 }
@@ -575,7 +575,7 @@ public abstract class m extends FrameLayout {
                         fuVar.requestFocus();
                         AndroidUtilities.showKeyboard(fuVar);
                         gVar.getEditText().setScrollY(0);
-                        zcVar.c(true);
+                        ycVar.c(true);
                         return true;
                     }
                     View childAt = getChildAt(i10);

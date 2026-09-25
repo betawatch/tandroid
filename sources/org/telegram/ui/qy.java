@@ -105,7 +105,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, mg.b, le.e, xg0 {
     public static boolean w4;
@@ -462,7 +462,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
     public static void A0(qy qyVar) {
         MessagesController.getInstance(qyVar.currentAccount).removeSuggestion(0L, "PREMIUM_CHRISTMAS");
         qyVar.U4();
-        org.telegram.ui.Components.qc G = org.telegram.ui.Components.yc.a0(qyVar).G(R.raw.gift, 4, LocaleController.getString(R.string.BoostingPremiumChristmasToast));
+        org.telegram.ui.Components.qc G = org.telegram.ui.Components.xc.a0(qyVar).G(R.raw.gift, 4, LocaleController.getString(R.string.BoostingPremiumChristmasToast));
         G.j = 5000;
         G.j();
     }
@@ -480,7 +480,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
     public static void C0(qy qyVar) {
         MessagesController.getInstance(qyVar.currentAccount).removeSuggestion(0L, "BIRTHDAY_SETUP");
         qyVar.U4();
-        org.telegram.ui.Components.qc J = org.telegram.ui.Components.yc.a0(qyVar).J(R.raw.chats_infotip, LocaleController.getString(R.string.BirthdaySetupLater), LocaleController.getString(R.string.Settings), new lv(qyVar, 1));
+        org.telegram.ui.Components.qc J = org.telegram.ui.Components.xc.a0(qyVar).J(R.raw.chats_infotip, LocaleController.getString(R.string.BirthdaySetupLater), LocaleController.getString(R.string.Settings), new lv(qyVar, 1));
         J.j = 5000;
         J.j();
     }
@@ -789,7 +789,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
     public static void I0(qy qyVar, TLObject tLObject, TLRPC.UserFull userFull, TL_account.TL_birthday tL_birthday, TLRPC.TL_error tL_error) {
         String str;
         if (tLObject instanceof TLRPC.TL_boolTrue) {
-            org.telegram.ui.Components.qc M = org.telegram.ui.Components.yc.a0(qyVar).M(LocaleController.getString(R.string.PrivacyBirthdaySetDone), LocaleController.getString(R.string.PrivacyBirthdaySetDoneInfo), R.raw.gift);
+            org.telegram.ui.Components.qc M = org.telegram.ui.Components.xc.a0(qyVar).M(LocaleController.getString(R.string.PrivacyBirthdaySetDone), LocaleController.getString(R.string.PrivacyBirthdaySetDoneInfo), R.raw.gift);
             M.j = 5000;
             M.j();
             return;
@@ -804,7 +804,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
             qyVar.getMessagesStorage().updateUserInfo(userFull, false);
         }
         if (tL_error == null || (str = tL_error.text) == null || !str.startsWith("FLOOD_WAIT_")) {
-            org.telegram.messenger.f0.p(R.string.UnknownError, org.telegram.ui.Components.yc.a0(qyVar), R.raw.error, 36);
+            org.telegram.messenger.f0.p(R.string.UnknownError, org.telegram.ui.Components.xc.a0(qyVar), R.raw.error, 36);
             return;
         }
         if (qyVar.getParentActivity() != null) {
@@ -1566,7 +1566,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         BirthdayController.getInstance(qyVar.currentAccount).hide();
         MessagesController.getInstance(qyVar.currentAccount).removeSuggestion(0L, "BIRTHDAY_CONTACTS_TODAY");
         qyVar.U4();
-        org.telegram.ui.Components.qc G = org.telegram.ui.Components.yc.a0(qyVar).G(R.raw.gift, 4, LocaleController.getString(R.string.BoostingPremiumChristmasToast));
+        org.telegram.ui.Components.qc G = org.telegram.ui.Components.xc.a0(qyVar).G(R.raw.gift, 4, LocaleController.getString(R.string.BoostingPremiumChristmasToast));
         G.j = 5000;
         G.j();
     }
@@ -2082,7 +2082,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
 
     public final void G4() {
         getContactsController().loadGlobalPrivacySetting();
-        org.telegram.ui.Components.v6 v6Var = new org.telegram.ui.Components.v6(getParentActivity(), this.currentAccount, getResourceProvider(), new tt(5, this, r0), new aj(r0, 17));
+        org.telegram.ui.Components.v6 v6Var = new org.telegram.ui.Components.v6(getParentActivity(), this.currentAccount, getResourceProvider(), new tt(4, this, r0), new aj(r0, 17));
         org.telegram.ui.ActionBar.z2 z2Var = new org.telegram.ui.ActionBar.z2(getParentActivity(), getResourceProvider());
         z2Var.c(v6Var);
         org.telegram.ui.ActionBar.e3 e3Var = z2Var.a;
@@ -2628,7 +2628,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                 if (tL_attachMenuBot2.show_in_side_menu) {
                     pv pvVar = new pv(this, tL_attachMenuBot2, launchActivity2, 0);
-                    tt ttVar2 = new tt(4, this, tL_attachMenuBot2);
+                    tt ttVar2 = new tt(3, this, tL_attachMenuBot2);
                     org.telegram.ui.ActionBar.d6 d6Var3 = H.d;
                     if (H.e != null) {
                         int i15 = org.telegram.ui.ActionBar.h6.F8;
@@ -2935,7 +2935,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         AndroidUtilities.shakeViewSpring(view, i10);
         BotWebViewVibrationEffect.APP_ERROR.vibrate();
         String userName = j3 >= 0 ? UserObject.getUserName(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3))) : "";
-        (getMessagesController().premiumFeaturesBlocked() ? org.telegram.ui.Components.yc.a0(this).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : org.telegram.ui.Components.yc.a0(this).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new lv(this, 22))).j();
+        (getMessagesController().premiumFeaturesBlocked() ? org.telegram.ui.Components.xc.a0(this).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : org.telegram.ui.Components.xc.a0(this).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new lv(this, 22))).j();
     }
 
     public final void O3(final long j3, final long j10, boolean z10, final wf1 wf1Var) {
@@ -4310,7 +4310,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                     });
                 } else {
                     if (this.V2 == 0 && this.X2 == 0 && MessagesController.getInstance(this.currentAccount).pendingSuggestions.contains("STARS_SUBSCRIPTION_LOW_BALANCE")) {
-                        yh.t5 y3 = yh.t5.y(this.currentAccount, false);
+                        yh.s5 y3 = yh.s5.y(this.currentAccount, false);
                         ArrayList arrayList = y3.z;
                         if (!arrayList.isEmpty()) {
                             long j13 = -y3.f.amount;
@@ -4339,7 +4339,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                             }
                             j3 = j12;
                             if (j13 > j3) {
-                                yh.t5 y10 = yh.t5.y(this.currentAccount, false);
+                                yh.s5 y10 = yh.s5.y(this.currentAccount, false);
                                 ArrayList arrayList2 = y10.z;
                                 StringBuilder sb3 = new StringBuilder();
                                 if (arrayList2.isEmpty()) {
@@ -4625,7 +4625,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                                 this.M1.a(this.currentAccount, arrayList4);
                                 this.M1.b(Emoji.replaceWithRestrictedEmoji(AndroidUtilities.replaceSingleTag(arrayList4.size() == 1 ? LocaleController.formatString(R.string.BirthdayTodaySingleTitle, UserObject.getForcedFirstName(arrayList4.get(0))) : LocaleController.formatPluralString("BirthdayTodayMultipleTitle", arrayList4.size(), new Object[0]), org.telegram.ui.ActionBar.h6.I6, 2, null), this.M1.c, new ew(this, i12)), LocaleController.formatString(arrayList4.size() == 1 ? R.string.BirthdayTodaySingleMessage2 : R.string.BirthdayTodayMultipleMessage2, new Object[0]));
                                 this.M1.setOnCloseListener(new rv(this, 14));
-                                yh.t5.y(this.currentAccount, false).V();
+                                yh.s5.y(this.currentAccount, false).V();
                             }
                             z13 = true;
                             str = null;
@@ -5740,7 +5740,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
             pyVar.addView(pyVar.w, w7.y5.e(-2, -2, i16));
             my myVar = new my(this, context2, pyVar);
             pyVar.a = myVar;
-            myVar.C0(new tt(6, this, pyVar));
+            myVar.C0(new tt(5, this, pyVar));
             ?? r42 = pyVar.a;
             pyVar.b = new a5.a((org.telegram.ui.Components.wl0) r42);
             r42.setAllowStopHeaveOperations(r82);
@@ -8628,7 +8628,7 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                         }
                         int i18 = 4;
                         if (b10 == 4) {
-                            org.telegram.messenger.f0.p(isChannelAndNotMegaGroup ? R.string.CommunityHiddenChannelUnavailable : R.string.CommunityHiddenGroupUnavailable, org.telegram.ui.Components.yc.a0(this), R.raw.e_hand_2, 36);
+                            org.telegram.messenger.f0.p(isChannelAndNotMegaGroup ? R.string.CommunityHiddenChannelUnavailable : R.string.CommunityHiddenGroupUnavailable, org.telegram.ui.Components.xc.a0(this), R.raw.e_hand_2, 36);
                             return;
                         }
                         if (chat5 == null || !(((z11 = chat5.monoforum) || chat5.forum) && j14 == j3)) {
@@ -9921,9 +9921,9 @@ public class qy extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
-    public final void r4(java.util.ArrayList r46, int r47, boolean r48, boolean r49, java.util.HashSet r50) {
+    public final void r4(java.util.ArrayList r40, int r41, boolean r42, boolean r43, java.util.HashSet r44) {
         /*
-            Method dump skipped, instructions count: 2785
+            Method dump skipped, instructions count: 2783
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.qy.r4(java.util.ArrayList, int, boolean, boolean, java.util.HashSet):void");

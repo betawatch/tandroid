@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class t31 extends org.telegram.ui.ActionBar.e3 {
     public static final /* synthetic */ int v = 0;
@@ -89,7 +89,7 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static void K(int i10, final Context context, final long j3, final boolean z10, final boolean z11, final ArrayList arrayList, final org.telegram.ui.Components.yc ycVar, final org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, String str, final Utilities.Callback callback) {
+    public static void K(int i10, final Context context, final long j3, final boolean z10, final boolean z11, final ArrayList arrayList, final org.telegram.ui.Components.xc xcVar, final org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, String str, final Utilities.Callback callback) {
         TLRPC.TL_messages_report tL_messages_report;
         TLRPC.TL_messages_report tL_messages_report2;
         if (context != null) {
@@ -114,7 +114,7 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
                     ConnectionsManager.getInstance(i10).sendRequestTyped(tL_messages_report, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.j31
                         @Override // org.telegram.messenger.Utilities.Callback2
                         public final void run(Object obj, Object obj2) {
-                            t31.m(context, d6Var, z10, z11, j3, arrayList, zArr, callback, ycVar, (TLRPC.ReportResult) obj);
+                            t31.m(context, d6Var, z10, z11, j3, arrayList, zArr, callback, xcVar, (TLRPC.ReportResult) obj);
                         }
                     });
                 }
@@ -129,7 +129,7 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
             ConnectionsManager.getInstance(i10).sendRequestTyped(tL_messages_report, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.j31
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
-                    t31.m(context, d6Var, z10, z11, j3, arrayList, zArr, callback, ycVar, (TLRPC.ReportResult) obj);
+                    t31.m(context, d6Var, z10, z11, j3, arrayList, zArr, callback, xcVar, (TLRPC.ReportResult) obj);
                 }
             });
         }
@@ -150,7 +150,7 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
         if (parentActivity == null) {
             return;
         }
-        K(currentAccount, parentActivity, messageObject.getDialogId(), false, messageObject.isEphemeral(), new ArrayList(Collections.singleton(Integer.valueOf(messageObject.isEphemeral() ? messageObject.getEphemeralId() : messageObject.getId()))), org.telegram.ui.Components.yc.a0(wnVar), wnVar.getResourceProvider(), new byte[0], null, null);
+        K(currentAccount, parentActivity, messageObject.getDialogId(), false, messageObject.isEphemeral(), new ArrayList(Collections.singleton(Integer.valueOf(messageObject.isEphemeral() ? messageObject.getEphemeralId() : messageObject.getId()))), org.telegram.ui.Components.xc.a0(wnVar), wnVar.getResourceProvider(), new byte[0], null, null);
     }
 
     public static void N(wn wnVar, MessageObject messageObject, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -167,7 +167,7 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
         ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new ei.b1(parentActivity, d6Var, a2, bArr, wnVar, messageObject, currentAccount));
     }
 
-    public static void m(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11, long j3, ArrayList arrayList, boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.yc ycVar, TLRPC.ReportResult reportResult) {
+    public static void m(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11, long j3, ArrayList arrayList, boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.xc xcVar, TLRPC.ReportResult reportResult) {
         boolean z12 = reportResult instanceof TLRPC.TL_reportResultChooseOption;
         if (!z12 && !(reportResult instanceof TLRPC.TL_reportResultAddComment)) {
             AndroidUtilities.runOnUIThread(new e31(0, callback, zArr), 200L);
@@ -182,14 +182,14 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
             View view = viewPages[0];
             if (view instanceof s31) {
                 ((s31) view).a(0);
-                t31Var.containerView.post(new ix0(23, viewPages, tL_reportResultAddComment));
+                t31Var.containerView.post(new jx0(22, viewPages, tL_reportResultAddComment));
             }
             View view2 = viewPages[1];
             if (view2 instanceof s31) {
                 ((s31) view2).a(1);
             }
         }
-        t31Var.s = new k31(zArr, callback, ycVar);
+        t31Var.s = new k31(zArr, callback, xcVar);
         t31Var.setOnDismissListener(new e31(1, callback, zArr));
         t31Var.show();
     }
@@ -287,7 +287,7 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
         View view = viewPages[0];
         if (view instanceof s31) {
             ((s31) view).a(0);
-            this.containerView.post(new ix0(22, viewPages, tL_channels_sponsoredMessageReportResultChooseOption));
+            this.containerView.post(new jx0(21, viewPages, tL_channels_sponsoredMessageReportResultChooseOption));
         }
         View view2 = viewPages[1];
         if (view2 instanceof s31) {
@@ -300,7 +300,7 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
         View view = viewPages[0];
         if (view instanceof s31) {
             ((s31) view).a(0);
-            this.containerView.post(new ix0(24, viewPages, tL_reportResultChooseOption));
+            this.containerView.post(new jx0(23, viewPages, tL_reportResultChooseOption));
         }
         View view2 = viewPages[1];
         if (view2 instanceof s31) {

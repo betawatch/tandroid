@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
@@ -53,11 +54,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h5 implements Runnable {
     public final /* synthetic */ int a;
@@ -115,6 +116,41 @@ public final /* synthetic */ class h5 implements Runnable {
         }
     }
 
+    private final void b() {
+        int a2;
+        ki.q qVar = (ki.q) this.b;
+        ki.l0 l0Var = (ki.l0) this.c;
+        ki.l0 l0Var2 = (ki.l0) this.d;
+        Handler handler = (Handler) this.e;
+        if (qVar.Z && qVar.G == 0 && qVar.D) {
+            qVar.x.g(qVar.w, qVar.s, false);
+            qVar.E = false;
+            qVar.F = false;
+            qVar.M = 0.0f;
+            qVar.G = 1;
+            long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
+            qVar.H = elapsedRealtimeNanos;
+            qVar.I = elapsedRealtimeNanos;
+            qVar.N = l0Var;
+            qVar.O = l0Var2;
+            String[] strArr = ki.t0.a;
+            synchronized (ki.t0.class) {
+                ki.t0.b();
+                if (l0Var == l0Var2) {
+                    throw new IllegalArgumentException("Camera switch direction must change");
+                }
+                a2 = ki.t0.a(l0Var == ki.l0.b ? 0 : 1);
+            }
+            qVar.L = a2;
+            qVar.J = ((Math.max(210, Math.min(300, 300 - ((Math.max(0, a2 - 400) * 3) / 20))) * 45) / 100) * 1000000;
+            qVar.K = (r4 - r5) * 1000000;
+            qVar.e.b("synthetic camera switch started: from=" + l0Var + ", to=" + l0Var2 + ", expectedWaitMs=" + qVar.L + ", targetBlurRadiusPx=" + (((qVar.x.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((qVar.J + qVar.K) / 1000000));
+            qVar.A = -1L;
+            handler.removeCallbacks(qVar.e0);
+            handler.post(qVar.e0);
+        }
+    }
+
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:83:0x015b, code lost:
     
@@ -139,7 +175,7 @@ public final /* synthetic */ class h5 implements Runnable {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final void b() {
+    private final void c() {
         Bitmap bitmap;
         Bundle bundle;
         e9.i0 i0Var;
@@ -378,7 +414,7 @@ public final /* synthetic */ class h5 implements Runnable {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final void c() {
+    private final void e() {
         m4.a1 a1Var = (m4.a1) this.b;
         m4.r rVar = (m4.r) this.c;
         m4.a0 a0Var = (m4.a0) this.d;
@@ -444,49 +480,45 @@ public final /* synthetic */ class h5 implements Runnable {
         }
     }
 
-    private final void e() {
+    private final void f() {
         oi.f fVar = (oi.f) this.b;
         ((ArrayDeque) fVar.a).addLast(new oi.e((le.b) this.c, (oi.b) this.d, (RequestTimeDelegate) this.e));
         fVar.K();
     }
 
-    private final void f() {
+    private final void g() {
         CameraController.lambda$openRound$9((CameraSession) this.b, (Runnable) this.c, (SurfaceTexture) this.d, (Runnable) this.e);
     }
 
-    private final void g() {
+    private final void h() {
         CameraController.lambda$close$5((Runnable) this.b, (CameraSession) this.c, (CountDownLatch) this.d, (Runnable) this.e);
     }
 
-    private final void h() {
-        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (y70) this.e);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:346:0x08d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:346:0x08ce, code lost:
     
         if (r6 != null) goto L306;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:347:0x08d4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:347:0x08d0, code lost:
     
         r6.dispose();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:348:0x08ea, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:348:0x08e6, code lost:
     
         org.telegram.messenger.AndroidUtilities.runOnUIThread(new ai.y8(r2, 2));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:349:0x08f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:349:0x08ef, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:357:0x08e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:357:0x08e3, code lost:
     
         if (r6 != null) goto L306;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x0166, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0162, code lost:
     
         if (r10 == null) goto L72;
      */
-    /* JADX WARN: Removed duplicated region for block: B:417:0x0a26  */
+    /* JADX WARN: Removed duplicated region for block: B:417:0x0a22  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -634,7 +666,7 @@ public final /* synthetic */ class h5 implements Runnable {
                     c10 = 0;
                 } else {
                     c10 = 0;
-                    yc.a0(U).d0(tL_error, false);
+                    xc.a0(U).d0(tL_error, false);
                 }
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(x8Var.a);
                 int i14 = NotificationCenter.storyAlbumsCollectionsUpdate;
@@ -1047,7 +1079,7 @@ public final /* synthetic */ class h5 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
                 AndroidUtilities.addToClipboard(connectedbotstarref.url);
-                new yc(e3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
+                new xc(e3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
                 return;
             case 9:
                 ei.e4.x0((ei.e4) this.b, (Context) this.c, (TLRPC.User) this.d, (TL_payments.connectedBotStarRef) this.e);
@@ -1233,6 +1265,9 @@ public final /* synthetic */ class h5 implements Runnable {
                 a();
                 return;
             case 20:
+                b();
+                return;
+            case 21:
                 oi.f fVar = (oi.f) this.b;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
                 m4.e eVar = (m4.e) this.d;
@@ -1248,13 +1283,13 @@ public final /* synthetic */ class h5 implements Runnable {
                     }
                 }
                 return;
-            case 21:
-                b();
-                return;
             case 22:
                 c();
                 return;
             case 23:
+                e();
+                return;
+            case 24:
                 m4.a0 a0Var2 = (m4.a0) this.b;
                 i9.c0 c0Var = (i9.c0) this.c;
                 e2.h hVar = (e2.h) this.d;
@@ -1271,7 +1306,7 @@ public final /* synthetic */ class h5 implements Runnable {
                     c0Var.n(th7);
                     return;
                 }
-            case 24:
+            case 25:
                 m4.a0 a0Var3 = (m4.a0) this.b;
                 m4.y0 y0Var = (m4.y0) this.c;
                 m4.r rVar2 = (m4.r) this.d;
@@ -1280,9 +1315,6 @@ public final /* synthetic */ class h5 implements Runnable {
                     return;
                 }
                 y0Var.a(a0Var3.t, rVar2, list);
-                return;
-            case 25:
-                e();
                 return;
             case 26:
                 f();
@@ -1294,7 +1326,7 @@ public final /* synthetic */ class h5 implements Runnable {
                 h();
                 return;
             default:
-                ((Utilities.Callback) this.e).run(org.telegram.ui.ActionBar.h6.Q0((File) this.b, (String) this.c, (String[]) this.d));
+                ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (y70) this.e);
                 return;
         }
     }
@@ -1313,14 +1345,6 @@ public final /* synthetic */ class h5 implements Runnable {
         this.c = obj2;
         this.d = obj3;
         this.e = obj4;
-    }
-
-    public /* synthetic */ h5(Utilities.Callback callback, File file, String str, String[] strArr) {
-        this.a = 29;
-        this.e = callback;
-        this.b = file;
-        this.c = str;
-        this.d = strArr;
     }
 
     public /* synthetic */ h5(TLObject tLObject, boolean[] zArr, org.telegram.ui.web.q qVar, TLRPC.UserFull userFull) {

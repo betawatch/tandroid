@@ -43,7 +43,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class ThemeActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -144,7 +144,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.m2 implements Notif
     public int y0;
     public int z0;
 
-    /* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+    /* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
     public static class InnerAccentView extends View {
         public final Paint a;
         public ObjectAnimator b;
@@ -348,7 +348,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.m2 implements Notif
                                         if (!booleanValue2 || U2 == null) {
                                             return;
                                         }
-                                        org.telegram.messenger.f0.p(R.string.AgeVerificationPassedTitle, org.telegram.ui.Components.yc.a0(U2), R.raw.contact_check, 36);
+                                        org.telegram.messenger.f0.p(R.string.AgeVerificationPassedTitle, org.telegram.ui.Components.xc.a0(U2), R.raw.contact_check, 36);
                                     }
                                 };
                                 k3Var.H0 = r62;
@@ -557,12 +557,12 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.m2 implements Notif
             }
             final AtomicReference atomicReference2 = new AtomicReference();
             LinearLayout f12 = org.telegram.messenger.ok.f(context, 1);
-            ArrayList b10 = org.telegram.ui.web.o1.b();
+            ArrayList b10 = org.telegram.ui.web.n1.b();
             int size = b10.size();
             CharSequence[] charSequenceArr2 = new CharSequence[size];
             final int i18 = 0;
             while (i18 < size) {
-                charSequenceArr2[i18] = ((org.telegram.ui.web.o1) b10.get(i18)).a;
+                charSequenceArr2[i18] = ((org.telegram.ui.web.n1) b10.get(i18)).a;
                 org.telegram.ui.Cells.l6 l6Var2 = new org.telegram.ui.Cells.l6(themeActivity.getParentActivity(), null);
                 l6Var2.setPadding(AndroidUtilities.dp(f10), 0, AndroidUtilities.dp(4.0f), 0);
                 l6Var2.a(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.g7, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E5, false));
@@ -757,13 +757,13 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.m2 implements Notif
                 }
                 return;
             }
-            n81 n81Var = new n81(5, themeActivity, view);
+            p81 p81Var = new p81(4, themeActivity, view);
             AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(context, 0, themeActivity.resourceProvider);
             String string6 = LocaleController.getString(R.string.ConfirmSensitiveContentTitle);
             org.telegram.ui.ActionBar.a2 a2Var4 = alertDialog$Builder4.a;
             a2Var4.R = string6;
             a2Var4.T = LocaleController.getString(R.string.ConfirmSensitiveContentText);
-            alertDialog$Builder4.k(LocaleController.getString(R.string.Confirm), new ds0(12, themeActivity, n81Var));
+            alertDialog$Builder4.k(LocaleController.getString(R.string.Confirm), new ds0(12, themeActivity, p81Var));
             alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
             themeActivity.showDialog(a2Var4);
             return;
@@ -924,8 +924,8 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.m2 implements Notif
         }
     }
 
-    public static void X(ThemeActivity themeActivity, n81 n81Var) {
-        C0(themeActivity.currentAccount, themeActivity.getParentActivity(), new bt(19, themeActivity, n81Var), themeActivity.getResourceProvider());
+    public static void X(ThemeActivity themeActivity, p81 p81Var) {
+        C0(themeActivity.currentAccount, themeActivity.getParentActivity(), new bt(19, themeActivity, p81Var), themeActivity.getResourceProvider());
     }
 
     public static boolean Y(ThemeActivity themeActivity, int i10, boolean z10) {

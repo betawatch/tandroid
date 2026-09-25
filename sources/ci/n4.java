@@ -39,7 +39,7 @@ import org.telegram.ui.fm0;
 import org.telegram.ui.gn0;
 import org.telegram.ui.gq0;
 import org.telegram.ui.i80;
-import org.telegram.ui.ix0;
+import org.telegram.ui.jx0;
 import org.telegram.ui.k80;
 import org.telegram.ui.sa1;
 import org.telegram.ui.sh1;
@@ -49,7 +49,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.xg0;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -379,7 +379,7 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                         boolean z13 = z12;
                         profileActivity.x5 = new org.telegram.messenger.u8(profileActivity, clientUserId, arrayList6, z12, 9);
                         org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(profileActivity, zArr3, arrayList6, zArr2, clientUserId, 7);
-                        (z13 ? org.telegram.ui.Components.yc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), fVar).j() : org.telegram.ui.Components.yc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, fVar).j()).v = new ix0(12, profileActivity, zArr3);
+                        (z13 ? org.telegram.ui.Components.xc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), fVar).j() : org.telegram.ui.Components.xc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, fVar).j()).v = new jx0(11, profileActivity, zArr3);
                         break;
                     }
                 } else {
@@ -407,7 +407,7 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                     if (!arrayList7.isEmpty()) {
                         org.telegram.messenger.j7 j7Var = new org.telegram.messenger.j7(profileActivity, a2, h12, arrayList7, 14);
                         profileActivity.getMessagesController().getStoriesController().c0(h12, a2, arrayList7);
-                        org.telegram.ui.Components.yc.a0(profileActivity).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", arrayList7.size(), w10)), LocaleController.getString(R.string.UndoNoCaps), j7Var).j();
+                        org.telegram.ui.Components.xc.a0(profileActivity).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", arrayList7.size(), w10)), LocaleController.getString(R.string.UndoNoCaps), j7Var).j();
                         break;
                     }
                 }

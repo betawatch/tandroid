@@ -40,7 +40,7 @@ import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.zr0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -57,7 +57,7 @@ import tg.t0;
 import tg.v;
 import u2.b0;
 import u2.f0;
-import u2.k0;
+import u2.j0;
 import u2.p;
 import xh.g4;
 import xh.h4;
@@ -67,7 +67,7 @@ import xh.r2;
 import yh.j2;
 import yh.x3;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, androidx.car.app.utils.b, q9.d, j2, Utilities.Callback5, ll0, mg1, a61 {
     public final /* synthetic */ int a;
@@ -183,7 +183,7 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
     @Override // e2.h
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.b;
-        ((k0) obj).d(aVar.b, (f0) aVar.c, (b0) this.c);
+        ((j0) obj).d(aVar.b, (f0) aVar.c, (b0) this.c);
     }
 
     @Override // s5.f
@@ -251,7 +251,7 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
         o2Var.f(true);
         int i10 = o2Var.b;
         if (j3 == UserConfig.getInstance(i10).getClientUserId()) {
-            yc a02 = yc.a0(zr0Var.a);
+            xc a02 = xc.a0(zr0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
             String string = LocaleController.getString(R.string.BoughtResoldGiftTitle);
             int i11 = R.string.BoughtResoldGiftText;
@@ -262,7 +262,7 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
             O.r = false;
             O.j();
         } else {
-            qc O2 = yc.a0(zr0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j3)));
+            qc O2 = xc.a0(zr0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j3)));
             O2.r = false;
             O2.j();
         }

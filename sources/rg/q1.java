@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.pw0;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.bt;
 import org.telegram.ui.l21;
 import xh.s2;
@@ -28,7 +28,7 @@ import yh.o2;
 import yh.p2;
 import yh.x2;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 break;
             case 4:
                 CharSequence charSequence = (CharSequence) obj;
-                yc X = yc.X();
+                xc X = xc.X();
                 if (X != null) {
                     X.Q(R.raw.forward, 30, charSequence).j();
                     break;

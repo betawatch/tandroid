@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements ad0, org.telegram.ui.ActionBar.z1, d5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final /* synthetic */ class x1 implements ad0, org.telegram.ui.ActionBar.
     }
 
     @Override // p.a
-    public qc a(yc ycVar) {
-        return ycVar.k(false);
+    public qc a(xc xcVar) {
+        return xcVar.k(false);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate

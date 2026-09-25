@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class cu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.u4 {
     private static final int ACCESSIBILITY_ACTION_SHARE = 268435456;
@@ -857,7 +857,7 @@ public class cu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         t41 t41Var = new t41(getContext(), U != null ? U.getResourceProvider() : null);
         t41Var.a0 = subSequence;
         if (LanguageDetector.hasSupport()) {
-            LanguageDetector.detectLanguage(subSequence.toString(), new nv(t41Var, 26), new fa0(27));
+            LanguageDetector.detectLanguage(subSequence.toString(), new mv(t41Var, 26), new fa0(27));
         }
         t41Var.d0 = new vt(this, i10, selectionEnd);
         t41Var.show();

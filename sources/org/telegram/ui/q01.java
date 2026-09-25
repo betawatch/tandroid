@@ -45,7 +45,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class q01 extends org.telegram.ui.Components.vl0 {
     public final Context c;
@@ -246,20 +246,20 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
         return (i10 == profileActivity.E3 || i10 == profileActivity.F3) ? 28 : 0;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:566:0x0e37, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:566:0x0e35, code lost:
     
         if (r0.about != null) goto L574;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x04db  */
-    /* JADX WARN: Removed duplicated region for block: B:265:0x05e7 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x05f3  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x05fb  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x04d9  */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x05e5 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x05f1  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x05f9  */
     /* JADX WARN: Removed duplicated region for block: B:53:0x01aa  */
-    /* JADX WARN: Removed duplicated region for block: B:549:0x0de0  */
+    /* JADX WARN: Removed duplicated region for block: B:549:0x0dde  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:643:0x130a  */
-    /* JADX WARN: Removed duplicated region for block: B:649:0x134a  */
+    /* JADX WARN: Removed duplicated region for block: B:643:0x1308  */
+    /* JADX WARN: Removed duplicated region for block: B:649:0x1348  */
     /* JADX WARN: Removed duplicated region for block: B:75:0x0230  */
     @Override // s4.h0
     /*
@@ -1246,7 +1246,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                                                                                                                                                                 i67 = profileActivity.d4;
                                                                                                                                                                 if (i10 == i67) {
                                                                                                                                                                     i78 = ((org.telegram.ui.ActionBar.m2) profileActivity).currentAccount;
-                                                                                                                                                                    yh.t5 w10 = yh.t5.w(i78);
+                                                                                                                                                                    yh.s5 w10 = yh.s5.w(i78);
                                                                                                                                                                     long j35 = w10.p().amount;
                                                                                                                                                                     String string17 = LocaleController.getString(R.string.MenuTelegramStars);
                                                                                                                                                                     CharSequence charSequence2 = str13;
@@ -1262,7 +1262,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                                                                                                                                                                     i68 = profileActivity.e4;
                                                                                                                                                                     if (i10 == i68) {
                                                                                                                                                                         i77 = ((org.telegram.ui.ActionBar.m2) profileActivity).currentAccount;
-                                                                                                                                                                        yh.t5 L = yh.t5.L(i77);
+                                                                                                                                                                        yh.s5 L = yh.s5.L(i77);
                                                                                                                                                                         long j36 = L.p().amount;
                                                                                                                                                                         String string18 = LocaleController.getString(R.string.MyTON);
                                                                                                                                                                         CharSequence charSequence3 = str13;
@@ -1659,6 +1659,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                         if (TLObject.hasFlag(userFull28.flags2, 33554432)) {
                             userFull29 = profileActivity.v2;
                             l4 = Long.valueOf(userFull29.bot_manager_id);
+                            int i131 = 14;
                             if (profileActivity.i4 < 0 || botverification != null || l4 != null) {
                                 e9Var.setFixedSize(0);
                                 MessagesController messagesController11 = profileActivity.getMessagesController();
@@ -1698,7 +1699,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                                     spannableStringBuilder4.append("</>");
                                     spannableStringBuilder4.setSpan(new org.telegram.ui.Components.pq(R.drawable.managed_bot), length, spannableStringBuilder4.length(), 33);
                                     spannableStringBuilder4.append(" ");
-                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.ProfileBotManagedBy, UserObject.getPublicUsername(user2)), profileActivity.getThemedColor(org.telegram.ui.ActionBar.h6.gc), new ix0(15, this, l4)));
+                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.ProfileBotManagedBy, UserObject.getPublicUsername(user2)), profileActivity.getThemedColor(org.telegram.ui.ActionBar.h6.gc), new jx0(i131, this, l4)));
                                 }
                                 e9Var.setLinkTextRippleColor(Integer.valueOf(org.telegram.ui.ActionBar.h6.l1(0.2f, profileActivity.getThemedColor(org.telegram.ui.ActionBar.h6.B6))));
                                 e9Var.setText(spannableStringBuilder4);
@@ -1711,6 +1712,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                         }
                     }
                     l4 = null;
+                    int i1312 = 14;
                     if (profileActivity.i4 < 0) {
                     }
                     e9Var.setFixedSize(0);
@@ -1734,7 +1736,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                         TLRPC.User user7 = messagesController12.getUser(Long.valueOf(j30));
                         if (user7 != null && user7.bot && user7.bot_can_edit) {
                             e9Var.setFixedSize(0);
-                            int i131 = R.string.ProfileBotAffiliateProgramInfoOwner;
+                            int i132 = R.string.ProfileBotAffiliateProgramInfoOwner;
                             String userName = UserObject.getUserName(user7);
                             userFull23 = profileActivity.v2;
                             if (userFull23 != null) {
@@ -1742,15 +1744,15 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                                 if (userFull24.starref_program != null) {
                                     userFull25 = profileActivity.v2;
                                     i102 = userFull25.starref_program.commission_permille;
-                                    e9Var.setText(LocaleController.formatString(i131, userName, ei.l.G0(i102)));
+                                    e9Var.setText(LocaleController.formatString(i132, userName, ei.l.G0(i102)));
                                     break;
                                 }
                             }
                             i102 = 0;
-                            e9Var.setText(LocaleController.formatString(i131, userName, ei.l.G0(i102)));
+                            e9Var.setText(LocaleController.formatString(i132, userName, ei.l.G0(i102)));
                         } else {
                             e9Var.setFixedSize(0);
-                            int i132 = R.string.ProfileBotAffiliateProgramInfo;
+                            int i133 = R.string.ProfileBotAffiliateProgramInfo;
                             String userName2 = UserObject.getUserName(user7);
                             userFull20 = profileActivity.v2;
                             if (userFull20 != null) {
@@ -1758,12 +1760,12 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                                 if (userFull21.starref_program != null) {
                                     userFull22 = profileActivity.v2;
                                     i101 = userFull22.starref_program.commission_permille;
-                                    e9Var.setText(LocaleController.formatString(i132, userName2, ei.l.G0(i101)));
+                                    e9Var.setText(LocaleController.formatString(i133, userName2, ei.l.G0(i101)));
                                     break;
                                 }
                             }
                             i101 = 0;
-                            e9Var.setText(LocaleController.formatString(i132, userName2, ei.l.G0(i101)));
+                            e9Var.setText(LocaleController.formatString(i133, userName2, ei.l.G0(i101)));
                         }
                     }
                 }
@@ -1789,15 +1791,15 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                     SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder("⚠️");
                     org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.round_warn);
                     pqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
-                    int i133 = org.telegram.ui.ActionBar.h6.wj;
+                    int i134 = org.telegram.ui.ActionBar.h6.wj;
                     d6Var = profileActivity.z0;
-                    pqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.v0(i133, d6Var));
+                    pqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.v0(i134, d6Var));
                     spannableStringBuilder5.setSpan(pqVar, 0, spannableStringBuilder5.length(), 33);
                     spannableStringBuilder5.append((CharSequence) " ");
-                    int i134 = R.string.ProfileUnofficialSecurityRisk;
+                    int i135 = R.string.ProfileUnofficialSecurityRisk;
                     MessagesController messagesController13 = profileActivity.getMessagesController();
                     j32 = profileActivity.e1;
-                    spannableStringBuilder5.append((CharSequence) LocaleController.formatString(i134, UserObject.getForcedFirstName(messagesController13.getUser(Long.valueOf(j32)))));
+                    spannableStringBuilder5.append((CharSequence) LocaleController.formatString(i135, UserObject.getForcedFirstName(messagesController13.getUser(Long.valueOf(j32)))));
                     textView.setText(spannableStringBuilder5);
                     break;
                 }

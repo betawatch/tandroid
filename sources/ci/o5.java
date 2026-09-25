@@ -13,9 +13,9 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.y70;
-import org.telegram.ui.dh;
+import org.telegram.ui.fh;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
                         y5Var.container.performHapticFeedback(3);
                     } catch (Exception unused) {
                     }
-                    new org.telegram.ui.Components.yc(y5Var.container, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new f5(q6Var, 1))).k(true);
+                    new org.telegram.ui.Components.xc(y5Var.container, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new f5(q6Var, 1))).k(true);
                     return Boolean.FALSE;
                 }
                 int i10 = 0;
@@ -89,7 +89,7 @@ public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
                     }
                 }
                 if (i10 >= 3) {
-                    new org.telegram.ui.Components.yc(y5Var.container, d6Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
+                    new org.telegram.ui.Components.xc(y5Var.container, d6Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
                     return Boolean.FALSE;
                 }
                 zArr[0] = false;
@@ -143,8 +143,8 @@ public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
                         }
                     }
                 }, tL_aiComposeTone.creator);
-                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.ActionBar.l5(e0Var, tL_aiComposeTone, context, d6Var2, 15), false);
-                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new dh(25, e0Var, tL_aiComposeTone));
+                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.ActionBar.l5(e0Var, tL_aiComposeTone, context, d6Var2, 16), false);
+                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new fh(24, e0Var, tL_aiComposeTone));
                 final int i13 = 1;
                 F.m(tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.f
                     @Override // java.lang.Runnable

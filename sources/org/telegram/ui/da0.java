@@ -1,7 +1,6 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,7 +10,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -32,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class da0 implements Runnable {
     public final /* synthetic */ int a;
@@ -258,7 +256,7 @@ public final /* synthetic */ class da0 implements Runnable {
                                             if (zipOutputStream != null) {
                                                 zipOutputStream.close();
                                             }
-                                            AndroidUtilities.runOnUIThread(new wr0((Dialog) a2Var, zArr2, (Object) activity, (Serializable) file, 5));
+                                            AndroidUtilities.runOnUIThread(new jr0(a2Var, zArr2, activity, file, 6));
                                             return;
                                         }
                                     } catch (Throwable th2) {
@@ -298,7 +296,7 @@ public final /* synthetic */ class da0 implements Runnable {
                         zipOutputStream = null;
                     }
                     zipOutputStream.close();
-                    AndroidUtilities.runOnUIThread(new wr0((Dialog) a2Var, zArr2, (Object) activity, (Serializable) file, 5));
+                    AndroidUtilities.runOnUIThread(new jr0(a2Var, zArr2, activity, file, 6));
                     return;
                 } catch (Exception e11) {
                     e11.printStackTrace();
@@ -384,7 +382,7 @@ public final /* synthetic */ class da0 implements Runnable {
                 org.telegram.ui.web.c cVar = kVar.w;
                 ArrayList arrayList4 = kVar.x;
                 arrayList4.clear();
-                org.telegram.ui.web.o1.a().getClass();
+                org.telegram.ui.web.n1.a().getClass();
                 ArrayList arrayList5 = new ArrayList();
                 try {
                     JSONArray jSONArray = new JSONArray(str2).getJSONArray(1);

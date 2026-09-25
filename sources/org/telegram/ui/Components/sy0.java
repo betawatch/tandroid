@@ -13,7 +13,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class sy0 implements org.telegram.ui.lt {
     public final /* synthetic */ xy0 a;
@@ -72,7 +72,7 @@ public final class sy0 implements org.telegram.ui.lt {
         if (!AndroidUtilities.addToClipboard(valueOf) || (vy0Var = this.a.c) == null) {
             return;
         }
-        org.telegram.messenger.ok.o(R.string.EmojiCopied, yc.a0(vy0Var.getParentFragment()));
+        org.telegram.messenger.ok.o(R.string.EmojiCopied, xc.a0(vy0Var.getParentFragment()));
     }
 
     @Override // org.telegram.ui.lt
@@ -204,12 +204,12 @@ public final class sy0 implements org.telegram.ui.lt {
         TLRPC.User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
         Object tL_emojiStatusEmpty = currentUser == null ? new TLRPC.TL_emojiStatusEmpty() : currentUser.emoji_status;
         MessagesController.getInstance(xy0Var.a).updateEmojiStatus(emojiStatus);
-        wn0 wn0Var = new wn0(12, this, tL_emojiStatusEmpty);
+        wn0 wn0Var = new wn0(11, this, tL_emojiStatusEmpty);
         vy0 vy0Var = xy0Var.c;
         org.telegram.ui.ActionBar.m2 parentFragment = vy0Var == null ? null : vy0Var.getParentFragment();
         if (parentFragment != null) {
             if (document != null) {
-                yc.a0(parentFragment).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), wn0Var).j();
+                xc.a0(parentFragment).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), wn0Var).j();
                 return;
             }
             ic icVar = new ic(xy0Var.getContext(), d6Var);

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class oj implements org.telegram.ui.Components.po {
     public final /* synthetic */ wn a;
@@ -23,7 +23,7 @@ public final class oj implements org.telegram.ui.Components.po {
     public final void n() {
         wn wnVar = this.a;
         wnVar.bc(true);
-        org.telegram.ui.Components.yc.A(wnVar, wnVar.getMessagesController().isDialogMuted(wnVar.T5, wnVar.d()), wnVar.ea).j();
+        org.telegram.ui.Components.xc.A(wnVar, wnVar.getMessagesController().isDialogMuted(wnVar.T5, wnVar.d()), wnVar.ea).j();
     }
 
     @Override // org.telegram.ui.Components.po
@@ -52,8 +52,8 @@ public final class oj implements org.telegram.ui.Components.po {
         boolean z10 = notificationsSettings.getBoolean("sound_enabled_" + NotificationsController.getSharedPrefKey(wnVar.T5, wnVar.d()), true);
         boolean z11 = !z10;
         notificationsSettings.edit().putBoolean("sound_enabled_" + NotificationsController.getSharedPrefKey(wnVar.T5, wnVar.d()), z11).apply();
-        if (org.telegram.ui.Components.yc.a(wnVar)) {
-            org.telegram.ui.Components.yc.S(z10 ? 1 : 0, wnVar, wnVar.getResourceProvider()).j();
+        if (org.telegram.ui.Components.xc.a(wnVar)) {
+            org.telegram.ui.Components.xc.S(z10 ? 1 : 0, wnVar, wnVar.getResourceProvider()).j();
         }
         wnVar.Pc(false);
     }
@@ -63,8 +63,8 @@ public final class oj implements org.telegram.ui.Components.po {
         wn wnVar = this.a;
         if (i10 != 0) {
             wnVar.getNotificationsController().muteUntil(wnVar.T5, wnVar.d(), i10);
-            if (org.telegram.ui.Components.yc.a(wnVar)) {
-                org.telegram.ui.Components.yc.z(wnVar, 5, i10, wnVar.getResourceProvider()).j();
+            if (org.telegram.ui.Components.xc.a(wnVar)) {
+                org.telegram.ui.Components.xc.z(wnVar, 5, i10, wnVar.getResourceProvider()).j();
                 return;
             }
             return;
@@ -72,8 +72,8 @@ public final class oj implements org.telegram.ui.Components.po {
         if (wnVar.getMessagesController().isDialogMuted(wnVar.T5, wnVar.d())) {
             wnVar.bc(true);
         }
-        if (org.telegram.ui.Components.yc.a(wnVar)) {
-            org.telegram.ui.Components.yc.z(wnVar, 4, i10, wnVar.getResourceProvider()).j();
+        if (org.telegram.ui.Components.xc.a(wnVar)) {
+            org.telegram.ui.Components.xc.z(wnVar, 4, i10, wnVar.getResourceProvider()).j();
         }
     }
 

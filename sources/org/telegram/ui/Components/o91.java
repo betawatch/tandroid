@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class o91 extends ViewGroup implements p71, AudioManager.OnAudioFocusChangeListener {
     public String E;
@@ -80,7 +80,7 @@ public final class o91 extends ViewGroup implements p71, AudioManager.OnAudioFoc
     public Bitmap h;
     public int h0;
     public final g91 i0;
-    public final ki.c j0;
+    public final ki.d j0;
     public final g91 k0;
     public TextureView n;
     public int r;
@@ -112,7 +112,7 @@ public final class o91 extends ViewGroup implements p71, AudioManager.OnAudioFoc
         Paint paint = new Paint();
         this.Q = paint;
         this.i0 = new g91(this, 0);
-        this.j0 = new ki.c(this, 4);
+        this.j0 = new ki.d(this, 4);
         this.k0 = new g91(this, 1);
         setWillNotDraw(false);
         this.v = l91Var;

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public abstract class pa0 extends b71 {
     public final int T;
@@ -82,7 +82,7 @@ public abstract class pa0 extends b71 {
             if (m2Var instanceof org.telegram.ui.wn) {
                 boolean P9 = ((org.telegram.ui.wn) m2Var).P9();
                 this.Z = true;
-                AndroidUtilities.runOnUIThread(new cv(22, this, h2Var), P9 ? 200L : 0L);
+                AndroidUtilities.runOnUIThread(new vw(21, this, h2Var), P9 ? 200L : 0L);
             } else {
                 this.Z = true;
                 setFocusable(true);

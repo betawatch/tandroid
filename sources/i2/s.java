@@ -59,14 +59,14 @@ import org.telegram.ui.gn0;
 import org.telegram.ui.hc0;
 import org.telegram.ui.j20;
 import org.telegram.ui.kj;
-import org.telegram.ui.lj0;
+import org.telegram.ui.kj0;
 import org.telegram.ui.om0;
 import org.telegram.ui.pg0;
 import org.telegram.ui.qg0;
 import org.telegram.ui.wn;
 import org.telegram.ui.xc0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.BooleanCallback, ad0, ImageReceiver.ImageReceiverDelegate, d5, ml0, ll0, z1, xc0, hl0, nl0 {
     public final /* synthetic */ int a;
@@ -157,7 +157,7 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
                 ContactsActivity.U((ContactsActivity) this.c, this.b, view, i10);
                 break;
             default:
-                lj0.P((lj0) this.c, this.b, view);
+                kj0.P((kj0) this.c, this.b, view);
                 break;
         }
     }

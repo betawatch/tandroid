@@ -6,9 +6,10 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ke;
+import org.telegram.ui.web.o1;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements Utilities.Callback {
     public final /* synthetic */ a0 a;
@@ -30,7 +31,7 @@ public final /* synthetic */ class y implements Utilities.Callback {
         a0 a0Var = this.a;
         a0Var.dismiss();
         if (this.b == null) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(28, a0Var, this.e), 220L);
+            AndroidUtilities.runOnUIThread(new o1(27, a0Var, this.e), 220L);
             return;
         }
         m2 U = LaunchActivity.U();

@@ -53,7 +53,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.vz0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements le.e, x5 {
     public CharSequence A0;
@@ -2287,11 +2287,11 @@ public class k extends FrameLayout implements le.e, x5 {
     public final void y(RecyclerView recyclerView, boolean z10, int i10, int i11) {
         this.o1 = i10;
         this.p1 = i11;
-        ki.n nVar = new ki.n(27, this, recyclerView);
-        recyclerView.j(new ai.r(nVar, 12));
+        ki.h0 h0Var = new ki.h0(26, this, recyclerView);
+        recyclerView.j(new ai.r(h0Var, 12));
         this.n1 = z10;
         if (this.m1) {
-            nVar.run();
+            h0Var.run();
             return;
         }
         this.m1 = true;
@@ -2311,10 +2311,10 @@ public class k extends FrameLayout implements le.e, x5 {
         this.o1 = i10;
         this.p1 = i11;
         b();
-        ki.n nVar = new ki.n(26, this, mo0Var);
-        mo0Var.f.add(nVar);
+        ki.h0 h0Var = new ki.h0(25, this, mo0Var);
+        mo0Var.f.add(h0Var);
         if (this.m1) {
-            nVar.run();
+            h0Var.run();
             return;
         }
         this.m1 = true;

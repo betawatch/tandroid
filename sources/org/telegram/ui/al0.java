@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class al0 implements Runnable {
     public final /* synthetic */ org.telegram.ui.web.b1 E;
@@ -98,7 +98,7 @@ public final /* synthetic */ class al0 implements Runnable {
                     cl0.a().d0(tL_error, false);
                     return;
                 }
-                org.telegram.ui.Components.yc a2 = cl0.a();
+                org.telegram.ui.Components.xc a2 = cl0.a();
                 int i10 = R.raw.error;
                 String string = LocaleController.getString(R.string.BotAuthLoggedInFailTitle);
                 String str4 = str2;

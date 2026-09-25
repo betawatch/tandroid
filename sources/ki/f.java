@@ -2,124 +2,128 @@ package ki;
 
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CaptureRequest;
-import android.hardware.camera2.CaptureResult;
-import android.hardware.camera2.TotalCaptureResult;
-import android.os.SystemClock;
+import android.os.Handler;
+import android.util.Size;
+import ci.y0;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
-public final class f extends CameraCaptureSession.CaptureCallback {
-    public final /* synthetic */ h a;
+public final class f extends CameraCaptureSession.StateCallback {
+    public final /* synthetic */ i a;
 
-    public f(h hVar) {
-        this.a = hVar;
+    public f(i iVar) {
+        this.a = iVar;
     }
 
-    @Override // android.hardware.camera2.CameraCaptureSession.CaptureCallback
-    public final void onCaptureCompleted(CameraCaptureSession cameraCaptureSession, CaptureRequest captureRequest, TotalCaptureResult totalCaptureResult) {
-        int i10;
-        h hVar = this.a;
-        l lVar = hVar.j;
-        if (hVar.M) {
-            Object tag = captureRequest.getTag();
-            if ((tag instanceof Integer) && ((Integer) tag).intValue() == hVar.Q) {
-                hVar.N++;
-                Integer num = (Integer) totalCaptureResult.get(CaptureResult.FLASH_MODE);
-                Integer num2 = (Integer) totalCaptureResult.get(CaptureResult.FLASH_STATE);
-                boolean z10 = !hVar.L ? !(num == null || num.intValue() == 0) : !(num != null && num.intValue() == 2);
-                boolean z11 = !hVar.L || num2 == null || num2.intValue() == 3 || num2.intValue() == 4;
-                if (z10 && z11) {
-                    lVar.b("torch result confirmed: enabled=" + hVar.L + ", resultMode=" + num + ", flashState=" + num2 + ", frames=" + hVar.N + ", retries=" + hVar.O);
-                    hVar.M = false;
+    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
+    public final void onClosed(CameraCaptureSession cameraCaptureSession) {
+        i iVar = this.a;
+        if (iVar.z != cameraCaptureSession) {
+            return;
+        }
+        iVar.z = null;
+        iVar.A = null;
+        iVar.N = false;
+        iVar.j.b("capture session closed");
+    }
+
+    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
+    public final void onConfigureFailed(CameraCaptureSession cameraCaptureSession) {
+        cameraCaptureSession.close();
+        i iVar = this.a;
+        if (iVar.z == cameraCaptureSession) {
+            iVar.z = null;
+            iVar.A = null;
+        }
+        if (iVar.S) {
+            i iVar2 = this.a;
+            if (iVar2.y != null && !iVar2.U && !iVar2.Y) {
+                i iVar3 = this.a;
+                if (iVar3.G == n0.c) {
+                    iVar3.n("60 fps session configuration failed", null);
+                    return;
                 } else {
-                    int i11 = hVar.N;
-                    if (i11 == 3 && (i10 = hVar.O) == 0) {
-                        hVar.O = i10 + 1;
-                        hVar.N = 0;
-                        lVar.b("torch result not applied; rebuilding request: enabled=" + hVar.L + ", resultMode=" + num + ", flashState=" + num2);
-                        hVar.a();
-                    } else if (i11 >= 6) {
-                        lVar.b("torch result failed: enabled=" + hVar.L + ", resultMode=" + num + ", flashState=" + num2 + ", retries=" + hVar.O);
-                        hVar.M = false;
+                    iVar3.t(new IllegalStateException("Camera capture session configuration failed"));
+                    return;
+                }
+            }
+        }
+        this.a.j.b("stale capture session configuration failure ignored");
+    }
+
+    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
+    public final void onConfigured(CameraCaptureSession cameraCaptureSession) {
+        String str;
+        if (this.a.S) {
+            i iVar = this.a;
+            if (iVar.y != null) {
+                iVar.z = cameraCaptureSession;
+                try {
+                    iVar.D = iVar.E;
+                    iVar.A = iVar.l(true);
+                    q qVar = this.a.v;
+                    if (qVar != null) {
+                        Handler handler = qVar.m;
+                        if (qVar.Z && handler != null) {
+                            handler.post(new n(qVar, 1));
+                        }
+                    }
+                    i iVar2 = this.a;
+                    boolean z10 = iVar2.W;
+                    iVar2.W = false;
+                    iVar2.X = z10;
+                    i iVar3 = this.a;
+                    CameraCaptureSession cameraCaptureSession2 = iVar3.z;
+                    CaptureRequest.Builder builder = iVar3.A;
+                    if (cameraCaptureSession2 != null && builder != null) {
+                        cameraCaptureSession2.setRepeatingRequest(builder.build(), iVar3.S0, iVar3.n);
+                    }
+                    m mVar = this.a.j;
+                    StringBuilder sb2 = new StringBuilder("capture session configured: facing=");
+                    sb2.append(this.a.D);
+                    sb2.append(", fpsRange=");
+                    sb2.append(this.a.H);
+                    sb2.append(", elapsedMs=");
+                    sb2.append(i.m(this.a.h0));
+                    sb2.append(", segmentElapsedMs=");
+                    sb2.append(i.m(this.a.f0));
+                    if (z10) {
+                        str = ", switchElapsedMs=" + i.m(this.a.i0);
+                    } else {
+                        str = "";
+                    }
+                    sb2.append(str);
+                    mVar.b(sb2.toString());
+                    i iVar4 = this.a;
+                    iVar4.c.post(new a(iVar4, 7));
+                    i iVar5 = this.a;
+                    k2.u uVar = iVar5.k;
+                    l0 l0Var = iVar5.D;
+                    m0 m0Var = iVar5.F;
+                    n0 n0Var = iVar5.G;
+                    Size size = iVar5.q;
+                    Size size2 = iVar5.r;
+                    i iVar6 = this.a;
+                    ((s0) uVar.b).h.post(new y0(uVar, new h(l0Var, m0Var, n0Var, size, size2, iVar6.L, iVar6.q()), z10, 7));
+                    l0 l0Var2 = this.a.C;
+                    i iVar7 = this.a;
+                    if (l0Var2 != iVar7.D) {
+                        iVar7.F(iVar7.C);
+                        return;
+                    }
+                    return;
+                } catch (Exception e) {
+                    i iVar8 = this.a;
+                    if (iVar8.G == n0.c) {
+                        iVar8.n("60 fps request submission rejected", e);
+                        return;
+                    } else {
+                        iVar8.t(e);
+                        return;
                     }
                 }
             }
         }
-        Long l4 = (Long) totalCaptureResult.get(CaptureResult.SENSOR_TIMESTAMP);
-        if (l4 == null || l4.longValue() <= hVar.y0) {
-            return;
-        }
-        long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
-        if (hVar.x0 == 0) {
-            hVar.x0 = l4.longValue();
-            hVar.z0 = 1L;
-        } else {
-            long longValue = l4.longValue() - hVar.y0;
-            hVar.B0++;
-            hVar.C0 += longValue;
-            double d = longValue;
-            hVar.D0 = (d * d) + hVar.D0;
-            long j3 = hVar.E0;
-            if (j3 == 0 || longValue < j3) {
-                hVar.E0 = longValue;
-            }
-            hVar.F0 = Math.max(hVar.F0, longValue);
-            if (longValue > 50000000) {
-                hVar.G0++;
-            }
-            if (longValue > 100000000) {
-                hVar.H0++;
-            }
-            hVar.z0++;
-        }
-        long j10 = hVar.A0;
-        if (j10 != 0) {
-            long j11 = elapsedRealtimeNanos - j10;
-            hVar.I0++;
-            hVar.J0 += j11;
-            hVar.K0 = Math.max(hVar.K0, j11);
-        }
-        hVar.A0 = elapsedRealtimeNanos;
-        hVar.y0 = l4.longValue();
-        long longValue2 = l4.longValue() - hVar.x0;
-        if (longValue2 < 3000000000L) {
-            return;
-        }
-        float f7 = ((hVar.z0 - 1) * 1.0E9f) / longValue2;
-        m0 m0Var = hVar.F;
-        int i12 = m0Var == null ? 0 : m0Var.a;
-        StringBuilder sb2 = new StringBuilder("camera capture rate: measuredFps=");
-        sb2.append(f7);
-        sb2.append(", requestedFps=");
-        sb2.append(hVar.h.a);
-        sb2.append(", activeFps=");
-        sb2.append(i12 == 0 ? "unknown" : Integer.valueOf(i12));
-        sb2.append(", targetMet=");
-        sb2.append(i12 == 0 || f7 >= ((float) i12) * 0.85f);
-        sb2.append(", fpsRange=");
-        sb2.append(hVar.G);
-        sb2.append(", sensorIntervalMs={avg=");
-        sb2.append(h.c(hVar.C0, hVar.B0));
-        sb2.append(", min=");
-        sb2.append(hVar.E0 / 1000000.0f);
-        sb2.append(", max=");
-        sb2.append(hVar.F0 / 1000000.0f);
-        sb2.append(", jitter=");
-        sb2.append(h.A(hVar.D0, hVar.C0, hVar.B0));
-        sb2.append("}, sensorGaps={over50ms=");
-        sb2.append(hVar.G0);
-        sb2.append(", over100ms=");
-        sb2.append(hVar.H0);
-        sb2.append("}, callbackIntervalMs={avg=");
-        sb2.append(h.c(hVar.J0, hVar.I0));
-        sb2.append(", max=");
-        sb2.append(hVar.K0 / 1000000.0f);
-        sb2.append("}");
-        lVar.b(sb2.toString());
-        hVar.t();
-        hVar.x0 = l4.longValue();
-        hVar.y0 = l4.longValue();
-        hVar.z0 = 1L;
-        hVar.A0 = elapsedRealtimeNanos;
+        cameraCaptureSession.close();
     }
 }

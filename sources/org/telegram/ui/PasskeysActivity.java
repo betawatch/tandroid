@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public class PasskeysActivity extends org.telegram.ui.ActionBar.m2 {
     public org.telegram.ui.Components.r61 a;
@@ -42,7 +42,7 @@ public class PasskeysActivity extends org.telegram.ui.ActionBar.m2 {
             return;
         }
         if (!"EMPTY".equalsIgnoreCase(str)) {
-            org.telegram.ui.Components.yc.a0(passkeysActivity).c0(str, true);
+            org.telegram.ui.Components.xc.a0(passkeysActivity).c0(str, true);
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(passkeysActivity.getParentActivity());
@@ -115,7 +115,7 @@ public class PasskeysActivity extends org.telegram.ui.ActionBar.m2 {
         if (r61Var != null && (j61Var = r61Var.Y2) != null) {
             j61Var.N(true);
         }
-        org.telegram.ui.Components.qc M = org.telegram.ui.Components.yc.a0(this).M(LocaleController.getString(R.string.PasskeyAddedTitle), LocaleController.formatString(R.string.PasskeyAddedText, passkey.name), R.raw.passcode_lock_close);
+        org.telegram.ui.Components.qc M = org.telegram.ui.Components.xc.a0(this).M(LocaleController.getString(R.string.PasskeyAddedTitle), LocaleController.formatString(R.string.PasskeyAddedText, passkey.name), R.raw.passcode_lock_close);
         M.j = 5000;
         M.k(true);
     }

@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.wi;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x7 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class x7 implements Utilities.CallbackReturn {
                 di.d dVar = (di.d) this.b;
                 return dVar.n[((Integer) obj).intValue() % dVar.n.length];
             case 2:
-                return new org.telegram.ui.web.f1(2, (org.telegram.ui.l0) this.b, (Integer) obj);
+                return new org.telegram.ui.web.o1(1, (org.telegram.ui.l0) this.b, (Integer) obj);
             case 3:
                 qg.n0 n0Var = (qg.n0) this.b;
                 if (((Integer) obj).intValue() == 2) {

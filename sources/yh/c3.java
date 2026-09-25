@@ -25,7 +25,7 @@ import org.telegram.ui.Components.m40;
 import org.telegram.ui.Components.zz0;
 import org.telegram.ui.bt;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes4.dex */
 public final class c3 {
     public final TL_stars.TL_starGiftUnique a;
@@ -88,9 +88,9 @@ public final class c3 {
         f7.addView(textView2, w7.y5.t(-1, -2, 48, 24, 4, 24, 4));
         if (z10) {
             zz0 zz0Var = new zz0(context, d6Var);
-            x3.q1(zz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            x3.q1(zz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
-            x3.q1(zz0Var, t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            x3.q1(zz0Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            x3.q1(zz0Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            x3.q1(zz0Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
             if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
                 zz0Var.c(LocaleController.getString(R.string.GiftValue2), v7.j.g("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
             }
@@ -145,7 +145,7 @@ public final class c3 {
             this.n = g10;
             g10.d();
             if (this.p.add(bVar)) {
-                t5.x(i10, bVar).H(this.a, j3, null, true, new bt(29, this, bVar));
+                s5.x(i10, bVar).H(this.a, j3, null, true, new bt(29, this, bVar));
                 return;
             }
             return;

@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final class ge0 extends org.telegram.ui.Components.fw0 {
     public final /* synthetic */ qg0 E;
@@ -365,6 +365,6 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
             passwordinputsettings.hint = str2 != null ? str2 : "";
             passwordinputsettings.new_algo = this.s.new_algo;
         }
-        Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.vn0(this, str, str2, tL_auth_recoverPassword, 18));
+        Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.vn0(this, str, str2, tL_auth_recoverPassword, 19));
     }
 }

@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                     ((zh.a) arrayList2.get(i10)).a.delete();
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(9, z6Var, a2Var));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(8, z6Var, a2Var));
                 return;
             case 4:
                 s7 s7Var = (s7) this.d;
@@ -181,7 +181,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.b;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
                 AndroidUtilities.addToClipboard(strArr[0]);
-                org.telegram.messenger.ok.o(R.string.LinkCopied, new org.telegram.ui.Components.yc(e3Var.topBulletinContainer, d6Var));
+                org.telegram.messenger.ok.o(R.string.LinkCopied, new org.telegram.ui.Components.xc(e3Var.topBulletinContainer, d6Var));
                 return;
             case 8:
                 qa.X((qa) this.d, (org.telegram.ui.ActionBar.a2) this.b, (TLRPC.User) this.c);
@@ -232,7 +232,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 ((sa1) this.d).showDialog(je.d0((Context) this.b, (org.telegram.ui.ActionBar.d6) this.c, false));
                 return;
             case 14:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(29, (sa) this.c, ((wn) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(28, (sa) this.c, ((wn) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
                 return;
             case 15:
                 wn.U((wn) this.d, (TLRPC.User) this.b, (TLRPC.EmojiStatus) this.c);
@@ -289,7 +289,7 @@ public final /* synthetic */ class r1 implements Runnable {
                         yf.d0.a(messageObject.messageOwner.action.photo, user2, false);
                         wnVar6.getUserConfig().setCurrentUser(user2);
                         wnVar6.getUserConfig().saveConfig(true);
-                        org.telegram.ui.Components.yc.a0(wnVar6).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new aj(zlVar, 5)), null).j();
+                        org.telegram.ui.Components.xc.a0(wnVar6).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new aj(zlVar, 5)), null).j();
                     }
                 }
                 messageObject.settingAvatar = false;

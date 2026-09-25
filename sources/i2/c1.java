@@ -32,7 +32,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.cp;
 import org.telegram.ui.ep;
@@ -43,7 +43,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.yt;
 import w7.y5;
 
-/* compiled from: r8-map-id-b07cfdfd75409cd6350aa76f4fec680e8237f25f7a223b1e5148659feab2c2d2 */
+/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final /* synthetic */ class c1 implements Runnable {
                             twoStepVerificationActivity.o0();
                             twoStepVerificationActivity.finishFragment();
                         }
-                        yc.b0(tL_error);
+                        xc.b0(tL_error);
                         break;
                     } else {
                         ConnectionsManager.getInstance(jeVar.y0).sendRequest(new TL_account.getPassword(), new v1(jeVar, twoStepVerificationActivity, z10, 2), 8);
