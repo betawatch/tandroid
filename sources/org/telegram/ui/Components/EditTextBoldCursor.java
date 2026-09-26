@@ -50,7 +50,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes3.dex */
 public class EditTextBoldCursor extends eu {
     private static final String BLINK_CLASS = "android.widget.Editor$Blink";
@@ -1240,7 +1240,7 @@ public class EditTextBoldCursor extends eu {
         d.h(runnable);
         yf.f e = d.e(max);
         if (e.f == null) {
-            e.f = new pe.b(true);
+            e.f = new pe.b();
         }
         e.f.add(runnable);
         return true;

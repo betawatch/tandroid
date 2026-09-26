@@ -63,7 +63,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes3.dex */
 public final class z81 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.u40, xg0, le.e {
     public org.telegram.ui.Components.h9 E;
@@ -165,16 +165,16 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
     /* JADX WARN: Removed duplicated region for block: B:127:0x0216  */
     /* JADX WARN: Removed duplicated region for block: B:130:0x021f  */
     /* JADX WARN: Removed duplicated region for block: B:135:0x022f  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x023f  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x024f  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0239  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0229  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0219  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0210  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0200  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x01de  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0229  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0210  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0200  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x01f7  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x01de  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01d3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -282,7 +282,7 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
                 String str27 = !SharedConfig.frameMetricsEnabled ? "hide frame metrics" : "show frame metrics";
                 String str28 = !BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.shadowsInSections ? "disable shadows in settings" : "enable shadows in settings" : null;
                 String str29 = !BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.debugViewMetrics ? "disable debug view metrics" : "enable debug view metrics" : null;
-                String str30 = !BuildVars.DEBUG_VERSION ? pi.e.a.a() ? "hide experimental settings" : "show experimental settings" : null;
+                String str30 = !pi.e.a.a() ? "hide experimental settings" : "show experimental settings";
                 CharSequence[] charSequenceArr = new CharSequence[43];
                 charSequenceArr[0] = string4;
                 charSequenceArr[c10] = string5;
@@ -352,7 +352,7 @@ public final class z81 extends org.telegram.ui.ActionBar.m2 implements Notificat
         }
         if (!BuildVars.DEBUG_PRIVATE_VERSION) {
         }
-        if (!BuildVars.DEBUG_VERSION) {
+        if (!pi.e.a.a()) {
         }
         CharSequence[] charSequenceArr2 = new CharSequence[43];
         charSequenceArr2[0] = string4;

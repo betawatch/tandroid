@@ -169,7 +169,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes3.dex */
 public class wn extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, ky, xc0, org.telegram.ui.Components.gk, org.telegram.ui.Components.ch, mg.b, org.telegram.ui.Components.o50, le.e {
     public static int Gc = 22;
@@ -882,9 +882,9 @@ public class wn extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         this.d = false;
         this.s = new HashMap();
         this.v = new ph.i(new of(this, 18));
-        pe.b bVar = new pe.b(true);
+        pe.b bVar = new pe.b();
         this.y = bVar;
-        pe.b bVar2 = new pe.b(true);
+        pe.b bVar2 = new pe.b();
         this.E = bVar2;
         this.W = new hh.l();
         this.Z0 = new ArrayList();
@@ -1056,7 +1056,7 @@ public class wn extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         cVar4.e = bVar;
         this.J.e = bVar;
         this.K.e = bVar;
-        cVar.e = new pe.b(true);
+        cVar.e = new pe.b();
         cVar4.d = bVar2;
         this.J.d = bVar2;
         this.K.d = bVar2;
@@ -39051,24 +39051,24 @@ public class wn extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         */
     /* JADX WARN: Code restructure failed: missing block: B:311:0x05d8, code lost:
     
-        if (r3 != r41.d4) goto L313;
+        if (r3 != r42.d4) goto L313;
      */
     /* JADX WARN: Code restructure failed: missing block: B:439:0x05f5, code lost:
     
-        if (org.telegram.messenger.MessageObject.getSavedDialogId(getUserConfig().getClientUserId(), r12.messageOwner) != r41.d4) goto L313;
+        if (org.telegram.messenger.MessageObject.getSavedDialogId(getUserConfig().getClientUserId(), r12.messageOwner) != r42.d4) goto L313;
      */
     /* JADX WARN: Code restructure failed: missing block: B:445:0x0610, code lost:
     
-        if (r41.d4 != r12.getReplyMsgId()) goto L313;
+        if (r42.d4 != r12.getReplyMsgId()) goto L313;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:840:0x0edd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:843:0x0eee, code lost:
     
-        if (r41.R3 == 9) goto L855;
+        if (r42.R3 == 9) goto L858;
      */
     /* JADX WARN: Removed duplicated region for block: B:104:0x02af  */
     /* JADX WARN: Removed duplicated region for block: B:107:0x02be  */
-    /* JADX WARN: Removed duplicated region for block: B:1089:0x057f  */
-    /* JADX WARN: Removed duplicated region for block: B:1090:0x0554 A[EDGE_INSN: B:1090:0x0554->B:287:0x0554 BREAK  A[LOOP:5: B:275:0x0538->B:283:0x0551], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1093:0x057f  */
+    /* JADX WARN: Removed duplicated region for block: B:1094:0x0554 A[EDGE_INSN: B:1094:0x0554->B:287:0x0554 BREAK  A[LOOP:5: B:275:0x0538->B:283:0x0551], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:156:0x03a4  */
     /* JADX WARN: Removed duplicated region for block: B:179:0x04a0  */
     /* JADX WARN: Removed duplicated region for block: B:182:0x04b2 A[SYNTHETIC] */
@@ -39084,50 +39084,52 @@ public class wn extends org.telegram.ui.ActionBar.m2 implements NotificationCent
     /* JADX WARN: Removed duplicated region for block: B:417:0x073b  */
     /* JADX WARN: Removed duplicated region for block: B:424:0x0679 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:431:0x0639  */
-    /* JADX WARN: Removed duplicated region for block: B:462:0x10a6  */
-    /* JADX WARN: Removed duplicated region for block: B:482:0x10d8  */
-    /* JADX WARN: Removed duplicated region for block: B:488:0x10ef  */
-    /* JADX WARN: Removed duplicated region for block: B:490:0x10f3  */
-    /* JADX WARN: Removed duplicated region for block: B:491:0x10f7  */
-    /* JADX WARN: Removed duplicated region for block: B:502:0x1140  */
-    /* JADX WARN: Removed duplicated region for block: B:505:0x1149  */
-    /* JADX WARN: Removed duplicated region for block: B:512:0x115c  */
-    /* JADX WARN: Removed duplicated region for block: B:514:0x1164  */
-    /* JADX WARN: Removed duplicated region for block: B:517:0x117a  */
-    /* JADX WARN: Removed duplicated region for block: B:526:0x1193  */
-    /* JADX WARN: Removed duplicated region for block: B:531:0x11a1  */
-    /* JADX WARN: Removed duplicated region for block: B:536:0x11ac  */
-    /* JADX WARN: Removed duplicated region for block: B:541:0x11b7  */
-    /* JADX WARN: Removed duplicated region for block: B:544:0x11be  */
+    /* JADX WARN: Removed duplicated region for block: B:462:0x10b8  */
+    /* JADX WARN: Removed duplicated region for block: B:482:0x10ea  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x1101  */
+    /* JADX WARN: Removed duplicated region for block: B:490:0x1105  */
+    /* JADX WARN: Removed duplicated region for block: B:491:0x1109  */
+    /* JADX WARN: Removed duplicated region for block: B:502:0x1152  */
+    /* JADX WARN: Removed duplicated region for block: B:505:0x115b  */
+    /* JADX WARN: Removed duplicated region for block: B:512:0x116e  */
+    /* JADX WARN: Removed duplicated region for block: B:514:0x1176  */
+    /* JADX WARN: Removed duplicated region for block: B:517:0x118c  */
+    /* JADX WARN: Removed duplicated region for block: B:526:0x11a5  */
+    /* JADX WARN: Removed duplicated region for block: B:531:0x11b3  */
+    /* JADX WARN: Removed duplicated region for block: B:536:0x11be  */
+    /* JADX WARN: Removed duplicated region for block: B:541:0x11c9  */
+    /* JADX WARN: Removed duplicated region for block: B:544:0x11d0  */
     /* JADX WARN: Removed duplicated region for block: B:549:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:551:0x1171  */
+    /* JADX WARN: Removed duplicated region for block: B:551:0x1183  */
     /* JADX WARN: Removed duplicated region for block: B:561:0x07ac  */
-    /* JADX WARN: Removed duplicated region for block: B:613:0x0964  */
-    /* JADX WARN: Removed duplicated region for block: B:680:0x0a6e  */
-    /* JADX WARN: Removed duplicated region for block: B:683:0x0a77  */
-    /* JADX WARN: Removed duplicated region for block: B:690:0x0ab8  */
-    /* JADX WARN: Removed duplicated region for block: B:697:0x0ad8  */
-    /* JADX WARN: Removed duplicated region for block: B:704:0x0b8d  */
-    /* JADX WARN: Removed duplicated region for block: B:719:0x0bb7  */
-    /* JADX WARN: Removed duplicated region for block: B:731:0x0c0e  */
+    /* JADX WARN: Removed duplicated region for block: B:613:0x0966  */
+    /* JADX WARN: Removed duplicated region for block: B:680:0x0a6f  */
+    /* JADX WARN: Removed duplicated region for block: B:683:0x0a78  */
+    /* JADX WARN: Removed duplicated region for block: B:691:0x0ac0  */
+    /* JADX WARN: Removed duplicated region for block: B:698:0x0ae0  */
+    /* JADX WARN: Removed duplicated region for block: B:705:0x0b95  */
+    /* JADX WARN: Removed duplicated region for block: B:722:0x0bc8  */
+    /* JADX WARN: Removed duplicated region for block: B:734:0x0c1f  */
     /* JADX WARN: Removed duplicated region for block: B:80:0x0243  */
     /* JADX WARN: Removed duplicated region for block: B:82:0x024a  */
-    /* JADX WARN: Removed duplicated region for block: B:836:0x0ebf  */
-    /* JADX WARN: Removed duplicated region for block: B:839:0x0ed9  */
+    /* JADX WARN: Removed duplicated region for block: B:839:0x0ed0  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x0246  */
-    /* JADX WARN: Removed duplicated region for block: B:847:0x0f26  */
-    /* JADX WARN: Removed duplicated region for block: B:853:0x0f40  */
-    /* JADX WARN: Removed duplicated region for block: B:871:0x0ee6  */
-    /* JADX WARN: Removed duplicated region for block: B:877:0x0ee0  */
-    /* JADX WARN: Removed duplicated region for block: B:910:0x0bf6 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:964:0x0b87  */
-    /* JADX WARN: Removed duplicated region for block: B:968:0x0ab1  */
+    /* JADX WARN: Removed duplicated region for block: B:842:0x0eea  */
+    /* JADX WARN: Removed duplicated region for block: B:850:0x0f39  */
+    /* JADX WARN: Removed duplicated region for block: B:856:0x0f53  */
+    /* JADX WARN: Removed duplicated region for block: B:858:0x0f56  */
+    /* JADX WARN: Removed duplicated region for block: B:863:0x0f65  */
+    /* JADX WARN: Removed duplicated region for block: B:874:0x0ef7  */
+    /* JADX WARN: Removed duplicated region for block: B:880:0x0ef1  */
+    /* JADX WARN: Removed duplicated region for block: B:913:0x0c07 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:967:0x0b8f  */
+    /* JADX WARN: Removed duplicated region for block: B:971:0x0ab6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void za(java.util.ArrayList r42, boolean r43) {
+    public final void za(java.util.ArrayList r43, boolean r44) {
         /*
-            Method dump skipped, instructions count: 4550
+            Method dump skipped, instructions count: 4568
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.wn.za(java.util.ArrayList, boolean):void");

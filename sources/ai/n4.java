@@ -28,7 +28,7 @@ import org.telegram.ui.n50;
 import org.telegram.ui.o50;
 import org.telegram.ui.z60;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes4.dex */
 public final class n4 extends View {
     public final /* synthetic */ int a = 0;
@@ -38,7 +38,7 @@ public final class n4 extends View {
 
     public n4(Context context) {
         super(context);
-        this.b = new pe.b(true);
+        this.b = new pe.b();
         this.c = new tf.a(0, this);
     }
 

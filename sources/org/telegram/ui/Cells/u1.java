@@ -174,7 +174,7 @@ import org.telegram.ui.pm;
 import org.telegram.ui.wn;
 import org.telegram.ui.zb0;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes3.dex */
 public class u1 extends a0 implements no0, ImageReceiver.ImageReceiverDelegate, DownloadController.FileDownloadProgressListener, y9, NotificationCenter.NotificationCenterDelegate, le.e, o4 {
     public static final float[] Fe = new float[8];
@@ -30460,35 +30460,35 @@ public class u1 extends a0 implements no0, ImageReceiver.ImageReceiverDelegate, 
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0533  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x058d  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x05f8  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x060e  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0645  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0660  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0669  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0544  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x059e  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0609  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x061f  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0656  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x0671  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x067a  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x06d7  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x06e8  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0770  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x0663  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x048d  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x035a  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x0343  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x06e8  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x06f9  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0781  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x0674  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x049e  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x036b  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0354  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x0311  */
     /* JADX WARN: Removed duplicated region for block: B:211:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x02cf  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x030e  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0352  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0361  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0399  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x03a2  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x03ba  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x048b  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x04a5  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x04bf  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x04d6 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x02e0  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x02ec  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x031f  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0363  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0372  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x03aa  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x03b3  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x03cb  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x049c  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x04b6  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x04d0  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x04e7 A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -30587,7 +30587,12 @@ public class u1 extends a0 implements no0, ImageReceiver.ImageReceiverDelegate, 
                             format = LocaleController.formatSmallDateChat(messageObject.messageOwner.date) + ", " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
                         } else if (this.ad) {
                             if (AppGlobalConfig.getInstance(i12).messagePrimaryEditedDate.get()) {
-                                format = LocaleController.formatPmEditedDate(this.K != null ? r4.getMaxEditDate() : messageObject.messageOwner.edit_date);
+                                MessageObject.GroupedMessages groupedMessages2 = this.K;
+                                int maxEditDate = groupedMessages2 != null ? groupedMessages2.getMaxEditDate() : messageObject.messageOwner.edit_date;
+                                if (maxEditDate == 0 && this.y7.isEditing()) {
+                                    maxEditDate = ConnectionsManager.getInstance(i12).getCurrentTime();
+                                }
+                                format = LocaleController.formatPmEditedDate(maxEditDate);
                             } else {
                                 format = LocaleController.getString(R.string.EditedMessage) + " " + LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000);
                             }

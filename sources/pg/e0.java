@@ -20,7 +20,7 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.uv0;
 import v7.a7;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public static final rr B = new rr(0.0d, 0.5d, 0.0d, 1.0d);

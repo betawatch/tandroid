@@ -35,7 +35,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes3.dex */
 public class ij0 extends BitmapDrawable implements Animatable, yf.c {
     public static final AtomicInteger P0 = new AtomicInteger();
@@ -151,7 +151,7 @@ public class ij0 extends BitmapDrawable implements Animatable, yf.c {
         this.y0 = new hj0(this, 3);
         this.z0 = new hj0(this, 4);
         this.F0 = new hj0(this, 5);
-        this.I0 = new pe.b(true);
+        this.I0 = new pe.b(true, true);
         this.M0 = new c6(this, 2);
         this.b = i10;
         this.c = i11;
@@ -1191,7 +1191,7 @@ public class ij0 extends BitmapDrawable implements Animatable, yf.c {
         this.y0 = new hj0(this, 3);
         this.z0 = new hj0(this, 4);
         this.F0 = new hj0(this, 5);
-        this.I0 = new pe.b(true);
+        this.I0 = new pe.b(true, true);
         this.M0 = new c6(this, 2);
         this.b = i10;
         this.c = i11;
@@ -1225,7 +1225,7 @@ public class ij0 extends BitmapDrawable implements Animatable, yf.c {
         this.y0 = new hj0(this, 3);
         this.z0 = new hj0(this, 4);
         this.F0 = new hj0(this, 5);
-        this.I0 = new pe.b(true);
+        this.I0 = new pe.b(true, true);
         this.M0 = new c6(this, 2);
         this.b = i11;
         this.c = i12;

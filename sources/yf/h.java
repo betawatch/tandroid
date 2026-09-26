@@ -8,7 +8,7 @@ import android.view.View;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes.dex */
 public final class h implements Choreographer.FrameCallback {
     public static h s;
@@ -27,9 +27,9 @@ public final class h implements Choreographer.FrameCallback {
         this.a = choreographer;
         this.b = new LinkedHashSet();
         this.c = new SparseArray();
-        this.d = new pe.b(true);
-        this.e = new pe.b(true);
-        this.f = new pe.b(true);
+        this.d = new pe.b();
+        this.e = new pe.b();
+        this.f = new pe.b();
         choreographer.postFrameCallback(this);
     }
 

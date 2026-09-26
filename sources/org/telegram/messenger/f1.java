@@ -13,7 +13,7 @@ import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f1 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,40 +82,40 @@ public final /* synthetic */ class f1 implements Runnable {
                 ((ContactsLoadingObserver) this.b).lambda$new$1();
                 break;
             case 18:
-                ((DispatchQueueMainThreadSync) this.b).lambda$recycle$0();
-                break;
-            case 19:
                 ((FactCheckController) this.b).loadMissing();
                 break;
-            case 20:
+            case 19:
                 ((FileLoaderPriorityQueue) this.b).lambda$new$0();
                 break;
-            case 21:
+            case 20:
                 ((FilePathDatabase) this.b).lambda$clear$3();
                 break;
-            case 22:
+            case 21:
                 FileRefController.lambda$onRequestComplete$46((TLRPC.TL_theme) this.b);
                 break;
-            case 23:
+            case 22:
                 ((ImageReceiver) this.b).invalidate();
                 break;
-            case 24:
+            case 23:
                 MediaController.lambda$saveFile$46((org.telegram.ui.ActionBar.a2) this.b);
                 break;
-            case 25:
+            case 24:
                 ((org.telegram.ui.Components.oc) this.b).f();
                 break;
-            case 26:
+            case 25:
                 MediaDataController.lambda$addRecentGif$27((TLRPC.Document) this.b);
                 break;
-            case 27:
+            case 26:
                 MessagesController.lambda$convertToGigaGroup$268((MessagesStorage.BooleanCallback) this.b);
                 break;
-            case 28:
+            case 27:
                 MessagesController.lambda$performLogout$321((TLObject) this.b);
                 break;
-            default:
+            case 28:
                 MessagesController.lambda$setContentSettings$503((TLRPC.TL_error) this.b);
+                break;
+            default:
+                ((MusicPlayerService) this.b).stopSelf();
                 break;
         }
     }

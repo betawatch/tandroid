@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.concurrent.Semaphore;
 import w7.k6;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes.dex */
 public final class b implements Iterable {
     public final boolean a;
@@ -21,7 +21,7 @@ public final class b implements Iterable {
     public a n;
 
     public b() {
-        this(true);
+        this(false, true);
     }
 
     public final boolean add(Object obj) {
@@ -175,11 +175,11 @@ public final class b implements Iterable {
         }
     }
 
-    public b(boolean z10) {
+    public b(boolean z10, boolean z11) {
         this.c = new ArrayList();
         this.d = new ArrayList();
-        this.f = null;
-        this.a = z10;
+        this.f = z10 ? new Semaphore(1) : null;
+        this.a = z11;
         this.b = new ArrayList();
     }
 }

@@ -8,7 +8,7 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ug implements Runnable {
     public final /* synthetic */ int a;
@@ -23,51 +23,48 @@ public final /* synthetic */ class ug implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MusicPlayerService) this.b).stopSelf();
-                break;
-            case 1:
                 NotificationBadge.HuaweiHomeBadger.lambda$executeBadge$0((Bundle) this.b);
                 break;
-            case 2:
+            case 1:
                 ((NotificationsSettingsFacade) this.b).lambda$applyDialogNotificationsSettings$0();
                 break;
-            case 3:
+            case 2:
                 ((CancellationSignal) this.b).cancel();
                 break;
-            case 4:
+            case 3:
                 ((ProxyRotationController) this.b).lambda$new$2();
                 break;
-            case 5:
+            case 4:
                 ((PushListenerController.GooglePushListenerServiceProvider) this.b).lambda$onRequestPushToken$1();
                 break;
-            case 6:
+            case 5:
                 ((RichMessageLayout.PreviewView) this.b).lambda$onTouchEvent$0();
                 break;
-            case 7:
+            case 6:
                 ((RichMessageLayout.RichButtonRowBlock) this.b).invalidate();
                 break;
-            case 8:
+            case 7:
                 ((RichMessageLayout.RichButtonSpan) this.b).invalidate();
                 break;
-            case 9:
+            case 8:
                 RichMessageLayout.RichUnsupportedBlock.lambda$new$0((RichMessageLayout) this.b);
                 break;
-            case 10:
+            case 9:
                 ((RichMessageLayout.Text) this.b).lambda$scheduleLongPress$2();
                 break;
-            case 11:
+            case 10:
                 ((SecretChatHelper) this.b).lambda$startSecretChat$25();
                 break;
-            case 12:
+            case 11:
                 ((SendMessagesHelper) this.b).lambda$new$0();
                 break;
-            case 13:
+            case 12:
                 ((MessagesStorage.StringCallback) this.b).run(null);
                 break;
-            case 14:
+            case 13:
                 ((SendMessagesHelper.LocationProvider) this.b).lambda$start$0();
                 break;
-            case 15:
+            case 14:
                 ((TelegramMediaSession) this.b).onAccountSwitched();
                 break;
             default:

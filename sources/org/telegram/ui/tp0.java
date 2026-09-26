@@ -39,7 +39,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53901c404a1b0373a5bf33e44ab631b007d629dadc71f62a8c7dd35781185007 */
+/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
 /* loaded from: classes3.dex */
 public final class tp0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public final ah.c E;
@@ -98,9 +98,9 @@ public final class tp0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.S = q6;
         this.a0 = q6;
         this.b0 = i0.b.e;
-        pe.b bVar = new pe.b(true);
+        pe.b bVar = new pe.b();
         this.d0 = bVar;
-        pe.b bVar2 = new pe.b(true);
+        pe.b bVar2 = new pe.b();
         this.e0 = bVar2;
         this.i0 = new va(this, 1);
         this.j0 = new ArrayList();
