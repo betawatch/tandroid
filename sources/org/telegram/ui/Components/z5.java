@@ -24,7 +24,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class z5 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -92,10 +92,10 @@ public class z5 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i10, int i11) {
         if (layout.getText() instanceof Spanned) {
-            c11[] c11VarArr = (c11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), c11.class);
-            for (int i12 = 0; c11VarArr != null && i12 < c11VarArr.length; i12++) {
-                c11 c11Var = c11VarArr[i12];
-                if (c11Var != null && c11Var.c()) {
+            e11[] e11VarArr = (e11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), e11.class);
+            for (int i12 = 0; e11VarArr != null && i12 < e11VarArr.length; i12++) {
+                e11 e11Var = e11VarArr[i12];
+                if (e11Var != null && e11Var.c()) {
                     return true;
                 }
             }
@@ -207,7 +207,7 @@ public class z5 extends ReplacementSpan {
             ofFloat.addUpdateListener(new s5(this, f12, f11, f14, f10, 0));
             this.moveAnimator.addListener(new t5(this, 2));
             this.moveAnimator.setDuration(140L);
-            this.moveAnimator.setInterpolator(rr.f);
+            this.moveAnimator.setInterpolator(sr.f);
             this.moveAnimator.start();
             return;
         }
@@ -255,7 +255,7 @@ public class z5 extends ReplacementSpan {
             });
             this.scaleAnimator.addListener(new t5(this, i11));
             this.scaleAnimator.setDuration(130L);
-            this.scaleAnimator.setInterpolator(rr.f);
+            this.scaleAnimator.setInterpolator(sr.f);
             this.scaleAnimator.start();
         } else if (this.isRemoved) {
             this.isRemoved = false;
@@ -287,7 +287,7 @@ public class z5 extends ReplacementSpan {
                 }
             });
             this.scaleAnimator.addListener(new t5(this, i10));
-            this.scaleAnimator.setInterpolator(rr.f);
+            this.scaleAnimator.setInterpolator(sr.f);
             this.scaleAnimator.setDuration(130L);
             this.scaleAnimator.start();
         }

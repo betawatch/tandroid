@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ot0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final class ot0 extends AnimatorListenerAdapter {
         }
         Bitmap bitmap = photoViewer.C4.getBitmap();
         if (bitmap != null || photoViewer.r1) {
-            photoViewer.C1.b(bitmap, photoViewer.C4.getOrientation(), photoViewer.c2 != 1, false, photoViewer.D1, photoViewer.r1 ? (org.telegram.ui.Components.i71) photoViewer.B2 : null, ku0Var.c);
+            photoViewer.C1.b(bitmap, photoViewer.C4.getOrientation(), photoViewer.c2 != 1, false, photoViewer.D1, photoViewer.r1 ? (org.telegram.ui.Components.k71) photoViewer.B2 : null, ku0Var.c);
             photoViewer.C1.a();
             int bitmapWidth = photoViewer.C4.getBitmapWidth();
             int bitmapHeight = photoViewer.C4.getBitmapHeight();
@@ -88,7 +88,7 @@ public final class ot0 extends AnimatorListenerAdapter {
         }
         AnimatorSet animatorSet = new AnimatorSet();
         photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.U0, (Property<org.telegram.ui.Components.cg0, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.s6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.ef0, Float>) View.ALPHA, 0.0f, 1.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.U0, (Property<org.telegram.ui.Components.eg0, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.s6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.gf0, Float>) View.ALPHA, 0.0f, 1.0f));
         photoViewer.p6.setDuration(200L);
         photoViewer.p6.addListener(new xo0(this, 3));
         photoViewer.p6.start();

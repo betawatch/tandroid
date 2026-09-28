@@ -34,7 +34,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class TelegramMediaSession {
     private static final String CONTENT_STYLE_BROWSABLE_HINT = "android.media.browse.CONTENT_STYLE_BROWSABLE_HINT";
@@ -65,12 +65,12 @@ public class TelegramMediaSession {
     private final a0.i pendingMusicLoads = new a0.i();
     private final ArrayList<PendingBrowseRequest> pendingBrowseRequests = new ArrayList<>();
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public interface BrowseChildrenCallback {
         void onResult(List<MediaBrowser.MediaItem> list);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static final class PendingBrowseRequest {
         final BrowseChildrenCallback callback;
         final String parentMediaId;
@@ -463,7 +463,7 @@ public class TelegramMediaSession {
         this.pendingMusicLoads.k(arrayList2, j3);
         int i10 = this.currentAccount;
         MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-        messagesStorage.getStorageQueue().postRunnable(new j7(this, messagesStorage, j3, i10, 10));
+        messagesStorage.getStorageQueue().postRunnable(new g7(this, messagesStorage, j3, i10, 10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -589,7 +589,7 @@ public class TelegramMediaSession {
         if (dialogIdFromMediaId == 0 || this.musicObjects.f(dialogIdFromMediaId) != null) {
             browseChildrenCallback.onResult(loadChildrenSync(str));
         } else {
-            loadMusicForDialog(dialogIdFromMediaId, new n8(this, browseChildrenCallback, str, 27));
+            loadMusicForDialog(dialogIdFromMediaId, new j8(this, browseChildrenCallback, str, 27));
         }
     }
 
@@ -629,7 +629,7 @@ public class TelegramMediaSession {
         this.session.i(SharedConfig.shuffleMusic ? 1 : 0);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public final class SessionCallback extends android.support.v4.media.session.s {
         private SessionCallback() {
         }

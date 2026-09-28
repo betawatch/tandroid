@@ -2,10 +2,10 @@ package org.telegram.messenger;
 
 import android.content.SharedPreferences;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ge implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -34,18 +34,18 @@ public final /* synthetic */ class ge implements Runnable {
                 ((MessagesController) this.e).lambda$getChannelDifference$346((TLRPC.updates_ChannelDifference) this.f, this.c, (TLRPC.Chat) this.h, (a0.i) this.n, this.b, this.d);
                 break;
             default:
-                y70 y70Var = (y70) this.e;
-                y70 y70Var2 = (y70) this.f;
+                a80 a80Var = (a80) this.e;
+                a80 a80Var2 = (a80) this.f;
                 org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.h;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.n;
-                y70Var.u();
+                a80Var.u();
                 SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.b);
                 StringBuilder sb2 = new StringBuilder("sound_enabled_");
                 long j3 = this.c;
                 long j10 = this.d;
                 boolean z10 = notificationsSettings.getBoolean(f0.i(j3, j10, sb2), true);
                 notificationsSettings.edit().putBoolean(f0.i(j3, j10, new StringBuilder("sound_enabled_")), !z10).apply();
-                y70Var2.u();
+                a80Var2.u();
                 if (org.telegram.ui.Components.xc.a(m2Var)) {
                     org.telegram.ui.Components.xc.S(z10 ? 1 : 0, m2Var, d6Var).j();
                     break;
@@ -54,12 +54,12 @@ public final /* synthetic */ class ge implements Runnable {
         }
     }
 
-    public /* synthetic */ ge(y70 y70Var, int i10, long j3, long j10, y70 y70Var2, wn wnVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.e = y70Var;
+    public /* synthetic */ ge(a80 a80Var, int i10, long j3, long j10, a80 a80Var2, wn wnVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.e = a80Var;
         this.b = i10;
         this.c = j3;
         this.d = j10;
-        this.f = y70Var2;
+        this.f = a80Var2;
         this.h = wnVar;
         this.n = d6Var;
     }

@@ -26,13 +26,13 @@ import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.j61;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k0 {
     public static k0 B;
@@ -58,7 +58,7 @@ public final class k0 {
     public float q;
     public float r;
     public boolean s;
-    public final ok0 t;
+    public final qk0 t;
     public boolean u;
     public final View v;
     public boolean w;
@@ -95,19 +95,19 @@ public final class k0 {
     /* JADX WARN: Type inference failed for: r11v9 */
     /* JADX WARN: Type inference failed for: r5v38, types: [org.telegram.messenger.ImageReceiver] */
     /* JADX WARN: Type inference failed for: r5v39, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r5v46, types: [org.telegram.ui.Components.ij0] */
-    /* JADX WARN: Type inference failed for: r5v50, types: [org.telegram.ui.Components.ij0] */
+    /* JADX WARN: Type inference failed for: r5v46, types: [org.telegram.ui.Components.kj0] */
+    /* JADX WARN: Type inference failed for: r5v50, types: [org.telegram.ui.Components.kj0] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public k0(Context context, m2 m2Var, qk0 qk0Var, View view, View view2, float f7, float f10, o0 o0Var, int i10, int i11, boolean z10) {
+    public k0(Context context, m2 m2Var, sk0 sk0Var, View view, View view2, float f7, float f10, o0 o0Var, int i10, int i11, boolean z10) {
         MessageObject messageObject;
         Context context2;
         View view3;
         m0 m0Var;
         long j3;
         MessageObject messageObject2;
-        qk0 qk0Var2;
+        sk0 sk0Var2;
         int i12;
         View view4;
         m2 m2Var2;
@@ -159,10 +159,10 @@ public final class k0 {
             m0Var = m10;
             j3 = 0;
             messageObject2 = messageObject;
-            qk0Var2 = qk0Var;
+            sk0Var2 = sk0Var;
             view4 = view;
             m2Var2 = m2Var;
-            k0 k0Var = new k0(context, m2Var2, qk0Var2, view4, view3, f7, f10, o0Var, i10, 1, true);
+            k0 k0Var = new k0(context, m2Var2, sk0Var2, view4, view3, f7, f10, o0Var, i10, 1, true);
             context2 = context;
             i12 = i10;
             this.f = k0Var;
@@ -173,21 +173,21 @@ public final class k0 {
             m0Var = m10;
             j3 = 0;
             messageObject2 = messageObject;
-            qk0Var2 = qk0Var;
+            sk0Var2 = sk0Var;
             i12 = i10;
             view4 = view;
             m2Var2 = m2Var;
         }
         wn wnVar3 = m2Var2 instanceof wn ? (wn) m2Var2 : null;
-        if (qk0Var2 != null) {
-            ai.w0 w0Var = qk0Var2.b;
+        if (sk0Var2 != null) {
+            ai.w0 w0Var = sk0Var2.b;
             int i19 = 0;
             while (true) {
                 if (i19 >= w0Var.getChildCount()) {
                     break;
                 }
-                if ((w0Var.getChildAt(i19) instanceof ok0) && ((ok0) w0Var.getChildAt(i19)).e.equals(this.p)) {
-                    this.t = (ok0) w0Var.getChildAt(i19);
+                if ((w0Var.getChildAt(i19) instanceof qk0) && ((qk0) w0Var.getChildAt(i19)).e.equals(this.p)) {
+                    this.t = (qk0) w0Var.getChildAt(i19);
                     break;
                 }
                 i19++;
@@ -280,8 +280,8 @@ public final class k0 {
                     wnVar3 = wnVar2;
                 }
                 wnVar = wnVar3;
-                ok0 ok0Var = this.t;
-                boolean z13 = ok0Var == null || !(f7 == f11 || f10 == f11);
+                qk0 qk0Var = this.t;
+                boolean z13 = qk0Var == null || !(f7 == f11 || f10 == f11);
                 if (view3 == null) {
                     view3.getLocationOnScreen(this.j);
                     int[] iArr = this.j;
@@ -299,7 +299,7 @@ public final class k0 {
                     f13 = f25;
                     f12 = f24;
                 } else {
-                    if (ok0Var == null) {
+                    if (qk0Var == null) {
                         if (m0Var != null) {
                             ImageReceiver imageReceiver2 = m0Var.C;
                             view4.getLocationInWindow(this.j);
@@ -513,7 +513,7 @@ public final class k0 {
                         frameLayout.setPivotX(i17);
                         frameLayout.setPivotY(i18);
                     }
-                    ok0Var.getLocationOnScreen(this.j);
+                    qk0Var.getLocationOnScreen(this.j);
                     float x10 = this.j[0] + this.t.b.getX();
                     float y3 = this.j[1] + this.t.b.getY();
                     f14 = this.t.getScaleX() * this.t.b.getWidth();
@@ -590,8 +590,8 @@ public final class k0 {
         }
         wnVar = wnVar3;
         f11 = 0.0f;
-        ok0 ok0Var2 = this.t;
-        if (ok0Var2 == null) {
+        qk0 qk0Var2 = this.t;
+        if (qk0Var2 == null) {
         }
         if (view3 == null) {
         }
@@ -688,7 +688,7 @@ public final class k0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void d(m2 m2Var, qk0 qk0Var, View view, View view2, float f7, float f10, o0 o0Var, int i10, int i11) {
+    public static void d(m2 m2Var, sk0 sk0Var, View view, View view2, float f7, float f10, o0 o0Var, int i10, int i11) {
         if (view == null || o0Var == null || m2Var == null || m2Var.getParentActivity() == null) {
             return;
         }
@@ -697,7 +697,7 @@ public final class k0 {
             if (i11 == 2 || i11 == 0) {
                 d(m2Var, null, view, view2, 0.0f, 0.0f, o0Var, i10, 1);
             }
-            k0 k0Var = new k0(m2Var.getParentActivity(), m2Var, qk0Var, view, view2, f7, f10, o0Var, i10, i11, false);
+            k0 k0Var = new k0(m2Var.getParentActivity(), m2Var, sk0Var, view, view2, f7, f10, o0Var, i10, i11, false);
             if (i11 == 1) {
                 C = k0Var;
             } else {

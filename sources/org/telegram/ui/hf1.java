@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class hf1 extends uf1 {
     public final /* synthetic */ wf1 i3;
@@ -14,13 +14,13 @@ public final class hf1 extends uf1 {
         this.i3 = wf1Var;
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean S0() {
         ArrayList arrayList = this.i3.b;
         return (getAdapter() == null || this.X1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((nf1) arrayList.get(0)).c == null || ((nf1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
     }
 
-    @Override // org.telegram.ui.uf1, org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.uf1, org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.i3.y0();

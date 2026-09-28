@@ -8,7 +8,7 @@ import android.util.Property;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class lt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final class lt0 extends AnimatorListenerAdapter {
                         AnimatorSet animatorSet = photoViewer.U7;
                         xu0 xu0Var = photoViewer.O7;
                         Property property = View.TRANSLATION_Y;
-                        animatorSet.playTogether(ObjectAnimator.ofFloat(xu0Var, (Property<xu0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.P7, (Property<org.telegram.ui.Components.cg0, Float>) property, 0.0f));
+                        animatorSet.playTogether(ObjectAnimator.ofFloat(xu0Var, (Property<xu0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.P7, (Property<org.telegram.ui.Components.eg0, Float>) property, 0.0f));
                     } else {
                         if (photoViewer.S4) {
                             photoViewer.j0.setVisibility(8);

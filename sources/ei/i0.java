@@ -14,11 +14,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.vp;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class i0 extends Drawable {
     public final ImageView a;
@@ -32,7 +32,7 @@ public final class i0 extends Drawable {
     public final e6 i;
     public final e6 j;
     public final e6 k;
-    public ij0 l;
+    public kj0 l;
 
     public i0(Context context, ImageView imageView) {
         Paint paint = new Paint(1);
@@ -40,10 +40,10 @@ public final class i0 extends Drawable {
         this.c = new RectF();
         this.h = false;
         rc rcVar = new rc(this, 7);
-        rr rrVar = rr.h;
-        this.i = new e6(rcVar, 320L, rrVar, 0);
-        this.j = new e6(new rc(this, 7), 320L, rrVar, 0);
-        this.k = new e6(new rc(this, 7), 320L, rrVar, 0);
+        sr srVar = sr.h;
+        this.i = new e6(rcVar, 320L, srVar, 0);
+        this.j = new e6(new rc(this, 7), 320L, srVar, 0);
+        this.k = new e6(new rc(this, 7), 320L, srVar, 0);
         this.a = imageView;
         this.d = System.currentTimeMillis();
         this.e = context.getResources().getDrawable(R.drawable.search_files_filled).mutate();
@@ -57,7 +57,7 @@ public final class i0 extends Drawable {
     public final void draw(Canvas canvas) {
         float f7;
         float f10;
-        ij0 ij0Var;
+        kj0 kj0Var;
         Canvas canvas2 = canvas;
         Rect bounds = getBounds();
         int centerX = bounds.centerX();
@@ -96,7 +96,7 @@ public final class i0 extends Drawable {
             float currentTimeMillis2 = ((System.currentTimeMillis() - j3) * 0.45f) % 5400.0f;
             float max = Math.max(0.0f, ((1520.0f * currentTimeMillis2) / 5400.0f) - 20.0f);
             for (int i10 = 0; i10 < 4; i10++) {
-                u1.a aVar = up.h;
+                u1.a aVar = vp.h;
                 aVar.getInterpolation((currentTimeMillis2 - (i10 * 1350)) / 667.0f);
                 max += aVar.getInterpolation((currentTimeMillis2 - (r10 + 667)) / 667.0f) * 250.0f;
             }
@@ -110,12 +110,12 @@ public final class i0 extends Drawable {
             f7 = 255.0f;
             f10 = 0.0f;
         }
-        if (e <= f10 || (ij0Var = this.l) == null) {
+        if (e <= f10 || (kj0Var = this.l) == null) {
             return;
         }
-        int i11 = ij0Var.b / 2;
-        int i12 = ij0Var.c / 2;
-        ij0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
+        int i11 = kj0Var.b / 2;
+        int i12 = kj0Var.c / 2;
+        kj0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
         this.l.setAlpha((int) (e * f7));
         this.l.draw(canvas2);
     }

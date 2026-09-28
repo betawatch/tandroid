@@ -18,7 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class fc0 extends FrameLayout {
     public final org.telegram.ui.Components.y9 a;
@@ -27,7 +27,7 @@ public final class fc0 extends FrameLayout {
     public final TextView d;
     public final org.telegram.ui.Cells.x1 e;
     public final TextView f;
-    public final org.telegram.ui.Components.so0 h;
+    public final org.telegram.ui.Components.uo0 h;
     public final dc0 n;
     public boolean r;
     public float s;
@@ -61,13 +61,13 @@ public final class fc0 extends FrameLayout {
         x1Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
         linearLayout.addView(x1Var, w7.y5.t(-2, 17, 16, 6, 1, 0, 0));
         addView(linearLayout, w7.y5.d(-1, -2.0f, 55, 21.0f, 17.0f, 21.0f, 0.0f));
-        org.telegram.ui.Components.so0 so0Var = new org.telegram.ui.Components.so0(context, null, true);
-        this.h = so0Var;
-        so0Var.setReportChanges(true);
-        so0Var.setDelegate(new g(this, 23));
-        so0Var.setProgress(LiteMode.getPowerSaverLevel() / 100.0f);
-        so0Var.setImportantForAccessibility(2);
-        addView(so0Var, w7.y5.d(-1, 44.0f, 48, 6.0f, 68.0f, 6.0f, 0.0f));
+        org.telegram.ui.Components.uo0 uo0Var = new org.telegram.ui.Components.uo0(context, null, true);
+        this.h = uo0Var;
+        uo0Var.setReportChanges(true);
+        uo0Var.setDelegate(new g(this, 23));
+        uo0Var.setProgress(LiteMode.getPowerSaverLevel() / 100.0f);
+        uo0Var.setImportantForAccessibility(2);
+        addView(uo0Var, w7.y5.d(-1, 44.0f, 48, 6.0f, 68.0f, 6.0f, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setImportantForAccessibility(4);
         TextView textView2 = new TextView(context);
@@ -79,7 +79,7 @@ public final class fc0 extends FrameLayout {
         frameLayout.addView(textView2, w7.y5.e(-2, -2, 19));
         org.telegram.ui.Cells.x1 x1Var2 = new org.telegram.ui.Cells.x1(this, context);
         this.e = x1Var2;
-        x1Var2.b(0.45f, 240L, org.telegram.ui.Components.rr.h);
+        x1Var2.b(0.45f, 240L, org.telegram.ui.Components.sr.h);
         x1Var2.setGravity(1);
         x1Var2.setTextSize(AndroidUtilities.dp(13.0f));
         x1Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.n6, false));
@@ -125,7 +125,7 @@ public final class fc0 extends FrameLayout {
         if (z10 != this.r) {
             this.r = z10;
             x1Var2.clearAnimation();
-            org.telegram.messenger.ok.s(x1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.rr.h, 220L);
+            org.telegram.messenger.ok.s(x1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.sr.h, 220L);
         }
         float f10 = powerSaverLevel >= 100 ? 1.0f : 0.0f;
         if (this.s != f10) {
@@ -169,7 +169,7 @@ public final class fc0 extends FrameLayout {
                 }
             });
             this.v.addListener(new ec0(this, f10, 0));
-            this.v.setInterpolator(org.telegram.ui.Components.rr.h);
+            this.v.setInterpolator(org.telegram.ui.Components.sr.h);
             this.v.setDuration(320L);
             this.v.start();
         }
@@ -215,7 +215,7 @@ public final class fc0 extends FrameLayout {
                 }
             });
             this.x.addListener(new ec0(this, f11, 1));
-            this.x.setInterpolator(org.telegram.ui.Components.rr.h);
+            this.x.setInterpolator(org.telegram.ui.Components.sr.h);
             this.x.setDuration(320L);
             this.x.start();
         }

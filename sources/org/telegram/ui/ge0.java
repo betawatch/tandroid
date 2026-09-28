@@ -20,11 +20,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ge0 extends org.telegram.ui.Components.fw0 {
+public final class ge0 extends org.telegram.ui.Components.hw0 {
     public final /* synthetic */ qg0 E;
-    public final org.telegram.ui.Components.jd0[] a;
+    public final org.telegram.ui.Components.ld0[] a;
     public final EditTextBoldCursor[] b;
     public final TextView c;
     public final TextView d;
@@ -47,7 +47,7 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
         setOrientation(1);
         int i11 = i10 == 1 ? 1 : 2;
         this.b = new EditTextBoldCursor[i11];
-        this.a = new org.telegram.ui.Components.jd0[i11];
+        this.a = new org.telegram.ui.Components.ld0[i11];
         TextView textView = new TextView(context);
         this.c = textView;
         float f7 = 18.0f;
@@ -65,9 +65,9 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
         addView(textView2, w7.y5.t(-2, -2, 1, 8, 6, 8, 16));
         final int i12 = 0;
         while (i12 < this.b.length) {
-            org.telegram.ui.Components.jd0 jd0Var = new org.telegram.ui.Components.jd0(context, null);
-            this.a[i12] = jd0Var;
-            jd0Var.setText(LocaleController.getString(i10 == 0 ? i12 == 0 ? R.string.PleaseEnterNewFirstPasswordHint : R.string.PleaseEnterNewSecondPasswordHint : R.string.PasswordHintPlaceholder));
+            org.telegram.ui.Components.ld0 ld0Var = new org.telegram.ui.Components.ld0(context, null);
+            this.a[i12] = ld0Var;
+            ld0Var.setText(LocaleController.getString(i10 == 0 ? i12 == 0 ? R.string.PleaseEnterNewFirstPasswordHint : R.string.PleaseEnterNewSecondPasswordHint : R.string.PasswordHintPlaceholder));
             this.b[i12] = new EditTextBoldCursor(context);
             this.b[i12].setCursorSize(AndroidUtilities.dp(20.0f));
             this.b[i12].setCursorWidth(1.5f);
@@ -86,7 +86,7 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
             EditTextBoldCursor editTextBoldCursor = this.b[i12];
             boolean z10 = i12 == 0 && i10 == 0;
             editTextBoldCursor.addTextChangedListener(new fe0(this, z10));
-            this.b[i12].setOnFocusChangeListener(new od(jd0Var, 3));
+            this.b[i12].setOnFocusChangeListener(new od(ld0Var, 3));
             if (z10) {
                 LinearLayout linearLayout = new LinearLayout(context);
                 linearLayout.setOrientation(0);
@@ -134,12 +134,12 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
                     }
                 });
                 linearLayout.addView(imageView, w7.y5.u(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
-                jd0Var.addView(linearLayout, w7.y5.c(-2.0f, -1));
+                ld0Var.addView(linearLayout, w7.y5.c(-2.0f, -1));
             } else {
-                jd0Var.addView(this.b[i12], w7.y5.c(-2.0f, -1));
+                ld0Var.addView(this.b[i12], w7.y5.c(-2.0f, -1));
             }
-            jd0Var.e(this.b[i12]);
-            addView(jd0Var, w7.y5.t(-1, -2, 1, 16, 16, 16, 0));
+            ld0Var.e(this.b[i12]);
+            addView(ld0Var, w7.y5.t(-1, -2, 1, 16, 16, 16, 0));
             this.b[i12].setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.de0
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView3, int i14, KeyEvent keyEvent) {
@@ -217,12 +217,12 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
         });
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final boolean c(boolean z10) {
         this.E.k1(true, true);
         this.v = null;
@@ -230,17 +230,17 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void d() {
         this.w = false;
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public String getHeaderName() {
         return LocaleController.getString("NewPassword", R.string.NewPassword);
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void h(String str) {
         if (this.w) {
             return;
@@ -284,12 +284,12 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void j() {
         AndroidUtilities.runOnUIThread(new c10(this, 18), qg0.t0);
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("recoveryview_params" + this.x);
         this.v = bundle2;
@@ -298,14 +298,14 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void l(Bundle bundle) {
         if (this.v != null) {
             bundle.putBundle("recoveryview_params" + this.x, this.v);
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void m(Bundle bundle, boolean z10) {
         EditTextBoldCursor[] editTextBoldCursorArr;
         if (bundle == null) {
@@ -335,7 +335,7 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
         editTextBoldCursorArr[0].requestFocus();
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void n() {
         this.c.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
         this.d.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.D6, false));
@@ -343,8 +343,8 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
             editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
             editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.l6, false));
         }
-        for (org.telegram.ui.Components.jd0 jd0Var : this.a) {
-            jd0Var.f();
+        for (org.telegram.ui.Components.ld0 ld0Var : this.a) {
+            ld0Var.f();
         }
         this.e.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q6, false));
         ImageView imageView = this.f;
@@ -365,6 +365,6 @@ public final class ge0 extends org.telegram.ui.Components.fw0 {
             passwordinputsettings.hint = str2 != null ? str2 : "";
             passwordinputsettings.new_algo = this.s.new_algo;
         }
-        Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.vn0(this, str, str2, tL_auth_recoverPassword, 19));
+        Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.xn0(this, str, str2, tL_auth_recoverPassword, 19));
     }
 }

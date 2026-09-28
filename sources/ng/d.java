@@ -30,16 +30,16 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.w80;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.y80;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.wf1;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final /* synthetic */ int a = 0;
@@ -106,17 +106,17 @@ public abstract class d {
         return cVar;
     }
 
-    public static qq d(int i10, String str) {
+    public static rq d(int i10, String str) {
         a aVar = new a(i10);
-        w80 w80Var = new w80(1, null);
+        y80 y80Var = new y80(1, null);
         String trim = str.trim();
-        w80Var.a(trim.length() >= 1 ? trim.substring(0, 1).toUpperCase() : "");
-        qq qqVar = new qq(aVar, w80Var, 0, 0);
-        qqVar.w = true;
-        return qqVar;
+        y80Var.a(trim.length() >= 1 ? trim.substring(0, 1).toUpperCase() : "");
+        rq rqVar = new rq(aVar, y80Var, 0, 0);
+        rqVar.w = true;
+        return rqVar;
     }
 
-    public static qq e(TLRPC.TL_forumTopic tL_forumTopic) {
+    public static rq e(TLRPC.TL_forumTopic tL_forumTopic) {
         if (tL_forumTopic == null) {
             return null;
         }
@@ -216,19 +216,19 @@ public abstract class d {
             z5Var.cacheType = 13;
         } else {
             spannableStringBuilder.append((CharSequence) " ");
-            qq e = e(tL_forumTopic);
+            rq e = e(tL_forumTopic);
             if (drawableArr != null) {
                 drawableArr[0] = e.a;
             }
             e.setBounds(0, 0, (int) (e.getIntrinsicWidth() * 0.65f), (int) (e.getIntrinsicHeight() * 0.65f));
             Drawable drawable = e.b;
-            if (drawable instanceof w80) {
-                ((w80) drawable).i = 0.7f;
+            if (drawable instanceof y80) {
+                ((y80) drawable).i = 0.7f;
             }
             if (paint != null) {
-                pq pqVar = new pq(0, e);
-                pqVar.setSize((int) (Math.abs(paint.getFontMetrics().ascent) + Math.abs(paint.getFontMetrics().descent)));
-                spannableStringBuilder.setSpan(pqVar, 0, 1, 33);
+                qq qqVar = new qq(0, e);
+                qqVar.setSize((int) (Math.abs(paint.getFontMetrics().ascent) + Math.abs(paint.getFontMetrics().descent)));
+                spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
             } else {
                 spannableStringBuilder.setSpan(new ImageSpan(e), 0, 1, 33);
             }

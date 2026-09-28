@@ -1,22 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class gv extends uq0 {
-    public final /* synthetic */ tv b1;
+public final class gv extends g.p {
+    public final /* synthetic */ uv c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gv(tv tvVar, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.b1 = tvVar;
+    public gv(uv uvVar) {
+        this.c = uvVar;
     }
 
-    @Override // org.telegram.ui.Components.uq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        AndroidUtilities.runOnUIThread(new xm(this, iVar, i10, 1), 100L);
+    @Override // g.p
+    public final int i(int i10) {
+        TLRPC.StickerSet stickerSet;
+        uv uvVar = this.c;
+        s4.s sVar = uvVar.y;
+        ev evVar = uvVar.e;
+        ci.v vVar = uvVar.h;
+        if (vVar.getAdapter() == null || vVar.getAdapter().j(i10) != 1) {
+            return sVar.J;
+        }
+        int i11 = 0;
+        int i12 = 0;
+        while (true) {
+            ArrayList[] arrayListArr = evVar.c;
+            if (i11 >= arrayListArr.length) {
+                break;
+            }
+            int size = arrayListArr[i11].size();
+            if (evVar.c.length > 1) {
+                size = Math.min(sVar.J * 2, size);
+            }
+            i12 += size + 2;
+            if (i10 < i12) {
+                break;
+            }
+            i11++;
+        }
+        ArrayList arrayList = evVar.b;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (arrayList == null || i11 >= arrayList.size()) ? null : (TLRPC.TL_messages_stickerSet) evVar.b.get(i11);
+        return (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || stickerSet.emojis) ? 5 : 8;
     }
 }

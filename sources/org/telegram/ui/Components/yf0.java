@@ -1,27 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class yf0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class yf0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zf0 b;
+    public final /* synthetic */ cg0 b;
 
-    public /* synthetic */ yf0(zf0 zf0Var, int i10) {
+    public /* synthetic */ yf0(cg0 cg0Var, int i10) {
         this.a = i10;
-        this.b = zf0Var;
+        this.b = cg0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.a.n.setVisibility(8);
+                this.b.e();
                 break;
             default:
-                this.b.a.h.setVisibility(8);
+                this.b.g();
                 break;
         }
     }

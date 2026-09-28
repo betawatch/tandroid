@@ -31,10 +31,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.nj0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class e4 extends FrameLayout {
     public ChatObject.Call E;
@@ -66,9 +66,9 @@ public class e4 extends FrameLayout {
     public AnimatorSet d0;
     public final org.telegram.ui.ActionBar.h5 e;
     public float e0;
-    public final lj0 f;
-    public final ij0 h;
-    public final ij0 n;
+    public final nj0 f;
+    public final kj0 h;
+    public final kj0 n;
     public final org.telegram.ui.Components.o5 r;
     public final org.telegram.ui.Components.o5 s;
     public Drawable v;
@@ -99,14 +99,14 @@ public class e4 extends FrameLayout {
                     case 0:
                         e4 e4Var = this.b;
                         e4Var.n.S(0, null);
-                        ij0 ij0Var = e4Var.h;
-                        ij0Var.S(0, null);
-                        e4Var.f.setAnimation(ij0Var);
+                        kj0 kj0Var = e4Var.h;
+                        kj0Var.S(0, null);
+                        e4Var.f.setAnimation(kj0Var);
                         break;
                     case 1:
                         e4 e4Var2 = this.b;
-                        lj0 lj0Var = e4Var2.f;
-                        ij0 ij0Var2 = e4Var2.n;
+                        nj0 nj0Var = e4Var2.f;
+                        kj0 kj0Var2 = e4Var2.n;
                         int nextInt = Utilities.random.nextInt(100);
                         int i13 = 120;
                         if (nextInt < 32) {
@@ -129,11 +129,11 @@ public class e4 extends FrameLayout {
                                 }
                             }
                         }
-                        ij0Var2.P(i13);
-                        ij0Var2.S(i13 - 1, e4Var2.R);
-                        lj0Var.setAnimation(ij0Var2);
-                        ij0Var2.M(i12);
-                        lj0Var.d();
+                        kj0Var2.P(i13);
+                        kj0Var2.S(i13 - 1, e4Var2.R);
+                        nj0Var.setAnimation(kj0Var2);
+                        kj0Var2.M(i12);
+                        nj0Var.d();
                         break;
                     case 2:
                         this.b.a(true, true);
@@ -166,14 +166,14 @@ public class e4 extends FrameLayout {
                     case 0:
                         e4 e4Var = this.b;
                         e4Var.n.S(0, null);
-                        ij0 ij0Var = e4Var.h;
-                        ij0Var.S(0, null);
-                        e4Var.f.setAnimation(ij0Var);
+                        kj0 kj0Var = e4Var.h;
+                        kj0Var.S(0, null);
+                        e4Var.f.setAnimation(kj0Var);
                         break;
                     case 1:
                         e4 e4Var2 = this.b;
-                        lj0 lj0Var = e4Var2.f;
-                        ij0 ij0Var2 = e4Var2.n;
+                        nj0 nj0Var = e4Var2.f;
+                        kj0 kj0Var2 = e4Var2.n;
                         int nextInt = Utilities.random.nextInt(100);
                         int i13 = 120;
                         if (nextInt < 32) {
@@ -196,11 +196,11 @@ public class e4 extends FrameLayout {
                                 }
                             }
                         }
-                        ij0Var2.P(i13);
-                        ij0Var2.S(i13 - 1, e4Var2.R);
-                        lj0Var.setAnimation(ij0Var2);
-                        ij0Var2.M(i122);
-                        lj0Var.d();
+                        kj0Var2.P(i13);
+                        kj0Var2.S(i13 - 1, e4Var2.R);
+                        nj0Var.setAnimation(kj0Var2);
+                        kj0Var2.M(i122);
+                        nj0Var.d();
                         break;
                     case 2:
                         this.b.a(true, true);
@@ -234,14 +234,14 @@ public class e4 extends FrameLayout {
                     case 0:
                         e4 e4Var = this.b;
                         e4Var.n.S(0, null);
-                        ij0 ij0Var = e4Var.h;
-                        ij0Var.S(0, null);
-                        e4Var.f.setAnimation(ij0Var);
+                        kj0 kj0Var = e4Var.h;
+                        kj0Var.S(0, null);
+                        e4Var.f.setAnimation(kj0Var);
                         break;
                     case 1:
                         e4 e4Var2 = this.b;
-                        lj0 lj0Var = e4Var2.f;
-                        ij0 ij0Var2 = e4Var2.n;
+                        nj0 nj0Var = e4Var2.f;
+                        kj0 kj0Var2 = e4Var2.n;
                         int nextInt = Utilities.random.nextInt(100);
                         int i132 = 120;
                         if (nextInt < 32) {
@@ -264,11 +264,11 @@ public class e4 extends FrameLayout {
                                 }
                             }
                         }
-                        ij0Var2.P(i132);
-                        ij0Var2.S(i132 - 1, e4Var2.R);
-                        lj0Var.setAnimation(ij0Var2);
-                        ij0Var2.M(i122);
-                        lj0Var.d();
+                        kj0Var2.P(i132);
+                        kj0Var2.S(i132 - 1, e4Var2.R);
+                        nj0Var.setAnimation(kj0Var2);
+                        kj0Var2.M(i122);
+                        nj0Var.d();
                         break;
                     case 2:
                         this.b.a(true, true);
@@ -300,14 +300,14 @@ public class e4 extends FrameLayout {
                     case 0:
                         e4 e4Var = this.b;
                         e4Var.n.S(0, null);
-                        ij0 ij0Var = e4Var.h;
-                        ij0Var.S(0, null);
-                        e4Var.f.setAnimation(ij0Var);
+                        kj0 kj0Var = e4Var.h;
+                        kj0Var.S(0, null);
+                        e4Var.f.setAnimation(kj0Var);
                         break;
                     case 1:
                         e4 e4Var2 = this.b;
-                        lj0 lj0Var = e4Var2.f;
-                        ij0 ij0Var2 = e4Var2.n;
+                        nj0 nj0Var = e4Var2.f;
+                        kj0 kj0Var2 = e4Var2.n;
                         int nextInt = Utilities.random.nextInt(100);
                         int i132 = 120;
                         if (nextInt < 32) {
@@ -330,11 +330,11 @@ public class e4 extends FrameLayout {
                                 }
                             }
                         }
-                        ij0Var2.P(i132);
-                        ij0Var2.S(i132 - 1, e4Var2.R);
-                        lj0Var.setAnimation(ij0Var2);
-                        ij0Var2.M(i122);
-                        lj0Var.d();
+                        kj0Var2.P(i132);
+                        kj0Var2.S(i132 - 1, e4Var2.R);
+                        nj0Var.setAnimation(kj0Var2);
+                        kj0Var2.M(i122);
+                        nj0Var.d();
                         break;
                     case 2:
                         this.b.a(true, true);
@@ -367,14 +367,14 @@ public class e4 extends FrameLayout {
                     case 0:
                         e4 e4Var = this.b;
                         e4Var.n.S(0, null);
-                        ij0 ij0Var = e4Var.h;
-                        ij0Var.S(0, null);
-                        e4Var.f.setAnimation(ij0Var);
+                        kj0 kj0Var = e4Var.h;
+                        kj0Var.S(0, null);
+                        e4Var.f.setAnimation(kj0Var);
                         break;
                     case 1:
                         e4 e4Var2 = this.b;
-                        lj0 lj0Var = e4Var2.f;
-                        ij0 ij0Var2 = e4Var2.n;
+                        nj0 nj0Var = e4Var2.f;
+                        kj0 kj0Var2 = e4Var2.n;
                         int nextInt = Utilities.random.nextInt(100);
                         int i132 = 120;
                         if (nextInt < 32) {
@@ -397,11 +397,11 @@ public class e4 extends FrameLayout {
                                 }
                             }
                         }
-                        ij0Var2.P(i132);
-                        ij0Var2.S(i132 - 1, e4Var2.R);
-                        lj0Var.setAnimation(ij0Var2);
-                        ij0Var2.M(i122);
-                        lj0Var.d();
+                        kj0Var2.P(i132);
+                        kj0Var2.S(i132 - 1, e4Var2.R);
+                        nj0Var.setAnimation(kj0Var2);
+                        kj0Var2.M(i122);
+                        nj0Var.d();
                         break;
                     case 2:
                         this.b.a(true, true);
@@ -494,22 +494,22 @@ public class e4 extends FrameLayout {
         h5Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.rg, false));
         h5Var2.setVisibility(8);
         addView(h5Var2, w7.y5.d(-1, 60.0f, (LocaleController.isRTL ? 5 : 3) | 48, 14.0f, 32.0f, 14.0f, 0.0f));
-        ij0 ij0Var = new ij0(R.raw.voice_outlined2, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(32.0f), true, null);
-        this.h = ij0Var;
-        this.n = new ij0(R.raw.hand_1, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(32.0f), true, null);
-        lj0 lj0Var = new lj0(context);
-        this.f = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        lj0Var.setAnimation(ij0Var);
+        kj0 kj0Var = new kj0(R.raw.voice_outlined2, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(32.0f), true, null);
+        this.h = kj0Var;
+        this.n = new kj0(R.raw.hand_1, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(32.0f), true, null);
+        nj0 nj0Var = new nj0(context);
+        this.f = nj0Var;
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        nj0Var.setAnimation(kj0Var);
         z f02 = org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, this.T, false) & 620756991, 1, -1);
         try {
             RippleDrawable.class.getDeclaredMethod("setForceSoftware", Boolean.TYPE).invoke(f02, Boolean.TRUE);
         } catch (Throwable unused) {
         }
-        lj0Var.setBackground(f02);
-        lj0Var.setImportantForAccessibility(2);
-        addView(lj0Var, w7.y5.d(48, -1.0f, (LocaleController.isRTL ? 3 : 5) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
-        lj0Var.setOnClickListener(new a(this, i10));
+        nj0Var.setBackground(f02);
+        nj0Var.setImportantForAccessibility(2);
+        addView(nj0Var, w7.y5.d(48, -1.0f, (LocaleController.isRTL ? 3 : 5) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
+        nj0Var.setOnClickListener(new a(this, i10));
         this.a = new c4(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(29.0f));
         setWillNotDraw(false);
         setFocusable(true);
@@ -544,8 +544,8 @@ public class e4 extends FrameLayout {
         }
         char c11 = 1;
         boolean z13 = (c() && this.F.raise_hand_rating == 0) ? false : true;
-        lj0 lj0Var = this.f;
-        lj0Var.setEnabled(z13);
+        nj0 nj0Var = this.f;
+        nj0Var.setEnabled(z13);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         TLRPC.GroupCallParticipant groupCallParticipant = this.F;
         boolean z14 = elapsedRealtime - groupCallParticipant.lastVoiceUpdateTime < 500 ? groupCallParticipant.hasVoiceDelayed : groupCallParticipant.hasVoice;
@@ -754,39 +754,39 @@ public class e4 extends FrameLayout {
                         this.d0.start();
                     }
                     if (z10 || this.J != z18 || this.K != z12) {
-                        ij0 ij0Var = this.h;
+                        kj0 kj0Var = this.h;
                         if (z12) {
-                            P = ij0Var.P(84);
+                            P = kj0Var.P(84);
                             if (z10) {
-                                ij0Var.S(83, this.S);
+                                kj0Var.S(83, this.S);
                             } else {
-                                ij0Var.S(0, null);
+                                kj0Var.S(0, null);
                             }
                         } else {
-                            lj0Var.setAnimation(ij0Var);
-                            ij0Var.S(0, null);
+                            nj0Var.setAnimation(kj0Var);
+                            kj0Var.S(0, null);
                             if (z18 && this.K) {
-                                P = ij0Var.P(21);
+                                P = kj0Var.P(21);
                             } else {
-                                P = ij0Var.P(z18 ? 64 : 42);
+                                P = kj0Var.P(z18 ? 64 : 42);
                             }
                         }
                         if (z10) {
                             if (P) {
                                 if (i10 == 3) {
-                                    ij0Var.M(63);
+                                    kj0Var.M(63);
                                 } else if (z18 && this.K && !z12) {
-                                    ij0Var.M(0);
+                                    kj0Var.M(0);
                                 } else if (z18) {
-                                    ij0Var.M(43);
+                                    kj0Var.M(43);
                                 } else {
-                                    ij0Var.M(21);
+                                    kj0Var.M(21);
                                 }
                             }
-                            lj0Var.d();
+                            nj0Var.d();
                         } else {
-                            ij0Var.N(ij0Var.f - 1, false, true);
-                            lj0Var.invalidate();
+                            kj0Var.N(kj0Var.f - 1, false, true);
+                            nj0Var.invalidate();
                         }
                         this.J = z18;
                         this.K = z12;
@@ -805,7 +805,7 @@ public class e4 extends FrameLayout {
                 }
                 if (z10) {
                 }
-                ij0 ij0Var2 = this.h;
+                kj0 kj0Var2 = this.h;
                 if (z12) {
                 }
                 if (z10) {
@@ -817,8 +817,8 @@ public class e4 extends FrameLayout {
                 c4Var2.e(this, !this.a0 && this.e0 == f7);
             }
             this.L = w02;
-            lj0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
-            org.telegram.ui.ActionBar.h6.B1(lj0Var.getDrawable(), w02 & 620756991, true);
+            nj0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+            org.telegram.ui.ActionBar.h6.B1(nj0Var.getDrawable(), w02 & 620756991, true);
         }
         arrayList = null;
         if (i10 == 1) {
@@ -834,7 +834,7 @@ public class e4 extends FrameLayout {
         }
         if (z10) {
         }
-        ij0 ij0Var22 = this.h;
+        kj0 kj0Var22 = this.h;
         if (z12) {
         }
         if (z10) {
@@ -1032,9 +1032,9 @@ public class e4 extends FrameLayout {
         }
         if (this.O) {
             PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN);
-            lj0 lj0Var = this.f;
-            lj0Var.setColorFilter(porterDuffColorFilter);
-            org.telegram.ui.ActionBar.h6.B1(lj0Var.getDrawable(), i11 & 620756991, true);
+            nj0 nj0Var = this.f;
+            nj0Var.setColorFilter(porterDuffColorFilter);
+            org.telegram.ui.ActionBar.h6.B1(nj0Var.getDrawable(), i11 & 620756991, true);
         }
     }
 
@@ -1205,11 +1205,11 @@ public class e4 extends FrameLayout {
         this.b.setAlpha(f7 == 0.0f ? 1.0f : 0.0f);
         this.a.e(this, this.a0 && f7 == 0.0f);
         float f11 = 1.0f - f7;
-        lj0 lj0Var = this.f;
-        lj0Var.setAlpha(f11);
+        nj0 nj0Var = this.f;
+        nj0Var.setAlpha(f11);
         float f12 = (f11 * 0.4f) + 0.6f;
-        lj0Var.setScaleX(f12);
-        lj0Var.setScaleY(f12);
+        nj0Var.setScaleX(f12);
+        nj0Var.setScaleY(f12);
         invalidate();
     }
 

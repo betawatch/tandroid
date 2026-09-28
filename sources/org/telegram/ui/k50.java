@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class k50 implements org.telegram.ui.Components.u40 {
+public final class k50 implements org.telegram.ui.Components.w40 {
     public float a;
     public TLRPC.FileLocation b;
     public TLRPC.FileLocation c;
@@ -20,13 +20,13 @@ public final class k50 implements org.telegram.ui.Components.u40 {
         this.e = j3;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final void B(float f7) {
         this.f.b.O(this.d, f7);
         a(f7);
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
         AndroidUtilities.runOnUIThread(new fi.k(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
     }
@@ -54,31 +54,31 @@ public final class k50 implements org.telegram.ui.Components.u40 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final /* synthetic */ vu0 getCloseIntoObject() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final /* synthetic */ String getInitialSearchString() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final /* synthetic */ boolean t() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final /* synthetic */ void P() {
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final void L(boolean z10, boolean z11) {
     }
 }

@@ -1,79 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class oi0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pi0 b;
+public final class oi0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ ri0 b;
 
-    public /* synthetic */ oi0(pi0 pi0Var, int i10) {
-        this.a = i10;
-        this.b = pi0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oi0(ri0 ri0Var, Activity activity) {
+        super(activity);
+        this.b = ri0Var;
+        this.a = false;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                pi0 pi0Var = this.b;
-                AnimatorSet animatorSet = pi0Var.s;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    pi0Var.s = null;
-                    pi0Var.getClass();
-                    break;
-                }
-                break;
-            case 2:
-                pi0 pi0Var2 = this.b;
-                AnimatorSet animatorSet2 = pi0Var2.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    pi0Var2.s = null;
-                    pi0Var2.getClass();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        ri0 ri0Var = this.b;
+        gd0 gd0Var = ri0Var.H;
+        gd0 gd0Var2 = ri0Var.G;
+        this.a = true;
+        Point point = AndroidUtilities.displaySize;
+        int i12 = point.x > point.y ? 3 : 5;
+        gd0Var2.setItemCount(i12);
+        gd0Var.setItemCount(i12);
+        gd0Var2.getLayoutParams().height = AndroidUtilities.dp(54.0f) * i12;
+        gd0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * i12;
+        this.a = false;
+        int size = View.MeasureSpec.getSize(i10);
+        ri0Var.N = size;
+        if (size != 0) {
+            ri0Var.c(false);
         }
+        super.onMeasure(i10, i11);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        pi0 pi0Var = this.b;
-        switch (i10) {
-            case 0:
-                AnimatorSet animatorSet = pi0Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    pi0Var.h = null;
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            case 1:
-                AnimatorSet animatorSet2 = pi0Var.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    pi0Var.s = null;
-                    if (pi0Var.w) {
-                        pi0Var.setLayerType(0, null);
-                    }
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            default:
-                AnimatorSet animatorSet3 = pi0Var.s;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    pi0Var.s = null;
-                    AndroidUtilities.runOnUIThread(new ic0(this, 15));
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
+        super.requestLayout();
     }
 }

@@ -21,9 +21,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class jm extends org.telegram.ui.Components.xk0 {
+public final class jm extends org.telegram.ui.Components.zk0 {
     public int E;
     public int F;
     public int G;
@@ -68,7 +68,7 @@ public final class jm extends org.telegram.ui.Components.xk0 {
         C(true);
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -566,12 +566,12 @@ public final class jm extends org.telegram.ui.Components.xk0 {
         return i10 == this.I ? 8 : 4;
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.zk0, s4.h0
     public final void l() {
         O(false);
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.zk0, s4.h0
     public final void m(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item changed " + i10);
@@ -594,7 +594,7 @@ public final class jm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.zk0, s4.h0
     public final void o(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item inserted " + i10);
@@ -640,7 +640,7 @@ public final class jm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.zk0, s4.h0
     public final void q(int i10, int i11) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item range changed " + i10 + ":" + i11);
@@ -663,7 +663,7 @@ public final class jm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.zk0, s4.h0
     public final void s(int i10, int i11) {
         int i12;
         int i13;
@@ -696,7 +696,7 @@ public final class jm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.zk0, s4.h0
     public final void t(int i10, int i11) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item range removed" + i10 + ":" + i11);
@@ -719,7 +719,7 @@ public final class jm extends org.telegram.ui.Components.xk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0, s4.h0
+    @Override // org.telegram.ui.Components.zk0, s4.h0
     public final void u(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item removed " + i10);
@@ -874,7 +874,7 @@ public final class jm extends org.telegram.ui.Components.xk0 {
         int i19;
         int i20;
         boolean z27;
-        org.telegram.ui.Components.h60 h60Var;
+        org.telegram.ui.Components.j60 j60Var;
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         String str2;
@@ -1352,7 +1352,7 @@ public final class jm extends org.telegram.ui.Components.xk0 {
                                         }
                                         indexOf = arrayList3.indexOf(messageObject2);
                                         if (indexOf != -1) {
-                                            if (messageObject2.type == 5 && (h60Var = wnVar.b3) != null && h60Var.getTextureView() != null) {
+                                            if (messageObject2.type == 5 && (j60Var = wnVar.b3) != null && j60Var.getTextureView() != null) {
                                                 of ofVar = wnVar.q7;
                                                 if (ofVar != null) {
                                                     AndroidUtilities.cancelRunOnUIThread(ofVar);
@@ -1449,9 +1449,9 @@ public final class jm extends org.telegram.ui.Components.xk0 {
                                             hashMap.remove(messageObject2.getDocument());
                                             tjVar = wnVar.y0;
                                             if (tjVar != null) {
-                                                org.telegram.ui.Components.ko koVar = wnVar.S0;
+                                                org.telegram.ui.Components.lo loVar = wnVar.S0;
                                                 tjVar.O = c1Var;
-                                                tjVar.P = koVar;
+                                                tjVar.P = loVar;
                                                 r10 = 0;
                                                 tjVar.N = false;
                                                 if (u1Var.fd) {

@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class q2 extends FrameLayout {
     public TextView[] a;
@@ -33,7 +33,7 @@ public final class q2 extends FrameLayout {
         this.h = ofFloat;
         ofFloat.addUpdateListener(new ai.x(view2, view));
         this.h.addListener(new gg.k0((FrameLayout) this, view, view2, (Object) runnable, 4));
-        this.h.setDuration(250L).setInterpolator(rr.f);
+        this.h.setDuration(250L).setInterpolator(sr.f);
         this.h.start();
     }
 
@@ -85,7 +85,7 @@ public final class q2 extends FrameLayout {
             if (frameLayout.getVisibility() == 8) {
                 return;
             }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(rr.f).setListener(new p2(this, 1)).setDuration(300L).start();
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(sr.f).setListener(new p2(this, 1)).setDuration(300L).start();
         } else {
             if (frameLayout.getVisibility() == 0) {
                 return;
@@ -95,7 +95,7 @@ public final class q2 extends FrameLayout {
             frameLayout.setScaleY(0.6f);
             frameLayout.setScaleX(0.6f);
             frameLayout.animate().setListener(null).cancel();
-            ok.s(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), rr.k, 300L);
+            ok.s(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), sr.k, 300L);
         }
     }
 

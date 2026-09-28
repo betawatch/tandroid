@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class xt0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
@@ -173,7 +173,7 @@ public final class xt0 implements ViewTreeObserver.OnPreDrawListener {
             arrayList.add(ObjectAnimator.ofFloat(nu0Var, (Property<nu0, Float>) property, 0.0f, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f));
             if (photoViewer.c2 == 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.ef0, Float>) property, 0.0f, 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.gf0, Float>) property, 0.0f, 1.0f));
             }
             animatorSet.playTogether(arrayList);
             animatorSet.setDuration(200L);

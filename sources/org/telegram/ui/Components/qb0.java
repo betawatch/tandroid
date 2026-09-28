@@ -1,45 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class qb0 extends org.telegram.ui.ActionBar.e1 {
-    public final /* synthetic */ int L;
+public final class qb0 extends g.p {
+    public final /* synthetic */ bc0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qb0(int i10, int i11, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
-        super(i10, context, d6Var, z10, z11);
-        this.L = i11;
+    public qb0(bc0 bc0Var) {
+        this.c = bc0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e1
-    public final void i() {
-        switch (this.L) {
-            case 0:
-                setBackground(null);
-                break;
-            default:
-                setBackground(null);
-                break;
+    @Override // g.p
+    public final int i(int i10) {
+        MessageObject messageObject;
+        MessageObject.GroupedMessages a2;
+        if (i10 < 0) {
+            return MediaDataController.MAX_STYLE_RUNS_COUNT;
         }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.L) {
-            case 0:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
-            default:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
+        bc0 bc0Var = this.c;
+        return (i10 >= bc0Var.r.previewMessages.size() || (a2 = bc0.a(bc0Var, (messageObject = bc0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
     }
 }

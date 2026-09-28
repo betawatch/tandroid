@@ -1,17 +1,76 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface po {
-    void dismiss();
+public final class po extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    public final /* synthetic */ int T;
+    public Object U;
 
-    void m();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ po(Context context, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var, int i12) {
+        super(i10, i11, context, d6Var);
+        this.T = i12;
+    }
 
-    void n();
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.T) {
+            case 0:
+                canvas.save();
+                Path path = (Path) this.U;
+                path.rewind();
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path.addRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
+                canvas.clipPath(path);
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                canvas.restore();
+                return drawChild;
+            case 1:
+                canvas.save();
+                Path path2 = (Path) this.U;
+                path2.rewind();
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path2.addRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
+                canvas.clipPath(path2);
+                boolean drawChild2 = super.drawChild(canvas, view, j3);
+                canvas.restore();
+                return drawChild2;
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
+    }
 
-    void o();
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        int i12;
+        switch (this.T) {
+            case 2:
+                a80 a80Var = (a80) this.U;
+                if (this == a80Var.A && (i12 = a80Var.X) > 0) {
+                    i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11));
+                }
+                super.onMeasure(i10, i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
 
-    void r();
-
-    void u(int i10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public po(a80 a80Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
+        super(i10, i11, context, d6Var);
+        this.T = 2;
+        this.U = a80Var;
+    }
 }

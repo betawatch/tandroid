@@ -15,10 +15,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.nz;
 import org.telegram.ui.nj0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class t1 {
     public boolean A;
@@ -423,7 +423,7 @@ public final class t1 {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) string);
                     spannableStringBuilder.append(text2.subSequence(string.length(), text2.length()));
-                    spannableStringBuilder.setSpan(new mz(z13), 0, string.length(), 0);
+                    spannableStringBuilder.setSpan(new nz(z13), 0, string.length(), 0);
                     this.V0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.h6.T2, AndroidUtilities.dp(100.0f) + u1Var.qb, alignment, 1.0f, 0.0f, false);
                     this.Y0 = u1Var.pb - this.X0;
                 } else {

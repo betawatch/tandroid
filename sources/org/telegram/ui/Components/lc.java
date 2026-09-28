@@ -5,12 +5,12 @@ import android.graphics.Typeface;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class lc extends nb {
     public final w9 a;
-    public final n90 b;
-    public final n90 c;
+    public final p90 b;
+    public final p90 c;
 
     public lc(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, d6Var);
@@ -24,21 +24,21 @@ public final class lc extends nb {
         int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.h6.Gi);
         LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
         addView(f7, w7.y5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        n90 n90Var = new n90(context, null);
-        this.b = n90Var;
-        n90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        n90Var.setTextColor(themedColor);
-        n90Var.setTextSize(1, 14.0f);
-        n90Var.setTypeface(AndroidUtilities.bold());
-        f7.addView(n90Var);
-        n90 n90Var2 = new n90(context, null);
-        this.c = n90Var2;
-        n90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        n90Var2.setTextColor(themedColor);
-        n90Var2.setLinkTextColor(themedColor2);
-        n90Var2.setTypeface(Typeface.SANS_SERIF);
-        n90Var2.setTextSize(1, 13.0f);
-        f7.addView(n90Var2);
+        p90 p90Var = new p90(context, null);
+        this.b = p90Var;
+        p90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        p90Var.setTextColor(themedColor);
+        p90Var.setTextSize(1, 14.0f);
+        p90Var.setTypeface(AndroidUtilities.bold());
+        f7.addView(p90Var);
+        p90 p90Var2 = new p90(context, null);
+        this.c = p90Var2;
+        p90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        p90Var2.setTextColor(themedColor);
+        p90Var2.setLinkTextColor(themedColor2);
+        p90Var2.setTypeface(Typeface.SANS_SERIF);
+        p90Var2.setTextSize(1, 13.0f);
+        f7.addView(p90Var2);
     }
 
     @Override // org.telegram.ui.Components.ub

@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class SavedMessagesController {
     private final int currentAccount;
@@ -38,7 +38,7 @@ public class SavedMessagesController {
     private final Runnable saveCacheRunnable = new yh(this, 1);
     private final a0.i checkMessagesCallbacks = new a0.i();
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class SavedDialog {
         public long dialogId;
         private int lastDate;
@@ -885,7 +885,7 @@ public class SavedMessagesController {
         this.saving = true;
         ArrayList arrayList = new ArrayList(this.allDialogs);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new n8(this, messagesStorage, arrayList, 22));
+        messagesStorage.getStorageQueue().postRunnable(new j8(this, messagesStorage, arrayList, 22));
     }
 
     private void saveCacheSchedule() {
@@ -927,7 +927,7 @@ public class SavedMessagesController {
                 }
             }
         }
-        Collections.sort(arrayList, new ai(0));
+        Collections.sort(arrayList, new ai(1));
         this.allDialogs.addAll(arrayList);
         if (z10) {
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.savedMessagesDialogsUpdate, new Object[0]);
@@ -1490,8 +1490,8 @@ public class SavedMessagesController {
             }
             i11++;
         }
-        Collections.sort(arrayList, new p(28));
-        Collections.sort(arrayList4, new p(29));
+        Collections.sort(arrayList, new p(29));
+        Collections.sort(arrayList4, new ai(0));
         arrayList.addAll(0, arrayList4);
         return true;
     }

@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class j0 {
     public static final float[][] a;
@@ -168,12 +168,12 @@ public abstract class j0 {
             }
             float f51 = f26;
             if (i12 == 18 || i12 == 19 || i12 == 6 || i12 == 7) {
-                f13 = rr.i.getInterpolation(f13);
+                f13 = sr.i.getInterpolation(f13);
             }
             float[] fArr3 = fArr;
             float b10 = com.google.android.gms.internal.vision.e2.b(1.0f, f15, AndroidUtilities.dp(12.0f), f47);
             if (f13 < 1.0f) {
-                f46 = AndroidUtilities.lerp(f18, f46, rr.i.getInterpolation(f13));
+                f46 = AndroidUtilities.lerp(f18, f46, sr.i.getInterpolation(f13));
                 b10 = AndroidUtilities.lerp(f19, b10, f13);
                 dpf27 = AndroidUtilities.lerp(AndroidUtilities.dpf2(8.0f), dpf27, f13);
             }

@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class d9 extends FrameLayout {
     public float E;
@@ -23,8 +23,8 @@ public abstract class d9 extends FrameLayout {
     public long a;
     public TLRPC.Document b;
     public final ai.y5 c;
-    public final p20 d;
-    public final p20 e;
+    public final r20 d;
+    public final r20 e;
     public float f;
     public a9 h;
     public boolean n;
@@ -39,11 +39,11 @@ public abstract class d9 extends FrameLayout {
     public d9(e9 e9Var, Context context) {
         super(context);
         this.F = e9Var;
-        this.d = new p20();
-        this.e = new p20();
+        this.d = new r20();
+        this.e = new r20();
         this.f = 1.0f;
         this.r = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
-        this.s = new e6(this, 200L, rr.g);
+        this.s = new e6(this, 200L, sr.g);
         this.w = -1.0f;
         ai.y5 y5Var = new ai.y5(this, context, 7);
         this.c = y5Var;
@@ -115,13 +115,13 @@ public abstract class d9 extends FrameLayout {
             int i11 = a9Var.d;
             int i12 = a9Var.e;
             int i13 = a9Var.f;
-            p20 p20Var = this.d;
-            p20Var.d(i10, i11, i12, i13);
-            Paint paint = p20Var.c;
+            r20 r20Var = this.d;
+            r20Var.d(i10, i11, i12, i13);
+            Paint paint = r20Var.c;
             float f11 = this.y;
             float f12 = this.x;
             float f13 = this.E;
-            p20Var.b(f11 - f12, f13 - f12, f11 + f12, f13 + f12);
+            r20Var.b(f11 - f12, f13 - f12, f11 + f12, f13 + f12);
             if (this.f == 1.0f) {
                 d9Var = this;
                 paint.setAlpha(255);
@@ -159,9 +159,9 @@ public abstract class d9 extends FrameLayout {
             float f23 = f22 - f20;
             float f24 = f19 + f20;
             float f25 = f22 + f20;
-            p20 p20Var2 = this.e;
-            p20Var2.b(f21, f23, f24, f25);
-            Paint paint2 = p20Var2.c;
+            r20 r20Var2 = this.e;
+            r20Var2.b(f21, f23, f24, f25);
+            Paint paint2 = r20Var2.c;
             paint2.setAlpha(255);
             d9Var = this;
             d9Var.a(canvas, this.y, this.E, measuredWidth, this.x, paint2);

@@ -12,9 +12,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ou0 extends org.telegram.ui.Components.vl0 {
+public final class ou0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ PhotoViewer d;
 
@@ -23,7 +23,7 @@ public final class ou0 extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -49,7 +49,7 @@ public final class ou0 extends org.telegram.ui.Components.vl0 {
         int dp = AndroidUtilities.dp(85.0f);
         int dp2 = i10 != 0 ? AndroidUtilities.dp(6.0f) : 0;
         z5Var.f = dp;
-        org.telegram.ui.Components.op opVar = z5Var.c;
+        org.telegram.ui.Components.pp ppVar = z5Var.c;
         org.telegram.ui.Components.w9 w9Var = z5Var.a;
         t5 t5Var = z5Var.e;
         z5Var.h = dp2;
@@ -65,8 +65,8 @@ public final class ou0 extends org.telegram.ui.Components.vl0 {
                 z5Var.setTag(searchImage);
                 z5Var.setImage(searchImage);
                 t5Var.setVisibility(4);
-                opVar.a.f(-1, true, false);
-                opVar.setVisibility(0);
+                ppVar.a.f(-1, true, false);
+                ppVar.setVisibility(0);
                 return;
             }
             return;
@@ -90,8 +90,8 @@ public final class ou0 extends org.telegram.ui.Components.vl0 {
         } else {
             w9Var.setImageResource(R.drawable.nophotos);
         }
-        opVar.a.f(-1, true, false);
-        opVar.setVisibility(0);
+        ppVar.a.f(-1, true, false);
+        ppVar.setVisibility(0);
     }
 
     @Override // s4.h0
@@ -125,14 +125,14 @@ public final class ou0 extends org.telegram.ui.Components.vl0 {
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
         t5Var.addView(textView, w7.y5.d(-2, -2.0f, 19, 18.0f, -0.7f, 0.0f, 0.0f));
-        org.telegram.ui.Components.op opVar = new org.telegram.ui.Components.op(context, 24, null);
-        z5Var.c = opVar;
-        opVar.setDrawBackgroundAsArc(11);
-        opVar.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
-        z5Var.addView(opVar, w7.y5.d(26, 26.0f, 51, 55.0f, 4.0f, 0.0f, 0.0f));
-        opVar.setVisibility(0);
+        org.telegram.ui.Components.pp ppVar = new org.telegram.ui.Components.pp(context, 24, null);
+        z5Var.c = ppVar;
+        ppVar.setDrawBackgroundAsArc(11);
+        ppVar.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
+        z5Var.addView(ppVar, w7.y5.d(26, 26.0f, 51, 55.0f, 4.0f, 0.0f, 0.0f));
+        ppVar.setVisibility(0);
         z5Var.setFocusable(true);
         frameLayout.setOnClickListener(new f60(this, 20));
-        return new org.telegram.ui.Components.gl0(z5Var);
+        return new org.telegram.ui.Components.il0(z5Var);
     }
 }

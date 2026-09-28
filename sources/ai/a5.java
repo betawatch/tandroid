@@ -18,11 +18,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.cz;
 import org.telegram.ui.hv0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class a5 extends i0 {
     public final org.telegram.ui.Components.e6 d;
@@ -42,9 +42,9 @@ public final class a5 extends i0 {
         this.x = e6Var;
         this.v = b6Var;
         this.w = jcVar;
-        rr rrVar = rr.f;
-        this.d = new org.telegram.ui.Components.e6(this, 150L, rrVar);
-        this.e = new org.telegram.ui.Components.e6(this, 150L, rrVar);
+        sr srVar = sr.f;
+        this.d = new org.telegram.ui.Components.e6(this, 150L, srVar);
+        this.e = new org.telegram.ui.Components.e6(this, 150L, srVar);
         this.f = new org.telegram.ui.Components.voip.h(32, 102, 240);
         org.telegram.ui.Components.e6 e6Var2 = new org.telegram.ui.Components.e6(this);
         this.h = e6Var2;

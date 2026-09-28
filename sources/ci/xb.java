@@ -10,12 +10,12 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.if0;
 import org.telegram.ui.Components.kf0;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.mf0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.wv0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class xb extends FrameLayout {
     public final Rect a;
@@ -89,23 +89,23 @@ public final class xb extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         lc lcVar = this.d;
-        kf0 kf0Var = lcVar.F1;
-        if (kf0Var != null) {
-            float measuredWidth = kf0Var.getMeasuredWidth();
+        mf0 mf0Var = lcVar.F1;
+        if (mf0Var != null) {
+            float measuredWidth = mf0Var.getMeasuredWidth();
             float measuredHeight = lcVar.F1.getMeasuredHeight();
-            sk0 sk0Var = kf0Var.e;
-            sk0Var.a = 0.0f;
-            sk0Var.b = 0.0f;
-            sk0Var.c = measuredWidth;
-            sk0Var.d = measuredHeight;
+            uk0 uk0Var = mf0Var.e;
+            uk0Var.a = 0.0f;
+            uk0Var.b = 0.0f;
+            uk0Var.c = measuredWidth;
+            uk0Var.d = measuredHeight;
         }
-        if0 if0Var = lcVar.E1;
-        if (if0Var != null) {
-            float measuredWidth2 = if0Var.getMeasuredWidth();
+        kf0 kf0Var = lcVar.E1;
+        if (kf0Var != null) {
+            float measuredWidth2 = kf0Var.getMeasuredWidth();
             float measuredHeight2 = lcVar.E1.getMeasuredHeight();
-            uv0 uv0Var = if0Var.d;
-            uv0Var.a = measuredWidth2;
-            uv0Var.b = measuredHeight2;
+            wv0 wv0Var = kf0Var.d;
+            wv0Var.a = measuredWidth2;
+            wv0Var.b = measuredHeight2;
         }
     }
 

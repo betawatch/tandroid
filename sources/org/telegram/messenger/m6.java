@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m6 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class m6 implements Runnable {
                 ((ImageLoader) this.c).lambda$cancelLoadingForImageReceiver$4(this.b, (ImageReceiver) this.d);
                 break;
             case 3:
-                ((MediaDataController) this.c).lambda$loadBotKeyboard$196((MessagesStorage.TopicKey) this.d, this.b);
+                ((MediaDataController) this.c).lambda$loadBotKeyboard$197((MessagesStorage.TopicKey) this.d, this.b);
                 break;
             case 4:
                 ((MediaDataController) this.c).lambda$buildShortcuts$143(this.b, (ArrayList) this.d);

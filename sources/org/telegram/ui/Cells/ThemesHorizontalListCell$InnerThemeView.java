@@ -41,9 +41,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.oc0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public static final /* synthetic */ int b0 = 0;
@@ -126,9 +126,9 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         if (i11 != 0 && g6Var2.N != 0) {
             int o10 = this.b.o();
             org.telegram.ui.ActionBar.g6 g6Var3 = this.b;
-            mc0 mc0Var = new mc0(true, o10, g6Var3.M, g6Var3.N, g6Var3.O);
-            mc0Var.w(AndroidUtilities.dp(6.0f));
-            this.O = mc0Var;
+            oc0 oc0Var = new oc0(true, o10, g6Var3.M, g6Var3.N, g6Var3.O);
+            oc0Var.w(AndroidUtilities.dp(6.0f));
+            this.O = oc0Var;
             dArr = AndroidUtilities.rgbToHsv(Color.red(this.b.o()), Color.green(this.b.o()), Color.blue(this.b.o()));
         } else if (i11 != 0) {
             GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{this.b.o(), this.b.M});
@@ -158,7 +158,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             this.R = true;
         }
         if (this.b.o() == 0 && this.b.T && this.O == null) {
-            mc0 Q = org.telegram.ui.ActionBar.h6.Q(100, 200);
+            oc0 Q = org.telegram.ui.ActionBar.h6.Q(100, 200);
             this.O = Q;
             Q.w(AndroidUtilities.dp(6.0f));
         }

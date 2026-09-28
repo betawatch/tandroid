@@ -1,111 +1,314 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.Intent;
+import android.util.Property;
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import java.util.HashMap;
-import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BringAppForegroundService;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class tu extends org.telegram.ui.ActionBar.e5 {
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ wu h;
+public final class tu implements n91 {
+    public final /* synthetic */ xu a;
 
-    public tu(wu wuVar, boolean z10) {
-        this.h = wuVar;
-        this.f = z10;
+    public tu(xu xuVar) {
+        this.a = xuVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5, org.telegram.ui.ActionBar.y2
-    public final boolean g() {
-        wu wuVar = this.h;
-        o91 o91Var = wuVar.c;
-        boolean z10 = o91Var.T;
-        if (z10) {
-            if (z10) {
-                o91Var.T = false;
-                o91Var.m();
-                o91Var.l(false);
+    @Override // org.telegram.ui.Components.n91
+    public final TextureView a(View view, boolean z10, float f7, int i10, boolean z11) {
+        ViewGroup viewGroup;
+        ViewGroup viewGroup2;
+        xu xuVar = this.a;
+        FrameLayout frameLayout = xuVar.e;
+        Activity activity = xuVar.r;
+        if (!z10) {
+            frameLayout.setVisibility(4);
+            xuVar.M = false;
+            if (activity == null) {
+                return null;
             }
-            return false;
+            try {
+                viewGroup = ((org.telegram.ui.ActionBar.e3) xuVar).containerView;
+                viewGroup.setSystemUiVisibility(0);
+                activity.setRequestedOrientation(xuVar.L);
+                return null;
+            } catch (Exception e) {
+                FileLog.e(e);
+                return null;
+            }
+        }
+        frameLayout.setVisibility(0);
+        frameLayout.setAlpha(1.0f);
+        frameLayout.addView(xuVar.c.getAspectRatioView());
+        xuVar.N = false;
+        xuVar.M = z11;
+        if (activity == null) {
+            return null;
         }
         try {
-            wuVar.r.getWindow().clearFlags(128);
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return true;
+            xuVar.L = activity.getRequestedOrientation();
+            if (z11) {
+                if (((WindowManager) activity.getSystemService("window")).getDefaultDisplay().getRotation() == 3) {
+                    activity.setRequestedOrientation(8);
+                } else {
+                    activity.setRequestedOrientation(0);
+                }
+            }
+            viewGroup2 = ((org.telegram.ui.ActionBar.e3) xuVar).containerView;
+            viewGroup2.setSystemUiVisibility(1028);
+            return null;
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            return null;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e5, org.telegram.ui.ActionBar.y2
-    public final void onOpenAnimationEnd() {
-        String str;
-        int intValue;
-        wu wuVar = this.h;
-        int i10 = wuVar.Q;
-        RadialProgressView radialProgressView = wuVar.n;
-        qu quVar = wuVar.b;
-        o91 o91Var = wuVar.c;
-        if (this.f && wuVar.c.g(wuVar.K, null, null, wuVar.I, true)) {
-            radialProgressView.setVisibility(4);
-            quVar.setVisibility(4);
-            o91Var.setVisibility(0);
-            return;
+    @Override // org.telegram.ui.Components.n91
+    public final void b() {
+        xu xuVar = this.a;
+        if (xuVar.c.f()) {
+            xuVar.dismissInternal();
         }
-        radialProgressView.setVisibility(0);
-        quVar.setVisibility(0);
-        wuVar.s.setVisibility(0);
-        wuVar.v.setVisibility(4);
-        quVar.setKeepScreenOn(true);
-        o91Var.setVisibility(4);
-        o91Var.getControlsView().setVisibility(4);
-        o91Var.getTextureView().setVisibility(4);
-        if (o91Var.getTextureImageView() != null) {
-            o91Var.getTextureImageView().setVisibility(4);
+    }
+
+    @Override // org.telegram.ui.Components.n91
+    public final void d() {
+        xu xuVar = this.a;
+        ru ruVar = xuVar.b;
+        ruVar.setVisibility(0);
+        xuVar.s.setVisibility(0);
+        xuVar.v.setVisibility(4);
+        ruVar.setKeepScreenOn(true);
+        q91 q91Var = xuVar.c;
+        q91Var.setVisibility(4);
+        q91Var.getControlsView().setVisibility(4);
+        q91Var.getTextureView().setVisibility(4);
+        if (q91Var.getTextureImageView() != null) {
+            q91Var.getTextureImageView().setVisibility(4);
         }
-        wuVar.c.g(null, null, null, null, false);
+        xuVar.c.g(null, null, null, null, false);
         HashMap hashMap = new HashMap();
         hashMap.put("Referer", "messenger.telegram.org");
         try {
-            String youtubeId = o91Var.getYoutubeId();
-            if (youtubeId == null) {
-                quVar.loadUrl(wuVar.K, hashMap);
+            ruVar.loadUrl(xuVar.K, hashMap);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.n91
+    public final void e(q91 q91Var, boolean z10) {
+        Activity activity = this.a.r;
+        if (z10) {
+            try {
+                activity.getWindow().addFlags(128);
+                return;
+            } catch (Exception e) {
+                FileLog.e(e);
                 return;
             }
-            wuVar.h.setVisibility(0);
-            wuVar.y = true;
-            quVar.addJavascriptInterface(new vu(wuVar), "YoutubeProxy");
-            String str2 = wuVar.I;
-            if (str2 != null) {
-                try {
-                    Uri parse = Uri.parse(str2);
-                    if (i10 > 0) {
-                        str = "" + i10;
-                    } else {
-                        str = null;
-                    }
-                    if (str == null && (str = parse.getQueryParameter("t")) == null) {
-                        str = parse.getQueryParameter("time_continue");
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                if (str != null) {
-                    if (str.contains("m")) {
-                        String[] split = str.split("m");
-                        intValue = (Utilities.parseInt((CharSequence) split[0]).intValue() * 60) + Utilities.parseInt((CharSequence) split[1]).intValue();
-                    } else {
-                        intValue = Utilities.parseInt((CharSequence) str).intValue();
-                    }
-                    wuVar.b.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, "<!DOCTYPE html><html><head><style>body { margin: 0; width:100%%; height:100%%;  background-color:#000; }html { width:100%%; height:100%%; background-color:#000; }.embed-container iframe,.embed-container object,   .embed-container embed {       position: absolute;       top: 0;       left: 0;       width: 100%% !important;       height: 100%% !important;   }   </style></head><body>   <div class=\"embed-container\">       <div id=\"player\"></div>   </div>   <script src=\"https://www.youtube.com/iframe_api\"></script>   <script>   var player;   var observer;   var videoEl;   var playing;   var posted = false;   YT.ready(function() {       player = new YT.Player(\"player\", {                              \"width\" : \"100%%\",                              \"events\" : {                              \"onReady\" : \"onReady\",                              \"onError\" : \"onError\",                              \"onStateChange\" : \"onStateChange\",                              },                              \"videoId\" : \"%1$s\",                              \"height\" : \"100%%\",                              \"playerVars\" : {                              \"start\" : %2$d,                              \"rel\" : 1,                              \"showinfo\" : 0,                              \"modestbranding\" : 0,                              \"iv_load_policy\" : 3,                              \"autohide\" : 1,                              \"autoplay\" : 1,                              \"cc_load_policy\" : 1,                              \"playsinline\" : 1,                              \"controls\" : 1                              }                            });        player.setSize(window.innerWidth, window.innerHeight);    });    function hideControls() {        playing = !videoEl.paused;       videoEl.controls = 0;       observer.observe(videoEl, {attributes: true});    }    function showControls() {        playing = !videoEl.paused;       observer.disconnect();       videoEl.controls = 1;    }    function onError(event) {       if (!posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onStateChange(event) {       if (event.data == YT.PlayerState.PLAYING && !posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onReady(event) {       player.playVideo();    }    window.onresize = function() {       player.setSize(window.innerWidth, window.innerHeight);       player.playVideo();    }    </script></body></html>", youtubeId, Integer.valueOf(intValue)), "text/html", "UTF-8", "https://youtube.com");
-                }
-            }
-            intValue = 0;
-            wuVar.b.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, "<!DOCTYPE html><html><head><style>body { margin: 0; width:100%%; height:100%%;  background-color:#000; }html { width:100%%; height:100%%; background-color:#000; }.embed-container iframe,.embed-container object,   .embed-container embed {       position: absolute;       top: 0;       left: 0;       width: 100%% !important;       height: 100%% !important;   }   </style></head><body>   <div class=\"embed-container\">       <div id=\"player\"></div>   </div>   <script src=\"https://www.youtube.com/iframe_api\"></script>   <script>   var player;   var observer;   var videoEl;   var playing;   var posted = false;   YT.ready(function() {       player = new YT.Player(\"player\", {                              \"width\" : \"100%%\",                              \"events\" : {                              \"onReady\" : \"onReady\",                              \"onError\" : \"onError\",                              \"onStateChange\" : \"onStateChange\",                              },                              \"videoId\" : \"%1$s\",                              \"height\" : \"100%%\",                              \"playerVars\" : {                              \"start\" : %2$d,                              \"rel\" : 1,                              \"showinfo\" : 0,                              \"modestbranding\" : 0,                              \"iv_load_policy\" : 3,                              \"autohide\" : 1,                              \"autoplay\" : 1,                              \"cc_load_policy\" : 1,                              \"playsinline\" : 1,                              \"controls\" : 1                              }                            });        player.setSize(window.innerWidth, window.innerHeight);    });    function hideControls() {        playing = !videoEl.paused;       videoEl.controls = 0;       observer.observe(videoEl, {attributes: true});    }    function showControls() {        playing = !videoEl.paused;       observer.disconnect();       videoEl.controls = 1;    }    function onError(event) {       if (!posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onStateChange(event) {       if (event.data == YT.PlayerState.PLAYING && !posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onReady(event) {       player.playVideo();    }    window.onresize = function() {       player.setSize(window.innerWidth, window.innerHeight);       player.playVideo();    }    </script></body></html>", youtubeId, Integer.valueOf(intValue)), "text/html", "UTF-8", "https://youtube.com");
+        }
+        try {
+            activity.getWindow().clearFlags(128);
         } catch (Exception e7) {
             FileLog.e(e7);
         }
+    }
+
+    @Override // org.telegram.ui.Components.n91
+    public final TextureView f(View view, boolean z10, int i10, int i11, boolean z11) {
+        ViewGroup viewGroup;
+        ViewGroup viewGroup2;
+        ViewGroup viewGroup3;
+        org.telegram.ui.ActionBar.d3 d3Var;
+        xu xuVar = this.a;
+        q91 q91Var = xuVar.c;
+        int[] iArr = xuVar.E;
+        if (z10) {
+            view.setTranslationY(0.0f);
+            TextureView textureView = new TextureView(xuVar.r);
+            if (!qg0.x(false, xuVar.r, null, textureView, i10, i11, false)) {
+                return null;
+            }
+            qg0.p0.U = xuVar;
+            return textureView;
+        }
+        if (!z11) {
+            viewGroup = ((org.telegram.ui.ActionBar.e3) xuVar).containerView;
+            viewGroup.setTranslationY(0.0f);
+            return null;
+        }
+        xuVar.O = true;
+        q91Var.getAspectRatioView().getLocationInWindow(iArr);
+        iArr[0] = iArr[0] - xuVar.getLeftInset();
+        float f7 = iArr[1];
+        viewGroup2 = ((org.telegram.ui.ActionBar.e3) xuVar).containerView;
+        iArr[1] = (int) (f7 - viewGroup2.getTranslationY());
+        TextureView textureView2 = q91Var.getTextureView();
+        ImageView textureImageView = q91Var.getTextureImageView();
+        AnimatorSet animatorSet = new AnimatorSet();
+        Property property = View.SCALE_X;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textureImageView, (Property<ImageView, Float>) property, 1.0f);
+        Property property2 = View.SCALE_Y;
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textureImageView, (Property<ImageView, Float>) property2, 1.0f);
+        Property property3 = View.TRANSLATION_X;
+        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(textureImageView, (Property<ImageView, Float>) property3, iArr[0]);
+        Property property4 = View.TRANSLATION_Y;
+        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(textureImageView, (Property<ImageView, Float>) property4, iArr[1]);
+        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(textureView2, (Property<TextureView, Float>) property, 1.0f);
+        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(textureView2, (Property<TextureView, Float>) property2, 1.0f);
+        ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(textureView2, (Property<TextureView, Float>) property3, iArr[0]);
+        ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(textureView2, (Property<TextureView, Float>) property4, iArr[1]);
+        viewGroup3 = ((org.telegram.ui.ActionBar.e3) xuVar).containerView;
+        ObjectAnimator ofFloat9 = ObjectAnimator.ofFloat(viewGroup3, (Property<ViewGroup, Float>) property4, 0.0f);
+        d3Var = ((org.telegram.ui.ActionBar.e3) xuVar).backDrawable;
+        animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat6, ofFloat7, ofFloat8, ofFloat9, ObjectAnimator.ofInt(d3Var, s6.d, 51));
+        animatorSet.setInterpolator(new DecelerateInterpolator());
+        animatorSet.setDuration(250L);
+        animatorSet.addListener(new r8(this, 17));
+        animatorSet.start();
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.n91
+    public final ViewGroup g() {
+        return this.a.container;
+    }
+
+    @Override // org.telegram.ui.Components.n91
+    public final boolean h() {
+        return this.a.G();
+    }
+
+    @Override // org.telegram.ui.Components.n91
+    public final void i(boolean z10, i91 i91Var, float f7, boolean z11) {
+        org.telegram.ui.ActionBar.d3 d3Var;
+        ViewGroup viewGroup;
+        ViewGroup viewGroup2;
+        ViewGroup viewGroup3;
+        ViewGroup viewGroup4;
+        ViewGroup viewGroup5;
+        org.telegram.ui.ActionBar.d3 d3Var2;
+        ViewGroup viewGroup6;
+        ViewGroup viewGroup7;
+        org.telegram.ui.ActionBar.d3 d3Var3;
+        if (!z10) {
+            if (ApplicationLoader.mainInterfacePaused) {
+                try {
+                    this.a.r.startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) BringAppForegroundService.class));
+                } catch (Throwable th2) {
+                    FileLog.e(th2);
+                }
+            }
+            if (z11) {
+                xu xuVar = this.a;
+                xuVar.setOnShowListener(xuVar.R);
+                uk0 o9 = qg0.o(f7, false);
+                TextureView textureView = this.a.c.getTextureView();
+                ImageView textureImageView = this.a.c.getTextureImageView();
+                float f10 = o9.c / textureView.getLayoutParams().width;
+                textureImageView.setScaleX(f10);
+                textureImageView.setScaleY(f10);
+                textureImageView.setTranslationX(o9.a);
+                textureImageView.setTranslationY(o9.b);
+                textureView.setScaleX(f10);
+                textureView.setScaleY(f10);
+                textureView.setTranslationX(o9.a);
+                textureView.setTranslationY(o9.b);
+            } else {
+                qg0.j(false);
+            }
+            this.a.setShowWithoutAnimation(true);
+            this.a.show();
+            if (z11) {
+                xu xuVar2 = this.a;
+                xuVar2.P = 4;
+                d3Var = ((org.telegram.ui.ActionBar.e3) xuVar2).backDrawable;
+                d3Var.setAlpha(1);
+                viewGroup = ((org.telegram.ui.ActionBar.e3) this.a).containerView;
+                viewGroup2 = ((org.telegram.ui.ActionBar.e3) this.a).containerView;
+                viewGroup.setTranslationY(AndroidUtilities.dp(10.0f) + viewGroup2.getMeasuredHeight());
+                return;
+            }
+            return;
+        }
+        xu xuVar3 = this.a;
+        if (xuVar3.r != null) {
+            try {
+                viewGroup3 = ((org.telegram.ui.ActionBar.e3) xuVar3).containerView;
+                viewGroup3.setSystemUiVisibility(0);
+                xu xuVar4 = this.a;
+                int i10 = xuVar4.L;
+                if (i10 != -2) {
+                    xuVar4.r.setRequestedOrientation(i10);
+                }
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+        if (this.a.e.getVisibility() == 0) {
+            viewGroup6 = ((org.telegram.ui.ActionBar.e3) this.a).containerView;
+            viewGroup7 = ((org.telegram.ui.ActionBar.e3) this.a).containerView;
+            viewGroup6.setTranslationY(AndroidUtilities.dp(10.0f) + viewGroup7.getMeasuredHeight());
+            d3Var3 = ((org.telegram.ui.ActionBar.e3) this.a).backDrawable;
+            d3Var3.setAlpha(0);
+        }
+        this.a.setOnShowListener(null);
+        if (!z11) {
+            if (this.a.e.getVisibility() == 0) {
+                this.a.e.setAlpha(1.0f);
+                this.a.e.setVisibility(4);
+            }
+            i91Var.run();
+            this.a.dismissInternal();
+            return;
+        }
+        TextureView textureView2 = this.a.c.getTextureView();
+        View controlsView = this.a.c.getControlsView();
+        ImageView textureImageView2 = this.a.c.getTextureImageView();
+        uk0 o10 = qg0.o(f7, true);
+        float width = o10.c / textureView2.getWidth();
+        AnimatorSet animatorSet = new AnimatorSet();
+        Property property = View.SCALE_X;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textureImageView2, (Property<ImageView, Float>) property, width);
+        Property property2 = View.SCALE_Y;
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textureImageView2, (Property<ImageView, Float>) property2, width);
+        Property property3 = View.TRANSLATION_X;
+        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(textureImageView2, (Property<ImageView, Float>) property3, o10.a);
+        Property property4 = View.TRANSLATION_Y;
+        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(textureImageView2, (Property<ImageView, Float>) property4, o10.b);
+        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(textureView2, (Property<TextureView, Float>) property, width);
+        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(textureView2, (Property<TextureView, Float>) property2, width);
+        ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(textureView2, (Property<TextureView, Float>) property3, o10.a);
+        ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(textureView2, (Property<TextureView, Float>) property4, o10.b);
+        viewGroup4 = ((org.telegram.ui.ActionBar.e3) this.a).containerView;
+        viewGroup5 = ((org.telegram.ui.ActionBar.e3) this.a).containerView;
+        ObjectAnimator ofFloat9 = ObjectAnimator.ofFloat(viewGroup4, (Property<ViewGroup, Float>) property4, AndroidUtilities.dp(10.0f) + viewGroup5.getMeasuredHeight());
+        d3Var2 = ((org.telegram.ui.ActionBar.e3) this.a).backDrawable;
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(d3Var2, s6.d, 0);
+        FrameLayout frameLayout = this.a.e;
+        Property property5 = View.ALPHA;
+        animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat6, ofFloat7, ofFloat8, ofFloat9, ofInt, ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property5, 0.0f), ObjectAnimator.ofFloat(controlsView, (Property<View, Float>) property5, 0.0f));
+        animatorSet.setInterpolator(new DecelerateInterpolator());
+        animatorSet.setDuration(250L);
+        animatorSet.addListener(new ai.z(23, this, i91Var));
+        animatorSet.start();
+    }
+
+    @Override // org.telegram.ui.Components.n91
+    public final void c(float f7) {
     }
 }

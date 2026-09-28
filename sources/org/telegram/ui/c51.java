@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c51 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class c51 implements ValueAnimator.AnimatorUpdateLi
                 if (view2 != null) {
                     view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
                 }
-                org.telegram.ui.Components.ln lnVar = a71Var2.n0;
-                if (lnVar != null) {
-                    lnVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
+                org.telegram.ui.Components.mn mnVar = a71Var2.n0;
+                if (mnVar != null) {
+                    mnVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
                     break;
                 }
                 break;
@@ -54,9 +54,9 @@ public final /* synthetic */ class c51 implements ValueAnimator.AnimatorUpdateLi
                 if (view3 != null) {
                     view3.setAlpha(floatValue);
                 }
-                org.telegram.ui.Components.ln lnVar2 = a71Var3.n0;
-                if (lnVar2 != null) {
-                    lnVar2.setAlpha(floatValue * floatValue);
+                org.telegram.ui.Components.mn mnVar2 = a71Var3.n0;
+                if (mnVar2 != null) {
+                    mnVar2.setAlpha(floatValue * floatValue);
                 }
                 u51Var.setAlpha(floatValue);
                 u51Var.invalidate();

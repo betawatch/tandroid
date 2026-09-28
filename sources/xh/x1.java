@@ -5,51 +5,51 @@ import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.v81;
-import org.telegram.ui.Components.w81;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.y81;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final class x1 extends w81 {
+public final class x1 extends y81 {
     public final /* synthetic */ org.telegram.ui.ActionBar.m2 T;
-    public final /* synthetic */ zr0 U;
+    public final /* synthetic */ bs0 U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(zr0 zr0Var, Context context, org.telegram.ui.ActionBar.m2 m2Var) {
+    public x1(bs0 bs0Var, Context context, org.telegram.ui.ActionBar.m2 m2Var) {
         super(context, null);
-        this.U = zr0Var;
+        this.U = bs0Var;
         this.T = m2Var;
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public final void h() {
-        zr0 zr0Var = this.U;
-        v81 v81Var = zr0Var.n;
-        if (!zr0Var.b() || v81Var == null) {
+        bs0 bs0Var = this.U;
+        x81 x81Var = bs0Var.n;
+        if (!bs0Var.b() || x81Var == null) {
             return;
         }
-        if (zr0Var.J == null) {
+        if (bs0Var.J == null) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.f0.g(R.string.Gift2NewCollection, new StringBuilder("+ ")));
-            pq pqVar = new pq(R.drawable.poll_add_plus, 0);
-            pqVar.spaceScaleX = 0.8f;
-            spannableStringBuilder.setSpan(pqVar, 0, 1, 33);
-            zr0Var.J = spannableStringBuilder;
+            qq qqVar = new qq(R.drawable.poll_add_plus, 0);
+            qqVar.spaceScaleX = 0.8f;
+            spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
+            bs0Var.J = spannableStringBuilder;
         }
-        v81Var.a(-1, zr0Var.J);
+        x81Var.a(-1, bs0Var.J);
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public final boolean i(MotionEvent motionEvent) {
         return !this.U.g();
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public final void w(boolean z10) {
-        zr0 zr0Var = this.U;
-        zr0Var.l();
+        bs0 bs0Var = this.U;
+        bs0Var.l();
         org.telegram.ui.ActionBar.m2 m2Var = this.T;
         if (m2Var instanceof ProfileActivity) {
             ((ProfileActivity) m2Var).R();
@@ -58,10 +58,10 @@ public final class x1 extends w81 {
                 fragmentView.invalidate();
             }
         }
-        zr0Var.o();
+        bs0Var.o();
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public final void z(int i10) {
         this.U.l();
         org.telegram.ui.ActionBar.m2 m2Var = this.T;

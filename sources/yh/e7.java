@@ -5,46 +5,46 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.widget.ImageView;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class e7 extends u51 {
+public final class e7 extends w51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        u51.setup(new e7());
+        w51.setup(new e7());
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
         f7 f7Var = (f7) view;
         org.telegram.ui.Components.p6 p6Var = f7Var.a;
         ImageView imageView = f7Var.b;
         int i10 = f7Var.c;
-        int i11 = v51Var.d;
+        int i11 = x51Var.d;
         boolean z11 = i10 == i11;
         f7Var.c = i11;
-        p6Var.c(v51Var.l, z11, true);
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, v51Var.q ? org.telegram.ui.ActionBar.h6.o6 : org.telegram.ui.ActionBar.h6.G6, false);
+        p6Var.c(x51Var.l, z11, true);
+        int w02 = org.telegram.ui.ActionBar.h6.w0(null, x51Var.q ? org.telegram.ui.ActionBar.h6.o6 : org.telegram.ui.ActionBar.h6.G6, false);
         p6Var.setTextColor(w02);
         imageView.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         if (z11) {
-            imageView.animate().rotation(v51Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(rr.h);
+            imageView.animate().rotation(x51Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(sr.h);
         } else {
-            imageView.setRotation(v51Var.f ? 0.0f : 180.0f);
+            imageView.setRotation(x51Var.f ? 0.0f : 180.0f);
         }
         f7Var.d = z10;
         f7Var.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, yl0 yl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new f7(context);
     }
 }

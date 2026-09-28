@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o20 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class o20 implements View.OnClickListener {
                         break;
                     }
                 } else if (AndroidUtilities.checkInlinePermissions(d60Var.i0)) {
-                    org.telegram.ui.Components.a30.e0 = false;
+                    org.telegram.ui.Components.c30.e0 = false;
                     d60Var.dismiss();
                     break;
                 } else {
@@ -139,9 +139,9 @@ public final /* synthetic */ class o20 implements View.OnClickListener {
                 if (P0 > 0 && P0 != Integer.MAX_VALUE) {
                     d60Var.Q.v0(0, P0, null);
                 }
-                org.telegram.ui.Components.fu fuVar = d60Var.H.a;
-                fuVar.requestFocus();
-                AndroidUtilities.showKeyboard(fuVar);
+                org.telegram.ui.Components.gu guVar = d60Var.H.a;
+                guVar.requestFocus();
+                AndroidUtilities.showKeyboard(guVar);
                 break;
             case 7:
                 ChatObject.Call call3 = d60Var.a1;
@@ -169,20 +169,20 @@ public final /* synthetic */ class o20 implements View.OnClickListener {
                 break;
             case 10:
                 ArrayList arrayList = d60Var.Y1;
-                org.telegram.ui.Components.ij0 ij0Var = d60Var.G2;
+                org.telegram.ui.Components.kj0 kj0Var = d60Var.G2;
                 d60Var.a2.e();
                 VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                 if (sharedInstance2 != null && sharedInstance2.getVideoState(false) == 2) {
                     sharedInstance2.switchCamera();
                     if (d60Var.H2 == 18) {
                         d60Var.H2 = 39;
-                        ij0Var.P(39);
-                        ij0Var.start();
+                        kj0Var.P(39);
+                        kj0Var.start();
                     } else {
-                        ij0Var.N(0, false, false);
+                        kj0Var.N(0, false, false);
                         d60Var.H2 = 18;
-                        ij0Var.P(18);
-                        ij0Var.start();
+                        kj0Var.P(18);
+                        kj0Var.start();
                     }
                     for (int i16 = 0; i16 < arrayList.size(); i16++) {
                         org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) arrayList.get(i16);
@@ -216,7 +216,7 @@ public final /* synthetic */ class o20 implements View.OnClickListener {
                                 ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.n(uVar, 1));
                                 uVar.J0.addListener(new org.telegram.ui.Components.voip.s(uVar, 2));
                                 uVar.J0.setDuration(400L);
-                                uVar.J0.setInterpolator(org.telegram.ui.Components.rr.f);
+                                uVar.J0.setInterpolator(org.telegram.ui.Components.sr.f);
                                 uVar.J0.start();
                             }
                         }

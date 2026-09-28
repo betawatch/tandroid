@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class fu0 extends qg.d2 {
     public final Path o0;
@@ -17,7 +17,7 @@ public final class fu0 extends qg.d2 {
         super(photoViewer.p5, photoViewer.E, photoViewer.v2, photoViewer.b0);
         this.r0 = photoViewer;
         this.o0 = new Path();
-        this.q0 = new org.telegram.ui.Components.e6(this, 0L, 420L, org.telegram.ui.Components.rr.h);
+        this.q0 = new org.telegram.ui.Components.e6(this, 0L, 420L, org.telegram.ui.Components.sr.h);
     }
 
     public final void m(boolean z10, boolean z11) {

@@ -10,13 +10,13 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.zk0;
+import org.telegram.ui.Components.bl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class p1 extends wl0 {
-    public zk0 X2;
+public final class p1 extends yl0 {
+    public bl0 X2;
     public boolean Y2;
     public float Z2;
     public float a3;
@@ -57,7 +57,7 @@ public final class p1 extends wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -198,10 +198,10 @@ public final class p1 extends wl0 {
         super.setLayoutManager(o0Var);
         this.X2 = null;
         if (o0Var instanceof s4.c0) {
-            zk0 zk0Var = new zk0(this, (s4.c0) o0Var);
-            this.X2 = zk0Var;
-            zk0Var.i = new l1(this, 0);
-            zk0Var.h = new a1.c(this, 15);
+            bl0 bl0Var = new bl0(this, (s4.c0) o0Var);
+            this.X2 = bl0Var;
+            bl0Var.i = new l1(this, 0);
+            bl0Var.h = new a1.c(this, 15);
         }
     }
 }

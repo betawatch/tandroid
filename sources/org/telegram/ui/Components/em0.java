@@ -1,23 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class em0 extends FrameLayout {
-    public View a;
-    public TextView b;
+public final class em0 {
+    public final float a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public final boolean e;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    public em0(float f7, float f10, float f11, float f12, int i10) {
+        this(f7, f10, f11, f12);
+        this.e = true;
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    public em0(float f7, float f10, float f11, float f12) {
+        this.a = f7;
+        this.b = f10;
+        this.c = f11;
+        this.d = f12;
     }
 }

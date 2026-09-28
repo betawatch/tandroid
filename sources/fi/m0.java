@@ -27,10 +27,10 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.f21;
-import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.h21;
+import org.telegram.ui.Components.mx0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.uv;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
@@ -38,7 +38,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.n80;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -108,17 +108,17 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 break;
             case 2:
-                tv tvVar = (tv) obj4;
+                uv uvVar = (uv) obj4;
                 int[] iArr = (int[]) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
-                m2 m2Var2 = tvVar.c;
+                m2 m2Var2 = uvVar.c;
                 iArr[0] = iArr[0] + 1;
                 if (((Boolean) obj).booleanValue()) {
                     iArr[1] = iArr[1] + 1;
                 }
                 if (iArr[0] == i12 && iArr[1] > 0) {
-                    tvVar.dismiss();
-                    qc.g(m2Var2, new kx0(m2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, m2Var2.getResourceProvider()), 1500).j();
+                    uvVar.dismiss();
+                    qc.g(m2Var2, new mx0(m2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, m2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
@@ -182,7 +182,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(zcVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new f21(this.b, context, d6Var, savedStarGift, 18), d6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new h21(this.b, context, d6Var, savedStarGift, 18), d6Var, null));
                     zcVar.setText(spannableStringBuilder);
                     break;
                 }
@@ -190,9 +190,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ m0(tv tvVar, int[] iArr, int i10, ArrayList arrayList) {
+    public /* synthetic */ m0(uv uvVar, int[] iArr, int i10, ArrayList arrayList) {
         this.a = 2;
-        this.c = tvVar;
+        this.c = uvVar;
         this.d = iArr;
         this.b = i10;
         this.e = arrayList;

@@ -3,21 +3,21 @@ package w7;
 import android.content.Context;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.p90;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public abstract class c6 {
-    public static n90 a(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public static p90 a(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
         int i11 = org.telegram.ui.ActionBar.h6.gc;
-        n90 n90Var = new n90(context, null);
-        n90Var.setTextSize(1, f7);
-        n90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
-        n90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        p90 p90Var = new p90(context, null);
+        p90Var.setTextSize(1, f7);
+        p90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        p90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
         if (z10) {
-            n90Var.setTypeface(AndroidUtilities.bold());
+            p90Var.setTypeface(AndroidUtilities.bold());
         }
-        return n90Var;
+        return p90Var;
     }
 
     public static TextView b(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {

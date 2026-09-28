@@ -19,9 +19,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class s4 extends View {
     public final org.telegram.ui.Components.e6 E;
@@ -52,16 +52,16 @@ public final class s4 extends View {
         this.d = o6Var;
         this.n = new org.telegram.ui.Components.yc(this);
         this.r = -1;
-        rr rrVar = rr.h;
-        this.y = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
-        this.E = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
+        sr srVar = sr.h;
+        this.y = new org.telegram.ui.Components.e6(this, 0L, 320L, srVar);
+        this.E = new org.telegram.ui.Components.e6(this, 0L, 320L, srVar);
         o6Var.setCallback(this);
         o6Var.r(-1);
         o6Var.b = 17;
         o6Var.t(AndroidUtilities.dp(16.0f));
         o6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
         o6Var.G = AndroidUtilities.displaySize.x;
-        o6Var.k(0.65f, 480L, rrVar);
+        o6Var.k(0.65f, 480L, srVar);
         o6Var.v = 0.35f;
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);

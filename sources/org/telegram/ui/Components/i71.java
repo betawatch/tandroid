@@ -1,166 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.graphics.SurfaceTexture;
 import android.view.TextureView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class i71 extends TextureView implements TextureView.SurfaceTextureListener {
-    public s71 a;
-    public wz b;
-    public final sk0 c;
-    public int d;
-    public int e;
-    public ci.k8 f;
-    public h71 h;
-    public int n;
-    public int r;
-    public ja s;
+public final /* synthetic */ class i71 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public i71(Context context, s71 s71Var) {
-        super(context);
-        this.c = new sk0();
-        this.a = s71Var;
-        setSurfaceTextureListener(this);
+    public /* synthetic */ i71(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void a(float f7, float f10, float f11, float f12) {
-        sk0 sk0Var = this.c;
-        sk0Var.a = f7;
-        sk0Var.b = f10;
-        sk0Var.c = f11;
-        sk0Var.d = f12;
-    }
-
-    public Bitmap getUiBlurBitmap() {
-        pa paVar;
-        wz wzVar = this.b;
-        if (wzVar == null || (paVar = wzVar.I) == null) {
-            return null;
-        }
-        synchronized (paVar.n) {
-            try {
-                if (paVar.q) {
-                    return paVar.p;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xz xzVar = ((k71) this.b).b;
+                if (xzVar != null) {
+                    xzVar.e(false, true, false);
+                    break;
                 }
-                return null;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+                break;
+            case 1:
+                u71 u71Var = (u71) this.b;
+                i2.f0 f0Var = u71Var.d;
+                if (f0Var != null) {
+                    TextureView textureView = u71Var.n;
+                    f0Var.B1();
+                    if (textureView != null && textureView == f0Var.V) {
+                        f0Var.B1();
+                        f0Var.o1();
+                        f0Var.t1(null);
+                        f0Var.m1(0, 0);
+                    }
+                    u71Var.d.v1(u71Var.n);
+                    ArrayList arrayList = u71Var.N;
+                    if (arrayList != null) {
+                        u71Var.F(arrayList, u71Var.O);
+                    } else if (u71Var.U) {
+                        u71Var.G(u71Var.Q, u71Var.S, u71Var.R, u71Var.T);
+                    } else {
+                        u71Var.D(u71Var.Q, u71Var.S);
+                    }
+                    u71Var.C();
+                    break;
+                }
+                break;
+            case 2:
+                u71 u71Var2 = ((t71) this.b).f;
+                u71Var2.a0.removeCallbacksAndMessages(null);
+                u71Var2.K.onVisualizerUpdate(false, true, null);
+                break;
+            case 3:
+                ((w71) this.b).g = false;
+                break;
+            case 4:
+                ((q91) ((ki.d) ((org.telegram.ui.Cells.fa) this.b).b).b).v.b();
+                break;
+            default:
+                ((m91) this.b).d(false, true);
+                break;
         }
-    }
-
-    public int getVideoHeight() {
-        return this.e;
-    }
-
-    public int getVideoWidth() {
-        return this.d;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int i12;
-        if (this.b != null || surfaceTexture == null || this.a == null) {
-            return;
-        }
-        wz wzVar = new wz(surfaceTexture, new mv(this, 29), this.f, this.s, i10, i11);
-        this.b = wzVar;
-        wzVar.i(this.n, this.r);
-        wz wzVar2 = this.b;
-        ja jaVar = this.s;
-        pa paVar = wzVar2.I;
-        if (paVar != null) {
-            ja jaVar2 = paVar.t;
-            if (jaVar2 != null && jaVar2.m != null) {
-                jaVar2.m = null;
-            }
-            paVar.t = jaVar;
-            if (jaVar != null && jaVar.m != paVar) {
-                jaVar.m = paVar;
-                jaVar.d();
-            }
-        }
-        int i13 = this.d;
-        if (i13 != 0 && (i12 = this.e) != 0) {
-            wz wzVar3 = this.b;
-            wzVar3.getClass();
-            wzVar3.postRunnable(new sz(wzVar3, i13, i12, 0));
-        }
-        this.b.e(true, true, false);
-        h71 h71Var = this.h;
-        if (h71Var != null) {
-            h71Var.c(this.b);
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        wz wzVar = this.b;
-        if (wzVar == null) {
-            return true;
-        }
-        wzVar.postRunnable(new tz(wzVar, 0));
-        this.b = null;
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        wz wzVar = this.b;
-        if (wzVar != null) {
-            wzVar.postRunnable(new sz(wzVar, i10, i11, 1));
-            this.b.e(false, true, false);
-            this.b.postRunnable(new g71(this, 0));
-        }
-    }
-
-    public void setDelegate(h71 h71Var) {
-        this.h = h71Var;
-        wz wzVar = this.b;
-        if (wzVar != null) {
-            if (h71Var == null) {
-                wzVar.f(null);
-            } else {
-                h71Var.c(wzVar);
-            }
-        }
-    }
-
-    public void setHDRInfo(ci.k8 k8Var) {
-        this.f = k8Var;
-        wz wzVar = this.b;
-        if (wzVar != null) {
-            wzVar.postRunnable(new vw(7, wzVar, k8Var));
-        }
-    }
-
-    @Override // android.view.TextureView
-    public void setTransform(Matrix matrix) {
-        super.setTransform(matrix);
-        wz wzVar = this.b;
-        if (wzVar != null) {
-            int width = getWidth();
-            int height = getHeight();
-            pa paVar = wzVar.I;
-            if (paVar == null) {
-                return;
-            }
-            Matrix matrix2 = paVar.v;
-            matrix.invert(matrix2);
-            float f7 = width;
-            float f10 = height;
-            matrix2.preScale(f7, f10);
-            matrix2.postScale(1.0f / f7, 1.0f / f10);
-            paVar.c(matrix2);
-            wzVar.e(false, false, false);
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

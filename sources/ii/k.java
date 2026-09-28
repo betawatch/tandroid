@@ -21,10 +21,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.q80;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -188,22 +188,22 @@ public final /* synthetic */ class k implements Runnable {
                 TLObject tLObject4 = (TLObject) this.b;
                 c5.o oVar2 = (c5.o) this.c;
                 c5.h hVar4 = (c5.h) this.d;
-                o80 o80Var = (o80) this.e;
+                q80 q80Var = (q80) this.e;
                 Activity activity2 = (Activity) this.f;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) this.h;
                 List list4 = (List) this.n;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.r;
                 if (!(tLObject4 instanceof TLRPC.TL_boolTrue)) {
                     if (!(tLObject4 instanceof TLRPC.TL_boolFalse)) {
-                        o80Var.run(Boolean.FALSE, tL_error4 != null ? tL_error4.text : "SERVER_ERROR");
+                        q80Var.run(Boolean.FALSE, tL_error4 != null ? tL_error4.text : "SERVER_ERROR");
                         break;
                     } else {
-                        o80Var.run(Boolean.FALSE, "PURCHASE_FORBIDDEN");
+                        q80Var.run(Boolean.FALSE, "PURCHASE_FORBIDDEN");
                         break;
                     }
                 } else {
-                    BillingController.getInstance().addResultListener(oVar2.c, new ci.k5(4, hVar4, o80Var));
-                    BillingController.getInstance().setOnCanceled(new yh.l4(o80Var, 0));
+                    BillingController.getInstance().addResultListener(oVar2.c, new ci.k5(4, hVar4, q80Var));
+                    BillingController.getInstance().setOnCanceled(new yh.l4(q80Var, 0));
                     BillingController billingController4 = BillingController.getInstance();
                     AccountInstance accountInstance4 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar4 = new of.b(7, false);

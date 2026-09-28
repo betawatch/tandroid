@@ -29,16 +29,16 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.lp0;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.i11;
+import org.telegram.ui.Components.np0;
+import org.telegram.ui.Components.pp;
 import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.n50;
 import w7.a6;
 import w7.y5;
@@ -46,7 +46,7 @@ import yh.q7;
 import yh.s5;
 import yh.w7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class j1 extends FrameLayout {
     public static final int[] l0 = {-2781403, -3635939};
@@ -59,9 +59,9 @@ public class j1 extends FrameLayout {
     public final n50 K;
     public final TextView L;
     public final TextView M;
-    public g11 N;
-    public t01 O;
-    public t01 P;
+    public i11 N;
+    public v01 O;
+    public v01 P;
     public final Rect Q;
     public boolean R;
     public boolean S;
@@ -73,7 +73,7 @@ public class j1 extends FrameLayout {
     public boolean a0;
     public final d6 b;
     public boolean b0;
-    public final lp0 c;
+    public final np0 c;
     public TL_stars.SavedStarGift c0;
     public final FrameLayout d;
     public boolean d0;
@@ -86,7 +86,7 @@ public class j1 extends FrameLayout {
     public rg.k h0;
     public TLRPC.Document i0;
     public TL_stars.SavedStarGift j0;
-    public op k0;
+    public pp k0;
     public final w9 n;
     public final FrameLayout.LayoutParams r;
     public final FrameLayout.LayoutParams s;
@@ -98,11 +98,11 @@ public class j1 extends FrameLayout {
     public j1(Context context, int i10, d6 d6Var) {
         super(context);
         this.Q = new Rect();
-        this.U = new e6(this, 0L, 320L, rr.h);
+        this.U = new e6(this, 0L, 320L, sr.h);
         this.a = i10;
         this.b = d6Var;
         a6.b(this, 0.04f, 1.5f);
-        this.c = new lp0(this);
+        this.c = new np0(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
         f1 f1Var = new f1(frameLayout, d6Var, true);
@@ -219,7 +219,7 @@ public class j1 extends FrameLayout {
         return null;
     }
 
-    public final void a(w70 w70Var, Canvas canvas, float f7, float f10, float f11) {
+    public final void a(y70 y70Var, Canvas canvas, float f7, float f10, float f11) {
         float f12;
         float f13;
         Canvas canvas2 = canvas;
@@ -237,7 +237,7 @@ public class j1 extends FrameLayout {
         w9Var.getImageReceiver().setImageCoords((f7 - lerp) / 2.0f, (f14 - lerp) / 2.0f, lerp, lerp);
         w9Var.getImageReceiver().draw(canvas2);
         if (w9Var.getImageReceiver().isLottieRunning()) {
-            w70Var.invalidate();
+            y70Var.invalidate();
         }
         rg.b1 b1Var = this.F;
         if (b1Var.getVisibility() != 0 || b1Var.getAlpha() <= 0.0f) {
@@ -282,18 +282,18 @@ public class j1 extends FrameLayout {
         }
         if (uniqueStarGift != null) {
             if (this.O == null) {
-                this.O = new t01(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
+                this.O = new v01(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
             }
             if (this.P == null) {
-                this.P = new t01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
+                this.P = new v01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
             }
-            t01 t01Var = this.O;
-            t01Var.p = f7 - AndroidUtilities.dp(8.0f);
+            v01 v01Var = this.O;
+            v01Var.p = f7 - AndroidUtilities.dp(8.0f);
             float f15 = f13 - f11;
-            t01Var.c((f7 - this.O.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.O.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
-            t01 t01Var2 = this.P;
-            t01Var2.p = f7 - AndroidUtilities.dp(8.0f);
-            t01Var2.c((f7 - this.P.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.P.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
+            v01Var.c((f7 - this.O.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.O.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
+            v01 v01Var2 = this.P;
+            v01Var2.p = f7 - AndroidUtilities.dp(8.0f);
+            v01Var2.c((f7 - this.P.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.P.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
             canvas2 = canvas;
         }
         h1 h1Var = this.J;
@@ -319,9 +319,9 @@ public class j1 extends FrameLayout {
 
     public final void b(boolean z10, boolean z11) {
         if (this.k0 == null) {
-            op opVar = new op(getContext(), 21, null);
-            this.k0 = opVar;
-            opVar.b(-1, h6.d6, h6.k7);
+            pp ppVar = new pp(getContext(), 21, null);
+            this.k0 = ppVar;
+            ppVar.b(-1, h6.d6, h6.k7);
             this.k0.setDrawUnchecked(false);
             this.d.addView(this.k0, y5.d(24, 24.0f, 51, 4.0f, 4.0f, 4.0f, 4.0f));
         }
@@ -383,7 +383,7 @@ public class j1 extends FrameLayout {
         this.e.f(z10, z11);
         ImageView imageView = this.w;
         if (z11) {
-            imageView.animate().translationX(z10 ? AndroidUtilities.dp(6.0f) : 0.0f).translationY(z10 ? AndroidUtilities.dp(6.0f) : 0.0f).setDuration(320L).setInterpolator(rr.h).start();
+            imageView.animate().translationX(z10 ? AndroidUtilities.dp(6.0f) : 0.0f).translationY(z10 ? AndroidUtilities.dp(6.0f) : 0.0f).setDuration(320L).setInterpolator(sr.h).start();
             return;
         }
         imageView.animate().cancel();
@@ -434,10 +434,10 @@ public class j1 extends FrameLayout {
         boolean z16;
         long j12;
         boolean z17;
-        g11 g11Var = this.N;
+        i11 i11Var = this.N;
         ColorFilter colorFilter = null;
-        if (g11Var != null) {
-            g11Var.run();
+        if (i11Var != null) {
+            i11Var.run();
             this.N = null;
         }
         i(starGift, starGift.getDocument());
@@ -675,9 +675,9 @@ public class j1 extends FrameLayout {
         long j3;
         boolean z12;
         boolean z13;
-        g11 g11Var = this.N;
-        if (g11Var != null) {
-            g11Var.run();
+        i11 i11Var = this.N;
+        if (i11Var != null) {
+            i11Var.run();
             this.N = null;
         }
         i(savedStarGift, savedStarGift.gift.getDocument());
@@ -714,7 +714,7 @@ public class j1 extends FrameLayout {
         w9Var.setLayoutParams(layoutParams);
         if (this.j0 == savedStarGift) {
             b1Var.setVisibility(0);
-            b1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(rr.h).withEndAction(new u2.p0(10, this, savedStarGift)).start();
+            b1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(sr.h).withEndAction(new u2.p0(10, this, savedStarGift)).start();
         } else {
             b1Var.setAlpha(savedStarGift.unsaved ? 1.0f : 0.0f);
             b1Var.setScaleX(savedStarGift.unsaved ? 1.0f : 0.4f);
@@ -731,7 +731,7 @@ public class j1 extends FrameLayout {
             j3 = 0;
         } else if (savedStarGift.name_hidden) {
             w9Var2.setVisibility(0);
-            qq a2 = q7.a(44, "anonymous");
+            rq a2 = q7.a(44, "anonymous");
             j3 = 0;
             int dp = AndroidUtilities.dp(16.0f);
             int dp2 = AndroidUtilities.dp(16.0f);
@@ -815,18 +815,18 @@ public class j1 extends FrameLayout {
             layoutParams3.bottomMargin = 0;
             textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
             textView.setTextSize(1, 12.0f);
-            pq[] pqVarArr = new pq[1];
+            qq[] qqVarArr = new qq[1];
             TL_stars.StarGift starGift2 = savedStarGift.gift;
             if (starGift2.resale_ton_only && DialogObject.getPeerDialogId(starGift2.owner_id) == UserConfig.getInstance(i11).getClientUserId()) {
                 z12 = true;
-                textView.setText(w7.U0(true, "XTR " + ((Object) w7.J0(savedStarGift.gift.getResellAmount(zf.b.b).o(), 1.0f, ',')), 0.95f, pqVarArr, 0.0f, 1.0f));
+                textView.setText(w7.U0(true, "XTR " + ((Object) w7.J0(savedStarGift.gift.getResellAmount(zf.b.b).o(), 1.0f, ',')), 0.95f, qqVarArr, 0.0f, 1.0f));
             } else {
                 z12 = true;
-                textView.setText(w7.R0("XTR " + LocaleController.formatNumber(savedStarGift.gift.getResellStars(), ','), 0.95f, pqVarArr));
+                textView.setText(w7.R0("XTR " + LocaleController.formatNumber(savedStarGift.gift.getResellStars(), ','), 0.95f, qqVarArr));
             }
-            pq pqVar = pqVarArr[0];
-            if (pqVar != null) {
-                pqVar.translate(0.0f, AndroidUtilities.dp(0.5f));
+            qq qqVar = qqVarArr[0];
+            if (qqVar != null) {
+                qqVar.translate(0.0f, AndroidUtilities.dp(0.5f));
             }
             int v = h6.v(stargiftattributebackdrop.center_color | (-16777216), h6.l1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
             n50Var.setBackground(new o1(1895825407, v));
@@ -1016,7 +1016,7 @@ public class j1 extends FrameLayout {
         h1 h1Var;
         TL_stars.SavedStarGift savedStarGift;
         TL_stars.SavedStarGift savedStarGift2;
-        op opVar;
+        pp ppVar;
         w9 w9Var;
         long peerDialogId;
         TextView textView2;
@@ -1053,8 +1053,8 @@ public class j1 extends FrameLayout {
                         savedStarGift2 = this.c0;
                         if (savedStarGift2 != null) {
                         }
-                        opVar = this.k0;
-                        if (opVar != null) {
+                        ppVar = this.k0;
+                        if (ppVar != null) {
                         }
                         accessibilityNodeInfo.setContentDescription(sb2.toString());
                     }
@@ -1077,8 +1077,8 @@ public class j1 extends FrameLayout {
                     savedStarGift2 = this.c0;
                     if (savedStarGift2 != null) {
                     }
-                    opVar = this.k0;
-                    if (opVar != null) {
+                    ppVar = this.k0;
+                    if (ppVar != null) {
                     }
                     accessibilityNodeInfo.setContentDescription(sb2.toString());
                 }
@@ -1103,8 +1103,8 @@ public class j1 extends FrameLayout {
                     savedStarGift2 = this.c0;
                     if (savedStarGift2 != null) {
                     }
-                    opVar = this.k0;
-                    if (opVar != null) {
+                    ppVar = this.k0;
+                    if (ppVar != null) {
                     }
                     accessibilityNodeInfo.setContentDescription(sb2.toString());
                 }
@@ -1127,8 +1127,8 @@ public class j1 extends FrameLayout {
                 savedStarGift2 = this.c0;
                 if (savedStarGift2 != null) {
                 }
-                opVar = this.k0;
-                if (opVar != null) {
+                ppVar = this.k0;
+                if (ppVar != null) {
                 }
                 accessibilityNodeInfo.setContentDescription(sb2.toString());
             }
@@ -1184,8 +1184,8 @@ public class j1 extends FrameLayout {
                         }
                     }
                 }
-                opVar = this.k0;
-                if (opVar != null && opVar.a.q) {
+                ppVar = this.k0;
+                if (ppVar != null && ppVar.a.q) {
                     accessibilityNodeInfo.setCheckable(true);
                     accessibilityNodeInfo.setChecked(true);
                 }
@@ -1222,8 +1222,8 @@ public class j1 extends FrameLayout {
                 if (peerDialogId != 0) {
                 }
             }
-            opVar = this.k0;
-            if (opVar != null) {
+            ppVar = this.k0;
+            if (ppVar != null) {
                 accessibilityNodeInfo.setCheckable(true);
                 accessibilityNodeInfo.setChecked(true);
             }

@@ -10,12 +10,12 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i70 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public h70 a;
-    public org.telegram.ui.Components.wl0 b;
-    public org.telegram.ui.Components.nz c;
+    public org.telegram.ui.Components.yl0 b;
+    public org.telegram.ui.Components.oz c;
     public long d;
     public boolean e;
     public TLRPC.TL_chatInviteExported f;
@@ -47,13 +47,13 @@ public final class i70 extends org.telegram.ui.ActionBar.m2 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.nz nzVar = new org.telegram.ui.Components.nz(context, null);
-        this.c = nzVar;
-        nzVar.b();
+        org.telegram.ui.Components.oz ozVar = new org.telegram.ui.Components.oz(context, null);
+        this.c = ozVar;
+        ozVar.b();
         frameLayout.addView(this.c, w7.y5.e(-1, -1, 51));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.b = wl0Var;
-        wl0Var.setLayoutManager(new s4.c0(1, false));
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.setLayoutManager(new s4.c0(1, false));
         this.b.setEmptyView(this.c);
         this.b.setVerticalScrollBarEnabled(false);
         frameLayout.addView(this.b, w7.y5.e(-1, -1, 51));

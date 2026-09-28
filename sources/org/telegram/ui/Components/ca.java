@@ -12,7 +12,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagePreviewParams;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ca extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -43,18 +43,18 @@ public final class ca extends AnimatorListenerAdapter {
                 this.b = true;
                 break;
             case 8:
-                o00 o00Var = (o00) this.c;
-                AnimatorSet animatorSet2 = o00Var.e;
+                p00 p00Var = (p00) this.c;
+                AnimatorSet animatorSet2 = p00Var.e;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    o00Var.e = null;
+                    p00Var.e = null;
                     break;
                 }
                 break;
             case 12:
-                c70 c70Var = (c70) this.c;
-                AnimatorSet animatorSet3 = c70Var.X;
+                e70 e70Var = (e70) this.c;
+                AnimatorSet animatorSet3 = e70Var.X;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    c70Var.X = null;
+                    e70Var.X = null;
                     break;
                 }
                 break;
@@ -66,21 +66,21 @@ public final class ca extends AnimatorListenerAdapter {
                 }
                 break;
             case 19:
-                ((jv0) this.c).N1 = null;
+                ((lv0) this.c).N1 = null;
                 break;
             case 23:
-                x61 x61Var = (x61) this.c;
-                AnimatorSet animatorSet4 = x61Var.d;
+                z61 z61Var = (z61) this.c;
+                AnimatorSet animatorSet4 = z61Var.d;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    x61Var.d = null;
+                    z61Var.d = null;
                     break;
                 }
                 break;
             case 24:
-                b71 b71Var = (b71) this.c;
-                AnimatorSet animatorSet5 = b71Var.r;
+                d71 d71Var = (d71) this.c;
+                AnimatorSet animatorSet5 = d71Var.r;
                 if (animatorSet5 != null && animatorSet5.equals(animator)) {
-                    b71Var.r = null;
+                    d71Var.r = null;
                     break;
                 }
                 break;
@@ -144,83 +144,83 @@ public final class ca extends AnimatorListenerAdapter {
                 }
                 break;
             case 3:
-                ko koVar = (ko) this.c;
+                lo loVar = (lo) this.c;
                 if (!this.b) {
-                    w9 w9Var = koVar.h;
-                    koVar.h = koVar.n;
-                    koVar.n = w9Var;
+                    w9 w9Var = loVar.h;
+                    loVar.h = loVar.n;
+                    loVar.n = w9Var;
                     w9Var.setVisibility(8);
-                    koVar.n.setAlpha(0.0f);
-                    koVar.h.setVisibility(0);
-                    koVar.h.setAlpha(1.0f);
+                    loVar.n.setAlpha(0.0f);
+                    loVar.h.setVisibility(0);
+                    loVar.h.setAlpha(1.0f);
                     break;
                 }
                 break;
             case 4:
                 boolean z10 = this.b;
-                uo uoVar = (uo) this.c;
-                if (animator == uoVar.e) {
+                vo voVar = (vo) this.c;
+                if (animator == voVar.e) {
                     float f7 = z10 ? 1.0f : 0.0f;
-                    uoVar.d = f7;
-                    uoVar.setShown(f7);
+                    voVar.d = f7;
+                    voVar.setShown(f7);
                     if (!z10) {
-                        uoVar.setVisibility(8);
+                        voVar.setVisibility(8);
                     }
-                    uoVar.a(true);
+                    voVar.a(true);
                     break;
                 }
                 break;
             case 5:
-                np npVar = (np) this.c;
-                npVar.g0 = this.b ? 1.0f : 0.0f;
-                npVar.J.setTranslationY((-AndroidUtilities.dp(7.0f)) * npVar.g0);
+                op opVar = (op) this.c;
+                opVar.g0 = this.b ? 1.0f : 0.0f;
+                opVar.J.setTranslationY((-AndroidUtilities.dp(7.0f)) * opVar.g0);
                 break;
             case 6:
                 if (!this.b) {
-                    ((nq) this.c).H.setVisibility(8);
+                    ((oq) this.c).H.setVisibility(8);
                     break;
                 }
                 break;
             case 7:
-                zv zvVar = (zv) this.c;
-                dw dwVar = zvVar.J;
-                if (dwVar.U && !zvVar.h) {
-                    if (!this.b && !zvVar.n) {
-                        zvVar.setBackground(null);
+                aw awVar = (aw) this.c;
+                ew ewVar = awVar.J;
+                if (ewVar.U && !awVar.h) {
+                    if (!this.b && !awVar.n) {
+                        awVar.setBackground(null);
                         break;
-                    } else if (zvVar.getBackground() == null) {
-                        zvVar.setBackground(org.telegram.ui.ActionBar.h6.Y(dwVar.k(), 8, 8));
+                    } else if (awVar.getBackground() == null) {
+                        awVar.setBackground(org.telegram.ui.ActionBar.h6.Y(ewVar.k(), 8, 8));
                         break;
                     }
                 }
                 break;
             case 8:
-                o00 o00Var = (o00) this.c;
-                AnimatorSet animatorSet2 = o00Var.e;
+                p00 p00Var = (p00) this.c;
+                AnimatorSet animatorSet2 = p00Var.e;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
                     if (!this.b) {
-                        o00Var.f.setVisibility(4);
+                        p00Var.f.setVisibility(4);
                     }
-                    o00Var.e = null;
+                    p00Var.e = null;
                     break;
                 }
                 break;
             case 9:
-                z00 z00Var = (z00) this.c;
-                z00Var.h = this.b ? 1.0f : 0.0f;
-                z00Var.invalidate();
+                a10 a10Var = (a10) this.c;
+                a10Var.h = this.b ? 1.0f : 0.0f;
+                a10Var.invalidate();
                 break;
             case 10:
-                a30 a30Var = (a30) this.c;
-                y20 y20Var = a30Var.a;
-                if (!a30Var.F) {
+                c30 c30Var = (c30) this.c;
+                a30 a30Var = c30Var.a;
+                if (!c30Var.F) {
                     float f10 = this.b ? 1.0f : 0.0f;
-                    a30Var.b0 = f10;
-                    a30Var.U.setPinnedProgress(f10);
-                    y20Var.setScaleX(1.0f - (a30Var.b0 * 0.6f));
-                    y20Var.setScaleY(1.0f - (a30Var.b0 * 0.6f));
-                    if (a30Var.W) {
-                        a30Var.i();
+                    c30Var.b0 = f10;
+                    c30Var.U.setPinnedProgress(f10);
+                    a30Var.setScaleX(1.0f - (c30Var.b0 * 0.6f));
+                    a30Var.setScaleY(1.0f - (c30Var.b0 * 0.6f));
+                    if (c30Var.W) {
+                        c30Var.i();
                         break;
                     }
                 }
@@ -230,34 +230,34 @@ public final class ca extends AnimatorListenerAdapter {
                 ((View) this.c).setVisibility(this.b ? 8 : 4);
                 break;
             case 12:
-                c70 c70Var = (c70) this.c;
-                AnimatorSet animatorSet3 = c70Var.X;
+                e70 e70Var = (e70) this.c;
+                AnimatorSet animatorSet3 = e70Var.X;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
                     if (!this.b) {
-                        c70Var.Y.setVisibility(4);
+                        e70Var.Y.setVisibility(4);
                     }
-                    c70Var.X = null;
+                    e70Var.X = null;
                     break;
                 }
                 break;
             case 13:
-                m70 m70Var = (m70) this.c;
+                o70 o70Var = (o70) this.c;
                 boolean z11 = this.b;
-                m70Var.h0 = z11 ? 1.0f : 0.0f;
-                viewGroup = ((org.telegram.ui.ActionBar.e3) m70Var).containerView;
+                o70Var.h0 = z11 ? 1.0f : 0.0f;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) o70Var).containerView;
                 viewGroup.invalidate();
                 if (!z11) {
-                    m70Var.V.setVisibility(8);
+                    o70Var.V.setVisibility(8);
                     break;
                 }
                 break;
             case 14:
-                fc0 fc0Var = (fc0) this.c;
-                if (fc0Var.getParent() != null) {
-                    ((ViewGroup) fc0Var.getParent()).removeView(fc0Var);
+                hc0 hc0Var = (hc0) this.c;
+                if (hc0Var.getParent() != null) {
+                    ((ViewGroup) hc0Var.getParent()).removeView(hc0Var);
                 }
                 boolean z12 = this.b;
-                org.telegram.ui.el elVar = (org.telegram.ui.el) fc0Var;
+                org.telegram.ui.el elVar = (org.telegram.ui.el) hc0Var;
                 MessagePreviewParams messagePreviewParams = elVar.H.f5;
                 if (messagePreviewParams != null) {
                     messagePreviewParams.attach(null);
@@ -268,14 +268,14 @@ public final class ca extends AnimatorListenerAdapter {
                 }
                 break;
             case 15:
-                zb0 zb0Var = (zb0) this.c;
-                zb0Var.P = null;
-                zb0Var.g(this.b, false);
+                bc0 bc0Var = (bc0) this.c;
+                bc0Var.P = null;
+                bc0Var.g(this.b, false);
                 break;
             case 16:
-                ce0 ce0Var = (ce0) this.c;
-                TextView textView = ce0Var.w;
-                ai.w5 w5Var = ce0Var.e;
+                ee0 ee0Var = (ee0) this.c;
+                TextView textView = ee0Var.w;
+                ai.w5 w5Var = ee0Var.e;
                 float f11 = this.b ? 1.0f : 0.0f;
                 w5Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f11));
                 w5Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f11));
@@ -283,7 +283,7 @@ public final class ca extends AnimatorListenerAdapter {
                 textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, f11));
                 textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, f11));
                 textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, f11));
-                ce0Var.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, f11));
+                ee0Var.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, f11));
                 break;
             case 17:
                 PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.c;
@@ -297,64 +297,64 @@ public final class ca extends AnimatorListenerAdapter {
                 break;
             case 18:
                 boolean z13 = this.b;
-                un0 un0Var = (un0) this.c;
-                if (animator == un0Var.G) {
+                wn0 wn0Var = (wn0) this.c;
+                if (animator == wn0Var.G) {
                     float f12 = z13 ? 1.0f : 0.0f;
-                    un0Var.F = f12;
-                    un0Var.setShown(f12);
+                    wn0Var.F = f12;
+                    wn0Var.setShown(f12);
                     if (!z13) {
-                        un0Var.setVisibility(8);
+                        wn0Var.setVisibility(8);
                     }
-                    un0Var.b(true);
+                    wn0Var.b(true);
                     break;
                 }
                 break;
             case 19:
-                jv0 jv0Var = (jv0) this.c;
-                if (jv0Var.N1 != null) {
-                    jv0Var.N1 = null;
+                lv0 lv0Var = (lv0) this.c;
+                if (lv0Var.N1 != null) {
+                    lv0Var.N1 = null;
                     if (!this.b) {
-                        jv0Var.B0.setVisibility(4);
+                        lv0Var.B0.setVisibility(4);
                         break;
                     }
                 }
                 break;
             case 20:
                 super.onAnimationEnd(animator);
-                h21 h21Var = (h21) this.c;
-                h21Var.M = this.b ? 1.0f : 0.0f;
-                h21Var.invalidate();
+                j21 j21Var = (j21) this.c;
+                j21Var.M = this.b ? 1.0f : 0.0f;
+                j21Var.invalidate();
                 break;
             case 21:
-                f31 f31Var = (f31) this.c;
-                f31Var.F = this.b ? 1.0f : 0.0f;
-                f31Var.h();
+                h31 h31Var = (h31) this.c;
+                h31Var.F = this.b ? 1.0f : 0.0f;
+                h31Var.h();
                 break;
             case 22:
-                j31 j31Var = (j31) this.c;
-                j31Var.Q = this.b ? 1.0f : 0.0f;
-                j31Var.h();
-                j31Var.g();
+                l31 l31Var = (l31) this.c;
+                l31Var.Q = this.b ? 1.0f : 0.0f;
+                l31Var.h();
+                l31Var.g();
                 break;
             case 23:
-                x61 x61Var = (x61) this.c;
-                AnimatorSet animatorSet4 = x61Var.d;
+                z61 z61Var = (z61) this.c;
+                AnimatorSet animatorSet4 = z61Var.d;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
                     if (!this.b) {
-                        x61Var.e.setVisibility(4);
+                        z61Var.e.setVisibility(4);
                     }
-                    x61Var.d = null;
+                    z61Var.d = null;
                     break;
                 }
                 break;
             case 24:
-                b71 b71Var = (b71) this.c;
-                AnimatorSet animatorSet5 = b71Var.r;
+                d71 d71Var = (d71) this.c;
+                AnimatorSet animatorSet5 = d71Var.r;
                 if (animatorSet5 != null && animatorSet5.equals(animator)) {
                     if (!this.b) {
-                        b71Var.n.setVisibility(4);
+                        d71Var.n.setVisibility(4);
                     }
-                    b71Var.r = null;
+                    d71Var.r = null;
                     break;
                 }
                 break;
@@ -429,8 +429,8 @@ public final class ca extends AnimatorListenerAdapter {
         this.b = z10;
     }
 
-    public ca(ko koVar) {
+    public ca(lo loVar) {
         this.a = 3;
-        this.c = koVar;
+        this.c = loVar;
     }
 }

@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class b {
     public static boolean a;
@@ -64,10 +64,10 @@ public abstract class b {
         f7.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         f7.setClipChildren(false);
         f7.setClipToPadding(false);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        lj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
-        lj0Var.d();
-        f7.addView(lj0Var, w7.y5.t(115, 115, 17, 0, 0, 0, 9));
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        nj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
+        nj0Var.d();
+        f7.addView(nj0Var, w7.y5.t(115, 115, 17, 0, 0, 0, 9));
         TextView textView = new TextView(context);
         org.telegram.messenger.ok.k(20.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));

@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zv implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class zv implements View.OnLongClickListener {
                             z10 = false;
                         }
                     }
-                    org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(qyVar2, view);
+                    org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(qyVar2, view);
                     H.c(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new lv(qyVar2, 19), false);
                     H.l(R.drawable.msg_calendar2, LocaleController.getString(R.string.ScheduleMessage), new lv(qyVar2, 20), z10);
                     H.Z();

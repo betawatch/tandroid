@@ -1,104 +1,153 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
+import android.graphics.Point;
+import android.util.Property;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class h20 extends LinearLayout {
-    public final ci.d a;
-    public final ci.d b;
-    public final ci.d c;
-    public final long d;
+public final class h20 extends ViewGroup {
+    public AnimatorSet a;
+    public boolean b;
+    public final ArrayList c;
+    public p30 d;
+    public final ArrayList e;
+    public int f;
+    public int h;
+    public int n;
+    public final /* synthetic */ i20 r;
 
-    public h20(Context context, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h20(i20 i20Var, Context context) {
         super(context);
-        TLRPC.TL_emojiList a2 = g9.a(i10);
-        setOrientation(1);
-        w9 w9Var = new w9(context);
-        w9Var.setImageDrawable(new ij0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
-        if (!AndroidUtilities.isTablet()) {
-            addView(w9Var, w7.y5.q(110, 110, 49));
-        }
-        TextView f7 = org.telegram.messenger.f0.f(context, 1, 20.0f);
-        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.h6.G6, null, false, f7, 1);
-        f7.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
-        f7.setTypeface(AndroidUtilities.bold());
-        addView(f7, w7.y5.t(-2, -2, 49, 0, 15, 0, 7));
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 14.0f);
-        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.h6.c7, null, false, textView, 1);
-        textView.setText(LocaleController.getString(UserConfig.getInstance(i10).isPremium() ? R.string.GalleryAccessAllowAccessTextPremium : R.string.GalleryAccessAllowAccessTextNonPremium));
-        textView.setMaxWidth(AndroidUtilities.dp(260.0f));
-        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView, w7.y5.t(-2, -2, 49, 0, 0, 0, 14));
-        ci.d dVar = new ci.d(context, null, true);
-        this.a = dVar;
-        dVar.e();
-        dVar.g(LocaleController.getString(R.string.GalleryAccessAllowAccessButton), false, true);
-        addView(dVar, w7.y5.q(-2, 44, 49));
-        ci.d dVar2 = new ci.d(context, null, false);
-        this.b = dVar2;
-        dVar2.e();
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
-        spannableStringBuilder.setSpan(new pq(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.GalleryAccessAllowAccessOpenCamera));
-        dVar2.g(spannableStringBuilder, false, true);
-        addView(dVar2, w7.y5.t(-2, 44, 49, 0, 8, 0, 0));
-        ci.d dVar3 = new ci.d(context, null, false);
-        this.c = dVar3;
-        dVar3.e();
-        dVar3.setVisibility(8);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("c");
-        ArrayList<Long> arrayList = a2.document_id;
-        if (arrayList == null || arrayList.isEmpty()) {
-            this.d = 0L;
-        } else {
-            long longValue = a2.document_id.get(0).longValue();
-            this.d = longValue;
-            spannableStringBuilder2.setSpan(new z5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
-            spannableStringBuilder2.append((CharSequence) "  ");
-        }
-        spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.UseEmoji));
-        dVar3.g(spannableStringBuilder2, false, true);
-        addView(dVar3, w7.y5.t(-2, 44, 49, 0, 1, 0, 0));
+        this.r = i20Var;
+        this.c = new ArrayList();
+        this.e = new ArrayList();
+        this.f = -1;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
+        }
+    }
+
+    @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30);
-        ci.d dVar = this.a;
-        dVar.setUseWrapContent(true);
-        ci.d dVar2 = this.b;
-        dVar2.setUseWrapContent(true);
-        ci.d dVar3 = this.c;
-        dVar3.setUseWrapContent(true);
-        dVar.measure(makeMeasureSpec, makeMeasureSpec2);
-        dVar2.measure(makeMeasureSpec, makeMeasureSpec2);
-        dVar3.measure(makeMeasureSpec, makeMeasureSpec2);
-        dVar.setUseWrapContent(false);
-        dVar2.setUseWrapContent(false);
-        dVar3.setUseWrapContent(false);
-        int max = Math.max(Math.max(dVar.getMeasuredWidth(), dVar2.getMeasuredWidth()), dVar3.getMeasuredWidth());
-        dVar.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
-        dVar2.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
-        dVar3.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
-        super.onMeasure(i10, i11);
-    }
-
-    public void setUseAnEmojiVisible(boolean z10) {
-        this.c.setVisibility(z10 ? 0 : 8);
+        ArrayList arrayList;
+        int A;
+        char c10;
+        int childCount = getChildCount();
+        int size = View.MeasureSpec.getSize(i10);
+        int dp = size - AndroidUtilities.dp(26.0f);
+        int dp2 = AndroidUtilities.dp(10.0f);
+        int dp3 = AndroidUtilities.dp(10.0f);
+        if (!this.b) {
+            this.n = 0;
+        }
+        int i12 = 0;
+        int i13 = 0;
+        int i14 = 0;
+        while (true) {
+            arrayList = this.c;
+            if (i12 >= childCount) {
+                break;
+            }
+            View childAt = getChildAt(i12);
+            if (childAt instanceof p30) {
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+                ArrayList arrayList2 = this.e;
+                boolean contains = arrayList2.contains(childAt);
+                if (contains) {
+                    c10 = 0;
+                } else {
+                    c10 = 0;
+                    if (childAt.getMeasuredWidth() + i13 > dp) {
+                        dp2 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp2);
+                        i13 = 0;
+                    }
+                }
+                if (childAt.getMeasuredWidth() + i14 > dp) {
+                    dp3 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp3);
+                    i14 = 0;
+                }
+                int dp4 = AndroidUtilities.dp(13.0f) + i13;
+                if (!this.b) {
+                    if (contains) {
+                        childAt.setTranslationX(AndroidUtilities.dp(13.0f) + i14);
+                        childAt.setTranslationY(dp3);
+                    } else if (arrayList2.isEmpty()) {
+                        childAt.setTranslationX(dp4);
+                        childAt.setTranslationY(dp2);
+                        this.n = Math.max(this.n, dp2);
+                    } else {
+                        float f7 = dp4;
+                        if (childAt.getTranslationX() != f7) {
+                            float[] fArr = new float[1];
+                            fArr[c10] = f7;
+                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, fArr));
+                        }
+                        float f10 = dp2;
+                        if (childAt.getTranslationY() != f10) {
+                            float[] fArr2 = new float[1];
+                            fArr2[c10] = f10;
+                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, fArr2));
+                        }
+                        this.n = Math.max(this.n, dp2);
+                    }
+                }
+                if (!contains) {
+                    i13 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i13);
+                }
+                i14 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i14);
+            }
+            i12++;
+        }
+        if (AndroidUtilities.isTablet()) {
+            A = AndroidUtilities.dp(372.0f) / 3;
+        } else {
+            Point point = AndroidUtilities.displaySize;
+            A = org.telegram.messenger.ok.A(158.0f, Math.min(point.x, point.y), 3);
+        }
+        if (dp - i13 < A) {
+            dp2 += AndroidUtilities.dp(40.0f);
+        }
+        if (dp - i14 < A) {
+            dp3 += AndroidUtilities.dp(40.0f);
+        }
+        boolean z10 = this.b;
+        i20 i20Var = this.r;
+        if (!z10) {
+            int dp5 = AndroidUtilities.dp(42.0f) + dp3;
+            i20Var.n = dp2;
+            if (this.a != null) {
+                this.h = AndroidUtilities.dp(42.0f) + dp2;
+                this.a.playTogether(arrayList);
+                this.a.addListener(new g20(this, 0));
+                this.f = NotificationCenter.getInstance(i20Var.a).setAnimationInProgress(this.f, null);
+                this.a.start();
+                this.b = true;
+            } else {
+                this.h = dp5;
+            }
+        }
+        int i15 = this.n;
+        i20Var.e = i15 > 0 ? AndroidUtilities.dp(40.0f) + i15 : 0;
+        setMeasuredDimension(size, this.h);
+        f20 f20Var = i20Var.f;
+        if (f20Var != null) {
+            f20Var.a(i20Var.e);
+        }
     }
 }

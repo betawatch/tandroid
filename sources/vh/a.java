@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.lt;
-import org.telegram.ui.Components.zi0;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.mt;
 import w7.q;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class a extends Path {
     public final /* synthetic */ View a;
@@ -46,8 +46,8 @@ public final class a extends Path {
                 if (i10 >= arrayList.size()) {
                     break;
                 }
-                zi0 zi0Var = (zi0) arrayList.get(i10);
-                if (f13 >= zi0Var.b && f13 <= zi0Var.c) {
+                bj0 bj0Var = (bj0) arrayList.get(i10);
+                if (f13 >= bj0Var.b && f13 <= bj0Var.c) {
                     gVar.y = true;
                     break;
                 }
@@ -65,7 +65,7 @@ public final class a extends Path {
         int i12 = this.f;
         gVar.setBounds(max, i11, (int) Math.min(f11, i12 <= 0 ? 2.14748365E9f : i12), (int) f12);
         gVar.h(this.b.getPaint().getColor());
-        gVar.t = lt.c;
+        gVar.t = mt.c;
         int width = gVar.getBounds().width() / AndroidUtilities.dp(6.0f);
         int i13 = g.B;
         int b10 = q.b(width * i13, i13, g.A);

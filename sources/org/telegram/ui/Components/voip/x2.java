@@ -10,12 +10,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.q81;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.mi1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class x2 extends FrameLayout {
     public Activity a;
@@ -76,7 +76,7 @@ public abstract class x2 extends FrameLayout {
             }
         } else {
             this.c.lock();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new q81(this, 11)).setDuration(j3).setInterpolator(rr.f).start();
+            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new s81(this, 11)).setDuration(j3).setInterpolator(sr.f).start();
         }
     }
 
@@ -107,7 +107,7 @@ public abstract class x2 extends FrameLayout {
         }
         setTranslationY(getMeasuredHeight());
         setAlpha(0.0f);
-        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(rr.f).start();
+        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(sr.f).start();
     }
 
     @Override // android.view.View

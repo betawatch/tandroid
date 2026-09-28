@@ -1,7 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface hl0 {
-    int run();
+public final class hl0 implements View.OnTouchListener {
+    public float a;
+    public float b;
+    public boolean c;
+
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        ViewParent parent = view.getParent();
+        if (parent != null) {
+            if (motionEvent.getAction() == 0) {
+                this.a = motionEvent.getX();
+                this.b = motionEvent.getY();
+                this.c = true;
+                parent.requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction() == 2) {
+                float x10 = this.a - motionEvent.getX();
+                float y3 = this.b - motionEvent.getY();
+                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
+                if (this.c) {
+                    if (Math.sqrt((y3 * y3) + (x10 * x10)) > scaledTouchSlop) {
+                        this.c = false;
+                        parent.requestDisallowInterceptTouchEvent(false);
+                        return false;
+                    }
+                }
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                this.c = false;
+                parent.requestDisallowInterceptTouchEvent(false);
+                return false;
+            }
+        }
+        return false;
+    }
 }

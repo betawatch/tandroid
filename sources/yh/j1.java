@@ -12,11 +12,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.l21;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -68,9 +68,9 @@ public final /* synthetic */ class j1 implements Runnable {
                     AndroidUtilities.runOnUIThread(runnable);
                     break;
                 } else {
-                    lj0 lj0Var = x2Var.l0;
-                    if (lj0Var != null) {
-                        lj0Var.d();
+                    nj0 nj0Var = x2Var.l0;
+                    if (nj0Var != null) {
+                        nj0Var.d();
                         AndroidUtilities.runOnUIThread(new l21(19), 750L);
                     }
                     x2Var.Q.animate().alpha(0.0f).start();

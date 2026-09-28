@@ -7,10 +7,10 @@ import android.graphics.ColorMatrixColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.o6;
 import org.telegram.ui.Cells.z7;
-import org.telegram.ui.Components.fh0;
+import org.telegram.ui.Components.hh0;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class y0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -63,17 +63,17 @@ public final class y0 extends AnimatorListenerAdapter {
                 y9Var.invalidateSelf();
                 break;
             default:
-                fh0 fh0Var = (fh0) this.c;
-                fh0Var.H.unlock();
+                hh0 hh0Var = (hh0) this.c;
+                hh0Var.H.unlock();
                 float f10 = this.b;
-                fh0Var.b = f10;
+                hh0Var.b = f10;
                 if (f10 <= 0.0f) {
-                    fh0Var.G = -1;
+                    hh0Var.G = -1;
                 }
-                fh0Var.c(true);
-                fh0Var.f = false;
-                if (fh0Var.O != null && Math.abs(f10 - 1.0f) < 0.01f) {
-                    fh0Var.O.run();
+                hh0Var.c(true);
+                hh0Var.f = false;
+                if (hh0Var.O != null && Math.abs(f10 - 1.0f) < 0.01f) {
+                    hh0Var.O.run();
                     break;
                 }
                 break;
@@ -84,9 +84,9 @@ public final class y0 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 5:
-                fh0 fh0Var = (fh0) this.c;
-                fh0Var.f = true;
-                fh0Var.c = this.b;
+                hh0 hh0Var = (hh0) this.c;
+                hh0Var.f = true;
+                hh0Var.c = this.b;
                 break;
             default:
                 super.onAnimationStart(animator);

@@ -16,17 +16,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.op;
+import org.telegram.ui.Components.pp;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class w1 extends FrameLayout {
     public final h9 a;
     public final ImageReceiver b;
     public final TextView c;
     public final TextView d;
-    public final op e;
+    public final pp e;
     public final Path f;
     public final Paint h;
     public final d6 n;
@@ -59,12 +59,12 @@ public final class w1 extends FrameLayout {
         ok.n(h6.z6, d6Var, textView2, 1, 15.0f);
         boolean z11 = LocaleController.isRTL;
         addView(textView2, y5.d(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
-        op opVar = new op(getContext(), 21, d6Var);
-        this.e = opVar;
-        opVar.b(-1, h6.d6, h6.k7);
-        opVar.setDrawUnchecked(false);
-        opVar.setDrawBackgroundAsArc(3);
-        addView(opVar, y5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
+        pp ppVar = new pp(getContext(), 21, d6Var);
+        this.e = ppVar;
+        ppVar.b(-1, h6.d6, h6.k7);
+        ppVar.setDrawUnchecked(false);
+        ppVar.setDrawBackgroundAsArc(3);
+        addView(ppVar, y5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
     @Override // android.view.View

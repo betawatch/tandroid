@@ -7,12 +7,12 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class j1 extends wl0 {
+public abstract class j1 extends yl0 {
     public static final Paint c3;
     public static final Paint d3;
     public static final Path e3;
@@ -121,7 +121,7 @@ public abstract class j1 extends wl0 {
     }
 
     public final void y1(float f7, boolean z10) {
-        float interpolation = z10 ? rr.g.getInterpolation(f7) : rr.i.getInterpolation(f7);
+        float interpolation = z10 ? sr.g.getInterpolation(f7) : sr.i.getInterpolation(f7);
         float childCount = 1.0f / (getChildCount() - 1);
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             View childAt = getChildAt(i10);

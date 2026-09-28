@@ -14,17 +14,17 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.c60;
-import org.telegram.ui.Components.e50;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.e60;
+import org.telegram.ui.Components.g50;
+import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.a71;
 import org.telegram.ui.c90;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class y4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -43,9 +43,9 @@ public final class y4 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 5:
-                lz lzVar = (lz) this.d;
-                if (animator.equals(lzVar.M0)) {
-                    lzVar.M0 = null;
+                mz mzVar = (mz) this.d;
+                if (animator.equals(mzVar.M0)) {
+                    mzVar.M0 = null;
                     break;
                 }
                 break;
@@ -93,9 +93,9 @@ public final class y4 extends AnimatorListenerAdapter {
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.d).x.remove((AnimatorSet) this.b);
                 View view = (View) this.c;
                 if (view instanceof org.telegram.ui.ActionBar.e1) {
-                    lj0 lj0Var = ((org.telegram.ui.ActionBar.e1) view).c;
-                    if (lj0Var.getAnimatedDrawable() != null) {
-                        lj0Var.getAnimatedDrawable().start();
+                    nj0 nj0Var = ((org.telegram.ui.ActionBar.e1) view).c;
+                    if (nj0Var.getAnimatedDrawable() != null) {
+                        nj0Var.getAnimatedDrawable().start();
                         break;
                     }
                 }
@@ -135,49 +135,49 @@ public final class y4 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                wl0 wl0Var = (wl0) this.c;
+                yl0 yl0Var = (yl0) this.c;
                 s4.s sVar = (s4.s) this.b;
-                lz lzVar = (lz) this.d;
-                if (animator.equals(lzVar.M0)) {
+                mz mzVar = (mz) this.d;
+                if (animator.equals(mzVar.M0)) {
                     int L0 = sVar.L0();
-                    wl0Var.setTranslationY(0.0f);
-                    if (wl0Var == lzVar.D0) {
-                        wl0Var.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f) + lzVar.p2);
-                    } else if (wl0Var == lzVar.h0) {
-                        wl0Var.setPadding(0, lzVar.b1, 0, AndroidUtilities.dp(44.0f) + lzVar.p2);
-                    } else if (wl0Var == lzVar.P) {
-                        wl0Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f) + lzVar.p2);
+                    yl0Var.setTranslationY(0.0f);
+                    if (yl0Var == mzVar.D0) {
+                        yl0Var.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f) + mzVar.p2);
+                    } else if (yl0Var == mzVar.h0) {
+                        yl0Var.setPadding(0, mzVar.b1, 0, AndroidUtilities.dp(44.0f) + mzVar.p2);
+                    } else if (yl0Var == mzVar.P) {
+                        yl0Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f) + mzVar.p2);
                     }
                     if (L0 != -1) {
                         sVar.h1(L0, 0);
                     }
-                    lzVar.M0 = null;
+                    mzVar.M0 = null;
                     break;
                 }
                 break;
             case 6:
-                c60 c60Var = (c60) this.d;
+                e60 e60Var = (e60) this.d;
                 super.onAnimationEnd(animator);
                 boolean[] zArr2 = (boolean[]) this.b;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
-                    ((e50) this.c).run();
+                    ((g50) this.c).run();
                 }
-                c60Var.h.setRotationY(0.0f);
-                c60Var.r0.setRotationY(0.0f);
-                c60Var.J0 = false;
-                c60Var.invalidate();
+                e60Var.h.setRotationY(0.0f);
+                e60Var.r0.setRotationY(0.0f);
+                e60Var.J0 = false;
+                e60Var.invalidate();
                 break;
             case 7:
-                w70 w70Var = (w70) this.b;
-                w70Var.setProgress(0.0f);
-                w70Var.invalidate();
-                AndroidUtilities.removeFromParent(w70Var);
+                y70 y70Var = (y70) this.b;
+                y70Var.setProgress(0.0f);
+                y70Var.invalidate();
+                AndroidUtilities.removeFromParent(y70Var);
                 ViewTreeObserver viewTreeObserver = ((ViewGroup) this.c).getViewTreeObserver();
-                y70 y70Var = (y70) this.d;
-                View view2 = y70Var.f;
-                viewTreeObserver.removeOnPreDrawListener(y70Var.y);
-                if (y70Var.P) {
+                a80 a80Var = (a80) this.d;
+                View view2 = a80Var.f;
+                viewTreeObserver.removeOnPreDrawListener(a80Var.y);
+                if (a80Var.P) {
                     view2.setVisibility(0);
                     if (view2 instanceof xh.j1) {
                         xh.j1 j1Var = (xh.j1) view2;

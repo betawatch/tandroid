@@ -7,16 +7,16 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class rc1 implements org.telegram.ui.Components.mq {
+public final class rc1 implements org.telegram.ui.Components.nq {
     public final /* synthetic */ od1 a;
 
     public rc1(od1 od1Var) {
         this.a = od1Var;
     }
 
-    @Override // org.telegram.ui.Components.mq
+    @Override // org.telegram.ui.Components.nq
     public final int K0(int i10) {
         org.telegram.ui.ActionBar.f6 f6Var;
         od1 od1Var = this.a;
@@ -30,7 +30,7 @@ public final class rc1 implements org.telegram.ui.Components.mq {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.mq
+    @Override // org.telegram.ui.Components.nq
     public final void l(boolean z10) {
         int i10;
         int i11;
@@ -53,7 +53,7 @@ public final class rc1 implements org.telegram.ui.Components.mq {
         sb2.append("/addtheme/");
         sb2.append(f6Var.r.slug);
         String sb3 = sb2.toString();
-        od1Var.showDialog(new org.telegram.ui.Components.uq0(od1Var.getParentActivity(), null, sb3, false, sb3, false, null));
+        od1Var.showDialog(new org.telegram.ui.Components.wq0(od1Var.getParentActivity(), null, sb3, false, sb3, false, null));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x00a8  */
@@ -65,7 +65,7 @@ public final class rc1 implements org.telegram.ui.Components.mq {
     /* JADX WARN: Removed duplicated region for block: B:37:0x00bf  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00b6  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x00ac  */
-    @Override // org.telegram.ui.Components.mq
+    @Override // org.telegram.ui.Components.nq
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -140,27 +140,27 @@ public final class rc1 implements org.telegram.ui.Components.mq {
                 int i22 = (int) f6Var.l;
                 int i23 = (int) f6Var.m;
                 int i24 = (int) f6Var.j;
-                org.telegram.ui.Components.nq nqVar = od1Var.V;
+                org.telegram.ui.Components.oq oqVar = od1Var.V;
                 if (i23 != 0) {
                     B04 = i23;
                 }
-                nqVar.e(B04, 3);
-                org.telegram.ui.Components.nq nqVar2 = od1Var.V;
+                oqVar.e(B04, 3);
+                org.telegram.ui.Components.oq oqVar2 = od1Var.V;
                 if (i22 != 0) {
                     B03 = i22;
                 }
-                nqVar2.e(B03, 2);
-                org.telegram.ui.Components.nq nqVar3 = od1Var.V;
+                oqVar2.e(B03, 2);
+                org.telegram.ui.Components.oq oqVar3 = od1Var.V;
                 if (i21 != 0) {
                     B02 = i21;
                 }
                 i12 = 1;
-                nqVar3.e(B02, 1);
-                org.telegram.ui.Components.nq nqVar4 = od1Var.V;
+                oqVar3.e(B02, 1);
+                org.telegram.ui.Components.oq oqVar4 = od1Var.V;
                 if (i24 != 0) {
                     B0 = i24;
                 }
-                nqVar4.e(B0, 0);
+                oqVar4.e(B0, 0);
                 i13 = od1Var.n;
                 if (i13 != i12 || i13 == 3) {
                     i14 = od1Var.y;
@@ -193,13 +193,13 @@ public final class rc1 implements org.telegram.ui.Components.mq {
                         od1Var.V.e(f6Var.h, 3);
                         od1Var.V.e(f6Var.g, 2);
                         od1Var.V.e(f6Var.f, 1);
-                        org.telegram.ui.Components.nq nqVar5 = od1Var.V;
+                        org.telegram.ui.Components.oq oqVar5 = od1Var.V;
                         int i25 = f6Var.e;
                         if (i25 == 0) {
                             i25 = f6Var.c;
                         }
                         z11 = false;
-                        nqVar5.e(i25, 0);
+                        oqVar5.e(i25, 0);
                         org.telegram.ui.ActionBar.h6.n1(z11, z11);
                         od1Var.u0.f1();
                     }
@@ -232,7 +232,7 @@ public final class rc1 implements org.telegram.ui.Components.mq {
         od1Var.u0.f1();
     }
 
-    @Override // org.telegram.ui.Components.mq
+    @Override // org.telegram.ui.Components.nq
     public final void y() {
         od1 od1Var = this.a;
         if (od1Var.getParentActivity() == null) {

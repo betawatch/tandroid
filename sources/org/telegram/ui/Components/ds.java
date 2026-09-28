@@ -1,47 +1,267 @@
 package org.telegram.ui.Components;
 
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ds implements Predicate {
+public final /* synthetic */ class ds implements MessagesStorage.LongCallback, nl0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ hs b;
 
-    public /* synthetic */ ds(int i10, TLObject tLObject) {
+    public /* synthetic */ ds(hs hsVar, int i10) {
         this.a = i10;
-        this.b = tLObject;
+        this.b = hsVar;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.nl0
+    public void c(float f7, float f10, int i10, View view) {
+        boolean z10;
+        hs hsVar = this.b;
+        x51 G = hsVar.X.G(i10 - 1);
+        if (G == null) {
+            return;
         }
-        return Predicate$-CC.$default$negate(this);
+        gs gsVar = hsVar.k0;
+        gs gsVar2 = hsVar.j0;
+        gs gsVar3 = hsVar.i0;
+        gs gsVar4 = hsVar.l0;
+        TLRPC.TL_chatBannedRights tL_chatBannedRights = hsVar.w0;
+        int i11 = G.d;
+        if (i11 == 103) {
+            boolean z11 = !hsVar.p0;
+            hsVar.p0 = z11;
+            ((org.telegram.ui.Cells.v8) view).setChecked(z11);
+            return;
+        }
+        int i12 = G.a;
+        if (i12 == 37) {
+            int i13 = i11 >>> 24;
+            int i14 = 16777215 & i11;
+            if (i13 == 0) {
+                gsVar3.e(i14);
+                return;
+            }
+            if (i13 == 1) {
+                gsVar2.e(i14);
+                hsVar.U();
+                return;
+            } else if (i11 == 3) {
+                gsVar.e(i14);
+                hsVar.U();
+                return;
+            } else {
+                if (i13 == 2) {
+                    gsVar4.e(i14);
+                    return;
+                }
+                return;
+            }
+        }
+        if (i12 != 36 && i12 != 35) {
+            if (i12 == 39) {
+                if (G.t) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hsVar.getContext());
+                    alertDialog$Builder.a.R = LocaleController.getString(R.string.UserRestrictionsCantModify);
+                    alertDialog$Builder.a.T = LocaleController.getString(R.string.UserRestrictionsCantModifyDisabled);
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+                    alertDialog$Builder.a.show();
+                    return;
+                }
+                if (i11 == 2) {
+                    tL_chatBannedRights.invite_users = !tL_chatBannedRights.invite_users;
+                    hsVar.V();
+                } else if (i11 == 3) {
+                    tL_chatBannedRights.pin_messages = !tL_chatBannedRights.pin_messages;
+                    hsVar.V();
+                } else if (i11 == 4) {
+                    tL_chatBannedRights.change_info = !tL_chatBannedRights.change_info;
+                    hsVar.V();
+                } else if (i11 == 5) {
+                    tL_chatBannedRights.manage_topics = !tL_chatBannedRights.manage_topics;
+                    hsVar.V();
+                } else if (i11 == 0) {
+                    tL_chatBannedRights.send_plain = !tL_chatBannedRights.send_plain;
+                    hsVar.V();
+                }
+                hsVar.X.N(true);
+                return;
+            }
+            if (i12 == 40) {
+                hsVar.y0 = !hsVar.y0;
+                hsVar.J();
+                hsVar.X.N(true);
+                hsVar.s();
+                return;
+            }
+            if (i11 == 100) {
+                hsVar.B0 = false;
+                boolean z12 = !hsVar.C0;
+                hsVar.C0 = z12;
+                hsVar.D0 = z12;
+                hsVar.J();
+                hsVar.X.N(true);
+                hsVar.s();
+                hsVar.O();
+                return;
+            }
+            if (i12 == 38) {
+                boolean z13 = hsVar.g0;
+                hsVar.g0 = !z13;
+                boolean[] zArr = !z13 ? hsVar.n0 : hsVar.m0;
+                if (gsVar4.g != 0) {
+                    gsVar4.e = zArr;
+                    gsVar4.f();
+                    gsVar4.g();
+                }
+                hsVar.X.N(true);
+                hsVar.V();
+                return;
+            }
+            return;
+        }
+        if (i11 == 0) {
+            gsVar3.d();
+            return;
+        }
+        if (i11 == 1) {
+            gsVar2.d();
+            hsVar.U();
+            return;
+        }
+        if (i11 == 3) {
+            gsVar.d();
+            hsVar.U();
+            return;
+        }
+        if (i11 == 2) {
+            gsVar4.d();
+            return;
+        }
+        if (i12 == 35) {
+            if (G.t) {
+                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(hsVar.getContext());
+                alertDialog$Builder2.a.R = LocaleController.getString(R.string.UserRestrictionsCantModify);
+                alertDialog$Builder2.a.T = LocaleController.getString(R.string.UserRestrictionsCantModifyDisabled);
+                alertDialog$Builder2.k(LocaleController.getString(R.string.OK), null);
+                alertDialog$Builder2.a.show();
+                return;
+            }
+            if (i11 == 6) {
+                z10 = true;
+                tL_chatBannedRights.send_photos = !tL_chatBannedRights.send_photos;
+                hsVar.V();
+            } else {
+                z10 = true;
+                if (i11 == 7) {
+                    tL_chatBannedRights.send_videos = !tL_chatBannedRights.send_videos;
+                    hsVar.V();
+                } else if (i11 == 9) {
+                    tL_chatBannedRights.send_audios = !tL_chatBannedRights.send_audios;
+                    hsVar.V();
+                } else if (i11 == 8) {
+                    tL_chatBannedRights.send_docs = !tL_chatBannedRights.send_docs;
+                    hsVar.V();
+                } else if (i11 == 11) {
+                    tL_chatBannedRights.send_roundvideos = !tL_chatBannedRights.send_roundvideos;
+                    hsVar.V();
+                } else if (i11 == 10) {
+                    tL_chatBannedRights.send_voices = !tL_chatBannedRights.send_voices;
+                    hsVar.V();
+                } else if (i11 == 15) {
+                    tL_chatBannedRights.send_reactions = !tL_chatBannedRights.send_reactions;
+                    hsVar.V();
+                } else {
+                    if (i11 == 12) {
+                        boolean z14 = !tL_chatBannedRights.send_stickers;
+                        tL_chatBannedRights.send_inline = z14;
+                        tL_chatBannedRights.send_gifs = z14;
+                        tL_chatBannedRights.send_games = z14;
+                        tL_chatBannedRights.send_stickers = z14;
+                        hsVar.V();
+                    } else if (i11 == 14) {
+                        if (tL_chatBannedRights.send_plain || hsVar.v0.send_plain) {
+                            int i15 = 0;
+                            while (true) {
+                                if (i15 >= hsVar.X.x.size()) {
+                                    break;
+                                }
+                                x51 G2 = hsVar.X.G(i15);
+                                if (G2.a == 39 && G2.d == 0) {
+                                    s4.c1 K = hsVar.d.K(i15 + 1);
+                                    if (K != null) {
+                                        View view2 = K.a;
+                                        float f11 = -hsVar.F0;
+                                        hsVar.F0 = f11;
+                                        AndroidUtilities.shakeViewSpring(view2, f11);
+                                    }
+                                } else {
+                                    i15++;
+                                }
+                            }
+                            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                            return;
+                        }
+                        tL_chatBannedRights.embed_links = !tL_chatBannedRights.embed_links;
+                        hsVar.V();
+                    } else if (i11 == 13) {
+                        z10 = true;
+                        tL_chatBannedRights.send_polls = !tL_chatBannedRights.send_polls;
+                        hsVar.V();
+                    } else {
+                        z10 = true;
+                        if (i11 == 101) {
+                            hsVar.C0 = !hsVar.C0;
+                            hsVar.O();
+                        } else if (i11 == 102) {
+                            hsVar.D0 = !hsVar.D0;
+                            hsVar.O();
+                        }
+                    }
+                    z10 = true;
+                }
+            }
+            hsVar.X.N(z10);
+        }
     }
 
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
+    @Override // org.telegram.ui.Components.nl0
+    public /* synthetic */ boolean d1(View view) {
+        return false;
     }
 
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j3) {
         switch (this.a) {
             case 0:
-                return MessageObject.peersEqual((TLRPC.InputPeer) this.b, ((MessageObject) obj).messageOwner.from_id);
+                hs hsVar = this.b;
+                hsVar.getClass();
+                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(org.telegram.ui.wn.R9(j3));
+                }
+                hsVar.dismiss();
+                break;
             default:
-                MessageObject messageObject = (MessageObject) obj;
-                TLObject tLObject = this.b;
-                return !(tLObject instanceof TLRPC.User) ? !((tLObject instanceof TLRPC.Chat) && messageObject.messageOwner.from_id.user_id == ((TLRPC.Chat) tLObject).id) : messageObject.messageOwner.from_id.user_id != ((TLRPC.User) tLObject).id;
+                hs hsVar2 = this.b;
+                hsVar2.getClass();
+                org.telegram.ui.ActionBar.m2 R2 = LaunchActivity.R();
+                if (R2 != null) {
+                    R2.presentFragment(org.telegram.ui.wn.R9(j3));
+                }
+                hsVar2.dismiss();
+                break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class sg extends FrameLayout {
     public final Drawable E;
@@ -78,7 +78,7 @@ public final class sg extends FrameLayout {
         this.L = new Path();
         this.M = new float[]{r14, r14, 0.0f, 0.0f, 0.0f, 0.0f, r14, r14};
         this.N = new float[]{0.0f, 0.0f, r13, r13, r13, r13, 0.0f, 0.0f};
-        this.O = new e6(this, 0L, 350L, rr.h);
+        this.O = new e6(this, 0L, 350L, sr.h);
         rg rgVar = new rg(this, this);
         this.G = rgVar;
         r0.i0.k(this, rgVar);
@@ -133,9 +133,9 @@ public final class sg extends FrameLayout {
             ci.e4 e4Var3 = this.b;
             int i10 = R.raw.fire_on;
             e4Var3.getClass();
-            ij0 ij0Var = new ij0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
-            ij0Var.start();
-            e4Var3.j(ij0Var);
+            kj0 kj0Var = new kj0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+            kj0Var.start();
+            e4Var3.j(kj0Var);
         } else {
             MessagesController.getGlobalMainSettings().edit().putInt("voiceoncehint", MessagesController.getGlobalMainSettings().getInt("voiceoncehint", 0) + 1).apply();
         }
@@ -356,7 +356,7 @@ public final class sg extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:143:0x0351, code lost:
     
-        r3 = org.telegram.ui.Components.rr.j;
+        r3 = org.telegram.ui.Components.sr.j;
         r4 = r3.getInterpolation(r4);
         r2 = r3.getInterpolation(r2);
         r14 = r4;
@@ -533,7 +533,7 @@ public final class sg extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0324, code lost:
     
-        r5 = org.telegram.ui.Components.rr.j;
+        r5 = org.telegram.ui.Components.sr.j;
         r18 = r5.getInterpolation(r4);
         r5.getInterpolation(r2);
         r14 = r18;
@@ -902,9 +902,9 @@ public final class sg extends FrameLayout {
                     if (e4Var != null && e4Var.V) {
                         a();
                     }
-                    rk0 rk0Var = chatActivityEnterView.h1;
-                    if (rk0Var != null) {
-                        rk0Var.setPlaying(false);
+                    tk0 tk0Var = chatActivityEnterView.h1;
+                    if (tk0Var != null) {
+                        tk0Var.setPlaying(false);
                     }
                     if (!MediaController.getInstance().isRecordingPaused() || (chatActivityEnterView.h1.getAudioLeft() <= 0.01f && chatActivityEnterView.h1.getAudioRight() >= 0.99f)) {
                         pgVar.run();

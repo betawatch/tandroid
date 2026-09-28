@@ -11,7 +11,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class of implements Runnable {
     public final /* synthetic */ int a;
@@ -169,14 +169,14 @@ public final /* synthetic */ class of implements Runnable {
                 break;
             case 22:
                 wnVar.q7 = null;
-                org.telegram.ui.Components.h60 h60Var = wnVar.b3;
-                if (h60Var != null) {
-                    org.telegram.ui.Components.e60 cameraContainer = h60Var.getCameraContainer();
+                org.telegram.ui.Components.j60 j60Var = wnVar.b3;
+                if (j60Var != null) {
+                    org.telegram.ui.Components.g60 cameraContainer = j60Var.getCameraContainer();
                     AnimatorSet animatorSet = new AnimatorSet();
-                    ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e60, Float>) View.SCALE_X, 0.5f);
-                    ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e60, Float>) View.SCALE_Y, 0.5f);
+                    ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.g60, Float>) View.SCALE_X, 0.5f);
+                    ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.g60, Float>) View.SCALE_Y, 0.5f);
                     Property property = View.ALPHA;
-                    animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e60, Float>) property, 0.0f), ObjectAnimator.ofFloat(wnVar.b3.getButtonsLayout(), (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(wnVar.b3.getPaint(), org.telegram.ui.Components.s6.b, 0), ObjectAnimator.ofFloat(wnVar.b3.getMuteImageView(), (Property<View, Float>) property, 0.0f));
+                    animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.g60, Float>) property, 0.0f), ObjectAnimator.ofFloat(wnVar.b3.getButtonsLayout(), (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(wnVar.b3.getPaint(), org.telegram.ui.Components.s6.b, 0), ObjectAnimator.ofFloat(wnVar.b3.getMuteImageView(), (Property<View, Float>) property, 0.0f));
                     animatorSet.addListener(new ui(wnVar, i11));
                     animatorSet.start();
                     break;

@@ -94,11 +94,11 @@ import org.telegram.ui.ActionBar.l3;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Cells.e9;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.f21;
+import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.h21;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
@@ -110,7 +110,7 @@ import org.telegram.ui.u9;
 import org.telegram.ui.xo0;
 import w7.c6;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class b1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean P0 = true;
@@ -148,7 +148,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     public boolean S;
     public boolean T;
     public TLRPC.User U;
-    public cn0 V;
+    public en0 V;
     public Activity W;
     public y0 a;
     public boolean a0;
@@ -308,7 +308,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                 aVar.accept(Boolean.TRUE);
                 return;
             }
-            b1Var.V = new cn0(b1Var, aVar, strArr, 19);
+            b1Var.V = new en0(b1Var, aVar, strArr, 19);
             Activity activity = b1Var.W;
             if (activity != null) {
                 activity.requestPermissions(strArr, 4000);
@@ -1488,7 +1488,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             y0 y0Var3 = y0Var2;
                             da daVar3 = daVar;
                             if (z20) {
-                                MessagesController.getInstance(b1Var3.M).unblockPeer(b1Var3.U.id, new f21(b1Var3, i22, y0Var3, daVar3, 13));
+                                MessagesController.getInstance(b1Var3.M).unblockPeer(b1Var3.U.id, new h21(b1Var3, i22, y0Var3, daVar3, 13));
                                 return;
                             }
                             SendMessagesHelper.getInstance(b1Var3.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(b1Var3.M).getCurrentUser(), b1Var3.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
@@ -2590,7 +2590,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     b11.setGravity(17);
                     f7.addView(b11, w7.y5.t(-1, -2, 7, 32, 0, 32, 19));
                     e9 e9Var = new e9(context, resourceProvider);
-                    e9Var.setBackground(new qq(new ColorDrawable(h6.v0(h6.a7, resourceProvider)), h6.U0(context, R.drawable.greydivider, h6.v0(h6.b7, resourceProvider))));
+                    e9Var.setBackground(new rq(new ColorDrawable(h6.v0(h6.a7, resourceProvider)), h6.U0(context, R.drawable.greydivider, h6.v0(h6.b7, resourceProvider))));
                     e9Var.setFixedSize(12);
                     f7.addView(e9Var, w7.y5.t(-1, 12, 7, 0, 0, 0, 0));
                     m4 m4Var = new m4(context, resourceProvider);
@@ -2943,7 +2943,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        cn0 cn0Var;
+        en0 en0Var;
         Uri[] uriArr;
         if (i10 == NotificationCenter.didSetNewTheme) {
             y0 y0Var = this.a;
@@ -2970,10 +2970,10 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         if (i10 != NotificationCenter.onActivityResultReceived) {
             if (i10 == NotificationCenter.onRequestPermissionResultReceived) {
                 int intValue = ((Integer) objArr[0]).intValue();
-                if (intValue != 4000 || (cn0Var = this.V) == null) {
+                if (intValue != 4000 || (en0Var = this.V) == null) {
                     return;
                 }
-                cn0Var.run();
+                en0Var.run();
                 this.V = null;
                 return;
             }

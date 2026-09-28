@@ -1,33 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class jc0 extends org.telegram.ui.ActionBar.h5 {
-    public final Paint M0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 N0;
+public final /* synthetic */ class jc0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jc0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.N0 = d6Var;
-        this.M0 = new Paint(1);
+    public /* synthetic */ jc0(org.telegram.ui.jt jtVar, ArrayList arrayList, boolean z10) {
+        this.c = jtVar;
+        this.d = arrayList;
+        this.b = z10;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.K5, this.N0);
-        Paint paint = this.M0;
-        paint.setColor(v02);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1.0f);
-        float height = getHeight() / 2.0f;
-        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - AndroidUtilities.dp(8.0f), height, paint);
-        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
-        super.dispatchDraw(canvas);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.c;
+                Runnable runnable = (Runnable) this.d;
+                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
+                    e3Var.dismiss();
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+            default:
+                org.telegram.ui.jt jtVar = (org.telegram.ui.jt) this.c;
+                ArrayList arrayList = (ArrayList) this.d;
+                org.telegram.ui.nt ntVar = jtVar.a;
+                if (ntVar.w != null && ntVar.l != null) {
+                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
+                    if (intValue == 0) {
+                        ntVar.l.C(ntVar.W);
+                    } else if (intValue == 1) {
+                        ntVar.l.v(ntVar.W);
+                    } else if (intValue == 2) {
+                        ntVar.l.v(null);
+                    } else if (intValue == 3) {
+                        ntVar.l.H(ntVar.W);
+                    } else if (intValue == 4) {
+                        ntVar.l.r(ntVar.W);
+                    } else if (intValue == 5) {
+                        MediaDataController.getInstance(ntVar.r).addRecentSticker(2, ntVar.b0, ntVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                    }
+                    ntVar.p();
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ jc0(boolean z10, org.telegram.ui.ActionBar.e3 e3Var, Runnable runnable) {
+        this.b = z10;
+        this.c = e3Var;
+        this.d = runnable;
     }
 }

@@ -11,9 +11,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ia0 implements org.telegram.ui.Components.be0, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class ia0 implements org.telegram.ui.Components.de0, org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ LaunchActivity a;
 
     public /* synthetic */ ia0(LaunchActivity launchActivity) {
@@ -26,8 +26,8 @@ public final /* synthetic */ class ia0 implements org.telegram.ui.Components.be0
         MessagesController.getInstance(this.a.O).performLogout(2);
     }
 
-    @Override // org.telegram.ui.Components.be0
-    public void g(org.telegram.ui.Components.ce0 ce0Var) {
+    @Override // org.telegram.ui.Components.de0
+    public void g(org.telegram.ui.Components.ee0 ee0Var) {
         Pattern pattern = LaunchActivity.B1;
         SharedConfig.isWaitingForPasscodeEnter = false;
         LaunchActivity launchActivity = this.a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class ia0 implements org.telegram.ui.Components.be0
             }
             launchActivity.s0.getView().setVisibility(0);
         }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, ce0Var);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, ee0Var);
         try {
             NotificationsController.getInstance(UserConfig.selectedAccount).showNotifications();
         } catch (Exception e) {

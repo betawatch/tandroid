@@ -21,9 +21,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ph1 extends org.telegram.ui.Components.el0 {
+public final class ph1 extends org.telegram.ui.Components.gl0 {
     public final Context c;
     public final gg.c2 f;
     public Runnable h;
@@ -93,18 +93,18 @@ public final class ph1 extends org.telegram.ui.Components.el0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.gl0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.el0
-    public final void G(org.telegram.ui.Components.wl0 wl0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(org.telegram.ui.Components.yl0 yl0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
@@ -243,14 +243,14 @@ public final class ph1 extends org.telegram.ui.Components.el0 {
                             if (i14 > 0) {
                                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                                 spannableStringBuilder4.append((CharSequence) "d");
-                                spannableStringBuilder4.setSpan(new org.telegram.ui.Components.pq(R.drawable.msg_mini_fireon, 0), 0, 1, 0);
+                                spannableStringBuilder4.setSpan(new org.telegram.ui.Components.qq(R.drawable.msg_mini_fireon, 0), 0, 1, 0);
                                 spannableStringBuilder4.append((CharSequence) LocaleController.formatString(R.string.AutoDeleteAfter, LocaleController.formatTTLString(i14)).toLowerCase());
                                 spannableStringBuilder = spannableStringBuilder4;
                                 z10 = true;
                             } else {
                                 SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
                                 spannableStringBuilder5.append((CharSequence) "d");
-                                spannableStringBuilder5.setSpan(new org.telegram.ui.Components.pq(R.drawable.msg_mini_fireoff, 0), 0, 1, 0);
+                                spannableStringBuilder5.setSpan(new org.telegram.ui.Components.qq(R.drawable.msg_mini_fireoff, 0), 0, 1, 0);
                                 spannableStringBuilder5.append((CharSequence) LocaleController.getString(R.string.AutoDeleteDisabled));
                                 spannableStringBuilder = spannableStringBuilder5;
                                 z10 = false;
@@ -450,6 +450,6 @@ public final class ph1 extends org.telegram.ui.Components.el0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        return new org.telegram.ui.Components.gl0(i10 != 1 ? new org.telegram.ui.Cells.v3(context, null) : new org.telegram.ui.Cells.g4(context, 1, 0, true));
+        return new org.telegram.ui.Components.il0(i10 != 1 ? new org.telegram.ui.Cells.v3(context, null) : new org.telegram.ui.Cells.g4(context, 1, 0, true));
     }
 }

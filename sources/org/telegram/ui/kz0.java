@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class kz0 extends hv0 {
     public final /* synthetic */ ProfileActivity T;
@@ -37,8 +37,8 @@ public final class kz0 extends hv0 {
             kVar3 = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
             kVar3.draw(canvas);
             canvas.restore();
-            org.telegram.ui.Components.lj0 lj0Var = profileActivity.v;
-            if (lj0Var != null && lj0Var.getVisibility() == 0 && profileActivity.v.getAlpha() > 0.0f) {
+            org.telegram.ui.Components.nj0 nj0Var = profileActivity.v;
+            if (nj0Var != null && nj0Var.getVisibility() == 0 && profileActivity.v.getAlpha() > 0.0f) {
                 canvas.save();
                 float f14 = (f7 * 0.5f) + 0.5f;
                 canvas.scale(f14, f14, (profileActivity.v.getMeasuredWidth() / 2.0f) + profileActivity.v.getX(), (profileActivity.v.getMeasuredHeight() / 2.0f) + profileActivity.v.getY());
@@ -58,9 +58,9 @@ public final class kz0 extends hv0 {
         for (int i10 = 0; i10 < profileActivity.n0.getChildCount(); i10++) {
             profileActivity.n0.getChildAt(i10).invalidate();
         }
-        org.telegram.ui.Components.lj0 lj0Var = profileActivity.v;
-        if (lj0Var != null) {
-            lj0Var.invalidate();
+        org.telegram.ui.Components.nj0 nj0Var = profileActivity.v;
+        if (nj0Var != null) {
+            nj0Var.invalidate();
         }
     }
 

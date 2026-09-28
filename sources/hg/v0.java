@@ -29,16 +29,16 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.up;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.vp;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class v0 extends m2 {
     public static final int U = -1;
@@ -78,9 +78,9 @@ public final class v0 extends m2 {
     public boolean R;
     public boolean S;
     public boolean T;
-    public qr a;
+    public rr a;
     public org.telegram.ui.ActionBar.u0 b;
-    public r61 c;
+    public t61 c;
     public gg.c2 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -141,9 +141,9 @@ public final class v0 extends m2 {
         }
     }
 
-    public static void W(final v0 v0Var, v51 v51Var, final View view) {
-        if (v51Var.g && !v0Var.v.h(v51Var)) {
-            int i10 = v51Var.d;
+    public static void W(final v0 v0Var, x51 x51Var, final View view) {
+        if (x51Var.g && !v0Var.v.h(x51Var)) {
+            int i10 = x51Var.d;
             if (i10 == U) {
                 c0 c0Var = v0Var.v;
                 v0Var.I = true;
@@ -166,8 +166,8 @@ public final class v0 extends m2 {
                 v0Var.Y(true);
                 return;
             }
-            if (v51Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) v0Var.N.get(v51Var.x);
+            if (x51Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) v0Var.N.get(x51Var.x);
                 if (user == null) {
                     return;
                 }
@@ -933,9 +933,9 @@ public final class v0 extends m2 {
             }
             this.w = z11;
             ViewPropertyAnimator duration = this.r.animate().alpha(z11 ? 0.0f : 1.0f).translationY(z11 ? -AndroidUtilities.dp(8.0f) : 0.0f).setDuration(320L);
-            rr rrVar = rr.h;
-            duration.setInterpolator(rrVar).start();
-            this.s.animate().alpha(z11 ? 1.0f : 0.0f).translationY(z11 ? 0.0f : AndroidUtilities.dp(8.0f)).setDuration(320L).setInterpolator(rrVar).start();
+            sr srVar = sr.h;
+            duration.setInterpolator(srVar).start();
+            this.s.animate().alpha(z11 ? 1.0f : 0.0f).translationY(z11 ? 0.0f : AndroidUtilities.dp(8.0f)).setDuration(320L).setInterpolator(srVar).start();
         }
     }
 
@@ -948,7 +948,7 @@ public final class v0 extends m2 {
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
         int i10 = h6.v8;
         mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-        this.a = new qr(mutate, new up(h6.w0(null, i10, false)));
+        this.a = new rr(mutate, new vp(h6.w0(null, i10, false)));
         this.b = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.a);
         Y(false);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -1014,12 +1014,12 @@ public final class v0 extends m2 {
         this.v = c0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         c0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        r61 r61Var = new r61(this, new bi.v(this, 24), new r0(this, 3), null);
-        this.c = r61Var;
-        r61Var.p1();
-        r61 r61Var2 = this.c;
-        r61Var2.Y2.r = false;
-        frameLayout.addView(r61Var2, y5.c(-1.0f, -1));
+        t61 t61Var = new t61(this, new bi.v(this, 24), new r0(this, 3), null);
+        this.c = t61Var;
+        t61Var.p1();
+        t61 t61Var2 = this.c;
+        t61Var2.Y2.r = false;
+        frameLayout.addView(t61Var2, y5.c(-1.0f, -1));
         this.actionBar.z(this.c, true);
         this.fragmentView = frameLayout;
         return frameLayout;

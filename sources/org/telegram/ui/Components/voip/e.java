@@ -22,11 +22,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.ki1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -45,7 +45,7 @@ public final class e extends View {
     public boolean R;
     public org.telegram.ui.Cells.z S;
     public final Paint T;
-    public final ij0 U;
+    public final kj0 U;
     public final Drawable V;
     public final s0 W;
     public final FabBackgroundDrawable a;
@@ -111,11 +111,11 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        ij0 ij0Var = new ij0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
-        this.U = ij0Var;
-        ij0Var.K(1);
-        ij0Var.P(90);
-        ij0Var.R(this);
+        kj0 kj0Var = new kj0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
+        this.U = kj0Var;
+        kj0Var.K(1);
+        kj0Var.P(90);
+        kj0Var.R(this);
         this.V = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);

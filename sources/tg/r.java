@@ -29,11 +29,11 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.bs0;
 import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.zr0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import xh.d2;
 import xh.o2;
@@ -41,7 +41,7 @@ import xh.v3;
 import yh.s5;
 import yh.x3;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -90,11 +90,11 @@ public final /* synthetic */ class r implements Runnable {
                 break;
             case 2:
                 vh.n nVar = (vh.n) obj3;
-                o90 o90Var = (o90) obj2;
+                q90 q90Var = (q90) obj2;
                 ClickableSpan clickableSpan = (ClickableSpan) obj;
-                m90 m90Var = nVar.y;
-                if (m90Var != null && nVar.E == o90Var) {
-                    m90Var.a(clickableSpan);
+                o90 o90Var = nVar.y;
+                if (o90Var != null && nVar.E == q90Var) {
+                    o90Var.a(clickableSpan);
                     nVar.E = null;
                     nVar.s.d(true);
                     break;
@@ -112,7 +112,7 @@ public final /* synthetic */ class r implements Runnable {
             case 4:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 m2 m2Var = (m2) obj;
-                ((zr0) obj3).H = -1;
+                ((bs0) obj3).H = -1;
                 if (tL_error2 != null) {
                     xc.a0(m2Var).d0(tL_error2, false);
                     break;
@@ -121,13 +121,13 @@ public final /* synthetic */ class r implements Runnable {
             case 5:
                 o2 o2Var = (o2) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                zr0 zr0Var = o2Var.a;
-                zr0Var.e.k(o2Var.e.d, savedStarGift);
-                ((y70) obj).u();
-                zr0Var.n();
-                TL_stars.TL_starGiftCollection c10 = zr0Var.e.c(o2Var.e.d);
+                bs0 bs0Var = o2Var.a;
+                bs0Var.e.k(o2Var.e.d, savedStarGift);
+                ((a80) obj).u();
+                bs0Var.n();
+                TL_stars.TL_starGiftCollection c10 = bs0Var.e.c(o2Var.e.d);
                 if (c10 != null) {
-                    xc.a0(zr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, x3.D1(savedStarGift.gift), c10.title))).j();
+                    xc.a0(bs0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, x3.D1(savedStarGift.gift), c10.title))).j();
                     break;
                 }
                 break;

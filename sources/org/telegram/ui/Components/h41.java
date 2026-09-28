@@ -1,44 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class h41 extends s4.h0 {
-    public Context c;
-    public View d;
-    public int e;
-
-    public final void D(View view) {
-        if (this.d == view) {
-            return;
-        }
-        this.e++;
-        this.d = view;
-        m(1);
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return 2;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        return this.e;
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return i10 == 0 ? new gl0(new ln(this.c, 13)) : new gl0(this.d);
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
+public final class h41 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.33f), View.MeasureSpec.getSize(i11)), TLObject.FLAG_30));
     }
 }

@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class SessionsActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -55,8 +55,8 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.m2 implements No
     public tx0 Y;
     public k81 a;
     public l60 b;
-    public org.telegram.ui.Components.nz c;
-    public org.telegram.ui.Components.u00 d;
+    public org.telegram.ui.Components.oz c;
+    public org.telegram.ui.Components.v00 d;
     public final ArrayList e;
     public final ArrayList f;
     public ArrayList h;
@@ -138,7 +138,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.m2 implements No
                                 spannableStringBuilder.append((CharSequence) ", ");
                             }
                             SpannableStringBuilder append = new SpannableStringBuilder("@").append((CharSequence) publicUsername);
-                            append.setSpan(new org.telegram.ui.Components.z51(v7.j.g("https://t.me/", publicUsername), (org.telegram.ui.Components.b11) null), 0, append.length(), 33);
+                            append.setSpan(new org.telegram.ui.Components.b61(v7.j.g("https://t.me/", publicUsername), (org.telegram.ui.Components.d11) null), 0, append.length(), 33);
                             spannableStringBuilder.append((CharSequence) append);
                         }
                     }
@@ -215,11 +215,11 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.m2 implements No
             LinearLayout linearLayout = new LinearLayout(parentActivity);
             linearLayout.setOrientation(1);
             linearLayout.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-            org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(parentActivity);
-            x71Var.d = lj0Var;
-            lj0Var.setOnClickListener(new o71(x71Var));
-            lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-            linearLayout.addView(lj0Var, w7.y5.t(70, 70, 1, 0, 16, 0, 0));
+            org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(parentActivity);
+            x71Var.d = nj0Var;
+            nj0Var.setOnClickListener(new o71(x71Var));
+            nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+            linearLayout.addView(nj0Var, w7.y5.t(70, 70, 1, 0, 16, 0, 0));
             TextView textView3 = new TextView(parentActivity);
             com.google.android.gms.internal.vision.e2.l(20.0f, 2, textView3);
             com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.h6.G6, null, false, textView3, 17);
@@ -295,11 +295,11 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.m2 implements No
                 }
                 i15 = 1;
             }
-            lj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), org.telegram.ui.ActionBar.h6.w0(null, i12, false)));
+            nj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), org.telegram.ui.ActionBar.h6.w0(null, i12, false)));
             if (i15 != 0) {
-                lj0Var.f(i11, 50, 50, new int[]{0, org.telegram.ui.ActionBar.h6.w0(null, i12, false)});
+                nj0Var.f(i11, 50, 50, new int[]{0, org.telegram.ui.ActionBar.h6.w0(null, i12, false)});
             } else {
-                lj0Var.setImageDrawable(x71Var.getContext().getDrawable(i11));
+                nj0Var.setImageDrawable(x71Var.getContext().getDrawable(i11));
             }
             w71 w71Var = new w71(parentActivity, false);
             StringBuilder sb3 = new StringBuilder();
@@ -504,10 +504,10 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.m2 implements No
 
     @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
-        org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(context, null);
-        this.d = u00Var;
+        org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(context, null);
+        this.d = v00Var;
         int i10 = 1;
-        u00Var.setIsSingleCell(true);
+        v00Var.setIsSingleCell(true);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         int i11 = this.w;
@@ -525,9 +525,9 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.m2 implements No
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.nz nzVar = new org.telegram.ui.Components.nz(context, null);
-        this.c = nzVar;
-        nzVar.b();
+        org.telegram.ui.Components.oz ozVar = new org.telegram.ui.Components.oz(context, null);
+        this.c = ozVar;
+        ozVar.b();
         frameLayout.addView(this.c, w7.y5.e(-1, -1, 17));
         l60 l60Var = new l60(this, context);
         this.b = l60Var;
@@ -543,9 +543,9 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.m2 implements No
         this.b.setAdapter(this.a);
         s4.j jVar = new s4.j();
         jVar.n(150L);
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.f;
-        jVar.i = rrVar;
-        jVar.o = rrVar;
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.f;
+        jVar.i = srVar;
+        jVar.o = srVar;
         this.b.setItemAnimator(jVar);
         this.b.setOnItemClickListener(new r21(this, 6));
         if (i11 == 0) {

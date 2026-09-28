@@ -6,9 +6,9 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ei extends ku {
+public final class ei extends lu {
     public final /* synthetic */ wi V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,10 +17,10 @@ public final class ei extends ku {
         this.V = wiVar;
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void f() {
         super.f();
-        lz emojiView = getEmojiView();
+        mz emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
             emojiView.w2 = false;
@@ -29,7 +29,7 @@ public final class ei extends ku {
         }
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void i(Menu menu) {
         org.telegram.ui.ActionBar.m2 m2Var = this.V.f0;
         if (m2Var instanceof org.telegram.ui.wn) {
@@ -57,7 +57,7 @@ public final class ei extends ku {
         this.V.b2();
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void q(int i10, int i11) {
         wi wiVar = this.V;
         wiVar.b2();

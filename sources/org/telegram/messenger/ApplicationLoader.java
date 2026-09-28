@@ -26,12 +26,12 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h10;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.i10;
 import org.telegram.ui.IUpdateLayout;
 import org.telegram.ui.fb0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -524,8 +524,8 @@ public class ApplicationLoader extends Application {
         NativeLoader.initNativeLibs(applicationContext);
         try {
             ConnectionsManager.native_setJava(false);
-            new h10(this) { // from class: org.telegram.messenger.ApplicationLoader.2
-                @Override // org.telegram.ui.Components.h10, android.app.Application.ActivityLifecycleCallbacks
+            new i10(this) { // from class: org.telegram.messenger.ApplicationLoader.2
+                @Override // org.telegram.ui.Components.i10, android.app.Application.ActivityLifecycleCallbacks
                 public void onActivityStarted(Activity activity) {
                     boolean isBackground = isBackground();
                     super.onActivityStarted(activity);
@@ -661,7 +661,7 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(y70 y70Var) {
+    public void addItemOptions(a80 a80Var) {
     }
 
     public void appCenterLogInternal(Throwable th2) {

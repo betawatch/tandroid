@@ -29,12 +29,12 @@ import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.uw0;
+import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.ww0;
+import org.telegram.ui.Components.yw0;
 import org.telegram.ui.b11;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class h5 extends View implements Drawable.Callback {
     public final Path A0;
@@ -301,7 +301,7 @@ public class h5 extends View implements Drawable.Callback {
                     } else {
                         Layout.Alignment alignment = getAlignment();
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                        StaticLayout c10 = uw0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.x0, false);
+                        StaticLayout c10 = ww0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.x0, false);
                         i14 = i16;
                         this.e = c10;
                         if (c10 != null) {
@@ -309,7 +309,7 @@ public class h5 extends View implements Drawable.Callback {
                             int lineStart = this.e.getLineStart(1);
                             CharSequence subSequence = charSequence4.subSequence(0, lineEnd);
                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(charSequence4);
-                            valueOf2.setSpan(new mz(z10), 0, lineStart, 0);
+                            valueOf2.setSpan(new nz(z10), 0, lineStart, 0);
                             String subSequence2 = lineEnd < ellipsize.length() ? ellipsize.subSequence(lineEnd, ellipsize.length()) : "…";
                             this.d = new StaticLayout(ellipsize, 0, ellipsize.length(), textPaint, this.P ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
                             StaticLayout staticLayout = new StaticLayout(subSequence, 0, subSequence.length(), textPaint, this.P ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
@@ -319,12 +319,12 @@ public class h5 extends View implements Drawable.Callback {
                             }
                             CharSequence charSequence6 = subSequence2;
                             this.f = new StaticLayout(charSequence6, 0, charSequence6.length(), textPaint, this.P ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            this.e = uw0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, false, truncateAt, i14 + this.t0, this.x0, false);
+                            this.e = ww0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, false, truncateAt, i14 + this.t0, this.x0, false);
                         }
                     }
                     i13 = i14;
                 } else if (this.r > 1) {
-                    StaticLayout c11 = uw0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
+                    StaticLayout c11 = ww0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
                     i13 = i16;
                     this.c = c11;
                 } else {
@@ -431,17 +431,17 @@ public class h5 extends View implements Drawable.Callback {
         return true;
     }
 
-    public final void g(ww0 ww0Var, String str) {
+    public final void g(yw0 yw0Var, String str) {
         Drawable drawable = this.y;
-        if (drawable == ww0Var) {
+        if (drawable == yw0Var) {
             return;
         }
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.y = ww0Var;
-        if (ww0Var != null) {
-            ww0Var.setCallback(this);
+        this.y = yw0Var;
+        if (yw0Var != null) {
+            yw0Var.setCallback(this);
         }
         f();
         this.E = str;

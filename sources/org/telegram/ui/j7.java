@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class j7 extends f7 {
     public final ArrayList f;
@@ -24,7 +24,7 @@ public final class j7 extends f7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -85,12 +85,12 @@ public final class j7 extends f7 {
         y6Var.setWillNotDraw(!z11);
         y6Var.requestLayout();
         boolean contains = s7Var.f.l.contains(Long.valueOf(r6Var.a));
-        org.telegram.ui.Components.op opVar = y6Var.n;
-        if (opVar != null || contains) {
-            if (opVar == null) {
-                org.telegram.ui.Components.op opVar2 = new org.telegram.ui.Components.op(y6Var.getContext(), 21, y6Var.b);
-                y6Var.n = opVar2;
-                opVar2.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
+        org.telegram.ui.Components.pp ppVar = y6Var.n;
+        if (ppVar != null || contains) {
+            if (ppVar == null) {
+                org.telegram.ui.Components.pp ppVar2 = new org.telegram.ui.Components.pp(y6Var.getContext(), 21, y6Var.b);
+                y6Var.n = ppVar2;
+                ppVar2.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
                 y6Var.n.setDrawUnchecked(false);
                 y6Var.n.setDrawBackgroundAsArc(3);
                 y6Var.addView(y6Var.n, w7.y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
@@ -107,6 +107,6 @@ public final class j7 extends f7 {
             y6Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
             y6Var = y6Var2;
         }
-        return new org.telegram.ui.Components.gl0(y6Var);
+        return new org.telegram.ui.Components.il0(y6Var);
     }
 }

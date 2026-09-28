@@ -25,10 +25,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.z1;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.lv0;
 import z3.n;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimestamp, z1, MessagesStorage.StringCallback, e2.h {
     public final /* synthetic */ int a;
@@ -160,7 +160,7 @@ public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimest
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        jv0.i((jv0) this.d, this.c, this.b, str);
+        lv0.i((lv0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ d(a aVar, int i10, long j3, long j10) {

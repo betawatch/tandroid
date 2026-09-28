@@ -33,11 +33,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.qq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public static final Rect a0 = new Rect();
@@ -63,7 +63,7 @@ public final class t5 extends FrameLayout {
     public final p5 a;
     public final o5 b;
     public final FrameLayout c;
-    public final op d;
+    public final pp d;
     public final ImageView e;
     public final TextView f;
     public final q5 h;
@@ -107,12 +107,12 @@ public final class t5 extends FrameLayout {
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
         q5Var.addView(textView, w7.y5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
-        op opVar = new op(context, 24, d6Var);
-        this.d = opVar;
-        opVar.setDrawBackgroundAsArc(7);
-        opVar.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
-        addView(opVar, w7.y5.d(26, 26.0f, 51, 52.0f, 4.0f, 0.0f, 0.0f));
-        opVar.setVisibility(0);
+        pp ppVar = new pp(context, 24, d6Var);
+        this.d = ppVar;
+        ppVar.setDrawBackgroundAsArc(7);
+        ppVar.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
+        addView(ppVar, w7.y5.d(26, 26.0f, 51, 52.0f, 4.0f, 0.0f, 0.0f));
+        ppVar.setVisibility(0);
         setFocusable(true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
@@ -189,11 +189,11 @@ public final class t5 extends FrameLayout {
         if (animatorSet != null) {
             animatorSet.cancel();
             this.J = null;
-            op opVar = this.d;
-            float f7 = opVar.a.q ? 0.787f : 1.0f;
+            pp ppVar = this.d;
+            float f7 = ppVar.a.q ? 0.787f : 1.0f;
             o5 o5Var = this.b;
             o5Var.setScaleX(f7);
-            o5Var.setScaleY(opVar.a.q ? 0.787f : 1.0f);
+            o5Var.setScaleY(ppVar.a.q ? 0.787f : 1.0f);
         }
     }
 
@@ -334,19 +334,19 @@ public final class t5 extends FrameLayout {
             spannableStringBuilder = new SpannableStringBuilder();
             if (this.V == null) {
                 this.V = new SpannableString("⭐");
-                pq pqVar = new pq(R.drawable.star_small_inner, 0);
-                pqVar.setScale(0.7f, 0.7f);
+                qq qqVar = new qq(R.drawable.star_small_inner, 0);
+                qqVar.setScale(0.7f, 0.7f);
                 SpannableString spannableString = this.V;
-                spannableString.setSpan(pqVar, 0, spannableString.length(), 33);
+                spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
             }
             spannableStringBuilder.append((CharSequence) this.V);
             spannableStringBuilder.append((CharSequence) "\u2009");
             if (z10) {
                 if (this.W == null) {
                     this.W = new SpannableString("l");
-                    pq pqVar2 = new pq(R.drawable.msg_mini_lock2, 0);
+                    qq qqVar2 = new qq(R.drawable.msg_mini_lock2, 0);
                     SpannableString spannableString2 = this.W;
-                    spannableString2.setSpan(pqVar2, 0, spannableString2.length(), 33);
+                    spannableString2.setSpan(qqVar2, 0, spannableString2.length(), 33);
                 }
                 spannableStringBuilder.append((CharSequence) this.W);
             } else {
@@ -362,11 +362,11 @@ public final class t5 extends FrameLayout {
     }
 
     public final void g(boolean z10) {
-        op opVar = this.d;
-        if (z10 && opVar.getAlpha() == 1.0f) {
+        pp ppVar = this.d;
+        if (z10 && ppVar.getAlpha() == 1.0f) {
             return;
         }
-        if (z10 || opVar.getAlpha() != 0.0f) {
+        if (z10 || ppVar.getAlpha() != 0.0f) {
             AnimatorSet animatorSet = this.n;
             if (animatorSet != null) {
                 animatorSet.cancel();
@@ -380,13 +380,13 @@ public final class t5 extends FrameLayout {
             float[] fArr = {z10 ? 1.0f : 0.0f};
             q5 q5Var = this.h;
             Property property = View.ALPHA;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(q5Var, (Property<q5, Float>) property, fArr), ObjectAnimator.ofFloat(opVar, (Property<op, Float>) property, z10 ? 1.0f : 0.0f));
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(q5Var, (Property<q5, Float>) property, fArr), ObjectAnimator.ofFloat(ppVar, (Property<pp, Float>) property, z10 ? 1.0f : 0.0f));
             this.n.addListener(new org.telegram.ui.t4(this, 8));
             this.n.start();
         }
     }
 
-    public op getCheckBox() {
+    public pp getCheckBox() {
         return this.d;
     }
 
@@ -613,14 +613,14 @@ public final class t5 extends FrameLayout {
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.c.getLayoutParams();
         layoutParams2.gravity = 53;
         layoutParams2.leftMargin = 0;
-        op opVar = this.d;
-        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) opVar.getLayoutParams();
+        pp ppVar = this.d;
+        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ppVar.getLayoutParams();
         layoutParams3.gravity = 53;
         layoutParams3.leftMargin = 0;
         int dp = AndroidUtilities.dp(5.0f);
         layoutParams3.topMargin = dp;
         layoutParams3.rightMargin = dp;
-        opVar.setDrawBackgroundAsArc(6);
+        ppVar.setDrawBackgroundAsArc(6);
         this.x = true;
     }
 

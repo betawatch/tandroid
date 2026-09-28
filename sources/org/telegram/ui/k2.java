@@ -6,19 +6,19 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k2 extends View {
     public final p70 a;
-    public final org.telegram.ui.Components.qq b;
+    public final org.telegram.ui.Components.rq b;
 
     public k2(Context context, p70 p70Var) {
         super(context);
         this.a = p70Var;
-        org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qk, false)), org.telegram.ui.ActionBar.h6.U0(context, R.drawable.greydivider_bottom, -16777216));
-        this.b = qqVar;
-        qqVar.w = true;
-        setBackgroundDrawable(qqVar);
+        org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qk, false)), org.telegram.ui.ActionBar.h6.U0(context, R.drawable.greydivider_bottom, -16777216));
+        this.b = rqVar;
+        rqVar.w = true;
+        setBackgroundDrawable(rqVar);
         setImportantForAccessibility(2);
     }
 

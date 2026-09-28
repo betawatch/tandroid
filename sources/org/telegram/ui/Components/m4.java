@@ -5,20 +5,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class m4 extends z51 {
+public final class m4 extends b61 {
     public final /* synthetic */ int e;
     public Object f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ m4(Object obj, int i10) {
-        super("@stickers", (b11) null);
+        super("@stickers", (d11) null);
         this.e = i10;
         this.f = obj;
     }
 
-    @Override // org.telegram.ui.Components.z51, android.text.style.URLSpan, android.text.style.ClickableSpan
+    @Override // org.telegram.ui.Components.b61, android.text.style.URLSpan, android.text.style.ClickableSpan
     public final void onClick(View view) {
         int i10;
         int i11;
@@ -29,10 +29,10 @@ public final class m4 extends z51 {
                 super.onClick(view);
                 break;
             case 1:
-                fy0 fy0Var = (fy0) this.f;
-                i10 = ((org.telegram.ui.ActionBar.e3) fy0Var).currentAccount;
-                MessagesController.getInstance(i10).openByUserName(getURL(), fy0Var.L, 1);
-                fy0Var.dismiss();
+                hy0 hy0Var = (hy0) this.f;
+                i10 = ((org.telegram.ui.ActionBar.e3) hy0Var).currentAccount;
+                MessagesController.getInstance(i10).openByUserName(getURL(), hy0Var.L, 1);
+                hy0Var.dismiss();
                 break;
             case 2:
                 AndroidUtilities.addToClipboard(getURL());
@@ -57,20 +57,20 @@ public final class m4 extends z51 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ m4(String str, int i10, Object obj) {
-        super(str, (b11) null);
+        super(str, (d11) null);
         this.e = i10;
         this.f = obj;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m4(String str, b11 b11Var) {
-        super(str, b11Var);
+    public /* synthetic */ m4(String str, d11 d11Var) {
+        super(str, d11Var);
         this.e = 2;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public m4(org.telegram.ui.ActionBar.m2 m2Var, String str) {
-        super(str, (b11) null);
+        super(str, (d11) null);
         this.e = 0;
         this.f = m2Var;
     }

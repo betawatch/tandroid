@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.or;
+import org.telegram.ui.Components.pr;
 import org.telegram.ui.v30;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class g0 extends View {
     public final /* synthetic */ org.telegram.ui.Cells.z a;
@@ -25,8 +25,8 @@ public final class g0 extends View {
     public final void dispatchDraw(Canvas canvas) {
         v30 v30Var = this.b;
         float measuredWidth = v30Var.d0.getMeasuredWidth();
-        or orVar = v30Var.c0;
-        float measuredWidth2 = (v30Var.e0.getMeasuredWidth() * orVar.g) + ((1.0f - orVar.g) * measuredWidth);
+        pr prVar = v30Var.c0;
+        float measuredWidth2 = (v30Var.e0.getMeasuredWidth() * prVar.g) + ((1.0f - prVar.g) * measuredWidth);
         canvas.save();
         int dp = AndroidUtilities.dp(50.0f) + ((int) measuredWidth2);
         int measuredHeight = getMeasuredHeight();

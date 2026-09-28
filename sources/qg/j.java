@@ -18,12 +18,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
 import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.yc;
 import v7.a7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -274,7 +274,7 @@ public abstract class j extends FrameLayout {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n0, z11 ? 0.5f : 1.0f);
                     this.o0 = ofFloat;
                     ofFloat.addUpdateListener(new f(this, i10));
-                    this.o0.setInterpolator(rr.h);
+                    this.o0.setInterpolator(sr.h);
                     this.o0.setDuration(280L);
                     this.o0.start();
                     this.y = z11;
@@ -467,7 +467,7 @@ public abstract class j extends FrameLayout {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 this.Q = duration;
-                duration.setInterpolator(rr.f);
+                duration.setInterpolator(sr.f);
                 this.Q.addUpdateListener(new f(this, i10));
                 this.Q.addListener(new g(this, 3));
                 this.Q.start();
@@ -563,8 +563,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public sk0 getSelectionBounds() {
-        return new sk0(0.0f, 0.0f, 0.0f, 0.0f);
+    public uk0 getSelectionBounds() {
+        return new uk0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {
@@ -602,7 +602,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.a0 = duration;
-        duration.setInterpolator(rr.f);
+        duration.setInterpolator(sr.f);
         this.a0.addUpdateListener(new f(this, 3));
         this.a0.addListener(new g(this, 0));
         this.a0.start();
@@ -615,7 +615,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.b0 = duration;
-        duration.setInterpolator(rr.f);
+        duration.setInterpolator(sr.f);
         this.b0.addUpdateListener(new f(this, 4));
         this.b0.addListener(new g(this, 1));
         this.b0.start();
@@ -674,7 +674,7 @@ public abstract class j extends FrameLayout {
             ofFloat.addUpdateListener(new f(this, 2));
             this.k0.addListener(new g(this, 4));
             this.k0.setDuration(280L);
-            this.k0.setInterpolator(rr.h);
+            this.k0.setInterpolator(sr.h);
             this.k0.start();
         }
     }

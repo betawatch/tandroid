@@ -2,9 +2,9 @@ package tg;
 
 import android.content.Context;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.fb0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class j1 extends ci.d {
     public final /* synthetic */ m1 h0;
@@ -21,7 +21,7 @@ public final class j1 extends ci.d {
         boolean z10 = m1Var.t0 == 0.0f;
         m1Var.t0 = f7;
         if (z10) {
-            m1Var.u0 = new db0(m1Var, 2);
+            m1Var.u0 = new fb0(m1Var, 2);
             m1Var.g0(false);
         }
         return f7;

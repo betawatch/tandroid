@@ -20,11 +20,11 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.u90;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
@@ -41,7 +41,7 @@ public final class w extends FrameLayout {
 
     public w(Context context, d6 d6Var) {
         super(context);
-        this.v = new e6(this, 0L, 500L, rr.h);
+        this.v = new e6(this, 0L, 500L, sr.h);
         Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
         this.b = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.h5, d6Var), PorterDuff.Mode.SRC_IN));
@@ -55,7 +55,7 @@ public final class w extends FrameLayout {
         addView(p6Var, y5.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        spannableString.setSpan(new s90(AndroidUtilities.dp(90.0f), p6Var), 0, 1, 33);
+        spannableString.setSpan(new u90(AndroidUtilities.dp(90.0f), p6Var), 0, 1, 33);
         p6 p6Var2 = new p6(context, false, true, true);
         this.e = p6Var2;
         int i10 = h6.z6;
@@ -64,7 +64,7 @@ public final class w extends FrameLayout {
         addView(p6Var2, y5.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        spannableString2.setSpan(new s90(AndroidUtilities.dp(70.0f), p6Var2), 0, 1, 33);
+        spannableString2.setSpan(new u90(AndroidUtilities.dp(70.0f), p6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
         ok.n(i10, d6Var, textView, 1, 16.0f);

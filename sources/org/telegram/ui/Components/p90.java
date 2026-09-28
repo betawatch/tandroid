@@ -2,97 +2,372 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuffColorFilter;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.widget.TextView;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class p90 extends View {
-    public final Drawable a;
-    public final Paint b;
-    public final Paint c;
-    public final e6 d;
-    public boolean e;
+public class p90 extends TextView {
+    public static Field I;
+    public static Class J;
+    public static Method K;
+    public boolean E;
+    public boolean F;
+    public PorterDuffColorFilter G;
+    public int H;
+    public final boolean a;
+    public final m90 b;
+    public final org.telegram.ui.ActionBar.d6 c;
+    public v5 d;
+    public q90 e;
+    public o90 f;
+    public o90 h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public CharacterStyle v;
+    public int w;
+    public boolean x;
+    public Object y;
 
     public p90(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Paint paint2 = new Paint(1);
-        this.c = paint2;
-        this.d = new e6(this, 0L, 320L, rr.h);
-        w7.a6.a(this);
-        this.a = context.getResources().getDrawable(R.drawable.media_live_on).mutate();
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint2.setColor(-65536);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        paint.setStyle(style);
-        paint.setColor(-1);
+        this(context, null);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.e == z10) {
+    public int a() {
+        return 0;
+    }
+
+    public final ClickableSpan b(int i10, int i11) {
+        Layout layout = getLayout();
+        if (layout == null) {
+            return null;
+        }
+        int paddingLeft = i10 - getPaddingLeft();
+        int textPaddingTop = i11 - getTextPaddingTop();
+        int lineForVertical = layout.getLineForVertical(textPaddingTop);
+        float f7 = paddingLeft;
+        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f7);
+        float lineLeft = layout.getLineLeft(lineForVertical);
+        if (lineLeft <= f7 && layout.getLineWidth(lineForVertical) + lineLeft >= f7 && textPaddingTop >= 0 && textPaddingTop <= layout.getHeight()) {
+            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+            if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                return clickableSpanArr[0];
+            }
+        }
+        return null;
+    }
+
+    public int c() {
+        return org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Ld, this.c);
+    }
+
+    public int getTextPaddingTop() {
+        int paddingTop = getPaddingTop();
+        return (getGravity() != 17 || getLayout() == null) ? paddingTop : Math.max(0, (((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2) + paddingTop;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (!this.x) {
+            this.x = true;
+            try {
+                if (J == null) {
+                    Field declaredField = TextView.class.getDeclaredField("mEditor");
+                    I = declaredField;
+                    declaredField.setAccessible(true);
+                    Class<?> cls = Class.forName("android.widget.Editor");
+                    J = cls;
+                    try {
+                        Method declaredMethod = cls.getDeclaredMethod("invalidateTextDisplayList", null);
+                        K = declaredMethod;
+                        declaredMethod.setAccessible(true);
+                    } catch (Exception unused) {
+                    }
+                }
+            } catch (Throwable th2) {
+                FileLog.e(th2);
+            }
+        }
+        super.invalidate();
+        if (isHardwareAccelerated()) {
+            try {
+                if (K != null) {
+                    if (this.y == null) {
+                        this.y = I.get(this);
+                    }
+                    Object obj = this.y;
+                    if (obj != null) {
+                        K.invoke(obj, null);
+                    }
+                }
+            } catch (Exception unused2) {
+            }
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.d = z5.update(a(), this, this.d, getLayout());
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        z5.release(this, this.d);
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(21:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|(4:21|22|(1:74)(1:25)|26)|(12:31|32|33|34|35|36|(3:38|(2:40|(1:42))|43)|44|45|46|47|(2:49|50)(1:52))|66|67|68|69|32|33|34|35|36|(0)|44|45|46|47|(0)(0)) */
+    /* JADX WARN: Can't wrap try/catch for region: R(24:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|21|22|(1:74)(1:25)|26|(12:31|32|33|34|35|36|(3:38|(2:40|(1:42))|43)|44|45|46|47|(2:49|50)(1:52))|66|67|68|69|32|33|34|35|36|(0)|44|45|46|47|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x00d0, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x00ad, code lost:
+    
+        r2 = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x00db, code lost:
+    
+        if (r14.E == false) goto L63;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00dd, code lost:
+    
+        org.telegram.messenger.FileLog.e((java.lang.Throwable) r0, true);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x00e0, code lost:
+    
+        r14.E = true;
+        r1 = r2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00d2, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00d3, code lost:
+    
+        r4 = r15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00ab, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00ac, code lost:
+    
+        r4 = r15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x00d6, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x00d7, code lost:
+    
+        r4 = r15;
+        r2 = true;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x009c A[Catch: Exception -> 0x00ab, TryCatch #1 {Exception -> 0x00ab, blocks: (B:33:0x0084, B:36:0x0092, B:38:0x009c, B:40:0x00a0, B:43:0x00af, B:44:0x00c0), top: B:32:0x0084 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00dd  */
+    @Override // android.widget.TextView, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z10;
+        Layout layout;
+        float height;
+        if (!this.a) {
+            canvas.save();
+            if (!this.n) {
+                canvas.translate(this.r ? 0.0f : getPaddingLeft(), this.s ? 0.0f : getTextPaddingTop());
+            }
+            m90 m90Var = this.b;
+            if (m90Var != null && m90Var.f(canvas)) {
+                invalidate();
+            }
+            canvas.restore();
+        }
+        super.onDraw(canvas);
+        boolean z11 = false;
+        try {
+            layout = getLayout();
+            height = ((getGravity() & 16) == 0 || layout == null) ? 0.0f : ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - layout.getHeight()) / 2.0f) + getPaddingTop();
+        } catch (Exception e) {
+            e = e;
+            canvas2 = canvas;
+        }
+        if (height == 0.0f && getPaddingLeft() == 0) {
+            z10 = false;
+            this.d = z5.update(a(), this, this.d, getLayout());
+            if (this.F) {
+                if (this.G == null) {
+                    if (this.H != getPaint().linkColor) {
+                    }
+                }
+                int i10 = getPaint().linkColor;
+                this.H = i10;
+                this.G = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+            }
+            canvas2 = canvas;
+            z5.drawAnimatedEmojis(canvas2, layout, this.d, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.G);
+            if (z10) {
+                return;
+            }
+            canvas2.restore();
             return;
         }
-        this.e = z10;
-        if (!z11) {
-            this.d.a(z10);
+        canvas.save();
+        canvas.translate(getPaddingLeft(), height);
+        z10 = true;
+        this.d = z5.update(a(), this, this.d, getLayout());
+        if (this.F) {
         }
+        canvas2 = canvas;
+        z5.drawAnimatedEmojis(canvas2, layout, this.d, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.G);
+        if (z10) {
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        int i12 = this.w;
+        if (i12 > 0) {
+            i10 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10));
+        }
+        super.onMeasure(i10, i11);
+        this.d = z5.update(a(), this, this.d, getLayout());
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        CharacterStyle characterStyle;
+        m90 m90Var = this.b;
+        if (m90Var != null) {
+            Layout layout = getLayout();
+            ClickableSpan b10 = b((int) motionEvent.getX(), (int) motionEvent.getY());
+            if (b10 != null && motionEvent.getAction() == 0) {
+                q90 q90Var = new q90(b10, this.c, motionEvent.getX(), motionEvent.getY(), 0);
+                q90Var.d(c());
+                this.e = q90Var;
+                m90Var.a(q90Var, null);
+                SpannableString spannableString = new SpannableString(layout.getText());
+                int spanStart = spannableString.getSpanStart(this.e.i);
+                int spanEnd = spannableString.getSpanEnd(this.e.i);
+                j90 b11 = this.e.b();
+                b11.d(layout, spanStart, getPaddingTop());
+                layout.getSelectionPath(spanStart, spanEnd, b11);
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this, q90Var, b10, 25), ViewConfiguration.getLongPressTimeout());
+                return true;
+            }
+            if (motionEvent.getAction() == 1) {
+                m90Var.d(true);
+                q90 q90Var2 = this.e;
+                if (q90Var2 != null && (characterStyle = q90Var2.i) == b10) {
+                    o90 o90Var = this.f;
+                    if (o90Var != null) {
+                        o90Var.a((ClickableSpan) characterStyle);
+                    } else if (characterStyle != null) {
+                        ((ClickableSpan) characterStyle).onClick(this);
+                    }
+                    this.e = null;
+                    return true;
+                }
+                this.e = null;
+            }
+            if (motionEvent.getAction() == 3) {
+                m90Var.d(true);
+                this.e = null;
+            }
+        }
+        return this.e != null || super.onTouchEvent(motionEvent);
+    }
+
+    public void setDisablePaddingsOffset(boolean z10) {
+        this.n = z10;
+    }
+
+    public void setDisablePaddingsOffsetX(boolean z10) {
+        this.r = z10;
+    }
+
+    public void setDisablePaddingsOffsetY(boolean z10) {
+        this.s = z10;
+    }
+
+    public void setEmojiColor(int i10) {
+        this.F = false;
+        this.G = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
         invalidate();
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e = this.d.e(!this.e);
-        int width = getWidth();
-        Drawable drawable = this.a;
-        drawable.setBounds((width - drawable.getIntrinsicWidth()) / 2, (getHeight() - drawable.getIntrinsicHeight()) / 2, (drawable.getIntrinsicWidth() + getWidth()) / 2, (drawable.getIntrinsicHeight() + getHeight()) / 2);
-        Rect bounds = drawable.getBounds();
-        float width2 = (bounds.width() * 0.325f) + bounds.left;
-        float height = (bounds.height() * 0.152f) + bounds.top;
-        float height2 = bounds.bottom - (bounds.height() * 0.152f);
-        float width3 = bounds.right - (bounds.width() * 0.101f);
-        if (e > 0.0f) {
-            float dp = AndroidUtilities.dp(4.0f);
-            Paint paint = this.c;
-            paint.setStrokeWidth(dp);
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, 255, 31);
-            drawable.draw(canvas);
-            if (this.e) {
-                canvas.drawLine(width3 - AndroidUtilities.dp(4.0f), height2 - AndroidUtilities.dp(4.0f), AndroidUtilities.lerp(width3 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + width2, e), AndroidUtilities.lerp(height2 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + height, e), paint);
-                canvas2 = canvas;
-            } else {
-                canvas2 = canvas;
-                canvas2.drawLine(width2 + AndroidUtilities.dp(4.0f), height + AndroidUtilities.dp(4.0f), AndroidUtilities.lerp(AndroidUtilities.dp(4.0f) + width2, width3 - AndroidUtilities.dp(4.0f), e), AndroidUtilities.lerp(AndroidUtilities.dp(4.0f) + height, height2 - AndroidUtilities.dp(4.0f), e), paint);
-            }
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-            drawable.draw(canvas2);
-        }
-        if (e > 0.0f) {
-            float dp2 = AndroidUtilities.dp(2.0f);
-            Paint paint2 = this.b;
-            paint2.setStrokeWidth(dp2);
-            if (this.e) {
-                canvas2.drawLine(width3, height2, AndroidUtilities.lerp(width3, width2, e), AndroidUtilities.lerp(height2, height, e), paint2);
-            } else {
-                canvas.drawLine(width2, height, AndroidUtilities.lerp(width2, width3, e), AndroidUtilities.lerp(height, height2, e), paint2);
+    public void setLoading(CharacterStyle characterStyle) {
+        if (this.v != characterStyle) {
+            m90 m90Var = this.b;
+            m90Var.e();
+            this.v = characterStyle;
+            t90 i10 = m90.i(getLayout(), characterStyle, getPaddingTop());
+            if (i10 != null) {
+                int d = d(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Ld, this.c));
+                i10.f(org.telegram.ui.ActionBar.h6.l1(0.8f, d), org.telegram.ui.ActionBar.h6.l1(1.3f, d), org.telegram.ui.ActionBar.h6.l1(1.0f, d), org.telegram.ui.ActionBar.h6.l1(4.0f, d));
+                i10.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
+                m90Var.b(i10, null);
             }
         }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLObject.FLAG_30));
+    @Override // android.widget.TextView
+    public void setMaxWidth(int i10) {
+        this.w = i10;
+    }
+
+    public void setOnLinkLongPressListener(o90 o90Var) {
+        this.h = o90Var;
+    }
+
+    public void setOnLinkPressListener(o90 o90Var) {
+        this.f = o90Var;
+    }
+
+    @Override // android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        this.d = z5.update(a(), this, this.d, getLayout());
+    }
+
+    public p90(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.E = false;
+        this.F = true;
+        this.a = false;
+        this.b = new m90(this);
+        this.c = d6Var;
+    }
+
+    public p90(Context context, m90 m90Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.E = false;
+        this.F = true;
+        this.a = true;
+        this.b = m90Var;
+        this.c = d6Var;
+    }
+
+    public int d(int i10) {
+        return i10;
     }
 }

@@ -7,11 +7,11 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.h5;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class v {
     public final RectF a = new RectF();
@@ -28,27 +28,27 @@ public final class v {
     public final o6 l;
     public int m;
     public final org.telegram.ui.Cells.z n;
-    public final up o;
+    public final vp o;
     public final org.telegram.ui.Components.voip.h p;
 
     public v(x xVar) {
-        rr rrVar = rr.h;
-        this.b = new e6(xVar, 0L, 320L, rrVar);
-        this.c = new e6(xVar, 0L, 320L, rrVar);
-        this.d = new e6(xVar, 0L, 320L, rrVar);
-        this.e = new e6(xVar, 0L, 320L, rrVar);
-        this.f = new h5(xVar, 320L, rrVar, 0);
-        this.g = new h5(xVar, 320L, rrVar, 0);
-        this.h = new e6(xVar, 0L, 320L, rrVar);
-        this.i = new e6(xVar, 0L, 320L, rrVar);
+        sr srVar = sr.h;
+        this.b = new e6(xVar, 0L, 320L, srVar);
+        this.c = new e6(xVar, 0L, 320L, srVar);
+        this.d = new e6(xVar, 0L, 320L, srVar);
+        this.e = new e6(xVar, 0L, 320L, srVar);
+        this.f = new h5(xVar, 320L, srVar, 0);
+        this.g = new h5(xVar, 320L, srVar, 0);
+        this.h = new e6(xVar, 0L, 320L, srVar);
+        this.i = new e6(xVar, 0L, 320L, srVar);
         this.j = new yc(xVar);
         this.k = new Paint(1);
         o6 o6Var = new o6(true, false, true, false);
         this.l = o6Var;
         org.telegram.ui.Cells.z Y = h6.Y(0, 9, 9);
         this.n = Y;
-        up upVar = new up(-1);
-        this.o = upVar;
+        vp vpVar = new vp(-1);
+        this.o = vpVar;
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
         this.p = hVar;
         o6Var.b = 17;
@@ -57,7 +57,7 @@ public final class v {
         o6Var.G = AndroidUtilities.displaySize.x * 4;
         o6Var.n(true);
         o6Var.setCallback(xVar);
-        upVar.setCallback(xVar);
+        vpVar.setCallback(xVar);
         Y.setCallback(xVar);
         hVar.l = true;
         hVar.m = 2.0f;

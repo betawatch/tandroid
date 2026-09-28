@@ -15,9 +15,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
     public final h5 a;
@@ -44,7 +44,7 @@ public final class b extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         drawable.setColorFilter(new PorterDuffColorFilter(v02, mode));
         drawable2.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.k7, d6Var), mode));
-        imageView.setImageDrawable(new qq(drawable, drawable2));
+        imageView.setImageDrawable(new rq(drawable, drawable2));
         setBackgroundColor(h6.v0(h6.h5, d6Var));
     }
 

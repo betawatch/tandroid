@@ -1,38 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yw0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bx0 b;
-
-    public /* synthetic */ yw0(bx0 bx0Var, int i10) {
-        this.a = i10;
-        this.b = bx0Var;
+public abstract class yw0 extends Drawable {
+    public final void a() {
+        yf.h d = yf.h.d();
+        d.getClass();
+        yf.h.c();
+        d.e.add(this);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                bx0 bx0Var = this.b;
-                bx0Var.getClass();
-                bx0Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                bx0Var.invalidate();
-                break;
-            case 1:
-                bx0 bx0Var2 = this.b;
-                bx0Var2.getClass();
-                bx0Var2.m(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                bx0 bx0Var3 = this.b;
-                bx0Var3.getClass();
-                bx0Var3.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                bx0Var3.invalidate();
-                break;
-        }
-    }
+    public abstract void b(int i10);
+
+    public abstract void c(boolean z10);
+
+    public abstract void d();
+
+    public abstract void e();
 }

@@ -15,11 +15,11 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.qy;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class g0 extends rg.k1 {
     public static g0 S0;
@@ -31,9 +31,9 @@ public final class g0 extends rg.k1 {
         this.R0 = str;
         qc.a((FrameLayout) this.containerView, new a9(15));
         if (!z10) {
-            wl0 wl0Var = this.d;
+            yl0 yl0Var = this.d;
             int i11 = this.backgroundPaddingLeft;
-            wl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
+            yl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
             vg.a aVar = new vg.a(getContext(), this.resourcesProvider);
             this.Q0 = aVar;
             aVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 11));

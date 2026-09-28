@@ -26,12 +26,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class fp extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout E;
     public LinearLayout F;
-    public org.telegram.ui.Components.g90 G;
+    public org.telegram.ui.Components.i90 G;
     public org.telegram.ui.Cells.r8 H;
     public org.telegram.ui.Cells.e9 I;
     public org.telegram.ui.Cells.b7 J;
@@ -74,9 +74,9 @@ public final class fp extends org.telegram.ui.ActionBar.m2 implements Notificati
     public org.telegram.ui.ActionBar.u0 n;
     public boolean n0;
     public HashMap o0;
-    public org.telegram.ui.Components.c70 p0;
+    public org.telegram.ui.Components.e70 p0;
     public uo q0;
-    public org.telegram.ui.Components.qr r;
+    public org.telegram.ui.Components.rr r;
     public ValueAnimator r0;
     public LinearLayout s;
     public Boolean s0;
@@ -476,7 +476,7 @@ public final class fp extends org.telegram.ui.ActionBar.m2 implements Notificati
             this.r0 = ofFloat;
             ofFloat.addUpdateListener(new c3(this, 7));
             this.r0.setDuration((long) (Math.abs(this.r.c - (z10 ? 1.0f : 0.0f)) * 200.0f));
-            this.r0.setInterpolator(org.telegram.ui.Components.rr.f);
+            this.r0.setInterpolator(org.telegram.ui.Components.sr.f);
             this.r0.start();
         }
     }
@@ -513,9 +513,9 @@ public final class fp extends org.telegram.ui.ActionBar.m2 implements Notificati
             this.H.setVisibility(0);
             this.I.setVisibility(0);
             this.y.setPadding(0, 0, 0, this.V ? 0 : AndroidUtilities.dp(7.0f));
-            org.telegram.ui.Components.g90 g90Var = this.G;
+            org.telegram.ui.Components.i90 i90Var = this.G;
             TLRPC.TL_chatInviteExported tL_chatInviteExported = this.l0;
-            g90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
+            i90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
             this.G.c(this.l0, this.Z);
             zo zoVar = this.f;
             zoVar.setVisibility((this.V || zoVar.a.length() == 0) ? 8 : 0);
@@ -569,17 +569,17 @@ public final class fp extends org.telegram.ui.ActionBar.m2 implements Notificati
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
         int i11 = org.telegram.ui.ActionBar.h6.v8;
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
-        org.telegram.ui.Components.qr qrVar = new org.telegram.ui.Components.qr(mutate, new org.telegram.ui.Components.up(org.telegram.ui.ActionBar.h6.w0(null, i11, false)));
-        this.r = qrVar;
-        this.n = n10.i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), qrVar);
+        org.telegram.ui.Components.rr rrVar = new org.telegram.ui.Components.rr(mutate, new org.telegram.ui.Components.vp(org.telegram.ui.ActionBar.h6.w0(null, i11, false)));
+        this.r = rrVar;
+        this.n = n10.i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), rrVar);
         this.h = new xd(context);
         xo xoVar = new xo(this, context, this.h, this.resourceProvider);
         this.fragmentView = xoVar;
         xoVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.mo0 mo0Var = (org.telegram.ui.Components.mo0) this.fragmentView;
-        mo0Var.setFillViewport(true);
-        mo0Var.addView(this.h, new FrameLayout.LayoutParams(-1, -2));
-        this.actionBar.setAdaptiveBackground(mo0Var);
+        org.telegram.ui.Components.oo0 oo0Var = (org.telegram.ui.Components.oo0) this.fragmentView;
+        oo0Var.setFillViewport(true);
+        oo0Var.addView(this.h, new FrameLayout.LayoutParams(-1, -2));
+        this.actionBar.setAdaptiveBackground(oo0Var);
         this.h.setOrientation(1);
         boolean z10 = this.n0;
         if (z10) {
@@ -682,9 +682,9 @@ public final class fp extends org.telegram.ui.ActionBar.m2 implements Notificati
         this.F = linearLayout4;
         linearLayout4.setOrientation(1);
         this.y.addView(this.F, w7.y5.n(-1, -2));
-        org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(context, this, null, true, ChatObject.isChannel(this.X));
-        this.G = g90Var;
-        g90Var.setDelegate(new yo(this, context));
+        org.telegram.ui.Components.i90 i90Var = new org.telegram.ui.Components.i90(context, this, null, true, ChatObject.isChannel(this.X));
+        this.G = i90Var;
+        i90Var.setDelegate(new yo(this, context));
         this.G.d(0, null, false);
         this.F.addView(this.G);
         zo zoVar = new zo(this, context, this.resourceProvider);
@@ -730,7 +730,7 @@ public final class fp extends org.telegram.ui.ActionBar.m2 implements Notificati
         if (chatFull2 == null || chatFull2.guard_bot_id == 0) {
             e9Var3.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.ChannelSettingsJoinRequestInfo2 : isPublic ? R.string.GroupPublicSettingsJoinRequestInfo2 : R.string.GroupPrivateSettingsJoinRequestInfo2));
         } else {
-            e9Var3.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.ChannelSettingsJoinRequestInfoManagedBy : isPublic ? R.string.GroupPublicSettingsJoinRequestInfoManagedBy : R.string.GroupPrivateSettingsJoinRequestInfoManagedBy, "@" + DialogObject.getPublicUsername(MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(chatFull2.guard_bot_id)))), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.il, false), new org.telegram.ui.Components.vw(17, chatFull2, this)));
+            e9Var3.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.ChannelSettingsJoinRequestInfoManagedBy : isPublic ? R.string.GroupPublicSettingsJoinRequestInfoManagedBy : R.string.GroupPrivateSettingsJoinRequestInfoManagedBy, "@" + DialogObject.getPublicUsername(MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(chatFull2.guard_bot_id)))), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.il, false), new org.telegram.ui.Components.ww(17, chatFull2, this)));
         }
         this.h.addView(this.U);
         LinearLayout linearLayout6 = new LinearLayout(context);

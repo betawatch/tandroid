@@ -32,8 +32,8 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.j60;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.aj;
 import org.telegram.ui.al0;
@@ -47,7 +47,7 @@ import org.telegram.ui.ms;
 import org.telegram.ui.p60;
 import org.telegram.ui.p70;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class cb implements Runnable {
     public final /* synthetic */ int a;
@@ -174,10 +174,10 @@ public final /* synthetic */ class cb implements Runnable {
                 new k71(context2, chat2, user, new o8(this.b, booleanCallback, 27), (org.telegram.ui.ActionBar.d6) this.h).show();
                 break;
             case 7:
-                org.telegram.ui.Components.v9.a((org.telegram.ui.Components.v9) this.e, (Runnable[]) this.c, (Bitmap) this.f, (j60) this.d, this.b, (w7.j0[]) this.h);
+                org.telegram.ui.Components.v9.a((org.telegram.ui.Components.v9) this.e, (Runnable[]) this.c, (Bitmap) this.f, (l60) this.d, this.b, (w7.j0[]) this.h);
                 break;
             case 8:
-                ah0.m((ah0) this.e, (Integer[]) this.f, this.b, (TLObject) this.c, (ArrayList) this.d, (TLRPC.PollAnswerVoters) this.h);
+                ch0.m((ch0) this.e, (Integer[]) this.f, this.b, (TLObject) this.c, (ArrayList) this.d, (TLRPC.PollAnswerVoters) this.h);
                 break;
             case 9:
                 ms.Y((ms) this.e, (TLRPC.FileLocation) this.f, (TLRPC.InputFile) this.d, (TLObject) this.c, (TLRPC.FileLocation) this.h, this.b);
@@ -391,9 +391,9 @@ public final /* synthetic */ class cb implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ cb(ah0 ah0Var, Integer[] numArr, int i10, TLObject tLObject, ArrayList arrayList, TLRPC.PollAnswerVoters pollAnswerVoters) {
+    public /* synthetic */ cb(ch0 ch0Var, Integer[] numArr, int i10, TLObject tLObject, ArrayList arrayList, TLRPC.PollAnswerVoters pollAnswerVoters) {
         this.a = 8;
-        this.e = ah0Var;
+        this.e = ch0Var;
         this.f = numArr;
         this.b = i10;
         this.c = tLObject;

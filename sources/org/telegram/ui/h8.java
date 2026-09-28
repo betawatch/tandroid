@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class h8 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -39,7 +39,7 @@ public final class h8 extends org.telegram.ui.ActionBar.m2 implements Notificati
     public w7 L;
     public ka.c M;
     public wn N;
-    public org.telegram.ui.Components.j40 O;
+    public org.telegram.ui.Components.l40 O;
     public int P;
     public int Q;
     public ValueAnimator R;
@@ -300,9 +300,9 @@ public final class h8 extends org.telegram.ui.ActionBar.m2 implements Notificati
                                 break;
                             } else {
                                 if (h8Var2.O == null) {
-                                    org.telegram.ui.Components.j40 j40Var = new org.telegram.ui.Components.j40(h8Var2.a.getContext(), 8);
-                                    h8Var2.O = j40Var;
-                                    j40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
+                                    org.telegram.ui.Components.l40 l40Var = new org.telegram.ui.Components.l40(h8Var2.a.getContext(), 8);
+                                    h8Var2.O = l40Var;
+                                    l40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
                                     h8Var2.a.addView(h8Var2.O, w7.y5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                                     h8Var2.O.setText(LocaleController.getString(R.string.SelectDaysTooltip));
                                 }
@@ -344,9 +344,9 @@ public final class h8 extends org.telegram.ui.ActionBar.m2 implements Notificati
                                 break;
                             } else {
                                 if (h8Var2.O == null) {
-                                    org.telegram.ui.Components.j40 j40Var = new org.telegram.ui.Components.j40(h8Var2.a.getContext(), 8);
-                                    h8Var2.O = j40Var;
-                                    j40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
+                                    org.telegram.ui.Components.l40 l40Var = new org.telegram.ui.Components.l40(h8Var2.a.getContext(), 8);
+                                    h8Var2.O = l40Var;
+                                    l40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
                                     h8Var2.a.addView(h8Var2.O, w7.y5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                                     h8Var2.O.setText(LocaleController.getString(R.string.SelectDaysTooltip));
                                 }
@@ -400,7 +400,7 @@ public final class h8 extends org.telegram.ui.ActionBar.m2 implements Notificati
 
     public final void o0() {
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
-        duration.setInterpolator(org.telegram.ui.Components.rr.f);
+        duration.setInterpolator(org.telegram.ui.Components.sr.f);
         duration.addUpdateListener(new c3(this, 3));
         duration.addListener(new t4(this, 2));
         duration.start();
@@ -687,7 +687,7 @@ public final class h8 extends org.telegram.ui.ActionBar.m2 implements Notificati
 
     public final void t0() {
         String string;
-        org.telegram.ui.Components.j40 j40Var;
+        org.telegram.ui.Components.l40 l40Var;
         if (!this.d0) {
             this.actionBar.setTitle(LocaleController.getString(R.string.Calendar));
             this.H.c(0.0f, true);
@@ -722,8 +722,8 @@ public final class h8 extends org.telegram.ui.ActionBar.m2 implements Notificati
             this.n.setText(LocaleController.formatString("ClearHistoryForThisDay", R.string.ClearHistoryForThisDay, new Object[0]));
         }
         this.actionBar.J(str, z11, 150L, null);
-        if ((!this.G || abs > 0) && (j40Var = this.O) != null) {
-            j40Var.b(true);
+        if ((!this.G || abs > 0) && (l40Var = this.O) != null) {
+            l40Var.b(true);
         }
         if (abs > 0 || this.G) {
             if (this.n.getVisibility() == 8) {

@@ -1,79 +1,183 @@
 package org.telegram.ui.Components;
 
-import java.util.Iterator;
+import android.R;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k10 implements org.telegram.ui.ActionBar.q0, le.l, org.telegram.ui.ActionBar.z1, mv0 {
-    public final /* synthetic */ FragmentContextView a;
+public final class k10 {
+    public int a;
+    public final Object b;
+    public final Object c;
+    public final Object d;
+    public final Object e;
+    public final Object f;
+    public Object g;
+    public Object h;
 
-    public /* synthetic */ k10(FragmentContextView fragmentContextView) {
-        this.a = fragmentContextView;
+    public k10(org.telegram.ui.Cells.u1 u1Var) {
+        this.c = new Path();
+        this.d = new Rect();
+        this.f = new RectF();
+        this.b = u1Var;
+        this.e = new yc(u1Var, 0.8f, 1.4f);
     }
 
-    @Override // org.telegram.ui.Components.mv0
-    public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
-        float[] fArr = FragmentContextView.O0;
-        this.a.k(sharingLocationInfo);
-    }
-
-    @Override // le.l
-    public void c(le.m mVar) {
-        FragmentContextView fragmentContextView = this.a;
-        le.m mVar2 = fragmentContextView.M0;
-        float f7 = 1.0f - mVar2.a.d.c.a;
-        fragmentContextView.d.setAlpha(f7);
-        fragmentContextView.d.setScaleX(AndroidUtilities.lerp(0.7f, 1.0f, f7));
-        fragmentContextView.d.setScaleY(AndroidUtilities.lerp(0.7f, 1.0f, f7));
-        Iterator it = mVar2.iterator();
-        while (it.hasNext()) {
-            le.h hVar = (le.h) it.next();
-            float c10 = hVar.c();
-            Object obj = hVar.a;
-            float lerp = AndroidUtilities.lerp(0.7f, 1.0f, c10);
-            lh.c cVar = ((v10) obj).b;
-            cVar.setAlpha(hVar.c());
-            cVar.setScaleX(lerp);
-            cVar.setScaleY(lerp);
+    public void a(Canvas canvas, boolean z10) {
+        Rect rect = (Rect) this.d;
+        canvas.save();
+        Path path = (Path) this.c;
+        canvas.clipPath(path);
+        org.telegram.ui.Cells.z zVar = (org.telegram.ui.Cells.z) this.g;
+        if (zVar != null) {
+            zVar.setBounds(rect);
+            ((org.telegram.ui.Cells.z) this.g).draw(canvas);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        FragmentContextView fragmentContextView = this.a;
-        org.telegram.ui.ActionBar.m2 m2Var = fragmentContextView.h;
-        if (!(m2Var instanceof org.telegram.ui.qy)) {
-            LocationController.getInstance(m2Var.getCurrentAccount()).removeSharingLocation(fragmentContextView.n.a());
+        if (z10) {
+            t90 t90Var = (t90) this.h;
+            if (t90Var == null) {
+                t90 t90Var2 = new t90();
+                this.h = t90Var2;
+                t90Var2.C = true;
+            } else if (t90Var.b() || ((t90) this.h).c()) {
+                t90 t90Var3 = (t90) this.h;
+                t90Var3.b = -1L;
+                t90Var3.c = -1L;
+            }
+        } else {
+            t90 t90Var4 = (t90) this.h;
+            if (t90Var4 != null && !t90Var4.c() && !((t90) this.h).b()) {
+                ((t90) this.h).a();
+            }
+        }
+        canvas.restore();
+        t90 t90Var5 = (t90) this.h;
+        if (t90Var5 == null || t90Var5.b()) {
             return;
         }
-        for (int i11 = 0; i11 < 4; i11++) {
-            LocationController.getInstance(i11).removeAllLocationSharings();
+        t90 t90Var6 = (t90) this.h;
+        t90Var6.x = path;
+        t90Var6.f(org.telegram.ui.ActionBar.h6.l1(0.7f, this.a), org.telegram.ui.ActionBar.h6.l1(1.3f, this.a), org.telegram.ui.ActionBar.h6.l1(1.5f, this.a), org.telegram.ui.ActionBar.h6.l1(2.0f, this.a));
+        ((t90) this.h).setBounds(rect);
+        canvas.save();
+        ((t90) this.h).draw(canvas);
+        canvas.restore();
+        ((org.telegram.ui.Cells.u1) this.b).invalidate();
+    }
+
+    public void b(StaticLayout[] staticLayoutArr, boolean z10) {
+        float dp;
+        RectF rectF = (RectF) this.f;
+        int textSize = (((int) org.telegram.ui.ActionBar.h6.X2.getTextSize()) * 2) + AndroidUtilities.dp(4.0f);
+        float max = Math.max(0, Math.min(6, SharedConfig.bubbleRadius) - 1);
+        float min = Math.min(9, SharedConfig.bubbleRadius);
+        float min2 = Math.min(3, SharedConfig.bubbleRadius);
+        float f7 = -AndroidUtilities.dp(a4.a.e(min, 9.0f, 2.66f, 4.0f));
+        float f10 = -AndroidUtilities.dp(3.0f);
+        float dp2 = AndroidUtilities.dp(5.0f) + textSize;
+        float lineWidth = staticLayoutArr[0].getLineWidth(0) + AndroidUtilities.dp(r2);
+        float lineWidth2 = staticLayoutArr[1].getLineWidth(0) + AndroidUtilities.dp(r2);
+        Path path = (Path) this.c;
+        path.rewind();
+        if (!z10) {
+            max = SharedConfig.bubbleRadius / 2.0f;
+        }
+        float dp3 = AndroidUtilities.dp(max) * 2;
+        rectF.set(f7, f10, f7 + dp3, dp3 + f10);
+        path.arcTo(rectF, 180.0f, 90.0f);
+        float f11 = lineWidth - lineWidth2;
+        float max2 = Math.abs(f11) < ((float) AndroidUtilities.dp(min2 + min)) ? Math.max(lineWidth, lineWidth2) : lineWidth;
+        if (Math.abs(f11) > AndroidUtilities.dp(r14)) {
+            float dp4 = AndroidUtilities.dp(min2) * 2;
+            if (lineWidth < lineWidth2) {
+                float z11 = com.google.android.gms.internal.vision.e2.z(dp2, f10, 0.45f, f10);
+                dp = AndroidUtilities.dp(min) * 2;
+                rectF.set(max2 - dp, f10, max2, f10 + dp);
+                path.arcTo(rectF, 270.0f, 90.0f);
+                rectF.set(lineWidth, z11 - dp4, dp4 + lineWidth, z11);
+                path.arcTo(rectF, 180.0f, -90.0f);
+                float f12 = lineWidth2 - (dp2 - z11);
+                rectF.set(f12, z11, lineWidth2, dp2);
+                path.arcTo(rectF, 270.0f, 90.0f);
+                rectF.set(f12, z11, lineWidth2, dp2);
+                path.arcTo(rectF, 0.0f, 90.0f);
+            } else {
+                float z12 = com.google.android.gms.internal.vision.e2.z(dp2, f10, 0.55f, f10);
+                float f13 = z12 - f10;
+                rectF.set(max2 - f13, f10, max2, z12);
+                path.arcTo(rectF, 270.0f, 90.0f);
+                dp = AndroidUtilities.dp(min) * 2;
+                rectF.set(lineWidth - f13, f10, lineWidth, z12);
+                path.arcTo(rectF, 0.0f, 90.0f);
+                rectF.set(lineWidth2, z12, lineWidth2 + dp4, dp4 + z12);
+                path.arcTo(rectF, 270.0f, -90.0f);
+                rectF.set(lineWidth2 - dp, dp2 - dp, lineWidth2, dp2);
+                path.arcTo(rectF, 0.0f, 90.0f);
+            }
+        } else {
+            dp = AndroidUtilities.dp(min) * 2;
+            float f14 = max2 - dp;
+            rectF.set(f14, f10, max2, f10 + dp);
+            path.arcTo(rectF, 270.0f, 90.0f);
+            rectF.set(f14, dp2 - dp, max2, dp2);
+            path.arcTo(rectF, 0.0f, 90.0f);
+        }
+        rectF.set(f7, dp2 - dp, dp + f7, dp2);
+        path.arcTo(rectF, 90.0f, 90.0f);
+        path.close();
+        ((Rect) this.d).set((int) f7, (int) f10, (int) Math.max(lineWidth, lineWidth2), (int) dp2);
+    }
+
+    public void c(int i10) {
+        if (this.a != i10) {
+            org.telegram.ui.Cells.z zVar = (org.telegram.ui.Cells.z) this.g;
+            if (zVar == null) {
+                this.g = org.telegram.ui.ActionBar.h6.f0(i10, 2, -1);
+            } else {
+                org.telegram.ui.ActionBar.h6.B1(zVar, i10, true);
+            }
+            ((org.telegram.ui.Cells.z) this.g).setCallback((org.telegram.ui.Cells.u1) this.b);
+            this.a = i10;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public void m(int i10) {
-        float[] fArr = FragmentContextView.O0;
-        if (i10 >= 0) {
-            float[] fArr2 = FragmentContextView.O0;
-            if (i10 >= 6) {
-                return;
-            }
-            MediaController mediaController = MediaController.getInstance();
-            FragmentContextView fragmentContextView = this.a;
-            float playbackSpeed = mediaController.getPlaybackSpeed(fragmentContextView.V);
-            float f7 = fArr2[i10];
-            MediaController.getInstance().setPlaybackSpeed(fragmentContextView.V, f7);
-            if (playbackSpeed != f7) {
-                fragmentContextView.l(playbackSpeed, f7, false);
-            }
+    public void d(boolean z10) {
+        org.telegram.ui.Cells.z zVar;
+        Rect rect = (Rect) this.d;
+        float centerX = rect.centerX();
+        float centerY = rect.centerY();
+        ((yc) this.e).c(z10);
+        if (z10 && (zVar = (org.telegram.ui.Cells.z) this.g) != null) {
+            zVar.setHotspot(centerX, centerY);
         }
+        org.telegram.ui.Cells.z zVar2 = (org.telegram.ui.Cells.z) this.g;
+        if (zVar2 != null) {
+            zVar2.setState(z10 ? new int[]{R.attr.state_enabled, R.attr.state_pressed} : new int[0]);
+        }
+        ((org.telegram.ui.Cells.u1) this.b).invalidate();
     }
 
-    @Override // le.l
-    public /* synthetic */ void a() {
+    public k10() {
+        Paint paint = new Paint();
+        this.b = paint;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.c = new sc0(tileMode);
+        this.d = new sc0(tileMode);
+        this.e = new sc0(Shader.TileMode.REPEAT);
+        this.f = new jt();
+        this.g = new jt();
+        this.h = new float[4];
+        paint.setFilterBitmap(true);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
     }
 }

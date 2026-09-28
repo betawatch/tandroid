@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class o1 {
-    public static final rr w = ji.n.V;
+    public static final sr w = ji.n.V;
     public final FrameLayout a;
     public FrameLayout b;
     public ViewGroup c;

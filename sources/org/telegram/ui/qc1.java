@@ -5,33 +5,33 @@ import android.widget.Scroller;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class qc1 implements org.telegram.ui.Components.ro0, org.telegram.ui.Components.j20 {
+public final class qc1 implements org.telegram.ui.Components.to0, org.telegram.ui.Components.l20 {
     public final /* synthetic */ od1 a;
 
     public /* synthetic */ qc1(od1 od1Var) {
         this.a = od1Var;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void X(float f7, boolean z10) {
         od1 od1Var = this.a;
         od1Var.l1 = f7;
         od1Var.k1();
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ int m0() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.j20
+    @Override // org.telegram.ui.Components.l20
     public boolean onDown(MotionEvent motionEvent) {
         Scroller scroller = this.a.c;
         if (scroller == null) {
@@ -41,7 +41,7 @@ public final class qc1 implements org.telegram.ui.Components.ro0, org.telegram.u
         return true;
     }
 
-    @Override // org.telegram.ui.Components.j20
+    @Override // org.telegram.ui.Components.l20
     public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         od1 od1Var = this.a;
         Scroller scroller = od1Var.c;
@@ -54,7 +54,7 @@ public final class qc1 implements org.telegram.ui.Components.ro0, org.telegram.u
         return true;
     }
 
-    @Override // org.telegram.ui.Components.j20
+    @Override // org.telegram.ui.Components.l20
     public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         od1 od1Var = this.a;
         Scroller scroller = od1Var.c;
@@ -67,20 +67,20 @@ public final class qc1 implements org.telegram.ui.Components.ro0, org.telegram.u
         return true;
     }
 
-    @Override // org.telegram.ui.Components.j20
+    @Override // org.telegram.ui.Components.l20
     public boolean onSingleTapUp(MotionEvent motionEvent) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void B() {
     }
 
-    @Override // org.telegram.ui.Components.j20
+    @Override // org.telegram.ui.Components.l20
     public void b1() {
     }
 
-    @Override // org.telegram.ui.Components.j20
+    @Override // org.telegram.ui.Components.l20
     public void onLongPress(MotionEvent motionEvent) {
     }
 }

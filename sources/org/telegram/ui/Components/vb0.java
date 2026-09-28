@@ -1,36 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class vb0 implements kl0 {
-    public final /* synthetic */ zb0 a;
+public final /* synthetic */ class vb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wb0 b;
 
-    public vb0(zb0 zb0Var) {
-        this.a = zb0Var;
+    public /* synthetic */ vb0(wb0 wb0Var, int i10) {
+        this.a = i10;
+        this.b = wb0Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public final void d(int i10, View view) {
-        zb0 zb0Var = this.a;
-        if (zb0Var.a != 1 || zb0Var.r.previewMessages.size() <= 1) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                wb0 wb0Var = this.b;
+                if (wb0Var.W != -1) {
+                    NotificationCenter.getInstance(wb0Var.Y.c0.w).onAnimationFinish(wb0Var.W);
+                    wb0Var.W = -1;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.Y.h();
+                break;
+            default:
+                wb0 wb0Var2 = this.b;
+                if (wb0Var2.W != -1) {
+                    NotificationCenter.getInstance(wb0Var2.Y.c0.w).onAnimationFinish(wb0Var2.W);
+                    wb0Var2.W = -1;
+                    break;
+                }
+                break;
         }
-        int id2 = zb0Var.r.previewMessages.get(i10).getId();
-        boolean z10 = zb0Var.r.selectedIds.get(id2, false);
-        boolean z11 = !z10;
-        if (zb0Var.r.selectedIds.size() == 1 && z10) {
-            return;
-        }
-        if (z10) {
-            zb0Var.r.selectedIds.delete(id2);
-        } else {
-            zb0Var.r.selectedIds.put(id2, z11);
-        }
-        if (view instanceof org.telegram.ui.Cells.u1) {
-            ((org.telegram.ui.Cells.u1) view).L3(z11, z11, true);
-        }
-        zb0Var.k(true);
     }
 }

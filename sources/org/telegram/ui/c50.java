@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class c50 extends org.telegram.ui.Components.m30 {
+public final class c50 extends org.telegram.ui.Components.o30 {
     public final /* synthetic */ g50 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,7 +21,7 @@ public final class c50 extends org.telegram.ui.Components.m30 {
         this.n = g50Var;
     }
 
-    @Override // org.telegram.ui.Components.m30
+    @Override // org.telegram.ui.Components.o30
     public final void n(int i10) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         alertDialog$Builder.a.I = org.telegram.ui.ActionBar.h6.pg;

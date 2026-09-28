@@ -25,9 +25,9 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.t5;
-import org.telegram.ui.Components.k40;
-import org.telegram.ui.Components.op;
+import org.telegram.ui.Components.m40;
 import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.pp;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.qf;
 import org.telegram.ui.Components.wd;
@@ -37,7 +37,7 @@ import org.telegram.ui.wn;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class j0 extends org.telegram.ui.ActionBar.e3 {
     public final int E;
@@ -56,7 +56,7 @@ public final class j0 extends org.telegram.ui.ActionBar.e3 {
     public final ph.i h;
     public final g0 n;
     public final FrameLayout r;
-    public final op s;
+    public final pp s;
     public final TextView v;
     public final p6 w;
     public final ImageView x;
@@ -227,16 +227,16 @@ public final class j0 extends org.telegram.ui.ActionBar.e3 {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setText(LocaleController.getString(R.string.GiftMessageMakeMessagePublic));
         frameLayout.addView(textView2, y5.d(-2, -2.0f, 16, 36.0f, 0.0f, 14.0f, 0.0f));
-        op opVar = new op(context, 18, d6Var);
-        this.s = opVar;
-        opVar.getCheckBoxBase().j(true);
-        opVar.getCheckBoxBase().e = 0.9f;
-        opVar.b(i13, i13, h6.k7);
-        opVar.setDrawUnchecked(true);
-        opVar.a(!this.G, false);
+        pp ppVar = new pp(context, 18, d6Var);
+        this.s = ppVar;
+        ppVar.getCheckBoxBase().j(true);
+        ppVar.getCheckBoxBase().e = 0.9f;
+        ppVar.b(i13, i13, h6.k7);
+        ppVar.setDrawUnchecked(true);
+        ppVar.a(!this.G, false);
         a5Var.getLayout().R = new d0(this, i10);
-        opVar.setDrawBackgroundAsArc(10);
-        frameLayout.addView(opVar, y5.d(18, 18.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
+        ppVar.setDrawBackgroundAsArc(10);
+        frameLayout.addView(ppVar, y5.d(18, 18.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.setBackground(new t5(frameLayout, this.containerView, AndroidUtilities.dp(16.0f), p("paintChatActionBackground")));
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: xh.e0
             public final /* synthetic */ j0 b;
@@ -387,9 +387,9 @@ public final class j0 extends org.telegram.ui.ActionBar.e3 {
         super.onOpenAnimationEnd();
         setAllowNestedScroll(false);
         qc.a(this.container, new ai.w4(this, 10));
-        k40 k40Var = k40.s;
-        if (k40Var.c()) {
-            k40Var.b();
+        m40 m40Var = m40.s;
+        if (m40Var.c()) {
+            m40Var.b();
             TLObject userOrChat = MessagesController.getInstance(this.currentAccount).getUserOrChat(this.J);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(this.I.title);

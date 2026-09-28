@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class le1 extends org.telegram.ui.ActionBar.m2 {
     public float E;
@@ -26,15 +26,15 @@ public final class le1 extends org.telegram.ui.ActionBar.m2 {
     public final w5 I;
     public final r21 J;
     public final ml0 K;
-    public org.telegram.ui.Components.wl0 a;
-    public org.telegram.ui.Components.wl0 b;
+    public org.telegram.ui.Components.yl0 a;
+    public org.telegram.ui.Components.yl0 b;
     public TextView c;
     public ie1 d;
     public ke1 e;
     public final ArrayList f;
     public final ArrayList h;
     public m51 n;
-    public org.telegram.ui.Components.nz r;
+    public org.telegram.ui.Components.oz r;
     public FrameLayout s;
     public int v;
     public final HashSet w;
@@ -67,33 +67,33 @@ public final class le1 extends org.telegram.ui.ActionBar.m2 {
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.a = wl0Var;
-        wl0Var.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.wl0 wl0Var2 = this.a;
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.setLayoutManager(new s4.c0());
+        org.telegram.ui.Components.yl0 yl0Var2 = this.a;
         ie1 ie1Var = new ie1(this);
         this.d = ie1Var;
-        wl0Var2.setAdapter(ie1Var);
+        yl0Var2.setAdapter(ie1Var);
         this.a.setClipToPadding(false);
-        org.telegram.ui.Components.wl0 wl0Var3 = this.a;
+        org.telegram.ui.Components.yl0 yl0Var3 = this.a;
         r21 r21Var = this.J;
-        wl0Var3.setOnItemClickListener(r21Var);
-        org.telegram.ui.Components.wl0 wl0Var4 = this.a;
+        yl0Var3.setOnItemClickListener(r21Var);
+        org.telegram.ui.Components.yl0 yl0Var4 = this.a;
         ml0 ml0Var = this.K;
-        wl0Var4.setOnItemLongClickListener(ml0Var);
-        org.telegram.ui.Components.wl0 wl0Var5 = new org.telegram.ui.Components.wl0(context, null);
-        this.b = wl0Var5;
-        wl0Var5.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.wl0 wl0Var6 = this.b;
+        yl0Var4.setOnItemLongClickListener(ml0Var);
+        org.telegram.ui.Components.yl0 yl0Var5 = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var5;
+        yl0Var5.setLayoutManager(new s4.c0());
+        org.telegram.ui.Components.yl0 yl0Var6 = this.b;
         ke1 ke1Var = new ke1(this);
         this.e = ke1Var;
-        wl0Var6.setAdapter(ke1Var);
+        yl0Var6.setAdapter(ke1Var);
         this.b.setOnItemClickListener(r21Var);
         this.b.setOnItemLongClickListener(ml0Var);
         this.b.setOnScrollListener(new ge1(this, 0));
-        org.telegram.ui.Components.nz nzVar = new org.telegram.ui.Components.nz(context, null);
-        this.r = nzVar;
-        nzVar.setShowAtCenter(true);
+        org.telegram.ui.Components.oz ozVar = new org.telegram.ui.Components.oz(context, null);
+        this.r = ozVar;
+        ozVar.setShowAtCenter(true);
         this.r.setText(LocaleController.getString(R.string.NoResult));
         this.r.c();
         RadialProgressView radialProgressView = new RadialProgressView(context, null);

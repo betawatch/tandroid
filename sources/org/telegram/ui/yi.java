@@ -9,16 +9,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class yi implements org.telegram.ui.Components.ll0 {
+public final class yi implements org.telegram.ui.Components.nl0 {
     public final /* synthetic */ wn a;
 
     public yi(wn wnVar) {
         this.a = wnVar;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public final void c(float f7, float f10, int i10, View view) {
         boolean z10;
         org.telegram.ui.ActionBar.k kVar;
@@ -89,7 +89,7 @@ public final class yi implements org.telegram.ui.Components.ll0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public final boolean d1(View view) {
         String doubleTapReaction;
         TLRPC.TL_availableReaction tL_availableReaction;
@@ -122,7 +122,7 @@ public final class yi implements org.telegram.ui.Components.ll0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public final void r0(View view, float f7, float f10) {
         MessageObject messageObject;
         boolean z10;

@@ -52,11 +52,11 @@ import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.l01;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.n01;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.ro0;
+import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.to0;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ev;
@@ -81,9 +81,9 @@ import u2.a1;
 import w9.m;
 import za.a0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessContinuation, n, ce.b {
+public class a implements to0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessContinuation, n, ce.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -194,41 +194,41 @@ public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessCont
             ((zh.b) this.b).i(aVar);
             fvVar.e0.d();
             zh.b bVar = fvVar.g0;
-            my0[] my0VarArr = fvVar.b0;
+            oy0[] oy0VarArr = fvVar.b0;
             a2[] a2VarArr = fvVar.c0;
             a2 a2Var = a2VarArr[0];
             if (a2Var != null) {
-                my0 my0Var = my0VarArr[0];
+                oy0 oy0Var = oy0VarArr[0];
                 boolean z11 = bVar.m;
-                my0Var.c = z11;
+                oy0Var.c = z11;
                 a2Var.c(z11, true);
             }
             a2 a2Var2 = a2VarArr[1];
             if (a2Var2 != null) {
-                my0 my0Var2 = my0VarArr[1];
+                oy0 oy0Var2 = oy0VarArr[1];
                 boolean z12 = bVar.n;
-                my0Var2.c = z12;
+                oy0Var2.c = z12;
                 a2Var2.c(z12, true);
             }
             a2 a2Var3 = a2VarArr[2];
             if (a2Var3 != null) {
-                my0 my0Var3 = my0VarArr[2];
+                oy0 oy0Var3 = oy0VarArr[2];
                 boolean z13 = bVar.o;
-                my0Var3.c = z13;
+                oy0Var3.c = z13;
                 a2Var3.c(z13, true);
             }
             a2 a2Var4 = a2VarArr[3];
             if (a2Var4 != null) {
-                my0 my0Var4 = my0VarArr[3];
+                oy0 oy0Var4 = oy0VarArr[3];
                 boolean z14 = bVar.p;
-                my0Var4.c = z14;
+                oy0Var4.c = z14;
                 a2Var4.c(z14, true);
             }
             a2 a2Var5 = a2VarArr[4];
             if (a2Var5 != null) {
-                my0 my0Var5 = my0VarArr[4];
+                oy0 oy0Var5 = oy0VarArr[4];
                 boolean z15 = bVar.q;
-                my0Var5.c = z15;
+                oy0Var5.c = z15;
                 a2Var5.c(z15, true);
             }
             fvVar.a0.a(evVar.d(), true);
@@ -269,7 +269,7 @@ public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Cells.l1
     public boolean M0(long j3) {
-        return ((l01) this.c).v;
+        return ((n01) this.c).v;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -360,13 +360,13 @@ public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessCont
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void X(float f7, boolean z10) {
         i5.c = f7;
         ((TextView) this.b).setText("Saturation " + (f7 * 5.0f));
-        aw0 aw0Var = ((i5) this.c).b;
-        aw0Var.N();
-        aw0Var.M();
+        cw0 cw0Var = ((i5) this.c).b;
+        cw0Var.N();
+        cw0Var.M();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -394,7 +394,7 @@ public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Cells.l1
     public boolean a2(long j3) {
-        return ((l01) this.c).s;
+        return ((n01) this.c).s;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x008c A[Catch: all -> 0x0060, TryCatch #0 {all -> 0x0060, blocks: (B:18:0x004d, B:22:0x005a, B:23:0x006e, B:25:0x008c, B:28:0x0099, B:29:0x0177, B:34:0x00b9, B:37:0x00f9, B:40:0x0118, B:43:0x0125, B:48:0x010f, B:50:0x0063), top: B:17:0x004d }] */
@@ -587,7 +587,7 @@ public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessCont
         return new s5.h(aVar, bVar, s5.a.f, (s5.j) obj, aVar2);
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -652,7 +652,7 @@ public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessCont
         }
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ int m0() {
         return 0;
     }
@@ -786,7 +786,7 @@ public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessCont
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((l01) this.c).s || !TextUtils.isEmpty(trim)) {
+        if (((n01) this.c).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -874,7 +874,7 @@ public class a implements ro0, l1, i7, um0, fh.a, d6, le.e, s, n5.b, SuccessCont
         this.c = new BitmapShader(createBitmap, tileMode, tileMode);
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void B() {
     }
 

@@ -30,9 +30,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class r3 extends FrameLayout {
     public static int d0;
@@ -368,7 +368,7 @@ public final class r3 extends FrameLayout {
         p3 p3Var = this.J;
         if (z11) {
             frameLayout.setVisibility(0);
-            ok.s(p3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), rr.h, 320L);
+            ok.s(p3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), sr.h, 320L);
         } else {
             frameLayout.setVisibility(z10 ? 0 : 8);
         }

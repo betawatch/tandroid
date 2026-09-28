@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yz0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -58,14 +58,14 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
         int i18;
         Runnable runnable;
         int i19;
-        org.telegram.ui.Components.zs0 zs0Var;
+        org.telegram.ui.Components.bt0 bt0Var;
         if (this.b.getParentActivity() == null) {
             return;
         }
         if (i10 == -1) {
             ProfileActivity profileActivity = this.b;
             c01 c01Var = profileActivity.O;
-            if (c01Var == null || (zs0Var = c01Var.I0) == null || !zs0Var.n0) {
+            if (c01Var == null || (bt0Var = c01Var.I0) == null || !bt0Var.n0) {
                 profileActivity.finishFragment();
                 return;
             } else {
@@ -160,11 +160,11 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
             linearLayout.setOrientation(1);
             linearLayout.setClipChildren(false);
             linearLayout.setClipToPadding(false);
-            org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-            linearLayout.addView(lj0Var, w7.y5.t(110, 110, 17, 0, 21, 0, 11));
-            lj0Var.f(R.raw.raised_hand, 110, 110, null);
-            lj0Var.setAutoRepeat(false);
-            lj0Var.d();
+            org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+            linearLayout.addView(nj0Var, w7.y5.t(110, 110, 17, 0, 21, 0, 11));
+            nj0Var.f(R.raw.raised_hand, 110, 110, null);
+            nj0Var.setAutoRepeat(false);
+            nj0Var.d();
             TextView textView2 = new TextView(context);
             textView2.setTypeface(AndroidUtilities.bold());
             textView2.setGravity(17);
@@ -359,7 +359,7 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
                                     profileActivity10.H0 = true;
                                     View m10 = profileActivity10.c.m(0);
                                     if (m10 != null) {
-                                        profileActivity10.a.v0(0, m10.getTop() - profileActivity10.T3(), org.telegram.ui.Components.rr.h);
+                                        profileActivity10.a.v0(0, m10.getTop() - profileActivity10.T3(), org.telegram.ui.Components.sr.h);
                                         break;
                                     }
                                 }
@@ -506,10 +506,10 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
         if (i10 == 39) {
             Bundle g10 = org.telegram.ui.Cells.c1.g(2, TeXSymbolParser.TYPE_ATTR);
             g10.putLong("dialog_id", -this.b.f1);
-            org.telegram.ui.Components.na0 na0Var = new org.telegram.ui.Components.na0(g10, null);
+            org.telegram.ui.Components.pa0 pa0Var = new org.telegram.ui.Components.pa0(g10, null);
             ProfileActivity profileActivity13 = this.b;
-            na0Var.c = profileActivity13.u2;
-            profileActivity13.presentFragment(na0Var);
+            pa0Var.c = profileActivity13.u2;
+            profileActivity13.presentFragment(pa0Var);
             return;
         }
         if (i10 == 20) {
@@ -657,7 +657,7 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
                                     profileActivity102.H0 = true;
                                     View m10 = profileActivity102.c.m(0);
                                     if (m10 != null) {
-                                        profileActivity102.a.v0(0, m10.getTop() - profileActivity102.T3(), org.telegram.ui.Components.rr.h);
+                                        profileActivity102.a.v0(0, m10.getTop() - profileActivity102.T3(), org.telegram.ui.Components.sr.h);
                                         break;
                                     }
                                 }
@@ -966,7 +966,7 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
                                     profileActivity102.H0 = true;
                                     View m10 = profileActivity102.c.m(0);
                                     if (m10 != null) {
-                                        profileActivity102.a.v0(0, m10.getTop() - profileActivity102.T3(), org.telegram.ui.Components.rr.h);
+                                        profileActivity102.a.v0(0, m10.getTop() - profileActivity102.T3(), org.telegram.ui.Components.sr.h);
                                         break;
                                     }
                                 }
@@ -1041,9 +1041,9 @@ public final class yz0 extends org.telegram.ui.ActionBar.j {
             ImageLocation imageLocation3 = (ImageLocation) arrayList5.get(realPosition2);
             arrayList5.remove(realPosition2);
             arrayList5.add(0, imageLocation3);
-            org.telegram.ui.Components.d71 d71Var = (org.telegram.ui.Components.d71) arrayList4.get(realPosition2);
+            org.telegram.ui.Components.f71 f71Var = (org.telegram.ui.Components.f71) arrayList4.get(realPosition2);
             arrayList4.remove(realPosition2);
-            arrayList4.add(0, d71Var);
+            arrayList4.add(0, f71Var);
             Integer num = (Integer) arrayList3.get(realPosition2);
             arrayList3.remove(realPosition2);
             arrayList3.add(0, num);

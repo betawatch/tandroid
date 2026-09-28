@@ -21,11 +21,11 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.m40;
-import org.telegram.ui.Components.zz0;
+import org.telegram.ui.Components.b01;
+import org.telegram.ui.Components.o40;
 import org.telegram.ui.bt;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class c3 {
     public final TL_stars.TL_starGiftUnique a;
@@ -36,7 +36,7 @@ public final class c3 {
     public final boolean f;
     public final org.telegram.ui.ActionBar.d6 g;
     public final org.telegram.ui.ActionBar.a2 h;
-    public final m40 i;
+    public final o40 i;
     public final TextView j;
     public a k;
     public TextView l;
@@ -73,13 +73,13 @@ public final class c3 {
             ok.l(R.string.Gift2BuyPriceOnlyTON, textView, 17);
             f7.addView(textView, w7.y5.t(-2, -2, 17, 24, 4, 24, 4));
         } else {
-            m40 m40Var = new m40(context, d6Var);
-            this.i = m40Var;
+            o40 o40Var = new o40(context, d6Var);
+            this.i = o40Var;
             ArrayList arrayList = new ArrayList();
             arrayList.add(LocaleController.getString(R.string.Gift2BuyInStars));
             arrayList.add(LocaleController.getString(R.string.Gift2BuyInTON));
-            m40Var.b(arrayList, new v(this, 2));
-            f7.addView(m40Var, w7.y5.t(-2, -2, 1, 18, 0, 18, 12));
+            o40Var.b(arrayList, new v(this, 2));
+            f7.addView(o40Var, w7.y5.t(-2, -2, 1, 18, 0, 18, 12));
         }
         f7.addView(new z2(context, tL_starGiftUnique, user), w7.y5.t(-1, -2, 48, 0, -4, 0, 0));
         TextView textView2 = new TextView(context);
@@ -87,14 +87,14 @@ public final class c3 {
         ok.n(org.telegram.ui.ActionBar.h6.j5, d6Var, textView2, 1, 16.0f);
         f7.addView(textView2, w7.y5.t(-1, -2, 48, 24, 4, 24, 4));
         if (z10) {
-            zz0 zz0Var = new zz0(context, d6Var);
-            x3.q1(zz0Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            x3.q1(zz0Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
-            x3.q1(zz0Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            b01 b01Var = new b01(context, d6Var);
+            x3.q1(b01Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            x3.q1(b01Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            x3.q1(b01Var, s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
             if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
-                zz0Var.c(LocaleController.getString(R.string.GiftValue2), v7.j.g("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
+                b01Var.c(LocaleController.getString(R.string.GiftValue2), v7.j.g("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
             }
-            f7.addView(zz0Var, w7.y5.t(-1, -2, 48, 23, 16, 23, 4));
+            f7.addView(b01Var, w7.y5.t(-1, -2, 48, 23, 16, 23, 4));
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
         alertDialog$Builder.n(b3Var);
@@ -117,9 +117,9 @@ public final class c3 {
             aVar.a();
         }
         zf.b bVar2 = zf.b.b;
-        m40 m40Var = this.i;
-        if (m40Var != null) {
-            m40Var.a(bVar == bVar2 ? 1 : 0, z10);
+        o40 o40Var = this.i;
+        if (o40Var != null) {
+            o40Var.a(bVar == bVar2 ? 1 : 0, z10);
         }
         if (bVar == bVar2 && (e4Var = this.r) != null && e4Var.V) {
             e4Var.e(true);

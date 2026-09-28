@@ -12,7 +12,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class m0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -429,7 +429,7 @@ public final class m0 implements TextWatcher {
                 }
                 if (c6Var != null) {
                     c6Var.clearAnimation();
-                    c6Var.animate().translationX(0.0f).setInterpolator(org.telegram.ui.Components.rr.h).start();
+                    c6Var.animate().translationX(0.0f).setInterpolator(org.telegram.ui.Components.sr.h).start();
                 }
                 r51Var.c(false);
                 break;
@@ -443,11 +443,11 @@ public final class m0 implements TextWatcher {
                     se1Var.n = "";
                 }
                 if (!str10.equals(se1Var.n)) {
-                    org.telegram.ui.Components.w80 w80Var = new org.telegram.ui.Components.w80(1, null);
-                    w80Var.a(se1Var.n);
-                    org.telegram.ui.Components.bm0 bm0Var = se1Var.v;
-                    if (bm0Var != null) {
-                        bm0Var.b(w80Var, true);
+                    org.telegram.ui.Components.y80 y80Var = new org.telegram.ui.Components.y80(1, null);
+                    y80Var.a(se1Var.n);
+                    org.telegram.ui.Components.dm0 dm0Var = se1Var.v;
+                    if (dm0Var != null) {
+                        dm0Var.b(y80Var, true);
                         break;
                     }
                 }

@@ -15,17 +15,17 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.lc0;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.nc0;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class e7 extends vl0 {
+public final class e7 extends xl0 {
     public final ArrayList c = new ArrayList();
     public final /* synthetic */ k7 d;
 
@@ -33,7 +33,7 @@ public final class e7 extends vl0 {
         this.d = k7Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -241,7 +241,7 @@ public final class e7 extends vl0 {
                 view = new b7(this, k7Var.getContext(), i13);
                 break;
             case 1:
-                lc0 lc0Var = org.telegram.ui.Cells.o6.G;
+                nc0 nc0Var = org.telegram.ui.Cells.o6.G;
                 view = new c7(i11, dVar, this, k7Var.getContext());
                 break;
             case 2:
@@ -253,11 +253,11 @@ public final class e7 extends vl0 {
                 view = new org.telegram.ui.Cells.t3(k7Var.getContext(), 70);
                 break;
             case 4:
-                u00 u00Var = new u00(k7Var.getContext(), dVar);
-                u00Var.setIsSingleCell(true);
-                u00Var.setViewType(28);
-                u00Var.w = false;
-                view = u00Var;
+                v00 v00Var = new v00(k7Var.getContext(), dVar);
+                v00Var.setIsSingleCell(true);
+                v00Var.setViewType(28);
+                v00Var.w = false;
+                view = v00Var;
                 break;
             case 5:
             case 7:
@@ -280,7 +280,7 @@ public final class e7 extends vl0 {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.getString(R.string.ExpiredViewsStub)));
                     boolean premiumFeaturesBlocked = MessagesController.getInstance(i11).premiumFeaturesBlocked();
-                    n90 n90Var = d7Var.e;
+                    p90 p90Var = d7Var.e;
                     if (!premiumFeaturesBlocked) {
                         spannableStringBuilder.append((CharSequence) "\n\n");
                         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ExpiredViewsStubPremiumDescription), new Runnable() { // from class: ai.a7
@@ -310,7 +310,7 @@ public final class e7 extends vl0 {
                                 }
                             }
                         };
-                        ((LinearLayout.LayoutParams) n90Var.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
+                        ((LinearLayout.LayoutParams) p90Var.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
                         TextView textView = new TextView(d7Var.getContext());
                         textView.setText(string);
                         int i14 = org.telegram.ui.ActionBar.h6.Sh;
@@ -321,7 +321,7 @@ public final class e7 extends vl0 {
                         textView.setTypeface(AndroidUtilities.bold());
                         textView.setTextSize(1, 15.0f);
                         w5 w5Var = new w5(d7Var.getContext(), 19);
-                        w5Var.setOnClickListener(new i80(runnable, 19));
+                        w5Var.setOnClickListener(new k80(runnable, 19));
                         int dp = AndroidUtilities.dp(8.0f);
                         int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var);
                         int k10 = i0.a.k(org.telegram.ui.ActionBar.h6.v0(i14, d6Var), 30);
@@ -332,7 +332,7 @@ public final class e7 extends vl0 {
                         ub1Var.setClipChildren(false);
                         ub1Var.addView(w5Var, w7.y5.t(-2, -2, 1, 0, 28, 0, 4));
                     }
-                    n90Var.setText(spannableStringBuilder);
+                    p90Var.setText(spannableStringBuilder);
                 } else {
                     nVar.setVisibility(0);
                     if (k7Var.F.f) {
@@ -347,35 +347,35 @@ public final class e7 extends vl0 {
                 view = d7Var;
                 break;
             case 6:
-                u00 u00Var2 = new u00(k7Var.getContext(), dVar);
-                u00Var2.setIsSingleCell(true);
-                u00Var2.setIgnoreHeightCheck(true);
-                u00Var2.setItemsCount(20);
-                u00Var2.setViewType(28);
-                u00Var2.w = false;
-                view = u00Var2;
+                v00 v00Var2 = new v00(k7Var.getContext(), dVar);
+                v00Var2.setIsSingleCell(true);
+                v00Var2.setIgnoreHeightCheck(true);
+                v00Var2.setItemsCount(20);
+                v00Var2.setViewType(28);
+                v00Var2.w = false;
+                view = v00Var2;
                 break;
             case 11:
             case 12:
-                n90 n90Var2 = new n90(k7Var.getContext(), null);
-                n90Var2.setTextSize(1, 13.0f);
-                n90Var2.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, dVar));
-                n90Var2.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.J6, dVar));
+                p90 p90Var2 = new p90(k7Var.getContext(), null);
+                p90Var2.setTextSize(1, 13.0f);
+                p90Var2.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, dVar));
+                p90Var2.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.J6, dVar));
                 int dp2 = AndroidUtilities.dp(16.0f);
                 int dp3 = AndroidUtilities.dp(21.0f);
-                n90Var2.setPadding(dp3, dp2, dp3, dp2);
-                n90Var2.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
-                n90Var2.setGravity(17);
-                n90Var2.setDisablePaddingsOffsetY(true);
+                p90Var2.setPadding(dp3, dp2, dp3, dp2);
+                p90Var2.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
+                p90Var2.setGravity(17);
+                p90Var2.setDisablePaddingsOffsetY(true);
                 if (i10 == 11) {
-                    n90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryViewsPremiumHint), new a3.d(this, 10)));
+                    p90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryViewsPremiumHint), new a3.d(this, 10)));
                 } else {
-                    n90Var2.setText(LocaleController.getString(R.string.ServerErrorViewersFull));
+                    p90Var2.setText(LocaleController.getString(R.string.ServerErrorViewersFull));
                 }
-                n90Var2.setLayoutParams(new s4.p0(-1, -2));
-                view = n90Var2;
+                p90Var2.setLayoutParams(new s4.p0(-1, -2));
+                view = p90Var2;
                 break;
         }
-        return new gl0(view);
+        return new il0(view);
     }
 }

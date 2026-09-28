@@ -9,11 +9,11 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.uk0;
 import v7.a7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
@@ -34,7 +34,7 @@ public abstract class i extends FrameLayout {
         this.b = paint2;
         Paint paint3 = new Paint(1);
         this.c = paint3;
-        this.e = new e6(this, 0L, 250L, rr.h);
+        this.e = new e6(this, 0L, 250L, sr.h);
         this.f = true;
         setWillNotDraw(false);
         paint.setColor(-1);
@@ -55,7 +55,7 @@ public abstract class i extends FrameLayout {
 
     public final void b() {
         j jVar = this.h;
-        sk0 selectionBounds = jVar.getSelectionBounds();
+        uk0 selectionBounds = jVar.getSelectionBounds();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
         layoutParams.leftMargin = (int) selectionBounds.a;
         layoutParams.topMargin = (int) selectionBounds.b;

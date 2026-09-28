@@ -2,43 +2,38 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yd0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ci.j9 b;
+    public final /* synthetic */ zd0 b;
 
-    public /* synthetic */ yd0(ci.j9 j9Var, int i10) {
+    public /* synthetic */ yd0(zd0 zd0Var, int i10) {
         this.a = i10;
-        this.b = j9Var;
+        this.b = zd0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
+        EditTextBoldCursor editTextBoldCursor;
         switch (this.a) {
             case 0:
-                ci.j9 j9Var = this.b;
-                AnimatorSet animatorSet = (AnimatorSet) j9Var.e;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    j9Var.e = null;
-                    break;
-                }
-                break;
-            case 1:
-                ci.j9 j9Var2 = this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) j9Var2.e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    j9Var2.e = null;
-                    break;
-                }
+                ee0 ee0Var = this.b.d;
+                ee0Var.P = 1.0f;
+                ee0Var.f(1.0f);
                 break;
             default:
-                ci.j9 j9Var3 = this.b;
-                AnimatorSet animatorSet3 = (AnimatorSet) j9Var3.e;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    j9Var3.e = null;
+                zd0 zd0Var = this.b;
+                Runnable runnable = zd0Var.c;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                if (SharedConfig.passcodeType == 1 && zd0Var.d.x.getVisibility() != 0 && (editTextBoldCursor = zd0Var.d.r) != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(zd0Var.d.r);
                     break;
                 }
                 break;

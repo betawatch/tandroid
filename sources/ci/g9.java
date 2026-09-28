@@ -11,10 +11,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class g9 extends FrameLayout {
     public final /* synthetic */ int a = 2;
@@ -71,13 +71,13 @@ public final class g9 extends FrameLayout {
                         y9 y9Var = (y9) view;
                         float clamp = Utilities.clamp(1.0f - Math.abs(y9Var.getTranslationX() / y9Var.getMeasuredWidth()), 1.0f, f11);
                         float f12 = this.c;
-                        wl0 wl0Var = y9Var.f;
+                        yl0 yl0Var = y9Var.f;
                         FrameLayout frameLayout = y9Var.e;
                         s4.c0 c0Var = y9Var.h;
                         float f13 = (c0Var.t || y9Var.a == 0) ? AndroidUtilities.displaySize.y : 0.0f;
                         int i15 = 0;
-                        while (i15 < wl0Var.getChildCount()) {
-                            View childAt = wl0Var.getChildAt(i15);
+                        while (i15 < yl0Var.getChildCount()) {
+                            View childAt = yl0Var.getChildAt(i15);
                             if (c0Var.t) {
                                 float y3 = childAt.getY() + frameLayout.getPaddingTop();
                                 float alpha = childAt.getAlpha();
@@ -259,7 +259,7 @@ public final class g9 extends FrameLayout {
     public g9(fi.k0 k0Var, Context context) {
         super(context);
         this.e = k0Var;
-        this.b = new org.telegram.ui.Components.e6(this, 250L, rr.h);
+        this.b = new org.telegram.ui.Components.e6(this, 250L, sr.h);
         this.d = new Path();
     }
 
@@ -267,7 +267,7 @@ public final class g9 extends FrameLayout {
     public g9(fa faVar, Context context) {
         super(context);
         this.e = faVar;
-        this.b = new org.telegram.ui.Components.e6(this, 250L, rr.h);
+        this.b = new org.telegram.ui.Components.e6(this, 250L, sr.h);
         this.d = new Path();
     }
 }

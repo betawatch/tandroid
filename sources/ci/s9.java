@@ -8,12 +8,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.ok;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.ul;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.vl;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class s9 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -28,13 +28,13 @@ public final class s9 extends s4.s0 {
     @Override // s4.s0
     public void a(RecyclerView recyclerView, int i10) {
         boolean z10;
-        gl0 gl0Var;
+        il0 il0Var;
         int topScrollOffset;
         int topScrollOffset2;
         switch (this.a) {
             case 0:
                 y9 y9Var = (y9) this.c;
-                wl0 wl0Var = y9Var.f;
+                yl0 yl0Var = y9Var.f;
                 fa faVar = y9Var.W;
                 if (i10 == 1) {
                     z10 = ((org.telegram.ui.ActionBar.e3) faVar).keyboardVisible;
@@ -43,28 +43,28 @@ public final class s9 extends s4.s0 {
                     }
                 }
                 if (i10 == 0) {
-                    y9Var.S = !wl0Var.canScrollVertically(-1);
-                    wl0Var.canScrollVertically(1);
+                    y9Var.S = !yl0Var.canScrollVertically(-1);
+                    yl0Var.canScrollVertically(1);
                 }
                 y9Var.M = i10 != 0;
                 break;
             case 2:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.c;
-                ul ulVar = chatAttachAlertPhotoLayout.E;
+                vl vlVar = chatAttachAlertPhotoLayout.E;
                 wi wiVar = chatAttachAlertPhotoLayout.b;
                 if (i10 == 0) {
                     int dp = AndroidUtilities.dp(13.0f);
                     org.telegram.ui.ActionBar.u0 u0Var = wiVar.a1;
                     int dp2 = dp + (u0Var != null ? AndroidUtilities.dp(u0Var.getAlpha() * 26.0f) : 0);
                     int backgroundPaddingTop = wiVar.getBackgroundPaddingTop();
-                    if (((wiVar.b2[0] - backgroundPaddingTop) - dp2) + backgroundPaddingTop < (wiVar.O0.getAlpha() * wiVar.O0.getMeasuredHeight()) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (gl0Var = (gl0) ulVar.K(0)) != null) {
-                        View view = gl0Var.a;
+                    if (((wiVar.b2[0] - backgroundPaddingTop) - dp2) + backgroundPaddingTop < (wiVar.O0.getAlpha() * wiVar.O0.getMeasuredHeight()) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (il0Var = (il0) vlVar.K(0)) != null) {
+                        View view = il0Var.a;
                         int top = view.getTop();
                         topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
                         if (top > topScrollOffset) {
                             int top2 = view.getTop();
                             topScrollOffset2 = chatAttachAlertPhotoLayout.getTopScrollOffset();
-                            ulVar.v0(0, top2 - topScrollOffset2, null);
+                            vlVar.v0(0, top2 - topScrollOffset2, null);
                             break;
                         }
                     }
@@ -88,8 +88,8 @@ public final class s9 extends s4.s0 {
             case 0:
                 y9 y9Var = (y9) this.c;
                 fa faVar = y9Var.W;
-                wl0 wl0Var = y9Var.f;
-                boolean canScrollVertically = wl0Var.canScrollVertically(1);
+                yl0 yl0Var = y9Var.f;
+                boolean canScrollVertically = yl0Var.canScrollVertically(1);
                 if (canScrollVertically != this.b) {
                     y9Var.r.invalidate();
                     this.b = canScrollVertically;
@@ -97,8 +97,8 @@ public final class s9 extends s4.s0 {
                 y9Var.e.invalidate();
                 viewGroup = ((org.telegram.ui.ActionBar.e3) faVar).containerView;
                 viewGroup.invalidate();
-                if (y9Var.a == 6 && wl0Var.getChildCount() > 0) {
-                    int R = RecyclerView.R(wl0Var.getChildAt(0));
+                if (y9Var.a == 6 && yl0Var.getChildCount() > 0) {
+                    int R = RecyclerView.R(yl0Var.getChildAt(0));
                     i12 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
                     if (R >= MessagesController.getInstance(i12).getStoriesController().L.size()) {
                         i13 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
@@ -129,18 +129,18 @@ public final class s9 extends s4.s0 {
             default:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.c;
                 wi wiVar = chatAttachAlertPhotoLayout.b;
-                ul ulVar = chatAttachAlertPhotoLayout.E;
-                if (ulVar.getChildCount() > 0) {
+                vl vlVar = chatAttachAlertPhotoLayout.E;
+                if (vlVar.getChildCount() > 0) {
                     wiVar.X1(chatAttachAlertPhotoLayout, i11);
                     if (chatAttachAlertPhotoLayout.G.h() > 30) {
                         boolean z11 = this.b;
                         boolean z12 = wiVar.R;
                         if (z11 != z12) {
                             this.b = z12;
-                            ok.r(ulVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
+                            ok.r(vlVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
                         }
                     } else {
-                        ulVar.getFastScroll().setAlpha(0.0f);
+                        vlVar.getFastScroll().setAlpha(0.0f);
                     }
                     if (i11 != 0) {
                         chatAttachAlertPhotoLayout.V();

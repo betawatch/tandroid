@@ -18,9 +18,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class lr extends org.telegram.ui.Components.vl0 {
+public final class lr extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ pr d;
 
@@ -41,7 +41,7 @@ public final class lr extends org.telegram.ui.Components.vl0 {
     
         if (r7 == r3.L0) goto L42;
      */
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -732,13 +732,13 @@ public final class lr extends org.telegram.ui.Components.vl0 {
                 }
                 break;
             case 11:
-                org.telegram.ui.Components.u00 u00Var = (org.telegram.ui.Components.u00) view;
+                org.telegram.ui.Components.v00 v00Var = (org.telegram.ui.Components.v00) view;
                 if (i14 != 0) {
-                    u00Var.setItemsCount(1);
+                    v00Var.setItemsCount(1);
                     break;
                 } else {
                     TLRPC.ChatFull chatFull5 = prVar.s;
-                    u00Var.setItemsCount(chatFull5 != null ? chatFull5.kicked_count : 1);
+                    v00Var.setItemsCount(chatFull5 != null ? chatFull5.kicked_count : 1);
                     break;
                 }
             case 12:
@@ -930,28 +930,28 @@ public final class lr extends org.telegram.ui.Components.vl0 {
                 break;
             case 9:
             default:
-                org.telegram.ui.Components.ew0 ew0Var = new org.telegram.ui.Components.ew0(context, null);
-                ew0Var.b(prVar.p1, null, LocaleController.getString("SlowmodeOff", R.string.SlowmodeOff), LocaleController.formatString(R.string.SlowmodeSeconds, 5), LocaleController.formatString(R.string.SlowmodeSeconds, 10), LocaleController.formatString(R.string.SlowmodeSeconds, 30), LocaleController.formatString(R.string.SlowmodeMinutes, 1), LocaleController.formatString(R.string.SlowmodeMinutes, 5), LocaleController.formatString(R.string.SlowmodeMinutes, 15), LocaleController.formatString(R.string.SlowmodeHours, 1));
-                ew0Var.setCallback(new kr(this, 1));
-                view = ew0Var;
+                org.telegram.ui.Components.gw0 gw0Var = new org.telegram.ui.Components.gw0(context, null);
+                gw0Var.b(prVar.p1, null, LocaleController.getString("SlowmodeOff", R.string.SlowmodeOff), LocaleController.formatString(R.string.SlowmodeSeconds, 5), LocaleController.formatString(R.string.SlowmodeSeconds, 10), LocaleController.formatString(R.string.SlowmodeSeconds, 30), LocaleController.formatString(R.string.SlowmodeMinutes, 1), LocaleController.formatString(R.string.SlowmodeMinutes, 5), LocaleController.formatString(R.string.SlowmodeMinutes, 15), LocaleController.formatString(R.string.SlowmodeHours, 1));
+                gw0Var.setCallback(new kr(this, 1));
+                view = gw0Var;
                 break;
             case 10:
                 view = new org.telegram.ui.Cells.s4(context, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(120.0f));
                 break;
             case 11:
-                org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(context, null);
-                u00Var.setIsSingleCell(true);
-                u00Var.setViewType(6);
-                u00Var.w = false;
-                u00Var.setUseHeaderOffset(false);
-                u00Var.setPaddingLeft(AndroidUtilities.dp(5.0f));
+                org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(context, null);
+                v00Var.setIsSingleCell(true);
+                v00Var.setViewType(6);
+                v00Var.w = false;
+                v00Var.setUseHeaderOffset(false);
+                v00Var.setPaddingLeft(AndroidUtilities.dp(5.0f));
                 s4.p0 p0Var = new s4.p0(-1, -1);
                 int dp = AndroidUtilities.dp(12.0f);
                 ((ViewGroup.MarginLayoutParams) p0Var).rightMargin = dp;
                 ((ViewGroup.MarginLayoutParams) p0Var).leftMargin = dp;
                 ((ViewGroup.MarginLayoutParams) p0Var).topMargin = AndroidUtilities.dp(30.0f);
-                u00Var.setLayoutParams(p0Var);
-                view = u00Var;
+                v00Var.setLayoutParams(p0Var);
+                view = v00Var;
                 break;
             case 12:
                 org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(23, this.c, prVar.getResourceProvider(), false, true);
@@ -966,12 +966,12 @@ public final class lr extends org.telegram.ui.Components.vl0 {
                 view = a2Var;
                 break;
             case 15:
-                org.telegram.ui.Components.ew0 ew0Var2 = new org.telegram.ui.Components.ew0(context, null);
+                org.telegram.ui.Components.gw0 gw0Var2 = new org.telegram.ui.Components.gw0(context, null);
                 Drawable[] drawableArr = {prVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge), prVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), prVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), prVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), prVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2)};
                 int i12 = prVar.s1;
-                ew0Var2.b(i12 > 0 ? i12 - 1 : 0, drawableArr, "1", "2", "3", "4", "5");
-                ew0Var2.setCallback(new kr(this, 2));
-                view2 = ew0Var2;
+                gw0Var2.b(i12 > 0 ? i12 - 1 : 0, drawableArr, "1", "2", "3", "4", "5");
+                gw0Var2.setCallback(new kr(this, 2));
+                view2 = gw0Var2;
                 view = view2;
                 break;
             case 16:
@@ -981,6 +981,6 @@ public final class lr extends org.telegram.ui.Components.vl0 {
                 view = new org.telegram.ui.Cells.z7(context, prVar.getResourceProvider());
                 break;
         }
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 }

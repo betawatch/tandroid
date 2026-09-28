@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class af implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class af implements Utilities.Callback {
                 wn wnVar2 = this.b;
                 wnVar2.g5 = messageSuggestionParams;
                 wnVar2.p5.messageOwner.suggested_post = messageSuggestionParams.toTl();
-                wnVar2.yb(true, null, wnVar2.p5, null, null, null, false, true);
+                wnVar2.yb(true, null, wnVar2.p5, null, null, null, false);
                 break;
             case 1:
                 wnVar.vb(true, false);
@@ -112,9 +112,9 @@ public final /* synthetic */ class af implements Utilities.Callback {
                 break;
             case 7:
                 Long l4 = (Long) obj;
-                org.telegram.ui.Components.k31 k31Var = wnVar.R1;
-                if (k31Var != null) {
-                    k31Var.m(l4.longValue(), true);
+                org.telegram.ui.Components.m31 m31Var = wnVar.R1;
+                if (m31Var != null) {
+                    m31Var.m(l4.longValue(), true);
                     break;
                 }
                 break;

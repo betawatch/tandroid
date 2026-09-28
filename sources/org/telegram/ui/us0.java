@@ -8,15 +8,15 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class us0 extends org.telegram.ui.Components.md {
     public final Path t1;
     public final /* synthetic */ PhotoViewer u1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public us0(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, uu0 uu0Var, org.telegram.ui.Components.aw0 aw0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar, ar0 ar0Var) {
-        super(contextThemeWrapper, uu0Var, aw0Var, frameLayout, d6Var, jaVar, ar0Var);
+    public us0(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, uu0 uu0Var, org.telegram.ui.Components.cw0 cw0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar, ar0 ar0Var) {
+        super(contextThemeWrapper, uu0Var, cw0Var, frameLayout, d6Var, jaVar, ar0Var);
         this.u1 = photoViewer;
         this.t1 = new Path();
     }

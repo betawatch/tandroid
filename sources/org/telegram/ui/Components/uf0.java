@@ -1,100 +1,160 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.FrameLayout;
+import android.graphics.Paint;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class uf0 extends FrameLayout {
-    public final ci.wc a;
-    public final ci.d b;
-    public final qt c;
-    public s71 d;
-    public long e;
-    public float f;
-    public ci.a4 h;
-    public Utilities.Callback n;
-    public Runnable r;
+public final class uf0 extends xl0 {
+    public final Context c;
+    public final /* synthetic */ vf0 d;
 
-    public uf0(Context context, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar) {
-        super(context);
-        this.e = -1L;
-        this.f = 1.39f;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d6Var);
-        kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
-        kVar.B(-1, false);
-        kVar.A(587202559, false);
-        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.oo(this, 10));
-        addView(kVar, w7.y5.e(-1, -2, 55));
-        ci.wc wcVar = new ci.wc(context, null, null, d6Var, jaVar);
-        this.a = wcVar;
-        wcVar.X0 = true;
-        addView(wcVar, w7.y5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        ci.d dVar = new ci.d(context, d6Var, true);
-        this.b = dVar;
-        dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
-        dVar.e();
-        addView(dVar, w7.y5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        qt qtVar = new qt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
-        this.c = qtVar;
-        qtVar.setOnClickListener(new ai.d0(this, context, d6Var, 26));
-        addView(qtVar, w7.y5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        wcVar.setDelegate(new n7.z0(this));
+    public uf0(vf0 vf0Var, Context context) {
+        this.d = vf0Var;
+        this.c = context;
     }
 
-    public final void a(MediaController.PhotoEntry photoEntry, s71 s71Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        int i10;
-        ci.d dVar = this.b;
-        dVar.a = d6Var;
-        dVar.j();
-        int i11 = photoEntry.width;
-        if (i11 <= 0 || (i10 = photoEntry.height) <= 0) {
-            this.f = 1.39f;
+    @Override // org.telegram.ui.Components.xl0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.F;
+    }
+
+    @Override // s4.h0
+    public final long i(int i10) {
+        return i10;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        vf0 vf0Var = this.d;
+        return (i10 == vf0Var.y || i10 == vf0Var.E) ? 1 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        vf0 vf0Var = this.d;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                return;
+            }
+            org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) view;
+            u5Var.setTag(Integer.valueOf(i10));
+            if (i10 == vf0Var.y) {
+                u5Var.a(vf0Var.N, LocaleController.getString(R.string.TintShadows));
+                return;
+            } else {
+                if (i10 == vf0Var.E) {
+                    u5Var.a(vf0Var.O, LocaleController.getString(R.string.TintHighlights));
+                    return;
+                }
+                return;
+            }
+        }
+        org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) view;
+        v5Var.setTag(Integer.valueOf(i10));
+        if (i10 == vf0Var.b) {
+            v5Var.a(LocaleController.getString(R.string.Enhance), 0, vf0Var.G);
+            return;
+        }
+        if (i10 == vf0Var.r) {
+            v5Var.a(LocaleController.getString(R.string.Highlights), -100, vf0Var.P);
+            return;
+        }
+        if (i10 == vf0Var.d) {
+            v5Var.a(LocaleController.getString(R.string.Contrast), -100, vf0Var.I);
+            return;
+        }
+        if (i10 == vf0Var.c) {
+            v5Var.a(LocaleController.getString(R.string.Exposure), -100, vf0Var.H);
+            return;
+        }
+        if (i10 == vf0Var.f) {
+            v5Var.a(LocaleController.getString(R.string.Warmth), -100, vf0Var.J);
+            return;
+        }
+        if (i10 == vf0Var.e) {
+            v5Var.a(LocaleController.getString(R.string.Saturation), -100, vf0Var.K);
+            return;
+        }
+        if (i10 == vf0Var.v) {
+            v5Var.a(LocaleController.getString(R.string.Vignette), 0, vf0Var.R);
+            return;
+        }
+        if (i10 == vf0Var.s) {
+            v5Var.a(LocaleController.getString(R.string.Shadows), -100, vf0Var.Q);
+            return;
+        }
+        if (i10 == vf0Var.w) {
+            v5Var.a(LocaleController.getString(R.string.Grain), 0, vf0Var.S);
+            return;
+        }
+        if (i10 == vf0Var.x) {
+            v5Var.a(LocaleController.getString(R.string.Sharpen), 0, vf0Var.U);
+        } else if (i10 == vf0Var.h) {
+            v5Var.a(LocaleController.getString(R.string.Fade), 0, vf0Var.L);
+        } else if (i10 == vf0Var.n) {
+            v5Var.a(LocaleController.getString(R.string.SoftenSkin), 0, vf0Var.M);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Cells.u5 u5Var;
+        Context context = this.c;
+        if (i10 == 0) {
+            org.telegram.ui.ActionBar.d6 d6Var = this.d.I0;
+            org.telegram.ui.Cells.v5 v5Var = new org.telegram.ui.Cells.v5(context);
+            v5Var.e = new ai.q4(v5Var, 29);
+            TextView textView = new TextView(context);
+            v5Var.a = textView;
+            textView.setGravity(5);
+            textView.setTextColor(-1);
+            textView.setTextSize(1, 12.0f);
+            textView.setMaxLines(1);
+            textView.setSingleLine(true);
+            textView.setEllipsize(TextUtils.TruncateAt.END);
+            v5Var.addView(textView, w7.y5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            TextView textView2 = new TextView(context);
+            v5Var.b = textView2;
+            org.telegram.messenger.ok.n(org.telegram.ui.ActionBar.h6.zf, d6Var, textView2, 1, 12.0f);
+            textView2.setGravity(5);
+            textView2.setSingleLine(true);
+            v5Var.addView(textView2, w7.y5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            if0 if0Var = new if0(context);
+            Paint paint = new Paint();
+            if0Var.a = paint;
+            Paint paint2 = new Paint(1);
+            if0Var.b = paint2;
+            if0Var.c = AndroidUtilities.dp(16.0f);
+            if0Var.d = 0;
+            if0Var.e = 0.0f;
+            if0Var.f = false;
+            paint.setColor(-11711155);
+            paint2.setColor(-1);
+            v5Var.c = if0Var;
+            v5Var.addView(if0Var, w7.y5.d(-1, 40.0f, 19, 96.0f, 0.0f, 24.0f, 0.0f));
+            v5Var.setSeekBarDelegate(new nv(this, 11));
+            u5Var = v5Var;
         } else {
-            this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
+            org.telegram.ui.Cells.u5 u5Var2 = new org.telegram.ui.Cells.u5(context);
+            u5Var2.setOnClickListener(new k80(this, 6));
+            u5Var = u5Var2;
         }
-        this.d = s71Var;
-        long j3 = photoEntry.coverSavedPosition;
-        if (j3 >= 0) {
-            this.e = j3;
-            s71Var.L(j3, false);
-        } else {
-            this.e = s71Var.n();
-        }
-        String path = s71Var.F.getPath();
-        long p5 = s71Var.p();
-        i2.f0 f0Var = s71Var.d;
-        f0Var.B1();
-        this.a.o(false, path, p5, f0Var.Z);
-        long p10 = s71Var.p();
-        float max = 2.8f / Math.max(60L, p10);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, s71Var.p()));
-        ci.wc wcVar = this.a;
-        wcVar.setVideoLeft(max2);
-        wcVar.setVideoRight(max2 + max);
-        wcVar.Z0 = 0L;
-        wcVar.a1 = p10;
-        ci.qc qcVar = wcVar.h;
-        if (qcVar != null) {
-            ci.qc.a(qcVar, true);
-        }
-        wcVar.k();
-    }
-
-    public long getTime() {
-        return this.e;
-    }
-
-    public void setOnClose(Runnable runnable) {
-        this.r = runnable;
-    }
-
-    public void setOnGalleryImage(Utilities.Callback<MediaController.PhotoEntry> callback) {
-        this.n = callback;
+        return new il0(u5Var);
     }
 }

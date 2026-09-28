@@ -20,16 +20,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.p20;
+import org.telegram.ui.Components.r20;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.yf0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout {
     public final w9 a;
-    public final p20 b;
+    public final r20 b;
     public final int c;
     public final /* synthetic */ j d;
 
@@ -37,8 +37,8 @@ public final class g extends FrameLayout {
     public g(j jVar, Context context) {
         super(context);
         this.d = jVar;
-        p20 p20Var = new p20();
-        this.b = p20Var;
+        r20 r20Var = new r20();
+        this.b = r20Var;
         int i10 = jVar.f;
         d6 d6Var = jVar.a;
         if (i10 == 0) {
@@ -56,12 +56,12 @@ public final class g extends FrameLayout {
             textView.setTextColor(h6.v0(h6.G6, d6Var));
             textView.setText(LocaleController.getString(R.string.UpgradedStories));
             addView(textView, y5.d(-2, -2.0f, 1, 0.0f, 111.0f, 0.0f, 0.0f));
-            p20Var.m = true;
-            p20Var.a = true;
-            p20Var.d(h6.w0(null, h6.Mj, false), h6.w0(null, h6.Lj, false), 0, 0);
-            p20Var.c.setStyle(Paint.Style.STROKE);
-            p20Var.c.setStrokeCap(Paint.Cap.ROUND);
-            p20Var.c.setStrokeWidth(AndroidUtilities.dpf2(3.3f));
+            r20Var.m = true;
+            r20Var.a = true;
+            r20Var.d(h6.w0(null, h6.Mj, false), h6.w0(null, h6.Lj, false), 0, 0);
+            r20Var.c.setStyle(Paint.Style.STROKE);
+            r20Var.c.setStrokeCap(Paint.Cap.ROUND);
+            r20Var.c.setStrokeWidth(AndroidUtilities.dpf2(3.3f));
             return;
         }
         if (i10 == 1) {
@@ -101,14 +101,14 @@ public final class g extends FrameLayout {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(rect);
             rectF.inset(-AndroidUtilities.dp(5.0f), -AndroidUtilities.dp(5.0f));
-            p20 p20Var = this.b;
-            p20Var.c(rectF);
+            r20 r20Var = this.b;
+            r20Var.c(rectF);
             float f7 = 360.0f / 7;
             for (int i10 = 0; i10 < 7; i10++) {
                 float f10 = (i10 * f7) - 90.0f;
                 float f11 = 5;
                 float f12 = f10 + f11;
-                canvas.drawArc(AndroidUtilities.rectTmp, f12, ((f10 + f7) - f11) - f12, false, p20Var.c);
+                canvas.drawArc(AndroidUtilities.rectTmp, f12, ((f10 + f7) - f11) - f12, false, r20Var.c);
             }
         }
         super.dispatchDraw(canvas);

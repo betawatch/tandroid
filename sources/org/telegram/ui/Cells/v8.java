@@ -17,10 +17,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.ln;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class v8 extends FrameLayout {
     public int a;
@@ -31,7 +31,7 @@ public final class v8 extends FrameLayout {
     public LinearLayout f;
     public org.telegram.ui.Components.p6 h;
     public View n;
-    public ln r;
+    public mn r;
 
     public v8(Context context) {
         super(context);
@@ -76,7 +76,7 @@ public final class v8 extends FrameLayout {
             int i10 = org.telegram.ui.ActionBar.h6.G6;
             p6Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
             this.h.setTypeface(AndroidUtilities.bold());
-            this.h.b(0.4f, 320L, rr.h);
+            this.h.b(0.4f, 320L, sr.h);
             this.f.addView(this.h, w7.y5.c(20.0f, -2));
             this.n = new View(getContext());
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
@@ -86,14 +86,14 @@ public final class v8 extends FrameLayout {
             this.f.setClipChildren(false);
             setClipChildren(false);
             addView(this.f, w7.y5.e(-2, -2, 16));
-            ln lnVar = new ln(getContext(), 9);
-            this.r = lnVar;
-            lnVar.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), 2, -1));
+            mn mnVar = new mn(getContext(), 9);
+            this.r = mnVar;
+            mnVar.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), 2, -1));
             addView(this.r, w7.y5.e(76, -1, LocaleController.isRTL ? 3 : 5));
         }
         this.h.setText(str);
         this.n.animate().cancel();
-        this.n.animate().rotation(z10 ? 0.0f : 180.0f).setDuration(340L).setInterpolator(rr.h).start();
+        this.n.animate().rotation(z10 ? 0.0f : 180.0f).setDuration(340L).setInterpolator(sr.h).start();
         this.r.setOnClickListener(new a(runnable, 11));
     }
 

@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ug0 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class ug0 implements Runnable {
                     e4Var2.l0 = new ug0(yg0Var4, 4);
                     e4Var2.d = 8000L;
                     e4Var2.u();
-                    org.telegram.ui.Components.k40.r.b();
+                    org.telegram.ui.Components.m40.r.b();
                     break;
                 }
                 break;

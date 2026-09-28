@@ -24,12 +24,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class hj1 extends org.telegram.ui.ActionBar.m2 {
     public WebView a;
     public org.telegram.ui.ActionBar.u0 b;
-    public org.telegram.ui.Components.uq c;
+    public org.telegram.ui.Components.vq c;
     public final String d;
     public final String e;
     public final String f;
@@ -113,9 +113,9 @@ public final class hj1 extends org.telegram.ui.ActionBar.m2 {
         n10.a(0, R.drawable.ic_ab_other).e(2, R.drawable.msg_openin, LocaleController.getString(R.string.OpenInExternalApp));
         this.actionBar.setTitle(this.f);
         this.actionBar.setSubtitle("@" + this.e);
-        org.telegram.ui.Components.uq uqVar = new org.telegram.ui.Components.uq(context, 1);
-        this.c = uqVar;
-        this.b.addView(uqVar, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.vq vqVar = new org.telegram.ui.Components.vq(context, 1);
+        this.c = vqVar;
+        this.b.addView(vqVar, w7.y5.c(-1.0f, -1));
         this.c.setAlpha(0.0f);
         this.c.setScaleX(0.1f);
         this.c.setScaleY(0.1f);

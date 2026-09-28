@@ -3,13 +3,13 @@ package bi;
 import android.view.KeyEvent;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.am;
-import org.telegram.ui.Components.fy0;
-import org.telegram.ui.Components.ij;
+import org.telegram.ui.Components.bm;
+import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.jj;
 import org.telegram.ui.Components.oi;
 import s4.z0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class l extends s4.s {
     public final /* synthetic */ int Q;
@@ -26,7 +26,7 @@ public final class l extends s4.s {
     public boolean Y0() {
         switch (this.Q) {
             case 3:
-                return ((fy0) this.R).W != null && LocaleController.isRTL;
+                return ((hy0) this.R).W != null && LocaleController.isRTL;
             default:
                 return super.Y0();
         }
@@ -49,14 +49,14 @@ public final class l extends s4.s {
     public void v0(RecyclerView recyclerView, z0 z0Var, int i10) {
         switch (this.Q) {
             case 1:
-                ij ijVar = new ij(this, recyclerView.getContext());
-                ijVar.a = i10;
-                w0(ijVar);
+                jj jjVar = new jj(this, recyclerView.getContext());
+                jjVar.a = i10;
+                w0(jjVar);
                 break;
             case 2:
-                am amVar = new am(this, recyclerView.getContext());
-                amVar.a = i10;
-                w0(amVar);
+                bm bmVar = new bm(this, recyclerView.getContext());
+                bmVar.a = i10;
+                w0(bmVar);
                 break;
             default:
                 super.v0(recyclerView, z0Var, i10);
@@ -79,10 +79,10 @@ public final class l extends s4.s {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(fy0 fy0Var) {
+    public l(hy0 hy0Var) {
         super(5);
         this.Q = 3;
-        this.R = fy0Var;
+        this.R = hy0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

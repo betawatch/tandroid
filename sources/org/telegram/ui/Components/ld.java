@@ -25,7 +25,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.mi1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ld implements Runnable {
     public final /* synthetic */ int a;
@@ -88,9 +88,9 @@ public final /* synthetic */ class ld implements Runnable {
                     }
                     e4Var.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), mdVar.getEditTextHeight())) - AndroidUtilities.dp(14.0f)) * (mdVar instanceof org.telegram.ui.us0 ? -1.0f : 1.0f));
                     e4Var.s(replaceTags);
-                    ij0 ij0Var = new ij0(i18 > 0 ? R.raw.fire_on : R.raw.fire_off, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
-                    ij0Var.start();
-                    e4Var.j(ij0Var);
+                    kj0 kj0Var = new kj0(i18 > 0 ? R.raw.fire_on : R.raw.fire_off, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+                    kj0Var.start();
+                    e4Var.j(kj0Var);
                     e4Var.u();
                     mdVar.o1 = false;
                     AndroidUtilities.cancelRunOnUIThread(mdVar.p1);
@@ -123,35 +123,35 @@ public final /* synthetic */ class ld implements Runnable {
                 chatActivityEnterView.requestLayout();
                 break;
             case 2:
-                qm qmVar = (qm) obj;
-                rm rmVar = qmVar.P;
-                if (i18 == qmVar.O && rmVar.w.isShown()) {
-                    rmVar.w.e(1, true);
+                rm rmVar = (rm) obj;
+                sm smVar = rmVar.P;
+                if (i18 == rmVar.O && smVar.w.isShown()) {
+                    smVar.w.e(1, true);
                     break;
                 }
                 break;
             case 3:
-                lz lzVar = (lz) obj;
-                if (lzVar.P1) {
-                    my myVar = lzVar.t1;
-                    if (myVar != null && myVar.k()) {
+                mz mzVar = (mz) obj;
+                if (mzVar.P1) {
+                    ny nyVar = mzVar.t1;
+                    if (nyVar != null && nyVar.k()) {
                         try {
-                            lzVar.x.performHapticFeedback(3);
+                            mzVar.x.performHapticFeedback(3);
                         } catch (Exception unused) {
                         }
                     }
-                    lzVar.Q1 = true;
+                    mzVar.Q1 = true;
                     int max = Math.max(50, i18 - 100);
-                    AndroidUtilities.runOnUIThread(new ld(lzVar, max, i14), max);
+                    AndroidUtilities.runOnUIThread(new ld(mzVar, max, i14), max);
                     break;
                 }
                 break;
             case 4:
-                ((ab0) obj).b.run(Integer.valueOf(i18));
+                ((cb0) obj).b.run(Integer.valueOf(i18));
                 break;
             case 5:
-                zf0 zf0Var = (zf0) obj;
-                org.telegram.ui.au0 au0Var = zf0Var.a;
+                bg0 bg0Var = (bg0) obj;
+                org.telegram.ui.au0 au0Var = bg0Var.a;
                 TextView textView = au0Var.e;
                 ci.bb bbVar = au0Var.h;
                 RadialProgressView radialProgressView = au0Var.n;
@@ -166,11 +166,11 @@ public final /* synthetic */ class ld implements Runnable {
                 }
                 if (radialProgressView.getAlpha() == 1.0f) {
                     radialProgressView.animate().cancel();
-                    radialProgressView.animate().alpha(0.0f).setDuration(150L).setListener(new yf0(zf0Var, i17));
+                    radialProgressView.animate().alpha(0.0f).setDuration(150L).setListener(new ag0(bg0Var, i17));
                 }
                 if (bbVar.getAlpha() == 1.0f) {
                     bbVar.animate().cancel();
-                    bbVar.animate().alpha(0.0f).setDuration(150L).setListener(new yf0(zf0Var, i16));
+                    bbVar.animate().alpha(0.0f).setDuration(150L).setListener(new ag0(bg0Var, i16));
                 }
                 if (i18 != 2) {
                     if (i18 != 5) {
@@ -184,7 +184,7 @@ public final /* synthetic */ class ld implements Runnable {
                         textView2.setText(LocaleController.getString(R.string.YouTubeVideoErrorNotAvailableInApp));
                         textView.setText(LocaleController.getString(R.string.YouTubeVideoErrorOpenExternal));
                         textView.setVisibility(0);
-                        textView.setOnClickListener(new i80(zf0Var, 7));
+                        textView.setOnClickListener(new k80(bg0Var, 7));
                         break;
                     } else {
                         textView2.setText(LocaleController.getString(R.string.YouTubeVideoErrorHTML));
@@ -196,86 +196,86 @@ public final /* synthetic */ class ld implements Runnable {
                 }
                 break;
             case 6:
-                gj0 gj0Var = (gj0) obj;
-                gj0Var.V0 = false;
-                if (gj0Var.W0) {
-                    gj0Var.C(true);
+                ij0 ij0Var = (ij0) obj;
+                ij0Var.V0 = false;
+                if (ij0Var.W0) {
+                    ij0Var.C(true);
                     break;
                 } else {
-                    gj0Var.a1 = i18;
-                    gj0Var.I();
-                    gj0Var.x();
+                    ij0Var.a1 = i18;
+                    ij0Var.I();
+                    ij0Var.x();
                     break;
                 }
             case 7:
-                ((jv0) obj).d1(i18);
+                ((lv0) obj).d1(i18);
                 break;
             case 8:
-                ((cu0) obj).h.scrollBy(0, i18);
+                ((eu0) obj).h.scrollBy(0, i18);
                 break;
             case 9:
-                jv0 jv0Var = ((bt0) obj).a;
-                org.telegram.ui.ActionBar.m2 m2Var = jv0Var.v1;
+                lv0 lv0Var = ((dt0) obj).a;
+                org.telegram.ui.ActionBar.m2 m2Var = lv0Var.v1;
                 if (m2Var != null) {
-                    if (jv0Var.d1 instanceof TLRPC.TL_channelFull) {
+                    if (lv0Var.d1 instanceof TLRPC.TL_channelFull) {
                         TLRPC.TL_channels_setMainProfileTab tL_channels_setMainProfileTab = new TLRPC.TL_channels_setMainProfileTab();
-                        tL_channels_setMainProfileTab.tab = jv0.d0(i18, true);
-                        tL_channels_setMainProfileTab.channel = m2Var.getMessagesController().getInputChannel(jv0Var.d1.id);
-                        TLRPC.ChatFull chatFull = jv0Var.d1;
+                        tL_channels_setMainProfileTab.tab = lv0.d0(i18, true);
+                        tL_channels_setMainProfileTab.channel = m2Var.getMessagesController().getInputChannel(lv0Var.d1.id);
+                        TLRPC.ChatFull chatFull = lv0Var.d1;
                         chatFull.flags2 |= TLObject.FLAG_22;
                         chatFull.main_tab = tL_channels_setMainProfileTab.tab;
                         tL_account_setMainProfileTab = tL_channels_setMainProfileTab;
                     } else {
                         TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab2 = new TLRPC.TL_account_setMainProfileTab();
-                        TLRPC.ProfileTab d02 = jv0.d0(i18, true);
+                        TLRPC.ProfileTab d02 = lv0.d0(i18, true);
                         tL_account_setMainProfileTab2.tab = d02;
-                        TLRPC.UserFull userFull = jv0Var.e1;
+                        TLRPC.UserFull userFull = lv0Var.e1;
                         tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         if (userFull != null) {
                             userFull.flags2 |= 1048576;
                             userFull.main_tab = d02;
-                            m2Var.getMessagesStorage().updateUserInfo(jv0Var.e1, true);
+                            m2Var.getMessagesStorage().updateUserInfo(lv0Var.e1, true);
                             tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         }
                     }
                     m2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
-                    jv0Var.v1(true);
+                    lv0Var.v1(true);
                     break;
                 }
                 break;
             case 10:
-                ((gx0) obj).k0(i18, 0);
+                ((ix0) obj).k0(i18, 0);
                 break;
             case 11:
-                t41 t41Var = (t41) obj;
-                t41Var.U();
-                t41Var.g0 = i18;
-                i41.I(t41Var.f0);
-                t41Var.V();
+                v41 v41Var = (v41) obj;
+                v41Var.U();
+                v41Var.g0 = i18;
+                k41.I(v41Var.f0);
+                v41Var.V();
                 break;
             case 12:
-                ((v81) obj).v.x0(i18);
+                ((x81) obj).v.x0(i18);
                 break;
             case 13:
-                o91 o91Var = (o91) obj;
-                s71 s71Var = o91Var.a;
+                q91 q91Var = (q91) obj;
+                u71 u71Var = q91Var.a;
                 if (i18 == -1) {
-                    if (s71Var.y()) {
-                        s71Var.B();
-                        o91Var.n();
+                    if (u71Var.y()) {
+                        u71Var.B();
+                        q91Var.n();
                     }
-                    o91Var.J = false;
+                    q91Var.J = false;
                     break;
                 } else if (i18 == 1) {
-                    if (o91Var.K) {
-                        o91Var.K = false;
-                        s71Var.C();
+                    if (q91Var.K) {
+                        q91Var.K = false;
+                        u71Var.C();
                         break;
                     }
-                } else if (i18 != -3 && i18 == -2 && s71Var.y()) {
-                    o91Var.K = true;
-                    s71Var.B();
-                    o91Var.n();
+                } else if (i18 != -3 && i18 == -2 && u71Var.y()) {
+                    q91Var.K = true;
+                    u71Var.B();
+                    q91Var.n();
                     break;
                 }
                 break;
@@ -480,7 +480,7 @@ public final /* synthetic */ class ld implements Runnable {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 jVar.P = duration;
-                duration.setInterpolator(rr.f);
+                duration.setInterpolator(sr.f);
                 jVar.P.addUpdateListener(new qg.f(jVar, i13));
                 jVar.P.addListener(new qg.g(jVar, i15));
                 jVar.P.start();

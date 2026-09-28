@@ -42,14 +42,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class nt {
     public static TextPaint f0;
     public static volatile nt g0;
     public final ImageReceiver A;
     public final ImageReceiver B;
-    public org.telegram.ui.Components.qd0 C;
+    public org.telegram.ui.Components.sd0 C;
     public Path D;
     public boolean E;
     public float F;
@@ -86,7 +86,7 @@ public final class nt {
     public float g;
     public View h;
     public boolean i;
-    public org.telegram.ui.Components.f21 j;
+    public org.telegram.ui.Components.h21 j;
     public org.telegram.ui.ActionBar.m1 k;
     public lt l;
     public boolean m;
@@ -167,22 +167,22 @@ public final class nt {
         boolean z13 = !z12 && MessageObject.canUnvote(d);
         if (z11) {
             qh.q qVar2 = new qh.q(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext(), ntVar.r, ntVar.c0);
-            org.telegram.ui.Components.y70 y70Var = new org.telegram.ui.Components.y70(actionBarPopupWindow$ActionBarPopupWindowLayout, ntVar.c0);
-            int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout.b(y70Var.B);
+            org.telegram.ui.Components.a80 a80Var = new org.telegram.ui.Components.a80(actionBarPopupWindow$ActionBarPopupWindowLayout, ntVar.c0);
+            int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout.b(a80Var.B);
             int i10 = org.telegram.ui.ActionBar.h6.E8;
-            y70Var.T(org.telegram.ui.ActionBar.h6.l1(0.06f, org.telegram.ui.ActionBar.h6.v0(i10, ntVar.c0)));
+            a80Var.T(org.telegram.ui.ActionBar.h6.l1(0.06f, org.telegram.ui.ActionBar.h6.v0(i10, ntVar.c0)));
             ah.c cVar = ntVar.t;
             dh.e k10 = eh.b.k(ntVar.c0);
             org.telegram.ui.ActionBar.m2 m2Var = null;
-            LinearLayout linearLayout = y70Var.B;
+            LinearLayout linearLayout = a80Var.B;
             if (linearLayout != null) {
                 ch.d c10 = cVar.c(linearLayout, null, true);
                 c10.o(k10);
                 linearLayout.setBackground(c10);
             }
             z10 = true;
-            y70Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new aj(actionBarPopupWindow$ActionBarPopupWindowLayout, 15), false);
-            y70Var.k();
+            a80Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new aj(actionBarPopupWindow$ActionBarPopupWindowLayout, 15), false);
+            a80Var.k();
             MessageObject A = ntVar.l.A();
             Activity activity = ntVar.w;
             if ((activity instanceof LaunchActivity) && A != null) {
@@ -191,9 +191,9 @@ public final class nt {
                     m2Var = launchActivity.O().getLastFragment();
                 }
                 if (m2Var != null) {
-                    org.telegram.ui.Components.r61 a2 = qVar2.a(m2Var, A.getDialogId(), A.getId(), h.option, pollResult.voters, new bt(0, ntVar, m2Var));
+                    org.telegram.ui.Components.t61 a2 = qVar2.a(m2Var, A.getDialogId(), A.getId(), h.option, pollResult.voters, new bt(0, ntVar, m2Var));
                     qVar = qVar2;
-                    y70Var.q(a2);
+                    a80Var.q(a2);
                     qVar.setText(LocaleController.formatPluralString("PollVotesCount", pollResult.voters, new Object[0]));
                     qVar.a.d(pollResult.recent_voters, false);
                     qVar.setLayoutParams(w7.y5.n(-1, 48));
@@ -283,11 +283,11 @@ public final class nt {
         AndroidUtilities.runOnUIThread(new ys(this, 0), 200L);
         ah1 ah1Var = this.O;
         if (ah1Var != null) {
-            ah1Var.animate().alpha(0.0f).translationY(AndroidUtilities.dp(56.0f)).setDuration(150L).setInterpolator(org.telegram.ui.Components.rr.f).start();
+            ah1Var.animate().alpha(0.0f).translationY(AndroidUtilities.dp(56.0f)).setDuration(150L).setInterpolator(org.telegram.ui.Components.sr.f).start();
         }
         FrameLayout frameLayout = this.Q;
         if (frameLayout != null) {
-            frameLayout.animate().alpha(0.0f).setDuration(150L).scaleX(0.6f).scaleY(0.6f).setInterpolator(org.telegram.ui.Components.rr.f).start();
+            frameLayout.animate().alpha(0.0f).setDuration(150L).scaleX(0.6f).scaleY(0.6f).setInterpolator(org.telegram.ui.Components.sr.f).start();
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 8);
     }
@@ -313,7 +313,7 @@ public final class nt {
         }
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.L;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
-            org.telegram.messenger.ok.s(actionBarPopupWindow$ActionBarPopupWindowLayout.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).translationY(AndroidUtilities.dp(-12.0f)), org.telegram.ui.Components.rr.h, 320L);
+            org.telegram.messenger.ok.s(actionBarPopupWindow$ActionBarPopupWindowLayout.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).translationY(AndroidUtilities.dp(-12.0f)), org.telegram.ui.Components.sr.h, 320L);
             this.L = null;
             this.K = false;
             if (this.R) {
@@ -322,7 +322,7 @@ public final class nt {
         }
     }
 
-    public final boolean r(MotionEvent motionEvent, org.telegram.ui.Components.wl0 wl0Var, lt ltVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public final boolean r(MotionEvent motionEvent, org.telegram.ui.Components.yl0 yl0Var, lt ltVar, org.telegram.ui.ActionBar.d6 d6Var) {
         int i10;
         this.l = ltVar;
         if (ltVar != null) {
@@ -333,13 +333,13 @@ public final class nt {
         if ((ltVar2 == null || ltVar2.i()) && motionEvent.getAction() == 0) {
             int x10 = (int) motionEvent.getX();
             int y3 = (int) motionEvent.getY();
-            int childCount = wl0Var.getChildCount();
+            int childCount = yl0Var.getChildCount();
             int i11 = 0;
             while (true) {
                 if (i11 >= childCount) {
                     break;
                 }
-                View childAt = wl0Var.getChildAt(i11);
+                View childAt = yl0Var.getChildAt(i11);
                 if (childAt == null) {
                     break;
                 }
@@ -379,10 +379,10 @@ public final class nt {
                                 }
                             }
                             i10 = -1;
-                        } else if (childAt instanceof org.telegram.ui.Components.kv) {
+                        } else if (childAt instanceof org.telegram.ui.Components.lv) {
                             imageReceiver.setRoundRadius(0);
-                        } else if (!(childAt instanceof org.telegram.ui.Components.uy) || ((org.telegram.ui.Components.uy) childAt).getSpan() == null) {
-                            if ((childAt instanceof org.telegram.ui.Components.wy0) && (((org.telegram.ui.Components.wy0) childAt).b instanceof org.telegram.ui.Components.q5)) {
+                        } else if (!(childAt instanceof org.telegram.ui.Components.vy) || ((org.telegram.ui.Components.vy) childAt).getSpan() == null) {
+                            if ((childAt instanceof org.telegram.ui.Components.yy0) && (((org.telegram.ui.Components.yy0) childAt).b instanceof org.telegram.ui.Components.q5)) {
                                 imageReceiver.setRoundRadius(0);
                             }
                             i10 = -1;
@@ -394,9 +394,9 @@ public final class nt {
                         this.a = x10;
                         this.b = y3;
                         this.h = childAt;
-                        org.telegram.ui.Components.f21 f21Var = new org.telegram.ui.Components.f21(this, wl0Var, i10, d6Var, 1);
-                        this.j = f21Var;
-                        AndroidUtilities.runOnUIThread(f21Var, 200L);
+                        org.telegram.ui.Components.h21 h21Var = new org.telegram.ui.Components.h21(this, yl0Var, i10, d6Var, 1);
+                        this.j = h21Var;
+                        AndroidUtilities.runOnUIThread(h21Var, 200L);
                         return true;
                     }
                 }
@@ -414,7 +414,7 @@ public final class nt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean s(MotionEvent motionEvent, org.telegram.ui.Components.wl0 wl0Var, Object obj, lt ltVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public final boolean s(MotionEvent motionEvent, org.telegram.ui.Components.yl0 yl0Var, Object obj, lt ltVar, org.telegram.ui.ActionBar.d6 d6Var) {
         int i10;
         int i11;
         lt ltVar2;
@@ -429,10 +429,10 @@ public final class nt {
         lt ltVar3 = this.l;
         if ((ltVar3 == null || ltVar3.i()) && (this.j != null || this.E)) {
             if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3 || motionEvent.getAction() == 6) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.wn0(28, wl0Var, obj), 150L);
-                org.telegram.ui.Components.f21 f21Var = this.j;
-                if (f21Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(f21Var);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yn0(28, yl0Var, obj), 150L);
+                org.telegram.ui.Components.h21 h21Var = this.j;
+                if (h21Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(h21Var);
                     this.j = null;
                     return false;
                 }
@@ -456,13 +456,13 @@ public final class nt {
                         if (this.V != 1 || this.m) {
                             int x10 = (int) motionEvent.getX();
                             int y3 = (int) motionEvent.getY();
-                            int childCount = wl0Var.getChildCount();
+                            int childCount = yl0Var.getChildCount();
                             int i12 = 0;
                             while (true) {
                                 if (i12 >= childCount) {
                                     break;
                                 }
-                                View childAt = wl0Var.getChildAt(i12);
+                                View childAt = yl0Var.getChildAt(i12);
                                 if (childAt == null) {
                                     break;
                                 }
@@ -494,9 +494,9 @@ public final class nt {
                                             }
                                             i10 = i11;
                                         } else {
-                                            if (childAt instanceof org.telegram.ui.Components.kv) {
+                                            if (childAt instanceof org.telegram.ui.Components.lv) {
                                                 imageReceiver.setRoundRadius(0);
-                                            } else if (!(childAt instanceof org.telegram.ui.Components.uy) || ((org.telegram.ui.Components.uy) childAt).getSpan() == null) {
+                                            } else if (!(childAt instanceof org.telegram.ui.Components.vy) || ((org.telegram.ui.Components.vy) childAt).getSpan() == null) {
                                                 i10 = -1;
                                             } else {
                                                 imageReceiver.setRoundRadius(0);
@@ -547,13 +547,13 @@ public final class nt {
                                                 if (i10 != 1 || this.m) {
                                                     f2Var2.setScaled(true);
                                                 }
-                                            } else if (view2 instanceof org.telegram.ui.Components.kv) {
-                                                TLRPC.Document document3 = ((org.telegram.ui.Components.kv) view2).getDocument();
+                                            } else if (view2 instanceof org.telegram.ui.Components.lv) {
+                                                TLRPC.Document document3 = ((org.telegram.ui.Components.lv) view2).getDocument();
                                                 if (document3 != null) {
                                                     t(document3, null, MessageObject.findAnimatedEmojiEmoticon(document3, null, Integer.valueOf(this.r)), null, null, i10, false, null, d6Var, 0);
                                                 }
-                                            } else if (view2 instanceof org.telegram.ui.Components.uy) {
-                                                org.telegram.ui.Components.z5 span = ((org.telegram.ui.Components.uy) view2).getSpan();
+                                            } else if (view2 instanceof org.telegram.ui.Components.vy) {
+                                                org.telegram.ui.Components.z5 span = ((org.telegram.ui.Components.vy) view2).getSpan();
                                                 if (span != null) {
                                                     TLRPC.Document document4 = span.document;
                                                     if (document4 == null) {
@@ -566,8 +566,8 @@ public final class nt {
                                                 if (document != null) {
                                                     t(document, null, MessageObject.findAnimatedEmojiEmoticon(document, null, Integer.valueOf(this.r)), null, null, i10, false, null, d6Var, 0);
                                                 }
-                                            } else if (view2 instanceof org.telegram.ui.Components.wy0) {
-                                                Drawable drawable = ((org.telegram.ui.Components.wy0) view2).b;
+                                            } else if (view2 instanceof org.telegram.ui.Components.yy0) {
+                                                Drawable drawable = ((org.telegram.ui.Components.yy0) view2).b;
                                                 TLRPC.Document document5 = drawable instanceof org.telegram.ui.Components.q5 ? ((org.telegram.ui.Components.q5) drawable).e : null;
                                                 if (document5 != null) {
                                                     t(document5, null, MessageObject.findAnimatedEmojiEmoticon(document5, null, Integer.valueOf(this.r)), null, null, i10, false, null, d6Var, 0);
@@ -762,9 +762,9 @@ public final class nt {
                     imageReceiver4.setImage(importingSticker.path, null, null, importingSticker.animated ? "tgs" : null, 0L);
                     if (importingSticker.videoEditedInfo != null) {
                         if (this.C == null) {
-                            org.telegram.ui.Components.qd0 qd0Var = new org.telegram.ui.Components.qd0(this.z.getContext());
-                            this.C = qd0Var;
-                            this.z.addView(qd0Var, new FrameLayout.LayoutParams(512, 512));
+                            org.telegram.ui.Components.sd0 sd0Var = new org.telegram.ui.Components.sd0(this.z.getContext());
+                            this.C = sd0Var;
+                            this.z.addView(sd0Var, new FrameLayout.LayoutParams(512, 512));
                         }
                         z11 = false;
                         this.C.b(importingSticker.videoEditedInfo.mediaEntities, true, true, false);
@@ -874,9 +874,9 @@ public final class nt {
     }
 
     public final void u() {
-        org.telegram.ui.Components.f21 f21Var = this.j;
-        if (f21Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(f21Var);
+        org.telegram.ui.Components.h21 h21Var = this.j;
+        if (h21Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(h21Var);
             this.j = null;
         }
         View view = this.h;

@@ -11,10 +11,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class l extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
-    public org.telegram.ui.Components.wl0 a;
+    public org.telegram.ui.Components.yl0 a;
     public k b;
     public boolean c;
     public TLRPC.GlobalPrivacySettings d;
@@ -67,20 +67,20 @@ public final class l extends org.telegram.ui.ActionBar.m2 implements Notificatio
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.a = wl0Var;
-        wl0Var.p1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setLayoutManager(new gg.b0(1, false, 2));
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setLayoutAnimation(null);
-        org.telegram.ui.Components.wl0 wl0Var2 = this.a;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.a;
         k kVar = new k(this);
         this.b = kVar;
-        wl0Var2.setAdapter(kVar);
+        yl0Var2.setAdapter(kVar);
         s4.j jVar = new s4.j();
         jVar.n(350L);
-        jVar.o(org.telegram.ui.Components.rr.h);
+        jVar.o(org.telegram.ui.Components.sr.h);
         jVar.C = false;
         jVar.m = false;
         this.a.setItemAnimator(jVar);

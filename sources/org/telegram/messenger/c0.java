@@ -23,12 +23,12 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.no0;
+import org.telegram.ui.Components.po0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, ci.j8, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, no0, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class c0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, ci.j8, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, po0, org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -41,7 +41,7 @@ public final /* synthetic */ class c0 implements ResultCallback, WriteToSocketDe
         BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, hVar, sVar);
     }
 
-    @Override // org.telegram.ui.Components.no0
+    @Override // org.telegram.ui.Components.po0
     public void b(float f7) {
         ((RichMessageLayout.RichAudioBlock) this.b).lambda$new$0(f7);
     }
@@ -127,7 +127,7 @@ public final /* synthetic */ class c0 implements ResultCallback, WriteToSocketDe
         ProxyRotationController.lambda$new$1((SharedConfig.ProxyInfo) this.b, j3);
     }
 
-    @Override // org.telegram.ui.Components.no0
+    @Override // org.telegram.ui.Components.po0
     public /* synthetic */ void d(float f7) {
     }
 }

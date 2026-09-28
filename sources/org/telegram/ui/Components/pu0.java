@@ -1,45 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatMessageSharedResources;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class pu0 extends org.telegram.ui.Cells.u1 {
-    public final /* synthetic */ int Ge = 1;
+public final class pu0 extends org.telegram.ui.lu0 {
+    public final /* synthetic */ qu0 a;
 
-    public /* synthetic */ pu0(Context context, int i10) {
-        super(context, i10);
+    public pu0(qu0 qu0Var) {
+        this.a = qu0Var;
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public int getParentWidth() {
-        int i10;
-        int dp;
-        switch (this.Ge) {
-            case 1:
-                if (getMeasuredWidth() != 0) {
-                    i10 = getMeasuredWidth();
-                    dp = AndroidUtilities.dp(24.0f);
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final org.telegram.ui.vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver;
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject messageObject2;
+        su0 su0Var = this.a.c;
+        du0 du0Var = su0Var.r;
+        if (du0Var != null) {
+            int childCount = du0Var.getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = su0Var.r.getChildAt(i11);
+                if (!(childAt instanceof org.telegram.ui.Cells.u1) || messageObject == null || (messageObject2 = (u1Var = (org.telegram.ui.Cells.u1) childAt).getMessageObject()) == null || messageObject2.getId() != messageObject.getId()) {
+                    imageReceiver = null;
                 } else {
-                    i10 = AndroidUtilities.displaySize.x;
-                    dp = AndroidUtilities.dp(24.0f);
+                    ArrayList<Integer> arrayList = messageObject2.pollMediaMapping;
+                    imageReceiver = (arrayList == null || i10 < 0 || i10 >= arrayList.size()) ? u1Var.F2(i10) : u1Var.F2(messageObject2.pollMediaMapping.get(i10).intValue());
                 }
-                return i10 - dp;
-            default:
-                return super.getParentWidth();
+                if (imageReceiver != null) {
+                    int[] iArr = new int[2];
+                    childAt.getLocationInWindow(iArr);
+                    org.telegram.ui.vu0 vu0Var = new org.telegram.ui.vu0();
+                    vu0Var.b = iArr[0];
+                    vu0Var.c = childAt.getPaddingTop() + iArr[1];
+                    vu0Var.d = su0Var.r;
+                    vu0Var.m = null;
+                    vu0Var.a = imageReceiver;
+                    if (z10) {
+                        vu0Var.e = imageReceiver.getBitmapSafe();
+                    }
+                    vu0Var.h = imageReceiver.getRoundRadius(true);
+                    vu0Var.j = 0;
+                    vu0Var.i = 0;
+                    return vu0Var;
+                }
+            }
         }
+        return null;
     }
 
-    @Override // android.view.View
-    public final boolean isPressed() {
-        switch (this.Ge) {
-        }
-        return false;
-    }
-
-    public /* synthetic */ pu0(Context context, int i10, boolean z10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, i10, z10, chatMessageSharedResources, d6Var);
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final boolean K() {
+        return true;
     }
 }

@@ -19,12 +19,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.Components.rv0;
-import org.telegram.ui.Components.sv0;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uv0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, rv0, sv0, org.telegram.ui.ActionBar.z1, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
+public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, tv0, uv0, org.telegram.ui.ActionBar.z1, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w1(int i10) {
@@ -271,7 +271,7 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
         }
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.uv0
     public void b(Object obj, float f7) {
         m2 m2Var = (m2) obj;
         switch (this.a) {
@@ -302,7 +302,7 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
         }
     }
 
-    @Override // org.telegram.ui.Components.rv0
+    @Override // org.telegram.ui.Components.tv0
     public float get(Object obj) {
         m2 m2Var = (m2) obj;
         switch (this.a) {

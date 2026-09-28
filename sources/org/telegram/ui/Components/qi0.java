@@ -1,164 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class qi0 extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public final Paint c;
-    public final RectF d;
-    public int e;
-    public long f;
-    public float g;
-    public boolean h;
-    public boolean i;
+public final class qi0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ri0 b;
 
-    public qi0(Context context) {
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = new RectF();
-        this.e = 0;
-        this.a = context.getResources().getDrawable(R.drawable.outline_shield_plain_24).mutate();
-        this.b = context.getResources().getDrawable(R.drawable.outline_shield_check).mutate();
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.66f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        this.f = SystemClock.elapsedRealtime();
+    public /* synthetic */ qi0(ri0 ri0Var, int i10) {
+        this.a = i10;
+        this.b = ri0Var;
     }
 
-    public final void a(Drawable drawable) {
-        Rect bounds = getBounds();
-        drawable.setBounds(org.telegram.messenger.ok.z(2, bounds.centerX(), drawable), org.telegram.messenger.ok.d(2, bounds.centerY(), drawable), org.telegram.ui.Cells.c1.t(2, bounds.centerX(), drawable), org.telegram.ui.Cells.c1.d(2, bounds.centerY(), drawable));
-    }
-
-    public final void b(boolean z10, boolean z11, boolean z12) {
-        this.i = z10;
-        this.h = z11;
-        this.f = SystemClock.elapsedRealtime();
-        if (!z12) {
-            this.g = this.h ? 1.0f : 0.0f;
-        }
-        invalidateSelf();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = elapsedRealtime - this.f;
-        this.f = elapsedRealtime;
-        boolean z11 = this.i;
-        Drawable drawable = this.a;
-        if (!z11) {
-            a(drawable);
-            drawable.draw(canvas);
-        } else if (!this.h || this.g != 1.0f) {
-            a(drawable);
-            drawable.draw(canvas);
-            int i10 = (int) ((1.0f - this.g) * 255.0f);
-            Paint paint = this.c;
-            paint.setAlpha(i10);
-            this.e += (int) ((360 * j3) / 1000.0f);
-            int width = getBounds().width();
-            int height = getBounds().height();
-            int dp = AndroidUtilities.dp(4.0f);
-            RectF rectF = this.d;
-            rectF.set((width / 2) - dp, (height / 2) - dp, r0 + dp + dp, r4 + dp + dp);
-            canvas2 = canvas;
-            canvas2.drawArc(rectF, this.e - 90, 90.0f, false, paint);
-            invalidateSelf();
-            if (this.i && (this.h || this.g != 0.0f)) {
-                int i11 = (int) (this.g * 255.0f);
-                Drawable drawable2 = this.b;
-                drawable2.setAlpha(i11);
-                a(drawable2);
-                drawable2.draw(canvas2);
-            }
-            z10 = this.h;
-            if (z10) {
-                float f7 = this.g;
-                if (f7 != 1.0f) {
-                    float f10 = (j3 / 300.0f) + f7;
-                    this.g = f10;
-                    if (f10 > 1.0f) {
-                        this.g = 1.0f;
-                    }
-                    invalidateSelf();
-                    return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                ri0 ri0Var = this.b;
+                AnimatorSet animatorSet = ri0Var.s;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    ri0Var.s = null;
+                    ri0Var.getClass();
+                    break;
                 }
-            }
-            if (z10) {
-                float f11 = this.g;
-                if (f11 != 0.0f) {
-                    float f12 = f11 - (j3 / 300.0f);
-                    this.g = f12;
-                    if (f12 < 0.0f) {
-                        this.g = 0.0f;
-                    }
-                    invalidateSelf();
-                    return;
+                break;
+            case 2:
+                ri0 ri0Var2 = this.b;
+                AnimatorSet animatorSet2 = ri0Var2.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    ri0Var2.s = null;
+                    ri0Var2.getClass();
+                    break;
                 }
-                return;
-            }
-            return;
-        }
-        canvas2 = canvas;
-        if (this.i) {
-            int i112 = (int) (this.g * 255.0f);
-            Drawable drawable22 = this.b;
-            drawable22.setAlpha(i112);
-            a(drawable22);
-            drawable22.draw(canvas2);
-        }
-        z10 = this.h;
-        if (z10) {
-        }
-        if (z10) {
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-        this.b.setColorFilter(colorFilter);
-        this.c.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        ri0 ri0Var = this.b;
+        switch (i10) {
+            case 0:
+                AnimatorSet animatorSet = ri0Var.h;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    ri0Var.h = null;
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            case 1:
+                AnimatorSet animatorSet2 = ri0Var.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    ri0Var.s = null;
+                    if (ri0Var.w) {
+                        ri0Var.setLayerType(0, null);
+                    }
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            default:
+                AnimatorSet animatorSet3 = ri0Var.s;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    ri0Var.s = null;
+                    AndroidUtilities.runOnUIThread(new kc0(this, 15));
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+        }
     }
 }

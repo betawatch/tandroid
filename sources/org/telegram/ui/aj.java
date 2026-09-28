@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aj implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class aj implements Runnable {
                 wn wnVar = uiVar.b;
                 if (wnVar.e2 != null) {
                     AnimatorSet animatorSet = new AnimatorSet();
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(wnVar.e2, (Property<org.telegram.ui.Components.j40, Float>) View.ALPHA, 0.0f));
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(wnVar.e2, (Property<org.telegram.ui.Components.l40, Float>) View.ALPHA, 0.0f));
                     animatorSet.addListener(new t4(uiVar, 19));
                     animatorSet.setDuration(300L);
                     animatorSet.start();
@@ -107,7 +107,7 @@ public final /* synthetic */ class aj implements Runnable {
                 }
                 roVar.O0 = true;
                 if (roVar.R0 == null) {
-                    roVar.R0 = new org.telegram.ui.Components.ij0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                    roVar.R0 = new org.telegram.ui.Components.kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                 }
                 roVar.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                 roVar.b0.e.setAnimation(roVar.R0);

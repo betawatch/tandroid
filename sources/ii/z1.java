@@ -6,12 +6,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.uq0;
 import org.telegram.ui.Components.vg;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class z1 extends vg {
     public final /* synthetic */ int l0;
@@ -61,7 +61,7 @@ public final class z1 extends vg {
         Object obj = this.m0;
         switch (i10) {
             case 2:
-                return ((uq0) obj).getThemedColor(org.telegram.ui.ActionBar.h6.S5);
+                return ((wq0) obj).getThemedColor(org.telegram.ui.ActionBar.h6.S5);
             case 3:
             default:
                 return super.getFillColor();

@@ -97,18 +97,18 @@ import m.p3;
 import n6.l;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.p71;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.sz;
-import org.telegram.ui.Components.wz;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.tz;
+import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.xz;
 import v7.j;
 import v7.o;
 import z3.d;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final class a implements s, p71, d, a0, OnCompleteListener, n5.b {
+public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
     public static a e;
     public final /* synthetic */ int a;
     public Object b;
@@ -593,53 +593,53 @@ public final class a implements s, p71, d, a0, OnCompleteListener, n5.b {
         scheduledFuture.cancel(false);
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public void onError(s71 s71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.r71
+    public void onError(u71 u71Var, Exception exc) {
         ha haVar = ((b7) this.d).N;
         if (haVar != null) {
             haVar.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onStateChanged(boolean z10, int i10) {
         b7 b7Var = (b7) this.d;
         z6 z6Var = b7Var.K;
-        s71 s71Var = b7Var.e;
-        if (s71Var == null) {
+        u71 u71Var = b7Var.e;
+        if (u71Var == null) {
             return;
         }
-        if (s71Var.y()) {
+        if (u71Var.y()) {
             AndroidUtilities.runOnUIThread(z6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(z6Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((b7) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         b7 b7Var = (b7) this.d;
         l8 l8Var = (l8) this.b;
         if (l8Var != null) {
             k8 q6 = b7Var.e.q(l8Var.d1);
             l8Var.d1 = q6;
-            i71 i71Var = b7Var.n;
-            if (i71Var != null) {
-                i71Var.setHDRInfo(q6);
+            k71 k71Var = b7Var.n;
+            if (k71Var != null) {
+                k71Var.setHDRInfo(q6);
             }
         }
         int i13 = (int) (i10 * f7);
@@ -652,17 +652,17 @@ public final class a implements s, p71, d, a0, OnCompleteListener, n5.b {
             l8Var.A();
         }
         b7Var.b();
-        i71 i71Var2 = b7Var.n;
-        if (i71Var2 != null) {
+        k71 k71Var2 = b7Var.n;
+        if (k71Var2 != null) {
             int i15 = b7Var.f;
             int i16 = b7Var.h;
-            i71Var2.d = i15;
-            i71Var2.e = i16;
-            wz wzVar = i71Var2.b;
-            if (wzVar == null) {
+            k71Var2.d = i15;
+            k71Var2.e = i16;
+            xz xzVar = k71Var2.b;
+            if (xzVar == null) {
                 return;
             }
-            wzVar.postRunnable(new sz(wzVar, i15, i16, 0));
+            xzVar.postRunnable(new tz(xzVar, i15, i16, 0));
         }
     }
 
@@ -878,7 +878,7 @@ public final class a implements s, p71, d, a0, OnCompleteListener, n5.b {
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onRenderedFirstFrame() {
         l8 l8Var = (l8) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -897,10 +897,10 @@ public final class a implements s, p71, d, a0, OnCompleteListener, n5.b {
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            i71 i71Var = b7Var.n;
-            if (i71Var != null) {
+            k71 k71Var = b7Var.n;
+            if (k71Var != null) {
                 if (a7Var == null || !a7Var.g) {
-                    i71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, l8Var)).start();
+                    k71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, l8Var)).start();
                     return;
                 }
                 return;
@@ -985,11 +985,11 @@ public final class a implements s, p71, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 

@@ -1,35 +1,23 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class dj extends r61 {
-    public final /* synthetic */ hj f3;
+public final class dj extends FragmentContextView {
+    public final /* synthetic */ FrameLayout Q0;
+    public final /* synthetic */ ij R0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dj(hj hjVar, Context context, int i10, d dVar, aj ajVar, aj ajVar2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, i10, 0, false, dVar, ajVar, ajVar2, d6Var);
-        this.f3 = hjVar;
+    public dj(ij ijVar, Context context, org.telegram.ui.ActionBar.m2 m2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, FrameLayout frameLayout2) {
+        super(context, m2Var, frameLayout, false, d6Var);
+        this.R0 = ijVar;
+        this.Q0 = frameLayout2;
     }
 
-    @Override // org.telegram.ui.Components.r61
-    public final void C1() {
-        hj hjVar = this.f3;
-        hjVar.b.X1(hjVar, 0);
-    }
-
-    @Override // org.telegram.ui.Components.wl0
-    public final boolean E0(float f7) {
-        wi wiVar = this.f3.b;
-        return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + wiVar.b2[0]) + (!wiVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
-    }
-
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        hj hjVar = this.f3;
-        hjVar.b.X1(hjVar, 0);
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        this.R0.x.i(this.Q0, i10 == 0, true);
     }
 }

@@ -32,10 +32,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.t81;
-import org.telegram.ui.Components.u81;
 import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.w81;
 import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.x81;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -43,7 +43,7 @@ import org.telegram.ui.da0;
 import org.telegram.ui.wn;
 import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
     */
     public final void run(Object obj) {
         int[] iArr;
-        u81 u81Var;
+        w81 w81Var;
         ci.y8 y8Var = null;
         r4 = false;
         boolean z10 = false;
@@ -237,13 +237,13 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 }
                 break;
             case 5:
-                v81 v81Var = (v81) this.c;
+                x81 x81Var = (x81) this.c;
                 boolean z16 = this.b;
                 View view3 = (View) obj;
-                v81Var.v.getClass();
+                x81Var.v.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof t81) {
-                    ((t81) view3).setReordering(z16 && (u81Var = v81Var.y) != null && ((l.d) u81Var).G(R));
+                if (view3 instanceof v81) {
+                    ((v81) view3).setReordering(z16 && (w81Var = x81Var.y) != null && ((l.d) w81Var).G(R));
                     break;
                 }
                 break;

@@ -5,9 +5,9 @@ import android.graphics.Paint;
 import android.view.ViewGroup;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class aq0 extends org.telegram.ui.Components.vl0 {
+public final class aq0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ cq0 d;
 
@@ -16,7 +16,7 @@ public final class aq0 extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -71,6 +71,6 @@ public final class aq0 extends org.telegram.ui.Components.vl0 {
             y5Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(y5Var, 9));
         }
         y5Var.setDelegate(new ml0(this, 1));
-        return new org.telegram.ui.Components.gl0(y5Var);
+        return new org.telegram.ui.Components.il0(y5Var);
     }
 }

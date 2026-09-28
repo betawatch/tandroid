@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i2 extends View implements org.telegram.ui.Cells.p9 {
     public final p70 a;
@@ -241,7 +241,7 @@ public final class i2 extends View implements org.telegram.ui.Cells.p9 {
             objArr[c10] = str2;
             formatString = LocaleController.formatString(i19, objArr);
         }
-        b3 p5 = i4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((g4Var == null || !g4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.uw0.a(), i13, this.b);
+        b3 p5 = i4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((g4Var == null || !g4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ww0.a(), i13, this.b);
         this.d = p5;
         if (p5 != null) {
             int height = p5.d.getHeight() + dp5;

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ze0 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,12 +21,12 @@ public final /* synthetic */ class ze0 implements Runnable {
                 bf0 bf0Var = af0Var.d;
                 if (af0Var.b) {
                     boolean z10 = bf0Var.K;
-                    org.telegram.ui.Components.ij0 ij0Var = bf0Var.J;
+                    org.telegram.ui.Components.kj0 kj0Var = bf0Var.J;
                     id idVar = bf0Var.n;
                     if (z10 && System.currentTimeMillis() - af0Var.a >= 10000) {
-                        idVar.setAnimation(ij0Var);
-                        ij0Var.N(0, false, false);
-                        ij0Var.t0 = new ze0(af0Var, 1);
+                        idVar.setAnimation(kj0Var);
+                        kj0Var.N(0, false, false);
+                        kj0Var.t0 = new ze0(af0Var, 1);
                         idVar.d();
                         af0Var.a = System.currentTimeMillis();
                     }
@@ -39,9 +39,9 @@ public final /* synthetic */ class ze0 implements Runnable {
                 break;
             default:
                 bf0 bf0Var2 = this.b.d;
-                org.telegram.ui.Components.ij0 ij0Var2 = bf0Var2.I;
-                ij0Var2.N(0, false, false);
-                bf0Var2.n.setAnimation(ij0Var2);
+                org.telegram.ui.Components.kj0 kj0Var2 = bf0Var2.I;
+                kj0Var2.N(0, false, false);
+                bf0Var2.n.setAnimation(kj0Var2);
                 break;
         }
     }

@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class hv0 {
     public float A;
@@ -416,7 +416,7 @@ public class hv0 {
             ofFloat.addUpdateListener(new c3(this, 25));
             this.C.addListener(new xo0(this, 11));
             this.C.setDuration(220L);
-            this.C.setInterpolator(org.telegram.ui.Components.rr.f);
+            this.C.setInterpolator(org.telegram.ui.Components.sr.f);
             this.C.start();
         }
     }

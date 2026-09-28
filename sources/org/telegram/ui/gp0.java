@@ -13,9 +13,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class gp0 extends org.telegram.ui.Components.vl0 {
+public final class gp0 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ int d;
     public final /* synthetic */ np0 e;
@@ -26,7 +26,7 @@ public final class gp0 extends org.telegram.ui.Components.vl0 {
         this.d = i10;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 8 || i10 == 12;
@@ -251,9 +251,9 @@ public final class gp0 extends org.telegram.ui.Components.vl0 {
                 view2 = mp0Var;
                 break;
             case 4:
-                View lnVar = new org.telegram.ui.Components.ln(np0Var.getContext(), 20);
-                lnVar.setTag(-33024);
-                view = lnVar;
+                View mnVar = new org.telegram.ui.Components.mn(np0Var.getContext(), 20);
+                mnVar.setTag(-33024);
+                view = mnVar;
                 view2 = view;
                 break;
             case 5:
@@ -285,17 +285,17 @@ public final class gp0 extends org.telegram.ui.Components.vl0 {
             case 9:
                 Context context4 = this.c;
                 d6Var4 = ((org.telegram.ui.ActionBar.m2) tp0Var).resourceProvider;
-                org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(context4, d6Var4);
-                u00Var.setIsSingleCell(true);
-                u00Var.setViewType(35);
-                u00Var.setTag(-33024);
-                view = u00Var;
+                org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(context4, d6Var4);
+                v00Var.setIsSingleCell(true);
+                v00Var.setViewType(35);
+                v00Var.setTag(-33024);
+                view = v00Var;
                 view2 = view;
                 break;
             case 10:
-                View lnVar2 = new org.telegram.ui.Components.ln(np0Var.getContext(), 21);
-                lnVar2.setTag(-33024);
-                view = lnVar2;
+                View mnVar2 = new org.telegram.ui.Components.mn(np0Var.getContext(), 21);
+                mnVar2.setTag(-33024);
+                view = mnVar2;
                 view2 = view;
                 break;
             case 11:
@@ -311,7 +311,7 @@ public final class gp0 extends org.telegram.ui.Components.vl0 {
                 view2 = view;
                 break;
         }
-        return new org.telegram.ui.Components.gl0(view2);
+        return new org.telegram.ui.Components.il0(view2);
     }
 
     @Override // s4.h0

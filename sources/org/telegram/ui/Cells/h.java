@@ -3,13 +3,13 @@ package org.telegram.ui.Cells;
 import android.text.Layout;
 import android.text.style.ClickableSpan;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.t90;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class h extends nf.e {
-    public r90 d;
+    public t90 d;
     public final /* synthetic */ Layout e;
     public final /* synthetic */ ClickableSpan f;
     public final /* synthetic */ float g;
@@ -30,17 +30,17 @@ public final class h extends nf.e {
     @Override // nf.e
     public final void d() {
         j jVar = this.h;
-        k90 k90Var = jVar.E;
-        r90 r90Var = jVar.G;
-        if (r90Var != null) {
-            k90Var.l(r90Var, true);
+        m90 m90Var = jVar.E;
+        t90 t90Var = jVar.G;
+        if (t90Var != null) {
+            m90Var.l(t90Var, true);
         }
-        r90 i10 = k90.i(this.e, this.f, this.g);
+        t90 i10 = m90.i(this.e, this.f, this.g);
         this.d = i10;
         jVar.G = i10;
         int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Ld, jVar.I);
         this.d.f(org.telegram.ui.ActionBar.h6.l1(0.8f, v02), org.telegram.ui.ActionBar.h6.l1(1.3f, v02), org.telegram.ui.ActionBar.h6.l1(1.0f, v02), org.telegram.ui.ActionBar.h6.l1(4.0f, v02));
         this.d.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-        k90Var.b(this.d, null);
+        m90Var.b(this.d, null);
     }
 }

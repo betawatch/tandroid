@@ -42,18 +42,18 @@ import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.s2;
 import org.telegram.ui.Cells.sa;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.co0;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.l81;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.n81;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.cy;
 import org.telegram.ui.k10;
 import org.telegram.ui.qy;
@@ -62,9 +62,9 @@ import org.telegram.ui.wb1;
 import org.telegram.ui.zx;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class i0 extends vl0 {
+public abstract class i0 extends xl0 {
     public k10 A0;
     public int B0;
     public int C0;
@@ -148,10 +148,10 @@ public abstract class i0 extends vl0 {
         this.H0 = true;
         this.i0 = jVar;
         this.r0 = qyVar;
-        eo0 eo0Var = (eo0) this;
-        z zVar = new z(eo0Var);
+        go0 go0Var = (go0) this;
+        z zVar = new z(go0Var);
         this.j0 = zVar;
-        zVar.a = new a6.m(eo0Var, 22);
+        zVar.a = new a6.m(go0Var, 22);
         zVar.p = z10;
         this.e = context;
         this.V = i10;
@@ -176,7 +176,7 @@ public abstract class i0 extends vl0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 1 || i10 == 4 || i10 == 10) ? false : true;
@@ -217,7 +217,7 @@ public abstract class i0 extends vl0 {
         String str = this.M;
         G(str != null ? str.trim() : null);
         l();
-        MessagesStorage.getInstance(this.s0).getStorageQueue().postRunnable(new y8(28, (eo0) this, sb2));
+        MessagesStorage.getInstance(this.s0).getStorageQueue().postRunnable(new y8(28, (go0) this, sb2));
     }
 
     public final boolean F(Object obj) {
@@ -288,7 +288,7 @@ public abstract class i0 extends vl0 {
     public final SpannableStringBuilder H(f0 f0Var) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(f0Var.c));
         spannableStringBuilder.append((CharSequence) "v");
-        spannableStringBuilder.setSpan(new pq(R.drawable.arrows_select, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new qq(R.drawable.arrows_select, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         return spannableStringBuilder;
     }
 
@@ -550,7 +550,7 @@ public abstract class i0 extends vl0 {
         String str = this.M;
         G(str != null ? str.trim() : null);
         l();
-        MessagesStorage.getInstance(this.s0).getStorageQueue().postRunnable(new q((eo0) this, j3, 1));
+        MessagesStorage.getInstance(this.s0).getStorageQueue().postRunnable(new q((go0) this, j3, 1));
     }
 
     public final boolean S() {
@@ -620,7 +620,7 @@ public abstract class i0 extends vl0 {
                 TLRPC.TL_contacts_getSponsoredPeers tL_contacts_getSponsoredPeers = new TLRPC.TL_contacts_getSponsoredPeers();
                 this.R = trim;
                 tL_contacts_getSponsoredPeers.q = trim;
-                this.S = ConnectionsManager.getInstance(this.s0).sendRequest(tL_contacts_getSponsoredPeers, new n8((eo0) this, 9));
+                this.S = ConnectionsManager.getInstance(this.s0).sendRequest(tL_contacts_getSponsoredPeers, new n8((go0) this, 9));
             }
         }
         if (TextUtils.isEmpty(trim)) {
@@ -717,13 +717,13 @@ public abstract class i0 extends vl0 {
                 }
                 str2 = substring;
                 DispatchQueue dispatchQueue = Utilities.searchQueue;
-                eo0 eo0Var = (eo0) this;
-                v vVar2 = new v(eo0Var, trim, i13, str, 2);
+                go0 go0Var = (go0) this;
+                v vVar2 = new v(go0Var, trim, i13, str, 2);
                 this.f = vVar2;
                 dispatchQueue.postRunnable(vVar2, 300L);
                 if (str2 == null) {
                     this.D0++;
-                    ai.s1 s1Var2 = new ai.s1(eo0Var, i13, str2, 11);
+                    ai.s1 s1Var2 = new ai.s1(go0Var, i13, str2, 11);
                     this.r = s1Var2;
                     AndroidUtilities.runOnUIThread(s1Var2, 300L);
                     return;
@@ -733,8 +733,8 @@ public abstract class i0 extends vl0 {
         }
         str2 = null;
         DispatchQueue dispatchQueue2 = Utilities.searchQueue;
-        eo0 eo0Var2 = (eo0) this;
-        v vVar22 = new v(eo0Var2, trim, i13, str, 2);
+        go0 go0Var2 = (go0) this;
+        v vVar22 = new v(go0Var2, trim, i13, str, 2);
         this.f = vVar22;
         dispatchQueue2.postRunnable(vVar22, 300L);
         if (str2 == null) {
@@ -1328,7 +1328,7 @@ public abstract class i0 extends vl0 {
                             String formatName = user != null ? ContactsController.formatName(user.first_name, user.last_name) : r72 != 0 ? r72.monoforum ? ng.d.i(r72, i18, false) : r72.title : null;
                             if (formatName != null && (indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(formatName, str8)) != -1) {
                                 r52 = new SpannableStringBuilder(formatName);
-                                r52.setSpan(new f10(h6.q6, null), indexOfIgnoreCase, str8.length() + indexOfIgnoreCase, 33);
+                                r52.setSpan(new g10(h6.q6, null), indexOfIgnoreCase, str8.length() + indexOfIgnoreCase, 33);
                             }
                             if (arrayList2 == null || arrayList2.size() <= 1) {
                                 charSequence3 = charSequence2;
@@ -1393,7 +1393,7 @@ public abstract class i0 extends vl0 {
                                         }
                                         charSequence4 = null;
                                         try {
-                                            spannableStringBuilder2.setSpan(new f10(h6.q6, null), indexOfIgnoreCase2, length + indexOfIgnoreCase2, 33);
+                                            spannableStringBuilder2.setSpan(new g10(h6.q6, null), indexOfIgnoreCase2, length + indexOfIgnoreCase2, 33);
                                         } catch (Exception e) {
                                             e = e;
                                             FileLog.e(e);
@@ -1561,32 +1561,32 @@ public abstract class i0 extends vl0 {
                                     }
                                     break;
                                 case 1:
-                                    zx zxVar = ((eo0) this.b).K0;
-                                    co0 co0Var = zxVar.v0;
-                                    eo0 eo0Var = zxVar.b0;
-                                    String str10 = eo0Var.y;
-                                    ArrayList arrayList14 = eo0Var.x;
-                                    int i26 = eo0Var.w;
-                                    int i27 = eo0Var.v;
-                                    ArrayList arrayList15 = co0Var.O;
-                                    if (!TextUtils.equals(str10, co0Var.Y)) {
-                                        co0Var.V();
+                                    zx zxVar = ((go0) this.b).K0;
+                                    eo0 eo0Var = zxVar.v0;
+                                    go0 go0Var = zxVar.b0;
+                                    String str10 = go0Var.y;
+                                    ArrayList arrayList14 = go0Var.x;
+                                    int i26 = go0Var.w;
+                                    int i27 = go0Var.v;
+                                    ArrayList arrayList15 = eo0Var.O;
+                                    if (!TextUtils.equals(str10, eo0Var.Y)) {
+                                        eo0Var.V();
                                         arrayList15.clear();
                                         arrayList15.addAll(arrayList14);
-                                        co0Var.W = i27;
-                                        co0Var.V = i27 > arrayList14.size();
-                                        co0Var.Z = i26;
-                                        co0Var.Y = str10;
-                                        co0Var.N(true);
+                                        eo0Var.W = i27;
+                                        eo0Var.V = i27 > arrayList14.size();
+                                        eo0Var.Z = i26;
+                                        eo0Var.Y = str10;
+                                        eo0Var.N(true);
                                     }
                                     zxVar.q0 = true;
                                     zxVar.t0.h1(0, 0);
                                     zxVar.R();
-                                    l81 l81Var = zxVar.M;
-                                    if (l81Var != null && l81Var.getCurrentTabId() != 1) {
+                                    n81 n81Var = zxVar.M;
+                                    if (n81Var != null && n81Var.getCurrentTabId() != 1) {
                                         zxVar.M.d(1, 1);
                                     }
-                                    co0Var.Y(zxVar.K0);
+                                    eo0Var.Y(zxVar.K0);
                                     break;
                                 case 2:
                                     cy cyVar2 = this.b.U;
@@ -1628,32 +1628,32 @@ public abstract class i0 extends vl0 {
                                         }
                                         break;
                                     case 1:
-                                        zx zxVar = ((eo0) this.b).K0;
-                                        co0 co0Var = zxVar.v0;
-                                        eo0 eo0Var = zxVar.b0;
-                                        String str10 = eo0Var.y;
-                                        ArrayList arrayList14 = eo0Var.x;
-                                        int i26 = eo0Var.w;
-                                        int i27 = eo0Var.v;
-                                        ArrayList arrayList15 = co0Var.O;
-                                        if (!TextUtils.equals(str10, co0Var.Y)) {
-                                            co0Var.V();
+                                        zx zxVar = ((go0) this.b).K0;
+                                        eo0 eo0Var = zxVar.v0;
+                                        go0 go0Var = zxVar.b0;
+                                        String str10 = go0Var.y;
+                                        ArrayList arrayList14 = go0Var.x;
+                                        int i26 = go0Var.w;
+                                        int i27 = go0Var.v;
+                                        ArrayList arrayList15 = eo0Var.O;
+                                        if (!TextUtils.equals(str10, eo0Var.Y)) {
+                                            eo0Var.V();
                                             arrayList15.clear();
                                             arrayList15.addAll(arrayList14);
-                                            co0Var.W = i27;
-                                            co0Var.V = i27 > arrayList14.size();
-                                            co0Var.Z = i26;
-                                            co0Var.Y = str10;
-                                            co0Var.N(true);
+                                            eo0Var.W = i27;
+                                            eo0Var.V = i27 > arrayList14.size();
+                                            eo0Var.Z = i26;
+                                            eo0Var.Y = str10;
+                                            eo0Var.N(true);
                                         }
                                         zxVar.q0 = true;
                                         zxVar.t0.h1(0, 0);
                                         zxVar.R();
-                                        l81 l81Var = zxVar.M;
-                                        if (l81Var != null && l81Var.getCurrentTabId() != 1) {
+                                        n81 n81Var = zxVar.M;
+                                        if (n81Var != null && n81Var.getCurrentTabId() != 1) {
                                             zxVar.M.d(1, 1);
                                         }
-                                        co0Var.Y(zxVar.K0);
+                                        eo0Var.Y(zxVar.K0);
                                         break;
                                     case 2:
                                         cy cyVar2 = this.b.U;
@@ -1710,32 +1710,32 @@ public abstract class i0 extends vl0 {
                                                 }
                                                 break;
                                             case 1:
-                                                zx zxVar = ((eo0) this.b).K0;
-                                                co0 co0Var = zxVar.v0;
-                                                eo0 eo0Var = zxVar.b0;
-                                                String str10 = eo0Var.y;
-                                                ArrayList arrayList142 = eo0Var.x;
-                                                int i262 = eo0Var.w;
-                                                int i27 = eo0Var.v;
-                                                ArrayList arrayList152 = co0Var.O;
-                                                if (!TextUtils.equals(str10, co0Var.Y)) {
-                                                    co0Var.V();
+                                                zx zxVar = ((go0) this.b).K0;
+                                                eo0 eo0Var = zxVar.v0;
+                                                go0 go0Var = zxVar.b0;
+                                                String str10 = go0Var.y;
+                                                ArrayList arrayList142 = go0Var.x;
+                                                int i262 = go0Var.w;
+                                                int i27 = go0Var.v;
+                                                ArrayList arrayList152 = eo0Var.O;
+                                                if (!TextUtils.equals(str10, eo0Var.Y)) {
+                                                    eo0Var.V();
                                                     arrayList152.clear();
                                                     arrayList152.addAll(arrayList142);
-                                                    co0Var.W = i27;
-                                                    co0Var.V = i27 > arrayList142.size();
-                                                    co0Var.Z = i262;
-                                                    co0Var.Y = str10;
-                                                    co0Var.N(true);
+                                                    eo0Var.W = i27;
+                                                    eo0Var.V = i27 > arrayList142.size();
+                                                    eo0Var.Z = i262;
+                                                    eo0Var.Y = str10;
+                                                    eo0Var.N(true);
                                                 }
                                                 zxVar.q0 = true;
                                                 zxVar.t0.h1(0, 0);
                                                 zxVar.R();
-                                                l81 l81Var = zxVar.M;
-                                                if (l81Var != null && l81Var.getCurrentTabId() != 1) {
+                                                n81 n81Var = zxVar.M;
+                                                if (n81Var != null && n81Var.getCurrentTabId() != 1) {
                                                     zxVar.M.d(1, 1);
                                                 }
-                                                co0Var.Y(zxVar.K0);
+                                                eo0Var.Y(zxVar.K0);
                                                 break;
                                             case 2:
                                                 cy cyVar2 = this.b.U;
@@ -1775,32 +1775,32 @@ public abstract class i0 extends vl0 {
                                                 }
                                                 break;
                                             case 1:
-                                                zx zxVar = ((eo0) this.b).K0;
-                                                co0 co0Var = zxVar.v0;
-                                                eo0 eo0Var = zxVar.b0;
-                                                String str10 = eo0Var.y;
-                                                ArrayList arrayList142 = eo0Var.x;
-                                                int i262 = eo0Var.w;
-                                                int i272 = eo0Var.v;
-                                                ArrayList arrayList152 = co0Var.O;
-                                                if (!TextUtils.equals(str10, co0Var.Y)) {
-                                                    co0Var.V();
+                                                zx zxVar = ((go0) this.b).K0;
+                                                eo0 eo0Var = zxVar.v0;
+                                                go0 go0Var = zxVar.b0;
+                                                String str10 = go0Var.y;
+                                                ArrayList arrayList142 = go0Var.x;
+                                                int i262 = go0Var.w;
+                                                int i272 = go0Var.v;
+                                                ArrayList arrayList152 = eo0Var.O;
+                                                if (!TextUtils.equals(str10, eo0Var.Y)) {
+                                                    eo0Var.V();
                                                     arrayList152.clear();
                                                     arrayList152.addAll(arrayList142);
-                                                    co0Var.W = i272;
-                                                    co0Var.V = i272 > arrayList142.size();
-                                                    co0Var.Z = i262;
-                                                    co0Var.Y = str10;
-                                                    co0Var.N(true);
+                                                    eo0Var.W = i272;
+                                                    eo0Var.V = i272 > arrayList142.size();
+                                                    eo0Var.Z = i262;
+                                                    eo0Var.Y = str10;
+                                                    eo0Var.N(true);
                                                 }
                                                 zxVar.q0 = true;
                                                 zxVar.t0.h1(0, 0);
                                                 zxVar.R();
-                                                l81 l81Var = zxVar.M;
-                                                if (l81Var != null && l81Var.getCurrentTabId() != 1) {
+                                                n81 n81Var = zxVar.M;
+                                                if (n81Var != null && n81Var.getCurrentTabId() != 1) {
                                                     zxVar.M.d(1, 1);
                                                 }
-                                                co0Var.Y(zxVar.K0);
+                                                eo0Var.Y(zxVar.K0);
                                                 break;
                                             case 2:
                                                 cy cyVar2 = this.b.U;
@@ -1906,7 +1906,7 @@ public abstract class i0 extends vl0 {
                                                 i0 i0Var2 = this.b;
                                                 qy qyVar = i0Var2.r0;
                                                 v3 v3Var2 = v3Var;
-                                                y70 H2 = y70.H(qyVar, v3Var2);
+                                                a80 H2 = a80.H(qyVar, v3Var2);
                                                 for (f0 f0Var : f0.values()) {
                                                     boolean z16 = f0Var.a == i0Var2.c.a;
                                                     H2.i(new s4(i0Var2, z16, v3Var2, f0Var, 3), LocaleController.getString(f0Var.b), z16);
@@ -1961,7 +1961,7 @@ public abstract class i0 extends vl0 {
                                                 i0 i0Var2 = this.b;
                                                 qy qyVar = i0Var2.r0;
                                                 v3 v3Var2 = v3Var;
-                                                y70 H2 = y70.H(qyVar, v3Var2);
+                                                a80 H2 = a80.H(qyVar, v3Var2);
                                                 for (f0 f0Var : f0.values()) {
                                                     boolean z16 = f0Var.a == i0Var2.c.a;
                                                     H2.i(new s4(i0Var2, z16, v3Var2, f0Var, 3), LocaleController.getString(f0Var.b), z16);
@@ -2024,7 +2024,7 @@ public abstract class i0 extends vl0 {
                 l4Var.setNeedDivider(i16 != arrayList4.size());
                 break;
             case 6:
-                ((c0) ((wl0) view).getAdapter()).l();
+                ((c0) ((yl0) view).getAdapter()).l();
                 break;
             case 7:
                 String str10 = (String) J(i16);
@@ -2066,10 +2066,10 @@ public abstract class i0 extends vl0 {
                 view2 = new sa(context);
                 break;
             case 4:
-                u00 u00Var = new u00(context, null);
-                u00Var.setViewType(1);
-                u00Var.setIsSingleCell(true);
-                view2 = u00Var;
+                v00 v00Var = new v00(context, null);
+                v00Var.setViewType(1);
+                v00Var.setIsSingleCell(true);
+                view2 = v00Var;
                 break;
             case 5:
                 l4 l4Var = new l4(context);
@@ -2108,7 +2108,7 @@ public abstract class i0 extends vl0 {
                 e0 e0Var = new e0(context);
                 e0Var.setOrientation(1);
                 w9 w9Var = new w9(context);
-                w9Var.setImageDrawable(new ij0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+                w9Var.setImageDrawable(new kj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
                 e0Var.addView(w9Var, y5.t(120, 120, 1, 0, 27, 0, 0));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 17.0f);
@@ -2144,6 +2144,6 @@ public abstract class i0 extends vl0 {
         } else {
             view2.setLayoutParams(new s4.p0(-1, -2));
         }
-        return new gl0(view2);
+        return new il0(view2);
     }
 }

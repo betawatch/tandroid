@@ -14,13 +14,13 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class as extends EditTextBoldCursor {
-    public static final org.telegram.ui.Components.tv0 I;
-    public static final org.telegram.ui.Components.tv0 J;
-    public static final org.telegram.ui.Components.tv0 K;
-    public static final org.telegram.ui.Components.tv0 L;
+    public static final org.telegram.ui.Components.vv0 I;
+    public static final org.telegram.ui.Components.vv0 J;
+    public static final org.telegram.ui.Components.vv0 K;
+    public static final org.telegram.ui.Components.vv0 L;
     public Canvas E;
     public ValueAnimator F;
     public ValueAnimator G;
@@ -40,18 +40,18 @@ public abstract class as extends EditTextBoldCursor {
     public Bitmap y;
 
     static {
-        org.telegram.ui.Components.tv0 tv0Var = new org.telegram.ui.Components.tv0(new u6(9), new u6(10));
-        tv0Var.c = 100.0f;
-        I = tv0Var;
-        org.telegram.ui.Components.tv0 tv0Var2 = new org.telegram.ui.Components.tv0(new u6(11), new u6(12));
-        tv0Var2.c = 100.0f;
-        J = tv0Var2;
-        org.telegram.ui.Components.tv0 tv0Var3 = new org.telegram.ui.Components.tv0(new u6(13), new u6(14));
-        tv0Var3.c = 100.0f;
-        K = tv0Var3;
-        org.telegram.ui.Components.tv0 tv0Var4 = new org.telegram.ui.Components.tv0(new u6(15), new u6(16));
-        tv0Var4.c = 100.0f;
-        L = tv0Var4;
+        org.telegram.ui.Components.vv0 vv0Var = new org.telegram.ui.Components.vv0(new u6(9), new u6(10));
+        vv0Var.c = 100.0f;
+        I = vv0Var;
+        org.telegram.ui.Components.vv0 vv0Var2 = new org.telegram.ui.Components.vv0(new u6(11), new u6(12));
+        vv0Var2.c = 100.0f;
+        J = vv0Var2;
+        org.telegram.ui.Components.vv0 vv0Var3 = new org.telegram.ui.Components.vv0(new u6(13), new u6(14));
+        vv0Var3.c = 100.0f;
+        K = vv0Var3;
+        org.telegram.ui.Components.vv0 vv0Var4 = new org.telegram.ui.Components.vv0(new u6(15), new u6(16));
+        vv0Var4.c = 100.0f;
+        L = vv0Var4;
     }
 
     public static void k(o1.k kVar, float f7) {
@@ -135,7 +135,7 @@ public abstract class as extends EditTextBoldCursor {
         this.G.start();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.eu, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.fu, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.f.c();

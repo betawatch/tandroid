@@ -5,10 +5,10 @@ import le.c;
 import le.e;
 import le.f;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.voip.w2;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class a implements e {
     public final f a;
@@ -20,11 +20,11 @@ public final class a implements e {
     public boolean h;
 
     public a(w2 w2Var, h0 h0Var) {
-        rr rrVar = rr.h;
-        this.a = new f(1, this, rrVar, 350L);
-        this.b = new f(2, this, rrVar, 350L);
-        this.c = new c(0, this, rrVar, 350L, true);
-        this.d = new c(3, this, rrVar, 350L, true);
+        sr srVar = sr.h;
+        this.a = new f(1, this, srVar, 350L);
+        this.b = new f(2, this, srVar, 350L);
+        this.c = new c(0, this, srVar, 350L, true);
+        this.d = new c(3, this, srVar, 350L, true);
         this.h = true;
         this.e = w2Var;
         this.f = h0Var;

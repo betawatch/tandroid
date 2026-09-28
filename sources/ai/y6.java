@@ -14,9 +14,9 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.bm0;
+import org.telegram.ui.Components.dm0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class y6 extends FrameLayout {
     public final LinearLayout a;
@@ -29,7 +29,7 @@ public final class y6 extends FrameLayout {
     public final RectF n;
     public float r;
     public int s;
-    public final bm0 v;
+    public final dm0 v;
     public ValueAnimator w;
     public final /* synthetic */ k7 x;
 
@@ -70,13 +70,13 @@ public final class y6 extends FrameLayout {
         linearLayout2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
         linearLayout2.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.h6.v0(i10, dVar)));
         linearLayout2.setOrientation(0);
-        bm0 bm0Var = new bm0(getContext());
-        this.v = bm0Var;
-        bm0Var.r = true;
-        bm0Var.a(R.drawable.menu_views_reactions3, false);
+        dm0 dm0Var = new dm0(getContext());
+        this.v = dm0Var;
+        dm0Var.r = true;
+        dm0Var.a(R.drawable.menu_views_reactions3, false);
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setImageDrawable(bm0Var);
+        imageView.setImageDrawable(dm0Var);
         imageView.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
         linearLayout2.addView(imageView, w7.y5.n(26, 26));
         ImageView imageView2 = new ImageView(getContext());

@@ -7,12 +7,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.z1;
-import org.telegram.ui.Components.ad0;
-import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.jl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements e2.m, d9.e, e2.h, hl0, ad0, z1 {
+public final /* synthetic */ class w implements e2.m, d9.e, e2.h, jl0, cd0, z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -61,7 +61,7 @@ public final /* synthetic */ class w implements e2.m, d9.e, e2.h, hl0, ad0, z1 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ad0
+    @Override // org.telegram.ui.Components.cd0
     public String j(int i10) {
         int i11 = this.a;
         int i12 = this.b;
@@ -82,7 +82,7 @@ public final /* synthetic */ class w implements e2.m, d9.e, e2.h, hl0, ad0, z1 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.jl0
     public int run() {
         return this.b;
     }

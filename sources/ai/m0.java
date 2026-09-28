@@ -23,14 +23,13 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.i41;
-import org.telegram.ui.Components.ss;
-import org.telegram.ui.Components.us;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.vn;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.ts;
+import org.telegram.ui.Components.vs;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PremiumPreviewFragment;
@@ -42,10 +41,11 @@ import org.telegram.ui.in;
 import org.telegram.ui.lw0;
 import org.telegram.ui.qo0;
 import org.telegram.ui.ro;
+import org.telegram.ui.wl0;
 import org.telegram.ui.wn;
 import org.telegram.ui.zb0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -327,20 +327,20 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     break;
                 }
             case 10:
-                vn vnVar = (vn) this.b;
+                org.telegram.ui.Components.wn wnVar3 = (org.telegram.ui.Components.wn) this.b;
                 qh.e eVar = (qh.e) this.c;
-                vnVar.getClass();
-                vnVar.V((rh.e) eVar, true);
+                wnVar3.getClass();
+                wnVar3.V((rh.e) eVar, true);
                 break;
             case 11:
-                ss ssVar = (ss) this.b;
+                ts tsVar = (ts) this.b;
                 TLRPC.TL_contacts_search tL_contacts_search = (TLRPC.TL_contacts_search) this.c;
                 TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) obj;
-                ArrayList arrayList5 = ssVar.S;
-                ArrayList arrayList6 = ssVar.R;
-                int i16 = ssVar.N;
-                if (TextUtils.equals(tL_contacts_search.q, ssVar.e0) && !TextUtils.isEmpty(ssVar.e0)) {
-                    ssVar.a0 = false;
+                ArrayList arrayList5 = tsVar.S;
+                ArrayList arrayList6 = tsVar.R;
+                int i16 = tsVar.N;
+                if (TextUtils.equals(tL_contacts_search.q, tsVar.e0) && !TextUtils.isEmpty(tsVar.e0)) {
+                    tsVar.a0 = false;
                     if (tL_contacts_found != null) {
                         MessagesStorage.getInstance(i16).putUsersAndChats(tL_contacts_found.users, tL_contacts_found.chats, true, true);
                         MessagesController.getInstance(i16).putUsers(tL_contacts_found.users, false);
@@ -379,24 +379,24 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                             }
                         }
                     }
-                    wl0 wl0Var = ssVar.d;
-                    if (wl0Var != null) {
-                        wl0Var.u0(0);
+                    yl0 yl0Var = tsVar.d;
+                    if (yl0Var != null) {
+                        yl0Var.u0(0);
                     }
-                    ssVar.N(true);
+                    tsVar.N(true);
                     break;
                 }
                 break;
             case 12:
-                us usVar = (us) this.b;
+                vs vsVar = (vs) this.b;
                 TLRPC.TL_contacts_search tL_contacts_search2 = (TLRPC.TL_contacts_search) this.c;
                 TLRPC.TL_contacts_found tL_contacts_found2 = (TLRPC.TL_contacts_found) obj;
-                ArrayList arrayList9 = usVar.S;
-                ArrayList arrayList10 = usVar.R;
-                ArrayList arrayList11 = usVar.Q;
-                int i19 = usVar.N;
-                if (TextUtils.equals(tL_contacts_search2.q, usVar.b0) && !TextUtils.isEmpty(usVar.b0)) {
-                    usVar.X = false;
+                ArrayList arrayList9 = vsVar.S;
+                ArrayList arrayList10 = vsVar.R;
+                ArrayList arrayList11 = vsVar.Q;
+                int i19 = vsVar.N;
+                if (TextUtils.equals(tL_contacts_search2.q, vsVar.b0) && !TextUtils.isEmpty(vsVar.b0)) {
+                    vsVar.X = false;
                     if (tL_contacts_found2 != null) {
                         MessagesStorage.getInstance(i19).putUsersAndChats(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
                         MessagesController.getInstance(i19).putUsers(tL_contacts_found2.users, false);
@@ -421,7 +421,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                         }
                     }
                     arrayList10.clear();
-                    String lowerCase = usVar.b0.toLowerCase();
+                    String lowerCase = vsVar.b0.toLowerCase();
                     String translitSafe = AndroidUtilities.translitSafe(lowerCase);
                     MessagesController.ChannelRecommendations cachedChannelRecommendations = MessagesController.getInstance(i19).getCachedChannelRecommendations(0L);
                     if (cachedChannelRecommendations != null && !cachedChannelRecommendations.chats.isEmpty()) {
@@ -465,12 +465,12 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                             }
                         }
                     }
-                    usVar.N(true);
+                    vsVar.N(true);
                     break;
                 }
                 break;
             case 13:
-                i41.m((i41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                k41.m((k41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 break;
             case 14:
                 d60.q((d60) this.b, (ChatObject.Call) this.c, (Boolean) obj, (HashSet) obj2);
@@ -607,7 +607,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
                     if (savedStarGift.pinned_to_top) {
                         int i26 = ap0.a;
-                        v51 J = v51.J(ap0.class);
+                        x51 J = x51.J(ap0.class);
                         J.G = savedStarGift;
                         J.K(r2Var.b == savedStarGift.gift.id);
                         J.u = 1;
@@ -732,7 +732,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     i28 = iArr[i10];
                     i11 = 80;
                 }
-                arrayList18.add(new yh.n2(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new org.telegram.ui.wl0(x2Var, i28, starGift, 15)));
+                arrayList18.add(new yh.n2(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new wl0(x2Var, i28, starGift, 15)));
                 arrayList18.add(new yh.n2(4, 0.0f, 0.0f, i11, i28, -90, null, null));
                 yh.j1 j1Var = new yh.j1(x2Var, starGift, arrayList17, runnable, 3);
                 yh.p2 p2Var = o2Var.a;
@@ -758,13 +758,13 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 o2Var.b();
                 break;
             case 24:
-                yh.w7.z0((yh.w7) this.b, (v51) this.c, (Boolean) obj, (String) obj2);
+                yh.w7.z0((yh.w7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
                 break;
             case 25:
-                yh.l7.Q((yh.l7) this.b, (v51) this.c, (Boolean) obj, (String) obj2);
+                yh.l7.Q((yh.l7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
                 break;
             default:
-                yh.m7.Q((yh.m7) this.b, (v51) this.c, (Boolean) obj, (String) obj2);
+                yh.m7.Q((yh.m7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
                 break;
         }
     }

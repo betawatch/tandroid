@@ -39,10 +39,10 @@ import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Cells.y7;
 import org.telegram.ui.Cells.z7;
-import org.telegram.ui.Components.mo0;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.oo0;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.f81;
@@ -54,7 +54,7 @@ import w7.y5;
 import xh.h1;
 import yh.t3;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class q extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public final LinkedHashMap E;
@@ -87,7 +87,7 @@ public final class q extends m2 implements NotificationCenter.NotificationCenter
     public r0 v;
     public FrameLayout w;
     public ImageView x;
-    public mo0 y;
+    public oo0 y;
 
     public q(long j3, TLRPC.ChatFull chatFull) {
         super(null);
@@ -205,7 +205,7 @@ public final class q extends m2 implements NotificationCenter.NotificationCenter
             this.y.setLayoutParams(marginLayoutParams);
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
             this.c.animate().setListener(null).cancel();
-            this.c.animate().translationY(this.c.getMeasuredHeight()).setDuration(350L).withLayer().setInterpolator(rr.f).setUpdateListener(new j(this, 1)).setListener(new l(this, i10)).start();
+            this.c.animate().translationY(this.c.getMeasuredHeight()).setDuration(350L).withLayer().setInterpolator(sr.f).setUpdateListener(new j(this, 1)).setListener(new l(this, i10)).start();
         }
     }
 
@@ -290,9 +290,9 @@ public final class q extends m2 implements NotificationCenter.NotificationCenter
             this.w.animate().setListener(null).cancel();
             this.f.animate().setListener(null).cancel();
             ViewPropertyAnimator duration = this.w.animate().alpha(0.0f).setDuration(350L);
-            rr rrVar = rr.f;
-            duration.setInterpolator(rrVar).setListener(new l(this, 2)).start();
-            this.f.animate().alpha(0.0f).setDuration(350L).setInterpolator(rrVar).setListener(new l(this, 3)).start();
+            sr srVar = sr.f;
+            duration.setInterpolator(srVar).setListener(new l(this, 2)).start();
+            this.f.animate().alpha(0.0f).setDuration(350L).setInterpolator(srVar).setListener(new l(this, 3)).start();
             return;
         }
         this.f.setVisibility(0);
@@ -301,9 +301,9 @@ public final class q extends m2 implements NotificationCenter.NotificationCenter
             this.w.animate().setListener(null).cancel();
             this.f.animate().setListener(null).cancel();
             ViewPropertyAnimator duration2 = this.f.animate().alpha(1.0f).setDuration(350L);
-            rr rrVar2 = rr.f;
-            duration2.setInterpolator(rrVar2).setListener(new l(this, 1)).start();
-            this.w.animate().alpha(1.0f).setDuration(350L).setInterpolator(rrVar2).start();
+            sr srVar2 = sr.f;
+            duration2.setInterpolator(srVar2).setListener(new l(this, 1)).start();
+            this.w.animate().alpha(1.0f).setDuration(350L).setInterpolator(srVar2).start();
             LinkedHashMap linkedHashMap = this.E;
             if (linkedHashMap.isEmpty()) {
                 this.b.K.clear();
@@ -365,9 +365,9 @@ public final class q extends m2 implements NotificationCenter.NotificationCenter
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new f81(this, 13));
         this.h = new xd(context);
-        mo0 mo0Var = new mo0(context, this.h, this.resourceProvider, true);
-        this.y = mo0Var;
-        mo0Var.setFillViewport(true);
+        oo0 oo0Var = new oo0(context, this.h, this.resourceProvider, true);
+        this.y = oo0Var;
+        oo0Var.setFillViewport(true);
         this.actionBar.setAdaptiveBackground(this.y);
         t3 t3Var = new t3(this, context);
         this.h.setOrientation(1);
@@ -571,9 +571,9 @@ public final class q extends m2 implements NotificationCenter.NotificationCenter
         r0Var2.getClass();
         r0Var2.g(new SpannableStringBuilder(LocaleController.getString(R.string.ReactionUpdateReactionsBtn)), false, true);
         r0Var2.h0 = new SpannableStringBuilder("l");
-        pq pqVar = new pq(R.drawable.mini_switch_lock, 0);
-        pqVar.setTopOffset(1);
-        r0Var2.h0.setSpan(pqVar, 0, 1, 33);
+        qq qqVar = new qq(R.drawable.mini_switch_lock, 0);
+        qqVar.setTopOffset(1);
+        r0Var2.h0.setSpan(qqVar, 0, 1, 33);
         final int i21 = 2;
         this.v.setOnClickListener(new View.OnClickListener(this) { // from class: zg.k
             public final /* synthetic */ q b;

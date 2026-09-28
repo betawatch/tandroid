@@ -3,13 +3,13 @@ package ki;
 import java.io.File;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.ui.Components.a60;
-import org.telegram.ui.Components.b60;
-import org.telegram.ui.Components.m01;
-import org.telegram.ui.Components.n01;
+import org.telegram.ui.Components.c60;
+import org.telegram.ui.Components.d60;
 import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.p01;
+import org.telegram.ui.Components.q01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -33,19 +33,19 @@ public final /* synthetic */ class f0 implements Runnable {
         File file = this.e;
         long j3 = this.d;
         boolean z10 = this.f;
-        synchronized (s0Var.f) {
-            if (!s0Var.C && !o0Var.d && !o0Var.e) {
+        synchronized (s0Var.g) {
+            if (!s0Var.D && !o0Var.d && !o0Var.e) {
                 o0Var.e = true;
-                ((o01) s0Var.d).b(o0Var.a, file.length(), file);
-                s0Var.h.post(new f0(s0Var, o0Var, j3, file, z10));
+                ((q01) s0Var.e).b(o0Var.a, file.length(), file);
+                s0Var.i.post(new f0(s0Var, o0Var, j3, file, z10));
             }
         }
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        n01 n01Var;
-        n01 n01Var2;
+        p01 p01Var;
+        p01 p01Var2;
         switch (this.a) {
             case 0:
                 a();
@@ -56,46 +56,46 @@ public final /* synthetic */ class f0 implements Runnable {
                 long j3 = this.d;
                 File file = this.e;
                 boolean z10 = this.f;
-                int i10 = s0Var.V;
+                int i10 = s0Var.W;
                 if (i10 == 10 || i10 == 9) {
                     return;
                 }
-                s0Var.u(8);
-                s0Var.l.b("output completed: generation=" + o0Var.a + ", durationMs=" + j3 + ", size=" + file.length() + ", hasAudio=" + z10);
-                s0Var.l("completed");
-                l.d dVar = s0Var.c;
+                s0Var.v(8);
+                s0Var.m.b("output completed: generation=" + o0Var.a + ", durationMs=" + j3 + ", size=" + file.length() + ", hasAudio=" + z10);
+                s0Var.m("completed");
+                l.d dVar = s0Var.d;
                 long j10 = o0Var.a;
-                b60 b60Var = (b60) dVar.a;
-                a60 a60Var = b60Var.V;
-                if (a60Var == null) {
+                d60 d60Var = (d60) dVar.a;
+                c60 c60Var = d60Var.V;
+                if (c60Var == null) {
                     return;
                 }
-                b60Var.V = null;
-                b60Var.i0 = true;
-                o01 o01Var = b60Var.T;
-                if (o01Var == null) {
-                    n01Var2 = null;
+                d60Var.V = null;
+                d60Var.i0 = true;
+                q01 q01Var = d60Var.T;
+                if (q01Var == null) {
+                    p01Var2 = null;
                 } else {
-                    synchronized (o01Var) {
-                        m01 m01Var = (m01) o01Var.c.get(Long.valueOf(j10));
-                        if (m01Var != null && !m01Var.e) {
-                            n01Var = new n01(Math.max(m01Var.c, file.length()), m01Var.f, m01Var.g, m01Var.h, m01Var.i);
+                    synchronized (q01Var) {
+                        o01 o01Var = (o01) q01Var.c.get(Long.valueOf(j10));
+                        if (o01Var != null && !o01Var.e) {
+                            p01Var = new p01(Math.max(o01Var.c, file.length()), o01Var.f, o01Var.g, o01Var.h, o01Var.i);
                         }
-                        n01Var = new n01(file.length(), null, null, null, null);
+                        p01Var = new p01(file.length(), null, null, null, null);
                     }
-                    n01Var2 = n01Var;
+                    p01Var2 = p01Var;
                 }
-                VideoEditedInfo p5 = b60Var.p(file, j3, n01Var2);
+                VideoEditedInfo p5 = d60Var.p(file, j3, p01Var2);
                 p5.muted = !z10;
                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, file.getAbsolutePath(), 0, true, 0, 0, 0L);
-                photoEntry.ttl = a60Var.c;
-                photoEntry.effectId = a60Var.d;
-                b60Var.f.q(photoEntry, p5, a60Var.a, a60Var.b, 0, false, a60Var.e);
-                o01 o01Var2 = b60Var.T;
-                if (o01Var2 != null) {
-                    o01Var2.d(false);
+                photoEntry.ttl = c60Var.c;
+                photoEntry.effectId = c60Var.d;
+                d60Var.f.q(photoEntry, p5, c60Var.a, c60Var.b, 0, false, c60Var.e);
+                q01 q01Var2 = d60Var.T;
+                if (q01Var2 != null) {
+                    q01Var2.d(false);
                 }
-                b60Var.T = null;
+                d60Var.T = null;
                 MediaController.getInstance().requestRecordAudioFocus(false);
                 return;
         }

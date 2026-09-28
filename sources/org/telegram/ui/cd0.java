@@ -62,7 +62,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_channelLocation A0;
@@ -95,11 +95,11 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
     public Boolean P0;
     public boolean Q;
     public final Bitmap[] Q0;
-    public org.telegram.ui.Components.pi0 R;
+    public org.telegram.ui.Components.ri0 R;
     public k0 S;
     public qc0 T;
-    public org.telegram.ui.Components.wl0 U;
-    public org.telegram.ui.Components.wl0 V;
+    public org.telegram.ui.Components.yl0 U;
+    public org.telegram.ui.Components.yl0 V;
     public vc0 W;
     public View X;
     public s4.c0 Y;
@@ -112,7 +112,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
     public boolean c0;
     public org.telegram.ui.ActionBar.u0 d;
     public boolean d0;
-    public org.telegram.ui.Components.fl e;
+    public org.telegram.ui.Components.gl e;
     public long e0;
     public LinearLayout f;
     public boolean f0;
@@ -337,10 +337,10 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
             if (e4Var != null) {
                 e4Var.setTranslationY(min);
             }
-            org.telegram.ui.Components.fl flVar = this.e;
-            if (flVar != null) {
-                flVar.c = min;
-                flVar.setTranslationY(min + flVar.b);
+            org.telegram.ui.Components.gl glVar = this.e;
+            if (glVar != null) {
+                glVar.c = min;
+                glVar.setTranslationY(min + glVar.b);
             }
             View view = this.X;
             if (view != null) {
@@ -478,9 +478,9 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                 this.I.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(wc0Var.e.getPosition()));
             }
         }
-        org.telegram.ui.Components.pi0 pi0Var = this.R;
-        if (pi0Var != null) {
-            pi0Var.c(true);
+        org.telegram.ui.Components.ri0 ri0Var = this.R;
+        if (ri0Var != null) {
+            ri0Var.c(true);
         }
         C0();
         return wc0Var;
@@ -594,9 +594,9 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
         k0Var.setBackgroundDrawable(new org.telegram.ui.Components.ed(n0()));
         MessageObject messageObject2 = this.B0;
         if ((messageObject2 == null && (i14 == 0 || i14 == 1)) || (messageObject2 != null && i14 == 3)) {
-            org.telegram.ui.Components.fl flVar = new org.telegram.ui.Components.fl(context, 1);
-            this.e = flVar;
-            flVar.setTranslationX(-AndroidUtilities.dp(80.0f));
+            org.telegram.ui.Components.gl glVar = new org.telegram.ui.Components.gl(context, 1);
+            this.e = glVar;
+            glVar.setTranslationX(-AndroidUtilities.dp(80.0f));
             int dp = AndroidUtilities.dp(40.0f);
             int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.h6.wi);
             int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.h6.xi);
@@ -683,47 +683,47 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         kc0 kc0Var = new kc0(cd0Var, i18);
                                         ow owVar = new ow(15, cd0Var, user);
                                         mc0 mc0Var = new mc0(cd0Var, 2);
-                                        org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
-                                        pi0Var.a = null;
-                                        pi0Var.d = -1;
-                                        pi0Var.e = false;
-                                        pi0Var.f = false;
-                                        pi0Var.h = null;
-                                        pi0Var.n = new Rect();
+                                        org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(parentActivity);
+                                        ri0Var.a = null;
+                                        ri0Var.d = -1;
+                                        ri0Var.e = false;
+                                        ri0Var.f = false;
+                                        ri0Var.h = null;
+                                        ri0Var.n = new Rect();
                                         new Paint();
-                                        pi0Var.w = true;
-                                        pi0Var.F = org.telegram.ui.Components.rr.h;
-                                        pi0Var.setWillNotDraw(false);
-                                        pi0Var.Q = mc0Var;
-                                        pi0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
+                                        ri0Var.w = true;
+                                        ri0Var.F = org.telegram.ui.Components.sr.h;
+                                        ri0Var.setWillNotDraw(false);
+                                        ri0Var.Q = mc0Var;
+                                        ri0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
                                         Rect rect2 = new Rect();
                                         Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                         mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                         mutate2.getPadding(rect2);
                                         int i19 = rect2.left;
-                                        pi0Var.x = i19;
-                                        org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
-                                        pi0Var.v = li0Var;
-                                        li0Var.setBackgroundDrawable(mutate2);
-                                        li0Var.setPadding(i19, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i19, 0);
-                                        li0Var.setVisibility(4);
-                                        pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
-                                        pi0Var.O = LocaleController.getUseImperialSystemType();
-                                        pi0Var.M = user;
-                                        pi0Var.I = kc0Var;
-                                        org.telegram.ui.Components.ed0 ed0Var = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                        pi0Var.G = ed0Var;
-                                        ed0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-                                        ed0Var.setItemCount(5);
-                                        org.telegram.ui.Components.ed0 ed0Var2 = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                        pi0Var.H = ed0Var2;
-                                        ed0Var2.setItemCount(5);
-                                        ed0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
-                                        org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(pi0Var, parentActivity);
-                                        pi0Var.P = mi0Var;
-                                        mi0Var.setOrientation(1);
+                                        ri0Var.x = i19;
+                                        org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(ri0Var.getContext());
+                                        ri0Var.v = ni0Var;
+                                        ni0Var.setBackgroundDrawable(mutate2);
+                                        ni0Var.setPadding(i19, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i19, 0);
+                                        ni0Var.setVisibility(4);
+                                        ri0Var.addView(ni0Var, 0, w7.y5.e(-1, -2, 80));
+                                        ri0Var.O = LocaleController.getUseImperialSystemType();
+                                        ri0Var.M = user;
+                                        ri0Var.I = kc0Var;
+                                        org.telegram.ui.Components.gd0 gd0Var = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                        ri0Var.G = gd0Var;
+                                        gd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+                                        gd0Var.setItemCount(5);
+                                        org.telegram.ui.Components.gd0 gd0Var2 = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                        ri0Var.H = gd0Var2;
+                                        gd0Var2.setItemCount(5);
+                                        gd0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
+                                        org.telegram.ui.Components.oi0 oi0Var = new org.telegram.ui.Components.oi0(ri0Var, parentActivity);
+                                        ri0Var.P = oi0Var;
+                                        oi0Var.setOrientation(1);
                                         FrameLayout frameLayout = new FrameLayout(parentActivity);
-                                        mi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
+                                        oi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
                                         TextView textView = new TextView(parentActivity);
                                         textView.setText(LocaleController.getString(R.string.LocationNotifiation));
                                         org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, 20.0f);
@@ -732,40 +732,40 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         LinearLayout linearLayout = new LinearLayout(parentActivity);
                                         linearLayout.setOrientation(0);
                                         linearLayout.setWeightSum(1.0f);
-                                        mi0Var.addView(linearLayout, w7.y5.n(-1, -2));
+                                        oi0Var.addView(linearLayout, w7.y5.n(-1, -2));
                                         System.currentTimeMillis();
                                         FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                                         TextView textView2 = new TextView(parentActivity);
-                                        pi0Var.K = textView2;
-                                        org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(parentActivity);
-                                        pi0Var.J = ni0Var;
-                                        linearLayout.addView(ed0Var, w7.y5.l(0.5f, 0, 270));
-                                        ed0Var.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 0));
-                                        ed0Var.setMinValue(0);
-                                        ed0Var.setMaxValue(10);
-                                        ed0Var.setWrapSelectorWheel(false);
-                                        ed0Var.setTextOffset(AndroidUtilities.dp(20.0f));
-                                        org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(pi0Var, 1);
-                                        ed0Var.setOnValueChangedListener(ki0Var);
-                                        ed0Var2.setMinValue(0);
-                                        ed0Var2.setMaxValue(10);
-                                        ed0Var2.setWrapSelectorWheel(false);
-                                        ed0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
-                                        linearLayout.addView(ed0Var2, w7.y5.l(0.5f, 0, 270));
-                                        ed0Var2.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 2));
-                                        ed0Var2.setOnValueChangedListener(ki0Var);
-                                        ed0Var.setValue(0);
-                                        ed0Var2.setValue(6);
-                                        mi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
-                                        ni0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                                        ni0Var.setGravity(17);
-                                        ni0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-                                        ni0Var.setTextSize(1, 14.0f);
-                                        ni0Var.setMaxLines(2);
-                                        ni0Var.setTypeface(AndroidUtilities.bold());
-                                        ni0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
-                                        frameLayout2.addView(ni0Var, w7.y5.c(48.0f, -1));
-                                        ni0Var.setOnClickListener(new org.telegram.ui.Components.et(11, pi0Var, owVar));
+                                        ri0Var.K = textView2;
+                                        org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
+                                        ri0Var.J = pi0Var;
+                                        linearLayout.addView(gd0Var, w7.y5.l(0.5f, 0, 270));
+                                        gd0Var.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 0));
+                                        gd0Var.setMinValue(0);
+                                        gd0Var.setMaxValue(10);
+                                        gd0Var.setWrapSelectorWheel(false);
+                                        gd0Var.setTextOffset(AndroidUtilities.dp(20.0f));
+                                        org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(ri0Var, 1);
+                                        gd0Var.setOnValueChangedListener(mi0Var);
+                                        gd0Var2.setMinValue(0);
+                                        gd0Var2.setMaxValue(10);
+                                        gd0Var2.setWrapSelectorWheel(false);
+                                        gd0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
+                                        linearLayout.addView(gd0Var2, w7.y5.l(0.5f, 0, 270));
+                                        gd0Var2.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 2));
+                                        gd0Var2.setOnValueChangedListener(mi0Var);
+                                        gd0Var.setValue(0);
+                                        gd0Var2.setValue(6);
+                                        oi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
+                                        pi0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                                        pi0Var.setGravity(17);
+                                        pi0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+                                        pi0Var.setTextSize(1, 14.0f);
+                                        pi0Var.setMaxLines(2);
+                                        pi0Var.setTypeface(AndroidUtilities.bold());
+                                        pi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
+                                        frameLayout2.addView(pi0Var, w7.y5.c(48.0f, -1));
+                                        pi0Var.setOnClickListener(new org.telegram.ui.Components.ft(11, ri0Var, owVar));
                                         textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                         textView2.setGravity(17);
                                         textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -774,38 +774,38 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         textView2.setScaleX(0.5f);
                                         textView2.setScaleY(0.5f);
                                         frameLayout2.addView(textView2, w7.y5.c(48.0f, -1));
-                                        li0Var.addView(mi0Var, w7.y5.e(-1, -2, 51));
-                                        cd0Var.R = pi0Var;
-                                        ((FrameLayout) cd0Var.fragmentView).addView(pi0Var, w7.y5.c(-1.0f, -1));
-                                        org.telegram.ui.Components.pi0 pi0Var2 = cd0Var.R;
-                                        pi0Var2.r = false;
-                                        AnimatorSet animatorSet = pi0Var2.s;
+                                        ni0Var.addView(oi0Var, w7.y5.e(-1, -2, 51));
+                                        cd0Var.R = ri0Var;
+                                        ((FrameLayout) cd0Var.fragmentView).addView(ri0Var, w7.y5.c(-1.0f, -1));
+                                        org.telegram.ui.Components.ri0 ri0Var2 = cd0Var.R;
+                                        ri0Var2.r = false;
+                                        AnimatorSet animatorSet = ri0Var2.s;
                                         if (animatorSet != null) {
                                             animatorSet.cancel();
-                                            pi0Var2.s = null;
+                                            ri0Var2.s = null;
                                         }
-                                        org.telegram.ui.Components.li0 li0Var2 = pi0Var2.v;
-                                        li0Var2.measure(View.MeasureSpec.makeMeasureSpec((pi0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-                                        if (pi0Var2.r) {
+                                        org.telegram.ui.Components.ni0 ni0Var2 = ri0Var2.v;
+                                        ni0Var2.measure(View.MeasureSpec.makeMeasureSpec((ri0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                                        if (ri0Var2.r) {
                                             z11 = true;
                                         } else {
-                                            li0Var2.setVisibility(0);
-                                            if (pi0Var2.w) {
-                                                pi0Var2.setLayerType(2, null);
+                                            ni0Var2.setVisibility(0);
+                                            if (ri0Var2.w) {
+                                                ri0Var2.setLayerType(2, null);
                                             }
-                                            li0Var2.setTranslationY(li0Var2.getMeasuredHeight());
+                                            ni0Var2.setTranslationY(ni0Var2.getMeasuredHeight());
                                             AnimatorSet animatorSet2 = new AnimatorSet();
-                                            pi0Var2.s = animatorSet2;
-                                            animatorSet2.playTogether(ObjectAnimator.ofFloat(li0Var2, (Property<org.telegram.ui.Components.li0, Float>) View.TRANSLATION_Y, 0.0f));
-                                            pi0Var2.s.setDuration(400L);
-                                            pi0Var2.s.setStartDelay(20L);
-                                            pi0Var2.s.setInterpolator(pi0Var2.F);
+                                            ri0Var2.s = animatorSet2;
+                                            animatorSet2.playTogether(ObjectAnimator.ofFloat(ni0Var2, (Property<org.telegram.ui.Components.ni0, Float>) View.TRANSLATION_Y, 0.0f));
+                                            ri0Var2.s.setDuration(400L);
+                                            ri0Var2.s.setStartDelay(20L);
+                                            ri0Var2.s.setInterpolator(ri0Var2.F);
                                             z11 = true;
-                                            pi0Var2.s.addListener(new org.telegram.ui.Components.oi0(pi0Var2, 1 == true ? 1 : 0));
+                                            ri0Var2.s.addListener(new org.telegram.ui.Components.qi0(ri0Var2, 1 == true ? 1 : 0));
                                             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                                            pi0Var2.s.start();
+                                            ri0Var2.s.start();
                                         }
-                                        pi0Var2.c(z11);
+                                        ri0Var2.c(z11);
                                         break;
                                     }
                                 }
@@ -897,47 +897,47 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         kc0 kc0Var = new kc0(cd0Var, i18);
                                         ow owVar = new ow(15, cd0Var, user);
                                         mc0 mc0Var = new mc0(cd0Var, 2);
-                                        org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
-                                        pi0Var.a = null;
-                                        pi0Var.d = -1;
-                                        pi0Var.e = false;
-                                        pi0Var.f = false;
-                                        pi0Var.h = null;
-                                        pi0Var.n = new Rect();
+                                        org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(parentActivity);
+                                        ri0Var.a = null;
+                                        ri0Var.d = -1;
+                                        ri0Var.e = false;
+                                        ri0Var.f = false;
+                                        ri0Var.h = null;
+                                        ri0Var.n = new Rect();
                                         new Paint();
-                                        pi0Var.w = true;
-                                        pi0Var.F = org.telegram.ui.Components.rr.h;
-                                        pi0Var.setWillNotDraw(false);
-                                        pi0Var.Q = mc0Var;
-                                        pi0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
+                                        ri0Var.w = true;
+                                        ri0Var.F = org.telegram.ui.Components.sr.h;
+                                        ri0Var.setWillNotDraw(false);
+                                        ri0Var.Q = mc0Var;
+                                        ri0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
                                         Rect rect2 = new Rect();
                                         Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                         mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                         mutate2.getPadding(rect2);
                                         int i19 = rect2.left;
-                                        pi0Var.x = i19;
-                                        org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
-                                        pi0Var.v = li0Var;
-                                        li0Var.setBackgroundDrawable(mutate2);
-                                        li0Var.setPadding(i19, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i19, 0);
-                                        li0Var.setVisibility(4);
-                                        pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
-                                        pi0Var.O = LocaleController.getUseImperialSystemType();
-                                        pi0Var.M = user;
-                                        pi0Var.I = kc0Var;
-                                        org.telegram.ui.Components.ed0 ed0Var = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                        pi0Var.G = ed0Var;
-                                        ed0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-                                        ed0Var.setItemCount(5);
-                                        org.telegram.ui.Components.ed0 ed0Var2 = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                        pi0Var.H = ed0Var2;
-                                        ed0Var2.setItemCount(5);
-                                        ed0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
-                                        org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(pi0Var, parentActivity);
-                                        pi0Var.P = mi0Var;
-                                        mi0Var.setOrientation(1);
+                                        ri0Var.x = i19;
+                                        org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(ri0Var.getContext());
+                                        ri0Var.v = ni0Var;
+                                        ni0Var.setBackgroundDrawable(mutate2);
+                                        ni0Var.setPadding(i19, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i19, 0);
+                                        ni0Var.setVisibility(4);
+                                        ri0Var.addView(ni0Var, 0, w7.y5.e(-1, -2, 80));
+                                        ri0Var.O = LocaleController.getUseImperialSystemType();
+                                        ri0Var.M = user;
+                                        ri0Var.I = kc0Var;
+                                        org.telegram.ui.Components.gd0 gd0Var = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                        ri0Var.G = gd0Var;
+                                        gd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+                                        gd0Var.setItemCount(5);
+                                        org.telegram.ui.Components.gd0 gd0Var2 = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                        ri0Var.H = gd0Var2;
+                                        gd0Var2.setItemCount(5);
+                                        gd0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
+                                        org.telegram.ui.Components.oi0 oi0Var = new org.telegram.ui.Components.oi0(ri0Var, parentActivity);
+                                        ri0Var.P = oi0Var;
+                                        oi0Var.setOrientation(1);
                                         FrameLayout frameLayout = new FrameLayout(parentActivity);
-                                        mi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
+                                        oi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
                                         TextView textView = new TextView(parentActivity);
                                         textView.setText(LocaleController.getString(R.string.LocationNotifiation));
                                         org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, 20.0f);
@@ -946,40 +946,40 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         LinearLayout linearLayout = new LinearLayout(parentActivity);
                                         linearLayout.setOrientation(0);
                                         linearLayout.setWeightSum(1.0f);
-                                        mi0Var.addView(linearLayout, w7.y5.n(-1, -2));
+                                        oi0Var.addView(linearLayout, w7.y5.n(-1, -2));
                                         System.currentTimeMillis();
                                         FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                                         TextView textView2 = new TextView(parentActivity);
-                                        pi0Var.K = textView2;
-                                        org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(parentActivity);
-                                        pi0Var.J = ni0Var;
-                                        linearLayout.addView(ed0Var, w7.y5.l(0.5f, 0, 270));
-                                        ed0Var.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 0));
-                                        ed0Var.setMinValue(0);
-                                        ed0Var.setMaxValue(10);
-                                        ed0Var.setWrapSelectorWheel(false);
-                                        ed0Var.setTextOffset(AndroidUtilities.dp(20.0f));
-                                        org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(pi0Var, 1);
-                                        ed0Var.setOnValueChangedListener(ki0Var);
-                                        ed0Var2.setMinValue(0);
-                                        ed0Var2.setMaxValue(10);
-                                        ed0Var2.setWrapSelectorWheel(false);
-                                        ed0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
-                                        linearLayout.addView(ed0Var2, w7.y5.l(0.5f, 0, 270));
-                                        ed0Var2.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 2));
-                                        ed0Var2.setOnValueChangedListener(ki0Var);
-                                        ed0Var.setValue(0);
-                                        ed0Var2.setValue(6);
-                                        mi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
-                                        ni0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                                        ni0Var.setGravity(17);
-                                        ni0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-                                        ni0Var.setTextSize(1, 14.0f);
-                                        ni0Var.setMaxLines(2);
-                                        ni0Var.setTypeface(AndroidUtilities.bold());
-                                        ni0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
-                                        frameLayout2.addView(ni0Var, w7.y5.c(48.0f, -1));
-                                        ni0Var.setOnClickListener(new org.telegram.ui.Components.et(11, pi0Var, owVar));
+                                        ri0Var.K = textView2;
+                                        org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
+                                        ri0Var.J = pi0Var;
+                                        linearLayout.addView(gd0Var, w7.y5.l(0.5f, 0, 270));
+                                        gd0Var.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 0));
+                                        gd0Var.setMinValue(0);
+                                        gd0Var.setMaxValue(10);
+                                        gd0Var.setWrapSelectorWheel(false);
+                                        gd0Var.setTextOffset(AndroidUtilities.dp(20.0f));
+                                        org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(ri0Var, 1);
+                                        gd0Var.setOnValueChangedListener(mi0Var);
+                                        gd0Var2.setMinValue(0);
+                                        gd0Var2.setMaxValue(10);
+                                        gd0Var2.setWrapSelectorWheel(false);
+                                        gd0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
+                                        linearLayout.addView(gd0Var2, w7.y5.l(0.5f, 0, 270));
+                                        gd0Var2.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 2));
+                                        gd0Var2.setOnValueChangedListener(mi0Var);
+                                        gd0Var.setValue(0);
+                                        gd0Var2.setValue(6);
+                                        oi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
+                                        pi0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                                        pi0Var.setGravity(17);
+                                        pi0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+                                        pi0Var.setTextSize(1, 14.0f);
+                                        pi0Var.setMaxLines(2);
+                                        pi0Var.setTypeface(AndroidUtilities.bold());
+                                        pi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
+                                        frameLayout2.addView(pi0Var, w7.y5.c(48.0f, -1));
+                                        pi0Var.setOnClickListener(new org.telegram.ui.Components.ft(11, ri0Var, owVar));
                                         textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                         textView2.setGravity(17);
                                         textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -988,38 +988,38 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                         textView2.setScaleX(0.5f);
                                         textView2.setScaleY(0.5f);
                                         frameLayout2.addView(textView2, w7.y5.c(48.0f, -1));
-                                        li0Var.addView(mi0Var, w7.y5.e(-1, -2, 51));
-                                        cd0Var.R = pi0Var;
-                                        ((FrameLayout) cd0Var.fragmentView).addView(pi0Var, w7.y5.c(-1.0f, -1));
-                                        org.telegram.ui.Components.pi0 pi0Var2 = cd0Var.R;
-                                        pi0Var2.r = false;
-                                        AnimatorSet animatorSet = pi0Var2.s;
+                                        ni0Var.addView(oi0Var, w7.y5.e(-1, -2, 51));
+                                        cd0Var.R = ri0Var;
+                                        ((FrameLayout) cd0Var.fragmentView).addView(ri0Var, w7.y5.c(-1.0f, -1));
+                                        org.telegram.ui.Components.ri0 ri0Var2 = cd0Var.R;
+                                        ri0Var2.r = false;
+                                        AnimatorSet animatorSet = ri0Var2.s;
                                         if (animatorSet != null) {
                                             animatorSet.cancel();
-                                            pi0Var2.s = null;
+                                            ri0Var2.s = null;
                                         }
-                                        org.telegram.ui.Components.li0 li0Var2 = pi0Var2.v;
-                                        li0Var2.measure(View.MeasureSpec.makeMeasureSpec((pi0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-                                        if (pi0Var2.r) {
+                                        org.telegram.ui.Components.ni0 ni0Var2 = ri0Var2.v;
+                                        ni0Var2.measure(View.MeasureSpec.makeMeasureSpec((ri0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                                        if (ri0Var2.r) {
                                             z11 = true;
                                         } else {
-                                            li0Var2.setVisibility(0);
-                                            if (pi0Var2.w) {
-                                                pi0Var2.setLayerType(2, null);
+                                            ni0Var2.setVisibility(0);
+                                            if (ri0Var2.w) {
+                                                ri0Var2.setLayerType(2, null);
                                             }
-                                            li0Var2.setTranslationY(li0Var2.getMeasuredHeight());
+                                            ni0Var2.setTranslationY(ni0Var2.getMeasuredHeight());
                                             AnimatorSet animatorSet2 = new AnimatorSet();
-                                            pi0Var2.s = animatorSet2;
-                                            animatorSet2.playTogether(ObjectAnimator.ofFloat(li0Var2, (Property<org.telegram.ui.Components.li0, Float>) View.TRANSLATION_Y, 0.0f));
-                                            pi0Var2.s.setDuration(400L);
-                                            pi0Var2.s.setStartDelay(20L);
-                                            pi0Var2.s.setInterpolator(pi0Var2.F);
+                                            ri0Var2.s = animatorSet2;
+                                            animatorSet2.playTogether(ObjectAnimator.ofFloat(ni0Var2, (Property<org.telegram.ui.Components.ni0, Float>) View.TRANSLATION_Y, 0.0f));
+                                            ri0Var2.s.setDuration(400L);
+                                            ri0Var2.s.setStartDelay(20L);
+                                            ri0Var2.s.setInterpolator(ri0Var2.F);
                                             z11 = true;
-                                            pi0Var2.s.addListener(new org.telegram.ui.Components.oi0(pi0Var2, 1 == true ? 1 : 0));
+                                            ri0Var2.s.addListener(new org.telegram.ui.Components.qi0(ri0Var2, 1 == true ? 1 : 0));
                                             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                                            pi0Var2.s.start();
+                                            ri0Var2.s.start();
                                         }
-                                        pi0Var2.c(z11);
+                                        ri0Var2.c(z11);
                                         break;
                                     }
                                 }
@@ -1134,47 +1134,47 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 kc0 kc0Var = new kc0(cd0Var, i182);
                                 ow owVar = new ow(15, cd0Var, user);
                                 mc0 mc0Var = new mc0(cd0Var, 2);
-                                org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
-                                pi0Var.a = null;
-                                pi0Var.d = -1;
-                                pi0Var.e = false;
-                                pi0Var.f = false;
-                                pi0Var.h = null;
-                                pi0Var.n = new Rect();
+                                org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(parentActivity);
+                                ri0Var.a = null;
+                                ri0Var.d = -1;
+                                ri0Var.e = false;
+                                ri0Var.f = false;
+                                ri0Var.h = null;
+                                ri0Var.n = new Rect();
                                 new Paint();
-                                pi0Var.w = true;
-                                pi0Var.F = org.telegram.ui.Components.rr.h;
-                                pi0Var.setWillNotDraw(false);
-                                pi0Var.Q = mc0Var;
-                                pi0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
+                                ri0Var.w = true;
+                                ri0Var.F = org.telegram.ui.Components.sr.h;
+                                ri0Var.setWillNotDraw(false);
+                                ri0Var.Q = mc0Var;
+                                ri0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
                                 Rect rect2 = new Rect();
                                 Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                 mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                 mutate2.getPadding(rect2);
                                 int i192 = rect2.left;
-                                pi0Var.x = i192;
-                                org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
-                                pi0Var.v = li0Var;
-                                li0Var.setBackgroundDrawable(mutate2);
-                                li0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
-                                li0Var.setVisibility(4);
-                                pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
-                                pi0Var.O = LocaleController.getUseImperialSystemType();
-                                pi0Var.M = user;
-                                pi0Var.I = kc0Var;
-                                org.telegram.ui.Components.ed0 ed0Var = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                pi0Var.G = ed0Var;
-                                ed0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-                                ed0Var.setItemCount(5);
-                                org.telegram.ui.Components.ed0 ed0Var2 = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                pi0Var.H = ed0Var2;
-                                ed0Var2.setItemCount(5);
-                                ed0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
-                                org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(pi0Var, parentActivity);
-                                pi0Var.P = mi0Var;
-                                mi0Var.setOrientation(1);
+                                ri0Var.x = i192;
+                                org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(ri0Var.getContext());
+                                ri0Var.v = ni0Var;
+                                ni0Var.setBackgroundDrawable(mutate2);
+                                ni0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
+                                ni0Var.setVisibility(4);
+                                ri0Var.addView(ni0Var, 0, w7.y5.e(-1, -2, 80));
+                                ri0Var.O = LocaleController.getUseImperialSystemType();
+                                ri0Var.M = user;
+                                ri0Var.I = kc0Var;
+                                org.telegram.ui.Components.gd0 gd0Var = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                ri0Var.G = gd0Var;
+                                gd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+                                gd0Var.setItemCount(5);
+                                org.telegram.ui.Components.gd0 gd0Var2 = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                ri0Var.H = gd0Var2;
+                                gd0Var2.setItemCount(5);
+                                gd0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
+                                org.telegram.ui.Components.oi0 oi0Var = new org.telegram.ui.Components.oi0(ri0Var, parentActivity);
+                                ri0Var.P = oi0Var;
+                                oi0Var.setOrientation(1);
                                 FrameLayout frameLayout = new FrameLayout(parentActivity);
-                                mi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
+                                oi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView = new TextView(parentActivity);
                                 textView.setText(LocaleController.getString(R.string.LocationNotifiation));
                                 org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, 20.0f);
@@ -1183,40 +1183,40 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 LinearLayout linearLayout = new LinearLayout(parentActivity);
                                 linearLayout.setOrientation(0);
                                 linearLayout.setWeightSum(1.0f);
-                                mi0Var.addView(linearLayout, w7.y5.n(-1, -2));
+                                oi0Var.addView(linearLayout, w7.y5.n(-1, -2));
                                 System.currentTimeMillis();
                                 FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                                 TextView textView2 = new TextView(parentActivity);
-                                pi0Var.K = textView2;
-                                org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(parentActivity);
-                                pi0Var.J = ni0Var;
-                                linearLayout.addView(ed0Var, w7.y5.l(0.5f, 0, 270));
-                                ed0Var.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 0));
-                                ed0Var.setMinValue(0);
-                                ed0Var.setMaxValue(10);
-                                ed0Var.setWrapSelectorWheel(false);
-                                ed0Var.setTextOffset(AndroidUtilities.dp(20.0f));
-                                org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(pi0Var, 1);
-                                ed0Var.setOnValueChangedListener(ki0Var);
-                                ed0Var2.setMinValue(0);
-                                ed0Var2.setMaxValue(10);
-                                ed0Var2.setWrapSelectorWheel(false);
-                                ed0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
-                                linearLayout.addView(ed0Var2, w7.y5.l(0.5f, 0, 270));
-                                ed0Var2.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 2));
-                                ed0Var2.setOnValueChangedListener(ki0Var);
-                                ed0Var.setValue(0);
-                                ed0Var2.setValue(6);
-                                mi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
-                                ni0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                                ni0Var.setGravity(17);
-                                ni0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-                                ni0Var.setTextSize(1, 14.0f);
-                                ni0Var.setMaxLines(2);
-                                ni0Var.setTypeface(AndroidUtilities.bold());
-                                ni0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
-                                frameLayout2.addView(ni0Var, w7.y5.c(48.0f, -1));
-                                ni0Var.setOnClickListener(new org.telegram.ui.Components.et(11, pi0Var, owVar));
+                                ri0Var.K = textView2;
+                                org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
+                                ri0Var.J = pi0Var;
+                                linearLayout.addView(gd0Var, w7.y5.l(0.5f, 0, 270));
+                                gd0Var.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 0));
+                                gd0Var.setMinValue(0);
+                                gd0Var.setMaxValue(10);
+                                gd0Var.setWrapSelectorWheel(false);
+                                gd0Var.setTextOffset(AndroidUtilities.dp(20.0f));
+                                org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(ri0Var, 1);
+                                gd0Var.setOnValueChangedListener(mi0Var);
+                                gd0Var2.setMinValue(0);
+                                gd0Var2.setMaxValue(10);
+                                gd0Var2.setWrapSelectorWheel(false);
+                                gd0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
+                                linearLayout.addView(gd0Var2, w7.y5.l(0.5f, 0, 270));
+                                gd0Var2.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 2));
+                                gd0Var2.setOnValueChangedListener(mi0Var);
+                                gd0Var.setValue(0);
+                                gd0Var2.setValue(6);
+                                oi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
+                                pi0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                                pi0Var.setGravity(17);
+                                pi0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+                                pi0Var.setTextSize(1, 14.0f);
+                                pi0Var.setMaxLines(2);
+                                pi0Var.setTypeface(AndroidUtilities.bold());
+                                pi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
+                                frameLayout2.addView(pi0Var, w7.y5.c(48.0f, -1));
+                                pi0Var.setOnClickListener(new org.telegram.ui.Components.ft(11, ri0Var, owVar));
                                 textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                 textView2.setGravity(17);
                                 textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -1225,38 +1225,38 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 textView2.setScaleX(0.5f);
                                 textView2.setScaleY(0.5f);
                                 frameLayout2.addView(textView2, w7.y5.c(48.0f, -1));
-                                li0Var.addView(mi0Var, w7.y5.e(-1, -2, 51));
-                                cd0Var.R = pi0Var;
-                                ((FrameLayout) cd0Var.fragmentView).addView(pi0Var, w7.y5.c(-1.0f, -1));
-                                org.telegram.ui.Components.pi0 pi0Var2 = cd0Var.R;
-                                pi0Var2.r = false;
-                                AnimatorSet animatorSet = pi0Var2.s;
+                                ni0Var.addView(oi0Var, w7.y5.e(-1, -2, 51));
+                                cd0Var.R = ri0Var;
+                                ((FrameLayout) cd0Var.fragmentView).addView(ri0Var, w7.y5.c(-1.0f, -1));
+                                org.telegram.ui.Components.ri0 ri0Var2 = cd0Var.R;
+                                ri0Var2.r = false;
+                                AnimatorSet animatorSet = ri0Var2.s;
                                 if (animatorSet != null) {
                                     animatorSet.cancel();
-                                    pi0Var2.s = null;
+                                    ri0Var2.s = null;
                                 }
-                                org.telegram.ui.Components.li0 li0Var2 = pi0Var2.v;
-                                li0Var2.measure(View.MeasureSpec.makeMeasureSpec((pi0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-                                if (pi0Var2.r) {
+                                org.telegram.ui.Components.ni0 ni0Var2 = ri0Var2.v;
+                                ni0Var2.measure(View.MeasureSpec.makeMeasureSpec((ri0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                                if (ri0Var2.r) {
                                     z11 = true;
                                 } else {
-                                    li0Var2.setVisibility(0);
-                                    if (pi0Var2.w) {
-                                        pi0Var2.setLayerType(2, null);
+                                    ni0Var2.setVisibility(0);
+                                    if (ri0Var2.w) {
+                                        ri0Var2.setLayerType(2, null);
                                     }
-                                    li0Var2.setTranslationY(li0Var2.getMeasuredHeight());
+                                    ni0Var2.setTranslationY(ni0Var2.getMeasuredHeight());
                                     AnimatorSet animatorSet2 = new AnimatorSet();
-                                    pi0Var2.s = animatorSet2;
-                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(li0Var2, (Property<org.telegram.ui.Components.li0, Float>) View.TRANSLATION_Y, 0.0f));
-                                    pi0Var2.s.setDuration(400L);
-                                    pi0Var2.s.setStartDelay(20L);
-                                    pi0Var2.s.setInterpolator(pi0Var2.F);
+                                    ri0Var2.s = animatorSet2;
+                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(ni0Var2, (Property<org.telegram.ui.Components.ni0, Float>) View.TRANSLATION_Y, 0.0f));
+                                    ri0Var2.s.setDuration(400L);
+                                    ri0Var2.s.setStartDelay(20L);
+                                    ri0Var2.s.setInterpolator(ri0Var2.F);
                                     z11 = true;
-                                    pi0Var2.s.addListener(new org.telegram.ui.Components.oi0(pi0Var2, 1 == true ? 1 : 0));
+                                    ri0Var2.s.addListener(new org.telegram.ui.Components.qi0(ri0Var2, 1 == true ? 1 : 0));
                                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                                    pi0Var2.s.start();
+                                    ri0Var2.s.start();
                                 }
-                                pi0Var2.c(z11);
+                                ri0Var2.c(z11);
                                 break;
                             }
                         }
@@ -1364,47 +1364,47 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 kc0 kc0Var = new kc0(cd0Var, i182);
                                 ow owVar = new ow(15, cd0Var, user);
                                 mc0 mc0Var = new mc0(cd0Var, 2);
-                                org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
-                                pi0Var.a = null;
-                                pi0Var.d = -1;
-                                pi0Var.e = false;
-                                pi0Var.f = false;
-                                pi0Var.h = null;
-                                pi0Var.n = new Rect();
+                                org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(parentActivity);
+                                ri0Var.a = null;
+                                ri0Var.d = -1;
+                                ri0Var.e = false;
+                                ri0Var.f = false;
+                                ri0Var.h = null;
+                                ri0Var.n = new Rect();
                                 new Paint();
-                                pi0Var.w = true;
-                                pi0Var.F = org.telegram.ui.Components.rr.h;
-                                pi0Var.setWillNotDraw(false);
-                                pi0Var.Q = mc0Var;
-                                pi0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
+                                ri0Var.w = true;
+                                ri0Var.F = org.telegram.ui.Components.sr.h;
+                                ri0Var.setWillNotDraw(false);
+                                ri0Var.Q = mc0Var;
+                                ri0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
                                 Rect rect2 = new Rect();
                                 Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                 mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                 mutate2.getPadding(rect2);
                                 int i192 = rect2.left;
-                                pi0Var.x = i192;
-                                org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
-                                pi0Var.v = li0Var;
-                                li0Var.setBackgroundDrawable(mutate2);
-                                li0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
-                                li0Var.setVisibility(4);
-                                pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
-                                pi0Var.O = LocaleController.getUseImperialSystemType();
-                                pi0Var.M = user;
-                                pi0Var.I = kc0Var;
-                                org.telegram.ui.Components.ed0 ed0Var = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                pi0Var.G = ed0Var;
-                                ed0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-                                ed0Var.setItemCount(5);
-                                org.telegram.ui.Components.ed0 ed0Var2 = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                pi0Var.H = ed0Var2;
-                                ed0Var2.setItemCount(5);
-                                ed0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
-                                org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(pi0Var, parentActivity);
-                                pi0Var.P = mi0Var;
-                                mi0Var.setOrientation(1);
+                                ri0Var.x = i192;
+                                org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(ri0Var.getContext());
+                                ri0Var.v = ni0Var;
+                                ni0Var.setBackgroundDrawable(mutate2);
+                                ni0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
+                                ni0Var.setVisibility(4);
+                                ri0Var.addView(ni0Var, 0, w7.y5.e(-1, -2, 80));
+                                ri0Var.O = LocaleController.getUseImperialSystemType();
+                                ri0Var.M = user;
+                                ri0Var.I = kc0Var;
+                                org.telegram.ui.Components.gd0 gd0Var = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                ri0Var.G = gd0Var;
+                                gd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+                                gd0Var.setItemCount(5);
+                                org.telegram.ui.Components.gd0 gd0Var2 = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                ri0Var.H = gd0Var2;
+                                gd0Var2.setItemCount(5);
+                                gd0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
+                                org.telegram.ui.Components.oi0 oi0Var = new org.telegram.ui.Components.oi0(ri0Var, parentActivity);
+                                ri0Var.P = oi0Var;
+                                oi0Var.setOrientation(1);
                                 FrameLayout frameLayout = new FrameLayout(parentActivity);
-                                mi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
+                                oi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView = new TextView(parentActivity);
                                 textView.setText(LocaleController.getString(R.string.LocationNotifiation));
                                 org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, 20.0f);
@@ -1413,40 +1413,40 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 LinearLayout linearLayout = new LinearLayout(parentActivity);
                                 linearLayout.setOrientation(0);
                                 linearLayout.setWeightSum(1.0f);
-                                mi0Var.addView(linearLayout, w7.y5.n(-1, -2));
+                                oi0Var.addView(linearLayout, w7.y5.n(-1, -2));
                                 System.currentTimeMillis();
                                 FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                                 TextView textView2 = new TextView(parentActivity);
-                                pi0Var.K = textView2;
-                                org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(parentActivity);
-                                pi0Var.J = ni0Var;
-                                linearLayout.addView(ed0Var, w7.y5.l(0.5f, 0, 270));
-                                ed0Var.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 0));
-                                ed0Var.setMinValue(0);
-                                ed0Var.setMaxValue(10);
-                                ed0Var.setWrapSelectorWheel(false);
-                                ed0Var.setTextOffset(AndroidUtilities.dp(20.0f));
-                                org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(pi0Var, 1);
-                                ed0Var.setOnValueChangedListener(ki0Var);
-                                ed0Var2.setMinValue(0);
-                                ed0Var2.setMaxValue(10);
-                                ed0Var2.setWrapSelectorWheel(false);
-                                ed0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
-                                linearLayout.addView(ed0Var2, w7.y5.l(0.5f, 0, 270));
-                                ed0Var2.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 2));
-                                ed0Var2.setOnValueChangedListener(ki0Var);
-                                ed0Var.setValue(0);
-                                ed0Var2.setValue(6);
-                                mi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
-                                ni0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                                ni0Var.setGravity(17);
-                                ni0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-                                ni0Var.setTextSize(1, 14.0f);
-                                ni0Var.setMaxLines(2);
-                                ni0Var.setTypeface(AndroidUtilities.bold());
-                                ni0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
-                                frameLayout2.addView(ni0Var, w7.y5.c(48.0f, -1));
-                                ni0Var.setOnClickListener(new org.telegram.ui.Components.et(11, pi0Var, owVar));
+                                ri0Var.K = textView2;
+                                org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
+                                ri0Var.J = pi0Var;
+                                linearLayout.addView(gd0Var, w7.y5.l(0.5f, 0, 270));
+                                gd0Var.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 0));
+                                gd0Var.setMinValue(0);
+                                gd0Var.setMaxValue(10);
+                                gd0Var.setWrapSelectorWheel(false);
+                                gd0Var.setTextOffset(AndroidUtilities.dp(20.0f));
+                                org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(ri0Var, 1);
+                                gd0Var.setOnValueChangedListener(mi0Var);
+                                gd0Var2.setMinValue(0);
+                                gd0Var2.setMaxValue(10);
+                                gd0Var2.setWrapSelectorWheel(false);
+                                gd0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
+                                linearLayout.addView(gd0Var2, w7.y5.l(0.5f, 0, 270));
+                                gd0Var2.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 2));
+                                gd0Var2.setOnValueChangedListener(mi0Var);
+                                gd0Var.setValue(0);
+                                gd0Var2.setValue(6);
+                                oi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
+                                pi0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                                pi0Var.setGravity(17);
+                                pi0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+                                pi0Var.setTextSize(1, 14.0f);
+                                pi0Var.setMaxLines(2);
+                                pi0Var.setTypeface(AndroidUtilities.bold());
+                                pi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
+                                frameLayout2.addView(pi0Var, w7.y5.c(48.0f, -1));
+                                pi0Var.setOnClickListener(new org.telegram.ui.Components.ft(11, ri0Var, owVar));
                                 textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                 textView2.setGravity(17);
                                 textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -1455,38 +1455,38 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 textView2.setScaleX(0.5f);
                                 textView2.setScaleY(0.5f);
                                 frameLayout2.addView(textView2, w7.y5.c(48.0f, -1));
-                                li0Var.addView(mi0Var, w7.y5.e(-1, -2, 51));
-                                cd0Var.R = pi0Var;
-                                ((FrameLayout) cd0Var.fragmentView).addView(pi0Var, w7.y5.c(-1.0f, -1));
-                                org.telegram.ui.Components.pi0 pi0Var2 = cd0Var.R;
-                                pi0Var2.r = false;
-                                AnimatorSet animatorSet = pi0Var2.s;
+                                ni0Var.addView(oi0Var, w7.y5.e(-1, -2, 51));
+                                cd0Var.R = ri0Var;
+                                ((FrameLayout) cd0Var.fragmentView).addView(ri0Var, w7.y5.c(-1.0f, -1));
+                                org.telegram.ui.Components.ri0 ri0Var2 = cd0Var.R;
+                                ri0Var2.r = false;
+                                AnimatorSet animatorSet = ri0Var2.s;
                                 if (animatorSet != null) {
                                     animatorSet.cancel();
-                                    pi0Var2.s = null;
+                                    ri0Var2.s = null;
                                 }
-                                org.telegram.ui.Components.li0 li0Var2 = pi0Var2.v;
-                                li0Var2.measure(View.MeasureSpec.makeMeasureSpec((pi0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-                                if (pi0Var2.r) {
+                                org.telegram.ui.Components.ni0 ni0Var2 = ri0Var2.v;
+                                ni0Var2.measure(View.MeasureSpec.makeMeasureSpec((ri0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                                if (ri0Var2.r) {
                                     z11 = true;
                                 } else {
-                                    li0Var2.setVisibility(0);
-                                    if (pi0Var2.w) {
-                                        pi0Var2.setLayerType(2, null);
+                                    ni0Var2.setVisibility(0);
+                                    if (ri0Var2.w) {
+                                        ri0Var2.setLayerType(2, null);
                                     }
-                                    li0Var2.setTranslationY(li0Var2.getMeasuredHeight());
+                                    ni0Var2.setTranslationY(ni0Var2.getMeasuredHeight());
                                     AnimatorSet animatorSet2 = new AnimatorSet();
-                                    pi0Var2.s = animatorSet2;
-                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(li0Var2, (Property<org.telegram.ui.Components.li0, Float>) View.TRANSLATION_Y, 0.0f));
-                                    pi0Var2.s.setDuration(400L);
-                                    pi0Var2.s.setStartDelay(20L);
-                                    pi0Var2.s.setInterpolator(pi0Var2.F);
+                                    ri0Var2.s = animatorSet2;
+                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(ni0Var2, (Property<org.telegram.ui.Components.ni0, Float>) View.TRANSLATION_Y, 0.0f));
+                                    ri0Var2.s.setDuration(400L);
+                                    ri0Var2.s.setStartDelay(20L);
+                                    ri0Var2.s.setInterpolator(ri0Var2.F);
                                     z11 = true;
-                                    pi0Var2.s.addListener(new org.telegram.ui.Components.oi0(pi0Var2, 1 == true ? 1 : 0));
+                                    ri0Var2.s.addListener(new org.telegram.ui.Components.qi0(ri0Var2, 1 == true ? 1 : 0));
                                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                                    pi0Var2.s.start();
+                                    ri0Var2.s.start();
                                 }
-                                pi0Var2.c(z11);
+                                ri0Var2.c(z11);
                                 break;
                             }
                         }
@@ -1589,47 +1589,47 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 kc0 kc0Var = new kc0(cd0Var, i182);
                                 ow owVar = new ow(15, cd0Var, user);
                                 mc0 mc0Var = new mc0(cd0Var, 2);
-                                org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
-                                pi0Var.a = null;
-                                pi0Var.d = -1;
-                                pi0Var.e = false;
-                                pi0Var.f = false;
-                                pi0Var.h = null;
-                                pi0Var.n = new Rect();
+                                org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(parentActivity);
+                                ri0Var.a = null;
+                                ri0Var.d = -1;
+                                ri0Var.e = false;
+                                ri0Var.f = false;
+                                ri0Var.h = null;
+                                ri0Var.n = new Rect();
                                 new Paint();
-                                pi0Var.w = true;
-                                pi0Var.F = org.telegram.ui.Components.rr.h;
-                                pi0Var.setWillNotDraw(false);
-                                pi0Var.Q = mc0Var;
-                                pi0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
+                                ri0Var.w = true;
+                                ri0Var.F = org.telegram.ui.Components.sr.h;
+                                ri0Var.setWillNotDraw(false);
+                                ri0Var.Q = mc0Var;
+                                ri0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
                                 Rect rect2 = new Rect();
                                 Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                 mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                 mutate2.getPadding(rect2);
                                 int i192 = rect2.left;
-                                pi0Var.x = i192;
-                                org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
-                                pi0Var.v = li0Var;
-                                li0Var.setBackgroundDrawable(mutate2);
-                                li0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
-                                li0Var.setVisibility(4);
-                                pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
-                                pi0Var.O = LocaleController.getUseImperialSystemType();
-                                pi0Var.M = user;
-                                pi0Var.I = kc0Var;
-                                org.telegram.ui.Components.ed0 ed0Var = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                pi0Var.G = ed0Var;
-                                ed0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-                                ed0Var.setItemCount(5);
-                                org.telegram.ui.Components.ed0 ed0Var2 = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                pi0Var.H = ed0Var2;
-                                ed0Var2.setItemCount(5);
-                                ed0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
-                                org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(pi0Var, parentActivity);
-                                pi0Var.P = mi0Var;
-                                mi0Var.setOrientation(1);
+                                ri0Var.x = i192;
+                                org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(ri0Var.getContext());
+                                ri0Var.v = ni0Var;
+                                ni0Var.setBackgroundDrawable(mutate2);
+                                ni0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
+                                ni0Var.setVisibility(4);
+                                ri0Var.addView(ni0Var, 0, w7.y5.e(-1, -2, 80));
+                                ri0Var.O = LocaleController.getUseImperialSystemType();
+                                ri0Var.M = user;
+                                ri0Var.I = kc0Var;
+                                org.telegram.ui.Components.gd0 gd0Var = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                ri0Var.G = gd0Var;
+                                gd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+                                gd0Var.setItemCount(5);
+                                org.telegram.ui.Components.gd0 gd0Var2 = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                ri0Var.H = gd0Var2;
+                                gd0Var2.setItemCount(5);
+                                gd0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
+                                org.telegram.ui.Components.oi0 oi0Var = new org.telegram.ui.Components.oi0(ri0Var, parentActivity);
+                                ri0Var.P = oi0Var;
+                                oi0Var.setOrientation(1);
                                 FrameLayout frameLayout = new FrameLayout(parentActivity);
-                                mi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
+                                oi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView2 = new TextView(parentActivity);
                                 textView2.setText(LocaleController.getString(R.string.LocationNotifiation));
                                 org.telegram.messenger.f0.q(textView2, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, 20.0f);
@@ -1638,40 +1638,40 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 LinearLayout linearLayout = new LinearLayout(parentActivity);
                                 linearLayout.setOrientation(0);
                                 linearLayout.setWeightSum(1.0f);
-                                mi0Var.addView(linearLayout, w7.y5.n(-1, -2));
+                                oi0Var.addView(linearLayout, w7.y5.n(-1, -2));
                                 System.currentTimeMillis();
                                 FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                                 TextView textView22 = new TextView(parentActivity);
-                                pi0Var.K = textView22;
-                                org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(parentActivity);
-                                pi0Var.J = ni0Var;
-                                linearLayout.addView(ed0Var, w7.y5.l(0.5f, 0, 270));
-                                ed0Var.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 0));
-                                ed0Var.setMinValue(0);
-                                ed0Var.setMaxValue(10);
-                                ed0Var.setWrapSelectorWheel(false);
-                                ed0Var.setTextOffset(AndroidUtilities.dp(20.0f));
-                                org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(pi0Var, 1);
-                                ed0Var.setOnValueChangedListener(ki0Var);
-                                ed0Var2.setMinValue(0);
-                                ed0Var2.setMaxValue(10);
-                                ed0Var2.setWrapSelectorWheel(false);
-                                ed0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
-                                linearLayout.addView(ed0Var2, w7.y5.l(0.5f, 0, 270));
-                                ed0Var2.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 2));
-                                ed0Var2.setOnValueChangedListener(ki0Var);
-                                ed0Var.setValue(0);
-                                ed0Var2.setValue(6);
-                                mi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
-                                ni0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                                ni0Var.setGravity(17);
-                                ni0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-                                ni0Var.setTextSize(1, 14.0f);
-                                ni0Var.setMaxLines(2);
-                                ni0Var.setTypeface(AndroidUtilities.bold());
-                                ni0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
-                                frameLayout2.addView(ni0Var, w7.y5.c(48.0f, -1));
-                                ni0Var.setOnClickListener(new org.telegram.ui.Components.et(11, pi0Var, owVar));
+                                ri0Var.K = textView22;
+                                org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
+                                ri0Var.J = pi0Var;
+                                linearLayout.addView(gd0Var, w7.y5.l(0.5f, 0, 270));
+                                gd0Var.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 0));
+                                gd0Var.setMinValue(0);
+                                gd0Var.setMaxValue(10);
+                                gd0Var.setWrapSelectorWheel(false);
+                                gd0Var.setTextOffset(AndroidUtilities.dp(20.0f));
+                                org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(ri0Var, 1);
+                                gd0Var.setOnValueChangedListener(mi0Var);
+                                gd0Var2.setMinValue(0);
+                                gd0Var2.setMaxValue(10);
+                                gd0Var2.setWrapSelectorWheel(false);
+                                gd0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
+                                linearLayout.addView(gd0Var2, w7.y5.l(0.5f, 0, 270));
+                                gd0Var2.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 2));
+                                gd0Var2.setOnValueChangedListener(mi0Var);
+                                gd0Var.setValue(0);
+                                gd0Var2.setValue(6);
+                                oi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
+                                pi0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                                pi0Var.setGravity(17);
+                                pi0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+                                pi0Var.setTextSize(1, 14.0f);
+                                pi0Var.setMaxLines(2);
+                                pi0Var.setTypeface(AndroidUtilities.bold());
+                                pi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
+                                frameLayout2.addView(pi0Var, w7.y5.c(48.0f, -1));
+                                pi0Var.setOnClickListener(new org.telegram.ui.Components.ft(11, ri0Var, owVar));
                                 textView22.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                 textView22.setGravity(17);
                                 textView22.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -1680,38 +1680,38 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 textView22.setScaleX(0.5f);
                                 textView22.setScaleY(0.5f);
                                 frameLayout2.addView(textView22, w7.y5.c(48.0f, -1));
-                                li0Var.addView(mi0Var, w7.y5.e(-1, -2, 51));
-                                cd0Var.R = pi0Var;
-                                ((FrameLayout) cd0Var.fragmentView).addView(pi0Var, w7.y5.c(-1.0f, -1));
-                                org.telegram.ui.Components.pi0 pi0Var2 = cd0Var.R;
-                                pi0Var2.r = false;
-                                AnimatorSet animatorSet = pi0Var2.s;
+                                ni0Var.addView(oi0Var, w7.y5.e(-1, -2, 51));
+                                cd0Var.R = ri0Var;
+                                ((FrameLayout) cd0Var.fragmentView).addView(ri0Var, w7.y5.c(-1.0f, -1));
+                                org.telegram.ui.Components.ri0 ri0Var2 = cd0Var.R;
+                                ri0Var2.r = false;
+                                AnimatorSet animatorSet = ri0Var2.s;
                                 if (animatorSet != null) {
                                     animatorSet.cancel();
-                                    pi0Var2.s = null;
+                                    ri0Var2.s = null;
                                 }
-                                org.telegram.ui.Components.li0 li0Var2 = pi0Var2.v;
-                                li0Var2.measure(View.MeasureSpec.makeMeasureSpec((pi0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-                                if (pi0Var2.r) {
+                                org.telegram.ui.Components.ni0 ni0Var2 = ri0Var2.v;
+                                ni0Var2.measure(View.MeasureSpec.makeMeasureSpec((ri0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                                if (ri0Var2.r) {
                                     z11 = true;
                                 } else {
-                                    li0Var2.setVisibility(0);
-                                    if (pi0Var2.w) {
-                                        pi0Var2.setLayerType(2, null);
+                                    ni0Var2.setVisibility(0);
+                                    if (ri0Var2.w) {
+                                        ri0Var2.setLayerType(2, null);
                                     }
-                                    li0Var2.setTranslationY(li0Var2.getMeasuredHeight());
+                                    ni0Var2.setTranslationY(ni0Var2.getMeasuredHeight());
                                     AnimatorSet animatorSet2 = new AnimatorSet();
-                                    pi0Var2.s = animatorSet2;
-                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(li0Var2, (Property<org.telegram.ui.Components.li0, Float>) View.TRANSLATION_Y, 0.0f));
-                                    pi0Var2.s.setDuration(400L);
-                                    pi0Var2.s.setStartDelay(20L);
-                                    pi0Var2.s.setInterpolator(pi0Var2.F);
+                                    ri0Var2.s = animatorSet2;
+                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(ni0Var2, (Property<org.telegram.ui.Components.ni0, Float>) View.TRANSLATION_Y, 0.0f));
+                                    ri0Var2.s.setDuration(400L);
+                                    ri0Var2.s.setStartDelay(20L);
+                                    ri0Var2.s.setInterpolator(ri0Var2.F);
                                     z11 = true;
-                                    pi0Var2.s.addListener(new org.telegram.ui.Components.oi0(pi0Var2, 1 == true ? 1 : 0));
+                                    ri0Var2.s.addListener(new org.telegram.ui.Components.qi0(ri0Var2, 1 == true ? 1 : 0));
                                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                                    pi0Var2.s.start();
+                                    ri0Var2.s.start();
                                 }
-                                pi0Var2.c(z11);
+                                ri0Var2.c(z11);
                                 break;
                             }
                         }
@@ -1811,47 +1811,47 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 kc0 kc0Var = new kc0(cd0Var, i182);
                                 ow owVar = new ow(15, cd0Var, user);
                                 mc0 mc0Var = new mc0(cd0Var, 2);
-                                org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
-                                pi0Var.a = null;
-                                pi0Var.d = -1;
-                                pi0Var.e = false;
-                                pi0Var.f = false;
-                                pi0Var.h = null;
-                                pi0Var.n = new Rect();
+                                org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(parentActivity);
+                                ri0Var.a = null;
+                                ri0Var.d = -1;
+                                ri0Var.e = false;
+                                ri0Var.f = false;
+                                ri0Var.h = null;
+                                ri0Var.n = new Rect();
                                 new Paint();
-                                pi0Var.w = true;
-                                pi0Var.F = org.telegram.ui.Components.rr.h;
-                                pi0Var.setWillNotDraw(false);
-                                pi0Var.Q = mc0Var;
-                                pi0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
+                                ri0Var.w = true;
+                                ri0Var.F = org.telegram.ui.Components.sr.h;
+                                ri0Var.setWillNotDraw(false);
+                                ri0Var.Q = mc0Var;
+                                ri0Var.y = ViewConfiguration.get(parentActivity).getScaledTouchSlop();
                                 Rect rect2 = new Rect();
                                 Drawable mutate2 = parentActivity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                                 mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
                                 mutate2.getPadding(rect2);
                                 int i192 = rect2.left;
-                                pi0Var.x = i192;
-                                org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0(pi0Var.getContext());
-                                pi0Var.v = li0Var;
-                                li0Var.setBackgroundDrawable(mutate2);
-                                li0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
-                                li0Var.setVisibility(4);
-                                pi0Var.addView(li0Var, 0, w7.y5.e(-1, -2, 80));
-                                pi0Var.O = LocaleController.getUseImperialSystemType();
-                                pi0Var.M = user;
-                                pi0Var.I = kc0Var;
-                                org.telegram.ui.Components.ed0 ed0Var = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                pi0Var.G = ed0Var;
-                                ed0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-                                ed0Var.setItemCount(5);
-                                org.telegram.ui.Components.ed0 ed0Var2 = new org.telegram.ui.Components.ed0(parentActivity, null);
-                                pi0Var.H = ed0Var2;
-                                ed0Var2.setItemCount(5);
-                                ed0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
-                                org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(pi0Var, parentActivity);
-                                pi0Var.P = mi0Var;
-                                mi0Var.setOrientation(1);
+                                ri0Var.x = i192;
+                                org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(ri0Var.getContext());
+                                ri0Var.v = ni0Var;
+                                ni0Var.setBackgroundDrawable(mutate2);
+                                ni0Var.setPadding(i192, (AndroidUtilities.dp(8.0f) + rect2.top) - 1, i192, 0);
+                                ni0Var.setVisibility(4);
+                                ri0Var.addView(ni0Var, 0, w7.y5.e(-1, -2, 80));
+                                ri0Var.O = LocaleController.getUseImperialSystemType();
+                                ri0Var.M = user;
+                                ri0Var.I = kc0Var;
+                                org.telegram.ui.Components.gd0 gd0Var = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                ri0Var.G = gd0Var;
+                                gd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+                                gd0Var.setItemCount(5);
+                                org.telegram.ui.Components.gd0 gd0Var2 = new org.telegram.ui.Components.gd0(parentActivity, null);
+                                ri0Var.H = gd0Var2;
+                                gd0Var2.setItemCount(5);
+                                gd0Var2.setTextOffset(-AndroidUtilities.dp(10.0f));
+                                org.telegram.ui.Components.oi0 oi0Var = new org.telegram.ui.Components.oi0(ri0Var, parentActivity);
+                                ri0Var.P = oi0Var;
+                                oi0Var.setOrientation(1);
                                 FrameLayout frameLayout = new FrameLayout(parentActivity);
-                                mi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
+                                oi0Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView2 = new TextView(parentActivity);
                                 textView2.setText(LocaleController.getString(R.string.LocationNotifiation));
                                 org.telegram.messenger.f0.q(textView2, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, 20.0f);
@@ -1860,40 +1860,40 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 LinearLayout linearLayout = new LinearLayout(parentActivity);
                                 linearLayout.setOrientation(0);
                                 linearLayout.setWeightSum(1.0f);
-                                mi0Var.addView(linearLayout, w7.y5.n(-1, -2));
+                                oi0Var.addView(linearLayout, w7.y5.n(-1, -2));
                                 System.currentTimeMillis();
                                 FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                                 TextView textView22 = new TextView(parentActivity);
-                                pi0Var.K = textView22;
-                                org.telegram.ui.Components.ni0 ni0Var = new org.telegram.ui.Components.ni0(parentActivity);
-                                pi0Var.J = ni0Var;
-                                linearLayout.addView(ed0Var, w7.y5.l(0.5f, 0, 270));
-                                ed0Var.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 0));
-                                ed0Var.setMinValue(0);
-                                ed0Var.setMaxValue(10);
-                                ed0Var.setWrapSelectorWheel(false);
-                                ed0Var.setTextOffset(AndroidUtilities.dp(20.0f));
-                                org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(pi0Var, 1);
-                                ed0Var.setOnValueChangedListener(ki0Var);
-                                ed0Var2.setMinValue(0);
-                                ed0Var2.setMaxValue(10);
-                                ed0Var2.setWrapSelectorWheel(false);
-                                ed0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
-                                linearLayout.addView(ed0Var2, w7.y5.l(0.5f, 0, 270));
-                                ed0Var2.setFormatter(new org.telegram.ui.Components.ki0(pi0Var, 2));
-                                ed0Var2.setOnValueChangedListener(ki0Var);
-                                ed0Var.setValue(0);
-                                ed0Var2.setValue(6);
-                                mi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
-                                ni0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                                ni0Var.setGravity(17);
-                                ni0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-                                ni0Var.setTextSize(1, 14.0f);
-                                ni0Var.setMaxLines(2);
-                                ni0Var.setTypeface(AndroidUtilities.bold());
-                                ni0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
-                                frameLayout2.addView(ni0Var, w7.y5.c(48.0f, -1));
-                                ni0Var.setOnClickListener(new org.telegram.ui.Components.et(11, pi0Var, owVar));
+                                ri0Var.K = textView22;
+                                org.telegram.ui.Components.pi0 pi0Var = new org.telegram.ui.Components.pi0(parentActivity);
+                                ri0Var.J = pi0Var;
+                                linearLayout.addView(gd0Var, w7.y5.l(0.5f, 0, 270));
+                                gd0Var.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 0));
+                                gd0Var.setMinValue(0);
+                                gd0Var.setMaxValue(10);
+                                gd0Var.setWrapSelectorWheel(false);
+                                gd0Var.setTextOffset(AndroidUtilities.dp(20.0f));
+                                org.telegram.ui.Components.mi0 mi0Var = new org.telegram.ui.Components.mi0(ri0Var, 1);
+                                gd0Var.setOnValueChangedListener(mi0Var);
+                                gd0Var2.setMinValue(0);
+                                gd0Var2.setMaxValue(10);
+                                gd0Var2.setWrapSelectorWheel(false);
+                                gd0Var2.setTextOffset(-AndroidUtilities.dp(20.0f));
+                                linearLayout.addView(gd0Var2, w7.y5.l(0.5f, 0, 270));
+                                gd0Var2.setFormatter(new org.telegram.ui.Components.mi0(ri0Var, 2));
+                                gd0Var2.setOnValueChangedListener(mi0Var);
+                                gd0Var.setValue(0);
+                                gd0Var2.setValue(6);
+                                oi0Var.addView(frameLayout2, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
+                                pi0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                                pi0Var.setGravity(17);
+                                pi0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+                                pi0Var.setTextSize(1, 14.0f);
+                                pi0Var.setMaxLines(2);
+                                pi0Var.setTypeface(AndroidUtilities.bold());
+                                pi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
+                                frameLayout2.addView(pi0Var, w7.y5.c(48.0f, -1));
+                                pi0Var.setOnClickListener(new org.telegram.ui.Components.ft(11, ri0Var, owVar));
                                 textView22.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                 textView22.setGravity(17);
                                 textView22.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -1902,38 +1902,38 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                                 textView22.setScaleX(0.5f);
                                 textView22.setScaleY(0.5f);
                                 frameLayout2.addView(textView22, w7.y5.c(48.0f, -1));
-                                li0Var.addView(mi0Var, w7.y5.e(-1, -2, 51));
-                                cd0Var.R = pi0Var;
-                                ((FrameLayout) cd0Var.fragmentView).addView(pi0Var, w7.y5.c(-1.0f, -1));
-                                org.telegram.ui.Components.pi0 pi0Var2 = cd0Var.R;
-                                pi0Var2.r = false;
-                                AnimatorSet animatorSet = pi0Var2.s;
+                                ni0Var.addView(oi0Var, w7.y5.e(-1, -2, 51));
+                                cd0Var.R = ri0Var;
+                                ((FrameLayout) cd0Var.fragmentView).addView(ri0Var, w7.y5.c(-1.0f, -1));
+                                org.telegram.ui.Components.ri0 ri0Var2 = cd0Var.R;
+                                ri0Var2.r = false;
+                                AnimatorSet animatorSet = ri0Var2.s;
                                 if (animatorSet != null) {
                                     animatorSet.cancel();
-                                    pi0Var2.s = null;
+                                    ri0Var2.s = null;
                                 }
-                                org.telegram.ui.Components.li0 li0Var2 = pi0Var2.v;
-                                li0Var2.measure(View.MeasureSpec.makeMeasureSpec((pi0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-                                if (pi0Var2.r) {
+                                org.telegram.ui.Components.ni0 ni0Var2 = ri0Var2.v;
+                                ni0Var2.measure(View.MeasureSpec.makeMeasureSpec((ri0Var2.x * 2) + AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                                if (ri0Var2.r) {
                                     z11 = true;
                                 } else {
-                                    li0Var2.setVisibility(0);
-                                    if (pi0Var2.w) {
-                                        pi0Var2.setLayerType(2, null);
+                                    ni0Var2.setVisibility(0);
+                                    if (ri0Var2.w) {
+                                        ri0Var2.setLayerType(2, null);
                                     }
-                                    li0Var2.setTranslationY(li0Var2.getMeasuredHeight());
+                                    ni0Var2.setTranslationY(ni0Var2.getMeasuredHeight());
                                     AnimatorSet animatorSet2 = new AnimatorSet();
-                                    pi0Var2.s = animatorSet2;
-                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(li0Var2, (Property<org.telegram.ui.Components.li0, Float>) View.TRANSLATION_Y, 0.0f));
-                                    pi0Var2.s.setDuration(400L);
-                                    pi0Var2.s.setStartDelay(20L);
-                                    pi0Var2.s.setInterpolator(pi0Var2.F);
+                                    ri0Var2.s = animatorSet2;
+                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(ni0Var2, (Property<org.telegram.ui.Components.ni0, Float>) View.TRANSLATION_Y, 0.0f));
+                                    ri0Var2.s.setDuration(400L);
+                                    ri0Var2.s.setStartDelay(20L);
+                                    ri0Var2.s.setInterpolator(ri0Var2.F);
                                     z11 = true;
-                                    pi0Var2.s.addListener(new org.telegram.ui.Components.oi0(pi0Var2, 1 == true ? 1 : 0));
+                                    ri0Var2.s.addListener(new org.telegram.ui.Components.qi0(ri0Var2, 1 == true ? 1 : 0));
                                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                                    pi0Var2.s.start();
+                                    ri0Var2.s.start();
                                 }
-                                pi0Var2.c(z11);
+                                ri0Var2.c(z11);
                                 break;
                             }
                         }
@@ -2007,18 +2007,18 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
         this.r.setTextSize(1, 15.0f);
         this.r.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
         this.f.addView(this.r, w7.y5.t(-2, -2, 17, 0, 6, 0, 0));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.U = wl0Var;
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.U = yl0Var;
         qc0 qc0Var2 = new qc0(this, context, this.G0, this.e0, getResourceProvider(), this.E, i14 == 8);
         this.T = qc0Var2;
-        wl0Var.setAdapter(qc0Var2);
-        org.telegram.ui.Components.wl0 wl0Var2 = this.U;
+        yl0Var.setAdapter(qc0Var2);
+        org.telegram.ui.Components.yl0 yl0Var2 = this.U;
         s4.c0 c0Var = new s4.c0(1, false);
         this.Y = c0Var;
-        wl0Var2.setLayoutManager(c0Var);
+        yl0Var2.setLayoutManager(c0Var);
         if (this.M0 != null) {
             this.L0 = new org.telegram.ui.Cells.v3(context, this.resourceProvider);
-            sc0 sc0Var = new sc0(this, context, new org.telegram.ui.Components.bv0(this), this, new rc0(this), getResourceProvider());
+            sc0 sc0Var = new sc0(this, context, new org.telegram.ui.Components.dv0(this), this, new rc0(this), getResourceProvider());
             this.K0 = sc0Var;
             sc0Var.setBackgroundColor(getThemedColor(i12));
             this.K0.addView(this.L0, w7.y5.e(-1, 32, 55));
@@ -2028,7 +2028,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
             z10 = false;
             jVar.m = false;
             jVar.C = false;
-            jVar.o(org.telegram.ui.Components.rr.h);
+            jVar.o(org.telegram.ui.Components.sr.h);
             jVar.n(350L);
             this.U.setItemAnimator(jVar);
         } else {
@@ -2082,9 +2082,9 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                 this.S.addView(imageView4, w7.y5.e(28, 48, 49));
                 this.X = imageView4;
             }
-            org.telegram.ui.Components.wl0 wl0Var3 = new org.telegram.ui.Components.wl0(context, null);
-            this.V = wl0Var3;
-            wl0Var3.setVisibility(8);
+            org.telegram.ui.Components.yl0 yl0Var3 = new org.telegram.ui.Components.yl0(context, null);
+            this.V = yl0Var3;
+            yl0Var3.setVisibility(8);
             i11 = 0;
             this.V.setLayoutManager(new s4.c0(1, false));
             vc0 vc0Var2 = new vc0(this, context, getResourceProvider(), i10 == 8);
@@ -2283,9 +2283,9 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
             }
             if (z11 && (qc0Var = this.T) != null) {
                 qc0Var.l();
-                org.telegram.ui.Components.pi0 pi0Var = this.R;
-                if (pi0Var != null) {
-                    pi0Var.c(true);
+                org.telegram.ui.Components.ri0 ri0Var = this.R;
+                if (ri0Var != null) {
+                    ri0Var.c(true);
                 }
             }
             if (z11) {
@@ -2549,7 +2549,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                 if (this.c.getVisibility() != 8 && MessageObject.getFromChatId(message) != getUserConfig().getClientUserId()) {
                     this.c.setVisibility(0);
                     this.H = true;
-                    this.c.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180L).setListener(new org.telegram.ui.Components.q81(this, 25)).start();
+                    this.c.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180L).setListener(new org.telegram.ui.Components.s81(this, 25)).start();
                 }
             }
         }
@@ -2688,9 +2688,9 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
             layoutParams3.topMargin = currentActionBarHeight;
             layoutParams3.height = this.H0;
             this.S.setLayoutParams(layoutParams3);
-            org.telegram.ui.Components.wl0 wl0Var = this.V;
-            if (wl0Var != null) {
-                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) wl0Var.getLayoutParams();
+            org.telegram.ui.Components.yl0 yl0Var = this.V;
+            if (yl0Var != null) {
+                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) yl0Var.getLayoutParams();
                 layoutParams4.topMargin = currentActionBarHeight;
                 this.V.setLayoutParams(layoutParams4);
             }
@@ -2777,8 +2777,8 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
 
     @Override // org.telegram.ui.ActionBar.m2
     public final boolean onBackPressed(boolean z10) {
-        org.telegram.ui.Components.pi0 pi0Var = this.R;
-        if (pi0Var == null) {
+        org.telegram.ui.Components.ri0 ri0Var = this.R;
+        if (ri0Var == null) {
             IMapsProvider.IMapView iMapView = this.K;
             if (iMapView == null || iMapView.getGlSurfaceView() == null || this.M) {
                 return super.onBackPressed(z10);
@@ -2787,7 +2787,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
                 q0();
             }
         } else if (z10) {
-            pi0Var.a();
+            ri0Var.a();
             return false;
         }
         return false;
@@ -3090,9 +3090,9 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
         } else {
             this.T.M(this.w0);
         }
-        org.telegram.ui.Components.pi0 pi0Var = this.R;
-        if (pi0Var != null) {
-            pi0Var.c(true);
+        org.telegram.ui.Components.ri0 ri0Var = this.R;
+        if (ri0Var != null) {
+            ri0Var.c(true);
         }
         IMapsProvider.ICircle iCircle = this.O;
         if (iCircle != null) {
@@ -3151,9 +3151,9 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
         }
         this.R.L = true;
         this.c.setImageResource(R.drawable.msg_location_alert2);
-        org.telegram.ui.Components.pi0 pi0Var = this.R;
-        if (pi0Var != null) {
-            pi0Var.a();
+        org.telegram.ui.Components.ri0 ri0Var = this.R;
+        if (ri0Var != null) {
+            ri0Var.a();
         }
         m0().k(0L, 24, Integer.valueOf(i11), user, null, null);
     }
@@ -3170,24 +3170,24 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
     }
 
     public final void y0(boolean z10) {
-        org.telegram.ui.Components.fl flVar;
+        org.telegram.ui.Components.gl glVar;
         Location location;
         Location location2;
         if (this.G0 == 3) {
             z10 = true;
         }
-        if (z10 && (flVar = this.e) != null && flVar.getTag() == null && ((location = this.w0) == null || (location2 = this.x0) == null || location2.distanceTo(location) < 300.0f)) {
+        if (z10 && (glVar = this.e) != null && glVar.getTag() == null && ((location = this.w0) == null || (location2 = this.x0) == null || location2.distanceTo(location) < 300.0f)) {
             z10 = false;
         }
-        org.telegram.ui.Components.fl flVar2 = this.e;
-        if (flVar2 != null) {
-            if (!z10 || flVar2.getTag() == null) {
+        org.telegram.ui.Components.gl glVar2 = this.e;
+        if (glVar2 != null) {
+            if (!z10 || glVar2.getTag() == null) {
                 if (z10 || this.e.getTag() != null) {
                     this.e.setTag(z10 ? 1 : null);
                     AnimatorSet animatorSet = new AnimatorSet();
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.fl, Float>) View.TRANSLATION_X, z10 ? 0.0f : -AndroidUtilities.dp(80.0f)));
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.gl, Float>) View.TRANSLATION_X, z10 ? 0.0f : -AndroidUtilities.dp(80.0f)));
                     animatorSet.setDuration(180L);
-                    animatorSet.setInterpolator(org.telegram.ui.Components.rr.g);
+                    animatorSet.setInterpolator(org.telegram.ui.Components.sr.g);
                     animatorSet.start();
                 }
             }
@@ -3200,7 +3200,7 @@ public class cd0 extends org.telegram.ui.ActionBar.m2 implements NotificationCen
             this.P0 = Boolean.valueOf(z10);
             if (z11) {
                 this.b.setVisibility(0);
-                this.b.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).setInterpolator(org.telegram.ui.Components.rr.h).setDuration(420L).withEndAction(new ic0(this, z10, 0)).start();
+                this.b.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).setInterpolator(org.telegram.ui.Components.sr.h).setDuration(420L).withEndAction(new ic0(this, z10, 0)).start();
             } else {
                 this.b.setVisibility(z10 ? 0 : 8);
                 this.b.setAlpha(z10 ? 1.0f : 0.0f);

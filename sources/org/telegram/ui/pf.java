@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pf implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class pf implements View.OnClickListener {
                 wn.X((wn) obj2, (String) obj);
                 break;
             case 2:
-                wn.a1((wn) obj2, (org.telegram.ui.Components.y70) obj);
+                wn.a1((wn) obj2, (org.telegram.ui.Components.a80) obj);
                 break;
             case 3:
                 org.telegram.ui.Cells.a2 a2Var = (org.telegram.ui.Cells.a2) obj2;
@@ -167,16 +167,16 @@ public final /* synthetic */ class pf implements View.OnClickListener {
             case 17:
                 org.telegram.ui.Components.j8 j8Var = (org.telegram.ui.Components.j8) obj2;
                 j8Var.getClass();
-                ((org.telegram.ui.Components.y70) obj).u();
+                ((org.telegram.ui.Components.a80) obj).u();
                 j8Var.t0(6);
                 break;
             case 18:
-                org.telegram.ui.Components.ca0 ca0Var = (org.telegram.ui.Components.ca0) obj;
+                org.telegram.ui.Components.ea0 ea0Var = (org.telegram.ui.Components.ea0) obj;
                 org.telegram.ui.Components.j8 j8Var2 = ((org.telegram.ui.Components.a8) obj2).F;
                 i10 = ((org.telegram.ui.ActionBar.e3) j8Var2).currentAccount;
                 LaunchActivity launchActivity = j8Var2.G0;
-                if (MessagesController.getInstance(i10).getTotalDialogsCount() > 10 && !TextUtils.isEmpty(ca0Var.getText().toString())) {
-                    String charSequence = ca0Var.getText().toString();
+                if (MessagesController.getInstance(i10).getTotalDialogsCount() > 10 && !TextUtils.isEmpty(ea0Var.getText().toString())) {
+                    String charSequence = ea0Var.getText().toString();
                     if (launchActivity.O().getLastFragment() instanceof qy) {
                         qy qyVar = (qy) launchActivity.O().getLastFragment();
                         int totalDialogsCount = qyVar.getMessagesController().getTotalDialogsCount();
@@ -239,10 +239,10 @@ public final /* synthetic */ class pf implements View.OnClickListener {
             case 21:
                 org.telegram.ui.Components.md mdVar = (org.telegram.ui.Components.md) obj2;
                 FrameLayout frameLayout = (FrameLayout) obj;
-                org.telegram.ui.Components.y70 y70Var = mdVar.X0;
-                if (y70Var == null || !y70Var.D()) {
+                org.telegram.ui.Components.a80 a80Var = mdVar.X0;
+                if (a80Var == null || !a80Var.D()) {
                     mdVar.d1.e(true);
-                    org.telegram.ui.Components.y70 F = org.telegram.ui.Components.y70.F(frameLayout, new ai.d(), mdVar.V0);
+                    org.telegram.ui.Components.a80 F = org.telegram.ui.Components.a80.F(frameLayout, new ai.d(), mdVar.V0);
                     mdVar.X0 = F;
                     F.s = 0;
                     F.p(13, AndroidUtilities.dp(200.0f), LocaleController.getString(R.string.TimerPeriodHint));
@@ -265,118 +265,118 @@ public final /* synthetic */ class pf implements View.OnClickListener {
                 }
                 break;
             case 22:
-                org.telegram.ui.Components.el elVar = (org.telegram.ui.Components.el) obj2;
-                org.telegram.ui.Components.gl glVar = (org.telegram.ui.Components.gl) obj;
-                org.telegram.ui.Components.hl hlVar = elVar.b;
-                org.telegram.ui.Components.wi wiVar = hlVar.b;
+                org.telegram.ui.Components.fl flVar = (org.telegram.ui.Components.fl) obj2;
+                org.telegram.ui.Components.hl hlVar = (org.telegram.ui.Components.hl) obj;
+                org.telegram.ui.Components.il ilVar = flVar.b;
+                org.telegram.ui.Components.wi wiVar = ilVar.b;
                 wn wnVar2 = (wn) wiVar.f0;
                 if (wnVar2.c()) {
-                    parentActivity = hlVar.getParentActivity();
-                    org.telegram.ui.Components.e5.M(parentActivity, wnVar2.a(), new org.telegram.ui.Components.w2(i12, elVar, glVar), hlVar.a);
+                    parentActivity = ilVar.getParentActivity();
+                    org.telegram.ui.Components.e5.M(parentActivity, wnVar2.a(), new org.telegram.ui.Components.w2(i12, flVar, hlVar), ilVar.a);
                     break;
                 } else {
-                    org.telegram.ui.Components.e5.a0(wiVar.J1, wiVar.j1() + 1, wiVar.n1(), new oc(20, elVar, glVar));
+                    org.telegram.ui.Components.e5.a0(wiVar.J1, wiVar.j1() + 1, wiVar.n1(), new oc(20, flVar, hlVar));
                     break;
                 }
             case 23:
-                org.telegram.ui.Components.vn vnVar = ((org.telegram.ui.Components.tn) obj2).d;
-                wb1 wb1Var = vnVar.s;
-                View F2 = wb1Var.F((org.telegram.ui.Components.sn) obj);
+                org.telegram.ui.Components.wn wnVar3 = ((org.telegram.ui.Components.un) obj2).d;
+                wb1 wb1Var = wnVar3.s;
+                View F2 = wb1Var.F((org.telegram.ui.Components.tn) obj);
                 s4.c1 T = F2 != null ? wb1Var.T(F2) : null;
-                if (T != null && (b10 = T.b() - vnVar.t0) >= 0 && b10 < vnVar.K.length) {
-                    org.telegram.ui.Components.vn.O(vnVar, b10);
+                if (T != null && (b10 = T.b() - wnVar3.t0) >= 0 && b10 < wnVar3.K.length) {
+                    org.telegram.ui.Components.wn.O(wnVar3, b10);
                     break;
                 }
                 break;
             case 24:
-                org.telegram.ui.Components.fo foVar = (org.telegram.ui.Components.fo) obj2;
+                org.telegram.ui.Components.go goVar = (org.telegram.ui.Components.go) obj2;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
-                wn wnVar3 = foVar.G;
-                if (foVar.T) {
-                    wnVar3.showDialog(org.telegram.ui.Components.e5.V(foVar.getContext(), wnVar3.h, d6Var).a);
+                wn wnVar4 = goVar.G;
+                if (goVar.T) {
+                    wnVar4.showDialog(org.telegram.ui.Components.e5.V(goVar.getContext(), wnVar4.h, d6Var).a);
                     break;
                 } else {
-                    org.telegram.ui.Components.ao aoVar = foVar.e;
-                    if (wnVar3.getParentActivity() != null) {
-                        TLRPC.Chat chat = wnVar3.e;
+                    org.telegram.ui.Components.bo boVar = goVar.e;
+                    if (wnVar4.getParentActivity() != null) {
+                        TLRPC.Chat chat = wnVar4.e;
                         if (chat == null || ChatObject.canUserDoAdminAction(chat, 13)) {
-                            TLRPC.ChatFull chatFull = wnVar3.Z7;
-                            TLRPC.UserFull userFull = wnVar3.a8;
+                            TLRPC.ChatFull chatFull = wnVar4.Z7;
+                            TLRPC.UserFull userFull = wnVar4.a8;
                             int i19 = userFull != null ? userFull.ttl_period : chatFull != null ? chatFull.ttl_period : 0;
-                            org.telegram.ui.Components.o8 o8Var = new org.telegram.ui.Components.o8(foVar.getContext(), null, new org.telegram.ui.Components.bo(foVar, r4), true, 0, foVar.d0);
+                            org.telegram.ui.Components.o8 o8Var = new org.telegram.ui.Components.o8(goVar.getContext(), null, new org.telegram.ui.Components.co(goVar, r4), true, 0, goVar.d0);
                             o8Var.b(i19);
                             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = o8Var.a;
-                            org.telegram.ui.Components.co coVar = new org.telegram.ui.Components.co(foVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
-                            org.telegram.ui.ActionBar.m1[] m1VarArr = {coVar};
-                            coVar.e = true;
-                            coVar.c = 220;
-                            coVar.setOutsideTouchable(true);
+                            org.telegram.ui.Components.eo eoVar = new org.telegram.ui.Components.eo(goVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
+                            org.telegram.ui.ActionBar.m1[] m1VarArr = {eoVar};
+                            eoVar.e = true;
+                            eoVar.c = 220;
+                            eoVar.setOutsideTouchable(true);
                             m1VarArr[0].setClippingEnabled(true);
                             m1VarArr[0].setAnimationStyle(R.style.PopupContextAnimation);
                             m1VarArr[0].setFocusable(true);
                             actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                             m1VarArr[0].setInputMethodMode(2);
                             m1VarArr[0].getContentView().setFocusableInTouchMode(true);
-                            m1VarArr[0].showAtLocation(aoVar, 0, (int) (foVar.getX() + aoVar.getX()), (int) aoVar.getY());
-                            wnVar3.g8(false, true, 0.2f);
+                            m1VarArr[0].showAtLocation(boVar, 0, (int) (goVar.getX() + boVar.getX()), (int) boVar.getY());
+                            wnVar4.g8(false, true, 0.2f);
                             break;
-                        } else if (foVar.a.f && wnVar3.getParentActivity() != null && wnVar3.fragmentView != null && wnVar3.Z7 != null) {
-                            if (wnVar3.o2 == null) {
-                                org.telegram.ui.Components.j40 j40Var = new org.telegram.ui.Components.j40(7, wnVar3.getParentActivity(), wnVar3.ea, true);
-                                wnVar3.o2 = j40Var;
-                                j40Var.setAlpha(0.0f);
-                                wnVar3.o2.setVisibility(4);
-                                wnVar3.o2.setShowingDuration(4000L);
-                                wnVar3.X0.addView(wnVar3.o2, w7.y5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+                        } else if (goVar.a.f && wnVar4.getParentActivity() != null && wnVar4.fragmentView != null && wnVar4.Z7 != null) {
+                            if (wnVar4.o2 == null) {
+                                org.telegram.ui.Components.l40 l40Var = new org.telegram.ui.Components.l40(7, wnVar4.getParentActivity(), wnVar4.ea, true);
+                                wnVar4.o2 = l40Var;
+                                l40Var.setAlpha(0.0f);
+                                wnVar4.o2.setVisibility(4);
+                                wnVar4.o2.setShowingDuration(4000L);
+                                wnVar4.X0.addView(wnVar4.o2, w7.y5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                             }
-                            int i20 = wnVar3.Z7.ttl_period;
-                            wnVar3.o2.setText(LocaleController.formatString("AutoDeleteSetInfo", R.string.AutoDeleteSetInfo, i20 > 86400 ? LocaleController.formatPluralString("Days", i20 / 86400, new Object[0]) : i20 >= 3600 ? LocaleController.formatPluralString("Hours", i20 / 3600, new Object[0]) : i20 >= 60 ? LocaleController.formatPluralString("Minutes", i20 / 60, new Object[0]) : LocaleController.formatPluralString("Seconds", i20, new Object[0])));
-                            wnVar3.o2.f(wnVar3.a1.getTimeItem(), true);
+                            int i20 = wnVar4.Z7.ttl_period;
+                            wnVar4.o2.setText(LocaleController.formatString("AutoDeleteSetInfo", R.string.AutoDeleteSetInfo, i20 > 86400 ? LocaleController.formatPluralString("Days", i20 / 86400, new Object[0]) : i20 >= 3600 ? LocaleController.formatPluralString("Hours", i20 / 3600, new Object[0]) : i20 >= 60 ? LocaleController.formatPluralString("Minutes", i20 / 60, new Object[0]) : LocaleController.formatPluralString("Seconds", i20, new Object[0])));
+                            wnVar4.o2.f(wnVar4.a1.getTimeItem(), true);
                             break;
                         }
                     }
                 }
                 break;
             case 25:
-                org.telegram.ui.Components.np.n((org.telegram.ui.Components.np) obj, (wn) obj2);
+                org.telegram.ui.Components.op.n((org.telegram.ui.Components.op) obj, (wn) obj2);
                 break;
             case 26:
-                org.telegram.ui.Components.nr.P((org.telegram.ui.Components.nr) obj2, (TLRPC.Peer) obj);
+                org.telegram.ui.Components.or.P((org.telegram.ui.Components.or) obj2, (TLRPC.Peer) obj);
                 break;
             case 27:
-                org.telegram.ui.Components.vr vrVar = (org.telegram.ui.Components.vr) obj2;
+                org.telegram.ui.Components.wr wrVar = (org.telegram.ui.Components.wr) obj2;
                 String str = (String) obj;
-                if (vrVar.b == null && (view2 = vrVar.d) != null) {
+                if (wrVar.b == null && (view2 = wrVar.d) != null) {
                     View findFocus = view2.findFocus();
                     if (findFocus instanceof EditText) {
-                        vrVar.b = (EditText) findFocus;
+                        wrVar.b = (EditText) findFocus;
                     }
                 }
-                if (vrVar.b != null) {
+                if (wrVar.b != null) {
                     try {
-                        vrVar.performHapticFeedback(3, 2);
+                        wrVar.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
-                    EditText editText = vrVar.b;
+                    EditText editText = wrVar.b;
                     if (editText instanceof EditTextBoldCursor) {
                         ((EditTextBoldCursor) editText).setTextWatchersSuppressed(true, false);
                     }
-                    Editable text = vrVar.b.getText();
-                    int length2 = vrVar.b.getSelectionEnd() == vrVar.b.length() ? -1 : str.length() + vrVar.b.getSelectionStart();
-                    if (vrVar.b.getSelectionStart() == -1 || vrVar.b.getSelectionEnd() == -1) {
-                        vrVar.b.setText(str);
-                        EditText editText2 = vrVar.b;
+                    Editable text = wrVar.b.getText();
+                    int length2 = wrVar.b.getSelectionEnd() == wrVar.b.length() ? -1 : str.length() + wrVar.b.getSelectionStart();
+                    if (wrVar.b.getSelectionStart() == -1 || wrVar.b.getSelectionEnd() == -1) {
+                        wrVar.b.setText(str);
+                        EditText editText2 = wrVar.b;
                         editText2.setSelection(editText2.length());
                     } else {
-                        EditText editText3 = vrVar.b;
-                        editText3.setText(text.replace(editText3.getSelectionStart(), vrVar.b.getSelectionEnd(), str));
-                        EditText editText4 = vrVar.b;
+                        EditText editText3 = wrVar.b;
+                        editText3.setText(text.replace(editText3.getSelectionStart(), wrVar.b.getSelectionEnd(), str));
+                        EditText editText4 = wrVar.b;
                         if (length2 == -1) {
                             length2 = editText4.length();
                         }
                         editText4.setSelection(length2);
                     }
-                    EditText editText5 = vrVar.b;
+                    EditText editText5 = wrVar.b;
                     if (editText5 instanceof EditTextBoldCursor) {
                         ((EditTextBoldCursor) editText5).setTextWatchersSuppressed(false, true);
                         break;
@@ -384,23 +384,23 @@ public final /* synthetic */ class pf implements View.OnClickListener {
                 }
                 break;
             case 28:
-                org.telegram.ui.Components.gs gsVar = (org.telegram.ui.Components.gs) obj2;
-                org.telegram.ui.Components.fs fsVar = (org.telegram.ui.Components.fs) obj;
-                gsVar.J();
-                fsVar.f = !fsVar.f;
-                fsVar.j.X.N(true);
-                gsVar.s();
+                org.telegram.ui.Components.hs hsVar = (org.telegram.ui.Components.hs) obj2;
+                org.telegram.ui.Components.gs gsVar = (org.telegram.ui.Components.gs) obj;
+                hsVar.J();
+                gsVar.f = !gsVar.f;
+                gsVar.j.X.N(true);
+                hsVar.s();
                 break;
             default:
-                ((org.telegram.ui.Components.gs) obj2).B0 = !r13.B0;
-                ((org.telegram.ui.Components.j61) obj).N(true);
+                ((org.telegram.ui.Components.hs) obj2).B0 = !r13.B0;
+                ((org.telegram.ui.Components.l61) obj).N(true);
                 break;
         }
     }
 
-    public /* synthetic */ pf(org.telegram.ui.Components.np npVar, wn wnVar) {
+    public /* synthetic */ pf(org.telegram.ui.Components.op opVar, wn wnVar) {
         this.a = 25;
-        this.c = npVar;
+        this.c = opVar;
         this.b = wnVar;
     }
 }

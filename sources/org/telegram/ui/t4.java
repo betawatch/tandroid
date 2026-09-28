@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class t4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -75,9 +75,9 @@ public final class t4 extends AnimatorListenerAdapter {
             case 5:
                 org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) this.b;
                 Button button = wVar.n;
-                org.telegram.ui.Components.ii0 ii0Var = wVar.f;
-                if (button != ii0Var) {
-                    ii0Var.setVisibility(4);
+                org.telegram.ui.Components.ki0 ki0Var = wVar.f;
+                if (button != ki0Var) {
+                    ki0Var.setVisibility(4);
                     break;
                 } else {
                     wVar.e.setVisibility(4);
@@ -166,9 +166,9 @@ public final class t4 extends AnimatorListenerAdapter {
                 jkVar.r5.p9 = null;
                 break;
             case 19:
-                org.telegram.ui.Components.j40 j40Var = ((ui) this.b).b.e2;
-                if (j40Var != null) {
-                    j40Var.setVisibility(8);
+                org.telegram.ui.Components.l40 l40Var = ((ui) this.b).b.e2;
+                if (l40Var != null) {
+                    l40Var.setVisibility(8);
                     break;
                 }
                 break;
@@ -191,9 +191,9 @@ public final class t4 extends AnimatorListenerAdapter {
                 break;
             case 21:
                 ai.z zVar = (ai.z) this.b;
-                org.telegram.ui.Components.h60 h60Var = ((jm) ((dm) zVar.c).c).Q.b3;
-                if (h60Var != null) {
-                    h60Var.setIsMessageTransition(false);
+                org.telegram.ui.Components.j60 j60Var = ((jm) ((dm) zVar.c).c).Q.b3;
+                if (j60Var != null) {
+                    j60Var.setIsMessageTransition(false);
                     ((jm) ((dm) zVar.c).c).Q.b3.c(true);
                     ((jm) ((dm) zVar.c).c).Q.b3.setVisibility(4);
                     break;

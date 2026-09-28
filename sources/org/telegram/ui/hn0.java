@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class hn0 implements Runnable {
                 oo0Var.D0(false);
                 oo0Var.z0 = true;
                 oo0Var.H0(true, true);
-                org.telegram.ui.Components.uq uqVar = oo0Var.r;
-                if (uqVar != null) {
-                    uqVar.setVisibility(0);
+                org.telegram.ui.Components.vq vqVar = oo0Var.r;
+                if (vqVar != null) {
+                    vqVar.setVisibility(0);
                 }
                 org.telegram.ui.ActionBar.u0 u0Var = oo0Var.n;
                 if (u0Var != null) {

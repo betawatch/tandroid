@@ -1,68 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.view.TextureView;
-import java.util.ArrayList;
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g71 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class g71 implements View.OnLayoutChangeListener {
+    public Boolean a;
+    public boolean b;
+    public final /* synthetic */ n7.z0 c;
 
-    public /* synthetic */ g71(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public g71(n7.z0 z0Var, View view) {
+        this.c = z0Var;
+        o1.k kVar = new o1.k(view, o1.h.n, 0.0f);
+        z0Var.c = kVar;
+        kVar.u.a(1.0f);
+        ((o1.k) z0Var.c).u.b(350.0f);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                wz wzVar = ((i71) this.b).b;
-                if (wzVar != null) {
-                    wzVar.e(false, true, false);
-                    break;
-                }
-                break;
-            case 1:
-                s71 s71Var = (s71) this.b;
-                i2.f0 f0Var = s71Var.d;
-                if (f0Var != null) {
-                    TextureView textureView = s71Var.n;
-                    f0Var.B1();
-                    if (textureView != null && textureView == f0Var.V) {
-                        f0Var.B1();
-                        f0Var.o1();
-                        f0Var.t1(null);
-                        f0Var.m1(0, 0);
-                    }
-                    s71Var.d.v1(s71Var.n);
-                    ArrayList arrayList = s71Var.N;
-                    if (arrayList != null) {
-                        s71Var.F(arrayList, s71Var.O);
-                    } else if (s71Var.U) {
-                        s71Var.G(s71Var.Q, s71Var.S, s71Var.R, s71Var.T);
-                    } else {
-                        s71Var.D(s71Var.Q, s71Var.S);
-                    }
-                    s71Var.C();
-                    break;
-                }
-                break;
-            case 2:
-                s71 s71Var2 = ((r71) this.b).f;
-                s71Var2.a0.removeCallbacksAndMessages(null);
-                s71Var2.K.onVisualizerUpdate(false, true, null);
-                break;
-            case 3:
-                ((u71) this.b).g = false;
-                break;
-            case 4:
-                ((o91) ((ki.d) ((org.telegram.ui.Cells.fa) this.b).b).b).v.b();
-                break;
-            default:
-                ((k91) this.b).d(false, true);
-                break;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        Point point = AndroidUtilities.displaySize;
+        boolean z10 = point.x > point.y;
+        Boolean bool = this.a;
+        if (bool == null || bool.booleanValue() != z10) {
+            this.a = Boolean.valueOf(z10);
+            this.b = true;
         }
+        if (i15 == 0 || i15 == i11 || this.b) {
+            this.b = false;
+            return;
+        }
+        n7.z0 z0Var = this.c;
+        ((o1.k) z0Var.c).c();
+        if (view.getVisibility() != 0) {
+            view.setTranslationY(0.0f);
+            return;
+        }
+        ((o1.k) z0Var.c).u.i = 0.0f;
+        view.setTranslationY((i15 - i11) + 0.0f);
+        ((o1.k) z0Var.c).f();
     }
 }

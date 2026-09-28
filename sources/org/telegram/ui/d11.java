@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d11 extends FrameLayout {
     public final Matrix E;
@@ -46,15 +46,15 @@ public final class d11 extends FrameLayout {
         super(context);
         this.N = profileActivity;
         this.b = new Paint();
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        this.d = new org.telegram.ui.Components.e6(this, 350L, rrVar);
-        this.h = new org.telegram.ui.Components.h5(this, 350L, rrVar);
-        this.n = new org.telegram.ui.Components.h5(this, 350L, rrVar);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        this.d = new org.telegram.ui.Components.e6(this, 350L, srVar);
+        this.h = new org.telegram.ui.Components.h5(this, 350L, srVar);
+        this.n = new org.telegram.ui.Components.h5(this, 350L, srVar);
         this.E = new Matrix();
         this.F = new Paint(1);
         this.I = new org.telegram.ui.Components.o5(AndroidUtilities.dp(20.0f), 13, this, false);
-        this.J = new org.telegram.ui.Components.e6(this, 0L, 440L, rrVar);
-        new org.telegram.ui.Components.e6(this, 0L, 440L, rrVar);
+        this.J = new org.telegram.ui.Components.e6(this, 0L, 440L, srVar);
+        new org.telegram.ui.Components.e6(this, 0L, 440L, srVar);
         this.M = new Rect();
         setWillNotDraw(false);
     }
@@ -146,14 +146,14 @@ public final class d11 extends FrameLayout {
             paint3.setColor(this.a);
             int a2 = this.h.a(this.e, false);
             int a10 = this.n.a(this.f, false);
-            org.telegram.ui.Components.oh0 oh0Var = profileActivity.a0;
-            if (oh0Var != null) {
+            org.telegram.ui.Components.qh0 qh0Var = profileActivity.a0;
+            if (qh0Var != null) {
                 int i11 = this.H;
                 boolean z10 = this.c;
-                if (oh0Var.S == null || oh0Var.Q != i11 || oh0Var.R != z10) {
-                    oh0Var.Q = i11;
-                    oh0Var.R = z10;
-                    oh0Var.g();
+                if (qh0Var.S == null || qh0Var.Q != i11 || qh0Var.R != z10) {
+                    qh0Var.Q = i11;
+                    qh0Var.R = z10;
+                    qh0Var.g();
                 }
             }
             int width = getWidth() / 2;

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class xo0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class xo0 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 2:
-                ((PhotoViewer) ((org.telegram.ui.Components.al0) this.b).c).A2 = null;
+                ((PhotoViewer) ((org.telegram.ui.Components.cl0) this.b).c).A2 = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -73,7 +73,7 @@ public final class xo0 extends AnimatorListenerAdapter {
                 yq0Var.h.setEnabled(true);
                 break;
             case 2:
-                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.al0) obj).c;
+                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.cl0) obj).c;
                 if (photoViewer.A2 != null) {
                     il0 il0Var = new il0(this, 17);
                     photoViewer.I2 = il0Var;
@@ -186,7 +186,7 @@ public final class xo0 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 14:
-                ((ProfileActivity) ((org.telegram.ui.Components.al0) obj).c).D5 = null;
+                ((ProfileActivity) ((org.telegram.ui.Components.cl0) obj).c).D5 = null;
                 break;
             case 15:
                 r01 r01Var = (r01) obj;
@@ -238,9 +238,9 @@ public final class xo0 extends AnimatorListenerAdapter {
                 r51Var.setLayerType(0, null);
                 a71Var2.e0.setLayerType(0, null);
                 a71Var2.b0.setLayerType(0, null);
-                org.telegram.ui.Components.ln lnVar = a71Var2.n0;
-                if (lnVar != null) {
-                    lnVar.setLayerType(0, null);
+                org.telegram.ui.Components.mn mnVar = a71Var2.n0;
+                if (mnVar != null) {
+                    mnVar.setLayerType(0, null);
                 }
                 View view = a71Var2.m0;
                 if (view != null) {

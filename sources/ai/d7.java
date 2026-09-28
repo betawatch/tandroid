@@ -3,24 +3,24 @@ package ai;
 import android.content.Context;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ix0;
-import org.telegram.ui.Components.pk;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.qk;
+import org.telegram.ui.Components.v00;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class d7 extends ix0 {
+public final class d7 extends kx0 {
     public final /* synthetic */ int K = 0;
     public final /* synthetic */ Object L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(pk pkVar, Context context, u00 u00Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, u00Var, 1, d6Var);
-        this.L = pkVar;
+    public d7(qk qkVar, Context context, v00 v00Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, v00Var, 1, d6Var);
+        this.L = qkVar;
     }
 
-    @Override // org.telegram.ui.Components.ix0
+    @Override // org.telegram.ui.Components.kx0
     public void e(boolean z10, boolean z11) {
         switch (this.K) {
             case 2:
@@ -44,7 +44,7 @@ public final class d7 extends ix0 {
     public float getTranslationY() {
         switch (this.K) {
             case 1:
-                return super.getTranslationY() - ((pk) this.L).M;
+                return super.getTranslationY() - ((qk) this.L).M;
             default:
                 return super.getTranslationY();
         }
@@ -67,7 +67,7 @@ public final class d7 extends ix0 {
     public void setTranslationY(float f7) {
         switch (this.K) {
             case 1:
-                super.setTranslationY(f7 + ((pk) this.L).M);
+                super.setTranslationY(f7 + ((qk) this.L).M);
                 break;
             default:
                 super.setTranslationY(f7);
@@ -82,8 +82,8 @@ public final class d7 extends ix0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(wf1 wf1Var, Context context, u00 u00Var) {
-        super(context, u00Var, 0, null);
+    public d7(wf1 wf1Var, Context context, v00 v00Var) {
+        super(context, v00Var, 0, null);
         this.L = wf1Var;
     }
 }

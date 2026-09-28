@@ -29,9 +29,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class h50 extends org.telegram.ui.Components.aw0 {
+public final class h50 extends org.telegram.ui.Components.cw0 {
     public boolean A0;
     public boolean B0;
     public final HashMap C0;
@@ -52,7 +52,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
 
     /* JADX WARN: Removed duplicated region for block: B:134:0x039c  */
     /* JADX WARN: Removed duplicated region for block: B:136:0x03a1  */
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -91,9 +91,9 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
             if (Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated() && !AndroidUtilities.makingGlobalBlurBitmap) {
                 if (d60Var.Q2 == null) {
                     d60Var.Q2 = new RenderNode("CallActivity.Blur");
-                    d60Var.R2 = org.telegram.ui.Components.aw0.getRenderNodeScale();
+                    d60Var.R2 = org.telegram.ui.Components.cw0.getRenderNodeScale();
                     ColorMatrix colorMatrix = new ColorMatrix(new float[]{0.5f, 0.0f, 0.0f, 0.0f, 8.5f, 0.0f, 0.5f, 0.0f, 0.0f, 8.5f, 0.0f, 0.0f, 0.5f, 0.0f, 8.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f});
-                    float blurRadius = org.telegram.ui.Components.aw0.getBlurRadius();
+                    float blurRadius = org.telegram.ui.Components.cw0.getBlurRadius();
                     RenderNode renderNode = d60Var.Q2;
                     tileMode = Shader.TileMode.DECAL;
                     renderNode.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(blurRadius, blurRadius, tileMode), RenderEffect.createColorFilterEffect(new ColorMatrixColorFilter(colorMatrix))));
@@ -130,7 +130,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         }
         if (v30Var.r == null) {
             for (int i12 = 0; i12 < r30Var.getChildCount(); i12++) {
-                ((org.telegram.ui.Components.s20) r30Var.getChildAt(i12)).setProgressToFullscreen(1.0f);
+                ((org.telegram.ui.Components.u20) r30Var.getChildAt(i12)).setProgressToFullscreen(1.0f);
             }
         } else if (r30Var.getVisibility() == 0) {
             HashMap hashMap = this.C0;
@@ -164,47 +164,47 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
             }
             int i14 = 0;
             while (i14 < r30Var.getChildCount()) {
-                org.telegram.ui.Components.s20 s20Var = (org.telegram.ui.Components.s20) r30Var.getChildAt(i14);
-                View view3 = (View) hashMap.get(s20Var.getVideoParticipant());
+                org.telegram.ui.Components.u20 u20Var = (org.telegram.ui.Components.u20) r30Var.getChildAt(i14);
+                View view3 = (View) hashMap.get(u20Var.getVideoParticipant());
                 if (view3 == null) {
-                    view3 = (View) hashMap.get(s20Var.getParticipant());
+                    view3 = (View) hashMap.get(u20Var.getParticipant());
                 }
                 float f16 = v30Var.c;
                 HashMap hashMap2 = hashMap;
                 if (!d60Var.N2.k()) {
-                    s20Var.setAlpha(1.0f);
+                    u20Var.setAlpha(1.0f);
                 }
                 if (view3 != null) {
                     if (view3 instanceof org.telegram.ui.Components.voip.l) {
                         org.telegram.ui.Components.voip.l lVar3 = (org.telegram.ui.Components.voip.l) view3;
                         x11 = (j50Var.getX() + lVar3.getLeft()) - v30Var.getLeft();
                         f11 = (j50Var.getY() + lVar3.getTop()) - v30Var.getTop();
-                        f12 = r30Var.getX() + s20Var.getLeft();
-                        f13 = r30Var.getY() + s20Var.getTop();
+                        f12 = r30Var.getX() + u20Var.getLeft();
+                        f13 = r30Var.getY() + u20Var.getTop();
                     } else {
                         x11 = ((j50Var.getX() + r14.getLeft()) - v30Var.getLeft()) + r14.getAvatarImageView().getLeft() + (r14.getAvatarImageView().getMeasuredWidth() >> 1);
                         float y10 = ((j50Var.getY() + r14.getTop()) - v30Var.getTop()) + r14.getAvatarImageView().getTop() + (r14.getAvatarImageView().getMeasuredHeight() >> 1);
-                        float x12 = r30Var.getX() + s20Var.getLeft() + (s20Var.getMeasuredWidth() >> 1);
-                        float y11 = r30Var.getY() + s20Var.getTop() + (s20Var.getMeasuredHeight() >> 1);
+                        float x12 = r30Var.getX() + u20Var.getLeft() + (u20Var.getMeasuredWidth() >> 1);
+                        float y11 = r30Var.getY() + u20Var.getTop() + (u20Var.getMeasuredHeight() >> 1);
                         ((org.telegram.ui.Cells.e4) view3).setDrawAvatar(false);
                         f11 = y10;
                         f12 = x12;
                         f13 = y11;
                     }
                     float f17 = 1.0f - f16;
-                    s20Var.setTranslationX((x11 - f12) * f17);
-                    s20Var.setTranslationY((f11 - f13) * f17);
-                    s20Var.setScaleX(1.0f);
-                    s20Var.setScaleY(1.0f);
-                    s20Var.setProgressToFullscreen(f16);
+                    u20Var.setTranslationX((x11 - f12) * f17);
+                    u20Var.setTranslationY((f11 - f13) * f17);
+                    u20Var.setScaleX(1.0f);
+                    u20Var.setScaleY(1.0f);
+                    u20Var.setProgressToFullscreen(f16);
                 } else {
-                    s20Var.setScaleX(1.0f);
-                    s20Var.setScaleY(1.0f);
-                    s20Var.setTranslationX(0.0f);
-                    s20Var.setTranslationY(0.0f);
-                    s20Var.setProgressToFullscreen(1.0f);
-                    if (s20Var.getRenderer() == null) {
-                        s20Var.setAlpha(f16);
+                    u20Var.setScaleX(1.0f);
+                    u20Var.setScaleY(1.0f);
+                    u20Var.setTranslationX(0.0f);
+                    u20Var.setTranslationY(0.0f);
+                    u20Var.setProgressToFullscreen(1.0f);
+                    if (u20Var.getRenderer() == null) {
+                        u20Var.setAlpha(f16);
                     }
                 }
                 i14++;
@@ -214,7 +214,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         int i15 = 0;
         while (i15 < arrayList2.size()) {
             org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) arrayList2.get(i15);
-            org.telegram.ui.Components.wl0 wl0Var = d60Var.n2;
+            org.telegram.ui.Components.yl0 yl0Var = d60Var.n2;
             org.telegram.ui.Components.voip.p pVar = uVar.a;
             if (uVar.h || uVar.f || uVar.P) {
                 arrayList = arrayList2;
@@ -234,19 +234,19 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                             lVar5 = lVar6;
                         }
                         if (lVar6 == null) {
-                            wl0Var = j50Var;
+                            yl0Var = j50Var;
                         }
-                        float x13 = ((wl0Var.getX() + lVar5.getX()) - uVar.getLeft()) - v30Var.getLeft();
-                        float y12 = ((wl0Var.getY() + (lVar5.getY() + AndroidUtilities.dp(2.0f))) - uVar.getTop()) - v30Var.getTop();
+                        float x13 = ((yl0Var.getX() + lVar5.getX()) - uVar.getLeft()) - v30Var.getLeft();
+                        float y12 = ((yl0Var.getY() + (lVar5.getY() + AndroidUtilities.dp(2.0f))) - uVar.getTop()) - v30Var.getTop();
                         float f19 = 1.0f - f18;
                         float f20 = f18 * 0.0f;
                         uVar.setTranslationX((x13 * f19) + f20);
                         uVar.setTranslationY((y12 * f19) + f20);
                     }
                     pVar.setRoundCorners(AndroidUtilities.dp(8.0f));
-                    org.telegram.ui.Components.s20 s20Var2 = uVar.d;
-                    if (s20Var2 != null) {
-                        s20Var2.setAlpha(f18);
+                    org.telegram.ui.Components.u20 u20Var2 = uVar.d;
+                    if (u20Var2 != null) {
+                        u20Var2.setAlpha(f18);
                     }
                     if (!uVar.b && uVar.c == null && uVar.e == null) {
                         uVar.setAlpha(f18);
@@ -254,10 +254,10 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                         uVar.setAlpha(1.0f);
                     }
                 } else {
-                    org.telegram.ui.Components.s20 s20Var3 = uVar.d;
-                    if (s20Var3 != null) {
+                    org.telegram.ui.Components.u20 u20Var3 = uVar.d;
+                    if (u20Var3 != null) {
                         r30Var.getClass();
-                        if (RecyclerView.R(s20Var3) == -1) {
+                        if (RecyclerView.R(u20Var3) == -1) {
                             uVar.setAlpha(uVar.d.getAlpha());
                         } else if (uVar.c == null) {
                             if (uVar.v && !uVar.E) {
@@ -283,7 +283,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                             if (lVar9 == null || lVar8 == null) {
                                 org.telegram.ui.Components.voip.l lVar10 = lVar9 != null ? lVar9 : lVar8;
                                 if (lVar9 == null) {
-                                    wl0Var = j50Var;
+                                    yl0Var = j50Var;
                                 }
                                 lVar8 = lVar10;
                             } else {
@@ -295,7 +295,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                                             lVar8 = lVar;
                                         }
                                         if (!z10) {
-                                            wl0Var = j50Var;
+                                            yl0Var = j50Var;
                                         }
                                     }
                                 } else {
@@ -307,8 +307,8 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                                 if (!z10) {
                                 }
                             }
-                            uVar.setTranslationX(((wl0Var.getX() + lVar8.getX()) - uVar.getLeft()) - v30Var.getLeft());
-                            uVar.setTranslationY(((wl0Var.getY() + (lVar8.getY() + AndroidUtilities.dp(2.0f))) - uVar.getTop()) - v30Var.getTop());
+                            uVar.setTranslationX(((yl0Var.getX() + lVar8.getX()) - uVar.getLeft()) - v30Var.getLeft());
+                            uVar.setTranslationY(((yl0Var.getY() + (lVar8.getY() + AndroidUtilities.dp(2.0f))) - uVar.getTop()) - v30Var.getTop());
                             pVar.setRoundCorners(AndroidUtilities.dp(8.0f));
                             if (uVar.v && !uVar.E) {
                                 if (!d60.G3) {
@@ -397,7 +397,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                             canvas2.clipRect(max, max2, min, getMeasuredHeight());
                             canvas2.translate(childAt3.getX() + j50Var.getLeft(), childAt3.getY() + j50Var.getY());
                             float alpha = d60Var.W2.getAlpha() / 100.0f;
-                            rectF.set(0.0f, 0.0f, childAt3.getMeasuredWidth(), (int) (((d60Var.X2.getClipHeight() - d60Var.X2.getMeasuredHeight()) * (1.0f - org.telegram.ui.Components.rr.g.getInterpolation(1.0f - alpha))) + d60Var.X2.getMeasuredHeight()));
+                            rectF.set(0.0f, 0.0f, childAt3.getMeasuredWidth(), (int) (((d60Var.X2.getClipHeight() - d60Var.X2.getMeasuredHeight()) * (1.0f - org.telegram.ui.Components.sr.g.getInterpolation(1.0f - alpha))) + d60Var.X2.getMeasuredHeight()));
                             org.telegram.ui.Cells.e4 e4Var4 = d60Var.X2;
                             paint.getColor();
                             org.telegram.ui.ActionBar.h5[] h5VarArr = e4Var4.d;
@@ -475,7 +475,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                     path = path2;
                     canvas3.saveLayerAlpha(0.0f, 0.0f, e4Var.getMeasuredWidth(), e4Var.getClipHeight(), (int) (d60Var.d2 * f10), 31);
                 }
-                float clipHeight = (int) (((e4Var2.getClipHeight() - e4Var2.getMeasuredHeight()) * (1.0f - org.telegram.ui.Components.rr.g.getInterpolation(1.0f - d60Var.d2))) + e4Var2.getMeasuredHeight());
+                float clipHeight = (int) (((e4Var2.getClipHeight() - e4Var2.getMeasuredHeight()) * (1.0f - org.telegram.ui.Components.sr.g.getInterpolation(1.0f - d60Var.d2))) + e4Var2.getMeasuredHeight());
                 rectF.set(0.0f, 0.0f, e4Var2.getMeasuredWidth(), clipHeight);
                 org.telegram.ui.Cells.e4 e4Var5 = e4Var2;
                 e4Var5.setProgressToAvatarPreview(d60Var.b3 ? d60Var.d2 : 1.0f);
@@ -559,13 +559,13 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.D0.Z.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.D0.Z.onDetachedFromWindow();
@@ -701,7 +701,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         float f7;
         boolean z11;
@@ -733,11 +733,11 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         view2.setTranslationX(left);
         view.setTranslationX(left);
         ViewPropertyAnimator duration = j50Var.animate().translationX(0.0f).setDuration(350L);
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.f;
-        duration.setInterpolator(rrVar).start();
-        view2.animate().translationX(0.0f).setDuration(350L).setInterpolator(rrVar).start();
-        view.animate().translationX(0.0f).setDuration(350L).setInterpolator(rrVar).start();
-        i30Var.animate().translationX(0.0f).setDuration(350L).setInterpolator(rrVar).start();
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.f;
+        duration.setInterpolator(srVar).start();
+        view2.animate().translationX(0.0f).setDuration(350L).setInterpolator(srVar).start();
+        view.animate().translationX(0.0f).setDuration(350L).setInterpolator(srVar).start();
+        i30Var.animate().translationX(0.0f).setDuration(350L).setInterpolator(srVar).start();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -754,8 +754,8 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         LinearLayout linearLayout = d60Var.z1;
         z40 z40Var = d60Var.O;
         j60 j60Var = d60Var.o2;
-        org.telegram.ui.Components.t20 t20Var = d60Var.p2;
-        org.telegram.ui.Components.pz pzVar = d60Var.Y;
+        org.telegram.ui.Components.v20 v20Var = d60Var.p2;
+        org.telegram.ui.Components.qz qzVar = d60Var.Y;
         org.telegram.ui.Components.voip.w2 w2Var = d60Var.w;
         org.telegram.ui.ActionBar.h5 h5Var = d60Var.U;
         View view = d60Var.g0;
@@ -766,7 +766,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         org.telegram.ui.ActionBar.h5 h5Var2 = d60Var.W;
         d40 d40Var = d60Var.H;
         ArrayList arrayList2 = d60Var.Z1;
-        org.telegram.ui.Components.wl0 wl0Var = d60Var.n2;
+        org.telegram.ui.Components.yl0 yl0Var = d60Var.n2;
         j50 j50Var = d60Var.Q;
         v30 v30Var = d60Var.a2;
         r30 r30Var = d60Var.m2;
@@ -782,7 +782,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                 int i13 = w2Var.getLayoutParams().width;
             }
             d60.H0(d60Var);
-            pzVar.y1(d60.F3 ? 6 : 2);
+            qzVar.y1(d60.F3 ? 6 : 2);
             j50Var.a0();
             r30Var.a0();
             this.z0 = true;
@@ -797,7 +797,7 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         }
         if (d60.G3 != z12) {
             d60.G3 = z12;
-            wl0Var.setVisibility(z12 ? 0 : 8);
+            yl0Var.setVisibility(z12 ? 0 : 8);
             j50Var.a0();
             r30Var.a0();
             z10 = true;
@@ -808,19 +808,19 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
         if (this.z0) {
             d60Var.O0(z10);
             d60Var.P.l();
-            t20Var.G(wl0Var, false);
+            v20Var.G(yl0Var, false);
             if (d60.G3) {
-                j60Var.I(wl0Var, false);
+                j60Var.I(yl0Var, false);
             }
-            wl0Var.setVisibility(d60.G3 ? 0 : 8);
-            j60Var.H(wl0Var, d60.G3 && !v30Var.b, true);
+            yl0Var.setVisibility(d60.G3 ? 0 : 8);
+            j60Var.H(yl0Var, d60.G3 && !v30Var.b, true);
             boolean z13 = d60.G3;
             d60Var.P2 = !z13 || v30Var.b;
             boolean z14 = !z13 && v30Var.b;
-            t20Var.F(r30Var, z14);
+            v20Var.F(r30Var, z14);
             r30Var.setVisibility(z14 ? 0 : 8);
             j50Var.setVisibility((d60.G3 || !v30Var.b) ? 0 : 8);
-            pzVar.y1(d60.F3 ? 6 : 2);
+            qzVar.y1(d60.F3 ? 6 : 2);
             d60Var.N1(false, false);
             j50Var.a0();
             r30Var.a0();
@@ -848,8 +848,8 @@ public final class h50 extends org.telegram.ui.Components.aw0 {
                 layoutParams2.rightMargin = AndroidUtilities.dp(8.0f);
             }
         }
-        if (wl0Var != null) {
-            ((FrameLayout.LayoutParams) wl0Var.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        if (yl0Var != null) {
+            ((FrameLayout.LayoutParams) yl0Var.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
         }
         if (d40Var.getEmojiView() != null) {
             ((FrameLayout.LayoutParams) d40Var.getEmojiView().getLayoutParams()).gravity = 80;

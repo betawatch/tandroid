@@ -7,9 +7,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class vx implements ah.j, org.telegram.ui.Components.ho0, org.telegram.ui.Components.nl0, ci.cc, org.telegram.ui.Components.b20 {
+public final class vx implements ah.j, org.telegram.ui.Components.jo0, org.telegram.ui.Components.pl0, ci.cc, org.telegram.ui.Components.d20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ qy b;
 
@@ -76,7 +76,7 @@ public final class vx implements ah.j, org.telegram.ui.Components.ho0, org.teleg
         qyVar.e0[0].a.getViewTreeObserver().addOnPreDrawListener(new dm(1, this, jVar));
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public boolean c(float f7, float f10, int i10, View view) {
         boolean z10 = view instanceof org.telegram.ui.Cells.i6;
         qy qyVar = this.b;
@@ -136,7 +136,7 @@ public final class vx implements ah.j, org.telegram.ui.Components.ho0, org.teleg
         }
     }
 
-    @Override // org.telegram.ui.Components.ho0
+    @Override // org.telegram.ui.Components.jo0
     public void e(float f7) {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
@@ -144,12 +144,12 @@ public final class vx implements ah.j, org.telegram.ui.Components.ho0, org.teleg
         }
     }
 
-    @Override // org.telegram.ui.Components.ho0
+    @Override // org.telegram.ui.Components.jo0
     public void f(org.telegram.ui.Cells.s2 s2Var) {
         this.b.H4(s2Var);
     }
 
-    @Override // org.telegram.ui.Components.ho0
+    @Override // org.telegram.ui.Components.jo0
     public void finish() {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
@@ -157,7 +157,7 @@ public final class vx implements ah.j, org.telegram.ui.Components.ho0, org.teleg
         }
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public void g() {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
@@ -183,7 +183,7 @@ public final class vx implements ah.j, org.telegram.ui.Components.ho0, org.teleg
         }
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public void q(float f7) {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {

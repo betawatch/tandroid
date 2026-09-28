@@ -13,10 +13,10 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class k4 {
     public static EditTextBoldCursor a(Context context, org.telegram.ui.ActionBar.d6 d6Var, String str, String str2) {
@@ -43,13 +43,13 @@ public abstract class k4 {
         return editTextBoldCursor;
     }
 
-    public static y70 b(y70 y70Var, org.telegram.ui.ActionBar.m2 m2Var, final w3 w3Var, final boolean z10) {
+    public static a80 b(a80 a80Var, org.telegram.ui.ActionBar.m2 m2Var, final w3 w3Var, final boolean z10) {
         TL_iv.textButton textbutton;
         l4 l4Var = w3Var.d;
         TL_keyboard.InlineButtonType inlineButtonType = (l4Var == null || (textbutton = l4Var.a) == null) ? null : textbutton.type;
         if (inlineButtonType == null) {
             final int i10 = 0;
-            y70Var.c(R.drawable.media_link_24, LocaleController.getString(R.string.ChatLink), new Runnable() { // from class: ii.g4
+            a80Var.c(R.drawable.media_link_24, LocaleController.getString(R.string.ChatLink), new Runnable() { // from class: ii.g4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i10) {
@@ -63,7 +63,7 @@ public abstract class k4 {
                 }
             }, false);
             final int i11 = 1;
-            y70Var.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: ii.g4
+            a80Var.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: ii.g4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i11) {
@@ -76,9 +76,9 @@ public abstract class k4 {
                     }
                 }
             }, false);
-            y70Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new ci.y0(m2Var, w3Var, z10, 6), false);
-            y70Var.Z();
-            return y70Var;
+            a80Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new ci.y0(m2Var, w3Var, z10, 6), false);
+            a80Var.Z();
+            return a80Var;
         }
         if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl) {
             i(w3Var, z10);
@@ -91,7 +91,7 @@ public abstract class k4 {
         return null;
     }
 
-    public static y70 c(y70 y70Var, org.telegram.ui.ActionBar.m2 m2Var, final Context context, final org.telegram.ui.ActionBar.d6 d6Var, final u3 u3Var, final boolean z10) {
+    public static a80 c(a80 a80Var, org.telegram.ui.ActionBar.m2 m2Var, final Context context, final org.telegram.ui.ActionBar.d6 d6Var, final u3 u3Var, final boolean z10) {
         int i10 = u3Var.b;
         TL_iv.pageBlockButtonRow d = u3Var.d();
         TL_keyboard.PageButton pageButton = (d == null || i10 < 0 || i10 >= d.buttons.size()) ? null : d.buttons.get(i10);
@@ -107,7 +107,7 @@ public abstract class k4 {
             return null;
         }
         final int i11 = 0;
-        y70Var.c(R.drawable.media_link_24, LocaleController.getString(R.string.ChatLink), new Runnable() { // from class: ii.i4
+        a80Var.c(R.drawable.media_link_24, LocaleController.getString(R.string.ChatLink), new Runnable() { // from class: ii.i4
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i11) {
@@ -121,7 +121,7 @@ public abstract class k4 {
             }
         }, false);
         final int i12 = 1;
-        y70Var.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: ii.i4
+        a80Var.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: ii.i4
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i12) {
@@ -134,9 +134,9 @@ public abstract class k4 {
                 }
             }
         }, false);
-        y70Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new ci.u1(m2Var, context, d6Var, u3Var, z10, 3), false);
-        y70Var.Z();
-        return y70Var;
+        a80Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new ci.u1(m2Var, context, d6Var, u3Var, z10, 3), false);
+        a80Var.Z();
+        return a80Var;
     }
 
     public static void d(Context context, org.telegram.ui.ActionBar.d6 d6Var, u3 u3Var, boolean z10) {

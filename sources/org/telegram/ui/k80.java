@@ -11,15 +11,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    public final org.telegram.ui.Components.n90 T;
+    public final org.telegram.ui.Components.p90 T;
     public final org.telegram.ui.ActionBar.e1 U;
     public final org.telegram.ui.ActionBar.e1 V;
     public final org.telegram.ui.ActionBar.e1 W;
     public final ArrayList a0;
-    public final org.telegram.ui.Components.m00 b0;
+    public final org.telegram.ui.Components.n00 b0;
     public int c0;
     public final CacheByChatsController d0;
     public i80 e0;
@@ -59,23 +59,23 @@ public final class k80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
         frameLayout.addView(view, w7.y5.c(-1.0f, -1));
         frameLayout.setTag(R.id.fit_width_tag, 1);
         a(frameLayout, w7.y5.n(-1, 8));
-        org.telegram.ui.Components.m00 m00Var = new org.telegram.ui.Components.m00(this, context);
-        this.b0 = m00Var;
-        a(m00Var, w7.y5.n(-1, 48));
-        m00Var.setOnClickListener(new ov(12, this, m2Var));
+        org.telegram.ui.Components.n00 n00Var = new org.telegram.ui.Components.n00(this, context);
+        this.b0 = n00Var;
+        a(n00Var, w7.y5.n(-1, 48));
+        n00Var.setOnClickListener(new ov(12, this, m2Var));
         for (int i11 = 0; i11 < this.a0.size(); i11++) {
             ((j80) this.a0.get(i11)).a.setOnClickListener(new ci.n4(this, ((j80) this.a0.get(i11)).b, 18));
         }
-        org.telegram.ui.Components.n90 n90Var = new org.telegram.ui.Components.n90(context, null);
-        this.T = n90Var;
-        n90Var.setTag(R.id.fit_width_tag, 1);
-        n90Var.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
-        n90Var.setTextSize(1, 13.0f);
-        n90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E8, false));
-        n90Var.setMovementMethod(LinkMovementMethod.getInstance());
-        n90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.J6, false));
-        n90Var.setText(LocaleController.getString(R.string.KeepMediaPopupDescription));
-        a(n90Var, w7.y5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+        org.telegram.ui.Components.p90 p90Var = new org.telegram.ui.Components.p90(context, null);
+        this.T = p90Var;
+        p90Var.setTag(R.id.fit_width_tag, 1);
+        p90Var.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+        p90Var.setTextSize(1, 13.0f);
+        p90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E8, false));
+        p90Var.setMovementMethod(LinkMovementMethod.getInstance());
+        p90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.J6, false));
+        p90Var.setText(LocaleController.getString(R.string.KeepMediaPopupDescription));
+        a(p90Var, w7.y5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
     }
 
     public final void f() {

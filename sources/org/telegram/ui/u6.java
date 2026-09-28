@@ -11,9 +11,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u6 implements org.telegram.ui.Components.dw0, Utilities.Callback2Return, org.telegram.ui.ActionBar.z1, hh.i, org.telegram.ui.Components.jl0, org.telegram.ui.Components.rv0, org.telegram.ui.Components.sv0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.ad0, org.telegram.ui.Components.cd0 {
+public final /* synthetic */ class u6 implements org.telegram.ui.Components.fw0, Utilities.Callback2Return, org.telegram.ui.ActionBar.z1, hh.i, org.telegram.ui.Components.ll0, org.telegram.ui.Components.tv0, org.telegram.ui.Components.uv0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.cd0, org.telegram.ui.Components.ed0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ u6(int i10) {
@@ -24,7 +24,7 @@ public final /* synthetic */ class u6 implements org.telegram.ui.Components.dw0,
         return (ActionMode.Callback2) obj;
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.uv0
     public void b(Object obj, float f7) {
         as asVar = (as) obj;
         switch (this.a) {
@@ -76,7 +76,7 @@ public final /* synthetic */ class u6 implements org.telegram.ui.Components.dw0,
         }
     }
 
-    @Override // org.telegram.ui.Components.rv0
+    @Override // org.telegram.ui.Components.tv0
     public float get(Object obj) {
         as asVar = (as) obj;
         switch (this.a) {
@@ -93,7 +93,7 @@ public final /* synthetic */ class u6 implements org.telegram.ui.Components.dw0,
         }
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public void h(int i10) {
         if (i10 == 0) {
             SharedConfig.setKeepMedia(3);
@@ -113,7 +113,7 @@ public final /* synthetic */ class u6 implements org.telegram.ui.Components.dw0,
         view.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.ad0
+    @Override // org.telegram.ui.Components.cd0
     public String j(int i10) {
         switch (this.a) {
             case 20:
@@ -145,8 +145,8 @@ public final /* synthetic */ class u6 implements org.telegram.ui.Components.dw0,
         return String.format("%02d", Integer.valueOf(i10));
     }
 
-    @Override // org.telegram.ui.Components.cd0
-    public void q(org.telegram.ui.Components.ed0 ed0Var, int i10) {
+    @Override // org.telegram.ui.Components.ed0
+    public void q(org.telegram.ui.Components.gd0 gd0Var, int i10) {
         Pattern pattern = org.telegram.ui.Components.e5.a;
     }
 
@@ -180,7 +180,7 @@ public final /* synthetic */ class u6 implements org.telegram.ui.Components.dw0,
         }
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public /* synthetic */ void n() {
     }
 }

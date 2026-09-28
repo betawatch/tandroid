@@ -1,43 +1,107 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class fp0 extends FrameLayout {
-    public final /* synthetic */ ff a;
+public final class fp0 extends xl0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ List d;
+    public final /* synthetic */ MessagesController e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ TLRPC.Peer h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fp0(ff ffVar, Context context) {
-        super(context);
-        this.a = ffVar;
+    public fp0(org.telegram.ui.ActionBar.d6 d6Var, List list, MessagesController messagesController, int i10, TLRPC.Peer peer) {
+        this.c = d6Var;
+        this.d = list;
+        this.e = messagesController;
+        this.f = i10;
+        this.h = peer;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ff ffVar = this.a;
-        View contentView = ffVar.getContentView();
-        int[] iArr = new int[2];
-        contentView.getLocationInWindow(iArr);
-        iArr[0] = iArr[0] + ffVar.E;
-        iArr[1] = iArr[1] + ffVar.F;
-        getLocationInWindow(new int[2]);
-        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
-            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
-                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
-                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
-                    return contentView.dispatchTouchEvent(motionEvent);
-                }
+    @Override // org.telegram.ui.Components.xl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.size();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        jp0 jp0Var = (jp0) c1Var.a;
+        TLRPC.TL_sendAsPeer tL_sendAsPeer = (TLRPC.TL_sendAsPeer) this.d.get(i10);
+        TLRPC.Peer peer = tL_sendAsPeer.peer;
+        long j3 = peer.channel_id;
+        long j10 = j3 != 0 ? -j3 : 0L;
+        if (j10 == 0) {
+            long j11 = peer.user_id;
+            if (j11 != 0) {
+                j10 = j11;
             }
         }
-        if (!ffVar.A && !ffVar.D) {
-            ffVar.D = true;
-            ffVar.l(new o1.k[0]);
+        TLRPC.Peer peer2 = this.h;
+        MessagesController messagesController = this.e;
+        boolean z10 = true;
+        if (j10 >= 0) {
+            TLRPC.User user = messagesController.getUser(Long.valueOf(j10));
+            if (user != null) {
+                jp0Var.b.setText(UserObject.getUserName(user));
+                jp0Var.c.setText(LocaleController.getString(R.string.VoipGroupPersonalAccount));
+                jp0Var.a.setAvatar(user);
+            }
+            sv0 sv0Var = jp0Var.a;
+            if (peer2 == null ? i10 != 0 : peer2.user_id != peer.user_id) {
+                z10 = false;
+            }
+            sv0Var.a(z10, false);
+            return;
         }
-        return true;
+        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(-j10));
+        if (chat != null) {
+            if (tL_sendAsPeer.premium_required) {
+                StringBuilder sb2 = new StringBuilder();
+                String str = chat.title;
+                TextView textView = jp0Var.b;
+                sb2.append((Object) TextUtils.ellipsize(str, textView.getPaint(), this.f - AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END));
+                sb2.append(" d");
+                SpannableString spannableString = new SpannableString(sb2.toString());
+                qq qqVar = new qq(R.drawable.msg_mini_premiumlock, 0);
+                qqVar.setTopOffset(1);
+                qqVar.setSize(AndroidUtilities.dp(14.0f));
+                qqVar.setColorKey(org.telegram.ui.ActionBar.h6.C6);
+                spannableString.setSpan(qqVar, spannableString.length() - 1, spannableString.length(), 33);
+                textView.setEllipsize(null);
+                textView.setText(spannableString);
+            } else {
+                jp0Var.b.setEllipsize(TextUtils.TruncateAt.END);
+                jp0Var.b.setText(chat.title);
+            }
+            jp0Var.c.setText(LocaleController.formatPluralString((!ChatObject.isChannel(chat) || chat.megagroup) ? "Members" : "Subscribers", chat.participants_count, new Object[0]));
+            jp0Var.a.setAvatar(chat);
+        }
+        sv0 sv0Var2 = jp0Var.a;
+        if (peer2 == null ? i10 != 0 : peer2.channel_id != peer.channel_id) {
+            z10 = false;
+        }
+        sv0Var2.a(z10, false);
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        return new il0(new jp0(viewGroup.getContext(), this.c));
     }
 }

@@ -1,838 +1,272 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.BlendMode;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.ComposeShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
+import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
-import android.os.SystemClock;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import java.lang.ref.WeakReference;
-import java.util.List;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AppGlobalConfig;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class mc0 extends Drawable {
-    public static final boolean e0;
-    public static final boolean f0;
-    public Matrix A;
-    public boolean B;
-    public GradientDrawable C;
-    public GenericProvider D;
+public final class mc0 extends FrameLayout {
     public boolean E;
-    public boolean F;
-    public final Runnable G;
-    public PorterDuffColorFilter H;
-    public int I;
-    public float J;
-    public float K;
-    public int L;
-    public float M;
-    public boolean N;
-    public final int O;
-    public final int P;
-    public rc0 Q;
-    public List R;
-    public int S;
-    public boolean T;
-    public int U;
-    public final gh.a V;
-    public final gh.a W;
-    public Bitmap X;
-    public Canvas Y;
-    public Paint Z;
-    public final int[] a;
-    public int a0;
-    public long b;
-    public final gh.a b0;
-    public WeakReference c;
-    public Bitmap c0;
-    public boolean d;
-    public int d0;
-    public final rr e;
-    public int f;
-    public boolean g;
-    public float h;
-    public int i;
-    public final RectF j;
-    public Bitmap k;
-    public Bitmap l;
-    public final Bitmap[] m;
-    public final Paint n;
-    public final Paint o;
-    public final Paint p;
-    public int q;
-    public Canvas r;
-    public Canvas s;
-    public boolean t;
-    public Bitmap u;
-    public BitmapShader v;
-    public BitmapShader w;
-    public Bitmap x;
-    public ImageReceiver y;
-    public boolean z;
+    public float F;
+    public final int a;
+    public final int b;
+    public final org.telegram.ui.ActionBar.d6 c;
+    public final LinearLayout d;
+    public final TextView e;
+    public final TextView f;
+    public final TextView h;
+    public final long n;
+    public final int r;
+    public final int s;
+    public final int v;
+    public final int w;
+    public final Runnable x;
+    public final int y;
 
-    static {
-        int i10 = Build.VERSION.SDK_INT;
-        e0 = i10 < 28;
-        f0 = i10 >= 29;
-    }
-
-    public mc0() {
-        this.a = new int[]{-12423849, -531317, -7888252, -133430};
-        this.e = new rr(0.33d, 0.0d, 0.0d, 1.0d);
-        this.h = 1.0f;
-        this.j = new RectF();
-        this.m = new Bitmap[3];
-        this.n = new Paint(2);
-        this.o = new Paint(2);
-        this.p = new Paint();
-        this.q = 100;
-        this.C = new GradientDrawable();
-        this.G = new ic0(this, 1);
-        this.J = 1.0f;
-        this.K = 1.0f;
-        this.L = 255;
-        this.M = 1.0f;
-        this.O = 60;
-        this.P = 80;
-        this.S = -1;
-        this.U = -16777216;
-        this.V = new gh.a();
-        this.W = new gh.a();
-        this.b0 = new gh.a();
-        h();
-    }
-
-    public static int g(int i10, int i11, int i12, int i13) {
-        boolean j3 = j(i10, i11, i12, i13);
-        boolean z10 = f0;
-        if (j3) {
-            if (z10) {
-                return -1;
-            }
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        if (z10) {
-            return -16777216;
-        }
-        int averageColor = AndroidUtilities.getAverageColor(i12, AndroidUtilities.getAverageColor(i10, i11));
-        if (i13 != 0) {
-            averageColor = AndroidUtilities.getAverageColor(i13, averageColor);
-        }
-        return (AndroidUtilities.getPatternColor(averageColor, true) & 16777215) | 1677721600;
-    }
-
-    public static boolean j(int i10, int i11, int i12, int i13) {
-        int averageColor = AndroidUtilities.getAverageColor(i10, i11);
-        if (i12 != 0) {
-            averageColor = AndroidUtilities.getAverageColor(averageColor, i12);
-        }
-        if (i13 != 0) {
-            averageColor = AndroidUtilities.getAverageColor(averageColor, i13);
-        }
-        return AndroidUtilities.RGBtoHSB(Color.red(averageColor), Color.green(averageColor), Color.blue(averageColor))[2] < 0.3f;
-    }
-
-    public final void a(Canvas canvas, int i10, float f7, float f10, float f11, float f12) {
-        List list = this.R;
-        if (list == null || this.y == null || i10 < 0 || i10 >= list.size()) {
-            return;
-        }
-        dg.c cVar = (dg.c) this.R.get(i10);
-        canvas.save();
-        canvas.translate(f7, f10);
-        canvas.scale(f11, f12);
-        canvas.concat(cVar.b);
-        this.y.setImageCoords(cVar.a);
-        this.y.draw(canvas);
-        canvas.restore();
-    }
-
-    public final void b(Canvas canvas, RectF rectF, int i10) {
-        if (this.R == null || this.u == null) {
-            return;
-        }
-        a(canvas, i10, rectF.left, rectF.top, rectF.width() / this.u.getWidth(), rectF.height() / this.u.getHeight());
-    }
-
-    public final void c() {
-        int i10 = -1;
-        while (i10 < 3) {
-            int i11 = i10 + 1;
-            Utilities.generateGradient(i10 < 0 ? this.l : this.m[i10], this.i, i11 / 3.0f, this.a);
-            i10 = i11;
-        }
-    }
-
-    public final Bitmap d() {
-        return this.k;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        canvas.save();
-        Bitmap e = e();
-        float f7 = e != null ? bounds.top : this.f;
-        int width = this.k.getWidth();
-        int height = this.k.getHeight();
-        float width2 = bounds.width();
-        float height2 = bounds.height();
-        float f10 = width;
-        float f11 = height;
-        float max = Math.max(width2 / f10, height2 / f11);
-        float f12 = f10 * max;
-        float f13 = f11 * max;
-        float f14 = (width2 - f12) / 2.0f;
-        float f15 = (height2 - f13) / 2.0f;
-        if (this.g) {
-            int i10 = bounds.left;
-            f14 += i10;
-            int i11 = bounds.top;
-            f15 += i11;
-            canvas.clipRect(i10, i11, bounds.right, bounds.bottom);
-        }
-        boolean z10 = (Build.VERSION.SDK_INT < 28 || this.Q == null || this.k == null || e == null) ? false : true;
-        int i12 = this.q;
-        float f16 = 1.0f;
-        Paint paint = this.n;
-        Paint paint2 = this.o;
-        RectF rectF = this.j;
-        if (i12 < 0) {
-            boolean z11 = e0;
-            if (!z10 && (!z11 || e == null)) {
-                canvas.drawColor(i0.a.k(-16777216, (int) (this.L * this.K)));
-            }
-            if (e != null) {
-                if (z11) {
-                    int i13 = (((int) (this.L * this.J)) * (-this.q)) / 100;
-                    if (this.u != null) {
-                        Bitmap e7 = e();
-                        gh.a aVar = this.b0;
-                        if (aVar.a(e7) || this.c0 == null || this.d0 != i13) {
-                            int width3 = this.u.getWidth();
-                            int height3 = this.u.getHeight();
-                            this.d0 = i13;
-                            Bitmap bitmap = this.c0;
-                            if (bitmap == null || bitmap.getWidth() != width3 || this.c0.getHeight() != height3) {
-                                this.c0 = Bitmap.createBitmap(width3, height3, Bitmap.Config.ARGB_8888);
-                            }
-                            Utilities.applyAlphaInvert(e7, this.c0, i13);
-                        }
-                        aVar.b(e7);
-                    }
-                    float width4 = e.getWidth();
-                    float height4 = e.getHeight();
-                    float max2 = Math.max(width2 / width4, height2 / height4);
-                    float f17 = width4 * max2;
-                    float f18 = height4 * max2;
-                    float f19 = (width2 - f17) / 2.0f;
-                    float f20 = (height2 - f18) / 2.0f;
-                    rectF.set(f19, f20, f17 + f19, f18 + f20);
-                    if (this.c0 != null) {
-                        canvas.drawBitmap(this.k, (Rect) null, rectF, paint);
-                        canvas.drawBitmap(this.c0, (Rect) null, rectF, paint);
-                    } else {
-                        canvas.drawColor(i0.a.k(-16777216, (int) (this.L * this.K)));
-                    }
-                    b(canvas, rectF, this.S);
-                } else {
-                    if (this.A == null) {
-                        this.A = new Matrix();
-                    }
-                    this.A.reset();
-                    this.A.setTranslate(f14, f15 + f7);
-                    float min = 1.0f / Math.min(this.k.getWidth() / bounds.width(), this.k.getHeight() / bounds.height());
-                    this.A.preScale(min, min);
-                    this.v.setLocalMatrix(this.A);
-                    this.A.reset();
-                    float width5 = e.getWidth();
-                    float height5 = e.getHeight();
-                    float max3 = Math.max(width2 / width5, height2 / height5);
-                    float f21 = (width2 - (width5 * max3)) / 2.0f;
-                    float f22 = ((height2 - (height5 * max3)) / 2.0f) + f7;
-                    this.A.setTranslate((int) f21, (int) f22);
-                    if (!this.z || max3 > 1.4f || max3 < 0.8f) {
-                        this.A.preScale(max3, max3);
-                        f16 = max3;
-                    }
-                    this.w.setLocalMatrix(this.A);
-                    paint2.setColorFilter(null);
-                    paint2.setAlpha((int) ((Math.abs(this.q) / 100.0f) * this.L * this.J));
-                    rectF.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
-                    if (z10) {
-                        Paint e10 = this.Q.e(this.k, e, this.U, (int) (this.L * this.J), this.q, canvas.isHardwareAccelerated());
-                        this.Q.d(this.A);
-                        this.Q.c(rectF);
-                        float f23 = this.I;
-                        canvas.drawRoundRect(rectF, f23, f23, e10);
-                    } else {
-                        float f24 = this.I;
-                        canvas.drawRoundRect(rectF, f24, f24, paint2);
-                    }
-                    a(canvas, this.S, f21, f22, f16, f16);
-                }
-            }
-        } else {
-            boolean z12 = z10;
-            if (this.I != 0) {
-                this.A.reset();
-                this.A.setTranslate(f14, f15);
-                float min2 = 1.0f / Math.min(this.k.getWidth() / bounds.width(), this.k.getHeight() / bounds.height());
-                this.A.preScale(min2, min2);
-                this.v.setLocalMatrix(this.A);
-                rectF.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
-                if (!z12) {
-                    float f25 = this.I;
-                    canvas.drawRoundRect(rectF, f25, f25, paint);
-                }
-            } else {
-                canvas.translate(0.0f, f7);
-                GradientDrawable gradientDrawable = this.C;
-                if (gradientDrawable != null) {
-                    gradientDrawable.setBounds((int) f14, (int) f15, (int) (f14 + f12), (int) (f15 + f13));
-                    this.C.setAlpha((int) (this.K * 255.0f));
-                    this.C.draw(canvas);
-                } else {
-                    rectF.set(f14, f15, f12 + f14, f13 + f15);
-                    int alpha = paint.getAlpha();
-                    paint.setAlpha((int) (alpha * this.K));
-                    if (!z12) {
-                        canvas.drawBitmap(this.k, (Rect) null, rectF, paint);
-                    }
-                    paint.setAlpha(alpha);
-                }
-            }
-            if (e != null) {
-                float width6 = e.getWidth();
-                float height6 = e.getHeight();
-                float max4 = Math.max(width2 / width6, height2 / height6);
-                float f26 = width6 * max4;
-                float f27 = height6 * max4;
-                float f28 = (width2 - f26) / 2.0f;
-                float f29 = (height2 - f27) / 2.0f;
-                rectF.set(f28, f29, f26 + f28, f27 + f29);
-                paint2.setColorFilter(this.H);
-                paint2.setAlpha((int) ((Math.abs(this.q) / 100.0f) * this.L * this.J));
-                if (z12) {
-                    Paint e11 = this.Q.e(this.k, e, this.U, (int) (this.L * this.J), this.q, canvas.isHardwareAccelerated());
-                    rc0 rc0Var = this.Q;
-                    RectF rectF2 = rc0Var.j;
-                    rectF2.set(0.0f, 0.0f, rc0Var.g, rc0Var.h);
-                    Matrix matrix = rc0Var.i;
-                    matrix.setRectToRect(rectF2, rectF, Matrix.ScaleToFit.FILL);
-                    rc0Var.d(matrix);
-                    this.Q.c(rectF);
-                    canvas.drawRect(rectF, e11);
-                } else {
-                    canvas.drawBitmap(e, (Rect) null, rectF, paint2);
-                }
-                paint2.setAlpha((int) ((Math.abs(this.q) / 100.0f) * this.L * this.J * 0.8f));
-                b(canvas, rectF, this.S);
-            }
-        }
-        canvas.restore();
-        z();
-    }
-
-    public final Bitmap e() {
-        Bitmap bitmap = this.u;
-        if (bitmap == null) {
-            return null;
-        }
-        if (this.x == null) {
-            return bitmap;
-        }
-        gh.a aVar = this.V;
-        boolean a2 = aVar.a(bitmap);
-        Bitmap bitmap2 = this.x;
-        gh.a aVar2 = this.W;
-        boolean a10 = aVar2.a(bitmap2);
-        boolean z10 = true;
-        boolean z11 = this.a0 != this.S;
-        if (!a2 && !a10 && !z11) {
-            z10 = false;
-        }
-        Bitmap bitmap3 = this.X;
-        if (bitmap3 != null && !z10) {
-            return bitmap3;
-        }
-        int width = this.u.getWidth();
-        int height = this.u.getHeight();
-        Bitmap bitmap4 = this.X;
-        if (bitmap4 == null || bitmap4.getWidth() != width || this.X.getHeight() != height) {
-            this.X = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            this.Y = new Canvas(this.X);
-        }
-        Bitmap.Config config = this.u.getConfig();
-        if (config == Bitmap.Config.ARGB_8888) {
-            Utilities.copyBitmaps(this.u, this.X);
-        } else if (config == Bitmap.Config.ALPHA_8) {
-            Utilities.expandAlphaToBlack(this.u, this.X);
-        }
-        if (this.Z == null) {
-            Paint paint = new Paint(3);
-            this.Z = paint;
-            paint.setAlpha(204);
-        }
-        Canvas canvas = this.Y;
-        Paint paint2 = this.Z;
-        int i10 = this.S;
-        if (this.x != null && this.R != null) {
-            for (int i11 = 0; i11 < this.R.size(); i11++) {
-                if (i11 != i10) {
-                    dg.c cVar = (dg.c) this.R.get(i11);
-                    canvas.save();
-                    canvas.concat(cVar.b);
-                    canvas.drawBitmap(this.x, (Rect) null, cVar.a, paint2);
-                    canvas.restore();
-                }
-            }
-        }
-        this.a0 = this.S;
-        aVar.b(this.u);
-        aVar2.b(this.x);
-        return this.X;
-    }
-
-    public final int f() {
-        int[] iArr = this.a;
-        return g(iArr[0], iArr[1], iArr[2], iArr[3]);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        Bitmap bitmap = this.u;
-        return bitmap != null ? bitmap.getHeight() : super.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        Bitmap bitmap = this.u;
-        return bitmap != null ? bitmap.getWidth() : super.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public final void h() {
-        BlendMode blendMode;
-        Bitmap.Config config = Bitmap.Config.ARGB_8888;
-        int i10 = this.O;
-        int i11 = this.P;
-        Bitmap createBitmap = Bitmap.createBitmap(i10, i11, config);
-        this.k = createBitmap;
-        createBitmap.setHasAlpha(false);
-        for (int i12 = 0; i12 < 3; i12++) {
-            Bitmap createBitmap2 = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
-            this.m[i12] = createBitmap2;
-            createBitmap2.setHasAlpha(false);
-        }
-        this.r = new Canvas(this.k);
-        Bitmap createBitmap3 = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
-        this.l = createBitmap3;
-        createBitmap3.setHasAlpha(false);
-        this.s = new Canvas(this.l);
-        Utilities.generateGradient(this.k, this.i, this.e.getInterpolation(this.h), this.a);
-        if (f0) {
-            Paint paint = this.o;
-            blendMode = BlendMode.SOFT_LIGHT;
-            paint.setBlendMode(blendMode);
-        }
-    }
-
-    public final void i() {
-        invalidateSelf();
-        WeakReference weakReference = this.c;
-        if (weakReference != null && weakReference.get() != null) {
-            ((View) this.c.get()).invalidate();
-        }
-        if (this.t) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.invalidateMotionBackground, new Object[0]);
-            z();
-            Runnable runnable = this.G;
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            AndroidUtilities.runOnUIThread(runnable, 16L);
-        }
-    }
-
-    public final void k() {
-        this.T = true;
-        ImageReceiver imageReceiver = this.y;
-        if (imageReceiver != null) {
-            imageReceiver.onAttachedToWindow();
-        }
-    }
-
-    public final void l() {
-        this.T = false;
-        ImageReceiver imageReceiver = this.y;
-        if (imageReceiver != null) {
-            imageReceiver.onDetachedFromWindow();
-        }
-    }
-
-    public final void m(boolean z10) {
-        if (this.h < 1.0f) {
-            return;
-        }
-        this.F = true;
-        this.h = 0.0f;
-        this.E = z10;
-        i();
-    }
-
-    public final void n(int i10, int i11, int i12, int i13) {
-        o(i10, i11, i12, i13, 0, true);
-    }
-
-    public final void o(int i10, int i11, int i12, int i13, int i14, boolean z10) {
-        if (this.g && i12 == 0 && i13 == 0) {
-            this.C = new GradientDrawable(v9.d(i14), new int[]{i10, i11});
-        } else {
-            this.C = null;
-        }
-        int[] iArr = this.a;
-        if (iArr[0] == i10 && iArr[1] == i11 && iArr[2] == i12 && iArr[3] == i13) {
-            return;
-        }
-        iArr[0] = i10;
-        iArr[1] = i11;
-        iArr[2] = i12;
-        iArr[3] = i13;
-        Bitmap bitmap = this.k;
-        if (bitmap != null) {
-            Utilities.generateGradient(bitmap, this.i, this.e.getInterpolation(this.h), iArr);
-            if (z10) {
-                i();
-            }
-        }
-    }
-
-    public final void p() {
-        if (Build.VERSION.SDK_INT < 28 || this.Q != null || SharedConfig.fastWallpaperDisabled) {
-            return;
-        }
-        this.Q = new rc0();
-    }
-
-    public final void q(boolean z10) {
-        if (!z10 && this.N) {
-            this.h = 1.0f - ((this.h - (((int) (r0 / 0.125f)) * 0.125f)) / 0.125f);
-            this.d = true;
-        }
-        this.N = z10;
-    }
-
-    public final void r(View view) {
-        this.c = new WeakReference(view);
-        ImageReceiver imageReceiver = this.y;
-        if (imageReceiver != null) {
-            imageReceiver.setParentView(view);
-        }
-    }
-
-    public final void s(float f7) {
-        this.J = f7;
-        i();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.L = i10;
-        this.n.setAlpha(i10);
-        this.o.setAlpha(i10);
-    }
-
-    public final void t(Bitmap bitmap, int i10) {
-        this.q = i10;
-        this.u = bitmap;
-        if (bitmap == null) {
-            return;
-        }
-        boolean z10 = f0;
-        Paint paint = this.o;
-        if (z10) {
-            if (i10 >= 0) {
-                paint.setBlendMode(BlendMode.SOFT_LIGHT);
-            } else {
-                paint.setBlendMode(null);
-            }
-        }
-        boolean z11 = e0;
-        if (i10 >= 0) {
-            if (z11) {
-                paint.setXfermode(null);
-            }
-        } else {
-            if (z11) {
-                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-                return;
-            }
-            Bitmap bitmap2 = this.k;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            this.v = new BitmapShader(bitmap2, tileMode, tileMode);
-            Bitmap bitmap3 = this.u;
-            Shader.TileMode tileMode2 = Shader.TileMode.REPEAT;
-            this.w = new BitmapShader(bitmap3, tileMode2, tileMode2);
-            this.z = true;
-            paint.setShader(new ComposeShader(this.v, this.w, PorterDuff.Mode.DST_IN));
-            paint.setFilterBitmap(true);
-            this.A = new Matrix();
-        }
-    }
-
-    public final void u(int i10) {
-        this.U = i10;
-        this.H = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-        i();
-    }
-
-    public final void v(int i10) {
-        this.i = i10;
-        if (i10 < 0) {
-            this.i = 0;
-        } else if (i10 > 7) {
-            this.i = 7;
-        }
-        Utilities.generateGradient(this.k, this.i, this.e.getInterpolation(this.h), this.a);
-    }
-
-    public final void w(int i10) {
-        this.I = i10;
-        this.A = new Matrix();
-        Bitmap bitmap = this.k;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        this.v = bitmapShader;
-        this.n.setShader(bitmapShader);
-        i();
-    }
-
-    public final void x(boolean z10) {
-        if (this.h < 1.0f || !LiteMode.isEnabled(32)) {
-            i();
-            return;
-        }
-        this.F = false;
+    public mc0(Context context, int i10, MessageObject messageObject, Runnable runnable, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        TLRPC.MessageFwdHeader messageFwdHeader;
         this.E = false;
-        this.B = z10;
-        this.h = 0.0f;
-        int i10 = this.i - 1;
-        this.i = i10;
-        if (i10 < 0) {
-            this.i = 7;
-        }
-        i();
-        this.s.drawBitmap(this.k, 0.0f, 0.0f, (Paint) null);
-        c();
+        this.F = -1.0f;
+        this.b = i10;
+        int i11 = messageObject.currentAccount;
+        this.a = i11;
+        this.c = d6Var;
+        this.x = runnable;
+        this.y = ConnectionsManager.getInstance(i11).getCurrentTime() - messageObject.messageOwner.date;
+        this.n = messageObject.getDialogId();
+        this.r = messageObject.getId();
+        TLRPC.Message message = messageObject.messageOwner;
+        this.s = message == null ? 0 : message.date;
+        this.v = message == null ? 0 : message.edit_date;
+        this.w = (message == null || (messageFwdHeader = message.fwd_from) == null) ? 0 : messageFwdHeader.date;
+        ImageView imageView = new ImageView(context);
+        addView(imageView, w7.y5.d(24, 24.0f, 19, 11.0f, 0.0f, 0.0f, 0.0f));
+        Drawable mutate = context.getDrawable(i10 == 1 ? AppGlobalConfig.getInstance(i11).messagePrimaryEditedDate.get() ? R.drawable.outline_message_time_24 : R.drawable.menu_edited_stamp : i10 == 2 ? R.drawable.menu_forward_stamp : messageObject.isVoice() ? R.drawable.msg_played : R.drawable.msg_seen).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.F8, d6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setImageDrawable(mutate);
+        TextView textView = new TextView(context);
+        this.h = textView;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("loading text ");
+        spannableStringBuilder.setSpan(new u90(textView, AndroidUtilities.dp(96.0f), AndroidUtilities.dp(2.0f), d6Var), 0, spannableStringBuilder.length() - 1, 17);
+        int i12 = org.telegram.ui.ActionBar.h6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.7f, org.telegram.ui.ActionBar.h6.v0(i12, d6Var)));
+        textView.setText(spannableStringBuilder);
+        textView.setTextSize(1, 13.0f);
+        addView(textView, w7.y5.d(96, -2.0f, 19, 40.0f, -1.0f, 8.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.d = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setAlpha(0.0f);
+        addView(linearLayout, w7.y5.d(-1, -2.0f, 19, 38.0f, 0.0f, 8.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.e = textView2;
+        org.telegram.messenger.ok.n(i12, d6Var, textView2, 1, 14.0f);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView2, w7.y5.t(-2, -2, 19, 0, -1, 0, 0), context);
+        this.f = h;
+        h.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(20.0f), org.telegram.ui.ActionBar.h6.l1(0.75f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d7, d6Var))));
+        org.telegram.messenger.ok.n(i12, d6Var, h, 1, 11.0f);
+        h.setPadding(AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.33f));
+        linearLayout.addView(h, w7.y5.t(-2, -2, 19, 4, 0, 0, 0));
+        a();
     }
 
-    public final void y() {
-        if (this.h < 1.0f) {
+    public static void b(final Context context, final int i10, long j3, final boolean z10, Runnable runnable, final Runnable runnable2, final org.telegram.ui.ActionBar.d6 d6Var) {
+        final org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, context, d6Var, false);
+        e3Var.fixNavigationBar(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, d6Var));
+        boolean premiumFeaturesBlocked = MessagesController.getInstance(i10).premiumFeaturesBlocked();
+        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
+        f7.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        nj0 nj0Var = new nj0(context);
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        nj0Var.f(z10 ? R.raw.large_lastseen : R.raw.large_readtime, 70, 70, null);
+        nj0Var.d();
+        nj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        nj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var)));
+        f7.addView(nj0Var, w7.y5.t(80, 80, 1, 0, 16, 0, 16));
+        TextView textView = new TextView(context);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        int i11 = org.telegram.ui.ActionBar.h6.j5;
+        org.telegram.messenger.ok.n(i11, d6Var, textView, 1, 20.0f);
+        textView.setText(LocaleController.getString(z10 ? R.string.PremiumLastSeenHeader1 : R.string.PremiumReadHeader1));
+        f7.addView(textView, w7.y5.t(-1, -2, 1, 12, 0, 12, 0));
+        TextView textView2 = new TextView(context);
+        textView2.setGravity(17);
+        org.telegram.messenger.ok.n(i11, d6Var, textView2, 1, 14.0f);
+        String firstName = j3 > 0 ? UserObject.getFirstName(MessagesController.getInstance(i10).getUser(Long.valueOf(j3))) : "";
+        org.telegram.messenger.ok.q(z10 ? premiumFeaturesBlocked ? R.string.PremiumLastSeenText1Locked : R.string.PremiumLastSeenText1 : premiumFeaturesBlocked ? R.string.PremiumReadText1Locked : R.string.PremiumReadText1, new Object[]{firstName}, textView2);
+        f7.addView(textView2, w7.y5.t(-1, -2, 1, 32, 9, 32, 19));
+        final ci.d g10 = org.telegram.messenger.ok.g(24, context, d6Var, true);
+        g10.g(LocaleController.getString(z10 ? R.string.PremiumLastSeenButton1 : R.string.PremiumReadButton1), false, true);
+        f7.addView(g10, w7.y5.q(-1, 48, 1));
+        g10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ic0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                ci.d dVar = ci.d.this;
+                dVar.setLoading(true);
+                boolean z11 = z10;
+                int i12 = i10;
+                org.telegram.ui.ActionBar.e3 e3Var2 = e3Var;
+                Runnable runnable3 = runnable2;
+                if (z11) {
+                    TL_account.setPrivacy setprivacy = new TL_account.setPrivacy();
+                    setprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
+                    setprivacy.rules.add(new TLRPC.TL_inputPrivacyValueAllowAll());
+                    ConnectionsManager.getInstance(i12).sendRequest(setprivacy, new ai.s5(dVar, e3Var2, runnable3, 11));
+                    return;
+                }
+                TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
+                TLRPC.GlobalPrivacySettings globalPrivacySettings = ContactsController.getInstance(i12).getGlobalPrivacySettings();
+                setglobalprivacysettings.settings = globalPrivacySettings;
+                if (globalPrivacySettings == null) {
+                    setglobalprivacysettings.settings = new TLRPC.TL_globalPrivacySettings();
+                }
+                setglobalprivacysettings.settings.hide_read_marks = false;
+                ConnectionsManager.getInstance(i12).sendRequest(setglobalprivacysettings, new ci.hd(context, d6Var, dVar, e3Var2, runnable3, 5));
+            }
+        });
+        if (!premiumFeaturesBlocked) {
+            lc0 lc0Var = new lc0(context, d6Var);
+            lc0Var.setGravity(17);
+            lc0Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
+            lc0Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
+            lc0Var.l(" " + LocaleController.getString(R.string.PremiumOr) + " ", false);
+            lc0Var.setTextSize(14);
+            f7.addView(lc0Var, w7.y5.t(270, -2, 1, 12, 17, 12, 17));
+            TextView textView3 = new TextView(context);
+            textView3.setTypeface(AndroidUtilities.bold());
+            textView3.setGravity(17);
+            textView3.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+            textView3.setTextSize(1, 20.0f);
+            textView3.setText(LocaleController.getString(z10 ? R.string.PremiumLastSeenHeader2 : R.string.PremiumReadHeader2));
+            f7.addView(textView3, w7.y5.t(-1, -2, 1, 12, 0, 12, 0));
+            TextView textView4 = new TextView(context);
+            textView4.setGravity(17);
+            org.telegram.messenger.ok.n(i11, d6Var, textView4, 1, 14.0f);
+            org.telegram.messenger.ok.q(z10 ? R.string.PremiumLastSeenText2 : R.string.PremiumReadText2, new Object[]{firstName}, textView4);
+            f7.addView(textView4, w7.y5.t(-1, -2, 1, 32, 9, 32, 19));
+            rg.p0 p0Var = new rg.p0(context, d6Var, true);
+            p0Var.setOnClickListener(new jc0(z10, e3Var, runnable));
+            p0Var.b(LocaleController.getString(z10 ? R.string.PremiumLastSeenButton2 : R.string.PremiumReadButton2), false, false);
+            f7.addView(p0Var, w7.y5.t(-1, 48, 1, 0, 0, 0, 4));
+        }
+        e3Var.setCustomView(f7);
+        e3Var.show();
+    }
+
+    public final void a() {
+        TextView textView = this.e;
+        int i10 = this.a;
+        TextView textView2 = this.f;
+        TextView textView3 = this.h;
+        LinearLayout linearLayout = this.d;
+        int i11 = this.b;
+        if (i11 == 1) {
+            linearLayout.setAlpha(1.0f);
+            textView3.setAlpha(0.0f);
+            textView2.setVisibility(8);
+            textView.setText(AppGlobalConfig.getInstance(i10).messagePrimaryEditedDate.get() ? LocaleController.formatPmSentDate(this.s) : LocaleController.formatPmEditedDate(this.v));
             return;
         }
-        this.F = false;
-        this.B = true;
-        this.E = true;
-        this.h = 0.0f;
-        i();
-        Utilities.generateGradient(this.l, this.i, 0.0f, this.a);
-        c();
-    }
-
-    public final void z() {
-        float interpolation;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = elapsedRealtime - this.b;
-        if (j3 > 20) {
-            j3 = 17;
-        }
-        this.b = elapsedRealtime;
-        if (j3 <= 1) {
+        if (i11 == 2) {
+            linearLayout.setAlpha(1.0f);
+            textView3.setAlpha(0.0f);
+            textView2.setVisibility(8);
+            textView.setText(LocaleController.formatPmFwdDate(this.w));
             return;
         }
-        boolean z10 = this.N;
-        if (z10 && this.h == 1.0f) {
-            this.h = 0.0f;
+        setOnClickListener(null);
+        linearLayout.setAlpha(0.0f);
+        textView3.setAlpha(1.0f);
+        textView2.setVisibility(0);
+        TLRPC.TL_messages_getOutboxReadDate tL_messages_getOutboxReadDate = new TLRPC.TL_messages_getOutboxReadDate();
+        tL_messages_getOutboxReadDate.peer = MessagesController.getInstance(i10).getInputPeer(this.n);
+        tL_messages_getOutboxReadDate.msg_id = this.r;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getOutboxReadDate, new y1(this, 8));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        ub ubVar;
+        super.onDetachedFromWindow();
+        qc qcVar = qc.w;
+        if (qcVar == null || (ubVar = qcVar.e) == null || ubVar.getParent() == null || !(qcVar.e.getParent().getParent() instanceof kb)) {
+            return;
         }
-        float f7 = this.h;
-        if (f7 < 1.0f) {
-            boolean z11 = true;
-            boolean z12 = this.t || this.F;
-            if (z10) {
-                float f10 = ((j3 / 12000.0f) * this.M) + f7;
-                this.h = f10;
-                if (f10 >= 1.0f) {
-                    this.h = 0.0f;
-                }
-                float f11 = this.h;
-                int i10 = (int) (f11 / 0.125f);
-                this.i = i10;
-                interpolation = 1.0f - ((f11 - (i10 * 0.125f)) / 0.125f);
-            } else {
-                boolean z13 = this.F;
-                rr rrVar = this.e;
-                if (z13) {
-                    float interpolation2 = rrVar.getInterpolation(f7);
-                    char c10 = interpolation2 <= 0.25f ? (char) 0 : interpolation2 <= 0.5f ? (char) 1 : interpolation2 <= 0.75f ? (char) 2 : (char) 3;
-                    GenericProvider genericProvider = this.D;
-                    if (genericProvider != null) {
-                        this.h = ((Float) genericProvider.provide(this)).floatValue();
-                    } else {
-                        this.h = (j3 / (this.E ? 1000.0f : 2000.0f)) + this.h;
-                    }
-                    if (this.h > 1.0f) {
-                        this.h = 1.0f;
-                    }
-                    float interpolation3 = (this.D != null || this.d) ? this.h : rrVar.getInterpolation(this.h);
-                    if (this.d && (interpolation3 == 0.0f || interpolation3 == 1.0f)) {
-                        this.d = false;
-                    }
-                    if ((c10 == 0 && interpolation3 > 0.25f) || ((c10 == 1 && interpolation3 > 0.5f) || (c10 == 2 && interpolation3 > 0.75f))) {
-                        if (this.E) {
-                            int i11 = this.i + 1;
-                            this.i = i11;
-                            if (i11 > 7) {
-                                this.i = 0;
-                            }
-                        } else {
-                            int i12 = this.i - 1;
-                            this.i = i12;
-                            if (i12 < 0) {
-                                this.i = 7;
-                            }
-                        }
-                    }
-                    if (interpolation3 > 0.25f) {
-                        interpolation3 = interpolation3 <= 0.5f ? interpolation3 - 0.25f : interpolation3 <= 0.75f ? interpolation3 - 0.5f : interpolation3 - 0.75f;
-                    }
-                    float f12 = interpolation3 / 0.25f;
-                    if (this.E) {
-                        interpolation = 1.0f - f12;
-                        if (this.h >= 1.0f) {
-                            int i13 = this.i + 1;
-                            this.i = i13;
-                            if (i13 > 7) {
-                                this.i = 0;
-                            }
-                            interpolation = 1.0f;
-                        }
-                    } else {
-                        interpolation = f12;
-                    }
+        qcVar.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        float f7;
+        View view = (View) getParent();
+        int size = View.MeasureSpec.getSize(i10);
+        int mode = View.MeasureSpec.getMode(i10);
+        if (this.F < 0.0f) {
+            this.F = 0.0f;
+            int i12 = this.b;
+            TextView textView = this.e;
+            if (i12 == 0) {
+                long currentTimeMillis = System.currentTimeMillis();
+                float max = Math.max(this.F, AndroidUtilities.dp(144.0f));
+                this.F = max;
+                float max2 = Math.max(max, textView.getPaint().measureText(LocaleController.getString(R.string.PmReadUnknown)) + AndroidUtilities.dp(48.0f));
+                this.F = max2;
+                float max3 = Math.max(max2, textView.getPaint().measureText(LocaleController.getString(R.string.PmRead) + this.f.getPaint().measureText(LocaleController.getString(R.string.PmReadShowWhen))) + AndroidUtilities.dp(64.0f));
+                this.F = max3;
+                float max4 = Math.max(max3, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadTodayAt, LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + ((float) AndroidUtilities.dp(48.0f)));
+                this.F = max4;
+                int i13 = this.y;
+                if (i13 > 86400) {
+                    f7 = 48.0f;
+                    this.F = Math.max(max4, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadYesterdayAt, LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(48.0f));
                 } else {
-                    GenericProvider genericProvider2 = this.D;
-                    if (genericProvider2 != null) {
-                        this.h = ((Float) genericProvider2.provide(this)).floatValue();
-                    } else {
-                        this.h = (j3 / (this.B ? 300.0f : 500.0f)) + f7;
-                    }
-                    if (this.h > 1.0f) {
-                        this.h = 1.0f;
-                    }
-                    interpolation = (this.D != null || this.d) ? this.h : rrVar.getInterpolation(this.h);
-                    if (this.d && (interpolation == 0.0f || interpolation == 1.0f)) {
-                        this.d = false;
-                    }
-                    if (this.E) {
-                        interpolation = 1.0f - interpolation;
-                        if (this.h >= 1.0f) {
-                            int i14 = this.i + 1;
-                            this.i = i14;
-                            if (i14 > 7) {
-                                this.i = 0;
-                            }
-                            z11 = z12;
-                            interpolation = 1.0f;
-                        }
-                    }
+                    f7 = 48.0f;
                 }
-                z11 = z12;
-            }
-            if (z11) {
-                Utilities.generateGradient(this.k, this.i, interpolation, this.a);
+                if (i13 > 172800) {
+                    float max5 = Math.max(this.F, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadDateTimeAt, LocaleController.getInstance().getFormatterDayMonth().format(new Date(currentTimeMillis)), LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(f7));
+                    this.F = max5;
+                    this.F = Math.max(max5, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadDateTimeAt, LocaleController.getInstance().getFormatterYear().format(new Date(currentTimeMillis)), LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(f7));
+                }
             } else {
-                Paint paint = this.p;
-                Bitmap[] bitmapArr = this.m;
-                if (interpolation != 1.0f) {
-                    int i15 = (int) (interpolation / 0.33333334f);
-                    if (i15 == 0) {
-                        this.r.drawBitmap(this.l, 0.0f, 0.0f, (Paint) null);
-                    } else {
-                        this.r.drawBitmap(bitmapArr[i15 - 1], 0.0f, 0.0f, (Paint) null);
-                    }
-                    paint.setAlpha((int) (((interpolation - (i15 * 0.33333334f)) / 0.33333334f) * 255.0f));
-                    this.r.drawBitmap(bitmapArr[i15], 0.0f, 0.0f, paint);
-                } else {
-                    this.r.drawBitmap(bitmapArr[2], 0.0f, 0.0f, paint);
-                }
+                this.F = textView.getPaint().measureText(textView.getText().toString()) + AndroidUtilities.dp(48.0f);
             }
-            i();
         }
-    }
-
-    public mc0(boolean z10, int i10, int i11, int i12, int i13) {
-        this(i10, i11, i12, i13, z10, 0, false);
-    }
-
-    public mc0(int i10, int i11, int i12, int i13, boolean z10, int i14, boolean z11) {
-        this.a = new int[]{-12423849, -531317, -7888252, -133430};
-        this.e = new rr(0.33d, 0.0d, 0.0d, 1.0d);
-        this.h = 1.0f;
-        this.j = new RectF();
-        this.m = new Bitmap[3];
-        this.n = new Paint(2);
-        this.o = new Paint(2);
-        this.p = new Paint();
-        this.q = 100;
-        this.C = new GradientDrawable();
-        this.G = new ic0(this, 1);
-        this.J = 1.0f;
-        this.K = 1.0f;
-        this.L = 255;
-        this.M = 1.0f;
-        this.O = 60;
-        this.P = 80;
-        this.S = -1;
-        this.U = -16777216;
-        this.V = new gh.a();
-        this.W = new gh.a();
-        this.b0 = new gh.a();
-        if (z11) {
-            this.O = 80;
-            this.P = 80;
+        int i14 = TLObject.FLAG_30;
+        if (view != null && view.getWidth() > 0) {
+            size = view.getWidth();
+            mode = TLObject.FLAG_30;
         }
-        this.g = z10;
-        o(i10, i11, i12, i13, i14, false);
-        h();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        float f10 = size;
+        float f11 = this.F;
+        if (f10 < f11 || mode == Integer.MIN_VALUE) {
+            size = (int) f11;
+        } else {
+            i14 = mode;
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, i14), i11);
     }
 }

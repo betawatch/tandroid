@@ -20,14 +20,14 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class xb extends aw0 {
+public final class xb extends cw0 {
     public final Path A0;
     public final RectF B0;
     public final RectF C0;
@@ -61,7 +61,7 @@ public final class xb extends aw0 {
     /* JADX WARN: Removed duplicated region for block: B:224:0x0769  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x07c6  */
     /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -98,7 +98,7 @@ public final class xb extends aw0 {
         ca caVar3;
         int i10;
         e6 t10;
-        mj0 mj0Var;
+        oj0 oj0Var;
         jc jcVar = this.I0;
         RectF rectF5 = jcVar.T;
         gc gcVar = jcVar.s0;
@@ -436,13 +436,13 @@ public final class xb extends aw0 {
                             jcVar.d = false;
                             jc.x1 = true;
                             jcVar.b0 = jcVar.W;
-                            if (gcVar.d != null && (t10 = jcVar.t()) != null && (mj0Var = t10.o1.d) != null) {
-                                mj0 mj0Var2 = gcVar.d;
-                                mj0Var.c = mj0Var2.c;
-                                mj0Var.f = mj0Var2.f;
-                                mj0Var.b = mj0Var2.b;
-                                mj0Var.a = System.currentTimeMillis();
-                                mj0Var.c();
+                            if (gcVar.d != null && (t10 = jcVar.t()) != null && (oj0Var = t10.o1.d) != null) {
+                                oj0 oj0Var2 = gcVar.d;
+                                oj0Var.c = oj0Var2.c;
+                                oj0Var.f = oj0Var2.f;
+                                oj0Var.b = oj0Var2.b;
+                                oj0Var.a = System.currentTimeMillis();
+                                oj0Var.c();
                             }
                             jcVar.E = true;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -460,7 +460,7 @@ public final class xb extends aw0 {
                             jcVar.F.addListener(new sb(jcVar, i10));
                             jcVar.F.setStartDelay(40L);
                             jcVar.F.setDuration(250L);
-                            jcVar.F.setInterpolator(rr.f);
+                            jcVar.F.setInterpolator(sr.f);
                             jcVar.F.start();
                             if (!arrayList.isEmpty()) {
                                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
@@ -552,7 +552,7 @@ public final class xb extends aw0 {
         boolean z11;
         zb zbVar;
         int i10;
-        qk0 qk0Var;
+        sk0 sk0Var;
         jc jcVar = this.I0;
         float[] fArr = jcVar.o0;
         e6 currentPeerView = jcVar.n0.getCurrentPeerView();
@@ -570,7 +570,7 @@ public final class xb extends aw0 {
         }
         float f7 = 0.0f;
         int i11 = 0;
-        if (jcVar.p1 && currentPeerView != null && (qk0Var = currentPeerView.r3) != null) {
+        if (jcVar.p1 && currentPeerView != null && (sk0Var = currentPeerView.r3) != null) {
             float f10 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f7 += view.getX();
@@ -582,14 +582,14 @@ public final class xb extends aw0 {
                 return true;
             }
             Rect rect = AndroidUtilities.rectTmp2;
-            qk0Var.getHitRect(rect);
+            sk0Var.getHitRect(rect);
             rect.offset((int) f7, (int) f10);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.b1(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            qk0Var.dispatchTouchEvent(motionEvent);
+            sk0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -602,7 +602,7 @@ public final class xb extends aw0 {
                 ofFloat.addUpdateListener(new ub(this, i11));
                 jcVar.G.addListener(new vb(this, i11));
                 jcVar.G.setDuration(250L);
-                jcVar.G.setInterpolator(rr.f);
+                jcVar.G.setInterpolator(sr.f);
                 jcVar.G.start();
             }
             if (jcVar.V >= 0.3f) {
@@ -710,7 +710,7 @@ public final class xb extends aw0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         jc jcVar = this.I0;
@@ -726,7 +726,7 @@ public final class xb extends aw0 {
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storyDeleted);
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         org.telegram.ui.Components.qc.h(this);
@@ -920,7 +920,7 @@ public final class xb extends aw0 {
                 ofFloat.addUpdateListener(new ub(this, i10));
                 jcVar.G.addListener(new vb(this, i10));
                 jcVar.G.setDuration(150L);
-                jcVar.G.setInterpolator(rr.f);
+                jcVar.G.setInterpolator(sr.f);
                 jcVar.G.start();
             }
             e6 t10 = jcVar.t();

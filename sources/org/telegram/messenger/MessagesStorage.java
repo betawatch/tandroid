@@ -50,7 +50,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class MessagesStorage extends BaseController {
     public static final String[] DATABASE_TABLES;
@@ -113,22 +113,22 @@ public class MessagesStorage extends BaseController {
     private static volatile MessagesStorage[] Instance = new MessagesStorage[4];
     private static final Object[] lockObjects = new Object[4];
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public interface BooleanCallback {
         void run(boolean z10);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public interface IntCallback {
         void run(int i10);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public interface LongCallback {
         void run(long j3);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class ReadDialog {
         public int date;
         public int lastMid;
@@ -138,7 +138,7 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class SavedReactionsUpdate {
         TLRPC.TL_messageReactions last;
         TLRPC.TL_messageReactions old;
@@ -151,12 +151,12 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public interface StringCallback {
         void run(String str);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class TopicKey {
         public long dialogId;
         public long topicId;
@@ -3131,7 +3131,7 @@ public class MessagesStorage extends BaseController {
                 ArrayList<Integer> arrayList = new ArrayList<>();
                 arrayList.add(Integer.valueOf(i13));
                 sparseArray.put(max, arrayList);
-                AndroidUtilities.runOnUIThread(new u8(this, z10, j3, arrayList, 5));
+                AndroidUtilities.runOnUIThread(new o8(this, z10, j3, arrayList, 5));
                 SQLitePreparedStatement executeFast = this.database.executeFast("REPLACE INTO enc_tasks_v4 VALUES(?, ?, ?, ?)");
                 for (int i14 = 0; i14 < sparseArray.size(); i14++) {
                     try {
@@ -7858,7 +7858,7 @@ public class MessagesStorage extends BaseController {
                     throw th;
                 }
             }
-            Collections.sort(this.dialogFilters, new p(22));
+            Collections.sort(this.dialogFilters, new p(23));
             if (z11) {
                 calcUnreadCounters(true);
             }
@@ -7892,7 +7892,7 @@ public class MessagesStorage extends BaseController {
      */
     /* JADX WARN: Code restructure failed: missing block: B:29:0x005f, code lost:
     
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.r7(9, r7));
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.o7(9, r7));
      */
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0069, code lost:
     
@@ -8310,7 +8310,7 @@ public class MessagesStorage extends BaseController {
                             boolean readBool3 = byteBufferValue.readBool(false);
                             z5Var.c = byteBufferValue.readString(false);
                             z5Var.b = byteBufferValue.readString(false);
-                            AndroidUtilities.runOnUIThread(new u8(this, z5Var, readBool3, longValue, 6));
+                            AndroidUtilities.runOnUIThread(new o8(this, z5Var, readBool3, longValue, 6));
                             break;
                         case 22:
                             final TLRPC.InputPeer TLdeserialize7 = TLRPC.InputPeer.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
@@ -8422,7 +8422,7 @@ public class MessagesStorage extends BaseController {
                                         removePendingTask(longValue);
                                         break;
                                     } else {
-                                        AndroidUtilities.runOnUIThread(new o9(this, readInt646, longValue, TLdeserialize10, readInt3218, 2));
+                                        AndroidUtilities.runOnUIThread(new n9(this, readInt646, longValue, TLdeserialize10, readInt3218, 2));
                                         break;
                                     }
                             }
@@ -12944,7 +12944,7 @@ public class MessagesStorage extends BaseController {
                 MessageObject messageObject = new MessageObject(this.currentAccount, message, (AbstractMap<Long, TLRPC.User>) hashMap, (AbstractMap<Long, TLRPC.Chat>) hashMap2, true, true);
                 ArrayList arrayList5 = new ArrayList();
                 arrayList5.add(messageObject);
-                AndroidUtilities.runOnUIThread(new n8(this, messageObject, arrayList5, 20));
+                AndroidUtilities.runOnUIThread(new j8(this, messageObject, arrayList5, 20));
             }
             if (arrayList3 != null) {
                 AndroidUtilities.runOnUIThread(new oe(5, arrayList3, this));
@@ -17042,7 +17042,7 @@ public class MessagesStorage extends BaseController {
                         executeFast.bindLong(6, tL_forumTopic2.id);
                         executeFast.step();
                         nativeByteBuffer.reuse();
-                        AndroidUtilities.runOnUIThread(new j7(this, j3, tL_forumTopic, i10, 5));
+                        AndroidUtilities.runOnUIThread(new g7(this, j3, tL_forumTopic, i10, 5));
                     }
                 }
             } else {
@@ -17075,7 +17075,7 @@ public class MessagesStorage extends BaseController {
                 executeFast.bindLong(6, tL_forumTopic2.id);
                 executeFast.step();
                 nativeByteBuffer2.reuse();
-                AndroidUtilities.runOnUIThread(new j7(this, j3, tL_forumTopic, i10, 5));
+                AndroidUtilities.runOnUIThread(new g7(this, j3, tL_forumTopic, i10, 5));
             }
         } catch (Exception e10) {
             e = e10;
@@ -19228,7 +19228,7 @@ public class MessagesStorage extends BaseController {
             }
         }
         if (z11) {
-            Collections.sort(this.dialogFilters, new p(24));
+            Collections.sort(this.dialogFilters, new p(25));
             saveDialogFiltersOrderInternal();
         }
         int i13 = z10 ? 1 : 2;
@@ -22324,7 +22324,7 @@ public class MessagesStorage extends BaseController {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        this.storageQueue.postRunnable(new n8((BaseController) this, str, (Object) str2, 19));
+        this.storageQueue.postRunnable(new j8((BaseController) this, str, (Object) str2, 19));
     }
 
     public void bindTaskToGuid(Runnable runnable, int i10) {
@@ -23609,7 +23609,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void getNewTask(a0.i iVar, a0.i iVar2) {
-        this.storageQueue.postRunnable(new n8(this, iVar, iVar2, 21));
+        this.storageQueue.postRunnable(new j8(this, iVar, iVar2, 21));
     }
 
     public void getSavedDialogMaxMessageId(long j3, IntCallback intCallback) {
@@ -24748,7 +24748,7 @@ public class MessagesStorage extends BaseController {
                         arrayList6.add(d0Var5);
                     }
                 }
-                Collections.sort(arrayList6, new p(25));
+                Collections.sort(arrayList6, new p(26));
                 for (i18 = 0; i18 < arrayList6.size(); i18++) {
                     gg.d0 d0Var6 = (gg.d0) arrayList6.get(i18);
                     arrayList.add(d0Var6.a);
@@ -24850,7 +24850,7 @@ public class MessagesStorage extends BaseController {
                 arrayList6 = new ArrayList(i13);
                 while (i17 < iVar2.m()) {
                 }
-                Collections.sort(arrayList6, new p(25));
+                Collections.sort(arrayList6, new p(26));
                 while (i18 < arrayList6.size()) {
                 }
                 if (i10 == 2) {
@@ -24876,7 +24876,7 @@ public class MessagesStorage extends BaseController {
             arrayList6 = new ArrayList(i13);
             while (i17 < iVar2.m()) {
             }
-            Collections.sort(arrayList6, new p(25));
+            Collections.sort(arrayList6, new p(26));
             while (i18 < arrayList6.size()) {
             }
             if (i10 == 2) {
@@ -25282,7 +25282,7 @@ public class MessagesStorage extends BaseController {
         if (tLObject == null || TextUtils.isEmpty(str)) {
             return;
         }
-        this.storageQueue.postRunnable(new n8(this, tLObject, str, 18));
+        this.storageQueue.postRunnable(new j8(this, tLObject, str, 18));
     }
 
     public void saveChannelPts(long j3, int i10) {
@@ -25460,7 +25460,7 @@ public class MessagesStorage extends BaseController {
         if (tL_chatBannedRights == null || j3 == 0) {
             return;
         }
-        this.storageQueue.postRunnable(new j7(this, j3, i10, tL_chatBannedRights, 8));
+        this.storageQueue.postRunnable(new g7(this, j3, i10, tL_chatBannedRights, 8));
     }
 
     public void updateChatInfo(TLRPC.ChatFull chatFull, boolean z10) {
@@ -25545,7 +25545,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void updateMessageReactions(long j3, int i10, TLRPC.TL_messageReactions tL_messageReactions) {
-        this.storageQueue.postRunnable(new j7(this, i10, j3, tL_messageReactions, 7));
+        this.storageQueue.postRunnable(new g7(this, i10, j3, tL_messageReactions, 7));
     }
 
     public long[] updateMessageStateAndId(final long j3, final long j10, final Integer num, final int i10, final int i11, boolean z10, final int i12, final int i13) {
@@ -25579,7 +25579,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void updateMessageVoiceTranscriptionOpen(long j3, int i10, TLRPC.Message message) {
-        this.storageQueue.postRunnable(new j7(this, i10, j3, message, 6));
+        this.storageQueue.postRunnable(new g7(this, i10, j3, message, 6));
     }
 
     public void updateMutedDialogsFiltersCounters() {
@@ -25600,7 +25600,7 @@ public class MessagesStorage extends BaseController {
 
     public void updateRepliesMaxReadId(long j3, long j10, int i10, int i11, boolean z10) {
         if (z10) {
-            this.storageQueue.postRunnable(new j8(this, j3, j10, i10, i11, 2));
+            this.storageQueue.postRunnable(new g8(this, j3, j10, i10, i11, 2));
         } else {
             updateRepliesMaxReadIdInternal(-j3, j10, i10, i11);
         }
@@ -25783,7 +25783,7 @@ public class MessagesStorage extends BaseController {
 
     public TLRPC.ChatFull loadChatInfo(long j3, boolean z10, CountDownLatch countDownLatch, boolean z11, boolean z12, int i10) {
         TLRPC.ChatFull[] chatFullArr = new TLRPC.ChatFull[1];
-        this.storageQueue.postRunnable(new a9(this, chatFullArr, j3, z10, z11, z12, i10, countDownLatch));
+        this.storageQueue.postRunnable(new w8(this, chatFullArr, j3, z10, z11, z12, i10, countDownLatch));
         if (countDownLatch != null) {
             try {
                 countDownLatch.await();
@@ -25837,7 +25837,7 @@ public class MessagesStorage extends BaseController {
         updateUnreadReactionsCountInternal("reaction_mentions", "reaction_mentions_topics", "unread_reactions", "unread_reactions", j3, j10, i10, z10);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class Hole {
         public int end;
         public int start;
@@ -25911,7 +25911,7 @@ public class MessagesStorage extends BaseController {
     }
 
     public void putMessages(TLRPC.messages_Messages messages_messages, long j3, int i10, int i11, boolean z10, int i12, long j10) {
-        this.storageQueue.postRunnable(new y8(this, i12, messages_messages, j3, j10, i10, i11, z10));
+        this.storageQueue.postRunnable(new u8(this, i12, messages_messages, j3, j10, i10, i11, z10));
     }
 
     public void deleteEphemeralMessages(a0.i iVar, boolean z10) {

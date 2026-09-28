@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l00;
-import org.telegram.ui.Components.s01;
-import org.telegram.ui.Components.yw;
+import org.telegram.ui.Components.m00;
+import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.zw;
 import org.telegram.ui.cn0;
 import org.telegram.ui.ep;
 import org.telegram.ui.il0;
@@ -18,7 +18,7 @@ import org.telegram.ui.oo0;
 import org.telegram.ui.tf0;
 import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -69,16 +69,16 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 Pattern pattern = org.telegram.ui.Components.e5.a;
                 break;
             case 13:
-                int i11 = yw.H0;
+                int i11 = zw.H0;
                 break;
             case 14:
-                int i12 = l00.A0;
+                int i12 = m00.A0;
                 break;
             case 15:
                 AndroidUtilities.runOnUIThread(new f(18));
                 break;
             case 16:
-                int i13 = s01.e;
+                int i13 = u01.e;
                 break;
             case 17:
                 int i14 = tf0.t0;

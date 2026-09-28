@@ -10,16 +10,16 @@ import android.view.ViewGroup;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.wv0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b2 extends j {
-    public uv0 q0;
+    public wv0 q0;
     public ob r0;
     public ob s0;
     public zg.f0 t0;
@@ -39,7 +39,7 @@ public final class b2 extends j {
 
     @Override // qg.j, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        uv0 uv0Var = this.q0;
+        wv0 wv0Var = this.q0;
         int padding = getPadding();
         float d = this.x0.d(1.0f, false);
         if (d == 1.0f) {
@@ -51,12 +51,12 @@ public final class b2 extends j {
         ob obVar = this.s0;
         if (obVar != null) {
             obVar.e = (int) ((1.0f - d) * 255.0f);
-            obVar.setBounds(padding, padding, ((int) uv0Var.a) - padding, ((int) uv0Var.b) - padding);
+            obVar.setBounds(padding, padding, ((int) wv0Var.a) - padding, ((int) wv0Var.b) - padding);
             this.s0.draw(canvas);
         }
         ob obVar2 = this.r0;
         obVar2.e = (int) (d * 255.0f);
-        obVar2.setBounds(padding, padding, ((int) uv0Var.a) - padding, ((int) uv0Var.b) - padding);
+        obVar2.setBounds(padding, padding, ((int) wv0Var.a) - padding, ((int) wv0Var.b) - padding);
         this.r0.draw(canvas);
         Rect rect = AndroidUtilities.rectTmp2;
         float width = (this.r0.getBounds().width() * 0.61f) / 2.0f;
@@ -104,23 +104,23 @@ public final class b2 extends j {
     }
 
     @Override // qg.j
-    public sk0 getSelectionBounds() {
+    public uk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new sk0();
+            return new uk0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.4f) * getMeasuredWidth();
         float f7 = scale / 2.0f;
         float f10 = scale * scaleX;
-        return new sk0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
+        return new uk0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
     }
 
     @Override // qg.j
     public final void k() {
-        uv0 uv0Var = this.q0;
-        float f7 = uv0Var.a / 2.0f;
-        float f10 = uv0Var.b / 2.0f;
+        wv0 wv0Var = this.q0;
+        float f7 = wv0Var.a / 2.0f;
+        float f10 = wv0Var.b / 2.0f;
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
         m();
@@ -142,8 +142,8 @@ public final class b2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        uv0 uv0Var = this.q0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) uv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) uv0Var.b, TLObject.FLAG_30));
+        wv0 wv0Var = this.q0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) wv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) wv0Var.b, TLObject.FLAG_30));
     }
 
     public final void q(boolean z10) {
@@ -173,8 +173,8 @@ public final class b2 extends j {
         boolean[] zArr = {false};
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new ai.x(26, this, zArr));
-        ofFloat.addListener(new al0(18, this, zArr));
-        ofFloat.setInterpolator(rr.g);
+        ofFloat.addListener(new cl0(18, this, zArr));
+        ofFloat.setInterpolator(sr.g);
         ofFloat.setDuration(350L);
         ofFloat.start();
     }

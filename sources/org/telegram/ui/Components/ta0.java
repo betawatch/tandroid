@@ -1,36 +1,10 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ta0 extends g.p {
-    public final /* synthetic */ za0 c;
-
-    public ta0(za0 za0Var) {
-        this.c = za0Var;
-    }
-
-    @Override // g.p
-    public final int i(int i10) {
-        za0 za0Var = this.c;
-        gg.k1 k1Var = za0Var.f;
-        if (i10 == 0) {
-            return 100;
-        }
-        int i11 = i10 - 1;
-        Object J = k1Var.J(i11);
-        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
-            return 100;
-        }
-        if (J instanceof TLRPC.Document) {
-            return 20;
-        }
-        if (k1Var.I() != null || k1Var.U != null) {
-            i10 = i11;
-        }
-        sa0 sa0Var = za0Var.d;
-        sa0Var.B1();
-        return sa0Var.R.get(i10);
+public final /* synthetic */ class ta0 implements o1.f {
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+        int i10 = bb0.U;
     }
 }

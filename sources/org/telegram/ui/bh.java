@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bh implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class bh implements Utilities.Callback {
                 org.telegram.ui.Components.y5 y5Var = x2Var.E;
                 if (this.b == this.c) {
                     x2Var.d0 = arrayList;
-                    y5Var.animate().alpha(x2Var.s ? 0.0f : x2Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.rr.h).setDuration(420L).start();
+                    y5Var.animate().alpha(x2Var.s ? 0.0f : x2Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.sr.h).setDuration(420L).start();
                     ArrayList arrayList2 = new ArrayList();
                     for (int i13 = 0; i13 < arrayList.size(); i13++) {
                         if ((arrayList.get(i13) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i13)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {

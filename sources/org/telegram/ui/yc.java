@@ -13,14 +13,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yc extends FrameLayout {
     public final int a;
     public final org.telegram.ui.ActionBar.d6 b;
     public final ArrayList c;
     public final wb1 d;
-    public final org.telegram.ui.Components.u00 e;
+    public final org.telegram.ui.Components.v00 e;
     public boolean f;
     public final wc h;
     public boolean n;
@@ -37,11 +37,11 @@ public final class yc extends FrameLayout {
         this.x = new HashMap();
         this.a = i10;
         this.b = d6Var;
-        org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(getContext(), d6Var);
-        this.e = u00Var;
-        u00Var.setViewType(14);
-        u00Var.setVisibility(0);
-        addView(u00Var, w7.y5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
+        org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(getContext(), d6Var);
+        this.e = v00Var;
+        v00Var.setViewType(14);
+        v00Var.setVisibility(0);
+        addView(v00Var, w7.y5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
         wb1 wb1Var = new wb1(activity, 4, d6Var);
         this.d = wb1Var;
         wb1Var.setClipToPadding(false);
@@ -63,9 +63,9 @@ public final class yc extends FrameLayout {
         chatThemeController.preloadAllWallpaperImages(false);
         chatThemeController.requestAllChatThemes(new xc(this, i10), true);
         if (this.n) {
-            AndroidUtilities.updateViewVisibilityAnimated(u00Var, false, 1.0f, true, false);
+            AndroidUtilities.updateViewVisibilityAnimated(v00Var, false, 1.0f, true, false);
         } else {
-            AndroidUtilities.updateViewVisibilityAnimated(u00Var, true, 1.0f, true, false);
+            AndroidUtilities.updateViewVisibilityAnimated(v00Var, true, 1.0f, true, false);
         }
     }
 
@@ -81,11 +81,11 @@ public final class yc extends FrameLayout {
             if (i11 >= arrayList.size()) {
                 break;
             }
-            org.telegram.ui.Components.mp mpVar = (org.telegram.ui.Components.mp) arrayList.get(i11);
-            if (!TextUtils.equals(this.s, mpVar.a()) && (!TextUtils.isEmpty(str) || !mpVar.a.a)) {
+            org.telegram.ui.Components.np npVar = (org.telegram.ui.Components.np) arrayList.get(i11);
+            if (!TextUtils.equals(this.s, npVar.a()) && (!TextUtils.isEmpty(str) || !npVar.a.a)) {
                 z11 = false;
             }
-            mpVar.d = z11;
+            npVar.d = z11;
             if (z11) {
                 i10 = i11;
             }
@@ -97,8 +97,8 @@ public final class yc extends FrameLayout {
         }
         for (int i12 = 0; i12 < wb1Var.getChildCount(); i12++) {
             View childAt = wb1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.h21) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.h21) childAt).g(((org.telegram.ui.Components.mp) arrayList.get(R)).d, true);
+            if ((childAt instanceof org.telegram.ui.Components.j21) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.j21) childAt).g(((org.telegram.ui.Components.np) arrayList.get(R)).d, true);
             }
         }
     }
@@ -113,8 +113,8 @@ public final class yc extends FrameLayout {
         AndroidUtilities.forEachViews((RecyclerView) this.d, (Utilities.Callback<View>) new uc(this, 1));
         if (this.v != null) {
             ArrayList arrayList = this.c;
-            if ((arrayList.isEmpty() || ((org.telegram.ui.Components.mp) arrayList.get(0)).a.a) && this.f) {
-                arrayList.add(0, new org.telegram.ui.Components.mp(org.telegram.ui.ActionBar.b4.a(this.a)));
+            if ((arrayList.isEmpty() || ((org.telegram.ui.Components.np) arrayList.get(0)).a.a) && this.f) {
+                arrayList.add(0, new org.telegram.ui.Components.np(org.telegram.ui.ActionBar.b4.a(this.a)));
                 this.h.l();
             }
         }

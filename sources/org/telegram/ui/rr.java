@@ -8,20 +8,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class rr {
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
     public final LinearLayout b;
     public final ir0 c;
 
-    public rr(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.fh0 fh0Var, ir0 ir0Var) {
+    public rr(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.hh0 hh0Var, ir0 ir0Var) {
         this.c = ir0Var;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, contextThemeWrapper, null);
         this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
         org.telegram.ui.ActionBar.e1 c10 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, null);
-        c10.setOnClickListener(new qr(fh0Var, 0));
+        c10.setOnClickListener(new qr(hh0Var, 0));
         c10.c(-328966, -328966);
         c10.setSelectorColor(268435455);
         View w5Var = new ai.w5(contextThemeWrapper, 11);

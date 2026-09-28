@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class c8 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ Context a;
@@ -306,16 +306,16 @@ public final class c8 extends GestureDetector.SimpleOnGestureListener {
                 } else {
                     int id3 = messageObject.getId();
                     int i10 = a2.c;
-                    org.telegram.ui.Components.jv0 jv0Var = (org.telegram.ui.Components.jv0) cVar.b;
+                    org.telegram.ui.Components.lv0 lv0Var = (org.telegram.ui.Components.lv0) cVar.b;
                     int i11 = -1;
-                    for (int i12 = 0; i12 < jv0Var.t1[0].a.size(); i12++) {
-                        if (((MessageObject) jv0Var.t1[0].a.get(i12)).getId() == id3) {
+                    for (int i12 = 0; i12 < lv0Var.t1[0].a.size(); i12++) {
+                        if (((MessageObject) lv0Var.t1[0].a.get(i12)).getId() == id3) {
                             i11 = i12;
                         }
                     }
-                    org.telegram.ui.Components.cu0 W = jv0Var.W(0);
+                    org.telegram.ui.Components.eu0 W = lv0Var.W(0);
                     if (i11 < 0 || W == null) {
-                        jv0Var.y0(0, id3, i10, true);
+                        lv0Var.y0(0, id3, i10, true);
                     } else {
                         W.x.h1(i11, 0);
                     }

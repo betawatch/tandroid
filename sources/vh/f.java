@@ -13,10 +13,10 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.y50;
+import org.telegram.ui.Components.a60;
 import org.telegram.ui.m51;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class f {
     public static HashMap n;
@@ -24,7 +24,7 @@ public final class f {
     public final double b;
     public final int c;
     public final m51 d;
-    public final y50 e;
+    public final a60 e;
     public e f;
     public final int g;
     public final int h;
@@ -42,11 +42,11 @@ public final class f {
         this.g = i11;
         this.h = i12;
         this.d = m51Var;
-        y50 y50Var = new y50(this, m51Var.getContext(), 1);
-        this.e = y50Var;
-        y50Var.setSurfaceTextureListener(new ki.d(this, 5));
-        y50Var.setOpaque(false);
-        m51Var.addView(y50Var);
+        a60 a60Var = new a60(this, m51Var.getContext(), 1);
+        this.e = a60Var;
+        a60Var.setSurfaceTextureListener(new ki.d(this, 5));
+        a60Var.setOpaque(false);
+        m51Var.addView(a60Var);
     }
 
     public static f d(int i10, View view, ViewGroup viewGroup) {
@@ -159,9 +159,9 @@ public final class f {
         if (num.intValue() % 4 == 3) {
             canvas.scale(1.0f, -1.0f, i12 / 2.0f, i13 / 2.0f);
         }
-        y50 y50Var = this.e;
+        a60 a60Var = this.e;
         if (z10) {
-            Bitmap bitmap = y50Var.getBitmap();
+            Bitmap bitmap = a60Var.getBitmap();
             if (bitmap != null) {
                 Paint paint = new Paint(7);
                 paint.setColor(-1);
@@ -169,8 +169,8 @@ public final class f {
                 bitmap.recycle();
             }
         } else {
-            y50Var.setAlpha(f7);
-            y50Var.draw(canvas);
+            a60Var.setAlpha(f7);
+            a60Var.draw(canvas);
         }
         canvas.restore();
     }

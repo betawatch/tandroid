@@ -39,16 +39,16 @@ import org.telegram.ui.Cells.w4;
 import org.telegram.ui.Cells.w7;
 import org.telegram.ui.Cells.x4;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.sc0;
 import org.telegram.ui.wc0;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class t0 extends c implements LocationController.LocationFetchCallback {
     public final int K;
@@ -96,7 +96,7 @@ public class t0 extends c implements LocationController.LocationFetchCallback {
         this.b0 = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         if (i10 == 6) {
@@ -828,7 +828,7 @@ public class t0 extends c implements LocationController.LocationFetchCallback {
                 break;
             case 10:
                 View b7Var = new b7(context, (org.telegram.ui.Cells.c1) null);
-                new qq(new ColorDrawable(h6.v0(h6.a7, d6Var)), h6.V0(context, R.drawable.greydivider_bottom, h6.b7)).w = true;
+                new rq(new ColorDrawable(h6.v0(h6.a7, d6Var)), h6.V0(context, R.drawable.greydivider_bottom, h6.b7)).w = true;
                 view2 = b7Var;
                 break;
             case 11:
@@ -844,7 +844,7 @@ public class t0 extends c implements LocationController.LocationFetchCallback {
                 view2 = this.h0;
                 break;
         }
-        return new gl0(view2);
+        return new il0(view2);
     }
 
     public void K() {

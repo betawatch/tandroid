@@ -1,78 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class la0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+public final class la0 implements xt0 {
+    public final /* synthetic */ pa0 a;
 
-    public /* synthetic */ la0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
-        this.a = i11;
-        this.d = notificationCenterDelegate;
-        this.b = i10;
-        this.c = z10;
+    public la0(pa0 pa0Var) {
+        this.a = pa0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                AnimatorSet[] animatorSetArr = ((fy0) this.d).I;
-                int i10 = this.b;
-                AnimatorSet animatorSet = animatorSetArr[i10];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[i10] = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
+    @Override // org.telegram.ui.Components.xt0
+    public final void R() {
+        this.a.a0();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                na0 na0Var = (na0) this.d;
-                p6[] p6VarArr = na0Var.x;
-                org.telegram.ui.ActionBar.h5[] h5VarArr = na0Var.w;
-                float[] fArr = na0Var.Z;
-                boolean z10 = this.c;
-                float f7 = z10 ? 1.0f : 0.0f;
-                int i10 = this.b;
-                fArr[i10] = f7;
-                h5VarArr[i10].setScaleX(z10 ? 1.0f : 1.111f);
-                h5VarArr[i10].setScaleY(z10 ? 1.0f : 1.111f);
-                h5VarArr[i10].setTranslationY(z10 ? 0.0f : AndroidUtilities.dp(8.0f));
-                p6VarArr[i10].setAlpha(z10 ? 1.0f : 0.0f);
-                if (!z10) {
-                    p6VarArr[i10].setVisibility(8);
-                    break;
-                }
-                break;
-            default:
-                fy0 fy0Var = (fy0) this.d;
-                AnimatorSet[] animatorSetArr = fy0Var.I;
-                int i11 = this.b;
-                AnimatorSet animatorSet = animatorSetArr[i11];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.c) {
-                        fy0Var.J[i11].setVisibility(4);
-                    }
-                    animatorSetArr[i11] = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.xt0
+    public final boolean T() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final yl0 f() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final boolean p() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final void E() {
     }
 }

@@ -17,7 +17,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class ca1 extends FrameLayout {
     public final Window a;
@@ -45,7 +45,7 @@ public abstract class ca1 extends FrameLayout {
         this.h = new m51(context, 2);
         kg.c cVar = new kg.c(getContext(), d6Var);
         this.d = cVar;
-        cVar.d.setOnTouchListener(new org.telegram.ui.Components.fl0());
+        cVar.d.setOnTouchListener(new org.telegram.ui.Components.hl0());
         final int i11 = 0;
         cVar.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.y91
             public final /* synthetic */ ca1 b;
@@ -140,7 +140,7 @@ public abstract class ca1 extends FrameLayout {
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.s5, d6Var));
         this.b.setDateSelectionListener(new ml0(this, 19));
         this.b.t0.d(false, false);
-        this.b.t0.setOnTouchListener(new org.telegram.ui.Components.fl0());
+        this.b.t0.setOnTouchListener(new org.telegram.ui.Components.hl0());
         final int i13 = 1;
         this.b.t0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.y91
             public final /* synthetic */ ca1 b;
@@ -290,12 +290,12 @@ public abstract class ca1 extends FrameLayout {
                 int w02 = (((jg.a) this.r.d.d.get(i10)).g < 0 || !org.telegram.ui.ActionBar.h6.c1(((jg.a) this.r.d.d.get(i10)).g)) ? i0.a.f(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false)) < 0.5d ? ((jg.a) this.r.d.d.get(i10)).i : ((jg.a) this.r.d.d.get(i10)).h : org.telegram.ui.ActionBar.h6.w0(null, ((jg.a) this.r.d.d.get(i10)).g, false);
                 ArrayList arrayList2 = this.n;
                 if (i10 < arrayList2.size()) {
-                    org.telegram.ui.Components.t00 t00Var = ((ba1) arrayList2.get(i10)).a;
-                    t00Var.getClass();
-                    t00Var.r = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false);
-                    t00Var.v = -1;
-                    t00Var.s = w02;
-                    t00Var.invalidate();
+                    org.telegram.ui.Components.u00 u00Var = ((ba1) arrayList2.get(i10)).a;
+                    u00Var.getClass();
+                    u00Var.r = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false);
+                    u00Var.v = -1;
+                    u00Var.s = w02;
+                    u00Var.invalidate();
                 }
             }
         }
@@ -376,12 +376,12 @@ public abstract class ca1 extends FrameLayout {
                 ba1 ba1Var = new ba1(this, i10);
                 ba1Var.b = fVar;
                 String str3 = fVar.a.d;
-                org.telegram.ui.Components.t00 t00Var = ba1Var.a;
-                t00Var.setText(str3);
-                t00Var.a(fVar.n, false);
-                t00Var.setOnTouchListener(new org.telegram.ui.Components.fl0());
-                t00Var.setOnClickListener(new ny0(7, ba1Var, fVar));
-                t00Var.setOnLongClickListener(new ai.q3(6, ba1Var, fVar));
+                org.telegram.ui.Components.u00 u00Var = ba1Var.a;
+                u00Var.setText(str3);
+                u00Var.a(fVar.n, false);
+                u00Var.setOnTouchListener(new org.telegram.ui.Components.hl0());
+                u00Var.setOnClickListener(new ny0(7, ba1Var, fVar));
+                u00Var.setOnLongClickListener(new ai.q3(6, ba1Var, fVar));
             }
         }
         long j3 = this.r.c;

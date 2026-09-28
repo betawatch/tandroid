@@ -1,56 +1,73 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.BirthdayController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ FrameLayout d;
+    public final /* synthetic */ lv0 b;
 
-    public /* synthetic */ hr0(FrameLayout frameLayout, boolean z10, int i10, int i11) {
-        this.a = i11;
-        this.d = frameLayout;
-        this.b = z10;
-        this.c = i10;
+    public /* synthetic */ hr0(lv0 lv0Var, int i10) {
+        this.a = i10;
+        this.b = lv0Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                jv0 jv0Var = (jv0) this.d;
-                org.telegram.ui.ActionBar.m2 m2Var = jv0Var.v1;
-                if (!this.b) {
-                    m2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
-                    ci.lc.E(m2Var.getParentActivity(), m2Var.getCurrentAccount()).R(null);
-                    break;
-                } else {
-                    jv0Var.O0(m2Var, jv0Var.j1, this.c);
-                    break;
-                }
-            default:
-                zr0 zr0Var = (zr0) this.d;
-                if (zr0Var.e.h() && zr0Var.h.getCurrentPosition() != 0) {
-                    zr0Var.a();
-                    break;
-                } else {
-                    boolean z10 = this.b;
-                    int i10 = this.c;
-                    if (!z10) {
-                        tg.m1.e0(2, BirthdayController.getInstance(i10).getState());
-                        break;
-                    } else {
-                        xh.r1 r1Var = new xh.r1(zr0Var.getContext(), i10, zr0Var.c, null, null);
-                        r1Var.V(BirthdayController.getInstance(i10).isToday(zr0Var.c));
-                        r1Var.show();
-                        break;
+                this.b.L(true);
+                break;
+            case 1:
+                this.b.C0(102, view);
+                break;
+            case 2:
+                this.b.C0(100, view);
+                break;
+            case 3:
+                this.b.C0(103, view);
+                break;
+            case 4:
+                this.b.C0(104, view);
+                break;
+            case 5:
+                this.b.C0(101, view);
+                break;
+            case 6:
+                lv0 lv0Var = this.b;
+                gs0 gs0Var = lv0Var.W;
+                bs0 bs0Var = lv0Var.V;
+                if (lv0Var.q0.getAlpha() >= 0.1f) {
+                    if (bs0Var != null && bs0Var.g()) {
+                        bs0Var.i();
+                    }
+                    if (gs0Var != null && gs0Var.w) {
+                        kv0 i12 = lv0Var.i1(lv0Var.h1(lv0Var.getClosestTab()));
+                        eu0 W = lv0Var.W(i12.a);
+                        if (W != null) {
+                            gs0Var.setReorderingAlbums(false);
+                            ks0 ks0Var = W.h;
+                            for (int i10 = 0; i10 < ks0Var.getChildCount(); i10++) {
+                                View childAt = ks0Var.getChildAt(i10);
+                                if (childAt instanceof org.telegram.ui.Cells.t7) {
+                                    ((org.telegram.ui.Cells.t7) childAt).l(false, true);
+                                }
+                            }
+                            jv0 jv0Var = i12.c;
+                            if (jv0Var != null && jv0Var.x) {
+                                jv0Var.x = false;
+                                break;
+                            }
+                        }
                     }
                 }
+                break;
+            default:
+                org.telegram.ui.ActionBar.m2 m2Var = this.b.v1;
+                m2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
+                ci.lc.E(m2Var.getParentActivity(), m2Var.getCurrentAccount()).R(null);
+                break;
         }
     }
 }

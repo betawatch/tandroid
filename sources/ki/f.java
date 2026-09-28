@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.util.Size;
 import ci.y0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class f extends CameraCaptureSession.StateCallback {
     public final /* synthetic */ i a;
@@ -104,7 +104,7 @@ public final class f extends CameraCaptureSession.StateCallback {
                     Size size = iVar5.q;
                     Size size2 = iVar5.r;
                     i iVar6 = this.a;
-                    ((s0) uVar.b).h.post(new y0(uVar, new h(l0Var, m0Var, n0Var, size, size2, iVar6.L, iVar6.q()), z10, 7));
+                    ((s0) uVar.b).i.post(new y0(uVar, new h(l0Var, m0Var, n0Var, size, size2, iVar6.L, iVar6.q()), z10, 7));
                     l0 l0Var2 = this.a.C;
                     i iVar7 = this.a;
                     if (l0Var2 != iVar7.D) {

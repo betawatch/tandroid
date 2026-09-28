@@ -75,14 +75,14 @@ import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.hh;
-import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u71;
 import org.telegram.ui.Components.ui;
 import qg.c2;
 import v7.a7;
 import v7.n8;
 import x2.p;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class m implements z3.d, a0, androidx.activity.result.b, s, o, pc, OnCompleteListener, n, i1, ui, k0, h1, k2.n, y2.m, x0, n5.b {
     public final /* synthetic */ int a;
@@ -268,8 +268,8 @@ public class m implements z3.d, a0, androidx.activity.result.b, s, o, pc, OnComp
         }
         l8Var.Z = f7;
         l8Var.j = true;
-        s71 s71Var = b7Var.e;
-        if (s71Var == null || s71Var.p() == -9223372036854775807L) {
+        u71 u71Var = b7Var.e;
+        if (u71Var == null || u71Var.p() == -9223372036854775807L) {
             return;
         }
         b7Var.m((long) (f7 * b7Var.e.p()));
@@ -801,18 +801,18 @@ public class m implements z3.d, a0, androidx.activity.result.b, s, o, pc, OnComp
             b7Var.m(j3);
             return;
         }
-        s71 s71Var = b7Var.e;
-        if (s71Var != null) {
-            s71Var.L(j3, true);
+        u71 u71Var = b7Var.e;
+        if (u71Var != null) {
+            u71Var.L(j3, true);
             return;
         }
         if (b7Var.j()) {
             b7Var.E.m(j3, true);
             return;
         }
-        s71 s71Var2 = b7Var.y;
-        if (s71Var2 != null) {
-            s71Var2.L(j3, false);
+        u71 u71Var2 = b7Var.y;
+        if (u71Var2 != null) {
+            u71Var2.L(j3, false);
         }
     }
 

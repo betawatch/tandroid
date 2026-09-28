@@ -30,10 +30,10 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b51 extends Dialog {
-    public final org.telegram.ui.Components.kt E;
+    public final org.telegram.ui.Components.lt E;
     public float F;
     public float G;
     public boolean H;
@@ -61,7 +61,7 @@ public final class b51 extends Dialog {
     public boolean b0;
     public final ci.m6 c;
     public org.telegram.ui.ActionBar.a2 c0;
-    public org.telegram.ui.Components.k11 d;
+    public org.telegram.ui.Components.m11 d;
     public ValueAnimator d0;
     public i0.b e;
     public ValueAnimator e0;
@@ -71,7 +71,7 @@ public final class b51 extends Dialog {
     public Matrix r;
     public float s;
     public float v;
-    public org.telegram.ui.Components.s71 w;
+    public org.telegram.ui.Components.u71 w;
     public ci.e4 x;
     public TextView y;
 
@@ -98,7 +98,7 @@ public final class b51 extends Dialog {
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.j(k0Var, y41Var);
         if (SharedConfig.raiseToListen) {
-            this.E = new org.telegram.ui.Components.kt();
+            this.E = new org.telegram.ui.Components.lt();
         }
     }
 
@@ -119,8 +119,8 @@ public final class b51 extends Dialog {
         this.d0.addListener(new androidx.fragment.app.g(this, z10, w41Var, i10));
         long j3 = (z10 || this.Y != null) ? 520L : 330L;
         ValueAnimator valueAnimator3 = this.d0;
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        valueAnimator3.setInterpolator(rrVar);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        valueAnimator3.setInterpolator(srVar);
         this.d0.setDuration(j3);
         this.d0.start();
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.v, z10 ? 1.0f : 0.0f);
@@ -129,7 +129,7 @@ public final class b51 extends Dialog {
         ofFloat2.addUpdateListener(new q11(this, i11));
         this.e0.addListener(new c70(i11, this, z10));
         this.e0.setDuration((long) (j3 * 1.5f));
-        this.e0.setInterpolator(rrVar);
+        this.e0.setInterpolator(srVar);
         this.e0.start();
     }
 
@@ -187,14 +187,14 @@ public final class b51 extends Dialog {
         if (e4Var != null) {
             e4Var.e(true);
         }
-        org.telegram.ui.Components.s71 s71Var = this.w;
-        if (s71Var != null) {
-            s71Var.B();
+        org.telegram.ui.Components.u71 u71Var = this.w;
+        if (u71Var != null) {
+            u71Var.B();
             this.w.H();
             this.w = null;
         }
         if (!this.S && (z41Var = this.N) != null && z41Var.getSeekBarWaveform() != null) {
-            org.telegram.ui.Components.vo0 seekBarWaveform = this.N.getSeekBarWaveform();
+            org.telegram.ui.Components.xo0 seekBarWaveform = this.N.getSeekBarWaveform();
             seekBarWaveform.L = this.s;
             org.telegram.ui.Cells.u1 u1Var = seekBarWaveform.n;
             if (u1Var != null) {
@@ -214,47 +214,47 @@ public final class b51 extends Dialog {
             }
             AndroidUtilities.runOnUIThread(h0Var);
             this.Y = null;
-            org.telegram.ui.Components.k11 k11Var = new org.telegram.ui.Components.k11(this.a, null);
-            this.d = k11Var;
-            k0Var.addView(k11Var, w7.y5.e(-1, -1, 119));
-            org.telegram.ui.Components.k11 k11Var2 = this.d;
+            org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11(this.a, null);
+            this.d = m11Var;
+            k0Var.addView(m11Var, w7.y5.e(-1, -1, 119));
+            org.telegram.ui.Components.m11 m11Var2 = this.d;
             z41 z41Var2 = this.N;
             w41 w41Var = new w41(this, 1);
-            org.telegram.ui.Components.i11 i11Var = k11Var2.a;
-            if (i11Var != null) {
-                i11Var.e(z41Var2, 1.5f, w41Var);
-                Choreographer.getInstance().postFrameCallback(k11Var2.b);
+            org.telegram.ui.Components.k11 k11Var = m11Var2.a;
+            if (k11Var != null) {
+                k11Var.e(z41Var2, 1.5f, w41Var);
+                Choreographer.getInstance().postFrameCallback(m11Var2.b);
             } else {
-                org.telegram.ui.Components.j11 j11Var = new org.telegram.ui.Components.j11(z41Var2, w41Var);
-                j11Var.g = 1.5f;
-                k11Var2.c.add(j11Var);
+                org.telegram.ui.Components.l11 l11Var = new org.telegram.ui.Components.l11(z41Var2, w41Var);
+                l11Var.g = 1.5f;
+                m11Var2.c.add(l11Var);
             }
             WindowManager.LayoutParams attributes = getWindow().getAttributes();
             attributes.flags |= 16;
             getWindow().setAttributes(attributes);
         }
-        org.telegram.ui.Components.kt ktVar = this.E;
-        if (ktVar != null) {
-            PowerManager.WakeLock wakeLock = ktVar.h;
-            SensorManager sensorManager = ktVar.a;
-            if (ktVar.n) {
-                Sensor sensor = ktVar.f;
+        org.telegram.ui.Components.lt ltVar = this.E;
+        if (ltVar != null) {
+            PowerManager.WakeLock wakeLock = ltVar.h;
+            SensorManager sensorManager = ltVar.a;
+            if (ltVar.n) {
+                Sensor sensor = ltVar.f;
                 if (sensor != null) {
-                    sensorManager.unregisterListener(ktVar, sensor);
+                    sensorManager.unregisterListener(ltVar, sensor);
                 }
-                Sensor sensor2 = ktVar.e;
+                Sensor sensor2 = ltVar.e;
                 if (sensor2 != null) {
-                    sensorManager.unregisterListener(ktVar, sensor2);
+                    sensorManager.unregisterListener(ltVar, sensor2);
                 }
-                Sensor sensor3 = ktVar.d;
+                Sensor sensor3 = ltVar.d;
                 if (sensor3 != null) {
-                    sensorManager.unregisterListener(ktVar, sensor3);
+                    sensorManager.unregisterListener(ltVar, sensor3);
                 }
-                sensorManager.unregisterListener(ktVar, ktVar.c);
+                sensorManager.unregisterListener(ltVar, ltVar.c);
                 if (wakeLock != null && wakeLock.isHeld()) {
                     wakeLock.release();
                 }
-                ktVar.n = false;
+                ltVar.n = false;
             }
         }
     }
@@ -341,30 +341,30 @@ public final class b51 extends Dialog {
                 AndroidUtilities.runOnUIThread(teVar);
                 this.X = null;
             }
-            org.telegram.ui.Components.kt ktVar = this.E;
-            if (ktVar != null) {
-                PowerManager.WakeLock wakeLock = ktVar.h;
-                SensorManager sensorManager = ktVar.a;
-                if (ktVar.n) {
+            org.telegram.ui.Components.lt ltVar = this.E;
+            if (ltVar != null) {
+                PowerManager.WakeLock wakeLock = ltVar.h;
+                SensorManager sensorManager = ltVar.a;
+                if (ltVar.n) {
                     return;
                 }
-                Sensor sensor = ktVar.f;
+                Sensor sensor = ltVar.f;
                 if (sensor != null) {
-                    sensorManager.registerListener(ktVar, sensor, 30000);
+                    sensorManager.registerListener(ltVar, sensor, 30000);
                 }
-                Sensor sensor2 = ktVar.e;
+                Sensor sensor2 = ltVar.e;
                 if (sensor2 != null) {
-                    sensorManager.registerListener(ktVar, sensor2, 30000);
+                    sensorManager.registerListener(ltVar, sensor2, 30000);
                 }
-                Sensor sensor3 = ktVar.d;
+                Sensor sensor3 = ltVar.d;
                 if (sensor3 != null) {
-                    sensorManager.registerListener(ktVar, sensor3, 30000);
+                    sensorManager.registerListener(ltVar, sensor3, 30000);
                 }
-                sensorManager.registerListener(ktVar, ktVar.c, 3);
+                sensorManager.registerListener(ltVar, ltVar.c, 3);
                 if (wakeLock != null && Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
                     wakeLock.acquire();
                 }
-                ktVar.n = true;
+                ltVar.n = true;
             }
         }
     }

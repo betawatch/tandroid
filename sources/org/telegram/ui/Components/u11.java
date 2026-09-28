@@ -2,28 +2,41 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.AnimatorSet;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class u11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ThemeEditorView.EditorAlert a;
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ThemeEditorView.EditorAlert b;
 
-    public u11(ThemeEditorView.EditorAlert editorAlert) {
-        this.a = editorAlert;
+    public u11(ThemeEditorView.EditorAlert editorAlert, boolean z10) {
+        this.b = editorAlert;
+        this.a = z10;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        AnimatorSet[] animatorSetArr = this.b.x;
+        AnimatorSet animatorSet = animatorSetArr[0];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        animatorSetArr[0] = null;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        ThemeEditorView.EditorAlert editorAlert = this.a;
-        if (editorAlert.c.getAdapter() == editorAlert.r) {
-            a21 a21Var = editorAlert.f.b;
-            a21Var.requestFocus();
-            AndroidUtilities.showKeyboard(a21Var);
+        ThemeEditorView.EditorAlert editorAlert = this.b;
+        AnimatorSet[] animatorSetArr = editorAlert.x;
+        AnimatorSet animatorSet = animatorSetArr[0];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
         }
-        editorAlert.b.setVisibility(8);
-        editorAlert.v.setVisibility(8);
-        editorAlert.H = false;
+        if (!this.a) {
+            editorAlert.w[0].setVisibility(4);
+        }
+        animatorSetArr[0] = null;
     }
 }

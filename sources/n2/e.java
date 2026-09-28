@@ -42,23 +42,23 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.df0;
-import org.telegram.ui.Components.ef0;
-import org.telegram.ui.Components.ic0;
-import org.telegram.ui.Components.j60;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.jq0;
-import org.telegram.ui.Components.kh0;
-import org.telegram.ui.Components.p71;
-import org.telegram.ui.Components.pg0;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.ff0;
+import org.telegram.ui.Components.gf0;
+import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.lq0;
+import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qq0;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.rg0;
 import org.telegram.ui.Components.rk0;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.uq0;
-import org.telegram.ui.Components.wa0;
+import org.telegram.ui.Components.sq0;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u71;
 import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.ya0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.l9;
 import org.telegram.ui.ls0;
@@ -74,9 +74,9 @@ import s4.p0;
 import yh.r2;
 import yh.x3;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.android.gms.common.api.internal.s, h1, w2.a, jq0, pk0 {
+public class e implements o0.b, l71, d5, ya0, lg.o, r71, b2, t9, com.google.android.gms.common.api.internal.s, h1, w2.a, lq0, rk0 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -344,7 +344,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
 
     @Override // lg.o
     public void L(boolean z10) {
-        ((ef0) this.b).c.setAspectLock(z10);
+        ((gf0) this.b).c.setAspectLock(z10);
     }
 
     public void M(c1 c1Var) {
@@ -364,7 +364,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
         eVar.g(view);
     }
 
-    @Override // org.telegram.ui.Components.wa0
+    @Override // org.telegram.ui.Components.ya0
     public void O(int i10, int i11, CharSequence charSequence, boolean z10) {
         wi wiVar = (wi) this.b;
         if (wiVar.m1() == null) {
@@ -385,21 +385,21 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
 
     @Override // gg.b2
     public void a(int i10) {
-        qq0 qq0Var = (qq0) this.b;
-        uq0 uq0Var = qq0Var.K;
-        qq0Var.s = i10;
-        if (qq0Var.v != i10) {
-            qq0Var.d.clear();
+        sq0 sq0Var = (sq0) this.b;
+        wq0 wq0Var = sq0Var.K;
+        sq0Var.s = i10;
+        if (sq0Var.v != i10) {
+            sq0Var.d.clear();
         }
-        int i11 = qq0Var.J;
-        if (qq0Var.h() != 0 || qq0Var.e.e() || qq0Var.I) {
-            uq0Var.x0.b(i11);
+        int i11 = sq0Var.J;
+        if (sq0Var.h() != 0 || sq0Var.e.e() || sq0Var.I) {
+            wq0Var.x0.b(i11);
         } else {
-            uq0Var.Q.e(false, true);
+            wq0Var.Q.e(false, true);
         }
-        qq0Var.l();
-        int i12 = uq0.a1;
-        uq0Var.K0(true);
+        sq0Var.l();
+        int i12 = wq0.a1;
+        wq0Var.K0(true);
     }
 
     @Override // com.google.android.gms.common.api.internal.s
@@ -523,11 +523,11 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
 
     @Override // lg.o
     public void e0(boolean z10) {
-        ef0 ef0Var = (ef0) this.b;
-        ef0Var.getClass();
-        df0 df0Var = ef0Var.a;
-        if (df0Var != null) {
-            ((ls0) df0Var).a(z10);
+        gf0 gf0Var = (gf0) this.b;
+        gf0Var.getClass();
+        ff0 ff0Var = gf0Var.a;
+        if (ff0Var != null) {
+            ((ls0) ff0Var).a(z10);
         }
     }
 
@@ -543,9 +543,9 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
 
     @Override // lg.o
     public void g0() {
-        df0 df0Var = ((ef0) this.b).a;
-        if (df0Var != null) {
-            PhotoViewer photoViewer = ((ls0) df0Var).a;
+        ff0 ff0Var = ((gf0) this.b).a;
+        if (ff0Var != null) {
+            PhotoViewer photoViewer = ((ls0) ff0Var).a;
             if (photoViewer.c2 == 1) {
                 photoViewer.H2 = true;
                 photoViewer.p3();
@@ -553,7 +553,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
         }
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
         zg.t tVar = (zg.t) this.b;
         tVar.a.ab(null, tVar.e, tVar.b, view, 0.0f, 0.0f, o0Var, false, z10, z11, false);
@@ -565,17 +565,17 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
         return null;
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.l71
     public void invalidate() {
         ((u1) ((org.telegram.ui.Cells.h1) this.b).b).invalidate();
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ boolean k() {
         return false;
     }
@@ -614,31 +614,31 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
         b1Var.h0 = false;
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onStateChanged(boolean z10, int i10) {
-        rk0 rk0Var = (rk0) this.b;
-        if (z10 && rk0Var.n.n() >= 0) {
-            rk0Var.w = true;
+        tk0 tk0Var = (tk0) this.b;
+        if (z10 && tk0Var.n.n() >= 0) {
+            tk0Var.w = true;
         }
-        pg0 pg0Var = rk0Var.f;
-        ic0 ic0Var = rk0Var.x;
-        pg0Var.a(z10, true);
-        AndroidUtilities.cancelRunOnUIThread(ic0Var);
+        rg0 rg0Var = tk0Var.f;
+        kc0 kc0Var = tk0Var.x;
+        rg0Var.a(z10, true);
+        AndroidUtilities.cancelRunOnUIThread(kc0Var);
         if (z10) {
-            AndroidUtilities.runOnUIThread(ic0Var, 16L);
+            AndroidUtilities.runOnUIThread(kc0Var, 16L);
         }
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ boolean p() {
         return false;
     }
@@ -673,7 +673,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
 
     @Override // gg.b2
     public boolean s(int i10) {
-        return i10 == ((qq0) this.b).r;
+        return i10 == ((sq0) this.b).r;
     }
 
     public void t() {
@@ -703,7 +703,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
         return null;
     }
 
-    @Override // org.telegram.ui.Components.jq0
+    @Override // org.telegram.ui.Components.lq0
     public void u0() {
         qc k10 = ((x3) this.b).getBulletinFactory().k(false);
         k10.t = true;
@@ -714,7 +714,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
         return null;
     }
 
-    @Override // org.telegram.ui.Components.wa0
+    @Override // org.telegram.ui.Components.ya0
     public Paint.FontMetricsInt w() {
         return ((wi) this.b).E0.getEditText().getPaint().getFontMetricsInt();
     }
@@ -732,9 +732,9 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
 
     @Override // lg.o
     public void z() {
-        df0 df0Var = ((ef0) this.b).a;
-        if (df0Var != null) {
-            ((ls0) df0Var).a.e0.invalidate();
+        ff0 ff0Var = ((gf0) this.b).a;
+        if (ff0Var != null) {
+            ((ls0) ff0Var).a.e0.invalidate();
         }
     }
 
@@ -743,7 +743,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onRenderedFirstFrame() {
     }
 
@@ -760,7 +760,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
                     this.b = new s0.e(this);
                     break;
                 } else {
-                    this.b = new kh0(this);
+                    this.b = new mh0(this);
                     break;
                 }
             case 24:
@@ -777,15 +777,15 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
 
     public e(int i10, int i11, int[] iArr) {
         this.a = 4;
-        j60[] j60VarArr = new j60[(iArr.length / 2) + 1];
-        this.b = j60VarArr;
-        j60 j60Var = new j60(i10, i11);
+        l60[] l60VarArr = new l60[(iArr.length / 2) + 1];
+        this.b = l60VarArr;
+        l60 l60Var = new l60(i10, i11);
         int i12 = 0;
-        j60VarArr[0] = j60Var;
+        l60VarArr[0] = l60Var;
         while (i12 < iArr.length / 2) {
             int i13 = i12 + 1;
             int i14 = i12 * 2;
-            ((j60[]) this.b)[i13] = new j60(iArr[i14], iArr[i14 + 1]);
+            ((l60[]) this.b)[i13] = new l60(iArr[i14], iArr[i14 + 1]);
             i12 = i13;
         }
     }
@@ -795,11 +795,11 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
         this.b = new GestureDetector(context, onGestureListener, null);
     }
 
-    @Override // org.telegram.ui.Components.jq0
+    @Override // org.telegram.ui.Components.lq0
     public /* synthetic */ void U() {
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ void n() {
     }
 
@@ -812,7 +812,7 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
     public /* synthetic */ void F(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.Components.wa0
+    @Override // org.telegram.ui.Components.ya0
     public /* synthetic */ void P(String str) {
     }
 
@@ -820,35 +820,35 @@ public class e implements o0.b, j71, d5, wa0, lg.o, p71, b2, t9, com.google.andr
     public /* synthetic */ void T0(MrzRecognizer.Result result) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public void onError(s71 s71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.r71
+    public void onError(u71 u71Var, Exception exc) {
     }
 
-    @Override // org.telegram.ui.Components.wa0
+    @Override // org.telegram.ui.Components.ya0
     public /* synthetic */ void A(TLRPC.TL_document tL_document, String str, Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.wa0
+    @Override // org.telegram.ui.Components.ya0
     public /* synthetic */ void f(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ void m(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

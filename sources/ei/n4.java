@@ -4,11 +4,11 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.vr;
+import org.telegram.ui.Components.hh0;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.wr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class n4 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -25,14 +25,14 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
     public boolean onDown(MotionEvent motionEvent) {
         switch (this.a) {
             case 1:
-                vr vrVar = (vr) this.c;
-                sr srVar = vrVar.r;
-                if (vrVar.n) {
-                    vrVar.removeCallbacks(srVar);
+                wr wrVar = (wr) this.c;
+                tr trVar = wrVar.r;
+                if (wrVar.n) {
+                    wrVar.removeCallbacks(trVar);
                 }
-                vrVar.n = true;
-                vrVar.postDelayed(srVar, 200L);
-                vrVar.h.run();
+                wrVar.n = true;
+                wrVar.postDelayed(trVar, 200L);
+                wrVar.h.run();
                 return true;
             case 2:
                 return true;
@@ -88,11 +88,11 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
             default:
                 return super.onFling(motionEvent, motionEvent2, f7, f10);
             case 2:
-                fh0 fh0Var = (fh0) this.c;
-                if (!fh0Var.f && !fh0Var.h && f7 >= 600.0f) {
-                    fh0Var.e = false;
-                    fh0Var.h = false;
-                    fh0Var.a(0.0f, f7 / 6000.0f);
+                hh0 hh0Var = (hh0) this.c;
+                if (!hh0Var.f && !hh0Var.h && f7 >= 600.0f) {
+                    hh0Var.e = false;
+                    hh0Var.h = false;
+                    hh0Var.a(0.0f, f7 / 6000.0f);
                 }
                 return false;
         }
@@ -195,44 +195,44 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
                 }
                 return true;
             case 1:
-                vr vrVar = (vr) this.c;
-                if (vrVar.n || vrVar.f) {
+                wr wrVar = (wr) this.c;
+                if (wrVar.n || wrVar.f) {
                     float abs3 = Math.abs(f7);
                     float f18 = this.b;
                     if (abs3 >= f18 || Math.abs(f10) >= f18) {
-                        vrVar.n = false;
-                        vrVar.f = false;
-                        vrVar.removeCallbacks(vrVar.r);
-                        vrVar.removeCallbacks(vrVar.h);
+                        wrVar.n = false;
+                        wrVar.f = false;
+                        wrVar.removeCallbacks(wrVar.r);
+                        wrVar.removeCallbacks(wrVar.h);
                     }
                 }
                 return false;
             default:
-                fh0 fh0Var = (fh0) this.c;
-                if (fh0Var.e || fh0Var.h) {
+                hh0 hh0Var = (hh0) this.c;
+                if (hh0Var.e || hh0Var.h) {
                     motionEvent3 = motionEvent2;
                 } else {
-                    if (fh0Var.y || fh0Var.b != 1.0f || f7 > (-this.b) || Math.abs(f7) < Math.abs(1.5f * f10)) {
+                    if (hh0Var.y || hh0Var.b != 1.0f || f7 > (-this.b) || Math.abs(f7) < Math.abs(1.5f * f10)) {
                         motionEvent3 = motionEvent2;
                     } else {
                         motionEvent3 = motionEvent2;
-                        if (!fh0Var.d(motionEvent3, fh0Var.getChildAt(fh0Var.b > 0.5f ? 1 : 0))) {
-                            fh0Var.e = true;
+                        if (!hh0Var.d(motionEvent3, hh0Var.getChildAt(hh0Var.b > 0.5f ? 1 : 0))) {
+                            hh0Var.e = true;
                             MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                            for (int i11 = 0; i11 < fh0Var.getChildCount(); i11++) {
-                                fh0Var.getChildAt(i11).dispatchTouchEvent(obtain2);
+                            for (int i11 = 0; i11 < hh0Var.getChildCount(); i11++) {
+                                hh0Var.getChildAt(i11).dispatchTouchEvent(obtain2);
                             }
                             obtain2.recycle();
                         }
                     }
-                    fh0Var.h = true;
+                    hh0Var.h = true;
                 }
-                if (fh0Var.e) {
-                    fh0Var.c = -1.0f;
-                    fh0Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / fh0Var.getWidth()));
-                    fh0Var.c(true);
+                if (hh0Var.e) {
+                    hh0Var.c = -1.0f;
+                    hh0Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / hh0Var.getWidth()));
+                    hh0Var.c(true);
                 }
-                return fh0Var.e;
+                return hh0Var.e;
         }
     }
 }

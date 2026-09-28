@@ -10,9 +10,9 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import org.telegram.ui.Components.s50;
+import org.telegram.ui.Components.u50;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class h implements d, t5.c, c {
     public static final i5.c f = new i5.c("proto");
@@ -109,7 +109,7 @@ public final class h implements d, t5.c, c {
         if (b10 == null) {
             return arrayList;
         }
-        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i10)), new s50(this, arrayList, iVar, 8));
+        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i10)), new u50(this, arrayList, iVar, 8));
         return arrayList;
     }
 

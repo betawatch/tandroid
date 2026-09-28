@@ -13,13 +13,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 import w7.y5;
 import yh.w7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class d extends FrameLayout {
     public final ci.d a;
@@ -28,16 +28,16 @@ public final class d extends FrameLayout {
     public final GiftAuctionController.Auction d;
     public final Paint e;
     public final yf.n f;
-    public final pq h;
-    public final pq[] n;
+    public final qq h;
+    public final qq[] n;
 
     public d(Context context, GiftAuctionController.Auction auction) {
         super(context);
         Paint paint = new Paint(1);
         this.e = paint;
         this.f = new yf.n(new r5.d(this, 14));
-        this.h = new pq(R.drawable.filled_gift_sell_24, 0);
-        this.n = new pq[1];
+        this.h = new qq(R.drawable.filled_gift_sell_24, 0);
+        this.n = new qq[1];
         this.d = auction;
         setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
         paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, 0.0f, TLObject.FLAG_29);
@@ -45,7 +45,7 @@ public final class d extends FrameLayout {
         ci.d dVar = new ci.d(context, null, true);
         this.a = dVar;
         dVar.d.o(false, true, true);
-        lj0 lj0Var = new lj0(context);
+        nj0 nj0Var = new nj0(context);
         p6 p6Var = new p6(context, false, false, false);
         this.b = p6Var;
         p6Var.setTextSize(AndroidUtilities.dp(14.0f));
@@ -56,11 +56,11 @@ public final class d extends FrameLayout {
         p6Var2.setTextSize(AndroidUtilities.dp(12.0f));
         TLRPC.Document document = auction.gift.sticker;
         if (document != null) {
-            lj0Var.g(44, 44, document);
+            nj0Var.g(44, 44, document);
         }
         addView(p6Var, y5.d(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
         addView(p6Var2, y5.d(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
-        addView(lj0Var, y5.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
+        addView(nj0Var, y5.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
         addView(dVar, y5.d(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
         b(false);
     }
@@ -83,13 +83,13 @@ public final class d extends FrameLayout {
         }
         String h = org.telegram.messenger.f0.h(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
         boolean isOutbid = auction.getBidStatus().isOutbid();
-        pq[] pqVarArr = this.n;
+        qq[] qqVarArr = this.n;
         p6 p6Var = this.c;
         if (isOutbid) {
-            p6Var.c(w7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, pqVarArr), z10, true);
+            p6Var.c(w7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, qqVarArr), z10, true);
             p6Var.setTextColor(h6.w0(null, h6.q7, false));
         } else {
-            p6Var.c(w7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, pqVarArr), z10, true);
+            p6Var.c(w7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, qqVarArr), z10, true);
             p6Var.setTextColor(h6.w0(null, h6.G6, false));
         }
     }

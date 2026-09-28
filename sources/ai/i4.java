@@ -9,19 +9,19 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.gk;
+import org.telegram.ui.Components.hk;
 import org.telegram.ui.mn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class i4 implements gk {
+public final class i4 implements hk {
     public final /* synthetic */ e6 a;
 
     public i4(e6 e6Var) {
         this.a = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.gk
+    @Override // org.telegram.ui.Components.hk
     public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
         AccountInstance accountInstance;
         e6 e6Var = this.a;
@@ -34,7 +34,7 @@ public final class i4 implements gk {
         e6Var.k0(j10 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.gk
+    @Override // org.telegram.ui.Components.hk
     public final void w() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
@@ -50,11 +50,11 @@ public final class i4 implements gk {
         }
     }
 
-    @Override // org.telegram.ui.Components.gk
+    @Override // org.telegram.ui.Components.hk
     public final /* synthetic */ void O() {
     }
 
-    @Override // org.telegram.ui.Components.gk
+    @Override // org.telegram.ui.Components.hk
     public final /* synthetic */ void l(long j3, ArrayList arrayList, boolean z10, int i10) {
     }
 }

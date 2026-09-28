@@ -25,11 +25,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class g4 extends FrameLayout {
     public boolean E;
@@ -52,7 +52,7 @@ public final class g4 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
     public final ai.z5 b;
     public final org.telegram.ui.ActionBar.h5 c;
-    public final op d;
+    public final pp d;
     public final org.telegram.ui.Components.h9 e;
     public Object f;
     public CharSequence h;
@@ -76,21 +76,21 @@ public final class g4 extends FrameLayout {
         return h9Var;
     }
 
-    public static qq b(Context context, boolean z10) {
-        qq qqVar = new qq(new ci.d4(new rg.z0(org.telegram.ui.ActionBar.h6.Mj, org.telegram.ui.ActionBar.h6.Lj, -1, -1, null), 3), context.getResources().getDrawable(R.drawable.msg_settings_premium), 0, 0);
+    public static rq b(Context context, boolean z10) {
+        rq rqVar = new rq(new ci.d4(new rg.z0(org.telegram.ui.ActionBar.h6.Mj, org.telegram.ui.ActionBar.h6.Lj, -1, -1, null), 3), context.getResources().getDrawable(R.drawable.msg_settings_premium), 0, 0);
         if (z10) {
             int dp = AndroidUtilities.dp(18.0f);
             int dp2 = AndroidUtilities.dp(18.0f);
-            qqVar.e = dp;
-            qqVar.f = dp2;
+            rqVar.e = dp;
+            rqVar.f = dp2;
         }
-        return qqVar;
+        return rqVar;
     }
 
     public final void c(boolean z10, boolean z11) {
-        op opVar = this.d;
-        if (opVar != null) {
-            opVar.a(z10, z11);
+        pp ppVar = this.d;
+        if (ppVar != null) {
+            ppVar.a(z10, z11);
             return;
         }
         if (this.v != 2 || this.H == z10) {
@@ -107,7 +107,7 @@ public final class g4 extends FrameLayout {
             ofFloat.addUpdateListener(new r(this, 3));
             this.G.addListener(new org.telegram.ui.t4(this, 7));
             this.G.setDuration(180L);
-            this.G.setInterpolator(rr.g);
+            this.G.setInterpolator(sr.g);
             this.G.start();
         } else {
             float f7 = this.H ? 0.82f : 1.0f;
@@ -197,7 +197,7 @@ public final class g4 extends FrameLayout {
         boolean z10 = obj instanceof String;
         org.telegram.ui.ActionBar.d6 d6Var = this.M;
         boolean z11 = this.K;
-        op opVar = this.d;
+        pp ppVar = this.d;
         org.telegram.ui.Components.w9 w9Var = this.a;
         ai.z5 z5Var = this.b;
         org.telegram.ui.Components.h9 h9Var = this.e;
@@ -209,12 +209,12 @@ public final class g4 extends FrameLayout {
             int dp = AndroidUtilities.dp(38.0f);
             layoutParams2.height = dp;
             layoutParams.width = dp;
-            if (opVar != null) {
-                ((FrameLayout.LayoutParams) opVar.getLayoutParams()).topMargin = AndroidUtilities.dp(25.0f);
+            if (ppVar != null) {
+                ((FrameLayout.LayoutParams) ppVar.getLayoutParams()).topMargin = AndroidUtilities.dp(25.0f);
                 if (LocaleController.isRTL) {
-                    ((FrameLayout.LayoutParams) opVar.getLayoutParams()).rightMargin = AndroidUtilities.dp(31.0f);
+                    ((FrameLayout.LayoutParams) ppVar.getLayoutParams()).rightMargin = AndroidUtilities.dp(31.0f);
                 } else {
-                    ((FrameLayout.LayoutParams) opVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(32.0f);
+                    ((FrameLayout.LayoutParams) ppVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(32.0f);
                 }
             }
             String str4 = (String) this.f;
@@ -267,15 +267,15 @@ public final class g4 extends FrameLayout {
             int dp2 = AndroidUtilities.dp(46.0f);
             layoutParams4.height = dp2;
             layoutParams3.width = dp2;
-            if (opVar != null) {
-                FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) opVar.getLayoutParams();
+            if (ppVar != null) {
+                FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ppVar.getLayoutParams();
                 int dp3 = AndroidUtilities.dp(29.0f);
                 int i12 = this.F;
                 layoutParams5.topMargin = dp3 + i12;
                 if (LocaleController.isRTL) {
-                    ((FrameLayout.LayoutParams) opVar.getLayoutParams()).rightMargin = AndroidUtilities.dp(40.0f) + i12;
+                    ((FrameLayout.LayoutParams) ppVar.getLayoutParams()).rightMargin = AndroidUtilities.dp(40.0f) + i12;
                 } else {
-                    ((FrameLayout.LayoutParams) opVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(40.0f) + i12;
+                    ((FrameLayout.LayoutParams) ppVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(40.0f) + i12;
                 }
             }
             Object obj2 = this.f;
@@ -463,7 +463,7 @@ public final class g4 extends FrameLayout {
         invalidate();
     }
 
-    public op getCheckBox() {
+    public pp getCheckBox() {
         return this.d;
     }
 
@@ -509,8 +509,8 @@ public final class g4 extends FrameLayout {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        op opVar = this.d;
-        if (opVar != null ? opVar.a.q : this.H) {
+        pp ppVar = this.d;
+        if (ppVar != null ? ppVar.a.q : this.H) {
             accessibilityNodeInfo.setCheckable(true);
             accessibilityNodeInfo.setChecked(true);
         }
@@ -524,9 +524,9 @@ public final class g4 extends FrameLayout {
     }
 
     public void setCheckBoxEnabled(boolean z10) {
-        op opVar = this.d;
-        if (opVar != null) {
-            opVar.setEnabled(z10);
+        pp ppVar = this.d;
+        if (ppVar != null) {
+            ppVar.setEnabled(z10);
         }
     }
 
@@ -542,7 +542,7 @@ public final class g4 extends FrameLayout {
     public g4(int i10, int i11, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
         super(context);
         this.w = UserConfig.selectedAccount;
-        this.N = new org.telegram.ui.Components.e6(this, 0L, 350L, rr.h);
+        this.N = new org.telegram.ui.Components.e6(this, 0L, 350L, sr.h);
         this.M = d6Var;
         this.v = i10;
         this.K = z11;
@@ -571,13 +571,13 @@ public final class g4 extends FrameLayout {
         boolean z14 = LocaleController.isRTL;
         addView(h5Var, w7.y5.d(-1, 20.0f, (z14 ? 5 : 3) | 48, (z14 ? 28 : 72) + i11, 32.0f, (z14 ? 72 : 28) + i11, 0.0f));
         if (i10 == 1) {
-            op opVar = new op(context, 21, d6Var);
-            this.d = opVar;
-            opVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
-            opVar.setDrawUnchecked(false);
-            opVar.setDrawBackgroundAsArc(3);
+            pp ppVar = new pp(context, 21, d6Var);
+            this.d = ppVar;
+            ppVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
+            ppVar.setDrawUnchecked(false);
+            ppVar.setDrawBackgroundAsArc(3);
             boolean z15 = LocaleController.isRTL;
-            addView(opVar, w7.y5.d(24, 24.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : i11 + 40, 33.0f, z15 ? i11 + 39 : 0.0f, 0.0f));
+            addView(ppVar, w7.y5.d(24, 24.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : i11 + 40, 33.0f, z15 ? i11 + 39 : 0.0f, 0.0f));
         } else if (i10 == 2) {
             Paint paint = new Paint(1);
             this.J = paint;

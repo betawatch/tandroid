@@ -1,36 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class sx0 extends uq0 {
-    public final /* synthetic */ fy0 b1;
+public final /* synthetic */ class sx0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hy0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sx0(fy0 fy0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.b1 = fy0Var;
+    public /* synthetic */ sx0(hy0 hy0Var, int i10) {
+        this.a = i10;
+        this.b = hy0Var;
     }
 
-    @Override // org.telegram.ui.Components.uq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new xm(this, iVar, i10, 20), 100L);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.uq0, org.telegram.ui.ActionBar.e3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        org.telegram.ui.ActionBar.m2 m2Var = this.b1.L;
-        if (m2Var instanceof org.telegram.ui.wn) {
-            AndroidUtilities.requestAdjustResize(m2Var.getParentActivity(), m2Var.getClassGuid());
-            if (((org.telegram.ui.wn) m2Var).Y.getVisibility() == 0) {
-                m2Var.getFragmentView().requestLayout();
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d.l();
+                break;
+            case 1:
+                this.b.d.l();
+                break;
+            case 2:
+                hy0.t(this.b);
+                break;
+            case 3:
+                MessagesController.getInstance(r0.currentAccount).openByUserName("stickers", this.b.L, 1);
+                break;
+            default:
+                hy0.s(this.b);
+                break;
         }
     }
 }

@@ -9,16 +9,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ac implements pk0 {
+public final class ac implements rk0 {
     public final /* synthetic */ bc a;
 
     public ac(bc bcVar) {
         this.a = bcVar;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
         bc bcVar = this.a;
         org.telegram.ui.ActionBar.m2 m2Var = bcVar.f;
@@ -43,26 +43,26 @@ public final class ac implements pk0 {
         AndroidUtilities.runOnUIThread(new org.telegram.messenger.qj(this, o0Var, !z12, m2Var.getCurrentAccount(), i10), 300L);
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ boolean p() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ void n() {
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ void m(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

@@ -19,7 +19,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.IMapsProvider;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kc0 implements org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.z1, IMapsProvider.OnCameraMoveStartedListener, gg.b, IMapsProvider.ITouchInterceptor {
     public final /* synthetic */ int a;
@@ -151,9 +151,9 @@ public final /* synthetic */ class kc0 implements org.telegram.ui.ActionBar.q0, 
                 return;
             }
             if ((i11 == 0 || i11 == 1) && cd0Var.U.getChildCount() > 0 && (childAt = cd0Var.U.getChildAt(0)) != null) {
-                org.telegram.ui.Components.wl0 wl0Var = cd0Var.U;
-                View F = wl0Var.F(childAt);
-                s4.c1 T = F == null ? null : wl0Var.T(F);
+                org.telegram.ui.Components.yl0 yl0Var = cd0Var.U;
+                View F = yl0Var.F(childAt);
+                s4.c1 T = F == null ? null : yl0Var.T(F);
                 if (T == null || T.b() != 0) {
                     return;
                 }

@@ -1,23 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class xw extends yy {
-    public final /* synthetic */ lz H;
+public final class xw extends g.p {
+    public final /* synthetic */ mz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xw(lz lzVar, Context context) {
-        super(lzVar, context, 0);
-        this.H = lzVar;
+    public xw(mz mzVar) {
+        this.c = mzVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            this.H.x0.invalidate();
+    @Override // g.p
+    public final int i(int i10) {
+        mz mzVar = this.c;
+        hz hzVar = mzVar.z0;
+        s4.h0 adapter = mzVar.D0.getAdapter();
+        dz dzVar = mzVar.y0;
+        if (adapter != dzVar) {
+            if (i10 == hzVar.x || !(hzVar.r.get(i10) == null || (hzVar.r.get(i10) instanceof TLRPC.Document))) {
+                return dzVar.d;
+            }
+            return 1;
         }
+        if (i10 == 0) {
+            return dzVar.d;
+        }
+        if (i10 == dzVar.s || !(dzVar.h.get(i10) == null || (dzVar.h.get(i10) instanceof TLRPC.Document))) {
+            return dzVar.d;
+        }
+        return 1;
     }
 }

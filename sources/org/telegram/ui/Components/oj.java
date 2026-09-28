@@ -1,27 +1,65 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class oj extends s4.d0 {
-    public final /* synthetic */ hg.g0 r;
+public final class oj implements TextWatcher {
+    public final /* synthetic */ ak a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oj(hg.g0 g0Var, Context context) {
-        super(context);
-        this.r = g0Var;
+    public oj(ak akVar) {
+        this.a = akVar;
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        return org.telegram.messenger.f0.A(8.0f, ((zj) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int currentTop;
+        String obj = editable.toString();
+        if (obj.isEmpty()) {
+            s4.h0 adapter = this.a.s.getAdapter();
+            ak akVar = this.a;
+            if (adapter != akVar.E) {
+                currentTop = akVar.getCurrentTop();
+                this.a.G.setText(LocaleController.getString(R.string.NoContacts));
+                this.a.G.c();
+                ak akVar2 = this.a;
+                akVar2.s.setAdapter(akVar2.E);
+                this.a.E.l();
+                if (currentTop > 0) {
+                    this.a.v.h1(0, -currentTop);
+                }
+            }
+        } else {
+            oz ozVar = this.a.G;
+            if (ozVar != null) {
+                ozVar.setText(LocaleController.getString(R.string.NoResult));
+            }
+        }
+        wj wjVar = this.a.F;
+        if (wjVar != null) {
+            if (wjVar.f != null) {
+                Utilities.searchQueue.cancelRunnable(wjVar.f);
+                wjVar.f = null;
+            }
+            int i10 = wjVar.h + 1;
+            wjVar.h = i10;
+            DispatchQueue dispatchQueue = Utilities.searchQueue;
+            vj vjVar = new vj(wjVar, obj, i10, 0);
+            wjVar.f = vjVar;
+            dispatchQueue.postRunnable(vjVar, 300L);
+        }
     }
 
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

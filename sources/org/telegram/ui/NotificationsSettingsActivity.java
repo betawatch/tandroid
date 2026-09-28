@@ -42,7 +42,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -65,7 +65,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.m2 
     public boolean V;
     public boolean W;
     public boolean X;
-    public org.telegram.ui.Components.wl0 a;
+    public org.telegram.ui.Components.yl0 a;
     private int accountsAllRow;
     public boolean b;
     private int badgeNumberMessagesRow;
@@ -349,7 +349,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.m2 
         }
         ArrayList arrayList31 = arrayList27;
         ArrayList arrayList32 = arrayList;
-        Collections.sort(arrayList32, Comparator$-CC.comparingDouble(new org.telegram.ui.Components.w71(3)));
+        Collections.sort(arrayList32, Comparator$-CC.comparingDouble(new org.telegram.ui.Components.y71(3)));
         int max = Math.max(0, arrayList32.size() - 5);
         while (max < arrayList32.size()) {
             long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_topPeer) arrayList32.get(max)).peer);
@@ -876,9 +876,9 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.m2 
         ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).sendRequest(new TL_account.resetNotifySettings(), new m(notificationsSettingsActivity, 15));
     }
 
-    public final void A0(org.telegram.ui.Components.f21 f21Var) {
+    public final void A0(org.telegram.ui.Components.h21 h21Var) {
         MediaDataController.getInstance(this.currentAccount).loadHints(true);
-        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new jf0(this, new ArrayList(MediaDataController.getInstance(this.currentAccount).hints), f21Var, 9));
+        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new jf0(this, new ArrayList(MediaDataController.getInstance(this.currentAccount).hints), h21Var, 9));
     }
 
     @Override // org.telegram.ui.ActionBar.m2
@@ -895,19 +895,19 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.m2 
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.a = wl0Var;
-        wl0Var.p1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setItemAnimator(null);
         this.a.setLayoutAnimation(null);
         this.a.setLayoutManager(new gg.b0(i10, false, 13));
         this.a.setVerticalScrollBarEnabled(false);
         frameLayout.addView(this.a, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.wl0 wl0Var2 = this.a;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.a;
         mk0 mk0Var = new mk0(this, context);
         this.c = mk0Var;
-        wl0Var2.setAdapter(mk0Var);
+        yl0Var2.setAdapter(mk0Var);
         this.a.setOnItemClickListener(new lk0(this));
         return this.fragmentView;
     }

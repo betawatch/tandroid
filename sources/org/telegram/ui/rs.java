@@ -3,15 +3,15 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rs implements ah.m {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.wl0 b;
+    public final /* synthetic */ org.telegram.ui.Components.yl0 b;
 
-    public /* synthetic */ rs(org.telegram.ui.Components.wl0 wl0Var, int i10) {
+    public /* synthetic */ rs(org.telegram.ui.Components.yl0 yl0Var, int i10) {
         this.a = i10;
-        this.b = wl0Var;
+        this.b = yl0Var;
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */

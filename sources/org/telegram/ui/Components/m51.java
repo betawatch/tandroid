@@ -1,46 +1,48 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class m51 implements dy0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ r51 b;
+public final class m51 extends s4.s0 {
+    public final /* synthetic */ t51 a;
 
-    public m51(r51 r51Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = r51Var;
-        this.a = inputStickerSet;
+    public m51(t51 t51Var) {
+        this.a = t51Var;
     }
 
-    @Override // org.telegram.ui.Components.dy0
-    public final void a() {
-        r51 r51Var = this.b;
-        s4.h0 adapter = r51Var.n.getAdapter();
-        q51 q51Var = r51Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i10 = 0;
-        if (adapter == q51Var) {
-            while (i10 < q51Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) q51Var.e.get(i10);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    q51Var.F(stickerSetCovered, null);
-                    return;
-                }
-                i10++;
-            }
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        s4.s0 s0Var = this.a.y;
+        if (s0Var != null) {
+            s0Var.a(recyclerView, i10);
+        }
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        t51 t51Var = this.a;
+        s51 s51Var = t51Var.s;
+        j51 j51Var = t51Var.n;
+        s4.s0 s0Var = t51Var.y;
+        if (s0Var != null) {
+            s0Var.b(j51Var, i10, i11);
+        }
+        if (i11 <= 0 || j51Var.getAdapter() != s51Var || !t51Var.J || s51Var.r || s51Var.s) {
             return;
         }
-        gg.g2 g2Var = r51Var.v;
-        ArrayList arrayList = g2Var.E;
-        while (i10 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                g2Var.F(stickerSetCovered2, null);
+        if (t51Var.r.N0() >= ((s51Var.w + 1) - ((s51Var.v + 1) * 10)) - 1) {
+            t51 t51Var2 = s51Var.x;
+            if (!t51Var2.J || s51Var.r || s51Var.s) {
                 return;
             }
-            i10++;
+            s51Var.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = s51Var.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(t51Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new y1(s51Var, 17));
         }
     }
 }

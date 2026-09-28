@@ -1,7 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface ad0 {
-    String j(int i10);
+public final class ad0 extends ro0 {
+    public final /* synthetic */ gd0 d;
+
+    public ad0(gd0 gd0Var) {
+        this.d = gd0Var;
+    }
+
+    @Override // org.telegram.ui.Components.ro0
+    public final boolean a() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ro0
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ro0
+    public final void c(boolean z10) {
+        this.d.a(!z10);
+    }
+
+    @Override // org.telegram.ui.Components.ro0
+    public final CharSequence d() {
+        gd0 gd0Var = this.d;
+        Utilities.CallbackReturn callbackReturn = gd0Var.s0;
+        return callbackReturn != null ? (CharSequence) callbackReturn.run(Integer.valueOf(gd0Var.G)) : gd0Var.d(gd0Var.G);
+    }
 }

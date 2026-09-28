@@ -45,15 +45,15 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.g3;
 import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Components.au;
-import org.telegram.ui.Components.cu;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.ic0;
-import org.telegram.ui.Components.nl0;
-import org.telegram.ui.Components.p71;
-import org.telegram.ui.Components.ro0;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.uf0;
+import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.du;
+import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.to0;
+import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.wf0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.i5;
@@ -66,9 +66,9 @@ import org.telegram.ui.qy;
 import v7.e8;
 import w7.pa;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2.n, SuccessContinuation {
+public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2.n, SuccessContinuation {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -211,21 +211,21 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
 
     @Override // ci.pc
     public void F(float f7, boolean z10) {
-        ic0 ic0Var = (ic0) this.b;
-        uf0 uf0Var = (uf0) this.c;
-        s71 s71Var = uf0Var.d;
-        if (s71Var == null) {
+        kc0 kc0Var = (kc0) this.b;
+        wf0 wf0Var = (wf0) this.c;
+        u71 u71Var = wf0Var.d;
+        if (u71Var == null) {
             return;
         }
         float max = 2.8f / Math.max(60L, r2);
-        long p5 = (long) ((((f7 / (1.0f - max)) * max) + f7) * s71Var.p());
-        uf0Var.e = p5;
-        uf0Var.d.L(p5, !z10);
+        long p5 = (long) ((((f7 / (1.0f - max)) * max) + f7) * u71Var.p());
+        wf0Var.e = p5;
+        wf0Var.d.L(p5, !z10);
         if (z10) {
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(ic0Var);
-        AndroidUtilities.runOnUIThread(ic0Var, 120L);
+        AndroidUtilities.cancelRunOnUIThread(kc0Var);
+        AndroidUtilities.runOnUIThread(kc0Var, 120L);
     }
 
     @Override // org.telegram.ui.ActionBar.d6
@@ -297,7 +297,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         }
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void X(float f7, boolean z10) {
         ((TextView) this.b).setText("Alpha " + i5.e);
         i5.e = f7;
@@ -309,7 +309,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         return h6.I.q();
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public boolean c(float f7, float f10, int i10, View view) {
         qy qyVar = (qy) this.c;
         if (view instanceof s2) {
@@ -331,7 +331,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         return new ch.f(this);
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public void g() {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
@@ -349,7 +349,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         return ((SparseIntArray) this.b).get(i10);
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -370,10 +370,10 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         i1Var.a |= 8;
     }
 
-    @Override // org.telegram.ui.Components.au
+    @Override // org.telegram.ui.Components.bu
     public void j() {
         g3 g3Var = (g3) this.c;
-        ((cu) this.b).getText();
+        ((du) this.b).getText();
         g3Var.b();
     }
 
@@ -382,7 +382,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         h6.q(f7, f10, i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ int m0() {
         return 0;
     }
@@ -405,8 +405,8 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         }
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public void onError(s71 s71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.r71
+    public void onError(u71 u71Var, Exception exc) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         int i10 = secretMediaViewer.b0;
         if (i10 <= 0) {
@@ -417,11 +417,11 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         AndroidUtilities.runOnUIThread(new jx0(27, this, (File) this.b), 100L);
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onStateChanged(boolean z10, int i10) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         n41 n41Var = secretMediaViewer.i1;
@@ -465,12 +465,12 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         }
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         l4 l4Var = ((SecretMediaViewer) this.c).w;
         if (l4Var != null) {
@@ -518,7 +518,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         return false;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public void q(float f7) {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
@@ -727,7 +727,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onRenderedFirstFrame() {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         if (secretMediaViewer.c0) {
@@ -764,9 +764,9 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
 
     public z0(View view) {
         this.a = 5;
-        e71 e71Var = new e71(this, view);
-        this.b = e71Var;
-        view.addOnLayoutChangeListener(e71Var);
+        g71 g71Var = new g71(this, view);
+        this.b = g71Var;
+        view.addOnLayoutChangeListener(g71Var);
     }
 
     public z0(androidx.lifecycle.t tVar, androidx.lifecycle.t0 t0Var) {
@@ -775,10 +775,10 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         this.c = (w1.b) new aa.a(t0Var, w1.b.f).k(w1.b.class);
     }
 
-    public z0(uf0 uf0Var) {
+    public z0(wf0 wf0Var) {
         this.a = 4;
-        this.c = uf0Var;
-        this.b = new ic0(this, 10);
+        this.c = wf0Var;
+        this.b = new kc0(this, 10);
     }
 
     public z0(k9.h hVar) {
@@ -786,7 +786,7 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
         this.c = hVar;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void B() {
     }
 
@@ -855,15 +855,15 @@ public final class z0 implements d6, ro0, au, pc, nl0, fh.a, p71, p2.s, r2.k, y2
     public /* synthetic */ void l0(long j3) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 

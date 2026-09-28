@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g2 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -20,13 +20,13 @@ public final /* synthetic */ class g2 implements DialogInterface.OnDismissListen
         switch (i10) {
             case 0:
                 if (zArr[0]) {
-                    int i11 = vn.m1;
+                    int i11 = wn.m1;
                     break;
                 }
                 break;
             default:
                 if (zArr[0]) {
-                    int i12 = cu.b;
+                    int i12 = du.b;
                     break;
                 }
                 break;

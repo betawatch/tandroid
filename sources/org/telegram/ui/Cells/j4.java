@@ -13,9 +13,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class j4 implements DownloadController.FileDownloadProgressListener {
     public TLRPC.MessageExtendedMedia E;
@@ -25,7 +25,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
     public final int I;
     public final int J;
     public int K;
-    public t01 L;
+    public v01 L;
     public boolean M;
     public int a;
     public int b;
@@ -63,7 +63,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
         if (this.x) {
             int i12 = this.J;
             this.K = i12;
-            this.L = new t01(AndroidUtilities.formatLongDuration(i12), 12.0f, null);
+            this.L = new v01(AndroidUtilities.formatLongDuration(i12), 12.0f, null);
         }
         ImageReceiver imageReceiver = new ImageReceiver(u1Var);
         this.f = imageReceiver;

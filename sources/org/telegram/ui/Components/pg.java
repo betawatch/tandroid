@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a;
@@ -170,36 +170,36 @@ public final /* synthetic */ class pg implements Runnable {
                 ((mi) obj).B0.A1.l();
                 break;
             case 22:
-                pk pkVar = (pk) ((androidx.mediarouter.app.g) obj).b;
+                qk qkVar = (qk) ((androidx.mediarouter.app.g) obj).b;
                 try {
-                    File file = pkVar.O;
+                    File file = qkVar.O;
                     if (file == null) {
-                        pkVar.O();
+                        qkVar.O();
                     } else {
-                        pkVar.N(file);
+                        qkVar.N(file);
                     }
-                    pkVar.V();
+                    qkVar.V();
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);
                     return;
                 }
             case 23:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((yl) obj).b;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((zl) obj).b;
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
                 chatAttachAlertPhotoLayout2.p0(-1, true);
                 break;
             case 24:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((vl) obj).c;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((wl) obj).c;
                 if (chatAttachAlertPhotoLayout3.P != null && !chatAttachAlertPhotoLayout3.b.isDismissed()) {
                     chatAttachAlertPhotoLayout3.P.setSystemUiVisibility(1028);
                     break;
                 }
                 break;
             case 25:
-                rm rmVar = (rm) obj;
-                wi wiVar = rmVar.b;
-                if (rmVar.Q && (chatAttachAlertPhotoLayout = wiVar.j0) != null) {
+                sm smVar = (sm) obj;
+                wi wiVar = smVar.b;
+                if (smVar.Q && (chatAttachAlertPhotoLayout = wiVar.j0) != null) {
                     org.telegram.ui.ActionBar.e1 e1Var = chatAttachAlertPhotoLayout.c1;
                     e1Var.setIcon(R.drawable.ic_ab_back);
                     e1Var.setText(LocaleController.getString(R.string.Back));
@@ -208,18 +208,18 @@ public final /* synthetic */ class pg implements Runnable {
                 }
                 break;
             case 26:
-                vn vnVar = (vn) obj;
-                vnVar.k1 = -1;
-                vnVar.j1 = null;
+                wn wnVar = (wn) obj;
+                wnVar.k1 = -1;
+                wnVar.j1 = null;
                 break;
             case 27:
-                ((po) obj).n();
+                ((qo) obj).n();
                 break;
             case 28:
-                ((ro) obj).setVisibility(8);
+                ((so) obj).setVisibility(8);
                 break;
             default:
-                ((qp) obj).b.a();
+                ((rp) obj).b.a();
                 break;
         }
     }

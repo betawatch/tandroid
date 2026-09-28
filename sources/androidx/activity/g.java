@@ -18,11 +18,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.vv0;
-import org.telegram.ui.Components.wv0;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.xv0;
+import org.telegram.ui.Components.yv0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -157,18 +157,18 @@ public final class g implements Runnable {
                 return;
             case 7:
                 long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((wv0) this.d).c, this.b);
-                ((wv0) this.d).getClass();
-                aw0 aw0Var = (aw0) this.c;
-                aw0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + aw0Var.j0);
-                int i16 = aw0Var.i0 + 1;
-                aw0Var.i0 = i16;
+                Utilities.stackBlurBitmap(((yv0) this.d).c, this.b);
+                ((yv0) this.d).getClass();
+                cw0 cw0Var = (cw0) this.c;
+                cw0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + cw0Var.j0);
+                int i16 = cw0Var.i0 + 1;
+                cw0Var.i0 = i16;
                 if (i16 > 1000) {
-                    FileLog.d("chat blur generating average time" + (aw0Var.j0 / aw0Var.i0));
-                    aw0Var.i0 = 0;
-                    aw0Var.j0 = 0;
+                    FileLog.d("chat blur generating average time" + (cw0Var.j0 / cw0Var.i0));
+                    cw0Var.i0 = 0;
+                    cw0Var.j0 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new vv0(this, i10));
+                AndroidUtilities.runOnUIThread(new xv0(this, i10));
                 return;
             default:
                 visionClearcutLogger = ((DynamiteClearcutLogger) this.c).zzc;
@@ -184,8 +184,8 @@ public final class g implements Runnable {
         this.b = i10;
     }
 
-    public g(aw0 aw0Var) {
+    public g(cw0 cw0Var) {
         this.a = 7;
-        this.c = aw0Var;
+        this.c = cw0Var;
     }
 }

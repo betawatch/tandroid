@@ -15,11 +15,11 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xa;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.wn;
@@ -27,29 +27,29 @@ import s4.j;
 import w7.y5;
 import yh.s5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class h extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final zf.a X;
     public final d1 Y;
     public final FrameLayout Z;
     public Runnable a0;
-    public j61 b0;
+    public l61 b0;
 
     public h(Context context, d6 d6Var, zf.a aVar, boolean z10, Runnable runnable) {
         super(context, null, false, false, d6Var);
         this.v = 0.2f;
         this.a0 = runnable;
         fixNavigationBar();
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         final int i11 = 0;
-        wl0Var.setPadding(i10, 0, i10, 0);
+        yl0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new ai.g(this, 7));
         j jVar = new j();
         jVar.m = false;
         jVar.C = false;
-        jVar.o(rr.h);
+        jVar.o(sr.h);
         jVar.n(350L);
         this.d.setItemAnimator(jVar);
         setBackgroundColor(h6.v0(h6.h5, d6Var));
@@ -109,9 +109,9 @@ public final class h extends bb implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        j61 j61Var = this.b0;
-        if (j61Var != null) {
-            j61Var.N(false);
+        l61 l61Var = this.b0;
+        if (l61Var != null) {
+            l61Var.N(false);
         }
     }
 
@@ -119,9 +119,9 @@ public final class h extends bb implements NotificationCenter.NotificationCenter
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            j61 j61Var = this.b0;
-            if (j61Var != null) {
-                j61Var.N(true);
+            l61 l61Var = this.b0;
+            if (l61Var != null) {
+                l61Var.N(true);
             }
             zf.a s10 = s5.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
@@ -182,10 +182,10 @@ public final class h extends bb implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        j61 j61Var = new j61(this.d, getContext(), this.currentAccount, 0, true, new v(this, 11), this.resourcesProvider);
-        this.b0 = j61Var;
-        return j61Var;
+    public final xl0 v(yl0 yl0Var) {
+        l61 l61Var = new l61(this.d, getContext(), this.currentAccount, 0, true, new v(this, 11), this.resourcesProvider);
+        this.b0 = l61Var;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

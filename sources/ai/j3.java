@@ -23,20 +23,19 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.nf;
-import org.telegram.ui.Components.og0;
-import org.telegram.ui.Components.ou;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.pu;
+import org.telegram.ui.Components.qg0;
 import org.telegram.ui.Components.td;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.wu;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xu;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.au0;
 import org.telegram.ui.mu0;
 import org.telegram.ui.pg0;
-import org.telegram.ui.qg0;
 import org.telegram.ui.rb0;
 import org.telegram.ui.tq0;
 import org.telegram.ui.ub1;
@@ -46,7 +45,7 @@ import org.telegram.ui.xq0;
 import org.telegram.ui.yq0;
 import org.telegram.ui.zs0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -173,25 +172,25 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                     break;
                 }
             case 6:
-                og0 og0Var = (og0) this.c;
+                qg0 qg0Var = (qg0) this.c;
                 boolean z18 = this.b;
-                og0Var.getClass();
+                qg0Var.getClass();
                 List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) view.getContext().getSystemService("activity")).getRunningAppProcesses();
                 boolean z19 = runningAppProcesses == null || runningAppProcesses.isEmpty() || runningAppProcesses.get(0).importance == 100;
                 if (!z18 && (!z19 || !LaunchActivity.E1)) {
-                    LaunchActivity.F1 = new ou(0, view);
+                    LaunchActivity.F1 = new pu(0, view);
                     Context context = ApplicationLoader.applicationContext;
                     Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
                     intent.addFlags(TLObject.FLAG_28);
                     context.startActivity(intent);
                     break;
                 } else {
-                    wu wuVar = og0Var.U;
-                    if (wuVar != null) {
-                        wuVar.I();
+                    xu xuVar = qg0Var.U;
+                    if (xuVar != null) {
+                        xuVar.I();
                         break;
                     } else {
-                        PhotoViewer photoViewer = og0Var.V;
+                        PhotoViewer photoViewer = qg0Var.V;
                         if (photoViewer != null && photoViewer.J3) {
                             if (PhotoViewer.a9 != null) {
                                 PhotoViewer.a9.G0(false, true);
@@ -211,7 +210,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                                     viewGroup.removeView(au0Var.f);
                                 }
                                 au0Var.addView(au0Var.f, 0, w7.y5.e(-1, -1, 51));
-                                og0.j(false);
+                                qg0.j(false);
                             }
                             PhotoViewer.a9 = PhotoViewer.b9;
                             PhotoViewer.b9 = null;
@@ -242,7 +241,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                                 photoViewer.m6 = 0.0f;
                             } else if (view2 != null) {
                                 photoViewer.B3 = true;
-                                sk0 o9 = og0.o(photoViewer.y2.getAspectRatio(), false);
+                                uk0 o9 = qg0.o(photoViewer.y2.getAspectRatio(), false);
                                 float f7 = o9.c / photoViewer.x3.getLayoutParams().width;
                                 photoViewer.x3.setScaleX(f7);
                                 photoViewer.x3.setScaleY(f7);
@@ -271,7 +270,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                                     photoViewer.E2.setClipToOutline(true);
                                 }
                             } else {
-                                og0.j(true);
+                                qg0.j(true);
                             }
                             try {
                                 photoViewer.e = true;
@@ -340,13 +339,13 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
             default:
                 pg0 pg0Var = (pg0) this.c;
                 boolean z21 = this.b;
-                qg0 qg0Var = pg0Var.V;
-                if (qg0Var.getParentActivity() != null) {
-                    boolean z22 = !qg0Var.E;
-                    qg0Var.E = z22;
+                org.telegram.ui.qg0 qg0Var2 = pg0Var.V;
+                if (qg0Var2.getParentActivity() != null) {
+                    boolean z22 = !qg0Var2.E;
+                    qg0Var2.E = z22;
                     ((org.telegram.ui.Cells.a2) view).c(z22, true);
-                    if ((z21 && qg0Var.getConnectionsManager().isTestBackend()) != qg0Var.E) {
-                        qg0Var.getConnectionsManager().switchBackend(false);
+                    if ((z21 && qg0Var2.getConnectionsManager().isTestBackend()) != qg0Var2.E) {
+                        qg0Var2.getConnectionsManager().switchBackend(false);
                     }
                     pg0Var.s();
                     break;

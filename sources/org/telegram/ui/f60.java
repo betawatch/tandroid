@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f60 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
     */
     public final void onClick(View view) {
         int b10;
-        org.telegram.ui.Components.xy0 xy0Var;
+        org.telegram.ui.Components.zy0 zy0Var;
         final int i10 = 4;
         int i11 = 19;
         final int i12 = 3;
@@ -69,9 +69,9 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
         final int i14 = 0;
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.op opVar = (org.telegram.ui.Components.op) this.b;
-                opVar.a(!opVar.a.q, true);
-                MessagesController.getGlobalMainSettings().edit().putBoolean("callmiconstart", opVar.a.q).apply();
+                org.telegram.ui.Components.pp ppVar = (org.telegram.ui.Components.pp) this.b;
+                ppVar.a(!ppVar.a.q, true);
+                MessagesController.getGlobalMainSettings().edit().putBoolean("callmiconstart", ppVar.a.q).apply();
                 break;
             case 1:
                 ((k60) this.b).b.T0(19);
@@ -184,7 +184,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                 if (ph0Var.n != null) {
                     View view2 = sh0Var.fragmentView;
                     if (view2 instanceof ViewGroup) {
-                        org.telegram.ui.Components.y70 F = org.telegram.ui.Components.y70.F((ViewGroup) view2, null, ph0Var);
+                        org.telegram.ui.Components.a80 F = org.telegram.ui.Components.a80.F((ViewGroup) view2, null, ph0Var);
                         if (ph0Var.n.revoked) {
                             F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.mh0
                                 @Override // java.lang.Runnable
@@ -834,9 +834,9 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                     textView.clearFocus();
                                     rv0Var.i0();
                                     rv0Var.r0();
-                                    xy0Var = rv0Var.Q;
-                                    if (xy0Var != null) {
-                                        xy0Var.f();
+                                    zy0Var = rv0Var.Q;
+                                    if (zy0Var != null) {
+                                        zy0Var.f();
                                         rv0Var.Q.setDelegate(null);
                                     }
                                     rv0Var.b.m(rv0Var.p0);
@@ -852,8 +852,8 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                             textView.clearFocus();
                             rv0Var.i0();
                             rv0Var.r0();
-                            xy0Var = rv0Var.Q;
-                            if (xy0Var != null) {
+                            zy0Var = rv0Var.Q;
+                            if (zy0Var != null) {
                             }
                             rv0Var.b.m(rv0Var.p0);
                         }
@@ -931,10 +931,10 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                     ofFloat.addUpdateListener(new q11(v21Var, i12));
                     v21Var.N.addListener(new xo0(v21Var, 17));
                     v21Var.N.setDuration(400L);
-                    v21Var.N.setInterpolator(org.telegram.ui.Components.lt.e);
+                    v21Var.N.setInterpolator(org.telegram.ui.Components.mt.e);
                     v21Var.N.start();
                     frameLayout2.addView(v21Var.O, new ViewGroup.LayoutParams(-1, -1));
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yr0(11, v21Var, z11));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.as0(11, v21Var, z11));
                     break;
                 }
                 break;

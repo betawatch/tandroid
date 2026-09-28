@@ -9,20 +9,20 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class j91 implements TextWatcher {
     public boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ org.telegram.ui.Components.jd0 d;
+    public final /* synthetic */ org.telegram.ui.Components.ld0 d;
     public final /* synthetic */ int[] e;
     public final /* synthetic */ TextView f;
 
-    public j91(int i10, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.Components.jd0 jd0Var, int[] iArr, TextView textView) {
+    public j91(int i10, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.Components.ld0 ld0Var, int[] iArr, TextView textView) {
         this.b = i10;
         this.c = editTextBoldCursor;
-        this.d = jd0Var;
+        this.d = ld0Var;
         this.e = iArr;
         this.f = textView;
     }
@@ -35,7 +35,7 @@ public final class j91 implements TextWatcher {
     */
     public final void afterTextChanged(Editable editable) {
         double d;
-        org.telegram.ui.Components.jd0 jd0Var = this.d;
+        org.telegram.ui.Components.ld0 ld0Var = this.d;
         int i10 = this.b;
         EditTextBoldCursor editTextBoldCursor = this.c;
         if (this.a) {
@@ -53,7 +53,7 @@ public final class j91 implements TextWatcher {
                     editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                     int i11 = -iArr[0];
                     iArr[0] = i11;
-                    AndroidUtilities.shakeViewSpring(jd0Var, i11);
+                    AndroidUtilities.shakeViewSpring(ld0Var, i11);
                 } else if (d > 0.0d && d < MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d) {
                     this.a = true;
                     d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d;
@@ -61,14 +61,14 @@ public final class j91 implements TextWatcher {
                     editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                     int i12 = -iArr[0];
                     iArr[0] = i12;
-                    AndroidUtilities.shakeViewSpring(jd0Var, i12);
+                    AndroidUtilities.shakeViewSpring(ld0Var, i12);
                 }
             } catch (Exception unused) {
                 this.a = true;
                 editTextBoldCursor.setText(d <= 0.0d ? "" : Double.toString(d));
                 editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                 this.a = false;
-                jd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
                 TextView textView = this.f;
                 if (d != 0.0d) {
                 }
@@ -77,7 +77,7 @@ public final class j91 implements TextWatcher {
             d = 0.0d;
         }
         this.a = false;
-        jd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
         TextView textView2 = this.f;
         if (d != 0.0d) {
             textView2.animate().alpha(0.0f).start();

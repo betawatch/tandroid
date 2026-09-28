@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class y70 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public Drawable E;
@@ -49,7 +49,7 @@ public final class y70 extends org.telegram.ui.ActionBar.m2 implements Notificat
     public bi.o n;
     public FrameLayout r;
     public ci.m6 s;
-    public org.telegram.ui.Components.ij0 v;
+    public org.telegram.ui.Components.kj0 v;
     public int w;
     public boolean x;
     public boolean y;
@@ -146,22 +146,22 @@ public final class y70 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.actionBar.setAddToContainer(false);
         ScrollView scrollView = new ScrollView(context);
         scrollView.setFillViewport(true);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.addView(lj0Var, w7.y5.e(28, 28, 17));
+        frameLayout.addView(nj0Var, w7.y5.e(28, 28, 17));
         ci.m6 m6Var = new ci.m6(this, context, frameLayout, 17);
         this.s = m6Var;
         scrollView.addView(m6Var, w7.y5.x(-1, -2, 51));
-        org.telegram.ui.Components.ij0 ij0Var = new org.telegram.ui.Components.ij0(R.raw.sun, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.v = ij0Var;
-        ij0Var.h = true;
-        ij0Var.Z = true;
-        ij0Var.o();
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.sun, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.v = kj0Var;
+        kj0Var.h = true;
+        kj0Var.Z = true;
+        kj0Var.o();
         this.v.P(org.telegram.ui.ActionBar.h6.A0().q() ? this.v.e[0] - 1 : 0);
         this.v.N(org.telegram.ui.ActionBar.h6.A0().q() ? this.v.e[0] - 1 : 0, false, false);
-        lj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.h6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
-        lj0Var.setAnimation(this.v);
-        frameLayout.setOnClickListener(new ov(11, this, lj0Var));
+        nj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.h6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
+        nj0Var.setAnimation(this.v);
+        frameLayout.setOnClickListener(new ov(11, this, nj0Var));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.r = frameLayout2;
         this.s.addView(frameLayout2, w7.y5.d(-1, -2.0f, 51, 0.0f, 78.0f, 0.0f, 0.0f));

@@ -36,7 +36,7 @@ import rg.q1;
 import tg.b0;
 import tg.i;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ny0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -126,9 +126,9 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                     if (sb2.length() != 0) {
                         StringBuilder v = a4.a.v(str);
                         v.append(sb2.toString());
-                        org.telegram.ui.Components.ui0 ui0Var = new org.telegram.ui.Components.ui0(context, LocaleController.getString(R.string.ShareQrCode), v.toString(), LocaleController.getString(R.string.QRCodeLinkHelpProxy), true);
-                        ui0Var.h.setImageBitmap(SvgHelper.getBitmap(AndroidUtilities.readRes(R.raw.qr_dog), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false));
-                        f21Var.showDialog(ui0Var);
+                        org.telegram.ui.Components.wi0 wi0Var = new org.telegram.ui.Components.wi0(context, LocaleController.getString(R.string.ShareQrCode), v.toString(), LocaleController.getString(R.string.QRCodeLinkHelpProxy), true);
+                        wi0Var.h.setImageBitmap(SvgHelper.getBitmap(AndroidUtilities.readRes(R.raw.qr_dog), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false));
+                        f21Var.showDialog(wi0Var);
                         break;
                     }
                 } catch (Exception unused) {
@@ -156,10 +156,10 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                         int w06 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qh, false);
                         org.telegram.ui.ActionBar.z2 z2Var2 = new org.telegram.ui.ActionBar.z2(context2, null);
                         z2Var2.a();
-                        org.telegram.ui.Components.ed0 ed0Var = new org.telegram.ui.Components.ed0(context2, null);
-                        ed0Var.setTextColor(w02);
-                        ed0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-                        ed0Var.setItemCount(5);
+                        org.telegram.ui.Components.gd0 gd0Var = new org.telegram.ui.Components.gd0(context2, null);
+                        gd0Var.setTextColor(w02);
+                        gd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+                        gd0Var.setItemCount(5);
                         org.telegram.ui.Components.g4 g4Var = new org.telegram.ui.Components.g4(context2, null);
                         g4Var.setItemCount(5);
                         g4Var.setTextColor(w02);
@@ -168,7 +168,7 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                         h4Var.setItemCount(5);
                         h4Var.setTextColor(w02);
                         h4Var.setTextOffset(-AndroidUtilities.dp(34.0f));
-                        org.telegram.ui.Components.w3 w3Var = new org.telegram.ui.Components.w3(context2, ed0Var, g4Var, h4Var, 3);
+                        org.telegram.ui.Components.w3 w3Var = new org.telegram.ui.Components.w3(context2, gd0Var, g4Var, h4Var, 3);
                         org.telegram.ui.Components.h4 h4Var2 = h4Var;
                         w3Var.setOrientation(1);
                         FrameLayout frameLayout = new FrameLayout(context2);
@@ -186,13 +186,13 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                         w3Var.addView(linearLayout, w7.y5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
                         Calendar calendar = Calendar.getInstance();
                         ai.p4 p4Var = new ai.p4(context2, 17);
-                        linearLayout.addView(ed0Var, w7.y5.l(0.5f, 0, 270));
-                        ed0Var.setMinValue(0);
-                        ed0Var.setMaxValue(365);
-                        ed0Var.setWrapSelectorWheel(false);
-                        ed0Var.setFormatter(new u6(24));
-                        ai.q5 q5Var = new ai.q5(ed0Var, g4Var, h4Var2, 17);
-                        ed0Var.setOnValueChangedListener(q5Var);
+                        linearLayout.addView(gd0Var, w7.y5.l(0.5f, 0, 270));
+                        gd0Var.setMinValue(0);
+                        gd0Var.setMaxValue(365);
+                        gd0Var.setWrapSelectorWheel(false);
+                        gd0Var.setFormatter(new u6(24));
+                        ai.q5 q5Var = new ai.q5(gd0Var, g4Var, h4Var2, 17);
+                        gd0Var.setOnValueChangedListener(q5Var);
                         g4Var.setMinValue(0);
                         g4Var.setMaxValue(23);
                         linearLayout.addView(g4Var, w7.y5.l(0.2f, 0, 270));
@@ -220,13 +220,13 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                                 h4Var2 = h4Var2;
                                 h4Var2.setValue(calendar.get(12));
                                 g4Var.setValue(calendar.get(11));
-                                ed0Var.setValue(timeInMillis);
+                                gd0Var.setValue(timeInMillis);
                             } else {
                                 h4Var2 = h4Var2;
                             }
                         }
                         org.telegram.ui.Components.h4 h4Var3 = h4Var2;
-                        org.telegram.ui.Components.e5.g(null, null, 0L, 0L, 0, ed0Var, g4Var, h4Var3);
+                        org.telegram.ui.Components.e5.g(null, null, 0L, 0L, 0, gd0Var, g4Var, h4Var3);
                         p4Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                         p4Var.setGravity(17);
                         p4Var.setTextColor(w04);
@@ -237,7 +237,7 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                         p4Var.setText(LocaleController.getString(R.string.SetEmojiStatusUntilButton));
                         w3Var.addView(p4Var, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
                         org.telegram.ui.ActionBar.z2 z2Var3 = z2Var2;
-                        p4Var.setOnClickListener(new org.telegram.ui.Components.m0(ed0Var, g4Var, h4Var3, calendar, ds0Var, z2Var2, 1));
+                        p4Var.setOnClickListener(new org.telegram.ui.Components.m0(gd0Var, g4Var, h4Var3, calendar, ds0Var, z2Var2, 1));
                         z2Var3.b(w3Var);
                         org.telegram.ui.ActionBar.e3 e3Var = z2Var3.a;
                         e3Var.show();
@@ -292,8 +292,8 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                 kg.f fVar = (kg.f) this.c;
                 int i21 = ba1Var.c;
                 ca1 ca1Var = ba1Var.d;
-                org.telegram.ui.Components.t00 t00Var = ba1Var.a;
-                if (t00Var.c) {
+                org.telegram.ui.Components.u00 u00Var = ba1Var.a;
+                if (u00Var.c) {
                     ArrayList arrayList = ca1Var.n;
                     ig.g gVar = ca1Var.c;
                     int size = arrayList.size();
@@ -307,14 +307,14 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                     }
                     ca1Var.f();
                     if (i18 != 0) {
-                        AndroidUtilities.shakeView(t00Var);
+                        AndroidUtilities.shakeView(u00Var);
                         break;
                     } else {
-                        t00Var.setChecked(true ^ t00Var.b);
-                        fVar.n = t00Var.b;
+                        u00Var.setChecked(true ^ u00Var.b);
+                        fVar.n = u00Var.b;
                         ca1Var.b.z();
                         if (ca1Var.r.c > 0 && i21 < gVar.d.size()) {
-                            ((kg.f) gVar.d.get(i21)).n = t00Var.b;
+                            ((kg.f) gVar.d.get(i21)).n = u00Var.b;
                             gVar.z();
                             break;
                         }
@@ -435,7 +435,7 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                     Objects.requireNonNull(uVar);
                     nVar.setColorListener(new ci.d5(uVar, i12));
                     ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-                    duration.setInterpolator(org.telegram.ui.Components.rr.f);
+                    duration.setInterpolator(org.telegram.ui.Components.sr.f);
                     duration.addUpdateListener(new org.telegram.ui.Components.voip.r0(nVar, i16));
                     duration.start();
                     xVar.n.a();
@@ -453,7 +453,7 @@ public final /* synthetic */ class ny0 implements View.OnClickListener {
                 }
                 break;
             case 15:
-                org.telegram.ui.Components.vn.d0((wn) this.c, 41026, new ii.q1((qh.c) this.b, i13), null);
+                org.telegram.ui.Components.wn.d0((wn) this.c, 41026, new ii.q1((qh.c) this.b, i13), null);
                 break;
             case 16:
                 rg.j0.V((rg.j0) this.b, (Context) this.c);

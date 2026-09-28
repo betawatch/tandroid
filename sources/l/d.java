@@ -36,22 +36,22 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.e9;
 import org.telegram.ui.Cells.k0;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.m9;
-import org.telegram.ui.Components.n81;
-import org.telegram.ui.Components.ro0;
-import org.telegram.ui.Components.u81;
-import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.p81;
+import org.telegram.ui.Components.to0;
 import org.telegram.ui.Components.w81;
+import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.y81;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.tb1;
 import qg.n2;
 import qg.w1;
 import w7.y8;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, com.google.android.gms.common.api.internal.s, w1, r4.c, com.google.android.gms.common.api.internal.o, n5.b, OnCompleteListener {
+public final class d implements e2, y2.g, le.e, j, l2.h, to0, le.g, ah.j, w81, com.google.android.gms.common.api.internal.s, w1, r4.c, com.google.android.gms.common.api.internal.o, n5.b, OnCompleteListener {
     public Object a;
 
     public /* synthetic */ d(Object obj) {
@@ -88,11 +88,11 @@ public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
     }
 
     public boolean G(int i10) {
-        n81 n81Var = ((w81) this.a).L;
-        if (n81Var == null) {
+        p81 p81Var = ((y81) this.a).L;
+        if (p81Var == null) {
             return false;
         }
-        return n81Var.c(i10);
+        return p81Var.c(i10);
     }
 
     public void H(Runnable runnable) {
@@ -129,43 +129,43 @@ public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
     }
 
     public void L(float f7) {
-        w81 w81Var = (w81) this.a;
+        y81 y81Var = (y81) this.a;
         if (f7 == 1.0f) {
-            View[] viewArr = w81Var.e;
-            View[] viewArr2 = w81Var.e;
+            View[] viewArr = y81Var.e;
+            View[] viewArr2 = y81Var.e;
             if (viewArr[1] != null) {
-                w81Var.F();
-                w81Var.h.put(w81Var.f[1], viewArr2[1]);
-                w81Var.removeView(viewArr2[1]);
-                w81Var.E(viewArr2[0], 0.0f);
+                y81Var.F();
+                y81Var.h.put(y81Var.f[1], viewArr2[1]);
+                y81Var.removeView(viewArr2[1]);
+                y81Var.E(viewArr2[0], 0.0f);
                 viewArr2[1] = null;
             }
-            w81Var.z(w81Var.b);
+            y81Var.z(y81Var.b);
             return;
         }
-        View[] viewArr3 = w81Var.e;
-        View[] viewArr4 = w81Var.e;
+        View[] viewArr3 = y81Var.e;
+        View[] viewArr4 = y81Var.e;
         View view = viewArr3[1];
         if (view == null) {
             return;
         }
-        if (w81Var.y) {
-            w81Var.E(view, (1.0f - f7) * viewArr3[0].getMeasuredWidth());
-            w81Var.E(viewArr4[0], (-r2.getMeasuredWidth()) * f7);
+        if (y81Var.y) {
+            y81Var.E(view, (1.0f - f7) * viewArr3[0].getMeasuredWidth());
+            y81Var.E(viewArr4[0], (-r2.getMeasuredWidth()) * f7);
         } else {
-            w81Var.E(view, (1.0f - f7) * (-viewArr3[0].getMeasuredWidth()));
-            w81Var.E(viewArr4[0], r2.getMeasuredWidth() * f7);
+            y81Var.E(view, (1.0f - f7) * (-viewArr3[0].getMeasuredWidth()));
+            y81Var.E(viewArr4[0], r2.getMeasuredWidth() * f7);
         }
-        w81Var.w(false);
+        y81Var.w(false);
     }
 
     @Override // ah.j
     public void U(ah.a aVar) {
-        aVar.a(((uq0) this.a).getThemedColor(h6.d6));
+        aVar.a(((wq0) this.a).getThemedColor(h6.d6));
         aVar.b(SharedConfig.chatBlurEnabled());
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void X(float f7, boolean z10) {
         tb1 tb1Var = (tb1) ((k0) this.a);
         int i10 = (int) (h6.q * 100.0f);
@@ -173,9 +173,9 @@ public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
         h6.q = f7;
         if (i10 != i11) {
             ThemeActivity themeActivity = tb1Var.e.e;
-            gl0 gl0Var = (gl0) themeActivity.b.K(themeActivity.f0);
-            if (gl0Var != null) {
-                ((e9) gl0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (h6.q * 100.0f))));
+            il0 il0Var = (il0) themeActivity.b.K(themeActivity.f0);
+            if (il0Var != null) {
+                ((e9) il0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (h6.q * 100.0f))));
             }
             h6.E(true);
         }
@@ -205,10 +205,10 @@ public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
 
     @Override // ah.j
     public void d(Canvas canvas) {
-        uq0 uq0Var = (uq0) this.a;
-        canvas.drawColor(uq0Var.getThemedColor(h6.d6));
+        wq0 wq0Var = (wq0) this.a;
+        canvas.drawColor(wq0Var.getThemedColor(h6.d6));
         if (SharedConfig.chatBlurEnabled()) {
-            uq0Var.O0.b(canvas, -3);
+            wq0Var.O0.b(canvas, -3);
         }
     }
 
@@ -227,7 +227,7 @@ public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
         return new s5.j((Context) ((fd.a) this.a).get(), "com.google.android.datatransport.events", Integer.valueOf(s5.j.d).intValue());
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public CharSequence getContentDescription() {
         return " ";
     }
@@ -293,7 +293,7 @@ public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
         return dVar;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ int m0() {
         return 0;
     }
@@ -570,7 +570,7 @@ public final class d implements e2, y2.g, le.e, j, l2.h, ro0, le.g, ah.j, u81, c
         return ((n2) this.a).F;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void B() {
     }
 

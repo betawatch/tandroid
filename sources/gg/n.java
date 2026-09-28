@@ -20,16 +20,16 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.lo;
-import org.telegram.ui.Components.po;
-import org.telegram.ui.Components.sb0;
-import org.telegram.ui.Components.zb0;
+import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.mo;
+import org.telegram.ui.Components.qo;
+import org.telegram.ui.Components.ub0;
 import org.telegram.ui.wn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -177,40 +177,40 @@ public final /* synthetic */ class n implements Runnable {
                 m2Var.presentFragment(new wn(bundle));
                 break;
             case 8:
-                po poVar = (po) this.d;
+                qo qoVar = (qo) this.d;
                 int i18 = this.b;
                 if (i18 != 0) {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                poVar.u(i18);
+                qoVar.u(i18);
                 break;
             case 9:
-                lo loVar = (lo) this.d;
+                mo moVar = (mo) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
                     SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", notificationsSettings2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                loVar.run(Integer.valueOf(i19));
+                moVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                zb0 zb0Var = ((sb0) this.d).X2;
-                View d = zb0Var.d();
-                sb0 sb0Var = zb0Var.f;
+                bc0 bc0Var = ((ub0) this.d).X2;
+                View d = bc0Var.d();
+                ub0 ub0Var = bc0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i20 = top2 - top;
-                    int paddingTop = sb0Var.getPaddingTop();
-                    int height = sb0Var.getHeight() - sb0Var.getPaddingBottom();
+                    int paddingTop = ub0Var.getPaddingTop();
+                    int height = ub0Var.getHeight() - ub0Var.getPaddingBottom();
                     if (i20 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i21 = top - paddingTop;
                     if (i21 < 0) {
-                        sb0Var.scrollBy(0, i21);
+                        ub0Var.scrollBy(0, i21);
                         break;
                     }
                 }

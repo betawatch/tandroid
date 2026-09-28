@@ -30,15 +30,15 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.xr0;
+import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zr0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class z extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
@@ -51,7 +51,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final v81 r;
+    public final x81 r;
     public Boolean s;
     public int v;
     public float w;
@@ -90,16 +90,16 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             u8Var = u8Var2;
         }
         this.e = u8Var;
-        xr0 xr0Var = (xr0) this;
-        a aVar = new a(xr0Var, context);
+        zr0 zr0Var = (zr0) this;
+        a aVar = new a(zr0Var, context);
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(xr0Var, context));
+        aVar.setAdapter(new b(zr0Var, context));
         addView(aVar, y5.e(-1, -1, 119));
-        v81 n10 = aVar.n(9, true);
+        x81 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new a1.c(xr0Var, 11));
+        n10.setPreTabClick(new a1.c(zr0Var, 11));
         addView(n10, y5.e(-1, 42, 48));
         i(false);
     }
@@ -317,7 +317,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         return u8Var;
     }
 
-    public wl0 getCurrentListView() {
+    public yl0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof u) {
             return ((u) currentView).f;
@@ -414,13 +414,13 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         a aVar = this.n;
         aVar.o(true);
         SpannableString spannableString = new SpannableString(f0.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
-        pq pqVar = new pq(R.drawable.msg_filled_plus, 0);
-        pqVar.setScale(0.9f, 0.9f);
-        pqVar.spaceScaleX = 0.85f;
-        spannableString.setSpan(pqVar, 0, 1, 33);
-        v81 v81Var = this.r;
-        v81Var.a(-1, spannableString);
-        v81Var.x.l();
+        qq qqVar = new qq(R.drawable.msg_filled_plus, 0);
+        qqVar.setScale(0.9f, 0.9f);
+        qqVar.spaceScaleX = 0.85f;
+        spannableString.setSpan(qqVar, 0, 1, 33);
+        x81 x81Var = this.r;
+        x81Var.a(-1, spannableString);
+        x81Var.x.l();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -431,7 +431,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.w = z11 ? 1.0f : 0.0f;
-                v81Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
+                x81Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
                 aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
                 return;
             }
@@ -440,7 +440,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             ofFloat.addUpdateListener(new ai.a(this, 14));
             this.x.addListener(new ai.n(4, this, z11));
             this.x.setDuration(320L);
-            this.x.setInterpolator(rr.h);
+            this.x.setInterpolator(sr.h);
             this.x.start();
         }
     }

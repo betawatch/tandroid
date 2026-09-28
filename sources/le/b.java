@@ -42,10 +42,10 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.s50;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.u50;
 import org.telegram.ui.Components.voip.n1;
-import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.yn0;
 import org.telegram.ui.ar0;
 import org.telegram.ui.st0;
 import org.telegram.ui.web.a0;
@@ -64,7 +64,7 @@ import r2.v;
 import r2.w;
 import w7.m6;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements e, z, z0, e2.h, x0, q9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, n1, z1, i0, v1, j8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, v, t5.b {
     public final /* synthetic */ int a;
@@ -155,7 +155,7 @@ public final /* synthetic */ class b implements e, z, z0, e2.h, x0, q9.d, Vector
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ij0 lottieAnimation;
+        kj0 lottieAnimation;
         o2 o2Var = (o2) this.b;
         if (!z10 || z11 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
@@ -234,7 +234,7 @@ public final /* synthetic */ class b implements e, z, z0, e2.h, x0, q9.d, Vector
         SQLiteDatabase a2 = hVar.a();
         a2.beginTransaction();
         try {
-            o5.a aVar = (o5.a) s5.h.h(a2.rawQuery("SELECT log_source, reason, events_dropped_count FROM log_event_dropped", new String[0]), new s50(hVar, hashMap, tVar, 9));
+            o5.a aVar = (o5.a) s5.h.h(a2.rawQuery("SELECT log_source, reason, events_dropped_count FROM log_event_dropped", new String[0]), new u50(hVar, hashMap, tVar, 9));
             a2.setTransactionSuccessful();
             return aVar;
         } finally {
@@ -312,7 +312,7 @@ public final /* synthetic */ class b implements e, z, z0, e2.h, x0, q9.d, Vector
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new wn0(26, uVar, bitmap));
+        AndroidUtilities.runOnUIThread(new yn0(26, uVar, bitmap));
     }
 
     public /* synthetic */ b(s0 s0Var, r0 r0Var) {

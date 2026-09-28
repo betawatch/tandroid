@@ -15,7 +15,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class d41 extends FrameLayout {
     public static long Q;
@@ -89,7 +89,7 @@ public abstract class d41 extends FrameLayout {
             ofFloat.addUpdateListener(new a41(this, 0));
             this.h.addListener(new c41(this, i10));
             this.h.setDuration(250L);
-            this.h.setInterpolator(org.telegram.ui.Components.rr.f);
+            this.h.setInterpolator(org.telegram.ui.Components.sr.f);
             this.h.start();
             return;
         }
@@ -284,7 +284,7 @@ public abstract class d41 extends FrameLayout {
                     ofFloat.addUpdateListener(new a41(this, 2));
                     this.h.addListener(new c41(this, i10));
                     this.h.setDuration(250L);
-                    this.h.setInterpolator(org.telegram.ui.Components.rr.f);
+                    this.h.setInterpolator(org.telegram.ui.Components.sr.f);
                     this.h.start();
                 }
             }

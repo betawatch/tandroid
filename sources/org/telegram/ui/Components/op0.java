@@ -1,53 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowInsets;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class op0 implements r0.n, org.telegram.ui.ActionBar.k1 {
+public final /* synthetic */ class op0 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uq0 b;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ View d;
 
-    public /* synthetic */ op0(uq0 uq0Var, int i10) {
+    public /* synthetic */ op0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, View view, int[] iArr, int i10) {
         this.a = i10;
-        this.b = uq0Var;
+        this.c = notificationCenterDelegate;
+        this.d = view;
+        this.b = iArr;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        WindowInsets g10 = l1Var.g();
-        uq0 uq0Var = this.b;
-        uq0Var.processLegacyContainerInsets(g10);
-        i0.b f7 = l1Var.a.f(519);
-        if (!uq0Var.G0.equals(f7)) {
-            uq0Var.G0 = f7;
-            uq0Var.container.requestLayout();
-        }
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k1
-    public void p(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.m1 m1Var;
-        org.telegram.ui.ActionBar.m1 m1Var2;
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
         switch (this.a) {
-            case 1:
-                uq0 uq0Var = this.b;
-                uq0Var.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var = uq0Var.J0) != null && m1Var.isShowing()) {
-                    uq0Var.J0.d(true);
-                    break;
-                }
+            case 0:
+                ((wq0) this.c).Q0((org.telegram.ui.Cells.g7) this.d, this.b, f7 / 1000.0f);
                 break;
             default:
-                uq0 uq0Var2 = this.b;
-                uq0Var2.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var2 = uq0Var2.J0) != null && m1Var2.isShowing()) {
-                    uq0Var2.J0.d(true);
-                    break;
-                }
+                ((dq0) this.c).d.Q0(this.d, this.b, f7 / 1000.0f);
                 break;
         }
     }

@@ -11,15 +11,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.f21;
-import org.telegram.ui.Components.gs;
-import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.ms;
+import org.telegram.ui.Components.h21;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.ns;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ki0;
 import org.telegram.ui.p70;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class za implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -72,15 +72,15 @@ public final /* synthetic */ class za implements RequestDelegate {
                     break;
                 }
             case 4:
-                AndroidUtilities.runOnUIThread(new ei.l3((gs) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 22));
+                AndroidUtilities.runOnUIThread(new ei.l3((hs) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 22));
                 break;
             case 5:
-                jv0 jv0Var = (jv0) obj3;
+                lv0 lv0Var = (lv0) obj3;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
-                AndroidUtilities.runOnUIThread(new ms((org.telegram.ui.ActionBar.a2[]) obj2, 2));
+                AndroidUtilities.runOnUIThread(new ns((org.telegram.ui.ActionBar.a2[]) obj2, 2));
                 int i11 = this.b;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new c9(jv0Var, i11, tL_error, tL_messages_editMessage, 25));
+                    AndroidUtilities.runOnUIThread(new c9(lv0Var, i11, tL_error, tL_messages_editMessage, 25));
                     break;
                 } else {
                     MessagesController.getInstance(i11).processUpdates((TLRPC.Updates) tLObject, false);
@@ -98,7 +98,7 @@ public final /* synthetic */ class za implements RequestDelegate {
                 int i12 = this.b;
                 if (!z10) {
                     if (tL_error != null) {
-                        AndroidUtilities.runOnUIThread(new f21(i12, tL_error, m2Var2, tL_payments_assignPlayMarketTransaction, 10));
+                        AndroidUtilities.runOnUIThread(new h21(i12, tL_error, m2Var2, tL_payments_assignPlayMarketTransaction, 10));
                         break;
                     }
                 } else {

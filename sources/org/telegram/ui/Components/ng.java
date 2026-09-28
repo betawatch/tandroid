@@ -25,9 +25,9 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class ng extends cu {
+public abstract class ng extends du {
     public fd c;
     public final /* synthetic */ ChatActivityEnterView d;
 
@@ -179,7 +179,7 @@ public abstract class ng extends cu {
         }
     }
 
-    @Override // org.telegram.ui.Components.cu
+    @Override // org.telegram.ui.Components.du
     public final void onContextMenuClose() {
         og ogVar = this.d.Z2;
         if (ogVar != null) {
@@ -187,7 +187,7 @@ public abstract class ng extends cu {
         }
     }
 
-    @Override // org.telegram.ui.Components.cu
+    @Override // org.telegram.ui.Components.du
     public final void onContextMenuOpen() {
         og ogVar = this.d.Z2;
         if (ogVar != null) {
@@ -216,7 +216,7 @@ public abstract class ng extends cu {
         }
     }
 
-    @Override // org.telegram.ui.Components.cu, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.du, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public void onMeasure(int i10, int i11) {
         boolean z10 = getMeasuredWidth() == 0 && getMeasuredHeight() == 0;
         ChatActivityEnterView chatActivityEnterView = this.d;
@@ -239,7 +239,7 @@ public abstract class ng extends cu {
         }
     }
 
-    @Override // org.telegram.ui.Components.eu, android.widget.TextView
+    @Override // org.telegram.ui.Components.fu, android.widget.TextView
     public final void onSelectionChanged(int i10, int i11) {
         super.onSelectionChanged(i10, i11);
         og ogVar = this.d.Z2;
@@ -248,7 +248,7 @@ public abstract class ng extends cu {
         }
     }
 
-    @Override // org.telegram.ui.Components.cu, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.du, android.widget.EditText, android.widget.TextView
     public boolean onTextContextMenuItem(int i10) {
         if (i10 == 16908322) {
             ChatActivityEnterView chatActivityEnterView = this.d;
@@ -374,13 +374,13 @@ public abstract class ng extends cu {
         return super.requestRectangleOnScreen(rect);
     }
 
-    @Override // org.telegram.ui.Components.eu
+    @Override // org.telegram.ui.Components.fu
     public void setOffsetY(float f7) {
         super.setOffsetY(f7);
         ChatActivityEnterView chatActivityEnterView = this.d;
         if (chatActivityEnterView.m1.getForeground() != null) {
-            aw0 aw0Var = chatActivityEnterView.m1;
-            aw0Var.invalidateDrawable(aw0Var.getForeground());
+            cw0 cw0Var = chatActivityEnterView.m1;
+            cw0Var.invalidateDrawable(cw0Var.getForeground());
         }
     }
 }

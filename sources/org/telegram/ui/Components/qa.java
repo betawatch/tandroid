@@ -6,11 +6,11 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class qa {
     public final int a;
-    public final ij0 b;
+    public final kj0 b;
     public final org.telegram.ui.Cells.z c;
     public final TextPaint d;
     public final StaticLayout e;
@@ -22,28 +22,28 @@ public final class qa {
     public final int k;
     public boolean l;
     public int m;
-    public final /* synthetic */ ma0 n;
+    public final /* synthetic */ oa0 n;
 
-    public qa(ma0 ma0Var, int i10, int i11, int i12, int i13, String str) {
-        this.n = ma0Var;
+    public qa(oa0 oa0Var, int i10, int i11, int i12, int i13, String str) {
+        this.n = oa0Var;
         TextPaint textPaint = new TextPaint(1);
         this.d = textPaint;
         this.h = new RectF();
-        this.i = new e6(ma0Var, 0L, 200L, rr.h);
+        this.i = new e6(oa0Var, 0L, 200L, sr.h);
         this.m = -1;
         this.a = i10;
         this.j = i12;
         this.k = i13;
-        ij0 ij0Var = new ij0(i11, AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f));
-        this.b = ij0Var;
-        ij0Var.R(ma0Var);
-        ij0Var.J(true);
-        ij0Var.h = true;
-        ij0Var.K(0);
+        kj0 kj0Var = new kj0(i11, AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f));
+        this.b = kj0Var;
+        kj0Var.R(oa0Var);
+        kj0Var.J(true);
+        kj0Var.h = true;
+        kj0Var.K(0);
         textPaint.setTypeface(AndroidUtilities.bold());
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
         int i14 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.ui.ActionBar.d6 d6Var = ma0Var.a;
+        org.telegram.ui.ActionBar.d6 d6Var = oa0Var.a;
         textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(i14, d6Var));
         StaticLayout staticLayout = new StaticLayout(str, textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.e = staticLayout;

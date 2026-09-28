@@ -29,9 +29,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.voip.g2;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.b10;
 import org.telegram.ui.cp;
@@ -44,9 +44,9 @@ import org.telegram.ui.s00;
 import org.telegram.ui.tl0;
 import org.telegram.ui.xs;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements Continuation, z1, j0, ll0, xs, androidx.car.app.utils.a {
+public final /* synthetic */ class i implements Continuation, z1, j0, nl0, xs, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -75,12 +75,12 @@ public final /* synthetic */ class i implements Continuation, z1, j0, ll0, xs, a
         g2.m(user, this.b, userFull != null && userFull.video_calls_available, launchActivity, userFull, AccountInstance.getInstance(iArr[0]));
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         ChatAttachAlertPhotoLayout.K((ChatAttachAlertPhotoLayout) this.c, this.b, (d6) this.d, view, i10);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -90,7 +90,7 @@ public final /* synthetic */ class i implements Continuation, z1, j0, ll0, xs, a
         switch (this.a) {
             case 1:
                 hg.c0 c0Var = (hg.c0) this.c;
-                (!this.b ? c0Var.k : c0Var.j).remove(Long.valueOf(((v51) this.d).x));
+                (!this.b ? c0Var.k : c0Var.j).remove(Long.valueOf(((x51) this.d).x));
                 c0Var.e.run();
                 break;
             case 2:
@@ -215,7 +215,7 @@ public final /* synthetic */ class i implements Continuation, z1, j0, ll0, xs, a
         this.d = m2Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

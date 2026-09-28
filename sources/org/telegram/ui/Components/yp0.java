@@ -1,116 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class yp0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ uq0 b;
+public final class yp0 extends yl0 {
+    public final /* synthetic */ int X2;
+    public final /* synthetic */ wq0 Y2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yp0(uq0 uq0Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = uq0Var;
+    public /* synthetic */ yp0(wq0 wq0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, d6Var);
+        this.X2 = i10;
+        this.Y2 = wq0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean E0(float f7) {
+        switch (this.X2) {
             case 0:
-                uq0 uq0Var = this.b;
-                uq0Var.X0.setBounds(0, (int) uq0Var.u0, getMeasuredWidth(), getMeasuredHeight());
-                uq0Var.X0.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, uq0Var.u0, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                uq0 uq0Var = this.b;
-                yp0 yp0Var = uq0Var.c;
-                float f7 = uq0Var.v0;
-                if (f7 != 0.0f && f7 != yp0Var.getTop() + uq0Var.v0) {
-                    ValueAnimator valueAnimator = uq0Var.w0;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    float top = uq0Var.v0 - (yp0Var.getTop() + uq0Var.u0);
-                    uq0Var.u0 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    uq0Var.w0 = ofFloat;
-                    ofFloat.addUpdateListener(new s70(this, 17));
-                    uq0Var.w0.setInterpolator(rr.f);
-                    uq0Var.w0.setDuration(200L);
-                    uq0Var.w0.start();
-                    uq0Var.v0 = 0.0f;
+                wq0 wq0Var = this.Y2;
+                if (f7 >= AndroidUtilities.dp((!wq0Var.h0 || wq0Var.o0[1] == null) ? 58.0f : 111.0f) + wq0Var.G0.b) {
                 }
-                uq0Var.S[1].setTranslationY((-(yp0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + uq0Var.u0 + uq0Var.t0 + ((1.0f - getAlpha()) * (yp0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
                 break;
             default:
-                super.onDraw(canvas);
+                wq0 wq0Var2 = this.Y2;
+                if (f7 >= AndroidUtilities.dp((!wq0Var2.h0 || wq0Var2.o0[1] == null) ? 58.0f : 111.0f) + wq0Var2.G0.b) {
+                }
                 break;
         }
+        return true;
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.U.m(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.a) {
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.X2) {
             case 0:
-                super.setAlpha(f7);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    this.b.S[1].setTranslationY(0.0f);
+                wq0 wq0Var = this.Y2;
+                yl0 yl0Var = wq0Var.E;
+                if (yl0Var.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, AndroidUtilities.dp((!wq0Var.h0 || wq0Var.o0[1] == null) ? 58.0f : 111.0f) + wq0Var.p0, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (yl0Var.getVisibility() != 8) {
+                    canvas.restore();
                     break;
                 }
                 break;
             default:
-                super.setVisibility(i10);
+                wq0 wq0Var2 = this.Y2;
+                yl0 yl0Var2 = wq0Var2.E;
+                if (yl0Var2.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, AndroidUtilities.dp((!wq0Var2.h0 || wq0Var2.o0[1] == null) ? 58.0f : 111.0f) + wq0Var2.p0, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (yl0Var2.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
                 break;
         }
     }

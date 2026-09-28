@@ -15,11 +15,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.w9;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout {
     public final TextView a;
@@ -149,7 +149,7 @@ public final class c0 extends FrameLayout {
         TextView textView;
         d6 d6Var = this.n;
         if (z10) {
-            textView = new n90(getContext(), d6Var);
+            textView = new p90(getContext(), d6Var);
             textView.setLinkTextColor(h6.v0(h6.J6, d6Var));
         } else {
             textView = new TextView(getContext());

@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class jl implements km {
     public final /* synthetic */ wn a;
@@ -63,7 +63,7 @@ public final class jl implements km {
         wn wnVar2 = this.a;
         int G8 = z12 ? wnVar2.G8() : wnVar.G8();
         ArrayList arrayList3 = new ArrayList(wnVar.h4 ? wnVar2.H4 : wnVar.H4);
-        org.telegram.messenger.y7 y7Var = new org.telegram.messenger.y7(this, z11, arrayList, arrayList2, G8, i11);
+        org.telegram.messenger.v7 v7Var = new org.telegram.messenger.v7(this, z11, arrayList, arrayList2, G8, i11);
         org.telegram.messenger.voip.l0 l0Var = new org.telegram.messenger.voip.l0(this, z11, arrayList3, i11);
         un unVar = wnVar.ea;
         if (wnVar.getParentActivity() == null) {
@@ -82,7 +82,7 @@ public final class jl implements km {
                 nbVar = ybVar;
             }
             org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(wnVar.getParentActivity(), unVar, true);
-            ocVar.a = y7Var;
+            ocVar.a = v7Var;
             ocVar.b = l0Var;
             nbVar.setButton(ocVar);
             qcVar = org.telegram.ui.Components.qc.g(wnVar, nbVar, 5000);

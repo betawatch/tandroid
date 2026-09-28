@@ -10,20 +10,20 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.Cells.y2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.ce0;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.fy0;
-import org.telegram.ui.Components.hl;
+import org.telegram.ui.Components.ee0;
+import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.il;
 import org.telegram.ui.Components.j8;
-import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.lo0;
-import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.pi0;
-import org.telegram.ui.Components.pk;
-import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.no0;
+import org.telegram.ui.Components.op;
+import org.telegram.ui.Components.oz;
+import org.telegram.ui.Components.qk;
+import org.telegram.ui.Components.ri0;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.wu;
+import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.xu;
 import org.telegram.ui.PopupNotificationActivity;
 import org.telegram.ui.h9;
 import org.telegram.ui.i4;
@@ -33,7 +33,7 @@ import org.telegram.ui.ub;
 import org.telegram.ui.wj0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -84,37 +84,37 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i17 = wi.O2;
                 break;
             case 14:
-                int i18 = pk.g0;
+                int i18 = qk.g0;
                 break;
             case 15:
-                int i19 = hl.E0;
+                int i19 = il.E0;
                 break;
             case 16:
-                int i20 = np.i0;
+                int i20 = op.i0;
                 break;
             case 17:
-                wu wuVar = wu.S;
+                xu xuVar = xu.S;
                 break;
             case 18:
-                int i21 = nz.h;
+                int i21 = oz.h;
                 break;
             case 19:
-                int[] iArr = ce0.a0;
+                int[] iArr = ee0.a0;
                 break;
             case 20:
-                int i22 = pi0.R;
+                int i22 = ri0.R;
                 break;
             case 21:
-                int i23 = lo0.Y0;
+                int i23 = no0.Y0;
                 break;
             case 22:
-                int i24 = uq0.a1;
+                int i24 = wq0.a1;
                 break;
             case 23:
-                int[] iArr2 = jv0.d2;
+                int[] iArr2 = lv0.d2;
                 break;
             case 24:
-                int i25 = fy0.u0;
+                int i25 = hy0.u0;
                 break;
             case 25:
                 int i26 = UndoView.e0;

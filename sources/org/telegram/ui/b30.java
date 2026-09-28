@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b30 extends s4.s0 {
     public final /* synthetic */ d60 a;
@@ -21,13 +21,13 @@ public final class b30 extends s4.s0 {
         d60 d60Var = this.a;
         j50 j50Var = d60Var.Q;
         if (i10 != 0) {
-            org.telegram.ui.Components.j40 j40Var = d60Var.m0;
-            if (j40Var != null) {
-                j40Var.b(true);
+            org.telegram.ui.Components.l40 l40Var = d60Var.m0;
+            if (l40Var != null) {
+                l40Var.b(true);
             }
-            org.telegram.ui.Components.j40 j40Var2 = d60Var.n0;
-            if (j40Var2 != null) {
-                j40Var2.b(true);
+            org.telegram.ui.Components.l40 l40Var2 = d60Var.n0;
+            if (l40Var2 != null) {
+                l40Var2.b(true);
                 return;
             }
             return;
@@ -38,9 +38,9 @@ public final class b30 extends s4.s0 {
             return;
         }
         j50Var.getChildAt(0);
-        org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) j50Var.K(0);
-        if (gl0Var != null) {
-            View view = gl0Var.a;
+        org.telegram.ui.Components.il0 il0Var = (org.telegram.ui.Components.il0) j50Var.K(0);
+        if (il0Var != null) {
+            View view = il0Var.a;
             if (view.getTop() > 0) {
                 j50Var.v0(0, view.getTop(), null);
             }

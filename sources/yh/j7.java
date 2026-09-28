@@ -16,9 +16,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class j7 extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -33,7 +33,7 @@ public final class j7 extends FrameLayout {
 
     public j7(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.r = new org.telegram.ui.Components.e6(this, 0L, 500L, rr.h);
+        this.r = new org.telegram.ui.Components.e6(this, 0L, 500L, sr.h);
         this.a = d6Var;
         Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
         this.b = mutate;

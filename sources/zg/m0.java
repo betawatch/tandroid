@@ -33,17 +33,17 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.sn0;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.un0;
+import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.yc;
 import yh.i8;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class m0 {
     public int A;
@@ -51,7 +51,7 @@ public abstract class m0 {
     public final ImageReceiver C;
     public final q5 D;
     public int E;
-    public final wq F;
+    public final xq F;
     public final o6 G;
     public final o6 H;
     public boolean I;
@@ -73,7 +73,7 @@ public abstract class m0 {
     public final yc Y;
     public final i8 Z;
     public final TLRPC.ReactionCount a;
-    public final ij0 a0;
+    public final kj0 a0;
     public final boolean b;
     public int c;
     public int d;
@@ -108,7 +108,7 @@ public abstract class m0 {
 
     public m0(m0 m0Var, int i10, View view, TLRPC.ReactionCount reactionCount, boolean z10, boolean z11, d6 d6Var) {
         i8 i8Var;
-        ij0 ij0Var;
+        kj0 kj0Var;
         i.f fVar = new i.f(this, 10);
         this.V = i10;
         this.W = view;
@@ -122,13 +122,13 @@ public abstract class m0 {
             this.C = new ImageReceiver();
         }
         if (this.F == null) {
-            this.F = new wq(view, false, null);
+            this.F = new xq(view, false, null);
         }
         if (this.G == null) {
             o6 o6Var = new o6(true, true, true, false);
             this.G = o6Var;
             o6Var.E = true;
-            o6Var.k(0.4f, 320L, rr.h);
+            o6Var.k(0.4f, 320L, sr.h);
             o6Var.t(AndroidUtilities.dp(13.0f));
             o6Var.setCallback(fVar);
             o6Var.u(AndroidUtilities.bold());
@@ -166,17 +166,17 @@ public abstract class m0 {
         }
         this.C.setParentView(view);
         this.Q = reactionCount.chosen;
-        wq wqVar = this.F;
-        wqVar.G = false;
-        wqVar.a = true;
+        xq xqVar = this.F;
+        xqVar.G = false;
+        xqVar.a = true;
         if (reaction != null) {
             if (d.a) {
                 this.m = true;
                 if (LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)) {
-                    if (m0Var == null || (ij0Var = m0Var.a0) == null) {
-                        this.a0 = new ij0(R.raw.star_reaction_click, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+                    if (m0Var == null || (kj0Var = m0Var.a0) == null) {
+                        this.a0 = new kj0(R.raw.star_reaction_click, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
                     } else {
-                        this.a0 = ij0Var;
+                        this.a0 = kj0Var;
                     }
                     this.C.setImageBitmap(this.a0);
                 } else {
@@ -204,7 +204,7 @@ public abstract class m0 {
         if (this.u) {
             o6 o6Var3 = this.G;
             o6Var3.q(Emoji.replaceEmoji(this.v, o6Var3.a.getFontMetricsInt(), false), !LocaleController.isRTL, true);
-            if (this instanceof sn0) {
+            if (this instanceof un0) {
                 Integer.toString(reactionCount.count);
                 this.F.c(this.w, false);
             } else {
@@ -218,9 +218,9 @@ public abstract class m0 {
             Integer.toString(reactionCount.count);
             this.F.c(this.w, false);
         }
-        wq wqVar2 = this.F;
-        wqVar2.I = 2;
-        wqVar2.z = 3;
+        xq xqVar2 = this.F;
+        xqVar2.I = 2;
+        xqVar2.z = 3;
     }
 
     public final void a() {
@@ -307,7 +307,7 @@ public abstract class m0 {
         Paint paint2;
         float f18;
         float f19;
-        wq wqVar;
+        xq xqVar;
         float f20;
         j9 j9Var;
         float f21;
@@ -395,12 +395,12 @@ public abstract class m0 {
             if (this.I != z11) {
                 if (z11) {
                     z12 = z16;
-                    rr rrVar = rr.k;
+                    sr srVar = sr.k;
                     o6Var3.u = 0.6f;
                     imageReceiver = imageReceiver2;
                     o6Var3.r = 650L;
                     o6Var3.t = 1.6f;
-                    o6Var3.s = rrVar;
+                    o6Var3.s = srVar;
                     o6Var3.q(AndroidUtilities.formatWholeNumber(this.w, 0), false, true);
                     o6Var = o6Var2;
                     o6Var3.q(LocaleController.formatNumber(this.w, ','), true, true);
@@ -409,12 +409,12 @@ public abstract class m0 {
                     imageReceiver = imageReceiver2;
                     o6Var = o6Var2;
                     z12 = z16;
-                    rr rrVar2 = rr.h;
+                    sr srVar2 = sr.h;
                     o6Var3.u = 0.6f;
                     paint = paint4;
                     o6Var3.r = 320L;
                     o6Var3.t = 1.6f;
-                    o6Var3.s = rrVar2;
+                    o6Var3.s = srVar2;
                     o6Var3.q(AndroidUtilities.formatWholeNumber(this.w, 0), true, true);
                 }
                 this.I = z11;
@@ -536,8 +536,8 @@ public abstract class m0 {
                 f19 = o6Var4.d() + (o6Var4.g() * AndroidUtilities.dp(4.0f));
             }
             if (f13 > 0.0f || this.S || o6Var3 == null || this.T != null) {
-                wqVar = this.F;
-                if (wqVar != null && e()) {
+                xqVar = this.F;
+                if (xqVar != null && e()) {
                     canvas.save();
                     if (this.u || i()) {
                         f20 = this.u ? 9 : 8;
@@ -545,7 +545,7 @@ public abstract class m0 {
                         f20 = 10.0f;
                     }
                     canvas.translate(AndroidUtilities.dp(f20) + f7 + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(q5Var == null ? 2.0f : 5.0f) + f19 + (!z12 ? -AndroidUtilities.dp(1.0f) : 0), f10);
-                    wqVar.a(canvas);
+                    xqVar.a(canvas);
                     canvas.restore();
                 }
             } else {
@@ -615,14 +615,14 @@ public abstract class m0 {
         f19 = 0.0f;
         if (f13 > 0.0f) {
         }
-        wqVar = this.F;
-        if (wqVar != null) {
+        xqVar = this.F;
+        if (xqVar != null) {
             canvas.save();
             if (this.u) {
             }
             f20 = this.u ? 9 : 8;
             canvas.translate(AndroidUtilities.dp(f20) + f7 + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(q5Var == null ? 2.0f : 5.0f) + f19 + (!z12 ? -AndroidUtilities.dp(1.0f) : 0), f10);
-            wqVar.a(canvas);
+            xqVar.a(canvas);
             canvas.restore();
         }
         if (!this.S) {
@@ -777,7 +777,7 @@ public abstract class m0 {
                 j9 j9Var = new j9(this.W, false);
                 this.T = j9Var;
                 j9Var.v = 250L;
-                rr rrVar = ji.n.V;
+                sr srVar = ji.n.V;
                 j9Var.s = AndroidUtilities.dp(20.0f);
                 this.T.p = AndroidUtilities.dp(100.0f);
                 j9 j9Var2 = this.T;
@@ -801,7 +801,7 @@ public abstract class m0 {
             imageReceiver = this.C;
         }
         if (imageReceiver != null) {
-            ij0 lottieAnimation = imageReceiver.getLottieAnimation();
+            kj0 lottieAnimation = imageReceiver.getLottieAnimation();
             if (lottieAnimation != null) {
                 lottieAnimation.H(true);
                 return;
@@ -820,7 +820,7 @@ public abstract class m0 {
             imageReceiver = this.C;
         }
         if (imageReceiver != null) {
-            ij0 lottieAnimation = imageReceiver.getLottieAnimation();
+            kj0 lottieAnimation = imageReceiver.getLottieAnimation();
             if (lottieAnimation != null) {
                 lottieAnimation.stop();
                 return;

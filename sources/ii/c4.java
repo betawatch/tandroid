@@ -17,21 +17,21 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.bh;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.vg;
 import org.telegram.ui.Components.zg;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class c4 extends FrameLayout {
     public final ImageView E;
     public final z1 F;
     public final ub1 G;
     public final FrameLayout H;
-    public final lj0 I;
+    public final nj0 I;
     public final LinearLayout J;
     public int K;
     public final LinearLayout L;
@@ -559,19 +559,19 @@ public final class c4 extends FrameLayout {
         frameLayout6.setClipToPadding(false);
         frameLayout6.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         frameLayout2.addView(frameLayout6, w7.y5.e(80, 60, 81));
-        lj0 lj0Var = new lj0(context);
-        this.I = lj0Var;
-        lj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
-        ij0 animatedDrawable = lj0Var.getAnimatedDrawable();
+        nj0 nj0Var = new nj0(context);
+        this.I = nj0Var;
+        nj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
+        kj0 animatedDrawable = nj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             animatedDrawable.h = true;
             animatedDrawable.K(0);
             animatedDrawable.P(0);
         }
-        lj0Var.setScaleType(scaleType);
-        lj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
-        lj0Var.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
-        frameLayout6.addView(lj0Var, w7.y5.e(-1, -1, 119));
+        nj0Var.setScaleType(scaleType);
+        nj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i13, d6Var), mode));
+        nj0Var.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
+        frameLayout6.addView(nj0Var, w7.y5.e(-1, -1, 119));
         FrameLayout frameLayout7 = new FrameLayout(context);
         frameLayout7.setBackground(new d2(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var))));
         ub1Var.addView(frameLayout7, w7.y5.c(44.0f, -2));
@@ -1221,16 +1221,16 @@ public final class c4 extends FrameLayout {
         }
         this.c0 = z10;
         float f7 = z10 ? 1.15f : 1.0f;
-        lj0 lj0Var = this.I;
+        nj0 nj0Var = this.I;
         if (z11) {
-            lj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(rr.h).start();
+            nj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(sr.h).start();
         } else {
-            lj0Var.animate().cancel();
-            lj0Var.setScaleX(f7);
-            lj0Var.setScaleY(f7);
+            nj0Var.animate().cancel();
+            nj0Var.setScaleX(f7);
+            nj0Var.setScaleY(f7);
         }
-        lj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(z10 ? org.telegram.ui.ActionBar.h6.q7 : org.telegram.ui.ActionBar.h6.G6, this.b), PorterDuff.Mode.SRC_IN));
-        ij0 animatedDrawable = lj0Var.getAnimatedDrawable();
+        nj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(z10 ? org.telegram.ui.ActionBar.h6.q7 : org.telegram.ui.ActionBar.h6.G6, this.b), PorterDuff.Mode.SRC_IN));
+        kj0 animatedDrawable = nj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             if (z10) {
                 if (animatedDrawable.a0 > 34) {
@@ -1255,9 +1255,9 @@ public final class c4 extends FrameLayout {
         if (z10) {
             linearLayout.setVisibility(0);
             ViewPropertyAnimator duration = linearLayout.animate().alpha(i10 == 0 ? 1.0f : 0.0f).scaleX(i10 == 0 ? 1.0f : 0.8f).scaleY(i10 == 0 ? 1.0f : 0.8f).translationY(i10 == 0 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L);
-            rr rrVar = rr.h;
+            sr srVar = sr.h;
             final int i11 = 0;
-            duration.setInterpolator(rrVar).withEndAction(new Runnable(this) { // from class: ii.z3
+            duration.setInterpolator(srVar).withEndAction(new Runnable(this) { // from class: ii.z3
                 public final /* synthetic */ c4 b;
 
                 {
@@ -1293,7 +1293,7 @@ public final class c4 extends FrameLayout {
             }).start();
             ub1Var.setVisibility(0);
             final int i12 = 1;
-            ub1Var.animate().alpha(i10 == 1 ? 1.0f : 0.0f).scaleX(i10 == 1 ? 1.0f : 0.8f).scaleY(i10 == 1 ? 1.0f : 0.8f).translationY(i10 == 1 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L).setInterpolator(rrVar).withEndAction(new Runnable(this) { // from class: ii.z3
+            ub1Var.animate().alpha(i10 == 1 ? 1.0f : 0.0f).scaleX(i10 == 1 ? 1.0f : 0.8f).scaleY(i10 == 1 ? 1.0f : 0.8f).translationY(i10 == 1 ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(420L).setInterpolator(srVar).withEndAction(new Runnable(this) { // from class: ii.z3
                 public final /* synthetic */ c4 b;
 
                 {
@@ -1330,7 +1330,7 @@ public final class c4 extends FrameLayout {
             frameLayout.setVisibility(0);
             ViewPropertyAnimator scaleX = frameLayout.animate().alpha(i10 == 2 ? 1.0f : 0.0f).scaleX(i10 == 2 ? 1.0f : 0.8f);
             final int i13 = 2;
-            scaleX.scaleY(i10 == 2 ? 1.0f : 0.8f).setDuration(420L).setInterpolator(rrVar).withEndAction(new Runnable(this) { // from class: ii.z3
+            scaleX.scaleY(i10 == 2 ? 1.0f : 0.8f).setDuration(420L).setInterpolator(srVar).withEndAction(new Runnable(this) { // from class: ii.z3
                 public final /* synthetic */ c4 b;
 
                 {

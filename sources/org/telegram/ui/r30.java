@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class r30 extends org.telegram.ui.Components.wl0 {
+public final class r30 extends org.telegram.ui.Components.yl0 {
     public final /* synthetic */ d60 X2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,24 +15,24 @@ public final class r30 extends org.telegram.ui.Components.wl0 {
         this.X2 = d60Var;
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.Components.s20 s20Var = (org.telegram.ui.Components.s20) view;
+        org.telegram.ui.Components.u20 u20Var = (org.telegram.ui.Components.u20) view;
         d60 d60Var = this.X2;
         j50 j50Var = d60Var.Q;
         v30 v30Var = d60Var.a2;
         if (v30Var.r == null && !d60Var.N2.k()) {
-            s20Var.setAlpha(1.0f);
-            s20Var.setTranslationX(0.0f);
-            s20Var.setTranslationY(0.0f);
+            u20Var.setAlpha(1.0f);
+            u20Var.setTranslationX(0.0f);
+            u20Var.setTranslationY(0.0f);
         }
         r30 r30Var = d60Var.m2;
-        s20Var.getClass();
+        u20Var.getClass();
         r30Var.getClass();
-        if (RecyclerView.R(s20Var) == -1 && s20Var.getRenderer() != null) {
+        if (RecyclerView.R(u20Var) == -1 && u20Var.getRenderer() != null) {
             return true;
         }
-        if (s20Var.getTranslationY() == 0.0f || s20Var.getRenderer() == null || s20Var.getRenderer().c == null) {
+        if (u20Var.getTranslationY() == 0.0f || u20Var.getRenderer() == null || u20Var.getRenderer().c == null) {
             return super.drawChild(canvas, view, j3);
         }
         float top = j50Var.getTop() - getTop();

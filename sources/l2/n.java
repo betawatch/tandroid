@@ -9,10 +9,10 @@ import c3.h0;
 import e2.d0;
 import e2.v;
 import n4.y;
-import org.telegram.ui.Components.uo0;
+import org.telegram.ui.Components.wo0;
 import u2.a1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class n implements h0 {
     public final a1 a;
@@ -72,12 +72,12 @@ public final class n implements h0 {
             }
         }
         a1 a1Var = this.a;
-        uo0 uo0Var = a1Var.a;
+        wo0 wo0Var = a1Var.a;
         synchronized (a1Var) {
             int i14 = a1Var.s;
             i13 = i14 == 0 ? -1L : a1Var.i(i14);
         }
-        uo0Var.b(i13);
+        wo0Var.b(i13);
     }
 
     @Override // c3.h0

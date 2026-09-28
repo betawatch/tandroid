@@ -2,17 +2,17 @@ package ci;
 
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.dw0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g5 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bw0 b;
+    public final /* synthetic */ dw0 b;
 
-    public /* synthetic */ g5(bw0 bw0Var, int i10) {
+    public /* synthetic */ g5(dw0 dw0Var, int i10) {
         this.a = i10;
-        this.b = bw0Var;
+        this.b = dw0Var;
     }
 
     @Override // android.view.View.OnTouchListener

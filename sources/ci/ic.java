@@ -3,19 +3,19 @@ package ci;
 import android.animation.ValueAnimator;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.m20;
-import org.telegram.ui.Components.q91;
+import org.telegram.ui.Components.o20;
+import org.telegram.ui.Components.s91;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class ic extends m20 {
+public final class ic extends o20 {
     public final /* synthetic */ kc a;
 
     public ic(kc kcVar) {
         this.a = kcVar;
     }
 
-    @Override // org.telegram.ui.Components.m20
+    @Override // org.telegram.ui.Components.o20
     public final boolean a() {
         ob obVar;
         lc lcVar = this.a.E0;
@@ -67,12 +67,12 @@ public final class ic extends m20 {
     public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         t7 t7Var;
         ob obVar;
-        q91 q91Var;
+        s91 s91Var;
         yb ybVar;
         kc kcVar = this.a;
         lc lcVar = kcVar.E0;
         ValueAnimator valueAnimator = lcVar.E;
-        if ((valueAnimator != null && valueAnimator.isRunning()) || (((t7Var = lcVar.D0) != null && (t7Var.x.h || t7Var.L)) || lcVar.O0.x0 || (((obVar = lcVar.B0) != null && obVar.s) || kcVar.A0 || (((q91Var = lcVar.V0) != null && (q91Var.F || q91Var.G)) || lcVar.I())))) {
+        if ((valueAnimator != null && valueAnimator.isRunning()) || (((t7Var = lcVar.D0) != null && (t7Var.x.h || t7Var.L)) || lcVar.O0.x0 || (((obVar = lcVar.B0) != null && obVar.s) || kcVar.A0 || (((s91Var = lcVar.V0) != null && (s91Var.F || s91Var.G)) || lcVar.I())))) {
             return false;
         }
         boolean z10 = true;
@@ -119,13 +119,13 @@ public final class ic extends m20 {
     public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         t7 t7Var;
         ob obVar;
-        q91 q91Var;
+        s91 s91Var;
         kb kbVar;
         float f11;
         kc kcVar = this.a;
         lc lcVar = kcVar.E0;
         ValueAnimator valueAnimator = lcVar.E;
-        if ((valueAnimator != null && valueAnimator.isRunning()) || lcVar.o2 != null || lcVar.n2 != null || (((t7Var = lcVar.D0) != null && (t7Var.x.h || t7Var.L)) || lcVar.O0.x0 || (((obVar = lcVar.B0) != null && obVar.s) || kcVar.A0 || (((q91Var = lcVar.V0) != null && (q91Var.F || q91Var.G)) || lcVar.I() || lcVar.Q1 || lcVar.P1 || lcVar.f0 != 0)))) {
+        if ((valueAnimator != null && valueAnimator.isRunning()) || lcVar.o2 != null || lcVar.n2 != null || (((t7Var = lcVar.D0) != null && (t7Var.x.h || t7Var.L)) || lcVar.O0.x0 || (((obVar = lcVar.B0) != null && obVar.s) || kcVar.A0 || (((s91Var = lcVar.V0) != null && (s91Var.F || s91Var.G)) || lcVar.I() || lcVar.Q1 || lcVar.P1 || lcVar.f0 != 0)))) {
             return false;
         }
         if (!lcVar.X) {

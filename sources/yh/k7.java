@@ -16,11 +16,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.u90;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class k7 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public long a;
@@ -29,15 +29,15 @@ public final class k7 extends LinearLayout implements NotificationCenter.Notific
     public boolean d;
     public SpannableString e;
     public long f;
-    public final pq[] h;
-    public final pq[] n;
+    public final qq[] h;
+    public final qq[] n;
     public ValueAnimator r;
 
     public k7(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.f = -1L;
-        this.h = new pq[1];
-        this.n = new pq[1];
+        this.h = new qq[1];
+        this.n = new qq[1];
         this.b = i10;
         this.a = UserConfig.getInstance(i10).getClientUserId();
         setOrientation(1);
@@ -106,7 +106,7 @@ public final class k7 extends LinearLayout implements NotificationCenter.Notific
             if (this.e == null) {
                 SpannableString spannableString = new SpannableString("x");
                 this.e = spannableString;
-                spannableString.setSpan(new s90(AndroidUtilities.dp(48.0f), o00Var), 0, this.e.length(), 33);
+                spannableString.setSpan(new u90(AndroidUtilities.dp(48.0f), o00Var), 0, this.e.length(), 33);
             }
             o00Var.c(this.e, z10, true);
             this.f = -1L;
@@ -116,11 +116,11 @@ public final class k7 extends LinearLayout implements NotificationCenter.Notific
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             if (!i11.k()) {
                 String str = "⭐️" + i11.d();
-                pq[] pqVarArr = this.n;
-                spannableStringBuilder.append((CharSequence) w7.X0(true, str, 0.62f, pqVarArr));
-                pq pqVar = pqVarArr[0];
-                if (pqVar != null) {
-                    pqVar.setColorKey(org.telegram.ui.ActionBar.h6.il);
+                qq[] qqVarArr = this.n;
+                spannableStringBuilder.append((CharSequence) w7.X0(true, str, 0.62f, qqVarArr));
+                qq qqVar = qqVarArr[0];
+                if (qqVar != null) {
+                    qqVar.setColorKey(org.telegram.ui.ActionBar.h6.il);
                 }
                 spannableStringBuilder.append((CharSequence) "  ");
             }

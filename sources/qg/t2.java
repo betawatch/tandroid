@@ -22,13 +22,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ec0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.gc0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.xd;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class t2 extends Dialog {
     public ValueAnimator E;
@@ -46,8 +46,8 @@ public final class t2 extends Dialog {
     public BitmapShader r;
     public Paint s;
     public Matrix v;
-    public final ec0 w;
-    public final ec0 x;
+    public final gc0 w;
+    public final gc0 x;
     public float y;
 
     public t2(Context context, final int i10) {
@@ -89,11 +89,11 @@ public final class t2 extends Dialog {
         r2 r2Var = new r2(this, context, AndroidUtilities.density);
         this.f = r2Var;
         w7Var2.addView(r2Var, y5.e(-2, -2, 17));
-        y70 F = y70.F(f0Var, dVar, f0Var);
-        ec0 ec0Var = new ec0(getContext(), R.raw.position_below, LocaleController.getString(R.string.StoryLinkCaptionAbove), R.raw.position_above, LocaleController.getString(R.string.StoryLinkCaptionBelow), dVar);
-        this.w = ec0Var;
+        a80 F = a80.F(f0Var, dVar, f0Var);
+        gc0 gc0Var = new gc0(getContext(), R.raw.position_below, LocaleController.getString(R.string.StoryLinkCaptionAbove), R.raw.position_above, LocaleController.getString(R.string.StoryLinkCaptionBelow), dVar);
+        this.w = gc0Var;
         final int i11 = 0;
-        ec0Var.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
+        gc0Var.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
             public final /* synthetic */ t2 b;
 
             {
@@ -122,11 +122,11 @@ public final class t2 extends Dialog {
                 }
             }
         });
-        F.q(ec0Var);
-        ec0 ec0Var2 = new ec0(context, R.raw.media_shrink, LocaleController.getString(R.string.LinkMediaLarger), R.raw.media_enlarge, LocaleController.getString(R.string.LinkMediaSmaller), dVar);
-        this.x = ec0Var2;
+        F.q(gc0Var);
+        gc0 gc0Var2 = new gc0(context, R.raw.media_shrink, LocaleController.getString(R.string.LinkMediaLarger), R.raw.media_enlarge, LocaleController.getString(R.string.LinkMediaSmaller), dVar);
+        this.x = gc0Var2;
         final int i12 = 1;
-        ec0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
+        gc0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
             public final /* synthetic */ t2 b;
 
             {
@@ -155,7 +155,7 @@ public final class t2 extends Dialog {
                 }
             }
         });
-        F.q(ec0Var2);
+        F.q(gc0Var2);
         F.k();
         F.c(R.drawable.msg_select, LocaleController.getString(R.string.ApplyChanges), new p2(this, 2), false);
         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.DoNotLinkPreview), new p2(this, 3), true);
@@ -173,7 +173,7 @@ public final class t2 extends Dialog {
         this.E = ofFloat;
         ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 13));
         this.E.addListener(new androidx.fragment.app.g(this, z10, p2Var, 12));
-        this.E.setInterpolator(rr.h);
+        this.E.setInterpolator(sr.h);
         this.E.setDuration(z10 ? 420L : 320L);
         this.E.start();
     }

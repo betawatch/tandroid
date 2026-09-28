@@ -1,50 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.SparseIntArray;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class l81 extends v81 {
-    public final /* synthetic */ w81 t0;
+public final /* synthetic */ class l81 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y81 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l81(w81 w81Var, Context context, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(i10, context, d6Var, z10);
-        this.t0 = w81Var;
+    public /* synthetic */ l81(y81 y81Var, int i10) {
+        this.a = i10;
+        this.b = y81Var;
     }
 
-    @Override // org.telegram.ui.Components.v81
-    public final void e(float f7, int i10, int i11) {
-        float f10 = f7 < 0.0f ? 0.0f : f7 > 1.0f ? 1.0f : f7;
-        this.F = i10;
-        SparseIntArray sparseIntArray = this.b0;
-        this.G = sparseIntArray.get(i10);
-        if (f10 > 0.0f) {
-            u81 u81Var = this.y;
-            if (u81Var != null) {
-                n81 n81Var = ((w81) ((l.d) u81Var).a).L;
-            }
-            this.L = i11;
-            this.M = sparseIntArray.get(i11);
-        } else {
-            this.L = -1;
-            this.M = -1;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                y81 y81Var = this.b;
+                y81Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = y81Var.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (y81Var.y) {
+                        y81Var.E(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        y81Var.E(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
+                    } else {
+                        y81Var.E(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        y81Var.E(viewArr[0], r1.getMeasuredWidth() * floatValue);
+                    }
+                    y81Var.c = floatValue;
+                    y81Var.w(true);
+                    n81 n81Var = y81Var.M;
+                    if (n81Var != null) {
+                        n81Var.v.invalidate();
+                        y81Var.M.v.f1();
+                        y81Var.M.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                y81 y81Var2 = this.b;
+                y81Var2.getClass();
+                y81Var2.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                y81 y81Var3 = this.b;
+                y81Var3.N.onAnimationUpdate(valueAnimator);
+                y81Var3.M.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y81Var3.M.v.f1();
+                y81Var3.M.invalidate();
+                break;
+            default:
+                y81 y81Var4 = this.b;
+                y81Var4.getClass();
+                y81Var4.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
         }
-        this.K = f10;
-        this.v.f1();
-        invalidate();
-        c(i10);
-        if (f10 >= 1.0f) {
-            this.L = -1;
-            this.M = -1;
-            this.F = i11;
-            this.G = sparseIntArray.get(i11);
-        }
-        u81 u81Var2 = this.y;
-        if (u81Var2 != null) {
-            ((w81) ((l.d) u81Var2).a).s();
-        }
-        this.t0.y(f7 <= 0.5f ? i10 : i11, i10 < i11);
     }
 }

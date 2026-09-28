@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class c5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int F = 0;
@@ -145,7 +145,7 @@ public abstract class c5 extends FrameLayout implements NotificationCenter.Notif
         }
         this.r = z10;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.setInterpolator(z10 ? this.a : org.telegram.ui.Components.rr.h);
+        ofFloat.setInterpolator(z10 ? this.a : org.telegram.ui.Components.sr.h);
         final int i10 = 0;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.a5
             public final /* synthetic */ c5 b;

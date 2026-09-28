@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nd0 implements o1.g {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class nd0 implements o1.g {
                     ViewGroup viewGroup = eg0Var.b;
                     PointF pointF = eg0Var.y;
                     hh.k.b(view, viewGroup, pointF);
-                    org.telegram.ui.Components.z10 z10Var = eg0Var.h;
-                    z10Var.setTranslationX(pointF.x);
-                    z10Var.setTranslationY(pointF.y);
+                    org.telegram.ui.Components.b20 b20Var = eg0Var.h;
+                    b20Var.setTranslationX(pointF.x);
+                    b20Var.setTranslationY(pointF.y);
                     eg0Var.requestLayout();
                     break;
                 }
@@ -56,11 +56,11 @@ public final /* synthetic */ class nd0 implements o1.g {
             case 3:
                 cv0 cv0Var = (cv0) obj;
                 int dp = cv0Var.e > cv0Var.f ? AndroidUtilities.dp(48.0f) : 0;
-                org.telegram.ui.Components.u71 u71Var = cv0Var.s.q3;
+                org.telegram.ui.Components.w71 w71Var = cv0Var.s.q3;
                 int measuredHeight = cv0Var.getMeasuredHeight();
-                u71Var.h = (int) (((cv0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
-                u71Var.i = measuredHeight;
-                View view2 = u71Var.v;
+                w71Var.h = (int) (((cv0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
+                w71Var.i = measuredHeight;
+                View view2 = w71Var.v;
                 if (view2 != null) {
                     view2.invalidate();
                     break;
@@ -73,11 +73,11 @@ public final /* synthetic */ class nd0 implements o1.g {
                 break;
             default:
                 v41 v41Var = (v41) obj;
-                org.telegram.ui.Components.u71 u71Var2 = v41Var.r.Q;
+                org.telegram.ui.Components.w71 w71Var2 = v41Var.r.Q;
                 int measuredHeight2 = v41Var.getMeasuredHeight();
-                u71Var2.h = (int) (((v41Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
-                u71Var2.i = measuredHeight2;
-                View view3 = u71Var2.v;
+                w71Var2.h = (int) (((v41Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
+                w71Var2.i = measuredHeight2;
+                View view3 = w71Var2.v;
                 if (view3 != null) {
                     view3.invalidate();
                     break;

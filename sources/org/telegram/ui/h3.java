@@ -10,7 +10,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h3 implements q0.a {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class h3 implements q0.a {
                 }
                 break;
             case 1:
-                ((org.telegram.ui.Components.ak0) this.b).h((List) obj);
+                ((org.telegram.ui.Components.ck0) this.b).h((List) obj);
                 break;
             case 2:
                 TLRPC.User user = (TLRPC.User) obj;

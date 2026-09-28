@@ -25,14 +25,14 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.ed0;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.gd0;
+import org.telegram.ui.Components.or;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.da;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -84,7 +84,7 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                     arrayList.addAll(arrayList3);
                 }
                 arrayList.add(0, UserConfig.getInstance(i11).getCurrentUser());
-                y70 F = y70.F(e3Var.getContainerView(), d6Var, linearLayout);
+                a80 F = a80.F(e3Var.getContainerView(), d6Var, linearLayout);
                 int size = arrayList.size();
                 int i12 = 0;
                 while (i12 < size) {
@@ -113,31 +113,31 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                 LinearLayout linearLayout2 = (LinearLayout) obj3;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) obj4;
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) obj2;
-                bk0 bk0Var = (bk0) obj;
+                dk0 dk0Var = (dk0) obj;
                 int currentItem = gVar.getCurrentItem();
                 if (i11 != currentItem) {
-                    bk0 bk0Var2 = (bk0) linearLayout2.getChildAt(currentItem);
+                    dk0 dk0Var2 = (dk0) linearLayout2.getChildAt(currentItem);
                     atomicBoolean.set(true);
                     gVar.x(i11, true);
                     float scrollX = horizontalScrollView.getScrollX();
-                    float x10 = bk0Var.getX() - ((horizontalScrollView.getWidth() - bk0Var.getWidth()) / 2.0f);
+                    float x10 = dk0Var.getX() - ((horizontalScrollView.getWidth() - dk0Var.getWidth()) / 2.0f);
                     ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-                    duration.setInterpolator(rr.f);
-                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, bk0Var2, bk0Var));
+                    duration.setInterpolator(sr.f);
+                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, dk0Var2, dk0Var));
                     duration.start();
                     break;
                 }
                 break;
             case 2:
-                ed0 ed0Var = (ed0) obj3;
+                gd0 gd0Var = (gd0) obj3;
                 org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) obj2;
                 Utilities.Callback callback2 = (Utilities.Callback) obj;
                 TL_account.TL_birthday tL_birthday = new TL_account.TL_birthday();
-                tL_birthday.day = ((ed0) callback).getValue();
-                tL_birthday.month = ((ed0) obj4).getValue() + 1;
-                if (ed0Var.getValue() != i11) {
+                tL_birthday.day = ((gd0) callback).getValue();
+                tL_birthday.month = ((gd0) obj4).getValue() + 1;
+                if (gd0Var.getValue() != i11) {
                     tL_birthday.flags |= 1;
-                    tL_birthday.year = ed0Var.getValue();
+                    tL_birthday.year = gd0Var.getValue();
                 }
                 runnable = z2Var.a.dismissRunnable;
                 runnable.run();
@@ -149,7 +149,7 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
                 a2Var.R = string;
                 a2Var.T = LocaleController.getString(R.string.LiveStoryRTMPRevokeText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new da((nr) callback, (ci.d) obj2, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 2));
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new da((or) callback, (ci.d) obj2, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 2));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.o();
@@ -220,8 +220,8 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
         this.b = i10;
     }
 
-    public /* synthetic */ m3(nr nrVar, Context context, ai.d dVar, ci.d dVar2, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, int i10) {
-        this.d = nrVar;
+    public /* synthetic */ m3(or orVar, Context context, ai.d dVar, ci.d dVar2, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, int i10) {
+        this.d = orVar;
         this.e = context;
         this.c = dVar;
         this.f = dVar2;
@@ -229,21 +229,21 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
         this.b = i10;
     }
 
-    public /* synthetic */ m3(ed0 ed0Var, ed0 ed0Var2, ed0 ed0Var3, int i10, org.telegram.ui.ActionBar.z2 z2Var, Utilities.Callback callback) {
-        this.d = ed0Var;
-        this.e = ed0Var2;
-        this.c = ed0Var3;
+    public /* synthetic */ m3(gd0 gd0Var, gd0 gd0Var2, gd0 gd0Var3, int i10, org.telegram.ui.ActionBar.z2 z2Var, Utilities.Callback callback) {
+        this.d = gd0Var;
+        this.e = gd0Var2;
+        this.c = gd0Var3;
         this.b = i10;
         this.f = z2Var;
         this.h = callback;
     }
 
-    public /* synthetic */ m3(z4.g gVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, bk0 bk0Var) {
+    public /* synthetic */ m3(z4.g gVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, dk0 dk0Var) {
         this.d = gVar;
         this.b = i10;
         this.c = linearLayout;
         this.e = atomicBoolean;
         this.f = horizontalScrollView;
-        this.h = bk0Var;
+        this.h = dk0Var;
     }
 }

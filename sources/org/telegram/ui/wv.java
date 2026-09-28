@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wv implements org.telegram.ui.Components.kl0 {
+public final /* synthetic */ class wv implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ qy b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class wv implements org.telegram.ui.Components.kl0 
         this.b = qyVar;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         switch (this.a) {
             case 0:
@@ -29,7 +29,7 @@ public final /* synthetic */ class wv implements org.telegram.ui.Components.kl0 
                         Bundle g10 = org.telegram.ui.Cells.c1.g(3, TeXSymbolParser.TYPE_ATTR);
                         g10.putString("hashtag", v8Var.C);
                         g10.putInt("storiesCount", v8Var.J);
-                        qyVar.presentFragment(new org.telegram.ui.Components.na0(g10, null));
+                        qyVar.presentFragment(new org.telegram.ui.Components.pa0(g10, null));
                         break;
                     }
                 } else {

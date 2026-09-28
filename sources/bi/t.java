@@ -17,15 +17,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.xr0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zr0;
 import s4.c1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public class t extends el0 {
+public class t extends gl0 {
     public final Context c;
     public d9 e;
     public t f;
@@ -41,12 +41,12 @@ public class t extends el0 {
         M();
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(c1 c1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.gl0
     public final String F(int i10) {
         MessageObject messageObject;
         TL_stories.StoryItem storyItem;
@@ -57,14 +57,14 @@ public class t extends el0 {
         return LocaleController.formatYearMont(storyItem.date, true);
     }
 
-    @Override // org.telegram.ui.Components.el0
-    public final void G(wl0 wl0Var, float f7, int[] iArr) {
-        int measuredHeight = wl0Var.getChildAt(0).getMeasuredHeight();
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(yl0 yl0Var, float f7, int[] iArr) {
+        int measuredHeight = yl0Var.getChildAt(0).getMeasuredHeight();
         t tVar = this.f;
         u uVar = this.s;
         int i10 = this == tVar ? uVar.e : uVar.d;
         int ceil = (int) (Math.ceil(h() / i10) * measuredHeight);
-        int measuredHeight2 = wl0Var.getMeasuredHeight() - wl0Var.getPaddingTop();
+        int measuredHeight2 = yl0Var.getMeasuredHeight() - yl0Var.getPaddingTop();
         if (measuredHeight == 0) {
             iArr[1] = 0;
             iArr[0] = 0;
@@ -76,13 +76,13 @@ public class t extends el0 {
     }
 
     public final boolean L(int i10) {
-        xr0 xr0Var = this.s.W;
+        zr0 zr0Var = this.s.W;
         d9 d9Var = this.e;
         if (d9Var == null) {
             return false;
         }
         if (d9Var instanceof u8) {
-            TLRPC.User user = MessagesController.getInstance(xr0Var.b).getUser(Long.valueOf(xr0Var.d));
+            TLRPC.User user = MessagesController.getInstance(zr0Var.b).getUser(Long.valueOf(zr0Var.d));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
         }
         if (i10 < 0 || i10 >= d9Var.i.size()) {
@@ -201,29 +201,29 @@ public class t extends el0 {
             t7Var.f0 = messageObject != null && this.e.m(messageObject.getId());
             t7Var.setReorder(true);
             t7Var.k(messageObject, this == this.f ? uVar.e : uVar.d, false);
-            xr0 xr0Var = uVar.W;
-            if (!xr0Var.G.C1 || messageObject == null) {
+            zr0 zr0Var = uVar.W;
+            if (!zr0Var.G.C1 || messageObject == null) {
                 t7Var.i(false, false);
             } else {
-                t7Var.i(xr0Var.c(messageObject), true);
+                t7Var.i(zr0Var.c(messageObject), true);
             }
         }
     }
 
     @Override // s4.h0
     public final c1 x(ViewGroup viewGroup, int i10) {
-        xr0 xr0Var = this.s.W;
+        zr0 zr0Var = this.s.W;
         if (this.h == null) {
-            this.h = new s7(viewGroup.getContext(), xr0Var.c);
+            this.h = new s7(viewGroup.getContext(), zr0Var.c);
         }
-        t7 t7Var = new t7(this.c, this.h, xr0Var.b);
+        t7 t7Var = new t7(this.c, this.h, zr0Var.b);
         t7Var.w0 = true;
         t7Var.setGradientView(null);
         t7Var.d0 = true;
-        return new gl0(t7Var);
+        return new il0(t7Var);
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.gl0
     public final void I() {
     }
 }

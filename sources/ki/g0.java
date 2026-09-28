@@ -18,7 +18,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import yh.s5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -64,20 +64,20 @@ public final /* synthetic */ class g0 implements Runnable {
                 try {
                     try {
                         tVar.f();
-                        s0Var.l.b("preview output finalized: size=" + tVar.a.length() + ", replace=" + z10 + ", elapsedMs=" + s0.e(nanoTime));
-                        s0Var.f();
+                        s0Var.m.b("preview output finalized: size=" + tVar.a.length() + ", replace=" + z10 + ", elapsedMs=" + s0.f(nanoTime));
+                        s0Var.g();
                         if (z10) {
-                            s0Var.r(file4, s0Var.F, s0Var.G, z11, i10);
+                            s0Var.s(file4, s0Var.G, s0Var.H, z11, i10);
                             file = file4;
                         } else {
                             file = file4;
                             try {
                                 File file5 = tVar.a;
-                                long j3 = s0Var.J;
+                                long j3 = s0Var.K;
                                 if (j3 <= 0) {
-                                    j3 = s0Var.D;
+                                    j3 = s0Var.E;
                                 }
-                                ExecutorService executorService = s0Var.j;
+                                ExecutorService executorService = s0Var.k;
                                 try {
                                     f0 f0Var = new f0(s0Var, o0Var, file5, j3, true);
                                     s0Var = s0Var;
@@ -85,7 +85,7 @@ public final /* synthetic */ class g0 implements Runnable {
                                 } catch (Exception e) {
                                     e = e;
                                     s0Var = s0Var;
-                                    s0Var.h.post(new c0(s0Var, e, 0));
+                                    s0Var.i.post(new c0(s0Var, e, 0));
                                     if (file != null) {
                                         w7.k.c(file);
                                     }
@@ -100,7 +100,7 @@ public final /* synthetic */ class g0 implements Runnable {
                                 e = e7;
                             }
                         }
-                        s0Var.Q = null;
+                        s0Var.R = null;
                         if (file != null) {
                             w7.k.c(file);
                         }

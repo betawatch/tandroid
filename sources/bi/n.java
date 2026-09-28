@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.v00;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class n extends u00 {
+public final class n extends v00 {
     public final Paint U;
     public final /* synthetic */ u V;
 
@@ -19,18 +19,18 @@ public final class n extends u00 {
         this.U = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.v00
     public final int getColumnsCount() {
         return this.V.d;
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.v00
     public final int getViewType() {
         setIsSingleCell(false);
         return 27;
     }
 
-    @Override // org.telegram.ui.Components.u00, android.view.View
+    @Override // org.telegram.ui.Components.v00, android.view.View
     public final void onDraw(Canvas canvas) {
         int v02 = h6.v0(h6.d6, this.V.W.c);
         Paint paint = this.U;

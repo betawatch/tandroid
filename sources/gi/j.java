@@ -15,14 +15,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.x5;
-import org.telegram.ui.Components.ac0;
+import org.telegram.ui.Components.cc0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class j extends LinearLayout implements x5 {
     public final d6 a;
-    public final ac0 b;
+    public final cc0 b;
     public final FrameLayout c;
     public final ImageView d;
     public final TextView e;
@@ -37,9 +37,9 @@ public final class j extends LinearLayout implements x5 {
         setOrientation(0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        ac0 ac0Var = new ac0(1);
-        this.b = ac0Var;
-        frameLayout.setBackground(ac0Var);
+        cc0 cc0Var = new cc0(1);
+        this.b = cc0Var;
+        frameLayout.setBackground(cc0Var);
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);

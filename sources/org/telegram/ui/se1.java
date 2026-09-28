@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class se1 extends org.telegram.ui.ActionBar.m2 {
     public int E;
@@ -32,8 +32,8 @@ public final class se1 extends org.telegram.ui.ActionBar.m2 {
     public org.telegram.ui.Components.w9[] h;
     public String n;
     public boolean r;
-    public org.telegram.ui.Components.qq s;
-    public org.telegram.ui.Components.bm0 v;
+    public org.telegram.ui.Components.rq s;
+    public org.telegram.ui.Components.dm0 v;
     public TLRPC.TL_forumTopic w;
     public ng.a x;
     public wn y;
@@ -73,9 +73,9 @@ public final class se1 extends org.telegram.ui.ActionBar.m2 {
             w9VarArr[1].setAnimatedEmojiDrawable(q5Var);
             w9VarArr[1].setImageDrawable(null);
         } else {
-            org.telegram.ui.Components.w80 w80Var = new org.telegram.ui.Components.w80(1, null);
-            w80Var.a(this.n);
-            this.v.b(w80Var, false);
+            org.telegram.ui.Components.y80 y80Var = new org.telegram.ui.Components.y80(1, null);
+            y80Var.a(this.n);
+            this.v.b(y80Var, false);
             w9VarArr[1].setImageDrawable(this.s);
             w9VarArr[1].setAnimatedEmojiDrawable(null);
         }
@@ -201,22 +201,22 @@ public final class se1 extends org.telegram.ui.ActionBar.m2 {
             re1Var.setAnimationsEnabled(this.fragmentBeginToShow);
             this.f.setClipChildren(false);
             frameLayout2.addView(this.f, w7.y5.d(-1, -1.0f, 0, 12.0f, 12.0f, 12.0f, 12.0f));
-            org.telegram.ui.Components.qq d = ng.d.d(this.E, "");
+            org.telegram.ui.Components.rq d = ng.d.d(this.E, "");
             this.x = (ng.a) d.a;
-            this.v = new org.telegram.ui.Components.bm0(context);
-            org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(d, this.v, 0, 0);
-            qqVar.w = true;
-            this.f.setForumIconDrawable(qqVar);
-            this.s = qqVar;
-            org.telegram.ui.Components.bm0 bm0Var = this.v;
+            this.v = new org.telegram.ui.Components.dm0(context);
+            org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(d, this.v, 0, 0);
+            rqVar.w = true;
+            this.f.setForumIconDrawable(rqVar);
+            this.s = rqVar;
+            org.telegram.ui.Components.dm0 dm0Var = this.v;
             org.telegram.ui.Components.w9 w9Var2 = w9VarArr[0];
-            ArrayList arrayList = bm0Var.n;
+            ArrayList arrayList = dm0Var.n;
             if (!arrayList.contains(w9Var2)) {
                 arrayList.add(w9Var2);
             }
-            org.telegram.ui.Components.bm0 bm0Var2 = this.v;
+            org.telegram.ui.Components.dm0 dm0Var2 = this.v;
             org.telegram.ui.Components.w9 w9Var3 = w9VarArr[1];
-            ArrayList arrayList2 = bm0Var2.n;
+            ArrayList arrayList2 = dm0Var2.n;
             if (!arrayList2.contains(w9Var3)) {
                 arrayList2.add(w9Var3);
             }

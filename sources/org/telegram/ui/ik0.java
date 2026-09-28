@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ik0 extends og.b {
     public final Context d;
@@ -21,7 +21,7 @@ public final class ik0 extends og.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 0 || i10 == 4) ? false : true;
@@ -103,7 +103,7 @@ public final class ik0 extends og.b {
                 gk0 gk0Var = (gk0) view;
                 gk0Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
                 CharSequence charSequence = hk0Var.e;
-                org.telegram.messenger.ok.s(gk0Var.Q.animate().rotation(hk0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.rr.h, 340L);
+                org.telegram.messenger.ok.s(gk0Var.Q.animate().rotation(hk0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.sr.h, 340L);
                 gk0Var.i(charSequence, z10);
                 break;
         }
@@ -153,7 +153,7 @@ public final class ik0 extends og.b {
                 m4Var = gk0Var;
                 break;
         }
-        return new org.telegram.ui.Components.gl0(m4Var);
+        return new org.telegram.ui.Components.il0(m4Var);
     }
 
     @Override // s4.h0

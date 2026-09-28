@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yj0 extends View {
     public final Paint a;
@@ -28,8 +28,8 @@ public final class yj0 extends View {
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        this.c = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        this.c = new org.telegram.ui.Components.e6(this, 0L, 320L, srVar);
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
         this.d = o6Var;
         this.f = 1.0f;
@@ -38,7 +38,7 @@ public final class yj0 extends View {
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setStrokeWidth(AndroidUtilities.dp(4.0f));
         o6Var.setCallback(this);
-        o6Var.k(0.35f, 200L, rrVar);
+        o6Var.k(0.35f, 200L, srVar);
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
         TextPaint textPaint = o6Var.a;
         textPaint.setStyle(style);
@@ -69,7 +69,7 @@ public final class yj0 extends View {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.h = ofFloat;
                 ofFloat.addUpdateListener(new c3(this, 18));
-                this.h.addListener(new org.telegram.ui.Components.q81(this, 28));
+                this.h.addListener(new org.telegram.ui.Components.s81(this, 28));
                 this.h.setInterpolator(new OvershootInterpolator(2.0f));
                 this.h.setDuration(200L);
                 this.h.start();

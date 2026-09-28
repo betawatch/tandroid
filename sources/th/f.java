@@ -33,16 +33,16 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.k;
 import org.telegram.ui.Cells.v3;
+import org.telegram.ui.Components.b20;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.c20;
-import org.telegram.ui.Components.g20;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.n30;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.ug0;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.z10;
+import org.telegram.ui.Components.e20;
+import org.telegram.ui.Components.i20;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.p30;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.wg0;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.t5;
 import r0.a0;
 import s4.j;
@@ -50,7 +50,7 @@ import tg.u0;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class f extends bb implements le.e {
     public static final /* synthetic */ int r0 = 0;
@@ -60,11 +60,11 @@ public final class f extends bb implements le.e {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public j61 d0;
+    public l61 d0;
     public final ci.d e0;
     public final o f0;
     public final t5 g0;
-    public final g20 h0;
+    public final i20 h0;
     public final v3 i0;
     public final HashMap j0;
     public l.d k0;
@@ -73,13 +73,13 @@ public final class f extends bb implements le.e {
     public final FrameLayout n0;
     public HashSet o0;
     public final Rect p0;
-    public n30 q0;
+    public p30 q0;
 
     public f(Context context, d6 d6Var) {
         super(context, d6Var, true);
-        rr rrVar = rr.h;
-        this.X = new le.f(3, this, rrVar, 350L);
-        this.Y = new le.c(4, this, rrVar, 320L, false);
+        sr srVar = sr.h;
+        this.X = new le.f(3, this, srVar, 350L);
+        this.Y = new le.c(4, this, srVar, 320L, false);
         this.Z = new HashMap();
         this.a0 = new ArrayList();
         this.b0 = new ArrayList();
@@ -91,11 +91,11 @@ public final class f extends bb implements le.e {
         this.w = false;
         this.m0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
         AndroidUtilities.enableEdgeToEdge(getWindow());
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        yl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
-        this.d.j(new ug0(this, 13));
+        this.d.j(new wg0(this, 13));
         this.d.setOnItemClickListener(new c(context, d6Var, this));
         ci.d dVar = new ci.d(context, d6Var, true);
         this.e0 = dVar;
@@ -115,20 +115,20 @@ public final class f extends bb implements le.e {
         a6.a(oVar);
         this.e.n().addView(oVar, y5.t(-2, 48, 16, 12, 0, 12, 0));
         oVar.setOnClickListener(new a(this, 1));
-        c20 c20Var = new c20(context, d6Var);
+        e20 e20Var = new e20(context, d6Var);
         String string = LocaleController.getString(R.string.PollV2SearchHint);
-        h2 h2Var = c20Var.r;
+        h2 h2Var = e20Var.r;
         h2Var.setHint(string);
         h2Var.addTextChangedListener(new i2(this, 17));
-        g20 g20Var = new g20(context, this.currentAccount);
-        this.h0 = g20Var;
-        g20Var.setDelegate(new b(this));
+        i20 i20Var = new i20(context, this.currentAccount);
+        this.h0 = i20Var;
+        i20Var.setDelegate(new b(this));
         t5 t5Var = new t5(context, d6Var, this);
         this.g0 = t5Var;
         int i11 = this.backgroundPaddingLeft;
         t5Var.setPadding(i11, 0, i11, 0);
-        t5Var.addView(c20Var, y5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
-        t5Var.addView(g20Var, y5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
+        t5Var.addView(e20Var, y5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
+        t5Var.addView(i20Var, y5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
         v3 v3Var = new v3(context, 18, d6Var);
         this.i0 = v3Var;
         v3Var.setTranslationY(AndroidUtilities.dp(48.0f));
@@ -145,7 +145,7 @@ public final class f extends bb implements le.e {
         this.containerView.addView(frameLayout2, y5.e(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 80));
         j jVar = new j();
         jVar.n(350L);
-        jVar.o(rrVar);
+        jVar.o(srVar);
         jVar.C = false;
         jVar.m = false;
         this.d.setItemAnimator(jVar);
@@ -186,10 +186,10 @@ public final class f extends bb implements le.e {
                     }
                 }
                 if (tL_help_country != null) {
-                    n30 n30Var = new n30(fVar.getContext(), tL_help_country);
-                    n30Var.setOnClickListener(new a(fVar, 3));
-                    fVar.h0.a(n30Var);
-                    hashMap.put(tL_help_country.iso2, n30Var);
+                    p30 p30Var = new p30(fVar.getContext(), tL_help_country);
+                    p30Var.setOnClickListener(new a(fVar, 3));
+                    fVar.h0.a(p30Var);
+                    hashMap.put(tL_help_country.iso2, p30Var);
                 }
             }
         }
@@ -201,7 +201,7 @@ public final class f extends bb implements le.e {
     public final void D(int i10, float f7, float f10, le.f fVar) {
         if (i10 != 3) {
             if (i10 == 4) {
-                z10.d(this.f0, f7);
+                b20.d(this.f0, f7);
             }
         } else {
             Q();
@@ -216,23 +216,23 @@ public final class f extends bb implements le.e {
         Rect rect = this.p0;
         boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
-        wl0 wl0Var = this.d;
-        wl0Var.setClipBounds(rect);
+        yl0 yl0Var = this.d;
+        yl0Var.setClipBounds(rect);
         if (z10) {
-            wl0Var.invalidate();
+            yl0Var.invalidate();
         }
     }
 
     public final void R() {
-        wl0 wl0Var;
+        yl0 yl0Var;
         float f7 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            wl0Var = this.d;
-            if (i10 >= wl0Var.getChildCount()) {
+            yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 break;
             }
-            View childAt = wl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -242,24 +242,24 @@ public final class f extends bb implements le.e {
         t5 t5Var = this.g0;
         if (t5Var.getTranslationY() != max) {
             t5Var.setTranslationY(max);
-            wl0Var.invalidate();
+            yl0Var.invalidate();
         }
     }
 
     public final void S(View view) {
-        n30 n30Var = (n30) view;
-        if (!n30Var.y) {
-            n30 n30Var2 = this.q0;
-            if (n30Var2 != null) {
-                n30Var2.a();
+        p30 p30Var = (p30) view;
+        if (!p30Var.y) {
+            p30 p30Var2 = this.q0;
+            if (p30Var2 != null) {
+                p30Var2.a();
             }
-            this.q0 = n30Var;
-            n30Var.b();
+            this.q0 = p30Var;
+            p30Var.b();
             return;
         }
         this.q0 = null;
-        this.h0.c(n30Var);
-        String countryIso2 = n30Var.getCountryIso2();
+        this.h0.c(p30Var);
+        String countryIso2 = p30Var.getCountryIso2();
         HashMap hashMap = this.j0;
         hashMap.remove(countryIso2);
         this.e0.b(hashMap.size(), true);
@@ -274,11 +274,11 @@ public final class f extends bb implements le.e {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        j61 j61Var = new j61(wl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 8), this.resourcesProvider);
-        this.d0 = j61Var;
-        j61Var.r = false;
-        return j61Var;
+    public final xl0 v(yl0 yl0Var) {
+        l61 l61Var = new l61(yl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 8), this.resourcesProvider);
+        this.d0 = l61Var;
+        l61Var.r = false;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

@@ -10,9 +10,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class c80 extends org.telegram.ui.Components.vl0 {
+public final class c80 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -33,7 +33,7 @@ public final class c80 extends org.telegram.ui.Components.vl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f != 2;
     }
@@ -104,9 +104,9 @@ public final class c80 extends org.telegram.ui.Components.vl0 {
             p4Var.h = charSequence;
             p4Var.a();
             boolean containsKey = g80Var.F.containsKey(contact.key);
-            org.telegram.ui.Components.op opVar = p4Var.e;
-            if (opVar != null) {
-                opVar.a(containsKey, false);
+            org.telegram.ui.Components.pp ppVar = p4Var.e;
+            if (ppVar != null) {
+                ppVar.a(containsKey, false);
             }
         }
     }
@@ -124,6 +124,6 @@ public final class c80 extends org.telegram.ui.Components.vl0 {
         } else {
             view = i10 == 2 ? new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null) : new org.telegram.ui.Cells.p4(context, true);
         }
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 }

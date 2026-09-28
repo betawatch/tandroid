@@ -31,18 +31,18 @@ import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import w7.q;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
     public int F;
     public m6 a;
-    public qq b;
+    public rq b;
     public k c;
     public k d;
     public SharedPreferences e;
@@ -54,7 +54,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public wl0 y;
+    public yl0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
         return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
@@ -163,12 +163,12 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         Drawable mutate = getResources().getDrawable(R.drawable.floating_shadow).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, mode));
-        qq qqVar = new qq(mutate, h02, 0, 0);
+        rq rqVar = new rq(mutate, h02, 0, 0);
         int dp = AndroidUtilities.dp(56.0f);
         int dp2 = AndroidUtilities.dp(56.0f);
-        qqVar.e = dp;
-        qqVar.f = dp2;
-        this.b = qqVar;
+        rqVar.e = dp;
+        rqVar.f = dp2;
+        this.b = rqVar;
         Drawable drawable = getResources().getDrawable(R.drawable.popup_fixed_alert3);
         drawable.setColorFilter(new PorterDuffColorFilter(h6.w0(null, h6.h5, false), mode));
         this.w.setBackground(drawable);

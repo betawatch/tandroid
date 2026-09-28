@@ -13,10 +13,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public abstract class y {
     public static mg.i a;
@@ -54,12 +54,12 @@ public abstract class y {
             textView.setTypeface(AndroidUtilities.bold());
             textView.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f));
             linearLayout.addView(textView, y5.n(-1, -2));
-            wl0 wl0Var = new wl0(launchActivity, null);
-            iVar2.y = wl0Var;
-            wl0Var.setLayoutManager(new s4.c0());
-            wl0Var.setAdapter(new mg.g(iVar2, launchActivity));
-            wl0Var.setOnItemClickListener(new ai.g(iVar2, 13));
-            linearLayout.addView(wl0Var, y5.l(1.0f, -1, 0));
+            yl0 yl0Var = new yl0(launchActivity, null);
+            iVar2.y = yl0Var;
+            yl0Var.setLayoutManager(new s4.c0());
+            yl0Var.setAdapter(new mg.g(iVar2, launchActivity));
+            yl0Var.setOnItemClickListener(new ai.g(iVar2, 13));
+            linearLayout.addView(yl0Var, y5.l(1.0f, -1, 0));
             iVar2.addView(linearLayout, y5.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             iVar2.d();
             iVar2.setFitsSystemWindows(true);

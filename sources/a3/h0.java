@@ -47,13 +47,13 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.cg;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.eh;
-import org.telegram.ui.Components.gx0;
-import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.lm;
-import org.telegram.ui.Components.om;
-import org.telegram.ui.Components.q80;
-import org.telegram.ui.Components.qm;
+import org.telegram.ui.Components.ix0;
+import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.mm;
+import org.telegram.ui.Components.pm;
 import org.telegram.ui.Components.rm;
+import org.telegram.ui.Components.s80;
+import org.telegram.ui.Components.sm;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
@@ -71,7 +71,7 @@ import org.telegram.ui.sq;
 import org.telegram.ui.v90;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -101,7 +101,7 @@ public final /* synthetic */ class h0 implements Runnable {
         boolean z12;
         boolean z13;
         int i11;
-        om omVar;
+        pm pmVar;
         int i12 = 2;
         int i13 = 0;
         switch (this.a) {
@@ -420,34 +420,34 @@ public final /* synthetic */ class h0 implements Runnable {
                 e5.M(wiVar.getContext(), this.b, new eh(wiVar, 14), (d6) this.d);
                 return;
             case 20:
-                qm qmVar = (qm) this.c;
+                rm rmVar = (rm) this.c;
                 long j27 = this.b;
-                om omVar2 = (om) this.d;
-                rm rmVar = qmVar.P;
-                if (!rmVar.r.K1 && qmVar.y == j27 && (omVar = qmVar.F) == omVar2) {
-                    rmVar.J = omVar;
-                    rmVar.M = omVar.a.a;
-                    rmVar.K = false;
-                    qmVar.G = 0.0f;
-                    qmVar.invalidate();
-                    ValueAnimator valueAnimator = rmVar.L;
+                pm pmVar2 = (pm) this.d;
+                sm smVar = rmVar.P;
+                if (!smVar.r.K1 && rmVar.y == j27 && (pmVar = rmVar.F) == pmVar2) {
+                    smVar.J = pmVar;
+                    smVar.M = pmVar.a.a;
+                    smVar.K = false;
+                    rmVar.G = 0.0f;
+                    rmVar.invalidate();
+                    ValueAnimator valueAnimator = smVar.L;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    rmVar.L = ofFloat;
-                    ofFloat.addUpdateListener(new lm(qmVar, 0));
-                    rmVar.L.setDuration(200L);
-                    rmVar.L.start();
-                    om omVar3 = rmVar.J;
-                    RectF f7 = omVar3.f(omVar3.e());
-                    RectF d = rmVar.J.d();
-                    rmVar.G = (((rmVar.y - f7.left) / f7.width()) + 0.5f) / 2.0f;
-                    rmVar.F = (rmVar.E - f7.top) / f7.height();
-                    rmVar.H = d.width();
-                    rmVar.I = d.height();
+                    smVar.L = ofFloat;
+                    ofFloat.addUpdateListener(new mm(rmVar, 0));
+                    smVar.L.setDuration(200L);
+                    smVar.L.start();
+                    pm pmVar3 = smVar.J;
+                    RectF f7 = pmVar3.f(pmVar3.e());
+                    RectF d = smVar.J.d();
+                    smVar.G = (((smVar.y - f7.left) / f7.width()) + 0.5f) / 2.0f;
+                    smVar.F = (smVar.E - f7.top) / f7.height();
+                    smVar.H = d.width();
+                    smVar.I = d.height();
                     try {
-                        rmVar.performHapticFeedback(0, 2);
+                        smVar.performHapticFeedback(0, 2);
                         return;
                     } catch (Exception unused) {
                         return;
@@ -455,13 +455,13 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 return;
             case 21:
-                q80.Xc((q80) this.c, this.b, (TLRPC.Chat) this.d);
+                s80.Xc((s80) this.c, this.b, (TLRPC.Chat) this.d);
                 return;
             case 22:
-                ((jv0) this.c).v1.presentFragment(wn.Q9(((MessageObject) this.d).getId(), this.b));
+                ((lv0) this.c).v1.presentFragment(wn.Q9(((MessageObject) this.d).getId(), this.b));
                 return;
             case 23:
-                gx0.x1((gx0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
+                ix0.x1((ix0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
                 return;
             case 24:
                 qy qyVar2 = (qy) this.c;

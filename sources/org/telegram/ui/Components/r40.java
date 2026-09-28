@@ -1,31 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
+import android.text.Editable;
 import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class r40 implements org.telegram.ui.bq0 {
-    public final /* synthetic */ v40 a;
+public final class r40 implements org.telegram.ui.sq0 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ x40 d;
 
-    public r40(v40 v40Var) {
-        this.a = v40Var;
+    public r40(x40 x40Var, HashMap hashMap, ArrayList arrayList) {
+        this.d = x40Var;
+        this.b = hashMap;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.bq0
-    public final void a(ArrayList arrayList) {
-        v40.b(this.a, false, arrayList);
+    @Override // org.telegram.ui.sq0
+    public final boolean e() {
+        return this.d.b.e();
     }
 
-    @Override // org.telegram.ui.bq0
-    public final void b() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("image/*");
-            this.a.a.startActivityForResult(intent, 14);
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // org.telegram.ui.sq0
+    public final void i(int i10, boolean z10, boolean z11) {
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty()) {
+            return;
         }
+        x40 x40Var = this.d;
+        if (x40Var.b == null || this.a || z10) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i11 >= arrayList2.size()) {
+                x40.b(x40Var, false, arrayList);
+                return;
+            }
+            Object obj = hashMap.get(arrayList2.get(i11));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList.add(sendingMediaInfo);
+            if (obj instanceof MediaController.SearchImage) {
+                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                String str = searchImage.imagePath;
+                if (str != null) {
+                    sendingMediaInfo.path = str;
+                } else {
+                    sendingMediaInfo.searchImage = searchImage;
+                }
+                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+                sendingMediaInfo.thumbPath = searchImage.thumbPath;
+                CharSequence charSequence = searchImage.caption;
+                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                sendingMediaInfo.entities = searchImage.entities;
+                sendingMediaInfo.masks = searchImage.stickers;
+                sendingMediaInfo.ttl = searchImage.ttl;
+            }
+            i11++;
+        }
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void b(Editable editable) {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ void g() {
     }
 }

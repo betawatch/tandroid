@@ -13,23 +13,23 @@ import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.g5;
-import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.pq0;
 import rg.i1;
 import s4.c1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class g extends vl0 {
+public final class g extends xl0 {
     public final /* synthetic */ n c;
 
     public g(n nVar) {
         this.c = nVar;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -153,6 +153,6 @@ public final class g extends vl0 {
             pq0Var.setTag(-33024);
             view = pq0Var;
         }
-        return new gl0(view);
+        return new il0(view);
     }
 }

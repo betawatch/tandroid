@@ -7,9 +7,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.oz;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class e0 implements TextWatcher {
     public final /* synthetic */ k0 a;
@@ -23,21 +23,21 @@ public final class e0 implements TextWatcher {
         int currentTop;
         k0 k0Var = this.a;
         ai.w0 w0Var = k0Var.s;
-        nz nzVar = k0Var.E;
+        oz ozVar = k0Var.E;
         h0 h0Var = k0Var.x;
         String obj = editable.toString();
         if (obj.isEmpty()) {
             if (w0Var.getAdapter() != h0Var) {
                 currentTop = k0Var.getCurrentTop();
-                nzVar.c();
+                ozVar.c();
                 w0Var.setAdapter(h0Var);
                 h0Var.l();
                 if (currentTop > 0) {
                     k0Var.v.h1(0, -currentTop);
                 }
             }
-        } else if (nzVar != null) {
-            nzVar.setText(LocaleController.getString(R.string.NoResult));
+        } else if (ozVar != null) {
+            ozVar.setText(LocaleController.getString(R.string.NoResult));
         }
         i0 i0Var = k0Var.y;
         if (i0Var != null) {

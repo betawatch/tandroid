@@ -9,10 +9,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.t00;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.u00;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
@@ -20,7 +20,7 @@ import org.telegram.ui.ba1;
 import org.telegram.ui.ca1;
 import org.telegram.ui.tt;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -49,18 +49,18 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                 if (e4Var != null) {
                     e4Var.e(true);
                 }
-                qk0 qk0Var = e6Var.r3;
-                if (qk0Var == null) {
+                sk0 sk0Var = e6Var.r3;
+                if (sk0Var == null) {
                     org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
-                    qk0 qk0Var2 = new qk0(2, e6Var.C2, e6Var.getContext(), R, new x3(4, e6Var.B0));
-                    e6Var.r3 = qk0Var2;
-                    qk0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
+                    sk0 sk0Var2 = new sk0(2, e6Var.C2, e6Var.getContext(), R, new x3(4, e6Var.B0));
+                    e6Var.r3 = sk0Var2;
+                    sk0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
                     e6Var.addView(e6Var.r3, e6Var.getChildCount() - 1, w7.y5.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                     e6Var.r3.setVisibility(8);
                     e6Var.r3.setDelegate(new z4(e6Var));
                     e6Var.r3.p(null, null, true);
                 } else {
-                    e6Var.bringChildToFront(qk0Var);
+                    e6Var.bringChildToFront(sk0Var);
                     e6Var.r3.n();
                 }
                 e6Var.r3.setFragment(LaunchActivity.R());
@@ -89,12 +89,12 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                 MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
                 return true;
             case 3:
-                y70 y70Var = (y70) this.b;
+                a80 a80Var = (a80) this.b;
                 ((tt) this.c).run();
-                if (!y70Var.J) {
+                if (!a80Var.J) {
                     return true;
                 }
-                y70Var.u();
+                a80Var.u();
                 return true;
             case 4:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
@@ -127,9 +127,9 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                 ba1 ba1Var = (ba1) this.b;
                 kg.f fVar = (kg.f) this.c;
                 ca1 ca1Var = ba1Var.d;
-                t00 t00Var = ba1Var.a;
+                u00 u00Var = ba1Var.a;
                 boolean z10 = false;
-                if (t00Var.c) {
+                if (u00Var.c) {
                     ca1Var.f();
                     ArrayList arrayList = ca1Var.n;
                     ig.g gVar = ca1Var.c;
@@ -142,7 +142,7 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                         }
                     }
                     z10 = true;
-                    t00Var.setChecked(true);
+                    u00Var.setChecked(true);
                     fVar.n = true;
                     ca1Var.b.z();
                     if (ca1Var.r.c > 0) {

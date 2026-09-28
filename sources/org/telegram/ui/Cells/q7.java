@@ -23,17 +23,17 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.op;
+import org.telegram.ui.Components.pp;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class q7 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
     public final TextView b;
     public final q5 c;
     public final View d;
-    public final op e;
+    public final pp e;
     public final FrameLayout f;
     public AnimatorSet h;
     public MessageObject n;
@@ -72,13 +72,13 @@ public final class q7 extends FrameLayout {
         this.d = view;
         view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.K0(false));
         addView(view, w7.y5.c(-1.0f, -1));
-        op opVar = new op(context, 21, null);
-        this.e = opVar;
-        opVar.setVisibility(4);
-        opVar.b(-1, org.telegram.ui.ActionBar.h6.Lh, org.telegram.ui.ActionBar.h6.k7);
-        opVar.setDrawUnchecked(false);
-        opVar.setDrawBackgroundAsArc(1);
-        addView(opVar, w7.y5.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
+        pp ppVar = new pp(context, 21, null);
+        this.e = ppVar;
+        ppVar.setVisibility(4);
+        ppVar.b(-1, org.telegram.ui.ActionBar.h6.Lh, org.telegram.ui.ActionBar.h6.k7);
+        ppVar.setDrawUnchecked(false);
+        ppVar.setDrawBackgroundAsArc(1);
+        addView(ppVar, w7.y5.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
     }
 
     @Override // android.view.View

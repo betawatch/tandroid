@@ -1,46 +1,75 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class bo implements n8 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.m1[] a;
-    public final /* synthetic */ fo b;
+public final class bo extends w9 {
+    public final org.telegram.ui.Cells.m6 G;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 H;
+    public final /* synthetic */ boolean I;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 J;
+    public final /* synthetic */ go K;
 
-    public bo(fo foVar, org.telegram.ui.ActionBar.m1[] m1VarArr) {
-        this.b = foVar;
-        this.a = m1VarArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bo(go goVar, Context context, org.telegram.ui.ActionBar.m2 m2Var, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.K = goVar;
+        this.H = m2Var;
+        this.I = z10;
+        this.J = d6Var;
+        this.G = new org.telegram.ui.Cells.m6(this);
     }
 
-    @Override // org.telegram.ui.Components.n8
-    public final void U0(int i10, int i11) {
-        org.telegram.ui.wn wnVar = this.b.G;
-        if (wnVar == null) {
+    @Override // org.telegram.ui.Components.w9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        long j3;
+        go goVar = this.K;
+        if (!goVar.b || this.e != null) {
+            super.onDraw(canvas);
             return;
         }
-        wnVar.getMessagesController().setDialogHistoryTTL(wnVar.a(), i10);
-        TLRPC.ChatFull chatFull = wnVar.Z7;
-        TLRPC.UserFull userFull = wnVar.a8;
-        if (userFull == null && chatFull == null) {
-            return;
+        org.telegram.ui.Cells.m6 m6Var = this.G;
+        m6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        m6Var.a = true;
+        m6Var.v = true;
+        m6Var.J = this.J;
+        Integer num = goVar.c;
+        if (num != null) {
+            m6Var.z = num.intValue();
         }
-        wnVar.Q7();
-        UndoView undoView = wnVar.y3;
-        if (undoView != null) {
-            undoView.k(wnVar.a(), i11, wnVar.i(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
+        org.telegram.ui.wn wnVar = goVar.G;
+        if (wnVar != null) {
+            j3 = wnVar.a();
+        } else {
+            org.telegram.ui.ActionBar.m2 m2Var = this.H;
+            j3 = m2Var instanceof wf1 ? -((wf1) m2Var).a : 0L;
+        }
+        ai.ia.h(j3, canvas, this.a, m6Var);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!this.I || !getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
         }
     }
 
-    @Override // org.telegram.ui.Components.n8
-    public final void dismiss() {
-        org.telegram.ui.ActionBar.m1 m1Var = this.a[0];
-        if (m1Var != null) {
-            m1Var.dismiss();
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.K.b && this.G.a(motionEvent, this)) {
+            return true;
         }
-    }
-
-    @Override // org.telegram.ui.Components.n8
-    public final /* synthetic */ void j1() {
+        return super.onTouchEvent(motionEvent);
     }
 }

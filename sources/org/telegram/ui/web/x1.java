@@ -9,30 +9,30 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.pk;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class x1 extends u51 {
+public final class x1 extends w51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        u51.setup(new x1());
+        w51.setup(new x1());
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
         y1 y1Var = (y1) view;
-        String str = v51Var.n;
-        String str2 = (String) v51Var.l;
-        long j3 = v51Var.B;
+        String str = x51Var.n;
+        String str2 = (String) x51Var.l;
+        long j3 = x51Var.B;
         ImageView imageView = y1Var.a;
         y1Var.b.setText(str);
         pk pkVar = y1Var.c;
@@ -62,19 +62,19 @@ public final class x1 extends u51 {
             n10.a(imageView);
             imageView.setImageDrawable(y1Var.d);
         } else {
-            qq qqVar = new qq(h6.b0(AndroidUtilities.dp(6.0f), h6.l1(0.1f, h6.w0(null, h6.G6, false))), new d4(charSequence));
+            rq rqVar = new rq(h6.b0(AndroidUtilities.dp(6.0f), h6.l1(0.1f, h6.w0(null, h6.G6, false))), new d4(charSequence));
             int dp = AndroidUtilities.dp(28.0f);
             int dp2 = AndroidUtilities.dp(28.0f);
-            qqVar.h = dp;
-            qqVar.n = dp2;
-            imageView.setImageDrawable(qqVar);
+            rqVar.h = dp;
+            rqVar.n = dp2;
+            imageView.setImageDrawable(rqVar);
         }
         y1Var.f = z10;
         y1Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, d6 d6Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, yl0 yl0Var, int i10, int i11, d6 d6Var) {
         return new y1(context);
     }
 }

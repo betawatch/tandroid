@@ -15,9 +15,9 @@ import android.view.View;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class q4 extends View implements org.telegram.ui.Components.uh0 {
+public abstract class q4 extends View implements org.telegram.ui.Components.wh0 {
     public final boolean[] E;
     public final float[] F;
     public float G;
@@ -29,7 +29,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.uh0 
     public int M;
     public float N;
     public int O;
-    public org.telegram.ui.Components.zh0 P;
+    public org.telegram.ui.Components.bi0 P;
     public final TextPaint Q;
     public float R;
     public int S;
@@ -92,7 +92,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.uh0 
         paint3.setAlpha(66);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(250L);
-        ofFloat.setInterpolator(org.telegram.ui.Components.rr.j);
+        ofFloat.setInterpolator(org.telegram.ui.Components.sr.j);
         ofFloat.addUpdateListener(new c3(this, i10));
         ofFloat.addListener(new ai.b(this, 29));
         TextPaint textPaint = new TextPaint(1);
@@ -111,24 +111,24 @@ public abstract class q4 extends View implements org.telegram.ui.Components.uh0 
         return this.T;
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.wh0
     public final void a() {
         Arrays.fill(this.E, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.wh0
     public final void b(boolean z10) {
         this.E[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.wh0
     public final void d() {
         invalidate();
     }
 
-    public org.telegram.ui.Components.zh0 getProfileGalleryView() {
+    public org.telegram.ui.Components.bi0 getProfileGalleryView() {
         return this.P;
     }
 
@@ -262,7 +262,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.uh0 
                     if (i15 != this.M) {
                         this.H[i15] = 0.75f;
                     } else if (this.b == 3) {
-                        paint6.setAlpha((int) (AndroidUtilities.lerp(i11, 255, org.telegram.ui.Components.rr.j.getInterpolation(this.H[i15])) * this.G));
+                        paint6.setAlpha((int) (AndroidUtilities.lerp(i11, 255, org.telegram.ui.Components.sr.j.getInterpolation(this.H[i15])) * this.G));
                     }
                     canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i15 != this.M ? paint3 : paint6);
                     i15++;
@@ -448,11 +448,11 @@ public abstract class q4 extends View implements org.telegram.ui.Components.uh0 
         gradientDrawableArr[1].setBounds(i10 - i14, 0, i10, i11);
     }
 
-    public void setProfileGalleryView(org.telegram.ui.Components.zh0 zh0Var) {
-        this.P = zh0Var;
+    public void setProfileGalleryView(org.telegram.ui.Components.bi0 bi0Var) {
+        this.P = bi0Var;
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.wh0
     public void c() {
     }
 }

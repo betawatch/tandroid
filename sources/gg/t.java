@@ -31,14 +31,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.f51;
-import org.telegram.ui.Components.m01;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.q01;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -109,12 +109,12 @@ public final /* synthetic */ class t implements Runnable {
                 String str2 = tL_messages_searchStickerSets.q;
                 g2 g2Var = e2Var.a;
                 String str3 = g2Var.R;
-                f51 f51Var = g2Var.e;
+                h51 h51Var = g2Var.e;
                 if (str2.equals(str3)) {
                     e2Var.a();
-                    f51Var.b.h.getProgressDrawable().e = false;
+                    h51Var.b.h.getProgressDrawable().e = false;
                     g2Var.N = 0;
-                    f51Var.b(true);
+                    h51Var.b(true);
                     g2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     g2Var.l();
                     return;
@@ -244,9 +244,9 @@ public final /* synthetic */ class t implements Runnable {
                 return;
             case 15:
                 x3 x3Var = (x3) this.b;
-                y70 y70Var = (y70) this.c;
+                a80 a80Var = (a80) this.c;
                 p5 p5Var = (p5) this.d;
-                if (x3Var.j4 != y70Var) {
+                if (x3Var.j4 != a80Var) {
                     return;
                 }
                 x3Var.j4 = null;
@@ -347,12 +347,12 @@ public final /* synthetic */ class t implements Runnable {
                 ki.s0 s0Var = (ki.s0) this.b;
                 ki.t tVar = (ki.t) this.c;
                 File file = (File) this.d;
-                Handler handler = s0Var.h;
+                Handler handler = s0Var.i;
                 try {
                     tVar.d(file);
-                    s0Var.f();
+                    s0Var.g();
                     long e = w7.k.e(file) / 1000;
-                    s0Var.l.b("preview snapshot completed: durationMs=" + e + ", size=" + file.length() + ", elapsedMs=" + ki.s0.e(s0Var.I));
+                    s0Var.m.b("preview snapshot completed: durationMs=" + e + ", size=" + file.length() + ", elapsedMs=" + ki.s0.f(s0Var.J));
                     handler.post(new ki.d0(s0Var, e, i10));
                     return;
                 } catch (Exception e7) {
@@ -363,14 +363,14 @@ public final /* synthetic */ class t implements Runnable {
                 ki.s0 s0Var2 = (ki.s0) this.b;
                 ki.o0 o0Var = (ki.o0) this.c;
                 File file2 = (File) this.d;
-                ki.p0 p0Var = s0Var2.d;
+                ki.p0 p0Var = s0Var2.e;
                 long j10 = o0Var.a;
-                o01 o01Var = (o01) p0Var;
-                synchronized (o01Var) {
-                    if (o01Var.d) {
+                q01 q01Var = (q01) p0Var;
+                synchronized (q01Var) {
+                    if (q01Var.d) {
                         return;
                     }
-                    o01Var.c.put(Long.valueOf(j10), new m01(file2));
+                    q01Var.c.put(Long.valueOf(j10), new o01(file2));
                     return;
                 }
             case 25:

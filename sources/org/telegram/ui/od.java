@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class od implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -41,19 +41,19 @@ public final /* synthetic */ class od implements View.OnFocusChangeListener {
                 }
                 break;
             case 3:
-                org.telegram.ui.Components.jd0 jd0Var = (org.telegram.ui.Components.jd0) this.b;
+                org.telegram.ui.Components.ld0 ld0Var = (org.telegram.ui.Components.ld0) this.b;
                 float f10 = z10 ? 1.0f : 0.0f;
-                jd0Var.b(f10, f10, true);
+                ld0Var.b(f10, f10, true);
                 break;
             case 4:
-                org.telegram.ui.Components.jd0 jd0Var2 = ((je0) this.b).x;
+                org.telegram.ui.Components.ld0 ld0Var2 = ((je0) this.b).x;
                 float f11 = z10 ? 1.0f : 0.0f;
-                jd0Var2.b(f11, f11, true);
+                ld0Var2.b(f11, f11, true);
                 break;
             case 5:
-                org.telegram.ui.Components.jd0 jd0Var3 = ((re0) this.b).b;
+                org.telegram.ui.Components.ld0 ld0Var3 = ((re0) this.b).b;
                 float f12 = z10 ? 1.0f : 0.0f;
-                jd0Var3.b(f12, f12, true);
+                ld0Var3.b(f12, f12, true);
                 break;
             case 6:
                 qg0 qg0Var2 = ((ue0) this.b).y;
@@ -64,9 +64,9 @@ public final /* synthetic */ class od implements View.OnFocusChangeListener {
                 }
                 break;
             case 7:
-                org.telegram.ui.Components.jd0 jd0Var4 = ((ff0) this.b).a;
+                org.telegram.ui.Components.ld0 ld0Var4 = ((ff0) this.b).a;
                 float f13 = z10 ? 1.0f : 0.0f;
-                jd0Var4.b(f13, f13, true);
+                ld0Var4.b(f13, f13, true);
                 break;
             case 8:
                 qg0 qg0Var3 = ((tf0) this.b).s0;
@@ -77,14 +77,14 @@ public final /* synthetic */ class od implements View.OnFocusChangeListener {
                 }
                 break;
             case 9:
-                org.telegram.ui.Components.jd0 jd0Var5 = ((pg0) this.b).e;
+                org.telegram.ui.Components.ld0 ld0Var5 = ((pg0) this.b).e;
                 float f14 = z10 ? 1.0f : 0.0f;
-                jd0Var5.b(f14, f14, true);
+                ld0Var5.b(f14, f14, true);
                 break;
             case 10:
-                org.telegram.ui.Components.jd0 jd0Var6 = ((PasscodeActivity) this.b).f;
+                org.telegram.ui.Components.ld0 ld0Var6 = ((PasscodeActivity) this.b).f;
                 float f15 = z10 ? 1.0f : 0.0f;
-                jd0Var6.b(f15, f15, true);
+                ld0Var6.b(f15, f15, true);
                 break;
             case 11:
                 td1 td1Var = (td1) this.b;
@@ -96,9 +96,9 @@ public final /* synthetic */ class od implements View.OnFocusChangeListener {
                     break;
                 }
             default:
-                org.telegram.ui.Components.jd0 jd0Var7 = ((TwoStepVerificationActivity) this.b).v;
+                org.telegram.ui.Components.ld0 ld0Var7 = ((TwoStepVerificationActivity) this.b).v;
                 float f16 = z10 ? 1.0f : 0.0f;
-                jd0Var7.b(f16, f16, true);
+                ld0Var7.b(f16, f16, true);
                 break;
         }
     }

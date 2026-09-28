@@ -10,7 +10,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class t01 extends View {
     public final RectF a;
@@ -42,7 +42,7 @@ public final class t01 extends View {
         paint.setColor(637534208);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.d = ofFloat;
-        ofFloat.setInterpolator(org.telegram.ui.Components.rr.j);
+        ofFloat.setInterpolator(org.telegram.ui.Components.sr.j);
         ofFloat.addUpdateListener(new c3(this, 29));
         ofFloat.addListener(new c70(5, this, profileActivity.n1));
         profileActivity.n0.b(new s01(this));

@@ -1,43 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class es0 extends org.telegram.ui.s11 {
-    public final /* synthetic */ jv0 H;
+public final class es0 extends Drawable {
+    public final /* synthetic */ int a;
+    public final ShapeDrawable b;
+    public final Rect c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public es0(jv0 jv0Var, Context context, aw0 aw0Var, ai.x8 x8Var, ds0 ds0Var) {
-        super(context, aw0Var, x8Var, ds0Var);
-        this.H = jv0Var;
+    public es0(bs0 bs0Var) {
+        this.a = 1;
+        this.b = org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
+        this.c = new Rect();
     }
 
-    @Override // org.telegram.ui.s11
-    public final void a() {
-        is0 is0Var;
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.F;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-        invalidate();
-        jv0 jv0Var = this.H;
-        cu0[] cu0VarArr = jv0Var.k0;
-        if (cu0VarArr != null) {
-            for (cu0 cu0Var : cu0VarArr) {
-                if (cu0Var != null && (is0Var = cu0Var.h) != null) {
-                    int paddingLeft = is0Var.getPaddingLeft();
-                    int Z = jv0Var.Z(cu0Var.F);
-                    int paddingRight = cu0Var.h.getPaddingRight();
-                    is0 is0Var2 = cu0Var.h;
-                    int Y = jv0Var.Y(jv0Var.v0());
-                    is0Var2.e3 = Y;
-                    is0Var.setPadding(paddingLeft, Z, paddingRight, Y);
-                }
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                Rect bounds = getBounds();
+                Rect rect = this.c;
+                rect.set(bounds);
+                rect.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
+                ShapeDrawable shapeDrawable = this.b;
+                shapeDrawable.setBounds(rect);
+                shapeDrawable.draw(canvas);
+                break;
+            default:
+                Rect bounds2 = getBounds();
+                Rect rect2 = this.c;
+                rect2.set(bounds2);
+                rect2.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
+                ShapeDrawable shapeDrawable2 = this.b;
+                shapeDrawable2.setBounds(rect2);
+                shapeDrawable2.draw(canvas);
+                break;
         }
-        jv0Var.K();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i10);
+                break;
+            default:
+                this.b.setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        int i10 = this.a;
+    }
+
+    public es0(fs0 fs0Var) {
+        this.a = 0;
+        int dp = AndroidUtilities.dp(16.0f);
+        int dp2 = AndroidUtilities.dp(16.0f);
+        int i10 = org.telegram.ui.ActionBar.h6.d6;
+        org.telegram.ui.ActionBar.d6 d6Var = fs0Var.c;
+        this.b = org.telegram.ui.ActionBar.h6.c0(dp, dp2, org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.l1(0.04f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var))));
+        this.c = new Rect();
+    }
+
+    private final void a(ColorFilter colorFilter) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.media.MediaFormat;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class jt0 implements a3.y {
     public final /* synthetic */ PhotoViewer a;
@@ -14,10 +14,10 @@ public final class jt0 implements a3.y {
 
     @Override // a3.y
     public final void a(long j3, long j10, b2.s sVar, MediaFormat mediaFormat) {
-        org.telegram.ui.Components.s71 s71Var;
+        org.telegram.ui.Components.u71 u71Var;
         PhotoViewer photoViewer = this.a;
-        if (photoViewer.J4 && (s71Var = photoViewer.F2) != null) {
-            AndroidUtilities.runOnUIThread(new sj0(21, this, s71Var));
+        if (photoViewer.J4 && (u71Var = photoViewer.F2) != null) {
+            AndroidUtilities.runOnUIThread(new sj0(21, this, u71Var));
         }
     }
 }

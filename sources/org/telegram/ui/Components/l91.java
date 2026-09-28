@@ -1,27 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface l91 {
-    TextureView a(View view, boolean z10, float f7, int i10, boolean z11);
+public final class l91 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m91 b;
 
-    void b();
+    public /* synthetic */ l91(m91 m91Var, int i10) {
+        this.a = i10;
+        this.b = m91Var;
+    }
 
-    void c(float f7);
-
-    void d();
-
-    void e(o91 o91Var, boolean z10);
-
-    TextureView f(View view, boolean z10, int i10, int i11, boolean z11);
-
-    ViewGroup g();
-
-    boolean h();
-
-    void i(boolean z10, g91 g91Var, float f7, boolean z11);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.y = null;
+                break;
+            default:
+                this.b.y = null;
+                break;
+        }
+    }
 }

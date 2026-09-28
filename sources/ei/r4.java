@@ -9,14 +9,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.d10;
+import org.telegram.ui.Components.e10;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.gr0;
 import org.telegram.ui.l6;
 import yh.j5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -52,12 +52,12 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
                 l6Var.run(Float.valueOf((w7.q.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f10)) + (f7 / f10)), Boolean.FALSE);
                 break;
             case 3:
-                d10 d10Var = (d10) this.c;
+                e10 e10Var = (e10) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
                 int i11 = this.b;
-                d10Var.getClass();
-                d10Var.A0 = ((Boolean) obj).booleanValue();
-                d10Var.dismiss();
+                e10Var.getClass();
+                e10Var.A0 = ((Boolean) obj).booleanValue();
+                e10Var.dismiss();
                 callback.run(Integer.valueOf(i11));
                 break;
             case 4:

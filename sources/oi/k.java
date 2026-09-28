@@ -30,12 +30,12 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.g10;
 import org.telegram.ui.Components.h10;
+import org.telegram.ui.Components.i10;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class k implements g10 {
+public final class k implements h10 {
     public static final Object v = new Object();
     public static k w;
     public static k x;
@@ -86,8 +86,8 @@ public final class k implements g10 {
         synchronized (kVar.a) {
             try {
                 if (!kVar.r && kVar.o == null) {
-                    h10 h10Var = h10.getInstance();
-                    if (h10Var != null && h10Var.isBackground()) {
+                    i10 i10Var = i10.getInstance();
+                    if (i10Var != null && i10Var.isBackground()) {
                         kVar.s = true;
                         return;
                     }
@@ -283,9 +283,9 @@ public final class k implements g10 {
                 try {
                     k kVar3 = new k(i10, str2, d);
                     w = kVar3;
-                    h10 h10Var = h10.getInstance();
-                    if (h10Var != null) {
-                        h10Var.addListener(kVar3);
+                    i10 i10Var = i10.getInstance();
+                    if (i10Var != null) {
+                        i10Var.addListener(kVar3);
                     }
                     kVar3.j.execute(new g(kVar3, 1));
                     AndroidUtilities.runOnUIThread(new g(kVar3, 2));
@@ -439,9 +439,9 @@ public final class k implements g10 {
                     this.i.close();
                 } catch (Exception unused) {
                 }
-                h10 h10Var = h10.getInstance();
-                if (h10Var != null) {
-                    h10Var.removeListener(this);
+                i10 i10Var = i10.getInstance();
+                if (i10Var != null) {
+                    i10Var.removeListener(this);
                 }
                 int size = arrayList.size();
                 while (i10 < size) {
@@ -461,12 +461,12 @@ public final class k implements g10 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g10
+    @Override // org.telegram.ui.Components.h10
     public final void onBecameForeground() {
         AndroidUtilities.runOnUIThread(new g(this, 2));
     }
 
-    @Override // org.telegram.ui.Components.g10
+    @Override // org.telegram.ui.Components.h10
     public final void onBecameBackground() {
     }
 }

@@ -13,14 +13,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.op;
+import org.telegram.ui.Components.pp;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class x8 extends FrameLayout {
     public final TextView a;
     public final TextView b;
-    public final op c;
+    public final pp c;
     public boolean d;
     public boolean e;
     public int f;
@@ -56,13 +56,13 @@ public final class x8 extends FrameLayout {
         textView2.setEllipsize(truncateAt);
         boolean z11 = LocaleController.isRTL;
         addView(textView2, w7.y5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f));
-        op opVar = new op(context, 21, null);
-        this.c = opVar;
-        opVar.setDrawUnchecked(true);
-        opVar.setDrawBackgroundAsArc(10);
-        opVar.setDuration(100L);
-        opVar.b(org.telegram.ui.ActionBar.h6.h7, org.telegram.ui.ActionBar.h6.j7, org.telegram.ui.ActionBar.h6.k7);
-        addView(opVar, w7.y5.d(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        pp ppVar = new pp(context, 21, null);
+        this.c = ppVar;
+        ppVar.setDrawUnchecked(true);
+        ppVar.setDrawBackgroundAsArc(10);
+        ppVar.setDuration(100L);
+        ppVar.b(org.telegram.ui.ActionBar.h6.h7, org.telegram.ui.ActionBar.h6.j7, org.telegram.ui.ActionBar.h6.k7);
+        addView(ppVar, w7.y5.d(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
         setClipChildren(false);
     }
 

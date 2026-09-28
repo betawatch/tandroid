@@ -5,7 +5,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jo implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class jo implements Runnable {
                 }
                 roVar3.O0 = true;
                 if (roVar3.R0 == null) {
-                    roVar3.R0 = new org.telegram.ui.Components.ij0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                    roVar3.R0 = new org.telegram.ui.Components.kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                 }
                 roVar3.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                 roVar3.b0.e.setAnimation(roVar3.R0);

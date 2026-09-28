@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class p10 implements org.telegram.ui.Cells.m7 {
     public final /* synthetic */ q10 a;
@@ -39,7 +39,7 @@ public final class p10 implements org.telegram.ui.Cells.m7 {
     public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
         t10 t10Var = this.a.v;
         SpannableStringBuilder[] spannableStringBuilderArr = t10.s0;
-        org.telegram.ui.Components.wu.J(t10Var.L, messageObject, t10Var.g0, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+        org.telegram.ui.Components.xu.J(t10Var.L, messageObject, t10Var.g0, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
     }
 
     @Override // org.telegram.ui.Cells.m7

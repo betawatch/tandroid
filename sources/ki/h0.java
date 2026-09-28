@@ -36,14 +36,14 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.b60;
-import org.telegram.ui.Components.mo0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.d60;
+import org.telegram.ui.Components.oo0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.il;
 import org.telegram.ui.z31;
 import rg.x0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -213,27 +213,27 @@ public final /* synthetic */ class h0 implements Runnable {
                 k2.u uVar = (k2.u) this.b;
                 l0 l0Var = (l0) this.c;
                 s0 s0Var = (s0) uVar.b;
-                s0Var.M++;
-                s0Var.v = true;
-                s0Var.l.b("camera switch started: target=" + l0Var);
-                b60 b60Var = (b60) s0Var.c.a;
-                il ilVar = b60Var.E;
-                FrameLayout frameLayout = b60Var.x;
-                b60Var.s(false);
-                Bitmap bitmap = b60Var.m0;
+                s0Var.N++;
+                s0Var.w = true;
+                s0Var.m.b("camera switch started: target=" + l0Var);
+                d60 d60Var = (d60) s0Var.d.a;
+                il ilVar = d60Var.E;
+                FrameLayout frameLayout = d60Var.x;
+                d60Var.s(false);
+                Bitmap bitmap = d60Var.m0;
                 if (bitmap != null) {
                     ilVar.setImageBitmap(bitmap);
-                    b60Var.l0 = true;
+                    d60Var.l0 = true;
                     ilVar.animate().cancel();
                     ilVar.setAlpha(1.0f);
                 }
                 frameLayout.animate().cancel();
                 frameLayout.setCameraDistance(frameLayout.getMeasuredHeight() * 8.0f);
                 frameLayout.animate().rotationY(90.0f).setDuration(120L).start();
-                s0Var.n();
+                s0Var.o();
                 return;
             case 1:
-                ((s0) ((k2.u) this.b).b).g((Exception) this.c);
+                ((s0) ((k2.u) this.b).b).h((Exception) this.c);
                 return;
             case 2:
                 ((i9.c0) this.c).m(Boolean.valueOf(((m4.a0) this.b).o()));
@@ -410,7 +410,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 return;
             case 25:
                 org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically = ((mo0) this.c).canScrollVertically(-1);
+                boolean canScrollVertically = ((oo0) this.c).canScrollVertically(-1);
                 boolean z11 = !canScrollVertically;
                 if (kVar2.q1 == z11) {
                     return;
@@ -426,7 +426,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, i11));
                 kVar2.s1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z11, c10 == true ? 1 : 0));
                 kVar2.s1.setDuration(320L);
-                kVar2.s1.setInterpolator(rr.h);
+                kVar2.s1.setInterpolator(sr.h);
                 kVar2.s1.start();
                 return;
             case 26:
@@ -447,7 +447,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar3, i10));
                 kVar3.s1.addListener(new org.telegram.ui.ActionBar.c(kVar3, z12, i11));
                 kVar3.s1.setDuration(320L);
-                kVar3.s1.setInterpolator(rr.h);
+                kVar3.s1.setInterpolator(sr.h);
                 kVar3.s1.start();
                 return;
             case 27:

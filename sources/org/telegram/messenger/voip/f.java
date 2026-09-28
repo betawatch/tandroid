@@ -37,9 +37,9 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.h80;
-import org.telegram.ui.Components.qs;
+import org.telegram.ui.Components.j80;
 import org.telegram.ui.Components.rs;
+import org.telegram.ui.Components.ss;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.LaunchActivity;
@@ -63,7 +63,7 @@ import yh.r5;
 import yh.s5;
 import yh.x7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class f implements Runnable {
 
     /* JADX WARN: Code restructure failed: missing block: B:184:0x0557, code lost:
     
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.qs(r2, 1));
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.rs(r2, 1));
      */
     /* JADX WARN: Code restructure failed: missing block: B:185:0x0560, code lost:
     
@@ -134,7 +134,7 @@ public final /* synthetic */ class f implements Runnable {
                 prVar2.presentFragment(kqVar2);
                 return;
             case 3:
-                rs rsVar = (rs) this.d;
+                ss ssVar = (ss) this.d;
                 MessagesStorage messagesStorage = (MessagesStorage) this.c;
                 ArrayList arrayList = (ArrayList) this.e;
                 long j11 = this.b;
@@ -163,18 +163,18 @@ public final /* synthetic */ class f implements Runnable {
                     }
                 }
             case 4:
-                rs rsVar2 = (rs) this.d;
+                ss ssVar2 = (ss) this.d;
                 ArrayList<TLRPC.User> arrayList2 = (ArrayList) this.c;
                 long j12 = this.b;
                 String str6 = (String) this.e;
-                qs qsVar = (qs) this.f;
-                MessagesController.getInstance(rsVar2.a).putUsers(arrayList2, true);
-                rsVar2.h.addAll(arrayList2);
-                rsVar2.f = j12;
-                rsVar2.g = str6;
-                rsVar2.e = TextUtils.isEmpty(str6);
-                rsVar2.d = true;
-                qsVar.run();
+                rs rsVar = (rs) this.f;
+                MessagesController.getInstance(ssVar2.a).putUsers(arrayList2, true);
+                ssVar2.h.addAll(arrayList2);
+                ssVar2.f = j12;
+                ssVar2.g = str6;
+                ssVar2.e = TextUtils.isEmpty(str6);
+                ssVar2.d = true;
+                rsVar.run();
                 return;
             case 5:
                 a2 a2Var = (a2) this.d;
@@ -189,10 +189,10 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 if (tLObject3 != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject3;
-                    h80.G = joinaspeers.peers;
-                    h80.I = j13;
-                    h80.H = SystemClock.elapsedRealtime();
-                    h80.J = accountInstance.getCurrentAccount();
+                    j80.G = joinaspeers.peers;
+                    j80.I = j13;
+                    j80.H = SystemClock.elapsedRealtime();
+                    j80.J = accountInstance.getCurrentAccount();
                     accountInstance.getMessagesController().putChats(joinaspeers.chats, false);
                     accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
                     booleanCallback.run(joinaspeers.peers.size() == 1);

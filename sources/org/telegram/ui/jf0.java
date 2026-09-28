@@ -42,7 +42,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -384,7 +384,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = kk0Var.n;
                 String lowerCase = str4.trim().toLowerCase();
                 if (lowerCase.length() == 0) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(kk0Var, new ArrayList(), new ArrayList(), new ArrayList(), 26));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0(kk0Var, new ArrayList(), new ArrayList(), new ArrayList(), 26));
                     break;
                 } else {
                     String translitString2 = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -508,7 +508,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                         arrayList6 = arrayList;
                         i23 = 1;
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(kk0Var, arrayList8, arrayList9, arrayList7, 26));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0(kk0Var, arrayList8, arrayList9, arrayList7, 26));
                     break;
                 }
                 break;
@@ -715,10 +715,10 @@ public final /* synthetic */ class jf0 implements Runnable {
                         }
                         PhotoViewer photoViewer8 = bu0Var.d;
                         if (!photoViewer8.J4) {
-                            org.telegram.ui.Components.f71 f71Var = photoViewer8.j1;
+                            org.telegram.ui.Components.h71 h71Var = photoViewer8.j1;
                             boolean z13 = photoViewer8.Z7 > 1;
                             PhotoViewer photoViewer9 = bu0Var.d;
-                            f71Var.a(Math.min(photoViewer9.e8, bu0Var.d.f8), z13, photoViewer9.r);
+                            h71Var.a(Math.min(photoViewer9.e8, bu0Var.d.f8), z13, photoViewer9.r);
                         }
                         if (BuildVars.LOGS_ENABLED) {
                             StringBuilder sb2 = new StringBuilder("compressionsCount = ");
@@ -812,12 +812,12 @@ public final /* synthetic */ class jf0 implements Runnable {
                 break;
             case 24:
                 ProfileActivity profileActivity2 = (ProfileActivity) this.b;
-                org.telegram.ui.Components.fo foVar = (org.telegram.ui.Components.fo) this.d;
+                org.telegram.ui.Components.go goVar = (org.telegram.ui.Components.go) this.d;
                 wn wnVar2 = (wn) this.c;
-                org.telegram.ui.Components.ao aoVar = foVar.e;
+                org.telegram.ui.Components.bo boVar = goVar.e;
                 ViewGroup viewGroup = (ViewGroup) wnVar2.fragmentView;
                 RectF rectF = hh.k.h;
-                hh.k.c(aoVar, viewGroup, rectF);
+                hh.k.c(boVar, viewGroup, rectF);
                 profileActivity2.O5 = rectF.left;
                 profileActivity2.N3();
                 break;

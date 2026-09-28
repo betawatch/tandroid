@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class TopicsController extends BaseController {
     public static final int LOAD_TYPE_HASH_CHECK = 3;
@@ -50,7 +50,7 @@ public class TopicsController extends BaseController {
     LongSparseIntArray topicsIsLoading;
     a0.i topicsMapByChatId;
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class TopicUpdate {
         boolean checkForDelete;
         long dialogId;
@@ -65,7 +65,7 @@ public class TopicsController extends BaseController {
         int unreadMentions;
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class TopicsLoadOffset {
         int lastMessageDate;
         int lastMessageId;
@@ -511,7 +511,7 @@ public class TopicsController extends BaseController {
                 iVar.k(tL_messages_savedDialogs.messages.get(i10), tL_messages_savedDialogs.messages.get(i10).id);
                 i10++;
             }
-            AndroidUtilities.runOnUIThread(new l8(this, tL_messages_savedDialogs, j3, l4, iVar, hashSet, runnable));
+            AndroidUtilities.runOnUIThread(new h8(this, tL_messages_savedDialogs, j3, l4, iVar, hashSet, runnable));
             return;
         }
         if (tLObject != null) {
@@ -850,7 +850,7 @@ public class TopicsController extends BaseController {
             tL_messages_getReplies2.limit = 1;
             tL_messages_getReplies = tL_messages_getReplies2;
         }
-        getConnectionsManager().sendRequest(tL_messages_getReplies, new z6(this, findTopic, j3, j10, 3));
+        getConnectionsManager().sendRequest(tL_messages_getReplies, new c8(this, findTopic, j3, j10, 3));
     }
 
     public ArrayList<TLRPC.TL_forumTopic> getTopics(long j3) {
@@ -1302,7 +1302,7 @@ public class TopicsController extends BaseController {
     }
 
     public void updateMentionsUnread(long j3, long j10, int i10) {
-        AndroidUtilities.runOnUIThread(new t7(this, j3, j10, i10, 2));
+        AndroidUtilities.runOnUIThread(new q7(this, j3, j10, i10, 2));
     }
 
     public int updatePollVotesUnread(long j3, long j10, int i10, boolean z10) {
@@ -1517,7 +1517,7 @@ public class TopicsController extends BaseController {
         ArrayList arrayList = (ArrayList) this.topicsByChatId.f(j3);
         if (arrayList != null) {
             if (this.openedTopicsByChatId.get(j3, 0) > 0) {
-                Collections.sort(arrayList, new ai(4));
+                Collections.sort(arrayList, new ai(5));
             }
             if (z10) {
                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsDidLoaded, Long.valueOf(j3), Boolean.TRUE);

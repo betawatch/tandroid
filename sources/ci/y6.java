@@ -13,8 +13,8 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.u40;
+import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.w40;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.d60;
 import org.telegram.ui.qy;
@@ -23,9 +23,9 @@ import org.telegram.ui.web.o1;
 import org.telegram.ui.wn;
 import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, t5.b, r9.g, u40 {
+public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, t5.b, r9.g, w40 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -42,10 +42,10 @@ public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.
 
     @Override // org.telegram.ui.Components.d5
     public void J(int i10, int i11, boolean z10) {
-        wn.c0((wn) this.c, (ArrayList) this.d, this.b, (mm0) this.e, z10, i10);
+        wn.c0((wn) this.c, (ArrayList) this.d, this.b, (om0) this.e, z10, i10);
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
         wn wnVar = (wn) this.c;
         TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
@@ -92,7 +92,7 @@ public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.
         }
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public /* synthetic */ boolean e() {
         return true;
     }
@@ -155,12 +155,12 @@ public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.
         }
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public /* synthetic */ vu0 getCloseIntoObject() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public /* synthetic */ String getInitialSearchString() {
         return null;
     }
@@ -198,7 +198,7 @@ public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.
         return null;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public /* synthetic */ boolean t() {
         return false;
     }
@@ -219,15 +219,15 @@ public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.
         this.e = user;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public /* synthetic */ void B(float f7) {
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public /* synthetic */ void P() {
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public /* synthetic */ void L(boolean z10, boolean z11) {
     }
 }

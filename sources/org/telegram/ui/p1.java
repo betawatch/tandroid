@@ -6,7 +6,7 @@ import android.webkit.WebChromeClient;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class p1 extends WebChromeClient {
     public final /* synthetic */ int a;
@@ -38,16 +38,16 @@ public final class p1 extends WebChromeClient {
                 break;
             default:
                 super.onHideCustomView();
-                org.telegram.ui.Components.wu wuVar = (org.telegram.ui.Components.wu) this.b;
-                if (wuVar.d != null) {
-                    wuVar.getSheetContainer().setVisibility(0);
-                    wuVar.e.setVisibility(4);
-                    wuVar.e.removeView(wuVar.d);
-                    WebChromeClient.CustomViewCallback customViewCallback2 = wuVar.f;
+                org.telegram.ui.Components.xu xuVar = (org.telegram.ui.Components.xu) this.b;
+                if (xuVar.d != null) {
+                    xuVar.getSheetContainer().setVisibility(0);
+                    xuVar.e.setVisibility(4);
+                    xuVar.e.removeView(xuVar.d);
+                    WebChromeClient.CustomViewCallback customViewCallback2 = xuVar.f;
                     if (customViewCallback2 != null && !customViewCallback2.getClass().getName().contains(".chromium.")) {
-                        wuVar.f.onCustomViewHidden();
+                        xuVar.f.onCustomViewHidden();
                     }
-                    wuVar.d = null;
+                    xuVar.d = null;
                     break;
                 }
                 break;
@@ -81,15 +81,15 @@ public final class p1 extends WebChromeClient {
                     break;
                 }
             default:
-                org.telegram.ui.Components.wu wuVar = (org.telegram.ui.Components.wu) this.b;
-                FrameLayout frameLayout = wuVar.e;
-                if (wuVar.d == null && !org.telegram.ui.Components.og0.p0.P) {
-                    wuVar.I();
-                    wuVar.d = view;
-                    wuVar.getSheetContainer().setVisibility(4);
+                org.telegram.ui.Components.xu xuVar = (org.telegram.ui.Components.xu) this.b;
+                FrameLayout frameLayout = xuVar.e;
+                if (xuVar.d == null && !org.telegram.ui.Components.qg0.p0.P) {
+                    xuVar.I();
+                    xuVar.d = view;
+                    xuVar.getSheetContainer().setVisibility(4);
                     frameLayout.setVisibility(0);
                     frameLayout.addView(view, w7.y5.c(-1.0f, -1));
-                    wuVar.f = customViewCallback;
+                    xuVar.f = customViewCallback;
                     break;
                 } else {
                     customViewCallback.onCustomViewHidden();

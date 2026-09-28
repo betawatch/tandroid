@@ -12,10 +12,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.wv0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class za implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class za implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        uv0 uv0Var;
+        wv0 wv0Var;
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         switch (this.a) {
             case 0:
@@ -112,12 +112,12 @@ public final /* synthetic */ class za implements Utilities.Callback2 {
                             float f7 = (!(tLObject instanceof TLRPC.Photo) || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, MediaDataController.MAX_STYLE_RUNS_COUNT)) == null) ? 1.0f : closestPhotoSizeWithSize.w / closestPhotoSizeWithSize.h;
                             if (f7 > 1.0f) {
                                 float floor = (float) Math.floor(Math.max(nbVar2.R1, j6Var.getMeasuredWidth()) * 0.5d);
-                                uv0Var = new uv0(floor, floor / f7);
+                                wv0Var = new wv0(floor, floor / f7);
                             } else {
                                 float floor2 = (float) Math.floor(Math.max(nbVar2.S1, j6Var.getMeasuredHeight()) * 0.5d);
-                                uv0Var = new uv0(f7 * floor2, floor2);
+                                wv0Var = new wv0(f7 * floor2, floor2);
                             }
-                            qg.y1 y1Var = new qg.y1(nbVar2.getContext(), nbVar2.e0(), uv0Var, tLObject);
+                            qg.y1 y1Var = new qg.y1(nbVar2.getContext(), nbVar2.e0(), wv0Var, tLObject);
                             y1Var.setDelegate(nbVar2);
                             j6Var.addView(y1Var);
                             nbVar2.g0();

@@ -31,12 +31,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.zm0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.bn0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class wc extends View {
     public final Paint A0;
@@ -80,7 +80,7 @@ public final class wc extends View {
     public float V;
     public final Paint V0;
     public boolean W;
-    public final zm0 W0;
+    public final bn0 W0;
     public boolean X0;
     public final ai.m3 Y0;
     public long Z0;
@@ -124,7 +124,7 @@ public final class wc extends View {
     public boolean o1;
     public final Path p0;
     public VelocityTracker p1;
-    public final t01 q0;
+    public final v01 q0;
     public boolean q1;
     public final ArrayList r;
     public final Drawable r0;
@@ -160,14 +160,14 @@ public final class wc extends View {
         this.x = new Path();
         this.y = new Path();
         this.b0 = 1;
-        rr rrVar = rr.h;
-        this.c0 = new org.telegram.ui.Components.e6(this, 0L, 360L, rrVar);
-        this.d0 = new org.telegram.ui.Components.e6(this, 360L, rrVar);
-        this.e0 = new org.telegram.ui.Components.e6(this, 0L, 360L, rrVar);
-        this.f0 = new org.telegram.ui.Components.e6(this, 360L, rrVar);
-        this.g0 = new org.telegram.ui.Components.e6(this, 0L, 360L, rrVar);
-        this.h0 = new org.telegram.ui.Components.e6(this, 0L, 360L, rrVar);
-        this.i0 = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
+        sr srVar = sr.h;
+        this.c0 = new org.telegram.ui.Components.e6(this, 0L, 360L, srVar);
+        this.d0 = new org.telegram.ui.Components.e6(this, 360L, srVar);
+        this.e0 = new org.telegram.ui.Components.e6(this, 0L, 360L, srVar);
+        this.f0 = new org.telegram.ui.Components.e6(this, 360L, srVar);
+        this.g0 = new org.telegram.ui.Components.e6(this, 0L, 360L, srVar);
+        this.h0 = new org.telegram.ui.Components.e6(this, 0L, 360L, srVar);
+        this.i0 = new org.telegram.ui.Components.e6(this, 0L, 320L, srVar);
         this.j0 = true;
         this.o0 = new RectF();
         this.p0 = new Path();
@@ -206,10 +206,10 @@ public final class wc extends View {
         this.U0 = new Matrix();
         Paint paint8 = new Paint(1);
         this.V0 = paint8;
-        this.W0 = new zm0(getContext(), null);
+        this.W0 = new bn0(getContext(), null);
         this.Z0 = -1L;
         this.a1 = -1L;
-        this.b1 = new org.telegram.ui.Components.e6(0.0f, this, 0L, 340L, rrVar);
+        this.b1 = new org.telegram.ui.Components.e6(0.0f, this, 0L, 340L, srVar);
         this.c1 = -1L;
         this.h1 = -1;
         this.i1 = -1;
@@ -238,7 +238,7 @@ public final class wc extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.q0 = new t01(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
+        this.q0 = new v01(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.r0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -312,7 +312,7 @@ public final class wc extends View {
                 int i14 = wcVar.y1;
                 int i15 = wcVar.x1;
                 float min2 = Math.min((i13 - i14) - i15, ((((AndroidUtilities.lerp(wcVar.T, 1.0f, wcVar.f0.c) * wcVar.R) + (wcVar.Q - wcVar.f)) / min) * wcVar.u1) + i14 + i15);
-                y70 F = y70.F(viewGroup, d6Var, wcVar);
+                a80 F = a80.F(viewGroup, d6Var, wcVar);
                 F.q(f8Var);
                 F.o();
                 F.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoryAudioRemove), new mc(wcVar, 1), false);
@@ -376,7 +376,7 @@ public final class wc extends View {
                 int i18 = wcVar.y1;
                 int i19 = wcVar.x1;
                 float min4 = Math.min((i17 - i18) - i19, ((((AndroidUtilities.lerp(wcVar.K, 1.0f, wcVar.d0.c) * wcVar.H) + (wcVar.I - wcVar.f)) / min3) * wcVar.u1) + i18 + i19);
-                y70 F2 = y70.F(viewGroup, d6Var, wcVar);
+                a80 F2 = a80.F(viewGroup, d6Var, wcVar);
                 F2.q(f8Var2);
                 F2.o();
                 F2.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoryRoundRemove), new mc(wcVar, 2), false);
@@ -435,7 +435,7 @@ public final class wc extends View {
                         }
                     }
                 };
-                y70 F3 = y70.F(viewGroup, d6Var, wcVar);
+                a80 F3 = a80.F(viewGroup, d6Var, wcVar);
                 F3.q(f8Var3);
                 F3.V(5);
                 F3.U = true;
@@ -453,7 +453,7 @@ public final class wc extends View {
                 f8Var4.c = 1.5f;
                 f8Var4.d(qcVar.i);
                 f8Var4.h = new ai.g3(8, wcVar, qcVar);
-                y70 F4 = y70.F(viewGroup, d6Var, wcVar);
+                a80 F4 = a80.F(viewGroup, d6Var, wcVar);
                 F4.q(f8Var4);
                 F4.V(5);
                 F4.U = true;
@@ -678,8 +678,8 @@ public final class wc extends View {
 
     @Override // android.view.View
     public final void computeScroll() {
-        zm0 zm0Var = this.W0;
-        if (!zm0Var.b()) {
+        bn0 bn0Var = this.W0;
+        if (!bn0Var.b()) {
             if (this.r1) {
                 this.r1 = false;
                 pc pcVar = this.a;
@@ -691,13 +691,13 @@ public final class wc extends View {
             }
             return;
         }
-        int i10 = zm0Var.j;
+        int i10 = bn0Var.j;
         long min = Math.min(getBaseDuration(), getMaxScrollDuration());
         if (this.q1) {
             this.f = (long) Math.max(0.0f, (((i10 - this.y1) - this.x1) / this.u1) * min);
         } else {
             if (!this.P) {
-                zm0Var.a();
+                bn0Var.a();
                 return;
             }
             int i11 = this.y1;
@@ -923,7 +923,7 @@ public final class wc extends View {
                     drawable.setBounds(centerX, ok.d(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.c1.d(2, centerY, drawable));
                     drawable.setAlpha(191);
                     drawable.draw(canvas);
-                    t01 t01Var = wcVar.q0;
+                    v01 v01Var = wcVar.q0;
                     float centerX2 = (rectF9.centerX() - h) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
                     float f63 = centerY;
                     paint = paint4;
@@ -931,7 +931,7 @@ public final class wc extends View {
                     arrayList = arrayList21;
                     naVar = naVar2;
                     f7 = 0.4f;
-                    t01Var.c(centerX2, f63, 0.75f, -1, canvas);
+                    v01Var.c(centerX2, f63, 0.75f, -1, canvas);
                     canvas.restore();
                 }
             } else {
@@ -953,7 +953,7 @@ public final class wc extends View {
             drawable.setBounds(centerX3, ok.d(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.c1.d(2, centerY2, drawable));
             drawable.setAlpha(191);
             drawable.draw(canvas);
-            t01 t01Var2 = wcVar.q0;
+            v01 v01Var2 = wcVar.q0;
             float centerX22 = (rectF9.centerX() - h10) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
             float f632 = centerY2;
             paint = paint4;
@@ -961,7 +961,7 @@ public final class wc extends View {
             arrayList = arrayList21;
             naVar = naVar2;
             f7 = 0.4f;
-            t01Var2.c(centerX22, f632, 0.75f, -1, canvas);
+            v01Var2.c(centerX22, f632, 0.75f, -1, canvas);
             canvas.restore();
         } else {
             rectF = rectF6;
@@ -2687,7 +2687,7 @@ public final class wc extends View {
             if (motionEvent.getAction() != 0 || motionEvent.getY() >= timelineHeight) {
                 long currentTimeMillis = System.currentTimeMillis();
                 int action = motionEvent.getAction();
-                zm0 zm0Var = this.W0;
+                bn0 bn0Var = this.W0;
                 ai.m3 m3Var = this.Y0;
                 if (action == 0) {
                     ai.j jVar2 = this.d1;
@@ -2695,7 +2695,7 @@ public final class wc extends View {
                         AndroidUtilities.cancelRunOnUIThread(jVar2);
                         this.d1 = null;
                     }
-                    zm0Var.a();
+                    bn0Var.a();
                     this.i1 = -1;
                     this.h1 = c(motionEvent);
                     this.j1 = -1;
@@ -3214,7 +3214,7 @@ public final class wc extends View {
                     }
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                     AndroidUtilities.cancelRunOnUIThread(m3Var);
-                    zm0Var.a();
+                    bn0Var.a();
                     if (motionEvent.getAction() == 1) {
                         if ((System.currentTimeMillis() - this.f1 > ViewConfiguration.getTapTimeout() || this.m1) && this.j0) {
                             int i21 = this.h1;

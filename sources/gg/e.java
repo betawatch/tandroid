@@ -28,16 +28,16 @@ import org.telegram.ui.Cells.r4;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Cells.za;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.ln;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tq;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.uq;
+import org.telegram.ui.Components.yl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class e extends sl0 {
+public abstract class e extends ul0 {
     public final boolean E;
     public int F;
     public final boolean G;
@@ -61,7 +61,7 @@ public abstract class e extends sl0 {
         this.G = i11 == 2;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.gl0
     public final String F(int i10) {
         if (this.F != 2 && !this.I) {
             int i11 = this.r;
@@ -83,15 +83,15 @@ public abstract class e extends sl0 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.el0
-    public final void G(wl0 wl0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(yl0 yl0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.ul0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -153,12 +153,12 @@ public abstract class e extends sl0 {
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.ul0
     public final int N(int i10, int i11) {
         return Objects.hash(Integer.valueOf(i10 * (-49612)), O(i10, i11));
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.ul0
     public final Object O(int i10, int i11) {
         int i12;
         boolean z10 = this.K;
@@ -208,7 +208,7 @@ public abstract class e extends sl0 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0089 A[RETURN] */
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.ul0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -299,7 +299,7 @@ public abstract class e extends sl0 {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.ul0
     public final View T(int i10, View view) {
         View view2;
         int i11 = this.r;
@@ -350,7 +350,7 @@ public abstract class e extends sl0 {
         return view2;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean V(int i10, int i11, s4.c1 c1Var) {
         if (!this.K) {
             int i12 = this.v;
@@ -395,7 +395,7 @@ public abstract class e extends sl0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.ul0
     public final void W(int i10, int i11, s4.c1 c1Var) {
         ArrayList<TLRPC.TL_contact> arrayList;
         int i12 = c1Var.f;
@@ -575,7 +575,7 @@ public abstract class e extends sl0 {
         } else if (i10 != 3) {
             if (i10 == 4) {
                 FrameLayout m6Var = new m6(this, context, viewGroup, 1);
-                m6Var.addView(new tq(context), y5.e(-1, -2, 17));
+                m6Var.addView(new uq(context), y5.e(-1, -2, 17));
                 m6Var.setLayoutParams(new s4.p0(-1, -2));
                 m6Var.setTag(-33024);
                 view2 = m6Var;
@@ -586,10 +586,10 @@ public abstract class e extends sl0 {
             } else if (i10 != 9) {
                 view = new b7(context, (org.telegram.ui.Cells.c1) null);
             } else {
-                View lnVar = new ln(context, 4);
-                lnVar.setId(9);
-                lnVar.setTag(-33024);
-                view2 = lnVar;
+                View mnVar = new mn(context, 4);
+                mnVar.setId(9);
+                mnVar.setTag(-33024);
+                view2 = mnVar;
             }
             view = view2;
         } else {
@@ -597,6 +597,6 @@ public abstract class e extends sl0 {
             d3Var.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : 72.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 28.0f), AndroidUtilities.dp(8.0f));
             view = d3Var;
         }
-        return new gl0(view);
+        return new il0(view);
     }
 }

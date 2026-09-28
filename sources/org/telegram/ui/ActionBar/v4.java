@@ -36,10 +36,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.st;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class v4 {
     public static final h4 p = new h4();
@@ -50,7 +50,7 @@ public final class v4 {
     public Menu e;
     public final int i;
     public Runnable j;
-    public rt k;
+    public st k;
     public final d6 n;
     public final ah.c o;
     public final Rect c = new Rect();
@@ -345,7 +345,7 @@ public final class v4 {
     }
 
     public final ArrayList d(Menu menu) {
-        rt rtVar;
+        st stVar;
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; menu != null && i10 < menu.size(); i10++) {
             MenuItem item = menu.getItem(i10);
@@ -353,7 +353,7 @@ public final class v4 {
                 SubMenu subMenu = item.getSubMenu();
                 if (subMenu != null) {
                     arrayList.addAll(d(subMenu));
-                } else if ((item.getItemId() != R.id.menu_quote || (rtVar = this.k) == null || ((Boolean) rtVar.run()).booleanValue()) && item.getItemId() != 16908353 && item.getItemId() != 16909808 && (item.getItemId() != R.id.menu_regular || this.j == null)) {
+                } else if ((item.getItemId() != R.id.menu_quote || (stVar = this.k) == null || ((Boolean) stVar.run()).booleanValue()) && item.getItemId() != 16908353 && item.getItemId() != 16909808 && (item.getItemId() != R.id.menu_regular || this.j == null)) {
                     arrayList.add(item);
                 }
             }

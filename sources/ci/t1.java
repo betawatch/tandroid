@@ -6,13 +6,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ty;
+import org.telegram.ui.Components.uy;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.cp;
 import org.telegram.ui.je;
 import org.telegram.ui.yt;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class t1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new i2.c1((cp) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error, 8));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new u1((ty) this.c, (String) this.e, this.b, (String) this.d, tLObject));
+                AndroidUtilities.runOnUIThread(new u1((uy) this.c, (String) this.e, this.b, (String) this.d, tLObject));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new i2.c1((yt) this.c, tLObject, (d) this.d, this.b, (HashSet) this.e, tL_error, 10));
@@ -61,9 +61,9 @@ public final /* synthetic */ class t1 implements RequestDelegate {
         this.b = z10;
     }
 
-    public /* synthetic */ t1(ty tyVar, String str, boolean z10, String str2) {
+    public /* synthetic */ t1(uy uyVar, String str, boolean z10, String str2) {
         this.a = 4;
-        this.c = tyVar;
+        this.c = uyVar;
         this.e = str;
         this.b = z10;
         this.d = str2;

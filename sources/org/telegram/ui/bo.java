@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -82,18 +82,18 @@ public final /* synthetic */ class bo implements View.OnClickListener {
                 break;
             case 1:
                 org.telegram.ui.ActionBar.a2[] a2VarArr = (org.telegram.ui.ActionBar.a2[]) this.c;
-                org.telegram.ui.Components.cs csVar = (org.telegram.ui.Components.cs) this.d;
+                org.telegram.ui.Components.ds dsVar = (org.telegram.ui.Components.ds) this.d;
                 a2VarArr[0].dismiss();
-                csVar.run(-this.b);
+                dsVar.run(-this.b);
                 break;
             case 2:
                 org.telegram.ui.ActionBar.a2[] a2VarArr2 = (org.telegram.ui.ActionBar.a2[]) this.c;
-                org.telegram.ui.Components.cs csVar2 = (org.telegram.ui.Components.cs) this.d;
+                org.telegram.ui.Components.ds dsVar2 = (org.telegram.ui.Components.ds) this.d;
                 a2VarArr2[0].dismiss();
-                csVar2.run(-this.b);
+                dsVar2.run(-this.b);
                 break;
             case 3:
-                org.telegram.ui.Components.m70.N((org.telegram.ui.Components.m70) this.c, (Context) this.d, this.b);
+                org.telegram.ui.Components.o70.N((org.telegram.ui.Components.o70) this.c, (Context) this.d, this.b);
                 break;
             case 4:
                 qy qyVar = (qy) this.c;

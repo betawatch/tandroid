@@ -11,7 +11,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class n50 extends View {
     public final /* synthetic */ int a;
@@ -170,14 +170,14 @@ public final class n50 extends View {
             case 7:
                 w21 w21Var = (w21) this.b;
                 canvas.drawColor(w21Var.K ? -15590870 : -6569073);
-                org.telegram.ui.Components.mc0 mc0Var = w21Var.n;
-                if (mc0Var != null) {
-                    mc0Var.setBounds(0, 0, getWidth(), getHeight());
+                org.telegram.ui.Components.oc0 oc0Var = w21Var.n;
+                if (oc0Var != null) {
+                    oc0Var.setBounds(0, 0, getWidth(), getHeight());
                 }
                 w21Var.h.setBounds(0, 0, getWidth(), getHeight());
-                org.telegram.ui.Components.mc0 mc0Var2 = w21Var.n;
-                if (mc0Var2 != null) {
-                    mc0Var2.draw(canvas);
+                org.telegram.ui.Components.oc0 oc0Var2 = w21Var.n;
+                if (oc0Var2 != null) {
+                    oc0Var2.draw(canvas);
                 }
                 w21Var.h.draw(canvas);
                 super.onDraw(canvas);

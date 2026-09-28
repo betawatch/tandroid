@@ -1,295 +1,235 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class hd0 extends tk0 implements DownloadController.FileDownloadProgressListener {
-    public static final Paint H;
-    public static final Paint I;
-    public static final TextPaint J;
-    public static final TextPaint K;
-    public static final TextPaint L;
-    public static final TextPaint M;
-    public static final TextPaint N;
-    public static final TextPaint O;
-    public static final DecelerateInterpolator P;
-    public String E;
-    public String F;
-    public String G;
-    public long a;
-    public float b;
-    public float c;
-    public long d;
-    public float e;
-    public float f;
-    public boolean h;
-    public View n;
-    public MessageObject r;
-    public int s;
-    public boolean v;
-    public boolean w;
-    public Drawable x;
-    public String y;
+public final class hd0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        Paint paint = new Paint();
-        H = paint;
-        Paint paint2 = new Paint(1);
-        I = paint2;
-        TextPaint textPaint = new TextPaint(1);
-        J = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        K = textPaint2;
-        TextPaint textPaint3 = new TextPaint(1);
-        L = textPaint3;
-        TextPaint textPaint4 = new TextPaint(1);
-        M = textPaint4;
-        TextPaint textPaint5 = new TextPaint(1);
-        N = textPaint5;
-        TextPaint textPaint6 = new TextPaint(1);
-        O = textPaint6;
-        P = new DecelerateInterpolator();
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        paint.setColor(-14209998);
-        textPaint.setColor(-1);
-        textPaint2.setColor(-1);
-        textPaint3.setColor(-10327179);
-        textPaint4.setColor(-10327179);
-        textPaint5.setColor(-1);
-        textPaint6.setColor(-1);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint2.setTypeface(AndroidUtilities.bold());
-        textPaint4.setTypeface(AndroidUtilities.bold());
-        textPaint5.setTypeface(AndroidUtilities.bold());
-        textPaint6.setTypeface(AndroidUtilities.bold());
+    public /* synthetic */ hd0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void a() {
-        MessageObject messageObject = this.r;
-        if (messageObject != null) {
-            TLRPC.Message message = messageObject.messageOwner;
-            if (message.media != null) {
-                String attachFileName = ((TextUtils.isEmpty(message.attachPath) || !new File(this.r.messageOwner.attachPath).exists()) && !FileLoader.getInstance(UserConfig.selectedAccount).getPathToMessage(this.r.messageOwner).exists()) ? FileLoader.getAttachFileName(this.r.getDocument()) : null;
-                this.w = false;
-                if (attachFileName == null) {
-                    this.h = false;
-                    this.v = false;
-                    this.w = true;
-                    DownloadController.getInstance(this.r.currentAccount).removeLoadingFileObserver(this);
-                } else {
-                    DownloadController.getInstance(this.r.currentAccount).addLoadingFileObserver(attachFileName, this);
-                    boolean isLoadingFile = FileLoader.getInstance(this.r.currentAccount).isLoadingFile(attachFileName);
-                    this.v = isLoadingFile;
-                    if (isLoadingFile) {
-                        this.h = true;
-                        Float fileProgress = ImageLoader.getInstance().getFileProgress(attachFileName);
-                        if (fileProgress == null) {
-                            fileProgress = Float.valueOf(0.0f);
-                        }
-                        b(fileProgress.floatValue(), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 4:
+                ((ch0) this.b).h = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                NumberTextView numberTextView = (NumberTextView) this.b;
+                numberTextView.d = null;
+                numberTextView.b.clear();
+                break;
+            case 1:
+                ee0 ee0Var = (ee0) this.b;
+                ee0Var.setVisibility(8);
+                ee0Var.h();
+                ee0Var.P = 0.0f;
+                ee0Var.f(0.0f);
+                ee0Var.setAlpha(0.0f);
+                break;
+            case 2:
+                AnimatorSet animatorSet = (AnimatorSet) this.b;
+                if (animatorSet != null) {
+                    animatorSet.start();
+                    break;
+                }
+                break;
+            case 3:
+                jf jfVar = (jf) this.b;
+                AnimatorSet animatorSet2 = (AnimatorSet) ((ci.j9) jfVar.c).e;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    ((ci.j9) jfVar.c).e = null;
+                    break;
+                }
+                break;
+            case 4:
+                break;
+            case 5:
+                hh0 hh0Var = (hh0) this.b;
+                hh0Var.f = false;
+                hh0Var.F = null;
+                break;
+            case 6:
+                ((vi0) this.b).b();
+                break;
+            case 7:
+                ((ck0) this.b).h.setVisibility(8);
+                break;
+            case 8:
+                yl0 yl0Var = (yl0) this.b;
+                View view = yl0Var.c1;
+                if (view != null) {
+                    view.setVisibility(8);
+                }
+                if (yl0Var.b1()) {
+                    yl0Var.invalidate();
+                    break;
+                }
+                break;
+            case 9:
+                wm0 wm0Var = (wm0) this.b;
+                if (wm0Var.s != null) {
+                    wm0Var.j();
+                    wm0Var.s.invalidate();
+                    wm0Var.e.invalidate();
+                    wm0Var.invalidate();
+                    wm0Var.s = null;
+                    break;
+                }
+                break;
+            case 10:
+                ((an0) this.b).d = false;
+                break;
+            case 11:
+                ((no0) this.b).M0.setVisibility(8);
+                break;
+            case 12:
+                lp0 lp0Var = (lp0) this.b;
+                if (animator == lp0Var.h) {
+                    lp0Var.h = null;
+                    break;
+                }
+                break;
+            case 13:
+                ((vq0) this.b).e = null;
+                break;
+            case 14:
+                dr0 dr0Var = (dr0) this.b;
+                if (dr0Var.getParent() != null) {
+                    ((ViewGroup) dr0Var.getParent()).removeView(dr0Var);
+                    break;
+                }
+                break;
+            case 15:
+                gt0 gt0Var = (gt0) this.b;
+                View view2 = gt0Var.c;
+                view2.setAlpha(1.0f);
+                s4.o0.x0(view2);
+                gt0Var.a.removeView(view2);
+                break;
+            case 16:
+                sv0 sv0Var = (sv0) this.b;
+                if (sv0Var.f == animator) {
+                    sv0Var.f = null;
+                    break;
+                }
+                break;
+            case 17:
+                ix0 ix0Var = (ix0) this.b;
+                ix0Var.setCategoriesShownT(((Float) ix0Var.p3.getAnimatedValue()).floatValue());
+                ix0Var.p3 = null;
+                break;
+            case 18:
+                hy0 hy0Var = (hy0) this.b;
+                hy0Var.x.setVisibility(8);
+                hy0Var.F.setImageDrawable(null);
+                break;
+            case 19:
+                int i10 = 0;
+                while (true) {
+                    oy0[] oy0VarArr = (oy0[]) this.b;
+                    if (i10 >= oy0VarArr.length) {
+                        break;
                     } else {
-                        this.h = false;
-                    }
-                }
-                this.n.invalidate();
-            }
-        }
-        this.v = false;
-        this.w = true;
-        this.h = false;
-        b(0.0f, false);
-        DownloadController.getInstance(this.r.currentAccount).removeLoadingFileObserver(this);
-        this.n.invalidate();
-    }
-
-    public final void b(float f7, boolean z10) {
-        if (z10) {
-            this.c = this.e;
-        } else {
-            this.e = f7;
-            this.c = f7;
-        }
-        this.G = String.format("%d%%", Integer.valueOf((int) (100.0f * f7)));
-        if (f7 != 1.0f) {
-            this.f = 1.0f;
-        }
-        this.b = f7;
-        this.d = 0L;
-        this.a = System.currentTimeMillis();
-        this.n.invalidate();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        String upperCase;
-        int dp;
-        TextPaint textPaint;
-        Rect bounds = getBounds();
-        int width = bounds.width();
-        int height = bounds.height();
-        canvas.save();
-        canvas.translate(bounds.left, bounds.top);
-        canvas.drawRect(0.0f, 0.0f, width, height, H);
-        int A = org.telegram.messenger.ok.A(240.0f, height, 2);
-        int A2 = org.telegram.messenger.ok.A(48.0f, width, 2);
-        Drawable drawable = this.x;
-        drawable.setBounds(A2, A, AndroidUtilities.dp(48.0f) + A2, AndroidUtilities.dp(48.0f) + A);
-        drawable.draw(canvas);
-        canvas.drawText(this.y, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(31.0f) + A, J);
-        canvas.drawText(this.E, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(96.0f) + A, K);
-        canvas.drawText(this.F, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(125.0f) + A, L);
-        if (this.w) {
-            upperCase = LocaleController.getString(R.string.OpenFile);
-            textPaint = O;
-            dp = 0;
-        } else {
-            upperCase = this.v ? LocaleController.getString(R.string.Cancel).toUpperCase() : LocaleController.getString(R.string.TapToDownload);
-            dp = AndroidUtilities.dp(28.0f);
-            textPaint = M;
-        }
-        canvas.drawText(upperCase, (width - ((int) Math.ceil(textPaint.measureText(upperCase)))) / 2, org.telegram.messenger.f0.C(235.0f, A, dp), textPaint);
-        if (this.h) {
-            if (this.G != null) {
-                canvas.drawText(this.G, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(210.0f) + A, N);
-            }
-            int A3 = org.telegram.messenger.ok.A(240.0f, width, 2);
-            int dp2 = AndroidUtilities.dp(232.0f) + A;
-            Paint paint = I;
-            paint.setColor(-10327179);
-            paint.setAlpha((int) (this.f * 255.0f));
-            float f7 = dp2;
-            canvas.drawRect(((int) (AndroidUtilities.dp(240.0f) * this.e)) + A3, f7, AndroidUtilities.dp(240.0f) + A3, AndroidUtilities.dp(2.0f) + dp2, paint);
-            paint.setColor(-1);
-            paint.setAlpha((int) (this.f * 255.0f));
-            float f10 = A3;
-            canvas.drawRect(f10, f7, (AndroidUtilities.dp(240.0f) * this.e) + f10, AndroidUtilities.dp(2.0f) + dp2, paint);
-            long currentTimeMillis = System.currentTimeMillis();
-            long j3 = currentTimeMillis - this.a;
-            this.a = currentTimeMillis;
-            float f11 = this.e;
-            if (f11 != 1.0f) {
-                float f12 = this.b;
-                if (f11 != f12) {
-                    float f13 = this.c;
-                    float f14 = f12 - f13;
-                    if (f14 > 0.0f) {
-                        long j10 = this.d + j3;
-                        this.d = j10;
-                        if (j10 >= 300) {
-                            this.e = f12;
-                            this.c = f12;
-                            this.d = 0L;
-                        } else {
-                            this.e = (P.getInterpolation(j10 / 300.0f) * f14) + f13;
+                        oy0 oy0Var = oy0VarArr[i10];
+                        if (oy0Var != null) {
+                            oy0Var.d = false;
                         }
+                        i10++;
                     }
-                    this.n.invalidate();
                 }
-            }
-            float f15 = this.e;
-            if (f15 >= 1.0f && f15 == 1.0f) {
-                float f16 = this.f;
-                if (f16 != 0.0f) {
-                    float f17 = f16 - (j3 / 200.0f);
-                    this.f = f17;
-                    if (f17 <= 0.0f) {
-                        this.f = 0.0f;
-                    }
-                    this.n.invalidate();
+            case 20:
+                super.onAnimationEnd(animator);
+                ((py0) this.b).H = null;
+                break;
+            case 21:
+                ((sy0) this.b).e = false;
+                break;
+            case 22:
+                ((c11) this.b).setVisibility(4);
+                break;
+            case 23:
+                ((n21) this.b).setVisibility(8);
+                break;
+            case 24:
+                ai.n4 n4Var = ((h31) this.b).f;
+                n4Var.setScaleX(1.0f);
+                n4Var.setScaleY(1.0f);
+                n4Var.invalidate();
+                break;
+            case 25:
+                l31 l31Var = (l31) this.b;
+                l31Var.K = 1.0f;
+                l31Var.h.invalidate();
+                break;
+            case 26:
+                ((t51) this.b).L = null;
+                break;
+            case 27:
+                UndoView undoView = (UndoView) this.b;
+                undoView.setVisibility(4);
+                undoView.setScaleX(1.0f);
+                undoView.setScaleY(1.0f);
+                undoView.setAlpha(1.0f);
+                break;
+            case 28:
+                a71 a71Var = (a71) this.b;
+                if (a71Var.a.getTag() == null) {
+                    a71Var.a.setVisibility(4);
+                    break;
                 }
-            }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                b71 b71Var = (b71) this.b;
+                b71Var.b = 0.0f;
+                b71Var.setTranslationY(0.0f);
+                b71Var.a = null;
+                break;
         }
-        canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.n.getMeasuredHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.n.getMeasuredWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        return this.n.getMeasuredHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        return this.n.getMeasuredWidth();
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final int getObserverTag() {
-        return this.s;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -1;
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onFailedDownload(String str, boolean z10) {
-        a();
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressDownload(String str, long j3, long j10) {
-        if (!this.h) {
-            a();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 10:
+                an0 an0Var = (an0) this.b;
+                an0Var.d = true;
+                if (an0Var.getParent() instanceof HorizontalScrollView) {
+                    ((HorizontalScrollView) an0Var.getParent()).requestDisallowInterceptTouchEvent(false);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-        b(Math.min(1.0f, j3 / j10), true);
     }
 
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onSuccessDownload(String str) {
-        b(1.0f, true);
-        a();
+    public hd0(gt0 gt0Var, s4.o0 o0Var) {
+        this.a = 15;
+        this.b = gt0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        Drawable drawable = this.x;
-        if (drawable != null) {
-            drawable.setAlpha(i10);
-        }
-        H.setAlpha(i10);
-        J.setAlpha(i10);
-        K.setAlpha(i10);
-        L.setAlpha(i10);
-        M.setAlpha(i10);
-        N.setAlpha(i10);
-        O.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressUpload(String str, long j3, long j10, boolean z10) {
+    private final void a(Animator animator) {
     }
 }

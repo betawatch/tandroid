@@ -6,7 +6,7 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k8 {
     public float f;
@@ -26,15 +26,15 @@ public final class k8 {
     public final float m = 120.0f;
     public final int n = 61;
     public final float[] o = new float[6];
-    public final tp[] a = new tp[2];
+    public final up[] a = new up[2];
 
     public k8() {
         for (int i10 = 0; i10 < 2; i10++) {
-            tp[] tpVarArr = this.a;
-            tp tpVar = new tp();
-            tpVarArr[i10] = tpVar;
-            tpVar.g = AndroidUtilities.dp(24.0f);
-            tpVar.k = 1.0f;
+            up[] upVarArr = this.a;
+            up upVar = new up();
+            upVarArr[i10] = upVar;
+            upVar.g = AndroidUtilities.dp(24.0f);
+            upVar.k = 1.0f;
         }
         this.h = new Paint(1);
     }
@@ -104,19 +104,19 @@ public final class k8 {
                 iArr[i11] = (int) (fArr[i11] * f11);
                 i11++;
             }
-            tp[] tpVarArr = this.a;
-            tp tpVar = tpVarArr[0];
-            for (int i12 = 0; i12 < tpVar.f; i12 += 2) {
-                float[] fArr4 = tpVar.j;
+            up[] upVarArr = this.a;
+            up upVar = upVarArr[0];
+            for (int i12 = 0; i12 < upVar.f; i12 += 2) {
+                float[] fArr4 = upVar.j;
                 fArr4[i12] = iArr[i12 / 2];
                 fArr4[i12 + 1] = 0.0f;
             }
             for (int i13 = 0; i13 < 3; i13++) {
                 iArr[i13] = (int) (fArr[i13 + 3] * f11);
             }
-            tp tpVar2 = tpVarArr[1];
-            for (int i14 = 0; i14 < tpVar2.f; i14 += 2) {
-                float[] fArr5 = tpVar2.j;
+            up upVar2 = upVarArr[1];
+            for (int i14 = 0; i14 < upVar2.f; i14 += 2) {
+                float[] fArr5 = upVar2.j;
                 fArr5[i14] = iArr[i14 / 2];
                 fArr5[i14 + 1] = 0.0f;
             }
@@ -124,9 +124,9 @@ public final class k8 {
             if (dp > AndroidUtilities.dp(26.0f)) {
                 dp = AndroidUtilities.dp(26.0f);
             }
-            tp tpVar3 = tpVarArr[0];
-            tpVarArr[1].g = dp;
-            tpVar3.g = dp;
+            up upVar3 = upVarArr[0];
+            upVarArr[1].g = dp;
+            upVar3.g = dp;
             canvas.save();
             float f20 = (float) (this.r + 0.6d);
             this.r = f20;
@@ -134,14 +134,14 @@ public final class k8 {
             canvas.save();
             float f21 = (this.f * 0.04f) + 1.0f;
             canvas.scale(f21, f21, f7, f10);
-            tp tpVar4 = tpVarArr[0];
+            up upVar4 = upVarArr[0];
             Paint paint = this.h;
-            tpVar4.a(f7, f10, canvas, paint);
+            upVar4.a(f7, f10, canvas, paint);
             canvas.restore();
             canvas.rotate(60.0f, f7, f10);
             float z10 = com.google.android.gms.internal.vision.e2.z(1.0f, this.f, 0.04f, 1.0f);
             canvas.scale(z10, z10, f7, f10);
-            tpVarArr[1].a(f7, f10, canvas, paint);
+            upVarArr[1].a(f7, f10, canvas, paint);
             canvas.restore();
         }
     }

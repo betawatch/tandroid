@@ -16,12 +16,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.cu;
+import org.telegram.ui.Components.du;
 import yh.z5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class d0 extends cu {
+public abstract class d0 extends du {
     public final d6 c;
     public final n2.e d;
     public Runnable e;
@@ -59,7 +59,7 @@ public abstract class d0 extends cu {
         setFocusableInTouchMode(false);
     }
 
-    @Override // org.telegram.ui.Components.eu, android.view.View
+    @Override // org.telegram.ui.Components.fu, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (!((GestureDetector) this.d.b).onTouchEvent(motionEvent) || isLongClickable()) {
             return super.dispatchTouchEvent(motionEvent);
@@ -126,7 +126,7 @@ public abstract class d0 extends cu {
         }
     }
 
-    @Override // org.telegram.ui.Components.eu, android.widget.TextView
+    @Override // org.telegram.ui.Components.fu, android.widget.TextView
     public final void onSelectionChanged(int i10, int i11) {
         super.onSelectionChanged(i10, i11);
         if (!hasSelection() || ((b[]) getText().getSpans(i10, i11, b.class)).length == 0) {

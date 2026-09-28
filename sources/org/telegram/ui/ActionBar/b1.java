@@ -31,10 +31,10 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.mc0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.oc0;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class b1 extends FrameLayout {
     public final Paint E;
@@ -78,8 +78,8 @@ public abstract class b1 extends FrameLayout {
     public b1(Context context, d6 d6Var) {
         super(context);
         this.a = 0.5f;
-        rr rrVar = rr.h;
-        this.e = new org.telegram.ui.Components.e6(1.0f, this, 0L, 320L, rrVar);
+        sr srVar = sr.h;
+        this.e = new org.telegram.ui.Components.e6(1.0f, this, 0L, 320L, srVar);
         this.r = new int[2];
         this.s = 0.0f;
         Paint paint = new Paint(1);
@@ -105,7 +105,7 @@ public abstract class b1 extends FrameLayout {
         this.c = x0Var;
         x0Var.setCallback(this);
         x0Var.u(AndroidUtilities.bold());
-        x0Var.k(0.3f, 165L, rrVar);
+        x0Var.k(0.3f, 165L, srVar);
         x0Var.t(AndroidUtilities.dpf2(14.0f));
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
         TextPaint textPaint = x0Var.a;
@@ -116,7 +116,7 @@ public abstract class b1 extends FrameLayout {
         this.d = x0Var2;
         x0Var2.setCallback(this);
         x0Var2.u(AndroidUtilities.bold());
-        x0Var2.k(0.3f, 165L, rrVar);
+        x0Var2.k(0.3f, 165L, srVar);
         x0Var2.t(AndroidUtilities.dpf2(14.0f));
         TextPaint textPaint2 = x0Var2.a;
         textPaint2.setStyle(style);
@@ -195,7 +195,7 @@ public abstract class b1 extends FrameLayout {
             this.T = ofFloat;
             ofFloat.addUpdateListener(new v0(this, i10));
             this.T.addListener(new y0(this, a2, i10));
-            this.T.setInterpolator(rr.h);
+            this.T.setInterpolator(sr.h);
             this.T.setDuration(220L);
             this.T.start();
         } else {
@@ -326,7 +326,7 @@ public abstract class b1 extends FrameLayout {
                 v02 = ((ColorDrawable) r02).getColor();
             } else {
                 Pair pair = null;
-                Bitmap bitmap = r02 instanceof mc0 ? ((mc0) r02).k : r02 instanceof BitmapDrawable ? ((BitmapDrawable) r02).getBitmap() : null;
+                Bitmap bitmap = r02 instanceof oc0 ? ((oc0) r02).k : r02 instanceof BitmapDrawable ? ((BitmapDrawable) r02).getBitmap() : null;
                 if (bitmap != null) {
                     float f7 = iArr[0] / AndroidUtilities.displaySize.x;
                     int width = (int) (f7 * bitmap.getWidth());

@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class u00 extends FrameLayout {
     public final org.telegram.ui.ActionBar.m2 a;
@@ -106,7 +106,7 @@ public abstract class u00 extends FrameLayout {
         org.telegram.ui.ActionBar.m2 m2Var = this.a;
         if (m2Var instanceof b10) {
             ai.w0 w0Var = ((b10) m2Var).a;
-            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(m2Var, this);
+            org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(m2Var, this);
             H.W(w0Var.V0(this, false));
             H.c(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new t00(this, 0), false);
             H.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteLink), new t00(this, 1), true);
@@ -121,9 +121,9 @@ public abstract class u00 extends FrameLayout {
         if (this.x == null) {
             return;
         }
-        org.telegram.ui.Components.ui0 ui0Var = new org.telegram.ui.Components.ui0(getContext(), LocaleController.getString(R.string.InviteByQRCode), this.x, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
-        ui0Var.m(R.raw.qr_code_logo);
-        ui0Var.show();
+        org.telegram.ui.Components.wi0 wi0Var = new org.telegram.ui.Components.wi0(getContext(), LocaleController.getString(R.string.InviteByQRCode), this.x, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
+        wi0Var.m(R.raw.qr_code_logo);
+        wi0Var.show();
     }
 
     public final void e(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite, boolean z10) {
@@ -165,7 +165,7 @@ public abstract class u00 extends FrameLayout {
             this.w = ofFloat;
             ofFloat.addUpdateListener(new c3(this, 13));
             this.w.addListener(new org.telegram.ui.Components.ca(28, this, z12));
-            this.w.setInterpolator(org.telegram.ui.Components.rr.h);
+            this.w.setInterpolator(org.telegram.ui.Components.sr.h);
             this.w.setDuration(350L);
             this.w.start();
         }

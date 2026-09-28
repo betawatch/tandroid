@@ -30,15 +30,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.bt;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -179,7 +179,7 @@ public final /* synthetic */ class o1 implements Runnable {
                     n2Var.b0.setScaleX(0.3f);
                     n2Var.b0.setScaleY(0.3f);
                     n2Var.b0.setAlpha(0.0f);
-                    n2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(rr.f).start();
+                    n2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(sr.f).start();
                     return;
                 }
                 return;
@@ -216,7 +216,7 @@ public final /* synthetic */ class o1 implements Runnable {
                 rg.j0 j0Var = (rg.j0) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
                 ArrayList arrayList2 = j0Var.i0;
-                wl0 wl0Var = j0Var.d;
+                yl0 yl0Var = j0Var.d;
                 if (tLObject2 != null) {
                     arrayList2.clear();
                     arrayList2.addAll(((TLRPC.TL_messages_chats) tLObject2).chats);
@@ -224,17 +224,17 @@ public final /* synthetic */ class o1 implements Runnable {
                     j0Var.J0.b(j0Var.n0 + 4);
                     int i13 = 0;
                     while (true) {
-                        if (i13 >= wl0Var.getChildCount()) {
+                        if (i13 >= yl0Var.getChildCount()) {
                             i10 = 0;
-                        } else if (wl0Var.getChildAt(i13) instanceof rg.i0) {
-                            i10 = wl0Var.getChildAt(i13).getTop();
+                        } else if (yl0Var.getChildAt(i13) instanceof rg.i0) {
+                            i10 = yl0Var.getChildAt(i13).getTop();
                         } else {
                             i13++;
                         }
                     }
                     j0Var.M1();
                     if (j0Var.l0 >= 0 && i10 != 0) {
-                        ((s4.c0) wl0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
+                        ((s4.c0) yl0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
                     }
                 }
                 int max = Math.max(arrayList2.size(), j0Var.M0.b);
@@ -245,7 +245,7 @@ public final /* synthetic */ class o1 implements Runnable {
                 h0Var.requestLayout();
                 return;
             case 18:
-                ((rg.j0) this.b).m1((q90) this.c, true);
+                ((rg.j0) this.b).m1((s90) this.c, true);
                 return;
             case 19:
                 rg.z1 z1Var2 = (rg.z1) this.b;

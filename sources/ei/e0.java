@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.ed0;
+import org.telegram.ui.Components.gd0;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
@@ -27,7 +27,7 @@ import org.telegram.ui.mi1;
 import org.telegram.ui.p51;
 import org.telegram.ui.qo0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 AndroidUtilities.hideKeyboard((EditText) obj2);
                 break;
             case 7:
-                ((ii.q1) obj).run(Integer.valueOf(((ed0) obj2).getValue()));
+                ((ii.q1) obj).run(Integer.valueOf(((gd0) obj2).getValue()));
                 break;
             case 8:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj;

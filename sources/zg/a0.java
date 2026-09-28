@@ -21,17 +21,17 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.nk0;
-import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.pk0;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.j61;
 import org.telegram.ui.x51;
 import org.telegram.ui.y61;
 import rg.b1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class a0 extends FrameLayout {
     public final Drawable a;
@@ -96,14 +96,14 @@ public final class a0 extends FrameLayout {
         float f11;
         RectF rectF2;
         int i11;
-        qk0 qk0Var;
-        qk0 qk0Var2;
+        sk0 sk0Var;
+        sk0 sk0Var2;
         int i12;
         float f12;
         l4 l4Var;
         int i13;
         RectF rectF3;
-        qk0 qk0Var3;
+        sk0 sk0Var3;
         int i14;
         int i15;
         HashMap hashMap2;
@@ -115,7 +115,7 @@ public final class a0 extends FrameLayout {
         float f15;
         float f16;
         float f17;
-        qk0 qk0Var4;
+        sk0 sk0Var4;
         RectF rectF7;
         l4 l4Var2;
         int[] iArr;
@@ -139,22 +139,22 @@ public final class a0 extends FrameLayout {
         int i17 = b0Var.y;
         RectF rectF9 = b0Var.i;
         x xVar = b0Var.m;
-        qk0 qk0Var5 = b0Var.n;
+        sk0 sk0Var5 = b0Var.n;
         if (b0Var.l) {
             float clamp = Utilities.clamp(b0Var.j, 1.0f, 0.0f);
             RectF rectF10 = AndroidUtilities.rectTmp;
             rectF10.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             if (i17 == 4) {
-                rectF8.set(qk0Var5.w);
+                rectF8.set(sk0Var5.w);
                 rectF8.offset(b0Var.g, b0Var.h);
             }
             AndroidUtilities.lerp(rectF8, rectF10, b0Var.j, rectF9);
             float lerp = AndroidUtilities.lerp(b0Var.e, AndroidUtilities.dp(i17 == 5 ? 20.0f : 8.0f), b0Var.j);
             HashMap hashMap3 = this.e;
             hashMap3.clear();
-            if (i17 == 1 || (qk0Var5.getDelegate() != null && qk0Var5.getDelegate().p())) {
+            if (i17 == 1 || (sk0Var5.getDelegate() != null && sk0Var5.getDelegate().p())) {
                 f7 = 1.0f;
-                pk0 delegate = qk0Var5.getDelegate();
+                rk0 delegate = sk0Var5.getDelegate();
                 float x10 = getX();
                 a0 a0Var = b0Var.a;
                 hashMap = hashMap3;
@@ -191,10 +191,10 @@ public final class a0 extends FrameLayout {
                 i10 = 4;
                 f10 = 255.0f;
             }
-            if (qk0Var5.R0 != null) {
+            if (sk0Var5.R0 != null) {
                 canvas2.save();
                 float f29 = rectF.left;
-                float y3 = qk0Var5.R0.getY() + rectF.top;
+                float y3 = sk0Var5.R0.getY() + rectF.top;
                 if (i17 != 3 && i17 != i10) {
                     if (i17 != 5) {
                         f28 = 0.0f;
@@ -202,19 +202,19 @@ public final class a0 extends FrameLayout {
                         rectF2 = rectF8;
                         f11 = lerp;
                         i11 = 5;
-                        canvas2.saveLayerAlpha(0.0f, 0.0f, qk0Var5.R0.getMeasuredWidth(), qk0Var5.R0.getMeasuredHeight(), (int) ((f7 - b0Var.j) * qk0Var5.R0.getAlpha() * f10), 31);
-                        qk0Var5.R0.draw(canvas2);
+                        canvas2.saveLayerAlpha(0.0f, 0.0f, sk0Var5.R0.getMeasuredWidth(), sk0Var5.R0.getMeasuredHeight(), (int) ((f7 - b0Var.j) * sk0Var5.R0.getAlpha() * f10), 31);
+                        sk0Var5.R0.draw(canvas2);
                         canvas2.restore();
                         canvas2.restore();
                     }
                 }
-                f28 = qk0Var5.w.top;
+                f28 = sk0Var5.w.top;
                 canvas2.translate(f29, y3 - f28);
                 rectF2 = rectF8;
                 f11 = lerp;
                 i11 = 5;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, qk0Var5.R0.getMeasuredWidth(), qk0Var5.R0.getMeasuredHeight(), (int) ((f7 - b0Var.j) * qk0Var5.R0.getAlpha() * f10), 31);
-                qk0Var5.R0.draw(canvas2);
+                canvas2.saveLayerAlpha(0.0f, 0.0f, sk0Var5.R0.getMeasuredWidth(), sk0Var5.R0.getMeasuredHeight(), (int) ((f7 - b0Var.j) * sk0Var5.R0.getAlpha() * f10), 31);
+                sk0Var5.R0.draw(canvas2);
                 canvas2.restore();
                 canvas2.restore();
             } else {
@@ -222,18 +222,18 @@ public final class a0 extends FrameLayout {
                 rectF2 = rectF8;
                 i11 = 5;
             }
-            float width = (rectF.width() - qk0Var5.w.width()) + (rectF.left - qk0Var5.w.left);
+            float width = (rectF.width() - sk0Var5.w.width()) + (rectF.left - sk0Var5.w.left);
             if (b0Var.j > 0.05f || i17 == i11) {
                 canvas2.save();
-                canvas2.translate(width, (rectF.height() - qk0Var5.w.height()) + (rectF.top - qk0Var5.w.top));
-                float max = (Math.max(0.25f, Math.min(qk0Var5.v, 1.0f)) - 0.25f) / 0.75f;
+                canvas2.translate(width, (rectF.height() - sk0Var5.w.height()) + (rectF.top - sk0Var5.w.top));
+                float max = (Math.max(0.25f, Math.min(sk0Var5.v, 1.0f)) - 0.25f) / 0.75f;
                 Canvas canvas3 = canvas2;
-                qk0Var5.f(qk0Var5.E * max, max, qk0Var5.F * max, qk0Var5.M0 == i11 ? 255 : (int) org.telegram.messenger.f0.z(1.0f, qk0Var5.w0, Utilities.clamp(qk0Var5.w0 / 0.2f, 1.0f, 0.0f), 255.0f), canvas3);
-                qk0Var = qk0Var5;
+                sk0Var5.f(sk0Var5.E * max, max, sk0Var5.F * max, sk0Var5.M0 == i11 ? 255 : (int) org.telegram.messenger.f0.z(1.0f, sk0Var5.w0, Utilities.clamp(sk0Var5.w0 / 0.2f, 1.0f, 0.0f), 255.0f), canvas3);
+                sk0Var = sk0Var5;
                 canvas2 = canvas3;
                 canvas2.restore();
             } else {
-                qk0Var = qk0Var5;
+                sk0Var = sk0Var5;
             }
             if (i17 == 5) {
                 Path path = this.v;
@@ -247,7 +247,7 @@ public final class a0 extends FrameLayout {
             this.n = 1.0f;
             this.r = 0.0f;
             this.s = 0.0f;
-            if (qk0Var != null) {
+            if (sk0Var != null) {
                 for (int childCount = xVar.h0.getChildCount() - 1; childCount >= 0; childCount--) {
                     if (xVar.h0.getChildAt(childCount) instanceof j61) {
                         j61 j61Var = (j61) xVar.h0.getChildAt(childCount);
@@ -257,7 +257,7 @@ public final class a0 extends FrameLayout {
                     }
                 }
                 int save = canvas2.save();
-                canvas2.translate(rectF.left, e2.z(1.0f, b0Var.j, qk0Var.g() + qk0Var.getTopOffset(), rectF.top));
+                canvas2.translate(rectF.left, e2.z(1.0f, b0Var.j, sk0Var.g() + sk0Var.getTopOffset(), rectF.top));
                 float max2 = Math.max(1.0f - (xVar.i0.getVisibility() == 0 ? xVar.i0.getAlpha() : 0.0f), 1.0f - b0Var.j);
                 if (max2 != 1.0f) {
                     canvas2.saveLayerAlpha(0.0f, 0.0f, rectF.width(), rectF.height(), (int) (max2 * 255.0f), 31);
@@ -280,39 +280,39 @@ public final class a0 extends FrameLayout {
                 }
                 int i19 = -1;
                 int i20 = -1;
-                while (i20 < qk0Var.b.getChildCount()) {
-                    View childAt = i20 == i19 ? qk0Var.z0 : qk0Var.b.getChildAt(i20);
+                while (i20 < sk0Var.b.getChildCount()) {
+                    View childAt = i20 == i19 ? sk0Var.z0 : sk0Var.b.getChildAt(i20);
                     if (childAt.getLeft() < 0 || childAt.getVisibility() == 8) {
                         i13 = i20;
                         rectF3 = rectF;
-                        qk0Var3 = qk0Var;
+                        sk0Var3 = sk0Var;
                         i14 = i17;
                         i15 = save;
                         hashMap2 = hashMap;
                         rectF4 = rectF2;
                     } else {
                         canvas2.save();
-                        if (childAt instanceof ok0) {
-                            ok0 ok0Var = (ok0) childAt;
-                            nk0 nk0Var = ok0Var.a;
-                            nk0 nk0Var2 = ok0Var.b;
-                            b1 b1Var = ok0Var.f;
+                        if (childAt instanceof qk0) {
+                            qk0 qk0Var = (qk0) childAt;
+                            pk0 pk0Var = qk0Var.a;
+                            pk0 pk0Var2 = qk0Var.b;
+                            b1 b1Var = qk0Var.f;
                             if (b1Var != null) {
                                 b1Var.setAlpha(1.0f - b0Var.j);
                             }
-                            j61 j61Var2 = (j61) hashMap.get(ok0Var.e);
+                            j61 j61Var2 = (j61) hashMap.get(qk0Var.e);
                             if (j61Var2 != null) {
                                 float x12 = childAt.getX();
                                 float y11 = childAt.getY();
                                 if (i20 == -1) {
-                                    x12 -= qk0Var.b.getX();
-                                    f18 = y11 - qk0Var.b.getY();
+                                    x12 -= sk0Var.b.getX();
+                                    f18 = y11 - sk0Var.b.getY();
                                 } else {
                                     f18 = y11;
                                 }
                                 i13 = i20;
-                                float x13 = ((xVar.h0.getX() + (xVar.getX() + j61Var2.getX())) - nk0Var2.getX()) - AndroidUtilities.dp(1.0f);
-                                float y12 = (xVar.h0.getY() + (xVar.g0.getY() + (xVar.getY() + j61Var2.getY()))) - nk0Var2.getY();
+                                float x13 = ((xVar.h0.getX() + (xVar.getX() + j61Var2.getX())) - pk0Var2.getX()) - AndroidUtilities.dp(1.0f);
+                                float y12 = (xVar.h0.getY() + (xVar.g0.getY() + (xVar.getY() + j61Var2.getY()))) - pk0Var2.getY();
                                 float measuredWidth = j61Var2.getMeasuredWidth();
                                 if (j61Var2.L) {
                                     i16 = 4;
@@ -327,15 +327,15 @@ public final class a0 extends FrameLayout {
                                         float f32 = x12;
                                         float lerp3 = AndroidUtilities.lerp(f18, f31, b0Var.j);
                                         float f33 = f18;
-                                        float measuredWidth2 = measuredWidth / nk0Var2.getMeasuredWidth();
+                                        float measuredWidth2 = measuredWidth / pk0Var2.getMeasuredWidth();
                                         i15 = save;
                                         rectF5 = rectF;
                                         f17 = AndroidUtilities.lerp(1.0f, measuredWidth2, b0Var.j);
-                                        if (ok0Var.y != 0) {
+                                        if (qk0Var.y != 0) {
                                             f22 = AndroidUtilities.dp(6.0f);
                                             f24 = f22;
                                             f23 = 0.0f;
-                                        } else if (ok0Var.w) {
+                                        } else if (qk0Var.w) {
                                             f22 = AndroidUtilities.dp(6.0f);
                                             f23 = f22;
                                             f24 = f23;
@@ -396,11 +396,11 @@ public final class a0 extends FrameLayout {
                                 float f322 = x12;
                                 float lerp32 = AndroidUtilities.lerp(f18, f312, b0Var.j);
                                 float f332 = f18;
-                                float measuredWidth22 = measuredWidth / nk0Var2.getMeasuredWidth();
+                                float measuredWidth22 = measuredWidth / pk0Var2.getMeasuredWidth();
                                 i15 = save;
                                 rectF5 = rectF;
                                 f17 = AndroidUtilities.lerp(1.0f, measuredWidth22, b0Var.j);
-                                if (ok0Var.y != 0) {
+                                if (qk0Var.y != 0) {
                                 }
                                 f25 = 0.0f;
                                 canvas2.translate(lerp22, lerp32);
@@ -420,7 +420,7 @@ public final class a0 extends FrameLayout {
                                 i15 = save;
                                 hashMap2 = hashMap;
                                 rectF6 = rectF2;
-                                canvas2.translate(nk0Var2.getX() + childAt.getX(), nk0Var2.getY() + childAt.getY());
+                                canvas2.translate(pk0Var2.getX() + childAt.getX(), pk0Var2.getY() + childAt.getY());
                                 f13 = 0.0f;
                                 f14 = 0.0f;
                                 f15 = 0.0f;
@@ -429,28 +429,28 @@ public final class a0 extends FrameLayout {
                             }
                             if (j61Var2 != null) {
                                 if (j61Var2.L) {
-                                    float measuredWidth3 = ok0Var.getMeasuredWidth() / f12;
-                                    float measuredHeight = ok0Var.getMeasuredHeight() / f12;
-                                    float measuredWidth4 = ok0Var.getMeasuredWidth() - AndroidUtilities.dp(f12);
+                                    float measuredWidth3 = qk0Var.getMeasuredWidth() / f12;
+                                    float measuredHeight = qk0Var.getMeasuredHeight() / f12;
+                                    float measuredWidth4 = qk0Var.getMeasuredWidth() - AndroidUtilities.dp(f12);
                                     float lerp4 = AndroidUtilities.lerp(measuredWidth4, (j61Var2.getMeasuredWidth() - AndroidUtilities.dp(f12)) / f17, b0Var.j);
                                     RectF rectF11 = AndroidUtilities.rectTmp;
                                     float f36 = lerp4 / f12;
                                     rectF7 = rectF6;
-                                    qk0Var4 = qk0Var;
+                                    sk0Var4 = sk0Var;
                                     rectF11.set(measuredWidth3 - f36, measuredHeight - f36, measuredWidth3 + f36, measuredHeight + f36);
                                     float lerp5 = AndroidUtilities.lerp(measuredWidth4 / f12, AndroidUtilities.dp(4.0f), b0Var.j);
                                     canvas2.drawRoundRect(rectF11, lerp5, lerp5, xVar.L);
                                 } else {
-                                    qk0Var4 = qk0Var;
+                                    sk0Var4 = sk0Var;
                                     rectF7 = rectF6;
                                 }
-                                ok0Var.x = false;
+                                qk0Var.x = false;
                                 if (f13 == 0.0f) {
-                                    ok0Var.draw(canvas2);
+                                    qk0Var.draw(canvas2);
                                 } else {
-                                    ImageReceiver imageReceiver = nk0Var2.getImageReceiver();
-                                    ok0Var.b();
-                                    q5 q5Var = nk0Var2.e;
+                                    ImageReceiver imageReceiver = pk0Var2.getImageReceiver();
+                                    qk0Var.b();
+                                    q5 q5Var = pk0Var2.e;
                                     if (q5Var != null && (l4Var3 = q5Var.k) != null) {
                                         imageReceiver = l4Var3;
                                     }
@@ -465,39 +465,39 @@ public final class a0 extends FrameLayout {
                                         i21++;
                                     }
                                     imageReceiver.setRoundRadius((int) AndroidUtilities.lerp(f14, 0.0f, b0Var.j), (int) AndroidUtilities.lerp(f15, 0.0f, b0Var.j), (int) AndroidUtilities.lerp(f16, 0.0f, b0Var.j), (int) AndroidUtilities.lerp(f13, 0.0f, b0Var.j));
-                                    ok0Var.draw(canvas2);
+                                    qk0Var.draw(canvas2);
                                     imageReceiver.setRoundRadius(iArr);
                                 }
-                                ok0Var.x = true;
+                                qk0Var.x = true;
                                 if (!j61Var2.b) {
                                     j61Var2.b = true;
                                     j61Var2.invalidate();
                                 }
                             } else {
-                                qk0Var4 = qk0Var;
+                                sk0Var4 = sk0Var;
                                 rectF7 = rectF6;
-                                if (ok0Var.r && nk0Var2.getImageReceiver().getLottieAnimation() == null) {
-                                    float alpha = nk0Var.getImageReceiver().getAlpha();
-                                    nk0Var.getImageReceiver().setAlpha((1.0f - clamp) * alpha);
-                                    nk0Var.draw(canvas2);
-                                    nk0Var.getImageReceiver().setAlpha(alpha);
+                                if (qk0Var.r && pk0Var2.getImageReceiver().getLottieAnimation() == null) {
+                                    float alpha = pk0Var.getImageReceiver().getAlpha();
+                                    pk0Var.getImageReceiver().setAlpha((1.0f - clamp) * alpha);
+                                    pk0Var.draw(canvas2);
+                                    pk0Var.getImageReceiver().setAlpha(alpha);
                                 } else {
-                                    ok0Var.b();
-                                    ImageReceiver imageReceiver2 = nk0Var2.getImageReceiver();
-                                    q5 q5Var2 = nk0Var2.e;
+                                    qk0Var.b();
+                                    ImageReceiver imageReceiver2 = pk0Var2.getImageReceiver();
+                                    q5 q5Var2 = pk0Var2.e;
                                     if (q5Var2 != null && (l4Var2 = q5Var2.k) != null) {
                                         imageReceiver2 = l4Var2;
                                     }
                                     float alpha2 = imageReceiver2.getAlpha();
                                     imageReceiver2.setAlpha((1.0f - clamp) * alpha2);
-                                    nk0Var2.draw(canvas2);
+                                    pk0Var2.draw(canvas2);
                                     imageReceiver2.setAlpha(alpha2);
                                 }
                             }
-                            if (nk0Var2.getVisibility() != 0) {
+                            if (pk0Var2.getVisibility() != 0) {
                                 invalidate();
                             }
-                            qk0Var3 = qk0Var4;
+                            sk0Var3 = sk0Var4;
                             rectF3 = rectF5;
                             rectF4 = rectF7;
                         } else {
@@ -506,10 +506,10 @@ public final class a0 extends FrameLayout {
                             i14 = i17;
                             i15 = save;
                             hashMap2 = hashMap;
-                            qk0Var3 = qk0Var;
+                            sk0Var3 = sk0Var;
                             rectF4 = rectF2;
                             rectF3 = rectF12;
-                            canvas2.translate((rectF12.width() + childAt.getX()) - qk0Var3.w.width(), (childAt.getY() + rectF4.top) - rectF3.top);
+                            canvas2.translate((rectF12.width() + childAt.getX()) - sk0Var3.w.width(), (childAt.getY() + rectF4.top) - rectF3.top);
                             canvas2.saveLayerAlpha(0.0f, 0.0f, childAt.getMeasuredWidth(), childAt.getMeasuredHeight(), (int) ((1.0f - clamp) * 255.0f), 31);
                             float f37 = 1.0f - b0Var.j;
                             canvas2.scale(f37, f37, r14.getMeasuredWidth() >> 1, r14.getMeasuredHeight() >> 1);
@@ -519,7 +519,7 @@ public final class a0 extends FrameLayout {
                         canvas2.restore();
                     }
                     i20 = i13 + 1;
-                    qk0Var = qk0Var3;
+                    sk0Var = sk0Var3;
                     rectF2 = rectF4;
                     rectF = rectF3;
                     hashMap = hashMap2;
@@ -527,11 +527,11 @@ public final class a0 extends FrameLayout {
                     save = i15;
                     i19 = -1;
                 }
-                qk0Var2 = qk0Var;
+                sk0Var2 = sk0Var;
                 i12 = i17;
                 canvas2.restoreToCount(save);
             } else {
-                qk0Var2 = qk0Var;
+                sk0Var2 = sk0Var;
                 i12 = i17;
                 f12 = 2.0f;
             }
@@ -539,7 +539,7 @@ public final class a0 extends FrameLayout {
             int i22 = b0Var.F;
             if (i22 < 5) {
                 if (i22 == 3) {
-                    qk0Var2.setSkipDraw(true);
+                    sk0Var2.setSkipDraw(true);
                 }
                 b0Var.F++;
             }
@@ -558,15 +558,15 @@ public final class a0 extends FrameLayout {
                             xVar.U0 = 1.0f;
                             y61 y61Var = xVar.H;
                             if (y61Var != null) {
-                                qk0 qk0Var6 = (qk0) ((z2.b) y61Var).a;
+                                sk0 sk0Var6 = (sk0) ((z2.b) y61Var).a;
                                 if (j61Var3.s) {
-                                    qk0Var6.l(j61Var3, j61Var3.x, true);
+                                    sk0Var6.l(j61Var3, j61Var3.x, true);
                                 } else {
                                     long j3 = j61Var3.e.documentId;
                                     o0 o0Var2 = new o0();
                                     o0Var2.g = j3;
                                     o0Var2.h = j3;
-                                    qk0Var6.l(j61Var3, o0Var2, true);
+                                    sk0Var6.l(j61Var3, o0Var2, true);
                                 }
                             }
                         }
@@ -612,8 +612,8 @@ public final class a0 extends FrameLayout {
     public final void invalidate() {
         super.invalidate();
         b0 b0Var = this.w;
-        qk0 qk0Var = b0Var.n;
-        if (b0Var.y == 1 || !(qk0Var == null || qk0Var.getDelegate() == null || !qk0Var.getDelegate().p())) {
+        sk0 sk0Var = b0Var.n;
+        if (b0Var.y == 1 || !(sk0Var == null || sk0Var.getDelegate() == null || !sk0Var.getDelegate().p())) {
             b0Var.m.f0.invalidate();
         }
     }

@@ -1,46 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class tr extends ImageView {
-    public final /* synthetic */ int a = 1;
-    public Object b;
-    public final /* synthetic */ ViewGroup c;
+public final /* synthetic */ class tr implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wr b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tr(vr vrVar, Context context, n2.e eVar) {
-        super(context);
-        this.c = vrVar;
-        this.b = eVar;
+    public /* synthetic */ tr(wr wrVar, int i10) {
+        this.a = i10;
+        this.b = wrVar;
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        View view;
         switch (this.a) {
             case 0:
-                vr vrVar = (vr) this.c;
-                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (vrVar.n || vrVar.f)) {
-                    vrVar.n = false;
-                    vrVar.f = false;
-                    removeCallbacks(vrVar.r);
-                    removeCallbacks(vrVar.h);
+                wr wrVar = this.b;
+                if (wrVar.b == null && (view = wrVar.d) != null) {
+                    View findFocus = view.findFocus();
+                    if (findFocus instanceof EditText) {
+                        wrVar.b = (EditText) findFocus;
+                    }
                 }
-                super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((n2.e) this.b).b).onTouchEvent(motionEvent);
+                EditText editText = wrVar.b;
+                if (editText != null) {
+                    if (editText.length() != 0 || wrVar.e) {
+                        try {
+                            wrVar.performHapticFeedback(3, 2);
+                            wrVar.playSoundEffect(0);
+                        } catch (Exception unused) {
+                        }
+                        wrVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
+                        wrVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
+                        if (wrVar.f) {
+                            wrVar.postDelayed(wrVar.h, 50L);
+                            break;
+                        }
+                    }
+                }
+                break;
             default:
-                return super.onTouchEvent(motionEvent);
+                wr wrVar2 = this.b;
+                wrVar2.n = false;
+                wrVar2.f = true;
+                wrVar2.h.run();
+                break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tr(qk0 qk0Var, Context context) {
-        super(context);
-        this.c = qk0Var;
     }
 }

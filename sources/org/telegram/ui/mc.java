@@ -14,16 +14,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class mc extends org.telegram.ui.Components.vl0 {
+public final class mc extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ ad c;
 
     public mc(ad adVar) {
         this.c = adVar;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 5 || i10 == 6;
@@ -402,14 +402,14 @@ public final class mc extends org.telegram.ui.Components.vl0 {
         } else if (i10 == 10) {
             Activity parentActivity8 = adVar.getParentActivity();
             d6Var = ((org.telegram.ui.ActionBar.m2) adVar).resourceProvider;
-            org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(parentActivity8, d6Var);
-            u00Var.setIsSingleCell(true);
-            u00Var.setViewType(35);
-            frameLayout = u00Var;
+            org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(parentActivity8, d6Var);
+            v00Var.setIsSingleCell(true);
+            v00Var.setViewType(35);
+            frameLayout = v00Var;
         } else {
             frameLayout = new org.telegram.ui.Cells.e9(adVar.getParentActivity());
         }
-        return new org.telegram.ui.Components.gl0(frameLayout);
+        return new org.telegram.ui.Components.il0(frameLayout);
     }
 
     @Override // s4.h0

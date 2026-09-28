@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.os.Build;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.z1, mq {
+public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.z1, nq {
     public final /* synthetic */ int a;
     public final /* synthetic */ e9 b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.z1, m
         this.b = e9Var;
     }
 
-    @Override // org.telegram.ui.Components.mq
+    @Override // org.telegram.ui.Components.nq
     public /* synthetic */ int K0(int i10) {
         return 0;
     }
@@ -31,7 +31,7 @@ public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.z1, m
         }
     }
 
-    @Override // org.telegram.ui.Components.mq
+    @Override // org.telegram.ui.Components.nq
     public void x0(int i10, int i11, boolean z10) {
         e9 e9Var = this.b;
         if (i11 == 0) {
@@ -81,11 +81,11 @@ public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.z1, m
         e9Var.a.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.mq
+    @Override // org.telegram.ui.Components.nq
     public /* synthetic */ void l(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.mq
+    @Override // org.telegram.ui.Components.nq
     public /* synthetic */ void y() {
     }
 }

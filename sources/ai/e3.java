@@ -22,10 +22,10 @@ import org.telegram.messenger.ok;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -217,9 +217,9 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                 ci.d dVar = new ci.d(e6Var.getContext(), d6Var, true);
                 dVar.g(LocaleController.getString(R.string.StoryQualityIncrease), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
-                pq pqVar = new pq(R.drawable.mini_switch_lock, 0);
-                pqVar.setTopOffset(1);
-                spannableStringBuilder.setSpan(pqVar, 0, 1, 33);
+                qq qqVar = new qq(R.drawable.mini_switch_lock, 0);
+                qqVar.setTopOffset(1);
+                spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
                 dVar.f(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) LocaleController.getString(R.string.OptionPremiumRequiredTitle)), false);
                 linearLayout.addView(dVar, w7.y5.q(-1, 48, 1));
                 dVar.setOnClickListener(new f2(2, e6Var, e3Var));

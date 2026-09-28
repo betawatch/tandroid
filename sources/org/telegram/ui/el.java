@@ -7,18 +7,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class el extends org.telegram.ui.Components.fc0 {
+public final class el extends org.telegram.ui.Components.hc0 {
     public final /* synthetic */ wn H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public el(wn wnVar, Context context, wn wnVar2, ah.c cVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.bc0 bc0Var, int i11, boolean z10) {
-        super(context, wnVar2, cVar, messagePreviewParams, user, chat, i10, bc0Var, i11, z10);
+    public el(wn wnVar, Context context, wn wnVar2, ah.c cVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.dc0 dc0Var, int i11, boolean z10) {
+        super(context, wnVar2, cVar, messagePreviewParams, user, chat, i10, dc0Var, i11, z10);
         this.H = wnVar;
     }
 
-    @Override // org.telegram.ui.Components.fc0
+    @Override // org.telegram.ui.Components.hc0
     public final void b() {
         MessageObject messageObject;
         mn mnVar;
@@ -29,7 +29,7 @@ public final class el extends org.telegram.ui.Components.fc0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fc0
+    @Override // org.telegram.ui.Components.hc0
     public final void c(boolean z10) {
         int i10;
         boolean z11;

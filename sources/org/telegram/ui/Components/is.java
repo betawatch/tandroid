@@ -2,83 +2,49 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;
-import java.util.ArrayList;
+import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class is {
-    public final org.telegram.ui.Cells.s2 a;
-    public final ArrayList b = new ArrayList();
-    public final ArrayList c = new ArrayList();
-    public hs d = null;
+    public int a;
+    public int b;
+    public v01 c;
+    public int d;
+    public int e;
 
-    public is(org.telegram.ui.Cells.s2 s2Var) {
-        this.a = s2Var;
+    public static is b(org.telegram.ui.Cells.s2 s2Var, MessagesController.DialogFilter dialogFilter) {
+        is isVar = new is();
+        isVar.a = dialogFilter.id;
+        isVar.b = dialogFilter.color;
+        String str = dialogFilter.name;
+        if (str == null) {
+            str = "";
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
+        v01 v01Var = new v01(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
+        v01Var.s(s2Var);
+        isVar.c = v01Var;
+        isVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, v01Var.a.getFontMetricsInt(), false), dialogFilter.entities, isVar.c.a.getFontMetricsInt()));
+        isVar.c.p(26);
+        int dp = AndroidUtilities.dp(9.32f);
+        v01 v01Var2 = isVar.c;
+        isVar.e = dp + ((int) v01Var2.c);
+        v01Var2.j();
+        int[] iArr = org.telegram.ui.ActionBar.h6.r8;
+        isVar.d = org.telegram.ui.ActionBar.h6.w0(null, iArr[dialogFilter.color % iArr.length], false);
+        return isVar;
     }
 
-    public final void a(Canvas canvas, int i10) {
-        ArrayList arrayList;
-        canvas.clipRect(0, 0, i10, AndroidUtilities.dp(14.66f));
+    public final void a(Canvas canvas) {
+        org.telegram.ui.ActionBar.h6.A0.setColor(org.telegram.ui.ActionBar.h6.l1(org.telegram.ui.ActionBar.h6.I.q() ? 0.2f : 0.1f, this.d));
         RectF rectF = AndroidUtilities.rectTmp;
-        float f7 = i10;
-        rectF.set(0.0f, 0.0f, f7, AndroidUtilities.dp(14.66f));
-        canvas.saveLayerAlpha(rectF, 255, 31);
-        if (LocaleController.isRTL) {
-            canvas.translate(f7, 0.0f);
-        }
-        int dp = i10 - AndroidUtilities.dp(25.0f);
-        int i11 = 0;
-        while (true) {
-            arrayList = this.c;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            hs hsVar = (hs) arrayList.get(i11);
-            dp = org.telegram.messenger.ok.y(4.0f, hsVar.e, dp);
-            if (dp < 0) {
-                break;
-            }
-            if (LocaleController.isRTL) {
-                canvas.translate(-hsVar.e, 0.0f);
-                hsVar.a(canvas);
-                canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
-            } else {
-                hsVar.a(canvas);
-                canvas.translate(AndroidUtilities.dp(4.0f) + hsVar.e, 0.0f);
-            }
-            i11++;
-        }
-        if (i11 < arrayList.size()) {
-            int size = arrayList.size() - i11;
-            hs hsVar2 = this.d;
-            if (hsVar2 == null || hsVar2.a != size) {
-                hs hsVar3 = new hs();
-                hsVar3.a = size;
-                t01 t01Var = new t01(hg.c.h(size, "+"), 10.0f, AndroidUtilities.bold());
-                t01Var.s(this.a);
-                hsVar3.c = t01Var;
-                int dp2 = AndroidUtilities.dp(9.32f);
-                t01 t01Var2 = hsVar3.c;
-                hsVar3.e = dp2 + ((int) t01Var2.c);
-                t01Var2.j();
-                hsVar3.d = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.n8, false);
-                this.d = hsVar3;
-            }
-            if (LocaleController.isRTL) {
-                canvas.translate(-this.d.e, 0.0f);
-                this.d.a(canvas);
-                canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
-            } else {
-                this.d.a(canvas);
-                canvas.translate(AndroidUtilities.dp(4.0f) + this.d.e, 0.0f);
-            }
-        }
-        canvas.restore();
-    }
-
-    public final boolean b() {
-        return this.c.isEmpty();
+        rectF.set(0.0f, 0.0f, this.e, AndroidUtilities.dp(14.66f));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.h6.A0);
+        this.c.c(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(14.66f) / 2.0f, 1.0f, this.d, canvas);
     }
 }

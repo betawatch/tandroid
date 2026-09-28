@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class lf1 extends og.b {
     public final /* synthetic */ wf1 d;
@@ -19,7 +19,7 @@ public final class lf1 extends og.b {
         this.d = wf1Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 3;
@@ -147,13 +147,13 @@ public final class lf1 extends og.b {
             if (i10 == 2) {
                 kf1 kf1Var = new kf1(this, wf1Var.getParentActivity());
                 wf1Var.E0 = kf1Var;
-                return new org.telegram.ui.Components.gl0(kf1Var);
+                return new org.telegram.ui.Components.il0(kf1Var);
             }
-            org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(viewGroup.getContext(), null);
-            u00Var.setViewType(24);
-            u00Var.setIsSingleCell(true);
-            u00Var.w = true;
-            return new org.telegram.ui.Components.gl0(u00Var);
+            org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(viewGroup.getContext(), null);
+            v00Var.setViewType(24);
+            v00Var.setIsSingleCell(true);
+            v00Var.w = true;
+            return new org.telegram.ui.Components.il0(v00Var);
         }
         tf1 tf1Var = new tf1(wf1Var, viewGroup.getContext(), false);
         if (i10 == 3) {
@@ -166,6 +166,6 @@ public final class lf1 extends og.b {
         z10 = ((org.telegram.ui.ActionBar.m2) wf1Var).inPreviewMode;
         tf1Var.k0 = z10;
         tf1Var.setArchivedPullAnimation(wf1Var.w);
-        return new org.telegram.ui.Components.gl0(tf1Var);
+        return new org.telegram.ui.Components.il0(tf1Var);
     }
 }

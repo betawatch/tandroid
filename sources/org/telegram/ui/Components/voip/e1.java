@@ -16,25 +16,25 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ad0;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.rv0;
-import org.telegram.ui.Components.sv0;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uv0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.yg0;
 import yh.w7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e1 implements rv0, sv0, org.telegram.ui.ActionBar.z1, ad0, GenericProvider, FlagSecureReason.FlagSecureCondition, Utilities.Callback2Return, dw0 {
+public final /* synthetic */ class e1 implements tv0, uv0, org.telegram.ui.ActionBar.z1, cd0, GenericProvider, FlagSecureReason.FlagSecureCondition, Utilities.Callback2Return, fw0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e1(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.uv0
     public void b(Object obj, float f7) {
         k1 k1Var = (k1) obj;
         WindowManager.LayoutParams layoutParams = k1Var.c;
@@ -90,18 +90,18 @@ public final /* synthetic */ class e1 implements rv0, sv0, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.rv0
+    @Override // org.telegram.ui.Components.tv0
     public float get(Object obj) {
         return ((k1) obj).R;
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public void h(int i10) {
         SharedConfig.proxyRotationTimeout = i10;
         SharedConfig.saveConfig();
     }
 
-    @Override // org.telegram.ui.Components.ad0
+    @Override // org.telegram.ui.Components.cd0
     public String j(int i10) {
         switch (this.a) {
             case 6:
@@ -170,7 +170,7 @@ public final /* synthetic */ class e1 implements rv0, sv0, org.telegram.ui.Actio
         return SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture;
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public /* synthetic */ void n() {
     }
 

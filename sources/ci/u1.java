@@ -38,12 +38,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.cu;
-import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.ty;
-import org.telegram.ui.Components.wx0;
+import org.telegram.ui.Components.du;
+import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.yx0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ey;
@@ -51,10 +51,11 @@ import org.telegram.ui.hg;
 import org.telegram.ui.je;
 import org.telegram.ui.nt;
 import org.telegram.ui.oo0;
+import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
@@ -171,8 +172,8 @@ public final /* synthetic */ class u1 implements Runnable {
                 long nanoTime = System.nanoTime();
                 try {
                     try {
-                        s0Var.f();
-                        long j3 = s0Var.D;
+                        s0Var.g();
+                        long j3 = s0Var.E;
                         if (z14) {
                             try {
                                 synchronized (r32) {
@@ -185,17 +186,17 @@ public final /* synthetic */ class u1 implements Runnable {
                                         throw th2;
                                     }
                                 }
-                                s0Var.f();
-                                s0Var.j(o0Var, 1);
+                                s0Var.g();
+                                s0Var.k(o0Var, 1);
                                 file = r32.a;
                                 try {
                                     s0Var.c(true);
-                                    a3.z a2 = w7.k.a(file3, s0Var.P, s0Var.F, s0Var.G, true);
+                                    a3.z a2 = w7.k.a(file3, s0Var.Q, s0Var.G, s0Var.H, true);
                                     j3 = a2.b;
-                                    s0Var.l.b("resume trim remux completed: requested=" + s0Var.F + ".." + s0Var.G + ", actualStartMs=" + a2.a + ", retainedDurationMs=" + j3 + ", outputSize=" + s0Var.P.a.length() + ", elapsedMs=" + ki.s0.e(nanoTime));
+                                    s0Var.m.b("resume trim remux completed: requested=" + s0Var.G + ".." + s0Var.H + ", actualStartMs=" + a2.a + ", retainedDurationMs=" + j3 + ", outputSize=" + s0Var.Q.a.length() + ", elapsedMs=" + ki.s0.f(nanoTime));
                                 } catch (Exception e7) {
                                     e = e7;
-                                    s0Var.h.post(new ki.c0(s0Var, e, 1));
+                                    s0Var.i.post(new ki.c0(s0Var, e, 1));
                                     if (file3 != null) {
                                         w7.k.c(file3);
                                     }
@@ -208,7 +209,7 @@ public final /* synthetic */ class u1 implements Runnable {
                             } catch (Exception e10) {
                                 e = e10;
                                 file = null;
-                                s0Var.h.post(new ki.c0(s0Var, e, 1));
+                                s0Var.i.post(new ki.c0(s0Var, e, 1));
                                 if (file3 != null) {
                                 }
                                 if (file == null) {
@@ -229,12 +230,12 @@ public final /* synthetic */ class u1 implements Runnable {
                         } else {
                             file = null;
                         }
-                        s0Var.f();
-                        s0Var.Q = null;
+                        s0Var.g();
+                        s0Var.R = null;
                         if (!z14) {
-                            s0Var.l.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + ki.s0.e(nanoTime));
+                            s0Var.m.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + ki.s0.f(nanoTime));
                         }
-                        s0Var.h.post(new ki.d0(s0Var, j3, 0));
+                        s0Var.i.post(new ki.d0(s0Var, j3, 0));
                         if (file3 != null) {
                             w7.k.c(file3);
                         }
@@ -343,31 +344,31 @@ public final /* synthetic */ class u1 implements Runnable {
                 }
                 return;
             case 17:
-                cu cuVar = (cu) this.c;
+                du duVar = (du) this.c;
                 boolean z18 = this.b;
                 fi.o oVar = (fi.o) this.d;
                 String str3 = (String) this.f;
                 TextView textView = (TextView) this.e;
-                ClipboardManager clipboardManager = (ClipboardManager) cuVar.getContext().getSystemService("clipboard");
+                ClipboardManager clipboardManager = (ClipboardManager) duVar.getContext().getSystemService("clipboard");
                 boolean z19 = z18 && (TextUtils.isEmpty(oVar.getText()) || TextUtils.equals(oVar.getText().toString(), str3)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                ok.s(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), rr.h, 300L);
+                ok.s(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), sr.h, 300L);
                 return;
             case 18:
-                ty tyVar = (ty) this.c;
+                uy uyVar = (uy) this.c;
                 String str4 = (String) this.f;
                 boolean z20 = this.b;
                 String str5 = (String) this.e;
                 TLObject tLObject4 = (TLObject) this.d;
-                tyVar.a.remove(str5);
-                lz lzVar = tyVar.b;
-                qy qyVar = lzVar.j0;
-                HashMap hashMap = lzVar.l0;
-                if (qyVar.v && qyVar.w.equals(str4)) {
-                    lzVar.j0.E(str4, "", false, true, z20, str5, tLObject4);
+                uyVar.a.remove(str5);
+                mz mzVar = uyVar.b;
+                ry ryVar = mzVar.j0;
+                HashMap hashMap = mzVar.l0;
+                if (ryVar.v && ryVar.w.equals(str4)) {
+                    mzVar.j0.E(str4, "", false, true, z20, str5, tLObject4);
                     return;
                 }
                 if (z20 && (!(tLObject4 instanceof TLRPC.messages_BotResults) || ((TLRPC.messages_BotResults) tLObject4).results.isEmpty())) {
-                    tyVar.a(str4, false);
+                    uyVar.a(str4, false);
                     return;
                 } else {
                     if (!(tLObject4 instanceof TLRPC.messages_BotResults) || hashMap.containsKey(str5)) {
@@ -446,7 +447,7 @@ public final /* synthetic */ class u1 implements Runnable {
                     photoEntry.averageDuration = (long) (MessageObject.getDocumentDuration(document) * 1000.0d);
                 }
                 PhotoViewer.t1().J2(m2Var.getParentActivity(), null, m2Var.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList6, 0, 11, false, new wx0(), wnVar2);
+                PhotoViewer.t1().f2(arrayList6, 0, 11, false, new yx0(), wnVar2);
                 PhotoViewer.t1().X0(document, z21 ? document : null, true, null);
                 nt.q().T = z21 ? tL_messages_stickerSet : null;
                 return;
@@ -456,18 +457,18 @@ public final /* synthetic */ class u1 implements Runnable {
                 TLObject tLObject5 = (TLObject) this.d;
                 String str6 = (String) this.f;
                 boolean z22 = this.b;
-                org.telegram.ui.qy qyVar2 = eyVar.a;
+                qy qyVar = eyVar.a;
                 if (tL_error2 == null) {
-                    TLRPC.User user2 = qyVar2.getMessagesController().getUser(Long.valueOf(qyVar2.getUserConfig().getClientUserId()));
+                    TLRPC.User user2 = qyVar.getMessagesController().getUser(Long.valueOf(qyVar.getUserConfig().getClientUserId()));
                     if (user2 == null) {
-                        user2 = qyVar2.getUserConfig().getCurrentUser();
+                        user2 = qyVar.getUserConfig().getCurrentUser();
                         if (user2 == null) {
                             return;
                         } else {
-                            qyVar2.getMessagesController().putUser(user2, false);
+                            qyVar.getMessagesController().putUser(user2, false);
                         }
                     } else {
-                        qyVar2.getUserConfig().setCurrentUser(user2);
+                        qyVar.getUserConfig().setCurrentUser(user2);
                     }
                     TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject5;
                     ArrayList<TLRPC.PhotoSize> arrayList8 = tL_photos_photo.photo.sizes;
@@ -484,63 +485,63 @@ public final /* synthetic */ class u1 implements Runnable {
                     if (closestPhotoSizeWithSize2 != null) {
                         tL_userProfilePhoto.photo_big = closestPhotoSizeWithSize2.location;
                     }
-                    if (closestPhotoSizeWithSize == null || qyVar2.b4 == null) {
+                    if (closestPhotoSizeWithSize == null || qyVar.b4 == null) {
                         user = user3;
                         z10 = true;
                     } else {
-                        i16 = ((org.telegram.ui.ActionBar.m2) qyVar2).currentAccount;
+                        i16 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
                         File pathToAttach2 = FileLoader.getInstance(i16).getPathToAttach(closestPhotoSizeWithSize, true);
-                        i17 = ((org.telegram.ui.ActionBar.m2) qyVar2).currentAccount;
-                        FileLoader.getInstance(i17).getPathToAttach(qyVar2.b4, true).renameTo(pathToAttach2);
+                        i17 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
+                        FileLoader.getInstance(i17).getPathToAttach(qyVar.b4, true).renameTo(pathToAttach2);
                         StringBuilder sb2 = new StringBuilder();
-                        sb2.append(qyVar2.b4.volume_id);
+                        sb2.append(qyVar.b4.volume_id);
                         sb2.append("_");
-                        String o9 = a4.a.o(qyVar2.b4.local_id, "@50_50", sb2);
+                        String o9 = a4.a.o(qyVar.b4.local_id, "@50_50", sb2);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(closestPhotoSizeWithSize.location.volume_id);
                         sb3.append("_");
                         String o10 = a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3);
                         ImageLoader imageLoader = ImageLoader.getInstance();
-                        i18 = ((org.telegram.ui.ActionBar.m2) qyVar2).currentAccount;
+                        i18 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
                         user = user3;
                         z10 = true;
                         imageLoader.replaceImageInCache(o9, o10, ImageLocation.getForUserOrChat(i18, user, 1), false);
                     }
                     if (closestVideoSizeWithSize != null && str6 != null) {
-                        i15 = ((org.telegram.ui.ActionBar.m2) qyVar2).currentAccount;
+                        i15 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
                         new File(str6).renameTo(FileLoader.getInstance(i15).getPathToAttach(closestVideoSizeWithSize, "mp4", z10));
-                    } else if (closestPhotoSizeWithSize2 != null && qyVar2.c4 != null) {
-                        i13 = ((org.telegram.ui.ActionBar.m2) qyVar2).currentAccount;
+                    } else if (closestPhotoSizeWithSize2 != null && qyVar.c4 != null) {
+                        i13 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
                         File pathToAttach3 = FileLoader.getInstance(i13).getPathToAttach(closestPhotoSizeWithSize2, true);
-                        i14 = ((org.telegram.ui.ActionBar.m2) qyVar2).currentAccount;
-                        FileLoader.getInstance(i14).getPathToAttach(qyVar2.c4, true).renameTo(pathToAttach3);
+                        i14 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
+                        FileLoader.getInstance(i14).getPathToAttach(qyVar.c4, true).renameTo(pathToAttach3);
                     }
-                    qyVar2.getMessagesController().getDialogPhotos(user.id).addPhotoAtStart(tL_photos_photo.photo);
+                    qyVar.getMessagesController().getDialogPhotos(user.id).addPhotoAtStart(tL_photos_photo.photo);
                     ArrayList arrayList9 = new ArrayList();
                     arrayList9.add(user);
                     i11 = 0;
-                    qyVar2.getMessagesStorage().putUsersAndChats(arrayList9, null, false, true);
-                    TLRPC.UserFull userFull = qyVar2.getMessagesController().getUserFull(qyVar2.getUserConfig().getClientUserId());
+                    qyVar.getMessagesStorage().putUsersAndChats(arrayList9, null, false, true);
+                    TLRPC.UserFull userFull = qyVar.getMessagesController().getUserFull(qyVar.getUserConfig().getClientUserId());
                     if (userFull != null) {
                         userFull.profile_photo = tL_photos_photo.photo;
-                        qyVar2.getMessagesStorage().updateUserInfo(userFull, false);
+                        qyVar.getMessagesStorage().updateUserInfo(userFull, false);
                     }
                 } else {
                     i11 = 0;
                 }
-                qyVar2.b4 = null;
-                qyVar2.c4 = null;
-                NotificationCenter notificationCenter = qyVar2.getNotificationCenter();
+                qyVar.b4 = null;
+                qyVar.c4 = null;
+                NotificationCenter notificationCenter = qyVar.getNotificationCenter();
                 int i22 = NotificationCenter.updateInterfaces;
                 Object[] objArr = new Object[1];
                 objArr[i11] = Integer.valueOf(MessagesController.UPDATE_MASK_ALL);
                 notificationCenter.lambda$postNotificationNameOnUIThread$1(i22, objArr);
-                qyVar2.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[i11]);
-                qyVar2.getUserConfig().saveConfig(true);
-                i12 = ((org.telegram.ui.ActionBar.m2) qyVar2).currentAccount;
+                qyVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[i11]);
+                qyVar.getUserConfig().saveConfig(true);
+                i12 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
                 MessagesController.getInstance(i12).removeSuggestion(0L, "USERPIC_SETUP");
-                qyVar2.U4();
-                org.telegram.ui.Components.qc qcVar = qyVar2.d4;
+                qyVar.U4();
+                org.telegram.ui.Components.qc qcVar = qyVar.d4;
                 if (qcVar != null) {
                     org.telegram.ui.Components.hc hcVar = (org.telegram.ui.Components.hc) qcVar.e;
                     hcVar.d.c(LocaleController.getString(z22 ? R.string.YourProfileVideoDone : R.string.YourProfilePhotoDone), true, true);
@@ -550,11 +551,11 @@ public final /* synthetic */ class u1 implements Runnable {
                     button.setScaleY(0.6f);
                     button.setAlpha(0.0f);
                     button.setVisibility(0);
-                    ok.s(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), rr.h, 360L);
-                    org.telegram.ui.Components.qc qcVar2 = qyVar2.d4;
+                    ok.s(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), sr.h, 360L);
+                    org.telegram.ui.Components.qc qcVar2 = qyVar.d4;
                     qcVar2.j = 5000;
                     qcVar2.i(false);
-                    qyVar2.d4.i(true);
+                    qyVar.d4.i(true);
                     return;
                 }
                 return;
@@ -649,18 +650,18 @@ public final /* synthetic */ class u1 implements Runnable {
         this.e = bitmap2;
     }
 
-    public /* synthetic */ u1(cu cuVar, boolean z10, fi.o oVar, String str, TextView textView) {
+    public /* synthetic */ u1(du duVar, boolean z10, fi.o oVar, String str, TextView textView) {
         this.a = 17;
-        this.c = cuVar;
+        this.c = duVar;
         this.b = z10;
         this.d = oVar;
         this.f = str;
         this.e = textView;
     }
 
-    public /* synthetic */ u1(ty tyVar, String str, boolean z10, String str2, TLObject tLObject) {
+    public /* synthetic */ u1(uy uyVar, String str, boolean z10, String str2, TLObject tLObject) {
         this.a = 18;
-        this.c = tyVar;
+        this.c = uyVar;
         this.f = str;
         this.b = z10;
         this.e = str2;

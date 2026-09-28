@@ -13,18 +13,18 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.dm0;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.o90;
-import org.telegram.ui.Components.r90;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.fm0;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.t90;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class va {
-    public o90 a;
+    public q90 a;
     public org.telegram.ui.Components.z5 b;
-    public final k90 c;
+    public final m90 c;
     public org.telegram.ui.Components.v5 d;
     public StaticLayout e;
     public org.telegram.ui.Components.v5 f;
@@ -40,29 +40,29 @@ public final class va {
     public sa p;
     public boolean q;
     public final org.telegram.ui.Components.e6 r;
-    public final r90 s;
+    public final t90 s;
     public final Path t;
     public final AtomicReference u;
     public final /* synthetic */ wa v;
 
     public va(wa waVar) {
         this.v = waVar;
-        this.c = new k90(waVar);
+        this.c = new m90(waVar);
         ArrayList arrayList = new ArrayList();
         this.i = arrayList;
         this.j = new Stack();
         this.n = "";
-        this.r = new org.telegram.ui.Components.e6(waVar.J, 0L, 400L, rr.h);
+        this.r = new org.telegram.ui.Components.e6(waVar.J, 0L, 400L, sr.h);
         Path path = new Path();
         this.t = path;
         this.u = new AtomicReference();
         this.k = new vh.l(waVar, arrayList, new a1.c(this, 9));
-        r90 r90Var = new r90();
-        this.s = r90Var;
-        r90Var.x = path;
-        r90Var.j(4.0f);
-        r90Var.f(org.telegram.ui.ActionBar.h6.l1(0.3f, -1), org.telegram.ui.ActionBar.h6.l1(0.1f, -1), org.telegram.ui.ActionBar.h6.l1(0.2f, -1), org.telegram.ui.ActionBar.h6.l1(0.7f, -1));
-        r90Var.setCallback(waVar);
+        t90 t90Var = new t90();
+        this.s = t90Var;
+        t90Var.x = path;
+        t90Var.j(4.0f);
+        t90Var.f(org.telegram.ui.ActionBar.h6.l1(0.3f, -1), org.telegram.ui.ActionBar.h6.l1(0.1f, -1), org.telegram.ui.ActionBar.h6.l1(0.2f, -1), org.telegram.ui.ActionBar.h6.l1(0.7f, -1));
+        t90Var.setCallback(waVar);
     }
 
     public final int a(int i10) {
@@ -111,9 +111,9 @@ public final class va {
         }
         if (e > 0.0f || this.q) {
             int i10 = (int) (e * 255.0f * lerp);
-            r90 r90Var = this.s;
-            r90Var.setAlpha(i10);
-            r90Var.draw(canvas2);
+            t90 t90Var = this.s;
+            t90Var.setAlpha(i10);
+            t90Var.draw(canvas2);
             waVar.invalidate();
         }
     }
@@ -187,7 +187,7 @@ public final class va {
                             arrayList2 = arrayList;
                             i11 = i13;
                             float lerp = AndroidUtilities.lerp(f11, f12, waVar.w);
-                            float lerp2 = AndroidUtilities.lerp(taVar.d, taVar.f, rr.g.getInterpolation(waVar.w));
+                            float lerp2 = AndroidUtilities.lerp(taVar.d, taVar.f, sr.g.getInterpolation(waVar.w));
                             canvas.translate(waVar.E + lerp, waVar.F + i10 + lerp2);
                             if (z10) {
                                 f(taVar.b, waVar.E + lerp, waVar.F + i10 + lerp2);
@@ -418,7 +418,7 @@ public final class va {
             ua uaVar = new ua(this, 0);
             saVar.r = waVar;
             saVar.s = uaVar;
-            new dm0(waVar);
+            new fm0(waVar);
             saVar.j.setCallback(waVar);
             saVar.h.a = waVar;
             saVar.i.a = waVar;
@@ -429,7 +429,7 @@ public final class va {
             ua uaVar2 = new ua(this, 1);
             saVar3.r = waVar;
             saVar3.s = uaVar2;
-            new dm0(waVar);
+            new fm0(waVar);
             saVar3.j.setCallback(waVar);
             saVar3.h.a = waVar;
             saVar3.i.a = waVar;

@@ -4,7 +4,7 @@ import android.animation.TimeInterpolator;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class h5 {
     public final View a;
@@ -20,7 +20,7 @@ public final class h5 {
 
     public h5(View view) {
         this.f = 200L;
-        this.g = rr.f;
+        this.g = sr.f;
         this.a = view;
         this.e = true;
     }
@@ -67,7 +67,7 @@ public final class h5 {
 
     public h5(View view, long j3, TimeInterpolator timeInterpolator) {
         this.f = 200L;
-        rr rrVar = rr.f;
+        sr srVar = sr.f;
         this.a = view;
         this.f = j3;
         this.g = timeInterpolator;
@@ -76,7 +76,7 @@ public final class h5 {
 
     public h5(View view, long j3, TimeInterpolator timeInterpolator, int i10) {
         this.f = 200L;
-        rr rrVar = rr.f;
+        sr srVar = sr.f;
         this.a = view;
         this.f = j3;
         this.g = timeInterpolator;
@@ -85,7 +85,7 @@ public final class h5 {
 
     public h5(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
         this.f = 200L;
-        rr rrVar = rr.f;
+        sr srVar = sr.f;
         this.b = runnable;
         this.f = j3;
         this.g = timeInterpolator;

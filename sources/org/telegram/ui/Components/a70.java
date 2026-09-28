@@ -1,28 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class a70 extends org.telegram.ui.Cells.za {
-    public final TextView a0;
-    public final TextView b0;
+public final class a70 extends FrameLayout {
+    public TextView a;
 
-    public a70(Context context) {
-        super(context, 6, 0, true);
-        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
-        TextView textView = new TextView(context);
-        this.a0 = textView;
-        org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f);
-        f7.addView(textView, w7.y5.q(-2, -2, 5));
-        TextView textView2 = new TextView(context);
-        this.b0 = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.z6, false));
-        textView2.setTextSize(1, 13.0f);
-        f7.addView(textView2, w7.y5.t(-2, -2, 5, 0, 1, 0, 0));
-        addView(f7, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(84.0f), TLObject.FLAG_30));
     }
 }

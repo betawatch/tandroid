@@ -17,15 +17,15 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.o01;
-import org.telegram.ui.Components.qo;
+import org.telegram.ui.Components.q01;
+import org.telegram.ui.Components.ro;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
 import org.telegram.ui.wn;
 import yh.x3;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -75,9 +75,9 @@ public final /* synthetic */ class g0 implements Runnable {
                 ki.o0 o0Var = (ki.o0) this.e;
                 long j13 = this.b;
                 long j14 = this.c;
-                synchronized (s0Var.f) {
+                synchronized (s0Var.g) {
                     if (!o0Var.d && !o0Var.e) {
-                        ((o01) s0Var.d).a(o0Var.a, o0Var.b, j13, j14);
+                        ((q01) s0Var.e).a(o0Var.a, o0Var.b, j13, j14);
                         return;
                     }
                     return;
@@ -89,7 +89,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((MediaDataController) this.d).lambda$loadPinnedMessages$163(this.b, this.c, (ArrayList) this.e);
                 return;
             case 6:
-                ((MediaDataController) this.d).lambda$saveDraftReplyMessage$192(this.b, this.c, (TLRPC.Message) this.e);
+                ((MediaDataController) this.d).lambda$saveDraftReplyMessage$193(this.b, this.c, (TLRPC.Message) this.e);
                 return;
             case 7:
                 ((MessagesStorage) this.d).lambda$loadPendingTasks$29(this.b, this.c, (TLRPC.TL_messages_deleteScheduledMessages) this.e);
@@ -110,7 +110,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
                 return;
             case 13:
-                ((qo) this.d).d(this.b, this.c, (HashSet) this.e);
+                ((ro) this.d).d(this.b, this.c, (HashSet) this.e);
                 return;
             case 14:
                 qy qyVar = (qy) this.d;

@@ -25,14 +25,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.dg;
-import org.telegram.ui.Components.hl;
-import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.vn;
+import org.telegram.ui.Components.il;
+import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.my;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.a71;
 import org.telegram.ui.ad;
@@ -42,7 +41,7 @@ import org.telegram.ui.sq;
 import org.telegram.ui.wn;
 import org.telegram.ui.xk0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -155,7 +154,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 valueAnimatorArr[0] = ofFloat;
                 ofFloat.addUpdateListener(new x(i11, textView, textView2));
                 valueAnimatorArr[0].setDuration(320L);
-                valueAnimatorArr[0].setInterpolator(rr.h);
+                valueAnimatorArr[0].setInterpolator(sr.h);
                 valueAnimatorArr[0].start();
                 if (bool.booleanValue()) {
                     AndroidUtilities.runOnUIThread(runnableArr[0], 5320L);
@@ -192,32 +191,32 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 break;
             case 6:
-                hl.L((hl) obj5, (wn) obj4, (TLRPC.TL_messageMediaGeo) obj3, (org.telegram.ui.ActionBar.d6) obj2, (Long) obj);
+                il.L((il) obj5, (wn) obj4, (TLRPC.TL_messageMediaGeo) obj3, (org.telegram.ui.ActionBar.d6) obj2, (Long) obj);
                 break;
             case 7:
-                hl.P((hl) obj5, (wn) obj4, (TLRPC.TL_messageMediaVenue) obj3, (org.telegram.ui.ActionBar.d6) obj2);
+                il.P((il) obj5, (wn) obj4, (TLRPC.TL_messageMediaVenue) obj3, (org.telegram.ui.ActionBar.d6) obj2);
                 break;
             case 8:
-                vn vnVar = (vn) obj5;
-                wn wnVar2 = (wn) obj4;
+                org.telegram.ui.Components.wn wnVar2 = (org.telegram.ui.Components.wn) obj5;
+                wn wnVar3 = (wn) obj4;
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) obj3;
                 ArrayList arrayList2 = (ArrayList) obj2;
                 Long l10 = (Long) obj;
-                if (wnVar2.c()) {
-                    org.telegram.ui.Components.e5.L(wnVar2.getParentActivity(), wnVar2.a(), new a1.d(vnVar, tL_messageMediaPoll, arrayList2, l10, 8));
+                if (wnVar3.c()) {
+                    org.telegram.ui.Components.e5.L(wnVar3.getParentActivity(), wnVar3.a(), new a1.d(wnVar2, tL_messageMediaPoll, arrayList2, l10, 8));
                     break;
                 } else {
-                    vnVar.j0.e(tL_messageMediaPoll, vnVar.O, vnVar.l1, arrayList2, true, 0, l10.longValue());
-                    vnVar.b.dismiss(true);
+                    wnVar2.j0.e(tL_messageMediaPoll, wnVar2.O, wnVar2.l1, arrayList2, true, 0, l10.longValue());
+                    wnVar2.b.dismiss(true);
                     break;
                 }
             case 9:
-                ly lyVar = (ly) obj5;
+                my myVar = (my) obj5;
                 ArrayList arrayList3 = (ArrayList) obj4;
                 Runnable runnable = (Runnable) obj2;
                 ArrayList arrayList4 = (ArrayList) obj;
-                if (((String) obj3).equals(lyVar.v)) {
-                    org.telegram.ui.Components.q5.h(lyVar.F.c1).f(arrayList4);
+                if (((String) obj3).equals(myVar.v)) {
+                    org.telegram.ui.Components.q5.h(myVar.F.c1).f(arrayList4);
                     int size = arrayList4.size();
                     while (i12 < size) {
                         Object obj6 = arrayList4.get(i12);
@@ -232,7 +231,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 break;
             case 10:
-                jv0.m((jv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (y70) obj2, (e9) obj);
+                lv0.m((lv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (a80) obj2, (e9) obj);
                 break;
             case 11:
                 qy qyVar = (qy) obj5;

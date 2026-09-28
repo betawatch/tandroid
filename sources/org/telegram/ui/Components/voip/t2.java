@@ -24,13 +24,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.mc0;
-import org.telegram.ui.Components.q81;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.oc0;
+import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.sr;
 import org.webrtc.RendererCommon;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class t2 extends FrameLayout {
     public boolean E;
@@ -352,8 +352,8 @@ public class t2 extends FrameLayout {
         } else {
             this.b0.setDuration(350L);
         }
-        this.b0.setInterpolator(rr.f);
-        this.b0.addListener(new q81(this, 9));
+        this.b0.setInterpolator(sr.f);
+        this.b0.addListener(new s81(this, 9));
         this.b0.start();
         ArrayList arrayList = this.G;
         if (!arrayList.isEmpty()) {
@@ -494,7 +494,7 @@ public class t2 extends FrameLayout {
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.r = frameLayout;
-        frameLayout.setBackground(new mc0(true, -14602694, -13935795, -14395293, -14203560));
+        frameLayout.setBackground(new oc0(true, -14602694, -13935795, -14395293, -14203560));
         addView(frameLayout, y5.c(-1.0f, -1));
         frameLayout.setVisibility(8);
         ImageView imageView2 = new ImageView(getContext());

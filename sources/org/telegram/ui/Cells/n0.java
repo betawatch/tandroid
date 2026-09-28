@@ -18,11 +18,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.uw0;
+import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.ww0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class n0 {
     public final u1 a;
@@ -35,7 +35,7 @@ public final class n0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final t01 k;
+    public final v01 k;
     public boolean l;
     public boolean m;
     public final yc n;
@@ -79,7 +79,7 @@ public final class n0 {
         if (c(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new t01(hg.c.h(i11, "+"), 9.33f, AndroidUtilities.bold());
+            this.k = new v01(hg.c.h(i11, "+"), 9.33f, AndroidUtilities.bold());
         }
     }
 
@@ -120,7 +120,7 @@ public final class n0 {
                 CharSequence charSequence = this.e;
                 this.f = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setMaxLines(2).setEllipsize(TextUtils.TruncateAt.END).setBreakStrategy(0).setAlignment(Layout.Alignment.ALIGN_CENTER).build();
             } else {
-                this.f = uw0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
+                this.f = ww0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
             }
         }
         if (this.f != null) {
@@ -137,15 +137,15 @@ public final class n0 {
             this.f.draw(canvas);
             canvas.restore();
         }
-        t01 t01Var = this.k;
-        if (t01Var != null) {
-            t01Var.p = i10 - AndroidUtilities.dp(32.0f);
+        v01 v01Var = this.k;
+        if (v01Var != null) {
+            v01Var.p = i10 - AndroidUtilities.dp(32.0f);
             Drawable drawable = this.h;
-            float l4 = (f10 - (t01Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
+            float l4 = (f10 - (v01Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
             float dp = AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(4.165f);
             boolean z10 = this.g;
             if (drawable != null) {
-                drawable.setBounds((int) ((z10 ? t01Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) ok.b(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + t01Var.l() : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) a4.a.e(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
+                drawable.setBounds((int) ((z10 ? v01Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) ok.b(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + v01Var.l() : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) a4.a.e(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
                 drawable.draw(canvas);
             }
             this.k.c(l4 + AndroidUtilities.dp(!z10 ? 12.66f : 4.0f), dp, f7, -1, canvas);
@@ -195,7 +195,7 @@ public final class n0 {
         if (c(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new t01(c(tLObject), 9.33f, AndroidUtilities.bold());
+            this.k = new v01(c(tLObject), 9.33f, AndroidUtilities.bold());
         }
     }
 }

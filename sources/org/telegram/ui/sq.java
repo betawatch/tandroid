@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sq implements Runnable {
     public final /* synthetic */ int a;
@@ -239,9 +239,9 @@ public final /* synthetic */ class sq implements Runnable {
                     w0Var.Y1 = prVar.B1;
                     w0Var.Z1 = 0;
                     lrVar2.l();
-                    org.telegram.ui.Components.ix0 ix0Var = prVar.b;
-                    if (ix0Var != null && prVar.a.d.d1 == 0 && prVar.R) {
-                        ix0Var.e(false, true);
+                    org.telegram.ui.Components.kx0 kx0Var = prVar.b;
+                    if (kx0Var != null && prVar.a.d.d1 == 0 && prVar.R) {
+                        kx0Var.e(false, true);
                     }
                 }
                 prVar.resumeDelayedFragmentAnimation();
@@ -557,11 +557,11 @@ public final /* synthetic */ class sq implements Runnable {
                 qg0Var.g1((Bundle) obj2, (TLRPC.auth_SentCode) ((TLObject) obj), true);
                 break;
             case 25:
-                org.telegram.ui.Components.rn rnVar = (org.telegram.ui.Components.rn) obj3;
+                org.telegram.ui.Components.sn snVar = (org.telegram.ui.Components.sn) obj3;
                 EditText editText = (EditText) obj2;
                 AtomicReference atomicReference = (AtomicReference) obj;
-                rnVar.getClass();
-                editText.removeTextChangedListener(rnVar);
+                snVar.getClass();
+                editText.removeTextChangedListener(snVar);
                 editText.removeCallbacks((Runnable) atomicReference.get());
                 ((Runnable) atomicReference.get()).run();
                 break;

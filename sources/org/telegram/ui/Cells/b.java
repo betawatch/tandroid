@@ -5,9 +5,9 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.dk0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a = 1;
@@ -17,12 +17,12 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f7, float f10, bk0 bk0Var, bk0 bk0Var2) {
+    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f7, float f10, dk0 dk0Var, dk0 dk0Var2) {
         this.d = horizontalScrollView;
         this.b = f7;
         this.c = f10;
-        this.e = bk0Var;
-        this.f = bk0Var2;
+        this.e = dk0Var;
+        this.f = dk0Var2;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -61,14 +61,14 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
                 break;
             default:
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) this.d;
-                bk0 bk0Var = (bk0) this.e;
-                bk0 bk0Var2 = (bk0) this.f;
+                dk0 dk0Var = (dk0) this.e;
+                dk0 dk0Var2 = (dk0) this.f;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f15 = this.c;
                 float f16 = this.b;
                 horizontalScrollView.setScrollX((int) com.google.android.gms.internal.vision.e2.z(f15, f16, floatValue3, f16));
-                bk0Var.setOutlineProgress(1.0f - floatValue3);
-                bk0Var2.setOutlineProgress(floatValue3);
+                dk0Var.setOutlineProgress(1.0f - floatValue3);
+                dk0Var2.setOutlineProgress(floatValue3);
                 break;
         }
     }

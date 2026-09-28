@@ -49,14 +49,14 @@ import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.aa;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.h80;
+import org.telegram.ui.Components.ft;
+import org.telegram.ui.Components.j80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.d60;
 import org.telegram.ui.vz0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class g2 {
     public static long a;
@@ -91,7 +91,7 @@ public abstract class g2 {
             }
             if (z14 && chat != null && !z13 && (chatFull2 = accountInstance.getMessagesController().getChatFull(chat.id)) != null && (peer = chatFull2.groupcall_default_join_as) != null) {
                 final TLRPC.InputPeer inputPeer2 = accountInstance.getMessagesController().getInputPeer(MessageObject.getPeerId(peer));
-                h80.t(activity, -chat.id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.x1
+                j80.t(activity, -chat.id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.x1
                     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                     public final void run(boolean z17) {
                         String str2 = str;
@@ -116,7 +116,7 @@ public abstract class g2 {
                 return;
             }
             if (z14 && chat != null) {
-                h80.u(activity, -chat.id, accountInstance, m2Var, !z13 ? 1 : 0, null, new y1(z13, activity, accountInstance, chat, str, user, z11, z12, m2Var));
+                j80.u(activity, -chat.id, accountInstance, m2Var, !z13 ? 1 : 0, null, new y1(z13, activity, accountInstance, chat, str, user, z11, z12, m2Var));
                 return;
             }
             if (z15 && !z10 && (inputPeer instanceof TLRPC.TL_inputPeerUser) && ChatObject.shouldSendAnonymously(chat) && (!ChatObject.isChannel(chat) || chat.megagroup)) {
@@ -653,16 +653,16 @@ public abstract class g2 {
         f7.addView(editTextBoldCursor, y5.k(8.0f, 8.0f, 8.0f, 0.0f, -1, -2));
         final boolean[] zArr = {true};
         final org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(context, 1);
-        et etVar = new et(25, zArr, a2Var2);
+        ft ftVar = new ft(25, zArr, a2Var2);
         a2Var2.e(LocaleController.getString(R.string.CallReportIncludeLogs), null, true, false, false);
         a2Var2.setClipToPadding(false);
-        a2Var2.setOnClickListener(etVar);
+        a2Var2.setOnClickListener(ftVar);
         f7.addView(a2Var2, y5.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
         textView2.setTextColor(h6.w0(null, h6.r5, false));
         textView2.setPadding(org.telegram.ui.Cells.c1.c(8.0f, R.string.CallReportLogsExplain, textView2), 0, AndroidUtilities.dp(8.0f), 0);
-        textView2.setOnClickListener(etVar);
+        textView2.setOnClickListener(ftVar);
         f7.addView(textView2);
         a2Var2.setVisibility(8);
         textView2.setVisibility(8);

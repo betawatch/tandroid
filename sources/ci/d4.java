@@ -9,9 +9,9 @@ import androidx.appcompat.widget.ActionBarContainer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class d4 extends Drawable {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final class d4 extends Drawable {
                 canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), AndroidUtilities.dp(18.0f), ((Switch) this.b).J);
                 break;
             case 6:
-                ((t01) this.b).c(getBounds().centerX() - (((t01) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false), canvas);
+                ((v01) this.b).c(getBounds().centerX() - (((v01) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false), canvas);
                 break;
             case 7:
                 canvas.save();
@@ -231,7 +231,7 @@ public final class d4 extends Drawable {
 
     public d4(String str) {
         this.a = 6;
-        this.b = new t01(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
+        this.b = new v01(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
     }
 
     private final void a(int i10) {

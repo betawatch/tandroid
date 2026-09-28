@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e1;
 import org.telegram.ui.ActionBar.m1;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.xm0;
+import org.telegram.ui.Components.zm0;
 import org.telegram.ui.f0;
 import org.telegram.ui.of;
 import org.telegram.ui.pe;
@@ -24,7 +24,7 @@ import org.telegram.ui.pm;
 import org.telegram.ui.sy0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
     public final boolean onLongClick(View view) {
         of ofVar;
         char c10;
-        xm0 xm0Var;
+        zm0 zm0Var;
         switch (this.a) {
             case 0:
                 b bVar = ((h) this.c).n;
@@ -103,7 +103,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                 break;
             default:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) this.c;
-                if (!scrollSlidingTextTabStrip.n0 && (xm0Var = scrollSlidingTextTabStrip.b) != null && xm0Var.n1(this.b, view)) {
+                if (!scrollSlidingTextTabStrip.n0 && (zm0Var = scrollSlidingTextTabStrip.b) != null && zm0Var.n1(this.b, view)) {
                 }
                 break;
         }

@@ -35,9 +35,9 @@ import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.web.o1;
 import s4.c1;
 import tg.u;
@@ -51,11 +51,11 @@ import vg.x;
 import vg.y;
 import yh.f7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b extends og.b {
     public final d6 d;
-    public wl0 f;
+    public yl0 f;
     public u h;
     public u n;
     public r r;
@@ -71,7 +71,7 @@ public final class b extends og.b {
         messagesStorage.getStorageQueue().postRunnable(new o1(25, messagesStorage, q1Var));
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 2 || i10 == 11 || i10 == 8 || i10 == 10 || i10 == 15 || i10 == 12 || i10 == 17 || i10 == 18;
@@ -424,7 +424,7 @@ public final class b extends og.b {
                 ImageView imageView = f7Var.b;
                 imageView.setColorFilter(porterDuffColorFilter);
                 if (z10) {
-                    imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(rr.h);
+                    imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(sr.h);
                 } else {
                     imageView.setRotation(0.0f);
                 }

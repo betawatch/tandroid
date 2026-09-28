@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class rf1 extends org.telegram.ui.Components.n81 {
+public final class rf1 extends org.telegram.ui.Components.p81 {
     public final ArrayList a;
     public final /* synthetic */ sf1 b;
 
@@ -33,13 +33,13 @@ public final class rf1 extends org.telegram.ui.Components.n81 {
         arrayList.add(of1Var5);
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final void b(View view, int i10, int i11) {
         sf1 sf1Var = this.b;
         sf1Var.K(view, i10, sf1Var.b0, true);
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final View d(int i10) {
         int i11;
         sf1 sf1Var = this.b;
@@ -49,10 +49,10 @@ public final class rf1 extends org.telegram.ui.Components.n81 {
         }
         if (i10 == 2) {
             i11 = ((org.telegram.ui.ActionBar.m2) wf1Var).currentAccount;
-            org.telegram.ui.Components.in0 in0Var = new org.telegram.ui.Components.in0(i11, wf1Var);
-            in0Var.b.j(new qf1(0));
-            in0Var.setUiCallback(sf1Var);
-            return in0Var;
+            org.telegram.ui.Components.kn0 kn0Var = new org.telegram.ui.Components.kn0(i11, wf1Var);
+            kn0Var.b.j(new qf1(0));
+            kn0Var.setUiCallback(sf1Var);
+            return kn0Var;
         }
         t10 t10Var = new t10(wf1Var);
         t10Var.setChatPreviewDelegate(sf1Var.r0);
@@ -61,12 +61,12 @@ public final class rf1 extends org.telegram.ui.Components.n81 {
         return t10Var;
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final int e() {
         return this.a.size();
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final CharSequence g(int i10) {
         ArrayList arrayList = this.a;
         if (((of1) arrayList.get(i10)).a == 0) {
@@ -80,7 +80,7 @@ public final class rf1 extends org.telegram.ui.Components.n81 {
         return str != null ? str : LocaleController.getString(q0Var.b);
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final int h(int i10) {
         ArrayList arrayList = this.a;
         if (((of1) arrayList.get(i10)).a == 0) {

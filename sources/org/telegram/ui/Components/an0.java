@@ -1,96 +1,128 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class an0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ in0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
+public abstract class an0 extends HorizontalScrollView {
+    public boolean a;
+    public LinearLayout b;
+    public ValueAnimator c;
+    public boolean d;
+    public int e;
+    public ValueAnimator f;
 
-    public /* synthetic */ an0(in0 in0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
-        this.b = in0Var;
-        this.c = str;
-        this.d = arrayList;
-        this.e = arrayList2;
+    public an0(Context context) {
+        super(context);
+        this.e = -1;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                in0 in0Var = this.b;
-                int i10 = in0Var.d;
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                int i11 = 0;
-                while (true) {
-                    ArrayList arrayList3 = this.d;
-                    int size = arrayList3.size();
-                    String str = this.c;
-                    if (i11 >= size) {
-                        int i12 = 0;
-                        while (true) {
-                            ArrayList arrayList4 = this.e;
-                            if (i12 >= arrayList4.size()) {
-                                AndroidUtilities.runOnUIThread(new an0(in0Var, str, arrayList, arrayList2));
-                                break;
-                            } else {
-                                String documentFileName = FileLoader.getDocumentFileName(((MessageObject) arrayList4.get(i12)).getDocument());
-                                if (documentFileName != null && documentFileName.toLowerCase().contains(str)) {
-                                    MessageObject messageObject = new MessageObject(i10, ((MessageObject) arrayList4.get(i12)).messageOwner, false, false);
-                                    messageObject.mediaExists = ((MessageObject) arrayList4.get(i12)).mediaExists;
-                                    messageObject.setQuery(in0Var.K);
-                                    arrayList2.add(messageObject);
-                                }
-                                i12++;
-                            }
+    public final void a(int i10) {
+        if (this.e == i10) {
+            return;
+        }
+        this.e = i10;
+        ValueAnimator valueAnimator = this.f;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (getScrollX() == i10) {
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i10);
+        this.f = ofFloat;
+        ofFloat.addUpdateListener(new u70(this, 14));
+        this.f.setInterpolator(sr.h);
+        this.f.setDuration(250L);
+        this.f.addListener(new hd0(this, 10));
+        this.f.start();
+    }
+
+    public final void b(int i10, int i11) {
+        int measuredWidth;
+        if (getChildCount() <= 0) {
+            return;
+        }
+        int dp = AndroidUtilities.dp(50.0f);
+        if (i10 < getScrollX() + dp) {
+            measuredWidth = i10 - dp;
+        } else {
+            if (i11 <= (getMeasuredWidth() - dp) + getScrollX()) {
+                return;
+            } else {
+                measuredWidth = (i11 - getMeasuredWidth()) + dp;
+            }
+        }
+        a(w7.q.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
+    }
+
+    public final void c() {
+        q5 q5Var;
+        ai.l4 l4Var;
+        kj0 kj0Var;
+        ValueAnimator valueAnimator;
+        int childCount = this.b.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = this.b.getChildAt(i10);
+            if (childAt instanceof aw) {
+                aw awVar = (aw) childAt;
+                boolean z10 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
+                boolean z11 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
+                if (!awVar.y && z10 && (kj0Var = awVar.e) != null && !kj0Var.k0 && !z11) {
+                    awVar.e.T(0.0f, true);
+                    awVar.e.start();
+                }
+                if (awVar.y != z10) {
+                    awVar.y = z10;
+                    if (z10) {
+                        awVar.invalidate();
+                        rg.b1 b1Var = awVar.f;
+                        if (b1Var != null) {
+                            b1Var.invalidate();
+                        }
+                        rg.b1 b1Var2 = awVar.f;
+                        if (b1Var2 != null && (q5Var = awVar.w) != null && (l4Var = q5Var.k) != null) {
+                            b1Var2.setImageReceiver(l4Var);
+                        }
+                        w9 w9Var = awVar.d;
+                        if (w9Var != null) {
+                            w9Var.invalidate();
                         }
                     } else {
-                        String documentFileName2 = FileLoader.getDocumentFileName(((MessageObject) arrayList3.get(i11)).getDocument());
-                        if (documentFileName2 != null && documentFileName2.toLowerCase().contains(str)) {
-                            MessageObject messageObject2 = new MessageObject(i10, ((MessageObject) arrayList3.get(i11)).messageOwner, false, false);
-                            messageObject2.mediaExists = ((MessageObject) arrayList3.get(i11)).mediaExists;
-                            messageObject2.setQuery(in0Var.K);
-                            arrayList.add(messageObject2);
-                        }
-                        i11++;
+                        awVar.b();
                     }
+                    awVar.c();
                 }
-                break;
-            default:
-                in0 in0Var2 = this.b;
-                ix0 ix0Var = in0Var2.a;
-                if (this.c.equals(in0Var2.L)) {
-                    if (in0Var2.r == 0) {
-                        in0Var2.N.b(0);
-                    }
-                    in0Var2.e(this.d, this.e, true);
-                    if (in0Var2.r == 0) {
-                        ix0Var.e(false, true);
-                        n90 n90Var = ix0Var.e;
-                        ix0Var.d.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        n90Var.setVisibility(0);
-                        n90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                        break;
-                    }
-                }
-                break;
+            }
         }
     }
 
-    public /* synthetic */ an0(in0 in0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
-        this.b = in0Var;
-        this.d = arrayList;
-        this.c = str;
-        this.e = arrayList2;
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        c();
+    }
+
+    @Override // android.view.View
+    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
+        super.onScrollChanged(i10, i11, i12, i13);
+        if ((Math.abs(i11 - i13) < 2 || i11 >= getMeasuredHeight() || i11 == 0) && !this.a) {
+            requestDisallowInterceptTouchEvent(false);
+        }
+        c();
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 1) {
+            motionEvent.getAction();
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

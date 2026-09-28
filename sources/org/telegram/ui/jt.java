@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class jt implements Runnable {
     public final /* synthetic */ nt a;
@@ -163,7 +163,7 @@ public final class jt implements Runnable {
         View view5;
         View view6;
         ci.m6 m6Var28;
-        org.telegram.ui.Components.y70 j3;
+        org.telegram.ui.Components.a80 j3;
         TLRPC.Document unused;
         nt ntVar = this.a;
         ah.c cVar = ntVar.t;
@@ -241,7 +241,7 @@ public final class jt implements Runnable {
                     }
                 });
                 ofFloat.setDuration(350L);
-                ofFloat.setInterpolator(org.telegram.ui.Components.rr.f);
+                ofFloat.setInterpolator(org.telegram.ui.Components.sr.f);
                 ofFloat.start();
             }
             ntVar.K = true;
@@ -348,7 +348,7 @@ public final class jt implements Runnable {
                 view5 = ntVar.L;
                 view4.setPivotX(view5.getMeasuredWidth() / 2.0f);
                 view6 = ntVar.L;
-                view6.animate().translationY(0.0f).alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.rr.h).start();
+                view6.animate().translationY(0.0f).alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.sr.h).start();
                 if (ntVar.P == null) {
                     org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(ntVar, ntVar.z.getContext(), UserConfig.selectedAccount, ntVar.c0);
                     ntVar.P = zbVar;
@@ -445,7 +445,7 @@ public final class jt implements Runnable {
                             for (int i34 = 0; i34 < arrayList7.size(); i34++) {
                                 iArr[i34] = ((Integer) arrayList7.get(i34)).intValue();
                             }
-                            org.telegram.ui.Components.hc0 hc0Var = new org.telegram.ui.Components.hc0(this, arrayList6, isStickerInFavorites);
+                            org.telegram.ui.Components.jc0 jc0Var = new org.telegram.ui.Components.jc0(this, arrayList6, isStickerInFavorites);
                             boolean h10 = nt.h(ntVar, actionBarPopupWindow$ActionBarPopupWindowLayout2);
                             int i35 = 0;
                             while (i35 < arrayList5.size()) {
@@ -461,7 +461,7 @@ public final class jt implements Runnable {
                                     c12.setTextColor(nt.d(ntVar, org.telegram.ui.ActionBar.h6.q7));
                                 }
                                 c12.setTag(Integer.valueOf(i35));
-                                c12.setOnClickListener(hc0Var);
+                                c12.setOnClickListener(jc0Var);
                                 i35++;
                                 actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout3;
                             }
@@ -550,7 +550,7 @@ public final class jt implements Runnable {
                                     }
                                 });
                                 ofFloat2.setDuration(350L);
-                                ofFloat2.setInterpolator(org.telegram.ui.Components.rr.f);
+                                ofFloat2.setInterpolator(org.telegram.ui.Components.sr.f);
                                 ofFloat2.start();
                             }
                             i27 = 0;
@@ -627,14 +627,14 @@ public final class jt implements Runnable {
                         for (int i42 = 0; i42 < arrayList10.size(); i42++) {
                             iArr2[i42] = ((Integer) arrayList10.get(i42)).intValue();
                         }
-                        org.telegram.ui.Components.et etVar = new org.telegram.ui.Components.et(28, this, arrayList9);
+                        org.telegram.ui.Components.ft ftVar = new org.telegram.ui.Components.ft(28, this, arrayList9);
                         for (int i43 = 0; i43 < arrayList8.size(); i43++) {
                             int intValue2 = ((Integer) arrayList10.get(i43)).intValue();
                             CharSequence charSequence2 = (CharSequence) arrayList8.get(i43);
                             d6Var = ntVar.c0;
                             org.telegram.ui.ActionBar.e1 c13 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, intValue2, charSequence2, false, d6Var);
                             c13.setTag(Integer.valueOf(i43));
-                            c13.setOnClickListener(etVar);
+                            c13.setOnClickListener(ftVar);
                             if (z10 && i43 == arrayList8.size() - 1) {
                                 c13.c(nt.d(ntVar, org.telegram.ui.ActionBar.h6.q7), nt.d(ntVar, org.telegram.ui.ActionBar.h6.p7));
                             }
@@ -723,7 +723,7 @@ public final class jt implements Runnable {
                                 }
                             });
                             ofFloat3.setDuration(350L);
-                            ofFloat3.setInterpolator(org.telegram.ui.Components.rr.f);
+                            ofFloat3.setInterpolator(org.telegram.ui.Components.sr.f);
                             ofFloat3.start();
                         }
                         i27 = 0;
@@ -858,7 +858,7 @@ public final class jt implements Runnable {
                 ntVar.K = true;
                 m6Var15 = ntVar.z;
                 m6Var15.invalidate();
-                et etVar2 = new et(this, arrayList12, isStickerInFavorites2);
+                et etVar = new et(this, arrayList12, isStickerInFavorites2);
                 nt.h(ntVar, actionBarPopupWindow$ActionBarPopupWindowLayout2);
                 for (int i51 = 0; i51 < arrayList11.size(); i51++) {
                     int intValue3 = ((Integer) arrayList13.get(i51)).intValue();
@@ -866,19 +866,19 @@ public final class jt implements Runnable {
                     d6Var3 = ntVar.c0;
                     org.telegram.ui.ActionBar.e1 c14 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, intValue3, charSequence3, false, d6Var3);
                     c14.setTag(Integer.valueOf(i51));
-                    c14.setOnClickListener(etVar2);
+                    c14.setOnClickListener(etVar);
                     if (((Integer) arrayList12.get(i51)).intValue() == 8) {
                         int d10 = nt.d(ntVar, org.telegram.ui.ActionBar.h6.q7);
                         c14.c(d10, d10);
                         c14.setSelectorColor(org.telegram.ui.ActionBar.h6.l1(0.1f, d10));
                     }
                 }
-                ft ftVar = new ft(this, actionBarPopupWindow$ActionBarPopupWindowLayout2);
-                ntVar.k = ftVar;
-                ftVar.e = true;
-                ftVar.c = 100;
-                ftVar.g = true;
-                ftVar.setOutsideTouchable(true);
+                ft ftVar2 = new ft(this, actionBarPopupWindow$ActionBarPopupWindowLayout2);
+                ntVar.k = ftVar2;
+                ftVar2.e = true;
+                ftVar2.c = 100;
+                ftVar2.g = true;
+                ftVar2.setOutsideTouchable(true);
                 ntVar.k.setClippingEnabled(true);
                 ntVar.k.setAnimationStyle(R.style.PopupContextAnimation);
                 ntVar.k.setFocusable(true);

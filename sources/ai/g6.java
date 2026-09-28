@@ -20,17 +20,17 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cd0;
 import org.telegram.ui.Components.ed0;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.gd0;
+import org.telegram.ui.Components.q80;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.a71;
 import org.telegram.ui.iz0;
 import org.telegram.ui.ye;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g6 implements dc, OnFailureListener, org.telegram.ui.ActionBar.z1, cd0, c5.p, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
+public final /* synthetic */ class g6 implements dc, OnFailureListener, org.telegram.ui.ActionBar.z1, ed0, c5.p, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -109,12 +109,12 @@ public final /* synthetic */ class g6 implements dc, OnFailureListener, org.tele
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
     public void onProductDetailsResponse(c5.h hVar, List list) {
-        AndroidUtilities.runOnUIThread(new ye((yh.s5) this.a, list, (o80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
+        AndroidUtilities.runOnUIThread(new ye((yh.s5) this.a, list, (q80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
     }
 
-    @Override // org.telegram.ui.Components.cd0
-    public void q(ed0 ed0Var, int i10) {
-        org.telegram.ui.Components.e5.c((ci.d) this.a, (ed0) this.b, (ed0) this.c, (ed0) this.d, (ed0) this.e);
+    @Override // org.telegram.ui.Components.ed0
+    public void q(gd0 gd0Var, int i10) {
+        org.telegram.ui.Components.e5.c((ci.d) this.a, (gd0) this.b, (gd0) this.c, (gd0) this.d, (gd0) this.e);
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback

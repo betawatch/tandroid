@@ -6,10 +6,10 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ba1 {
-    public final org.telegram.ui.Components.t00 a;
+    public final org.telegram.ui.Components.u00 a;
     public kg.f b;
     public final int c;
     public final /* synthetic */ ca1 d;
@@ -17,21 +17,21 @@ public final class ba1 {
     public ba1(ca1 ca1Var, int i10) {
         this.d = ca1Var;
         this.c = i10;
-        org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(ca1Var.getContext());
-        t00Var.c = true;
+        org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(ca1Var.getContext());
+        u00Var.c = true;
         TextPaint textPaint = new TextPaint(1);
-        t00Var.e = textPaint;
-        t00Var.f = new Paint(1);
+        u00Var.e = textPaint;
+        u00Var.f = new Paint(1);
         Paint paint = new Paint(1);
-        t00Var.h = paint;
+        u00Var.h = paint;
         Paint paint2 = new Paint(1);
-        t00Var.n = paint2;
-        t00Var.w = AndroidUtilities.dp(35.0f);
-        t00Var.x = AndroidUtilities.dp(22.0f);
-        t00Var.y = AndroidUtilities.dp(8.0f);
-        t00Var.E = AndroidUtilities.dp(3.5f);
-        t00Var.F = new RectF();
-        t00Var.G = 0.0f;
+        u00Var.n = paint2;
+        u00Var.w = AndroidUtilities.dp(35.0f);
+        u00Var.x = AndroidUtilities.dp(22.0f);
+        u00Var.y = AndroidUtilities.dp(8.0f);
+        u00Var.E = AndroidUtilities.dp(3.5f);
+        u00Var.F = new RectF();
+        u00Var.G = 0.0f;
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
@@ -41,9 +41,9 @@ public final class ba1 {
         paint2.setStyle(style);
         paint2.setStrokeCap(Paint.Cap.ROUND);
         paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.a = t00Var;
-        t00Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        ca1Var.h.addView(t00Var);
+        this.a = u00Var;
+        u00Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        ca1Var.h.addView(u00Var);
         ca1Var.n.add(this);
     }
 }

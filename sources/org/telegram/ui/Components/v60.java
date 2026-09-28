@@ -1,48 +1,27 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class v60 implements org.telegram.ui.qb0 {
-    public final /* synthetic */ w60 a;
+public final class v60 extends i90 {
+    public final /* synthetic */ z60 L;
 
-    public v60(w60 w60Var) {
-        this.a = w60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v60(z60 z60Var, Context context, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.e3 e3Var, boolean z10) {
+        super(context, m2Var, e3Var, false, z10);
+        this.L = z60Var;
     }
 
-    @Override // org.telegram.ui.qb0
-    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
-        int i10;
-        org.telegram.ui.hb hbVar = this.a.a.c.j0;
-        if (hbVar != null) {
-            TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
-            TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = new TLRPC.TL_channelAdminLogEventActionExportedInviteEdit();
-            tL_channelAdminLogEventActionExportedInviteEdit.new_invite = tL_chatInviteExported;
-            tL_channelAdminLogEventActionExportedInviteEdit.prev_invite = tL_chatInviteExported;
-            tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteEdit;
-            tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
-            org.telegram.ui.ub ubVar = hbVar.a;
-            tL_channelAdminLogEvent.user_id = ubVar.getAccountInstance().getUserConfig().clientUserId;
-            i10 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
-            if (new MessageObject(i10, tL_channelAdminLogEvent, (ArrayList<MessageObject>) ubVar.n0, (HashMap<String, ArrayList<MessageObject>>) ubVar.m0, ubVar.f, ubVar.T, true).contentType < 0) {
-                return;
-            }
-            ubVar.R0();
-            ubVar.E.l();
-            org.telegram.ui.ub.K0(ubVar);
-        }
-    }
-
-    @Override // org.telegram.ui.qb0
-    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
-    }
-
-    @Override // org.telegram.ui.qb0
-    public final void c(TLObject tLObject) {
+    @Override // org.telegram.ui.Components.i90
+    public final void e(int i10, SpannableStringBuilder spannableStringBuilder) {
+        org.telegram.ui.ActionBar.d6 d6Var;
+        e70 e70Var = this.L.c;
+        org.telegram.ui.ActionBar.c3 c3Var = e70Var.container;
+        d6Var = ((org.telegram.ui.ActionBar.e3) e70Var).resourcesProvider;
+        qc Q = new xc(c3Var, d6Var).Q(i10, 36, spannableStringBuilder);
+        Q.r = false;
+        Q.k(true);
     }
 }

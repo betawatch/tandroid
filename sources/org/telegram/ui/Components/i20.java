@@ -1,6 +1,156 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Rect;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ScrollView;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface i20 {
+public class i20 extends ScrollView {
+    public final int a;
+    public final a0.i b;
+    public final ArrayList c;
+    public final h20 d;
+    public int e;
+    public f20 f;
+    public boolean h;
+    public int n;
+
+    public i20(Context context, int i10) {
+        super(context);
+        this.b = new a0.i();
+        this.c = new ArrayList();
+        this.a = i10;
+        h20 h20Var = new h20(this, context);
+        this.d = h20Var;
+        setVerticalScrollBarEnabled(false);
+        addView(h20Var, w7.y5.c(-2.0f, -1));
+    }
+
+    public void a(p30 p30Var) {
+        h20 h20Var = this.d;
+        ArrayList arrayList = h20Var.c;
+        i20 i20Var = h20Var.r;
+        i20Var.c.add(p30Var);
+        if (!p30Var.d) {
+            i20Var.b.k(p30Var, p30Var.getUid());
+        }
+        AnimatorSet animatorSet = h20Var.a;
+        if (animatorSet != null && animatorSet.isRunning()) {
+            h20Var.a.setupEndValues();
+            h20Var.a.cancel();
+        }
+        h20Var.b = false;
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        h20Var.a = animatorSet2;
+        animatorSet2.addListener(new g20(h20Var, 1));
+        h20Var.a.setDuration(150L);
+        h20Var.d = p30Var;
+        arrayList.clear();
+        arrayList.add(ObjectAnimator.ofFloat(h20Var.d, (Property<p30, Float>) View.SCALE_X, 0.01f, 1.0f));
+        arrayList.add(ObjectAnimator.ofFloat(h20Var.d, (Property<p30, Float>) View.SCALE_Y, 0.01f, 1.0f));
+        arrayList.add(ObjectAnimator.ofFloat(h20Var.d, (Property<p30, Float>) View.ALPHA, 0.0f, 1.0f));
+        h20Var.addView(p30Var);
+    }
+
+    public void b() {
+        h20 h20Var = this.d;
+        ArrayList arrayList = h20Var.c;
+        i20 i20Var = h20Var.r;
+        i20Var.h = true;
+        ArrayList arrayList2 = i20Var.c;
+        ArrayList arrayList3 = new ArrayList(arrayList2);
+        arrayList2.clear();
+        ArrayList arrayList4 = h20Var.e;
+        arrayList4.clear();
+        arrayList4.addAll(arrayList3);
+        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
+            ((p30) arrayList3.get(i10)).setOnClickListener(null);
+        }
+        AnimatorSet animatorSet = h20Var.a;
+        if (animatorSet != null && animatorSet.isRunning()) {
+            h20Var.a.setupEndValues();
+            h20Var.a.cancel();
+        }
+        h20Var.b = false;
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        h20Var.a = animatorSet2;
+        animatorSet2.addListener(new ai.z(26, h20Var, arrayList3));
+        arrayList.clear();
+        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+            p30 p30Var = (p30) arrayList3.get(i11);
+            arrayList.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.SCALE_X, 1.0f, 0.01f));
+            arrayList.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.SCALE_Y, 1.0f, 0.01f));
+            arrayList.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.ALPHA, 1.0f, 0.0f));
+        }
+        h20Var.requestLayout();
+    }
+
+    public void c(p30 p30Var) {
+        h20 h20Var = this.d;
+        ArrayList arrayList = h20Var.e;
+        ArrayList arrayList2 = h20Var.c;
+        i20 i20Var = h20Var.r;
+        i20Var.h = true;
+        if (!p30Var.d) {
+            i20Var.b.l(p30Var.getUid());
+        }
+        i20Var.c.remove(p30Var);
+        p30Var.setOnClickListener(null);
+        AnimatorSet animatorSet = h20Var.a;
+        if (animatorSet != null) {
+            animatorSet.setupEndValues();
+            h20Var.a.cancel();
+        }
+        h20Var.b = false;
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        h20Var.a = animatorSet2;
+        animatorSet2.addListener(new ai.z(25, h20Var, p30Var));
+        h20Var.a.setDuration(150L);
+        arrayList.clear();
+        arrayList.add(p30Var);
+        arrayList2.clear();
+        arrayList2.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.SCALE_X, 1.0f, 0.01f));
+        arrayList2.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.SCALE_Y, 1.0f, 0.01f));
+        arrayList2.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.ALPHA, 1.0f, 0.0f));
+        h20Var.requestLayout();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        float f7 = this.e;
+        float y3 = motionEvent.getY();
+        if (action != 0 || y3 <= f7) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    public ViewGroup getSpansContainer() {
+        return this.d;
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        if (this.h) {
+            this.h = false;
+            return false;
+        }
+        rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+        rect.top = org.telegram.messenger.f0.C(20.0f, this.n, rect.top);
+        rect.bottom = org.telegram.messenger.f0.C(50.0f, this.n, rect.bottom);
+        return super.requestChildRectangleOnScreen(view, rect, z10);
+    }
+
+    public void setDelegate(f20 f20Var) {
+        this.f = f20Var;
+    }
 }

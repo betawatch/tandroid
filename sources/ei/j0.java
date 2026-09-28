@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.mb;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.oc;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class j0 extends nb {
     public final d6 a;
@@ -183,9 +183,9 @@ public final class j0 extends nb {
             i0Var.h = false;
             e6Var.getClass();
             e6Var.d(0.0f, true);
-            ij0 ij0Var = i0Var.l;
-            if (ij0Var != null) {
-                ij0Var.C(true);
+            kj0 kj0Var = i0Var.l;
+            if (kj0Var != null) {
+                kj0Var.C(true);
                 i0Var.l = null;
             }
             e6 e6Var2 = i0Var.i;
@@ -228,9 +228,9 @@ public final class j0 extends nb {
             setButton(2);
             if (!i0Var.h) {
                 i0Var.h = true;
-                ij0 ij0Var2 = new ij0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                i0Var.l = ij0Var2;
-                ij0Var2.R(i0Var.a);
+                kj0 kj0Var2 = new kj0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+                i0Var.l = kj0Var2;
+                kj0Var2.R(i0Var.a);
                 i0Var.l.J(true);
                 i0Var.l.start();
                 i0Var.g = 1.0f;

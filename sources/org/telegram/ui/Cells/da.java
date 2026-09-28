@@ -27,17 +27,17 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.vq;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class da {
     public final ActionMode.Callback A;
     public final Rect B;
     public ca C;
     public w7.i0 D;
-    public wl0 E;
+    public yl0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -91,7 +91,7 @@ public abstract class da {
     public ActionBarPopupWindow$ActionBarPopupWindowLayout o0;
     public final Paint p;
     public TextView p0;
-    public final vq q;
+    public final wq q;
     public Rect q0;
     public final Path r;
     public final g r0;
@@ -113,10 +113,10 @@ public abstract class da {
         Paint paint = new Paint(1);
         this.o = paint;
         this.p = new Paint(1);
-        vq vqVar = new vq();
-        this.q = vqVar;
+        wq wqVar = new wq();
+        this.q = wqVar;
         this.r = new Path();
-        new u9().a = vqVar;
+        new u9().a = wqVar;
         this.u = -1;
         this.v = -1;
         n9 n9Var = new n9(this);
@@ -143,7 +143,7 @@ public abstract class da {
         float dp = AndroidUtilities.dp(6.0f);
         this.n = dp;
         paint.setPathEffect(new CornerPathEffect(dp));
-        vqVar.d = 1.0f;
+        wqVar.d = 1.0f;
     }
 
     public static void a(da daVar, int i10) {
@@ -380,8 +380,8 @@ public abstract class da {
     }
 
     public final void T(ViewGroup viewGroup) {
-        if (viewGroup instanceof wl0) {
-            this.E = (wl0) viewGroup;
+        if (viewGroup instanceof yl0) {
+            this.E = (yl0) viewGroup;
         }
         this.F = viewGroup;
     }
@@ -675,7 +675,7 @@ public abstract class da {
         float f10;
         float f11;
         int i13;
-        vq vqVar;
+        wq wqVar;
         float f12;
         x9 x9Var = this.t0;
         x9Var.reset();
@@ -692,21 +692,21 @@ public abstract class da {
         int i14 = 0;
         while (true) {
             i13 = x9Var.c;
-            vqVar = this.q;
+            wqVar = this.q;
             f12 = this.n;
             if (i14 >= i13) {
                 break;
             }
             RectF rectF = (RectF) x9Var.b.get(i14);
             rectF.set((int) (Math.max(f7, rectF.left) - (z10 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.vision.e2.z(rectF.top, f11, f10, f11), (int) (Math.max(f7, rectF.right) + (z11 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.vision.e2.z(rectF.bottom, f11, f10, f11));
-            vqVar.addRect(rectF, Path.Direction.CW);
+            wqVar.addRect(rectF, Path.Direction.CW);
             i14++;
         }
         if (i13 != 0 || z11) {
             return;
         }
         try {
-            vqVar.addRect(((int) layout.getPrimaryHorizontal(i11)) - (f12 / 2.0f), layout.getLineTop(i10), (f12 / 4.0f) + ((int) layout.getPrimaryHorizontal(i12)), layout.getLineBottom(i10), Path.Direction.CW);
+            wqVar.addRect(((int) layout.getPrimaryHorizontal(i11)) - (f12 / 2.0f), layout.getLineTop(i10), (f12 / 4.0f) + ((int) layout.getPrimaryHorizontal(i12)), layout.getLineBottom(i10), Path.Direction.CW);
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -729,14 +729,14 @@ public abstract class da {
         da daVar;
         int i17;
         float lineRight;
-        vq vqVar;
+        wq wqVar;
         if (layout == null || layout.getText() == null) {
             return;
         }
         int clamp = Utilities.clamp(i10, layout.getText().length(), 0);
         int clamp2 = Utilities.clamp(i11, layout.getText().length(), 0);
-        vq vqVar2 = this.q;
-        vqVar2.reset();
+        wq wqVar2 = this.q;
+        wqVar2.reset();
         Path path2 = this.r;
         path2.reset();
         float f11 = this.n;
@@ -780,7 +780,7 @@ public abstract class da {
                     if (rect != null) {
                         RectF rectF = AndroidUtilities.rectTmp;
                         rectF.set(rect);
-                        vqVar2.addRect(rectF, Path.Direction.CW);
+                        wqVar2.addRect(rectF, Path.Direction.CW);
                     }
                     i13 = lineForOffset + 1;
                     while (i13 < lineForOffset2) {
@@ -790,7 +790,7 @@ public abstract class da {
                         int max2 = Math.max(lineLeft, lineRight2);
                         float max3 = Math.max(f7, min2);
                         float f13 = i18;
-                        vqVar2.addRect(max3 - f13, layout.getLineTop(i13), Math.max(f7, max2) + f13, layout.getLineBottom(i13) + 1, Path.Direction.CW);
+                        wqVar2.addRect(max3 - f13, layout.getLineTop(i13), Math.max(f7, max2) + f13, layout.getLineBottom(i13) + 1, Path.Direction.CW);
                         i13++;
                         lineForOffset2 = lineForOffset2;
                         i18 = i18;
@@ -846,13 +846,13 @@ public abstract class da {
             if (i22 >= 26) {
                 canvas.clipOutRect(rect2);
             }
-            vqVar = vqVar2;
+            wqVar = wqVar2;
         } else {
             if (!z10 || layout.isRtlCharAt(i16)) {
-                vqVar = vqVar2;
+                wqVar = wqVar2;
             } else {
                 Rect rect3 = AndroidUtilities.rectTmp2;
-                vqVar = vqVar2;
+                wqVar = wqVar2;
                 rect3.set((int) primaryHorizontal2, (int) (lineBottom - f10), (int) Math.min(primaryHorizontal2 + f10, layout.getLineRight(i15)), (int) lineBottom);
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rect3);
@@ -873,8 +873,8 @@ public abstract class da {
                 }
             }
         }
-        vqVar.a();
-        canvas.drawPath(vqVar, daVar.o);
+        wqVar.a();
+        canvas.drawPath(wqVar, daVar.o);
         if (z12) {
             canvas.restore();
             canvas.drawPath(path, daVar.p);

@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class t31 extends org.telegram.ui.ActionBar.e3 {
     public static final /* synthetic */ int v = 0;
@@ -256,27 +256,27 @@ public final class t31 extends org.telegram.ui.ActionBar.e3 {
         i1Var.D(i1Var.b + 1);
         s31 s31Var = (s31) i1Var.getViewPages()[1];
         if (s31Var != null) {
-            org.telegram.ui.Components.r61 r61Var = s31Var.f;
+            org.telegram.ui.Components.t61 t61Var = s31Var.f;
             if (tLObject instanceof TLRPC.TL_reportResultChooseOption) {
                 s31Var.b = null;
                 s31Var.c = (TLRPC.TL_reportResultChooseOption) tLObject;
                 s31Var.d = null;
-                r61Var.Y2.N(false);
+                t61Var.Y2.N(false);
             } else if (tLObject instanceof TLRPC.TL_reportResultAddComment) {
                 s31Var.b((TLRPC.TL_reportResultAddComment) tLObject);
             } else if (z10) {
                 s31Var.b = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject;
                 s31Var.c = null;
                 s31Var.d = null;
-                r61Var.Y2.N(false);
+                t61Var.Y2.N(false);
             }
             if (charSequence != null) {
                 t5 t5Var = s31Var.h;
                 ((TextView) t5Var.d).setText(charSequence);
                 ((TextView) t5Var.d).getText();
                 t5Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_31));
-                if (r61Var != null) {
-                    r61Var.Y2.N(true);
+                if (t61Var != null) {
+                    t61Var.Y2.N(true);
                 }
             }
         }

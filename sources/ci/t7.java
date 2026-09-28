@@ -20,11 +20,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class t7 extends View {
     public s7 E;
@@ -43,8 +43,8 @@ public final class t7 extends View {
     public final RectF f;
     public final ImageReceiver h;
     public boolean n;
-    public t01 r;
-    public t01 s;
+    public v01 r;
+    public v01 s;
     public final Path v;
     public final Paint w;
     public final org.telegram.ui.Components.yc x;
@@ -52,7 +52,7 @@ public final class t7 extends View {
 
     public t7(Activity activity, int i10, ha haVar) {
         super(activity);
-        this.d = new org.telegram.ui.Components.e6(this, 0L, 320L, rr.h);
+        this.d = new org.telegram.ui.Components.e6(this, 0L, 320L, sr.h);
         this.e = new RectF();
         this.f = new RectF();
         this.h = new ImageReceiver(this);
@@ -70,7 +70,7 @@ public final class t7 extends View {
         if (s7Var == null) {
             return;
         }
-        this.r = new t01(s7Var.b(), 16.0f, AndroidUtilities.bold());
+        this.r = new v01(s7Var.b(), 16.0f, AndroidUtilities.bold());
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.E.a());
         if (spannableStringBuilder.toString().contains(">")) {
             spannableStringBuilder.clear();
@@ -78,11 +78,11 @@ public final class t7 extends View {
         } else {
             spannableStringBuilder.append((CharSequence) " ");
             spannableStringBuilder.append((CharSequence) ">");
-            pq pqVar = new pq(R.drawable.settings_arrow, 0);
-            pqVar.setScale(1.25f, 1.25f);
-            spannableStringBuilder.setSpan(pqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+            qq qqVar = new qq(R.drawable.settings_arrow, 0);
+            qqVar.setScale(1.25f, 1.25f);
+            spannableStringBuilder.setSpan(qqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         }
-        this.s = new t01(spannableStringBuilder, 14.0f, null);
+        this.s = new v01(spannableStringBuilder, 14.0f, null);
         this.E.d(this.h);
         this.n = true;
     }
@@ -93,11 +93,11 @@ public final class t7 extends View {
         float f10;
         Object obj;
         float e = this.d.e(this.y);
-        t01 t01Var = this.r;
-        if (t01Var == null || this.s == null || e <= 0.0f) {
+        v01 v01Var = this.r;
+        if (v01Var == null || this.s == null || e <= 0.0f) {
             return;
         }
-        t01Var.p = getWidth() * 0.7f;
+        v01Var.p = getWidth() * 0.7f;
         this.s.p = getWidth() * 0.7f;
         float dp = AndroidUtilities.dp(5.0f);
         float dp2 = AndroidUtilities.dp(10.0f);
@@ -156,8 +156,8 @@ public final class t7 extends View {
             imageReceiver.draw(canvas);
         }
         float centerY = rectF.centerY() - ((this.s.j() + (this.r.j() + dp4)) / f10);
-        t01 t01Var2 = this.r;
-        t01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (t01Var2.j() / f10) + centerY, e, -1, canvas);
+        v01 v01Var2 = this.r;
+        v01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (v01Var2.j() / f10) + centerY, e, -1, canvas);
         this.s.c(rectF.left + (this.n ? dp3 + dp5 + dp5 : 0.0f) + f7, this.r.j() + centerY + dp4 + (this.s.j() / f10), e, org.telegram.ui.ActionBar.h6.v(-16777216, -1610612737), canvas);
         canvas.restore();
     }

@@ -25,7 +25,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class dd extends View {
     public static final int[] W;
@@ -94,10 +94,10 @@ public abstract class dd extends View {
         this.b = new RectF();
         this.c = new RectF();
         this.h = true;
-        rr rrVar = rr.h;
-        this.n = new e6(this, 750L, rrVar);
+        sr srVar = sr.h;
+        this.n = new e6(this, 750L, srVar);
         this.r = false;
-        this.s = new e6(this, 650L, rrVar);
+        this.s = new e6(this, 650L, srVar);
         this.w = new float[2];
         this.x = new RectF();
         Paint paint = new Paint(1);
@@ -138,24 +138,24 @@ public abstract class dd extends View {
         paint2.setStyle(style);
         paint2.setStrokeCap(Paint.Cap.ROUND);
         paint2.setStrokeJoin(Paint.Join.ROUND);
-        o6Var.k(0.2f, 450L, rrVar);
+        o6Var.k(0.2f, 450L, srVar);
         o6Var.v = 0.6f;
         o6Var.r(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
         o6Var.u(AndroidUtilities.bold());
         o6Var.t(AndroidUtilities.dp(32.0f));
         o6Var.b = 17;
-        o6Var2.k(0.6f, 450L, rrVar);
+        o6Var2.k(0.6f, 450L, srVar);
         o6Var2.v = 0.6f;
         o6Var2.r(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.y6, false));
         o6Var2.t(AndroidUtilities.dp(12.0f));
         o6Var2.b = 17;
-        o6Var3.k(0.2f, 450L, rrVar);
+        o6Var3.k(0.2f, 450L, srVar);
         o6Var3.v = 0.6f;
         o6Var3.a.setShader(linearGradient2);
         o6Var3.u(AndroidUtilities.bold());
         o6Var3.t(AndroidUtilities.dp(32.0f));
         o6Var3.b = 17;
-        o6Var4.k(0.6f, 450L, rrVar);
+        o6Var4.k(0.6f, 450L, srVar);
         o6Var4.v = 0.6f;
         o6Var4.a.setShader(linearGradient2);
         o6Var4.u(AndroidUtilities.bold());
@@ -271,7 +271,7 @@ public abstract class dd extends View {
         }
         float currentTimeMillis = ((d0 == null ? System.currentTimeMillis() : r9.longValue()) - c0.longValue()) * 0.6f;
         float[] fArr2 = this.w;
-        up.a(fArr2, currentTimeMillis % 5400.0f);
+        vp.a(fArr2, currentTimeMillis % 5400.0f);
         float f26 = fArr2[0];
         float f27 = fArr2[1];
         if (d > 0.0f) {
@@ -301,7 +301,7 @@ public abstract class dd extends View {
                 break;
             }
             bd bdVar2 = bdVarArr[i11];
-            up.a(fArr2, (currentTimeMillis + (i11 * 80)) % 5400.0f);
+            vp.a(fArr2, (currentTimeMillis + (i11 * 80)) % 5400.0f);
             float min = Math.min(Math.max(fArr2[c11], f26), f27);
             float min2 = Math.min(Math.max(fArr2[c10], f26), f27);
             if (d < f10 || min < min2) {

@@ -3,9 +3,9 @@ package pg;
 import android.animation.ValueAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class o0 implements Runnable {
                     s0Var.K = ofFloat;
                     ofFloat.addUpdateListener(new n0(s0Var, i11));
                     s0Var.K.addListener(new r0(s0Var, i11));
-                    s0Var.K.setInterpolator(rr.h);
+                    s0Var.K.setInterpolator(sr.h);
                     s0Var.K.start();
                     s0Var.d = i1Var;
                     n2.e eVar3 = s0Var.a;

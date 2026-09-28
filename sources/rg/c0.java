@@ -32,26 +32,26 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.b7;
 import org.telegram.ui.Cells.g4;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.ln;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.s51;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.u90;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.w90;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.t5;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class c0 extends vl0 {
+public final class c0 extends xl0 {
     public final /* synthetic */ j0 c;
 
     public c0(j0 j0Var) {
         this.c = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         j0 j0Var = this.c;
         int i10 = j0Var.h0;
@@ -211,7 +211,7 @@ public final class c0 extends vl0 {
                 if (indexOf >= 0) {
                     spannableStringBuilder = new SpannableStringBuilder(string);
                     SpannableString spannableString = new SpannableString(a4.a.o(f0Var.e.e, "", new StringBuilder()));
-                    spannableString.setSpan(new s51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new u51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
                     spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) spannableString);
                 }
                 h5Var.l(spannableStringBuilder, false);
@@ -224,7 +224,7 @@ public final class c0 extends vl0 {
                     if (indexOf2 >= 0) {
                         spannableStringBuilder2 = new SpannableStringBuilder(str);
                         SpannableString spannableString2 = new SpannableString(f0Var.e.c);
-                        spannableString2.setSpan(new s51(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new u51(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 2, (CharSequence) spannableString2);
                     }
                     h5Var.l(spannableStringBuilder2, false);
@@ -283,15 +283,15 @@ public final class c0 extends vl0 {
                 view = g4Var;
                 break;
             case 5:
-                u00 u00Var = new u00(context, null);
-                u00Var.setViewType(j0Var.h0 == 2 ? 22 : 21);
-                u00Var.setIsSingleCell(true);
-                u00Var.setIgnoreHeightCheck(true);
-                u00Var.setItemsCount(10);
-                view = u00Var;
+                v00 v00Var = new v00(context, null);
+                v00Var.setViewType(j0Var.h0 == 2 ? 22 : 21);
+                v00Var.setIsSingleCell(true);
+                v00Var.setIgnoreHeightCheck(true);
+                v00Var.setItemsCount(10);
+                view = v00Var;
                 break;
             case 6:
-                view = new ln(j0Var.getContext(), 29);
+                view = new mn(j0Var.getContext(), 29);
                 break;
             case 7:
                 FrameLayout frameLayout = new FrameLayout(j0Var.getContext());
@@ -413,8 +413,8 @@ public final class c0 extends vl0 {
                 i16 = ((e3) j0Var).backgroundPaddingLeft;
                 linearLayout.setPadding(dp4, 0, AndroidUtilities.dp(6.0f) + i16, 0);
                 linearLayout.setOrientation(1);
-                u90 u90Var = new u90(context);
-                n90 n90Var = new n90(context, null);
+                w90 w90Var = new w90(context);
+                p90 p90Var = new p90(context, null);
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(j0Var.x1() ? R.string.BoostingStoriesByGiftingGroup2 : R.string.BoostingStoriesByGiftingChannel2));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.BoostingStoriesByGiftingLink));
                 spannableStringBuilder.setSpan(new ac(this, 8), 0, spannableStringBuilder.length(), 33);
@@ -422,28 +422,28 @@ public final class c0 extends vl0 {
                 Drawable mutate = j0Var.getContext().getResources().getDrawable(R.drawable.msg_arrowright).mutate();
                 int i25 = h6.gc;
                 mutate.setColorFilter(new PorterDuffColorFilter(i25, PorterDuff.Mode.SRC_IN));
-                pq pqVar = new pq(0, mutate);
-                pqVar.setColorKey(i25);
-                pqVar.setSize(AndroidUtilities.dp(18.0f));
-                pqVar.setWidth(AndroidUtilities.dp(11.0f));
-                pqVar.setTranslateX(-AndroidUtilities.dp(5.0f));
-                spannableString.setSpan(pqVar, 0, spannableString.length(), 33);
-                n90Var.setText(TextUtils.concat(replaceTags, " ", AndroidUtilities.replaceCharSequence(">", spannableStringBuilder, spannableString)));
-                n90Var.setTextSize(1, 14.0f);
-                n90Var.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
+                qq qqVar = new qq(0, mutate);
+                qqVar.setColorKey(i25);
+                qqVar.setSize(AndroidUtilities.dp(18.0f));
+                qqVar.setWidth(AndroidUtilities.dp(11.0f));
+                qqVar.setTranslateX(-AndroidUtilities.dp(5.0f));
+                spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
+                p90Var.setText(TextUtils.concat(replaceTags, " ", AndroidUtilities.replaceCharSequence(">", spannableStringBuilder, spannableString)));
+                p90Var.setTextSize(1, 14.0f);
+                p90Var.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
                 d6Var8 = ((e3) j0Var).resourcesProvider;
                 if (d6Var8 instanceof ai.d) {
                     int i26 = h6.y6;
                     d6Var11 = ((e3) j0Var).resourcesProvider;
-                    n90Var.setTextColor(h6.v0(i26, d6Var11));
+                    p90Var.setTextColor(h6.v0(i26, d6Var11));
                 } else {
                     int i27 = h6.G6;
                     d6Var9 = ((e3) j0Var).resourcesProvider;
-                    n90Var.setTextColor(h6.v0(i27, d6Var9));
+                    p90Var.setTextColor(h6.v0(i27, d6Var9));
                 }
                 final int i28 = 1;
-                n90Var.setGravity(1);
-                n90Var.setOnClickListener(new View.OnClickListener(this) { // from class: rg.a0
+                p90Var.setGravity(1);
+                p90Var.setOnClickListener(new View.OnClickListener(this) { // from class: rg.a0
                     public final /* synthetic */ c0 b;
 
                     {
@@ -477,7 +477,7 @@ public final class c0 extends vl0 {
                         }
                     }
                 });
-                u90Var.setOnClickListener(new org.telegram.ui.Components.voip.o(n90Var, 9));
+                w90Var.setOnClickListener(new org.telegram.ui.Components.voip.o(p90Var, 9));
                 if (j0Var.y1()) {
                     d6Var10 = ((e3) j0Var).resourcesProvider;
                     ci.d dVar = new ci.d(context, d6Var10, true);
@@ -523,8 +523,8 @@ public final class c0 extends vl0 {
                 } else {
                     linearLayout.addView(j0Var.F0, y5.k(12.0f, 12.0f, 12.0f, 8.0f, -1, 48));
                 }
-                linearLayout.addView(u90Var, y5.k(0.0f, -5.0f, 0.0f, 0.0f, -1, 48));
-                linearLayout.addView(n90Var, y5.k(12.0f, -6.0f, 12.0f, 17.0f, -1, -2));
+                linearLayout.addView(w90Var, y5.k(0.0f, -5.0f, 0.0f, 0.0f, -1, 48));
+                linearLayout.addView(p90Var, y5.k(12.0f, -6.0f, 12.0f, 17.0f, -1, -2));
                 view = linearLayout;
                 break;
             case 9:

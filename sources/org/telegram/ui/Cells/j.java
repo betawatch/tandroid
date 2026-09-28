@@ -33,22 +33,22 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.o90;
-import org.telegram.ui.Components.r90;
-import org.telegram.ui.Components.uw0;
-import org.telegram.ui.Components.z51;
+import org.telegram.ui.Components.b61;
+import org.telegram.ui.Components.j90;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.t90;
+import org.telegram.ui.Components.ww0;
 import org.telegram.ui.l01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final int a0 = AndroidUtilities.dp(76.0f);
     public static final int b0 = View.MeasureSpec.makeMeasureSpec(999999, TLObject.FLAG_31);
-    public final k90 E;
+    public final m90 E;
     public h F;
-    public r90 G;
+    public t90 G;
     public final org.telegram.ui.ActionBar.m2 H;
     public final org.telegram.ui.ActionBar.d6 I;
     public final FrameLayout J;
@@ -76,14 +76,14 @@ public abstract class j extends FrameLayout {
     public final FrameLayout r;
     public final FrameLayout s;
     public final Drawable v;
-    public o90 w;
+    public q90 w;
     public float x;
     public StaticLayout y;
 
     public j(Context context, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         new Point();
-        new h90(0);
+        new j90(0);
         this.M = null;
         this.N = -1;
         this.P = false;
@@ -98,7 +98,7 @@ public abstract class j extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.J = frameLayout;
         frameLayout.setImportantForAccessibility(2);
-        this.E = new k90(frameLayout);
+        this.E = new m90(frameLayout);
         this.K = org.telegram.ui.ActionBar.h6.Y(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 0, 0);
         TextView textView = new TextView(context);
         this.h = textView;
@@ -150,9 +150,9 @@ public abstract class j extends FrameLayout {
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), org.telegram.ui.ActionBar.h6.P1, Math.max(1, i10)).setBreakStrategy(0).setHyphenationFrequency(0);
         if (LocaleController.isRTL) {
-            alignment = uw0.a();
+            alignment = ww0.a();
         } else {
-            Layout.Alignment[] alignmentArr = uw0.a;
+            Layout.Alignment[] alignmentArr = ww0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -257,7 +257,7 @@ public abstract class j extends FrameLayout {
         frameLayout.setBackground(null);
     }
 
-    public final o90 b(StaticLayout staticLayout, int i10, int i11, int i12, int i13) {
+    public final q90 b(StaticLayout staticLayout, int i10, int i11, int i12, int i13) {
         int i14 = i12 - i10;
         int i15 = i13 - i11;
         try {
@@ -273,16 +273,16 @@ public abstract class j extends FrameLayout {
             if (clickableSpanArr.length == 0 || AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
                 return null;
             }
-            o90 o90Var = new o90(clickableSpanArr[0], this.I, i12, i13, 0);
-            o90Var.d(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Ld, this.I));
+            q90 q90Var = new q90(clickableSpanArr[0], this.I, i12, i13, 0);
+            q90Var.d(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Ld, this.I));
             int spanStart = spannable.getSpanStart(clickableSpanArr[0]);
             int spanEnd = spannable.getSpanEnd(clickableSpanArr[0]);
-            h90 b10 = o90Var.b();
+            j90 b10 = q90Var.b();
             float f10 = i11;
             this.x = f10;
             b10.d(staticLayout, spanStart, f10);
             staticLayout.getSelectionPath(spanStart, spanEnd, b10);
-            return o90Var;
+            return q90Var;
         } catch (Exception e) {
             FileLog.e(e);
             return null;
@@ -300,8 +300,8 @@ public abstract class j extends FrameLayout {
             hVar2 = new h(this, layout, clickableSpan, f7);
         }
         this.F = hVar2;
-        if (clickableSpan instanceof z51) {
-            String url = ((z51) clickableSpan).getURL();
+        if (clickableSpan instanceof b61) {
+            String url = ((b61) clickableSpan).getURL();
             if (url.startsWith("@") || url.startsWith("#") || url.startsWith("$") || url.startsWith("/")) {
                 ((l01) this).c0.e.B4(url, this.F);
                 return;
@@ -346,8 +346,8 @@ public abstract class j extends FrameLayout {
         this.c = dp;
         float f14 = 0.0f;
         canvas.translate(dp, 0.0f);
-        k90 k90Var = this.E;
-        if (k90Var != null && k90Var.f(canvas)) {
+        m90 m90Var = this.E;
+        if (m90Var != null && m90Var.f(canvas)) {
             invalidate();
         }
         int dp2 = AndroidUtilities.dp(8.0f);
@@ -616,7 +616,7 @@ public abstract class j extends FrameLayout {
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         j jVar;
-        o90 b10;
+        q90 b10;
         int x10 = (int) motionEvent.getX();
         int y3 = (int) motionEvent.getY();
         c cVar = this.n;
@@ -647,7 +647,7 @@ public abstract class j extends FrameLayout {
                                         }
                                         StaticLayout staticLayout2 = staticLayoutArr[i10];
                                         Point point = jVar.O[i10];
-                                        o90 b11 = jVar.b(staticLayout2, point.x, point.y, x10, y3);
+                                        q90 b11 = jVar.b(staticLayout2, point.x, point.y, x10, y3);
                                         if (b11 != null) {
                                             b10 = b11;
                                             break;
@@ -677,10 +677,10 @@ public abstract class j extends FrameLayout {
                     if (!super.onTouchEvent(motionEvent)) {
                     }
                 } else {
-                    o90 o90Var = this.w;
-                    if (o90Var != null) {
+                    q90 q90Var = this.w;
+                    if (q90Var != null) {
                         try {
-                            d((ClickableSpan) o90Var.i, this.a, this.x);
+                            d((ClickableSpan) q90Var.i, this.a, this.x);
                         } catch (Exception e) {
                             FileLog.e(e);
                         }

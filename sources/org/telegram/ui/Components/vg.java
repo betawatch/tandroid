@@ -21,9 +21,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class vg extends View implements x70 {
+public abstract class vg extends View implements z70 {
     public boolean E;
     public boolean F;
     public Drawable G;
@@ -34,7 +34,7 @@ public abstract class vg extends View implements x70 {
     public final Paint L;
     public float M;
     public float N;
-    public final pq[] O;
+    public final qq[] O;
     public final e6 P;
     public final yc Q;
     public boolean R;
@@ -71,25 +71,25 @@ public abstract class vg extends View implements x70 {
 
     public vg(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
         super(context);
-        rr rrVar = rr.h;
-        this.x = new e6(this, 0L, 320L, rrVar);
+        sr srVar = sr.h;
+        this.x = new e6(this, 0L, 320L, srVar);
         this.y = new Paint(1);
         this.I = -1;
         this.J = -1;
         this.L = new Paint(1);
-        this.O = new pq[1];
-        this.P = new e6(this, 0L, 420L, rrVar);
+        this.O = new qq[1];
+        this.P = new e6(this, 0L, 420L, srVar);
         this.Q = new yc(this);
         this.S = new u1.a();
-        this.V = new e6(this, 0L, 420L, rrVar);
-        this.W = new e6(this, 0L, 500L, rrVar);
+        this.V = new e6(this, 0L, 420L, srVar);
+        this.W = new e6(this, 0L, 500L, srVar);
         this.a0 = new Path();
         Paint paint = new Paint(1);
         this.b0 = paint;
         o6 o6Var = new o6(true, true, true, false);
         this.c0 = o6Var;
         this.d0 = 1.0f;
-        this.e0 = new e6(this, 0L, 320L, rrVar);
+        this.e0 = new e6(this, 0L, 320L, srVar);
         this.k0 = new RectF();
         this.b = i10;
         this.a = d6Var;
@@ -117,7 +117,7 @@ public abstract class vg extends View implements x70 {
         o6Var.b = 17;
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.z70
     public final void a(RectF rectF) {
         float circleWidth = getCircleWidth();
         float circleHeight = getCircleHeight();
@@ -126,7 +126,7 @@ public abstract class vg extends View implements x70 {
         rectF.set(measuredWidth - circleWidth, measuredHeight - circleHeight, measuredWidth, measuredHeight);
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.z70
     public final void b(Canvas canvas, float f7) {
         float lerp;
         float lerp2;

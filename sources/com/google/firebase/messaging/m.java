@@ -40,8 +40,8 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.mu;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.nu;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.c5;
 import org.telegram.ui.r4;
 import org.telegram.ui.v4;
@@ -49,7 +49,7 @@ import org.telegram.ui.x4;
 import org.telegram.ui.z0;
 import r0.i0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -59,12 +59,12 @@ public final class m implements c3.q {
     public Object d;
 
     public m(View view) {
-        mu[] muVarArr = {new mu(), new mu(), new mu()};
-        this.b = muVarArr;
+        nu[] nuVarArr = {new nu(), new nu(), new nu()};
+        this.b = nuVarArr;
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(g(muVarArr[0], 0, 255, 0, 300), g(muVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(muVarArr[2], 0, 255, 300, 300), g(muVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(muVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(muVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
+        animatorSet.playTogether(g(nuVarArr[0], 0, 255, 0, 300), g(nuVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(nuVarArr[2], 0, 255, 300, 300), g(nuVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(nuVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(nuVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
         animatorSet.addListener(new y4(this, view));
     }
 
@@ -257,12 +257,12 @@ public final class m implements c3.q {
         return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
     }
 
-    public ValueAnimator g(mu muVar, int i10, int i11, int i12, int i13) {
+    public ValueAnimator g(nu nuVar, int i10, int i11, int i12, int i13) {
         ValueAnimator ofInt = ValueAnimator.ofInt(i10, i11);
-        ofInt.addUpdateListener(new ai.x(15, this, muVar));
+        ofInt.addUpdateListener(new ai.x(15, this, nuVar));
         ofInt.setDuration(i13);
         ofInt.setStartDelay(i12);
-        ofInt.setInterpolator(rr.f);
+        ofInt.setInterpolator(sr.f);
         return ofInt;
     }
 
@@ -553,12 +553,12 @@ public final class m implements c3.q {
     }
 
     public void x(SpannableString spannableString, int i10) {
-        mu[] muVarArr = (mu[]) this.b;
+        nu[] nuVarArr = (nu[]) this.b;
         int i11 = i10 + 1;
-        spannableString.setSpan(muVarArr[0], i10, i11, 0);
+        spannableString.setSpan(nuVarArr[0], i10, i11, 0);
         int i12 = i10 + 2;
-        spannableString.setSpan(muVarArr[1], i11, i12, 0);
-        spannableString.setSpan(muVarArr[2], i12, i10 + 3, 0);
+        spannableString.setSpan(nuVarArr[1], i11, i12, 0);
+        spannableString.setSpan(nuVarArr[2], i12, i10 + 3, 0);
     }
 
     public void y() {

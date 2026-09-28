@@ -22,7 +22,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class z10 extends og.b {
     public final Context d;
@@ -33,7 +33,7 @@ public final class z10 extends og.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 3 || i10 == 0 || i10 == 5 || i10 == 1) ? false : true;
@@ -128,9 +128,9 @@ public final class z10 extends og.b {
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
             drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.k7, false), mode));
-            org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(drawable, drawable2);
+            org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(drawable, drawable2);
             b20Var.a.l(((Object) x10Var.c) + "", false);
-            b20Var.b.setImageDrawable(qqVar);
+            b20Var.b.setImageDrawable(rqVar);
             return;
         }
         v10 v10Var = (v10) view;
@@ -171,7 +171,7 @@ public final class z10 extends og.b {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                 v10Var.y = ofFloat;
                 ofFloat.addUpdateListener(new c3(v10Var, 14));
-                v10Var.y.setInterpolator(org.telegram.ui.Components.rr.h);
+                v10Var.y.setInterpolator(org.telegram.ui.Components.sr.h);
                 v10Var.y.setDuration(340L);
                 ValueAnimator valueAnimator2 = v10Var.y;
                 if (i15 >= 0) {
@@ -326,15 +326,15 @@ public final class z10 extends og.b {
                     textView2.setEllipsize(truncateAt);
                     textView2.setGravity(LocaleController.isRTL ? 5 : 3);
                     a20Var.addView(textView2, w7.y5.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, 22.0f, 35.0f, 22.0f, 0.0f));
-                    org.telegram.ui.Components.ii0 ii0Var = new org.telegram.ui.Components.ii0(context);
-                    a20Var.c = ii0Var;
-                    ii0Var.setText(LocaleController.getString(R.string.Add));
-                    ii0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-                    ii0Var.setProgressColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Nh, false));
+                    org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(context);
+                    a20Var.c = ki0Var;
+                    ki0Var.setText(LocaleController.getString(R.string.Add));
+                    ki0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+                    ki0Var.setProgressColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Nh, false));
                     int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Oh, false);
                     org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qh, false);
-                    ii0Var.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{14.0f}, w02));
-                    a20Var.addView(ii0Var, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
+                    ki0Var.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{14.0f}, w02));
+                    a20Var.addView(ki0Var, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
                     a20Var.setAddOnClickListener(new ov(i11, this, a20Var));
                     frameLayout = a20Var;
                 } else {
@@ -351,14 +351,14 @@ public final class z10 extends og.b {
             int i13 = R.raw.filters;
             SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.CreateNewFilterInfo, new Object[0]));
             w10 w10Var = new w10(context);
-            org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-            w10Var.a = lj0Var;
-            lj0Var.f(i13, 90, 90, null);
-            lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-            lj0Var.d();
-            lj0Var.setImportantForAccessibility(2);
-            w10Var.addView(lj0Var, w7.y5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
-            lj0Var.setOnClickListener(new a(w10Var, 27));
+            org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+            w10Var.a = nj0Var;
+            nj0Var.f(i13, 90, 90, null);
+            nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+            nj0Var.d();
+            nj0Var.setImportantForAccessibility(2);
+            w10Var.addView(nj0Var, w7.y5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
+            nj0Var.setOnClickListener(new a(w10Var, 27));
             TextView textView3 = new TextView(context);
             textView3.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.B6, false));
             textView3.setTextSize(1, 14.0f);
@@ -367,6 +367,6 @@ public final class z10 extends og.b {
             w10Var.addView(textView3, w7.y5.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
             frameLayout = w10Var;
         }
-        return new org.telegram.ui.Components.gl0(frameLayout);
+        return new org.telegram.ui.Components.il0(frameLayout);
     }
 }

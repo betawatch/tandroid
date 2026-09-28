@@ -1,100 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class qv implements NotificationCenter.NotificationCenterDelegate {
-    public final ArrayList a;
-    public ArrayList b;
-    public ArrayList[] c;
-    public final int d;
-    public boolean e = false;
-    public final /* synthetic */ tv f;
+public final /* synthetic */ class qv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rv b;
 
-    public qv(int i10, ArrayList arrayList, tv tvVar) {
-        this.f = tvVar;
-        this.d = i10;
-        this.a = arrayList == null ? new ArrayList() : arrayList;
+    public /* synthetic */ qv(rv rvVar, int i10) {
+        this.a = i10;
+        this.b = rvVar;
     }
 
-    public final void a(int i10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        ArrayList<Long> arrayList;
-        if (i10 >= 0) {
-            ArrayList[] arrayListArr = this.c;
-            if (i10 >= arrayListArr.length) {
-                return;
-            }
-            if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents == null) {
-                arrayListArr[i10] = new ArrayList(12);
-                for (int i11 = 0; i11 < 12; i11++) {
-                    this.c[i10].add(null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.f.dismiss();
+                break;
+            default:
+                uv uvVar = this.b.f;
+                uvVar.dismiss();
+                org.telegram.ui.ActionBar.m2 m2Var = uvVar.c;
+                if (m2Var != null && m2Var.getParentActivity() != null) {
+                    org.telegram.messenger.ok.p(R.string.AddEmojiNotFound, xc.a0(m2Var), null);
+                    break;
                 }
-                return;
-            }
-            arrayListArr[i10] = new ArrayList();
-            for (int i12 = 0; i12 < tL_messages_stickerSet.documents.size(); i12++) {
-                TLRPC.Document document = tL_messages_stickerSet.documents.get(i12);
-                if (document == null) {
-                    this.c[i10].add(null);
-                } else {
-                    qx qxVar = new qx();
-                    long j3 = document.id;
-                    for (int i13 = 0; i13 < tL_messages_stickerSet.packs.size() && ((arrayList = tL_messages_stickerSet.packs.get(i13).documents) == null || !arrayList.contains(Long.valueOf(j3))); i13++) {
-                    }
-                    qxVar.a = tL_messages_stickerSet;
-                    qxVar.b = document.id;
-                    this.c[i10].add(qxVar);
-                    if (this.f.H) {
-                        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-                        if (this.c[i10].size() >= ((stickerSet == null || stickerSet.emojis) ? 16 : 10)) {
-                            return;
-                        }
-                    } else {
-                        continue;
-                    }
-                }
-            }
-        }
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        TLRPC.StickerSet stickerSet;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        if (i10 == NotificationCenter.groupStickersDidLoad) {
-            for (int i12 = 0; i12 < this.b.size(); i12++) {
-                if (this.b.get(i12) == null) {
-                    TLRPC.TL_messages_stickerSet stickerSet2 = MediaDataController.getInstance(this.d).getStickerSet((TLRPC.InputStickerSet) this.a.get(i12), true);
-                    if (this.b.size() == 1 && stickerSet2 != null && (stickerSet = stickerSet2.set) != null && !stickerSet.emojis) {
-                        tv tvVar = this.f;
-                        tvVar.dismiss();
-                        Context context = tvVar.getContext();
-                        org.telegram.ui.ActionBar.m2 m2Var = tvVar.c;
-                        TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
-                        org.telegram.ui.ActionBar.m2 m2Var2 = tvVar.c;
-                        org.telegram.ui.jk jkVar = m2Var2 instanceof org.telegram.ui.wn ? ((org.telegram.ui.wn) m2Var2).Y : null;
-                        d6Var = ((org.telegram.ui.ActionBar.e3) tvVar).resourcesProvider;
-                        new fy0(context, m2Var, inputStickerSet, null, jkVar, d6Var).show();
-                        return;
-                    }
-                    this.b.set(i12, stickerSet2);
-                    if (stickerSet2 != null) {
-                        a(i12, stickerSet2);
-                    }
-                }
-            }
-            tv tvVar2 = ((dv) this).h;
-            tvVar2.a0();
-            ci.v vVar = tvVar2.h;
-            if (vVar == null || vVar.getAdapter() == null) {
-                return;
-            }
-            vVar.getAdapter().l();
+                break;
         }
     }
 }

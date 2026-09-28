@@ -1,75 +1,51 @@
 package org.telegram.ui.Components;
 
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.PhotoViewer;
+import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ql implements Utilities.Callback {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ dm e;
+public final /* synthetic */ class ql implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ql(vl vlVar, boolean z10, boolean z11, int i10) {
-        this.e = vlVar;
-        this.b = z10;
-        this.c = z11;
-        this.d = i10;
+    public /* synthetic */ ql(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int indexOf;
+        int indexOf2;
+        int i10 = this.a;
+        Object obj3 = this.b;
+        switch (i10) {
             case 0:
-                Long l4 = (Long) obj;
-                wi wiVar = ((yl) this.e).b.b;
-                if (wiVar != null) {
-                    wiVar.I1 = true;
+                ArrayList arrayList = (ArrayList) obj3;
+                MediaController.AlbumEntry albumEntry = (MediaController.AlbumEntry) obj;
+                MediaController.AlbumEntry albumEntry2 = (MediaController.AlbumEntry) obj2;
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                int i11 = albumEntry.bucketId;
+                if (i11 != 0 || albumEntry2.bucketId == 0) {
+                    if ((i11 != 0 && albumEntry2.bucketId == 0) || (indexOf = arrayList.indexOf(albumEntry)) > (indexOf2 = arrayList.indexOf(albumEntry2))) {
+                        return 1;
+                    }
+                    if (indexOf >= indexOf2) {
+                        return 0;
+                    }
                 }
-                wiVar.Z1.B1(7, true, this.b, this.d, 0, 0L, wiVar.s1(), this.c, l4.longValue());
-                HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
-                hashMap.clear();
-                ChatAttachAlertPhotoLayout.r1.clear();
-                ChatAttachAlertPhotoLayout.t1.clear();
-                hashMap.clear();
-                PhotoViewer.t1();
-                PhotoViewer.t1().G0(PhotoViewer.t1().P, false);
-                PhotoViewer.t1().u2 = true;
-                break;
+                return -1;
             default:
-                vl vlVar = (vl) this.e;
-                Long l10 = (Long) obj;
-                PhotoViewer.t1();
-                PhotoViewer.t1().O = false;
-                PhotoViewer.t1().u2 = false;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = vlVar.c;
-                wi wiVar2 = chatAttachAlertPhotoLayout.b;
-                wiVar2.s2 = true;
-                wiVar2.I1 = true;
-                chatAttachAlertPhotoLayout.a0(false);
-                ui uiVar = wiVar2.Z1;
-                boolean z10 = this.b;
-                uiVar.B1(z10 ? 4 : 8, true, this.c, this.d, 0, 0L, wiVar2.s1(), z10, l10.longValue());
-                ChatAttachAlertPhotoLayout.r1.clear();
-                ChatAttachAlertPhotoLayout.t1.clear();
-                ChatAttachAlertPhotoLayout.s1.clear();
-                chatAttachAlertPhotoLayout.G.l();
-                chatAttachAlertPhotoLayout.v.l();
-                wiVar2.dismiss(true);
-                PhotoViewer.t1();
-                PhotoViewer.t1().G0(PhotoViewer.t1().P, false);
-                PhotoViewer.t1().u2 = true;
-                break;
+                mz mzVar = ((zw) obj3).G0;
+                int indexOf3 = mzVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj);
+                int indexOf4 = mzVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj2);
+                if (indexOf3 < 0 || indexOf4 < 0) {
+                    return 0;
+                }
+                return indexOf3 - indexOf4;
         }
-    }
-
-    public /* synthetic */ ql(yl ylVar, boolean z10, int i10, boolean z11) {
-        this.e = ylVar;
-        this.b = z10;
-        this.d = i10;
-        this.c = z11;
     }
 }

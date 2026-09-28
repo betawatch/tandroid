@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class c4 {
     public float a;
@@ -48,7 +48,7 @@ public final class c4 {
             float f11 = (this.a * 0.4f) + 0.8f;
             if (this.e || this.d != 0.0f) {
                 canvas.save();
-                float interpolation = rr.f.getInterpolation(this.d) * f11;
+                float interpolation = sr.f.getInterpolation(this.d) * f11;
                 canvas.scale(interpolation, interpolation, f7, f10);
                 boolean z10 = this.h;
                 org.telegram.ui.Components.ba baVar = this.f;
@@ -94,7 +94,7 @@ public final class c4 {
 
     public final float b() {
         float f7 = (this.a * 0.2f) + 0.9f;
-        float interpolation = rr.g.getInterpolation(this.d);
+        float interpolation = sr.g.getInterpolation(this.d);
         return com.google.android.gms.internal.vision.e2.z(1.0f, interpolation, 1.0f, f7 * interpolation);
     }
 

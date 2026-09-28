@@ -13,16 +13,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class pk0 extends org.telegram.ui.Components.vl0 {
+public final class pk0 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ sk0 c;
 
     public pk0(sk0 sk0Var) {
         this.c = sk0Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2;
@@ -132,9 +132,9 @@ public final class pk0 extends org.telegram.ui.Components.vl0 {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         drawable.setColorFilter(new PorterDuffColorFilter(v02, mode));
         drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.k7, d6Var), mode));
-        org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(drawable, drawable2);
+        org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(drawable, drawable2);
         g2Var.a.l(LocaleController.getString(R.string.UploadSound), false);
-        g2Var.b.setImageDrawable(qqVar);
+        g2Var.b.setImageDrawable(rqVar);
         g2Var.c = false;
     }
 
@@ -151,15 +151,15 @@ public final class pk0 extends org.telegram.ui.Components.vl0 {
             radioButton.b(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.g7, d6Var), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h7, d6Var));
             boolean z10 = LocaleController.isRTL;
             rk0Var.addView(radioButton, w7.y5.d(22, 22.0f, (z10 ? 5 : 3) | 16, z10 ? 0 : 20, 0.0f, z10 ? 20 : 0, 0.0f));
-            org.telegram.ui.Components.op opVar = new org.telegram.ui.Components.op(context, 24, d6Var);
-            rk0Var.c = opVar;
+            org.telegram.ui.Components.pp ppVar = new org.telegram.ui.Components.pp(context, 24, d6Var);
+            rk0Var.c = ppVar;
             int i11 = org.telegram.ui.ActionBar.h6.d6;
-            opVar.b(-1, i11, org.telegram.ui.ActionBar.h6.k7);
-            opVar.setDrawUnchecked(false);
-            opVar.setDrawBackgroundAsArc(3);
+            ppVar.b(-1, i11, org.telegram.ui.ActionBar.h6.k7);
+            ppVar.setDrawUnchecked(false);
+            ppVar.setDrawBackgroundAsArc(3);
             boolean z11 = LocaleController.isRTL;
-            rk0Var.addView(opVar, w7.y5.d(26, 26.0f, (z11 ? 5 : 3) | 16, z11 ? 0 : 18, 0.0f, z11 ? 18 : 0, 0.0f));
-            opVar.a(true, false);
+            rk0Var.addView(ppVar, w7.y5.d(26, 26.0f, (z11 ? 5 : 3) | 16, z11 ? 0 : 18, 0.0f, z11 ? 18 : 0, 0.0f));
+            ppVar.a(true, false);
             TextView textView = new TextView(context);
             rk0Var.a = textView;
             org.telegram.messenger.ok.n(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);

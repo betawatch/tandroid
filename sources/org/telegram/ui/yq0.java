@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yq0 extends org.telegram.ui.ActionBar.m2 {
-    public static final org.telegram.ui.Components.ur0 y = new org.telegram.ui.Components.ur0(4);
+    public static final org.telegram.ui.Components.wr0 y = new org.telegram.ui.Components.wr0(4);
     public final tq0 a;
     public final tq0 b;
     public org.telegram.ui.ActionBar.u0 c;
-    public org.telegram.ui.Components.ku d;
+    public org.telegram.ui.Components.lu d;
     public boolean e;
     public final Paint f;
     public ScrollSlidingTextTabStrip h;
@@ -116,9 +116,9 @@ public final class yq0 extends org.telegram.ui.ActionBar.m2 {
         vq0Var.setWillNotDraw(false);
         tq0 tq0Var = this.a;
         tq0Var.setParentFragment(this);
-        org.telegram.ui.Components.ku kuVar = tq0Var.d0;
-        this.d = kuVar;
-        kuVar.setSizeNotifierLayout(vq0Var);
+        org.telegram.ui.Components.lu luVar = tq0Var.d0;
+        this.d = luVar;
+        luVar.setSizeNotifierLayout(vq0Var);
         int i13 = 0;
         while (i13 < 4) {
             View view = i13 != 0 ? i13 != 1 ? i13 != 2 ? tq0Var.c0 : tq0Var.b0 : tq0Var.a0 : tq0Var.Z;
@@ -129,11 +129,11 @@ public final class yq0 extends org.telegram.ui.ActionBar.m2 {
         k0 k0Var = tq0Var.a0;
         n50 n50Var = tq0Var.b0;
         View view2 = tq0Var.c0;
-        org.telegram.ui.Components.ku kuVar2 = tq0Var.d0;
+        org.telegram.ui.Components.lu luVar2 = tq0Var.d0;
         tq0 tq0Var2 = this.b;
         tq0Var2.Z = frameLayout;
         tq0Var2.a0 = k0Var;
-        tq0Var2.d0 = kuVar2;
+        tq0Var2.d0 = luVar2;
         tq0Var2.b0 = n50Var;
         tq0Var2.c0 = view2;
         tq0Var2.q0 = false;

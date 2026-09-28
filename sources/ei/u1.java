@@ -37,11 +37,11 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.h21;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.jd0;
-import org.telegram.ui.Components.mc0;
-import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.j21;
+import org.telegram.ui.Components.ld0;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.ky;
@@ -49,7 +49,7 @@ import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements ky, org.telegram.ui.ActionBar.z1, ResultCallback {
     public final /* synthetic */ int a = 1;
@@ -159,19 +159,19 @@ public final /* synthetic */ class u1 implements ky, org.telegram.ui.ActionBar.z
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        h21 h21Var = (h21) this.d;
-        mp mpVar = (mp) this.e;
+        j21 j21Var = (j21) this.d;
+        np npVar = (np) this.e;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.c) {
             return;
         }
-        Drawable drawable = mpVar.b;
-        if (drawable instanceof mc0) {
-            mc0 mc0Var = (mc0) drawable;
-            mc0Var.t(h21.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
-            mc0Var.u(h21Var.L);
+        Drawable drawable = npVar.b;
+        if (drawable instanceof oc0) {
+            oc0 oc0Var = (oc0) drawable;
+            oc0Var.t(j21.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
+            oc0Var.u(j21Var.L);
         }
-        h21Var.invalidate();
+        j21Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -281,10 +281,10 @@ public final /* synthetic */ class u1 implements ky, org.telegram.ui.ActionBar.z
         e.addView(textView2, y5.k(24.0f, 0.0f, 24.0f, 22.0f, -1, -2));
         final int i15 = MessagesController.getInstance(i13).botVerificationDescriptionLengthLimit;
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(activity);
-        final jd0 jd0Var = new jd0(activity, null);
-        jd0Var.setForceForceUseCenter(true);
-        jd0Var.setText(LocaleController.getString(R.string.BotVerifyDescription));
-        jd0Var.setLeftPadding(AndroidUtilities.dp(2.0f));
+        final ld0 ld0Var = new ld0(activity, null);
+        ld0Var.setForceForceUseCenter(true);
+        ld0Var.setText(LocaleController.getString(R.string.BotVerifyDescription));
+        ld0Var.setLeftPadding(AndroidUtilities.dp(2.0f));
         editTextBoldCursor.setTextColor(h6.w0(null, i14, false));
         editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
         editTextBoldCursor.setCursorWidth(1.5f);
@@ -298,12 +298,12 @@ public final /* synthetic */ class u1 implements ky, org.telegram.ui.ActionBar.z
         editTextBoldCursor.setHighlightColor(h6.w0(null, h6.uf, false));
         editTextBoldCursor.setHandlesColor(h6.w0(null, h6.vf, false));
         editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
-        editTextBoldCursor.setOnFocusChangeListener(new w1(jd0Var, editTextBoldCursor, i16));
-        jd0Var.e(editTextBoldCursor);
-        jd0Var.addView(editTextBoldCursor, y5.d(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
-        e.addView(jd0Var, y5.n(-1, -2));
+        editTextBoldCursor.setOnFocusChangeListener(new w1(ld0Var, editTextBoldCursor, i16));
+        ld0Var.e(editTextBoldCursor);
+        ld0Var.addView(editTextBoldCursor, y5.d(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
+        e.addView(ld0Var, y5.n(-1, -2));
         editTextBoldCursor.addTextChangedListener(new org.telegram.ui.Cells.i3());
-        editTextBoldCursor.addTextChangedListener(new z1(editTextBoldCursor, i15, jd0Var));
+        editTextBoldCursor.addTextChangedListener(new z1(editTextBoldCursor, i15, ld0Var));
         if (!TextUtils.isEmpty(botverifiersettings.custom_description)) {
             editTextBoldCursor.setText(botverifiersettings.custom_description);
             if (!botverifiersettings.can_modify_custom_description) {
@@ -312,7 +312,7 @@ public final /* synthetic */ class u1 implements ky, org.telegram.ui.ActionBar.z
                 editTextBoldCursor.setFocusableInTouchMode(false);
             }
         } else if (!botverifiersettings.can_modify_custom_description) {
-            jd0Var.setVisibility(8);
+            ld0Var.setVisibility(8);
         }
         if (botverifiersettings.can_modify_custom_description) {
             TextView textView3 = new TextView(activity);
@@ -340,9 +340,9 @@ public final /* synthetic */ class u1 implements ky, org.telegram.ui.ActionBar.z
                 boolean z12 = botverifiersettings2.can_modify_custom_description;
                 EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
                 if (z12 && editTextBoldCursor2.getText().length() > i15) {
-                    jd0 jd0Var2 = jd0Var;
-                    jd0Var2.a(1.0f);
-                    AndroidUtilities.shakeViewSpring(jd0Var2, -6.0f);
+                    ld0 ld0Var2 = ld0Var;
+                    ld0Var2.a(1.0f);
+                    AndroidUtilities.shakeViewSpring(ld0Var2, -6.0f);
                     return;
                 }
                 dVar2.setLoading(true);
@@ -381,10 +381,10 @@ public final /* synthetic */ class u1 implements ky, org.telegram.ui.ActionBar.z
         org.telegram.tgnet.l.b(this, tL_error);
     }
 
-    public /* synthetic */ u1(h21 h21Var, long j3, mp mpVar, int i10) {
-        this.d = h21Var;
+    public /* synthetic */ u1(j21 j21Var, long j3, np npVar, int i10) {
+        this.d = j21Var;
         this.c = j3;
-        this.e = mpVar;
+        this.e = npVar;
         this.b = i10;
     }
 

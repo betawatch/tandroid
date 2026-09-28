@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.n30;
+import org.telegram.ui.Components.p30;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class ba extends ViewGroup {
     public final /* synthetic */ int a = 0;
@@ -49,7 +49,7 @@ public final class ba extends ViewGroup {
         arrayList3.addAll(arrayList);
         arrayList.clear();
         for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            ((n30) arrayList2.get(i11)).setOnClickListener(null);
+            ((p30) arrayList2.get(i11)).setOnClickListener(null);
         }
         c();
         this.c = false;
@@ -62,11 +62,11 @@ public final class ba extends ViewGroup {
         arrayList5.clear();
         this.e.clear();
         for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-            n30 n30Var = (n30) arrayList2.get(i12);
-            arrayList5.add(n30Var);
-            arrayList4.add(ObjectAnimator.ofFloat(n30Var, (Property<n30, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList4.add(ObjectAnimator.ofFloat(n30Var, (Property<n30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList4.add(ObjectAnimator.ofFloat(n30Var, (Property<n30, Float>) View.ALPHA, 1.0f, 0.0f));
+            p30 p30Var = (p30) arrayList2.get(i12);
+            arrayList5.add(p30Var);
+            arrayList4.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.SCALE_X, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.SCALE_Y, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.ALPHA, 1.0f, 0.0f));
         }
         requestLayout();
     }
@@ -82,7 +82,7 @@ public final class ba extends ViewGroup {
         arrayList3.addAll(arrayList);
         arrayList.clear();
         for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            ((n30) arrayList2.get(i11)).setOnClickListener(null);
+            ((p30) arrayList2.get(i11)).setOnClickListener(null);
         }
         c();
         if (z10) {
@@ -96,11 +96,11 @@ public final class ba extends ViewGroup {
             arrayList5.clear();
             this.e.clear();
             for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                n30 n30Var = (n30) arrayList2.get(i12);
-                arrayList5.add(n30Var);
-                arrayList4.add(ObjectAnimator.ofFloat(n30Var, (Property<n30, Float>) View.SCALE_X, 1.0f, 0.01f));
-                arrayList4.add(ObjectAnimator.ofFloat(n30Var, (Property<n30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-                arrayList4.add(ObjectAnimator.ofFloat(n30Var, (Property<n30, Float>) View.ALPHA, 1.0f, 0.0f));
+                p30 p30Var = (p30) arrayList2.get(i12);
+                arrayList5.add(p30Var);
+                arrayList4.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.SCALE_X, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.SCALE_Y, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(p30Var, (Property<p30, Float>) View.ALPHA, 1.0f, 0.0f));
             }
         } else {
             for (int i13 = 0; i13 < arrayList2.size(); i13++) {
@@ -253,7 +253,7 @@ public final class ba extends ViewGroup {
                     m9 m9Var2 = m9Var;
                     View childAt = getChildAt(i26);
                     int i29 = childCount;
-                    if (childAt instanceof n30) {
+                    if (childAt instanceof p30) {
                         i14 = i26;
                         int i30 = i27;
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
@@ -417,7 +417,7 @@ public final class ba extends ViewGroup {
                 int i36 = 0;
                 while (i34 < childCount2) {
                     View childAt2 = getChildAt(i34);
-                    if (childAt2 instanceof n30) {
+                    if (childAt2 instanceof p30) {
                         i18 = childCount2;
                         childAt2.measure(View.MeasureSpec.makeMeasureSpec(size2, i25), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
                         boolean contains2 = arrayList2.contains(childAt2);

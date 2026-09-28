@@ -26,13 +26,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class m3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -64,10 +64,10 @@ public final class m3 extends FrameLayout {
         this.a = new Paint(1);
         this.b = true;
         this.c = false;
-        rr rrVar = rr.h;
-        this.h = new org.telegram.ui.Components.h5(this, 200L, rrVar, 0);
-        this.r = new org.telegram.ui.Components.h5(this, 200L, rrVar, 0);
-        this.v = new org.telegram.ui.Components.e6(this, 0L, 200L, rrVar);
+        sr srVar = sr.h;
+        this.h = new org.telegram.ui.Components.h5(this, 200L, srVar, 0);
+        this.r = new org.telegram.ui.Components.h5(this, 200L, srVar, 0);
+        this.v = new org.telegram.ui.Components.e6(this, 0L, 200L, srVar);
         this.w = UserConfig.selectedAccount;
         this.E = new RectF();
         this.I = new HashSet();
@@ -491,7 +491,7 @@ public final class m3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     j3Var.u = null;
                 } else {
-                    j3Var.u = new t01(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    j3Var.u = new v01(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;

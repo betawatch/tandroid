@@ -14,15 +14,15 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class g9 extends FrameLayout {
     public q5 a;
     public q5 b;
     public w9 c;
     public w9 d;
-    public p20 e;
-    public p20 f;
+    public r20 e;
+    public r20 f;
     public final TextView h;
     public final TLRPC.TL_emojiList n;
     public final int r;
@@ -39,7 +39,7 @@ public abstract class g9 extends FrameLayout {
         this.s = 0;
         this.v = 0;
         this.w = 1.0f;
-        this.y = new f9((hm) this);
+        this.y = new f9((im) this);
         TLRPC.TL_emojiList a2 = a(i10);
         this.n = a2;
         this.c = new w9(context);
@@ -57,9 +57,9 @@ public abstract class g9 extends FrameLayout {
         int i12 = iArr[1];
         int i13 = iArr[2];
         int i14 = iArr[3];
-        p20 p20Var = new p20();
-        this.e = p20Var;
-        p20Var.d(i11, i12, i13, i14);
+        r20 r20Var = new r20();
+        this.e = r20Var;
+        r20Var.d(i11, i12, i13, i14);
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextSize(1, 12.0f);
@@ -120,13 +120,13 @@ public abstract class g9 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        p20 p20Var = this.e;
-        if (p20Var != null) {
-            p20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        r20 r20Var = this.e;
+        if (r20Var != null) {
+            r20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         }
-        p20 p20Var2 = this.f;
-        if (p20Var2 != null) {
-            p20Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        r20 r20Var2 = this.f;
+        if (r20Var2 != null) {
+            r20Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         }
         float f7 = this.w;
         if (f7 == 1.0f) {
@@ -137,7 +137,7 @@ public abstract class g9 extends FrameLayout {
             this.c.setScaleY(1.0f);
             this.d.setAlpha(0.0f);
         } else {
-            float interpolation = rr.f.getInterpolation(f7);
+            float interpolation = sr.f.getInterpolation(f7);
             this.e.c.setAlpha(255);
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
             this.f.c.setAlpha((int) (255.0f * interpolation));

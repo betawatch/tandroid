@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final class k0 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.Components.v81 v81Var;
+        org.telegram.ui.Components.x81 x81Var;
         org.telegram.ui.Cells.u1 u1Var;
         ImageReceiver imageReceiver;
         switch (this.a) {
@@ -73,8 +73,8 @@ public final class k0 extends FrameLayout {
             case 6:
                 super.dispatchDraw(canvas);
                 vu vuVar = (vu) this.b;
-                if (vuVar.getParentLayout() != null && (v81Var = vuVar.b) != null) {
-                    float measuredHeight = v81Var.getMeasuredHeight();
+                if (vuVar.getParentLayout() != null && (x81Var = vuVar.b) != null) {
+                    float measuredHeight = x81Var.getMeasuredHeight();
                     canvas.drawLine(0.0f, measuredHeight, getWidth(), measuredHeight, org.telegram.ui.ActionBar.h6.k0);
                     break;
                 }
@@ -507,9 +507,9 @@ public final class k0 extends FrameLayout {
                 z60 z60Var = (z60) this.b;
                 z60Var.g0();
                 z60Var.h0();
-                org.telegram.ui.Components.c20 c20Var = z60Var.f;
+                org.telegram.ui.Components.e20 e20Var = z60Var.f;
                 le.f fVar = z60Var.b;
-                c20Var.setTranslationY(fVar.e);
+                e20Var.setTranslationY(fVar.e);
                 z60Var.i0();
                 z60Var.e.setTranslationY(AndroidUtilities.dp(48.0f) + fVar.e);
                 break;
@@ -534,13 +534,13 @@ public final class k0 extends FrameLayout {
             case 12:
                 super.onLayout(z10, i10, i11, i12, i13);
                 qg0 qg0Var = (qg0) this.b;
-                for (org.telegram.ui.Components.fw0 fw0Var : qg0Var.b) {
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) fw0Var.getLayoutParams();
+                for (org.telegram.ui.Components.hw0 hw0Var : qg0Var.b) {
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) hw0Var.getLayoutParams();
                     int dp2 = AndroidUtilities.dp(16.0f) + getHeight();
-                    if (!fw0Var.a() && qg0Var.c.getVisibility() == 0) {
+                    if (!hw0Var.a() && qg0Var.c.getVisibility() == 0) {
                         dp2 += AndroidUtilities.dp(230.0f);
                     }
-                    fw0Var.layout(marginLayoutParams.leftMargin, marginLayoutParams.topMargin, getWidth() - marginLayoutParams.rightMargin, dp2);
+                    hw0Var.layout(marginLayoutParams.leftMargin, marginLayoutParams.topMargin, getWidth() - marginLayoutParams.rightMargin, dp2);
                 }
                 break;
             case 13:
@@ -681,13 +681,13 @@ public final class k0 extends FrameLayout {
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
                 qg0 qg0Var = (qg0) this.b;
-                for (org.telegram.ui.Components.fw0 fw0Var : qg0Var.b) {
-                    ViewGroup.MarginLayoutParams marginLayoutParams7 = (ViewGroup.MarginLayoutParams) fw0Var.getLayoutParams();
+                for (org.telegram.ui.Components.hw0 hw0Var : qg0Var.b) {
+                    ViewGroup.MarginLayoutParams marginLayoutParams7 = (ViewGroup.MarginLayoutParams) hw0Var.getLayoutParams();
                     int dp = AndroidUtilities.dp(16.0f) + (measuredHeight - marginLayoutParams7.topMargin);
-                    if (!fw0Var.a() && qg0Var.c.getVisibility() == 0) {
+                    if (!hw0Var.a() && qg0Var.c.getVisibility() == 0) {
                         dp += AndroidUtilities.dp(230.0f);
                     }
-                    fw0Var.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - marginLayoutParams7.rightMargin) - marginLayoutParams7.leftMargin, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
+                    hw0Var.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - marginLayoutParams7.rightMargin) - marginLayoutParams7.leftMargin, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
                 }
                 break;
             case 15:

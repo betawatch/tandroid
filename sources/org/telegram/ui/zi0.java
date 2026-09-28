@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class zi0 extends org.telegram.ui.Components.fo {
+public final class zi0 extends org.telegram.ui.Components.go {
     public final /* synthetic */ dj0 v0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class zi0 extends org.telegram.ui.Components.fo {
         this.v0 = dj0Var;
     }
 
-    @Override // org.telegram.ui.Components.fo, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.go, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         dj0 dj0Var = this.v0;
@@ -35,13 +35,13 @@ public final class zi0 extends org.telegram.ui.Components.fo {
         }
     }
 
-    @Override // org.telegram.ui.Components.fo, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.go, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.v0.W.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.fo, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.go, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.v0.W.onDetachedFromWindow();

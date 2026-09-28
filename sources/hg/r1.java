@@ -8,12 +8,12 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b5;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.mz;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class r1 extends aw0 {
+public final class r1 extends cw0 {
     public final /* synthetic */ int w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -22,7 +22,7 @@ public final class r1 extends aw0 {
         this.w0 = i10;
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public boolean P() {
         switch (this.w0) {
             case 2:
@@ -41,8 +41,8 @@ public final class r1 extends aw0 {
     public void addView(View view) {
         switch (this.w0) {
             case 4:
-                if (view instanceof lz) {
-                    ViewGroup.LayoutParams layoutParams = ((lz) view).getLayoutParams();
+                if (view instanceof mz) {
+                    ViewGroup.LayoutParams layoutParams = ((mz) view).getLayoutParams();
                     if (layoutParams == null) {
                         layoutParams = new FrameLayout.LayoutParams(-1, -2);
                     }
@@ -62,7 +62,7 @@ public final class r1 extends aw0 {
     /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0090  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -111,7 +111,7 @@ public final class r1 extends aw0 {
                                     i18 = layoutParams.bottomMargin;
                                 }
                                 i19 = i20 + paddingTop;
-                                if (childAt instanceof lz) {
+                                if (childAt instanceof mz) {
                                     i19 = AndroidUtilities.isTablet() ? i21 - measuredHeight : (i21 + R) - measuredHeight;
                                 }
                                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
@@ -120,7 +120,7 @@ public final class r1 extends aw0 {
                                 i18 = layoutParams.bottomMargin;
                             }
                             i19 = i17 - i18;
-                            if (childAt instanceof lz) {
+                            if (childAt instanceof mz) {
                             }
                             childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
                         } else {
@@ -131,7 +131,7 @@ public final class r1 extends aw0 {
                         if (i24 == 16) {
                         }
                         i19 = i17 - i18;
-                        if (childAt instanceof lz) {
+                        if (childAt instanceof mz) {
                         }
                         childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
                     }

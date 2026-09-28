@@ -44,16 +44,16 @@ import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.ug0;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.wg0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.j20;
 import org.telegram.ui.ui1;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class z0 extends bb {
     public final ci.d X;
@@ -102,8 +102,8 @@ public final class z0 extends bb {
         this.q0 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
         ((ViewGroup) this.e.getParent()).removeView(this.e);
         ViewGroup viewGroup = this.containerView;
-        rr rrVar = rr.h;
-        this.m0 = new e6(viewGroup, 0L, 350L, rrVar);
+        sr srVar = sr.h;
+        this.m0 = new e6(viewGroup, 0L, 350L, srVar);
         xg.c cVar = new xg.c(getContext(), this.resourcesProvider);
         this.a0 = cVar;
         cVar.setOnCloseClickListener(new t0(this, 7));
@@ -123,7 +123,7 @@ public final class z0 extends bb {
         ViewGroup viewGroup3 = this.containerView;
         int i12 = this.backgroundPaddingLeft;
         viewGroup3.addView(y0Var, y5.f(-2.0f, 55, i12, 0, i12, 0));
-        j20 j20Var = new j20(getContext(), this.resourcesProvider, (wl0) null);
+        j20 j20Var = new j20(getContext(), this.resourcesProvider, (yl0) null);
         j20Var.setClickable(true);
         j20Var.setOrientation(1);
         j20Var.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
@@ -136,16 +136,16 @@ public final class z0 extends bb {
         int i13 = this.backgroundPaddingLeft;
         viewGroup4.addView(j20Var, y5.f(-2.0f, 87, i13, 0, i13, 0));
         ug.h hVar = this.o0;
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         hVar.n = arrayList;
-        hVar.f = wl0Var;
+        hVar.f = yl0Var;
         int i14 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
-        this.d.j(new ug0(this, 12));
+        yl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
+        this.d.j(new wg0(this, 12));
         this.d.setOnItemClickListener(new r5.d(this, 9));
         s4.j jVar = new s4.j();
         jVar.n(350L);
-        jVar.o(rrVar);
+        jVar.o(srVar);
         jVar.C = false;
         jVar.m = false;
         this.d.setItemAnimator(jVar);
@@ -490,15 +490,15 @@ public final class z0 extends bb {
     }
 
     public final void X(boolean z10) {
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         if (!z10) {
-            wl0Var.u0(0);
+            yl0Var.u0(0);
             return;
         }
         ji.o oVar = new ji.o(getContext(), 2, 0.6f);
         oVar.a = 1;
         oVar.p = AndroidUtilities.dp(38.0f);
-        wl0Var.getLayoutManager().w0(oVar);
+        yl0Var.getLayoutManager().w0(oVar);
     }
 
     public final void Y() {
@@ -627,12 +627,12 @@ public final class z0 extends bb {
         a0(z10, z11);
         int i10 = 0;
         while (true) {
-            wl0 wl0Var = this.d;
-            if (i10 >= wl0Var.getChildCount()) {
+            yl0 yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 Z(z10);
                 return;
             }
-            View childAt = wl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if (childAt instanceof xg.l) {
                 int R = RecyclerView.R(childAt) - 1;
                 if (R >= 0) {
@@ -699,7 +699,7 @@ public final class z0 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         ug.h hVar = new ug.h(getContext(), this.resourcesProvider, true);
         this.o0 = hVar;
         return hVar;

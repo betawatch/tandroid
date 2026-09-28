@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class x11 extends FrameLayout {
     public final TextView a;
@@ -25,7 +25,7 @@ public final class x11 extends FrameLayout {
     public final ImageView c;
     public SharedConfig.ProxyInfo d;
     public Drawable e;
-    public final org.telegram.ui.Components.op f;
+    public final org.telegram.ui.Components.pp f;
     public boolean h;
     public boolean n;
     public int r;
@@ -65,12 +65,12 @@ public final class x11 extends FrameLayout {
         imageView.setContentDescription(LocaleController.getString(R.string.Edit));
         addView(imageView, w7.y5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 48, 8.0f, 8.0f, 8.0f, 0.0f));
         imageView.setOnClickListener(new f60(this, 26));
-        org.telegram.ui.Components.op opVar = new org.telegram.ui.Components.op(context, 21, null);
-        this.f = opVar;
-        opVar.b(org.telegram.ui.ActionBar.h6.i7, org.telegram.ui.ActionBar.h6.g7, org.telegram.ui.ActionBar.h6.k7);
-        opVar.setDrawBackgroundAsArc(14);
-        opVar.setVisibility(8);
-        addView(opVar, w7.y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 8.0f, 0.0f));
+        org.telegram.ui.Components.pp ppVar = new org.telegram.ui.Components.pp(context, 21, null);
+        this.f = ppVar;
+        ppVar.b(org.telegram.ui.ActionBar.h6.i7, org.telegram.ui.ActionBar.h6.g7, org.telegram.ui.ActionBar.h6.k7);
+        ppVar.setDrawBackgroundAsArc(14);
+        ppVar.setVisibility(8);
+        addView(ppVar, w7.y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 8.0f, 0.0f));
         setWillNotDraw(false);
     }
 
@@ -82,7 +82,7 @@ public final class x11 extends FrameLayout {
         float dp = LocaleController.isRTL ? -AndroidUtilities.dp(32.0f) : AndroidUtilities.dp(32.0f);
         if (z11) {
             ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
-            duration.setInterpolator(org.telegram.ui.Components.rr.f);
+            duration.setInterpolator(org.telegram.ui.Components.sr.f);
             duration.addUpdateListener(new ig(this, dp, 4));
             duration.addListener(new c70(6, this, z10));
             duration.start();
@@ -101,16 +101,16 @@ public final class x11 extends FrameLayout {
             dp2 = -dp2;
         }
         float f7 = dp2 + dp;
-        org.telegram.ui.Components.op opVar = this.f;
-        opVar.setTranslationX(f7);
+        org.telegram.ui.Components.pp ppVar = this.f;
+        ppVar.setTranslationX(f7);
         imageView.setVisibility(z10 ? 8 : 0);
         imageView.setAlpha(1.0f);
         imageView.setScaleX(1.0f);
         imageView.setScaleY(1.0f);
-        opVar.setVisibility(z10 ? 0 : 8);
-        opVar.setAlpha(1.0f);
-        opVar.setScaleX(1.0f);
-        opVar.setScaleY(1.0f);
+        ppVar.setVisibility(z10 ? 0 : 8);
+        ppVar.setAlpha(1.0f);
+        ppVar.setScaleX(1.0f);
+        ppVar.setScaleY(1.0f);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x00e0  */

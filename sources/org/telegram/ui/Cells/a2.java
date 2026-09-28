@@ -25,10 +25,10 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout {
     public final int E;
@@ -45,7 +45,7 @@ public final class a2 extends FrameLayout {
     public final TextView f;
     public final View h;
     public final CheckBoxSquare n;
-    public final op r;
+    public final pp r;
     public View s;
     public final z1 v;
     public final org.telegram.ui.Components.w9 w;
@@ -62,14 +62,14 @@ public final class a2 extends FrameLayout {
     }
 
     public final boolean b() {
-        op opVar = this.r;
-        return opVar != null ? opVar.a.q : this.n.h;
+        pp ppVar = this.r;
+        return ppVar != null ? ppVar.a.q : this.n.h;
     }
 
     public final void c(boolean z10, boolean z11) {
-        op opVar = this.r;
-        if (opVar != null) {
-            opVar.a(z10, z11);
+        pp ppVar = this.r;
+        if (ppVar != null) {
+            ppVar.a(z10, z11);
         } else {
             this.n.a(z10, z11);
         }
@@ -115,9 +115,9 @@ public final class a2 extends FrameLayout {
         } else {
             this.c.setText(charSequence);
         }
-        op opVar = this.r;
-        if (opVar != null) {
-            opVar.a(z10, z12);
+        pp ppVar = this.r;
+        if (ppVar != null) {
+            ppVar.a(z10, z12);
         } else {
             this.n.a(z10, z12);
         }
@@ -159,7 +159,7 @@ public final class a2 extends FrameLayout {
         return this.d;
     }
 
-    public op getCheckBoxRound() {
+    public pp getCheckBoxRound() {
         return this.r;
     }
 
@@ -297,7 +297,7 @@ public final class a2 extends FrameLayout {
         }
         f();
         this.s.animate().cancel();
-        this.s.animate().rotation(bool.booleanValue() ? 0.0f : 180.0f).setDuration(340L).setInterpolator(rr.h).start();
+        this.s.animate().rotation(bool.booleanValue() ? 0.0f : 180.0f).setDuration(340L).setInterpolator(sr.h).start();
     }
 
     @Override // android.view.View
@@ -480,16 +480,16 @@ public final class a2 extends FrameLayout {
         float f7 = i11;
         addView(textView, w7.y5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f7, 0.0f, f7, 0.0f));
         if (a()) {
-            op opVar = new op(context, 21, d6Var);
-            this.r = opVar;
-            this.h = opVar;
-            opVar.setDrawUnchecked(true);
-            opVar.a(true, false);
-            opVar.setDrawBackgroundAsArc(10);
+            pp ppVar = new pp(context, 21, d6Var);
+            this.r = ppVar;
+            this.h = ppVar;
+            ppVar.setDrawUnchecked(true);
+            ppVar.a(true, false);
+            ppVar.setDrawBackgroundAsArc(10);
             this.E = 21;
             float f10 = 21;
             boolean z16 = LocaleController.isRTL;
-            addView(opVar, w7.y5.d(21, f10, (z16 ? 5 : 3) | 48, z16 ? 0 : i11, 16.0f, z16 ? i11 : 0, 0.0f));
+            addView(ppVar, w7.y5.d(21, f10, (z16 ? 5 : 3) | 48, z16 ? 0 : i11, 16.0f, z16 ? i11 : 0, 0.0f));
         } else {
             if (i10 != 1 && i10 != 5) {
                 z11 = false;

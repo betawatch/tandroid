@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class le implements Runnable {
     public final /* synthetic */ int a;
@@ -195,15 +195,15 @@ public final /* synthetic */ class le implements Runnable {
                 break;
             case 24:
                 if (!wnVar.l3 && wnVar.x0 != null && wnVar.getParentActivity() != null && wnVar.fragmentView != null) {
-                    org.telegram.ui.Components.rp rpVar = wnVar.v2;
-                    if (rpVar == null || rpVar.getTag() == null) {
+                    org.telegram.ui.Components.sp spVar = wnVar.v2;
+                    if (spVar == null || spVar.getTag() == null) {
                         if (wnVar.v2 == null) {
                             pm pmVar = wnVar.X0;
                             int indexOfChild = pmVar.indexOfChild(wnVar.S);
                             if (indexOfChild != -1) {
-                                org.telegram.ui.Components.rp rpVar2 = new org.telegram.ui.Components.rp(wnVar.getParentActivity(), wnVar.ea);
-                                wnVar.v2 = rpVar2;
-                                pmVar.addView(rpVar2, indexOfChild + 1, w7.y5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
+                                org.telegram.ui.Components.sp spVar2 = new org.telegram.ui.Components.sp(wnVar.getParentActivity(), wnVar.ea);
+                                wnVar.v2 = spVar2;
+                                pmVar.addView(spVar2, indexOfChild + 1, w7.y5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
                                 wnVar.v2.setAlpha(0.0f);
                                 wnVar.v2.setVisibility(4);
                             }
@@ -213,70 +213,70 @@ public final /* synthetic */ class le implements Runnable {
                         while (i15 < childCount2) {
                             View childAt2 = wnVar.x0.getChildAt(i15);
                             if ((childAt2 instanceof org.telegram.ui.Cells.u1) && (messageObject = (u1Var = (org.telegram.ui.Cells.u1) childAt2).getMessageObject()) != null && messageObject.isOutOwner() && messageObject.isSent()) {
-                                org.telegram.ui.Components.rp rpVar3 = wnVar.v2;
-                                ImageView imageView = rpVar3.c;
-                                org.telegram.ui.Components.pg pgVar = rpVar3.e;
+                                org.telegram.ui.Components.sp spVar3 = wnVar.v2;
+                                ImageView imageView = spVar3.c;
+                                org.telegram.ui.Components.pg pgVar = spVar3.e;
                                 if (pgVar != null) {
                                     AndroidUtilities.cancelRunOnUIThread(pgVar);
-                                    rpVar3.e = null;
+                                    spVar3.e = null;
                                 }
                                 int[] iArr = new int[2];
                                 u1Var.getLocationInWindow(iArr);
                                 int i16 = iArr[c10];
-                                ((View) rpVar3.getParent()).getLocationInWindow(iArr);
+                                ((View) spVar3.getParent()).getLocationInWindow(iArr);
                                 int i17 = i16 - iArr[1];
                                 View view = (View) u1Var.getParent();
-                                rpVar3.measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
-                                if (i17 > AndroidUtilities.dp(10.0f) + rpVar3.getMeasuredHeight()) {
+                                spVar3.measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
+                                if (i17 > AndroidUtilities.dp(10.0f) + spVar3.getMeasuredHeight()) {
                                     int C = org.telegram.messenger.f0.C(6.0f, u1Var.getChecksY(), i17);
                                     int dp = AndroidUtilities.dp(5.0f) + u1Var.getChecksX();
                                     int measuredWidth = view.getMeasuredWidth();
-                                    float measuredHeight = C - rpVar3.getMeasuredHeight();
-                                    rpVar3.f = measuredHeight;
-                                    rpVar3.setTranslationY(measuredHeight);
+                                    float measuredHeight = C - spVar3.getMeasuredHeight();
+                                    spVar3.f = measuredHeight;
+                                    spVar3.setTranslationY(measuredHeight);
                                     int left = u1Var.getLeft() + dp;
                                     int dp2 = AndroidUtilities.dp(15.0f);
                                     if (left > view.getMeasuredWidth() / 2) {
-                                        int measuredWidth2 = (measuredWidth - rpVar3.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
-                                        rpVar3.setTranslationX(measuredWidth2);
+                                        int measuredWidth2 = (measuredWidth - spVar3.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
+                                        spVar3.setTranslationX(measuredWidth2);
                                         dp2 += measuredWidth2;
                                     } else {
-                                        rpVar3.setTranslationX(0.0f);
+                                        spVar3.setTranslationX(0.0f);
                                     }
                                     float left2 = ((u1Var.getLeft() + dp) - dp2) - (imageView.getMeasuredWidth() / 2);
                                     imageView.setTranslationX(left2);
                                     if (left > view.getMeasuredWidth() / 2) {
                                         if (left2 < AndroidUtilities.dp(10.0f)) {
                                             float dp3 = left2 - AndroidUtilities.dp(10.0f);
-                                            rpVar3.setTranslationX(rpVar3.getTranslationX() + dp3);
+                                            spVar3.setTranslationX(spVar3.getTranslationX() + dp3);
                                             imageView.setTranslationX(left2 - dp3);
                                         }
-                                    } else if (left2 > rpVar3.getMeasuredWidth() - AndroidUtilities.dp(24.0f)) {
-                                        float measuredWidth3 = (left2 - rpVar3.getMeasuredWidth()) + AndroidUtilities.dp(24.0f);
-                                        rpVar3.setTranslationX(measuredWidth3);
+                                    } else if (left2 > spVar3.getMeasuredWidth() - AndroidUtilities.dp(24.0f)) {
+                                        float measuredWidth3 = (left2 - spVar3.getMeasuredWidth()) + AndroidUtilities.dp(24.0f);
+                                        spVar3.setTranslationX(measuredWidth3);
                                         imageView.setTranslationX(left2 - measuredWidth3);
                                     } else if (left2 < AndroidUtilities.dp(10.0f)) {
                                         float dp4 = left2 - AndroidUtilities.dp(10.0f);
-                                        rpVar3.setTranslationX(rpVar3.getTranslationX() + dp4);
+                                        spVar3.setTranslationX(spVar3.getTranslationX() + dp4);
                                         imageView.setTranslationX(left2 - dp4);
                                     }
-                                    rpVar3.setPivotX(left2);
-                                    rpVar3.setPivotY(rpVar3.getMeasuredHeight());
-                                    AnimatorSet animatorSet = rpVar3.d;
+                                    spVar3.setPivotX(left2);
+                                    spVar3.setPivotY(spVar3.getMeasuredHeight());
+                                    AnimatorSet animatorSet = spVar3.d;
                                     if (animatorSet != null) {
                                         animatorSet.cancel();
-                                        rpVar3.d = null;
+                                        spVar3.d = null;
                                     }
-                                    rpVar3.setTag(1);
-                                    rpVar3.setVisibility(0);
+                                    spVar3.setTag(1);
+                                    spVar3.setVisibility(0);
                                     AnimatorSet animatorSet2 = new AnimatorSet();
-                                    rpVar3.d = animatorSet2;
-                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(rpVar3, (Property<org.telegram.ui.Components.rp, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(rpVar3, (Property<org.telegram.ui.Components.rp, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(rpVar3, (Property<org.telegram.ui.Components.rp, Float>) View.SCALE_Y, 0.0f, 1.0f));
-                                    rpVar3.d.addListener(new org.telegram.ui.Components.qp(rpVar3, i13));
-                                    rpVar3.d.setDuration(180L);
-                                    rpVar3.d.start();
+                                    spVar3.d = animatorSet2;
+                                    animatorSet2.playTogether(ObjectAnimator.ofFloat(spVar3, (Property<org.telegram.ui.Components.sp, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(spVar3, (Property<org.telegram.ui.Components.sp, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(spVar3, (Property<org.telegram.ui.Components.sp, Float>) View.SCALE_Y, 0.0f, 1.0f));
+                                    spVar3.d.addListener(new org.telegram.ui.Components.rp(spVar3, i13));
+                                    spVar3.d.setDuration(180L);
+                                    spVar3.d.start();
                                     while (i13 < 2) {
-                                        rpVar3.a[i13].animate().scaleX(1.04f).scaleY(1.04f).setInterpolator(org.telegram.ui.Components.rr.i).setStartDelay((i13 == 0 ? 132 : 500) + 140).setDuration(100L).setListener(new ei.v2(rpVar3, i13, 6)).start();
+                                        spVar3.a[i13].animate().scaleX(1.04f).scaleY(1.04f).setInterpolator(org.telegram.ui.Components.sr.i).setStartDelay((i13 == 0 ? 132 : 500) + 140).setDuration(100L).setListener(new ei.v2(spVar3, i13, 6)).start();
                                         i13++;
                                     }
                                     wnVar.getMessagesController().removeSuggestion(0L, "NEWCOMER_TICKS");
@@ -309,9 +309,9 @@ public final /* synthetic */ class le implements Runnable {
                 }
                 break;
             case 28:
-                org.telegram.ui.Components.ro roVar = ((org.telegram.ui.Components.ro[]) wnVar.a0.b)[0];
-                org.telegram.ui.ActionBar.h5 h5Var = roVar.d;
-                org.telegram.ui.ActionBar.h5 h5Var2 = roVar.e;
+                org.telegram.ui.Components.so soVar = ((org.telegram.ui.Components.so[]) wnVar.a0.b)[0];
+                org.telegram.ui.ActionBar.h5 h5Var = soVar.d;
+                org.telegram.ui.ActionBar.h5 h5Var2 = soVar.e;
                 wnVar.F1 = !wnVar.F1;
                 h5Var.setPivotX(0.0f);
                 h5Var2.setPivotX(0.0f);

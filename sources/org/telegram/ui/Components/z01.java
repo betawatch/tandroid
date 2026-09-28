@@ -1,54 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z01 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a11 b;
+public class z01 extends MetricAffectingSpan {
+    public final TextPaint a;
+    public final String b;
 
-    public /* synthetic */ z01(a11 a11Var, int i10) {
-        this.a = i10;
-        this.b = a11Var;
+    public z01(TextPaint textPaint, String str) {
+        this.a = textPaint;
+        this.b = str;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                a11 a11Var = this.b;
-                a11Var.getClass();
-                a11Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a11Var.invalidate();
-                break;
-            case 1:
-                a11 a11Var2 = this.b;
-                a11Var2.getClass();
-                a11Var2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a11Var2.invalidate();
-                break;
-            case 2:
-                a11 a11Var3 = this.b;
-                a11Var3.getClass();
-                a11Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a11Var3.invalidate();
-                break;
-            case 3:
-                a11 a11Var4 = this.b;
-                a11Var4.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a11Var4.s = floatValue;
-                a11Var4.w = (int) ((a11Var4.h * floatValue) + 0);
-                a11Var4.invalidate();
-                break;
-            default:
-                a11 a11Var5 = this.b;
-                a11Var5.getClass();
-                a11Var5.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a11Var5.x = a11Var5.r + ((int) Math.ceil((a11Var5.n - r1) * r5));
-                a11Var5.invalidate();
-                break;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
+        }
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
         }
     }
 }

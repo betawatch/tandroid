@@ -1,31 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class xp extends z4.g {
-    public wp w0;
+public abstract class xp extends z4.a {
+    public abstract int j();
 
-    public xp(Context context) {
-        super(context);
-        b(new vp((zh0) this));
-    }
-
-    @Override // z4.g
-    @Deprecated
-    public void setAdapter(z4.a aVar) {
-        if (!(aVar instanceof wp)) {
-            throw new IllegalArgumentException();
+    public final int k(int i10) {
+        int size = ((ai0) this).c.size();
+        int j3 = j();
+        if (i10 < j3) {
+            return ((size - (j3 * 2)) - ((j3 - i10) - 1)) - 1;
         }
-        setAdapter((wp) aVar);
-    }
-
-    public void setAdapter(wp wpVar) {
-        this.w0 = wpVar;
-        super.setAdapter((z4.a) wpVar);
-        if (wpVar != null) {
-            x(wpVar.j(), false);
-        }
+        int i11 = size - j3;
+        return i10 >= i11 ? i10 - i11 : i10 - j3;
     }
 }

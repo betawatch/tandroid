@@ -33,7 +33,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ye implements Runnable {
     public final /* synthetic */ int a;
@@ -90,16 +90,16 @@ public final /* synthetic */ class ye implements Runnable {
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj4;
                 String str = (String) obj3;
                 TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = (TLRPC.TL_messageEntityFormattedDate) obj2;
-                org.telegram.ui.Components.mm0 mm0Var = (org.telegram.ui.Components.mm0) obj;
+                org.telegram.ui.Components.om0 om0Var = (org.telegram.ui.Components.om0) obj;
                 wnVar.getClass();
-                ((org.telegram.ui.Components.y70) obj6).n0 = true;
+                ((org.telegram.ui.Components.a80) obj6).n0 = true;
                 if (!TextUtils.isEmpty(messageObject.caption)) {
                     str = u1Var.getMessageObject().caption.toString();
                 } else if (!TextUtils.isEmpty(messageObject.messageText)) {
                     str = u1Var.getMessageObject().messageText.toString();
                 }
                 AndroidUtilities.createCalendarEvent(wnVar.getParentActivity(), tL_messageEntityFormattedDate.date * 1000, str.length() > 21 ? str.substring(0, 21) + "..." : str, str, (tL_messageEntityFormattedDate.long_time || tL_messageEntityFormattedDate.short_time) ? false : true);
-                mm0Var.dismiss();
+                om0Var.dismiss();
                 break;
             case 1:
                 wn wnVar2 = (wn) obj7;
@@ -180,7 +180,7 @@ public final /* synthetic */ class ye implements Runnable {
                 String str4 = (String) obj3;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj4;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj2;
-                org.telegram.ui.Components.vn0 vn0Var = (org.telegram.ui.Components.vn0) obj;
+                org.telegram.ui.Components.xn0 xn0Var = (org.telegram.ui.Components.xn0) obj;
                 if (((c5.h) obj6).a == 0 && list != null && !list.isEmpty()) {
                     for (Purchase purchase : list) {
                         if (purchase.b().contains(str4)) {
@@ -190,12 +190,12 @@ public final /* synthetic */ class ye implements Runnable {
                             tL_dataJSON.data = purchase.a;
                             tL_inputStorePaymentAuthCode.restore = true;
                             tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentAuthCode;
-                            zf0Var.v.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new ci.hd(zf0Var, tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore, vn0Var, 8), 74);
+                            zf0Var.v.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new ci.hd(zf0Var, tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore, xn0Var, 8), 74);
                             break;
                         }
                     }
                 }
-                vn0Var.run();
+                xn0Var.run();
                 break;
             case 5:
                 pg0 pg0Var = (pg0) obj7;
@@ -438,26 +438,26 @@ public final /* synthetic */ class ye implements Runnable {
             case 12:
                 yh.s5 s5Var2 = (yh.s5) obj7;
                 List list2 = (List) obj6;
-                org.telegram.ui.Components.o80 o80Var = (org.telegram.ui.Components.o80) obj5;
+                org.telegram.ui.Components.q80 q80Var = (org.telegram.ui.Components.q80) obj5;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) obj4;
                 TL_stars.TL_starsGiftOption tL_starsGiftOption = (TL_stars.TL_starsGiftOption) obj3;
                 c5.h hVar2 = (c5.h) obj2;
                 Activity activity = (Activity) obj;
                 if (list2.isEmpty()) {
-                    AndroidUtilities.runOnUIThread(new yh.l4(o80Var, i18));
+                    AndroidUtilities.runOnUIThread(new yh.l4(q80Var, i18));
                     break;
                 } else {
                     c5.o oVar = (c5.o) list2.get(0);
                     c5.k a2 = oVar.a();
                     if (a2 == null) {
-                        AndroidUtilities.runOnUIThread(new yh.l4(o80Var, i17));
+                        AndroidUtilities.runOnUIThread(new yh.l4(q80Var, i17));
                         break;
                     } else {
                         tL_inputStorePaymentStarsGift.currency = a2.c;
                         tL_inputStorePaymentStarsGift.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
                         tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentStarsGift;
-                        ConnectionsManager.getInstance(s5Var2.a).sendRequest(tL_payments_canPurchaseStore2, new dh1(oVar, hVar2, o80Var, activity, tL_inputStorePaymentStarsGift, list2, 4));
+                        ConnectionsManager.getInstance(s5Var2.a).sendRequest(tL_payments_canPurchaseStore2, new dh1(oVar, hVar2, q80Var, activity, tL_inputStorePaymentStarsGift, list2, 4));
                         break;
                     }
                 }
@@ -479,11 +479,11 @@ public final /* synthetic */ class ye implements Runnable {
                         h1Var.setDrawStar(false);
                         h1Var.getLocationInWindow(iArr2);
                         TextView textView = h1Var.E;
-                        org.telegram.ui.Components.pq[] pqVarArr = h1Var.G;
-                        if (pqVarArr[0] != null && textView.getLayout() != null) {
-                            float x10 = textView.getX() + textView.getPaddingLeft() + pqVarArr[0].translateX;
-                            float y3 = textView.getY() + textView.getPaddingTop() + pqVarArr[0].translateY;
-                            rectF.set(x10, y3, r2.drawable.getBounds().width() + x10, pqVarArr[0].drawable.getBounds().height() + y3);
+                        org.telegram.ui.Components.qq[] qqVarArr = h1Var.G;
+                        if (qqVarArr[0] != null && textView.getLayout() != null) {
+                            float x10 = textView.getX() + textView.getPaddingLeft() + qqVarArr[0].translateX;
+                            float y3 = textView.getY() + textView.getPaddingTop() + qqVarArr[0].translateY;
+                            rectF.set(x10, y3, r2.drawable.getBounds().width() + x10, qqVarArr[0].drawable.getBounds().height() + y3);
                         }
                         rectF.offset(iArr2[0], iArr2[1]);
                         break;

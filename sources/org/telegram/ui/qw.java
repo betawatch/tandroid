@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class qw extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ qy a;
@@ -47,7 +47,7 @@ public final class qw extends org.telegram.ui.ActionBar.j {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("RemoveDocumentsMessage", hashMap.size(), new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString(R.string.RemoveDocumentsAlertMessage));
                 alertDialog$Builder.a.T = spannableStringBuilder;
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.fa0(16));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.ha0(16));
                 alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.Components.w2(15, zxVar, arrayList4));
                 TextView textView = (TextView) alertDialog$Builder.o().d(-1);
                 if (textView != null) {
@@ -71,7 +71,7 @@ public final class qw extends org.telegram.ui.ActionBar.j {
             } else {
                 if (i10 == 201) {
                     qy qyVar3 = new qy(org.telegram.messenger.ok.e(3, "onlySelect", "dialogsType", true));
-                    qyVar3.C2 = new org.telegram.ui.Components.mv(zxVar, 18);
+                    qyVar3.C2 = new org.telegram.ui.Components.nv(zxVar, 18);
                     qyVar2.presentFragment(qyVar3);
                     return;
                 }
@@ -151,9 +151,9 @@ public final class qw extends org.telegram.ui.ActionBar.j {
             return;
         }
         if (i10 == 109) {
-            org.telegram.ui.Components.o00 o00Var = new org.telegram.ui.Components.o00(qyVar, arrayList3);
-            o00Var.r = new du(this, 4);
-            qyVar.showDialog(o00Var);
+            org.telegram.ui.Components.p00 p00Var = new org.telegram.ui.Components.p00(qyVar, arrayList3);
+            p00Var.r = new du(this, 4);
+            qyVar.showDialog(p00Var);
             return;
         }
         if (i10 != 110) {
@@ -164,7 +164,7 @@ public final class qw extends org.telegram.ui.ActionBar.j {
             return;
         }
         MessagesController.DialogFilter dialogFilter2 = qyVar.getMessagesController().getDialogFilters().get(qyVar.e0[0].h);
-        ArrayList I = org.telegram.ui.Components.o00.I(qyVar, dialogFilter2, arrayList3, false, false);
+        ArrayList I = org.telegram.ui.Components.p00.I(qyVar, dialogFilter2, arrayList3, false, false);
         if (I.size() + (dialogFilter2 != null ? dialogFilter2.neverShow.size() : 0) > 100) {
             qyVar.showDialog(org.telegram.ui.Components.e5.N(qyVar.getParentActivity(), LocaleController.getString(R.string.FilterAddToAlertFullTitle), LocaleController.getString(R.string.FilterAddToAlertFullText)).a);
             return;

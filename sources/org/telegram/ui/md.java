@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class md implements Runnable {
     public final /* synthetic */ int a;
@@ -60,9 +60,9 @@ public final /* synthetic */ class md implements Runnable {
                     aeVar.g(LocaleController.getString(R.string.MonetizationStarsWithdrawUntil), true, true);
                     if (jeVar.h1 == null) {
                         jeVar.h1 = new SpannableStringBuilder("l");
-                        org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.mini_switch_lock, 0);
-                        pqVar.setTopOffset(1);
-                        jeVar.h1.setSpan(pqVar, 0, 1, 33);
+                        org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(R.drawable.mini_switch_lock, 0);
+                        qqVar.setTopOffset(1);
+                        jeVar.h1.setSpan(qqVar, 0, 1, 33);
                     }
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) jeVar.h1).append((CharSequence) yh.g.j0(jeVar.L0 - currentTime));

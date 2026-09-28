@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class p1 extends s4.j0 {
     public final /* synthetic */ int a;
@@ -25,15 +25,15 @@ public final class p1 extends s4.j0 {
                 ((q1) this.b).l();
                 break;
             case 1:
-                wl0 wl0Var = (wl0) this.b;
-                wl0Var.K0(true);
-                if (wl0Var.s2) {
-                    wl0Var.s1 = -1;
-                    if (wl0Var.V1 == null) {
-                        wl0Var.G1.setEmpty();
+                yl0 yl0Var = (yl0) this.b;
+                yl0Var.K0(true);
+                if (yl0Var.s2) {
+                    yl0Var.s1 = -1;
+                    if (yl0Var.V1 == null) {
+                        yl0Var.G1.setEmpty();
                     }
                 }
-                wl0Var.invalidate();
+                yl0Var.invalidate();
                 break;
             default:
                 RecyclerView recyclerView = (RecyclerView) this.b;
@@ -96,12 +96,12 @@ public final class p1 extends s4.j0 {
                 ((q1) this.b).s(i10 + 1, i11);
                 break;
             case 1:
-                wl0 wl0Var = (wl0) this.b;
-                wl0Var.K0(true);
-                View view = wl0Var.r1;
+                yl0 yl0Var = (yl0) this.b;
+                yl0Var.K0(true);
+                View view = yl0Var.r1;
                 if (view != null && view.getAlpha() == 0.0f) {
-                    wl0Var.s1 = -1;
-                    wl0Var.f1();
+                    yl0Var.s1 = -1;
+                    yl0Var.f1();
                     break;
                 }
                 break;
@@ -158,7 +158,7 @@ public final class p1 extends s4.j0 {
                 ((q1) this.b).t(i10 + 1, i11);
                 break;
             case 1:
-                ((wl0) this.b).K0(true);
+                ((yl0) this.b).K0(true);
                 break;
             default:
                 RecyclerView recyclerView = (RecyclerView) this.b;

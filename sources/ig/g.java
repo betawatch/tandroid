@@ -26,11 +26,11 @@ import org.telegram.messenger.f0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.ca1;
 import org.telegram.ui.ml0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -586,7 +586,7 @@ public abstract class g extends View implements i {
                 this.v = f11;
             } else {
                 float f13 = this.T0;
-                this.v = (rr.g.getInterpolation(f12) * (f11 - f13)) + f13;
+                this.v = (sr.g.getInterpolation(f12) * (f11 - f13)) + f13;
             }
             invalidate();
         }
@@ -601,7 +601,7 @@ public abstract class g extends View implements i {
                     this.w = f15;
                 } else {
                     float f17 = this.U0;
-                    this.w = (rr.g.getInterpolation(f16) * (f15 - f17)) + f17;
+                    this.w = (sr.g.getInterpolation(f16) * (f15 - f17)) + f17;
                 }
                 invalidate();
             }

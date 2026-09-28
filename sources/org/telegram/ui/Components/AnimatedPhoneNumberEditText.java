@@ -10,9 +10,9 @@ import android.util.TypedValue;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public class AnimatedPhoneNumberEditText extends g40 {
+public class AnimatedPhoneNumberEditText extends i40 {
     public String E;
     public ci.y0 F;
     public final ArrayList e;
@@ -53,7 +53,7 @@ public class AnimatedPhoneNumberEditText extends g40 {
         super.setHintText(str);
     }
 
-    @Override // org.telegram.ui.Components.g40
+    @Override // org.telegram.ui.Components.i40
     public String getHintText() {
         return this.E;
     }
@@ -62,7 +62,7 @@ public class AnimatedPhoneNumberEditText extends g40 {
         return this.r;
     }
 
-    @Override // org.telegram.ui.Components.g40
+    @Override // org.telegram.ui.Components.i40
     public final void i(int i10) {
         ArrayList arrayList = this.w;
         if (i10 < arrayList.size()) {
@@ -70,7 +70,7 @@ public class AnimatedPhoneNumberEditText extends g40 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g40
+    @Override // org.telegram.ui.Components.i40
     public void setHintText(String str) {
         boolean isEmpty;
         boolean isEmpty2 = TextUtils.isEmpty(str);
@@ -188,13 +188,13 @@ public class AnimatedPhoneNumberEditText extends g40 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.eu, android.widget.TextView
+    @Override // org.telegram.ui.Components.fu, android.widget.TextView
     public void setTextColor(int i10) {
         super.setTextColor(i10);
         this.h.setColor(i10);
     }
 
-    @Override // org.telegram.ui.Components.g40, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    @Override // org.telegram.ui.Components.i40, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
     public final void setTextSize(int i10, float f7) {
         super.setTextSize(i10, f7);
         this.h.setTextSize(TypedValue.applyDimension(i10, f7, getResources().getDisplayMetrics()));

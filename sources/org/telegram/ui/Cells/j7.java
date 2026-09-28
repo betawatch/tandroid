@@ -30,12 +30,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.ct;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.v00;
 import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class j7 extends FrameLayout implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.v5 E;
@@ -59,7 +59,7 @@ public class j7 extends FrameLayout implements DownloadController.FileDownloadPr
     public int W;
     public final SpannableStringBuilder a;
     public final TextPaint a0;
-    public final op b;
+    public final pp b;
     public final TextPaint b0;
     public boolean c;
     public final org.telegram.ui.ActionBar.d6 c0;
@@ -74,7 +74,7 @@ public class j7 extends FrameLayout implements DownloadController.FileDownloadPr
     public final TextPaint h0;
     public Utilities.CallbackReturn i0;
     public float j0;
-    public u00 k0;
+    public v00 k0;
     public int n;
     public final int r;
     public StaticLayout s;
@@ -319,11 +319,11 @@ public class j7 extends FrameLayout implements DownloadController.FileDownloadPr
     }
 
     public final void e(boolean z10, boolean z11) {
-        op opVar = this.b;
-        if (opVar.getVisibility() != 0) {
-            opVar.setVisibility(0);
+        pp ppVar = this.b;
+        if (ppVar.getVisibility() != 0) {
+            ppVar.setVisibility(0);
         }
-        opVar.a(z10, z11);
+        ppVar.a(z10, z11);
     }
 
     public final void f(MessageObject messageObject, boolean z10) {
@@ -857,8 +857,8 @@ public class j7 extends FrameLayout implements DownloadController.FileDownloadPr
         }
     }
 
-    public void setGlobalGradientView(u00 u00Var) {
-        this.k0 = u00Var;
+    public void setGlobalGradientView(v00 v00Var) {
+        this.k0 = v00Var;
     }
 
     public void setNeedPlayMessageListener(Utilities.CallbackReturn<MessageObject, Boolean> callbackReturn) {
@@ -884,21 +884,21 @@ public class j7 extends FrameLayout implements DownloadController.FileDownloadPr
         radialProgress2.g(org.telegram.ui.ActionBar.h6.ie, org.telegram.ui.ActionBar.h6.je, org.telegram.ui.ActionBar.h6.uc, org.telegram.ui.ActionBar.h6.vc);
         this.Q = DownloadController.getInstance(i11).generateObserverTag();
         setWillNotDraw(false);
-        op opVar = new op(context, 22, d6Var);
-        this.b = opVar;
-        opVar.setVisibility(4);
-        opVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
-        opVar.setDrawUnchecked(false);
-        opVar.setDrawBackgroundAsArc(3);
+        pp ppVar = new pp(context, 22, d6Var);
+        this.b = ppVar;
+        ppVar.setVisibility(4);
+        ppVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
+        ppVar.setDrawUnchecked(false);
+        ppVar.setDrawBackgroundAsArc(3);
         boolean z10 = LocaleController.isRTL;
-        addView(opVar, w7.y5.d(24, 24.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 38.1f, 32.1f, z10 ? 6.0f : 0.0f, 0.0f));
+        addView(ppVar, w7.y5.d(24, 24.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 38.1f, 32.1f, z10 ? 6.0f : 0.0f, 0.0f));
         if (i10 == 1) {
             TextPaint textPaint = new TextPaint(1);
             this.a0 = textPaint;
             textPaint.setTextSize(AndroidUtilities.dp(13.0f));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(".");
             this.a = spannableStringBuilder;
-            spannableStringBuilder.setSpan(new ct(), 0, 1, 0);
+            spannableStringBuilder.setSpan(new dt(), 0, 1, 0);
         }
         TextPaint textPaint2 = new TextPaint(1);
         this.b0 = textPaint2;

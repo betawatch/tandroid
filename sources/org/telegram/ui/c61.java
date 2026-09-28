@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class c61 extends org.telegram.ui.Components.wl0 {
+public abstract class c61 extends org.telegram.ui.Components.yl0 {
     public final SparseArray X2;
     public final ArrayList Y2;
     public final ArrayList Z2;
@@ -56,7 +56,7 @@ public abstract class c61 extends org.telegram.ui.Components.wl0 {
     
         if (((org.telegram.ui.Components.q5) r1).c() != false) goto L10;
      */
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.yl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -75,7 +75,7 @@ public abstract class c61 extends org.telegram.ui.Components.wl0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -185,7 +185,7 @@ public abstract class c61 extends org.telegram.ui.Components.wl0 {
                                 invalidate();
                             }
                         }
-                        j61Var.S = Utilities.clamp(j61Var.L ? org.telegram.ui.Components.rr.h.getInterpolation(j61Var.R) : 1.0f - org.telegram.ui.Components.rr.h.getInterpolation(1.0f - j61Var.R), 1.0f, 0.0f);
+                        j61Var.S = Utilities.clamp(j61Var.L ? org.telegram.ui.Components.sr.h.getInterpolation(j61Var.R) : 1.0f - org.telegram.ui.Components.sr.h.getInterpolation(1.0f - j61Var.R), 1.0f, 0.0f);
                         int dp = AndroidUtilities.dp(i15 == 6 ? 1.5f : 1.0f);
                         int dp2 = AndroidUtilities.dp(i15 == 6 ? 6.0f : 4.0f);
                         RectF rectF = AndroidUtilities.rectTmp;
@@ -238,7 +238,7 @@ public abstract class c61 extends org.telegram.ui.Components.wl0 {
                     int i18 = a71Var.N1;
                     List list = a71.Z1;
                     if (R == i18 - 1) {
-                        float interpolation = org.telegram.ui.Components.rr.g.getInterpolation(w7.q.a((SystemClock.elapsedRealtime() - a71Var.P1) / 200.0f, 0.0f, 1.0f));
+                        float interpolation = org.telegram.ui.Components.sr.g.getInterpolation(w7.q.a((SystemClock.elapsedRealtime() - a71Var.P1) / 200.0f, 0.0f, 1.0f));
                         if (interpolation < 1.0f) {
                             float f14 = 1.0f - interpolation;
                             canvas2.saveLayerAlpha(view.getLeft(), view.getTop(), view.getRight(), view.getBottom(), (int) (255.0f * f14), 31);
@@ -364,7 +364,7 @@ public abstract class c61 extends org.telegram.ui.Components.wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0
+    @Override // org.telegram.ui.Components.yl0
     public final void f1() {
         if (zg.e0.b(this)) {
             return;
@@ -381,7 +381,7 @@ public abstract class c61 extends org.telegram.ui.Components.wl0 {
         super.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         a71 a71Var = this.e3;
@@ -390,7 +390,7 @@ public abstract class c61 extends org.telegram.ui.Components.wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         a71 a71Var = this.e3;

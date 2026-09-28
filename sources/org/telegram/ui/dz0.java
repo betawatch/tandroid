@@ -3,7 +3,7 @@ package org.telegram.ui;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class dz0 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -49,9 +49,9 @@ public final class dz0 extends s4.s0 {
         switch (this.a) {
             case 1:
                 ProfileActivity profileActivity = this.b;
-                org.telegram.ui.Components.j40 j40Var = profileActivity.X;
-                if (j40Var != null) {
-                    j40Var.b(true);
+                org.telegram.ui.Components.l40 l40Var = profileActivity.X;
+                if (l40Var != null) {
+                    l40Var.b(true);
                 }
                 profileActivity.A3();
                 if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.v4 - 8) {

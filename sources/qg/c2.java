@@ -17,12 +17,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.wv0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class c2 extends j {
     public boolean A0;
@@ -31,7 +31,7 @@ public final class c2 extends j {
     public final int q0;
     public boolean r0;
     public final e6 s0;
-    public final uv0 t0;
+    public final wv0 t0;
     public final TextureView u0;
     public final Bitmap v0;
     public final Rect w0;
@@ -39,7 +39,7 @@ public final class c2 extends j {
     public float y0;
     public final Path z0;
 
-    public c2(Context context, PointF pointF, uv0 uv0Var, String str) {
+    public c2(Context context, PointF pointF, wv0 wv0Var, String str) {
         super(context, pointF);
         this.q0 = -1;
         this.r0 = false;
@@ -50,12 +50,12 @@ public final class c2 extends j {
         this.z0 = new Path();
         this.A0 = true;
         this.B0 = true;
-        rr rrVar = rr.h;
-        this.C0 = new e6(this, 0L, 350L, rrVar);
+        sr srVar = sr.h;
+        this.C0 = new e6(this, 0L, 350L, srVar);
         new Paint(1).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         setRotation(0.0f);
         setScale(1.0f);
-        this.t0 = uv0Var;
+        this.t0 = wv0Var;
         Bitmap decodeFile = BitmapFactory.decodeFile(str);
         this.v0 = decodeFile;
         if (decodeFile != null) {
@@ -65,7 +65,7 @@ public final class c2 extends j {
         TextureView textureView = new TextureView(context);
         this.u0 = textureView;
         addView(textureView, y5.c(-1.0f, -1));
-        this.s0 = new e6(this, 0L, 500L, rrVar);
+        this.s0 = new e6(this, 0L, 500L, srVar);
         k();
         setWillNotDraw(false);
     }
@@ -135,28 +135,28 @@ public final class c2 extends j {
         return this.q0;
     }
 
-    public uv0 getBaseSize() {
+    public wv0 getBaseSize() {
         return this.t0;
     }
 
     @Override // qg.j
-    public sk0 getSelectionBounds() {
+    public uk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new sk0();
+            return new uk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
         float x10 = ok.x(dp, 2.0f, getPositionX(), scaleX);
-        return new sk0(x10, ok.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
+        return new uk0(x10, ok.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
     }
 
     @Override // qg.j
     public final void k() {
-        uv0 uv0Var = this.t0;
-        float f7 = uv0Var.a / 2.0f;
-        float f10 = uv0Var.b / 2.0f;
+        wv0 wv0Var = this.t0;
+        float f7 = wv0Var.a / 2.0f;
+        float f10 = wv0Var.b / 2.0f;
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
         m();
@@ -174,9 +174,9 @@ public final class c2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        uv0 uv0Var = this.t0;
-        int i12 = (int) uv0Var.a;
-        int i13 = (int) uv0Var.b;
+        wv0 wv0Var = this.t0;
+        int i12 = (int) wv0Var.a;
+        int i13 = (int) wv0Var.b;
         TextureView textureView = this.u0;
         if (textureView != null) {
             float f7 = this.y0;

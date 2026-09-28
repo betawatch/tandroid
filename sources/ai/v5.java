@@ -30,18 +30,18 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.Components.i41;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.hh0;
+import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yr;
+import org.telegram.ui.Components.zr;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.qr;
 import org.telegram.ui.vr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class v5 extends yr {
+public final class v5 extends zr {
     public boolean c;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
     public final /* synthetic */ jc e;
@@ -100,7 +100,7 @@ public final class v5 extends yr {
     /* JADX WARN: Removed duplicated region for block: B:82:0x0374  */
     /* JADX WARN: Removed duplicated region for block: B:92:0x03da  */
     /* JADX WARN: Type inference failed for: r4v92, types: [org.telegram.tgnet.TLRPC$User] */
-    @Override // org.telegram.ui.Components.yr
+    @Override // org.telegram.ui.Components.zr
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -167,13 +167,13 @@ public final class v5 extends yr {
             }
             if ((e6Var.C1 || e6Var.S1.h(e6Var.B1)) && !c6Var.f && (storyItem = c6Var.a) != null) {
                 HashSet hashSet = storyItem.albums != null ? new HashSet(storyItem.albums) : new HashSet();
-                y70 y70Var = new y70(actionBarPopupWindow$ActionBarPopupWindowLayout2, d6Var);
-                y70Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new a3.d(actionBarPopupWindow$ActionBarPopupWindowLayout2, 8), false);
-                y70Var.k();
+                a80 a80Var = new a80(actionBarPopupWindow$ActionBarPopupWindowLayout2, d6Var);
+                a80Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new a3.d(actionBarPopupWindow$ActionBarPopupWindowLayout2, 8), false);
+                a80Var.k();
                 x8 B = e6Var.getStoriesController().B(e6Var.B1, true);
                 x8 B2 = e6Var.S1.B(e6Var.B1, false);
-                y70.f(y70Var, B, hashSet, B2 != null && B2.a(), new a3.k0(v5Var, d6Var, storyItem, 2), new e4(v5Var, hashSet, storyItem, d6Var, 2));
-                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(y70Var.B);
+                a80.f(a80Var, B, hashSet, B2 != null && B2.a(), new a3.k0(v5Var, d6Var, storyItem, 2), new e4(v5Var, hashSet, storyItem, d6Var, 2));
+                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(a80Var.B);
                 org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(0, e6Var.getContext(), v5Var.d, false, false);
                 e6Var.E3 = e1Var;
                 e1Var.g(LocaleController.getString(R.string.StoriesAlbumAddToAlbum), R.drawable.menu_album_add, null);
@@ -578,7 +578,7 @@ public final class v5 extends yr {
                             }
                             storyItem3 = c6Var.a;
                             if (storyItem3 != null) {
-                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, i41.A())) {
+                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, k41.A())) {
                                     org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, LocaleController.getString(R.string.HideTranslation), false, v5Var.d).setOnClickListener(new i5(v5Var, 4));
                                 } else if (MessagesController.getInstance(e6Var.C2).getTranslateController().canTranslateStory(c6Var.a)) {
                                     actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -748,7 +748,7 @@ public final class v5 extends yr {
         }
     }
 
-    @Override // org.telegram.ui.Components.yr
+    @Override // org.telegram.ui.Components.zr
     public final void c() {
         if (!this.c && !this.k[0]) {
             AndroidUtilities.runOnUIThread(new m5(this, 0));
@@ -768,7 +768,7 @@ public final class v5 extends yr {
             return;
         }
         Context context = e6Var.getContext();
-        fh0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+        hh0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
         final of.b bVar = new of.b(2, this, actionBarPopupWindow$ActionBarPopupWindowLayout);
         vr vrVar = new vr();
         org.telegram.ui.ActionBar.e1[] e1VarArr = new org.telegram.ui.ActionBar.e1[5];

@@ -12,9 +12,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ck extends org.telegram.ui.Components.za0 {
+public final class ck extends org.telegram.ui.Components.bb0 {
     public boolean V;
     public final /* synthetic */ wn W;
 
@@ -25,7 +25,7 @@ public final class ck extends org.telegram.ui.Components.za0 {
         this.V = true;
     }
 
-    @Override // org.telegram.ui.Components.za0
+    @Override // org.telegram.ui.Components.bb0
     public final boolean a() {
         wn wnVar = this.W;
         return wnVar.R.getVisibility() != 0 || wnVar.n3;
@@ -39,12 +39,12 @@ public final class ck extends org.telegram.ui.Components.za0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.za0
+    @Override // org.telegram.ui.Components.bb0
     public final void j() {
         this.W.sc();
     }
 
-    @Override // org.telegram.ui.Components.za0
+    @Override // org.telegram.ui.Components.bb0
     public final void k(TLRPC.BotInlineResult botInlineResult) {
         wn wnVar = this.W;
         if (wnVar.getParentActivity() == null || botInlineResult.content == null) {
@@ -62,10 +62,10 @@ public final class ck extends org.telegram.ui.Components.za0 {
         }
         String str2 = botInlineResult.description;
         String str3 = botInlineResult.content.url;
-        org.telegram.ui.Components.wu.J(wnVar, null, xlVar, str, str2, str3, str3, inlineResultWidthAndHeight[0], inlineResultWidthAndHeight[1], -1, wnVar.x9());
+        org.telegram.ui.Components.xu.J(wnVar, null, xlVar, str, str2, str3, str3, inlineResultWidthAndHeight[0], inlineResultWidthAndHeight[1], -1, wnVar.x9());
     }
 
-    @Override // org.telegram.ui.Components.za0
+    @Override // org.telegram.ui.Components.bb0
     public final void l(boolean z10) {
         String string;
         wn wnVar = this.W;
@@ -94,7 +94,7 @@ public final class ck extends org.telegram.ui.Components.za0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.za0
+    @Override // org.telegram.ui.Components.bb0
     public final void m() {
         wn wnVar = this.W;
         if (wnVar.Z4 && ((getAdapter().R == null || wnVar.a5 || wnVar.b5) && wnVar.h != null && getAdapter().R != null)) {
@@ -111,7 +111,7 @@ public final class ck extends org.telegram.ui.Components.za0 {
         wnVar.sc();
     }
 
-    @Override // org.telegram.ui.Components.za0
+    @Override // org.telegram.ui.Components.bb0
     public final void n(boolean z10) {
         if (this.V != z10) {
             wn wnVar = this.W;

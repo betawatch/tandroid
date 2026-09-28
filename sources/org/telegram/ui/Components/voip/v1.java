@@ -19,10 +19,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.uh1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class v1 extends FrameLayout {
     public float E;
@@ -188,8 +188,8 @@ public final class v1 extends FrameLayout {
         v1Var.d0.start();
         animate().setListener(null).cancel();
         ViewPropertyAnimator duration = animate().scaleX(0.23f).scaleY(0.23f).translationX(translationX2 - ((getMeasuredWidth() - (getMeasuredWidth() * 0.23f)) / 2.0f)).translationY(translationY2 - ((getMeasuredHeight() - (getMeasuredHeight() * 0.23f)) / 2.0f)).alpha(1.0f).setStartDelay(0L).setDuration(300L);
-        rr rrVar = rr.f;
-        duration.setInterpolator(rrVar).setListener(new le.d(this, translationX2, translationY2, 1)).setInterpolator(rrVar).start();
+        sr srVar = sr.f;
+        duration.setInterpolator(srVar).setListener(new le.d(this, translationX2, translationY2, 1)).setInterpolator(srVar).start();
     }
 
     public final void d(float f7, float f10) {
@@ -263,7 +263,7 @@ public final class v1 extends FrameLayout {
         float z12 = com.google.android.gms.internal.vision.e2.z((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i11, f10, systemWindowInsetTop);
         if (z10) {
             animate().setListener(null).cancel();
-            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(rr.f).start();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(sr.f).start();
             return;
         }
         if (!this.S) {
@@ -390,7 +390,7 @@ public final class v1 extends FrameLayout {
                 } else if (getY() + getMeasuredHeight() > measuredHeight - f12) {
                     startDelay.translationY((measuredHeight - getMeasuredHeight()) - f12);
                 }
-                startDelay.setDuration(150L).setInterpolator(rr.f).start();
+                startDelay.setDuration(150L).setInterpolator(sr.f).start();
             }
             this.e = false;
             return true;

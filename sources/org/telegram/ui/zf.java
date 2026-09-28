@@ -7,9 +7,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zf implements org.telegram.ui.Components.zj0 {
+public final /* synthetic */ class zf implements org.telegram.ui.Components.bk0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ wn b;
     public final /* synthetic */ boolean c;
@@ -22,7 +22,7 @@ public final /* synthetic */ class zf implements org.telegram.ui.Components.zj0 
         this.d = messageObject;
     }
 
-    @Override // org.telegram.ui.Components.zj0
+    @Override // org.telegram.ui.Components.bk0
     public final void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
@@ -54,7 +54,7 @@ public final /* synthetic */ class zf implements org.telegram.ui.Components.zj0 
                                         } else {
                                             wnVar2.getClass();
                                         }
-                                        new org.telegram.ui.Components.gs(wnVar2, wnVar2.e, arrayList, arrayList2, channelParticipantArr2, wnVar2.L6, (int) wnVar2.d(), wnVar2.R3, true, new ai.f(17)).show();
+                                        new org.telegram.ui.Components.hs(wnVar2, wnVar2.e, arrayList, arrayList2, channelParticipantArr2, wnVar2.L6, (int) wnVar2.d(), wnVar2.R3, true, new ai.f(17)).show();
                                         break;
                                     default:
                                         wn wnVar3 = wnVar;
@@ -66,7 +66,7 @@ public final /* synthetic */ class zf implements org.telegram.ui.Components.zj0 
                                         } else {
                                             wnVar3.getClass();
                                         }
-                                        new org.telegram.ui.Components.gs(wnVar3, wnVar3.e, arrayList, arrayList2, channelParticipantArr3, wnVar3.L6, (int) wnVar3.d(), wnVar3.R3, true, new ai.f(17)).show();
+                                        new org.telegram.ui.Components.hs(wnVar3, wnVar3.e, arrayList, arrayList2, channelParticipantArr3, wnVar3.L6, (int) wnVar3.d(), wnVar3.R3, true, new ai.f(17)).show();
                                         break;
                                 }
                             }
@@ -105,7 +105,7 @@ public final /* synthetic */ class zf implements org.telegram.ui.Components.zj0 
                                     } else {
                                         wnVar22.getClass();
                                     }
-                                    new org.telegram.ui.Components.gs(wnVar22, wnVar22.e, arrayList3, arrayList4, channelParticipantArr22, wnVar22.L6, (int) wnVar22.d(), wnVar22.R3, true, new ai.f(17)).show();
+                                    new org.telegram.ui.Components.hs(wnVar22, wnVar22.e, arrayList3, arrayList4, channelParticipantArr22, wnVar22.L6, (int) wnVar22.d(), wnVar22.R3, true, new ai.f(17)).show();
                                     break;
                                 default:
                                     wn wnVar3 = wnVar2;
@@ -117,7 +117,7 @@ public final /* synthetic */ class zf implements org.telegram.ui.Components.zj0 
                                     } else {
                                         wnVar3.getClass();
                                     }
-                                    new org.telegram.ui.Components.gs(wnVar3, wnVar3.e, arrayList3, arrayList4, channelParticipantArr3, wnVar3.L6, (int) wnVar3.d(), wnVar3.R3, true, new ai.f(17)).show();
+                                    new org.telegram.ui.Components.hs(wnVar3, wnVar3.e, arrayList3, arrayList4, channelParticipantArr3, wnVar3.L6, (int) wnVar3.d(), wnVar3.R3, true, new ai.f(17)).show();
                                     break;
                             }
                         }

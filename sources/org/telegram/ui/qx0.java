@@ -19,9 +19,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class qx0 extends org.telegram.ui.Components.vl0 {
+public final class qx0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ PrivacyControlActivity d;
 
@@ -30,7 +30,7 @@ public final class qx0 extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10;
         int i11;
@@ -392,9 +392,9 @@ public final class qx0 extends org.telegram.ui.Components.vl0 {
                         e9Var.setText(LocaleController.formatString(R.string.PrivateMessagesPriceInfo, ei.l.G0(privacyControlActivity.getMessagesController().starsPaidMessageCommissionPermille), String.valueOf(((int) (((privacyControlActivity.L * (privacyControlActivity.getMessagesController().starsPaidMessageCommissionPermille / 1000.0f)) / 1000.0d) * privacyControlActivity.getMessagesController().starsUsdWithdrawRate1000)) / 100.0d)));
                     } else if (i10 == privacyControlActivity.k0) {
                         SpannableString spannableString2 = new SpannableString(ImageLoader.AUTOPLAY_FILTER);
-                        org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.msg_input_gift, 0);
-                        pqVar.setScale(0.583f, 0.583f);
-                        spannableString2.setSpan(pqVar, 0, 1, 33);
+                        org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(R.drawable.msg_input_gift, 0);
+                        qqVar.setScale(0.583f, 0.583f);
+                        spannableString2.setSpan(qqVar, 0, 1, 33);
                         e9Var.setText(LocaleController.formatSpannable(R.string.PrivacyGiftsShowIconInfo, spannableString2));
                     } else if (i10 == privacyControlActivity.q0) {
                         e9Var.setText(LocaleController.getString(R.string.PrivacyGiftsTypeInfo));
@@ -665,7 +665,7 @@ public final class qx0 extends org.telegram.ui.Components.vl0 {
                 }
                 privacyControlActivity.u0.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.K0(false));
                 privacyControlActivity.u0.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
-                privacyControlActivity.t0 = new org.telegram.ui.Components.ij0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                privacyControlActivity.t0 = new org.telegram.ui.Components.kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                 privacyControlActivity.u0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                 privacyControlActivity.u0.e.setAnimation(privacyControlActivity.t0);
                 view = privacyControlActivity.u0;
@@ -710,16 +710,16 @@ public final class qx0 extends org.telegram.ui.Components.vl0 {
                 d6Var3 = ((org.telegram.ui.ActionBar.m2) privacyControlActivity).resourceProvider;
                 ci.d dVar = new ci.d(context, d6Var3, true);
                 dVar.setRoundRadius(24);
-                org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.msg_mini_lock3, 0);
+                org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(R.drawable.msg_mini_lock3, 0);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.PrivateMessagesChargePremiumLocked));
                 spannableStringBuilder.append((CharSequence) " l");
-                spannableStringBuilder.setSpan(pqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.setSpan(qqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                 dVar.g(spannableStringBuilder, false, true);
                 dVar.setOnClickListener(new f60(this, 24));
                 frameLayout.addView(dVar, w7.y5.d(-1, 48.0f, 119, 18.0f, 0.0f, 18.0f, 16.0f));
                 view = frameLayout;
                 break;
         }
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 }

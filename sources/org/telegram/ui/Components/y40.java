@@ -1,26 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class y40 {
-    public long a;
-    public float b;
-    public float c;
-    public boolean d;
-    public float e;
-    public final RectF f = new RectF();
-    public int g;
-    public final Paint h;
-    public final int i;
+public final class y40 extends FrameLayout {
+    public View a;
+    public TextView b;
+    public nj0 c;
+    public LinearLayout d;
 
-    public y40(int i10) {
-        this.i = i10;
-        Paint paint = new Paint(1);
-        this.h = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    }
+
+    public void setGravity(int i10) {
+        this.b.setGravity(i10);
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
+    }
+
+    public void setTextColor(int i10) {
+        this.b.setTextColor(i10);
     }
 }

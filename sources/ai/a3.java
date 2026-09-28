@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.r80;
+import org.telegram.ui.Components.t80;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                 e6Var.J0.H(new ProfileActivity(bundle, null));
                 break;
             case 1:
-                r80.q((r80) this.c, this.b);
+                t80.q((t80) this.c, this.b);
                 break;
             case 2:
                 qy qyVar = (qy) this.c;

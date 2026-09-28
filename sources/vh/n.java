@@ -26,22 +26,22 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.z9;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.m90;
 import org.telegram.ui.Components.o90;
-import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.t90;
 import org.telegram.ui.Components.v5;
 import org.telegram.ui.Components.z5;
 import tg.r;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class n extends TextView implements z9 {
     public static Field O;
     public static Class P;
     public static Method Q;
-    public o90 E;
+    public q90 E;
     public PorterDuffColorFilter F;
     public final boolean G;
     public boolean H;
@@ -60,11 +60,11 @@ public class n extends TextView implements z9 {
     public int h;
     public v5 n;
     public boolean r;
-    public final k90 s;
+    public final m90 s;
     public final d6 v;
     public CharacterStyle w;
-    public m90 x;
-    public m90 y;
+    public o90 x;
+    public o90 y;
 
     public n(Context context) {
         this(context, null, true);
@@ -123,31 +123,31 @@ public class n extends TextView implements z9 {
     @Override // android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         CharacterStyle characterStyle;
-        k90 k90Var = this.s;
-        if (k90Var != null) {
+        m90 m90Var = this.s;
+        if (m90Var != null) {
             Layout layout = getLayout();
             ClickableSpan a2 = a((int) motionEvent.getX(), (int) motionEvent.getY());
             if (a2 != null && motionEvent.getAction() == 0) {
-                o90 o90Var = new o90(a2, this.v, motionEvent.getX(), motionEvent.getY(), 0);
-                o90Var.d(h6.v0(h6.Ld, this.v));
-                this.E = o90Var;
-                k90Var.a(o90Var, null);
+                q90 q90Var = new q90(a2, this.v, motionEvent.getX(), motionEvent.getY(), 0);
+                q90Var.d(h6.v0(h6.Ld, this.v));
+                this.E = q90Var;
+                m90Var.a(q90Var, null);
                 SpannableString spannableString = new SpannableString(layout.getText());
                 int spanStart = spannableString.getSpanStart(this.E.i);
                 int spanEnd = spannableString.getSpanEnd(this.E.i);
-                h90 b10 = this.E.b();
+                j90 b10 = this.E.b();
                 b10.d(layout, spanStart, this.G ? 0.0f : getPaddingTop());
                 layout.getSelectionPath(spanStart, spanEnd, b10);
-                AndroidUtilities.runOnUIThread(new r(this, o90Var, a2, 2), ViewConfiguration.getLongPressTimeout());
+                AndroidUtilities.runOnUIThread(new r(this, q90Var, a2, 2), ViewConfiguration.getLongPressTimeout());
                 return true;
             }
             if (motionEvent.getAction() == 1) {
-                k90Var.d(true);
-                o90 o90Var2 = this.E;
-                if (o90Var2 != null && (characterStyle = o90Var2.i) == a2) {
-                    m90 m90Var = this.x;
-                    if (m90Var != null) {
-                        m90Var.a((ClickableSpan) characterStyle);
+                m90Var.d(true);
+                q90 q90Var2 = this.E;
+                if (q90Var2 != null && (characterStyle = q90Var2.i) == a2) {
+                    o90 o90Var = this.x;
+                    if (o90Var != null) {
+                        o90Var.a((ClickableSpan) characterStyle);
                     } else if (characterStyle != null) {
                         ((ClickableSpan) characterStyle).onClick(this);
                     }
@@ -157,7 +157,7 @@ public class n extends TextView implements z9 {
                 this.E = null;
             }
             if (motionEvent.getAction() == 3) {
-                k90Var.d(true);
+                m90Var.d(true);
                 this.E = null;
             }
         }
@@ -227,8 +227,8 @@ public class n extends TextView implements z9 {
         if (!this.H) {
             canvas.translate(this.I ? 0.0f : paddingLeft, this.J ? 0.0f : paddingTop);
         }
-        k90 k90Var = this.s;
-        if (k90Var != null && k90Var.f(canvas)) {
+        m90 m90Var = this.s;
+        if (m90Var != null && m90Var.f(canvas)) {
             invalidate();
         }
         canvas.restore();
@@ -336,25 +336,25 @@ public class n extends TextView implements z9 {
 
     public void setLoading(CharacterStyle characterStyle) {
         if (this.w != characterStyle) {
-            k90 k90Var = this.s;
-            k90Var.e();
+            m90 m90Var = this.s;
+            m90Var.e();
             this.w = characterStyle;
-            r90 i10 = k90.i(getLayout(), characterStyle, getPaddingTop());
+            t90 i10 = m90.i(getLayout(), characterStyle, getPaddingTop());
             if (i10 != null) {
                 int v02 = h6.v0(h6.Ld, this.v);
                 i10.f(h6.l1(0.8f, v02), h6.l1(1.3f, v02), h6.l1(1.0f, v02), h6.l1(4.0f, v02));
                 i10.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                k90Var.b(i10, null);
+                m90Var.b(i10, null);
             }
         }
     }
 
-    public void setOnLinkLongPressListener(m90 m90Var) {
-        this.y = m90Var;
+    public void setOnLinkLongPressListener(o90 o90Var) {
+        this.y = o90Var;
     }
 
-    public void setOnLinkPressListener(m90 m90Var) {
-        this.x = m90Var;
+    public void setOnLinkPressListener(o90 o90Var) {
+        this.x = o90Var;
     }
 
     @Override // android.widget.TextView
@@ -384,7 +384,7 @@ public class n extends TextView implements z9 {
         this.r = true;
         this.G = true;
         this.K = null;
-        this.s = new k90(this);
+        this.s = new m90(this);
         this.v = d6Var;
         this.a = new l(this, arrayList, new ai.k(12, this, z10));
     }

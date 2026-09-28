@@ -12,12 +12,12 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.dr;
+import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.kj0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -112,7 +112,7 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                         TLRPC.User user = b1Var2.U;
                         e4 e4Var = new e4(b1Var2, daVar2, str2, tL_buttonTypeRequestPeer, 14);
                         d6 d6Var2 = b1Var2.e;
-                        dr.a(context, i12, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, e4Var, d6Var2, new xc(b1Var2, d6Var2));
+                        er.a(context, i12, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, e4Var, d6Var2, new xc(b1Var2, d6Var2));
                         break;
                     }
                 }

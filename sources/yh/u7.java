@@ -5,12 +5,12 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.n81;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.p81;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class u7 extends n81 {
+public final class u7 extends p81 {
     public final Context a;
     public final int b;
     public final boolean c;
@@ -29,23 +29,23 @@ public final class u7 extends n81 {
         i();
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final View d(int i10) {
         return new t7(this.a, this.c, this.f, i10, this.b, this.d, this.e);
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final int e() {
         return this.g.size();
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final CharSequence g(int i10) {
         int h = h(i10);
         return h != 0 ? h != 1 ? h != 2 ? "" : LocaleController.getString(R.string.StarsTransactionsOutgoing) : LocaleController.getString(R.string.StarsTransactionsIncoming) : LocaleController.getString(R.string.StarsTransactionsAll);
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final int h(int i10) {
         if (i10 < 0) {
             return 0;
@@ -54,7 +54,7 @@ public final class u7 extends n81 {
         if (i10 >= arrayList.size()) {
             return 0;
         }
-        return ((v51) arrayList.get(i10)).z;
+        return ((x51) arrayList.get(i10)).z;
     }
 
     public final void i() {
@@ -64,28 +64,28 @@ public final class u7 extends n81 {
         long j3 = this.f;
         if (j3 == 0) {
             s5 y3 = s5.y(i10, this.c);
-            arrayList.add(v51.C(0));
+            arrayList.add(x51.C(0));
             if (y3.O(1)) {
-                arrayList.add(v51.C(1));
+                arrayList.add(x51.C(1));
             }
             if (y3.O(2)) {
-                arrayList.add(v51.C(2));
+                arrayList.add(x51.C(2));
                 return;
             }
             return;
         }
         o g10 = o.g(i10);
-        arrayList.add(v51.C(0));
+        arrayList.add(x51.C(0));
         if (!g10.k(j3).a[1].isEmpty()) {
-            arrayList.add(v51.C(1));
+            arrayList.add(x51.C(1));
         }
         if (g10.k(j3).a[2].isEmpty()) {
             return;
         }
-        arrayList.add(v51.C(2));
+        arrayList.add(x51.C(2));
     }
 
-    @Override // org.telegram.ui.Components.n81
+    @Override // org.telegram.ui.Components.p81
     public final void b(View view, int i10, int i11) {
     }
 }

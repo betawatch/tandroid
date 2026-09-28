@@ -13,11 +13,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
+import org.telegram.ui.Components.b01;
 import org.telegram.ui.Components.ua;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.zz0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class w3 extends ua {
     public final ArrayList a0;
@@ -47,14 +47,14 @@ public final class w3 extends ua {
         b11.setText(LocaleController.getString(R.string.Gift2UpgradeCostsText));
         this.X.addView(b11, w7.y5.t(-1, -2, 17, 32, 10, 32, 10));
         int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
-        zz0 zz0Var = new zz0(context, d6Var);
+        b01 b01Var = new b01(context, d6Var);
         int i12 = 0;
         boolean z10 = false;
         while (i12 < arrayList.size()) {
             if (currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i12)).date || ((i10 = i12 + 1) < arrayList.size() && currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i10)).date)) {
                 f7 = f11;
                 Date date = new Date(r13.date * 1000);
-                zz0Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), w7.X0(false, org.telegram.messenger.f0.h((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                b01Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), w7.X0(false, org.telegram.messenger.f0.h((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                 z10 = true;
             } else {
                 f7 = f11;
@@ -71,11 +71,11 @@ public final class w3 extends ua {
                 i13++;
                 TL_stars.StarGiftUpgradePrice starGiftUpgradePrice = (TL_stars.StarGiftUpgradePrice) obj;
                 Date date2 = new Date(starGiftUpgradePrice.date * 1000);
-                zz0Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), w7.X0(false, org.telegram.messenger.f0.h((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                b01Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), w7.X0(false, org.telegram.messenger.f0.h((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
             }
         }
         float f13 = f12 + 14.0f;
-        this.X.addView(zz0Var, w7.y5.r(-1, -2, 7, f13, 16.0f, f13, 15.0f));
+        this.X.addView(b01Var, w7.y5.r(-1, -2, 7, f13, 16.0f, f13, 15.0f));
         TextView b12 = w7.c6.b(context, 12.0f, org.telegram.ui.ActionBar.h6.y6, false, null);
         b12.setGravity(17);
         b12.setText(LocaleController.getString(R.string.Gift2UpgradeCostsFooter));
@@ -92,8 +92,8 @@ public final class w3 extends ua {
         float f15 = f14 + 16.0f;
         this.Y.addView(dVar, w7.y5.d(-1, 48.0f, 119, f15, 16.0f, f15, 16.0f));
         this.containerView.addView(this.Y, w7.y5.e(-1, -2, 87));
-        wl0 wl0Var = this.d;
-        wl0Var.setPadding(wl0Var.getPaddingLeft(), wl0Var.getPaddingTop(), wl0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + wl0Var.getPaddingBottom());
+        yl0 yl0Var = this.d;
+        yl0Var.setPadding(yl0Var.getPaddingLeft(), yl0Var.getPaddingTop(), yl0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + yl0Var.getPaddingBottom());
         this.Z.g(x3.g2(LocaleController.getString(R.string.Understood)), false, true);
         this.Z.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 25));
     }

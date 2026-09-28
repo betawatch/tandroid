@@ -62,7 +62,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ey0;
+import org.telegram.ui.Components.gy0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.db1;
 import u2.o1;
@@ -87,7 +87,7 @@ import y9.x0;
 import y9.y0;
 import y9.z1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class n implements d6 {
     public Object a;
@@ -409,7 +409,7 @@ public final class n implements d6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new ey0(this, i10, 0));
+                ofFloat.addUpdateListener(new gy0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -418,7 +418,7 @@ public final class n implements d6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new ey0(this, i11, 1));
+                ofFloat2.addUpdateListener(new gy0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -427,7 +427,7 @@ public final class n implements d6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new ey0(this, i12, 2));
+                ofFloat3.addUpdateListener(new gy0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }

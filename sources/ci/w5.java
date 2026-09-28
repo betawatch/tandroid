@@ -14,13 +14,13 @@ import android.widget.TextView;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ed0;
-import org.telegram.ui.Components.j31;
-import org.telegram.ui.Components.lp0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.gd0;
+import org.telegram.ui.Components.l31;
+import org.telegram.ui.Components.np0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class w5 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -50,19 +50,19 @@ public final class w5 extends LinearLayout {
         switch (this.a) {
             case 4:
                 super.dispatchDraw(canvas);
-                ((t01) this.b).e(canvas, ((ed0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
+                ((v01) this.b).e(canvas, ((gd0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
                 break;
             case 5:
                 canvas.save();
                 org.telegram.ui.Components.e6 e6Var = (org.telegram.ui.Components.e6) this.b;
-                j31 j31Var = (j31) this.c;
-                float e = e6Var.e(j31Var.w);
+                l31 l31Var = (l31) this.c;
+                float e = e6Var.e(l31Var.w);
                 if (e > 0.0f) {
-                    if (j31Var.c == null) {
-                        j31Var.c = new lp0(this);
+                    if (l31Var.c == null) {
+                        l31Var.c = new np0(this);
                     }
                     canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-                    j31Var.c.a(canvas, e);
+                    l31Var.c.a(canvas, e);
                     canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
                 }
                 super.dispatchDraw(canvas);
@@ -141,7 +141,7 @@ public final class w5 extends LinearLayout {
                 Layout layout = textView.getLayout();
                 if (layout != null) {
                     Layout layout2 = textView2 != null ? textView2.getLayout() : null;
-                    float interpolation = layout2 == null ? 0.0f : rr.f.getInterpolation(q6Var.a1);
+                    float interpolation = layout2 == null ? 0.0f : sr.f.getInterpolation(q6Var.a1);
                     float lerp = AndroidUtilities.lerp(layout.getPrimaryHorizontal(layout.getLineStart(0)) + textView.getX(), layout2 != null ? layout2.getPrimaryHorizontal(layout.getLineStart(0)) + textView2.getX() : 0.0f, interpolation);
                     canvas.drawLine(lerp, y3, AndroidUtilities.lerp(layout.getPrimaryHorizontal(layout.getLineEnd(0)) - layout.getPrimaryHorizontal(layout.getLineStart(0)), layout2 != null ? layout2.getPrimaryHorizontal(layout2.getLineEnd(0)) - layout2.getPrimaryHorizontal(layout2.getLineStart(0)) : 0.0f, interpolation) + lerp, y3, paint);
                     break;
@@ -162,7 +162,7 @@ public final class w5 extends LinearLayout {
                 float y10 = ((textView3.getY() + textView3.getHeight()) - textView3.getPaddingBottom()) + AndroidUtilities.dp(3.0f);
                 Layout layout3 = textView3.getLayout();
                 Layout layout4 = textView4 != null ? textView4.getLayout() : null;
-                float interpolation2 = layout4 == null ? 0.0f : rr.f.getInterpolation(n0Var.i1);
+                float interpolation2 = layout4 == null ? 0.0f : sr.f.getInterpolation(n0Var.i1);
                 float lerp2 = AndroidUtilities.lerp(layout3.getPrimaryHorizontal(layout3.getLineStart(0)) + textView3.getX(), textView4 != null ? layout4.getPrimaryHorizontal(layout3.getLineStart(0)) + textView4.getX() : 0.0f, interpolation2);
                 canvas.drawLine(lerp2, y10, AndroidUtilities.lerp(layout3.getPrimaryHorizontal(layout3.getLineEnd(0)) - layout3.getPrimaryHorizontal(layout3.getLineStart(0)), layout4 != null ? layout4.getPrimaryHorizontal(layout4.getLineEnd(0)) - layout4.getPrimaryHorizontal(layout4.getLineStart(0)) : 0.0f, interpolation2) + lerp2, y10, paint2);
                 break;
@@ -231,11 +231,11 @@ public final class w5 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w5(j31 j31Var, Context context) {
+    public w5(l31 l31Var, Context context) {
         super(context);
         this.a = 5;
-        this.c = j31Var;
-        this.b = new org.telegram.ui.Components.e6(this, 360L, rr.h);
+        this.c = l31Var;
+        this.b = new org.telegram.ui.Components.e6(this, 360L, sr.h);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

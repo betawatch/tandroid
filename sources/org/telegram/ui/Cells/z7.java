@@ -12,9 +12,9 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class z7 extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -38,8 +38,8 @@ public final class z7 extends FrameLayout {
         this.a = d6Var;
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, true);
         this.b = p6Var;
-        rr rrVar = rr.h;
-        p6Var.b(0.3f, 220L, rrVar);
+        sr srVar = sr.h;
+        p6Var.b(0.3f, 220L, srVar);
         p6Var.setTextSize(AndroidUtilities.dp(13.0f));
         int i10 = org.telegram.ui.ActionBar.h6.y6;
         p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
@@ -50,7 +50,7 @@ public final class z7 extends FrameLayout {
         addView(p6Var, w7.y5.d(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var2 = new org.telegram.ui.Components.p6(context, false, true, true);
         this.c = p6Var2;
-        p6Var2.b(0.3f, 220L, rrVar);
+        p6Var2.b(0.3f, 220L, srVar);
         p6Var2.setTextSize(AndroidUtilities.dp(13.0f));
         p6Var2.setGravity(17);
         p6Var2.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.I6, d6Var));
@@ -60,7 +60,7 @@ public final class z7 extends FrameLayout {
         addView(p6Var2, w7.y5.d(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var3 = new org.telegram.ui.Components.p6(context, true, true, true);
         this.d = p6Var3;
-        p6Var3.b(0.3f, 220L, rrVar);
+        p6Var3.b(0.3f, 220L, srVar);
         p6Var3.setTextSize(AndroidUtilities.dp(13.0f));
         p6Var3.setGravity(5);
         p6Var3.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));

@@ -8,15 +8,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.p90;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class w0 extends LinearLayout {
     public int a;
     public final TextView b;
-    public final n90 c;
+    public final p90 c;
     public LinearLayout d;
     public final l0 e;
     public final ViewGroup f;
@@ -41,15 +41,15 @@ public final class w0 extends LinearLayout {
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         addView(textView, y5.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
-        n90 n90Var = new n90(context, null);
-        this.c = n90Var;
-        n90Var.setGravity(1);
-        n90Var.setTextSize(1, 15.0f);
-        n90Var.setTextColor(x0Var.getThemedColor(i11));
+        p90 p90Var = new p90(context, null);
+        this.c = p90Var;
+        p90Var.setGravity(1);
+        p90Var.setTextSize(1, 15.0f);
+        p90Var.setTextColor(x0Var.getThemedColor(i11));
         if (!x0Var.E) {
-            n90Var.setLines(2);
+            p90Var.setLines(2);
         }
-        addView(n90Var, y5.t(-1, -2, 1, 21, 10, 21, 16));
+        addView(p90Var, y5.t(-1, -2, 1, 21, 10, 21, 16));
         setImportantForAccessibility(2);
         setClipChildren(false);
     }
@@ -86,15 +86,15 @@ public final class w0 extends LinearLayout {
             ((b) viewGroup).setTopOffset(x0Var.L);
         }
         viewGroup.getLayoutParams().height = x0Var.s;
-        n90 n90Var = this.c;
-        n90Var.setVisibility(0);
+        p90 p90Var = this.c;
+        p90Var.setVisibility(0);
         ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = 0;
         super.onMeasure(i10, i11);
         if (this.h) {
             viewGroup.getLayoutParams().height = getMeasuredHeight() - AndroidUtilities.dp(16.0f);
             ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = AndroidUtilities.dp(16.0f);
             textView.setVisibility(8);
-            n90Var.setVisibility(8);
+            p90Var.setVisibility(8);
             super.onMeasure(i10, i11);
         }
     }

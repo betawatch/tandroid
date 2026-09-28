@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ed0;
+import org.telegram.ui.Components.gd0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -65,18 +65,18 @@ public final /* synthetic */ class w implements View.OnClickListener {
                             LinearLayout linearLayout = new LinearLayout(context);
                             linearLayout.setOrientation(0);
                             linearLayout.setWeightSum(1.0f);
-                            ed0 ed0Var = new ed0(context, null);
-                            ed0Var.setAllItemsCount(6);
-                            ed0Var.setItemCount(Math.min(6, 8));
-                            ed0Var.setTextColor(w02);
-                            ed0Var.setGravity(17);
-                            ed0Var.setMinValue(0);
-                            ed0Var.setMaxValue(5);
-                            ed0Var.setValue(i12);
-                            linearLayout.addView(ed0Var, w7.y5.l(1.0f, 0, 432));
+                            gd0 gd0Var = new gd0(context, null);
+                            gd0Var.setAllItemsCount(6);
+                            gd0Var.setItemCount(Math.min(6, 8));
+                            gd0Var.setTextColor(w02);
+                            gd0Var.setGravity(17);
+                            gd0Var.setMinValue(0);
+                            gd0Var.setMaxValue(5);
+                            gd0Var.setValue(i12);
+                            linearLayout.addView(gd0Var, w7.y5.l(1.0f, 0, 432));
                             int i13 = 7;
-                            ed0Var.setFormatter(new org.telegram.ui.Components.s(strArr, i13));
-                            org.telegram.ui.Components.w4 w4Var = new org.telegram.ui.Components.w4(context, ed0Var);
+                            gd0Var.setFormatter(new org.telegram.ui.Components.s(strArr, i13));
+                            org.telegram.ui.Components.w4 w4Var = new org.telegram.ui.Components.w4(context, gd0Var);
                             w4Var.setOrientation(1);
                             FrameLayout frameLayout = new FrameLayout(context);
                             TextView textView = new TextView(context);
@@ -94,7 +94,7 @@ public final /* synthetic */ class w implements View.OnClickListener {
                             w4Var.addView(dVar, w7.y5.t(-1, 48, 0, 16, 12, 16, 12));
                             e3Var.customView = w4Var;
                             e3Var.show();
-                            e3Var.setOnDismissListener(new ei.e0(i13, q1Var, ed0Var));
+                            e3Var.setOnDismissListener(new ei.e0(i13, q1Var, gd0Var));
                             e3Var.setBackgroundColor(w03);
                             e3Var.fixNavigationBar(w03);
                             org.telegram.ui.ActionBar.e3[] e3VarArr = {e3Var};

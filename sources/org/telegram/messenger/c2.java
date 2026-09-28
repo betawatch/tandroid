@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c2 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,16 +82,16 @@ public final /* synthetic */ class c2 implements Runnable {
                 ((MediaController) this.b).lambda$startAudioAgain$7((MessageObject) this.c);
                 break;
             case 18:
-                ((MediaDataController) this.b).lambda$loadHints$147((TLRPC.TL_contacts_topPeers) this.c);
-                break;
-            case 19:
                 MediaDataController.lambda$loadReplyMessagesForMessages$172((AtomicInteger) this.b, (Runnable) this.c);
                 break;
+            case 19:
+                MediaDataController.lambda$fillWithAnimatedEmoji$229((boolean[]) this.b, (t6) this.c);
+                break;
             case 20:
-                MediaDataController.lambda$fillWithAnimatedEmoji$228((boolean[]) this.b, (t6) this.c);
+                ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);
                 break;
             case 21:
-                ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);
+                ((MediaDataController) this.b).lambda$loadHints$147((TLRPC.TL_contacts_topPeers) this.c);
                 break;
             case 22:
                 ((MessageObject) this.b).lambda$loadAnimatedEmojiDocument$0((TLRPC.Document) this.c);

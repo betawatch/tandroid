@@ -92,7 +92,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.zg1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class SendMessagesHelper extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     private static final int ERROR_TYPE_FILE_TOO_LARGE = 2;
@@ -122,7 +122,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     private final HashMap<Integer, Boolean> waitingForTodoUpdate;
     private final HashMap<String, byte[]> waitingForVote;
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class DelayedMessageSendAfterRequest {
         public DelayedMessage delayedMessage;
         public MessageObject msgObj;
@@ -138,7 +138,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class ImportingHistory {
         public long dialogId;
         public double estimatedUploadSpeed;
@@ -157,7 +157,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         public ArrayList<String> uploadMedia = new ArrayList<>();
         public int timeUntilFinish = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-        /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+        /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
         public class 1 implements RequestDelegate {
             final /* synthetic */ TLRPC.TL_messages_initHistoryImport val$req;
 
@@ -192,7 +192,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
         }
 
-        /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+        /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
         public class 2 implements RequestDelegate {
             final /* synthetic */ String val$path;
 
@@ -215,7 +215,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
         }
 
-        /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+        /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
         public class 3 implements RequestDelegate {
             final /* synthetic */ TLRPC.TL_messages_startHistoryImport val$req;
 
@@ -349,7 +349,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class ImportingSticker {
         public boolean animated;
         public String emoji;
@@ -359,7 +359,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         public boolean validated;
         public VideoEditedInfo videoEditedInfo;
 
-        /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+        /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
         public class 1 implements RequestDelegate {
             final /* synthetic */ Runnable val$onFinish;
 
@@ -411,7 +411,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class ImportingStickers {
         public double estimatedUploadSpeed;
         private long lastUploadSize;
@@ -428,7 +428,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         public ArrayList<ImportingSticker> uploadMedia = new ArrayList<>();
         public int timeUntilFinish = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-        /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+        /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
         public class 1 implements RequestDelegate {
             final /* synthetic */ TLRPC.TL_stickers_createStickerSet val$req;
 
@@ -570,7 +570,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class MediaSendPrepareWorker {
         public volatile String parentObject;
         public volatile TLRPC.TL_photo photo;
@@ -580,7 +580,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class SendMessageParams {
         public String caption;
         public TLRPC.PhotoSize cover;
@@ -744,7 +744,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class SendingMediaInfo {
         public boolean canDeleteAfter;
         public String caption;
@@ -1546,7 +1546,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendDelayedMessage$50(DelayedMessage delayedMessage, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new n8(this, tLObject, delayedMessage, 25));
+        AndroidUtilities.runOnUIThread(new j8(this, tLObject, delayedMessage, 25));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2096,7 +2096,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     notificationCenter3.lambda$postNotificationNameOnUIThread$1(i27, objArr3);
                     SendMessagesHelper sendMessagesHelper8 = this;
                     boolean z15 = z10;
-                    getMessagesStorage().getStorageQueue().postRunnable(new y7(sendMessagesHelper8, z15, message2, i10, arrayList, i11));
+                    getMessagesStorage().getStorageQueue().postRunnable(new v7(sendMessagesHelper8, z15, message2, i10, arrayList, i11));
                     sendMessagesHelper4 = sendMessagesHelper8;
                     z12 = z15;
                     tLObject3 = tLObject2;
@@ -8036,7 +8036,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             sendMessagesHelper.getStatsController().incrementSentItemsCount(ApplicationLoader.getCurrentNetworkType(), 1, i23);
         } else {
             i11 = i10;
-            AndroidUtilities.runOnUIThread(new n8(sendMessagesHelper, tL_error, tL_messages_forwardMessages, 26));
+            AndroidUtilities.runOnUIThread(new j8(sendMessagesHelper, tL_error, tL_messages_forwardMessages, 26));
         }
         for (int i24 = 0; i24 < arrayList.size(); i24++) {
             TLRPC.Message message6 = (TLRPC.Message) arrayList.get(i24);
@@ -8147,7 +8147,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tL_messages_getBotCallbackAnswer.flags = 1 | tL_messages_getBotCallbackAnswer.flags;
             tL_messages_getBotCallbackAnswer.data = bArr;
         }
-        getConnectionsManager().sendRequest(tL_messages_getBotCallbackAnswer, new v7(this, str, list, 11), 2);
+        getConnectionsManager().sendRequest(tL_messages_getBotCallbackAnswer, new s7(this, str, list, 11), 2);
         getMessagesController().markDialogAsRead(j3, i10, i10, 0, false, 0L, 0, true, 0);
     }
 
@@ -8212,7 +8212,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
             this.voteSendTime.k(Long.valueOf(SystemClock.elapsedRealtime()), messageObject.getPollId());
         }
-        AndroidUtilities.runOnUIThread(new n8((BaseController) this, str, (Object) runnable, 24));
+        AndroidUtilities.runOnUIThread(new j8((BaseController) this, str, (Object) runnable, 24));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -11437,7 +11437,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             long j10 = -j3;
             TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j10));
             if (chat != null && !chat.megagroup) {
-                getMessagesController().convertToMegaGroup(null, j10, null, new a8(this, uri, arrayList, longCallback));
+                getMessagesController().convertToMegaGroup(null, j10, null, new y7(this, uri, arrayList, longCallback));
                 return;
             }
         }
@@ -11781,7 +11781,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     public void sendNotificationCallback(long j3, int i10, byte[] bArr) {
-        AndroidUtilities.runOnUIThread(new j7(this, j3, i10, bArr, 9));
+        AndroidUtilities.runOnUIThread(new g7(this, j3, i10, bArr, 9));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -12331,7 +12331,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 String str13 = "stickerset_" + delayedMessage2.obj.getId();
                 TLRPC.TL_messages_getStickerSet tL_messages_getStickerSet = new TLRPC.TL_messages_getStickerSet();
                 tL_messages_getStickerSet.stickerset = (TLRPC.InputStickerSet) delayedMessage2.parentObject;
-                sendMessagesHelper.getConnectionsManager().sendRequest(tL_messages_getStickerSet, new v7(sendMessagesHelper, delayedMessage2, str13, 10));
+                sendMessagesHelper.getConnectionsManager().sendRequest(tL_messages_getStickerSet, new s7(sendMessagesHelper, delayedMessage2, str13, 10));
                 sendMessagesHelper.putToDelayedMessages(str13, delayedMessage2);
                 return;
             }
@@ -14724,7 +14724,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         sendSticker(document, str, j3, charSequence, videoEditedInfo, messageObject, messageObject2, storyItem, mnVar, sendAnimationData, z10, i10, i11, z11, obj, sendMessageChatArguments, j10, j11, messageSuggestionParams, false);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class LocationProvider {
         private LocationProviderDelegate delegate;
         private GpsLocationListener gpsLocationListener;
@@ -14733,7 +14733,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         private Runnable locationQueryCancelRunnable;
         private GpsLocationListener networkLocationListener;
 
-        /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+        /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
         public interface LocationProviderDelegate {
             void onLocationAcquired(Location location);
 
@@ -14820,7 +14820,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             this.delegate = locationProviderDelegate;
         }
 
-        /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+        /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
         public class GpsLocationListener implements LocationListener {
             private GpsLocationListener() {
             }
@@ -16624,7 +16624,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return charSequence;
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class DelayedMessage {
         public TLRPC.InputFile coverFile;
         public TLRPC.PhotoSize coverPhotoSize;
@@ -17165,7 +17165,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 tL_messages_editMessage.flags = i12 | 294912;
             }
         }
-        return getConnectionsManager().sendRequest(tL_messages_editMessage, new v7(this, m2Var, tL_messages_editMessage, 12));
+        return getConnectionsManager().sendRequest(tL_messages_editMessage, new s7(this, m2Var, tL_messages_editMessage, 12));
     }
 
     /*  JADX ERROR: Type inference failed

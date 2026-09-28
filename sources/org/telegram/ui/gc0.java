@@ -20,7 +20,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class gc0 extends FrameLayout {
     public final ImageView a;
@@ -29,7 +29,7 @@ public final class gc0 extends FrameLayout {
     public final org.telegram.ui.Components.p6 d;
     public final ImageView e;
     public final Switch f;
-    public final org.telegram.ui.Components.op h;
+    public final org.telegram.ui.Components.pp h;
     public boolean n;
     public boolean r;
     public boolean s;
@@ -62,7 +62,7 @@ public final class gc0 extends FrameLayout {
         p4Var.setImportantForAccessibility(2);
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, true, true);
         this.d = p6Var;
-        p6Var.b(0.35f, 200L, org.telegram.ui.Components.rr.h);
+        p6Var.b(0.35f, 200L, org.telegram.ui.Components.sr.h);
         p6Var.setTypeface(AndroidUtilities.bold());
         p6Var.setTextSize(AndroidUtilities.dp(14.0f));
         p6Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
@@ -95,16 +95,16 @@ public final class gc0 extends FrameLayout {
         r32.d(i11, i12, i13, i13);
         r32.setImportantForAccessibility(2);
         addView(r32, w7.y5.d(37, 50.0f, (LocaleController.isRTL ? 3 : 5) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
-        org.telegram.ui.Components.op opVar = new org.telegram.ui.Components.op(context, 21, null);
-        this.h = opVar;
-        opVar.b(org.telegram.ui.ActionBar.h6.h7, org.telegram.ui.ActionBar.h6.j7, org.telegram.ui.ActionBar.h6.k7);
-        opVar.setDrawUnchecked(true);
-        opVar.a(true, false);
-        opVar.setDrawBackgroundAsArc(10);
-        opVar.setVisibility(8);
-        opVar.setImportantForAccessibility(2);
+        org.telegram.ui.Components.pp ppVar = new org.telegram.ui.Components.pp(context, 21, null);
+        this.h = ppVar;
+        ppVar.b(org.telegram.ui.ActionBar.h6.h7, org.telegram.ui.ActionBar.h6.j7, org.telegram.ui.ActionBar.h6.k7);
+        ppVar.setDrawUnchecked(true);
+        ppVar.a(true, false);
+        ppVar.setDrawBackgroundAsArc(10);
+        ppVar.setVisibility(8);
+        ppVar.setImportantForAccessibility(2);
         boolean z10 = LocaleController.isRTL;
-        addView(opVar, w7.y5.d(21, 21.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f));
+        addView(ppVar, w7.y5.d(21, 21.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f));
         setFocusable(true);
     }
 
@@ -147,13 +147,13 @@ public final class gc0 extends FrameLayout {
         if ((Build.VERSION.SDK_INT < 33 || (SharedConfig.getDevicePerformanceClass() < 1 && !BuildVars.DEBUG_PRIVATE_VERSION)) && (262144 & i10) > 0) {
             bitCount--;
         }
-        return (org.telegram.ui.Components.k11.c() || (i10 & 65536) <= 0) ? bitCount : bitCount - 1;
+        return (org.telegram.ui.Components.m11.c() || (i10 & 65536) <= 0) ? bitCount : bitCount - 1;
     }
 
     public final void b(boolean z10, boolean z11) {
         if (this.s != z10) {
             this.s = z10;
-            org.telegram.ui.Components.op opVar = this.h;
+            org.telegram.ui.Components.pp ppVar = this.h;
             Switch r12 = this.f;
             LinearLayout linearLayout = this.b;
             ImageView imageView = this.a;
@@ -161,12 +161,12 @@ public final class gc0 extends FrameLayout {
                 imageView.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
                 linearLayout.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
                 r12.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
-                org.telegram.messenger.ok.r(opVar.animate(), z10 ? 0.5f : 1.0f, 220L);
+                org.telegram.messenger.ok.r(ppVar.animate(), z10 ? 0.5f : 1.0f, 220L);
             } else {
                 imageView.setAlpha(z10 ? 0.5f : 1.0f);
                 linearLayout.setAlpha(z10 ? 0.5f : 1.0f);
                 r12.setAlpha(z10 ? 0.5f : 1.0f);
-                opVar.setAlpha(z10 ? 0.5f : 1.0f);
+                ppVar.setAlpha(z10 ? 0.5f : 1.0f);
             }
             setEnabled(!z10);
         }
@@ -213,12 +213,12 @@ public final class gc0 extends FrameLayout {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        org.telegram.ui.Components.op opVar = this.h;
-        accessibilityNodeInfo.setClassName(opVar.getVisibility() == 0 ? "android.widget.CheckBox" : "android.widget.Switch");
+        org.telegram.ui.Components.pp ppVar = this.h;
+        accessibilityNodeInfo.setClassName(ppVar.getVisibility() == 0 ? "android.widget.CheckBox" : "android.widget.Switch");
         accessibilityNodeInfo.setCheckable(true);
         accessibilityNodeInfo.setEnabled(true);
-        if (opVar.getVisibility() == 0) {
-            accessibilityNodeInfo.setChecked(opVar.a.q);
+        if (ppVar.getVisibility() == 0) {
+            accessibilityNodeInfo.setChecked(ppVar.a.q);
         } else {
             accessibilityNodeInfo.setChecked(this.f.h);
         }

@@ -3,20 +3,20 @@ package bi;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.Cells.u7;
-import org.telegram.ui.Components.oz;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.pz;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.wv0;
 import s4.z0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class i extends oz {
+public final class i extends pz {
     public final /* synthetic */ int X = 0;
     public final Object Y;
 
     public i() {
         super(100, false);
-        this.Y = new uv0();
+        this.Y = new wv0();
     }
 
     @Override // s4.o0
@@ -29,14 +29,14 @@ public final class i extends oz {
         }
     }
 
-    @Override // org.telegram.ui.Components.oz
-    public uv0 D1(int i10) {
+    @Override // org.telegram.ui.Components.pz
+    public wv0 D1(int i10) {
         switch (this.X) {
             case 0:
-                uv0 uv0Var = (uv0) this.Y;
-                uv0Var.b = 100.0f;
-                uv0Var.a = 100.0f;
-                return uv0Var;
+                wv0 wv0Var = (wv0) this.Y;
+                wv0Var.b = 100.0f;
+                wv0Var.a = 100.0f;
+                return wv0Var;
             default:
                 return super.D1(i10);
         }
@@ -68,7 +68,7 @@ public final class i extends oz {
     public int W0(z0 z0Var) {
         switch (this.X) {
             case 1:
-                if (!((r61) this.Y).a3) {
+                if (!((t61) this.Y).a3) {
                     break;
                 } else {
                     break;
@@ -91,8 +91,8 @@ public final class i extends oz {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(r61 r61Var, int i10) {
+    public i(t61 t61Var, int i10) {
         super(i10, false);
-        this.Y = r61Var;
+        this.Y = t61Var;
     }
 }

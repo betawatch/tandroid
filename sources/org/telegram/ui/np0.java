@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class np0 extends FrameLayout {
     public static final /* synthetic */ int q0 = 0;
@@ -134,11 +134,11 @@ public final class np0 extends FrameLayout {
         gp0 gp0Var = new gp0(this, context, i10);
         this.d = gp0Var;
         ep0Var.setAdapter(gp0Var);
-        ep0Var.setOnItemClickListener(new org.telegram.ui.Components.bn0(this, i10, 1));
+        ep0Var.setOnItemClickListener(new org.telegram.ui.Components.dn0(this, i10, 1));
         ep0Var.j(new hp0(this, i10));
         addView(ep0Var, w7.y5.c(-1.0f, -1));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
-        spannableStringBuilder.setSpan(new org.telegram.ui.Components.pq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
+        spannableStringBuilder.setSpan(new org.telegram.ui.Components.qq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
         String string = LocaleController.getString(tp0Var.a ? R.string.ChannelColorApply : R.string.UserColorApply);
         this.O = string;
         this.N = new SpannableStringBuilder(spannableStringBuilder).append((CharSequence) " ").append((CharSequence) string);
@@ -146,7 +146,7 @@ public final class np0 extends FrameLayout {
         f(false);
         s4.j jVar = new s4.j();
         jVar.n(350L);
-        jVar.o(org.telegram.ui.Components.rr.h);
+        jVar.o(org.telegram.ui.Components.sr.h);
         jVar.C = false;
         jVar.m = false;
         ep0Var.setItemAnimator(jVar);
@@ -283,7 +283,7 @@ public final class np0 extends FrameLayout {
         ep0 ep0Var = this.b;
         if (ep0Var != null) {
             for (int i10 = 0; i10 < ep0Var.getChildCount(); i10++) {
-                if (ep0Var.getChildAt(i10) instanceof org.telegram.ui.Components.u00) {
+                if (ep0Var.getChildAt(i10) instanceof org.telegram.ui.Components.v00) {
                     return true;
                 }
             }

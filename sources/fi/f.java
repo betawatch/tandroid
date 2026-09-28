@@ -20,31 +20,31 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.x51;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class f extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
     public TLRPC.Chat b;
     public TLRPC.User c;
     public FrameLayout d;
-    public r61 e;
+    public t61 e;
     public e f;
     public ArrayList h;
     public NotificationCenter.ObserversGroup n;
 
-    public static void U(f fVar, v51 v51Var) {
+    public static void U(f fVar, x51 x51Var) {
         f fVar2;
-        if (v51Var.d == 1) {
+        if (x51Var.d == 1) {
             fVar2 = fVar;
             e5.R(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = v51Var.G;
+        Object obj = x51Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.a));
@@ -105,12 +105,12 @@ public final class f extends m2 implements NotificationCenter.NotificationCenter
                 this.f.a.e(chat, new h9(this.b));
             }
         }
-        r61 r61Var = new r61(this, new b(this, 0), new c(this), new c(this));
-        this.e = r61Var;
-        r61Var.setClipToPadding(false);
-        r61 r61Var2 = this.e;
-        r61Var2.Y2.r = false;
-        r61Var2.p1();
+        t61 t61Var = new t61(this, new b(this, 0), new c(this), new c(this));
+        this.e = t61Var;
+        t61Var.setClipToPadding(false);
+        t61 t61Var2 = this.e;
+        t61Var2.Y2.r = false;
+        t61Var2.p1();
         this.d.addView(this.e, y5.c(-1.0f, -1));
         this.d.addView(this.actionBar, y5.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.d;

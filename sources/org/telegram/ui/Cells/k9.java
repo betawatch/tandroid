@@ -5,9 +5,9 @@ import android.text.Layout;
 import android.text.Spanned;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k9 implements Runnable {
     public final /* synthetic */ da a;
@@ -28,9 +28,9 @@ public final class k9 implements Runnable {
         }
         y9 y9Var2 = daVar.W;
         CharSequence t10 = daVar.t(y9Var, true);
-        wl0 wl0Var = daVar.E;
-        if (wl0Var != null) {
-            wl0Var.I0(false);
+        yl0 yl0Var = daVar.E;
+        if (yl0Var != null) {
+            yl0Var.I0(false);
         }
         int i10 = daVar.s;
         int i11 = daVar.t;

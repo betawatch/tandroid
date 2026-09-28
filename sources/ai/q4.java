@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.IOException;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -213,14 +213,14 @@ public final class q4 implements Runnable {
                 return;
             case 24:
                 ki.s0 s0Var = (ki.s0) this.b;
-                if (s0Var.V == 5 && (f0Var = s0Var.R) != null && s0Var.w) {
+                if (s0Var.W == 5 && (f0Var = s0Var.S) != null && s0Var.x) {
                     long J0 = f0Var.J0();
-                    long j3 = s0Var.F;
-                    if (J0 < j3 || J0 >= s0Var.G) {
-                        s0Var.R.W0(5, j3);
+                    long j3 = s0Var.G;
+                    if (J0 < j3 || J0 >= s0Var.H) {
+                        s0Var.S.W0(5, j3);
                     }
-                    s0Var.c.getClass();
-                    s0Var.h.postDelayed(this, 33L);
+                    s0Var.d.getClass();
+                    s0Var.i.postDelayed(this, 33L);
                     return;
                 }
                 return;

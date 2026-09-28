@@ -4,14 +4,14 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class bl0 extends Drawable {
-    public final /* synthetic */ org.telegram.ui.Components.t01 a;
+    public final /* synthetic */ org.telegram.ui.Components.v01 a;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
 
-    public bl0(org.telegram.ui.Components.t01 t01Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.a = t01Var;
+    public bl0(org.telegram.ui.Components.v01 v01Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.a = v01Var;
         this.b = d6Var;
     }
 

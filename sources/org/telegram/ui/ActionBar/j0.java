@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import java.util.ArrayList;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.r90;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.rs0;
 import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class j0 extends ImageView {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final class j0 extends ImageView {
         switch (this.a) {
             case 1:
                 super.setAlpha(f7);
-                ((nq) this.b).x.invalidate();
+                ((oq) this.b).x.invalidate();
                 break;
             default:
                 super.setAlpha(f7);
@@ -111,9 +111,9 @@ public final class j0 extends ImageView {
                 if (rs0Var != null) {
                     rs0Var.setTranslationY(f7);
                 }
-                p90 p90Var = photoViewer.f1;
-                if (p90Var != null) {
-                    p90Var.setTranslationY(f7);
+                r90 r90Var = photoViewer.f1;
+                if (r90Var != null) {
+                    r90Var.setTranslationY(f7);
                     break;
                 }
                 break;

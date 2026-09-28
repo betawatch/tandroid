@@ -25,7 +25,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class o6 extends Drawable {
     public boolean A;
@@ -789,7 +789,7 @@ public class o6 extends Drawable {
         ofFloat.addUpdateListener(new ci.c5(this, this.a.getColor(), i10, 2));
         this.S.addListener(new ei.v2(this, i10, 4));
         this.S.setDuration(240L);
-        this.S.setInterpolator(rr.h);
+        this.S.setInterpolator(sr.h);
         this.S.start();
     }
 
@@ -870,7 +870,7 @@ public class o6 extends Drawable {
         this.m = 0.0f;
         this.n = true;
         this.r = 320L;
-        this.s = rr.h;
+        this.s = sr.h;
         this.t = -1.0f;
         this.u = 0.3f;
         this.v = 0.0f;

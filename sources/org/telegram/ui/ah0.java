@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ah0 extends org.telegram.ui.Components.g6 {
     public static final float[] S = {12.0f, 12.0f, 10.0f};
@@ -67,7 +67,7 @@ public final class ah0 extends org.telegram.ui.Components.g6 {
         lVar3.a(0.75f);
         kVar2.u = lVar3;
         this.P = new HashSet();
-        this.Q = new le.c(0, new du(this, 22), org.telegram.ui.Components.rr.h, 380L, false);
+        this.Q = new le.c(0, new du(this, 22), org.telegram.ui.Components.sr.h, 380L, false);
         this.R = new me.b(new g(this, 25));
         this.s = d6Var;
     }

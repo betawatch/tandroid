@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vd implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -45,19 +45,19 @@ public final /* synthetic */ class vd implements TextView.OnEditorActionListener
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.tn tnVar = (org.telegram.ui.Components.tn) this.b;
-                org.telegram.ui.Components.sn snVar = (org.telegram.ui.Components.sn) this.c;
-                org.telegram.ui.Components.vn vnVar = tnVar.d;
-                wb1 wb1Var = vnVar.s;
+                org.telegram.ui.Components.un unVar = (org.telegram.ui.Components.un) this.b;
+                org.telegram.ui.Components.tn tnVar = (org.telegram.ui.Components.tn) this.c;
+                org.telegram.ui.Components.wn wnVar = unVar.d;
+                wb1 wb1Var = wnVar.s;
                 if (i10 == 5) {
-                    View F = wb1Var.F(snVar);
+                    View F = wb1Var.F(tnVar);
                     s4.c1 T = F == null ? null : wb1Var.T(F);
                     if (T != null && (b10 = T.b()) != -1) {
-                        int i11 = b10 - vnVar.t0;
-                        int i12 = vnVar.M;
+                        int i11 = b10 - wnVar.t0;
+                        int i12 = wnVar.M;
                         int i13 = i12 - 1;
-                        if (i11 == i13 && i12 < vnVar.J) {
-                            vnVar.P();
+                        if (i11 == i13 && i12 < wnVar.J) {
+                            wnVar.P();
                             break;
                         } else if (i11 != i13) {
                             s4.c1 K = wb1Var.K(b10 + 1);
@@ -69,7 +69,7 @@ public final /* synthetic */ class vd implements TextView.OnEditorActionListener
                                 }
                             }
                         } else {
-                            AndroidUtilities.hideKeyboard(snVar.getTextView());
+                            AndroidUtilities.hideKeyboard(tnVar.getTextView());
                             break;
                         }
                     }

@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ki extends r6 {
     public final /* synthetic */ int b;
@@ -35,9 +35,9 @@ public final class ki extends r6 {
                 wiVar.d0 = f7;
                 oi oiVar = wiVar.z0;
                 if (oiVar != null) {
-                    if ((oiVar instanceof rm) || (wiVar.y0 instanceof rm)) {
+                    if ((oiVar instanceof sm) || (wiVar.y0 instanceof sm)) {
                         int max = Math.max(oiVar.getWidth(), wiVar.y0.getWidth());
-                        if (wiVar.z0 instanceof rm) {
+                        if (wiVar.z0 instanceof sm) {
                             wiVar.y0.setTranslationX((-max) * f7);
                             wiVar.z0.setTranslationX((1.0f - f7) * max);
                         } else {
@@ -48,14 +48,14 @@ public final class ki extends r6 {
                         oiVar.setAlpha(f7);
                         wiVar.z0.s(f7);
                         oi oiVar2 = wiVar.z0;
-                        vn vnVar = wiVar.m0;
-                        if (oiVar2 == vnVar || wiVar.y0 == vnVar) {
-                            wiVar.a2(oiVar2 == vnVar ? 1 : 0);
+                        wn wnVar = wiVar.m0;
+                        if (oiVar2 == wnVar || wiVar.y0 == wnVar) {
+                            wiVar.a2(oiVar2 == wnVar ? 1 : 0);
                         }
                         oi oiVar3 = wiVar.z0;
-                        vn vnVar2 = wiVar.n0;
-                        if (oiVar3 == vnVar2 || wiVar.y0 == vnVar2) {
-                            wiVar.a2(oiVar3 == vnVar2 ? 1 : 0);
+                        wn wnVar2 = wiVar.n0;
+                        if (oiVar3 == wnVar2 || wiVar.y0 == wnVar2) {
+                            wiVar.a2(oiVar3 == wnVar2 ? 1 : 0);
                         }
                         wiVar.z0.setTranslationY(AndroidUtilities.dp(78.0f) * f7);
                         wiVar.y0.s(1.0f - Math.min(1.0f, f7 / 0.7f));
@@ -80,12 +80,12 @@ public final class ki extends r6 {
                         float f12 = f7 - f11;
                         if (f12 <= 200.0f) {
                             float f13 = f12 / 200.0f;
-                            f10 = rr.g.getInterpolation(f13) * 1.1f;
-                            childAt.setAlpha(rr.j.getInterpolation(f13));
+                            f10 = sr.g.getInterpolation(f13) * 1.1f;
+                            childAt.setAlpha(sr.j.getInterpolation(f13));
                         } else {
                             childAt.setAlpha(1.0f);
                             float f14 = f12 - 200.0f;
-                            f10 = f14 <= 100.0f ? 1.1f - (rr.i.getInterpolation(f14 / 100.0f) * 0.1f) : 1.0f;
+                            f10 = f14 <= 100.0f ? 1.1f - (sr.i.getInterpolation(f14 / 100.0f) * 0.1f) : 1.0f;
                         }
                     } else {
                         f10 = 0.0f;

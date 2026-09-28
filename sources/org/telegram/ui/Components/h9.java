@@ -24,7 +24,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class h9 extends Drawable {
     public static final int[][] C = {new int[]{-636796, -1090751, -612560, -35006}, new int[]{-693938, -690388, -11246, -22717}, new int[]{-8160001, -5217281, -36183, -1938945}, new int[]{-16133536, -10560448, -4070106, -8331477}, new int[]{-10569989, -14692629, -12191817, -14683687}, new int[]{-11694593, -13910017, -14622003, -15801871}, new int[]{-439392, -304000, -19910, -98718}};
@@ -35,7 +35,7 @@ public class h9 extends Drawable {
     public boolean c;
     public int d;
     public int e;
-    public p20 f;
+    public r20 f;
     public boolean g;
     public StaticLayout h;
     public float i;
@@ -149,7 +149,7 @@ public class h9 extends Drawable {
     public final void draw(Canvas canvas) {
         Drawable[] drawableArr;
         Drawable drawable;
-        p20 p20Var;
+        r20 r20Var;
         Rect bounds = getBounds();
         if (bounds == null) {
             return;
@@ -161,8 +161,8 @@ public class h9 extends Drawable {
         TextPaint textPaint = this.a;
         textPaint.setColor(k10);
         Paint paint = org.telegram.ui.ActionBar.h6.q0;
-        if (this.c && (p20Var = this.f) != null) {
-            p20Var.b(bounds.left, bounds.top, r4 + width, r10 + width);
+        if (this.c && (r20Var = this.f) != null) {
+            r20Var.b(bounds.left, bounds.top, r4 + width, r10 + width);
             paint = this.f.c;
         } else if (this.b) {
             int k11 = i0.a.k(b(), this.y);
@@ -210,24 +210,24 @@ public class h9 extends Drawable {
                 float f13 = width / 2.0f;
                 canvas.drawCircle(f13, f13, this.o * f13, paint);
                 if (org.telegram.ui.ActionBar.h6.C1) {
-                    ij0 ij0Var = org.telegram.ui.ActionBar.h6.u1;
-                    ij0Var.Z = true;
-                    ij0Var.Q(org.telegram.ui.ActionBar.h6.w0(null, i12, true), "Arrow1");
+                    kj0 kj0Var = org.telegram.ui.ActionBar.h6.u1;
+                    kj0Var.Z = true;
+                    kj0Var.Q(org.telegram.ui.ActionBar.h6.w0(null, i12, true), "Arrow1");
                     org.telegram.ui.ActionBar.h6.u1.Q(org.telegram.ui.ActionBar.h6.w0(null, i12, true), "Arrow2");
                     org.telegram.ui.ActionBar.h6.u1.o();
                     org.telegram.ui.ActionBar.h6.C1 = false;
                 }
             } else if (!org.telegram.ui.ActionBar.h6.C1) {
-                ij0 ij0Var2 = org.telegram.ui.ActionBar.h6.u1;
-                ij0Var2.Z = true;
-                ij0Var2.Q(this.d, "Arrow1");
+                kj0 kj0Var2 = org.telegram.ui.ActionBar.h6.u1;
+                kj0Var2.Z = true;
+                kj0Var2.Q(this.d, "Arrow1");
                 org.telegram.ui.ActionBar.h6.u1.Q(this.d, "Arrow2");
                 org.telegram.ui.ActionBar.h6.u1.o();
                 org.telegram.ui.ActionBar.h6.C1 = true;
             }
-            ij0 ij0Var3 = org.telegram.ui.ActionBar.h6.u1;
-            int i13 = ij0Var3.b;
-            int i14 = ij0Var3.c;
+            kj0 kj0Var3 = org.telegram.ui.ActionBar.h6.u1;
+            int i13 = kj0Var3.b;
+            int i14 = kj0Var3.c;
             int i15 = (width - i13) / 2;
             int i16 = (width - i14) / 2;
             canvas.save();
@@ -379,13 +379,13 @@ public class h9 extends Drawable {
             } else if (i10 == 21) {
                 this.c = true;
                 if (this.f == null) {
-                    this.f = new p20();
+                    this.f = new r20();
                 }
                 this.f.d(-8160001, -5217281, -36183, -1938945);
             } else if (i10 == 22) {
                 this.c = true;
                 if (this.f == null) {
-                    this.f = new p20();
+                    this.f = new r20();
                 }
                 this.f.d(-11694593, -13910017, -14622003, -15801871);
             } else {
@@ -514,8 +514,8 @@ public class h9 extends Drawable {
 
     public final void s(int i10) {
         MessagesController.PeerColors peerColors;
-        p20 p20Var = this.f;
-        if (p20Var != null) {
+        r20 r20Var = this.f;
+        if (r20Var != null) {
             this.b = false;
             this.c = true;
         } else {
@@ -525,7 +525,7 @@ public class h9 extends Drawable {
         int[][] iArr = C;
         org.telegram.ui.ActionBar.d6 d6Var = this.z;
         if (i10 < 14) {
-            if (p20Var != null) {
+            if (r20Var != null) {
                 int[] iArr2 = iArr[e(i10)];
                 this.f.d(iArr2[0], iArr2[1], iArr2[2], iArr2[3]);
                 return;

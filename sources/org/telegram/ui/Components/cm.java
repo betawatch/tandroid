@@ -1,47 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class cm extends TextView {
-    public float a;
-    public boolean b;
-    public final /* synthetic */ Paint c;
+public final class cm implements zl0 {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cm(Context context, Paint paint) {
-        super(context);
-        this.c = paint;
-        this.a = 0.0f;
+    public cm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = (int) ((this.a * 130.0f) + 125.0f);
-        Paint paint = this.c;
-        paint.setAlpha(i10);
-        if (this.b) {
-            float f7 = this.a + 0.026666667f;
-            this.a = f7;
-            if (f7 >= 1.0f) {
-                this.a = 1.0f;
-                this.b = false;
-            }
-        } else {
-            float f10 = this.a - 0.026666667f;
-            this.a = f10;
-            if (f10 <= 0.0f) {
-                this.a = 0.0f;
-                this.b = true;
-            }
+    @Override // org.telegram.ui.Components.zl0
+    public final void a(boolean z10) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        chatAttachAlertPhotoLayout.L = z10 ? 1 : 0;
+        chatAttachAlertPhotoLayout.E.d1(true);
+    }
+
+    @Override // org.telegram.ui.Components.zl0
+    public final boolean b(int i10) {
+        return this.a.G.j(i10) == 0;
+    }
+
+    @Override // org.telegram.ui.Components.zl0
+    public final void c(View view, boolean z10) {
+        if (z10 == this.a.K && (view instanceof org.telegram.ui.Cells.t5)) {
+            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+            t5Var.w.a(t5Var);
         }
-        super.onDraw(canvas);
-        canvas.drawCircle(AndroidUtilities.dp(14.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(4.0f), paint);
-        invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.zl0
+    public final boolean d(int i10) {
+        MediaController.PhotoEntry M = this.a.G.M(i10);
+        return M != null && ChatAttachAlertPhotoLayout.s1.containsKey(Integer.valueOf(M.imageId));
     }
 }

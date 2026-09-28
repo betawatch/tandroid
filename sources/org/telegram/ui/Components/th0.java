@@ -1,172 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class th0 extends w9 implements xv0 {
-    public final int G;
-    public RadialProgress2 H;
-    public ValueAnimator I;
-    public float J;
-    public long K;
-    public boolean L;
-    public final int M;
-    public final Paint N;
-    public Runnable O;
-    public final /* synthetic */ zh0 P;
+public final class th0 implements z4.e {
+    public final /* synthetic */ bi0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public th0(zh0 zh0Var, Context context, int i10, Paint paint) {
-        super(context);
-        this.P = zh0Var;
-        this.G = AndroidUtilities.dp(64.0f);
-        this.K = -1L;
-        this.M = i10;
-        this.N = paint;
-        setLayerNum(zh0Var.l1);
+    public th0(bi0 bi0Var) {
+        this.a = bi0Var;
     }
 
-    @Override // org.telegram.ui.Components.xv0
-    public final void g(Runnable runnable) {
-        this.O = runnable;
-    }
-
-    @Override // android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        super.invalidate(i10, i11, i12, i13);
-        Runnable runnable = this.O;
-        if (runnable != null) {
-            runnable.run();
+    @Override // z4.e
+    public final void a(int i10) {
+        bi0 bi0Var = this.a;
+        int i11 = bi0Var.o1;
+        boolean z10 = i10 >= i11;
+        if (i10 != i11) {
+            bi0Var.getClass();
+            bi0Var.o1 = i10;
+        }
+        MessagesController.DialogPhotos dialogPhotos = bi0Var.S0;
+        if (dialogPhotos != null) {
+            ai0 ai0Var = bi0Var.D0;
+            dialogPhotos.loadAfter(i10 - (ai0Var != null ? ai0Var.j() : 0), z10);
         }
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        zh0 zh0Var = this.P;
-        float[] fArr = zh0Var.O0;
-        Path path = zh0Var.M0;
-        ArrayList arrayList = zh0Var.b1;
-        RectF rectF = zh0Var.N0;
-        org.telegram.ui.hv0 hv0Var = zh0Var.h1;
-        if (hv0Var == null || !hv0Var.n) {
-            if (this.H != null) {
-                int k10 = zh0Var.D0.k(this.M);
-                if (zh0Var.i1) {
-                    k10--;
-                }
-                Drawable drawable = getImageReceiver().getDrawable();
-                long j3 = 0;
-                int i10 = 4;
-                if (k10 >= arrayList.size() || arrayList.get(k10) == null ? drawable == null || (this.L && (!(drawable instanceof d6) || ((d6) drawable).d[4] <= 0)) : ((Float) arrayList.get(k10)).floatValue() < 1.0f) {
-                    if (this.K < 0) {
-                        this.K = System.currentTimeMillis();
-                    } else {
-                        long currentTimeMillis = System.currentTimeMillis() - this.K;
-                        long j10 = this.L ? 250L : 750L;
-                        if (currentTimeMillis <= 250 + j10 && currentTimeMillis > j10) {
-                            this.H.E = rr.f.getInterpolation((currentTimeMillis - j10) / 250.0f);
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
+        ImageLocation imageLocation;
+        bi0 bi0Var = this.a;
+        bi0Var.B(f7, i10);
+        if (i11 == 0) {
+            int k10 = bi0Var.D0.k(i10);
+            if (bi0Var.i1) {
+                k10--;
+            }
+            bi0Var.getCurrentItemView();
+            int childCount = bi0Var.getChildCount();
+            for (int i12 = 0; i12 < childCount; i12++) {
+                View childAt = bi0Var.getChildAt(i12);
+                if (childAt instanceof w9) {
+                    ai0 ai0Var = bi0Var.D0;
+                    int k11 = ai0Var.k(ai0Var.d.indexOf(childAt));
+                    if (bi0Var.i1) {
+                        k11--;
+                    }
+                    ImageReceiver imageReceiver = ((w9) childAt).getImageReceiver();
+                    boolean allowStartAnimation = imageReceiver.getAllowStartAnimation();
+                    if (k11 >= 0 && k11 < bi0Var.W0.size()) {
+                        if (k11 == k10) {
+                            if (!allowStartAnimation) {
+                                imageReceiver.setAllowStartAnimation(true);
+                                imageReceiver.startAnimation();
+                            }
+                            ImageLocation imageLocation2 = (ImageLocation) bi0Var.W0.get(k11);
+                            if (imageLocation2 != null) {
+                                FileLoader.getInstance(bi0Var.L0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
+                            }
+                        } else if (allowStartAnimation) {
+                            d6 animation = imageReceiver.getAnimation();
+                            if (animation != null && (imageLocation = (ImageLocation) bi0Var.W0.get(k11)) != null) {
+                                animation.y(imageLocation.videoSeekTo, false, true);
+                            }
+                            imageReceiver.setAllowStartAnimation(false);
+                            imageReceiver.stopAnimation();
                         }
                     }
-                    if (zh0Var.g1) {
-                        invalidate();
-                    } else {
-                        postInvalidateOnAnimation();
-                    }
-                    invalidate();
-                } else if (this.I == null) {
-                    RadialProgress2 radialProgress2 = this.H;
-                    if ((radialProgress2.c ? radialProgress2.j : radialProgress2.i).w < 1.0f) {
-                        radialProgress2.o(1.0f, true);
-                        j3 = 100;
-                    }
-                    this.J = this.H.E;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    this.I = ofFloat;
-                    ofFloat.setStartDelay(j3);
-                    this.I.setDuration((long) (this.J * 250.0f));
-                    this.I.setInterpolator(rr.f);
-                    this.I.addUpdateListener(new s70(this, i10));
-                    this.I.addListener(new ei.v2(this, k10, 8));
-                    this.I.start();
                 }
-                int i11 = zh0Var.m1;
-                if (i11 == 0 && zh0Var.n1 == 0) {
-                    canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.N);
-                    canvas2 = canvas;
-                } else {
-                    canvas2 = canvas;
-                    int i12 = zh0Var.n1;
-                    Paint paint = this.N;
-                    if (i11 == i12) {
-                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                        float f7 = zh0Var.m1;
-                        canvas2.drawRoundRect(rectF, f7, f7, paint);
-                    } else {
-                        path.reset();
-                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                        for (int i13 = 0; i13 < 4; i13++) {
-                            fArr[i13] = zh0Var.m1;
-                            fArr[i13 + 4] = zh0Var.n1;
-                        }
-                        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-                        canvas2.drawPath(path, paint);
-                    }
-                }
-            } else {
-                canvas2 = canvas;
             }
-            super.onDraw(canvas);
-            RadialProgress2 radialProgress22 = this.H;
-            if (radialProgress22 == null || radialProgress22.E <= 0.0f) {
-                return;
-            }
-            radialProgress22.draw(canvas2);
         }
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        if (this.H != null) {
-            int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (this.P.z0.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
-            int dp2 = AndroidUtilities.dp2(80.0f);
-            RadialProgress2 radialProgress2 = this.H;
-            int i14 = this.G;
-            int i15 = (i11 - currentActionBarHeight) - dp2;
-            radialProgress2.q((i10 - i14) / 2, hg.c.z(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate(Rect rect) {
-        super.invalidate(rect);
-        Runnable runnable = this.O;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        zh0 zh0Var = this.P;
-        if (zh0Var.g1) {
-            zh0Var.invalidate();
-        }
-        Runnable runnable = this.O;
-        if (runnable != null) {
-            runnable.run();
-        }
+    @Override // z4.e
+    public final void c(int i10) {
     }
 }

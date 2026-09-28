@@ -1,45 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class e71 implements View.OnLayoutChangeListener {
-    public Boolean a;
-    public boolean b;
-    public final /* synthetic */ n7.z0 c;
+public final class e71 extends ImageReceiver {
+    public final /* synthetic */ f71 a;
 
-    public e71(n7.z0 z0Var, View view) {
-        this.c = z0Var;
-        o1.k kVar = new o1.k(view, o1.h.n, 0.0f);
-        z0Var.c = kVar;
-        kVar.u.a(1.0f);
-        ((o1.k) z0Var.c).u.b(350.0f);
+    public e71(f71 f71Var) {
+        this.a = f71Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        Point point = AndroidUtilities.displaySize;
-        boolean z10 = point.x > point.y;
-        Boolean bool = this.a;
-        if (bool == null || bool.booleanValue() != z10) {
-            this.a = Boolean.valueOf(z10);
-            this.b = true;
-        }
-        if (i15 == 0 || i15 == i11 || this.b) {
-            this.b = false;
-            return;
-        }
-        n7.z0 z0Var = this.c;
-        ((o1.k) z0Var.c).c();
-        if (view.getVisibility() != 0) {
-            view.setTranslationY(0.0f);
-            return;
-        }
-        ((o1.k) z0Var.c).u.i = 0.0f;
-        view.setTranslationY((i15 - i11) + 0.0f);
-        ((o1.k) z0Var.c).f();
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.w5
+    public final void invalidate() {
+        this.a.invalidate();
     }
 }

@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p81 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class p81 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.gl0 gl0Var;
+        org.telegram.ui.Components.il0 il0Var;
         int i10;
         int i11;
         org.telegram.ui.web.b1 b1Var;
@@ -83,9 +83,9 @@ public final /* synthetic */ class p81 implements Runnable {
                     org.telegram.ui.ActionBar.h6.w = String.format("(%.06f, %.06f)", Double.valueOf(org.telegram.ui.ActionBar.h6.x), Double.valueOf(org.telegram.ui.ActionBar.h6.y));
                 }
                 org.telegram.ui.ActionBar.h6.q1();
-                org.telegram.ui.Components.wl0 wl0Var = themeActivity2.b;
-                if (wl0Var != null && (gl0Var = (org.telegram.ui.Components.gl0) wl0Var.K(themeActivity2.Y)) != null) {
-                    View view2 = gl0Var.a;
+                org.telegram.ui.Components.yl0 yl0Var = themeActivity2.b;
+                if (yl0Var != null && (il0Var = (org.telegram.ui.Components.il0) yl0Var.K(themeActivity2.Y)) != null) {
+                    View view2 = il0Var.a;
                     if (view2 instanceof org.telegram.ui.Cells.ea) {
                         ((org.telegram.ui.Cells.ea) view2).c(LocaleController.getString("AutoNightUpdateLocation", R.string.AutoNightUpdateLocation), org.telegram.ui.ActionBar.h6.w, false, false);
                         break;
@@ -214,19 +214,19 @@ public final /* synthetic */ class p81 implements Runnable {
                 org.telegram.ui.Components.voip.n2.T = false;
                 org.telegram.ui.Components.voip.n2.i();
                 ViewPropertyAnimator duration = mi1Var2.K.animate().setDuration(150L);
-                org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.f;
-                duration.setInterpolator(rrVar).start();
-                mi1Var2.H.animate().alpha(1.0f).setDuration(150L).setInterpolator(rrVar).start();
-                mi1Var2.I.animate().alpha(1.0f).setDuration(150L).setInterpolator(rrVar).start();
-                mi1Var2.N.animate().alpha(1.0f).setDuration(150L).setInterpolator(rrVar).start();
-                mi1Var2.X.animate().alpha(1.0f).setDuration(150L).setInterpolator(rrVar).start();
-                mi1Var2.j0.animate().alpha(1.0f).setDuration(150L).setInterpolator(rrVar).start();
-                mi1Var2.h0.animate().alpha(1.0f).setDuration(350L).setInterpolator(rrVar).start();
-                mi1Var2.i0.animate().alpha(1.0f).setDuration(350L).setInterpolator(rrVar).start();
-                mi1Var2.M0.animate().alpha(1.0f).setDuration(350L).setInterpolator(rrVar).start();
+                org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.f;
+                duration.setInterpolator(srVar).start();
+                mi1Var2.H.animate().alpha(1.0f).setDuration(150L).setInterpolator(srVar).start();
+                mi1Var2.I.animate().alpha(1.0f).setDuration(150L).setInterpolator(srVar).start();
+                mi1Var2.N.animate().alpha(1.0f).setDuration(150L).setInterpolator(srVar).start();
+                mi1Var2.X.animate().alpha(1.0f).setDuration(150L).setInterpolator(srVar).start();
+                mi1Var2.j0.animate().alpha(1.0f).setDuration(150L).setInterpolator(srVar).start();
+                mi1Var2.h0.animate().alpha(1.0f).setDuration(350L).setInterpolator(srVar).start();
+                mi1Var2.i0.animate().alpha(1.0f).setDuration(350L).setInterpolator(srVar).start();
+                mi1Var2.M0.animate().alpha(1.0f).setDuration(350L).setInterpolator(srVar).start();
                 valueAnimator.addListener(new ai1(mi1Var2, i13));
                 valueAnimator.setDuration(350L);
-                valueAnimator.setInterpolator(rrVar);
+                valueAnimator.setInterpolator(srVar);
                 valueAnimator.start();
                 break;
             case 22:
@@ -281,7 +281,7 @@ public final /* synthetic */ class p81 implements Runnable {
                     } else if (str5.equals("share_score")) {
                         messageObject.messageOwner.with_my_score = true;
                     }
-                    hj1Var.showDialog(org.telegram.ui.Components.uq0.N0(hj1Var.getParentActivity(), messageObject, null, false, hj1Var.h));
+                    hj1Var.showDialog(org.telegram.ui.Components.wq0.N0(hj1Var.getParentActivity(), messageObject, null, false, hj1Var.h));
                     break;
                 }
                 break;
@@ -327,9 +327,9 @@ public final /* synthetic */ class p81 implements Runnable {
                 arrayList9.clear();
                 arrayList9.addAll((ArrayList) obj);
                 g1Var.h = false;
-                org.telegram.ui.Components.l61 l61Var = g1Var.a;
-                if (l61Var != null) {
-                    l61Var.Y2.N(true);
+                org.telegram.ui.Components.n61 n61Var = g1Var.a;
+                if (n61Var != null) {
+                    n61Var.Y2.N(true);
                     break;
                 }
                 break;

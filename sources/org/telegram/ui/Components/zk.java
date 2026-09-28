@@ -1,28 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import android.location.Location;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class zk extends s4.d0 {
-    public final /* synthetic */ hg.g0 r;
+public final /* synthetic */ class zk implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ il b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zk(hg.g0 g0Var, Context context) {
-        super(context);
-        this.r = g0Var;
+    public /* synthetic */ zk(il ilVar, int i10) {
+        this.a = i10;
+        this.b = ilVar;
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        int k10 = super.k(i10, view);
-        hl hlVar = (hl) this.r.V;
-        return k10 - (hlVar.P.getPaddingTop() - (hlVar.A0 - hlVar.z0));
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 4;
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                il.K(this.b, (IMapsProvider.IMap) obj);
+                break;
+            default:
+                il.R(this.b, (Location) obj);
+                break;
+        }
     }
 }

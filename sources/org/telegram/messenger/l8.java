@@ -1,51 +1,38 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.Timer;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l8 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ a0.i d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ BaseController f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ Utilities.Callback e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ TLRPC.InputStickerSet h;
 
-    public /* synthetic */ l8(MediaDataController mediaDataController, Timer.Task task, Timer timer, ArrayList arrayList, long j3, a0.i iVar, Runnable runnable) {
-        this.f = mediaDataController;
-        this.h = task;
-        this.n = timer;
-        this.c = arrayList;
-        this.b = j3;
-        this.d = iVar;
-        this.e = runnable;
+    public /* synthetic */ l8(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, String str, Utilities.Callback callback, boolean z10, TLRPC.InputStickerSet inputStickerSet, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = tL_messages_stickerSet;
+        this.d = str;
+        this.e = callback;
+        this.f = z10;
+        this.h = inputStickerSet;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.f).lambda$loadReplyMessagesForMessages$171((Timer.Task) this.h, (Timer) this.n, this.c, this.b, this.d, this.e);
+                this.b.lambda$getStickerSet$33(this.c, this.d, this.e, this.f, this.h);
                 break;
             default:
-                ((TopicsController) this.f).lambda$reloadTopics$13((TLRPC.TL_messages_savedDialogs) this.h, this.b, this.c, this.d, (HashSet) this.n, this.e);
+                this.b.lambda$getStickerSet$36(this.c, this.d, this.e, this.f, this.h);
                 break;
         }
-    }
-
-    public /* synthetic */ l8(TopicsController topicsController, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j3, ArrayList arrayList, a0.i iVar, HashSet hashSet, Runnable runnable) {
-        this.f = topicsController;
-        this.h = tL_messages_savedDialogs;
-        this.b = j3;
-        this.c = arrayList;
-        this.d = iVar;
-        this.n = hashSet;
-        this.e = runnable;
     }
 }

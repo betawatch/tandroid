@@ -31,7 +31,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.cp;
@@ -43,7 +43,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.yt;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
@@ -241,7 +241,7 @@ public final /* synthetic */ class c1 implements Runnable {
                 fpVar.getMessagesController().updateUsernameActiveness(fpVar.X, tL_username.username, tL_username.active);
                 break;
             case 9:
-                ((lz) this.c).J((nh.b) this.d, (TLObject) this.e, (TLRPC.StickerSet) this.f, (TLRPC.Document) this.h, this.b, true);
+                ((mz) this.c).J((nh.b) this.d, (TLObject) this.e, (TLRPC.StickerSet) this.f, (TLRPC.Document) this.h, this.b, true);
                 break;
             default:
                 yt.Q((yt) this.c, (TLObject) this.d, (ci.d) this.e, this.b, (HashSet) this.f, (TLRPC.TL_error) this.h);

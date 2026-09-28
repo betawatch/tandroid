@@ -2,9 +2,9 @@ package gg;
 
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.ua0;
+import org.telegram.ui.Components.wa0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements MediaDataController.KeywordResultCallback, org.telegram.ui.Cells.e2 {
     public final /* synthetic */ k1 a;
@@ -27,8 +27,8 @@ public final /* synthetic */ class w0 implements MediaDataController.KeywordResu
         k1Var.K = null;
         k1Var.P = null;
         k1Var.l();
-        ua0 ua0Var = k1Var.V;
+        wa0 wa0Var = k1Var.V;
         ArrayList arrayList2 = k1Var.N;
-        ua0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
+        wa0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
     }
 }

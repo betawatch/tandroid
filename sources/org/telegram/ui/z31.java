@@ -19,11 +19,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class z31 extends org.telegram.ui.Components.bb {
     public final LinearLayout X;
-    public org.telegram.ui.Components.j61 Y;
+    public org.telegram.ui.Components.l61 Y;
 
     public z31(Context context, boolean z10, org.telegram.ui.ActionBar.d6 d6Var, Utilities.Callback callback) {
         super(context, null, false, false, d6Var);
@@ -41,13 +41,13 @@ public final class z31 extends org.telegram.ui.Components.bb {
         linearLayout.setPadding(AndroidUtilities.dp(6.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(6.0f) + this.backgroundPaddingLeft, 0);
         linearLayout.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(getContext());
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(getContext());
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        lj0Var.setScaleType(scaleType);
-        lj0Var.setImageResource(R.drawable.large_ads_info);
-        lj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        lj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var)));
-        frameLayout.addView(lj0Var, w7.y5.d(80, 80.0f, 1, 0.0f, 20.0f, 0.0f, 0.0f));
+        nj0Var.setScaleType(scaleType);
+        nj0Var.setImageResource(R.drawable.large_ads_info);
+        nj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        nj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.v0(i11, d6Var)));
+        frameLayout.addView(nj0Var, w7.y5.d(80, 80.0f, 1, 0.0f, 20.0f, 0.0f, 0.0f));
         if (callback != null) {
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(context.getDrawable(R.drawable.ic_ab_other));
@@ -149,20 +149,20 @@ public final class z31 extends org.telegram.ui.Components.bb {
             }
         });
         SpannableString spannableString = new SpannableString(">");
-        org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.attach_arrow_right, 0);
-        pqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.w0(null, i14, false));
-        pqVar.setScale(0.7f, 0.7f);
-        pqVar.setWidth(AndroidUtilities.dp(12.0f));
-        pqVar.setTranslateY(1.0f);
-        spannableString.setSpan(pqVar, 0, spannableString.length(), 33);
+        org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(R.drawable.attach_arrow_right, 0);
+        qqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.w0(null, i14, false));
+        qqVar.setScale(0.7f, 0.7f);
+        qqVar.setWidth(AndroidUtilities.dp(12.0f));
+        qqVar.setTranslateY(1.0f);
+        spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
         SpannableStringBuilder replaceCharSequence = AndroidUtilities.replaceCharSequence(">", AndroidUtilities.replaceCharSequence("%1$s", replaceTags, replaceSingleTag), spannableString);
-        org.telegram.ui.Components.n90 n90Var = new org.telegram.ui.Components.n90(context, null);
-        n90Var.setText(replaceCharSequence);
-        n90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i13, d6Var2));
-        n90Var.setTextSize(1, 14.0f);
-        n90Var.setGravity(1);
-        n90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        linearLayout.addView(n90Var, w7.y5.t(-2, -2, 1, 26, 8, 26, 0));
+        org.telegram.ui.Components.p90 p90Var = new org.telegram.ui.Components.p90(context, null);
+        p90Var.setText(replaceCharSequence);
+        p90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i13, d6Var2));
+        p90Var.setTextSize(1, 14.0f);
+        p90Var.setGravity(1);
+        p90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        linearLayout.addView(p90Var, w7.y5.t(-2, -2, 1, 26, 8, 26, 0));
         TextView textView3 = new TextView(context);
         textView3.setLines(1);
         textView3.setSingleLine(true);
@@ -195,10 +195,10 @@ public final class z31 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
-        org.telegram.ui.Components.j61 j61Var = new org.telegram.ui.Components.j61(wl0Var, getContext(), this.currentAccount, 0, true, new b5(this, 20), this.resourcesProvider);
-        this.Y = j61Var;
-        return j61Var;
+    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
+        org.telegram.ui.Components.l61 l61Var = new org.telegram.ui.Components.l61(yl0Var, getContext(), this.currentAccount, 0, true, new b5(this, 20), this.resourcesProvider);
+        this.Y = l61Var;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

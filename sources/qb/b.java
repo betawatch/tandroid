@@ -49,7 +49,7 @@ import org.telegram.ui.Components.fb;
 import org.telegram.ui.Components.gb;
 import org.telegram.ui.Components.hb;
 import org.telegram.ui.Components.hh;
-import org.telegram.ui.Components.nl;
+import org.telegram.ui.Components.ol;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.sb;
 import org.telegram.ui.Components.tb;
@@ -59,7 +59,7 @@ import org.telegram.ui.Components.z5;
 import org.telegram.ui.hv0;
 import r2.u;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, l1, u, u5.a, z3.k {
     public final /* synthetic */ int a;
@@ -428,14 +428,14 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Components.tb
-    public void U(ub ubVar, fb fbVar, pg pgVar, nl nlVar) {
+    public void U(ub ubVar, fb fbVar, pg pgVar, ol olVar) {
         ubVar.setInOutOffset(ubVar.getMeasuredHeight());
-        nlVar.accept(Float.valueOf(ubVar.getTranslationY()));
+        olVar.accept(Float.valueOf(ubVar.getTranslationY()));
         o1.k kVar = new o1.k(ubVar, ub.IN_OUT_OFFSET_Y, 0.0f);
         kVar.u.a(0.8f);
         kVar.u.b(400.0f);
         kVar.a(new m4(1, ubVar, pgVar));
-        kVar.b(new sb(nlVar, ubVar, 1));
+        kVar.b(new sb(olVar, ubVar, 1));
         kVar.f();
         fbVar.run();
     }

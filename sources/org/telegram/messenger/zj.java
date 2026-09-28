@@ -6,13 +6,13 @@ import java.util.Locale;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ed0;
+import org.telegram.ui.Components.gd0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.gn0;
 import org.telegram.ui.in;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e2.h {
     public final /* synthetic */ int a = 3;
@@ -67,16 +67,16 @@ public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e
                     break;
                 }
             default:
-                ed0 ed0Var = (ed0) obj4;
-                ed0 ed0Var2 = (ed0) obj3;
-                ed0 ed0Var3 = (ed0) obj2;
+                gd0 gd0Var = (gd0) obj4;
+                gd0 gd0Var2 = (gd0) obj3;
+                gd0 gd0Var3 = (gd0) obj2;
                 gg.d2 d2Var = (gg.d2) obj;
                 if (z10) {
-                    org.telegram.ui.Components.e5.d(ed0Var, ed0Var2, ed0Var3);
+                    org.telegram.ui.Components.e5.d(gd0Var, gd0Var2, gd0Var3);
                 }
-                int value = ed0Var3.getValue();
-                int value2 = ed0Var2.getValue();
-                int value3 = ed0Var.getValue();
+                int value = gd0Var3.getValue();
+                int value2 = gd0Var2.getValue();
+                int value3 = gd0Var.getValue();
                 gn0 gn0Var = (gn0) d2Var.c;
                 int i13 = d2Var.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) d2Var.d;
@@ -109,11 +109,11 @@ public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e
         this.f = contentsettings;
     }
 
-    public /* synthetic */ zj(boolean z10, ed0 ed0Var, ed0 ed0Var2, ed0 ed0Var3, gg.d2 d2Var) {
+    public /* synthetic */ zj(boolean z10, gd0 gd0Var, gd0 gd0Var2, gd0 gd0Var3, gg.d2 d2Var) {
         this.b = z10;
-        this.c = ed0Var;
-        this.d = ed0Var2;
-        this.e = ed0Var3;
+        this.c = gd0Var;
+        this.d = gd0Var2;
+        this.e = gd0Var3;
         this.f = d2Var;
     }
 }

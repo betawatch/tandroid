@@ -23,17 +23,17 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.ne0;
-import org.telegram.ui.Components.p91;
-import org.telegram.ui.Components.q91;
-import org.telegram.ui.Components.tf0;
-import org.telegram.ui.Components.wz;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.pe0;
+import org.telegram.ui.Components.r91;
+import org.telegram.ui.Components.s91;
+import org.telegram.ui.Components.vf0;
 import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.z1, p91, Utilities.CallbackVoidReturn, h71, h9, j8 {
+public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.z1, r91, Utilities.CallbackVoidReturn, j71, h9, j8 {
     public final /* synthetic */ int a;
     public final /* synthetic */ lc b;
 
@@ -55,7 +55,7 @@ public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, 
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.p91
+    @Override // org.telegram.ui.Components.r91
     public void a(float f7) {
         lc lcVar = this.b;
         ob obVar = lcVar.B0;
@@ -66,11 +66,11 @@ public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, 
         lcVar.j0(true);
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public void c(wz wzVar) {
+    @Override // org.telegram.ui.Components.j71
+    public void c(xz xzVar) {
         MediaController.SavedFilterState savedFilterState;
         lc lcVar = this.b;
-        if (wzVar == null) {
+        if (xzVar == null) {
             lcVar.getClass();
             return;
         }
@@ -78,7 +78,7 @@ public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, 
         if (l8Var == null || (savedFilterState = l8Var.a1) == null) {
             return;
         }
-        wzVar.f(new xz(savedFilterState));
+        xzVar.f(new yz(savedFilterState));
     }
 
     @Override // org.telegram.ui.ActionBar.z1
@@ -245,7 +245,7 @@ public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, 
                 int i15 = R.string.PermissionNoCameraMicVideo;
                 String[] strArr = z13 ? new String[0] : new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
                 final lc lcVar2 = this.b;
-                ne0.d(i14, i15, strArr, new Utilities.Callback() { // from class: ci.oa
+                pe0.d(i14, i15, strArr, new Utilities.Callback() { // from class: ci.oa
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj2) {
                         final lc lcVar3 = lc.this;
@@ -289,10 +289,10 @@ public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, 
             C = null;
         }
         lcVar.e0(lcVar.f0 == 0 ? C : null);
-        q91 q91Var = lcVar.V0;
-        if (q91Var != null) {
+        s91 s91Var = lcVar.V0;
+        if (s91Var != null) {
             lcVar.T1 = 0.0f;
-            q91Var.b(0.0f, false);
+            s91Var.b(0.0f, false);
         }
         lcVar.m0(true);
     }
@@ -301,8 +301,8 @@ public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, 
     public Object run() {
         zb zbVar;
         lc lcVar = this.b;
-        tf0 tf0Var = lcVar.B1;
-        Bitmap uiBlurBitmap = tf0Var != null ? tf0Var.getUiBlurBitmap() : null;
+        vf0 vf0Var = lcVar.B1;
+        Bitmap uiBlurBitmap = vf0Var != null ? vf0Var.getUiBlurBitmap() : null;
         return (uiBlurBitmap != null || (zbVar = lcVar.X0) == null || zbVar.getTextureView() == null) ? uiBlurBitmap : lcVar.X0.getTextureView().getUiBlurBitmap();
     }
 }

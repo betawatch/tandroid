@@ -20,10 +20,10 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ea extends FrameLayout {
     public boolean E;
@@ -33,7 +33,7 @@ public final class ea extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
     public final TextView b;
     public final org.telegram.ui.Components.p6 c;
-    public final lj0 d;
+    public final nj0 d;
     public org.telegram.ui.Components.w9 e;
     public final ImageView f;
     public boolean h;
@@ -254,11 +254,11 @@ public final class ea extends FrameLayout {
         if (imageView.getVisibility() == 0) {
             imageView.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
         }
-        lj0 lj0Var = this.d;
-        if (lj0Var.getVisibility() == 0) {
-            lj0Var.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
+        nj0 nj0Var = this.d;
+        if (nj0Var.getVisibility() == 0) {
+            nj0Var.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
             if (this.H) {
-                i12 = ok.y(8.0f, lj0Var.getMeasuredWidth(), i12);
+                i12 = ok.y(8.0f, nj0Var.getMeasuredWidth(), i12);
             }
         }
         org.telegram.ui.Components.w9 w9Var = this.e;
@@ -314,9 +314,9 @@ public final class ea extends FrameLayout {
 
     public void setIcon(int i10) {
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.b.getLayoutParams();
-        lj0 lj0Var = this.d;
+        nj0 nj0Var = this.d;
         if (i10 == 0) {
-            lj0Var.setVisibility(8);
+            nj0Var.setVisibility(8);
             boolean z10 = LocaleController.isRTL;
             int i11 = this.s;
             if (z10) {
@@ -327,10 +327,10 @@ public final class ea extends FrameLayout {
                 return;
             }
         }
-        lj0Var.setImageResource(i10);
-        lj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.m6, this.a), PorterDuff.Mode.MULTIPLY));
-        lj0Var.setBackground(null);
-        lj0Var.setVisibility(0);
+        nj0Var.setImageResource(i10);
+        nj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.m6, this.a), PorterDuff.Mode.MULTIPLY));
+        nj0Var.setBackground(null);
+        nj0Var.setVisibility(0);
         if (LocaleController.isRTL) {
             marginLayoutParams.rightMargin = AndroidUtilities.dp(58.0f);
         } else {
@@ -368,22 +368,22 @@ public final class ea extends FrameLayout {
         addView(textView, w7.y5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, !LocaleController.isRTL);
         this.c = p6Var;
-        p6Var.b(0.55f, 320L, rr.h);
+        p6Var.b(0.55f, 320L, sr.h);
         p6Var.setTextSize(AndroidUtilities.dp(16.0f));
         p6Var.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
         p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.I6, d6Var));
         float f10 = 17;
         addView(p6Var, w7.y5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f10, 0.0f, f10, 0.0f));
-        lj0 lj0Var = new lj0(context);
-        this.d = lj0Var;
+        nj0 nj0Var = new nj0(context);
+        this.d = nj0Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        lj0Var.setScaleType(scaleType);
+        nj0Var.setScaleType(scaleType);
         int i11 = org.telegram.ui.ActionBar.h6.m6;
         int v02 = org.telegram.ui.ActionBar.h6.v0(i11, d6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        lj0Var.setColorFilter(new PorterDuffColorFilter(v02, mode));
-        lj0Var.setVisibility(8);
-        addView(lj0Var, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        nj0Var.setColorFilter(new PorterDuffColorFilter(v02, mode));
+        nj0Var.setVisibility(8);
+        addView(nj0Var, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.f = imageView;
         imageView.setScaleType(scaleType);

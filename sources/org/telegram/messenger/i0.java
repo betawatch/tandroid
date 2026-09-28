@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 ((MediaDataController) this.c).lambda$loadArchivedStickersCount$71((TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
                 break;
             case 7:
-                ((MediaDataController) this.c).lambda$loadBotInfo$197((Utilities.Callback) this.d, (TL_bots.BotInfo) this.e, this.b);
+                ((MediaDataController) this.c).lambda$loadBotInfo$198((Utilities.Callback) this.d, (TL_bots.BotInfo) this.e, this.b);
                 break;
             case 8:
                 ((MediaDataController) this.c).lambda$putDiceStickersToCache$90((TLRPC.TL_messages_stickerSet) this.d, (String) this.e, this.b);

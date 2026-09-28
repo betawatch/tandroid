@@ -1,45 +1,14 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class w31 extends s4.s0 {
-    public final /* synthetic */ i41 a;
-
-    public w31(i41 i41Var) {
-        this.a = i41Var;
-    }
-
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        i41 i41Var = this.a;
-        v31 v31Var = i41Var.H;
-        if (i10 == 0) {
-            i41Var.G = false;
-        }
-        if ((i10 == 0 || i10 == 2) && i41Var.z(false) > 0.0f && i41Var.z(false) < AndroidUtilities.dp(96.0f) && v31Var.canScrollVertically(1) && i41.u(i41Var)) {
-            i41Var.G = true;
-            v31Var.v0(0, (int) i41Var.z(false), null);
-        }
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        i41 i41Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) i41Var).containerView;
-        viewGroup.invalidate();
-        boolean canScrollVertically = i41Var.H.canScrollVertically(1);
-        View view = i41Var.L;
-        Boolean bool = i41Var.Q;
-        if (bool == null || bool.booleanValue() != canScrollVertically) {
-            i41Var.Q = Boolean.valueOf(canScrollVertically);
-            view.animate().cancel();
-            org.telegram.messenger.ok.s(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), rr.h, 320L);
-        }
+public final class w31 extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

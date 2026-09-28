@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dc1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.ll0, org.telegram.ui.Components.y81, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class dc1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.nl0, org.telegram.ui.Components.a91, org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ od1 b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class dc1 implements ImageReceiver.ImageReceiverDel
         this.b = od1Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         if (view instanceof org.telegram.ui.Cells.u1) {
             org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
@@ -33,7 +33,7 @@ public final /* synthetic */ class dc1 implements ImageReceiver.ImageReceiverDel
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -125,12 +125,12 @@ public final /* synthetic */ class dc1 implements ImageReceiver.ImageReceiverDel
                     org.telegram.ui.ActionBar.h6.n1(false, false);
                 }
                 Drawable background = od1Var2.x0.getBackground();
-                if (background instanceof org.telegram.ui.Components.mc0) {
-                    org.telegram.ui.Components.mc0 mc0Var = (org.telegram.ui.Components.mc0) background;
-                    mc0Var.t(null, 100);
+                if (background instanceof org.telegram.ui.Components.oc0) {
+                    org.telegram.ui.Components.oc0 oc0Var = (org.telegram.ui.Components.oc0) background;
+                    oc0Var.t(null, 100);
                     if (org.telegram.ui.ActionBar.h6.I.q()) {
                         if (od1Var2.l1 < 0.0f) {
-                            od1Var2.x0.getImageReceiver().setGradientBitmap(mc0Var.k);
+                            od1Var2.x0.getImageReceiver().setGradientBitmap(oc0Var.k);
                         }
                         org.telegram.ui.Cells.j0 j0Var = od1Var2.T0;
                         if (j0Var != null) {
@@ -168,7 +168,7 @@ public final /* synthetic */ class dc1 implements ImageReceiver.ImageReceiverDel
         }
     }
 
-    @Override // org.telegram.ui.Components.y81
+    @Override // org.telegram.ui.Components.a91
     public void g(int i10, int i11) {
         od1 od1Var = this.b;
         if (od1Var.E1) {
@@ -184,7 +184,7 @@ public final /* synthetic */ class dc1 implements ImageReceiver.ImageReceiverDel
         org.telegram.messenger.h5.b(this, imageReceiver);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

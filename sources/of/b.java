@@ -112,9 +112,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.PhotoViewer;
 import p4.x;
 import p4.z;
@@ -127,7 +127,7 @@ import w7.d9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class b implements h, f0, s, OnCompleteListener, com.google.android.gms.internal.clearcut.h, cf.b, f6.a, g2.g, n, m, v3, a0, Continuation {
     public static volatile b d;
@@ -500,11 +500,11 @@ public class b implements h, f0, s, OnCompleteListener, com.google.android.gms.i
     }
 
     @Override // ii.v3
-    public y70 F(View view) {
+    public a80 F(View view) {
         r rVar = (r) this.c;
-        y70 y70Var = new y70(rVar, (d6) this.b, view, false, false, true);
-        rVar.H = y70Var;
-        return y70Var;
+        a80 a80Var = new a80(rVar, (d6) this.b, view, false, false, true);
+        rVar.H = a80Var;
+        return a80Var;
     }
 
     @Override // cf.b
@@ -614,9 +614,9 @@ public class b implements h, f0, s, OnCompleteListener, com.google.android.gms.i
     @Override // ii.v3
     public void J(u3 u3Var, View view) {
         r rVar = (r) this.c;
-        y70 y70Var = new y70(rVar, (d6) this.b, view, false, false, true);
-        y70Var.Q = true;
-        rVar.H = k4.c(y70Var, rVar.b.f0, rVar.getContext(), (d6) this.b, u3Var, true);
+        a80 a80Var = new a80(rVar, (d6) this.b, view, false, false, true);
+        a80Var.Q = true;
+        rVar.H = k4.c(a80Var, rVar.b.f0, rVar.getContext(), (d6) this.b, u3Var, true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x008f A[RETURN] */
@@ -1085,11 +1085,11 @@ public class b implements h, f0, s, OnCompleteListener, com.google.android.gms.i
     @Override // ii.v3
     public void d(ii.w3 w3Var, View view) {
         r rVar = (r) this.c;
-        y70 y70Var = new y70(rVar, (d6) this.b, view, false, false, true);
-        y70Var.Q = true;
+        a80 a80Var = new a80(rVar, (d6) this.b, view, false, false, true);
+        a80Var.Q = true;
         m2 m2Var = rVar.b.f0;
         rVar.getContext();
-        rVar.H = k4.b(y70Var, m2Var, w3Var, true);
+        rVar.H = k4.b(a80Var, m2Var, w3Var, true);
     }
 
     public void d0(b4 b4Var) {

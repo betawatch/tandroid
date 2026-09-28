@@ -1,38 +1,158 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class lp0 {
-    public final ou a;
-    public final long b;
-    public final float c;
-    public final float d;
-    public final float e;
+public final class lp0 extends View {
+    public static final vv0 v;
+    public ImageReceiver a;
+    public h9 b;
+    public org.telegram.ui.Cells.z c;
+    public Paint d;
+    public Paint e;
+    public o1.k f;
+    public ValueAnimator h;
+    public float n;
+    public boolean r;
+    public boolean s;
 
-    public lp0(View view) {
-        ou ouVar = new ou(1, view);
-        this.b = System.currentTimeMillis();
-        this.a = ouVar;
-        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+    static {
+        vv0 vv0Var = new vv0(new ha0(17), new ha0(18));
+        vv0Var.c = 100.0f;
+        v = vv0Var;
     }
 
-    public final void a(Canvas canvas, float f7) {
-        ou ouVar;
-        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
-        canvas.translate(0.0f, 0.0f);
-        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
-        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
-        canvas.translate(-0.0f, -0.0f);
-        if (f7 <= 0.0f || (ouVar = this.a) == null) {
+    public final void a(boolean z10, boolean z11, float f7) {
+        if (!z10) {
+            this.n = f7;
+            invalidate();
             return;
         }
-        ouVar.run();
+        o1.k kVar = this.f;
+        if (kVar != null) {
+            kVar.c();
+        }
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.s = false;
+        this.r = false;
+        if (!z11) {
+            ValueAnimator duration = ValueAnimator.ofFloat(this.n, f7).setDuration(200L);
+            this.h = duration;
+            duration.setInterpolator(sr.f);
+            this.h.addUpdateListener(new u70(this, 16));
+            this.h.addListener(new hd0(this, 12));
+            this.h.start();
+            return;
+        }
+        float f10 = this.n * 100.0f;
+        o1.k kVar2 = new o1.k(this, v);
+        kVar2.b = f10;
+        kVar2.c = true;
+        this.f = kVar2;
+        boolean z12 = f7 < this.n;
+        float f11 = f7 * 100.0f;
+        this.s = z12;
+        this.r = !z12;
+        o1.l lVar = new o1.l(f11);
+        lVar.i = f11;
+        lVar.b(450.0f);
+        lVar.a(1.0f);
+        kVar2.u = lVar;
+        this.f.b(new oh(this, z12, f10, f11));
+        this.f.a(new hb(this, 3));
+        this.f.f();
+    }
+
+    @Override // android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        this.c.setState(getDrawableState());
+    }
+
+    public float getProgress() {
+        return this.n;
+    }
+
+    @Override // android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        this.c.jumpToCurrentState();
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.d;
+        Paint paint2 = this.e;
+        canvas.save();
+        float f7 = 1.0f;
+        if (this.r) {
+            f7 = 1.0f - this.n;
+        } else if (this.s) {
+            f7 = this.n;
+        }
+        canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
+        super.onDraw(canvas);
+        this.a.draw(canvas);
+        int i10 = (int) (this.n * 255.0f);
+        paint.setAlpha(i10);
+        canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth(), getHeight()) / 2.0f, paint);
+        canvas.save();
+        paint2.setAlpha(i10);
+        float strokeWidth = paint2.getStrokeWidth() + AndroidUtilities.dp(10.0f);
+        canvas.drawLine(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth, paint2);
+        canvas.drawLine(strokeWidth, getHeight() - strokeWidth, getWidth() - strokeWidth, strokeWidth, paint2);
+        canvas.restore();
+        this.c.setBounds(0, 0, getWidth(), getHeight());
+        this.c.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getLayoutParams().width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getLayoutParams().height, TLObject.FLAG_30));
+        this.a.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+    }
+
+    public void setAvatar(TLObject tLObject) {
+        h9 h9Var = this.b;
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, tLObject instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : tLObject instanceof TLRPC.ChatInvite ? ((TLRPC.ChatInvite) tLObject).title : ""));
+        h9Var.p(tLObject);
+        this.a.setForUserOrChat(tLObject, h9Var);
+    }
+
+    public void setProgress(float f7) {
+        a(true, f7 != 0.0f, f7);
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || this.c == drawable;
     }
 }

@@ -1,51 +1,34 @@
 package org.telegram.ui.Components;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o81 implements ll0, ml0 {
-    public final /* synthetic */ v81 a;
+public final class o81 extends AnimatorListenerAdapter {
+    public boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ y81 d;
 
-    public /* synthetic */ o81(v81 v81Var) {
-        this.a = v81Var;
+    public o81(y81 y81Var, View view, float f7) {
+        this.d = y81Var;
+        this.b = view;
+        this.c = f7;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public void c(float f7, float f10, int i10, View view) {
-        v81 v81Var = this.a;
-        u81 u81Var = v81Var.y;
-        if (u81Var != null) {
-            w81 w81Var = (w81) ((l.d) u81Var).a;
-            if (w81Var.x || w81Var.H) {
-                return;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        super.onAnimationCancel(animator);
+        this.a = true;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.a) {
+            return;
         }
-        t81 t81Var = (t81) view;
-        if (i10 != v81Var.F || u81Var == null) {
-            Utilities.Callback2Return callback2Return = v81Var.l0;
-            if (callback2Return == null || !((Boolean) callback2Return.run(Integer.valueOf(t81Var.a.a), Integer.valueOf(i10))).booleanValue()) {
-                v81Var.d(t81Var.a.a, i10);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ml0
-    public boolean d(int i10, View view) {
-        Utilities.Callback2Return callback2Return = this.a.b;
-        if (callback2Return == null) {
-            return false;
-        }
-        return ((Boolean) callback2Return.run(Integer.valueOf(((t81) view).a.a), view)).booleanValue();
-    }
-
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ boolean d1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ll0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+        this.d.E(this.b, this.c);
     }
 }

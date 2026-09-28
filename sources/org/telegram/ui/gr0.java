@@ -15,7 +15,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gr0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -75,8 +75,8 @@ public final /* synthetic */ class gr0 implements Utilities.Callback {
                 ofFloat.addUpdateListener(new zq0(photoViewer2, i11));
                 photoViewer2.s7.setDuration(320L);
                 ValueAnimator valueAnimator2 = photoViewer2.s7;
-                org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-                valueAnimator2.setInterpolator(rrVar);
+                org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+                valueAnimator2.setInterpolator(srVar);
                 photoViewer2.s7.start();
                 AnimatorSet animatorSet = photoViewer2.J1;
                 if (animatorSet != null) {
@@ -94,7 +94,7 @@ public final /* synthetic */ class gr0 implements Utilities.Callback {
                 Property property2 = View.ALPHA;
                 animatorSet2.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofFloat(w5Var, (Property<ci.w5, Float>) property2, max > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(photoViewer2.L1.A0, (Property<qg.g1, Float>) property2, max > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(photoViewer2.L1.B0, (Property<qg.k1, Float>) property2, max > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f), ofFloat2);
                 animatorSet2.setDuration(320L);
-                animatorSet2.setInterpolator(rrVar);
+                animatorSet2.setInterpolator(srVar);
                 animatorSet2.start();
                 st0 st0Var = photoViewer2.L1;
                 qg.p1 p1Var = st0Var.u1;
@@ -116,14 +116,14 @@ public final /* synthetic */ class gr0 implements Utilities.Callback {
                 PhotoViewer photoViewer3 = this.b;
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
                 if (!photoViewer3.q5.b.N && (i10 = photoViewer3.P4) >= 0 && i10 < photoViewer3.g7.size() && (photoViewer3.g7.get(photoViewer3.P4) instanceof MediaController.PhotoEntry)) {
-                    org.telegram.ui.Components.uf0 uf0Var = photoViewer3.q5;
-                    ci.a4 a4Var = uf0Var.h;
+                    org.telegram.ui.Components.wf0 wf0Var = photoViewer3.q5;
+                    ci.a4 a4Var = wf0Var.h;
                     if (a4Var != null) {
                         a4Var.dismiss();
-                        uf0Var.h = null;
+                        wf0Var.h = null;
                     }
                     photoViewer3.q5.b.setLoading(true);
-                    Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.vn0(photoViewer3, photoEntry, (MediaController.PhotoEntry) photoViewer3.g7.get(photoViewer3.P4), PhotoViewer.y1(), 29));
+                    Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.xn0(photoViewer3, photoEntry, (MediaController.PhotoEntry) photoViewer3.g7.get(photoViewer3.P4), PhotoViewer.y1(), 29));
                     break;
                 }
                 break;

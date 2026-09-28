@@ -55,15 +55,15 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.gs;
-import org.telegram.ui.Components.gw0;
+import org.telegram.ui.Components.e10;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.hw0;
+import org.telegram.ui.Components.hs;
 import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xm;
+import org.telegram.ui.Components.ym;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
@@ -81,7 +81,7 @@ import org.telegram.ui.xi;
 import org.telegram.ui.yg0;
 import org.telegram.ui.zf0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l3 implements Runnable {
     public final /* synthetic */ int a;
@@ -532,18 +532,18 @@ public final /* synthetic */ class l3 implements Runnable {
                 m2Var3.presentFragment(new wn(bundle));
                 break;
             case 22:
-                gs.P((gs) this.c, (TLObject) this.d, (TLRPC.InputPeer) this.e, this.b, (int[]) this.f);
+                hs.P((hs) this.c, (TLObject) this.d, (TLRPC.InputPeer) this.e, this.b, (int[]) this.f);
                 break;
             case 23:
-                iw0 iw0Var = (iw0) this.c;
+                kw0 kw0Var = (kw0) this.c;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
                 int i30 = this.b;
                 MessageObject messageObject2 = (MessageObject) this.e;
                 org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) this.f;
-                int[] iArr2 = iw0Var.e;
-                RLottieNative[] rLottieNativeArr = iw0Var.f1;
-                if (iw0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new gw0(iw0Var, 2));
+                int[] iArr2 = kw0Var.e;
+                RLottieNative[] rLottieNativeArr = kw0Var.f1;
+                if (kw0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new iw0(kw0Var, 2));
                     break;
                 } else {
                     boolean z14 = false;
@@ -555,21 +555,21 @@ public final /* synthetic */ class l3 implements Runnable {
                                 TLRPC.Document document = tL_messages_stickerSet.documents.get(i32);
                                 String readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
                                 if (TextUtils.isEmpty(readRes)) {
-                                    AndroidUtilities.runOnUIThread(new hw0(document, i30, messageObject2, u1Var2, tL_messages_stickerSet, 1));
+                                    AndroidUtilities.runOnUIThread(new jw0(document, i30, messageObject2, u1Var2, tL_messages_stickerSet, 1));
                                     z14 = true;
                                 } else {
                                     rLottieNativeArr[i31] = RLottieNative.b(readRes, iArr2, null, null);
-                                    iw0Var.g1[i31] = iArr2[0];
+                                    kw0Var.g1[i31] = iArr2[0];
                                 }
                             }
                         }
                         i31++;
                     }
                     if (z14) {
-                        AndroidUtilities.runOnUIThread(new gw0(iw0Var, 3));
+                        AndroidUtilities.runOnUIThread(new iw0(kw0Var, 3));
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new xm(iw0Var, i30, u1Var2, 17));
+                        AndroidUtilities.runOnUIThread(new ym(kw0Var, i30, u1Var2, 17));
                         break;
                     }
                 }
@@ -678,40 +678,40 @@ public final /* synthetic */ class l3 implements Runnable {
                         MessagesController.getInstance(i35).putChats(arrayList2, false);
                         MessagesController.getInstance(i35).putUsers(arrayList, false);
                         if (!z15 || !((TL_chatlists.TL_chatlists_chatlistInvite) chatlist_chatlistinvite).peers.isEmpty()) {
-                            d10 d10Var = new d10(m2Var4, false);
-                            d10Var.Y = -1;
-                            d10Var.c0 = "";
-                            d10Var.d0 = new ArrayList();
-                            d10Var.f0 = "";
-                            d10Var.h0 = new ArrayList();
+                            e10 e10Var = new e10(m2Var4, false);
+                            e10Var.Y = -1;
+                            e10Var.c0 = "";
+                            e10Var.d0 = new ArrayList();
+                            e10Var.f0 = "";
+                            e10Var.h0 = new ArrayList();
                             ArrayList arrayList16 = new ArrayList();
-                            d10Var.i0 = arrayList16;
-                            d10Var.z0 = -1;
-                            d10Var.C0 = -5;
-                            d10Var.X = str2;
-                            d10Var.Z = chatlist_chatlistinvite;
+                            e10Var.i0 = arrayList16;
+                            e10Var.z0 = -1;
+                            e10Var.C0 = -5;
+                            e10Var.X = str2;
+                            e10Var.Z = chatlist_chatlistinvite;
                             arrayList16.clear();
                             if (z15) {
                                 TL_chatlists.TL_chatlists_chatlistInvite tL_chatlists_chatlistInvite2 = (TL_chatlists.TL_chatlists_chatlistInvite) chatlist_chatlistinvite;
                                 TLRPC.TL_textWithEntities tL_textWithEntities = tL_chatlists_chatlistInvite2.title;
-                                d10Var.c0 = tL_textWithEntities.text;
-                                d10Var.d0 = tL_textWithEntities.entities;
-                                d10Var.e0 = tL_chatlists_chatlistInvite2.title_noanimate;
-                                d10Var.g0 = tL_chatlists_chatlistInvite2.peers;
+                                e10Var.c0 = tL_textWithEntities.text;
+                                e10Var.d0 = tL_textWithEntities.entities;
+                                e10Var.e0 = tL_chatlists_chatlistInvite2.title_noanimate;
+                                e10Var.g0 = tL_chatlists_chatlistInvite2.peers;
                             } else if (chatlist_chatlistinvite instanceof TL_chatlists.TL_chatlists_chatlistInviteAlready) {
                                 TL_chatlists.TL_chatlists_chatlistInviteAlready tL_chatlists_chatlistInviteAlready2 = (TL_chatlists.TL_chatlists_chatlistInviteAlready) chatlist_chatlistinvite;
-                                d10Var.g0 = tL_chatlists_chatlistInviteAlready2.missing_peers;
-                                d10Var.j0 = tL_chatlists_chatlistInviteAlready2.already_peers;
-                                d10Var.Y = tL_chatlists_chatlistInviteAlready2.filter_id;
+                                e10Var.g0 = tL_chatlists_chatlistInviteAlready2.missing_peers;
+                                e10Var.j0 = tL_chatlists_chatlistInviteAlready2.already_peers;
+                                e10Var.Y = tL_chatlists_chatlistInviteAlready2.filter_id;
                                 ArrayList<MessagesController.DialogFilter> arrayList17 = m2Var4.getMessagesController().dialogFilters;
                                 if (arrayList17 != null) {
                                     while (true) {
                                         if (i11 < arrayList17.size()) {
                                             MessagesController.DialogFilter dialogFilter = arrayList17.get(i11);
-                                            if (dialogFilter.id == d10Var.Y) {
-                                                d10Var.c0 = dialogFilter.name;
-                                                d10Var.d0 = dialogFilter.entities;
-                                                d10Var.e0 = dialogFilter.title_noanimate;
+                                            if (dialogFilter.id == e10Var.Y) {
+                                                e10Var.c0 = dialogFilter.name;
+                                                e10Var.d0 = dialogFilter.entities;
+                                                e10Var.e0 = dialogFilter.title_noanimate;
                                             } else {
                                                 i11++;
                                             }
@@ -719,8 +719,8 @@ public final /* synthetic */ class l3 implements Runnable {
                                     }
                                 }
                             }
-                            d10Var.S();
-                            m2Var4.showDialog(d10Var);
+                            e10Var.S();
+                            m2Var4.showDialog(e10Var);
                             n80Var.run();
                             break;
                         } else {

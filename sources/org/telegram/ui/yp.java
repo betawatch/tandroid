@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yp extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Cells.k6 E;
@@ -25,7 +25,7 @@ public final class yp extends org.telegram.ui.ActionBar.m2 implements Notificati
     public long c;
     public ArrayList d;
     public LinearLayout e;
-    public org.telegram.ui.Components.wl0 f;
+    public org.telegram.ui.Components.yl0 f;
     public xp h;
     public org.telegram.ui.Cells.w8 n;
     public ArrayList r;
@@ -471,13 +471,13 @@ public final class yp extends org.telegram.ui.ActionBar.m2 implements Notificati
         this.y.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(null, i14, false), org.telegram.ui.ActionBar.h6.w0(null, i15, false)));
         this.E.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(null, i14, false), org.telegram.ui.ActionBar.h6.w0(null, i15, false)));
         V(this.w, false);
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.f = wl0Var;
-        wl0Var.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.wl0 wl0Var2 = this.f;
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.f = yl0Var;
+        yl0Var.setLayoutManager(new s4.c0());
+        org.telegram.ui.Components.yl0 yl0Var2 = this.f;
         xp xpVar = new xp(this, context);
         this.h = xpVar;
-        wl0Var2.setAdapter(xpVar);
+        yl0Var2.setAdapter(xpVar);
         this.f.setOnItemClickListener(new i(this, 4));
         linearLayout.addView(this.f, w7.y5.l(1.0f, -1, 0));
         this.f.p1();

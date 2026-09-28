@@ -31,20 +31,20 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.fa0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.ha0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.th;
-import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.vv0;
 import org.telegram.ui.Components.w9;
 import org.webrtc.RendererCommon;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k1 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final tv0 b0 = new tv0(new fa0(28), new fa0(29));
-    public static final tv0 c0 = new tv0(new e1(0), new e1(1));
+    public static final vv0 b0 = new vv0(new ha0(28), new ha0(29));
+    public static final vv0 c0 = new vv0(new e1(0), new e1(1));
     public static final k1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;
@@ -112,7 +112,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
             }
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.setDuration(250L);
-            animatorSet.setInterpolator(rr.f);
+            animatorSet.setInterpolator(sr.f);
             animatorSet.playTogether(ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_Y, 0.1f));
             animatorSet.addListener(new h1(k1Var));
             animatorSet.start();
@@ -239,7 +239,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         k1Var.b.addView(k1Var.d, k1Var.c);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(250L);
-        animatorSet.setInterpolator(rr.f);
+        animatorSet.setInterpolator(sr.f);
         animatorSet.playTogether(ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_Y, 1.0f));
         animatorSet.addListener(new f1(k1Var, 0));
         animatorSet.start();
@@ -399,12 +399,12 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         if (this.w != z11) {
             this.s.animate().cancel();
             ViewPropertyAnimator duration = this.s.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(150L);
-            rr rrVar = rr.f;
-            duration.setInterpolator(rrVar).start();
+            sr srVar = sr.f;
+            duration.setInterpolator(srVar).start();
             this.r.animate().cancel();
-            this.r.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(150L).setInterpolator(rrVar).start();
+            this.r.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(150L).setInterpolator(srVar).start();
             this.f.animate().cancel();
-            this.f.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(150L).setInterpolator(rrVar).start();
+            this.f.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(150L).setInterpolator(srVar).start();
             this.w = z11;
         }
         if (this.M == m() * this.P && this.N == l() * this.P) {
@@ -474,7 +474,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
     public final void o(boolean z10) {
         ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
         this.L = duration;
-        duration.setInterpolator(rr.f);
+        duration.setInterpolator(sr.f);
         this.L.addUpdateListener(new r0(this, 2));
         this.L.addListener(new f1(this, 1));
         this.L.start();

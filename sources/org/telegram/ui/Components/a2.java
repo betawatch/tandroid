@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -49,7 +49,7 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                     new xc(frameLayout, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.MessageScheduledRepeatPremium), new ai.f(22))).j();
                     break;
                 } else {
-                    y70 F = y70.F(e3Var.container, d6Var, frameLayout2);
+                    a80 F = a80.F(e3Var.container, d6Var, frameLayout2);
                     int i10 = 0;
                     while (true) {
                         int[] iArr2 = this.b;
@@ -65,27 +65,27 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                 }
             default:
                 boolean[] zArr = (boolean[]) this.c;
-                ed0 ed0Var = (ed0) this.d;
-                ed0 ed0Var2 = (ed0) this.e;
-                ed0 ed0Var3 = (ed0) this.f;
-                ed0 ed0Var4 = (ed0) this.h;
-                xt xtVar = (xt) this.n;
+                gd0 gd0Var = (gd0) this.d;
+                gd0 gd0Var2 = (gd0) this.e;
+                gd0 gd0Var3 = (gd0) this.f;
+                gd0 gd0Var4 = (gd0) this.h;
+                yt ytVar = (yt) this.n;
                 org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) this.r;
                 zArr[0] = false;
-                cu.j((cu) xtVar.c, xtVar.a, xtVar.b, (int) (e5.c(null, ed0Var, ed0Var2, ed0Var3, ed0Var4) / 1000), this.b[0]);
+                du.j((du) ytVar.c, ytVar.a, ytVar.b, (int) (e5.c(null, gd0Var, gd0Var2, gd0Var3, gd0Var4) / 1000), this.b[0]);
                 runnable = z2Var.a.dismissRunnable;
                 runnable.run();
                 break;
         }
     }
 
-    public /* synthetic */ a2(boolean[] zArr, ed0 ed0Var, ed0 ed0Var2, ed0 ed0Var3, ed0 ed0Var4, xt xtVar, int[] iArr, org.telegram.ui.ActionBar.z2 z2Var) {
+    public /* synthetic */ a2(boolean[] zArr, gd0 gd0Var, gd0 gd0Var2, gd0 gd0Var3, gd0 gd0Var4, yt ytVar, int[] iArr, org.telegram.ui.ActionBar.z2 z2Var) {
         this.c = zArr;
-        this.d = ed0Var;
-        this.e = ed0Var2;
-        this.f = ed0Var3;
-        this.h = ed0Var4;
-        this.n = xtVar;
+        this.d = gd0Var;
+        this.e = gd0Var2;
+        this.f = gd0Var3;
+        this.h = gd0Var4;
+        this.n = ytVar;
         this.b = iArr;
         this.r = z2Var;
     }

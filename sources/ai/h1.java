@@ -27,18 +27,18 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.s51;
-import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.z70;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class h1 extends FrameLayout implements x70 {
+public final class h1 extends FrameLayout implements z70 {
     public final TextView E;
     public final TextView F;
-    public final pq[] G;
-    public final pq[] H;
+    public final qq[] G;
+    public final qq[] H;
     public int I;
     public ValueAnimator J;
     public m1 K;
@@ -63,8 +63,8 @@ public final class h1 extends FrameLayout implements x70 {
         this.a = false;
         this.b = true;
         this.f = 0.5f;
-        this.G = new pq[1];
-        this.H = new pq[1];
+        this.G = new qq[1];
+        this.H = new qq[1];
         this.L = new Paint(1);
         this.c = i10;
         this.d = z10;
@@ -121,12 +121,12 @@ public final class h1 extends FrameLayout implements x70 {
         d1Var.addView(textView2, w7.y5.p(-2, -2, 0.0f, 85, 0, 3, 10, 0));
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.z70
     public final void a(RectF rectF) {
         rectF.set(0.0f, 0.0f, getWidth(), getHeight());
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.z70
     public final void b(Canvas canvas, float f7) {
         d1 d1Var = this.h;
         if (d1Var.getBackground() == null) {
@@ -161,7 +161,7 @@ public final class h1 extends FrameLayout implements x70 {
         ofFloat.addUpdateListener(new a(this, 4));
         this.J.addListener(new b(this, 2));
         this.J.setDuration(350L);
-        this.J.setInterpolator(rr.h);
+        this.J.setInterpolator(sr.h);
         this.J.start();
     }
 
@@ -312,9 +312,9 @@ public final class h1 extends FrameLayout implements x70 {
                         textView2.setVisibility(0);
                         textView2.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(13.0f), org.telegram.ui.ActionBar.h6.l1(0.25f, b12)));
                         textView2.setText(yh.w7.U0(false, org.telegram.messenger.f0.h(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
-                        pq pqVar = this.G[0];
-                        if (pqVar != null) {
-                            pqVar.draw = this.b;
+                        qq qqVar = this.G[0];
+                        if (qqVar != null) {
+                            qqVar.draw = this.b;
                         }
                     } else {
                         textView.setVisibility(0);
@@ -359,9 +359,9 @@ public final class h1 extends FrameLayout implements x70 {
         if (m1Var.h > 0) {
             spannableStringBuilder.append((CharSequence) ("#" + m1Var.h));
             z10 = z12;
-            pq pqVar2 = new pq(0, new c1(getContext(), m1Var.h));
-            pqVar2.setTranslateY(AndroidUtilities.dp(1.0f));
-            spannableStringBuilder.setSpan(pqVar2, 0, spannableStringBuilder.length(), 33);
+            qq qqVar2 = new qq(0, new c1(getContext(), m1Var.h));
+            qqVar2.setTranslateY(AndroidUtilities.dp(1.0f));
+            spannableStringBuilder.setSpan(qqVar2, 0, spannableStringBuilder.length(), 33);
             spannableStringBuilder.append((CharSequence) "\u2009");
         } else {
             z10 = z12;
@@ -375,7 +375,7 @@ public final class h1 extends FrameLayout implements x70 {
             i10 = 0;
             i11 = 33;
         }
-        spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), i10, spannableStringBuilder.length(), i11);
+        spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold()), i10, spannableStringBuilder.length(), i11);
         spannableStringBuilder.append((CharSequence) " ");
         int b132 = g0.b(i12, (int) m1Var.g, 1);
         int b142 = g0.b(i12, (int) m1Var.g, 2);
@@ -395,11 +395,11 @@ public final class h1 extends FrameLayout implements x70 {
 
     public void setDrawStar(boolean z10) {
         this.b = z10;
-        pq pqVar = this.G[0];
-        if (pqVar == null || pqVar.draw == z10) {
+        qq qqVar = this.G[0];
+        if (qqVar == null || qqVar.draw == z10) {
             return;
         }
-        pqVar.draw = z10;
+        qqVar.draw = z10;
         this.E.invalidate();
     }
 }

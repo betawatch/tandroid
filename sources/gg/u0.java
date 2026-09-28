@@ -10,10 +10,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.u4;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.v00;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class u0 extends c {
     public final Context K;
@@ -25,10 +25,10 @@ public abstract class u0 extends c {
         this.M = false;
         this.K = context;
         this.L = d6Var;
-        new u00(context, null).setIsSingleCell(true);
+        new v00(context, null).setIsSingleCell(true);
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -134,6 +134,6 @@ public abstract class u0 extends c {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         d6 d6Var = this.L;
         Context context = this.K;
-        return new gl0(i10 == 0 ? new u4(context, d6Var) : new v3(context, d6Var));
+        return new il0(i10 == 0 ? new u4(context, d6Var) : new v3(context, d6Var));
     }
 }

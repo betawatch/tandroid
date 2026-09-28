@@ -11,15 +11,15 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.c6;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.cu;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.zk0;
+import org.telegram.ui.Components.bl0;
+import org.telegram.ui.Components.du;
+import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.mo;
 import org.telegram.ui.sa1;
 import qg.v2;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,14 +34,14 @@ public final /* synthetic */ class q0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ((cu) this.b).requestFocus();
+                ((du) this.b).requestFocus();
                 return;
             case 1:
                 nf.f.s(((u0) this.b).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 return;
             case 2:
                 f1 f1Var = (f1) this.b;
-                Utilities.searchQueue.postRunnable(new cn0(f1Var, new ArrayList(f1Var.h.e), f1Var.h.n, 22));
+                Utilities.searchQueue.postRunnable(new en0(f1Var, new ArrayList(f1Var.h.e), f1Var.h.n, 22));
                 return;
             case 3:
                 ((HttpGetFileTask) this.b).lambda$doInBackground$1();
@@ -78,7 +78,7 @@ public final /* synthetic */ class q0 implements Runnable {
                 ((p4.g) this.b).n = -1;
                 return;
             case 9:
-                ((zk0) this.b).b();
+                ((bl0) this.b).b();
                 return;
             case 10:
                 n2.e eVar = ((pg.r0) this.b).b.a;
@@ -196,9 +196,9 @@ public final /* synthetic */ class q0 implements Runnable {
                 j0Var.n.presentFragment(sa1.d0(j0Var.s1(), true));
                 return;
             case 27:
-                lj0 lj0Var = ((rg.p0) this.b).y;
-                lj0Var.getAnimatedDrawable().N(0, true, false);
-                lj0Var.d();
+                nj0 nj0Var = ((rg.p0) this.b).y;
+                nj0Var.getAnimatedDrawable().N(0, true, false);
+                nj0Var.d();
                 return;
             case 28:
                 ((rg.v0) this.b).b.y();

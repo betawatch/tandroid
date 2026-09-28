@@ -15,7 +15,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class oy extends s4.v {
     public s4.c1 d;
@@ -321,22 +321,22 @@ public final class oy extends s4.v {
         }
         if (qyVar.V0 == null) {
             my myVar2 = pyVar.a;
-            org.telegram.ui.Components.ld0 ld0Var = new org.telegram.ui.Components.ld0();
-            ld0Var.a = new Paint(1);
+            org.telegram.ui.Components.nd0 nd0Var = new org.telegram.ui.Components.nd0();
+            nd0Var.a = new Paint(1);
             Paint paint = new Paint(1);
-            ld0Var.b = paint;
-            ld0Var.e = 0L;
-            ld0Var.f = new RectF();
+            nd0Var.b = paint;
+            nd0Var.e = 0L;
+            nd0Var.f = new RectF();
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            ld0Var.c = myVar2;
-            qyVar.V0 = ld0Var;
+            nd0Var.c = myVar2;
+            qyVar.V0 = nd0Var;
         }
-        org.telegram.ui.Components.ld0 ld0Var2 = qyVar.V0;
-        ld0Var2.d = a0Var;
-        ld0Var2.h = 0.0f;
-        ld0Var2.g = 0.0f;
-        ld0Var2.e = System.currentTimeMillis();
-        ld0Var2.c.invalidate();
+        org.telegram.ui.Components.nd0 nd0Var2 = qyVar.V0;
+        nd0Var2.d = a0Var;
+        nd0Var2.h = 0.0f;
+        nd0Var2.g = 0.0f;
+        nd0Var2.e = System.currentTimeMillis();
+        nd0Var2.c.invalidate();
     }
 }

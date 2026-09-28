@@ -27,9 +27,9 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.t6;
-import org.telegram.ui.Components.zk0;
+import org.telegram.ui.Components.bl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -42,7 +42,7 @@ public final class e {
     public v d;
     public q e;
     public com.google.android.gms.internal.cast.q f;
-    public zk0 g;
+    public bl0 g;
     public final Context h;
     public final e2.q n;
     public final l.d o;
@@ -289,19 +289,19 @@ public final class e {
 
     public final void h(e eVar, v vVar, q qVar, int i10, v vVar2, Collection collection) {
         com.google.android.gms.internal.cast.q qVar2;
-        zk0 zk0Var = this.g;
-        if (zk0Var != null) {
-            zk0Var.a();
+        bl0 bl0Var = this.g;
+        if (bl0Var != null) {
+            bl0Var.a();
             this.g = null;
         }
-        zk0 zk0Var2 = new zk0(eVar, vVar, qVar, i10, vVar2, collection);
-        this.g = zk0Var2;
-        if (zk0Var2.b != 3 || (qVar2 = this.f) == null) {
-            zk0Var2.b();
+        bl0 bl0Var2 = new bl0(eVar, vVar, qVar, i10, vVar2, collection);
+        this.g = bl0Var2;
+        if (bl0Var2.b != 3 || (qVar2 = this.f) == null) {
+            bl0Var2.b();
             return;
         }
         v vVar3 = this.d;
-        v vVar4 = (v) zk0Var2.g;
+        v vVar4 = (v) bl0Var2.g;
         int i11 = 2;
         com.google.android.gms.internal.cast.q.c.b("Prepare transfer from Route(%s) to Route(%s)", vVar3, vVar4);
         c0.i iVar = new c0.i();
@@ -315,17 +315,17 @@ public final class e {
         } catch (Exception e) {
             jVar.l(e);
         }
-        zk0 zk0Var3 = this.g;
-        e eVar2 = (e) ((WeakReference) zk0Var3.j).get();
-        if (eVar2 == null || eVar2.g != zk0Var3) {
+        bl0 bl0Var3 = this.g;
+        e eVar2 = (e) ((WeakReference) bl0Var3.j).get();
+        if (eVar2 == null || eVar2.g != bl0Var3) {
             Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-            zk0Var3.a();
+            bl0Var3.a();
         } else {
-            if (((c0.k) zk0Var3.k) != null) {
+            if (((c0.k) bl0Var3.k) != null) {
                 throw new IllegalStateException("future is already set");
             }
-            zk0Var3.k = kVar;
-            org.telegram.ui.web.q0 q0Var = new org.telegram.ui.web.q0(zk0Var3, 9);
+            bl0Var3.k = kVar;
+            org.telegram.ui.web.q0 q0Var = new org.telegram.ui.web.q0(bl0Var3, 9);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
             jVar.a(q0Var, new k2.b0(bVar, i11));

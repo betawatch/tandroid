@@ -26,10 +26,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class g6 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -322,7 +322,7 @@ public final class g6 implements NotificationCenter.NotificationCenterDelegate {
                 Canvas canvas = new Canvas(createBitmap);
                 int i10 = this.v;
                 if (i10 != 0) {
-                    patternColor = mc0.g(this.r, this.s, i10, this.w);
+                    patternColor = oc0.g(this.r, this.s, i10, this.w);
                 } else {
                     int i11 = this.s;
                     if (i11 != 0) {

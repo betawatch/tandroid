@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class pu extends og.b {
     public final /* synthetic */ int d;
@@ -26,7 +26,7 @@ public final class pu extends og.b {
         this.e = obj;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         switch (this.d) {
             case 0:
@@ -122,10 +122,10 @@ public final class pu extends og.b {
                             } else {
                                 imageView.setVisibility(0);
                                 boolean q6 = org.telegram.ui.ActionBar.h6.I.q();
-                                org.telegram.ui.Components.ac0 ac0Var = new org.telegram.ui.Components.ac0(1);
-                                ac0Var.b(i12, i13);
-                                ac0Var.b = q6;
-                                imageView.setBackground(ac0Var);
+                                org.telegram.ui.Components.cc0 cc0Var = new org.telegram.ui.Components.cc0(1);
+                                cc0Var.b(i12, i13);
+                                cc0Var.b = q6;
+                                imageView.setBackground(cc0Var);
                                 imageView.setImageResource(i14);
                             }
                             kuVar.b.setText(charSequence);
@@ -140,7 +140,7 @@ public final class pu extends og.b {
                                     ImageView imageView2 = kuVar.c;
                                     if (bool == null) {
                                         imageView2.setVisibility(0);
-                                        imageView2.animate().rotation(bool.booleanValue() ? 0.0f : 180.0f).setDuration(360L).setInterpolator(org.telegram.ui.Components.rr.h).start();
+                                        imageView2.animate().rotation(bool.booleanValue() ? 0.0f : 180.0f).setDuration(360L).setInterpolator(org.telegram.ui.Components.sr.h).start();
                                         break;
                                     } else {
                                         imageView2.setVisibility(8);
@@ -191,13 +191,13 @@ public final class pu extends og.b {
                                     ImageView imageView3 = gc0Var.e;
                                     org.telegram.ui.Components.p6 p6Var = gc0Var.d;
                                     ImageView imageView4 = gc0Var.a;
-                                    org.telegram.ui.Components.op opVar = gc0Var.h;
+                                    org.telegram.ui.Components.pp ppVar = gc0Var.h;
                                     ai.p4 p4Var = gc0Var.c;
                                     int i19 = bc0Var.a;
                                     CharSequence charSequence3 = bc0Var.c;
                                     int i20 = bc0Var.e;
                                     if (i19 == 3) {
-                                        opVar.setVisibility(8);
+                                        ppVar.setVisibility(8);
                                         imageView4.setVisibility(0);
                                         imageView4.setImageResource(bc0Var.d);
                                         p4Var.setText(charSequence3);
@@ -216,8 +216,8 @@ public final class pu extends og.b {
                                         r32.c(LiteMode.isEnabled(i20), false);
                                         gc0Var.r = Integer.bitCount(i20) > 1;
                                     } else {
-                                        opVar.setVisibility(0);
-                                        opVar.a(LiteMode.isEnabled(i20), false);
+                                        ppVar.setVisibility(0);
+                                        ppVar.a(LiteMode.isEnabled(i20), false);
                                         imageView4.setVisibility(8);
                                         r32.setVisibility(8);
                                         p6Var.setVisibility(8);
@@ -319,13 +319,13 @@ public final class pu extends og.b {
                 } else if (i10 != 7) {
                     view = new ku(vuVar, ruVar.getContext());
                 } else {
-                    View lnVar = new org.telegram.ui.Components.ln(ruVar.getContext(), 14);
+                    View mnVar = new org.telegram.ui.Components.mn(ruVar.getContext(), 14);
                     int i12 = org.telegram.ui.ActionBar.h6.d6;
                     int i13 = ru.p3;
-                    lnVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(i12, ruVar.p2));
-                    view = lnVar;
+                    mnVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(i12, ruVar.p2));
+                    view = mnVar;
                 }
-                return new org.telegram.ui.Components.gl0(view);
+                return new org.telegram.ui.Components.il0(view);
             default:
                 hc0 hc0Var = (hc0) obj;
                 Context context3 = viewGroup.getContext();
@@ -340,7 +340,7 @@ public final class pu extends og.b {
                 } else if (i10 == 5) {
                     view2 = new org.telegram.ui.Cells.r8(23, context3, null, false, true);
                 }
-                return new org.telegram.ui.Components.gl0(view2);
+                return new org.telegram.ui.Components.il0(view2);
         }
     }
 }

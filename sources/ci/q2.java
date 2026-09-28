@@ -20,10 +20,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.ne0;
-import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.pe0;
+import org.telegram.ui.Components.u90;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class q2 extends View {
     public final Paint a;
@@ -79,9 +79,9 @@ public final class q2 extends View {
             if (MessagesController.getInstance(i10).storyWeatherPreload) {
                 charSequence = replaceEmoji;
                 charSequence = replaceEmoji;
-                if (ne0.f("android.permission.ACCESS_COARSE_LOCATION") && kdVar == null) {
+                if (pe0.f("android.permission.ACCESS_COARSE_LOCATION") && kdVar == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
-                    spannableStringBuilder.setSpan(new s90(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new u90(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     n2VarArr[0] = new n2(this, spannableStringBuilder);
                     ld.a(false, new ai.g3(1, this, n2VarArr));
                     charSequence = spannableStringBuilder;

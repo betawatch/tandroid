@@ -54,11 +54,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h5 implements Runnable {
     public final /* synthetic */ int a;
@@ -1257,9 +1257,9 @@ public final /* synthetic */ class h5 implements Runnable {
                 ii.r rVar = (ii.r) this.b;
                 ii.a aVar2 = (ii.a) this.c;
                 TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) this.d;
-                y70 y70Var = (y70) this.e;
+                a80 a80Var = (a80) this.e;
                 rVar.r.V4(aVar2, pageBlock);
-                y70Var.u();
+                a80Var.u();
                 return;
             case 19:
                 a();
@@ -1326,7 +1326,7 @@ public final /* synthetic */ class h5 implements Runnable {
                 h();
                 return;
             default:
-                ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (y70) this.e);
+                ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (a80) this.e);
                 return;
         }
     }

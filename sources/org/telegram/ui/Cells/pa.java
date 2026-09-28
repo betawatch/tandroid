@@ -15,13 +15,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.td1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class pa extends wl0 implements NotificationCenter.NotificationCenterDelegate {
+public abstract class pa extends yl0 implements NotificationCenter.NotificationCenterDelegate {
     public static final byte[] i3 = new byte[1024];
     public boolean X2;
     public final gg.b0 Y2;
@@ -59,8 +59,8 @@ public abstract class pa extends wl0 implements NotificationCenter.NotificationC
         oa oaVar = new oa(this, context);
         this.c3 = oaVar;
         setAdapter(oaVar);
-        setOnItemClickListener(new kl0() { // from class: org.telegram.ui.Cells.ka
-            @Override // org.telegram.ui.Components.kl0
+        setOnItemClickListener(new ml0() { // from class: org.telegram.ui.Cells.ka
+            @Override // org.telegram.ui.Components.ml0
             public final void d(int i11, View view) {
                 pa paVar = pa.this;
                 paVar.getClass();
@@ -101,7 +101,7 @@ public abstract class pa extends wl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         for (int i10 = 0; i10 < 4; i10++) {
@@ -110,7 +110,7 @@ public abstract class pa extends wl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         for (int i10 = 0; i10 < 4; i10++) {
@@ -127,7 +127,7 @@ public abstract class pa extends wl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (getParent() != null && getParent().getParent() != null) {
             getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));

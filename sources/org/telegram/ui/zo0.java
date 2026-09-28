@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class zo0 extends View {
     public boolean E;
@@ -33,9 +33,9 @@ public class zo0 extends View {
     public zo0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.c = 0.0f;
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        this.h = new org.telegram.ui.Components.h5(this, 350L, rrVar);
-        this.n = new org.telegram.ui.Components.h5(this, 350L, rrVar);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        this.h = new org.telegram.ui.Components.h5(this, 350L, srVar);
+        this.n = new org.telegram.ui.Components.h5(this, 350L, srVar);
         this.y = new Paint(1);
         this.b = d6Var;
         this.a = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.s8, d6Var);

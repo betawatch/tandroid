@@ -24,7 +24,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class up implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -54,7 +54,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
     public int b;
     public boolean b0;
     public int c;
-    public final org.telegram.ui.Components.wq c0;
+    public final org.telegram.ui.Components.xq c0;
     public float d;
     public final int[] d0;
     public final Paint e;
@@ -87,8 +87,8 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
         this.r = new Path();
         this.I = 0L;
         this.b0 = true;
-        org.telegram.ui.Components.wq wqVar = new org.telegram.ui.Components.wq(null, true, null);
-        this.c0 = wqVar;
+        org.telegram.ui.Components.xq xqVar = new org.telegram.ui.Components.xq(null, true, null);
+        this.c0 = xqVar;
         this.d0 = new int[3];
         this.T = view;
         this.e0 = i10;
@@ -101,11 +101,11 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
         this.F = new ImageReceiver(view);
         paint.setStrokeWidth(AndroidUtilities.dpf2(2.8f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        wqVar.z = 3;
-        wqVar.I = 1;
-        wqVar.g = true;
-        wqVar.d = d("paintChatActionBackground");
-        wqVar.e = textPaint;
+        xqVar.z = 3;
+        xqVar.I = 1;
+        xqVar.g = true;
+        xqVar.d = d("paintChatActionBackground");
+        xqVar.e = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
         textPaint2.setTextSize(AndroidUtilities.dp(14.0f));
@@ -199,7 +199,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
         float f11;
         float f12;
         float f13;
-        org.telegram.ui.Components.wq wqVar;
+        org.telegram.ui.Components.xq xqVar;
         float f14;
         float f15;
         TextPaint textPaint;
@@ -224,9 +224,9 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                 q5Var.a(rjVar);
             }
         }
-        org.telegram.ui.Components.wq wqVar2 = this.c0;
-        wqVar2.H = rjVar;
-        RectF rectF3 = wqVar2.f;
+        org.telegram.ui.Components.xq xqVar2 = this.c0;
+        xqVar2.H = rjVar;
+        RectF rectF3 = xqVar2.f;
         float dp = AndroidUtilities.dp(110.0f) * f7;
         if (dp < AndroidUtilities.dp(8.0f)) {
             return;
@@ -313,7 +313,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                 f13 = f28;
                 float f30 = width2 / 2.0f;
                 float height = rectF4.height() - width2;
-                wqVar = wqVar2;
+                xqVar = xqVar2;
                 f14 = f27;
                 path.moveTo(rectF4.right, rectF4.top + width + width2);
                 float f31 = -width;
@@ -343,7 +343,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                 }
             } else {
                 f13 = f28;
-                wqVar = wqVar2;
+                xqVar = xqVar2;
                 f14 = f27;
                 f15 = f21;
                 textPaint = textPaint3;
@@ -433,7 +433,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
             canvas2.restore();
         } else {
             paint = paint2;
-            wqVar = wqVar2;
+            xqVar = xqVar2;
             f14 = f27;
             f15 = f21;
             textPaint = textPaint3;
@@ -477,8 +477,8 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
             imageReceiver2.setRoundRadius((int) f51);
             float f52 = f14;
             imageReceiver2.setImageCoords(f16 - f51, b11, f52, f52);
-            if (this.X && imageReceiver2.getDrawable() != null && (imageReceiver2.getDrawable() instanceof org.telegram.ui.Components.qq) && (((org.telegram.ui.Components.qq) imageReceiver2.getDrawable()).b instanceof org.telegram.ui.Components.w80)) {
-                ((org.telegram.ui.Components.w80) ((org.telegram.ui.Components.qq) imageReceiver2.getDrawable()).b).i = f7;
+            if (this.X && imageReceiver2.getDrawable() != null && (imageReceiver2.getDrawable() instanceof org.telegram.ui.Components.rq) && (((org.telegram.ui.Components.rq) imageReceiver2.getDrawable()).b instanceof org.telegram.ui.Components.y80)) {
+                ((org.telegram.ui.Components.y80) ((org.telegram.ui.Components.rq) imageReceiver2.getDrawable()).b).i = f7;
             }
             if (this.K <= 0.0f || !this.b0) {
                 imageReceiver2.draw(canvas2);
@@ -486,30 +486,30 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                 canvas2.saveLayerAlpha(imageReceiver2.getImageX(), imageReceiver2.getImageY(), imageReceiver2.getImageX() + imageReceiver2.getImageWidth(), imageReceiver2.getImageY() + imageReceiver2.getImageHeight(), 255, 31);
                 imageReceiver2.draw(canvas2);
                 float f53 = this.K;
-                org.telegram.ui.Components.wq wqVar3 = wqVar;
-                wqVar3.e(wqVar3.s);
-                canvas2.scale(f53, f53, (wqVar3.s / 2.0f) + wqVar3.A + AndroidUtilities.dp(12.0f) + f16, (b11 - AndroidUtilities.dp(6.0f)) + AndroidUtilities.dp(14.0f));
+                org.telegram.ui.Components.xq xqVar3 = xqVar;
+                xqVar3.e(xqVar3.s);
+                canvas2.scale(f53, f53, (xqVar3.s / 2.0f) + xqVar3.A + AndroidUtilities.dp(12.0f) + f16, (b11 - AndroidUtilities.dp(6.0f)) + AndroidUtilities.dp(14.0f));
                 canvas2.translate(AndroidUtilities.dp(12.0f) + f16, b11 - AndroidUtilities.dp(6.0f));
-                float f54 = wqVar3.C;
-                float f55 = wqVar3.l;
+                float f54 = xqVar3.C;
+                float f55 = xqVar3.l;
                 if (f55 != 1.0f) {
                     f19 = 6.0f;
-                    int i20 = wqVar3.c;
+                    int i20 = xqVar3.c;
                     if (i20 == 0 || i20 == 1) {
                         rectF2 = rectF;
                         f20 = 14.0f;
-                        wqVar3.e(wqVar3.s);
-                        float dp14 = (wqVar3.x - AndroidUtilities.dp(f54 * 2.0f)) / 2.0f;
-                        float f56 = wqVar3.B;
-                        rectF2.set(f56, dp14, wqVar3.s + f56 + AndroidUtilities.dp(11.0f), AndroidUtilities.dp(23.0f) + dp14);
+                        xqVar3.e(xqVar3.s);
+                        float dp14 = (xqVar3.x - AndroidUtilities.dp(f54 * 2.0f)) / 2.0f;
+                        float f56 = xqVar3.B;
+                        rectF2.set(f56, dp14, xqVar3.s + f56 + AndroidUtilities.dp(11.0f), AndroidUtilities.dp(23.0f) + dp14);
                     } else {
                         float f57 = f55 * 2.0f;
                         if (f57 > 1.0f) {
                             f57 = 1.0f;
                         }
-                        float dp15 = (wqVar3.x - AndroidUtilities.dp(f54 * 2.0f)) / 2.0f;
-                        int i21 = wqVar3.s;
-                        int i22 = wqVar3.r;
+                        float dp15 = (xqVar3.x - AndroidUtilities.dp(f54 * 2.0f)) / 2.0f;
+                        int i21 = xqVar3.s;
+                        int i22 = xqVar3.r;
                         if (i21 == i22) {
                             z10 = i21;
                             f20 = 14.0f;
@@ -517,8 +517,8 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                             f20 = 14.0f;
                             z10 = com.google.android.gms.internal.vision.e2.z(1.0f, f57, i22, i21 * f57);
                         }
-                        wqVar3.e(z10);
-                        float f58 = wqVar3.B;
+                        xqVar3.e(z10);
+                        float f58 = xqVar3.B;
                         rectF2 = rectF;
                         rectF2.set(f58, dp15, z10 + f58 + AndroidUtilities.dp(11.0f), AndroidUtilities.dp(23.0f) + dp15);
                     }
@@ -526,20 +526,20 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                     rectF2 = rectF;
                     f19 = 6.0f;
                     f20 = 14.0f;
-                    wqVar3.e(wqVar3.s);
-                    float dp16 = (wqVar3.x - AndroidUtilities.dp(f54 * 2.0f)) / 2.0f;
-                    float f59 = wqVar3.B;
-                    rectF2.set(f59, dp16, wqVar3.s + f59 + AndroidUtilities.dp(11.0f), AndroidUtilities.dp(23.0f) + dp16);
+                    xqVar3.e(xqVar3.s);
+                    float dp16 = (xqVar3.x - AndroidUtilities.dp(f54 * 2.0f)) / 2.0f;
+                    float f59 = xqVar3.B;
+                    rectF2.set(f59, dp16, xqVar3.s + f59 + AndroidUtilities.dp(11.0f), AndroidUtilities.dp(23.0f) + dp16);
                 }
                 rectF2.inset(-AndroidUtilities.dp(2.0f), -AndroidUtilities.dp(2.0f));
                 canvas2.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, this.n);
                 canvas2.restore();
                 canvas2.save();
                 float f60 = this.K;
-                wqVar3.e(wqVar3.s);
-                canvas2.scale(f60, f60, (wqVar3.s / 2.0f) + wqVar3.A + AndroidUtilities.dp(12.0f) + f16, (b11 - AndroidUtilities.dp(f19)) + AndroidUtilities.dp(f20));
+                xqVar3.e(xqVar3.s);
+                canvas2.scale(f60, f60, (xqVar3.s / 2.0f) + xqVar3.A + AndroidUtilities.dp(12.0f) + f16, (b11 - AndroidUtilities.dp(f19)) + AndroidUtilities.dp(f20));
                 canvas2.translate(AndroidUtilities.dp(12.0f) + f16, b11 - AndroidUtilities.dp(f19));
-                wqVar3.a(canvas2);
+                xqVar3.a(canvas2);
                 canvas2.restore();
             }
             imageReceiver2.setAlpha(1.0f);
@@ -676,7 +676,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                     }
                 }
             });
-            ofFloat.setInterpolator(org.telegram.ui.Components.rr.f);
+            ofFloat.setInterpolator(org.telegram.ui.Components.sr.f);
             ofFloat.setDuration(220L);
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.J = animatorSet2;
@@ -730,7 +730,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                 }
             }
         });
-        ofFloat2.setInterpolator(org.telegram.ui.Components.rr.h);
+        ofFloat2.setInterpolator(org.telegram.ui.Components.sr.h);
         ofFloat2.setDuration(250L);
         this.L = 0.0f;
         ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -779,8 +779,8 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                 }
             }
         });
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.j;
-        ofFloat3.setInterpolator(rrVar);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.j;
+        ofFloat3.setInterpolator(srVar);
         ofFloat3.setDuration(180L);
         ValueAnimator ofFloat4 = ValueAnimator.ofFloat(1.0f, -0.5f);
         ofFloat4.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.sp
@@ -828,7 +828,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                 }
             }
         });
-        ofFloat4.setInterpolator(rrVar);
+        ofFloat4.setInterpolator(srVar);
         ofFloat4.setDuration(120L);
         ValueAnimator ofFloat5 = ValueAnimator.ofFloat(-0.5f, 0.0f);
         final int i14 = 3;
@@ -877,7 +877,7 @@ public final class up implements NotificationCenter.NotificationCenterDelegate {
                 }
             }
         });
-        ofFloat5.setInterpolator(rrVar);
+        ofFloat5.setInterpolator(srVar);
         ofFloat5.setDuration(100L);
         AnimatorSet animatorSet3 = new AnimatorSet();
         this.J = animatorSet3;

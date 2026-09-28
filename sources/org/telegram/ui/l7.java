@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class l7 extends g7 {
     public final ArrayList n;
@@ -65,6 +65,6 @@ public final class l7 extends g7 {
         k7 k7Var = new k7(this, viewGroup.getContext(), 0);
         k7Var.e = 2;
         k7Var.b.addView(new org.telegram.ui.Cells.k7(viewGroup.getContext(), 3, null));
-        return new org.telegram.ui.Components.gl0(k7Var);
+        return new org.telegram.ui.Components.il0(k7Var);
     }
 }

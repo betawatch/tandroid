@@ -2,11 +2,11 @@ package ii;
 
 import android.text.TextUtils;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.cu;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h4 implements bu, j4 {
+public final /* synthetic */ class h4 implements cu, j4 {
     public final /* synthetic */ int a;
     public final /* synthetic */ w3 b;
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class h4 implements bu, j4 {
         this.b = w3Var;
     }
 
-    @Override // org.telegram.ui.Components.bu
+    @Override // org.telegram.ui.Components.cu
     public void run(String str) {
         switch (this.a) {
             case 0:

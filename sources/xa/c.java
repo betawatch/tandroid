@@ -81,8 +81,8 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.jq0;
-import org.telegram.ui.Components.no0;
+import org.telegram.ui.Components.lq0;
+import org.telegram.ui.Components.po0;
 import org.telegram.ui.vi0;
 import org.telegram.ui.wn;
 import pg.m;
@@ -93,9 +93,9 @@ import v7.j5;
 import v7.u7;
 import w9.h;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final class c implements s, jq0, a0, androidx.activity.result.b, ce.b, w1, v0, OnSuccessListener, SuccessContinuation, f6.a, n, s0, x, b2, he.a, no0, d5, k0 {
+public final class c implements s, lq0, a0, androidx.activity.result.b, ce.b, w1, v0, OnSuccessListener, SuccessContinuation, f6.a, n, s0, x, b2, he.a, po0, d5, k0 {
     public static volatile c c;
     public final /* synthetic */ int a;
     public Object b;
@@ -254,7 +254,7 @@ public final class c implements s, jq0, a0, androidx.activity.result.b, ce.b, w1
         }
     }
 
-    @Override // org.telegram.ui.Components.no0
+    @Override // org.telegram.ui.Components.po0
     public void b(float f7) {
         z zVar = (z) this.b;
         MessageObject messageObject = zVar.P;
@@ -280,7 +280,7 @@ public final class c implements s, jq0, a0, androidx.activity.result.b, ce.b, w1
         ((fi.s) this.b).finishFragment();
     }
 
-    @Override // org.telegram.ui.Components.no0
+    @Override // org.telegram.ui.Components.po0
     public void d(float f7) {
         MessageObject messageObject = ((z) this.b).P;
         if (messageObject == null) {
@@ -713,7 +713,7 @@ public final class c implements s, jq0, a0, androidx.activity.result.b, ce.b, w1
         return unmodifiableSet;
     }
 
-    @Override // org.telegram.ui.Components.jq0
+    @Override // org.telegram.ui.Components.lq0
     public void u0() {
         e6.j0((e6) this.b);
     }
@@ -767,7 +767,7 @@ public final class c implements s, jq0, a0, androidx.activity.result.b, ce.b, w1
         this.b = str;
     }
 
-    @Override // org.telegram.ui.Components.jq0
+    @Override // org.telegram.ui.Components.lq0
     public /* synthetic */ void U() {
     }
 }

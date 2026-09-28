@@ -1,45 +1,37 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.messages_Messages c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ ArrayList f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ int s;
-    public final /* synthetic */ int v;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
 
-    public /* synthetic */ y6(MediaDataController mediaDataController, TLRPC.messages_Messages messages_messages, int i10, long j3, ArrayList arrayList, int i11, int i12, boolean z10, int i13, int i14, int i15) {
-        this.a = i15;
+    public /* synthetic */ y6(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
+        this.a = i10;
         this.b = mediaDataController;
-        this.c = messages_messages;
-        this.d = i10;
-        this.e = j3;
-        this.f = arrayList;
-        this.h = i11;
-        this.n = i12;
-        this.r = z10;
-        this.s = i13;
-        this.v = i14;
+        this.c = tL_messages_stickerSet;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processLoadedMedia$133(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
+                this.b.lambda$saveStickerSetIntoCache$40(this.c);
+                break;
+            case 1:
+                this.b.lambda$loadGroupStickerSet$45(this.c);
+                break;
+            case 2:
+                this.b.lambda$loadGroupStickerSet$43(this.c);
+                break;
+            case 3:
+                this.b.lambda$putSetToCache$47(this.c);
                 break;
             default:
-                this.b.lambda$processLoadedMedia$134(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
+                this.b.lambda$replaceStickerSet$28(this.c);
                 break;
         }
     }

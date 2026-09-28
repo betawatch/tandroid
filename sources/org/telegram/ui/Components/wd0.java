@@ -1,42 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class wd0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xd0 b;
+public final class wd0 extends v7.p {
+    public final /* synthetic */ ee0 a;
 
-    public /* synthetic */ wd0(xd0 xd0Var, int i10) {
-        this.a = i10;
-        this.b = xd0Var;
+    public wd0(ee0 ee0Var) {
+        this.a = ee0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        EditTextBoldCursor editTextBoldCursor;
-        switch (this.a) {
-            case 0:
-                ce0 ce0Var = this.b.d;
-                ce0Var.P = 1.0f;
-                ce0Var.f(1.0f);
-                break;
-            default:
-                xd0 xd0Var = this.b;
-                Runnable runnable = xd0Var.c;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                if (SharedConfig.passcodeType == 1 && xd0Var.d.x.getVisibility() != 0 && (editTextBoldCursor = xd0Var.d.r) != null) {
-                    editTextBoldCursor.requestFocus();
-                    AndroidUtilities.showKeyboard(xd0Var.d.r);
-                    break;
-                }
-                break;
-        }
+    @Override // v7.p
+    public final void a(int i10, CharSequence charSequence) {
+        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
+        this.a.m(true);
+    }
+
+    @Override // v7.p
+    public final void b() {
+        FileLog.d("PasscodeView onAuthenticationFailed");
+        this.a.m(true);
+    }
+
+    @Override // v7.p
+    public final void c(androidx.biometric.s sVar) {
+        FileLog.d("PasscodeView onAuthenticationSucceeded");
+        this.a.k(true);
     }
 }

@@ -13,19 +13,19 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.zr0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import w7.a6;
 import w7.y5;
 import yh.k5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class o2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final LinearLayout E;
@@ -33,7 +33,7 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
     public final TextView G;
     public final ci.d H;
     public boolean I;
-    public final zr0 a;
+    public final bs0 a;
     public final int b;
     public final d6 c;
     public boolean d;
@@ -48,30 +48,30 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
     public final TextView x;
     public final FrameLayout y;
 
-    public o2(zr0 zr0Var, int i10, d6 d6Var) {
-        super(zr0Var.getContext());
+    public o2(bs0 bs0Var, int i10, d6 d6Var) {
+        super(bs0Var.getContext());
         this.r = AndroidUtilities.displaySize.y;
-        Context context = zr0Var.getContext();
-        this.a = zr0Var;
+        Context context = bs0Var.getContext();
+        this.a = bs0Var;
         this.b = i10;
         this.c = d6Var;
-        j2 j2Var = new j2(context, i10, new hi.a(this, 17), new i2(this), new i2(this), d6Var, zr0Var);
+        j2 j2Var = new j2(context, i10, new hi.a(this, 17), new i2(this), new i2(this), d6Var, bs0Var);
         this.f = j2Var;
         j2Var.Y2.r = false;
         j2Var.setSelectorType(9);
         j2Var.setSelectorDrawableColor(0);
-        j2Var.setPadding(AndroidUtilities.dp(9.0f), zr0Var.K, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(86.0f));
+        j2Var.setPadding(AndroidUtilities.dp(9.0f), bs0Var.K, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(86.0f));
         j2Var.setClipToPadding(false);
         j2Var.setClipChildren(false);
         addView(j2Var, y5.e(-1, -1, 119));
-        j2Var.j(new ii.n3(9, this, zr0Var));
-        k2 k2Var = new k2(zr0Var);
+        j2Var.j(new ii.n3(9, this, bs0Var));
+        k2 k2Var = new k2(bs0Var);
         k2Var.m = false;
         k2Var.C = false;
-        k2Var.o(rr.h);
+        k2Var.o(sr.h);
         k2Var.n(350L);
         j2Var.setItemAnimator(k2Var);
-        new s4.y(new l2(this, zr0Var)).e(j2Var);
+        new s4.y(new l2(this, bs0Var)).e(j2Var);
         View view = this.s;
         if (view != null) {
             removeView(view);
@@ -80,7 +80,7 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
         if (view2 != null) {
             removeView(view2);
         }
-        if (zr0Var.d != this.e) {
+        if (bs0Var.d != this.e) {
             this.s = null;
             this.w = null;
             this.x = null;
@@ -139,7 +139,7 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
             j2Var.setEmptyView(this.y);
             LinearLayout linearLayout2 = this.E;
             if (linearLayout2 != null) {
-                linearLayout2.setVisibility(zr0Var.e.h() ? 0 : 8);
+                linearLayout2.setVisibility(bs0Var.e.h() ? 0 : 8);
                 return;
             }
             return;
@@ -155,7 +155,7 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
         linearLayout3.setOrientation(1);
         this.s.addView(this.v, y5.e(-2, -2, 17));
         w9 w9Var = new w9(getContext());
-        w9Var.setImageDrawable(new ij0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+        w9Var.setImageDrawable(new kj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
         this.v.addView(w9Var, y5.t(120, 120, 1, 0, 0, 0, 0));
         TextView textView3 = new TextView(getContext());
         this.w = textView3;
@@ -214,8 +214,8 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
             return;
         }
         this.n = z10;
-        zr0 zr0Var = this.a;
-        zr0Var.p(zr0Var.g());
+        bs0 bs0Var = this.a;
+        bs0Var.p(bs0Var.g());
         int i10 = 0;
         while (true) {
             j2Var = this.f;
@@ -228,9 +228,9 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
             }
             i10++;
         }
-        j61 j61Var = j2Var.Y2;
-        if (j61Var != null) {
-            j61Var.S();
+        l61 l61Var = j2Var.Y2;
+        if (l61Var != null) {
+            l61Var.S();
         }
         if (z10) {
             org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
@@ -252,7 +252,7 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
             j2 j2Var = this.f;
             if (j2Var.canScrollVertically(1)) {
                 for (int i12 = 0; i12 < j2Var.getChildCount(); i12++) {
-                    if (!(j2Var.getChildAt(i12) instanceof u00)) {
+                    if (!(j2Var.getChildAt(i12) instanceof v00)) {
                     }
                 }
                 return;
@@ -272,13 +272,13 @@ public final class o2 extends FrameLayout implements NotificationCenter.Notifica
     }
 
     public final void f(boolean z10) {
-        j61 j61Var;
+        l61 l61Var;
         j2 j2Var = this.f;
-        if (j2Var == null || (j61Var = j2Var.Y2) == null) {
+        if (j2Var == null || (l61Var = j2Var.Y2) == null) {
             return;
         }
         boolean canScrollVertically = j2Var.canScrollVertically(-1);
-        j61Var.N(z10);
+        l61Var.N(z10);
         if (canScrollVertically) {
             return;
         }

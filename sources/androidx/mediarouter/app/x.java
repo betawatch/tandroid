@@ -14,19 +14,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ep;
-import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.m70;
-import org.telegram.ui.Components.n30;
-import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.fp;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.op;
+import org.telegram.ui.Components.p30;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.wo;
+import org.telegram.ui.Components.xo;
 import org.telegram.ui.wn;
 import s4.c1;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -212,56 +212,56 @@ public final class x implements View.OnClickListener {
                 }
                 return;
             case 8:
-                np npVar = (np) this.b;
-                wn wnVar = npVar.v;
+                op opVar = (op) this.b;
+                wn wnVar = opVar.v;
                 wi wiVar = new wi(wnVar.getParentActivity(), wnVar, false, false, false, wnVar.getResourceProvider());
-                npVar.Y = wiVar;
+                opVar.Y = wiVar;
                 wiVar.drawNavigationBar = true;
                 wiVar.L1(LocaleController.getString(R.string.ChooseBackground));
-                wi wiVar2 = npVar.Y;
-                wiVar2.Z1 = new ep(npVar);
+                wi wiVar2 = opVar.Y;
+                wiVar2.Z1 = new fp(opVar);
                 wiVar2.J1(1, false);
-                npVar.Y.r1();
-                npVar.Y.j0.f0();
-                npVar.Y.show();
-                npVar.Z = new m6(npVar, npVar.getContext());
-                p6 p6Var = new p6(npVar.getContext(), true, true, true);
-                npVar.a0 = p6Var;
+                opVar.Y.r1();
+                opVar.Y.j0.f0();
+                opVar.Y.show();
+                opVar.Z = new m6(opVar, opVar.getContext());
+                p6 p6Var = new p6(opVar.getContext(), true, true, true);
+                opVar.a0 = p6Var;
                 p6Var.setTextSize(AndroidUtilities.dp(14.0f));
-                npVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
-                npVar.a0.setGravity(17);
-                p6 p6Var2 = npVar.a0;
+                opVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                opVar.a0.setGravity(17);
+                p6 p6Var2 = opVar.a0;
                 int i10 = h6.Oh;
-                p6Var2.setTextColor(npVar.getThemedColor(i10));
-                npVar.Z.addView(npVar.a0, y5.e(-1, -2, 17));
-                m6 m6Var = npVar.Z;
+                p6Var2.setTextColor(opVar.getThemedColor(i10));
+                opVar.Z.addView(opVar.a0, y5.e(-1, -2, 17));
+                m6 m6Var = opVar.Z;
                 int dp = AndroidUtilities.dp(0.0f);
-                int themedColor = npVar.getThemedColor(h6.d6);
-                int k10 = i0.a.k(npVar.getThemedColor(i10), 76);
+                int themedColor = opVar.getThemedColor(h6.d6);
+                int k10 = i0.a.k(opVar.getThemedColor(i10), 76);
                 m6Var.setBackground(h6.i0(dp, dp, dp, dp, themedColor, k10, k10));
-                npVar.Z.setOnClickListener(new wo(npVar, 0));
-                npVar.Y.r1.addView(npVar.Z, y5.e(-1, -2, 80));
+                opVar.Z.setOnClickListener(new xo(opVar, 0));
+                opVar.Y.r1.addView(opVar.Z, y5.e(-1, -2, 80));
                 return;
             case 9:
-                m70 m70Var = (m70) this.b;
-                n30 n30Var = (n30) view;
-                if (n30Var.y) {
-                    m70Var.j0 = null;
-                    m70Var.f0.l(n30Var.getUid());
-                    m70Var.U.b(n30Var);
-                    m70Var.a0(true);
-                    AndroidUtilities.updateVisibleRows(m70Var.d);
+                o70 o70Var = (o70) this.b;
+                p30 p30Var = (p30) view;
+                if (p30Var.y) {
+                    o70Var.j0 = null;
+                    o70Var.f0.l(p30Var.getUid());
+                    o70Var.U.b(p30Var);
+                    o70Var.a0(true);
+                    AndroidUtilities.updateVisibleRows(o70Var.d);
                     return;
                 }
-                n30 n30Var2 = m70Var.j0;
-                if (n30Var2 != null) {
-                    n30Var2.a();
+                p30 p30Var2 = o70Var.j0;
+                if (p30Var2 != null) {
+                    p30Var2.a();
                 }
-                m70Var.j0 = n30Var;
-                n30Var.b();
+                o70Var.j0 = p30Var;
+                p30Var.b();
                 return;
             default:
-                ((g90) this.b).e.callOnClick();
+                ((i90) this.b).e.callOnClick();
                 return;
         }
     }

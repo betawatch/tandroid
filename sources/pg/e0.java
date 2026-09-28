@@ -15,15 +15,15 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.f21;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.h21;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.wv0;
 import v7.a7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class e0 {
-    public static final rr B = new rr(0.0d, 0.5d, 0.0d, 1.0d);
+    public static final sr B = new sr(0.0d, 0.5d, 0.0d, 1.0d);
     public m A;
     public final f1 a;
     public boolean b;
@@ -270,13 +270,13 @@ public final class e0 {
                                             sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new f21(n1Var3, i1Var, i21, f10, 14));
+                                        AndroidUtilities.runOnUIThread(new h21(n1Var3, i1Var, i21, f10, 14));
                                         n1Var3.j.set(false);
                                     }
                                     i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new f21(n1Var3, i1Var, i21, f10, 14));
+                                    AndroidUtilities.runOnUIThread(new h21(n1Var3, i1Var, i21, f10, 14));
                                     n1Var3.j.set(false);
                                 }
                             } finally {
@@ -551,13 +551,13 @@ public final class e0 {
                                             sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new f21(n1Var3, i1Var, i21, f10, 14));
+                                        AndroidUtilities.runOnUIThread(new h21(n1Var3, i1Var, i21, f10, 14));
                                         n1Var3.j.set(false);
                                     }
                                     i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new f21(n1Var3, i1Var, i21, f10, 14));
+                                    AndroidUtilities.runOnUIThread(new h21(n1Var3, i1Var, i21, f10, 14));
                                     n1Var3.j.set(false);
                                 }
                             } finally {
@@ -647,15 +647,15 @@ public final class e0 {
             if (z10 && (e1Var = f1Var.a) != null) {
                 e1Var.f();
             }
-            uv0 uv0Var = f1Var.getPainting().g;
+            wv0 wv0Var = f1Var.getPainting().g;
             w0 w0Var = this.g;
             float a2 = a7.a((float) w0Var.a, (float) w0Var.b, 0.0f, 0.0f);
             w0 w0Var2 = this.g;
-            float max = Math.max(a2, a7.a((float) w0Var2.a, (float) w0Var2.b, uv0Var.a, 0.0f));
+            float max = Math.max(a2, a7.a((float) w0Var2.a, (float) w0Var2.b, wv0Var.a, 0.0f));
             w0 w0Var3 = this.g;
-            float a10 = a7.a((float) w0Var3.a, (float) w0Var3.b, 0.0f, uv0Var.b);
+            float a10 = a7.a((float) w0Var3.a, (float) w0Var3.b, 0.0f, wv0Var.b);
             w0 w0Var4 = this.g;
-            final float max2 = Math.max(max, Math.max(a10, a7.a((float) w0Var4.a, (float) w0Var4.b, uv0Var.a, uv0Var.b))) / 0.84f;
+            final float max2 = Math.max(max, Math.max(a10, a7.a((float) w0Var4.a, (float) w0Var4.b, wv0Var.a, wv0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -693,7 +693,7 @@ public final class e0 {
             });
             this.x.addListener(new c0(this, w0Var6, max2, mVar, z10, y0Var));
             this.x.setDuration(450L);
-            this.x.setInterpolator(rr.h);
+            this.x.setInterpolator(sr.h);
             this.x.start();
             if (z10) {
                 BotWebViewVibrationEffect.IMPACT_HEAVY.vibrate();

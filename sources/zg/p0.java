@@ -41,13 +41,13 @@ import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.j9;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.xq;
 import org.telegram.ui.db1;
 import org.telegram.ui.pm;
 import yh.z5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class p0 {
     public static int Z;
@@ -201,7 +201,7 @@ public final class p0 {
             }
             m0 m0Var = (m0) arrayList2.get(i13);
             String str = m0Var.o;
-            wq wqVar = m0Var.F;
+            xq xqVar = m0Var.F;
             m0 m0Var2 = (m0) hashMap.get(str);
             if (m0Var2 != null && m0Var.b != m0Var2.b) {
                 m0Var2 = null;
@@ -223,9 +223,9 @@ public final class p0 {
                     m0Var.c = 3;
                     int i16 = m0Var.w;
                     int i17 = m0Var2.w;
-                    if (i16 != i17 && wqVar != null) {
-                        wqVar.c(i17, false);
-                        wqVar.c(m0Var.w, true);
+                    if (i16 != i17 && xqVar != null) {
+                        xqVar.c(i17, false);
+                        xqVar.c(m0Var.w, true);
                     }
                     j9 j9Var2 = m0Var.T;
                     if (j9Var2 != null || m0Var2.T != null) {
@@ -583,7 +583,7 @@ public final class p0 {
                 float f11 = f7 + f10;
                 RectF rectF2 = this.O;
                 rectF2.set(clamp, (f7 - dp) + f10, dp + clamp, f11);
-                float interpolation = rr.h.getInterpolation(this.D);
+                float interpolation = sr.h.getInterpolation(this.D);
                 AndroidUtilities.lerp(rectF, rectF2, interpolation, rectF2);
                 int i12 = m0Var.V;
                 o0 o0Var = m0Var.s;
@@ -705,7 +705,7 @@ public final class p0 {
             m0 m0Var = (m0) arrayList.get(i12);
             boolean z10 = m0Var.b;
             o6 o6Var = m0Var.G;
-            wq wqVar = m0Var.F;
+            xq xqVar = m0Var.F;
             if (z10) {
                 m0Var.A = AndroidUtilities.dp(14.0f);
                 m0Var.B = AndroidUtilities.dp(14.0f);
@@ -714,8 +714,8 @@ public final class p0 {
                 m0Var.B = AndroidUtilities.dp(26.0f);
                 if (m0Var.u) {
                     m0Var.A = (int) (o6Var.d + AndroidUtilities.dp(8.0f) + m0Var.A);
-                } else if (wqVar != null && m0Var.w > 1) {
-                    m0Var.A = org.telegram.messenger.f0.C(8.0f, (int) Math.ceil(wqVar.m), m0Var.A);
+                } else if (xqVar != null && m0Var.w > 1) {
+                    m0Var.A = org.telegram.messenger.f0.C(8.0f, (int) Math.ceil(xqVar.m), m0Var.A);
                 }
             } else {
                 m0Var.A = AndroidUtilities.dp(m0Var.D != null ? 6.0f : 4.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(8.0f);
@@ -725,8 +725,8 @@ public final class p0 {
                     m0Var.T.o = AndroidUtilities.dp(26.0f);
                 } else if (m0Var.u) {
                     m0Var.A = (int) (o6Var.d + AndroidUtilities.dp(8.0f) + m0Var.A);
-                } else if (((int) Math.ceil(wqVar.m)) > 0) {
-                    m0Var.A = org.telegram.messenger.f0.C(8.0f, (int) Math.ceil(wqVar.m), m0Var.A);
+                } else if (((int) Math.ceil(xqVar.m)) > 0) {
+                    m0Var.A = org.telegram.messenger.f0.C(8.0f, (int) Math.ceil(xqVar.m), m0Var.A);
                 } else {
                     m0Var.A -= AndroidUtilities.dp(1.0f);
                 }

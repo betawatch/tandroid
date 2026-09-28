@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class am implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ jm a;
@@ -328,11 +328,11 @@ public final class am implements org.telegram.ui.Cells.t0 {
             return;
         }
         if (videoSize2 != null) {
-            org.telegram.ui.Components.v40 v40Var = new org.telegram.ui.Components.v40(0, true, true);
-            v40Var.a = wnVar;
-            v40Var.f();
-            v40Var.c.j0.r0(null, videoSize2, 0L);
-            v40Var.b = new ci.y6(wnVar, new TLRPC.FileLocation[1], new TLRPC.FileLocation[1], wnVar.getUserConfig().getClientUserId(), 7);
+            org.telegram.ui.Components.x40 x40Var = new org.telegram.ui.Components.x40(0, true, true);
+            x40Var.a = wnVar;
+            x40Var.f();
+            x40Var.c.j0.r0(null, videoSize2, 0L);
+            x40Var.b = new ci.y6(wnVar, new TLRPC.FileLocation[1], new TLRPC.FileLocation[1], wnVar.getUserConfig().getClientUserId(), 7);
             return;
         }
         ArrayList arrayList2 = new ArrayList();
@@ -357,10 +357,10 @@ public final class am implements org.telegram.ui.Cells.t0 {
         } else {
             PhotoViewer.t1().N2(LocaleController.getString(R.string.SuggestedPhoto));
         }
-        org.telegram.ui.Components.t40 t40Var = new org.telegram.ui.Components.t40(1, wnVar.getUserConfig().getCurrentUser());
-        t40Var.e = videoSize != null;
-        t40Var.b = wnVar.getMessagesController().getUser(Long.valueOf(wnVar.T5));
-        PhotoViewer.t1().w2(t40Var);
+        org.telegram.ui.Components.v40 v40Var = new org.telegram.ui.Components.v40(1, wnVar.getUserConfig().getCurrentUser());
+        v40Var.e = videoSize != null;
+        v40Var.b = wnVar.getMessagesController().getUser(Long.valueOf(wnVar.T5));
+        PhotoViewer.t1().w2(v40Var);
     }
 
     @Override // org.telegram.ui.Cells.t0

@@ -39,13 +39,13 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.fy0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.vw;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.ww;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.aj;
@@ -62,7 +62,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.xe;
 import org.telegram.ui.ye;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z8 implements Runnable {
     public final /* synthetic */ int a;
@@ -713,7 +713,7 @@ public final /* synthetic */ class z8 implements Runnable {
                 TLObject tLObject3 = (TLObject) this.b;
                 String[] strArr2 = (String[]) this.c;
                 final FrameLayout frameLayout = (FrameLayout) this.d;
-                final n90 n90Var = (n90) this.e;
+                final p90 p90Var = (p90) this.e;
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.f;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.h;
                 if (tLObject3 instanceof TL_phone.exportedGroupCallInvite) {
@@ -738,11 +738,11 @@ public final /* synthetic */ class z8 implements Runnable {
                                     return;
                                 }
                                 atomicBoolean2.set(true);
-                                n90Var.setText(str12);
+                                p90Var.setText(str12);
                             }
                         }
                     });
-                    duration.addListener(new org.telegram.ui.b9(atomicBoolean, n90Var, str12));
+                    duration.addListener(new org.telegram.ui.b9(atomicBoolean, p90Var, str12));
                     duration.start();
                     new xc(e3Var.topBulletinContainer, d6Var).M(LocaleController.getString(R.string.GroupCallCreatedLinkRevokedTitle), LocaleController.getString(R.string.GroupCallCreatedLinkRevokedText), R.raw.linkbroken).j();
                     break;
@@ -803,10 +803,10 @@ public final /* synthetic */ class z8 implements Runnable {
                 TLObject tLObject4 = (TLObject) this.f;
                 CharacterStyle characterStyle = (CharacterStyle) this.h;
                 eVar.b();
-                y70 I = y70.I(wnVar, u1Var);
-                mm0 mm0Var = new mm0(wnVar.getParentActivity(), wnVar.ea);
-                I.p = new qe(mm0Var, 0);
-                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyCardNumber), new xe(wnVar, mm0Var, str13, 1), false);
+                a80 I = a80.I(wnVar, u1Var);
+                om0 om0Var = new om0(wnVar.getParentActivity(), wnVar.ea);
+                I.p = new qe(om0Var, 0);
+                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyCardNumber), new xe(wnVar, om0Var, str13, 1), false);
                 if (tLObject4 instanceof TLRPC.TL_payments_bankCardData) {
                     TLRPC.TL_payments_bankCardData tL_payments_bankCardData = (TLRPC.TL_payments_bankCardData) tLObject4;
                     ArrayList<TLRPC.TL_bankCardOpenUrl> arrayList10 = tL_payments_bankCardData.open_urls;
@@ -823,9 +823,9 @@ public final /* synthetic */ class z8 implements Runnable {
                         I.p(13, AndroidUtilities.dp(200.0f), tL_payments_bankCardData.title);
                     }
                 }
-                mm0Var.e(I);
-                mm0Var.f(u1Var, characterStyle, null, false);
-                wnVar.showDialog(mm0Var);
+                om0Var.e(I);
+                om0Var.f(u1Var, characterStyle, null, false);
+                wnVar.showDialog(om0Var);
                 break;
             case 7:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.b;
@@ -845,19 +845,19 @@ public final /* synthetic */ class z8 implements Runnable {
                     break;
                 }
             case 8:
-                fy0 fy0Var = (fy0) this.b;
+                hy0 hy0Var = (hy0) this.b;
                 TLObject tLObject5 = (TLObject) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
                 TextView textView = (TextView) this.e;
                 TextView textView2 = (TextView) this.f;
                 int[] iArr2 = (int[]) this.h;
-                fy0Var.getClass();
+                hy0Var.getClass();
                 if (!(tLObject5 instanceof TLRPC.TL_stickers_suggestedShortName) || (str5 = ((TLRPC.TL_stickers_suggestedShortName) tLObject5).short_name) == null) {
                     z14 = false;
                 } else {
                     editTextBoldCursor.setText(str5);
                     editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                    fy0Var.m0(textView, editTextBoldCursor.getText().toString(), true);
+                    hy0Var.m0(textView, editTextBoldCursor.getText().toString(), true);
                     z14 = true;
                 }
                 textView2.setVisibility(0);
@@ -879,10 +879,10 @@ public final /* synthetic */ class z8 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var3 = (org.telegram.ui.ActionBar.d6) this.d;
                 byte[] bArr = (byte[]) this.e;
                 org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.f;
-                vw vwVar = (vw) this.h;
+                ww wwVar = (ww) this.h;
                 t31 t31Var = new t31(context2, d6Var3, 0L, bArr);
                 t31Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject6);
-                t31Var.s = new n31(m2Var, context2, d6Var3, vwVar);
+                t31Var.s = new n31(m2Var, context2, d6Var3, wwVar);
                 t31Var.show();
                 break;
             case 12:
@@ -929,7 +929,7 @@ public final /* synthetic */ class z8 implements Runnable {
                     break;
                 } else {
                     int[] iArr3 = new int[11];
-                    Utilities.globalQueue.postRunnable(new cn0(file, iArr3, new ye(b1Var3, iArr3, file, a2Var, str16, str17, str18, 7), 18));
+                    Utilities.globalQueue.postRunnable(new en0(file, iArr3, new ye(b1Var3, iArr3, file, a2Var, str16, str17, str18, 7), 18));
                     break;
                 }
             case 15:

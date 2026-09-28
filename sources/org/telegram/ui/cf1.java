@@ -6,9 +6,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class cf1 implements org.telegram.ui.Components.po {
+public final class cf1 implements org.telegram.ui.Components.qo {
     public final /* synthetic */ TLRPC.TL_forumTopic a;
     public final /* synthetic */ wf1 b;
 
@@ -17,12 +17,12 @@ public final class cf1 implements org.telegram.ui.Components.po {
         this.a = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void dismiss() {
         this.b.finishPreviewFragment();
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void n() {
         wf1 wf1Var = this.b;
         wf1Var.finishPreviewFragment();
@@ -36,13 +36,13 @@ public final class cf1 implements org.telegram.ui.Components.po {
         }
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void o() {
         this.b.finishPreviewFragment();
         AndroidUtilities.runOnUIThread(new p81(11, this, this.a), 500L);
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void r() {
         int i10;
         wf1 wf1Var = this.b;
@@ -59,7 +59,7 @@ public final class cf1 implements org.telegram.ui.Components.po {
         }
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void u(int i10) {
         wf1 wf1Var = this.b;
         long j3 = wf1Var.a;
@@ -81,7 +81,7 @@ public final class cf1 implements org.telegram.ui.Components.po {
         }
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final /* synthetic */ void m() {
     }
 }

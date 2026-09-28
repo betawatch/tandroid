@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,13 +51,13 @@ public final /* synthetic */ class b4 implements Runnable {
                 ((LocationController) this.c).lambda$loadLiveLocations$25(this.b, (TLObject) this.d);
                 break;
             case 6:
-                ((MediaDataController) this.c).lambda$updateBotInfo$202((TL_update.TL_updateBotCommands) this.d, this.b);
+                ((MediaDataController) this.c).lambda$putBotInfo$202((TL_bots.BotInfo) this.d, this.b);
                 break;
             case 7:
-                ((MediaDataController) this.c).lambda$putBotInfo$201((TL_bots.BotInfo) this.d, this.b);
+                ((MediaDataController) this.c).lambda$savePinnedMessages$166((ArrayList) this.d, this.b);
                 break;
             case 8:
-                ((MediaDataController) this.c).lambda$savePinnedMessages$166((ArrayList) this.d, this.b);
+                ((MediaDataController) this.c).lambda$updateBotInfo$203((TL_update.TL_updateBotCommands) this.d, this.b);
                 break;
             case 9:
                 ((MessagesController) this.c).lambda$addUsersToChannel$273((TLRPC.TL_messages_invitedUsers) this.d, this.b);

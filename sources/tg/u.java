@@ -5,12 +5,12 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.p6;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements d5, dw0, vg.f, vg.k {
+public final /* synthetic */ class u implements d5, fw0, vg.f, vg.k {
     public final /* synthetic */ a0 a;
 
     public /* synthetic */ u(a0 a0Var) {
@@ -24,7 +24,7 @@ public final /* synthetic */ class u implements d5, dw0, vg.f, vg.k {
         a0Var.a0(false, true);
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public void h(int i10) {
         a0 a0Var = this.a;
         int i11 = a0Var.h0;
@@ -65,7 +65,7 @@ public final /* synthetic */ class u implements d5, dw0, vg.f, vg.k {
         bVar.q(bVar.e.size() - 12, 12);
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public /* synthetic */ void n() {
     }
 }

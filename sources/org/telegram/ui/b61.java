@@ -15,9 +15,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class b61 extends org.telegram.ui.Components.jt {
+public final class b61 extends org.telegram.ui.Components.kt {
     public int M;
     public int N;
     public ArrayList O;
@@ -32,7 +32,7 @@ public final class b61 extends org.telegram.ui.Components.jt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ca  */
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -93,12 +93,12 @@ public final class b61 extends org.telegram.ui.Components.jt {
         k();
     }
 
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     public final void b(Canvas canvas, Bitmap bitmap, Paint paint) {
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
     }
 
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     public final void c(Canvas canvas) {
         int i10 = 0;
         while (true) {
@@ -122,7 +122,7 @@ public final class b61 extends org.telegram.ui.Components.jt {
         }
     }
 
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     public final void d(Canvas canvas, float f7) {
         Drawable drawable;
         int i10;
@@ -227,7 +227,7 @@ public final class b61 extends org.telegram.ui.Components.jt {
         }
     }
 
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     public final void g() {
         int i10 = 0;
         while (true) {
@@ -248,7 +248,7 @@ public final class b61 extends org.telegram.ui.Components.jt {
     /* JADX WARN: Removed duplicated region for block: B:75:0x01f6  */
     /* JADX WARN: Removed duplicated region for block: B:78:0x0207  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x01de  */
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

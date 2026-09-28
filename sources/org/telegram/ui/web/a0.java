@@ -35,12 +35,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -139,10 +139,10 @@ public final /* synthetic */ class a0 implements Runnable {
                     ?? p6Var = new p6(context, true, true, true);
                     p6Var.setTextSize(AndroidUtilities.dp(12.0f));
                     SpannableString spannableString = new SpannableString("l");
-                    s90 s90Var = new s90(AndroidUtilities.dp(55.0f), p6Var);
+                    u90 u90Var = new u90(AndroidUtilities.dp(55.0f), p6Var);
                     int i13 = h6.Ed;
-                    s90Var.a(h6.l1(0.35f, h6.w0(null, i13, false)), h6.l1(0.075f, h6.w0(null, i13, false)));
-                    spannableString.setSpan(s90Var, 0, 1, 33);
+                    u90Var.a(h6.l1(0.35f, h6.w0(null, i13, false)), h6.l1(0.075f, h6.w0(null, i13, false)));
+                    spannableString.setSpan(u90Var, 0, 1, 33);
                     p6Var.setText(spannableString);
                     bi.v vVar = new bi.v(p6Var, 14);
                     HashMap hashMap2 = ei.l0.h;

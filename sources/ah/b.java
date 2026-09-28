@@ -98,21 +98,21 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.au;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.cd0;
 import org.telegram.ui.qc0;
 import org.telegram.ui.xc0;
 import u2.b0;
 import v7.m8;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener, q9.d, ll0, OnCompleteListener, Continuation, ml0, Utilities.Callback3Return, xc0, p0, au, j4, e2.n, e2.m, j0, e2.h, z0 {
+public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener, q9.d, nl0, OnCompleteListener, Continuation, ol0, Utilities.Callback3Return, xc0, p0, bu, j4, e2.n, e2.m, j0, e2.h, z0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -136,13 +136,13 @@ public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener,
     }
 
     @Override // ii.p0
-    public y70 a(i1 i1Var) {
+    public a80 a(i1 i1Var) {
         of.b bVar = (of.b) this.b;
         d6 d6Var = (d6) this.c;
         r rVar = (r) bVar.c;
-        y70 y70Var = new y70(rVar, d6Var, i1Var, false, false, true);
-        rVar.H = y70Var;
-        return y70Var;
+        a80 a80Var = new a80(rVar, d6Var, i1Var, false, false, true);
+        rVar.H = a80Var;
+        return a80Var;
     }
 
     @Override // e2.h
@@ -255,7 +255,7 @@ public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener,
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         d6 d6Var;
         int i11;
@@ -310,10 +310,10 @@ public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener,
                             clientUserId = UserConfig.getInstance(i12).getClientUserId();
                         }
                         d6Var2 = ((e3) faVar).resourcesProvider;
-                        y70 F = y70.F(y9Var, d6Var2, view);
+                        a80 F = a80.F(y9Var, d6Var2, view);
                         F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new ai.j(y9Var, clientUserId, 5), false);
                         F.k();
-                        y70.f(F, faVar.i1().B(clientUserId, true), faVar.v, false, null, new g3(5, y9Var, F));
+                        a80.f(F, faVar.i1().B(clientUserId, true), faVar.v, false, null, new g3(5, y9Var, F));
                         F.Z();
                         return;
                     }
@@ -549,12 +549,12 @@ public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener,
         r9Var.K = true;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         return e4.B0((e4) this.b, (Context) this.c, view, i10);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -668,7 +668,7 @@ public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener,
         }
     }
 
-    @Override // org.telegram.ui.Components.au
+    @Override // org.telegram.ui.Components.bu
     public void j() {
         switch (this.a) {
             case 17:
@@ -838,7 +838,7 @@ public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener,
         return Boolean.TRUE;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

@@ -1,138 +1,158 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.text.StaticLayout;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagePreviewParams;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ac0 extends Drawable {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public Object c;
-    public Object d;
-    public Object e;
+public final class ac0 extends s4.h0 {
+    public final /* synthetic */ bc0 c;
 
-    public ac0(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = new Paint(1);
-                Paint paint = new Paint(1);
-                this.d = paint;
-                this.e = new Matrix();
-                paint.setStyle(Paint.Style.STROKE);
-                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{1308622847, 0, 452984831}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP));
-                break;
-        }
+    public ac0(bc0 bc0Var) {
+        this.c = bc0Var;
     }
 
-    public void b(int i10, int i11) {
-        ((Paint) this.c).setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                ij0 ij0Var = (ij0) this.d;
-                ij0 ij0Var2 = (ij0) this.c;
-                Rect rect = AndroidUtilities.rectTmp2;
-                rect.set(getBounds().centerX() - AndroidUtilities.dp(12.0f), getBounds().centerY() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + getBounds().centerX(), AndroidUtilities.dp(12.0f) + getBounds().centerY());
-                if (((ij0) this.e).A()) {
-                    ij0 ij0Var3 = (ij0) this.e;
-                    boolean z10 = this.b;
-                    if (ij0Var3 != (z10 ? ij0Var2 : ij0Var)) {
-                        if (z10) {
-                            ij0Var = ij0Var2;
+    public static int D(org.telegram.ui.Cells.u1 u1Var, int i10, boolean z10) {
+        int C;
+        ArrayList<MessageObject.TextLayoutBlock> arrayList;
+        CharSequence charSequence;
+        float lineBottom;
+        MessageObject.TextLayoutBlocks textLayoutBlocks;
+        if (u1Var != null) {
+            org.telegram.ui.Cells.t1 t1Var = u1Var.Zc;
+            MessageObject messageObject = u1Var.getMessageObject();
+            if (messageObject != null && messageObject.getGroupId() == 0) {
+                if (TextUtils.isEmpty(messageObject.caption) || (textLayoutBlocks = u1Var.c4) == null) {
+                    u1Var.u3(true);
+                    int i11 = u1Var.r0;
+                    CharSequence charSequence2 = messageObject.messageText;
+                    ArrayList<MessageObject.TextLayoutBlock> arrayList2 = messageObject.textLayoutBlocks;
+                    C = u1Var.t1 ? org.telegram.messenger.f0.C(10.0f, u1Var.m2, i11) : i11;
+                    arrayList = arrayList2;
+                    charSequence = charSequence2;
+                } else {
+                    C = (int) u1Var.q4;
+                    charSequence = messageObject.caption;
+                    arrayList = textLayoutBlocks.textLayoutBlocks;
+                }
+                if (arrayList != null && charSequence != null) {
+                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                        MessageObject.TextLayoutBlock textLayoutBlock = arrayList.get(i12);
+                        StaticLayout staticLayout = textLayoutBlock.textLayout;
+                        String charSequence3 = staticLayout.getText().toString();
+                        int i13 = textLayoutBlock.charactersOffset;
+                        if (i10 > i13) {
+                            if (i10 - i13 > charSequence3.length() - 1) {
+                                lineBottom = C + ((int) (textLayoutBlock.textYOffset(arrayList, t1Var) + textLayoutBlock.padTop + textLayoutBlock.height));
+                            } else {
+                                int lineForOffset = staticLayout.getLineForOffset(i10 - textLayoutBlock.charactersOffset);
+                                lineBottom = (z10 ? staticLayout.getLineBottom(lineForOffset) : staticLayout.getLineTop(lineForOffset)) + textLayoutBlock.textYOffset(arrayList, t1Var) + C + textLayoutBlock.padTop;
+                            }
+                            return (int) lineBottom;
                         }
-                        this.e = ij0Var;
-                        ij0Var.M(ij0Var.e[0] - 1);
                     }
                 }
-                ((ij0) this.e).setBounds(rect);
-                ((ij0) this.e).draw(canvas);
-                break;
-            default:
-                Paint paint = (Paint) this.d;
-                float dp = AndroidUtilities.dp(10.0f);
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(getBounds());
-                Matrix matrix = (Matrix) this.e;
-                matrix.reset();
-                matrix.postTranslate(rectF.left, rectF.top);
-                canvas.drawRoundRect(rectF, dp, dp, (Paint) this.c);
-                if (this.b) {
-                    float dp2 = AndroidUtilities.dp(1.0f);
-                    paint.setStrokeWidth(dp2);
-                    matrix.reset();
-                    matrix.postTranslate(rectF.left, rectF.top);
-                    float f7 = dp2 / 2.0f;
-                    rectF.inset(f7, f7);
-                    canvas.drawRoundRect(rectF, dp, dp, paint);
-                    break;
+            }
+        }
+        return 0;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        MessagePreviewParams.Messages messages = this.c.r;
+        if (messages == null) {
+            return 0;
+        }
+        return messages.previewMessages.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        bc0 bc0Var = this.c;
+        ub0 ub0Var = bc0Var.f;
+        int i11 = bc0Var.a;
+        MessagePreviewParams.Messages messages = bc0Var.r;
+        if (messages != null && c1Var.f == 0) {
+            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) c1Var.a;
+            u1Var.setInvalidateSpoilersParent(messages.hasSpoilers);
+            u1Var.Z3(ub0Var.getMeasuredWidth(), ub0Var.getMeasuredHeight());
+            int id2 = u1Var.getMessageObject() != null ? u1Var.getMessageObject().getId() : 0;
+            if (i11 == 2) {
+                bc0Var.c0.d.checkCurrentLink(bc0Var.r.previewMessages.get(i10));
+            }
+            MessageObject messageObject = bc0Var.r.previewMessages.get(i10);
+            MessagePreviewParams.Messages messages2 = bc0Var.r;
+            u1Var.X3(messageObject, messages2.groupedMessagesMap.get(messages2.previewMessages.get(i10).getGroupId()), true, true, false, false);
+            if (i11 == 1) {
+                u1Var.setDelegate(new rb.a(16));
+            }
+            if (bc0Var.r.previewMessages.size() > 1) {
+                u1Var.J3(i11 == 1, false);
+                boolean z10 = id2 == bc0Var.r.previewMessages.get(i10).getId();
+                MessagePreviewParams.Messages messages3 = bc0Var.r;
+                boolean z11 = messages3.selectedIds.get(messages3.previewMessages.get(i10).getId(), false);
+                u1Var.L3(z11, z11, z10);
+            }
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        Context context = viewGroup.getContext();
+        bc0 bc0Var = this.c;
+        hc0 hc0Var = bc0Var.c0;
+        yb0 yb0Var = new yb0(this, context, hc0Var.w, bc0Var.J, hc0Var.F);
+        yb0Var.setClipChildren(false);
+        yb0Var.setClipToPadding(false);
+        yb0Var.setDelegate(new zb0(this));
+        return new il0(yb0Var);
+    }
+
+    @Override // s4.h0
+    public final void y(s4.c1 c1Var) {
+        int i10;
+        MessageObject c10;
+        bc0 bc0Var = this.c;
+        tb0 tb0Var = bc0Var.e;
+        hc0 hc0Var = bc0Var.c0;
+        if (bc0Var.r == null || (i10 = bc0Var.a) == 1) {
+            return;
+        }
+        View view = c1Var.a;
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+            if (i10 != 0) {
+                u1Var.setDrawSelectionBackground(false);
+                return;
+            }
+            MessageObject.GroupedMessages a2 = bc0.a(bc0Var, u1Var.getMessageObject());
+            u1Var.setDrawSelectionBackground(a2 == null);
+            u1Var.L3(true, a2 == null, false);
+            MessagePreviewParams messagePreviewParams = hc0Var.d;
+            if (messagePreviewParams.isSecret || messagePreviewParams.quote == null || u1Var.getMessageObject() == null || (c10 = bc0Var.c(null)) == null) {
+                return;
+            }
+            if ((u1Var.getMessageObject() == c10 || u1Var.getMessageObject().getId() == c10.getId()) && !tb0Var.y()) {
+                MessagePreviewParams messagePreviewParams2 = hc0Var.d;
+                tb0Var.a0(u1Var, messagePreviewParams2.quoteStart, messagePreviewParams2.quoteEnd);
+                if (bc0Var.b0) {
+                    bc0Var.L = D(u1Var, hc0Var.d.quoteStart, false);
+                    bc0Var.M = D(u1Var, hc0Var.d.quoteEnd, true);
+                    bc0Var.N = true;
+                    bc0Var.b0 = false;
                 }
-                break;
+            }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        switch (this.a) {
-            case 0:
-                return AndroidUtilities.dp(24.0f);
-            default:
-                return super.getIntrinsicHeight();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        switch (this.a) {
-            case 0:
-                return AndroidUtilities.dp(24.0f);
-            default:
-                return super.getIntrinsicWidth();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                ((ij0) this.c).setAlpha(i10);
-                ((ij0) this.d).setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                ((ij0) this.c).setColorFilter(colorFilter);
-                ((ij0) this.d).setColorFilter(colorFilter);
-                break;
-        }
-    }
-
-    private final void a(int i10) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
     }
 }

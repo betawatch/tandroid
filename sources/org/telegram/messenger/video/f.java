@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.ed0;
+import org.telegram.ui.Components.gd0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.aa;
 import org.telegram.ui.c3;
@@ -25,7 +25,7 @@ import org.telegram.ui.j40;
 import org.telegram.ui.l40;
 import org.telegram.ui.n30;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 break;
             default:
                 d60 d60Var = (d60) obj7;
-                ed0 ed0Var = (ed0) obj6;
+                gd0 gd0Var = (gd0) obj6;
                 i40 i40Var = (i40) obj5;
                 j40 j40Var = (j40) obj4;
                 TLRPC.Chat chat = (TLRPC.Chat) obj3;
@@ -83,8 +83,8 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     n30Var.b(LocaleController.getString(R.string.VoipGroupVoiceChat), true);
                 }
                 Calendar calendar = Calendar.getInstance();
-                boolean g10 = e5.g(null, null, 0L, 604800L, 3, ed0Var, i40Var, j40Var);
-                calendar.setTimeInMillis((ed0Var.getValue() * 86400000) + System.currentTimeMillis());
+                boolean g10 = e5.g(null, null, 0L, 604800L, 3, gd0Var, i40Var, j40Var);
+                calendar.setTimeInMillis((gd0Var.getValue() * 86400000) + System.currentTimeMillis());
                 int i11 = 11;
                 calendar.set(11, i40Var.getValue());
                 calendar.set(12, j40Var.getValue());

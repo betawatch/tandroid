@@ -18,11 +18,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.vq0;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.xq0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class u6 extends FrameLayout {
     public final org.telegram.ui.Components.o6 E;
@@ -58,13 +58,13 @@ public final class u6 extends FrameLayout {
         this.a = UserConfig.selectedAccount;
         t6 t6Var = new t6(this, 0);
         this.v = t6Var;
-        rr rrVar = rr.h;
-        this.w = new org.telegram.ui.Components.e6(this, 350L, rrVar);
-        this.x = new org.telegram.ui.Components.e6(this, 350L, rrVar);
-        this.y = new org.telegram.ui.Components.e6(this, 350L, rrVar);
+        sr srVar = sr.h;
+        this.w = new org.telegram.ui.Components.e6(this, 350L, srVar);
+        this.x = new org.telegram.ui.Components.e6(this, 350L, srVar);
+        this.y = new org.telegram.ui.Components.e6(this, 350L, srVar);
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, false, false);
         this.E = o6Var;
-        o6Var.k(0.3f, 320L, rrVar);
+        o6Var.k(0.3f, 320L, srVar);
         o6Var.t(AndroidUtilities.dp(12.0f));
         o6Var.u(Typeface.DEFAULT_BOLD);
         o6Var.b = 17;
@@ -103,26 +103,26 @@ public final class u6 extends FrameLayout {
                 if (z10) {
                     Drawable mutate = getResources().getDrawable(R.drawable.pin).mutate();
                     mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ni, d6Var), PorterDuff.Mode.MULTIPLY));
-                    qq qqVar = new qq(h02, mutate);
+                    rq rqVar = new rq(h02, mutate);
                     int dp = AndroidUtilities.dp(46.0f);
                     int dp2 = AndroidUtilities.dp(46.0f);
-                    qqVar.h = dp;
-                    qqVar.n = dp2;
+                    rqVar.h = dp;
+                    rqVar.n = dp2;
                     int dp3 = AndroidUtilities.dp(24.0f);
                     int dp4 = AndroidUtilities.dp(24.0f);
-                    qqVar.e = dp3;
-                    qqVar.f = dp4;
-                    imageView.setBackgroundDrawable(qqVar);
+                    rqVar.e = dp3;
+                    rqVar.f = dp4;
+                    imageView.setBackgroundDrawable(rqVar);
                 } else {
                     this.f = new RectF();
-                    vq0 vq0Var = new vq0(getContext(), z11 ? 5 : 4);
-                    vq0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.qi, d6Var), PorterDuff.Mode.MULTIPLY));
-                    qq qqVar2 = new qq(h02, vq0Var);
+                    xq0 xq0Var = new xq0(getContext(), z11 ? 5 : 4);
+                    xq0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.qi, d6Var), PorterDuff.Mode.MULTIPLY));
+                    rq rqVar2 = new rq(h02, xq0Var);
                     int dp5 = AndroidUtilities.dp(46.0f);
                     int dp6 = AndroidUtilities.dp(46.0f);
-                    qqVar2.h = dp5;
-                    qqVar2.n = dp6;
-                    imageView.setBackgroundDrawable(qqVar2);
+                    rqVar2.h = dp5;
+                    rqVar2.n = dp6;
+                    imageView.setBackgroundDrawable(rqVar2);
                     if (!z11) {
                         AndroidUtilities.cancelRunOnUIThread(t6Var);
                         AndroidUtilities.runOnUIThread(t6Var, 1000L);

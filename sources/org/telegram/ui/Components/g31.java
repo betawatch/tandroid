@@ -1,30 +1,50 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class g31 {
-    public static final g31 a;
-    public static final g31 b;
-    public static final g31 c;
-    public static final /* synthetic */ g31[] d;
+public final class g31 extends w51 {
+    public static final /* synthetic */ int a = 0;
 
     static {
-        g31 g31Var = new g31("TOP", 0);
-        a = g31Var;
-        g31 g31Var2 = new g31("LEFT", 1);
-        b = g31Var2;
-        g31 g31Var3 = new g31("BOTTOM", 2);
-        c = g31Var3;
-        d = new g31[]{g31Var, g31Var2, g31Var3};
+        w51.setup(new g31());
     }
 
-    public static g31 valueOf(String str) {
-        return (g31) Enum.valueOf(g31.class, str);
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+        h31 h31Var = (h31) view;
+        boolean z11 = false;
+        if (x51Var.r) {
+            h31Var.f();
+        } else {
+            Object obj = x51Var.G;
+            if (obj == null) {
+                if (x51Var.d == -2) {
+                    h31Var.c();
+                } else {
+                    h31Var.d((x51Var.y & 1) != 0, x51Var.q, x51Var.e);
+                }
+            } else if (obj instanceof TLRPC.TL_forumTopic) {
+                if (x51Var.I) {
+                    h31Var.b(x51Var.x, (TLRPC.TL_forumTopic) obj, x51Var.e);
+                } else {
+                    h31Var.g(x51Var.x, (TLRPC.TL_forumTopic) obj, x51Var.e);
+                }
+            }
+        }
+        h31Var.L = w7.d0.a(x51Var.y, 8) ? AndroidUtilities.dp(10.0f) : 0;
+        if (t61Var != null && t61Var.c3 && h31Var.s) {
+            z11 = true;
+        }
+        h31Var.setReorder(z11);
     }
 
-    public static g31[] values() {
-        return (g31[]) d.clone();
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, yl0 yl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new h31(context, i10, d6Var);
     }
 }

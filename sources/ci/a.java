@@ -17,9 +17,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final ImageReceiver a;
@@ -60,20 +60,20 @@ public final class a extends View {
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        qq qqVar = new qq(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        qqVar.w = false;
+        rq rqVar = new rq(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(6.0f), -13750737), mutate);
+        rqVar.w = false;
         int dp = AndroidUtilities.dp(18.0f);
         int dp2 = AndroidUtilities.dp(18.0f);
-        qqVar.e = dp;
-        qqVar.f = dp2;
+        rqVar.e = dp;
+        rqVar.f = dp2;
         if (photoEntry != null && (str2 = photoEntry.thumbPath) != null) {
-            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, qqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, rqVar, (Object) null, 0);
         } else if (photoEntry == null || photoEntry.path == null) {
-            imageReceiver.setImageBitmap(qqVar);
+            imageReceiver.setImageBitmap(rqVar);
         } else if (photoEntry.isVideo) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, qqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, rqVar, (Object) null, 0);
         } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, qqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, rqVar, (Object) null, 0);
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) str4);

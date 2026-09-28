@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class x70 extends z4.a {
     public final /* synthetic */ int c;
@@ -102,10 +102,10 @@ public final class x70 extends z4.a {
                 String str = bx0Var.d;
                 CharSequence charSequence = bx0Var.c;
                 TextView textView3 = w0Var.b;
-                org.telegram.ui.Components.n90 n90Var = w0Var.c;
+                org.telegram.ui.Components.p90 p90Var = w0Var.c;
                 if (i13 == 0 || i13 == 14 || i13 == 28) {
                     textView3.setText("");
-                    n90Var.setText("");
+                    p90Var.setText("");
                     w0Var.h = true;
                 } else if (x0Var.E) {
                     int i14 = x0Var.y;
@@ -147,17 +147,17 @@ public final class x70 extends z4.a {
                         i11 = R.string.PremiumPreviewSharingDisableDescription;
                     } else {
                         textView3.setText(charSequence);
-                        n90Var.setText(AndroidUtilities.replaceTags(str));
+                        p90Var.setText(AndroidUtilities.replaceTags(str));
                         w0Var.h = false;
                     }
-                    org.telegram.ui.Cells.c1.q(i11, n90Var);
+                    org.telegram.ui.Cells.c1.q(i11, p90Var);
                     w0Var.h = false;
                 } else {
                     textView3.setText(charSequence);
-                    n90Var.setText(AndroidUtilities.replaceTags(str));
+                    p90Var.setText(AndroidUtilities.replaceTags(str));
                     w0Var.h = false;
                 }
-                n90Var.setMaxWidth(ci.e4.a(n90Var.getText(), n90Var.getPaint()));
+                p90Var.setMaxWidth(ci.e4.a(p90Var.getText(), p90Var.getPaint()));
                 w0Var.requestLayout();
                 boolean z10 = bx0Var.a == 40;
                 if (z10 && w0Var.d == null) {
@@ -186,7 +186,7 @@ public final class x70 extends z4.a {
                 if (linearLayout2 != null) {
                     linearLayout2.setVisibility(z10 ? 0 : 8);
                 }
-                ((ViewGroup.MarginLayoutParams) n90Var.getLayoutParams()).topMargin = AndroidUtilities.dp(z10 ? 6.0f : 10.0f);
+                ((ViewGroup.MarginLayoutParams) p90Var.getLayoutParams()).topMargin = AndroidUtilities.dp(z10 ? 6.0f : 10.0f);
                 return w0Var;
         }
     }

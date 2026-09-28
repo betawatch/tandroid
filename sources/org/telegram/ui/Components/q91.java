@@ -3,279 +3,1575 @@ package org.telegram.ui.Components;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
+import android.graphics.Paint;
+import android.graphics.SurfaceTexture;
+import android.media.AudioManager;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.text.TextUtils;
+import android.view.TextureView;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
+import android.widget.ImageView;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.zip.GZIPInputStream;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class q91 extends View {
-    public float E;
-    public boolean F;
-    public boolean G;
-    public float H;
-    public float I;
-    public float J;
-    public AnimatorSet K;
-    public p91 L;
+public final class q91 extends ViewGroup implements r71, AudioManager.OnAudioFocusChangeListener {
+    public String E;
+    public String F;
+    public String G;
+    public boolean H;
+    public final boolean I;
+    public boolean J;
+    public boolean K;
+    public long L;
     public boolean M;
-    public final org.telegram.ui.Cells.d2 N;
-    public final Drawable a;
-    public final Drawable b;
-    public final Drawable c;
-    public final Drawable d;
-    public final Drawable e;
-    public final Drawable f;
-    public int h;
-    public int n;
+    public float N;
+    public int O;
+    public boolean P;
+    public final Paint Q;
+    public AsyncTask R;
+    public boolean S;
+    public boolean T;
+    public boolean U;
+    public boolean V;
+    public boolean W;
+    public final u71 a;
+    public final RadialProgressView a0;
+    public final j91 b;
+    public final ImageView b0;
+    public final jg0 c;
+    public final ImageView c0;
+    public final TextureView d;
+    public final ImageView d0;
+    public final ImageView e;
+    public AnimatorSet e0;
+    public final ViewGroup f;
+    public final m91 f0;
+    public int g0;
+    public Bitmap h;
+    public int h0;
+    public final i91 i0;
+    public final ki.d j0;
+    public final i91 k0;
+    public TextureView n;
     public int r;
-    public int s;
-    public int v;
-    public int w;
-    public int x;
-    public int y;
+    public boolean s;
+    public final n91 v;
+    public boolean w;
+    public String x;
+    public String y;
+    public static final Pattern l0 = Pattern.compile("(?:youtube(?:-nocookie)?\\.com/(?:[^/\\n\\s]+/\\S+/|(?:v|e(?:mbed)?)/|\\S*?[?&]v=)|youtu\\.be/)([a-zA-Z0-9_-]{11})");
+    public static final Pattern m0 = Pattern.compile("https?://(?:(?:www|(player))\\.)?vimeo(pro)?\\.com/(?!(?:channels|album)/[^/?#]+/?(?:$|[?#])|[^/]+/review/|ondemand/)(?:.*?/)?(?:(?:play_redirect_hls|moogaloop\\.swf)\\?clip_id=)?(?:videos?/)?([0-9]+)(?:/[\\da-f]+)?/?(?:[?&].*)?(?:[#].*)?$");
+    public static final Pattern n0 = Pattern.compile("(?:coub:|https?://(?:coub\\.com/(?:view|embed|coubs)/|c-cdn\\.coub\\.com/fb-player\\.swf\\?.*\\bcoub(?:ID|id)=))([\\da-z]+)");
+    public static final Pattern o0 = Pattern.compile("^https?://(?:www\\.)?aparat\\.com/(?:v/|video/video/embed/videohash/)([a-zA-Z0-9]+)");
+    public static final Pattern p0 = Pattern.compile("https?://clips\\.twitch\\.tv/(?:[^/]+/)*([^/?#&]+)");
+    public static final Pattern q0 = Pattern.compile("https?://(?:(?:www\\.)?twitch\\.tv/|player\\.twitch\\.tv/\\?.*?\\bchannel=)([^/#?]+)");
+    public static final Pattern r0 = Pattern.compile("fileList\\s*=\\s*JSON\\.parse\\('([^']+)'\\)");
+    public static final Pattern s0 = Pattern.compile("clipInfo\\s*=\\s*(\\{[^']+\\});");
+    public static final Pattern t0 = Pattern.compile("\"sts\"\\s*:\\s*(\\d+)");
+    public static final Pattern u0 = Pattern.compile("\"assets\":.+?\"js\":\\s*(\"[^\"]+\")");
+    public static final Pattern v0 = Pattern.compile("\\.sig\\|\\|([a-zA-Z0-9$]+)\\(");
+    public static final Pattern w0 = Pattern.compile("[\"']signature[\"']\\s*,\\s*([a-zA-Z0-9$]+)\\(");
+    public static final Pattern x0 = Pattern.compile("var\\s");
+    public static final Pattern y0 = Pattern.compile("return(?:\\s+|$)");
+    public static final Pattern z0 = Pattern.compile("[()]");
+    public static final Pattern A0 = Pattern.compile(".*?-([a-zA-Z0-9_-]+)(?:/watch_as3|/html5player(?:-new)?|(?:/[a-z]{2}_[A-Z]{2})?/base)?\\.([a-z]+)$");
 
-    public q91(Context context) {
+    public q91(Context context, boolean z10, n91 n91Var) {
         super(context);
-        this.M = true;
-        this.N = new org.telegram.ui.Cells.d2(this);
-        this.a = context.getResources().getDrawable(R.drawable.zoom_minus);
-        this.b = context.getResources().getDrawable(R.drawable.zoom_plus);
-        this.c = context.getResources().getDrawable(R.drawable.zoom_slide);
-        this.d = context.getResources().getDrawable(R.drawable.zoom_slide_a);
-        this.e = context.getResources().getDrawable(R.drawable.zoom_round);
-        this.f = context.getResources().getDrawable(R.drawable.zoom_round_b);
+        this.I = true;
+        Paint paint = new Paint();
+        this.Q = paint;
+        this.i0 = new i91(this, 0);
+        this.j0 = new ki.d(this, 4);
+        this.k0 = new i91(this, 1);
+        setWillNotDraw(false);
+        this.v = n91Var;
+        paint.setColor(-16777216);
+        jg0 jg0Var = new jg0(this, context, 1);
+        this.c = jg0Var;
+        addView(jg0Var, w7.y5.e(-1, -1, 17));
+        j91 j91Var = new j91(context, context);
+        this.b = j91Var;
+        final z71 z71Var = new z71(this);
+        j91Var.addJavascriptInterface(new Object(z71Var) { // from class: org.telegram.ui.Components.WebPlayerView$JavaScriptInterface
+            public final z71 a;
+
+            {
+                this.a = z71Var;
+            }
+
+            @JavascriptInterface
+            public void returnResultToJava(String str) {
+                q91 q91Var = (q91) this.a.a;
+                AsyncTask asyncTask = q91Var.R;
+                if (asyncTask == null || asyncTask.isCancelled()) {
+                    return;
+                }
+                AsyncTask asyncTask2 = q91Var.R;
+                if (asyncTask2 instanceof p91) {
+                    p91 p91Var = (p91) asyncTask2;
+                    String[] strArr = p91Var.c;
+                    strArr[0] = strArr[0].replace(p91Var.d, "/signature/" + str);
+                    p91Var.b.countDown();
+                }
+            }
+        }, "JavaScriptInterface");
+        WebSettings settings = j91Var.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDefaultTextEncodingName("utf-8");
+        ViewGroup g10 = n91Var.g();
+        this.f = g10;
+        TextureView textureView = new TextureView(context);
+        this.d = textureView;
+        textureView.setPivotX(0.0f);
+        textureView.setPivotY(0.0f);
+        if (g10 != null) {
+            g10.addView(textureView);
+        } else {
+            jg0Var.addView(textureView, w7.y5.e(-1, -1, 17));
+        }
+        if (g10 != null) {
+            ImageView imageView = new ImageView(context);
+            this.e = imageView;
+            imageView.setBackgroundColor(-65536);
+            imageView.setPivotX(0.0f);
+            imageView.setPivotY(0.0f);
+            imageView.setVisibility(4);
+            g10.addView(imageView);
+        }
+        u71 u71Var = new u71();
+        this.a = u71Var;
+        u71Var.J = this;
+        u71Var.V(textureView);
+        m91 m91Var = new m91(this, context);
+        this.f0 = m91Var;
+        if (g10 != null) {
+            g10.addView(m91Var);
+        } else {
+            addView(m91Var, w7.y5.c(-1.0f, -1));
+        }
+        RadialProgressView radialProgressView = new RadialProgressView(context, null);
+        this.a0 = radialProgressView;
+        radialProgressView.setProgressColor(-1);
+        addView(radialProgressView, w7.y5.e(48, 48, 17));
+        ImageView imageView2 = new ImageView(context);
+        this.b0 = imageView2;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView2.setScaleType(scaleType);
+        m91Var.addView(imageView2, w7.y5.d(56, 56.0f, 85, 0.0f, 0.0f, 0.0f, 5.0f));
+        final int i10 = 0;
+        imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.h91
+            public final /* synthetic */ q91 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        q91 q91Var = this.b;
+                        if (q91Var.w && !q91Var.S && !q91Var.W && q91Var.M) {
+                            q91Var.T = !q91Var.T;
+                            q91Var.l(true);
+                            break;
+                        }
+                        break;
+                    case 1:
+                        q91 q91Var2 = this.b;
+                        u71 u71Var2 = q91Var2.a;
+                        if (q91Var2.w && q91Var2.x != null) {
+                            if (u71Var2.d == null) {
+                                q91Var2.i();
+                            }
+                            if (u71Var2.y()) {
+                                u71Var2.B();
+                            } else {
+                                q91Var2.V = false;
+                                u71Var2.C();
+                            }
+                            q91Var2.n();
+                            break;
+                        }
+                        break;
+                    default:
+                        q91 q91Var3 = this.b;
+                        ViewGroup viewGroup = q91Var3.f;
+                        boolean z11 = q91Var3.I;
+                        n91 n91Var2 = q91Var3.v;
+                        m91 m91Var2 = q91Var3.f0;
+                        jg0 jg0Var2 = q91Var3.c;
+                        TextureView textureView2 = q91Var3.d;
+                        if (textureView2 != null && n91Var2.h() && !q91Var3.S && !q91Var3.W && q91Var3.M) {
+                            q91Var3.W = true;
+                            if (!q91Var3.U) {
+                                q91Var3.T = false;
+                                n91Var2.i(true, q91Var3.k0, jg0Var2.getAspectRatio(), z11);
+                                break;
+                            } else {
+                                ViewGroup viewGroup2 = (ViewGroup) jg0Var2.getParent();
+                                if (viewGroup2 != q91Var3) {
+                                    if (viewGroup2 != null) {
+                                        viewGroup2.removeView(jg0Var2);
+                                    }
+                                    q91Var3.addView(jg0Var2, 0, w7.y5.e(-1, -1, 17));
+                                    jg0Var2.measure(View.MeasureSpec.makeMeasureSpec(q91Var3.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(q91Var3.getMeasuredHeight() - AndroidUtilities.dp(10.0f), TLObject.FLAG_30));
+                                }
+                                Bitmap bitmap = q91Var3.h;
+                                if (bitmap != null) {
+                                    bitmap.recycle();
+                                    q91Var3.h = null;
+                                }
+                                q91Var3.S = true;
+                                q91Var3.U = false;
+                                q91Var3.n();
+                                q91Var3.o();
+                                q91Var3.k();
+                                q91Var3.m();
+                                textureView2.setVisibility(4);
+                                if (viewGroup != null) {
+                                    viewGroup.addView(textureView2);
+                                } else {
+                                    jg0Var2.addView(textureView2);
+                                }
+                                ViewGroup viewGroup3 = (ViewGroup) m91Var2.getParent();
+                                if (viewGroup3 != q91Var3) {
+                                    if (viewGroup3 != null) {
+                                        viewGroup3.removeView(m91Var2);
+                                    }
+                                    if (viewGroup != null) {
+                                        viewGroup.addView(m91Var2);
+                                    } else {
+                                        q91Var3.addView(m91Var2, 1);
+                                    }
+                                }
+                                m91Var2.d(false, false);
+                                n91Var2.i(false, null, jg0Var2.getAspectRatio(), z11);
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        });
+        ImageView imageView3 = new ImageView(context);
+        this.c0 = imageView3;
+        imageView3.setScaleType(scaleType);
+        m91Var.addView(imageView3, w7.y5.e(48, 48, 17));
+        final int i11 = 1;
+        imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.h91
+            public final /* synthetic */ q91 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        q91 q91Var = this.b;
+                        if (q91Var.w && !q91Var.S && !q91Var.W && q91Var.M) {
+                            q91Var.T = !q91Var.T;
+                            q91Var.l(true);
+                            break;
+                        }
+                        break;
+                    case 1:
+                        q91 q91Var2 = this.b;
+                        u71 u71Var2 = q91Var2.a;
+                        if (q91Var2.w && q91Var2.x != null) {
+                            if (u71Var2.d == null) {
+                                q91Var2.i();
+                            }
+                            if (u71Var2.y()) {
+                                u71Var2.B();
+                            } else {
+                                q91Var2.V = false;
+                                u71Var2.C();
+                            }
+                            q91Var2.n();
+                            break;
+                        }
+                        break;
+                    default:
+                        q91 q91Var3 = this.b;
+                        ViewGroup viewGroup = q91Var3.f;
+                        boolean z11 = q91Var3.I;
+                        n91 n91Var2 = q91Var3.v;
+                        m91 m91Var2 = q91Var3.f0;
+                        jg0 jg0Var2 = q91Var3.c;
+                        TextureView textureView2 = q91Var3.d;
+                        if (textureView2 != null && n91Var2.h() && !q91Var3.S && !q91Var3.W && q91Var3.M) {
+                            q91Var3.W = true;
+                            if (!q91Var3.U) {
+                                q91Var3.T = false;
+                                n91Var2.i(true, q91Var3.k0, jg0Var2.getAspectRatio(), z11);
+                                break;
+                            } else {
+                                ViewGroup viewGroup2 = (ViewGroup) jg0Var2.getParent();
+                                if (viewGroup2 != q91Var3) {
+                                    if (viewGroup2 != null) {
+                                        viewGroup2.removeView(jg0Var2);
+                                    }
+                                    q91Var3.addView(jg0Var2, 0, w7.y5.e(-1, -1, 17));
+                                    jg0Var2.measure(View.MeasureSpec.makeMeasureSpec(q91Var3.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(q91Var3.getMeasuredHeight() - AndroidUtilities.dp(10.0f), TLObject.FLAG_30));
+                                }
+                                Bitmap bitmap = q91Var3.h;
+                                if (bitmap != null) {
+                                    bitmap.recycle();
+                                    q91Var3.h = null;
+                                }
+                                q91Var3.S = true;
+                                q91Var3.U = false;
+                                q91Var3.n();
+                                q91Var3.o();
+                                q91Var3.k();
+                                q91Var3.m();
+                                textureView2.setVisibility(4);
+                                if (viewGroup != null) {
+                                    viewGroup.addView(textureView2);
+                                } else {
+                                    jg0Var2.addView(textureView2);
+                                }
+                                ViewGroup viewGroup3 = (ViewGroup) m91Var2.getParent();
+                                if (viewGroup3 != q91Var3) {
+                                    if (viewGroup3 != null) {
+                                        viewGroup3.removeView(m91Var2);
+                                    }
+                                    if (viewGroup != null) {
+                                        viewGroup.addView(m91Var2);
+                                    } else {
+                                        q91Var3.addView(m91Var2, 1);
+                                    }
+                                }
+                                m91Var2.d(false, false);
+                                n91Var2.i(false, null, jg0Var2.getAspectRatio(), z11);
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        });
+        if (z10) {
+            ImageView imageView4 = new ImageView(context);
+            this.d0 = imageView4;
+            imageView4.setScaleType(scaleType);
+            m91Var.addView(imageView4, w7.y5.e(56, 48, 53));
+            final int i12 = 2;
+            imageView4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.h91
+                public final /* synthetic */ q91 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    switch (i12) {
+                        case 0:
+                            q91 q91Var = this.b;
+                            if (q91Var.w && !q91Var.S && !q91Var.W && q91Var.M) {
+                                q91Var.T = !q91Var.T;
+                                q91Var.l(true);
+                                break;
+                            }
+                            break;
+                        case 1:
+                            q91 q91Var2 = this.b;
+                            u71 u71Var2 = q91Var2.a;
+                            if (q91Var2.w && q91Var2.x != null) {
+                                if (u71Var2.d == null) {
+                                    q91Var2.i();
+                                }
+                                if (u71Var2.y()) {
+                                    u71Var2.B();
+                                } else {
+                                    q91Var2.V = false;
+                                    u71Var2.C();
+                                }
+                                q91Var2.n();
+                                break;
+                            }
+                            break;
+                        default:
+                            q91 q91Var3 = this.b;
+                            ViewGroup viewGroup = q91Var3.f;
+                            boolean z11 = q91Var3.I;
+                            n91 n91Var2 = q91Var3.v;
+                            m91 m91Var2 = q91Var3.f0;
+                            jg0 jg0Var2 = q91Var3.c;
+                            TextureView textureView2 = q91Var3.d;
+                            if (textureView2 != null && n91Var2.h() && !q91Var3.S && !q91Var3.W && q91Var3.M) {
+                                q91Var3.W = true;
+                                if (!q91Var3.U) {
+                                    q91Var3.T = false;
+                                    n91Var2.i(true, q91Var3.k0, jg0Var2.getAspectRatio(), z11);
+                                    break;
+                                } else {
+                                    ViewGroup viewGroup2 = (ViewGroup) jg0Var2.getParent();
+                                    if (viewGroup2 != q91Var3) {
+                                        if (viewGroup2 != null) {
+                                            viewGroup2.removeView(jg0Var2);
+                                        }
+                                        q91Var3.addView(jg0Var2, 0, w7.y5.e(-1, -1, 17));
+                                        jg0Var2.measure(View.MeasureSpec.makeMeasureSpec(q91Var3.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(q91Var3.getMeasuredHeight() - AndroidUtilities.dp(10.0f), TLObject.FLAG_30));
+                                    }
+                                    Bitmap bitmap = q91Var3.h;
+                                    if (bitmap != null) {
+                                        bitmap.recycle();
+                                        q91Var3.h = null;
+                                    }
+                                    q91Var3.S = true;
+                                    q91Var3.U = false;
+                                    q91Var3.n();
+                                    q91Var3.o();
+                                    q91Var3.k();
+                                    q91Var3.m();
+                                    textureView2.setVisibility(4);
+                                    if (viewGroup != null) {
+                                        viewGroup.addView(textureView2);
+                                    } else {
+                                        jg0Var2.addView(textureView2);
+                                    }
+                                    ViewGroup viewGroup3 = (ViewGroup) m91Var2.getParent();
+                                    if (viewGroup3 != q91Var3) {
+                                        if (viewGroup3 != null) {
+                                            viewGroup3.removeView(m91Var2);
+                                        }
+                                        if (viewGroup != null) {
+                                            viewGroup.addView(m91Var2);
+                                        } else {
+                                            q91Var3.addView(m91Var2, 1);
+                                        }
+                                    }
+                                    m91Var2.d(false, false);
+                                    n91Var2.i(false, null, jg0Var2.getAspectRatio(), z11);
+                                    break;
+                                }
+                            }
+                            break;
+                    }
+                }
+            });
+        }
+        n();
+        k();
+        m();
+        o();
     }
 
-    public final boolean a(float f7) {
-        if (f7 < 0.0f || f7 > 1.0f) {
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x003e, code lost:
+    
+        if ((r2.find() ? r2.group(3) : null) != null) goto L61;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0059, code lost:
+    
+        if ((r2.find() ? r2.group(1) : null) != null) goto L61;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0073, code lost:
+    
+        if ((r2.find() ? r2.group(1) : null) != null) goto L61;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x008d, code lost:
+    
+        if ((r2.find() ? r2.group(1) : null) != null) goto L61;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
+    
+        if ((r2.find() ? r2.group(1) : null) != null) goto L61;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean a(String str) {
+        if (str == null) {
             return false;
         }
-        AnimatorSet animatorSet = this.K;
-        if (animatorSet != null) {
-            animatorSet.cancel();
+        if (!str.endsWith(".mp4")) {
+            try {
+                Matcher matcher = l0.matcher(str);
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
         }
-        this.J = f7;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.K = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, this.N, f7));
-        this.K.setDuration(180L);
-        this.K.addListener(new q81(this, 2));
-        this.K.start();
+        try {
+            Matcher matcher2 = n0.matcher(str);
+            return (matcher2.find() ? matcher2.group(1) : null) != null;
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            return false;
+        }
+        try {
+            Matcher matcher3 = o0.matcher(str);
+        } catch (Exception e10) {
+            FileLog.e(e10);
+        }
+        try {
+            Matcher matcher4 = q0.matcher(str);
+        } catch (Exception e11) {
+            FileLog.e(e11);
+        }
+        try {
+            Matcher matcher5 = m0.matcher(str);
+        } catch (Exception e12) {
+            FileLog.e(e12);
+        }
+        try {
+            Matcher matcher6 = p0.matcher(str);
+        } catch (Exception e13) {
+            FileLog.e(e13);
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x0170, code lost:
+    
+        if (r3 == (-1)) goto L98;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0191  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0196  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x019b A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x012b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0188 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static String c(AsyncTask asyncTask, String str, HashMap hashMap, boolean z10) {
+        URLConnection uRLConnection;
+        boolean z11;
+        InputStream inputStream;
+        StringBuilder sb2;
+        boolean z12;
+        URL url;
+        InputStream inputStream2;
+        boolean z13 = true;
+        try {
+            url = new URL(str);
+            uRLConnection = url.openConnection();
+        } catch (Throwable th2) {
+            th = th2;
+            uRLConnection = null;
+        }
+        try {
+            uRLConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
+            if (z10) {
+                uRLConnection.addRequestProperty("Accept-Encoding", "gzip, deflate");
+            }
+            uRLConnection.addRequestProperty("Accept-Language", "en-us,en;q=0.5");
+            uRLConnection.addRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+            uRLConnection.addRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
+            if (hashMap != null) {
+                for (Map.Entry entry : hashMap.entrySet()) {
+                    uRLConnection.addRequestProperty((String) entry.getKey(), (String) entry.getValue());
+                }
+            }
+            uRLConnection.setConnectTimeout(5000);
+            uRLConnection.setReadTimeout(5000);
+            if (uRLConnection instanceof HttpURLConnection) {
+                HttpURLConnection httpURLConnection = (HttpURLConnection) uRLConnection;
+                httpURLConnection.setInstanceFollowRedirects(true);
+                int responseCode = httpURLConnection.getResponseCode();
+                if (responseCode == 302 || responseCode == 301 || responseCode == 303) {
+                    String headerField = httpURLConnection.getHeaderField("Location");
+                    String headerField2 = httpURLConnection.getHeaderField("Set-Cookie");
+                    url = new URL(headerField);
+                    uRLConnection = url.openConnection();
+                    uRLConnection.setRequestProperty("Cookie", headerField2);
+                    uRLConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
+                    if (z10) {
+                        uRLConnection.addRequestProperty("Accept-Encoding", "gzip, deflate");
+                    }
+                    uRLConnection.addRequestProperty("Accept-Language", "en-us,en;q=0.5");
+                    uRLConnection.addRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+                    uRLConnection.addRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
+                    if (hashMap != null) {
+                        for (Map.Entry entry2 : hashMap.entrySet()) {
+                            uRLConnection.addRequestProperty((String) entry2.getKey(), (String) entry2.getValue());
+                        }
+                    }
+                }
+            }
+            uRLConnection.connect();
+            if (z10) {
+                try {
+                    inputStream2 = new GZIPInputStream(uRLConnection.getInputStream());
+                } catch (Exception unused) {
+                    uRLConnection = url.openConnection();
+                    uRLConnection.connect();
+                    inputStream2 = uRLConnection.getInputStream();
+                }
+            } else {
+                inputStream2 = uRLConnection.getInputStream();
+            }
+            inputStream = inputStream2;
+            z11 = true;
+        } catch (Throwable th3) {
+            th = th3;
+            boolean z14 = !(th instanceof SocketTimeoutException) ? !(!(th instanceof UnknownHostException) && (!(th instanceof SocketException) ? (th instanceof FileNotFoundException) : !(th.getMessage() == null || !th.getMessage().contains("ECONNRESET")))) : ApplicationLoader.isNetworkOnline();
+            FileLog.e(th);
+            z11 = z14;
+            inputStream = null;
+            if (z11) {
+            }
+            if (z12) {
+            }
+        }
+        if (z11) {
+            sb2 = null;
+            z12 = false;
+        } else {
+            try {
+                if (uRLConnection instanceof HttpURLConnection) {
+                    ((HttpURLConnection) uRLConnection).getResponseCode();
+                }
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+            if (inputStream != null) {
+                try {
+                    byte[] bArr = new byte[32768];
+                    sb2 = null;
+                    while (true) {
+                        try {
+                            if (asyncTask.isCancelled()) {
+                                break;
+                            }
+                            try {
+                                int read = inputStream.read(bArr);
+                                if (read > 0) {
+                                    if (sb2 == null) {
+                                        sb2 = new StringBuilder();
+                                    }
+                                    try {
+                                        try {
+                                            sb2.append(new String(bArr, 0, read, "UTF-8"));
+                                        } catch (Exception e7) {
+                                            e = e7;
+                                            FileLog.e(e);
+                                            z13 = false;
+                                            z12 = z13;
+                                            if (inputStream != null) {
+                                            }
+                                            if (z12) {
+                                            }
+                                        }
+                                    } catch (Throwable th4) {
+                                        th = th4;
+                                        FileLog.e(th);
+                                        z12 = false;
+                                        if (inputStream != null) {
+                                        }
+                                        if (z12) {
+                                        }
+                                    }
+                                }
+                            } catch (Exception e10) {
+                                e = e10;
+                            }
+                        } catch (Throwable th5) {
+                            th = th5;
+                        }
+                    }
+                    z12 = z13;
+                } catch (Throwable th6) {
+                    th = th6;
+                    sb2 = null;
+                }
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (Throwable th7) {
+                        FileLog.e(th7);
+                    }
+                }
+            } else {
+                sb2 = null;
+            }
+            z12 = false;
+            if (inputStream != null) {
+            }
+        }
+        if (z12) {
+            return null;
+        }
+        return sb2.toString();
+    }
+
+    public static String d(String str) {
+        if (!TextUtils.isEmpty(str)) {
+            try {
+                Matcher matcher = n0.matcher(str);
+                String group = matcher.find() ? matcher.group(1) : null;
+                if (group != null) {
+                    return group;
+                }
+            } catch (Exception e) {
+                FileLog.e(e);
+                return null;
+            }
+        }
+        return null;
+    }
+
+    public static String e(String str) {
+        if (str == null) {
+            return null;
+        }
+        Matcher matcher = l0.matcher(str);
+        if (matcher.find()) {
+            return matcher.group(1);
+        }
+        return null;
+    }
+
+    private View getControlView() {
+        return this.f0;
+    }
+
+    private View getProgressView() {
+        return this.a0;
+    }
+
+    public final void b() {
+        this.a.H();
+        AsyncTask asyncTask = this.R;
+        if (asyncTask != null) {
+            asyncTask.cancel(true);
+            this.R = null;
+        }
+        this.b.stopLoading();
+    }
+
+    public final boolean f() {
+        return this.U || this.W;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:106:0x00b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0097 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x018a  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0194  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0199  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x024d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x01b0  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0184  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x010f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00f1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00d3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean g(String str, TLRPC.Photo photo, Object obj, String str2, boolean z10) {
+        String str3;
+        String str4;
+        String str5;
+        String str6;
+        String str7;
+        String str8;
+        AsyncTask asyncTask;
+        m91 m91Var;
+        AnimatorSet animatorSet;
+        String group;
+        String group2;
+        String group3;
+        String group4;
+        String group5;
+        String d = d(str);
+        if (d == null) {
+            d = d(str2);
+        }
+        this.O = -1;
+        if (d != null || str == null) {
+            str3 = null;
+            str4 = null;
+        } else {
+            if (!str.endsWith(".mp4")) {
+                try {
+                    if (str2 != null) {
+                        try {
+                            Uri parse = Uri.parse(str2);
+                            String queryParameter = parse.getQueryParameter("t");
+                            if (queryParameter == null) {
+                                queryParameter = parse.getQueryParameter("time_continue");
+                            }
+                            if (queryParameter != null) {
+                                if (queryParameter.contains("m")) {
+                                    String[] split = queryParameter.split("m");
+                                    this.O = (Utilities.parseInt((CharSequence) split[0]).intValue() * 60) + Utilities.parseInt((CharSequence) split[1]).intValue();
+                                } else {
+                                    this.O = Utilities.parseInt((CharSequence) queryParameter).intValue();
+                                }
+                            }
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                        }
+                    }
+                    Matcher matcher = l0.matcher(str);
+                    group5 = matcher.find() ? matcher.group(1) : null;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+                if (group5 != null) {
+                    str4 = group5;
+                    if (str4 == null) {
+                        try {
+                            Matcher matcher2 = m0.matcher(str);
+                            group = matcher2.find() ? matcher2.group(3) : null;
+                        } catch (Exception e10) {
+                            FileLog.e(e10);
+                        }
+                        if (group != null) {
+                            str8 = group;
+                            if (str8 == null) {
+                                try {
+                                    Matcher matcher3 = o0.matcher(str);
+                                    group2 = matcher3.find() ? matcher3.group(1) : null;
+                                } catch (Exception e11) {
+                                    FileLog.e(e11);
+                                }
+                                if (group2 != null) {
+                                    str7 = group2;
+                                    if (str7 == null) {
+                                        try {
+                                            Matcher matcher4 = p0.matcher(str);
+                                            group3 = matcher4.find() ? matcher4.group(1) : null;
+                                        } catch (Exception e12) {
+                                            FileLog.e(e12);
+                                        }
+                                        if (group3 != null) {
+                                            str6 = group3;
+                                            if (str6 == null) {
+                                                try {
+                                                    Matcher matcher5 = q0.matcher(str);
+                                                    group4 = matcher5.find() ? matcher5.group(1) : null;
+                                                } catch (Exception e13) {
+                                                    FileLog.e(e13);
+                                                }
+                                                if (group4 != null) {
+                                                    str5 = group4;
+                                                    if (str5 == null) {
+                                                        try {
+                                                            Matcher matcher6 = n0.matcher(str);
+                                                            String group6 = matcher6.find() ? matcher6.group(1) : null;
+                                                            if (group6 != null) {
+                                                                d = group6;
+                                                            }
+                                                        } catch (Exception e14) {
+                                                            FileLog.e(e14);
+                                                        }
+                                                    }
+                                                    str3 = null;
+                                                    this.w = false;
+                                                    this.V = false;
+                                                    this.s = z10;
+                                                    this.x = null;
+                                                    this.E = null;
+                                                    b();
+                                                    this.M = false;
+                                                    this.N = 1.0f;
+                                                    asyncTask = this.R;
+                                                    if (asyncTask != null) {
+                                                        asyncTask.cancel(true);
+                                                        this.R = null;
+                                                    }
+                                                    k();
+                                                    o();
+                                                    m();
+                                                    n();
+                                                    m91Var = this.f0;
+                                                    if (photo != null) {
+                                                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 80, true);
+                                                        if (closestPhotoSizeWithSize != null) {
+                                                            m91Var.a.setImage(null, null, ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), "80_80_b", 0L, null, obj, 1);
+                                                            this.P = true;
+                                                        }
+                                                    } else {
+                                                        this.P = false;
+                                                    }
+                                                    animatorSet = this.e0;
+                                                    if (animatorSet != null) {
+                                                        animatorSet.cancel();
+                                                        this.e0 = null;
+                                                    }
+                                                    m91Var.c(0);
+                                                    if (str4 != null) {
+                                                        this.G = str4;
+                                                        str4 = null;
+                                                    }
+                                                    if (str3 != null) {
+                                                        this.w = true;
+                                                        this.x = str3;
+                                                        this.y = "other";
+                                                        if (this.s) {
+                                                            i();
+                                                        }
+                                                        j(false, false);
+                                                        m91Var.d(true, true);
+                                                    } else {
+                                                        if (str4 != null) {
+                                                            p91 p91Var = new p91(this, str4);
+                                                            p91Var.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, null, null, null);
+                                                            this.R = p91Var;
+                                                        } else if (str8 != null) {
+                                                            k91 k91Var = new k91(this, str8, 4);
+                                                            k91Var.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, null, null, null);
+                                                            this.R = k91Var;
+                                                        } else if (d != null) {
+                                                            k91 k91Var2 = new k91(this, d, 1);
+                                                            k91Var2.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, null, null, null);
+                                                            this.R = k91Var2;
+                                                            this.H = true;
+                                                        } else if (str7 != null) {
+                                                            k91 k91Var3 = new k91(this, str7, 0);
+                                                            k91Var3.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, null, null, null);
+                                                            this.R = k91Var3;
+                                                        } else if (str6 != null) {
+                                                            k91 k91Var4 = new k91(this, str, 2);
+                                                            k91Var4.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, null, null, null);
+                                                            this.R = k91Var4;
+                                                        } else if (str5 != null) {
+                                                            k91 k91Var5 = new k91(this, str5, 3);
+                                                            k91Var5.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, null, null, null);
+                                                            this.R = k91Var5;
+                                                            this.H = true;
+                                                        }
+                                                        m91Var.d(false, false);
+                                                        j(true, false);
+                                                    }
+                                                    if (str4 != null && str8 == null && d == null && str7 == null && str3 == null && str6 == null && str5 == null) {
+                                                        m91Var.setVisibility(8);
+                                                        return false;
+                                                    }
+                                                    m91Var.setVisibility(0);
+                                                    return true;
+                                                }
+                                            }
+                                            str5 = null;
+                                            if (str5 == null) {
+                                            }
+                                            str3 = null;
+                                            this.w = false;
+                                            this.V = false;
+                                            this.s = z10;
+                                            this.x = null;
+                                            this.E = null;
+                                            b();
+                                            this.M = false;
+                                            this.N = 1.0f;
+                                            asyncTask = this.R;
+                                            if (asyncTask != null) {
+                                            }
+                                            k();
+                                            o();
+                                            m();
+                                            n();
+                                            m91Var = this.f0;
+                                            if (photo != null) {
+                                            }
+                                            animatorSet = this.e0;
+                                            if (animatorSet != null) {
+                                            }
+                                            m91Var.c(0);
+                                            if (str4 != null) {
+                                            }
+                                            if (str3 != null) {
+                                            }
+                                            if (str4 != null) {
+                                            }
+                                            m91Var.setVisibility(0);
+                                            return true;
+                                        }
+                                    }
+                                    str6 = null;
+                                    if (str6 == null) {
+                                    }
+                                    str5 = null;
+                                    if (str5 == null) {
+                                    }
+                                    str3 = null;
+                                    this.w = false;
+                                    this.V = false;
+                                    this.s = z10;
+                                    this.x = null;
+                                    this.E = null;
+                                    b();
+                                    this.M = false;
+                                    this.N = 1.0f;
+                                    asyncTask = this.R;
+                                    if (asyncTask != null) {
+                                    }
+                                    k();
+                                    o();
+                                    m();
+                                    n();
+                                    m91Var = this.f0;
+                                    if (photo != null) {
+                                    }
+                                    animatorSet = this.e0;
+                                    if (animatorSet != null) {
+                                    }
+                                    m91Var.c(0);
+                                    if (str4 != null) {
+                                    }
+                                    if (str3 != null) {
+                                    }
+                                    if (str4 != null) {
+                                    }
+                                    m91Var.setVisibility(0);
+                                    return true;
+                                }
+                            }
+                            str7 = null;
+                            if (str7 == null) {
+                            }
+                            str6 = null;
+                            if (str6 == null) {
+                            }
+                            str5 = null;
+                            if (str5 == null) {
+                            }
+                            str3 = null;
+                            this.w = false;
+                            this.V = false;
+                            this.s = z10;
+                            this.x = null;
+                            this.E = null;
+                            b();
+                            this.M = false;
+                            this.N = 1.0f;
+                            asyncTask = this.R;
+                            if (asyncTask != null) {
+                            }
+                            k();
+                            o();
+                            m();
+                            n();
+                            m91Var = this.f0;
+                            if (photo != null) {
+                            }
+                            animatorSet = this.e0;
+                            if (animatorSet != null) {
+                            }
+                            m91Var.c(0);
+                            if (str4 != null) {
+                            }
+                            if (str3 != null) {
+                            }
+                            if (str4 != null) {
+                            }
+                            m91Var.setVisibility(0);
+                            return true;
+                        }
+                    }
+                    str8 = null;
+                    if (str8 == null) {
+                    }
+                    str7 = null;
+                    if (str7 == null) {
+                    }
+                    str6 = null;
+                    if (str6 == null) {
+                    }
+                    str5 = null;
+                    if (str5 == null) {
+                    }
+                    str3 = null;
+                    this.w = false;
+                    this.V = false;
+                    this.s = z10;
+                    this.x = null;
+                    this.E = null;
+                    b();
+                    this.M = false;
+                    this.N = 1.0f;
+                    asyncTask = this.R;
+                    if (asyncTask != null) {
+                    }
+                    k();
+                    o();
+                    m();
+                    n();
+                    m91Var = this.f0;
+                    if (photo != null) {
+                    }
+                    animatorSet = this.e0;
+                    if (animatorSet != null) {
+                    }
+                    m91Var.c(0);
+                    if (str4 != null) {
+                    }
+                    if (str3 != null) {
+                    }
+                    if (str4 != null) {
+                    }
+                    m91Var.setVisibility(0);
+                    return true;
+                }
+                str4 = null;
+                if (str4 == null) {
+                }
+                str8 = null;
+                if (str8 == null) {
+                }
+                str7 = null;
+                if (str7 == null) {
+                }
+                str6 = null;
+                if (str6 == null) {
+                }
+                str5 = null;
+                if (str5 == null) {
+                }
+                str3 = null;
+                this.w = false;
+                this.V = false;
+                this.s = z10;
+                this.x = null;
+                this.E = null;
+                b();
+                this.M = false;
+                this.N = 1.0f;
+                asyncTask = this.R;
+                if (asyncTask != null) {
+                }
+                k();
+                o();
+                m();
+                n();
+                m91Var = this.f0;
+                if (photo != null) {
+                }
+                animatorSet = this.e0;
+                if (animatorSet != null) {
+                }
+                m91Var.c(0);
+                if (str4 != null) {
+                }
+                if (str3 != null) {
+                }
+                if (str4 != null) {
+                }
+                m91Var.setVisibility(0);
+                return true;
+            }
+            str3 = str;
+            str4 = null;
+        }
+        str8 = str4;
+        str7 = str8;
+        str6 = str7;
+        str5 = str6;
+        this.w = false;
+        this.V = false;
+        this.s = z10;
+        this.x = null;
+        this.E = null;
+        b();
+        this.M = false;
+        this.N = 1.0f;
+        asyncTask = this.R;
+        if (asyncTask != null) {
+        }
+        k();
+        o();
+        m();
+        n();
+        m91Var = this.f0;
+        if (photo != null) {
+        }
+        animatorSet = this.e0;
+        if (animatorSet != null) {
+        }
+        m91Var.c(0);
+        if (str4 != null) {
+        }
+        if (str3 != null) {
+        }
+        if (str4 != null) {
+        }
+        m91Var.setVisibility(0);
         return true;
     }
 
-    public final void b(float f7, boolean z10) {
-        p91 p91Var;
-        if (f7 == this.E) {
-            return;
-        }
-        if (f7 < 0.0f) {
-            f7 = 0.0f;
-        } else if (f7 > 1.0f) {
-            f7 = 1.0f;
-        }
-        this.E = f7;
-        if (z10 && (p91Var = this.L) != null) {
-            p91Var.a(f7);
-        }
-        invalidate();
+    public View getAspectRatioView() {
+        return this.c;
     }
 
-    public float getZoom() {
-        return this.K != null ? this.J : this.E;
+    public View getControlsView() {
+        return this.f0;
+    }
+
+    public ImageView getTextureImageView() {
+        return this.e;
+    }
+
+    public TextureView getTextureView() {
+        return this.d;
+    }
+
+    public String getYoutubeId() {
+        return this.G;
+    }
+
+    public final void h() {
+        m91 m91Var = this.f0;
+        if (m91Var.getParent() != this) {
+            m91Var.setVisibility(8);
+        }
+        this.v.d();
+    }
+
+    public final void i() {
+        String str = this.x;
+        if (str == null) {
+            return;
+        }
+        String str2 = this.E;
+        u71 u71Var = this.a;
+        if (str2 != null) {
+            u71Var.G(Uri.parse(str), this.y, Uri.parse(this.E), this.F);
+        } else {
+            u71Var.D(Uri.parse(str), this.y);
+        }
+        u71Var.P(this.s);
+        long p5 = u71Var.p();
+        m91 m91Var = this.f0;
+        if (p5 != -9223372036854775807L) {
+            m91Var.b((int) (u71Var.p() / 1000));
+        } else {
+            m91Var.b(0);
+        }
+        k();
+        o();
+        m();
+        m91Var.invalidate();
+        if (this.O != -1) {
+            u71Var.L(r0 * MediaDataController.MAX_STYLE_RUNS_COUNT, false);
+        }
+    }
+
+    public final void j(boolean z10, boolean z11) {
+        RadialProgressView radialProgressView = this.a0;
+        if (!z11) {
+            radialProgressView.setAlpha(z10 ? 1.0f : 0.0f);
+            return;
+        }
+        AnimatorSet animatorSet = this.e0;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.e0 = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(radialProgressView, "alpha", z10 ? 1.0f : 0.0f));
+        this.e0.setDuration(150L);
+        this.e0.addListener(new s81(this, 1));
+        this.e0.start();
+    }
+
+    public final void k() {
+        i2.f0 f0Var = this.a.d;
+        ImageView imageView = this.b0;
+        if (f0Var == null || this.U) {
+            imageView.setVisibility(8);
+            return;
+        }
+        imageView.setVisibility(0);
+        if (this.T) {
+            imageView.setImageResource(R.drawable.ic_outfullscreen);
+            imageView.setLayoutParams(w7.y5.d(56, 56.0f, 85, 0.0f, 0.0f, 0.0f, 1.0f));
+        } else {
+            imageView.setImageResource(R.drawable.ic_gofullscreen);
+            imageView.setLayoutParams(w7.y5.d(56, 56.0f, 85, 0.0f, 0.0f, 0.0f, 5.0f));
+        }
+    }
+
+    public final void l(boolean z10) {
+        ViewGroup viewGroup;
+        TextureView textureView = this.d;
+        if (textureView == null) {
+            return;
+        }
+        k();
+        ViewGroup viewGroup2 = this.f;
+        jg0 jg0Var = this.c;
+        if (viewGroup2 != null) {
+            if (this.T) {
+                ViewGroup viewGroup3 = (ViewGroup) jg0Var.getParent();
+                if (viewGroup3 != null) {
+                    viewGroup3.removeView(jg0Var);
+                }
+            } else {
+                ViewGroup viewGroup4 = (ViewGroup) jg0Var.getParent();
+                if (viewGroup4 != this) {
+                    if (viewGroup4 != null) {
+                        viewGroup4.removeView(jg0Var);
+                    }
+                    addView(jg0Var, 0);
+                }
+            }
+            this.v.a(this.f0, this.T, jg0Var.getAspectRatio(), jg0Var.getVideoRotation(), z10);
+            return;
+        }
+        this.S = true;
+        if (!this.T) {
+            if (viewGroup2 != null) {
+                viewGroup2.addView(textureView);
+            } else {
+                jg0Var.addView(textureView);
+            }
+        }
+        boolean z11 = this.T;
+        m91 m91Var = this.f0;
+        if (z11) {
+            ViewGroup viewGroup5 = (ViewGroup) m91Var.getParent();
+            if (viewGroup5 != null) {
+                viewGroup5.removeView(m91Var);
+            }
+        } else {
+            ViewGroup viewGroup6 = (ViewGroup) m91Var.getParent();
+            if (viewGroup6 != this) {
+                if (viewGroup6 != null) {
+                    viewGroup6.removeView(m91Var);
+                }
+                if (viewGroup2 != null) {
+                    viewGroup2.addView(m91Var);
+                } else {
+                    addView(m91Var, 1);
+                }
+            }
+        }
+        TextureView a2 = this.v.a(this.f0, this.T, jg0Var.getAspectRatio(), jg0Var.getVideoRotation(), z10);
+        this.n = a2;
+        a2.setVisibility(4);
+        if (this.T && this.n != null && (viewGroup = (ViewGroup) textureView.getParent()) != null) {
+            viewGroup.removeView(textureView);
+        }
+        int i10 = m91.I;
+        m91Var.a();
+    }
+
+    public final void m() {
+        ImageView imageView = this.d0;
+        if (imageView == null) {
+            return;
+        }
+        imageView.setImageResource(this.U ? R.drawable.ic_goinline : R.drawable.ic_outinline);
+        imageView.setVisibility(this.a.d != null ? 0 : 8);
+        if (this.U) {
+            imageView.setLayoutParams(w7.y5.e(40, 40, 53));
+        } else {
+            imageView.setLayoutParams(w7.y5.e(56, 50, 53));
+        }
+    }
+
+    public final void n() {
+        m91 m91Var = this.f0;
+        int i10 = m91.I;
+        m91Var.a();
+        AndroidUtilities.cancelRunOnUIThread(this.i0);
+        if (!this.a.y()) {
+            if (this.V) {
+                this.c0.setImageResource(this.U ? R.drawable.ic_againinline : R.drawable.ic_again);
+                return;
+            } else {
+                this.c0.setImageResource(this.U ? R.drawable.ic_playinline : R.drawable.ic_play);
+                return;
+            }
+        }
+        this.c0.setImageResource(this.U ? R.drawable.ic_pauseinline : R.drawable.ic_pause);
+        AndroidUtilities.runOnUIThread(this.i0, 500L);
+        if (this.J) {
+            return;
+        }
+        AudioManager audioManager = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        this.J = true;
+        audioManager.requestAudioFocus(this, 3, 1);
+    }
+
+    @Override // android.media.AudioManager.OnAudioFocusChangeListener
+    public final void onAudioFocusChange(int i10) {
+        AndroidUtilities.runOnUIThread(new ld(this, i10, 13));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        int measuredWidth = getMeasuredWidth() / 2;
-        int measuredHeight = getMeasuredHeight() / 2;
-        boolean z10 = getMeasuredWidth() > getMeasuredHeight();
-        if (z10) {
-            this.h = AndroidUtilities.dp(41.0f);
-            this.n = measuredHeight;
-            this.r = getMeasuredWidth() - AndroidUtilities.dp(41.0f);
-            this.s = measuredHeight;
-            this.v = AndroidUtilities.dp(18.0f) + this.h;
-            this.w = measuredHeight;
-            this.x = this.r - AndroidUtilities.dp(18.0f);
-            this.y = measuredHeight;
-        } else {
-            this.h = measuredWidth;
-            this.n = AndroidUtilities.dp(41.0f);
-            this.r = measuredWidth;
-            this.s = getMeasuredHeight() - AndroidUtilities.dp(41.0f);
-            this.v = measuredWidth;
-            this.w = AndroidUtilities.dp(18.0f) + this.n;
-            this.x = measuredWidth;
-            this.y = this.s - AndroidUtilities.dp(18.0f);
-        }
-        int dp = this.h - AndroidUtilities.dp(7.0f);
-        int dp2 = this.n - AndroidUtilities.dp(7.0f);
-        int dp3 = AndroidUtilities.dp(7.0f) + this.h;
-        int dp4 = AndroidUtilities.dp(7.0f) + this.n;
-        Drawable drawable = this.a;
-        drawable.setBounds(dp, dp2, dp3, dp4);
-        drawable.draw(canvas);
-        int dp5 = this.r - AndroidUtilities.dp(7.0f);
-        int dp6 = this.s - AndroidUtilities.dp(7.0f);
-        int dp7 = AndroidUtilities.dp(7.0f) + this.r;
-        int dp8 = AndroidUtilities.dp(7.0f) + this.s;
-        Drawable drawable2 = this.b;
-        drawable2.setBounds(dp5, dp6, dp7, dp8);
-        drawable2.draw(canvas);
-        int i10 = this.x;
-        int i11 = this.v;
-        int i12 = this.y;
-        int i13 = this.w;
-        float f7 = this.E;
-        int i14 = (int) (((i10 - i11) * f7) + i11);
-        int i15 = (int) (((i12 - i13) * f7) + i13);
-        Drawable drawable3 = this.d;
-        Drawable drawable4 = this.c;
-        if (z10) {
-            drawable4.setBounds(i11, i13 - AndroidUtilities.dp(3.0f), this.x, AndroidUtilities.dp(3.0f) + this.w);
-            drawable3.setBounds(this.v, this.w - AndroidUtilities.dp(3.0f), i14, AndroidUtilities.dp(3.0f) + this.w);
-        } else {
-            drawable4.setBounds(i13, 0, i12, AndroidUtilities.dp(6.0f));
-            drawable3.setBounds(this.w, 0, i15, AndroidUtilities.dp(6.0f));
-            canvas.save();
-            canvas.rotate(90.0f);
-            canvas.translate(0.0f, (-this.v) - AndroidUtilities.dp(3.0f));
-        }
-        drawable4.draw(canvas);
-        drawable3.draw(canvas);
-        if (!z10) {
-            canvas.restore();
-        }
-        Drawable drawable5 = this.G ? this.f : this.e;
-        int intrinsicWidth = drawable5.getIntrinsicWidth() / 2;
-        drawable5.setBounds(i14 - intrinsicWidth, i15 - intrinsicWidth, i14 + intrinsicWidth, i15 + intrinsicWidth);
-        drawable5.draw(canvas);
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(10.0f), this.Q);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x01d9  */
+    @Override // org.telegram.ui.Components.r71
+    public final void onError(u71 u71Var, Exception exc) {
+        FileLog.e(exc);
+        h();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14 = i12 - i10;
+        jg0 jg0Var = this.c;
+        int measuredWidth = (i14 - jg0Var.getMeasuredWidth()) / 2;
+        int i15 = i13 - i11;
+        int dp = ((i15 - AndroidUtilities.dp(10.0f)) - jg0Var.getMeasuredHeight()) / 2;
+        jg0Var.layout(measuredWidth, dp, jg0Var.getMeasuredWidth() + measuredWidth, jg0Var.getMeasuredHeight() + dp);
+        m91 m91Var = this.f0;
+        if (m91Var.getParent() == this) {
+            m91Var.layout(0, 0, m91Var.getMeasuredWidth(), m91Var.getMeasuredHeight());
+        }
+        RadialProgressView radialProgressView = this.a0;
+        int measuredWidth2 = (i14 - radialProgressView.getMeasuredWidth()) / 2;
+        int measuredHeight = (i15 - radialProgressView.getMeasuredHeight()) / 2;
+        radialProgressView.layout(measuredWidth2, measuredHeight, radialProgressView.getMeasuredWidth() + measuredWidth2, radialProgressView.getMeasuredHeight() + measuredHeight);
+        m91Var.a.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(10.0f));
+    }
+
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        if (!this.M) {
-            return false;
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        this.c.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - AndroidUtilities.dp(10.0f), TLObject.FLAG_30));
+        m91 m91Var = this.f0;
+        if (m91Var.getParent() == this) {
+            m91Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         }
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        int action = motionEvent.getAction();
-        boolean z11 = getMeasuredWidth() > getMeasuredHeight();
-        int i10 = this.v;
-        float f7 = i10;
-        float f10 = this.x - i10;
-        float f11 = this.E;
-        int i11 = (int) ((f10 * f11) + f7);
-        int i12 = this.w;
-        float f12 = i12;
-        float f13 = this.y - i12;
-        int i13 = (int) ((f11 * f13) + f12);
-        if (action == 1 || action == 0) {
-            if (x10 < i11 - AndroidUtilities.dp(20.0f) || x10 > AndroidUtilities.dp(20.0f) + i11 || y3 < i13 - AndroidUtilities.dp(25.0f) || y3 > AndroidUtilities.dp(25.0f) + i13) {
-                try {
-                    if (x10 >= this.h - AndroidUtilities.dp(16.0f)) {
-                        if (x10 <= AndroidUtilities.dp(16.0f) + this.h && y3 >= this.n - AndroidUtilities.dp(16.0f)) {
-                            if (y3 <= AndroidUtilities.dp(16.0f) + this.n) {
-                                if (action == 1 && a((((float) Math.floor(getZoom() / 0.25f)) * 0.25f) - 0.25f)) {
-                                    performHapticFeedback(3);
-                                } else {
-                                    this.F = true;
-                                }
-                            }
-                        }
-                    }
-                    if (x10 >= this.r - AndroidUtilities.dp(16.0f)) {
-                        if (x10 <= AndroidUtilities.dp(16.0f) + this.r && y3 >= this.s - AndroidUtilities.dp(16.0f)) {
-                            if (y3 <= AndroidUtilities.dp(16.0f) + this.s) {
-                                if (action == 1 && a((((float) Math.floor(getZoom() / 0.25f)) * 0.25f) + 0.25f)) {
-                                    performHapticFeedback(3);
-                                } else {
-                                    this.F = true;
-                                }
-                            }
-                        }
-                    }
-                    if (z11) {
-                        if (x10 >= this.v && x10 <= this.x) {
-                            if (action == 0) {
-                                this.H = x10;
-                                this.F = true;
-                            } else if (Math.abs(this.H - x10) <= AndroidUtilities.dp(10.0f)) {
-                                float f14 = (x10 - this.v) / (this.x - r2);
-                                this.E = f14;
-                                p91 p91Var = this.L;
-                                if (p91Var != null) {
-                                    p91Var.a(f14);
-                                }
-                                invalidate();
-                            }
-                        }
-                    } else if (y3 >= this.w && y3 <= this.y) {
-                        if (action == 1) {
-                            this.I = y3;
-                            this.F = true;
-                        } else if (Math.abs(this.I - y3) <= AndroidUtilities.dp(10.0f)) {
-                            float f15 = (y3 - this.w) / (this.y - r0);
-                            this.E = f15;
-                            p91 p91Var2 = this.L;
-                            if (p91Var2 != null) {
-                                p91Var2.a(f15);
-                            }
-                            invalidate();
-                        }
-                    }
-                } catch (Exception unused) {
-                }
-            } else if (action == 0) {
-                this.G = true;
-                this.H = x10 - i11;
-                this.I = y3 - i13;
-                invalidate();
-            }
-            z10 = true;
-            if (action == 1) {
-                this.F = false;
-                this.G = false;
-                invalidate();
-            }
-            return !z10 || this.F || this.G || super.onTouchEvent(motionEvent);
-        }
-        if (action == 2 && this.G) {
-            if (z11) {
-                this.E = ((x10 + this.H) - f7) / f10;
+        this.a0.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+        setMeasuredDimension(size, size2);
+    }
+
+    @Override // org.telegram.ui.Components.r71
+    public final /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.r71
+    public final void onStateChanged(boolean z10, int i10) {
+        m91 m91Var = this.f0;
+        u71 u71Var = this.a;
+        if (i10 != 2) {
+            if (u71Var.p() != -9223372036854775807L) {
+                m91Var.b((int) (u71Var.p() / 1000));
             } else {
-                this.E = ((y3 + this.I) - f12) / f13;
+                m91Var.b(0);
             }
-            float f16 = this.E;
-            if (f16 < 0.0f) {
-                this.E = 0.0f;
-            } else if (f16 > 1.0f) {
-                this.E = 1.0f;
-            }
-            p91 p91Var3 = this.L;
-            if (p91Var3 != null) {
-                p91Var3.a(this.E);
-            }
-            invalidate();
         }
-        z10 = false;
-        if (action == 1) {
+        n91 n91Var = this.v;
+        if (i10 == 4 || i10 == 1 || !u71Var.y()) {
+            n91Var.e(this, false);
+        } else {
+            n91Var.e(this, true);
         }
-        if (z10) {
+        if (u71Var.y() && i10 != 4) {
+            n();
+            return;
+        }
+        if (i10 == 4) {
+            this.V = true;
+            u71Var.B();
+            u71Var.L(0L, false);
+            n();
+            m91Var.d(true, true);
         }
     }
 
-    public void setDelegate(p91 p91Var) {
-        this.L = p91Var;
+    @Override // org.telegram.ui.Components.r71
+    public final boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        if (this.S) {
+            this.S = false;
+            if (this.T || this.U) {
+                if (this.U) {
+                    this.r = 1;
+                }
+                this.n.setSurfaceTexture(surfaceTexture);
+                this.n.setSurfaceTextureListener(this.j0);
+                this.n.setVisibility(0);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.r71
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        if (this.r == 2) {
+            ImageView imageView = this.e;
+            if (imageView != null) {
+                imageView.setVisibility(4);
+                imageView.setImageDrawable(null);
+                Bitmap bitmap = this.h;
+                if (bitmap != null) {
+                    bitmap.recycle();
+                    this.h = null;
+                }
+            }
+            this.W = false;
+            int i10 = this.g0;
+            int i11 = this.h0;
+            this.c.getVideoRotation();
+            this.v.f(this.f0, false, i10, i11, this.I);
+            this.r = 0;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.r71
+    public final void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
+        jg0 jg0Var = this.c;
+        if (jg0Var != null) {
+            float f10 = i10 * f7;
+            this.g0 = (int) f10;
+            this.h0 = i11;
+            float f11 = i11 == 0 ? 1.0f : f10 / i11;
+            jg0Var.a(f11, 0);
+            if (this.T) {
+                this.v.c(f11);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.r71
+    public final void onRenderedFirstFrame() {
+        this.M = true;
+        this.L = System.currentTimeMillis();
+        this.f0.invalidate();
+    }
+
+    public final void o() {
+    }
+
+    @Override // org.telegram.ui.Components.r71
+    public final /* synthetic */ void onSeekFinished(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.r71
+    public final /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 }

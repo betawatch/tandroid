@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.text.Editable;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yp0 implements sq0 {
     public final /* synthetic */ cq0 a;
@@ -27,9 +27,9 @@ public final class yp0 implements sq0 {
     @Override // org.telegram.ui.sq0
     public final void b(Editable editable) {
         cq0 cq0Var = this.a;
-        org.telegram.ui.Components.ku kuVar = cq0Var.M;
+        org.telegram.ui.Components.lu luVar = cq0Var.M;
         cq0Var.a = editable;
-        kuVar.setText(editable);
+        luVar.setText(editable);
     }
 
     @Override // org.telegram.ui.sq0

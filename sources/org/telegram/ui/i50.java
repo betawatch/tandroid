@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i50 extends org.telegram.ui.ActionBar.h5 {
     public LinearGradient M0;
@@ -97,7 +97,7 @@ public final class i50 extends org.telegram.ui.ActionBar.h5 {
                 if (b10 > f11) {
                     this.S0 = f11;
                 }
-                float interpolation = org.telegram.ui.Components.rr.g.getInterpolation(this.S0 / f11);
+                float interpolation = org.telegram.ui.Components.sr.g.getInterpolation(this.S0 / f11);
                 float f13 = this.T0;
                 float f14 = this.Q0;
                 matrix.postTranslate(((((this.P0 - f14) * interpolation) + f14) * f13) - (f13 / 2.0f), 0.0f);
@@ -128,7 +128,7 @@ public final class i50 extends org.telegram.ui.ActionBar.h5 {
             f11 = this.R0;
             if (b10 > f11) {
             }
-            float interpolation2 = org.telegram.ui.Components.rr.g.getInterpolation(this.S0 / f11);
+            float interpolation2 = org.telegram.ui.Components.sr.g.getInterpolation(this.S0 / f11);
             float f132 = this.T0;
             float f142 = this.Q0;
             matrix2.postTranslate(((((this.P0 - f142) * interpolation2) + f142) * f132) - (f132 / 2.0f), 0.0f);

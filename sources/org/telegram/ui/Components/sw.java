@@ -1,21 +1,65 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class sw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zy b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ sw(zy zyVar, int i10) {
-        this.a = i10;
-        this.b = zyVar;
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* loaded from: classes3.dex */
+public final class sw extends FrameLayout {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ mz b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sw(mz mzVar, Context context, boolean z10) {
+        super(context);
+        this.b = mzVar;
+        this.a = z10;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        mz mzVar = this.b;
+        zw zwVar = mzVar.B0;
+        uw uwVar = mzVar.D0;
+        yw ywVar = mzVar.G0;
+        if (this.a || !(view == uwVar || view == ywVar)) {
+            return super.drawChild(canvas, view, j3);
         }
-        this.b.d();
+        canvas.save();
+        float y3 = zwVar.getY() + zwVar.getMeasuredHeight() + 1.0f;
+        if (view == uwVar) {
+            y3 = Math.max(y3, ywVar.getY() + ywVar.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * mzVar.a.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        mz mzVar = this.b;
+        mzVar.K0 = true;
+        mzVar.Y();
+        gg.g1 g1Var = mzVar.T0;
+        if (g1Var != null) {
+            g1Var.a();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        mz mzVar = this.b;
+        mzVar.K0 = false;
+        mzVar.Y();
+        gg.g1 g1Var = mzVar.T0;
+        if (g1Var != null) {
+            g1Var.a();
+        }
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class z8 implements org.telegram.ui.Components.ob {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final class z8 implements org.telegram.ui.Components.ob {
                 if (i10 == 1) {
                     return 0;
                 }
-                return Math.round(wnVar.S.getInputBubbleHeight() + AndroidUtilities.dp(16.0f) + wnVar.W8(org.telegram.ui.Components.g31.c) + wnVar.v.c());
+                return Math.round(wnVar.S.getInputBubbleHeight() + AndroidUtilities.dp(16.0f) + wnVar.W8(org.telegram.ui.Components.i31.c) + wnVar.v.c());
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.b;
                 i11 = contactsActivity.q0;
@@ -129,8 +129,8 @@ public final class z8 implements org.telegram.ui.Components.ob {
                     if (w5Var != null && w5Var.getVisibility() == 0) {
                         i13 = (int) ((photoViewer.i0.getAlpha() * photoViewer.i0.getHeight()) + 0);
                     }
-                    org.telegram.ui.Components.w30 w30Var = photoViewer.l1;
-                    return (w30Var == null || !w30Var.c()) ? i13 : (AndroidUtilities.isTablet() || photoViewer.e0.getMeasuredHeight() > photoViewer.e0.getMeasuredWidth()) ? (int) ((photoViewer.l1.getAlpha() * photoViewer.l1.getHeight()) + i13) : i13;
+                    org.telegram.ui.Components.y30 y30Var = photoViewer.l1;
+                    return (y30Var == null || !y30Var.c()) ? i13 : (AndroidUtilities.isTablet() || photoViewer.e0.getMeasuredHeight() > photoViewer.e0.getMeasuredWidth()) ? (int) ((photoViewer.l1.getAlpha() * photoViewer.l1.getHeight()) + i13) : i13;
                 }
                 ts0 ts0Var = photoViewer.U1;
                 if (ts0Var != null) {
@@ -216,8 +216,8 @@ public final class z8 implements org.telegram.ui.Components.ob {
                 }
                 nw nwVar = qyVar.z0;
                 int measuredHeight2 = i12 + ((nwVar == null || nwVar.getVisibility() != 0) ? 0 : qyVar.z0.getMeasuredHeight());
-                org.telegram.ui.Components.ls lsVar = qyVar.J1;
-                int height = measuredHeight2 + (lsVar != null ? lsVar.getHeight() : 0);
+                org.telegram.ui.Components.ms msVar = qyVar.J1;
+                int height = measuredHeight2 + (msVar != null ? msVar.getHeight() : 0);
                 hx hxVar = qyVar.E0;
                 if (hxVar != null && qyVar.G0) {
                     i13 = (int) ((1.0f - hxVar.getCollapsedProgress()) * AndroidUtilities.dp(81.0f));

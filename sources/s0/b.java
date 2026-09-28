@@ -31,7 +31,7 @@ import n4.y;
 import n7.z0;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.z1;
-import org.telegram.ui.Components.ad0;
+import org.telegram.ui.Components.cd0;
 import q9.p;
 import u2.d0;
 import u2.o1;
@@ -43,9 +43,9 @@ import w9.u;
 import w9.v;
 import w9.w;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements s5.f, pa.a, q9.d, z1, ad0, d9.e, e2.h {
+public final /* synthetic */ class b implements s5.f, pa.a, q9.d, z1, cd0, d9.e, e2.h {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
@@ -500,7 +500,7 @@ public final /* synthetic */ class b implements s5.f, pa.a, q9.d, z1, ad0, d9.e,
         }
     }
 
-    @Override // org.telegram.ui.Components.ad0
+    @Override // org.telegram.ui.Components.cd0
     public String j(int i10) {
         switch (this.a) {
             case 23:

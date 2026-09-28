@@ -1,44 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class xa0 extends s4.n0 {
-    public final /* synthetic */ ya0 a;
+public final class xa0 extends org.telegram.ui.lu0 {
+    public final /* synthetic */ bb0 a;
 
-    public xa0(ya0 ya0Var) {
-        this.a = ya0Var;
+    public xa0(bb0 bb0Var) {
+        this.a = bb0Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        int R;
-        rect.left = 0;
-        rect.right = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        s4.o0 layoutManager = recyclerView.getLayoutManager();
-        za0 za0Var = this.a.b3;
-        if (layoutManager != za0Var.d || (R = RecyclerView.R(view)) == 0 || za0Var.f.N()) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final org.telegram.ui.vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver;
+        if (i10 >= 0) {
+            bb0 bb0Var = this.a;
+            if (i10 < bb0Var.P.size()) {
+                int childCount = bb0Var.getListView().getChildCount();
+                Object obj = bb0Var.P.get(i10);
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = bb0Var.getListView().getChildAt(i11);
+                    if (childAt instanceof org.telegram.ui.Cells.f2) {
+                        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) childAt;
+                        if (f2Var.getResult() == obj) {
+                            imageReceiver = f2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                org.telegram.ui.vu0 vu0Var = new org.telegram.ui.vu0();
+                                vu0Var.b = iArr[0];
+                                vu0Var.c = iArr[1];
+                                vu0Var.d = bb0Var.getListView();
+                                vu0Var.a = imageReceiver;
+                                vu0Var.e = imageReceiver.getBitmapSafe();
+                                vu0Var.h = imageReceiver.getRoundRadius(true);
+                                return vu0Var;
+                            }
+                        }
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
+                    }
+                }
+            }
         }
-        if (za0Var.f.I() == null && za0Var.f.U == null) {
-            rect.top = AndroidUtilities.dp(2.0f);
-        } else {
-            if (R == 0) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        if (i10 >= 0) {
+            bb0 bb0Var = this.a;
+            if (i10 >= bb0Var.P.size()) {
                 return;
             }
-            R--;
-            sa0 sa0Var = za0Var.d;
-            sa0Var.B1();
-            if (R > sa0Var.U) {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
+            bb0Var.x.f((TLRPC.BotInlineResult) bb0Var.P.get(i10), z10, i11);
         }
-        rect.right = za0Var.d.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

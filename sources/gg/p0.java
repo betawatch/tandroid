@@ -11,18 +11,18 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
     public final d6 a;
     public final w9 b;
     public final TextView c;
-    public qq d;
+    public rq d;
     public q0 e;
 
     public p0(Context context, d6 d6Var) {
@@ -44,13 +44,13 @@ public final class p0 extends FrameLayout {
         d6 d6Var = this.a;
         setBackground(h6.b0(dp, h6.v0(i10, d6Var)));
         this.c.setTextColor(h6.v0(h6.G6, d6Var));
-        qq qqVar = this.d;
-        if (qqVar != null) {
+        rq rqVar = this.d;
+        if (rqVar != null) {
             if (this.e.d == 7) {
-                h6.v1(qqVar, h6.v0(h6.Oh, d6Var), false);
+                h6.v1(rqVar, h6.v0(h6.Oh, d6Var), false);
                 h6.v1(this.d, h6.v0(h6.Sh, d6Var), true);
             } else {
-                h6.v1(qqVar, h6.v0(h6.Oh, d6Var), false);
+                h6.v1(rqVar, h6.v0(h6.Oh, d6Var), false);
                 h6.v1(this.d, h6.v0(h6.Sh, d6Var), true);
             }
         }
@@ -65,7 +65,7 @@ public final class p0 extends FrameLayout {
         TextView textView = this.c;
         d6 d6Var = this.a;
         if (i10 == 7) {
-            qq L = h6.L(AndroidUtilities.dp(32.0f), R.drawable.chats_archive);
+            rq L = h6.L(AndroidUtilities.dp(32.0f), R.drawable.chats_archive);
             this.d = L;
             int dp = AndroidUtilities.dp(16.0f);
             int dp2 = AndroidUtilities.dp(16.0f);
@@ -77,19 +77,19 @@ public final class p0 extends FrameLayout {
             textView.setText(str);
             return;
         }
-        qq L2 = h6.L(AndroidUtilities.dp(32.0f), q0Var.a);
+        rq L2 = h6.L(AndroidUtilities.dp(32.0f), q0Var.a);
         this.d = L2;
         int i11 = h6.Oh;
         h6.v1(L2, h6.v0(i11, d6Var), false);
-        qq qqVar = this.d;
+        rq rqVar = this.d;
         int i12 = h6.Sh;
-        h6.v1(qqVar, h6.v0(i12, d6Var), true);
+        h6.v1(rqVar, h6.v0(i12, d6Var), true);
         if (q0Var.d == 4) {
             TLObject tLObject = q0Var.f;
             if (tLObject instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) tLObject;
                 if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id == user.id) {
-                    qq L3 = h6.L(AndroidUtilities.dp(32.0f), R.drawable.chats_saved);
+                    rq L3 = h6.L(AndroidUtilities.dp(32.0f), R.drawable.chats_saved);
                     int dp3 = AndroidUtilities.dp(16.0f);
                     int dp4 = AndroidUtilities.dp(16.0f);
                     L3.e = dp3;

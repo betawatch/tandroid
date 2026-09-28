@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eh implements cl, le.l, org.telegram.ui.ActionBar.z1, ml0, dh.d, org.telegram.ui.ActionBar.q0, un, AndroidUtilities.IntColorCallback, d5, ej {
+public final /* synthetic */ class eh implements dl, le.l, org.telegram.ui.ActionBar.z1, ol0, dh.d, org.telegram.ui.ActionBar.q0, vn, AndroidUtilities.IntColorCallback, d5, fj {
     public final /* synthetic */ int a;
     public final /* synthetic */ wi b;
 
@@ -66,7 +66,7 @@ public final /* synthetic */ class eh implements cl, le.l, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.cl
+    @Override // org.telegram.ui.Components.dl
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
         switch (this.a) {
             case 0:
@@ -86,7 +86,7 @@ public final /* synthetic */ class eh implements cl, le.l, org.telegram.ui.Actio
         this.b.u1();
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         TLRPC.User user;
         if (!(view instanceof pi)) {
@@ -101,7 +101,7 @@ public final /* synthetic */ class eh implements cl, le.l, org.telegram.ui.Actio
         return true;
     }
 
-    @Override // org.telegram.ui.Components.un
+    @Override // org.telegram.ui.Components.vn
     public void e(TLRPC.MessageMedia messageMedia, Editable editable, qh.f fVar, ArrayList arrayList, boolean z10, int i10, long j3) {
         String str;
         ArrayList<TLRPC.MessageEntity> arrayList2;
@@ -183,12 +183,12 @@ public final /* synthetic */ class eh implements cl, le.l, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.ej
+    @Override // org.telegram.ui.Components.fj
     public void h(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
         wi wiVar = this.b;
-        ej ejVar = wiVar.Y;
-        if (ejVar != null) {
-            ejVar.h(arrayList, charSequence, z10, i10, i11, j3, z11, j10);
+        fj fjVar = wiVar.Y;
+        if (fjVar != null) {
+            fjVar.h(arrayList, charSequence, z10, i10, i11, j3, z11, j10);
             return;
         }
         org.telegram.ui.ActionBar.m2 m2Var = wiVar.f0;

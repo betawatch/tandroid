@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class pv0 extends org.telegram.ui.Components.vl0 {
+public final class pv0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ rv0 d;
 
@@ -23,7 +23,7 @@ public final class pv0 extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10;
         int b10 = c1Var.b();
@@ -141,7 +141,7 @@ public final class pv0 extends org.telegram.ui.Components.vl0 {
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
             drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.k7, false), mode));
-            r8Var.n(LocaleController.getString(z10 ? R.string.TodoNewTask : R.string.AddAnOption), new org.telegram.ui.Components.qq(drawable, drawable2), false);
+            r8Var.n(LocaleController.getString(z10 ? R.string.TodoNewTask : R.string.AddAnOption), new org.telegram.ui.Components.rq(drawable, drawable2), false);
             return;
         }
         org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
@@ -185,7 +185,7 @@ public final class pv0 extends org.telegram.ui.Components.vl0 {
                 mv0 mv0Var = new mv0(this, context, z10 ? 1 : 0);
                 mv0Var.d();
                 mv0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
-                mv0Var.c(new org.telegram.ui.Components.rn(4, this, mv0Var));
+                mv0Var.c(new org.telegram.ui.Components.sn(4, this, mv0Var));
                 view = mv0Var;
             } else if (i10 == 6) {
                 View w8Var = new org.telegram.ui.Cells.w8(context);
@@ -194,7 +194,7 @@ public final class pv0 extends org.telegram.ui.Components.vl0 {
             } else if (i10 != 7) {
                 ov0 ov0Var = new ov0(this, context, z10 ? 1 : 0, new f60(rv0Var, 21));
                 ov0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
-                ov0Var.c(new org.telegram.ui.Components.rn(6, this, ov0Var));
+                ov0Var.c(new org.telegram.ui.Components.sn(6, this, ov0Var));
                 ov0Var.setShowNextButton(true);
                 EditTextBoldCursor textView = ov0Var.getTextView();
                 textView.setImeOptions(textView.getImeOptions() | 5);
@@ -205,7 +205,7 @@ public final class pv0 extends org.telegram.ui.Components.vl0 {
                 nv0 nv0Var = new nv0(this, context, z10 ? 1 : 0);
                 nv0Var.d();
                 nv0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
-                nv0Var.c(new org.telegram.ui.Components.rn(5, this, nv0Var));
+                nv0Var.c(new org.telegram.ui.Components.sn(5, this, nv0Var));
                 view = nv0Var;
             }
         } else {
@@ -283,9 +283,9 @@ public final class pv0 extends org.telegram.ui.Components.vl0 {
             if (textView.isFocused()) {
                 rv0 rv0Var = this.d;
                 if (rv0Var.c0) {
-                    org.telegram.ui.Components.xy0 xy0Var = rv0Var.Q;
-                    if (xy0Var != null) {
-                        xy0Var.f();
+                    org.telegram.ui.Components.zy0 zy0Var = rv0Var.Q;
+                    if (zy0Var != null) {
+                        zy0Var.f();
                     }
                     rv0Var.k0(true);
                 }

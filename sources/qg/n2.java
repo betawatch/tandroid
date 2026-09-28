@@ -55,8 +55,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.k11;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.gr0;
 import org.telegram.ui.l21;
@@ -66,7 +66,7 @@ import x7.fa;
 import x7.m7;
 import x7.o7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class n2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -84,7 +84,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
     public float P;
     public float Q;
     public float R;
-    public k11 S;
+    public m11 S;
     public int T;
     public int U;
     public boolean V;
@@ -124,9 +124,9 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
     public n2(ContextThemeWrapper contextThemeWrapper, d6 d6Var) {
         super(contextThemeWrapper);
         this.a = -1;
-        rr rrVar = rr.h;
-        this.b = new e6(0.0f, (View) null, 0L, 420L, rrVar);
-        this.c = new e6(0.0f, (View) null, 0L, 420L, rrVar);
+        sr srVar = sr.h;
+        this.b = new e6(0.0f, (View) null, 0L, 420L, srVar);
+        this.c = new e6(0.0f, (View) null, 0L, 420L, srVar);
         Paint paint = new Paint(1);
         this.d = paint;
         Paint paint2 = new Paint(1);
@@ -2687,7 +2687,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
         setClickable(false);
         TextView textView = this.M;
         textView.animate().cancel();
-        textView.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(240L).setInterpolator(rr.h).start();
+        textView.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(240L).setInterpolator(sr.h).start();
     }
 
     public final void g(Canvas canvas, boolean z10, ViewGroup viewGroup, boolean z11) {
@@ -2746,14 +2746,14 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
         return this.I;
     }
 
-    public k11 getThanosEffect() {
-        if (!k11.c()) {
+    public m11 getThanosEffect() {
+        if (!m11.c()) {
             return null;
         }
         if (this.S == null) {
-            k11 k11Var = new k11(getContext(), new e2(this, 1));
-            this.S = k11Var;
-            addView(k11Var, y5.c(-1.0f, -1));
+            m11 m11Var = new m11(getContext(), new e2(this, 1));
+            this.S = m11Var;
+            addView(m11Var, y5.c(-1.0f, -1));
         }
         return this.S;
     }
@@ -3095,7 +3095,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
             return;
         }
         this.i0 = z10;
-        this.h0.animate().alpha(z10 ? 1.0f : 0.0f).translationX(z10 ? 0.0f : AndroidUtilities.dp(-18.0f)).setInterpolator(rr.h).setDuration(320L).start();
+        this.h0.animate().alpha(z10 ? 1.0f : 0.0f).translationX(z10 ? 0.0f : AndroidUtilities.dp(-18.0f)).setInterpolator(sr.h).setDuration(320L).start();
         if (getParent() instanceof View) {
             ((View) getParent()).invalidate();
         }

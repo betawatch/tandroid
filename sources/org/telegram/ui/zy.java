@@ -14,11 +14,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class zy extends org.telegram.ui.ActionBar.m2 {
     public wy a;
-    public org.telegram.ui.Components.wl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public s4.y c;
     public ImageView d;
     public final ArrayList e;
@@ -49,10 +49,10 @@ public final class zy extends org.telegram.ui.ActionBar.m2 {
     public static /* synthetic */ void U(zy zyVar, Context context, int i10) {
         ArrayList arrayList = zyVar.e;
         if (i10 == zyVar.h) {
-            org.telegram.ui.Components.m70 m70Var = new org.telegram.ui.Components.m70(context, zyVar.currentAccount, null, 0L, zyVar, null);
-            m70Var.Y(new du(zyVar, 5));
-            m70Var.Z(arrayList);
-            zyVar.showDialog(m70Var);
+            org.telegram.ui.Components.o70 o70Var = new org.telegram.ui.Components.o70(context, zyVar.currentAccount, null, 0L, zyVar, null);
+            o70Var.Y(new du(zyVar, 5));
+            o70Var.Z(arrayList);
+            zyVar.showDialog(o70Var);
         }
     }
 
@@ -106,9 +106,9 @@ public final class zy extends org.telegram.ui.ActionBar.m2 {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.b = wl0Var;
-        wl0Var.setLayoutManager(new s4.c0(1, false));
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.setLayoutManager(new s4.c0(1, false));
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setAdapter(this.a);
         ((s4.j) this.b.getItemAnimator()).C = false;

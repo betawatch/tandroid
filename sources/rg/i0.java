@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.n60;
@@ -39,7 +39,7 @@ import org.telegram.ui.wn;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i0 extends LinearLayout {
     public TextView a;
@@ -353,7 +353,7 @@ public final class i0 extends LinearLayout {
                                             int size6 = arrayList3.size() - 2;
                                             int themedColor = j0Var.getThemedColor(h6.h5);
                                             k9Var.b = new z0(h6.Lj, h6.Mj, -1, -1, null);
-                                            k9Var.c = new t01(hg.c.h(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                                            k9Var.c = new v01(hg.c.h(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                                             Paint paint = new Paint(1);
                                             k9Var.d = paint;
                                             paint.setColor(themedColor);

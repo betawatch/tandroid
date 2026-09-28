@@ -19,11 +19,11 @@ import android.widget.ToggleButton;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ca;
-import org.telegram.ui.Components.q81;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.sr;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class w2 extends FrameLayout {
     public String E;
@@ -118,7 +118,7 @@ public class w2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, this.P ? 1.0f : 0.0f);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new v2(this, 0));
-            this.U.addListener(new q81(this, 10));
+            this.U.addListener(new s81(this, 10));
             this.U.setDuration(150L);
             this.U.start();
         }
@@ -342,9 +342,9 @@ public class w2 extends FrameLayout {
                                     float dpf2 = AndroidUtilities.dpf2(8.0f) + ((int) (width - (drawableArr[0].getIntrinsicWidth() / 2.0f))) + this.M;
                                     float dpf22 = AndroidUtilities.dpf2(8.0f) + ((int) (dp - (drawableArr[0].getIntrinsicHeight() / 2.0f)));
                                     float dp3 = AndroidUtilities.dp(17.0f);
-                                    rr rrVar = rr.f;
-                                    float interpolation = (rrVar.getInterpolation(this.K) * dp3) + (dpf2 - AndroidUtilities.dp(1.0f));
-                                    float interpolation2 = (rrVar.getInterpolation(this.K) * AndroidUtilities.dp(17.0f)) + dpf22;
+                                    sr srVar = sr.f;
+                                    float interpolation = (srVar.getInterpolation(this.K) * dp3) + (dpf2 - AndroidUtilities.dp(1.0f));
+                                    float interpolation2 = (srVar.getInterpolation(this.K) * AndroidUtilities.dp(17.0f)) + dpf22;
                                     canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
                                     drawableArr[0].setBounds((int) (width - (r2.getIntrinsicWidth() / 2.0f)), (int) (dp - (drawableArr[0].getIntrinsicHeight() / 2.0f)), (int) ((drawableArr[0].getIntrinsicWidth() / 2.0f) + width), (int) ((drawableArr[0].getIntrinsicHeight() / 2.0f) + dp));
                                     drawableArr[0].draw(canvas);

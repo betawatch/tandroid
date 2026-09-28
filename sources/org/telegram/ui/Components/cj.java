@@ -6,44 +6,44 @@ import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class cj implements TextWatcher {
-    public final /* synthetic */ hj a;
+    public final /* synthetic */ ij a;
 
-    public cj(hj hjVar) {
-        this.a = hjVar;
+    public cj(ij ijVar) {
+        this.a = ijVar;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        hj hjVar = this.a;
-        xi xiVar = hjVar.g0;
-        TextUtils.isEmpty(hjVar.E);
-        hjVar.E = editable.toString().trim();
-        xi xiVar2 = hjVar.b0;
+        ij ijVar = this.a;
+        xi xiVar = ijVar.f0;
+        TextUtils.isEmpty(ijVar.y);
+        ijVar.y = editable.toString().trim();
+        xi xiVar2 = ijVar.a0;
         AndroidUtilities.cancelRunOnUIThread(xiVar2);
-        if (!TextUtils.isEmpty(hjVar.E)) {
-            String str = hjVar.E;
-            hjVar.a0 = str != null && str.length() >= 0;
-            if (!TextUtils.equals(hjVar.W, hjVar.E)) {
-                hjVar.M.clear();
-                hjVar.c0 = 0;
-                hjVar.d0 = false;
+        if (!TextUtils.isEmpty(ijVar.y)) {
+            String str = ijVar.y;
+            ijVar.W = str != null && str.length() >= 0;
+            if (!TextUtils.equals(ijVar.V, ijVar.y)) {
+                ijVar.L.clear();
+                ijVar.b0 = 0;
+                ijVar.c0 = false;
             }
             AndroidUtilities.runOnUIThread(xiVar2, 1500L);
         }
         AndroidUtilities.cancelRunOnUIThread(xiVar);
-        if (!TextUtils.isEmpty(hjVar.E)) {
-            String str2 = hjVar.E;
-            hjVar.n0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(MessagesController.getInstance(hjVar.b.J1).config.musicSearchUsername.get())) ? false : true;
-            if (!TextUtils.equals(hjVar.f0, hjVar.E)) {
-                hjVar.N.clear();
-                hjVar.h0 = false;
+        if (!TextUtils.isEmpty(ijVar.y)) {
+            String str2 = ijVar.y;
+            ijVar.m0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(MessagesController.getInstance(ijVar.b.J1).config.musicSearchUsername.get())) ? false : true;
+            if (!TextUtils.equals(ijVar.e0, ijVar.y)) {
+                ijVar.M.clear();
+                ijVar.g0 = false;
             }
             AndroidUtilities.runOnUIThread(xiVar, 1500L);
         }
-        hjVar.P();
+        ijVar.P();
     }
 
     @Override // android.text.TextWatcher

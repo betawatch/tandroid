@@ -30,12 +30,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ln;
+import org.telegram.ui.Components.mn;
 import org.telegram.ui.db1;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public int E;
@@ -59,7 +59,7 @@ public final class k extends FrameLayout {
     public final ImageView n;
     public final TextView r;
     public final TextView s;
-    public final ln v;
+    public final mn v;
     public final c w;
     public final ArrayList x;
     public final i y;
@@ -119,7 +119,7 @@ public final class k extends FrameLayout {
         textView2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
         linearLayout.addView(textView2, y5.t(-1, -2, 55, 0, 0, 0, 0));
         this.y = new i(null, i10, new i2.h0(this, 28));
-        this.v = new ln(activity, 28);
+        this.v = new mn(activity, 28);
         int i12 = h6.Pk;
         c(h6.w0(null, i12, false), AndroidUtilities.computePerceivedBrightness(h6.w0(null, i12, false)) >= 0.721f ? -16777216 : -1);
         setOpenProgress(0.0f);

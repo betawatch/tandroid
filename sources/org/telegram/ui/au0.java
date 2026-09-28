@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class au0 extends org.telegram.ui.Components.ag0 {
+public final class au0 extends org.telegram.ui.Components.cg0 {
     public final Rect M;
     public final /* synthetic */ PhotoViewer N;
 
@@ -25,19 +25,19 @@ public final class au0 extends org.telegram.ui.Components.ag0 {
         this.N = photoViewer;
         this.a = UserConfig.selectedAccount;
         this.v = new ArrayList();
-        this.L = new org.telegram.ui.Components.ic0(this, 11);
+        this.L = new org.telegram.ui.Components.kc0(this, 11);
         this.b = photoViewer2;
         this.r = e1Var;
         int i10 = 1;
-        org.telegram.ui.Components.qu quVar = new org.telegram.ui.Components.qu(this, context, context, i10);
-        this.f = quVar;
-        quVar.getSettings().setJavaScriptEnabled(true);
-        quVar.getSettings().setDomStorageEnabled(true);
-        quVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        quVar.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(quVar, true);
-        quVar.setWebViewClient(new oi.i(this, i10));
-        addView(quVar, w7.y5.e(-1, -1, 51));
+        org.telegram.ui.Components.ru ruVar = new org.telegram.ui.Components.ru(this, context, context, i10);
+        this.f = ruVar;
+        ruVar.getSettings().setJavaScriptEnabled(true);
+        ruVar.getSettings().setDomStorageEnabled(true);
+        ruVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
+        ruVar.getSettings().setMixedContentMode(0);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(ruVar, true);
+        ruVar.setWebViewClient(new oi.i(this, i10));
+        addView(ruVar, w7.y5.e(-1, -1, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);

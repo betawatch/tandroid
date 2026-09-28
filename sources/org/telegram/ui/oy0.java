@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oy0 implements org.telegram.ui.ActionBar.i6 {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class oy0 implements org.telegram.ui.ActionBar.i6 {
                 break;
             case 1:
                 n11 n11Var = (n11) m2Var;
-                org.telegram.ui.Components.wl0 wl0Var = n11Var.a;
-                if (wl0Var != null) {
-                    int childCount = wl0Var.getChildCount();
+                org.telegram.ui.Components.yl0 yl0Var = n11Var.a;
+                if (yl0Var != null) {
+                    int childCount = yl0Var.getChildCount();
                     while (i11 < childCount) {
                         View childAt = n11Var.a.getChildAt(i11);
                         if (childAt instanceof org.telegram.ui.Cells.ya) {
@@ -143,9 +143,9 @@ public final /* synthetic */ class oy0 implements org.telegram.ui.ActionBar.i6 {
                 break;
             case 8:
                 le1 le1Var = (le1) m2Var;
-                org.telegram.ui.Components.wl0 wl0Var2 = le1Var.a;
-                if (wl0Var2 != null) {
-                    int childCount3 = wl0Var2.getChildCount();
+                org.telegram.ui.Components.yl0 yl0Var2 = le1Var.a;
+                if (yl0Var2 != null) {
+                    int childCount3 = yl0Var2.getChildCount();
                     for (int i19 = 0; i19 < childCount3; i19++) {
                         View childAt3 = le1Var.a.getChildAt(i19);
                         if (childAt3 instanceof org.telegram.ui.Cells.g4) {
@@ -153,9 +153,9 @@ public final /* synthetic */ class oy0 implements org.telegram.ui.ActionBar.i6 {
                         }
                     }
                 }
-                org.telegram.ui.Components.wl0 wl0Var3 = le1Var.b;
-                if (wl0Var3 != null) {
-                    int childCount4 = wl0Var3.getChildCount();
+                org.telegram.ui.Components.yl0 yl0Var3 = le1Var.b;
+                if (yl0Var3 != null) {
+                    int childCount4 = yl0Var3.getChildCount();
                     for (int i20 = 0; i20 < childCount4; i20++) {
                         View childAt4 = le1Var.b.getChildAt(i20);
                         if (childAt4 instanceof org.telegram.ui.Cells.g4) {
@@ -171,9 +171,9 @@ public final /* synthetic */ class oy0 implements org.telegram.ui.ActionBar.i6 {
                 break;
             default:
                 UsersSelectActivity usersSelectActivity = (UsersSelectActivity) m2Var;
-                org.telegram.ui.Components.wl0 wl0Var4 = usersSelectActivity.d;
-                if (wl0Var4 != null) {
-                    int childCount5 = wl0Var4.getChildCount();
+                org.telegram.ui.Components.yl0 yl0Var4 = usersSelectActivity.d;
+                if (yl0Var4 != null) {
+                    int childCount5 = yl0Var4.getChildCount();
                     for (int i21 = 0; i21 < childCount5; i21++) {
                         View childAt5 = usersSelectActivity.d.getChildAt(i21);
                         if (childAt5 instanceof org.telegram.ui.Cells.g4) {

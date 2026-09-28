@@ -14,12 +14,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.z00;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i1 extends LinearLayout {
     public final d6 a;
@@ -60,14 +60,14 @@ public final class i1 extends LinearLayout {
         TextView textView2 = this.d;
         w9 w9Var = this.b;
         if (i10 == 0) {
-            qq qqVar = new qq(h6.b0(AndroidUtilities.dp(28.0f), h6.v0(h6.Oh, this.a)), getContext().getResources().getDrawable(R.drawable.menu_hashtag).mutate());
-            qqVar.s = AndroidUtilities.dp(-0.66f);
-            qqVar.v = 0;
+            rq rqVar = new rq(h6.b0(AndroidUtilities.dp(28.0f), h6.v0(h6.Oh, this.a)), getContext().getResources().getDrawable(R.drawable.menu_hashtag).mutate());
+            rqVar.s = AndroidUtilities.dp(-0.66f);
+            rqVar.v = 0;
             int dp = AndroidUtilities.dp(20.0f);
             int dp2 = AndroidUtilities.dp(20.0f);
-            qqVar.e = dp;
-            qqVar.f = dp2;
-            w9Var.setImageDrawable(qqVar);
+            rqVar.e = dp;
+            rqVar.f = dp2;
+            w9Var.setImageDrawable(rqVar);
             textView2.setText(LocaleController.formatString(R.string.HashtagSuggestion1Title, str));
             textView.setText(LocaleController.getString(R.string.HashtagSuggestion1Text));
             return;

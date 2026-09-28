@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.ke0;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.da0;
 import org.telegram.ui.fp;
@@ -20,7 +20,7 @@ import org.telegram.ui.sm0;
 import org.telegram.ui.tq0;
 import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class t3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ai.s4((fp) obj, tL_error, tLObject, this.b, 14));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((ke0) obj, tL_error, tLObject, z10));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((me0) obj, tL_error, tLObject, z10));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new ai.s4((i70) obj, tL_error, tLObject, this.b, 23));

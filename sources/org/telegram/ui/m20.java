@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class m20 extends org.telegram.ui.ActionBar.m2 {
     public int E;
@@ -36,7 +36,7 @@ public abstract class m20 extends org.telegram.ui.ActionBar.m2 {
     public int O;
     public final i20 a;
     public final i20 b;
-    public org.telegram.ui.Components.wl0 c;
+    public org.telegram.ui.Components.yl0 c;
     public Drawable d;
     public rg.w1 e;
     public boolean f;
@@ -82,27 +82,27 @@ public abstract class m20 extends org.telegram.ui.ActionBar.m2 {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAddToContainer(false);
-        this.c = new org.telegram.ui.Components.wl0(context, null);
+        this.c = new org.telegram.ui.Components.yl0(context, null);
         if (this.G) {
-            this.F = new org.telegram.ui.Components.qz(this.c, (AndroidUtilities.dp(68.0f) + this.I) - AndroidUtilities.dp(16.0f));
+            this.F = new org.telegram.ui.Components.rz(this.c, (AndroidUtilities.dp(68.0f) + this.I) - AndroidUtilities.dp(16.0f));
         } else {
             this.F = new s4.c0();
         }
         this.c.setLayoutManager(this.F);
         s4.c0 c0Var = this.F;
-        if (c0Var instanceof org.telegram.ui.Components.qz) {
-            ((org.telegram.ui.Components.qz) c0Var).R = true;
+        if (c0Var instanceof org.telegram.ui.Components.rz) {
+            ((org.telegram.ui.Components.rz) c0Var).R = true;
         }
         s4.h0 n02 = n0();
         this.c.setAdapter(n02);
-        if (n02 instanceof org.telegram.ui.Components.j61) {
-            org.telegram.ui.Components.wl0 wl0Var = this.c;
+        if (n02 instanceof org.telegram.ui.Components.l61) {
+            org.telegram.ui.Components.yl0 yl0Var = this.c;
             h20 h20Var = new h20(this, 0);
             int dp = AndroidUtilities.dp(12.0f);
             float dp2 = AndroidUtilities.dp(16.0f);
-            org.telegram.ui.Components.wl0 wl0Var2 = this.c;
-            Objects.requireNonNull(wl0Var2);
-            wl0Var.r1(h20Var, dp, dp2, new du(wl0Var2, 10), true);
+            org.telegram.ui.Components.yl0 yl0Var2 = this.c;
+            Objects.requireNonNull(yl0Var2);
+            yl0Var.r1(h20Var, dp, dp2, new du(yl0Var2, 10), true);
         } else {
             this.c.setSections(true);
         }
@@ -152,12 +152,12 @@ public abstract class m20 extends org.telegram.ui.ActionBar.m2 {
     }
 
     public final void l0() {
-        org.telegram.ui.Components.wl0 wl0Var = this.c;
-        if (wl0Var == null || this.F == null || this.N < 0) {
+        org.telegram.ui.Components.yl0 yl0Var = this.c;
+        if (yl0Var == null || this.F == null || this.N < 0) {
             return;
         }
         int i10 = this.O;
-        wl0Var.K(0);
+        yl0Var.K(0);
         this.F.h1(this.N, i10);
         this.N = -1;
     }
@@ -167,9 +167,9 @@ public abstract class m20 extends org.telegram.ui.ActionBar.m2 {
         FrameLayout frameLayout2 = (FrameLayout) j20Var.e;
         FrameLayout frameLayout3 = (FrameLayout) j20Var.d;
         ((TextView) j20Var.b).setText(str);
-        org.telegram.ui.Components.n90 n90Var = (org.telegram.ui.Components.n90) j20Var.c;
-        n90Var.setText(charSequence);
-        n90Var.setMaxWidth(ci.e4.a(n90Var.getText(), n90Var.getPaint()));
+        org.telegram.ui.Components.p90 p90Var = (org.telegram.ui.Components.p90) j20Var.c;
+        p90Var.setText(charSequence);
+        p90Var.setMaxWidth(ci.e4.a(p90Var.getText(), p90Var.getPaint()));
         if (frameLayout != null) {
             frameLayout3.removeAllViews();
             frameLayout3.addView(frameLayout, w7.y5.e(-1, -2, 1));
@@ -236,8 +236,8 @@ public abstract class m20 extends org.telegram.ui.ActionBar.m2 {
     public final void s0() {
         View view;
         int i10;
-        org.telegram.ui.Components.wl0 wl0Var = this.c;
-        if (wl0Var == null || wl0Var.getChildCount() <= 0) {
+        org.telegram.ui.Components.yl0 yl0Var = this.c;
+        if (yl0Var == null || yl0Var.getChildCount() <= 0) {
             return;
         }
         int i11 = 0;
@@ -308,12 +308,12 @@ public abstract class m20 extends org.telegram.ui.ActionBar.m2 {
             if (this.M) {
                 int i11 = org.telegram.ui.ActionBar.h6.G6;
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
-                ((org.telegram.ui.Components.n90) this.y.c).setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
-                ((org.telegram.ui.Components.n90) this.y.c).setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gc, false));
+                ((org.telegram.ui.Components.p90) this.y.c).setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
+                ((org.telegram.ui.Components.p90) this.y.c).setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gc, false));
             } else {
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-                ((org.telegram.ui.Components.n90) this.y.c).setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-                ((org.telegram.ui.Components.n90) this.y.c).setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gc, false));
+                ((org.telegram.ui.Components.p90) this.y.c).setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+                ((org.telegram.ui.Components.p90) this.y.c).setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gc, false));
             }
         }
         u0();

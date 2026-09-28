@@ -26,7 +26,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -129,7 +129,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((LocationController) this.b).lambda$addSharingLocation$11((LocationController.SharingLocationInfo) this.c, (LocationController.SharingLocationInfo) this.d);
                 break;
             default:
-                ((MediaDataController) this.b).lambda$processLoadedDiceStickers$88((String) this.c, (TLRPC.TL_messages_stickerSet) this.d);
+                ((MediaDataController) this.b).lambda$saveToRingtones$204((TLObject) this.c, (TLRPC.Document) this.d);
                 break;
         }
     }

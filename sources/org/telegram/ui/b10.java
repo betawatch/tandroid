@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b10 extends org.telegram.ui.ActionBar.m2 {
     public int E;
@@ -444,9 +444,9 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
                     PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                     mutate2.setColorFilter(new PorterDuffColorFilter(w02, mode));
                     mutate3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false), mode));
-                    org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(mutate2, mutate3);
-                    qqVar.setBounds(0, 0, qqVar.getIntrinsicWidth(), qqVar.getIntrinsicHeight());
-                    spannableString.setSpan(new ImageSpan(qqVar, 0), 0, spannableString.length(), 33);
+                    org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(mutate2, mutate3);
+                    rqVar.setBounds(0, 0, rqVar.getIntrinsicWidth(), rqVar.getIntrinsicHeight());
+                    spannableString.setSpan(new ImageSpan(rqVar, 0), 0, spannableString.length(), 33);
                 }
                 spannableStringBuilder.append((CharSequence) spannableString);
                 return spannableStringBuilder;
@@ -503,7 +503,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
-        jVar.o(org.telegram.ui.Components.rr.h);
+        jVar.o(org.telegram.ui.Components.sr.h);
         jVar.n(350L);
         this.a.setItemAnimator(jVar);
         this.a.setOnScrollListener(new i3(this, 10));
@@ -917,7 +917,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
                         b10 b10Var2 = this.b;
                         MessagesController.DialogFilter dialogFilter = b10Var2.r;
                         if (dialogFilter != null && dialogFilter.isChatlist()) {
-                            org.telegram.ui.Components.d10.T(b10Var2, dialogFilter.id, new b00(b10Var2, 0));
+                            org.telegram.ui.Components.e10.T(b10Var2, dialogFilter.id, new b00(b10Var2, 0));
                             break;
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b10Var2.getParentActivity());
@@ -984,7 +984,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
                         b10 b10Var2 = this.b;
                         MessagesController.DialogFilter dialogFilter = b10Var2.r;
                         if (dialogFilter != null && dialogFilter.isChatlist()) {
-                            org.telegram.ui.Components.d10.T(b10Var2, dialogFilter.id, new b00(b10Var2, 0));
+                            org.telegram.ui.Components.e10.T(b10Var2, dialogFilter.id, new b00(b10Var2, 0));
                             break;
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b10Var2.getParentActivity());
@@ -1065,7 +1065,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
                                 b10 b10Var2 = this.b;
                                 MessagesController.DialogFilter dialogFilter = b10Var2.r;
                                 if (dialogFilter != null && dialogFilter.isChatlist()) {
-                                    org.telegram.ui.Components.d10.T(b10Var2, dialogFilter.id, new b00(b10Var2, 0));
+                                    org.telegram.ui.Components.e10.T(b10Var2, dialogFilter.id, new b00(b10Var2, 0));
                                     break;
                                 } else {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b10Var2.getParentActivity());
@@ -1130,7 +1130,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
                             b10 b10Var2 = this.b;
                             MessagesController.DialogFilter dialogFilter2 = b10Var2.r;
                             if (dialogFilter2 != null && dialogFilter2.isChatlist()) {
-                                org.telegram.ui.Components.d10.T(b10Var2, dialogFilter2.id, new b00(b10Var2, 0));
+                                org.telegram.ui.Components.e10.T(b10Var2, dialogFilter2.id, new b00(b10Var2, 0));
                                 break;
                             } else {
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b10Var2.getParentActivity());
@@ -1205,7 +1205,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
                                     b10 b10Var2 = this.b;
                                     MessagesController.DialogFilter dialogFilter2 = b10Var2.r;
                                     if (dialogFilter2 != null && dialogFilter2.isChatlist()) {
-                                        org.telegram.ui.Components.d10.T(b10Var2, dialogFilter2.id, new b00(b10Var2, 0));
+                                        org.telegram.ui.Components.e10.T(b10Var2, dialogFilter2.id, new b00(b10Var2, 0));
                                         break;
                                     } else {
                                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b10Var2.getParentActivity());
@@ -1295,7 +1295,7 @@ public final class b10 extends org.telegram.ui.ActionBar.m2 {
                             b10 b10Var2 = this.b;
                             MessagesController.DialogFilter dialogFilter2 = b10Var2.r;
                             if (dialogFilter2 != null && dialogFilter2.isChatlist()) {
-                                org.telegram.ui.Components.d10.T(b10Var2, dialogFilter2.id, new b00(b10Var2, 0));
+                                org.telegram.ui.Components.e10.T(b10Var2, dialogFilter2.id, new b00(b10Var2, 0));
                                 break;
                             } else {
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b10Var2.getParentActivity());

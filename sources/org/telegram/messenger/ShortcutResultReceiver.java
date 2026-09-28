@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class ShortcutResultReceiver extends BroadcastReceiver {
     /* JADX INFO: Access modifiers changed from: private */
@@ -18,7 +18,7 @@ public class ShortcutResultReceiver extends BroadcastReceiver {
         int intExtra = intent.getIntExtra("account", UserConfig.selectedAccount);
         Utilities.Callback<Boolean> remove = MediaDataController.getInstance(intExtra).shortcutCallbacks.remove(intent.getStringExtra("req_id"));
         if (remove != null) {
-            AndroidUtilities.runOnUIThread(new r7(10, remove));
+            AndroidUtilities.runOnUIThread(new o7(10, remove));
         }
     }
 }

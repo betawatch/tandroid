@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.y61;
-import org.telegram.ui.Components.yg0;
+import org.telegram.ui.Components.ch0;
 import org.telegram.ui.fc0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class x1 extends org.telegram.ui.Components.p6 {
     public final /* synthetic */ int s;
@@ -30,10 +30,10 @@ public final class x1 extends org.telegram.ui.Components.p6 {
         switch (this.s) {
             case 1:
                 super.invalidate();
-                yg0 yg0Var = (yg0) this.v;
-                ah0 ah0Var = yg0Var.d;
-                if (yg0Var == ah0Var.b.getPinnedHeader()) {
-                    ah0Var.b.invalidate();
+                ah0 ah0Var = (ah0) this.v;
+                ch0 ch0Var = ah0Var.d;
+                if (ah0Var == ch0Var.b.getPinnedHeader()) {
+                    ch0Var.b.invalidate();
                     break;
                 }
                 break;
@@ -59,7 +59,7 @@ public final class x1 extends org.telegram.ui.Components.p6 {
                 canvas.translate(AndroidUtilities.dp(15.0f), 0.0f);
                 super.onDraw(canvas);
                 canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(11.0f));
-                ((y61) this.v).b.draw(canvas);
+                ((a71) this.v).b.draw(canvas);
                 canvas.restore();
                 break;
             case 3:
@@ -93,7 +93,7 @@ public final class x1 extends org.telegram.ui.Components.p6 {
         ViewGroup viewGroup;
         switch (this.s) {
             case 1:
-                viewGroup = ((org.telegram.ui.ActionBar.e3) ((yg0) this.v).d).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) ((ah0) this.v).d).containerView;
                 return viewGroup.post(runnable);
             default:
                 return super.post(runnable);
@@ -105,7 +105,7 @@ public final class x1 extends org.telegram.ui.Components.p6 {
         ViewGroup viewGroup;
         switch (this.s) {
             case 1:
-                viewGroup = ((org.telegram.ui.ActionBar.e3) ((yg0) this.v).d).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) ((ah0) this.v).d).containerView;
                 return viewGroup.postDelayed(runnable, j3);
             default:
                 return super.postDelayed(runnable, j3);
@@ -120,10 +120,10 @@ public final class x1 extends org.telegram.ui.Components.p6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(y61 y61Var, Context context) {
+    public x1(a71 a71Var, Context context) {
         super(context, true, true, true);
         this.s = 2;
-        this.v = y61Var;
+        this.v = a71Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

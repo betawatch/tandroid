@@ -17,13 +17,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class o1 extends vl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class o1 extends xl0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
     public final wn f;
     public int h;
@@ -46,7 +46,7 @@ public final class o1 extends vl0 implements NotificationCenter.NotificationCent
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2;
@@ -176,10 +176,10 @@ public final class o1 extends vl0 implements NotificationCenter.NotificationCent
             d6 d6Var = this.s;
             Context context = this.c;
             if (i10 == 1) {
-                u00 u00Var = new u00(context, d6Var);
-                u00Var.setIsSingleCell(true);
-                u00Var.setViewType(7);
-                view = u00Var;
+                v00 v00Var = new v00(context, d6Var);
+                v00Var.setIsSingleCell(true);
+                v00Var.setViewType(7);
+                view = v00Var;
             } else if (i10 != 2) {
                 s2Var = null;
             } else {

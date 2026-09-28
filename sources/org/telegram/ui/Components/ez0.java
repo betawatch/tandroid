@@ -1,28 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ez0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Switch b;
+public final class ez0 extends gd0 {
+    public final /* synthetic */ fz0 w0;
 
-    public /* synthetic */ ez0(Switch r12, int i10) {
-        this.a = i10;
-        this.b = r12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ez0(fz0 fz0Var, Context context) {
+        super(context, 13, null);
+        this.w0 = fz0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.d = null;
-                break;
-            default:
-                this.b.e = null;
-                break;
-        }
+    @Override // org.telegram.ui.Components.gd0, android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float dp = AndroidUtilities.dp(31.0f);
+        fz0 fz0Var = this.w0;
+        fz0Var.d.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h7, false));
+        canvas.drawLine(AndroidUtilities.dp(2.0f), dp, getMeasuredWidth() - AndroidUtilities.dp(2.0f), dp, fz0Var.d);
+        float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(31.0f);
+        canvas.drawLine(AndroidUtilities.dp(2.0f), measuredHeight, getMeasuredWidth() - AndroidUtilities.dp(2.0f), measuredHeight, fz0Var.d);
     }
 }

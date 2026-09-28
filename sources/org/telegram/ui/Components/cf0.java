@@ -1,28 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class cf0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ef0 b;
+public final class cf0 extends Path {
+    public int a;
+    public int b;
+    public int c;
 
-    public /* synthetic */ cf0(ef0 ef0Var, int i10) {
-        this.a = i10;
-        this.b = ef0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.s = null;
-                break;
-            default:
-                this.b.v = null;
-                break;
+    public final void a(int i10, int i11, int i12) {
+        if (this.a == i10 && this.b == i11 && this.c == i12) {
+            return;
         }
+        rewind();
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f7 = i10 - i12;
+        float f10 = i11 + i12;
+        rectF.set(f7, i11 - i12, i10 + i12, f10);
+        arcTo(rectF, -180.0f, 270.0f, false);
+        float f11 = i12 / 81.0f;
+        float f12 = i10;
+        float f13 = f10 - (3.0f * f11);
+        cubicTo(f12 - (13.0f * f11), f10, f12 - (25.0f * f11), f13, f12 - (36.0f * f11), f10 - (8.42f * f11));
+        float f14 = f10 - f11;
+        cubicTo(f12 - (52.0f * f11), f14, f12 - (56.5f * f11), f14, f12 - (78.02f * f11), f14);
+        cubicTo(f12 - (80.0f * f11), f14, f12 - (81.0f * f11), f13, f12 - (79.52f * f11), f10 - (4.5f * f11));
+        float f15 = f12 - (63.73f * f11);
+        cubicTo(f12 - (78.0f * f11), f10 - (6.0f * f11), f15, f10 - (15.0f * f11), f15, f10 - (31.0f * f11));
+        float f16 = i11;
+        cubicTo(f12 - (74.5f * f11), f10 - (44.75f * f11), f7, (f11 * 18.87f) + f16, f7, f16);
+        close();
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 }

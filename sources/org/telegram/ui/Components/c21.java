@@ -1,64 +1,32 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class c21 extends FrameLayout {
-    public final ImageView a;
-    public final a21 b;
-    public final /* synthetic */ ThemeEditorView.EditorAlert c;
+public final class c21 extends EditTextBoldCursor {
+    public final /* synthetic */ e21 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c21(ThemeEditorView.EditorAlert editorAlert, Context context) {
+    public c21(e21 e21Var, Context context) {
         super(context);
-        this.c = editorAlert;
-        View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(18.0f), -854795));
-        addView(view, w7.y5.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.y5.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setScaleType(scaleType);
-        z11 z11Var = new z11();
-        imageView2.setImageDrawable(z11Var);
-        z11Var.f = AndroidUtilities.dp(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, w7.y5.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new i80(this, 21));
-        a21 a21Var = new a21(this, context);
-        this.b = a21Var;
-        a21Var.setTextSize(1, 16.0f);
-        a21Var.setHintTextColor(-6774617);
-        a21Var.setTextColor(-14540254);
-        a21Var.setBackgroundDrawable(null);
-        a21Var.setPadding(0, 0, 0, 0);
-        a21Var.setMaxLines(1);
-        a21Var.setLines(1);
-        a21Var.setSingleLine(true);
-        a21Var.setImeOptions(268435459);
-        a21Var.setHint(LocaleController.getString(R.string.Search));
-        a21Var.setCursorColor(-11491093);
-        a21Var.setCursorSize(AndroidUtilities.dp(20.0f));
-        a21Var.setCursorWidth(1.5f);
-        addView(a21Var, w7.y5.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
-        a21Var.addTextChangedListener(new b21(this));
-        a21Var.setOnEditorActionListener(new e1(this, 9));
+        this.b = e21Var;
+    }
+
+    @Override // org.telegram.ui.Components.fu, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        ViewGroup viewGroup;
+        MotionEvent obtain = MotionEvent.obtain(motionEvent);
+        float rawX = obtain.getRawX();
+        float rawY = obtain.getRawY();
+        ThemeEditorView.EditorAlert editorAlert = this.b.c;
+        viewGroup = ((org.telegram.ui.ActionBar.e3) editorAlert).containerView;
+        obtain.setLocation(rawX, rawY - viewGroup.getTranslationY());
+        editorAlert.c.dispatchTouchEvent(obtain);
+        obtain.recycle();
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

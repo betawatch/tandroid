@@ -11,19 +11,19 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.os;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.ps;
+import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class a extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
     public final org.telegram.ui.ActionBar.d6 b;
     public final TextView c;
-    public final n90 d;
+    public final p90 d;
     public zf.b e;
-    public final pq[] f;
+    public final qq[] f;
 
     public a(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         this(context, i10, zf.b.a, d6Var);
@@ -37,29 +37,29 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
         zf.b bVar3 = zf.b.a;
         TextView textView = this.c;
         org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        n90 n90Var = this.d;
+        p90 p90Var = this.d;
         if (bVar2 == bVar3) {
             textView.setText(w7.X0(false, LocaleController.formatString(R.string.Gift2MessageStarsInfo, LocaleController.formatNumber(s10.a(), ',')), 0.6f, null));
             int i11 = org.telegram.ui.ActionBar.h6.Gi;
-            n90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-            n90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-            n90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new rg.q1(this, 21)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+            p90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+            p90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+            p90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new rg.q1(this, 21)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
             return;
         }
         if (bVar2 == zf.b.b) {
             SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2MessageStarsInfoTON, s10.b()));
-            pq[] pqVarArr = this.f;
-            textView.setText(w7.X0(true, replaceTags, 0.6f, pqVarArr));
-            pqVarArr[0].setColorKey(org.telegram.ui.ActionBar.h6.Gi);
+            qq[] qqVarArr = this.f;
+            textView.setText(w7.X0(true, replaceTags, 0.6f, qqVarArr));
+            qqVarArr[0].setColorKey(org.telegram.ui.ActionBar.h6.Gi);
             StringBuilder sb2 = new StringBuilder(10);
             sb2.append('~');
             sb2.append(BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * s10.c() * 100.0d), "USD", 2));
             int i12 = org.telegram.ui.ActionBar.h6.Hi;
             int v02 = org.telegram.ui.ActionBar.h6.v0(i12, d6Var);
             int i13 = org.telegram.ui.ActionBar.h6.Fi;
-            n90Var.setTextColor(i0.a.d(0.33f, v02, org.telegram.ui.ActionBar.h6.v0(i13, d6Var)));
-            n90Var.setLinkTextColor(i0.a.d(0.33f, org.telegram.ui.ActionBar.h6.v0(i12, d6Var), org.telegram.ui.ActionBar.h6.v0(i13, d6Var)));
-            n90Var.setText(sb2);
+            p90Var.setTextColor(i0.a.d(0.33f, v02, org.telegram.ui.ActionBar.h6.v0(i13, d6Var)));
+            p90Var.setLinkTextColor(i0.a.d(0.33f, org.telegram.ui.ActionBar.h6.v0(i12, d6Var), org.telegram.ui.ActionBar.h6.v0(i13, d6Var)));
+            p90Var.setText(sb2);
         }
     }
 
@@ -94,7 +94,7 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
 
     public a(Context context, int i10, zf.b bVar, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.f = new pq[1];
+        this.f = new qq[1];
         this.a = i10;
         this.b = d6Var;
         this.e = bVar;
@@ -107,12 +107,12 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Hi, d6Var));
         textView.setGravity(17);
         addView(textView, w7.y5.p(-2, -2, 0.0f, 17, 0, 0, 0, 0));
-        n90 n90Var = new n90(context, d6Var);
-        this.d = n90Var;
-        n90Var.setTextSize(1, 12.0f);
-        n90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new os(context, d6Var)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
-        n90Var.setGravity(17);
-        addView(n90Var, w7.y5.p(-2, -2, 0.0f, 17, 0, 1, 0, 0));
+        p90 p90Var = new p90(context, d6Var);
+        this.d = p90Var;
+        p90Var.setTextSize(1, 12.0f);
+        p90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new ps(context, d6Var)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+        p90Var.setGravity(17);
+        addView(p90Var, w7.y5.p(-2, -2, 0.0f, 17, 0, 1, 0, 0));
         a();
     }
 }

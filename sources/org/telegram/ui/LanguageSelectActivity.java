@@ -23,14 +23,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class LanguageSelectActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public p80 a;
     private int autoTranslationPosition;
-    public org.telegram.ui.Components.wl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public p80 c;
-    public org.telegram.ui.Components.nz d;
+    public org.telegram.ui.Components.oz d;
     private int doNotTranslatePosition;
     public ArrayList e;
     public ArrayList f;
@@ -268,15 +268,15 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.m2 impleme
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.nz nzVar = new org.telegram.ui.Components.nz(context, null);
-        this.d = nzVar;
-        nzVar.setText(LocaleController.getString(R.string.NoResult));
+        org.telegram.ui.Components.oz ozVar = new org.telegram.ui.Components.oz(context, null);
+        this.d = ozVar;
+        ozVar.setText(LocaleController.getString(R.string.NoResult));
         this.d.c();
         this.d.setShowAtCenter(true);
         frameLayout2.addView(this.d, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.b = wl0Var;
-        wl0Var.p1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setEmptyView(this.d);
         this.b.setLayoutManager(new s4.c0(1, false));
@@ -285,7 +285,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.m2 impleme
         o80 o80Var = new o80(this);
         o80Var.n(400L);
         o80Var.C = false;
-        o80Var.o(org.telegram.ui.Components.rr.h);
+        o80Var.o(org.telegram.ui.Components.sr.h);
         this.b.setItemAnimator(o80Var);
         frameLayout2.addView(this.b, w7.y5.c(-1.0f, -1));
         this.b.setOnItemClickListener(new i(this, 15));
@@ -371,7 +371,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.m2 impleme
         if (this.actionBar != null) {
             String string = LocaleController.getString(R.string.Language);
             if (!TextUtils.equals(this.actionBar.getTitle(), string)) {
-                this.actionBar.J(string, true, 350L, org.telegram.ui.Components.rr.h);
+                this.actionBar.J(string, true, 350L, org.telegram.ui.Components.sr.h);
             }
         }
         p80 p80Var = this.a;

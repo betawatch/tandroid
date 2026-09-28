@@ -26,16 +26,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cu;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.du;
 import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.n61;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.yb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        j61 j61Var;
+        l61 l61Var;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         String str;
@@ -71,7 +71,7 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
                 }
                 break;
             case 2:
-                AndroidUtilities.hideKeyboard((cu) obj2);
+                AndroidUtilities.hideKeyboard((du) obj2);
                 AndroidUtilities.runOnUIThread((Runnable) obj, 80L);
                 break;
             case 3:
@@ -84,18 +84,18 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
             case 4:
                 org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) obj2;
                 g1Var.e = (ArrayList) obj;
-                l61 l61Var = g1Var.a;
-                if (l61Var.G) {
-                    l61Var.Y2.N(true);
+                n61 n61Var = g1Var.a;
+                if (n61Var.G) {
+                    n61Var.Y2.N(true);
                     break;
                 }
                 break;
             case 5:
                 org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) obj2;
                 z1Var.n = ((ArrayList) obj).size();
-                l61 l61Var2 = z1Var.a;
-                if (l61Var2 != null && (j61Var = l61Var2.Y2) != null && l61Var2.G) {
-                    j61Var.N(true);
+                n61 n61Var2 = z1Var.a;
+                if (n61Var2 != null && (l61Var = n61Var2.Y2) != null && n61Var2.G) {
+                    l61Var.N(true);
                     break;
                 }
                 break;

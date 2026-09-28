@@ -9,13 +9,13 @@ import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.m70;
+import org.telegram.ui.Components.o70;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.g80;
 import org.telegram.ui.gn0;
 import org.telegram.ui.qg0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class u1 extends ScrollView {
     public final /* synthetic */ int a;
@@ -68,15 +68,15 @@ public final class u1 extends ScrollView {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                m70 m70Var = (m70) this.b;
+                o70 o70Var = (o70) this.b;
                 int size = View.MeasureSpec.getSize(i10);
                 int size2 = View.MeasureSpec.getSize(i11);
                 if (AndroidUtilities.isTablet() || size2 > size) {
-                    m70Var.s0 = AndroidUtilities.dp(144.0f);
+                    o70Var.s0 = AndroidUtilities.dp(144.0f);
                 } else {
-                    m70Var.s0 = AndroidUtilities.dp(56.0f);
+                    o70Var.s0 = AndroidUtilities.dp(56.0f);
                 }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(m70Var.s0, TLObject.FLAG_31));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(o70Var.s0, TLObject.FLAG_31));
                 break;
             case 2:
                 super.onMeasure(i10, i11);

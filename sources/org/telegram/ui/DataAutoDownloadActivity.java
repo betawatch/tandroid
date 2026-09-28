@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
     public final DownloadController.Preset E;
@@ -32,7 +32,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
     public final String K;
     public eu a;
     private int autoDownloadRow;
-    public org.telegram.ui.Components.wl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public final ArrayList c;
     public int d;
     public int e;
@@ -116,7 +116,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
             AnimatorSet animatorSet2 = new AnimatorSet();
             animatorSetArr[0] = animatorSet2;
             animatorSet2.playTogether(arrayList);
-            animatorSetArr[0].addListener(new org.telegram.ui.Components.q81(animatorSetArr, 14));
+            animatorSetArr[0].addListener(new org.telegram.ui.Components.s81(animatorSetArr, 14));
             animatorSetArr[0].setDuration(150L);
             animatorSetArr[0].start();
         }
@@ -325,9 +325,9 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
                 }
                 edit2.commit();
                 j5Var.setChecked(!z14);
-                org.telegram.ui.Components.wl0 wl0Var = dataAutoDownloadActivity.b;
-                View F = wl0Var.F(view);
-                s4.c1 T = F == null ? null : wl0Var.T(F);
+                org.telegram.ui.Components.yl0 yl0Var = dataAutoDownloadActivity.b;
+                View F = yl0Var.F(view);
+                s4.c1 T = F == null ? null : yl0Var.T(F);
                 if (T != null) {
                     dataAutoDownloadActivity.a.v(T, i11);
                 }
@@ -522,9 +522,9 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false));
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.b = wl0Var;
-        wl0Var.p1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setVerticalScrollBarEnabled(false);
         ((s4.j) this.b.getItemAnimator()).C = false;
@@ -538,7 +538,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
     @Override // org.telegram.ui.ActionBar.m2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 16, new Class[]{org.telegram.ui.Cells.m4.class, org.telegram.ui.Cells.j5.class, org.telegram.ui.Components.ew0.class}, null, null, null, org.telegram.ui.ActionBar.h6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 16, new Class[]{org.telegram.ui.Cells.m4.class, org.telegram.ui.Cells.j5.class, org.telegram.ui.Components.gw0.class}, null, null, null, org.telegram.ui.ActionBar.h6.d6));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.h6.s8));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.h6.v8));
@@ -563,9 +563,9 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
         int i11 = org.telegram.ui.ActionBar.h6.N6;
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 0, new Class[]{org.telegram.ui.Cells.j5.class}, new String[]{"checkBox"}, null, null, -1, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 0, new Class[]{org.telegram.ui.Cells.e9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.B6));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 0, new Class[]{org.telegram.ui.Components.ew0.class}, null, null, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 0, new Class[]{org.telegram.ui.Components.ew0.class}, null, null, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 0, new Class[]{org.telegram.ui.Components.ew0.class}, null, null, null, org.telegram.ui.ActionBar.h6.y6));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 0, new Class[]{org.telegram.ui.Components.gw0.class}, null, null, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 0, new Class[]{org.telegram.ui.Components.gw0.class}, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.b, 0, new Class[]{org.telegram.ui.Components.gw0.class}, null, null, null, org.telegram.ui.ActionBar.h6.y6));
         return arrayList;
     }
 
@@ -599,13 +599,13 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
                 }
             }
         }
-        org.telegram.ui.Components.wl0 wl0Var = this.b;
-        if (wl0Var != null) {
-            s4.c1 K = wl0Var.K(this.usageProgressRow);
+        org.telegram.ui.Components.yl0 yl0Var = this.b;
+        if (yl0Var != null) {
+            s4.c1 K = yl0Var.K(this.usageProgressRow);
             if (K != null) {
                 View view = K.a;
-                if (view instanceof org.telegram.ui.Components.ew0) {
-                    m0((org.telegram.ui.Components.ew0) view);
+                if (view instanceof org.telegram.ui.Components.gw0) {
+                    m0((org.telegram.ui.Components.gw0) view);
                     return;
                 }
             }
@@ -613,7 +613,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
         }
     }
 
-    public final void m0(org.telegram.ui.Components.ew0 ew0Var) {
+    public final void m0(org.telegram.ui.Components.gw0 gw0Var) {
         ArrayList arrayList = this.c;
         String[] strArr = new String[arrayList.size()];
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -628,7 +628,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.m2 {
                 strArr[i10] = LocaleController.getString(R.string.AutoDownloadCustom);
             }
         }
-        ew0Var.b(this.d, null, strArr);
+        gw0Var.b(this.d, null, strArr);
     }
 
     public final void n0() {

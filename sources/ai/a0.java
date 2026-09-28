@@ -26,13 +26,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.p20;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.r20;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class a0 extends FrameLayout {
     public long E;
@@ -48,7 +48,7 @@ public final class a0 extends FrameLayout {
     public final ca O;
     public float P;
     public float Q;
-    public mj0 R;
+    public oj0 R;
     public o S;
     public final float T;
     public boolean U;
@@ -87,7 +87,7 @@ public final class a0 extends FrameLayout {
         this.P = 1.0f;
         this.Q = 1.0f;
         this.T = 1.0f;
-        this.a0 = new org.telegram.ui.Components.e6(this, 0L, 350L, rr.h);
+        this.a0 = new org.telegram.ui.Components.e6(this, 0L, 350L, sr.h);
         caVar.o = hxVar.b == 1;
         caVar.D = true;
         imageReceiver.setInvalidateAll(true);
@@ -204,7 +204,7 @@ public final class a0 extends FrameLayout {
         boolean z12;
         ImageReceiver imageReceiver2;
         boolean[] zArr;
-        mj0 mj0Var;
+        oj0 oj0Var;
         float dp = AndroidUtilities.dp(48.0f);
         float dp2 = AndroidUtilities.dp(26.33f);
         float dp3 = AndroidUtilities.dp(8.0f);
@@ -263,7 +263,7 @@ public final class a0 extends FrameLayout {
         }
         ArrayList arrayList = (ArrayList) l9Var.c.f(this.E);
         boolean z13 = (arrayList == null || arrayList.isEmpty()) ? false : true;
-        if (z13 || (this.W && (mj0Var = this.R) != null && mj0Var.f < 0.98f)) {
+        if (z13 || (this.W && (oj0Var = this.R) != null && oj0Var.f < 0.98f)) {
             canvas2 = canvas;
             f11 = f17;
             f12 = f10;
@@ -283,14 +283,14 @@ public final class a0 extends FrameLayout {
             }
             invalidate();
             if (this.R == null) {
-                mj0 mj0Var2 = hxVar.n;
-                if (mj0Var2 != null) {
-                    this.R = mj0Var2;
+                oj0 oj0Var2 = hxVar.n;
+                if (oj0Var2 != null) {
+                    this.R = oj0Var2;
                 } else {
-                    mj0 mj0Var3 = new mj0(this);
-                    this.R = mj0Var3;
-                    hxVar.n = mj0Var3;
-                    mj0Var3.d(null, true, false);
+                    oj0 oj0Var3 = new oj0(this);
+                    this.R = oj0Var3;
+                    hxVar.n = oj0Var3;
+                    oj0Var3.d(null, true, false);
                 }
             }
             if (this.w) {
@@ -303,9 +303,9 @@ public final class a0 extends FrameLayout {
             this.R.q = 0;
             Paint o9 = z10 ? ia.o(imageReceiver4) : ia.t(imageReceiver4, true);
             o9.setAlpha(255);
-            mj0 mj0Var4 = this.R;
-            mj0Var4.t = o9;
-            mj0Var4.f((int) (imageReceiver4.getImageX() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageX2() + AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY2() + AndroidUtilities.dp(3.0f)));
+            oj0 oj0Var4 = this.R;
+            oj0Var4.t = o9;
+            oj0Var4.f((int) (imageReceiver4.getImageX() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY() - AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageX2() + AndroidUtilities.dp(3.0f)), (int) (imageReceiver4.getImageY2() + AndroidUtilities.dp(3.0f)));
             this.R.e(Utilities.clamp(size, 1.0f, 0.0f), this.W);
             if (imageReceiver4.getVisible()) {
                 this.R.a(canvas2);
@@ -328,7 +328,7 @@ public final class a0 extends FrameLayout {
                 float f24 = e * caVar2.e;
                 caVar2.b = !this.W;
                 if (!this.c && hxVar.n0 <= 0.0f) {
-                    if (AndroidUtilities.lerp(getMeasuredWidth(), AndroidUtilities.dp(16.0f), rr.g.getInterpolation(this.J)) < (AndroidUtilities.dpf2(3.5f) + f7) * 2.0f) {
+                    if (AndroidUtilities.lerp(getMeasuredWidth(), AndroidUtilities.dp(16.0f), sr.g.getInterpolation(this.J)) < (AndroidUtilities.dpf2(3.5f) + f7) * 2.0f) {
                         f15 = ((float) Math.toDegrees(Math.acos((r1 / 2.0f) / r3))) * 2.0f;
                         caVar2.f = f15;
                         caVar2.l = this.c;
@@ -365,10 +365,10 @@ public final class a0 extends FrameLayout {
                         ImageReceiver imageReceiver5 = imageReceiver2;
                         if (f24 > 0.0f) {
                             if (ia.d == null) {
-                                p20 p20Var = new p20();
-                                ia.d = p20Var;
-                                p20Var.a = true;
-                                p20Var.b = true;
+                                r20 r20Var = new r20();
+                                ia.d = r20Var;
+                                r20Var.a = true;
+                                r20Var.b = true;
                                 int w02 = org.telegram.ui.ActionBar.h6.w0(zArr, org.telegram.ui.ActionBar.h6.xj, z11);
                                 int w03 = org.telegram.ui.ActionBar.h6.w0(zArr, org.telegram.ui.ActionBar.h6.q7, z11);
                                 ia.d.d(i0.a.d(0.25f, w02, w03), w03, z11 ? 1 : 0, z11 ? 1 : 0);
@@ -426,7 +426,7 @@ public final class a0 extends FrameLayout {
                     } else {
                         paint.setColor(org.telegram.ui.ActionBar.h6.l1(e, hxVar.f(org.telegram.ui.ActionBar.h6.M8)));
                     }
-                    float interpolation = rr.k.getInterpolation(e) * AndroidUtilities.dp(9.0f);
+                    float interpolation = sr.k.getInterpolation(e) * AndroidUtilities.dp(9.0f);
                     canvas2.drawCircle(dp4, dp5, AndroidUtilities.dp(2.0f) + interpolation, paint);
                     canvas2.drawCircle(dp4, dp5, interpolation, paint3);
                     textColor = hxVar.getTextColor();

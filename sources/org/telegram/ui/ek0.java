@@ -6,9 +6,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ek0 implements org.telegram.ui.Components.po {
+public final class ek0 implements org.telegram.ui.Components.qo {
     public final /* synthetic */ long a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ nk0 c;
@@ -84,7 +84,7 @@ public final class ek0 implements org.telegram.ui.Components.po {
         kVar.h(true);
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void n() {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
         MessagesController messagesController = notificationsCustomSettingsActivity.getMessagesController();
@@ -95,7 +95,7 @@ public final class ek0 implements org.telegram.ui.Components.po {
         b();
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void o() {
         long j3 = this.a;
         if (j3 != 0) {
@@ -105,7 +105,7 @@ public final class ek0 implements org.telegram.ui.Components.po {
         }
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void r() {
         int i10;
         String sharedPrefKey = NotificationsController.getSharedPrefKey(this.a, 0);
@@ -120,7 +120,7 @@ public final class ek0 implements org.telegram.ui.Components.po {
         }
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final void u(int i10) {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
         if (i10 == 0) {
@@ -139,11 +139,11 @@ public final class ek0 implements org.telegram.ui.Components.po {
         b();
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final /* synthetic */ void dismiss() {
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public final /* synthetic */ void m() {
     }
 }

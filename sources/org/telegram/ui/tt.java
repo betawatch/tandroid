@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tt implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class tt implements Runnable {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.wl0 wl0Var;
+        org.telegram.ui.Components.yl0 yl0Var;
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets;
         int i10 = this.a;
         int i11 = 24;
@@ -46,8 +46,8 @@ public final /* synthetic */ class tt implements Runnable {
                 wt wtVar = utVar.h;
                 if (wtVar.f) {
                     utVar.e = arrayList;
-                    if (wtVar.e && (wl0Var = wtVar.a) != null) {
-                        s4.h0 adapter = wl0Var.getAdapter();
+                    if (wtVar.e && (yl0Var = wtVar.a) != null) {
+                        s4.h0 adapter = yl0Var.getAdapter();
                         ut utVar2 = wtVar.d;
                         if (adapter != utVar2) {
                             wtVar.a.setAdapter(utVar2);
@@ -110,9 +110,9 @@ public final /* synthetic */ class tt implements Runnable {
                 CharSequence charSequence = (CharSequence) obj;
                 qy qyVar4 = ((bx) obj2).a;
                 qyVar4.H2 = null;
-                org.telegram.ui.Components.zq0 zq0Var = qyVar4.G2;
-                if (zq0Var != null && zq0Var.h) {
-                    zq0Var.e(charSequence, false);
+                org.telegram.ui.Components.br0 br0Var = qyVar4.G2;
+                if (br0Var != null && br0Var.h) {
+                    br0Var.e(charSequence, false);
                     break;
                 }
                 break;
@@ -130,9 +130,9 @@ public final /* synthetic */ class tt implements Runnable {
             case 11:
                 cz czVar = (cz) obj2;
                 wn wnVar = czVar.a;
-                org.telegram.ui.Components.fy0 fy0Var = new org.telegram.ui.Components.fy0(wnVar.getParentActivity(), czVar.a, ((MessageObject) obj).getInputStickerSet(), null, wnVar.Y, wnVar.getResourceProvider());
-                fy0Var.setCalcMandatoryInsets(wnVar.x9());
-                wnVar.showDialog(fy0Var);
+                org.telegram.ui.Components.hy0 hy0Var = new org.telegram.ui.Components.hy0(wnVar.getParentActivity(), czVar.a, ((MessageObject) obj).getInputStickerSet(), null, wnVar.Y, wnVar.getResourceProvider());
+                hy0Var.setCalcMandatoryInsets(wnVar.x9());
+                wnVar.showDialog(hy0Var);
                 break;
             case 12:
                 wz wzVar = (wz) obj2;

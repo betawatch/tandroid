@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class vi0 extends Dialog implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -97,7 +97,7 @@ public class vi0 extends Dialog implements NotificationCenter.NotificationCenter
     public boolean x;
     public org.telegram.ui.Cells.u1 x0;
     public boolean y;
-    public org.telegram.ui.Components.t01 y0;
+    public org.telegram.ui.Components.v01 y0;
     public Paint z0;
 
     public vi0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -323,7 +323,7 @@ public class vi0 extends Dialog implements NotificationCenter.NotificationCenter
         this.v0 = ofFloat;
         ofFloat.addUpdateListener(new ai.bb(9, this, z11));
         this.v0.addListener(new org.telegram.ui.ActionBar.f(this, z10, z11, runnable));
-        this.v0.setInterpolator(org.telegram.ui.Components.rr.h);
+        this.v0.setInterpolator(org.telegram.ui.Components.sr.h);
         this.v0.setDuration(350L);
         this.v0.start();
     }
@@ -532,12 +532,12 @@ public class vi0 extends Dialog implements NotificationCenter.NotificationCenter
         AndroidUtilities.setLightNavigationBar(gi0Var, !org.telegram.ui.ActionBar.h6.I.q());
     }
 
-    public final void p(org.telegram.ui.Components.y70 y70Var) {
+    public final void p(org.telegram.ui.Components.a80 a80Var) {
         int i10 = org.telegram.ui.ActionBar.h6.E8;
         org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        y70Var.T(org.telegram.ui.ActionBar.h6.l1(0.06f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var)));
-        y70Var.Q(this.k0, eh.b.k(d6Var), false);
-        ViewGroup viewGroup = y70Var.A;
+        a80Var.T(org.telegram.ui.ActionBar.h6.l1(0.06f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var)));
+        a80Var.Q(this.k0, eh.b.k(d6Var), false);
+        ViewGroup viewGroup = a80Var.A;
         this.Z = viewGroup;
         this.G.addView(viewGroup, w7.y5.c(-2.0f, -2));
     }
@@ -691,7 +691,7 @@ public class vi0 extends Dialog implements NotificationCenter.NotificationCenter
     public final void s(long j3) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        this.y0 = j3 > 0 ? new org.telegram.ui.Components.t01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
+        this.y0 = j3 > 0 ? new org.telegram.ui.Components.v01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
         if (this.z0 == null) {
             Paint paint = new Paint(1);
             this.z0 = paint;
@@ -723,7 +723,7 @@ public class vi0 extends Dialog implements NotificationCenter.NotificationCenter
             if (vgVar != null) {
                 vgVar.setAlpha(0.0f);
             }
-            org.telegram.ui.Components.mm0.d(new Utilities.Callback2() { // from class: org.telegram.ui.ci0
+            org.telegram.ui.Components.om0.d(new Utilities.Callback2() { // from class: org.telegram.ui.ci0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     vi0 vi0Var = vi0.this;
@@ -766,7 +766,7 @@ public class vi0 extends Dialog implements NotificationCenter.NotificationCenter
         this.g0 = false;
         this.f0 = true;
         this.e0.p(null, null, true);
-        this.e0.animate().scaleY(1.0f).scaleX(1.0f).alpha(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.rr.h).start();
+        this.e0.animate().scaleY(1.0f).scaleX(1.0f).alpha(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.sr.h).start();
         this.e0.r(false);
     }
 

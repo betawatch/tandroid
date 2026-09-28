@@ -22,7 +22,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.p90;
 import org.telegram.ui.ee;
 import org.telegram.ui.in;
 import org.telegram.ui.pm;
@@ -31,7 +31,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.xi;
 import org.telegram.ui.yi;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o8 implements Runnable {
     public final /* synthetic */ int a;
@@ -272,7 +272,7 @@ public final /* synthetic */ class o8 implements Runnable {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.t1((MessagesStorage.BooleanCallback) obj, i13), 250L);
                 break;
             case 28:
-                n90 n90Var = (n90) obj;
+                p90 p90Var = (p90) obj;
                 ArrayList<TLRPC.PrivacyRule> privacyRules = ContactsController.getInstance(i14).getPrivacyRules(11);
                 String string = LocaleController.getString(R.string.EditProfileBirthdayInfoContacts);
                 if (privacyRules != null && !privacyRules.isEmpty()) {
@@ -290,7 +290,7 @@ public final /* synthetic */ class o8 implements Runnable {
                         }
                     }
                 }
-                n90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new org.telegram.ui.Components.m1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
+                p90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new org.telegram.ui.Components.m1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
                 break;
             default:
                 ((org.telegram.ui.Components.o8) obj).b(i14);

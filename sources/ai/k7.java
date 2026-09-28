@@ -27,12 +27,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.qz;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.dm0;
+import org.telegram.ui.Components.rz;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class k7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public j7 E;
@@ -40,7 +40,7 @@ public abstract class k7 extends FrameLayout implements NotificationCenter.Notif
     public g9 G;
     public int H;
     public boolean I;
-    public final bl0 J;
+    public final dl0 J;
     public final jc K;
     public final t6 L;
     public final u6 M;
@@ -66,7 +66,7 @@ public abstract class k7 extends FrameLayout implements NotificationCenter.Notif
     public final d s;
     public final int v;
     public final e7 w;
-    public final qz x;
+    public final rz x;
     public r7 y;
 
     public k7(jc jcVar, Context context, u6 u6Var, y1 y1Var) {
@@ -90,10 +90,10 @@ public abstract class k7 extends FrameLayout implements NotificationCenter.Notif
         o6 o6Var = new o6(this, context, dVar);
         this.r = o6Var;
         o6Var.setClipToPadding(false);
-        this.J = new bl0(o6Var, true);
-        qz qzVar = new qz(o6Var, 0);
-        this.x = qzVar;
-        o6Var.setLayoutManager(qzVar);
+        this.J = new dl0(o6Var, true);
+        rz rzVar = new rz(o6Var, 0);
+        this.x = rzVar;
+        o6Var.setLayoutManager(rzVar);
         o6Var.setNestedScrollingEnabled(true);
         e7 e7Var = new e7(this);
         this.w = e7Var;
@@ -389,7 +389,7 @@ public abstract class k7 extends FrameLayout implements NotificationCenter.Notif
                 ofFloat.addUpdateListener(new a(y6Var, 10));
                 y6Var.w.addListener(new b(y6Var, 8));
                 y6Var.w.setDuration(250L);
-                y6Var.w.setInterpolator(rr.f);
+                y6Var.w.setInterpolator(sr.f);
                 y6Var.w.start();
             } else {
                 y6Var.r = 1.0f;
@@ -397,14 +397,14 @@ public abstract class k7 extends FrameLayout implements NotificationCenter.Notif
             }
         }
         boolean z12 = u6Var.a;
-        bm0 bm0Var = y6Var.v;
+        dm0 dm0Var = y6Var.v;
         if (z12) {
             j7 j7Var = this.E;
             i10 = (j7Var == null || !j7Var.f) ? R.drawable.menu_views_reactions3 : R.drawable.menu_views_reposts3;
         } else {
             i10 = R.drawable.menu_views_recent3;
         }
-        bm0Var.a(i10, z10);
+        dm0Var.a(i10, z10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x01e3  */

@@ -11,11 +11,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.g20;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final class k extends FrameLayout {
         this.e = nVar;
         this.b = -1;
         this.c = new Rect();
-        this.d = new e6(this, 220L, rr.h);
+        this.d = new e6(this, 220L, sr.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -100,7 +100,7 @@ public final class k extends FrameLayout {
                 this.b = getHeight();
                 if (wiVar.w.getVisibility() == 0 && getHeight() - wiVar.w.getTop() != top) {
                     wiVar.w.setTranslationY(wiVar.w.getTranslationY() + ((getHeight() - wiVar.w.getTop()) - top));
-                    wiVar.w.animate().translationY(0.0f).setDuration(320L).setInterpolator(rr.h).start();
+                    wiVar.w.animate().translationY(0.0f).setDuration(320L).setInterpolator(sr.h).start();
                     break;
                 }
                 break;

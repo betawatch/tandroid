@@ -5,10 +5,10 @@ import android.graphics.RectF;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.nt;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.ot;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class e {
     public c a;
@@ -31,17 +31,17 @@ public final class e {
     public final mi.a r = new mi.a();
     public final ArrayList s = new ArrayList();
 
-    public final void a(wl0 wl0Var) {
-        if (wl0Var == null) {
+    public final void a(yl0 yl0Var) {
+        if (yl0Var == null) {
             return;
         }
-        wl0Var.E2.b.add(new nt() { // from class: li.b
-            @Override // org.telegram.ui.Components.nt
+        yl0Var.E2.b.add(new ot() { // from class: li.b
+            @Override // org.telegram.ui.Components.ot
             public final void a(int i10, boolean z10) {
                 e.this.g++;
             }
         });
-        wl0Var.j(new r(this, 11));
+        yl0Var.j(new r(this, 11));
     }
 
     public final void b(View view) {

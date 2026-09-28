@@ -54,22 +54,22 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ce0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.tv0;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.vv0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.eu0;
 import org.telegram.ui.kb1;
 import org.telegram.ui.wn;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class k3 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.s3 {
     public static final HashSet W0 = new HashSet();
-    public static final tv0 X0;
+    public static final vv0 X0;
     public static int Y0;
     public boolean A0;
     public a1 B0;
@@ -88,7 +88,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
     public long J;
     public final HashMap J0;
     public int K;
-    public y70 K0;
+    public a80 K0;
     public long L;
     public k0 L0;
     public String M;
@@ -143,7 +143,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
     public final org.telegram.ui.ActionBar.m3 r;
     public boolean r0;
     public final cf.c s;
-    public final ce0 s0;
+    public final ee0 s0;
     public final e2 t0;
     public int u0;
     public final a3 v;
@@ -157,9 +157,9 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
     public Boolean z0;
 
     static {
-        tv0 tv0Var = new tv0(new d2.c(16), new d2.c(17));
-        tv0Var.c = 100.0f;
-        X0 = tv0Var;
+        vv0 vv0Var = new vv0(new d2.c(16), new d2.c(17));
+        vv0Var.c = 100.0f;
+        X0 = vv0Var;
         Y0 = 0;
     }
 
@@ -249,9 +249,9 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         a3Var.setScrollEndListener(new e2(this, 8));
         a3Var.setDelegate(new f2(this));
         a3Var.setIsKeyboardVisible(new f2(this));
-        ce0 ce0Var = new ce0(context);
-        this.s0 = ce0Var;
-        j3Var.addView(ce0Var, y5.c(-1.0f, -1));
+        ee0 ee0Var = new ee0(context);
+        this.s0 = ee0Var;
+        j3Var.addView(ee0Var, y5.c(-1.0f, -1));
         setContentView(j3Var, new ViewGroup.LayoutParams(-1, -1));
         D();
         LaunchActivity launchActivity = LaunchActivity.G1;
@@ -765,7 +765,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         } else {
             g3 g3Var = this.l0;
             if (g3Var != null) {
-                g3Var.animate().translationY(g3Var.getTotalHeight()).alpha(0.0f).setDuration(160L).setInterpolator(rr.h).start();
+                g3Var.animate().translationY(g3Var.getTotalHeight()).alpha(0.0f).setDuration(160L).setInterpolator(sr.h).start();
             }
             this.x.i();
             a3 a3Var = this.v;
@@ -1005,17 +1005,17 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
                 break;
             }
         }
-        y70 y70Var = this.K0;
-        if (y70Var != null) {
-            y70Var.u();
+        a80 a80Var = this.K0;
+        if (a80Var != null) {
+            a80Var.u();
         }
-        y70 G = y70.G(this.e, this.E, this.d0 ? this.m0 : this.Z, true);
+        a80 G = a80.G(this.e, this.E, this.d0 ? this.m0 : this.Z, true);
         this.K0 = G;
         ArrayList arrayList3 = l0.c(getContext(), this.G, this.H).e;
         HashMap hashMap = this.J0;
         hashMap.clear();
         if (!arrayList3.isEmpty()) {
-            y70 J = G.J();
+            a80 J = G.J();
             J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new eu0(G, 25), false);
             J.k();
             int size2 = arrayList3.size();
@@ -1388,7 +1388,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         c2Var.c(c2Var.b, this.U ? i10 : 0, d6Var);
         if (z11) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
-            duration.setInterpolator(rr.f);
+            duration.setInterpolator(sr.f);
             duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ei.o2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -1455,7 +1455,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         if (z10) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
             this.P0 = duration;
-            duration.setInterpolator(rr.f);
+            duration.setInterpolator(sr.f);
             this.P0.addUpdateListener(new l2(this, color, i10, i11));
             this.P0.addListener(new v2(this, i10, i11));
             this.P0.start();
@@ -1573,7 +1573,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         ofFloat.addUpdateListener(new w2(this, z10, translationY, currentActionBarHeight, f12, f7));
         this.R0.addListener(new x2(this, z10, currentActionBarHeight2, f12));
         this.R0.setDuration(280L);
-        this.R0.setInterpolator(rr.h);
+        this.R0.setInterpolator(sr.h);
         this.R0.start();
     }
 
@@ -1590,7 +1590,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         int i13 = 0;
         if (z10) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
-            duration.setInterpolator(rr.f);
+            duration.setInterpolator(sr.f);
             duration.addUpdateListener(new l2(this, i11, i10, i12));
             duration.addListener(new y2(this, i11, i10, i13));
             duration.start();
@@ -1613,7 +1613,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         this.O0 = ofFloat;
         ofFloat.addListener(new ai.n(14, this, z10));
         this.O0.addUpdateListener(new d2(this, 0));
-        this.O0.setInterpolator(rr.h);
+        this.O0.setInterpolator(sr.h);
         this.O0.setDuration(220L);
         this.O0.start();
     }

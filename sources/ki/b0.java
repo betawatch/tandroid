@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,8 +21,8 @@ public final /* synthetic */ class b0 implements Runnable {
         switch (this.a) {
             case 0:
                 s0 s0Var = this.b;
-                t tVar = s0Var.P;
-                File file = s0Var.Q;
+                t tVar = s0Var.Q;
+                File file = s0Var.R;
                 if (tVar != null) {
                     try {
                         synchronized (tVar) {
@@ -44,54 +44,54 @@ public final /* synthetic */ class b0 implements Runnable {
                 return;
             case 1:
                 s0 s0Var2 = this.b;
-                if (s0Var2.V == 3) {
-                    s0Var2.o();
+                if (s0Var2.W == 3) {
+                    s0Var2.p();
                     return;
                 }
                 return;
             case 2:
                 s0 s0Var3 = this.b;
-                int i10 = s0Var3.V;
+                int i10 = s0Var3.W;
                 if (i10 == 2 || i10 == 6) {
-                    s0Var3.E = SystemClock.elapsedRealtime();
-                    s0Var3.l.b("recording started: retainedDurationMs=" + s0Var3.D);
-                    s0Var3.u(3);
-                    long j3 = s0Var3.n - s0Var3.D;
+                    s0Var3.F = SystemClock.elapsedRealtime();
+                    s0Var3.m.b("recording started: retainedDurationMs=" + s0Var3.E);
+                    s0Var3.v(3);
+                    long j3 = s0Var3.o - s0Var3.E;
                     if (j3 <= 0) {
-                        s0Var3.o();
+                        s0Var3.p();
                         return;
                     } else {
-                        s0Var3.h.postDelayed(s0Var3.S, j3);
+                        s0Var3.i.postDelayed(s0Var3.T, j3);
                         return;
                     }
                 }
                 return;
             default:
                 s0 s0Var4 = this.b;
-                s0Var4.A = false;
-                s0Var4.l.b("recording segment stopped: state=" + hg.c.C(s0Var4.V) + ", retainedDurationMs=" + s0Var4.D);
-                if (s0Var4.z) {
-                    s0Var4.z = false;
-                    s0Var4.h();
+                s0Var4.B = false;
+                s0Var4.m.b("recording segment stopped: state=" + hg.c.C(s0Var4.W) + ", retainedDurationMs=" + s0Var4.E);
+                if (s0Var4.A) {
+                    s0Var4.A = false;
+                    s0Var4.i();
                     return;
                 }
-                if (s0Var4.x) {
-                    s0Var4.x = false;
-                    s0Var4.i.execute(new s4(s0Var4, s0Var4.P, s0Var4.y, s0Var4.O, 6));
+                if (s0Var4.y) {
+                    s0Var4.y = false;
+                    s0Var4.j.execute(new s4(s0Var4, s0Var4.Q, s0Var4.z, s0Var4.P, 6));
                     return;
                 }
-                if (s0Var4.V != 4) {
+                if (s0Var4.W != 4) {
                     return;
                 }
                 try {
-                    File createTempFile = File.createTempFile("round_video_preview_", ".mp4", s0Var4.a.getCacheDir());
-                    s0Var4.Q = createTempFile;
-                    s0Var4.I = System.nanoTime();
-                    s0Var4.l.b("preview snapshot started: file=" + createTempFile.getName());
-                    s0Var4.i.execute(new gg.t(s0Var4, s0Var4.P, createTempFile, 23));
+                    File d = s0Var4.d("round_video_preview_");
+                    s0Var4.R = d;
+                    s0Var4.J = System.nanoTime();
+                    s0Var4.m.b("preview snapshot started: file=" + d.getName());
+                    s0Var4.j.execute(new gg.t(s0Var4, s0Var4.Q, d, 23));
                     return;
                 } catch (IOException e) {
-                    s0Var4.g(e);
+                    s0Var4.h(e);
                     return;
                 }
         }

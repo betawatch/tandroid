@@ -6,9 +6,9 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class a2 extends ImageView implements org.telegram.ui.ActionBar.x5 {
     public final int a;
@@ -107,7 +107,7 @@ public final class a2 extends ImageView implements org.telegram.ui.ActionBar.x5 
         setClickable(z10);
         ViewPropertyAnimator animate = animate();
         this.n = z10;
-        animate.alpha(z10 ? 1.0f : 0.5f).setDuration(320L).setInterpolator(rr.h).start();
+        animate.alpha(z10 ? 1.0f : 0.5f).setDuration(320L).setInterpolator(sr.h).start();
     }
 
     public void setPremiumLocked(boolean z10) {

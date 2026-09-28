@@ -1,31 +1,44 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.ui.od1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class am extends s4.d0 {
-    public final /* synthetic */ bi.l r;
+public final class am extends org.telegram.ui.ActionBar.u0 {
+    public final /* synthetic */ int v0;
+    public final /* synthetic */ Object w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public am(bi.l lVar, Context context) {
-        super(context);
-        this.r = lVar;
+    public /* synthetic */ am(oi oiVar, Context context, org.telegram.ui.ActionBar.y yVar, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, yVar, 0, 0, false, d6Var);
+        this.v0 = i10;
+        this.w0 = oiVar;
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        int topScrollOffset;
-        int k10 = super.k(i10, view);
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.r.R;
-        int paddingTop = chatAttachAlertPhotoLayout.E.getPaddingTop();
-        topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
-        return k10 - (paddingTop - topScrollOffset);
+    @Override // org.telegram.ui.ActionBar.u0, android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.v0) {
+            case 0:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(((ChatAttachAlertPhotoLayout) this.w0).x.getText());
+                break;
+            case 1:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(((sm) this.w0).x.getText());
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(((od1) this.w0).h.getText());
+                break;
+        }
     }
 
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public am(od1 od1Var, Context context, org.telegram.ui.ActionBar.y yVar) {
+        super(context, yVar, 0, 0);
+        this.v0 = 2;
+        this.w0 = od1Var;
     }
 }

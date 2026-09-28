@@ -8,15 +8,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.s50;
+import org.telegram.ui.Components.t00;
+import org.telegram.ui.Components.u50;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class b1 implements Runnable {
                 TL_stars.TL_starGiftUnique K1 = x3Var.K1();
                 if (U != null && K1 != null) {
                     qy qyVar = new qy(ok.e(4, "onlySelect", "dialogsType", true));
-                    qyVar.C2 = new s50(x3Var, K1, qyVar, i11);
+                    qyVar.C2 = new u50(x3Var, K1, qyVar, i11);
                     U.presentFragment(qyVar);
                     break;
                 }
@@ -123,9 +123,9 @@ public final /* synthetic */ class b1 implements Runnable {
                 M.j = 5000;
                 M.t = true;
                 M.j();
-                s00 s00Var = x3Var.a0;
-                if (s00Var != null) {
-                    s00Var.c(true);
+                t00 t00Var = x3Var.a0;
+                if (t00Var != null) {
+                    t00Var.c(true);
                     break;
                 }
                 break;
@@ -142,8 +142,8 @@ public final /* synthetic */ class b1 implements Runnable {
                 ImageReceiver imageReceiver = (f3Var == null || (e3Var = f3Var.c) == null) ? null : ((h3) e3Var).d;
                 w9 w9Var = u3Var.d[0];
                 if (imageReceiver != null && w9Var != null && w9Var.getImageReceiver() != null) {
-                    ij0 lottieAnimation = imageReceiver.getLottieAnimation();
-                    ij0 lottieAnimation2 = w9Var.getImageReceiver().getLottieAnimation();
+                    kj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                    kj0 lottieAnimation2 = w9Var.getImageReceiver().getLottieAnimation();
                     if (lottieAnimation2 != null && lottieAnimation != null) {
                         lottieAnimation2.T(lottieAnimation.t(), false);
                     } else if (lottieAnimation2 == null && lottieAnimation != null) {

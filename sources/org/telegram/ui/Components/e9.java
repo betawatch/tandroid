@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class e9 extends org.telegram.ui.ActionBar.m2 {
     public static final int[][] c0 = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
@@ -55,11 +55,11 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
     public boolean Q;
     public org.telegram.ui.ActionBar.u0 R;
     public s8 S;
-    public final t40 T;
+    public final v40 T;
     public boolean U;
     public TextView V;
     public TextView W;
-    public final v40 X;
+    public final x40 X;
     public a9 Y;
     public boolean Z;
     public x8 a;
@@ -79,14 +79,14 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
     public ci.d x;
     public FrameLayout y;
 
-    public e9(v40 v40Var, t40 t40Var) {
+    public e9(x40 x40Var, v40 v40Var) {
         super(null);
         this.O = new Paint();
         this.Q = true;
         this.Z = false;
         this.a0 = 0.0f;
-        this.X = v40Var;
-        this.T = t40Var;
+        this.X = x40Var;
+        this.T = v40Var;
     }
 
     public static void U(e9 e9Var) {
@@ -137,8 +137,8 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
         this.H.A(k10, false);
         org.telegram.ui.ActionBar.y n10 = this.H.n();
         n10.setClipChildren(false);
-        t40 t40Var = this.T;
-        org.telegram.ui.ActionBar.u0 e = n10.e(1, (t40Var == null || t40Var.c != 2) ? LocaleController.getString(R.string.SetPhoto) : LocaleController.getString(R.string.SuggestPhoto));
+        v40 v40Var = this.T;
+        org.telegram.ui.ActionBar.u0 e = n10.e(1, (v40Var == null || v40Var.c != 2) ? LocaleController.getString(R.string.SetPhoto) : LocaleController.getString(R.string.SuggestPhoto));
         this.R = e;
         e.setBackground(org.telegram.ui.ActionBar.h6.f0(k10, 3, -1));
         this.H.setActionBarMenuOnItemClick(new v8(this, 1));
@@ -197,7 +197,7 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
             this.s = LocaleController.getString(R.string.SetCommunityPhoto);
         } else if (i12 == 2) {
             this.s = LocaleController.getString(R.string.SetGroupPhoto);
-        } else if (t40Var == null || t40Var.c != 2) {
+        } else if (v40Var == null || v40Var.c != 2) {
             this.s = LocaleController.getString(R.string.SetMyProfilePhotoAvatarConstructor);
         } else {
             this.s = LocaleController.getString(R.string.SuggestPhoto);
@@ -205,7 +205,7 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
         this.s = new SpannableStringBuilder(this.s);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.s);
         spannableStringBuilder.append((CharSequence) " l");
-        spannableStringBuilder.setSpan(new pq(R.drawable.msg_mini_lock2, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new qq(R.drawable.msg_mini_lock2, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         this.v = spannableStringBuilder;
         this.w = false;
         this.x.g(this.s, false, true);
@@ -283,15 +283,15 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
             hashMap.clear();
             Bitmap createBitmap = Bitmap.createBitmap(800, 800, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
-            p20 p20Var = new p20();
+            r20 r20Var = new r20();
             if (a9Var != null) {
-                p20Var.d(a9Var.c, a9Var.d, a9Var.e, a9Var.f);
+                r20Var.d(a9Var.c, a9Var.d, a9Var.e, a9Var.f);
             } else {
                 int[] iArr = c0[0];
-                p20Var.d(iArr[0], iArr[1], iArr[2], iArr[3]);
+                r20Var.d(iArr[0], iArr[1], iArr[2], iArr[3]);
             }
-            p20Var.b(0.0f, 0.0f, 800.0f, 800.0f);
-            canvas.drawRect(0.0f, 0.0f, 800.0f, 800.0f, p20Var.c);
+            r20Var.b(0.0f, 0.0f, 800.0f, 800.0f);
+            canvas.drawRect(0.0f, 0.0f, 800.0f, 800.0f, r20Var.c);
             File file2 = new File(FileLoader.getDirectory(4), SharedConfig.getLastLocalId() + "avatar_background.png");
             try {
                 file2.createNewFile();
@@ -519,11 +519,11 @@ public final class e9 extends org.telegram.ui.ActionBar.m2 {
         this.G.addUpdateListener(new ai.bb(5, this, z11));
         this.G.addListener(new org.telegram.ui.ActionBar.g(this, z10, z11, i10));
         if (z12) {
-            this.G.setInterpolator(rr.h);
+            this.G.setInterpolator(sr.h);
             this.G.setDuration(350L);
             this.G.setStartDelay(150L);
         } else {
-            this.G.setInterpolator(rr.f);
+            this.G.setInterpolator(sr.f);
             this.G.setDuration(250L);
         }
         this.G.start();

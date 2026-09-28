@@ -21,15 +21,15 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.ln;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.xl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class u1 extends vl0 {
+public abstract class u1 extends xl0 {
     public int E;
     public int F;
     public ArrayList G;
@@ -49,7 +49,7 @@ public abstract class u1 extends vl0 {
     public long x;
     public boolean y;
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2 || i10 == 3;
@@ -248,7 +248,7 @@ public abstract class u1 extends vl0 {
                         } else {
                             indexOfIgnoreCase++;
                         }
-                        spannableStringBuilder.setSpan(new f10(h6.q6, null), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
+                        spannableStringBuilder.setSpan(new g10(h6.q6, null), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
                     }
                     charSequence = null;
                     charSequence3 = spannableStringBuilder;
@@ -286,19 +286,19 @@ public abstract class u1 extends vl0 {
             i6Var2.E0 = true;
             view = i6Var2;
         } else if (i10 == 4) {
-            View lnVar = new ln(context, 7);
-            lnVar.setId(9);
-            lnVar.setTag(-33024);
-            view = lnVar;
+            View mnVar = new mn(context, 7);
+            mnVar.setId(9);
+            mnVar.setTag(-33024);
+            view = mnVar;
         } else if (i10 != 5) {
             view = new r8(16, context, false);
         } else {
-            u00 u00Var = new u00(context, null);
-            u00Var.setIsSingleCell(true);
-            u00Var.setViewType(29);
-            u00Var.setBackgroundColor(h6.w0(null, h6.d6, false));
-            view = u00Var;
+            v00 v00Var = new v00(context, null);
+            v00Var.setIsSingleCell(true);
+            v00Var.setViewType(29);
+            v00Var.setBackgroundColor(h6.w0(null, h6.d6, false));
+            view = v00Var;
         }
-        return new gl0(view);
+        return new il0(view);
     }
 }

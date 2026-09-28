@@ -4,50 +4,29 @@ import android.net.Uri;
 import android.text.TextPaint;
 import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public class z51 extends URLSpan {
-    public final boolean a;
-    public final b11 b;
-    public TLObject c;
-    public String d;
+public final class z51 extends URLSpan {
+    public final d11 a;
 
-    public z51(String str) {
-        this(str, (b11) null);
+    public z51(String str, d11 d11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = d11Var;
     }
 
     @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            nf.f.s(view.getContext(), url);
-            return;
-        }
-        nf.f.p(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
+    public final void onClick(View view) {
+        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
+    public final void updateDrawState(TextPaint textPaint) {
         super.updateDrawState(textPaint);
-        b11 b11Var = this.b;
-        if (b11Var != null) {
-            b11Var.a(textPaint);
+        d11 d11Var = this.a;
+        if (d11Var != null) {
+            d11Var.a(textPaint);
         }
-        textPaint.setUnderlineText(i10 == color && !this.a);
-    }
-
-    public z51(String str, int i10) {
-        this(str, (b11) null);
-        this.a = true;
-    }
-
-    public z51(String str, b11 b11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = b11Var;
+        textPaint.setUnderlineText(true);
     }
 }

@@ -16,14 +16,14 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class je0 extends org.telegram.ui.Components.fw0 {
+public final class je0 extends org.telegram.ui.Components.hw0 {
     public final EditTextBoldCursor a;
     public final TextView b;
     public final TextView c;
     public final TextView d;
-    public final org.telegram.ui.Components.lj0 e;
+    public final org.telegram.ui.Components.nj0 e;
     public Bundle f;
     public boolean h;
     public TL_account.Password n;
@@ -31,7 +31,7 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
     public String s;
     public String v;
     public String w;
-    public final org.telegram.ui.Components.jd0 x;
+    public final org.telegram.ui.Components.ld0 x;
     public final /* synthetic */ qg0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -46,11 +46,11 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         this.y = qg0Var;
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.e = lj0Var;
-        lj0Var.f(R.raw.tsv_setup_intro, 120, 120, null);
-        lj0Var.setAutoRepeat(false);
-        frameLayout.addView(lj0Var, w7.y5.e(120, 120, 1));
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        this.e = nj0Var;
+        nj0Var.f(R.raw.tsv_setup_intro, 120, 120, null);
+        nj0Var.setAutoRepeat(false);
+        frameLayout.addView(nj0Var, w7.y5.e(120, 120, 1));
         if (!AndroidUtilities.isSmallScreen()) {
             Point point = AndroidUtilities.displaySize;
             if (point.x <= point.y || AndroidUtilities.isTablet()) {
@@ -71,9 +71,9 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
                 textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                 textView2.setText(LocaleController.getString(R.string.LoginPasswordTextShort));
                 addView(textView2, w7.y5.t(-2, -2, 1, 12, 8, 12, 0));
-                org.telegram.ui.Components.jd0 jd0Var = new org.telegram.ui.Components.jd0(context, null);
-                this.x = jd0Var;
-                jd0Var.setText(LocaleController.getString(R.string.EnterPassword));
+                org.telegram.ui.Components.ld0 ld0Var = new org.telegram.ui.Components.ld0(context, null);
+                this.x = ld0Var;
+                ld0Var.setText(LocaleController.getString(R.string.EnterPassword));
                 EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
                 this.a = editTextBoldCursor;
                 editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -89,10 +89,10 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
                 editTextBoldCursor.setTypeface(Typeface.DEFAULT);
                 editTextBoldCursor.setGravity(!LocaleController.isRTL ? 5 : 3);
                 editTextBoldCursor.setOnFocusChangeListener(new od(this, 4));
-                jd0Var.e(editTextBoldCursor);
-                jd0Var.addView(editTextBoldCursor, w7.y5.e(-1, -2, 48));
+                ld0Var.e(editTextBoldCursor);
+                ld0Var.addView(editTextBoldCursor, w7.y5.e(-1, -2, 48));
                 editTextBoldCursor.setOnEditorActionListener(new ia(this, 5));
-                addView(jd0Var, w7.y5.t(-1, -2, 1, 16, 32, 16, 0));
+                addView(ld0Var, w7.y5.t(-1, -2, 1, 16, 32, 16, 0));
                 TextView textView3 = new TextView(context);
                 this.c = textView3;
                 textView3.setGravity(19);
@@ -124,9 +124,9 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         textView22.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         textView22.setText(LocaleController.getString(R.string.LoginPasswordTextShort));
         addView(textView22, w7.y5.t(-2, -2, 1, 12, 8, 12, 0));
-        org.telegram.ui.Components.jd0 jd0Var2 = new org.telegram.ui.Components.jd0(context, null);
-        this.x = jd0Var2;
-        jd0Var2.setText(LocaleController.getString(R.string.EnterPassword));
+        org.telegram.ui.Components.ld0 ld0Var2 = new org.telegram.ui.Components.ld0(context, null);
+        this.x = ld0Var2;
+        ld0Var2.setText(LocaleController.getString(R.string.EnterPassword));
         EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
         this.a = editTextBoldCursor2;
         editTextBoldCursor2.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -142,10 +142,10 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         editTextBoldCursor2.setTypeface(Typeface.DEFAULT);
         editTextBoldCursor2.setGravity(!LocaleController.isRTL ? 5 : 3);
         editTextBoldCursor2.setOnFocusChangeListener(new od(this, 4));
-        jd0Var2.e(editTextBoldCursor2);
-        jd0Var2.addView(editTextBoldCursor2, w7.y5.e(-1, -2, 48));
+        ld0Var2.e(editTextBoldCursor2);
+        ld0Var2.addView(editTextBoldCursor2, w7.y5.e(-1, -2, 48));
         editTextBoldCursor2.setOnEditorActionListener(new ia(this, 5));
-        addView(jd0Var2, w7.y5.t(-1, -2, 1, 16, 32, 16, 0));
+        addView(ld0Var2, w7.y5.t(-1, -2, 1, 16, 32, 16, 0));
         TextView textView32 = new TextView(context);
         this.c = textView32;
         textView32.setGravity(19);
@@ -160,12 +160,12 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         textView32.setOnClickListener(new ov(19, this, context));
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final boolean c(boolean z10) {
         this.h = false;
         this.y.k1(true, true);
@@ -173,17 +173,17 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void d() {
         this.h = false;
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public String getHeaderName() {
         return LocaleController.getString("LoginPassword", R.string.LoginPassword);
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void h(String str) {
         if (this.h || this.n == null) {
             return;
@@ -202,12 +202,12 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void j() {
         AndroidUtilities.runOnUIThread(new c10(this, 19), qg0.t0);
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("passview_params");
         this.f = bundle2;
@@ -220,7 +220,7 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void l(Bundle bundle) {
         String obj = this.a.getText().toString();
         if (obj.length() != 0) {
@@ -232,7 +232,7 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -262,7 +262,7 @@ public final class je0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void n() {
         int i10 = org.telegram.ui.ActionBar.h6.G6;
         this.d.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));

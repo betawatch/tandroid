@@ -5,7 +5,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ke implements Runnable {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class ke implements Runnable {
                 LongSparseIntArray longSparseIntArray = wnVar.M5;
                 long j3 = this.c;
                 longSparseIntArray.put(j3, 0);
-                org.telegram.ui.Components.k31 k31Var = wnVar.R1;
-                if (k31Var != null) {
-                    k31Var.setAllTopicsHidden(false);
+                org.telegram.ui.Components.m31 m31Var = wnVar.R1;
+                if (m31Var != null) {
+                    m31Var.setAllTopicsHidden(false);
                 }
                 if (j3 == wnVar.d4) {
                     wnVar.A0.O(false);

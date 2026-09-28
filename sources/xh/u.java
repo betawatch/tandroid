@@ -6,9 +6,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.wq0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class u extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ TL_stars.StarGift a;
@@ -36,7 +36,7 @@ public final class u extends org.telegram.ui.ActionBar.j {
         if (i10 == 3) {
             AndroidUtilities.addToClipboard(str);
         } else {
-            uq0.N0(context, null, str, false, str).show();
+            wq0.N0(context, null, str, false, str).show();
         }
     }
 }

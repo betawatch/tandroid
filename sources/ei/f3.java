@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.kd0;
+import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.z5;
@@ -31,7 +31,7 @@ import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 import yh.s5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class f3 implements org.telegram.ui.web.g0 {
     public boolean a;
@@ -203,11 +203,11 @@ public final class f3 implements org.telegram.ui.web.g0 {
         if (oo0Var != null) {
             a3Var.e(a3Var.getTopActionBarOffsetY() + (-a3Var.getOffsetY()));
             AndroidUtilities.hideKeyboard(j3Var);
-            kd0 kd0Var = new kd0(this.b);
-            kd0Var.show();
-            oo0Var.Z0 = new q5(this, kd0Var, str, 8);
+            md0 md0Var = new md0(this.b);
+            md0Var.show();
+            oo0Var.Z0 = new q5(this, md0Var, str, 8);
             oo0Var.Y0 = this.c;
-            kd0Var.c(oo0Var);
+            md0Var.c(oo0Var);
         }
     }
 
@@ -311,10 +311,10 @@ public final class f3 implements org.telegram.ui.web.g0 {
         bundle.putBoolean("allowBots", arrayList.contains("bots"));
         qy qyVar = new qy(bundle);
         AndroidUtilities.hideKeyboard(k3Var.e);
-        kd0 kd0Var = new kd0(this.b);
-        qyVar.C2 = new a1.d(this, user, str, kd0Var, 2);
-        kd0Var.show();
-        kd0Var.c(qyVar);
+        md0 md0Var = new md0(this.b);
+        qyVar.C2 = new a1.d(this, user, str, md0Var, 2);
+        md0Var.show();
+        md0Var.c(qyVar);
     }
 
     @Override // org.telegram.ui.web.g0

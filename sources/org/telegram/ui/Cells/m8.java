@@ -31,11 +31,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lt;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class m8 extends FrameLayout {
     public final TextView E;
@@ -46,7 +46,7 @@ public final class m8 extends FrameLayout {
     public final ai.p4 b;
     public final TextView c;
     public final org.telegram.ui.Components.w9 d;
-    public final op e;
+    public final pp e;
     public boolean f;
     public final ImageView h;
     public final ImageView n;
@@ -92,12 +92,12 @@ public final class m8 extends FrameLayout {
                 imageView2.setImageResource(R.drawable.list_reorder);
                 imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i11, false), mode));
                 addView(imageView2, w7.y5.h(58.0f, 58.0f, 8388613));
-                op opVar = new op(context, 21, null);
-                this.e = opVar;
-                opVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
-                opVar.setDrawUnchecked(false);
-                opVar.setDrawBackgroundAsArc(3);
-                addView(opVar, w7.y5.i(24.0f, 24.0f, 8388611, 34.0f, 30.0f, 0.0f, 0.0f));
+                pp ppVar = new pp(context, 21, null);
+                this.e = ppVar;
+                ppVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
+                ppVar.setDrawUnchecked(false);
+                ppVar.setDrawBackgroundAsArc(3);
+                addView(ppVar, w7.y5.i(24.0f, 24.0f, 8388611, 34.0f, 30.0f, 0.0f, 0.0f));
             } else if (i10 == 3) {
                 imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Mh, false), PorterDuff.Mode.MULTIPLY));
                 imageView.setImageResource(R.drawable.floating_check);
@@ -254,8 +254,8 @@ public final class m8 extends FrameLayout {
             ImageView imageView = this.n;
             imageView.setVisibility(0);
             ViewPropertyAnimator duration = imageView.animate().alpha(fArr[0]).scaleX(fArr2[0]).scaleY(fArr2[0]).setDuration(200L);
-            rr rrVar = lt.a;
-            duration.setInterpolator(rrVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
+            sr srVar = mt.a;
+            duration.setInterpolator(srVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
                 public final /* synthetic */ m8 b;
 
                 {
@@ -301,7 +301,7 @@ public final class m8 extends FrameLayout {
             if (this.w) {
                 FrameLayout frameLayout = this.x;
                 frameLayout.setVisibility(0);
-                frameLayout.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(rrVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
+                frameLayout.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(srVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
                     public final /* synthetic */ m8 b;
 
                     {
@@ -347,7 +347,7 @@ public final class m8 extends FrameLayout {
             } else {
                 ImageView imageView2 = this.h;
                 imageView2.setVisibility(0);
-                imageView2.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(rrVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
+                imageView2.animate().alpha(fArr[1]).scaleX(fArr2[1]).scaleY(fArr2[1]).setDuration(200L).setInterpolator(srVar).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Cells.h8
                     public final /* synthetic */ m8 b;
 
                     {
@@ -551,8 +551,8 @@ public final class m8 extends FrameLayout {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        op opVar = this.e;
-        if (opVar == null || !opVar.a.q) {
+        pp ppVar = this.e;
+        if (ppVar == null || !ppVar.a.q) {
             return;
         }
         accessibilityNodeInfo.setCheckable(true);

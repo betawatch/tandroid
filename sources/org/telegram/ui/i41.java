@@ -15,7 +15,7 @@ import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i41 extends og.b {
     public final /* synthetic */ SaveToGallerySettingsActivity d;
@@ -24,7 +24,7 @@ public final class i41 extends og.b {
         this.d = saveToGallerySettingsActivity;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 1 || i10 == 2 || i10 == 4 || i10 == 6;
@@ -159,7 +159,7 @@ public final class i41 extends og.b {
             case 8:
                 LinearLayout linearLayout = new LinearLayout(saveToGallerySettingsActivity.getParentActivity());
                 linearLayout.setOrientation(1);
-                org.telegram.ui.Components.so0 so0Var = new org.telegram.ui.Components.so0(saveToGallerySettingsActivity.getParentActivity());
+                org.telegram.ui.Components.uo0 uo0Var = new org.telegram.ui.Components.uo0(saveToGallerySettingsActivity.getParentActivity());
                 FrameLayout frameLayout = new FrameLayout(saveToGallerySettingsActivity.getParentActivity());
                 k41 k41Var = new k41(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
                 k41Var.setTextSize(AndroidUtilities.dp(13.0f));
@@ -173,15 +173,15 @@ public final class i41 extends og.b {
                 k41Var3.setText(AndroidUtilities.formatFileSize(4194304000L, true, false));
                 frameLayout.addView(k41Var3, w7.y5.e(-2, -2, 85));
                 linearLayout.addView(frameLayout, w7.y5.t(-1, 20, 0, 21, 10, 21, 0));
-                linearLayout.addView(so0Var, w7.y5.t(-1, 38, 0, 5, 0, 5, 4));
+                linearLayout.addView(uo0Var, w7.y5.t(-1, 38, 0, 5, 0, 5, 4));
                 long j3 = saveToGallerySettingsActivity.X().limitVideo;
                 if (j3 < 0 || j3 > 4194304000L) {
                     j3 = 4194304000L;
                 }
-                so0Var.setReportChanges(true);
-                so0Var.setDelegate(new h41(this, so0Var, k41Var, k41Var2, k41Var3));
-                so0Var.setProgress(((float) j3) > ((float) SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) * 0.7f ? a4.a.e(j3 - SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT, 4089446400L, 0.3f, 0.7f) : ((j3 - 524288) / 104333312) * 0.7f);
-                so0Var.w.X(so0Var.getProgress(), false);
+                uo0Var.setReportChanges(true);
+                uo0Var.setDelegate(new h41(this, uo0Var, k41Var, k41Var2, k41Var3));
+                uo0Var.setProgress(((float) j3) > ((float) SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) * 0.7f ? a4.a.e(j3 - SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT, 4089446400L, 0.3f, 0.7f) : ((j3 - 524288) / 104333312) * 0.7f);
+                uo0Var.w.X(uo0Var.getProgress(), false);
                 linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
                 view = linearLayout;
                 view3 = view;

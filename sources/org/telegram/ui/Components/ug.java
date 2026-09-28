@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ug extends View {
     public float a;
@@ -15,7 +15,7 @@ public final class ug extends View {
     public boolean c;
     public boolean d;
     public boolean e;
-    public final ij0 f;
+    public final kj0 f;
     public boolean h;
     public boolean n;
     public long r;
@@ -26,9 +26,9 @@ public final class ug extends View {
         super(context);
         this.s = chatActivityEnterView;
         this.r = -1L;
-        ij0 ij0Var = new ij0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.f = ij0Var;
-        ij0Var.o0 = true;
+        kj0 kj0Var = new kj0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.f = kj0Var;
+        kj0Var.o0 = true;
         a();
     }
 
@@ -40,20 +40,20 @@ public final class ug extends View {
         int i03 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.h6.Sd);
         int i04 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.h6.df);
         chatActivityEnterView.w3.setColor(i02);
-        ij0 ij0Var = this.f;
-        ij0Var.Z = true;
-        ij0Var.Q(i02, "Cup Red");
-        ij0Var.Q(i02, "Box Red");
-        ij0Var.Q(i04, "Cup Grey");
-        ij0Var.Q(i04, "Box Grey");
-        ij0Var.Q(i04, "Box_Grey 2");
-        ij0Var.Q(i04, "Line 1");
-        ij0Var.Q(i04, "Line 2");
-        ij0Var.Q(i04, "Line 3");
-        ij0Var.Q(i03, "Line 1 Dup");
-        ij0Var.Q(i03, "Line 2 Dup");
-        ij0Var.Q(i03, "Line 3 Dup");
-        ij0Var.o();
+        kj0 kj0Var = this.f;
+        kj0Var.Z = true;
+        kj0Var.Q(i02, "Cup Red");
+        kj0Var.Q(i02, "Box Red");
+        kj0Var.Q(i04, "Cup Grey");
+        kj0Var.Q(i04, "Box Grey");
+        kj0Var.Q(i04, "Box_Grey 2");
+        kj0Var.Q(i04, "Line 1");
+        kj0Var.Q(i04, "Line 2");
+        kj0Var.Q(i04, "Line 3");
+        kj0Var.Q(i03, "Line 1 Dup");
+        kj0Var.Q(i03, "Line 2 Dup");
+        kj0Var.Q(i03, "Line 3 Dup");
+        kj0Var.o();
     }
 
     @Override // android.view.View
@@ -61,29 +61,29 @@ public final class ug extends View {
         super.onAttachedToWindow();
         this.d = true;
         boolean z10 = this.e;
-        ij0 ij0Var = this.f;
+        kj0 kj0Var = this.f;
         if (z10) {
-            ij0Var.start();
+            kj0Var.start();
         }
-        ij0Var.R(this);
+        kj0Var.R(this);
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d = false;
-        ij0 ij0Var = this.f;
-        ij0Var.stop();
-        ij0Var.R(null);
+        kj0 kj0Var = this.f;
+        kj0Var.stop();
+        kj0Var.R(null);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Paint paint = this.s.w3;
         boolean z10 = this.e;
-        ij0 ij0Var = this.f;
+        kj0 kj0Var = this.f;
         if (z10) {
-            ij0Var.setAlpha((int) (this.a * 255.0f));
+            kj0Var.setAlpha((int) (this.a * 255.0f));
         }
         paint.setAlpha((int) (this.a * 255.0f));
         if (!this.n) {
@@ -109,9 +109,9 @@ public final class ug extends View {
             this.b = currentTimeMillis;
         }
         if (this.e) {
-            ij0Var.draw(canvas);
+            kj0Var.draw(canvas);
         }
-        if (!this.e || !ij0Var.u()) {
+        if (!this.e || !kj0Var.u()) {
             canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, AndroidUtilities.dp(5.0f), paint);
         }
         if (this.n) {

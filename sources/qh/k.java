@@ -4,11 +4,11 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class k extends r61 {
+public final class k extends t61 {
     public final /* synthetic */ int f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class k extends r61 {
         this.f3 = i10;
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int min = Math.min(AndroidUtilities.dp(220.0f), View.MeasureSpec.getSize(i10));
         View.MeasureSpec.getSize(i11);

@@ -5,14 +5,14 @@ import android.view.View;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.aq0;
 import org.telegram.ui.cq0;
 import org.telegram.ui.ml0;
 import org.telegram.ui.r10;
 import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,10 +44,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((w) obj).toggle();
                 break;
             case 3:
-                lj0 lj0Var = ((y2) obj).f;
-                if (!lj0Var.b()) {
-                    lj0Var.setProgress(0.0f);
-                    lj0Var.d();
+                nj0 nj0Var = ((y2) obj).f;
+                if (!nj0Var.b()) {
+                    nj0Var.setProgress(0.0f);
+                    nj0Var.d();
                     break;
                 }
                 break;

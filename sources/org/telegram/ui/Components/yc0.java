@@ -1,35 +1,172 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class yc0 extends po0 {
-    public final /* synthetic */ ed0 d;
+public abstract class yc0 extends cw0 implements r0.m, View.OnLayoutChangeListener {
+    public int A0;
+    public int B0;
+    public boolean C0;
+    public final b2.q0 w0;
+    public View x0;
+    public xc0 y0;
+    public org.telegram.ui.ActionBar.c3 z0;
 
-    public yc0(ed0 ed0Var) {
-        this.d = ed0Var;
+    public yc0(Context context) {
+        super(context, null);
+        this.w0 = new b2.q0();
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final boolean a() {
-        return true;
+    public void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
+        xc0 xc0Var;
+        if (viewGroup != this.x0 || (xc0Var = this.y0) == null || ((org.telegram.ui.s7) xc0Var).getListView() == null) {
+            return;
+        }
+        int top = this.y0.getTop();
+        if (i11 >= 0) {
+            org.telegram.ui.ActionBar.c3 c3Var = this.z0;
+            if (c3Var != null) {
+                c3Var.onNestedPreScroll(viewGroup, i10, i11, iArr);
+                return;
+            }
+            return;
+        }
+        if (top > this.A0) {
+            if (this.z0 == null || this.x0.canScrollVertically(i11)) {
+                return;
+            }
+            this.z0.onNestedScroll(viewGroup, 0, 0, i10, i11);
+            return;
+        }
+        yl0 listView = ((org.telegram.ui.s7) this.y0).getListView();
+        int L0 = ((s4.c0) listView.getLayoutManager()).L0();
+        if (L0 != -1) {
+            s4.c1 K = listView.K(L0);
+            int top2 = K != null ? K.a.getTop() : -1;
+            int paddingTop = listView.getPaddingTop();
+            if (top2 == paddingTop && L0 == 0) {
+                return;
+            }
+            iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
+            listView.scrollBy(0, i11);
+        }
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final boolean b() {
-        return true;
+    public final boolean Z() {
+        xc0 xc0Var = this.y0;
+        return xc0Var != null && xc0Var.getTop() == this.A0;
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final void c(boolean z10) {
-        this.d.a(!z10);
+    public final void a0(xc0 xc0Var, int i10) {
+        this.B0 = i10;
+        if (this.y0 != xc0Var) {
+            this.y0 = xc0Var;
+            if (this.C0 && xc0Var != null) {
+                org.telegram.ui.s7 s7Var = (org.telegram.ui.s7) xc0Var;
+                if (s7Var.getListView() != null) {
+                    s7Var.getListView().addOnLayoutChangeListener(this);
+                }
+            }
+        }
+        b0();
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final CharSequence d() {
-        ed0 ed0Var = this.d;
-        Utilities.CallbackReturn callbackReturn = ed0Var.s0;
-        return callbackReturn != null ? (CharSequence) callbackReturn.run(Integer.valueOf(ed0Var.G)) : ed0Var.d(ed0Var.G);
+    public final void b0() {
+        View view = this.x0;
+        if (view == null || this.y0 == null) {
+            return;
+        }
+        if (this.B0 != 0) {
+            this.A0 = view.getPaddingTop() + this.B0;
+        } else {
+            this.A0 = (view.getMeasuredHeight() - this.x0.getPaddingBottom()) - this.y0.getMeasuredHeight();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.cw0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    public void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+        xc0 xc0Var;
+        if (viewGroup != this.x0 || (xc0Var = this.y0) == null || ((org.telegram.ui.s7) xc0Var).getListView() == null) {
+            return;
+        }
+        yl0 listView = ((org.telegram.ui.s7) this.y0).getListView();
+        if (this.y0.getTop() == this.A0) {
+            iArr[1] = i13;
+            listView.scrollBy(0, i13);
+        }
+    }
+
+    public void o(int i10, View view) {
+        this.w0.a = 0;
+        org.telegram.ui.ActionBar.c3 c3Var = this.z0;
+        if (c3Var != null) {
+            c3Var.onStopNestedScroll(view);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.C0 = true;
+        xc0 xc0Var = this.y0;
+        if (xc0Var != null) {
+            xc0Var.addOnLayoutChangeListener(this);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.C0 = false;
+        xc0 xc0Var = this.y0;
+        if (xc0Var != null) {
+            xc0Var.removeOnLayoutChangeListener(this);
+        }
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        b0();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        b0();
+    }
+
+    public boolean p(View view, View view2, int i10, int i11) {
+        return view != null && view.isAttachedToWindow() && i10 == 2;
+    }
+
+    public void s(View view, View view2, int i10, int i11) {
+        this.w0.a = i10;
+    }
+
+    public void setBottomSheetContainerView(org.telegram.ui.ActionBar.c3 c3Var) {
+        this.z0 = c3Var;
+    }
+
+    public void setChildLayout(xc0 xc0Var) {
+        a0(xc0Var, 0);
+    }
+
+    public void setTargetListView(View view) {
+        this.x0 = view;
+        b0();
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public void onStopNestedScroll(View view) {
+    }
+
+    public void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
     }
 }

@@ -6,14 +6,14 @@ import android.animation.AnimatorSet;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.e9;
-import org.telegram.ui.Components.ka0;
-import org.telegram.ui.Components.na0;
+import org.telegram.ui.Components.ma0;
 import org.telegram.ui.Components.oi;
+import org.telegram.ui.Components.pa0;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.x8;
 import org.telegram.ui.qg0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             case 4:
-                ((ka0) this.d).f2 = null;
+                ((ma0) this.d).f2 = null;
                 break;
             case 5:
                 qg0 qg0Var = (qg0) this.d;
@@ -126,27 +126,27 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             case 4:
-                ka0 ka0Var = (ka0) this.d;
-                na0 na0Var = ka0Var.i2;
-                if (ka0Var.f2 != null) {
-                    ka0Var.f2 = null;
+                ma0 ma0Var = (ma0) this.d;
+                pa0 pa0Var = ma0Var.i2;
+                if (ma0Var.f2 != null) {
+                    ma0Var.f2 = null;
                     if (!this.b) {
-                        na0Var.F.setVisibility(4);
-                        FrameLayout frameLayout = na0Var.S;
+                        pa0Var.F.setVisibility(4);
+                        FrameLayout frameLayout = pa0Var.S;
                         if (frameLayout != null) {
                             frameLayout.setVisibility(4);
                         }
-                        u0 u0Var2 = na0Var.H;
+                        u0 u0Var2 = pa0Var.H;
                         if (u0Var2 != null) {
                             u0Var2.setVisibility(8);
                         }
-                        if (this.c && (u0Var = na0Var.G) != null) {
+                        if (this.c && (u0Var = pa0Var.G) != null) {
                             u0Var.setVisibility(8);
                             break;
                         }
                     } else {
-                        na0Var.s.setVisibility(4);
-                        u0 u0Var3 = na0Var.G;
+                        pa0Var.s.setVisibility(4);
+                        u0 u0Var3 = pa0Var.G;
                         if (u0Var3 != null) {
                             u0Var3.setVisibility(8);
                             break;

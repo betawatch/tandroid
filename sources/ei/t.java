@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.lt;
+import org.telegram.ui.Components.mt;
 import org.telegram.ui.a6;
 import org.telegram.ui.ad;
 import org.telegram.ui.fc;
@@ -27,7 +27,7 @@ import org.telegram.ui.w6;
 import org.telegram.ui.z6;
 import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class t extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -386,7 +386,7 @@ public final class t extends org.telegram.ui.ActionBar.j {
                         ofFloat.addUpdateListener(new ci.ub(adVar, 1));
                         adVar.o0.addListener(new org.telegram.ui.t4(adVar, 17));
                         adVar.o0.setDuration(400L);
-                        adVar.o0.setInterpolator(lt.e);
+                        adVar.o0.setInterpolator(mt.e);
                         adVar.o0.start();
                         frameLayout.addView(adVar.m0, new ViewGroup.LayoutParams(-1, -1));
                         AndroidUtilities.runOnUIThread(new fc(adVar, 0));

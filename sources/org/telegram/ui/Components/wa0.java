@@ -1,18 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface wa0 {
-    void A(TLRPC.TL_document tL_document, String str, Object obj);
+public final class wa0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 a;
+    public final /* synthetic */ bb0 b;
 
-    void O(int i10, int i11, CharSequence charSequence, boolean z10);
+    public wa0(bb0 bb0Var, org.telegram.ui.ActionBar.m2 m2Var) {
+        this.b = bb0Var;
+        this.a = m2Var;
+    }
 
-    void P(String str);
+    public final void a(boolean z10) {
+        bb0 bb0Var = this.b;
+        if (bb0Var.getNeededLayoutManager() != bb0Var.getCurrentLayoutManager() && bb0Var.a()) {
+            if (bb0Var.f.M0 > 0) {
+                bb0Var.N = true;
+                bb0Var.o(false);
+                return;
+            }
+            bb0Var.b.setLayoutManager(bb0Var.getNeededLayoutManager());
+        }
+        if (z10 && !bb0Var.a()) {
+            z10 = false;
+        }
+        bb0Var.o((!z10 || bb0Var.f.K() > 0) ? z10 : false);
+    }
 
-    void f(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10);
+    public final void b(boolean z10) {
+        this.b.l(z10);
+    }
 
-    Paint.FontMetricsInt w();
+    public final void c() {
+        bb0 bb0Var = this.b;
+        zp zpVar = bb0Var.J;
+        if (bb0Var.b.getLayoutManager() == bb0Var.d || !bb0Var.I) {
+            return;
+        }
+        AndroidUtilities.cancelRunOnUIThread(zpVar);
+        AndroidUtilities.runOnUIThread(zpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+    }
 }

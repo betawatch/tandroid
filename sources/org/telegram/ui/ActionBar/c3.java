@@ -21,10 +21,10 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class c3 extends FrameLayout {
     public boolean E;
@@ -89,7 +89,7 @@ public abstract class c3 extends FrameLayout {
         ofFloat.addUpdateListener(new a3(this, 4));
         this.h.playTogether(ObjectAnimator.ofFloat(e3Var.containerView, "translationY", 0.0f), ofFloat);
         this.h.setDuration((int) ((Math.max(0.0f, r1) / AndroidUtilities.getPixelsInCM(0.8f, false)) * 250.0f));
-        this.h.setInterpolator(rr.f);
+        this.h.setInterpolator(sr.f);
         this.h.addListener(new b3(this, 3));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.h.start();
@@ -235,13 +235,13 @@ public abstract class c3 extends FrameLayout {
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y, getMeasuredWidth());
                             ofFloat.addUpdateListener(new a3(this, i15));
                             ofFloat.addListener(new b3(this, i13));
-                            rr rrVar = rr.h;
-                            ofFloat.setInterpolator(rrVar);
+                            sr srVar = sr.h;
+                            ofFloat.setInterpolator(srVar);
                             ofFloat.setDuration(320L);
                             ofFloat.start();
                             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, 0.0f);
                             ofFloat2.addUpdateListener(new a3(this, i14));
-                            ofFloat2.setInterpolator(rrVar);
+                            ofFloat2.setInterpolator(srVar);
                             ofFloat2.setDuration(320L);
                             ofFloat2.start();
                         } else {
@@ -250,7 +250,7 @@ public abstract class c3 extends FrameLayout {
                             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(max, 0.0f);
                             ofFloat3.addUpdateListener(new a3(this, i13));
                             ofFloat3.addListener(new b3(this, i12));
-                            ofFloat3.setInterpolator(rr.f);
+                            ofFloat3.setInterpolator(sr.f);
                             ofFloat3.setDuration(220L);
                             ofFloat3.start();
                         }
@@ -840,7 +840,7 @@ public abstract class c3 extends FrameLayout {
                 for (int i18 = 0; i18 < childCount; i18++) {
                     View childAt = getChildAt(i18);
                     if (childAt.getVisibility() != 8 && childAt != e3Var.containerView) {
-                        if (childAt instanceof w70) {
+                        if (childAt instanceof y70) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30), 0);
                         } else if (!e3Var.onCustomMeasure(childAt, i17, i16)) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_30), 0);

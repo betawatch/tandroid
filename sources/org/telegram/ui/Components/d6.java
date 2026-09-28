@@ -30,7 +30,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d6 extends BitmapDrawable implements Animatable, yf.c {
     public static final float[] V0 = new float[8];
@@ -797,7 +797,7 @@ public final class d6 extends BitmapDrawable implements Animatable, yf.c {
         AndroidUtilities.executeOnUIThread(new b6(this, 0));
         if (this.D0 != null) {
             yf.e.c();
-            ij0.T0.cancelRunnable(this.D0);
+            kj0.T0.cancelRunnable(this.D0);
             this.D0 = null;
         }
         if (this.e == null) {

@@ -16,9 +16,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class r5 extends ViewGroup {
     public final RectF E;
@@ -76,7 +76,7 @@ public final class r5 extends ViewGroup {
         paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint2.setStrokeJoin(Paint.Join.ROUND);
         paint2.setStrokeCap(Paint.Cap.ROUND);
-        this.G = new org.telegram.ui.Components.e6(this, 0L, 220L, rr.h);
+        this.G = new org.telegram.ui.Components.e6(this, 0L, 220L, sr.h);
         b();
     }
 

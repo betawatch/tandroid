@@ -52,21 +52,21 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.d8;
 import org.telegram.ui.Cells.h5;
-import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ln;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.mn;
 import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.ua0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.wa0;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.wn;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class k1 extends vl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class k1 extends xl0 implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList A0;
     public HashMap B0;
     public String D0;
@@ -93,7 +93,7 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
     public long S;
     public TLRPC.TL_inlineBotSwitchPM T;
     public TLRPC.TL_inlineBotWebView U;
-    public final ua0 V;
+    public final wa0 V;
     public a0.i W;
     public int X;
     public int Y;
@@ -141,10 +141,10 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
     public boolean L0 = false;
     public int M0 = -1;
 
-    public k1(Context context, long j3, long j10, ua0 ua0Var, d6 d6Var, boolean z10) {
+    public k1(Context context, long j3, long j10, wa0 wa0Var, d6 d6Var, boolean z10) {
         this.H0 = d6Var;
         this.h = context;
-        this.V = ua0Var;
+        this.V = wa0Var;
         this.n = j3;
         this.s = z10;
         this.r = j10;
@@ -176,7 +176,7 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return (this.w0 == null || this.h0) && this.A0 == null;
     }
@@ -477,7 +477,7 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
         TLRPC.Chat chat;
         this.t0 = 0;
         this.I0.stop();
-        ua0 ua0Var = this.V;
+        wa0 wa0Var = this.V;
         if (user == null || !user.bot || user.bot_inline_placeholder == null) {
             this.w0 = null;
             this.T = null;
@@ -495,7 +495,7 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
                 this.h0 = canSendStickers;
                 if (!canSendStickers) {
                     l();
-                    ua0Var.a(true);
+                    wa0Var.a(true);
                     return;
                 }
             }
@@ -518,8 +518,8 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
             this.v0 = true;
             this.T = null;
         } else {
-            if (ua0Var != null) {
-                ua0Var.b(true);
+            if (wa0Var != null) {
+                wa0Var.b(true);
             }
             T(true, this.w0, this.r0, "");
         }
@@ -539,12 +539,12 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
         TLRPC.User user = this.w0;
         if (user == null || (str4 = user.username) == null || !str4.equals(str) || (str5 = this.r0) == null || !str5.equals(str2)) {
             TLRPC.User user2 = this.w0;
-            ua0 ua0Var = this.V;
+            wa0 wa0Var = this.V;
             if (user2 != null) {
                 if (!this.h0 && str != null && str2 != null) {
                     return;
                 } else {
-                    ua0Var.a(false);
+                    wa0Var.a(false);
                 }
             }
             b1 b1Var = this.y0;
@@ -568,19 +568,19 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
                 this.r0 = null;
                 this.I0.stop();
                 this.v0 = false;
-                if (ua0Var != null) {
-                    ua0Var.b(false);
+                if (wa0Var != null) {
+                    wa0Var.b(false);
                 }
                 if (str != null) {
                 }
             }
             if (str2 != null) {
-                if (ua0Var != null) {
+                if (wa0Var != null) {
                     if (this.w0 != null) {
-                        ua0Var.b(true);
+                        wa0Var.b(true);
                     } else if (str.equals("gif")) {
                         this.q0 = "gif";
-                        ua0Var.b(false);
+                        wa0Var.b(false);
                     }
                 }
                 MessagesController messagesController = MessagesController.getInstance(this.f);
@@ -596,8 +596,8 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
                 this.u0 = 0;
             }
             this.r0 = null;
-            if (ua0Var != null) {
-                ua0Var.b(false);
+            if (wa0Var != null) {
+                wa0Var.b(false);
             }
         }
     }
@@ -609,9 +609,9 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
             this.u0 = 0;
         }
         if (!this.h0 || !this.d) {
-            ua0 ua0Var = this.V;
-            if (ua0Var != null) {
-                ua0Var.b(false);
+            wa0 wa0Var = this.V;
+            if (wa0Var != null) {
+                wa0Var.b(false);
                 return;
             }
             return;
@@ -733,7 +733,7 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
     /* JADX WARN: Type inference failed for: r11v45 */
     /* JADX WARN: Type inference failed for: r11v68 */
     /* JADX WARN: Type inference failed for: r11v69 */
-    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.ua0] */
+    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.wa0] */
     /* JADX WARN: Type inference failed for: r26v0, types: [gg.k1, java.lang.Object, s4.h0] */
     /* JADX WARN: Type inference failed for: r3v25, types: [gg.i1] */
     /* JADX WARN: Type inference failed for: r6v18 */
@@ -1591,7 +1591,7 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
         String str;
         String str2;
         int i10 = this.M0;
-        ua0 ua0Var = this.V;
+        wa0 wa0Var = this.V;
         int i11 = 0;
         if (i10 != -1 && this.K0 != null) {
             int K = K();
@@ -1626,15 +1626,15 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
             }
             t(min, i10 - min);
             s(min, K - min);
-            if (z10 && ua0Var != null) {
-                ua0Var.c();
+            if (z10 && wa0Var != null) {
+                wa0Var.c();
             }
             this.K0 = objArr;
             return;
         }
-        if (ua0Var != null) {
+        if (wa0Var != null) {
             this.M0 = K();
-            ua0Var.c();
+            wa0Var.c();
         }
         super.l();
         int K2 = K();
@@ -1845,12 +1845,12 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
                         }
                         textView2.setVisibility(0);
                         if (booleanValue) {
-                            pq pqVar = new pq(R.drawable.mini_ephemeral_hidden_14, 0);
-                            pqVar.setColorKey(h6.A6);
-                            pqVar.setTopOffset(1);
+                            qq qqVar = new qq(R.drawable.mini_ephemeral_hidden_14, 0);
+                            qqVar.setColorKey(h6.A6);
+                            qqVar.setTopOffset(1);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str3);
                             spannableStringBuilder.append((CharSequence) " *");
-                            spannableStringBuilder.setSpan(pqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                            spannableStringBuilder.setSpan(qqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                             p4Var.setText(spannableStringBuilder);
                         } else {
                             p4Var.setText(str3);
@@ -1914,11 +1914,11 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
                         d8Var.addView(b1Var, y5.d(24, 24.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
                         view2 = d8Var;
                     } else {
-                        View lnVar = new ln(context, 6);
-                        qq qqVar = new qq(new ColorDrawable(z10 ? h6.l1(0.15f, -1) : h6.v0(h6.a7, d6Var)), h6.U0(context, R.drawable.greydivider, h6.v0(h6.b7, d6Var)), 0, 0);
-                        qqVar.w = true;
-                        lnVar.setBackground(qqVar);
-                        view = lnVar;
+                        View mnVar = new mn(context, 6);
+                        rq rqVar = new rq(new ColorDrawable(z10 ? h6.l1(0.15f, -1) : h6.v0(h6.a7, d6Var)), h6.U0(context, R.drawable.greydivider, h6.v0(h6.b7, d6Var)), 0, 0);
+                        rqVar.w = true;
+                        mnVar.setBackground(rqVar);
+                        view = mnVar;
                     }
                 } else {
                     view = new hg.y1(context, d6Var, false);
@@ -1928,12 +1928,12 @@ public final class k1 extends vl0 implements NotificationCenter.NotificationCent
                 f2Var.setDelegate(new w0(this));
                 view2 = f2Var;
             }
-            return new gl0(view2);
+            return new il0(view2);
         }
         h5 h5Var = new h5(context, d6Var);
         h5Var.setIsDarkTheme(false);
         view = h5Var;
         view2 = view;
-        return new gl0(view2);
+        return new il0(view2);
     }
 }

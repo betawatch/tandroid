@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ui1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class ui1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new jr0((qg.n2) this.b, tLObject, (qg.l2) this.c, tL_error, 25));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.cn0(tLObject, (MessagesController) this.b, (tg.x0) this.c, 28));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.en0(tLObject, (MessagesController) this.b, (tg.x0) this.c, 28));
                 break;
             case 3:
                 MessagesController messagesController = (MessagesController) this.b;
@@ -54,7 +54,7 @@ public final /* synthetic */ class ui1 implements RequestDelegate {
                 }
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new tg.r((org.telegram.ui.Components.zr0) this.b, tL_error, (org.telegram.ui.ActionBar.m2) this.c, 4));
+                AndroidUtilities.runOnUIThread(new tg.r((org.telegram.ui.Components.bs0) this.b, tL_error, (org.telegram.ui.ActionBar.m2) this.c, 4));
                 break;
             case 5:
                 AndroidUtilities.runOnUIThread(new tg.r((xh.v3) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 7));

@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ub1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -184,16 +184,16 @@ public final class ub1 extends LinearLayout {
                             }
                         }
                         if (i10 != indexOfChild) {
-                            org.telegram.ui.Components.xm0 xm0Var = scrollSlidingTextTabStrip.b;
+                            org.telegram.ui.Components.zm0 zm0Var = scrollSlidingTextTabStrip.b;
                             sparseIntArray.get(i10);
-                            xm0Var.getClass();
+                            zm0Var.getClass();
                         }
                     }
                 } else if (motionEvent.getAction() == 1) {
                     View view3 = scrollSlidingTextTabStrip.c0;
                     if (view3 != null) {
                         final int i12 = 0;
-                        view3.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.vm0
+                        view3.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.xm0
                             public final /* synthetic */ ub1 b;
 
                             {
@@ -215,14 +215,14 @@ public final class ub1 extends LinearLayout {
                                         break;
                                 }
                             }
-                        }).setInterpolator(org.telegram.ui.Components.rr.h).start();
+                        }).setInterpolator(org.telegram.ui.Components.sr.h).start();
                     }
                     scrollSlidingTextTabStrip.c0 = null;
                 } else if (motionEvent.getAction() == 3) {
                     View view4 = scrollSlidingTextTabStrip.c0;
                     if (view4 != null) {
                         final int i13 = 1;
-                        view4.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.vm0
+                        view4.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.xm0
                             public final /* synthetic */ ub1 b;
 
                             {
@@ -244,7 +244,7 @@ public final class ub1 extends LinearLayout {
                                         break;
                                 }
                             }
-                        }).setInterpolator(org.telegram.ui.Components.rr.h).start();
+                        }).setInterpolator(org.telegram.ui.Components.sr.h).start();
                     }
                     scrollSlidingTextTabStrip.c0 = null;
                 }
@@ -291,11 +291,11 @@ public final class ub1 extends LinearLayout {
                 }
                 return super.drawChild(canvas, view, j3);
             case 8:
-                org.telegram.ui.Components.um0 um0Var = (org.telegram.ui.Components.um0) this.b;
-                if (view instanceof org.telegram.ui.Components.nx0) {
-                    ((org.telegram.ui.Components.nx0) view).a(um0Var.i0);
+                org.telegram.ui.Components.wm0 wm0Var = (org.telegram.ui.Components.wm0) this.b;
+                if (view instanceof org.telegram.ui.Components.px0) {
+                    ((org.telegram.ui.Components.px0) view).a(wm0Var.i0);
                 }
-                if (view == um0Var.s) {
+                if (view == wm0Var.s) {
                     return true;
                 }
                 return super.drawChild(canvas, view, j3);
@@ -371,14 +371,14 @@ public final class ub1 extends LinearLayout {
                 int i14 = (i13 - i11) / 2;
                 for (int i15 = 0; i15 < getChildCount(); i15++) {
                     View childAt = getChildAt(i15);
-                    if (childAt != ((org.telegram.ui.Components.bw) this.b).s.F && childAt != null) {
+                    if (childAt != ((org.telegram.ui.Components.cw) this.b).s.F && childAt != null) {
                         childAt.layout(paddingLeft, i14 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i14);
                         paddingLeft = org.telegram.messenger.f0.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
                     }
                 }
                 break;
             case 7:
-                ((org.telegram.ui.Components.c20) this.b).c.a(getMeasuredWidth());
+                ((org.telegram.ui.Components.e20) this.b).c.a(getMeasuredWidth());
                 super.onLayout(z10, i10, i11, i12, i13);
                 break;
             case 8:
@@ -463,12 +463,12 @@ public final class ub1 extends LinearLayout {
                 super.onMeasure(i10, i11);
                 break;
             case 6:
-                super.onMeasure(Math.max(View.MeasureSpec.getSize(i10), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(((org.telegram.ui.Components.bw) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
+                super.onMeasure(Math.max(View.MeasureSpec.getSize(i10), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(((org.telegram.ui.Components.cw) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
                 break;
             case 11:
                 super.onMeasure(i10, i11);
                 if (LocaleController.isRTL) {
-                    ((org.telegram.ui.Components.g41) this.b).c.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.i41) this.b).c.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
@@ -537,10 +537,10 @@ public final class ub1 extends LinearLayout {
     public void setVisibility(int i10) {
         switch (this.a) {
             case 10:
-                org.telegram.ui.Components.ix0 ix0Var = (org.telegram.ui.Components.ix0) this.b;
-                org.telegram.ui.Components.w9 w9Var = ix0Var.b;
+                org.telegram.ui.Components.kx0 kx0Var = (org.telegram.ui.Components.kx0) this.b;
+                org.telegram.ui.Components.w9 w9Var = kx0Var.b;
                 if (getVisibility() == 8 && i10 == 0) {
-                    ix0Var.c();
+                    kx0Var.c();
                     if (LiteMode.isEnabled(3)) {
                         w9Var.getImageReceiver().startAnimation();
                     }

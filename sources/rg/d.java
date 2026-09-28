@@ -16,13 +16,13 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.m51;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class d extends vl0 {
+public final class d extends xl0 {
     public final d6 c;
     public final int d;
     public final int e;
@@ -59,7 +59,7 @@ public final class d extends vl0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }

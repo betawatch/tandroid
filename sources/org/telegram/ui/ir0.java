@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ir0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, ImageReceiver.ImageReceiverDelegate, r0.n {
     public final /* synthetic */ PhotoViewer a;
@@ -75,10 +75,10 @@ public final /* synthetic */ class ir0 implements org.telegram.ui.Components.d5,
         PhotoViewer photoViewer = this.a;
         if (imageReceiver == photoViewer.C4 && z10 && !z11) {
             if (!photoViewer.r1 && ((photoViewer.u4 == 1 || (i11 = photoViewer.c2) == 1 || i11 == 11) && photoViewer.C1 != null && (bitmap = imageReceiver.getBitmap()) != null)) {
-                org.telegram.ui.Components.ef0 ef0Var = photoViewer.C1;
+                org.telegram.ui.Components.gf0 gf0Var = photoViewer.C1;
                 int orientation = imageReceiver.getOrientation();
                 int i12 = photoViewer.c2;
-                ef0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.D1, null, null);
+                gf0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.D1, null, null);
             }
             if (photoViewer.y4.getVisibility() == 0) {
                 photoViewer.e0.requestLayout();

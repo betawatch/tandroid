@@ -34,7 +34,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yy extends FrameLayout {
     public org.telegram.ui.Components.u9 a;
@@ -382,17 +382,17 @@ public final class yy extends FrameLayout {
                                                             objArr3[c10] = string;
                                                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr3));
                                                             try {
-                                                                valueOf2.setSpan(new org.telegram.ui.Components.f10(org.telegram.ui.ActionBar.h6.o9, null), string.length() + 2, valueOf2.length(), 33);
+                                                                valueOf2.setSpan(new org.telegram.ui.Components.g10(org.telegram.ui.ActionBar.h6.o9, null), string.length() + 2, valueOf2.length(), 33);
                                                                 spannableStringBuilder = valueOf2;
                                                             } catch (Exception e) {
                                                                 FileLog.e(e);
                                                                 spannableStringBuilder = valueOf2;
                                                             }
-                                                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.f10(org.telegram.ui.ActionBar.h6.k9, null), 0, string.length() + 1, 33);
+                                                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.g10(org.telegram.ui.ActionBar.h6.k9, null), 0, string.length() + 1, 33);
                                                             charSequence2 = spannableStringBuilder;
                                                         }
                                                     }
-                                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.f10(org.telegram.ui.ActionBar.h6.k9, null), 0, string.length() + 1, 33);
+                                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.g10(org.telegram.ui.ActionBar.h6.k9, null), 0, string.length() + 1, 33);
                                                     charSequence2 = spannableStringBuilder;
                                                 } catch (Exception e7) {
                                                     FileLog.e(e7);
@@ -732,7 +732,7 @@ public final class yy extends FrameLayout {
                     b5Var2 = ((org.telegram.ui.ActionBar.m2) zyVar).parentLayout;
                     if (b5Var2 != null) {
                         drawable2.setAlpha((int) (255.0f * themeAnimationValue));
-                        if (!(drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.mc0)) {
+                        if (!(drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.oc0)) {
                             drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                             if (drawable2 instanceof org.telegram.ui.Components.v9) {
                                 drawable2.draw(canvas);

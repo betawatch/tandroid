@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -26,7 +26,7 @@ public class CheckBoxBase {
     public int A;
     public float B;
     public String C;
-    public pp D;
+    public qp D;
     public org.telegram.ui.ActionBar.d5 E;
     public org.telegram.ui.ActionBar.d6 F;
     public GenericProvider G;
@@ -630,7 +630,7 @@ public class CheckBoxBase {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
         this.p = ofFloat;
         ofFloat.addListener(new r8(this, 13));
-        this.p.setInterpolator(rr.g);
+        this.p.setInterpolator(sr.g);
         this.p.setDuration(this.H);
         this.p.start();
     }
@@ -692,9 +692,9 @@ public class CheckBoxBase {
         }
         this.o = f7;
         b();
-        pp ppVar = this.D;
-        if (ppVar != null) {
-            ppVar.a();
+        qp qpVar = this.D;
+        if (qpVar != null) {
+            qpVar.a();
         }
     }
 }

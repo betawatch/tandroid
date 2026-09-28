@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class nc1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -22,13 +22,13 @@ public final class nc1 implements View.OnClickListener {
                 od1 od1Var = this.c;
                 od1Var.F0.setRotation(this.b);
                 this.b -= 45;
-                od1Var.F0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.rr.g).start();
+                od1Var.F0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.sr.g).start();
                 dd1[] dd1VarArr = od1Var.w0;
                 dd1 dd1Var = dd1VarArr[0];
                 if (dd1Var != null) {
                     Drawable background = dd1Var.getBackground();
-                    if (background instanceof org.telegram.ui.Components.mc0) {
-                        ((org.telegram.ui.Components.mc0) background).x(false);
+                    if (background instanceof org.telegram.ui.Components.oc0) {
+                        ((org.telegram.ui.Components.oc0) background).x(false);
                     } else {
                         org.telegram.ui.ActionBar.f6 f6Var = od1Var.s;
                         if (od1Var.b == 2) {
@@ -57,8 +57,8 @@ public final class nc1 implements View.OnClickListener {
                 dd1 dd1Var2 = dd1VarArr[1];
                 if (dd1Var2 != null) {
                     Drawable background2 = dd1Var2.getBackground();
-                    if (background2 instanceof org.telegram.ui.Components.mc0) {
-                        ((org.telegram.ui.Components.mc0) background2).x(false);
+                    if (background2 instanceof org.telegram.ui.Components.oc0) {
+                        ((org.telegram.ui.Components.oc0) background2).x(false);
                         break;
                     }
                 }
@@ -68,7 +68,7 @@ public final class nc1 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.o5 o5Var = od1Var2.R;
                 od1Var2.G0.setRotation(this.b);
                 this.b -= 45;
-                od1Var2.G0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.rr.g).start();
+                od1Var2.G0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.sr.g).start();
                 org.telegram.ui.ActionBar.f6 f6Var2 = od1Var2.s;
                 if (!f6Var2.i) {
                     int i12 = f6Var2.h;
@@ -93,12 +93,12 @@ public final class nc1 implements View.OnClickListener {
                     od1Var2.V.e(f6Var2.h, 3);
                     od1Var2.V.e(f6Var2.g, 2);
                     od1Var2.V.e(f6Var2.f, 1);
-                    org.telegram.ui.Components.nq nqVar = od1Var2.V;
+                    org.telegram.ui.Components.oq oqVar = od1Var2.V;
                     int i15 = f6Var2.e;
                     if (i15 == 0) {
                         i15 = f6Var2.c;
                     }
-                    nqVar.e(i15, 0);
+                    oqVar.e(i15, 0);
                     od1Var2.K0[1].b(0, f6Var2.e);
                     od1Var2.K0[1].b(1, f6Var2.f);
                     od1Var2.K0[1].b(2, f6Var2.g);

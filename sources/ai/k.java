@@ -12,8 +12,8 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.r80;
+import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.t80;
 import org.telegram.ui.b10;
 import org.telegram.ui.d60;
 import org.telegram.ui.g50;
@@ -21,7 +21,7 @@ import org.telegram.ui.jk;
 import org.telegram.ui.nh1;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements t9, nh1, m4.z0, e2.h, org.telegram.ui.ActionBar.z1, yf.m, MessagesController.ErrorDelegate, vh.k {
     public final /* synthetic */ int a;
@@ -212,11 +212,11 @@ public final /* synthetic */ class k implements t9, nh1, m4.z0, e2.h, org.telegr
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        r80 r80Var = (r80) this.c;
+        t80 t80Var = (t80) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            r80Var.setOnDismissListener(new m80(0, r80Var, this.b));
+            t80Var.setOnDismissListener(new o80(0, t80Var, this.b));
         }
-        r80Var.dismiss();
+        t80Var.dismiss();
         return false;
     }
 }

@@ -8,14 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.dy;
-import org.telegram.ui.Components.hu;
+import org.telegram.ui.Components.ey;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.kd0;
-import org.telegram.ui.Components.ov;
+import org.telegram.ui.Components.ju;
+import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.pv;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class y3 extends org.telegram.ui.ActionBar.m2 {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
             case 3:
                 return ((ci.q6) this.b).getContext();
             case 4:
-                return ((iu) this.b).a.getContext();
+                return ((ju) this.b).a.getContext();
             case 12:
                 return ((yh.x3) this.b).getContext();
             default:
@@ -77,7 +77,7 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
             case 5:
                 return this.currentAccount;
             case 6:
-                return ((dy) this.b).E.c1;
+                return ((ey) this.b).E.c1;
             case 9:
                 return this.currentAccount;
             case 12:
@@ -91,10 +91,10 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
         ViewGroup viewGroup2;
         switch (this.a) {
             case 5:
-                viewGroup = ((org.telegram.ui.ActionBar.e3) ((ov) this.b).x).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) ((pv) this.b).x).containerView;
                 return viewGroup;
             case 6:
-                return ((dy) this.b).E.r;
+                return ((ey) this.b).E.r;
             case 7:
             case 8:
             default:
@@ -110,10 +110,10 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
         ViewGroup viewGroup;
         switch (this.a) {
             case 5:
-                viewGroup = ((org.telegram.ui.ActionBar.e3) ((ov) this.b).x).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) ((pv) this.b).x).containerView;
                 return (FrameLayout) viewGroup;
             case 6:
-                return ((dy) this.b).E.r;
+                return ((ey) this.b).E.r;
             case 7:
             case 8:
             default:
@@ -194,10 +194,10 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
             default:
                 return super.getResourceProvider();
             case 5:
-                d6Var2 = ((org.telegram.ui.ActionBar.e3) ((ov) this.b).x).resourcesProvider;
+                d6Var2 = ((org.telegram.ui.ActionBar.e3) ((pv) this.b).x).resourcesProvider;
                 return d6Var2;
             case 6:
-                return ((dy) this.b).E.Z1;
+                return ((ey) this.b).E.Z1;
             case 8:
                 return new x3(9, ((org.telegram.ui.web.b1) this.b).e);
             case 10:
@@ -212,7 +212,7 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
     public Dialog getVisibleDialog() {
         switch (this.a) {
             case 4:
-                return new hu(this, ((iu) this.b).a.getContext());
+                return new iu(this, ((ju) this.b).a.getContext());
             default:
                 return super.getVisibleDialog();
         }
@@ -239,7 +239,7 @@ public final class y3 extends org.telegram.ui.ActionBar.m2 {
         switch (this.a) {
             case 7:
                 if (z10 && z11) {
-                    ((kd0) this.b).dismiss();
+                    ((md0) this.b).dismiss();
                     break;
                 }
                 break;

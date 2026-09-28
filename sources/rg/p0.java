@@ -16,28 +16,28 @@ import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.up;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.yq;
 import org.telegram.ui.c70;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public class p0 extends FrameLayout implements q90 {
+public class p0 extends FrameLayout implements s90 {
     public boolean E;
     public boolean F;
-    public xq G;
+    public yq G;
     public boolean H;
     public boolean I;
     public final e6 J;
     public final e6 K;
-    public up L;
+    public vp L;
     public float M;
     public boolean N;
     public ValueAnimator O;
@@ -54,7 +54,7 @@ public class p0 extends FrameLayout implements q90 {
     public final Path v;
     public final org.telegram.ui.Components.voip.h w;
     public boolean x;
-    public final lj0 y;
+    public final nj0 y;
 
     public p0(Context context, d6 d6Var, boolean z10) {
         this(AndroidUtilities.dp(8.0f), context, d6Var, z10);
@@ -87,7 +87,7 @@ public class p0 extends FrameLayout implements q90 {
         d(z11);
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public final boolean c() {
         return this.N;
     }
@@ -108,21 +108,21 @@ public class p0 extends FrameLayout implements q90 {
         ofFloat.addUpdateListener(new k6(this, 11));
         this.s.addListener(new pg.d0(this, 4));
         this.s.setDuration(250L);
-        this.s.setInterpolator(rr.f);
+        this.s.setInterpolator(sr.f);
         this.s.start();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int dp;
-        xq xqVar = this.G;
+        yq yqVar = this.G;
         o0 o0Var = this.e;
-        if (xqVar != null) {
-            wq wqVar = xqVar.a;
-            if (wqVar.h == 0) {
+        if (yqVar != null) {
+            xq xqVar = yqVar.a;
+            if (xqVar.h == 0) {
                 dp = 0;
             } else {
-                dp = AndroidUtilities.dp(wqVar.C - 0.5f) + wqVar.s;
+                dp = AndroidUtilities.dp(xqVar.C - 0.5f) + xqVar.s;
             }
             e6 e6Var = this.J;
             e6Var.d(((dp * 0.85f) + AndroidUtilities.dp(3.0f)) / 2.0f, false);
@@ -204,7 +204,7 @@ public class p0 extends FrameLayout implements q90 {
         invalidate();
     }
 
-    public lj0 getIconView() {
+    public nj0 getIconView() {
         return this.y;
     }
 
@@ -234,16 +234,16 @@ public class p0 extends FrameLayout implements q90 {
     }
 
     public void setIcon(int i10) {
-        lj0 lj0Var = this.y;
-        lj0Var.f(i10, 24, 24, null);
+        nj0 nj0Var = this.y;
+        nj0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.h hVar = this.w;
         hVar.g = 2.0f;
         hVar.p = new org.telegram.ui.web.q0(this, 27);
         invalidate();
-        lj0Var.setVisibility(0);
+        nj0Var.setVisibility(0);
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public void setLoading(boolean z10) {
         if (this.N != z10) {
             ValueAnimator valueAnimator = this.O;
@@ -259,7 +259,7 @@ public class p0 extends FrameLayout implements q90 {
             ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, i10));
             this.O.addListener(new c70(i10, this, z10));
             this.O.setDuration(320L);
-            this.O.setInterpolator(rr.h);
+            this.O.setInterpolator(sr.h);
             this.O.start();
         }
     }
@@ -282,22 +282,22 @@ public class p0 extends FrameLayout implements q90 {
         LinearLayout f7 = ok.f(context, 0);
         o0 o0Var = new o0(this, context, 0);
         this.d = o0Var;
-        o0Var.b(0.35f, 350L, rr.h);
+        o0Var.b(0.35f, 350L, sr.h);
         o0Var.setGravity(17);
         o0Var.setTextColor(-1);
         o0Var.setTextSize(AndroidUtilities.dp(14.0f));
         o0Var.setTypeface(AndroidUtilities.bold());
-        lj0 lj0Var = new lj0(context);
-        this.y = lj0Var;
-        lj0Var.setColorFilter(-1);
-        lj0Var.setVisibility(8);
+        nj0 nj0Var = new nj0(context);
+        this.y = nj0Var;
+        nj0Var.setColorFilter(-1);
+        nj0Var.setVisibility(8);
         ai.f0 f0Var = new ai.f0(this, context, 27);
         this.r = f0Var;
         f0Var.addView(f7, y5.e(-2, -2, 17));
         int k10 = i0.a.k(-1, 120);
         f0Var.setBackground(h6.i0(i10, i10, i10, i10, 0, k10, k10));
         f7.addView(o0Var, y5.q(-2, -2, 16));
-        f7.addView(lj0Var, y5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        f7.addView(nj0Var, y5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(f0Var);
         setOutlineProvider(yf.i0.b);
         setClipToOutline(true);

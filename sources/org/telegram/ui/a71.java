@@ -50,7 +50,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class a71 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static String[] a2;
@@ -131,10 +131,10 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
     public final ci.r6 b0;
     public float b1;
     public int c;
-    public final org.telegram.ui.Components.dw[] c0;
+    public final org.telegram.ui.Components.ew[] c0;
     public final org.telegram.ui.ActionBar.m2 c1;
     public int d;
-    public org.telegram.ui.Components.dw d0;
+    public org.telegram.ui.Components.ew d0;
     public final int d1;
     public int e;
     public final s51 e0;
@@ -158,7 +158,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
     public final View m0;
     public int m1;
     public int n;
-    public final org.telegram.ui.Components.ln n0;
+    public final org.telegram.ui.Components.mn n0;
     public org.telegram.ui.Components.o5 n1;
     public final View o0;
     public Rect o1;
@@ -170,7 +170,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
     public final o51 r0;
     public j61 r1;
     public int s;
-    public final org.telegram.ui.Components.zk0 s0;
+    public final org.telegram.ui.Components.bl0 s0;
     public Rect s1;
     public final View t0;
     public final OvershootInterpolator t1;
@@ -300,13 +300,13 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
     }
 
     public static void a(a71 a71Var, int i10, int i11) {
-        org.telegram.ui.Components.zk0 zk0Var = a71Var.s0;
+        org.telegram.ui.Components.bl0 bl0Var = a71Var.s0;
         o51 o51Var = a71Var.r0;
         View m10 = o51Var.m(i10);
         int L0 = o51Var.L0();
         if ((m10 == null && Math.abs(i10 - L0) > 72.0f) || !SharedConfig.animationsEnabled()) {
-            zk0Var.b = o51Var.L0() < i10 ? 0 : 1;
-            zk0Var.c(i10, i11, false, false);
+            bl0Var.b = o51Var.L0() < i10 ? 0 : 1;
+            bl0Var.c(i10, i11, false, false);
         } else {
             ci.m1 m1Var = new ci.m1(a71Var, a71Var.h0.getContext(), 4);
             m1Var.a = i10;
@@ -428,7 +428,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         MediaDataController.getInstance(i10).getStickerSet((TLRPC.InputStickerSet) new TLRPC.TL_inputStickerSetEmojiDefaultStatuses(), false);
         MediaDataController.getInstance(i10).getDefaultEmojiStatuses();
         MediaDataController.getInstance(i10).checkDefaultTopicIcons();
-        org.telegram.ui.Components.gx0.x3.fetch(i10, 1, new ai.m(i10, 1));
+        org.telegram.ui.Components.ix0.x3.fetch(i10, 1, new ai.m(i10, 1));
     }
 
     public final void A(Long l4) {
@@ -537,7 +537,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         ArrayList<TLRPC.Document> arrayList6;
         boolean z14;
         SparseIntArray sparseIntArray3;
-        org.telegram.ui.Components.yx yxVar;
+        org.telegram.ui.Components.zx zxVar;
         SparseIntArray sparseIntArray4;
         int i17;
         SparseIntArray sparseIntArray5;
@@ -711,15 +711,15 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                 i10 = z13 ? 1 : 0;
                 TLRPC.TL_emojiList tL_emojiList3 = this.R ? MediaDataController.getInstance(i23).profileAvatarConstructorDefault : MediaDataController.getInstance(i23).groupAvatarConstructorDefault;
                 if (tL_emojiList3 != null && (arrayList8 = tL_emojiList3.document_id) != null && !arrayList8.isEmpty()) {
-                    org.telegram.ui.Components.yx yxVar2 = new org.telegram.ui.Components.yx();
-                    yxVar2.f = true;
-                    yxVar2.g = false;
-                    yxVar2.h = true;
-                    yxVar2.e = true;
-                    yxVar2.b = new TLRPC.TL_stickerSet();
-                    yxVar2.a = tL_emojiList3.document_id.get(0);
+                    org.telegram.ui.Components.zx zxVar2 = new org.telegram.ui.Components.zx();
+                    zxVar2.f = true;
+                    zxVar2.g = false;
+                    zxVar2.h = true;
+                    zxVar2.e = true;
+                    zxVar2.b = new TLRPC.TL_stickerSet();
+                    zxVar2.a = tL_emojiList3.document_id.get(0);
                     arrayList16.size();
-                    arrayList16.add(yxVar2);
+                    arrayList16.add(zxVar2);
                     int i33 = 0;
                     while (i33 < tL_emojiList3.document_id.size()) {
                         arrayList13.add(new org.telegram.ui.Components.z5(tL_emojiList3.document_id.get(i33).longValue(), (Paint.FontMetricsInt) null));
@@ -1042,22 +1042,22 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                                 sparseIntArray6.put(arrayList16.size(), this.u0);
                                 this.u0++;
                                 arrayList11.add(Long.valueOf((tL_messages_stickerSet3.set.id * 13) + 9211));
-                                org.telegram.ui.Components.yx yxVar3 = new org.telegram.ui.Components.yx();
-                                yxVar3.f = true;
-                                yxVar3.g = false;
-                                yxVar3.h = true;
+                                org.telegram.ui.Components.zx zxVar3 = new org.telegram.ui.Components.zx();
+                                zxVar3.f = true;
+                                zxVar3.g = false;
+                                zxVar3.h = true;
                                 if (i24 == 4) {
-                                    yxVar3.e = false;
+                                    zxVar3.e = false;
                                 } else {
-                                    yxVar3.e = !MessageObject.isPremiumEmojiPack(tL_messages_stickerSet3);
+                                    zxVar3.e = !MessageObject.isPremiumEmojiPack(tL_messages_stickerSet3);
                                 }
-                                yxVar3.b = tL_messages_stickerSet3.set;
-                                yxVar3.c = j(hashSet, tL_messages_stickerSet3.documents);
+                                zxVar3.b = tL_messages_stickerSet3.set;
+                                zxVar3.c = j(hashSet, tL_messages_stickerSet3.documents);
                                 arrayList16.size();
-                                arrayList16.add(yxVar3);
-                                this.u0 = yxVar3.c.size() + this.u0;
-                                for (int i54 = 0; i54 < yxVar3.c.size(); i54++) {
-                                    arrayList11.add(Long.valueOf((((TLRPC.Document) yxVar3.c.get(i54)).id * 13) + 3212));
+                                arrayList16.add(zxVar3);
+                                this.u0 = zxVar3.c.size() + this.u0;
+                                for (int i54 = 0; i54 < zxVar3.c.size(); i54++) {
+                                    arrayList11.add(Long.valueOf((((TLRPC.Document) zxVar3.c.get(i54)).id * 13) + 3212));
                                 }
                                 i18++;
                                 sparseIntArray2 = sparseIntArray7;
@@ -1084,7 +1084,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                     while (true) {
                         if (i55 < arrayList16.size()) {
                             arrayList5 = arrayList16;
-                            if (((org.telegram.ui.Components.yx) arrayList16.get(i55)).b.id == stickerSet3.id) {
+                            if (((org.telegram.ui.Components.zx) arrayList16.get(i55)).b.id == stickerSet3.id) {
                                 arrayList20 = arrayList27;
                                 sparseIntArray4 = sparseIntArray14;
                                 sparseIntArray3 = sparseIntArray13;
@@ -1112,34 +1112,34 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                                         SparseIntArray sparseIntArray15 = sparseIntArray14;
                                         sparseIntArray3 = sparseIntArray13;
                                         arrayList11.add(Long.valueOf((stickerSet3.id * 13) + 9211));
-                                        yxVar = new org.telegram.ui.Components.yx();
-                                        yxVar.d = inputStickerSet;
+                                        zxVar = new org.telegram.ui.Components.zx();
+                                        zxVar.d = inputStickerSet;
                                         sparseIntArray4 = sparseIntArray15;
-                                        yxVar.f = this.B0.contains(Long.valueOf(stickerSet3.id));
-                                        yxVar.g = true;
+                                        zxVar.f = this.B0.contains(Long.valueOf(stickerSet3.id));
+                                        zxVar.g = true;
                                         if (i24 != 4) {
-                                            yxVar.e = false;
+                                            zxVar.e = false;
                                         } else {
-                                            yxVar.e = !z14;
+                                            zxVar.e = !z14;
                                         }
-                                        yxVar.b = stickerSet3;
-                                        yxVar.c = j(hashSet, arrayList6);
+                                        zxVar.b = stickerSet3;
+                                        zxVar.c = j(hashSet, arrayList6);
                                         arrayList5.size();
-                                        yxVar.h = this.A0.contains(Long.valueOf(yxVar.b.id));
-                                        if (yxVar.c.size() > 24 || yxVar.h) {
-                                            this.u0 = yxVar.c.size() + this.u0;
-                                            for (i17 = 0; i17 < yxVar.c.size(); i17++) {
-                                                arrayList11.add(Long.valueOf((((TLRPC.Document) yxVar.c.get(i17)).id * 13) + 3212));
+                                        zxVar.h = this.A0.contains(Long.valueOf(zxVar.b.id));
+                                        if (zxVar.c.size() > 24 || zxVar.h) {
+                                            this.u0 = zxVar.c.size() + this.u0;
+                                            for (i17 = 0; i17 < zxVar.c.size(); i17++) {
+                                                arrayList11.add(Long.valueOf((((TLRPC.Document) zxVar.c.get(i17)).id * 13) + 3212));
                                             }
                                         } else {
                                             this.u0 += 24;
                                             for (int i56 = 0; i56 < 23; i56++) {
-                                                arrayList11.add(Long.valueOf((((TLRPC.Document) yxVar.c.get(i56)).id * 13) + 3212));
+                                                arrayList11.add(Long.valueOf((((TLRPC.Document) zxVar.c.get(i56)).id * 13) + 3212));
                                             }
-                                            arrayList11.add(Long.valueOf(((yxVar.c.size() - 23) * 169) + ((stickerSet3.id * 13) - 5531)));
+                                            arrayList11.add(Long.valueOf(((zxVar.c.size() - 23) * 169) + ((stickerSet3.id * 13) - 5531)));
                                             sparseIntArray10.put(this.u0 - 1, arrayList5.size());
                                         }
-                                        if (!yxVar.f || i24 == 4) {
+                                        if (!zxVar.f || i24 == 4) {
                                             sparseIntArray5 = sparseIntArray12;
                                         } else if (i24 == 5) {
                                             sparseIntArray5 = sparseIntArray12;
@@ -1150,11 +1150,11 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                                             sparseIntArray5.put(this.u0, arrayList5.size());
                                             this.u0++;
                                             arrayList11.add(Long.valueOf((stickerSet3.id * 13) + 3321));
-                                            arrayList5.add(yxVar);
+                                            arrayList5.add(zxVar);
                                         } else {
                                             sparseIntArray5 = sparseIntArray12;
                                         }
-                                        arrayList5.add(yxVar);
+                                        arrayList5.add(zxVar);
                                     } else {
                                         arrayList20 = arrayList27;
                                         sparseIntArray4 = sparseIntArray14;
@@ -1173,26 +1173,26 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                                         SparseIntArray sparseIntArray152 = sparseIntArray14;
                                         sparseIntArray3 = sparseIntArray13;
                                         arrayList11.add(Long.valueOf((stickerSet3.id * 13) + 9211));
-                                        yxVar = new org.telegram.ui.Components.yx();
-                                        yxVar.d = inputStickerSet;
+                                        zxVar = new org.telegram.ui.Components.zx();
+                                        zxVar.d = inputStickerSet;
                                         sparseIntArray4 = sparseIntArray152;
-                                        yxVar.f = this.B0.contains(Long.valueOf(stickerSet3.id));
-                                        yxVar.g = true;
+                                        zxVar.f = this.B0.contains(Long.valueOf(stickerSet3.id));
+                                        zxVar.g = true;
                                         if (i24 != 4) {
                                         }
-                                        yxVar.b = stickerSet3;
-                                        yxVar.c = j(hashSet, arrayList6);
+                                        zxVar.b = stickerSet3;
+                                        zxVar.c = j(hashSet, arrayList6);
                                         arrayList5.size();
-                                        yxVar.h = this.A0.contains(Long.valueOf(yxVar.b.id));
-                                        if (yxVar.c.size() > 24) {
+                                        zxVar.h = this.A0.contains(Long.valueOf(zxVar.b.id));
+                                        if (zxVar.c.size() > 24) {
                                         }
-                                        this.u0 = yxVar.c.size() + this.u0;
-                                        while (i17 < yxVar.c.size()) {
+                                        this.u0 = zxVar.c.size() + this.u0;
+                                        while (i17 < zxVar.c.size()) {
                                         }
-                                        if (yxVar.f) {
+                                        if (zxVar.f) {
                                         }
                                         sparseIntArray5 = sparseIntArray12;
-                                        arrayList5.add(yxVar);
+                                        arrayList5.add(zxVar);
                                     }
                                     arrayList20 = arrayList27;
                                     sparseIntArray4 = sparseIntArray14;
@@ -1355,17 +1355,17 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
     public final void E(float f7) {
         View view = this.m0;
         if (view != null) {
-            float interpolation = org.telegram.ui.Components.rr.g.getInterpolation(w7.q.a((((f7 * 800.0f) - 0.0f) / 120.0f) / 1.0f, 0.0f, 1.0f));
+            float interpolation = org.telegram.ui.Components.sr.g.getInterpolation(w7.q.a((((f7 * 800.0f) - 0.0f) / 120.0f) / 1.0f, 0.0f, 1.0f));
             view.setAlpha(interpolation);
             view.setScaleX(interpolation);
             view.setScaleY(interpolation * (n() ? -1 : 1));
         }
-        org.telegram.ui.Components.ln lnVar = this.n0;
-        if (lnVar != null) {
+        org.telegram.ui.Components.mn mnVar = this.n0;
+        if (mnVar != null) {
             float a10 = w7.q.a((((f7 * 800.0f) - 30.0f) / 120.0f) / 1.0f, 0.0f, 1.0f);
-            lnVar.setAlpha(a10);
-            lnVar.setScaleX(a10);
-            lnVar.setScaleY(a10 * (n() ? -1 : 1));
+            mnVar.setAlpha(a10);
+            mnVar.setScaleX(a10);
+            mnVar.setScaleY(a10 * (n() ? -1 : 1));
         }
         float f10 = 800.0f * f7;
         float f11 = f10 - 40.0f;
@@ -1373,9 +1373,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         float a12 = w7.q.a((f10 - 80.0f) / 700.0f, 0.0f, 1.0f);
         float a13 = w7.q.a(f11 / 750.0f, 0.0f, 1.0f);
         float a14 = w7.q.a((f10 - 30.0f) / 120.0f, 0.0f, 1.0f);
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        float interpolation2 = rrVar.getInterpolation(a11);
-        float interpolation3 = rrVar.getInterpolation(a12);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        float interpolation2 = srVar.getInterpolation(a11);
+        float interpolation3 = srVar.getInterpolation(a12);
         this.b0.setAlpha(a14);
         this.f0.setAlpha(a14);
         int i10 = 0;
@@ -1388,14 +1388,14 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         float f12 = 1.0f - a14;
         u51 u51Var = this.a0;
         u51Var.setTranslationY(AndroidUtilities.dp(-5.0f) * f12);
-        if (lnVar != null) {
-            lnVar.setTranslationY(AndroidUtilities.dp(-5.0f) * f12);
+        if (mnVar != null) {
+            mnVar.setTranslationY(AndroidUtilities.dp(-5.0f) * f12);
         }
         this.a1 = (interpolation2 * 0.85f) + 0.15f;
         this.b1 = (interpolation3 * 0.925f) + 0.075f;
         u51Var.invalidateOutline();
-        if (lnVar != null) {
-            lnVar.setAlpha(a14);
+        if (mnVar != null) {
+            mnVar.setAlpha(a14);
         }
         s51 s51Var = this.e0;
         s51Var.setAlpha(a14);
@@ -1598,18 +1598,18 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         if (i15 >= 0) {
             ArrayList arrayList = this.M0;
             if (i15 < arrayList.size()) {
-                org.telegram.ui.Components.yx yxVar = (org.telegram.ui.Components.yx) arrayList.get(i15);
-                if (yxVar.h) {
+                org.telegram.ui.Components.zx zxVar = (org.telegram.ui.Components.zx) arrayList.get(i15);
+                if (zxVar.h) {
                     return;
                 }
                 z11 = i15 + 1 == arrayList.size();
                 i13 = this.x0.get(i15);
-                this.A0.add(Long.valueOf(yxVar.b.id));
+                this.A0.add(Long.valueOf(zxVar.b.id));
                 i11 = 24;
-                i12 = yxVar.h ? yxVar.c.size() : Math.min(24, yxVar.c.size());
-                num = yxVar.c.size() > 24 ? Integer.valueOf(i13 + 1 + i12) : null;
-                yxVar.h = true;
-                i14 = yxVar.c.size();
+                i12 = zxVar.h ? zxVar.c.size() : Math.min(24, zxVar.c.size());
+                num = zxVar.c.size() > 24 ? Integer.valueOf(i13 + 1 + i12) : null;
+                zxVar.h = true;
+                i14 = zxVar.c.size();
                 if (i14 > i12) {
                     num = Integer.valueOf(i13 + 1 + i12);
                     num2 = Integer.valueOf(i14 - i12);
@@ -1622,7 +1622,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                 this.O1 = num2.intValue() + num.intValue();
                 this.P1 = SystemClock.elapsedRealtime();
                 if (z11) {
-                    post(new org.telegram.ui.Components.tx(this, num2.intValue() > i11 / 2 ? 1.5f : 3.5f, num.intValue(), 1));
+                    post(new org.telegram.ui.Components.ux(this, num2.intValue() > i11 / 2 ? 1.5f : 3.5f, num.intValue(), 1));
                     return;
                 }
                 return;
@@ -1752,7 +1752,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                 }
             });
             this.u1.addListener(new ai.y4(this, zArr, c90Var, 8));
-            this.u1.setInterpolator(org.telegram.ui.Components.rr.h);
+            this.u1.setInterpolator(org.telegram.ui.Components.sr.h);
             this.u1.setDuration(260L);
             this.u1.start();
             return;
@@ -1877,9 +1877,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         this.f0.setLayerType(2, null);
         this.e0.setLayerType(2, null);
         this.b0.setLayerType(2, null);
-        org.telegram.ui.Components.ln lnVar = this.n0;
-        if (lnVar != null) {
-            lnVar.setLayerType(2, null);
+        org.telegram.ui.Components.mn mnVar = this.n0;
+        if (mnVar != null) {
+            mnVar.setLayerType(2, null);
         }
         View view = this.m0;
         if (view != null) {
@@ -2103,7 +2103,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         this.i1 = ofFloat;
         ofFloat.addUpdateListener(new c51(this, 2));
         this.i1.setDuration(200L);
-        this.i1.setInterpolator(org.telegram.ui.Components.rr.f);
+        this.i1.setInterpolator(org.telegram.ui.Components.sr.f);
         this.i1.start();
     }
 
@@ -2172,9 +2172,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         ofFloat.addUpdateListener(new g51(this, z10, i10));
         this.E1.addListener(new t51(this, z10, i10));
         this.E1.setDuration(320L);
-        this.E1.setInterpolator(org.telegram.ui.Components.rr.h);
+        this.E1.setInterpolator(org.telegram.ui.Components.sr.h);
         this.E1.start();
-        org.telegram.messenger.ok.s(((View) x51Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new c51(this, 1)), org.telegram.ui.Components.rr.f, 160L);
+        org.telegram.messenger.ok.s(((View) x51Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new c51(this, 1)), org.telegram.ui.Components.sr.f, 160L);
         if (this.F1 && z11) {
             n51Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(54.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
         } else {
@@ -2226,7 +2226,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         int i19;
         boolean z14;
         int i20;
-        org.telegram.ui.Components.zv zvVar;
+        org.telegram.ui.Components.aw awVar;
         int i21 = i10;
         int i22 = i12;
         this.J = new HashSet();
@@ -2237,7 +2237,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         this.M = paint2;
         this.S = new ArrayList();
         this.V = UserConfig.selectedAccount;
-        this.c0 = new org.telegram.ui.Components.dw[2];
+        this.c0 = new org.telegram.ui.Components.ew[2];
         this.v0 = new ArrayList();
         this.w0 = new SparseIntArray();
         this.x0 = new SparseIntArray();
@@ -2329,12 +2329,12 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         u51Var.addView(r6Var, w7.y5.c(-1.0f, -1));
         addView(u51Var, w7.y5.d(-1, -1.0f, 119, 0.0f, (i21 == 0 || i21 == 12 || i21 == 9 || i21 == 2 || i21 == 7) ? this.d1 + 6 : 0.0f, 0.0f, n() ? this.d1 + 6 : 0.0f));
         if (num2 != null) {
-            org.telegram.ui.Components.ln lnVar = new org.telegram.ui.Components.ln(context, 24);
-            this.n0 = lnVar;
+            org.telegram.ui.Components.mn mnVar = new org.telegram.ui.Components.mn(context, 24);
+            this.n0 = mnVar;
             Drawable drawable = getResources().getDrawable(R.drawable.shadowed_bubble2_half);
             drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G8, d6Var), PorterDuff.Mode.MULTIPLY));
-            lnVar.setBackground(drawable);
-            addView(lnVar, w7.y5.d(17, 9.0f, (n() ? 80 : 48) | 3, (num2.intValue() / AndroidUtilities.density) + (z15 ? -25 : 10), n() ? 0.0f : this.d1 + 5, 0.0f, n() ? this.d1 + 14 : 0.0f));
+            mnVar.setBackground(drawable);
+            addView(mnVar, w7.y5.d(17, 9.0f, (n() ? 80 : 48) | 3, (num2.intValue() / AndroidUtilities.density) + (z15 ? -25 : 10), n() ? 0.0f : this.d1 + 5, 0.0f, n() ? this.d1 + 14 : 0.0f));
         }
         if (m2Var == null || i21 == 3 || i21 == 6 || i21 == 5 || i21 == 7) {
             i13 = 4;
@@ -2352,9 +2352,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                             z14 = false;
                             i20 = i21;
                             w51Var = new w51(this, context, d6Var, z18, z14, i20, !z12 ? new jx0(28, this, m2Var) : null, i22, i10);
-                            zvVar = w51Var.y;
-                            if (zvVar != null) {
-                                zvVar.setOnLongClickListener(new v(this, 7));
+                            awVar = w51Var.y;
+                            if (awVar != null) {
+                                awVar.setOnLongClickListener(new v(this, 7));
                             }
                             w51Var.U = false;
                             if (i20 != i13) {
@@ -2378,8 +2378,8 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                     z14 = true;
                     i20 = i21;
                     w51Var = new w51(this, context, d6Var, z18, z14, i20, !z12 ? new jx0(28, this, m2Var) : null, i22, i10);
-                    zvVar = w51Var.y;
-                    if (zvVar != null) {
+                    awVar = w51Var.y;
+                    if (awVar != null) {
                     }
                     w51Var.U = false;
                     if (i20 != i13) {
@@ -2397,9 +2397,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                 }
                 Integer num4 = num2;
                 i15 = i21;
-                org.telegram.ui.Components.dw[] dwVarArr = this.c0;
-                this.d0 = dwVarArr[0];
-                dwVarArr[1].setVisibility(8);
+                org.telegram.ui.Components.ew[] ewVarArr = this.c0;
+                this.d0 = ewVarArr[0];
+                ewVarArr[1].setVisibility(8);
                 s51 s51Var = new s51(context, num4, 1);
                 this.e0 = s51Var;
                 s51Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d7, d6Var));
@@ -2419,8 +2419,8 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                 y51Var.f = 160L;
                 y51Var.g = 160L;
                 y51Var.m = false;
-                org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-                y51Var.i = rrVar;
+                org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+                y51Var.i = srVar;
                 y51Var.C = false;
                 x51Var.setItemAnimator(y51Var);
                 x51Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
@@ -2442,7 +2442,7 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                 if (n51Var.getItemAnimator() == null) {
                     m51Var = m51Var2;
                     n51Var.getItemAnimator().n(180L);
-                    n51Var.getItemAnimator().i = rrVar;
+                    n51Var.getItemAnimator().i = srVar;
                 } else {
                     m51Var = m51Var2;
                 }
@@ -2485,16 +2485,16 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
                 n51Var.setVisibility(8);
                 m51Var3.addView(n51Var, w7.y5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
                 this.a0.addView(m51Var3, w7.y5.d(-1, -1.0f, 48, 0.0f, (i15 != 8 || i15 == 13 || i15 == 14) ? 0.0f : (1.0f / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
-                org.telegram.ui.Components.zk0 zk0Var = new org.telegram.ui.Components.zk0(x51Var, o51Var);
-                this.s0 = zk0Var;
-                zk0Var.i = new ci.l1(this, 1);
-                zk0Var.h = new e51(this);
+                org.telegram.ui.Components.bl0 bl0Var = new org.telegram.ui.Components.bl0(x51Var, o51Var);
+                this.s0 = bl0Var;
+                bl0Var.i = new ci.l1(this, 1);
+                bl0Var.h = new e51(this);
                 q51 q51Var = new q51(this, i15, context, d6Var, num);
                 x51Var.n1(q51Var, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
                 n51Var.n1(q51Var, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
-                org.telegram.ui.Components.bn0 bn0Var = new org.telegram.ui.Components.bn0(this, i10, 2);
-                x51Var.setOnItemClickListener(bn0Var);
-                n51Var.setOnItemClickListener(bn0Var);
+                org.telegram.ui.Components.dn0 dn0Var = new org.telegram.ui.Components.dn0(this, i10, 2);
+                x51Var.setOnItemClickListener(dn0Var);
+                n51Var.setOnItemClickListener(dn0Var);
                 r51 r51Var = new r51(this, context, z11);
                 this.f0 = r51Var;
                 r51Var.setTranslationY(-AndroidUtilities.dp(52.0f));
@@ -2585,9 +2585,9 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         }
         Integer num42 = num2;
         i15 = i21;
-        org.telegram.ui.Components.dw[] dwVarArr2 = this.c0;
-        this.d0 = dwVarArr2[0];
-        dwVarArr2[1].setVisibility(8);
+        org.telegram.ui.Components.ew[] ewVarArr2 = this.c0;
+        this.d0 = ewVarArr2[0];
+        ewVarArr2[1].setVisibility(8);
         s51 s51Var3 = new s51(context, num42, 1);
         this.e0 = s51Var3;
         s51Var3.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d7, d6Var));
@@ -2604,8 +2604,8 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         y51Var2.f = 160L;
         y51Var2.g = 160L;
         y51Var2.m = false;
-        org.telegram.ui.Components.rr rrVar2 = org.telegram.ui.Components.rr.h;
-        y51Var2.i = rrVar2;
+        org.telegram.ui.Components.sr srVar2 = org.telegram.ui.Components.sr.h;
+        y51Var2.i = srVar2;
         y51Var2.C = false;
         x51Var2.setItemAnimator(y51Var2);
         x51Var2.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
@@ -2651,16 +2651,16 @@ public abstract class a71 extends FrameLayout implements NotificationCenter.Noti
         n51Var.setVisibility(8);
         m51Var32.addView(n51Var, w7.y5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
         this.a0.addView(m51Var32, w7.y5.d(-1, -1.0f, 48, 0.0f, (i15 != 8 || i15 == 13 || i15 == 14) ? 0.0f : (1.0f / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.zk0 zk0Var2 = new org.telegram.ui.Components.zk0(x51Var2, o51Var3);
-        this.s0 = zk0Var2;
-        zk0Var2.i = new ci.l1(this, 1);
-        zk0Var2.h = new e51(this);
+        org.telegram.ui.Components.bl0 bl0Var2 = new org.telegram.ui.Components.bl0(x51Var2, o51Var3);
+        this.s0 = bl0Var2;
+        bl0Var2.i = new ci.l1(this, 1);
+        bl0Var2.h = new e51(this);
         q51 q51Var2 = new q51(this, i15, context, d6Var, num);
         x51Var2.n1(q51Var2, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
         n51Var.n1(q51Var2, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
-        org.telegram.ui.Components.bn0 bn0Var2 = new org.telegram.ui.Components.bn0(this, i10, 2);
-        x51Var2.setOnItemClickListener(bn0Var2);
-        n51Var.setOnItemClickListener(bn0Var2);
+        org.telegram.ui.Components.dn0 dn0Var2 = new org.telegram.ui.Components.dn0(this, i10, 2);
+        x51Var2.setOnItemClickListener(dn0Var2);
+        n51Var.setOnItemClickListener(dn0Var2);
         r51 r51Var2 = new r51(this, context, z11);
         this.f0 = r51Var2;
         r51Var2.setTranslationY(-AndroidUtilities.dp(52.0f));

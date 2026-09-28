@@ -15,9 +15,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class wy extends org.telegram.ui.Components.vl0 {
+public final class wy extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ zy d;
 
@@ -26,7 +26,7 @@ public final class wy extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 1 || i10 == 3;
@@ -96,7 +96,7 @@ public final class wy extends org.telegram.ui.Components.vl0 {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
         drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.k7, false), mode));
-        r8Var.n(LocaleController.getString(R.string.SelectChats), new org.telegram.ui.Components.qq(drawable, drawable2), zyVar.n != -1);
+        r8Var.n(LocaleController.getString(R.string.SelectChats), new org.telegram.ui.Components.rq(drawable, drawable2), zyVar.n != -1);
         r8Var.getImageView().setPadding(0, AndroidUtilities.dp(7.0f), 0, 0);
     }
 
@@ -128,7 +128,7 @@ public final class wy extends org.telegram.ui.Components.vl0 {
             zyVar.f = yyVar;
             frameLayout = yyVar;
         }
-        return new org.telegram.ui.Components.gl0(frameLayout);
+        return new org.telegram.ui.Components.il0(frameLayout);
     }
 
     @Override // s4.h0

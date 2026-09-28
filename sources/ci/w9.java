@@ -5,9 +5,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.widget.LinearLayout;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class w9 extends LinearLayout {
     public float a;
@@ -50,7 +50,7 @@ public final class w9 extends LinearLayout {
         ofFloat.addUpdateListener(new v9(this, r1));
         this.c.addListener(new ai.n(12, this, z10));
         this.c.setDuration(320L);
-        this.c.setInterpolator(rr.h);
+        this.c.setInterpolator(sr.h);
         this.c.start();
     }
 

@@ -1,62 +1,39 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class iy implements View.OnClickListener {
-    public final /* synthetic */ ly a;
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z2 b;
+    public final /* synthetic */ jy c;
 
-    public iy(ly lyVar) {
-        this.a = lyVar;
+    public iy(jy jyVar, boolean[] zArr, org.telegram.ui.ActionBar.z2 z2Var) {
+        this.c = jyVar;
+        this.a = zArr;
+        this.b = z2Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        boolean[] zArr = new boolean[1];
-        ly lyVar = this.a;
-        lz lzVar = lyVar.F;
-        org.telegram.ui.ActionBar.z2 z2Var = new org.telegram.ui.ActionBar.z2(lzVar.getContext(), null);
-        LinearLayout linearLayout = new LinearLayout(lzVar.getContext());
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
-        ImageView imageView = new ImageView(lzVar.getContext());
-        imageView.setImageResource(R.drawable.smiles_info);
-        linearLayout.addView(imageView, w7.y5.t(-2, -2, 49, 0, 15, 0, 0));
-        TextView textView = new TextView(lzVar.getContext());
-        textView.setText(LocaleController.getString(R.string.EmojiSuggestions));
-        textView.setTextSize(1, 15.0f);
-        int i10 = org.telegram.ui.ActionBar.h6.n5;
-        int i11 = lz.O2;
-        textView.setTextColor(lzVar.z(i10));
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView, w7.y5.t(-2, -2, 51, 0, 24, 0, 0));
-        TextView textView2 = new TextView(lzVar.getContext());
-        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.EmojiSuggestionsInfo)));
-        textView2.setTextSize(1, 15.0f);
-        textView2.setTextColor(lzVar.z(org.telegram.ui.ActionBar.h6.j5));
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        linearLayout.addView(textView2, w7.y5.t(-2, -2, 51, 0, 11, 0, 0));
-        TextView textView3 = new TextView(lzVar.getContext());
-        int i12 = R.string.EmojiSuggestionsUrl;
-        Object obj = lyVar.w;
-        if (obj == null) {
-            obj = lzVar.W0;
+        my myVar = this.c.a;
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
+            return;
         }
-        textView3.setText(LocaleController.formatString("EmojiSuggestionsUrl", i12, obj));
-        textView3.setTextSize(1, 15.0f);
-        textView3.setTextColor(lzVar.z(org.telegram.ui.ActionBar.h6.k5));
-        textView3.setGravity(LocaleController.isRTL ? 5 : 3);
-        linearLayout.addView(textView3, w7.y5.t(-2, -2, 51, 0, 18, 0, 16));
-        textView3.setOnClickListener(new hy(this, zArr, z2Var));
-        z2Var.b(linearLayout);
-        z2Var.a.show();
+        zArr[0] = true;
+        org.telegram.ui.ActionBar.a2[] a2VarArr = {new org.telegram.ui.ActionBar.a2(myVar.F.getContext(), 3, null)};
+        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
+        mz mzVar = myVar.F;
+        String str = myVar.w;
+        if (str == null) {
+            str = mzVar.W0[0];
+        }
+        tL_messages_getEmojiURL.lang_code = str;
+        AndroidUtilities.runOnUIThread(new ym(this, a2VarArr, ConnectionsManager.getInstance(mzVar.c1).sendRequest(tL_messages_getEmojiURL, new ai.s5(this, a2VarArr, this.b, 8)), 2), 1000L);
     }
 }

@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ei extends z4.a {
     public final /* synthetic */ int c;
@@ -17,7 +17,7 @@ public final class ei extends z4.a {
     public final /* synthetic */ boolean e;
     public final /* synthetic */ List f;
     public final /* synthetic */ MessageObject g;
-    public final /* synthetic */ org.telegram.ui.Components.qj0 h;
+    public final /* synthetic */ org.telegram.ui.Components.sj0 h;
     public final /* synthetic */ MessageObject i;
     public final /* synthetic */ SparseIntArray j;
     public final /* synthetic */ int k;
@@ -27,14 +27,14 @@ public final class ei extends z4.a {
     public final /* synthetic */ int o;
     public final /* synthetic */ wn p;
 
-    public ei(wn wnVar, int i10, SparseArray sparseArray, boolean z10, List list, MessageObject messageObject, org.telegram.ui.Components.qj0 qj0Var, MessageObject messageObject2, SparseIntArray sparseIntArray, int i11, z4.g gVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
+    public ei(wn wnVar, int i10, SparseArray sparseArray, boolean z10, List list, MessageObject messageObject, org.telegram.ui.Components.sj0 sj0Var, MessageObject messageObject2, SparseIntArray sparseIntArray, int i11, z4.g gVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
         this.p = wnVar;
         this.c = i10;
         this.d = sparseArray;
         this.e = z10;
         this.f = list;
         this.g = messageObject;
-        this.h = qj0Var;
+        this.h = sj0Var;
         this.i = messageObject2;
         this.j = sparseIntArray;
         this.k = i11;
@@ -69,19 +69,19 @@ public final class ei extends z4.a {
         wn wnVar = this.p;
         un unVar = wnVar.ea;
         i11 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
-        org.telegram.ui.Components.ak0 ak0Var = new org.telegram.ui.Components.ak0(context, unVar, i11, this.g, reactionCount, true);
-        org.telegram.ui.Components.qj0 qj0Var = this.h;
-        ak0Var.h(qj0Var.getSeenUsers());
-        ak0Var.G = new z0(this, 16);
-        ak0Var.E = new o(11, this, this.i);
-        ak0Var.y = new ei.u4(this.j, i10, this.k, this.l, this.m, this.n);
+        org.telegram.ui.Components.ck0 ck0Var = new org.telegram.ui.Components.ck0(context, unVar, i11, this.g, reactionCount, true);
+        org.telegram.ui.Components.sj0 sj0Var = this.h;
+        ck0Var.h(sj0Var.getSeenUsers());
+        ck0Var.G = new z0(this, 16);
+        ck0Var.E = new o(11, this, this.i);
+        ck0Var.y = new ei.u4(this.j, i10, this.k, this.l, this.m, this.n);
         if (i12 < 0) {
-            ak0Var.setPredictiveCount(this.o);
-            qj0Var.setSeenCallback(new h3(ak0Var, 1));
+            ck0Var.setPredictiveCount(this.o);
+            sj0Var.setSeenCallback(new h3(ck0Var, 1));
         }
-        gVar.addView(ak0Var);
-        sparseArray.put(i10, ak0Var);
-        return ak0Var;
+        gVar.addView(ck0Var);
+        sparseArray.put(i10, ck0Var);
+        return ck0Var;
     }
 
     @Override // z4.a

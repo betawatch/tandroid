@@ -8,11 +8,11 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.HashtagSearchController;
-import org.telegram.ui.Components.jh0;
-import org.telegram.ui.Components.oa0;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.lh0;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v00;
 import org.telegram.ui.de;
 import org.telegram.ui.iv;
 import org.telegram.ui.jv;
@@ -23,7 +23,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.wq0;
 import org.telegram.ui.yq0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class n3 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final class n3 extends s4.s0 {
                 break;
             case 8:
                 ((s4.s0) this.b).a(recyclerView, i10);
-                ((oa0) this.c).D.getClass();
+                ((qa0) this.c).D.getClass();
                 break;
         }
     }
@@ -126,10 +126,10 @@ public final class n3 extends s4.s0 {
                 }
                 break;
             case 1:
-                r61 r61Var = ((de) this.c).a;
-                if (r61Var.canScrollVertically(1)) {
-                    for (int i14 = 0; i14 < r61Var.getChildCount(); i14++) {
-                        if (!(r61Var.getChildAt(i14) instanceof u00)) {
+                t61 t61Var = ((de) this.c).a;
+                if (t61Var.canScrollVertically(1)) {
+                    for (int i14 = 0; i14 < t61Var.getChildCount(); i14++) {
+                        if (!(t61Var.getChildAt(i14) instanceof v00)) {
                         }
                     }
                     break;
@@ -173,18 +173,18 @@ public final class n3 extends s4.s0 {
                 break;
             case 3:
                 qy qyVar = (qy) this.b;
-                jh0 jh0Var = (jh0) this.c;
-                r61 r61Var2 = jh0Var.c;
-                if (!(TextUtils.isEmpty(jh0Var.w) ? jh0Var.e : jh0Var.n).isEmpty()) {
-                    if (r61Var2.canScrollVertically(1)) {
-                        for (int i17 = 0; i17 < r61Var2.getChildCount(); i17++) {
-                            if (!(r61Var2.getChildAt(i17) instanceof u00)) {
+                lh0 lh0Var = (lh0) this.c;
+                t61 t61Var2 = lh0Var.c;
+                if (!(TextUtils.isEmpty(lh0Var.w) ? lh0Var.e : lh0Var.n).isEmpty()) {
+                    if (t61Var2.canScrollVertically(1)) {
+                        for (int i17 = 0; i17 < t61Var2.getChildCount(); i17++) {
+                            if (!(t61Var2.getChildAt(i17) instanceof v00)) {
                             }
                         }
                     }
-                    jh0Var.a(false);
+                    lh0Var.a(false);
                 }
-                if (r61Var2.K1 && !jh0Var.Q && qyVar.getParentActivity() != null) {
+                if (t61Var2.K1 && !lh0Var.Q && qyVar.getParentActivity() != null) {
                     AndroidUtilities.hideKeyboard(qyVar.getParentActivity().getCurrentFocus());
                     break;
                 }
@@ -243,7 +243,7 @@ public final class n3 extends s4.s0 {
                 break;
             case 8:
                 ((s4.s0) this.b).b(recyclerView, i10, i11);
-                ((oa0) this.c).D.b(recyclerView, i10, i11);
+                ((qa0) this.c).D.b(recyclerView, i10, i11);
                 break;
             default:
                 xh.o2 o2Var = (xh.o2) this.c;
@@ -251,13 +251,13 @@ public final class n3 extends s4.s0 {
                 if (o2Var.isAttachedToWindow()) {
                     if (j2Var.canScrollVertically(1)) {
                         for (int i18 = 0; i18 < j2Var.getChildCount(); i18++) {
-                            if (!(j2Var.getChildAt(i18) instanceof u00)) {
+                            if (!(j2Var.getChildAt(i18) instanceof v00)) {
                             }
                         }
                     }
                     o2Var.e.a();
                 }
-                ((zr0) this.b).o();
+                ((bs0) this.b).o();
                 break;
         }
     }

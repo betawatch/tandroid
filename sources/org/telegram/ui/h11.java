@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class h11 extends View {
     public static final String[] s = {"🎉", "🎆", "🎈"};
@@ -159,7 +159,7 @@ public final class h11 extends View {
                     float f15 = pointF.y;
                     float f16 = ((v - f14) * cascade) + (f13 * f11) + f14;
                     float pow = f15 - ((f15 + f12) * ((float) Math.pow(this.h, 2.0d)));
-                    float interpolation = org.telegram.ui.Components.rr.h.getInterpolation(Utilities.clamp(cascade / 0.4f, 1.0f, 0.0f));
+                    float interpolation = org.telegram.ui.Components.sr.h.getInterpolation(Utilities.clamp(cascade / 0.4f, 1.0f, 0.0f));
                     float f17 = (f12 / 2.0f) * interpolation;
                     float f18 = f12 * interpolation;
                     g11Var.setImageCoords(f16 - f17, pow - f17, f18, f18);

@@ -1,46 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class eg0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fg0 b;
+public final class eg0 extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final TextView c;
+    public final boolean d;
 
-    public /* synthetic */ eg0(fg0 fg0Var, int i10) {
-        this.a = i10;
-        this.b = fg0Var;
+    public eg0(Context context) {
+        super(context);
+        this.d = true;
+        setBackgroundColor(-15066598);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(-1);
+        textView.setGravity(17);
+        textView.setBackground(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
+        textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
+        textView.setTypeface(AndroidUtilities.bold());
+        addView(textView, w7.y5.e(-2, -1, 51));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(-1);
+        textView2.setGravity(17);
+        textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(-12763843, 0, -1));
+        textView2.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        textView2.setText(LocaleController.getString(R.string.Send).toUpperCase());
+        textView2.setTypeface(AndroidUtilities.bold());
+        addView(textView2, w7.y5.e(-2, -1, 53));
+        TextView textView3 = new TextView(context);
+        this.c = textView3;
+        textView3.setTypeface(AndroidUtilities.bold());
+        textView3.setTextSize(1, 13.0f);
+        textView3.setTextColor(-1);
+        textView3.setGravity(17);
+        textView3.setBackgroundResource(R.drawable.photobadge);
+        textView3.setMinWidth(AndroidUtilities.dp(23.0f));
+        textView3.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
+        addView(textView3, w7.y5.d(-2, 23.0f, 53, 0.0f, 0.0f, 7.0f, 0.0f));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                fg0 fg0Var = this.b;
-                fg0Var.h = false;
-                fg0Var.a = fg0Var.c;
-                fg0Var.invalidate();
-                int i10 = fg0Var.J;
-                if (i10 >= 0) {
-                    fg0Var.b(i10);
-                    fg0Var.J = -1;
-                    break;
-                }
-                break;
-            default:
-                fg0 fg0Var2 = this.b;
-                fg0Var2.n = false;
-                fg0Var2.h = false;
-                fg0Var2.invalidate();
-                int i11 = fg0Var2.J;
-                if (i11 >= 0) {
-                    fg0Var2.b(i11);
-                    fg0Var2.J = -1;
-                }
-                fg0Var2.a();
-                break;
-        }
+    public final void a() {
+        this.c.setVisibility(8);
+        this.b.setTextColor(this.d ? -1 : -15095832);
     }
 }

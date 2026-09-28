@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class li extends org.telegram.ui.ActionBar.o1 {
     public final /* synthetic */ mi x;
@@ -15,7 +15,7 @@ public final class li extends org.telegram.ui.ActionBar.o1 {
 
     @Override // org.telegram.ui.ActionBar.o1
     public final boolean b() {
-        lz lzVar;
+        mz mzVar;
         wi wiVar = this.x.B0;
         if (!wiVar.isDismissed() && wiVar.s1) {
             oi oiVar = wiVar.y0;
@@ -23,15 +23,15 @@ public final class li extends org.telegram.ui.ActionBar.o1 {
                 return true;
             }
             oi oiVar2 = wiVar.y0;
-            vn vnVar = wiVar.m0;
-            if (oiVar2 == vnVar && ((lzVar = vnVar.E) == null || lzVar.getVisibility() != 0)) {
+            wn wnVar = wiVar.m0;
+            if (oiVar2 == wnVar && ((mzVar = wnVar.E) == null || mzVar.getVisibility() != 0)) {
                 return true;
             }
             oi oiVar3 = wiVar.y0;
-            vn vnVar2 = wiVar.n0;
-            if (oiVar3 == vnVar2) {
-                lz lzVar2 = vnVar2.E;
-                return lzVar2 == null || lzVar2.getVisibility() != 0;
+            wn wnVar2 = wiVar.n0;
+            if (oiVar3 == wnVar2) {
+                mz mzVar2 = wnVar2.E;
+                return mzVar2 == null || mzVar2.getVisibility() != 0;
             }
         }
         return false;

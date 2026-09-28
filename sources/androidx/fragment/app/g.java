@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.fw0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.vo0;
+import org.telegram.ui.Components.hw0;
+import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.xo0;
 import org.telegram.ui.b51;
 import org.telegram.ui.d60;
 import org.telegram.ui.de1;
@@ -28,7 +28,7 @@ import org.telegram.ui.y30;
 import org.telegram.ui.z41;
 import qg.t2;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -105,14 +105,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 5:
-                mm0 mm0Var = (mm0) this.d;
+                om0 om0Var = (om0) this.d;
                 float f7 = this.b ? 1.0f : 0.0f;
-                mm0Var.r = f7;
-                mm0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-                mm0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, mm0Var.r));
-                mm0Var.y.setAlpha(mm0Var.r);
-                mm0Var.s.invalidate();
-                mm0Var.v.invalidate();
+                om0Var.r = f7;
+                om0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
+                om0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, om0Var.r));
+                om0Var.y.setAlpha(om0Var.r);
+                om0Var.s.invalidate();
+                om0Var.v.invalidate();
                 Runnable runnable2 = (Runnable) this.c;
                 if (runnable2 != null) {
                     AndroidUtilities.runOnUIThread(runnable2);
@@ -178,14 +178,14 @@ public final class g extends AnimatorListenerAdapter {
                 d60Var.Q.invalidate();
                 return;
             case 8:
-                fw0 fw0Var = (fw0) this.c;
+                hw0 hw0Var = (hw0) this.c;
                 qg0 qg0Var = (qg0) this.d;
                 if (qg0Var.J == 0 && this.b) {
                     qg0Var.v1(true, true);
                 }
-                fw0Var.setVisibility(8);
-                fw0Var.g();
-                fw0Var.setX(0.0f);
+                hw0Var.setVisibility(8);
+                hw0Var.g();
+                hw0Var.setX(0.0f);
                 return;
             case 9:
                 dw0 dw0Var = (dw0) this.d;
@@ -213,7 +213,7 @@ public final class g extends AnimatorListenerAdapter {
                     b51Var.N.invalidate();
                 }
                 if (!b51Var.S && (z41Var = b51Var.N) != null && z41Var.getSeekBarWaveform() != null) {
-                    vo0 seekBarWaveform = b51Var.N.getSeekBarWaveform();
+                    xo0 seekBarWaveform = b51Var.N.getSeekBarWaveform();
                     seekBarWaveform.L = b51Var.s;
                     u1 u1Var2 = seekBarWaveform.n;
                     if (u1Var2 != null) {

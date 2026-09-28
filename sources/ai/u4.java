@@ -4,18 +4,18 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class u4 implements pk0 {
+public final class u4 implements rk0 {
     public final /* synthetic */ e6 a;
 
     public u4(e6 e6Var) {
         this.a = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
         e6 e6Var = this.a;
         if (z10) {
@@ -25,17 +25,17 @@ public final class u4 implements pk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final boolean k() {
         return this.a.N0();
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final void m(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         e6 e6Var = this.a;
         Paint paint = e6Var.n2;
@@ -52,12 +52,12 @@ public final class u4 implements pk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final void n() {
         ((ac) this.a.Q1).b(false);
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ boolean p() {
         return false;
     }

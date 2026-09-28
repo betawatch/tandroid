@@ -9,13 +9,13 @@ import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class ru0 {
     public final View i;
     public boolean p;
-    public final org.telegram.ui.Components.qq q;
-    public final org.telegram.ui.Components.pg0 r;
+    public final org.telegram.ui.Components.rq q;
+    public final org.telegram.ui.Components.rg0 r;
     public final /* synthetic */ PhotoViewer s;
     public long a = 0;
     public float b = 0.0f;
@@ -49,10 +49,10 @@ public abstract class ru0 {
             float[] fArr = this.n;
             if (i10 >= fArr.length) {
                 a();
-                org.telegram.ui.Components.pg0 pg0Var = new org.telegram.ui.Components.pg0(28);
-                this.r = pg0Var;
-                pg0Var.h = 200;
-                this.q = new org.telegram.ui.Components.qq(photoViewer.y.getDrawable(R.drawable.circle_big).mutate(), pg0Var);
+                org.telegram.ui.Components.rg0 rg0Var = new org.telegram.ui.Components.rg0(28);
+                this.r = rg0Var;
+                rg0Var.h = 200;
+                this.q = new org.telegram.ui.Components.rq(photoViewer.y.getDrawable(R.drawable.circle_big).mutate(), rg0Var);
                 return;
             }
             this.m[i10] = 1.0f;
@@ -167,16 +167,16 @@ public abstract class ru0 {
             return;
         }
         View view = this.i;
-        org.telegram.ui.Components.pg0 pg0Var = this.r;
-        if (pg0Var != null) {
+        org.telegram.ui.Components.rg0 rg0Var = this.r;
+        if (rg0Var != null) {
             boolean z12 = z11 && (i12 == 3 || i12 == 4);
             if (i10 == 3) {
-                pg0Var.a(false, z12);
+                rg0Var.a(false, z12);
             } else if (i10 == 4) {
-                pg0Var.a(true, z12);
+                rg0Var.a(true, z12);
             }
-            pg0Var.f = view;
-            pg0Var.invalidateSelf();
+            rg0Var.f = view;
+            rg0Var.invalidateSelf();
         }
         this.a = System.currentTimeMillis();
         if (!z10 || (i11 = this.h) == i10) {

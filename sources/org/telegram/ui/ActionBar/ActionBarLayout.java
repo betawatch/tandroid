@@ -57,10 +57,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.sd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.a30;
+import org.telegram.ui.Components.c30;
 import org.telegram.ui.Components.n9;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.b90;
@@ -71,7 +71,7 @@ import org.telegram.ui.un;
 import org.telegram.ui.wn;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements b5, mg.b {
     public static Drawable p1;
@@ -198,7 +198,7 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
         this.V0 = new Path();
         this.W0 = new float[8];
         this.Y0 = new int[2];
-        this.b1 = new org.telegram.ui.Components.e6(this, 280L, rr.h);
+        this.b1 = new org.telegram.ui.Components.e6(this, 280L, sr.h);
         this.i1 = new ArrayList();
         this.j1 = new o(this, 2);
         i0.b bVar = i0.b.e;
@@ -380,9 +380,9 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
         if (this.a0 || this.Q || j() || this.O0.isEmpty()) {
             return;
         }
-        a30 a30Var = a30.d0;
-        if (a30Var != null && a30Var.w) {
-            a30Var.e(false);
+        c30 c30Var = c30.d0;
+        if (c30Var != null && c30Var.w) {
+            c30Var.e(false);
             return;
         }
         if (!e0() && (kVar = this.y) != null && !kVar.s()) {
@@ -836,7 +836,7 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
             AnimatorSet animatorSet = new AnimatorSet();
             this.K = animatorSet;
             animatorSet.playTogether(arrayList4);
-            this.K.setInterpolator(rr.h);
+            this.K.setInterpolator(sr.h);
             this.K.setDuration(200L);
             this.K.addListener(new q(this, 1));
             this.K.start();
@@ -1579,7 +1579,7 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
                 long j3 = max;
                 animatorSet.playTogether(ofFloat.setDuration(j3), ObjectAnimator.ofFloat(this, "innerTranslationX", 0.0f).setDuration(j3));
                 if (D()) {
-                    animatorSet.setInterpolator(rr.h);
+                    animatorSet.setInterpolator(sr.h);
                 }
             }
         } else {
@@ -1590,7 +1590,7 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
                 long j10 = max2;
                 animatorSet.playTogether(ofFloat2.setDuration(j10), ObjectAnimator.ofFloat(this, "innerTranslationX", this.s.getMeasuredWidth()).setDuration(j10));
                 if (D()) {
-                    animatorSet.setInterpolator(rr.h);
+                    animatorSet.setInterpolator(sr.h);
                 }
             }
         }
@@ -2471,7 +2471,7 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(ObjectAnimator.ofFloat(m2Var2.fragmentView, (Property<View, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(m2Var2.fragmentView, (Property<View, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f));
         animatorSet.setDuration(200L);
-        animatorSet.setInterpolator(new rr(0.42d, 0.0d, 0.58d, 1.0d));
+        animatorSet.setInterpolator(new sr(0.42d, 0.0d, 0.58d, 1.0d));
         animatorSet.addListener(new ai.z(12, this, m2Var2));
         animatorSet.start();
         try {

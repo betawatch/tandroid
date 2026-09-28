@@ -16,11 +16,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class zj0 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public final yj0 b;
-    public final org.telegram.ui.Components.lj0 c;
+    public final org.telegram.ui.Components.nj0 c;
     public Utilities.Callback d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -31,15 +31,15 @@ public final class zj0 extends org.telegram.ui.ActionBar.e3 implements Notificat
         final int i11 = 1;
         LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.c = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        lj0Var.f(R.raw.silent_unmute, 46, 46, null);
-        lj0Var.d();
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        this.c = nj0Var;
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        nj0Var.f(R.raw.silent_unmute, 46, 46, null);
+        nj0Var.d();
         int dp = AndroidUtilities.dp(72.0f);
         int i12 = org.telegram.ui.ActionBar.h6.Oh;
-        lj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(dp, org.telegram.ui.ActionBar.h6.w0(null, i12, false)));
-        frameLayout.addView(lj0Var, w7.y5.e(72, 72, 17));
+        nj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(dp, org.telegram.ui.ActionBar.h6.w0(null, i12, false)));
+        frameLayout.addView(nj0Var, w7.y5.e(72, 72, 17));
         yj0 yj0Var = new yj0(context);
         this.b = yj0Var;
         frameLayout.addView(yj0Var, w7.y5.d(64, 32.0f, 49, 29.0f, 16.0f, 0.0f, 0.0f));
@@ -55,10 +55,10 @@ public final class zj0 extends org.telegram.ui.ActionBar.e3 implements Notificat
             public final void onClick(View view) {
                 switch (i10) {
                     case 0:
-                        org.telegram.ui.Components.lj0 lj0Var2 = this.b.c;
-                        if (!lj0Var2.b()) {
-                            lj0Var2.setProgress(0.0f);
-                            lj0Var2.d();
+                        org.telegram.ui.Components.nj0 nj0Var2 = this.b.c;
+                        if (!nj0Var2.b()) {
+                            nj0Var2.setProgress(0.0f);
+                            nj0Var2.d();
                             break;
                         }
                         break;
@@ -112,10 +112,10 @@ public final class zj0 extends org.telegram.ui.ActionBar.e3 implements Notificat
             public final void onClick(View view) {
                 switch (i11) {
                     case 0:
-                        org.telegram.ui.Components.lj0 lj0Var2 = this.b.c;
-                        if (!lj0Var2.b()) {
-                            lj0Var2.setProgress(0.0f);
-                            lj0Var2.d();
+                        org.telegram.ui.Components.nj0 nj0Var2 = this.b.c;
+                        if (!nj0Var2.b()) {
+                            nj0Var2.setProgress(0.0f);
+                            nj0Var2.d();
                             break;
                         }
                         break;
@@ -177,12 +177,12 @@ public final class zj0 extends org.telegram.ui.ActionBar.e3 implements Notificat
                     }
                 }
                 if (this.b.a(i12)) {
-                    org.telegram.ui.Components.lj0 lj0Var = this.c;
-                    if (lj0Var.b()) {
+                    org.telegram.ui.Components.nj0 nj0Var = this.c;
+                    if (nj0Var.b()) {
                         return;
                     }
-                    lj0Var.setProgress(0.0f);
-                    lj0Var.d();
+                    nj0Var.setProgress(0.0f);
+                    nj0Var.d();
                 }
             }
         }

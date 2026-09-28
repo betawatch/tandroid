@@ -26,12 +26,12 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.je;
 import w7.y5;
 import yh.w7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -113,9 +113,9 @@ public class e extends FrameLayout {
         this.H = getContext().getResources().getDrawable(R.drawable.stats_tooltip).mutate();
         int dp = AndroidUtilities.dp(4.0f);
         this.I = h6.i0(dp, dp, dp, dp, h6.v0(h6.h5, d6Var), h6.v0(h6.i6, d6Var), -16777216);
-        qq qqVar = new qq(this.H, this.I, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        qqVar.w = true;
-        setBackground(qqVar);
+        rq rqVar = new rq(this.H, this.I, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        rqVar.w = true;
+        setBackground(rqVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:46:0x0260  */

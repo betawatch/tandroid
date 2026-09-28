@@ -22,16 +22,16 @@ import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Cells.j6;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import s4.p0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class b extends bb {
-    public j61 X;
+    public l61 X;
     public boolean Y;
     public final FrameLayout Z;
     public final boolean a0;
@@ -64,9 +64,9 @@ public final class b extends bb {
             }
         }
         frameLayout.addView(i6Var, y5.c(-2.0f, i10));
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
+        yl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
         this.d.p1();
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new g(this, 12));
@@ -98,15 +98,15 @@ public final class b extends bb {
         }
         this.Y = z10;
         int i10 = this.c0 + 1;
-        wl0 wl0Var = this.d;
-        View U0 = wl0Var.U0(i10);
+        yl0 yl0Var = this.d;
+        View U0 = yl0Var.U0(i10);
         if (U0 instanceof j6) {
             ((j6) U0).a(!z10);
             z11 = false;
         } else {
             z11 = true;
         }
-        View U02 = wl0Var.U0(this.c0 + 2);
+        View U02 = yl0Var.U0(this.c0 + 2);
         if (U02 instanceof j6) {
             ((j6) U02).a(z10);
         } else {
@@ -118,11 +118,11 @@ public final class b extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        j61 j61Var = new j61(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
-        this.X = j61Var;
-        j61Var.r = false;
-        return j61Var;
+    public final xl0 v(yl0 yl0Var) {
+        l61 l61Var = new l61(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
+        this.X = l61Var;
+        l61Var.r = false;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

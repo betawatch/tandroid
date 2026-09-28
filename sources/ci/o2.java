@@ -4,11 +4,11 @@ import com.google.android.gms.common.api.internal.BasePendingResult;
 import java.util.ArrayDeque;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.yp;
+import org.telegram.ui.Components.zp;
 import org.telegram.ui.c10;
 import org.telegram.ui.il0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class o2 extends TimerTask {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final class o2 extends TimerTask {
                 }
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new yp(this, 24));
+                AndroidUtilities.runOnUIThread(new zp(this, 24));
                 break;
             case 3:
                 AndroidUtilities.runOnUIThread(new c10(this, 23));

@@ -34,27 +34,27 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Cells.ca;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.qh;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.vg;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.Components.yh;
 import org.telegram.ui.jk;
 import org.telegram.ui.vi0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class r extends oi implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] Q = {1, 2, 16, 8, 256, 4, 16384, 32768};
     public int E;
     public i1 F;
     public int G;
-    public y70 H;
+    public a80 H;
     public int I;
     public boolean J;
     public int K;
@@ -67,7 +67,7 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
     public final x3 r;
     public final c4 s;
     public m.p3 v;
-    public lz w;
+    public mz w;
     public boolean x;
     public boolean y;
 
@@ -136,12 +136,12 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
         }
         wi wiVar = rVar.b;
         if (rVar.w == null) {
-            lz lzVar = new lz(wiVar.f0, true, false, false, rVar.getContext(), true, null, wiVar.r1, true, rVar.a, false, false);
-            rVar.w = lzVar;
-            lzVar.setVisibility(8);
-            lz lzVar2 = rVar.w;
-            lzVar2.w2 = false;
-            lzVar2.setBottomInset(AndroidUtilities.navigationBarHeight);
+            mz mzVar = new mz(wiVar.f0, true, false, false, rVar.getContext(), true, null, wiVar.r1, true, rVar.a, false, false);
+            rVar.w = mzVar;
+            mzVar.setVisibility(8);
+            mz mzVar2 = rVar.w;
+            mzVar2.w2 = false;
+            mzVar2.setBottomInset(AndroidUtilities.navigationBarHeight);
             View view = rVar.w.v;
             if (view != null) {
                 view.setVisibility(8);
@@ -358,10 +358,10 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
         return !this.r.k3();
     }
 
-    public final void P(y70 y70Var, a aVar, TL_iv.PageBlock pageBlock, int i10, String str, int i11, y70 y70Var2) {
-        y70Var.j(aVar != null && aVar.b.getClass() == pageBlock.getClass(), i10, null, str, new ai.h5(this, aVar, pageBlock, y70Var2, 18));
-        y70Var.y().a.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
-        y70Var.y().a.setTextSize(1, i11);
+    public final void P(a80 a80Var, a aVar, TL_iv.PageBlock pageBlock, int i10, String str, int i11, a80 a80Var2) {
+        a80Var.j(aVar != null && aVar.b.getClass() == pageBlock.getClass(), i10, null, str, new ai.h5(this, aVar, pageBlock, a80Var2, 18));
+        a80Var.y().a.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
+        a80Var.y().a.setTextSize(1, i11);
     }
 
     public final boolean Q() {
@@ -424,18 +424,18 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
     public final void R(boolean z10) {
         if (this.y) {
             this.y = false;
-            lz lzVar = this.w;
-            if (lzVar != null) {
-                lzVar.t(false);
+            mz mzVar = this.w;
+            if (mzVar != null) {
+                mzVar.t(false);
                 if (!z10) {
                     this.w.A();
                 }
             }
         }
         this.F = null;
-        lz lzVar2 = this.w;
-        if (lzVar2 != null) {
-            lzVar2.setTranslationY(0.0f);
+        mz mzVar2 = this.w;
+        if (mzVar2 != null) {
+            mzVar2.setTranslationY(0.0f);
             this.w.setVisibility(8);
         }
         this.x = false;
@@ -452,15 +452,15 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
         float f7;
         float f10;
         int dp = this.y ? AndroidUtilities.dp(245.0f) : this.E;
-        lz lzVar = this.w;
+        mz mzVar = this.w;
         wi wiVar = this.b;
-        if (lzVar != null) {
+        if (mzVar != null) {
             if (this.x) {
                 f10 = (this.E - dp) + (this.y ? -wiVar.l2 : 0.0f);
             } else {
                 f10 = 0.0f;
             }
-            lzVar.setTranslationY(f10);
+            mzVar.setTranslationY(f10);
         }
         c4 c4Var = this.s;
         if (c4Var != null) {
@@ -484,7 +484,7 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
             if (this.M != this.K) {
                 ViewPropertyAnimator animate = c4Var.getBottomInnerContainer().animate();
                 this.M = this.K;
-                animate.translationY(-r1).setDuration(320L).setInterpolator(rr.h).start();
+                animate.translationY(-r1).setDuration(320L).setInterpolator(sr.h).start();
             }
         }
     }
@@ -818,14 +818,14 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        lz lzVar;
+        mz mzVar;
         x3 x3Var = this.r;
         k3 k3Var = x3Var.n3;
         ca caVar = x3Var.o3;
         if (k3Var.y() && caVar.onTouchEvent(motionEvent)) {
             return true;
         }
-        int height = (((!this.y || (lzVar = this.w) == null) ? getHeight() - this.E : (int) lzVar.getY()) - AndroidUtilities.dp(60.0f)) - this.K;
+        int height = (((!this.y || (mzVar = this.w) == null) ? getHeight() - this.E : (int) mzVar.getY()) - AndroidUtilities.dp(60.0f)) - this.K;
         if (motionEvent.getAction() == 0 && this.x && motionEvent.getY() < height) {
             R(false);
         }
@@ -897,9 +897,9 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
         if (z10) {
             if (z10) {
                 this.y = false;
-                lz lzVar = this.w;
-                if (lzVar != null) {
-                    lzVar.t(false);
+                mz mzVar = this.w;
+                if (mzVar != null) {
+                    mzVar.t(false);
                     this.w.A();
                 }
                 S();
@@ -938,12 +938,12 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
         if (x3Var != null) {
             x3Var.v2();
         }
-        lz lzVar = this.w;
-        if (lzVar == null || (observersGroup = lzVar.I2) == null) {
+        mz mzVar = this.w;
+        if (mzVar == null || (observersGroup = mzVar.I2) == null) {
             return;
         }
         observersGroup.removeAllObservers();
-        lzVar.I2 = null;
+        mzVar.I2 = null;
     }
 
     @Override // org.telegram.ui.Components.oi
@@ -1025,13 +1025,13 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
     public final void y(int i10, int i11) {
         int dp;
         int i12;
-        y70 y70Var;
+        a80 a80Var;
         boolean z10 = this.L;
         wi wiVar = this.b;
         boolean z11 = wiVar.r1.R() > AndroidUtilities.dp(20.0f);
         this.L = z11;
-        if (!z11 && z10 && (y70Var = this.H) != null) {
-            y70Var.u();
+        if (!z11 && z10 && (a80Var = this.H) != null) {
+            a80Var.u();
             this.H = null;
         }
         if (this.L || this.E > AndroidUtilities.dp(20.0f)) {

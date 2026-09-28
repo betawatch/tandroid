@@ -3,9 +3,9 @@ package mh;
 import android.text.SpannableStringBuilder;
 import android.util.SparseArray;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class a {
     public static final SparseArray a = new SparseArray(6);
@@ -18,13 +18,13 @@ public abstract class a {
             spannableStringBuilder.insert(0, (CharSequence) "* ");
         }
         SparseArray sparseArray = a;
-        pq pqVar = (pq) sparseArray.get(i10);
-        if (pqVar == null) {
-            pqVar = new pq(i10, 0);
-            pqVar.setColorKey(h6.il);
-            sparseArray.put(i10, pqVar);
+        qq qqVar = (qq) sparseArray.get(i10);
+        if (qqVar == null) {
+            qqVar = new qq(i10, 0);
+            qqVar.setColorKey(h6.il);
+            sparseArray.put(i10, qqVar);
         }
-        spannableStringBuilder.setSpan(pqVar, 0, 1, 33);
+        spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
         if (z10) {
             spannableStringBuilder.append((char) 8297);
         }

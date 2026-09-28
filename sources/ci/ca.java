@@ -18,10 +18,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.n30;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.p30;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class ca extends ScrollView {
     public final Paint E;
@@ -35,7 +35,7 @@ public abstract class ca extends ScrollView {
     public final int b;
     public final ba c;
     public final ArrayList d;
-    public n30 e;
+    public p30 e;
     public final m9 f;
     public boolean h;
     public Utilities.Callback n;
@@ -49,15 +49,15 @@ public abstract class ca extends ScrollView {
     public ca(Context context, org.telegram.ui.ActionBar.d6 d6Var, m9 m9Var) {
         super(context);
         this.d = new ArrayList();
-        rr rrVar = rr.h;
-        this.r = new org.telegram.ui.Components.e6(this, 0L, 300L, rrVar);
+        sr srVar = sr.h;
+        this.r = new org.telegram.ui.Components.e6(this, 0L, 300L, srVar);
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode);
         this.s = linearGradient;
         Paint paint = new Paint(1);
         this.v = paint;
         this.w = new Matrix();
-        this.x = new org.telegram.ui.Components.e6(this, 0L, 300L, rrVar);
+        this.x = new org.telegram.ui.Components.e6(this, 0L, 300L, srVar);
         LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode);
         this.y = linearGradient2;
         Paint paint2 = new Paint(1);

@@ -1,7 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface eh0 {
-    void a(float f7, float f10);
+public final /* synthetic */ class eh0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hh0 b;
+
+    public /* synthetic */ eh0(hh0 hh0Var, int i10) {
+        this.a = i10;
+        this.b = hh0Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                hh0 hh0Var = this.b;
+                hh0Var.getClass();
+                hh0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                hh0Var.c(true);
+                break;
+            default:
+                hh0 hh0Var2 = this.b;
+                hh0Var2.getClass();
+                hh0Var2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                hh0Var2.c(true);
+                break;
+        }
+    }
 }

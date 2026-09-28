@@ -6,10 +6,10 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class a4 extends org.telegram.ui.ActionBar.e3 {
     public final z3 b;
@@ -27,10 +27,10 @@ public final class a4 extends org.telegram.ui.ActionBar.e3 {
         z3Var.setMultipleOnClick(false);
         z3Var.setOnBackClickListener(new x3(this, 0));
         z3Var.setOnSelectListener(new bi.v(this, 4));
-        aw0 aw0Var = new aw0(context, null);
-        this.containerView = aw0Var;
+        cw0 cw0Var = new cw0(context, null);
+        this.containerView = cw0Var;
         int i10 = this.backgroundPaddingLeft;
-        aw0Var.setPadding(i10, 0, i10, 0);
+        cw0Var.setPadding(i10, 0, i10, 0);
         this.containerView.addView(z3Var);
     }
 
@@ -73,7 +73,7 @@ public final class a4 extends org.telegram.ui.ActionBar.e3 {
         ofFloat.addUpdateListener(new ai.a(this, 18));
         this.c.addListener(new ai.z(3, this, x3Var));
         this.c.setDuration(450L);
-        this.c.setInterpolator(rr.h);
+        this.c.setInterpolator(sr.h);
         this.c.start();
     }
 

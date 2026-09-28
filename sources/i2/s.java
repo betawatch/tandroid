@@ -35,21 +35,21 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Components.a8;
-import org.telegram.ui.Components.ad0;
+import org.telegram.ui.Components.cd0;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.e8;
-import org.telegram.ui.Components.hl0;
 import org.telegram.ui.Components.j8;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.Components.k6;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.lo;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.mo;
 import org.telegram.ui.Components.nl0;
-import org.telegram.ui.Components.ok0;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.po;
+import org.telegram.ui.Components.ol0;
+import org.telegram.ui.Components.pl0;
 import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.qo;
+import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.z7;
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LaunchActivity;
@@ -66,9 +66,9 @@ import org.telegram.ui.qg0;
 import org.telegram.ui.wn;
 import org.telegram.ui.xc0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.BooleanCallback, ad0, ImageReceiver.ImageReceiverDelegate, d5, ml0, ll0, z1, xc0, hl0, nl0 {
+public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.BooleanCallback, cd0, ImageReceiver.ImageReceiverDelegate, d5, ol0, nl0, z1, xc0, jl0, pl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -83,10 +83,10 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 7:
-                AndroidUtilities.runOnUIThread(new gg.n(i10, this.b, (po) this.c, 8), 16L);
+                AndroidUtilities.runOnUIThread(new gg.n(i10, this.b, (qo) this.c, 8), 16L);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new gg.n(i10, this.b, (lo) this.c, 9), 16L);
+                AndroidUtilities.runOnUIThread(new gg.n(i10, this.b, (mo) this.c, 9), 16L);
                 break;
         }
     }
@@ -150,7 +150,7 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         switch (this.a) {
             case 10:
@@ -162,22 +162,22 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
-        qk0 qk0Var = (qk0) this.c;
+        sk0 sk0Var = (sk0) this.c;
         if (this.b == 5) {
-            qk0Var.getClass();
+            sk0Var.getClass();
             return false;
         }
-        pk0 pk0Var = qk0Var.g0;
-        if (pk0Var == null || !(view instanceof ok0)) {
+        rk0 rk0Var = sk0Var.g0;
+        if (rk0Var == null || !(view instanceof qk0)) {
             return false;
         }
-        pk0Var.h(qk0Var, ((ok0) view).e, true, false);
+        rk0Var.h(sk0Var, ((qk0) view).e, true, false);
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         switch (this.a) {
         }
@@ -288,7 +288,7 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
         }
     }
 
-    @Override // org.telegram.ui.Components.ad0
+    @Override // org.telegram.ui.Components.cd0
     public String j(int i10) {
         Calendar calendar = (Calendar) this.c;
         calendar.clear();
@@ -304,12 +304,12 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
         h5.b(this, imageReceiver);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.jl0
     public int run() {
         s4.c0 c0Var = ((hc0) this.c).c;
         int dp = AndroidUtilities.dp(60.0f);
@@ -324,7 +324,7 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public boolean c(float f7, float f10, int i10, View view) {
         tg.m1 m1Var = (tg.m1) this.c;
         j20 j20Var = m1Var.d0;
@@ -351,7 +351,7 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
         boolean z11 = (i11 == 4 && hashSet.isEmpty()) ? false : true;
         if (z10 != z11) {
             j20Var.setVisibility(0);
-            j20Var.animate().alpha(z11 ? 1.0f : 0.0f).translationY(z11 ? 0.0f : AndroidUtilities.dp(12.0f)).setInterpolator(rr.h).setDuration(320L).withEndAction(!z11 ? new tg.a1(m1Var, 7) : null).start();
+            j20Var.animate().alpha(z11 ? 1.0f : 0.0f).translationY(z11 ? 0.0f : AndroidUtilities.dp(12.0f)).setInterpolator(sr.h).setDuration(320L).withEndAction(!z11 ? new tg.a1(m1Var, 7) : null).start();
             ug.h hVar = m1Var.p0;
             boolean z12 = !z11;
             if (hVar.y != z12) {
@@ -401,11 +401,11 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public /* synthetic */ void g() {
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public /* synthetic */ void q(float f7) {
     }
 

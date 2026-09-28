@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yz extends org.telegram.ui.ActionBar.m2 {
     public boolean E;
@@ -40,7 +40,7 @@ public final class yz extends org.telegram.ui.ActionBar.m2 {
     public int M;
     public int N;
     public int O;
-    public org.telegram.ui.Components.a10 P;
+    public org.telegram.ui.Components.b10 P;
     public pz Q;
     public final aj R;
     public ValueAnimator S;
@@ -52,7 +52,7 @@ public final class yz extends org.telegram.ui.ActionBar.m2 {
     public final ArrayList e;
     public final ArrayList f;
     public final ArrayList h;
-    public org.telegram.ui.Components.qr n;
+    public org.telegram.ui.Components.rr n;
     public org.telegram.ui.ActionBar.u0 r;
     public int s;
     public long v;
@@ -211,7 +211,7 @@ public final class yz extends org.telegram.ui.ActionBar.m2 {
             this.r.clearAnimation();
             ViewPropertyAnimator animate = this.r.animate();
             this.T = f7;
-            animate.alpha(f7).setDuration(320L).setInterpolator(org.telegram.ui.Components.rr.h).start();
+            animate.alpha(f7).setDuration(320L).setInterpolator(org.telegram.ui.Components.sr.h).start();
         }
     }
 
@@ -238,14 +238,14 @@ public final class yz extends org.telegram.ui.ActionBar.m2 {
         X();
     }
 
-    public final void Z(org.telegram.ui.Components.a10 a10Var, boolean z10) {
+    public final void Z(org.telegram.ui.Components.b10 b10Var, boolean z10) {
         ArrayList arrayList = this.e;
         arrayList.clear();
         ArrayList arrayList2 = this.f;
         if (!z10) {
             arrayList.addAll(arrayList2.subList(0, Math.min(a0(), arrayList2.size())));
         }
-        a10Var.a(LocaleController.getString(arrayList.size() >= Math.min(a0(), arrayList2.size()) ? R.string.DeselectAll : R.string.SelectAll), new ci.y0(this, a10Var, z10, 27));
+        b10Var.a(LocaleController.getString(arrayList.size() >= Math.min(a0(), arrayList2.size()) ? R.string.DeselectAll : R.string.SelectAll), new ci.y0(this, b10Var, z10, 27));
         this.G = true;
         Y();
         X();
@@ -325,9 +325,9 @@ public final class yz extends org.telegram.ui.ActionBar.m2 {
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
         int i10 = org.telegram.ui.ActionBar.h6.v8;
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-        org.telegram.ui.Components.qr qrVar = new org.telegram.ui.Components.qr(mutate, new org.telegram.ui.Components.up(org.telegram.ui.ActionBar.h6.w0(null, i10, false)));
-        this.n = qrVar;
-        this.r = n10.i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), qrVar);
+        org.telegram.ui.Components.rr rrVar = new org.telegram.ui.Components.rr(mutate, new org.telegram.ui.Components.vp(org.telegram.ui.ActionBar.h6.w0(null, i10, false)));
+        this.n = rrVar;
+        this.r = n10.i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), rrVar);
         X();
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
@@ -435,22 +435,22 @@ public final class yz extends org.telegram.ui.ActionBar.m2 {
             this.S = ofFloat;
             ofFloat.addUpdateListener(new c3(this, 12));
             this.S.setDuration((long) (Math.abs(this.n.c - (z10 ? 1.0f : 0.0f)) * 200.0f));
-            this.S.setInterpolator(org.telegram.ui.Components.rr.f);
+            this.S.setInterpolator(org.telegram.ui.Components.sr.f);
             this.S.start();
         }
     }
 
     public final void f0(boolean z10) {
-        org.telegram.ui.Components.a10 a10Var = this.P;
-        if (a10Var == null) {
+        org.telegram.ui.Components.b10 b10Var = this.P;
+        if (b10Var == null) {
             return;
         }
         ArrayList arrayList = this.e;
-        a10Var.b(arrayList.size() <= 0 ? LocaleController.getString("FilterInviteHeaderChatsEmpty") : LocaleController.formatPluralString("FilterInviteHeaderChats", arrayList.size(), new Object[0]), z10);
+        b10Var.b(arrayList.size() <= 0 ? LocaleController.getString("FilterInviteHeaderChatsEmpty") : LocaleController.formatPluralString("FilterInviteHeaderChats", arrayList.size(), new Object[0]), z10);
         ArrayList arrayList2 = this.f;
         if (arrayList2.size() > 1) {
             boolean z11 = arrayList.size() >= Math.min(a0(), arrayList2.size());
-            this.P.a(LocaleController.getString(!z11 ? R.string.SelectAll : R.string.DeselectAll), new org.telegram.ui.Components.yr0(6, this, z11));
+            this.P.a(LocaleController.getString(!z11 ? R.string.SelectAll : R.string.DeselectAll), new org.telegram.ui.Components.as0(6, this, z11));
         } else {
             this.P.a("", null);
         }

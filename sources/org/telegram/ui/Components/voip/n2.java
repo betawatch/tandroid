@@ -23,13 +23,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.ft;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.th;
 import org.webrtc.RendererCommon;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class n2 implements VoIPService.StateListener, rf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean T = false;
@@ -108,7 +108,7 @@ public final class n2 implements VoIPService.StateListener, rf.a, NotificationCe
             imageView2.setContentDescription(LocaleController.getString(R.string.Open));
             m2Var.addView(imageView2, y5.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new ai.e2(15));
-            imageView2.setOnClickListener(new et(26, this, context));
+            imageView2.setOnClickListener(new ft(26, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
@@ -378,7 +378,7 @@ public final class n2 implements VoIPService.StateListener, rf.a, NotificationCe
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, this.G ? 1.0f : 0.0f);
             this.v = ofFloat;
             ofFloat.addUpdateListener(this.w);
-            this.v.setDuration(300L).setInterpolator(rr.f);
+            this.v.setDuration(300L).setInterpolator(sr.f);
             this.v.start();
         }
     }

@@ -3,12 +3,12 @@ package org.telegram.ui.Cells;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.r90;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.t90;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                r90 r90Var = hVar.d;
-                if (r90Var != null) {
-                    hVar.h.E.l(r90Var, true);
+                t90 t90Var = hVar.d;
+                if (t90Var != null) {
+                    hVar.h.E.l(t90Var, true);
                     break;
                 }
                 break;
@@ -48,11 +48,11 @@ public final /* synthetic */ class g implements Runnable {
                 break;
             case 5:
                 i6 i6Var = (i6) this.b;
-                if (!(i6Var.getParent() instanceof wl0)) {
+                if (!(i6Var.getParent() instanceof yl0)) {
                     i6Var.callOnClick();
                     break;
                 } else {
-                    ((wl0) i6Var.getParent()).getOnItemClickListener().d(RecyclerView.R(i6Var), i6Var);
+                    ((yl0) i6Var.getParent()).getOnItemClickListener().d(RecyclerView.R(i6Var), i6Var);
                     break;
                 }
             case 6:

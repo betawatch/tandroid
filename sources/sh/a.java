@@ -16,10 +16,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import yf.p;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class a extends c implements e {
     public final le.c d;
@@ -32,7 +32,7 @@ public final class a extends c implements e {
 
     public a(Context context, d6 d6Var) {
         super(d6Var);
-        this.d = new le.c(0, this, rr.h, 320L, false);
+        this.d = new le.c(0, this, sr.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
         this.h = new TextPaint(h6.P2);

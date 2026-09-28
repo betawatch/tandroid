@@ -8,16 +8,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ey implements org.telegram.ui.Components.u40 {
+public final class ey implements org.telegram.ui.Components.w40 {
     public final /* synthetic */ qy a;
 
     public ey(qy qyVar) {
         this.a = qyVar;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final void B(float f7) {
         org.telegram.ui.Components.qc qcVar = this.a.d4;
         if (qcVar != null) {
@@ -25,7 +25,7 @@ public final class ey implements org.telegram.ui.Components.u40 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final void L(boolean z10, boolean z11) {
         org.telegram.ui.ActionBar.d6 d6Var;
         org.telegram.ui.ActionBar.d6 d6Var2;
@@ -76,7 +76,7 @@ public final class ey implements org.telegram.ui.Components.u40 {
         qcVar2.j();
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final void Q(final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, final String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, final boolean z10, final TLRPC.VideoSize videoSize) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.dy
             @Override // java.lang.Runnable
@@ -117,12 +117,12 @@ public final class ey implements org.telegram.ui.Components.u40 {
         });
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final vu0 getCloseIntoObject() {
         qy qyVar = this.a;
         org.telegram.ui.Components.qc qcVar = qyVar.d4;
@@ -147,17 +147,17 @@ public final class ey implements org.telegram.ui.Components.u40 {
         return vu0Var;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final /* synthetic */ String getInitialSearchString() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final boolean t() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.u40
+    @Override // org.telegram.ui.Components.w40
     public final /* synthetic */ void P() {
     }
 }

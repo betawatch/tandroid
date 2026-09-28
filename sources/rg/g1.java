@@ -4,11 +4,11 @@ import ai.y3;
 import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.uv;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class g1 extends tv {
+public final class g1 extends uv {
     public final /* synthetic */ k1 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class g1 extends tv {
         this.W = k1Var;
     }
 
-    @Override // org.telegram.ui.Components.tv
+    @Override // org.telegram.ui.Components.uv
     public final void Y() {
         this.W.dismiss();
     }

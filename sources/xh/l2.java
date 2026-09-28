@@ -5,20 +5,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.bs0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import yh.k5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class l2 extends s4.v {
-    public final /* synthetic */ zr0 d;
+    public final /* synthetic */ bs0 d;
     public final /* synthetic */ o2 e;
 
-    public l2(o2 o2Var, zr0 zr0Var) {
+    public l2(o2 o2Var, bs0 bs0Var) {
         this.e = o2Var;
-        this.d = zr0Var;
+        this.d = bs0Var;
     }
 
     @Override // s4.v
@@ -62,10 +62,10 @@ public final class l2 extends s4.v {
         int b10 = c1Var.b();
         int b11 = c1Var2.b();
         boolean z10 = o2Var.d;
-        zr0 zr0Var = this.d;
+        bs0 bs0Var = this.d;
         if (z10) {
             o2Var.e.k(b10, b11);
-            zr0Var.e.n(o2Var.e.d);
+            bs0Var.e.n(o2Var.e.d);
         } else {
             k5 k5Var = o2Var.e;
             if (k5Var.q == null) {
@@ -77,7 +77,7 @@ public final class l2 extends s4.v {
         j2Var.Y2.S();
         if (o2Var.d) {
             HashMap hashMap = s2.T;
-            zr0Var.f(true);
+            bs0Var.f(true);
         }
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
         if ((U instanceof ProfileActivity) && (g0Var = ((ProfileActivity) U).v0) != null) {

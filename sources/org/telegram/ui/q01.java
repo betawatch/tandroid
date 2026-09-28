@@ -45,9 +45,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class q01 extends org.telegram.ui.Components.vl0 {
+public final class q01 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final HashMap d = new HashMap();
     public final /* synthetic */ ProfileActivity e;
@@ -66,7 +66,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         ProfileActivity profileActivity = this.e;
         if (profileActivity.f3 != -1) {
@@ -934,17 +934,17 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                     } else {
                         i33 = profileActivity.r4;
                         if (i10 == i33) {
-                            org.telegram.ui.Components.n40 n40Var = new org.telegram.ui.Components.n40();
+                            org.telegram.ui.Components.p40 p40Var = new org.telegram.ui.Components.p40();
                             TLRPC.EncryptedChat l10 = org.telegram.messenger.f0.l(profileActivity.getMessagesController(), profileActivity.i1);
                             byte[] bArr = l10.key_hash;
-                            n40Var.a = bArr;
+                            p40Var.a = bArr;
                             if (bArr == null) {
                                 byte[] calcAuthKeyHash = AndroidUtilities.calcAuthKeyHash(l10.auth_key);
-                                n40Var.a = calcAuthKeyHash;
+                                p40Var.a = calcAuthKeyHash;
                                 l10.key_hash = calcAuthKeyHash;
                             }
-                            n40Var.invalidateSelf();
-                            r8Var2.t(LocaleController.getString(R.string.EncryptionKey), n40Var, false);
+                            p40Var.invalidateSelf();
+                            r8Var2.t(LocaleController.getString(R.string.EncryptionKey), p40Var, false);
                         } else {
                             i34 = profileActivity.L4;
                             if (i10 == i34) {
@@ -1542,7 +1542,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                                     i131 = ((org.telegram.ui.ActionBar.m2) profileActivity2).currentAccount;
                                     long a2 = profileActivity2.a();
                                     d6Var2 = ((org.telegram.ui.ActionBar.m2) profileActivity2).resourceProvider;
-                                    org.telegram.ui.Components.l01.b(parentActivity, i131, a2, user5, str22, z35, z36, z21, d6Var2);
+                                    org.telegram.ui.Components.n01.b(parentActivity, i131, a2, user5, str22, z35, z36, z21, d6Var2);
                                 }
                             });
                             zaVar.f(user5, i10 != profileActivity.v4 - 1);
@@ -1563,7 +1563,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                             i131 = ((org.telegram.ui.ActionBar.m2) profileActivity2).currentAccount;
                             long a2 = profileActivity2.a();
                             d6Var2 = ((org.telegram.ui.ActionBar.m2) profileActivity2).resourceProvider;
-                            org.telegram.ui.Components.l01.b(parentActivity, i131, a2, user5, str222, z352, z362, z21, d6Var2);
+                            org.telegram.ui.Components.n01.b(parentActivity, i131, a2, user5, str222, z352, z362, z21, d6Var2);
                         }
                     });
                     zaVar.f(user5, i10 != profileActivity.v4 - 1);
@@ -1668,7 +1668,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                                 boolean z37 = user6 == null && user6.bot && user6.bot_can_edit;
                                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                                 if (profileActivity.i4 >= 0) {
-                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleTag(LocaleController.getString(z37 ? R.string.ProfileBotOpenAppInfoOwner : R.string.ProfileBotOpenAppInfo), new org.telegram.ui.Components.yr0(10, this, z37)));
+                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleTag(LocaleController.getString(z37 ? R.string.ProfileBotOpenAppInfoOwner : R.string.ProfileBotOpenAppInfo), new org.telegram.ui.Components.as0(10, this, z37)));
                                     if (botverification != null || l4 != null) {
                                         spannableStringBuilder4.append("\n\n\n");
                                     }
@@ -1697,7 +1697,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                                 } else if (l4 != null && (user2 = profileActivity.getMessagesController().getUser(l4)) != null) {
                                     int length = spannableStringBuilder4.length();
                                     spannableStringBuilder4.append("</>");
-                                    spannableStringBuilder4.setSpan(new org.telegram.ui.Components.pq(R.drawable.managed_bot), length, spannableStringBuilder4.length(), 33);
+                                    spannableStringBuilder4.setSpan(new org.telegram.ui.Components.qq(R.drawable.managed_bot), length, spannableStringBuilder4.length(), 33);
                                     spannableStringBuilder4.append(" ");
                                     spannableStringBuilder4.append(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.ProfileBotManagedBy, UserObject.getPublicUsername(user2)), profileActivity.getThemedColor(org.telegram.ui.ActionBar.h6.gc), new jx0(i131, this, l4)));
                                 }
@@ -1789,12 +1789,12 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                 i103 = profileActivity.j4;
                 if (i10 == i103) {
                     SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder("⚠️");
-                    org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.round_warn);
-                    pqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
+                    org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(R.drawable.round_warn);
+                    qqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
                     int i134 = org.telegram.ui.ActionBar.h6.wj;
                     d6Var = profileActivity.z0;
-                    pqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.v0(i134, d6Var));
-                    spannableStringBuilder5.setSpan(pqVar, 0, spannableStringBuilder5.length(), 33);
+                    qqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.v0(i134, d6Var));
+                    spannableStringBuilder5.setSpan(qqVar, 0, spannableStringBuilder5.length(), 33);
                     spannableStringBuilder5.append((CharSequence) " ");
                     int i135 = R.string.ProfileUnofficialSecurityRisk;
                     MessagesController messagesController13 = profileActivity.getMessagesController();
@@ -1948,7 +1948,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
                 zaVar = new ei.i(context, profileActivity.z0);
                 break;
             case 28:
-                n01Var = new org.telegram.ui.Components.ln(context, 22);
+                n01Var = new org.telegram.ui.Components.mn(context, 22);
                 n01Var.setTag(-33024);
                 zaVar = n01Var;
                 break;
@@ -1962,7 +1962,7 @@ public final class q01 extends org.telegram.ui.Components.vl0 {
         if (i10 != 13) {
             zaVar.setLayoutParams(new s4.p0(-1, -2));
         }
-        return new org.telegram.ui.Components.gl0(zaVar);
+        return new org.telegram.ui.Components.il0(zaVar);
     }
 
     @Override // s4.h0

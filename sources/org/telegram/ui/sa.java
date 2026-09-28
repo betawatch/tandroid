@@ -15,7 +15,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sa implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,11 +48,11 @@ public final /* synthetic */ class sa implements Utilities.Callback {
                 CharacterStyle characterStyle = (CharacterStyle) this.f;
                 final TLRPC.User user = (TLRPC.User) obj;
                 final TLRPC.UserFull userFull = user != null ? wnVar.getMessagesController().getUserFull(user.id) : null;
-                org.telegram.ui.Components.y70 I = org.telegram.ui.Components.y70.I(wnVar, u1Var);
-                org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(wnVar.getParentActivity(), wnVar.ea);
-                I.p = new qe(mm0Var, 1);
+                org.telegram.ui.Components.a80 I = org.telegram.ui.Components.a80.I(wnVar, u1Var);
+                org.telegram.ui.Components.om0 om0Var = new org.telegram.ui.Components.om0(wnVar.getParentActivity(), wnVar.ea);
+                I.p = new qe(om0Var, 1);
                 z zVar = new z(wnVar, user, str, 2);
-                org.telegram.ui.Components.y70 J = I.J();
+                org.telegram.ui.Components.a80 J = I.J();
                 J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new eu0(I, 25), false);
                 J.k();
                 J.c(R.drawable.msg_addbot, LocaleController.getString(R.string.CreateNewContact), new r1(wnVar, I, str), false);
@@ -146,11 +146,11 @@ public final /* synthetic */ class sa implements Utilities.Callback {
                     I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new se(wnVar, str, 6), false);
                     I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new se(wnVar, str, 7), false);
                     I.k();
-                    I.n(user, LocaleController.getString(R.string.ViewProfile), new r1(wnVar, mm0Var, user, 16));
+                    I.n(user, LocaleController.getString(R.string.ViewProfile), new r1(wnVar, om0Var, user, 16));
                 }
-                mm0Var.e(I);
-                if (characterStyle instanceof org.telegram.ui.Components.b61) {
-                    String url = ((org.telegram.ui.Components.b61) characterStyle).getURL();
+                om0Var.e(I);
+                if (characterStyle instanceof org.telegram.ui.Components.d61) {
+                    String url = ((org.telegram.ui.Components.d61) characterStyle).getURL();
                     if (url == null) {
                         url = "";
                     }
@@ -163,11 +163,11 @@ public final /* synthetic */ class sa implements Utilities.Callback {
                     }
                     SpannableString spannableString = new SpannableString(trim);
                     spannableString.setSpan(characterStyle, 0, spannableString.length(), 33);
-                    mm0Var.f(u1Var, characterStyle, spannableString, false);
+                    om0Var.f(u1Var, characterStyle, spannableString, false);
                 } else {
-                    mm0Var.f(u1Var, characterStyle, null, false);
+                    om0Var.f(u1Var, characterStyle, null, false);
                 }
-                wnVar.showDialog(mm0Var);
+                wnVar.showDialog(om0Var);
                 break;
             case 2:
                 wn wnVar2 = (wn) this.b;
@@ -188,30 +188,30 @@ public final /* synthetic */ class sa implements Utilities.Callback {
                 wnVar2.Y.setFieldText("");
                 break;
             case 3:
-                org.telegram.ui.Components.ky kyVar = (org.telegram.ui.Components.ky) this.b;
+                org.telegram.ui.Components.ly lyVar = (org.telegram.ui.Components.ly) this.b;
                 String str3 = (String) this.f;
                 ArrayList arrayList = (ArrayList) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
                 ArrayList arrayList3 = (ArrayList) this.e;
-                org.telegram.ui.Components.ly lyVar = kyVar.a;
-                String str4 = lyVar.v;
-                ArrayList arrayList4 = lyVar.r;
-                ArrayList arrayList5 = lyVar.h;
-                ArrayList arrayList6 = lyVar.s;
-                org.telegram.ui.Components.lz lzVar = lyVar.F;
+                org.telegram.ui.Components.my myVar = lyVar.a;
+                String str4 = myVar.v;
+                ArrayList arrayList4 = myVar.r;
+                ArrayList arrayList5 = myVar.h;
+                ArrayList arrayList6 = myVar.s;
+                org.telegram.ui.Components.mz mzVar = myVar.F;
                 if (str3.equals(str4)) {
-                    org.telegram.ui.Components.kw kwVar = lzVar.V;
-                    org.telegram.ui.Components.xx xxVar = lzVar.P;
+                    org.telegram.ui.Components.lw lwVar = mzVar.V;
+                    org.telegram.ui.Components.yx yxVar = mzVar.P;
                     int i13 = 0;
-                    kwVar.e(false);
-                    lyVar.y = true;
-                    s4.h0 adapter = xxVar.getAdapter();
-                    org.telegram.ui.Components.ly lyVar2 = lzVar.S;
-                    if (adapter != lyVar2) {
-                        xxVar.setAdapter(lyVar2);
+                    lwVar.e(false);
+                    myVar.y = true;
+                    s4.h0 adapter = yxVar.getAdapter();
+                    org.telegram.ui.Components.my myVar2 = mzVar.S;
+                    if (adapter != myVar2) {
+                        yxVar.setAdapter(myVar2);
                     }
                     arrayList5.clear();
-                    arrayList5.addAll(lyVar.n);
+                    arrayList5.addAll(myVar.n);
                     arrayList4.clear();
                     arrayList4.addAll(arrayList);
                     arrayList6.clear();
@@ -221,23 +221,23 @@ public final /* synthetic */ class sa implements Utilities.Callback {
                     while (i14 < size) {
                         Object obj3 = arrayList2.get(i14);
                         i14++;
-                        org.telegram.ui.Components.ey eyVar = (org.telegram.ui.Components.ey) obj3;
-                        if (longSparseIntArray.indexOfKey(eyVar.c.id) < 0) {
-                            longSparseIntArray.append(eyVar.c.id, 1);
-                            arrayList6.add(eyVar);
+                        org.telegram.ui.Components.fy fyVar = (org.telegram.ui.Components.fy) obj3;
+                        if (longSparseIntArray.indexOfKey(fyVar.c.id) < 0) {
+                            longSparseIntArray.append(fyVar.c.id, 1);
+                            arrayList6.add(fyVar);
                         }
                     }
                     int size2 = arrayList3.size();
                     while (i13 < size2) {
                         Object obj4 = arrayList3.get(i13);
                         i13++;
-                        org.telegram.ui.Components.ey eyVar2 = (org.telegram.ui.Components.ey) obj4;
-                        if (longSparseIntArray.indexOfKey(eyVar2.c.id) < 0) {
-                            longSparseIntArray.append(eyVar2.c.id, 1);
-                            arrayList6.add(eyVar2);
+                        org.telegram.ui.Components.fy fyVar2 = (org.telegram.ui.Components.fy) obj4;
+                        if (longSparseIntArray.indexOfKey(fyVar2.c.id) < 0) {
+                            longSparseIntArray.append(fyVar2.c.id, 1);
+                            arrayList6.add(fyVar2);
                         }
                     }
-                    lyVar.l();
+                    myVar.l();
                     break;
                 }
                 break;
@@ -250,14 +250,14 @@ public final /* synthetic */ class sa implements Utilities.Callback {
                 qyVar.getClass();
                 a2Var.dismiss();
                 qyVar.getMessagesController().loadChannelParticipants(l10);
-                ky kyVar2 = qyVar.C2;
+                ky kyVar = qyVar.C2;
                 qyVar.removeSelfFromStack();
                 ldVar.removeSelfFromStack();
                 m2Var.finishFragment();
-                if (kyVar2 != null) {
+                if (kyVar != null) {
                     ArrayList arrayList7 = new ArrayList();
                     arrayList7.add(MessagesStorage.TopicKey.of(-l10.longValue(), 0L));
-                    kyVar2.u(qyVar, arrayList7, null, false, qyVar.J2, qyVar.K2, qyVar.L2, null);
+                    kyVar.u(qyVar, arrayList7, null, false, qyVar.J2, qyVar.K2, qyVar.L2, null);
                     break;
                 }
                 break;
@@ -267,9 +267,9 @@ public final /* synthetic */ class sa implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ sa(org.telegram.ui.Components.ky kyVar, String str, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
+    public /* synthetic */ sa(org.telegram.ui.Components.ly lyVar, String str, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
         this.a = 3;
-        this.b = kyVar;
+        this.b = lyVar;
         this.f = str;
         this.c = arrayList;
         this.d = arrayList2;

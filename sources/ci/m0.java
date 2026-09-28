@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class m0 extends FrameLayout {
     public boolean E;
@@ -41,9 +41,9 @@ public abstract class m0 extends FrameLayout {
         this.a = b7Var;
         l0 l0Var = new l0(this, context);
         this.e = l0Var;
-        rr rrVar = rr.h;
-        this.c = new org.telegram.ui.Components.e6(l0Var, 0L, 320L, rrVar);
-        this.d = new org.telegram.ui.Components.e6(l0Var, 0L, 320L, rrVar);
+        sr srVar = sr.h;
+        this.c = new org.telegram.ui.Components.e6(l0Var, 0L, 320L, srVar);
+        this.d = new org.telegram.ui.Components.e6(l0Var, 0L, 320L, srVar);
         g0 g0Var = new g0(this, context, 1);
         this.h = g0Var;
         g0Var.setListener(new a6.m(this, 11));

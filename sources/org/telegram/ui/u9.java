@@ -43,7 +43,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class u9 extends org.telegram.ui.ActionBar.m2 {
     public final PointF[] E;
@@ -384,7 +384,7 @@ public class u9 extends org.telegram.ui.ActionBar.m2 {
             this.actionBar.setTitle(LocaleController.getString(R.string.AuthAnotherClientScan));
         }
         Paint paint2 = new Paint(1);
-        paint2.setPathEffect(org.telegram.ui.Components.h90.c());
+        paint2.setPathEffect(org.telegram.ui.Components.j90.c());
         paint2.setColor(i0.a.k(-1, 40));
         s9 s9Var = new s9(context, paint2);
         this.a = s9Var;
@@ -425,8 +425,8 @@ public class u9 extends org.telegram.ui.ActionBar.m2 {
                     this.a.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                     spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) " ");
                     spannableStringBuilder.replace(indexOf, i14, (CharSequence) " ");
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.z51(strArr[i12], 0), i14, indexOf2, 33);
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.s51(AndroidUtilities.bold()), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.b61(strArr[i12], 0), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.u51(AndroidUtilities.bold()), i14, indexOf2, 33);
                     i12++;
                 }
                 this.a.setLinkTextColor(-1);

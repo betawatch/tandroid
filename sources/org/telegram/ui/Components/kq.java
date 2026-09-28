@@ -1,104 +1,224 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Color;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.util.Property;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class kq implements TextWatcher {
-    public final /* synthetic */ int a = 1;
+public final class kq extends EditTextBoldCursor {
     public final /* synthetic */ int b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ FrameLayout d;
 
-    public kq(nq nqVar, int i10) {
-        this.c = nqVar;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ kq(FrameLayout frameLayout, Context context, int i10, int i11) {
+        super(context);
+        this.b = i11;
+        this.d = frameLayout;
+        this.c = i10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        int i11 = this.a;
-        int i12 = this.b;
-        View view = this.c;
-        switch (i11) {
+    @Override // android.view.View
+    public boolean getGlobalVisibleRect(Rect rect, Point point) {
+        switch (this.b) {
+            case 1:
+                boolean globalVisibleRect = super.getGlobalVisibleRect(rect, point);
+                rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
+                return globalVisibleRect;
+            default:
+                return super.getGlobalVisibleRect(rect, point);
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.b) {
+            case 1:
+                super.invalidate();
+                ((oq) this.d).E[this.c - 1].invalidate();
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        kq kqVar;
+        char c10;
+        zy zyVar;
+        View view;
+        s4.c0 c0Var;
+        View view2;
+        kq kqVar2;
+        ny nyVar;
+        int i10 = this.b;
+        int i11 = this.c;
+        FrameLayout frameLayout = this.d;
+        int i12 = 1;
+        switch (i10) {
             case 0:
-                nq nqVar = (nq) view;
-                EditTextBoldCursor[] editTextBoldCursorArr = nqVar.E;
-                if (!nqVar.r) {
-                    nqVar.r = true;
-                    int i13 = 0;
-                    while (i13 < editable.length()) {
-                        char charAt = editable.charAt(i13);
-                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
-                            editable.replace(i13, i13 + 1, "");
-                            i13--;
-                        }
-                        i13++;
-                    }
-                    if (editable.length() != 0) {
-                        try {
-                            i10 = Integer.parseInt(editTextBoldCursorArr[i12].getText().toString(), 16) | (-16777216);
-                        } catch (Exception unused) {
-                            i10 = -1;
-                        }
-                        nqVar.setColorInner(i10);
-                        int color = nqVar.getColor();
-                        if (editable.length() == 6) {
-                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
-                            editTextBoldCursorArr[i12].setSelection(editable.length());
-                        }
-                        nqVar.v[nqVar.S].a(color);
-                        nqVar.a.x0(color, nqVar.S, true);
-                        nqVar.r = false;
+                oq oqVar = (oq) frameLayout;
+                if (getAlpha() == 1.0f && motionEvent.getAction() == 0) {
+                    if (!oqVar.E[i11 + 1].isFocused()) {
+                        oqVar.E[i11 + 1].requestFocus();
                         break;
                     } else {
-                        nqVar.r = false;
+                        AndroidUtilities.showKeyboard(oqVar.E[i11 + 1]);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                if (getAlpha() == 1.0f) {
+                    if (!isFocused()) {
+                        requestFocus();
+                        break;
+                    } else {
+                        AndroidUtilities.showKeyboard(this);
                         break;
                     }
                 }
                 break;
             default:
-                NumberTextView numberTextView = (NumberTextView) view;
-                int codePointCount = i12 - Character.codePointCount(editable, 0, editable.length());
-                if (codePointCount >= 30) {
-                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, false);
+                zy zyVar2 = (zy) frameLayout;
+                mz mzVar = zyVar2.G;
+                kq kqVar3 = zyVar2.d;
+                if (!kqVar3.isEnabled()) {
                     break;
                 } else {
-                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
-                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, true);
+                    if (motionEvent.getAction() == 0) {
+                        int i13 = 2;
+                        if (mzVar.t1.z()) {
+                            kqVar = kqVar3;
+                        } else {
+                            View view3 = mzVar.D0;
+                            View view4 = mzVar.P;
+                            ry ryVar = mzVar.j0;
+                            ow owVar = mzVar.h0;
+                            AnimatorSet animatorSet = mzVar.M0;
+                            if (animatorSet != null) {
+                                animatorSet.cancel();
+                                mzVar.M0 = null;
+                            }
+                            mzVar.I0 = false;
+                            mzVar.q0 = false;
+                            mzVar.c0 = false;
+                            int i14 = 0;
+                            while (i14 < 3) {
+                                if (i14 == 0) {
+                                    zyVar = mzVar.V;
+                                    view = mzVar.I;
+                                    c10 = 0;
+                                    c0Var = mzVar.Q;
+                                    view2 = view4;
+                                } else {
+                                    c10 = 0;
+                                    if (i14 == i12) {
+                                        zyVar = mzVar.o0;
+                                        view = mzVar.p0;
+                                        c0Var = mzVar.i0;
+                                        view2 = owVar;
+                                    } else {
+                                        zyVar = mzVar.G0;
+                                        view = mzVar.B0;
+                                        c0Var = mzVar.E0;
+                                        view2 = view3;
+                                    }
+                                }
+                                if (zyVar == null) {
+                                    kqVar2 = kqVar3;
+                                } else if (zyVar2 == zyVar && (nyVar = mzVar.t1) != null && nyVar.A()) {
+                                    AnimatorSet animatorSet2 = new AnimatorSet();
+                                    mzVar.M0 = animatorSet2;
+                                    Property property = View.TRANSLATION_Y;
+                                    if (view == null || i14 == i13) {
+                                        kqVar2 = kqVar3;
+                                        float[] fArr = new float[1];
+                                        fArr[c10] = i14 == 2 ? 0.0f : -AndroidUtilities.dp(36.0f);
+                                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view2, (Property<View, Float>) property, fArr);
+                                        float[] fArr2 = new float[1];
+                                        fArr2[c10] = AndroidUtilities.dp(0.0f);
+                                        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(zyVar, (Property<zy, Float>) property, fArr2);
+                                        Animator[] animatorArr = new Animator[2];
+                                        animatorArr[c10] = ofFloat;
+                                        animatorArr[1] = ofFloat2;
+                                        animatorSet2.playTogether(animatorArr);
+                                    } else {
+                                        kqVar2 = kqVar3;
+                                        float[] fArr3 = new float[1];
+                                        fArr3[c10] = -AndroidUtilities.dp(40.0f);
+                                        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr3);
+                                        float[] fArr4 = new float[1];
+                                        fArr4[c10] = -AndroidUtilities.dp(36.0f);
+                                        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(view2, (Property<View, Float>) property, fArr4);
+                                        float[] fArr5 = new float[1];
+                                        fArr5[c10] = AndroidUtilities.dp(0.0f);
+                                        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(zyVar, (Property<zy, Float>) property, fArr5);
+                                        Animator[] animatorArr2 = new Animator[3];
+                                        animatorArr2[c10] = ofFloat3;
+                                        animatorArr2[1] = ofFloat4;
+                                        animatorArr2[2] = ofFloat5;
+                                        animatorSet2.playTogether(animatorArr2);
+                                    }
+                                    mzVar.M0.setDuration(220L);
+                                    mzVar.M0.setInterpolator(sr.f);
+                                    mzVar.M0.addListener(new ai.z(24, mzVar, view2));
+                                    mzVar.M0.start();
+                                } else {
+                                    kqVar2 = kqVar3;
+                                    zyVar.setTranslationY(AndroidUtilities.dp(0.0f));
+                                    if (view != null && i14 != 2) {
+                                        view.setTranslationY(-AndroidUtilities.dp(40.0f));
+                                    }
+                                    if (view2 == view3) {
+                                        view2.setPadding(0, 0, 0, mzVar.p2);
+                                    } else if (view2 == view4) {
+                                        view2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), mzVar.p2);
+                                    } else if (view2 == owVar) {
+                                        view2.setPadding(0, mzVar.b1, 0, mzVar.p2);
+                                    }
+                                    if (view2 == owVar) {
+                                        boolean z10 = mzVar.n0.x.size() > 0;
+                                        ryVar.K = z10;
+                                        if (z10) {
+                                            ryVar.G("", true);
+                                            if (owVar.getAdapter() != ryVar) {
+                                                owVar.setAdapter(ryVar);
+                                            }
+                                        }
+                                    }
+                                    c0Var.h1(0, 0);
+                                    i14++;
+                                    i12 = 1;
+                                    i13 = 2;
+                                    kqVar3 = kqVar2;
+                                }
+                                i14++;
+                                i12 = 1;
+                                i13 = 2;
+                                kqVar3 = kqVar2;
+                            }
+                            kqVar = kqVar3;
+                            mzVar.M(false);
+                        }
+                        mzVar.t1.i(i11 == 1 ? 2 : 1);
+                        kqVar.requestFocus();
+                        AndroidUtilities.showKeyboard(kqVar);
+                    }
                     break;
                 }
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    public kq(int i10, NumberTextView numberTextView) {
-        this.b = i10;
-        this.c = numberTextView;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+        return super.onTouchEvent(motionEvent);
     }
 }

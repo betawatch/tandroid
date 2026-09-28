@@ -6,10 +6,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class kc extends nb {
-    public final lj0 a;
+    public final nj0 a;
     public final p6 b;
     public final p6 c;
     public final int d;
@@ -19,10 +19,10 @@ public final class kc extends nb {
         int i10 = org.telegram.ui.ActionBar.h6.Hi;
         this.d = getThemedColor(i10);
         setBackground(getThemedColor(org.telegram.ui.ActionBar.h6.Fi));
-        lj0 lj0Var = new lj0(context);
-        this.a = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(lj0Var, w7.y5.h(56.0f, 48.0f, 8388627));
+        nj0 nj0Var = new nj0(context);
+        this.a = nj0Var;
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(nj0Var, w7.y5.h(56.0f, 48.0f, 8388627));
         int themedColor = getThemedColor(i10);
         getThemedColor(org.telegram.ui.ActionBar.h6.Gi);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -47,10 +47,10 @@ public final class kc extends nb {
     }
 
     public final void c(int i10, String... strArr) {
-        lj0 lj0Var = this.a;
-        lj0Var.f(i10, 32, 32, null);
+        nj0 nj0Var = this.a;
+        nj0Var.f(i10, 32, 32, null);
         for (String str : strArr) {
-            lj0Var.h(this.d, str);
+            nj0Var.h(this.d, str);
         }
     }
 

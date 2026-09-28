@@ -16,11 +16,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d11;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.lt;
+import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.nj0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class y2 extends LinearLayout {
     public static final /* synthetic */ int w = 0;
@@ -29,9 +29,9 @@ public final class y2 extends LinearLayout {
     public q0.a c;
     public boolean d;
     public ValueAnimator e;
-    public final lj0 f;
+    public final nj0 f;
     public final TextView h;
-    public final d11 n;
+    public final f11 n;
     public int r;
     public int s;
     public final int v;
@@ -43,11 +43,11 @@ public final class y2 extends LinearLayout {
         setGravity(17);
         setOrientation(1);
         setOnTouchListener(new bi.d(5));
-        lj0 lj0Var = new lj0(context);
-        this.f = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(lj0Var, w7.y5.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
-        lj0Var.setOnClickListener(new a(this, 3));
+        nj0 nj0Var = new nj0(context);
+        this.f = nj0Var;
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(nj0Var, w7.y5.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
+        nj0Var.setOnClickListener(new a(this, 3));
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.m9, false));
@@ -55,9 +55,9 @@ public final class y2 extends LinearLayout {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         addView(textView, w7.y5.d(-1, -2.0f, 51, 52.0f, 10.0f, 52.0f, 0.0f));
-        d11 d11Var = new d11(context);
-        this.n = d11Var;
-        d11Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.v2
+        f11 f11Var = new f11(context);
+        this.n = f11Var;
+        f11Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.v2
             @Override // android.widget.ViewSwitcher.ViewFactory
             public final View makeView() {
                 TextView textView2 = new TextView(context);
@@ -68,9 +68,9 @@ public final class y2 extends LinearLayout {
                 return textView2;
             }
         });
-        d11Var.setInAnimation(context, R.anim.alpha_in);
-        d11Var.setOutAnimation(context, R.anim.alpha_out);
-        addView(d11Var, w7.y5.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
+        f11Var.setInAnimation(context, R.anim.alpha_in);
+        f11Var.setOutAnimation(context, R.anim.alpha_out);
+        addView(f11Var, w7.y5.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
     }
 
     public final void a(boolean z10) {
@@ -88,7 +88,7 @@ public final class y2 extends LinearLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(this.a, 1.0f).setDuration(250L);
         this.e = duration;
-        duration.setInterpolator(lt.d);
+        duration.setInterpolator(mt.d);
         this.e.addUpdateListener(new w2(this, 0));
         this.e.addListener(new x2(this, 1));
         this.e.start();

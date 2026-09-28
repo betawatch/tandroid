@@ -1,81 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.util.TypedValue;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public class g40 extends EditTextBoldCursor {
-    public final TextPaint b;
-    public String c;
-    public final Rect d;
+public final class g40 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.ActionBar.d6 b;
+    public ArrayList c;
+    public final FrameLayout d;
+    public final t61 e;
+    public final l61 f;
+    public Utilities.Callback h;
 
-    public g40(Context context) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        this.d = new Rect();
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.H6, false));
+    public g40(int i10, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity);
+        this.a = i10;
+        this.b = d6Var;
+        t61 t61Var = new t61(activity, i10, 0, false, new d(this, 15), new f40(this), new f40(this), d6Var);
+        this.e = t61Var;
+        t61Var.setClipToPadding(false);
+        l61 l61Var = (l61) t61Var.getAdapter();
+        this.f = l61Var;
+        l61Var.r = false;
+        addView(t61Var, -1, -1);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.d = frameLayout;
+        ImageView imageView = new ImageView(activity);
+        int i11 = org.telegram.ui.ActionBar.h6.m6;
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i11, d6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.large_hashtags);
+        frameLayout.addView(imageView, w7.y5.e(56, 56, 49));
+        TextView textView = new TextView(activity);
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        org.telegram.messenger.ok.l(R.string.HashtagSearchPlaceholder, textView, 17);
+        frameLayout.addView(textView, w7.y5.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.y5.e(210, -2, 17));
+        t61Var.setEmptyView(frameLayout);
     }
 
-    public String getHintText() {
-        return this.c;
+    public void setOnHashtagClickListener(Utilities.Callback<String> callback) {
+        this.h = callback;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.eu, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.c != null && length() < this.c.length()) {
-            int i10 = 0;
-            float f7 = 0.0f;
-            while (i10 < this.c.length()) {
-                int length = length();
-                TextPaint textPaint = this.b;
-                float measureText = i10 < length ? getPaint().measureText(getText(), i10, i10 + 1) : textPaint.measureText(this.c, i10, i10 + 1);
-                if (i10 < length()) {
-                    f7 += measureText;
-                    canvas2 = canvas;
-                } else {
-                    int color = textPaint.getColor();
-                    canvas.save();
-                    String str = this.c;
-                    textPaint.getTextBounds(str, 0, str.length(), this.d);
-                    i(i10);
-                    canvas2 = canvas;
-                    canvas2.drawText(this.c, i10, i10 + 1, f7, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
-                    f7 += measureText;
-                    canvas2.restore();
-                    textPaint.setColor(color);
-                }
-                i10++;
-                canvas = canvas2;
-            }
-        }
-        super.onDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.eu, android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        invalidate();
-    }
-
-    public void setHintText(String str) {
-        this.c = str;
-        invalidate();
-        setText(getText());
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
-    public void setTextSize(int i10, float f7) {
-        super.setTextSize(i10, f7);
-        this.b.setTextSize(TypedValue.applyDimension(i10, f7, getResources().getDisplayMetrics()));
-    }
-
-    public void i(int i10) {
+    public void setOnScrollListener(s4.s0 s0Var) {
+        this.e.j(s0Var);
     }
 }

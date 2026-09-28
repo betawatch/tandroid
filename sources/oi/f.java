@@ -58,14 +58,14 @@ import n7.z0;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.h10;
-import org.telegram.ui.Components.o91;
+import org.telegram.ui.Components.i10;
+import org.telegram.ui.Components.q91;
 import org.telegram.ui.web.k1;
 import org.telegram.ui.web.l1;
 import y9.t0;
 import zd.e0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class f implements n5.b {
     public static volatile f e;
@@ -383,9 +383,9 @@ public final class f implements n5.b {
                     k kVar2 = new k(i10, str2, d);
                     k.x = kVar2;
                     kVar2.u = dVar;
-                    h10 h10Var = h10.getInstance();
-                    if (h10Var != null) {
-                        h10Var.addListener(kVar2);
+                    i10 i10Var = i10.getInstance();
+                    if (i10Var != null) {
+                        i10Var.addListener(kVar2);
                     }
                     kVar2.j.execute(new g(kVar2, 1));
                     AndroidUtilities.runOnUIThread(new g(kVar2, 2));
@@ -839,7 +839,7 @@ public final class f implements n5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = o91.z0.matcher(trim);
+            Matcher matcher = q91.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -996,11 +996,11 @@ public final class f implements n5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = o91.x0.matcher(trim);
+        Matcher matcher = q91.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = o91.y0.matcher(trim);
+            Matcher matcher2 = q91.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

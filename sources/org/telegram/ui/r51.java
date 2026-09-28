@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class r51 extends p61 {
     public final /* synthetic */ a71 E;
@@ -30,11 +30,11 @@ public final class r51 extends p61 {
             s5.e eVar = (s5.e) a61Var;
             zg.b0 b0Var = (zg.b0) eVar.b;
             zg.a0 a0Var = b0Var.a;
-            org.telegram.ui.Components.qk0 qk0Var = (org.telegram.ui.Components.qk0) eVar.c;
+            org.telegram.ui.Components.sk0 sk0Var = (org.telegram.ui.Components.sk0) eVar.c;
             RectF rectF = AndroidUtilities.rectTmp;
             float f7 = 0;
             rectF.set(f7, f7, measuredWidth, measuredHeight);
-            qk0Var.getDelegate().m(canvas, rectF, 0.0f, a0Var.getX() + x10, (b0Var.y == 1 ? a0Var.getY() - AndroidUtilities.statusBarHeight : a0Var.getY() + b0Var.c.getY()) + y3, 255, true);
+            sk0Var.getDelegate().m(canvas, rectF, 0.0f, a0Var.getX() + x10, (b0Var.y == 1 ? a0Var.getY() - AndroidUtilities.statusBarHeight : a0Var.getY() + b0Var.c.getY()) + y3, 255, true);
         }
         super.dispatchDraw(canvas);
     }

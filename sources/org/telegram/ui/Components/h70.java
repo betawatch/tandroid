@@ -1,132 +1,48 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h70 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i70 b;
-    public final /* synthetic */ String c;
+public final class h70 extends kx0 {
+    public final /* synthetic */ int K;
 
-    public /* synthetic */ h70(i70 i70Var, String str, int i10) {
-        this.a = i10;
-        this.b = i70Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h70(Context context, View view, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
+        super(context, view, i10, d6Var);
+        this.K = i11;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v14 */
-    /* JADX WARN: Type inference failed for: r7v16 */
-    /* JADX WARN: Type inference failed for: r7v5 */
-    /* JADX WARN: Type inference failed for: r7v6 */
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        String publicUsername;
-        ArrayList arrayList;
-        Object obj;
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.kx0, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.K) {
             case 0:
-                i70 i70Var = this.b;
-                String str2 = this.c;
-                i70Var.getClass();
-                AndroidUtilities.runOnUIThread(new h70(i70Var, str2, 1));
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
                 break;
             case 1:
-                i70 i70Var2 = this.b;
-                String str3 = this.c;
-                gg.c2 c2Var = i70Var2.e;
-                org.telegram.ui.du duVar = i70Var2.n.m0;
-                c2Var.g(str3, true, duVar != null, true, duVar != null, 0L, false, 0, 0);
-                DispatchQueue dispatchQueue = Utilities.searchQueue;
-                h70 h70Var = new h70(i70Var2, str3, 2);
-                i70Var2.h = h70Var;
-                dispatchQueue.postRunnable(h70Var);
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
                 break;
             default:
-                i70 i70Var3 = this.b;
-                String str4 = this.c;
-                ArrayList arrayList2 = i70Var3.n.e0;
-                String lowerCase = str4.trim().toLowerCase();
-                if (lowerCase.length() != 0) {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (lowerCase.equals(translitString) || translitString.length() == 0) {
-                        translitString = null;
-                    }
-                    int i10 = 0;
-                    int i11 = (translitString != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i11];
-                    strArr[0] = lowerCase;
-                    if (translitString != null) {
-                        strArr[1] = translitString;
-                    }
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    int i12 = 0;
-                    while (i12 < arrayList2.size()) {
-                        TLObject tLObject = (TLObject) arrayList2.get(i12);
-                        boolean z10 = tLObject instanceof TLRPC.User;
-                        if (z10) {
-                            TLRPC.User user = (TLRPC.User) tLObject;
-                            str = ContactsController.formatName(user.first_name, user.last_name).toLowerCase();
-                            publicUsername = UserObject.getPublicUsername(user);
-                        } else {
-                            TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                            str = chat.title;
-                            publicUsername = ChatObject.getPublicUsername(chat);
-                        }
-                        String translitString2 = LocaleController.getInstance().getTranslitString(str);
-                        if (str.equals(translitString2)) {
-                            translitString2 = null;
-                        }
-                        boolean z11 = false;
-                        while (true) {
-                            if (i10 < i11) {
-                                String str5 = strArr[i10];
-                                ?? r72 = (str.startsWith(str5) || org.telegram.messenger.f0.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.f0.w(" ", str5, translitString2)))) ? 1 : (publicUsername == null || !publicUsername.startsWith(str5)) ? z11 : 2;
-                                if (r72 != 0) {
-                                    arrayList = arrayList2;
-                                    if (r72 != 1) {
-                                        obj = null;
-                                        arrayList4.add(AndroidUtilities.generateSearchName(v7.j.g("@", publicUsername), null, "@" + str5));
-                                    } else if (z10) {
-                                        TLRPC.User user2 = (TLRPC.User) tLObject;
-                                        arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str5));
-                                        obj = null;
-                                    } else {
-                                        obj = null;
-                                        arrayList4.add(AndroidUtilities.generateSearchName(((TLRPC.Chat) tLObject).title, null, str5));
-                                    }
-                                    arrayList3.add(tLObject);
-                                } else {
-                                    i10++;
-                                    arrayList2 = arrayList2;
-                                    z11 = r72;
-                                }
-                            } else {
-                                arrayList = arrayList2;
-                            }
-                        }
-                        i12++;
-                        arrayList2 = arrayList;
-                        i10 = 0;
-                    }
-                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(i70Var3, arrayList3, arrayList4, 24));
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(i70Var3, new ArrayList(), new ArrayList(), 24));
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kx0, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.K) {
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    e(false, false);
                     break;
                 }
+                break;
+            default:
+                super.setVisibility(i10);
                 break;
         }
     }

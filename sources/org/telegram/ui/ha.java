@@ -8,16 +8,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ha extends org.telegram.ui.Components.vl0 {
+public final class ha extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ qa c;
 
     public ha(qa qaVar) {
         this.c = qaVar;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 4;
     }
@@ -25,14 +25,14 @@ public final class ha extends org.telegram.ui.Components.vl0 {
     @Override // s4.h0
     public final int h() {
         qa qaVar = this.c;
-        org.telegram.ui.Components.wl0 wl0Var = qaVar.b;
+        org.telegram.ui.Components.yl0 yl0Var = qaVar.b;
         ArrayList arrayList = qaVar.v;
-        if (wl0Var != null) {
-            ArrayList arrayList2 = wl0Var.K2;
+        if (yl0Var != null) {
+            ArrayList arrayList2 = yl0Var.K2;
             if (arrayList2 != null) {
                 arrayList2.clear();
             } else {
-                wl0Var.K2 = new ArrayList();
+                yl0Var.K2 = new ArrayList();
             }
             if (arrayList.size() > 0) {
                 qaVar.b.K2.add(Long.valueOf(AndroidUtilities.pack(3, arrayList.size() + 3)));
@@ -97,22 +97,22 @@ public final class ha extends org.telegram.ui.Components.vl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         qa qaVar = this.c;
         if (i10 == 0) {
-            return new org.telegram.ui.Components.gl0(new org.telegram.ui.Cells.m4(qaVar.getParentActivity()));
+            return new org.telegram.ui.Components.il0(new org.telegram.ui.Cells.m4(qaVar.getParentActivity()));
         }
         if (i10 == 1) {
             pa paVar = new pa(qaVar, qaVar.getParentActivity());
             paVar.setTag(-33024);
-            return new org.telegram.ui.Components.gl0(paVar);
+            return new org.telegram.ui.Components.il0(paVar);
         }
         if (i10 == 2) {
-            return new org.telegram.ui.Components.gl0(new org.telegram.ui.Cells.e9(qaVar.getParentActivity()));
+            return new org.telegram.ui.Components.il0(new org.telegram.ui.Cells.e9(qaVar.getParentActivity()));
         }
         if (i10 == 3) {
-            return new org.telegram.ui.Components.gl0(new ka(qaVar, qaVar.getParentActivity()));
+            return new org.telegram.ui.Components.il0(new ka(qaVar, qaVar.getParentActivity()));
         }
         if (i10 != 4) {
             return null;
         }
-        return new org.telegram.ui.Components.gl0(new ga(this, qaVar.getParentActivity(), qaVar.getResourceProvider()));
+        return new org.telegram.ui.Components.il0(new ga(this, qaVar.getParentActivity(), qaVar.getResourceProvider()));
     }
 }

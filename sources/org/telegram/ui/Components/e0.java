@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class e0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Cells.j3 A0;
@@ -54,8 +54,8 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
     public boolean K0;
     public boolean L0;
     public String M0;
-    public ij0 N0;
-    public j61 O0;
+    public kj0 N0;
+    public l61 O0;
     public boolean P0;
     public int Q0;
     public boolean R0;
@@ -147,7 +147,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         d0Var2.n = new ci.o5(this, d6Var, context, 1);
         s0();
         d0Var2.c(-1);
-        String A = i41.A();
+        String A = k41.A();
         this.s0 = A;
         if (A == null) {
             this.s0 = TranslateController.currentLanguage();
@@ -201,9 +201,9 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         d10.rightMargin += i18;
         this.containerView.addView(frameLayout3, d10);
         p0(false);
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i19 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i19, 0, i19, AndroidUtilities.dp(66.0f));
+        yl0Var.setPadding(i19, 0, i19, AndroidUtilities.dp(66.0f));
         this.d.setClipToPadding(false);
         this.d.p1();
         this.d.setOnItemClickListener(new j(this, 0));
@@ -211,7 +211,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         m mVar = new m(this);
         mVar.m = false;
         mVar.C = false;
-        mVar.o(rr.h);
+        mVar.o(sr.h);
         mVar.n(350L);
         this.d.setItemAnimator(mVar);
         this.d.setOnScrollListener(new ai.r(this, 13));
@@ -262,8 +262,8 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         e0Var.k0();
         if (view instanceof LinearLayout) {
             LinearLayout linearLayout = (LinearLayout) view;
-            if (linearLayout.getChildAt(0) instanceof op) {
-                ((op) linearLayout.getChildAt(0)).a(e0Var.t0, true);
+            if (linearLayout.getChildAt(0) instanceof pp) {
+                ((pp) linearLayout.getChildAt(0)).a(e0Var.t0, true);
             }
         }
     }
@@ -371,7 +371,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
             return false;
         }
         boolean z10 = e0Var.l0 == UserConfig.getInstance(e0Var.currentAccount).getClientUserId();
-        y70 F = y70.F(e0Var.container, d6Var, e0Var.F0);
+        a80 F = a80.F(e0Var.container, d6Var, e0Var.F0);
         F.l(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new c(e0Var, 3), !z10);
         F.c(R.drawable.msg_calendar2, LocaleController.getString(z10 ? R.string.SetReminder : R.string.ScheduleMessage), new org.telegram.messenger.video.o(e0Var, context, d6Var, 9), false);
         F.Z();
@@ -380,7 +380,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
 
     public static void Y(e0 e0Var, View view) {
         final e0 e0Var2;
-        y70 F = y70.F(e0Var.container, e0Var.resourcesProvider, view);
+        a80 F = a80.F(e0Var.container, e0Var.resourcesProvider, view);
         F.X = AndroidUtilities.dp(450.0f);
         int i10 = 0;
         F.t = false;
@@ -396,7 +396,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
             e0Var2 = e0Var;
         } else {
             e0Var2 = e0Var;
-            e0Var2.b0(F, linearLayout, true, i41.y(i41.E(e0Var.s0, null, null)), null);
+            e0Var2.b0(F, linearLayout, true, k41.y(k41.E(e0Var.s0, null, null)), null);
         }
         int size = suggestedLanguages.size();
         int i11 = 0;
@@ -421,7 +421,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                                 e0Var3.c0();
                                 String str = language2.code;
                                 e0Var3.s0 = str;
-                                i41.I(str);
+                                k41.I(str);
                                 e0Var3.k0();
                                 break;
                             default:
@@ -429,7 +429,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                                 e0Var4.c0();
                                 String str2 = language2.code;
                                 e0Var4.s0 = str2;
-                                i41.I(str2);
+                                k41.I(str2);
                                 e0Var4.k0();
                                 break;
                         }
@@ -461,7 +461,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                             e0Var3.c0();
                             String str = language4.code;
                             e0Var3.s0 = str;
-                            i41.I(str);
+                            k41.I(str);
                             e0Var3.k0();
                             break;
                         default:
@@ -469,7 +469,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                             e0Var4.c0();
                             String str2 = language4.code;
                             e0Var4.s0 = str2;
-                            i41.I(str2);
+                            k41.I(str2);
                             e0Var4.k0();
                             break;
                     }
@@ -692,7 +692,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         imageView.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, f10));
     }
 
-    public final void b0(y70 y70Var, LinearLayout linearLayout, boolean z10, String str, Runnable runnable) {
+    public final void b0(a80 a80Var, LinearLayout linearLayout, boolean z10, String str, Runnable runnable) {
         int i10 = org.telegram.ui.ActionBar.h6.E8;
         int i11 = org.telegram.ui.ActionBar.h6.F8;
         org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(1, getContext(), this.resourcesProvider, false, false);
@@ -701,7 +701,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         e1Var.setChecked(z10);
         e1Var.c(org.telegram.ui.ActionBar.h6.v0(i10, this.resourcesProvider), org.telegram.ui.ActionBar.h6.v0(i11, this.resourcesProvider));
         e1Var.setSelectorColor(org.telegram.ui.ActionBar.h6.l1(0.12f, org.telegram.ui.ActionBar.h6.v0(i10, this.resourcesProvider)));
-        e1Var.setOnClickListener(new h(y70Var, z10, runnable, 0));
+        e1Var.setOnClickListener(new h(a80Var, z10, runnable, 0));
         linearLayout.addView(e1Var, w7.y5.n(-1, -2));
     }
 
@@ -800,11 +800,11 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         return this.Y != null;
     }
 
-    public final v51 j0(int i10, TL_iv.RichMessage richMessage, boolean z10) {
+    public final x51 j0(int i10, TL_iv.RichMessage richMessage, boolean z10) {
         if (richMessage == null) {
             richMessage = this.Y;
         }
-        v51 of2 = RichMessageLayout.PreviewView.Factory.of(richMessage);
+        x51 of2 = RichMessageLayout.PreviewView.Factory.of(richMessage);
         of2.d = i10;
         of2.e = z10;
         return of2;
@@ -887,11 +887,11 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
                     int dp2 = AndroidUtilities.dp((int) (Math.random() * 50.0d));
                     int length = spannableStringBuilder.length();
                     spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Loading));
-                    s90 s90Var = new s90(null, dp2, 0, null);
-                    s90Var.f = AndroidUtilities.dp(6.0f);
-                    s90Var.h = 0.5f;
-                    s90Var.n = true;
-                    spannableStringBuilder.setSpan(s90Var, length, spannableStringBuilder.length(), 33);
+                    u90 u90Var = new u90(null, dp2, 0, null);
+                    u90Var.f = AndroidUtilities.dp(6.0f);
+                    u90Var.h = 0.5f;
+                    u90Var.n = true;
+                    spannableStringBuilder.setSpan(u90Var, length, spannableStringBuilder.length(), 33);
                 }
                 if (selectedTab == 0) {
                     this.Z = true;
@@ -1044,7 +1044,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         int i10 = 0;
         if (com.google.android.gms.internal.vision.e2.u(editable)) {
             spannableStringBuilder = new SpannableStringBuilder(editable.toString());
-            Class[] clsArr = {c11.class, CodeHighlighting.Span.class, mw0.class, c61.class, b61.class, y51.class, z51.class, i10.class, x51.class, w51.class, z5.class};
+            Class[] clsArr = {e11.class, CodeHighlighting.Span.class, ow0.class, e61.class, d61.class, a61.class, b61.class, j10.class, z51.class, y51.class, z5.class};
             for (int i11 = 0; i11 < 11; i11++) {
                 for (Object obj : editable.getSpans(0, editable.length(), clsArr[i11])) {
                     spannableStringBuilder.setSpan(obj, editable.getSpanStart(obj), editable.getSpanEnd(obj), 33);
@@ -1124,9 +1124,9 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         dVar2.setVisibility(0);
         linearLayout.setVisibility(0);
         ViewPropertyAnimator alpha = dVar2.animate().alpha(this.K0 ? 1.0f : 0.0f);
-        rr rrVar = rr.h;
-        alpha.setInterpolator(rrVar).setDuration(320L).withEndAction(new c(this, 0)).start();
-        linearLayout.animate().alpha(this.K0 ? 0.0f : 1.0f).setInterpolator(rrVar).setDuration(320L).withEndAction(new c(this, 1)).start();
+        sr srVar = sr.h;
+        alpha.setInterpolator(srVar).setDuration(320L).withEndAction(new c(this, 0)).start();
+        linearLayout.animate().alpha(this.K0 ? 0.0f : 1.0f).setInterpolator(srVar).setDuration(320L).withEndAction(new c(this, 1)).start();
     }
 
     public final void q0() {
@@ -1144,20 +1144,20 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
     }
 
     public final void r0() {
-        wl0 wl0Var;
+        yl0 yl0Var;
         View view;
         if (this.B0 == null) {
             return;
         }
         int i10 = 0;
         while (true) {
-            wl0Var = this.d;
-            if (i10 >= wl0Var.getChildCount()) {
+            yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 view = null;
                 break;
             }
-            view = wl0Var.getChildAt(i10);
-            v51 G = this.O0.G(RecyclerView.R(view) - 1);
+            view = yl0Var.getChildAt(i10);
+            x51 G = this.O0.G(RecyclerView.R(view) - 1);
             if (G != null && G.c == this.x0) {
                 break;
             } else {
@@ -1169,7 +1169,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
             this.B0.e(true);
         } else {
             this.B0.setVisibility(0);
-            this.B0.setTranslationY(view.getY() + wl0Var.getY() + view.getHeight());
+            this.B0.setTranslationY(view.getY() + yl0Var.getY() + view.getHeight());
         }
     }
 
@@ -1205,9 +1205,9 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         ci.d dVar = this.F0;
         dVar.setVisibility(i10);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Send));
-        pq pqVar = new pq(this.m0 ? R.drawable.filled_profile_edit_24 : R.drawable.send_plane_24, 0);
-        pqVar.setTranslateY(AndroidUtilities.dp(1.0f));
-        spannableStringBuilder.setSpan(pqVar, 0, spannableStringBuilder.length(), 33);
+        qq qqVar = new qq(this.m0 ? R.drawable.filled_profile_edit_24 : R.drawable.send_plane_24, 0);
+        qqVar.setTranslateY(AndroidUtilities.dp(1.0f));
+        spannableStringBuilder.setSpan(qqVar, 0, spannableStringBuilder.length(), 33);
         dVar.setText(spannableStringBuilder);
         this.O0.N(false);
         k0();
@@ -1215,20 +1215,20 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        j61 j61Var = new j61(wl0Var, getContext(), this.currentAccount, 0, true, new d(this, 0), this.resourcesProvider);
-        this.O0 = j61Var;
-        j61Var.r = false;
-        return j61Var;
+    public final xl0 v(yl0 yl0Var) {
+        l61 l61Var = new l61(yl0Var, getContext(), this.currentAccount, 0, true, new d(this, 0), this.resourcesProvider);
+        this.O0 = l61Var;
+        l61Var.r = false;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb
     public final CharSequence y() {
         if (this.M0 == null) {
             this.M0 = LocaleController.getString(R.string.AIEditor);
-            ij0 ij0Var = new ij0(R.raw.emoji_stars, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-            this.N0 = ij0Var;
-            ij0Var.J(true);
+            kj0 kj0Var = new kj0(R.raw.emoji_stars, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+            this.N0 = kj0Var;
+            kj0Var.J(true);
             this.N0.K(1);
         }
         return this.M0;

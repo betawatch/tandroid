@@ -5,24 +5,24 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class h41 implements org.telegram.ui.Components.ro0 {
-    public final /* synthetic */ org.telegram.ui.Components.so0 a;
+public final class h41 implements org.telegram.ui.Components.to0 {
+    public final /* synthetic */ org.telegram.ui.Components.uo0 a;
     public final /* synthetic */ k41 b;
     public final /* synthetic */ k41 c;
     public final /* synthetic */ k41 d;
     public final /* synthetic */ i41 e;
 
-    public h41(i41 i41Var, org.telegram.ui.Components.so0 so0Var, k41 k41Var, k41 k41Var2, k41 k41Var3) {
+    public h41(i41 i41Var, org.telegram.ui.Components.uo0 uo0Var, k41 k41Var, k41 k41Var2, k41 k41Var3) {
         this.e = i41Var;
-        this.a = so0Var;
+        this.a = uo0Var;
         this.b = k41Var;
         this.c = k41Var2;
         this.d = k41Var3;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public final void X(float f7, boolean z10) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.e.d;
         boolean isAttachedToWindow = this.a.isAttachedToWindow();
@@ -53,17 +53,17 @@ public final class h41 implements org.telegram.ui.Components.ro0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public final /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public final /* synthetic */ int m0() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public final void B() {
     }
 }

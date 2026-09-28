@@ -38,9 +38,9 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.Components.bc0 {
+public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.Components.dc0 {
     public BitmapShader E;
     public boolean F;
     public AnimatorSet H;
@@ -266,7 +266,7 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
         } else {
             f7 = 0.0f;
         }
-        boolean z11 = drawable2 instanceof org.telegram.ui.Components.mc0;
+        boolean z11 = drawable2 instanceof org.telegram.ui.Components.oc0;
         boolean z12 = (z11 || (drawable2 instanceof BitmapDrawable)) && SharedConfig.getDevicePerformanceClass() != 0;
         this.R = z12;
         org.telegram.ui.ActionBar.b4 b4Var = this.f;
@@ -312,7 +312,7 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
                                 this.F = true;
                             } else {
                                 this.s = Bitmap.createBitmap(60, 80, Bitmap.Config.ARGB_8888);
-                                Bitmap bitmap3 = ((org.telegram.ui.Components.mc0) drawable2).k;
+                                Bitmap bitmap3 = ((org.telegram.ui.Components.oc0) drawable2).k;
                                 this.v = bitmap3;
                                 if (z10) {
                                     this.v = Bitmap.createBitmap(bitmap3);
@@ -358,7 +358,7 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
                             if (this.R) {
                                 ColorMatrix colorMatrix = new ColorMatrix();
                                 if (z11) {
-                                    if (((org.telegram.ui.Components.mc0) drawable2).q >= f10) {
+                                    if (((org.telegram.ui.Components.oc0) drawable2).q >= f10) {
                                         colorMatrix.setSaturation(1.6f);
                                         AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, this.G ? 0.97f : 0.92f);
                                         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, this.G ? 0.12f : -0.06f);
@@ -509,7 +509,7 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
         org.telegram.ui.ActionBar.b4 b4Var3 = this.f;
         if (b4Var3 == null && this.h == null) {
             Drawable s02 = org.telegram.ui.ActionBar.h6.s0();
-            this.R = s02 instanceof org.telegram.ui.Components.mc0;
+            this.R = s02 instanceof org.telegram.ui.Components.oc0;
             g(s02);
             this.K = this.R ? -1 : org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ic, false);
             this.L = this.R ? -1 : org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.jc, false);
@@ -518,8 +518,8 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
         } else {
             if (this.R) {
                 Drawable drawable = this.n;
-                if (drawable instanceof org.telegram.ui.Components.mc0) {
-                    Bitmap bitmap = ((org.telegram.ui.Components.mc0) drawable).k;
+                if (drawable instanceof org.telegram.ui.Components.oc0) {
+                    Bitmap bitmap = ((org.telegram.ui.Components.oc0) drawable).k;
                     this.P = bitmap;
                     if (b4Var3 != null) {
                         TLRPC.ChatTheme chatTheme = b4Var3.d;
@@ -581,7 +581,7 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
     public final void j(org.telegram.ui.ActionBar.b4 b4Var, TLRPC.WallPaper wallPaper, boolean z10) {
         int i10;
         boolean z11;
-        org.telegram.ui.Components.mc0 mc0Var;
+        org.telegram.ui.Components.oc0 oc0Var;
         Drawable drawable;
         int i11;
         char c10;
@@ -596,8 +596,8 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
         this.f = b4Var2;
         this.h = wallPaper;
         Drawable backgroundImage = wnVar.fragmentView != null ? wnVar.X0.getBackgroundImage() : null;
-        org.telegram.ui.Components.mc0 mc0Var2 = backgroundImage instanceof org.telegram.ui.Components.mc0 ? (org.telegram.ui.Components.mc0) backgroundImage : null;
-        int i13 = mc0Var2 != null ? mc0Var2.i : 0;
+        org.telegram.ui.Components.oc0 oc0Var2 = backgroundImage instanceof org.telegram.ui.Components.oc0 ? (org.telegram.ui.Components.oc0) backgroundImage : null;
+        int i13 = oc0Var2 != null ? oc0Var2.i : 0;
         if ((b4Var2 == null || b4Var2.a) && wallPaper == null) {
             int indexOfKey = org.telegram.ui.ActionBar.h6.rl.indexOfKey(org.telegram.ui.ActionBar.h6.lc);
             if (indexOfKey >= 0) {
@@ -613,8 +613,8 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
             this.b.clear();
             this.a.clear();
             Drawable s02 = org.telegram.ui.ActionBar.h6.s0();
-            if (s02 instanceof org.telegram.ui.Components.mc0) {
-                ((org.telegram.ui.Components.mc0) s02).v(i13);
+            if (s02 instanceof org.telegram.ui.Components.oc0) {
+                ((org.telegram.ui.Components.oc0) s02).v(i13);
             }
             this.n = null;
             if (org.telegram.ui.ActionBar.h6.I.q() == this.G) {
@@ -661,35 +661,35 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
                 int G02 = G0(org.telegram.ui.ActionBar.h6.Od);
                 int G03 = G0(org.telegram.ui.ActionBar.h6.Pd);
                 int G04 = G0(org.telegram.ui.ActionBar.h6.Qd);
-                org.telegram.ui.Components.mc0 mc0Var3 = new org.telegram.ui.Components.mc0();
-                mc0Var3.t(mc0Var3.u, b4Var2.k(this.G ? 1 : 0).settings.intensity);
+                org.telegram.ui.Components.oc0 oc0Var3 = new org.telegram.ui.Components.oc0();
+                oc0Var3.t(oc0Var3.u, b4Var2.k(this.G ? 1 : 0).settings.intensity);
                 TLRPC.Document f7 = b4Var2.f();
-                if (mc0Var3.y == null) {
+                if (oc0Var3.y == null) {
                     ImageReceiver imageReceiver = new ImageReceiver();
-                    mc0Var3.y = imageReceiver;
+                    oc0Var3.y = imageReceiver;
                     imageReceiver.setAlpha(0.5f);
-                    WeakReference weakReference = mc0Var3.c;
+                    WeakReference weakReference = oc0Var3.c;
                     if (weakReference != null) {
-                        mc0Var3.y.setParentView((View) weakReference.get());
+                        oc0Var3.y.setParentView((View) weakReference.get());
                     }
-                    if (mc0Var3.T) {
-                        mc0Var3.y.onAttachedToWindow();
+                    if (oc0Var3.T) {
+                        oc0Var3.y.onAttachedToWindow();
                     }
                 }
-                mc0Var3.y.setImage(ImageLocation.getForDocument(f7), "80_80", null, null, null, 0);
-                mc0Var3.y.setAutoRepeatCount(1);
-                mc0Var3.y.setAutoRepeat(1);
-                mc0Var3.o(G0, G02, G03, G04, 0, true);
-                mc0Var3.v(i13);
-                int f10 = mc0Var3.f();
+                oc0Var3.y.setImage(ImageLocation.getForDocument(f7), "80_80", null, null, null, 0);
+                oc0Var3.y.setAutoRepeatCount(1);
+                oc0Var3.y.setAutoRepeat(1);
+                oc0Var3.o(G0, G02, G03, G04, 0, true);
+                oc0Var3.v(i13);
+                int f10 = oc0Var3.f();
                 boolean z12 = this.G;
-                o oVar = new o(14, this, mc0Var3);
+                o oVar = new o(14, this, oc0Var3);
                 org.telegram.ui.ActionBar.a4 a4Var = (org.telegram.ui.ActionBar.a4) b4Var2.f.get(z12 ? 1 : 0);
                 if (a4Var == null || a4Var.c == null) {
                     z11 = z12 ? 1 : 0;
-                    mc0Var = mc0Var3;
+                    oc0Var = oc0Var3;
                 } else {
-                    mc0Var = mc0Var3;
+                    oc0Var = oc0Var3;
                     long i15 = b4Var2.i(z12 ? 1 : 0);
                     TL_stars.StarGift starGift = a4Var.c.gift;
                     TLRPC.Document document = starGift.sticker;
@@ -721,9 +721,9 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
                     ImageLoader.getInstance().loadImageForImageReceiver(imageReceiver2);
                 }
                 b4Var2 = b4Var;
-                org.telegram.ui.Components.mc0 mc0Var4 = mc0Var;
-                b4Var2.o(this.G ? 1 : 0, new org.telegram.messenger.j2(this, b4Var2, z11, mc0Var4, f10));
-                drawable = mc0Var4;
+                org.telegram.ui.Components.oc0 oc0Var4 = oc0Var;
+                b4Var2.o(this.G ? 1 : 0, new org.telegram.messenger.j2(this, b4Var2, z11, oc0Var4, f10));
+                drawable = oc0Var4;
             }
             this.n = drawable;
         }
@@ -733,20 +733,20 @@ public final class un implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
         }
         if (z10) {
             this.H = new AnimatorSet();
-            if (mc0Var2 != null) {
+            if (oc0Var2 != null) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-                ofFloat.addUpdateListener(new qn(mc0Var2, 0));
-                ofFloat.addListener(new sn(mc0Var2));
+                ofFloat.addUpdateListener(new qn(oc0Var2, 0));
+                ofFloat.addListener(new sn(oc0Var2));
                 ofFloat.setDuration(200L);
                 this.H.playTogether(ofFloat);
             }
             Drawable drawable3 = this.n;
-            if (drawable3 instanceof org.telegram.ui.Components.mc0) {
-                org.telegram.ui.Components.mc0 mc0Var5 = (org.telegram.ui.Components.mc0) drawable3;
-                mc0Var5.s(0.0f);
+            if (drawable3 instanceof org.telegram.ui.Components.oc0) {
+                org.telegram.ui.Components.oc0 oc0Var5 = (org.telegram.ui.Components.oc0) drawable3;
+                oc0Var5.s(0.0f);
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat2.addUpdateListener(new qn(mc0Var5, 1));
-                ofFloat2.addListener(new tn(mc0Var5));
+                ofFloat2.addUpdateListener(new qn(oc0Var5, 1));
+                ofFloat2.addListener(new tn(oc0Var5));
                 ofFloat2.setDuration(250L);
                 this.H.playTogether(ofFloat2);
             }

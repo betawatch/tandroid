@@ -5,16 +5,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class rc0 implements org.telegram.ui.Components.vt0 {
+public final class rc0 implements org.telegram.ui.Components.xt0 {
     public final /* synthetic */ cd0 a;
 
     public rc0(cd0 cd0Var) {
         this.a = cd0Var;
     }
 
-    @Override // org.telegram.ui.Components.vt0
+    @Override // org.telegram.ui.Components.xt0
     public final void R() {
         cd0 cd0Var = this.a;
         sc0 sc0Var = cd0Var.K0;
@@ -29,32 +29,32 @@ public final class rc0 implements org.telegram.ui.Components.vt0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vt0
+    @Override // org.telegram.ui.Components.xt0
     public final boolean T() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vt0
-    public final org.telegram.ui.Components.wl0 f() {
+    @Override // org.telegram.ui.Components.xt0
+    public final org.telegram.ui.Components.yl0 f() {
         return this.a.U;
     }
 
-    @Override // org.telegram.ui.Components.vt0
+    @Override // org.telegram.ui.Components.xt0
     public final TLRPC.Chat g() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.vt0
+    @Override // org.telegram.ui.Components.xt0
     public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vt0
+    @Override // org.telegram.ui.Components.xt0
     public final boolean p() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.vt0
+    @Override // org.telegram.ui.Components.xt0
     public final void E() {
     }
 }

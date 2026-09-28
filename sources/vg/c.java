@@ -20,11 +20,11 @@ import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.w9;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
     public final d6 a;
@@ -149,9 +149,9 @@ public abstract class c extends FrameLayout {
     public final SpannableStringBuilder e(CharSequence charSequence) {
         SpannableString spannableString = new SpannableString(">");
         Drawable drawable = getContext().getResources().getDrawable(R.drawable.attach_arrow_right);
-        pq pqVar = new pq(2, drawable);
+        qq qqVar = new qq(2, drawable);
         drawable.setBounds(0, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(12.0f));
-        spannableString.setSpan(pqVar, 0, spannableString.length(), 33);
+        spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append(charSequence).append((CharSequence) " ").append((CharSequence) spannableString);
         return spannableStringBuilder;

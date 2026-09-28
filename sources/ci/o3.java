@@ -10,25 +10,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class o3 extends el0 {
+public final class o3 extends gl0 {
     public final /* synthetic */ w3 c;
 
     public o3(w3 w3Var) {
         this.c = w3Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.gl0
     public final String F(int i10) {
         MediaController.PhotoEntry photoEntry;
         int i11 = i10 - 2;
@@ -55,27 +55,27 @@ public final class o3 extends el0 {
         return LocaleController.formatYearMont(j3, true);
     }
 
-    @Override // org.telegram.ui.Components.el0
-    public final void G(wl0 wl0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(yl0 yl0Var, float f7, int[] iArr) {
         int k10 = k();
-        float width = (wl0Var.getWidth() - wl0Var.getPaddingLeft()) - wl0Var.getPaddingRight();
+        float width = (yl0Var.getWidth() - yl0Var.getPaddingLeft()) - yl0Var.getPaddingRight();
         w3 w3Var = this.c;
         f3 f3Var = w3Var.e;
         float f10 = f3Var.J;
         int i10 = (int) (((int) (width / f10)) * w3Var.O);
         int ceil = (int) Math.ceil(k10 / f10);
-        float lerp = (AndroidUtilities.lerp(0, Math.max(0, r2 - ((AndroidUtilities.displaySize.y - wl0Var.getPaddingTop()) - wl0Var.getPaddingBottom())), f7) / (ceil * i10)) * ceil;
+        float lerp = (AndroidUtilities.lerp(0, Math.max(0, r2 - ((AndroidUtilities.displaySize.y - yl0Var.getPaddingTop()) - yl0Var.getPaddingBottom())), f7) / (ceil * i10)) * ceil;
         int round = Math.round(lerp);
         iArr[0] = Math.max(0, f3Var.J * round) + 2;
-        iArr[1] = wl0Var.getPaddingTop() + ((int) ((lerp - round) * i10));
+        iArr[1] = yl0Var.getPaddingTop() + ((int) ((lerp - round) * i10));
     }
 
-    @Override // org.telegram.ui.Components.el0
-    public final float H(wl0 wl0Var) {
+    @Override // org.telegram.ui.Components.gl0
+    public final float H(yl0 yl0Var) {
         int k10 = k();
-        float width = (wl0Var.getWidth() - wl0Var.getPaddingLeft()) - wl0Var.getPaddingRight();
+        float width = (yl0Var.getWidth() - yl0Var.getPaddingLeft()) - yl0Var.getPaddingRight();
         float f7 = this.c.e.J;
-        return (Math.max(0, wl0Var.computeVerticalScrollOffset() - r2.getPadding()) - wl0Var.getPaddingTop()) / ((((int) Math.ceil(k10 / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (AndroidUtilities.displaySize.y - wl0Var.getPaddingTop()));
+        return (Math.max(0, yl0Var.computeVerticalScrollOffset() - r2.getPadding()) - yl0Var.getPaddingTop()) / ((((int) Math.ceil(k10 / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (AndroidUtilities.displaySize.y - yl0Var.getPaddingTop()));
     }
 
     @Override // s4.h0
@@ -183,7 +183,7 @@ public final class o3 extends el0 {
         } else {
             view = new r3(w3Var.getContext(), w3Var.b, w3Var.O, w3Var.M);
         }
-        return new gl0(view);
+        return new il0(view);
     }
 
     @Override // s4.h0

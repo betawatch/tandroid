@@ -17,11 +17,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class pi1 implements vh0 {
     public final org.telegram.ui.Cells.u1 a;
-    public final org.telegram.ui.Components.wl0 b;
+    public final org.telegram.ui.Components.yl0 b;
     public final float c;
     public float d;
     public final Paint e = new Paint(1);
@@ -33,11 +33,11 @@ public final class pi1 implements vh0 {
     public float k;
     public float l;
 
-    public pi1(org.telegram.ui.Cells.u1 u1Var, jk jkVar, org.telegram.ui.Components.wl0 wl0Var, org.telegram.ui.Components.vi viVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public pi1(org.telegram.ui.Cells.u1 u1Var, jk jkVar, org.telegram.ui.Components.yl0 yl0Var, org.telegram.ui.Components.vi viVar, org.telegram.ui.ActionBar.d6 d6Var) {
         this.j = d6Var;
         this.a = u1Var;
         this.i = viVar;
-        this.b = wl0Var;
+        this.b = yl0Var;
         u1Var.setEnterTransitionInProgress(true);
         ChatActivityEnterView.RecordCircle recordCircle = jkVar.getRecordCircle();
         this.g = recordCircle;
@@ -61,7 +61,7 @@ public final class pi1 implements vh0 {
         ofFloat.setDuration(220L);
         ofFloat.addListener(new oi1(this, u1Var, viVar));
         if (u1Var.getSeekBarWaveform() != null) {
-            org.telegram.ui.Components.vo0 seekBarWaveform = u1Var.getSeekBarWaveform();
+            org.telegram.ui.Components.xo0 seekBarWaveform = u1Var.getSeekBarWaveform();
             seekBarWaveform.v.d(0.0f, true);
             org.telegram.ui.Cells.u1 u1Var2 = seekBarWaveform.n;
             if (u1Var2 != null) {
@@ -84,26 +84,26 @@ public final class pi1 implements vh0 {
         org.telegram.ui.Cells.u1 u1Var = this.a;
         int i10 = u1Var.getMessageObject().stableId;
         int i11 = this.h;
-        org.telegram.ui.Components.wl0 wl0Var = this.b;
+        org.telegram.ui.Components.yl0 yl0Var = this.b;
         if (i10 != i11) {
             x10 = this.k;
             y3 = this.l;
         } else {
-            y3 = (wl0Var.getY() + (u1Var.getY() + u1Var.getRadialProgress().a.centerY())) - viVar.getY();
-            x10 = (wl0Var.getX() + (u1Var.getX() + u1Var.getRadialProgress().a.centerX())) - viVar.getX();
+            y3 = (yl0Var.getY() + (u1Var.getY() + u1Var.getRadialProgress().a.centerY())) - viVar.getY();
+            x10 = (yl0Var.getX() + (u1Var.getX() + u1Var.getRadialProgress().a.centerX())) - viVar.getX();
         }
         this.k = x10;
         this.l = y3;
-        float interpolation = org.telegram.ui.Components.rr.f.getInterpolation(f10);
-        float interpolation2 = org.telegram.ui.Components.rr.h.getInterpolation(f10);
+        float interpolation = org.telegram.ui.Components.sr.f.getInterpolation(f10);
+        float interpolation2 = org.telegram.ui.Components.sr.h.getInterpolation(f10);
         final float f12 = (x10 * interpolation2) + ((1.0f - interpolation2) * x11);
         float f13 = 1.0f - interpolation;
         final float f14 = (y3 * interpolation) + (y10 * f13);
         float height = u1Var.getRadialProgress().a.height() / 2.0f;
         float f15 = (height * interpolation) + (this.c * f13);
-        wl0Var.getY();
+        yl0Var.getY();
         viVar.getY();
-        wl0Var.getMeasuredHeight();
+        yl0Var.getMeasuredHeight();
         if (viVar.getMeasuredHeight() > 0) {
             viVar.getMeasuredHeight();
         }
@@ -123,7 +123,7 @@ public final class pi1 implements vh0 {
             org.telegram.ui.Components.ba baVar = recordCircle.h;
             org.telegram.ui.Components.ba baVar2 = recordCircle.n;
             f7 = x11;
-            float interpolation3 = org.telegram.ui.Components.rr.g.getInterpolation(recordCircle.H);
+            float interpolation3 = org.telegram.ui.Components.sr.g.getInterpolation(recordCircle.H);
             ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
             float f18 = chatActivityEnterView.j4;
             float f19 = f18 > 0.7f ? 1.0f : f18 / 0.7f;

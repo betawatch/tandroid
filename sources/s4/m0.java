@@ -5,9 +5,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public abstract class m0 {
     public l.d a;
@@ -89,8 +89,8 @@ public abstract class m0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            uk0 uk0Var = (uk0) arrayList.get(i10);
-            uk0Var.a.c(uk0Var.b, uk0Var.c, uk0Var.d, false);
+            wk0 wk0Var = (wk0) arrayList.get(i10);
+            wk0Var.a.c(wk0Var.b, wk0Var.c, wk0Var.d, false);
         }
         arrayList.clear();
     }

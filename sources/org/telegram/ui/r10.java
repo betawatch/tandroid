@@ -12,9 +12,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.r10;
 import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class r10 extends org.telegram.ui.Components.vl0 {
+public final class r10 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ t10 d;
 
@@ -23,7 +23,7 @@ public final class r10 extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -55,7 +55,7 @@ public final class r10 extends org.telegram.ui.Components.vl0 {
                 if (i11 == 1) {
                     int ceil = (int) Math.ceil(arrayList.size() / t10Var.s);
                     int i12 = t10Var.s;
-                    ((org.telegram.ui.Components.u00) view).v = i12 - ((ceil * i12) - arrayList.size());
+                    ((org.telegram.ui.Components.v00) view).v = i12 - ((ceil * i12) - arrayList.size());
                     return;
                 }
                 return;
@@ -106,7 +106,7 @@ public final class r10 extends org.telegram.ui.Components.vl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.u00, org.telegram.ui.h10] */
+    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.v00, org.telegram.ui.h10] */
     /* JADX WARN: Type inference failed for: r6v5 */
     /* JADX WARN: Type inference failed for: r6v6, types: [android.view.View] */
     @Override // s4.h0

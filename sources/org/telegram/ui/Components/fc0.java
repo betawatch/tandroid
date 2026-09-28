@@ -1,181 +1,183 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class fc0 extends FrameLayout {
-    public final ArrayList E;
-    public final bc0 F;
-    public final ah.c G;
-    public TLRPC.Peer a;
-    public final boolean b;
-    public final org.telegram.ui.wn c;
-    public final MessagePreviewParams d;
-    public final dc0 e;
-    public final hb0 f;
-    public ValueAnimator h;
-    public final TLRPC.User n;
-    public final TLRPC.Chat r;
-    public boolean s;
-    public boolean v;
-    public final int w;
-    public boolean x;
-    public final org.telegram.ui.Cells.t6 y;
+public final class fc0 extends View {
+    public final ArrayList a;
+    public float b;
+    public final Paint c;
+    public final int d;
+    public final int e;
+    public Drawable f;
+    public float h;
+    public float n;
+    public final RectF r;
+    public Utilities.Callback s;
 
-    public fc0(Context context, org.telegram.ui.wn wnVar, ah.c cVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, bc0 bc0Var, int i11, final boolean z10) {
+    public fc0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.y = new org.telegram.ui.Cells.t6(this, 17);
-        this.E = new ArrayList(10);
-        this.b = z10;
-        this.c = wnVar;
-        this.w = i10;
-        this.G = cVar;
-        this.n = user;
-        this.r = chat;
-        this.d = messagePreviewParams;
-        this.F = bc0Var;
-        this.f = new hb0(this, context, bc0Var);
-        dc0 dc0Var = new dc0(context, bc0Var);
-        this.e = dc0Var;
-        ch.d c10 = cVar.c(dc0Var, null, false);
-        c10.o(eh.b.k(bc0Var));
-        c10.j.e = true;
-        c10.p(AndroidUtilities.dp(8.0f));
-        c10.q(AndroidUtilities.dp(16.0f));
-        dc0Var.setBackground(c10);
-        int i12 = 0;
-        for (int i13 = 0; i13 < 3; i13++) {
-            if (i13 == 0 && messagePreviewParams.replyMessage != null) {
-                this.e.a(0, LocaleController.getString(R.string.MessageOptionsReply));
-            } else if (i13 != 1 || messagePreviewParams.forwardMessages == null || z10) {
-                if (i13 == 2 && messagePreviewParams.linkMessage != null && !z10) {
-                    this.e.a(2, LocaleController.getString(R.string.MessageOptionsLink));
-                }
-            } else {
-                this.e.a(1, LocaleController.getString(R.string.MessageOptionsForward));
-            }
-            if (i13 == i11) {
-                i12 = this.e.a.size() - 1;
+        int[] iArr;
+        this.a = new ArrayList();
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.h = AndroidUtilities.dp(14.0f);
+        this.n = AndroidUtilities.dp(0.0f);
+        this.r = new RectF();
+        if (org.telegram.ui.ActionBar.h6.I.q()) {
+            this.d = -1862270977;
+            this.e = -1325400065;
+            paint.setColor(285212671);
+            return;
+        }
+        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Nd, d6Var);
+        if (d6Var instanceof org.telegram.ui.un) {
+            org.telegram.ui.un unVar = (org.telegram.ui.un) d6Var;
+            if ((unVar.d() instanceof oc0) && (iArr = ((oc0) unVar.d()).a) != null) {
+                v02 = AndroidUtilities.getAverageColor(AndroidUtilities.getAverageColor(iArr[0], iArr[1]), AndroidUtilities.getAverageColor(iArr[2], iArr[3]));
             }
         }
-        this.f.setAdapter(new ib0(this, context));
-        this.f.setPosition(i12);
-        this.e.setSelectedTab(i12);
-        addView(this.e, w7.y5.e(-1, 66, 87));
-        addView(this.f, w7.y5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 66.0f));
-        this.e.setOnTabClick(new y2(this, 7));
-        setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.gb0
-            @Override // android.view.View.OnTouchListener
-            public final boolean onTouch(View view, MotionEvent motionEvent) {
-                fc0 fc0Var = fc0.this;
-                fc0Var.getClass();
-                if (motionEvent.getAction() == 1 && !z10) {
-                    fc0Var.a(true);
-                }
-                return true;
-            }
-        });
-        this.s = true;
-        setAlpha(0.0f);
-        setScaleX(0.95f);
-        setScaleY(0.95f);
-        animate().alpha(1.0f).scaleX(1.0f).setDuration(250L).setInterpolator(ji.n.V).scaleY(1.0f);
+        this.d = org.telegram.ui.ActionBar.h6.c(-1606201797, v02);
+        this.e = org.telegram.ui.ActionBar.h6.c(-448573893, v02);
+        paint.setColor(org.telegram.ui.ActionBar.h6.c(814980216, v02));
     }
 
-    public final void a(boolean z10) {
+    public final void a(int i10, String str) {
+        this.a.add(new ec0(i10, str));
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ArrayList arrayList = this.a;
+        if (arrayList.size() <= 1) {
+            return;
+        }
+        float f7 = this.b;
+        double d = f7;
+        int floor = (int) Math.floor(d);
+        boolean z10 = floor >= 0 && floor < arrayList.size();
+        int ceil = (int) Math.ceil(d);
+        boolean z11 = ceil >= 0 && ceil < arrayList.size();
+        RectF rectF = this.r;
+        if (z10 && z11) {
+            AndroidUtilities.lerp(((ec0) arrayList.get(floor)).c, ((ec0) arrayList.get(ceil)).c, f7 - floor, rectF);
+        } else if (z10) {
+            rectF.set(((ec0) arrayList.get(floor)).c);
+        } else if (z11) {
+            rectF.set(((ec0) arrayList.get(ceil)).c);
+        }
+        Drawable drawable = this.f;
+        if (drawable != null) {
+            drawable.draw(canvas);
+        }
+        if (z10 || z11) {
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), this.c);
+        }
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ec0 ec0Var = (ec0) arrayList.get(i10);
+            ec0Var.b.c(ec0Var.c.left + this.h, getMeasuredHeight() / 2.0f, 1.0f, i0.a.d(1.0f - Math.abs(f7 - i10), this.d, this.e), canvas);
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int i10;
-        if (this.s) {
-            this.s = false;
-            animate().alpha(0.0f).scaleX(0.95f).scaleY(0.95f).setDuration(250L).setInterpolator(ji.n.V).setListener(new ca(14, this, z10));
+        Utilities.Callback callback;
+        ArrayList arrayList = this.a;
+        if (arrayList.size() > 1) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
             int i11 = 0;
             while (true) {
-                View[] viewArr = this.f.e;
-                if (i11 >= viewArr.length) {
+                if (i11 >= arrayList.size()) {
+                    i10 = -1;
                     break;
                 }
-                View view = viewArr[i11];
-                if (view instanceof zb0) {
-                    zb0 zb0Var = (zb0) view;
-                    if (zb0Var.a == 0) {
-                        zb0Var.j();
-                        break;
-                    }
+                if (((ec0) arrayList.get(i11)).d.contains(x10, y3)) {
+                    i10 = ((ec0) arrayList.get(i11)).a;
+                    break;
                 }
                 i11++;
             }
-            org.telegram.ui.el elVar = (org.telegram.ui.el) this;
-            org.telegram.ui.wn wnVar = elVar.H;
-            wnVar.Ea = null;
-            wnVar.d7();
-            MessagePreviewParams messagePreviewParams = wnVar.f5;
-            if (messagePreviewParams != null) {
-                if (wnVar.l5 == null) {
-                    wnVar.l5 = messagePreviewParams.quote;
+            if (motionEvent.getAction() == 0) {
+                if (i10 != -1) {
+                    return true;
                 }
-                if (messagePreviewParams.quote == null) {
-                    wnVar.l5 = null;
-                }
-                org.telegram.ui.mn mnVar = wnVar.l5;
-                if (mnVar != null) {
-                    mnVar.f = false;
-                    mnVar.b = messagePreviewParams.quoteStart;
-                    mnVar.c = messagePreviewParams.quoteEnd;
-                    mnVar.e();
-                    if (wnVar.nb == 2) {
-                        wnVar.Cb(wnVar.n5, wnVar.l5);
-                    }
-                } else {
-                    ArrayList<MessageObject> arrayList = new ArrayList<>();
-                    MessagePreviewParams.Messages messages = wnVar.f5.forwardMessages;
-                    if (messages != null) {
-                        messages.getSelectedMessages(arrayList);
-                    }
-                    wnVar.j8();
-                }
+            } else if (motionEvent.getAction() == 1 && i10 != -1 && (callback = this.s) != null) {
+                callback.run(Integer.valueOf(i10));
             }
-            if (wnVar.db && z10) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.dl(elVar, 1), 50L);
-                wnVar.db = false;
+        }
+        return false;
+    }
+
+    public int getColor() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        ArrayList arrayList;
+        super.onMeasure(i10, i11);
+        this.h = AndroidUtilities.dp(14.0f);
+        float f7 = 0.0f;
+        this.n = AndroidUtilities.dp(0.0f);
+        int i12 = 0;
+        while (true) {
+            arrayList = this.a;
+            if (i12 >= arrayList.size()) {
+                break;
             }
-            Activity parentActivity = wnVar.getParentActivity();
-            i10 = ((org.telegram.ui.ActionBar.m2) wnVar).classGuid;
-            AndroidUtilities.requestAdjustResize(parentActivity, i10);
+            if (i12 > 0) {
+                f7 += this.n;
+            }
+            f7 += ((ec0) arrayList.get(i12)).b.l() + this.h + this.h;
+            i12++;
+        }
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        float dp = (measuredHeight - AndroidUtilities.dp(26.0f)) / 2.0f;
+        float dp2 = (AndroidUtilities.dp(26.0f) + measuredHeight) / 2.0f;
+        float f10 = measuredWidth;
+        float f11 = (f10 - f7) / 2.0f;
+        float f12 = f11;
+        for (int i13 = 0; i13 < arrayList.size(); i13++) {
+            float l4 = ((ec0) arrayList.get(i13)).b.l() + this.h + this.h;
+            ((ec0) arrayList.get(i13)).c.set(f12, dp, f12 + l4, dp2);
+            ((ec0) arrayList.get(i13)).d.set(((ec0) arrayList.get(i13)).c);
+            ((ec0) arrayList.get(i13)).d.inset((-this.n) / 2.0f, -dp);
+            f12 += l4 + this.n;
+        }
+        Drawable drawable = this.f;
+        if (drawable != null) {
+            Rect rect = AndroidUtilities.rectTmp2;
+            drawable.getPadding(rect);
+            int i14 = measuredHeight / 2;
+            this.f.setBounds((((int) f11) - AndroidUtilities.dp(3.0f)) - rect.left, (i14 - AndroidUtilities.dp(16.0f)) - rect.top, AndroidUtilities.dp(3.0f) + ((int) ((f10 + f7) / 2.0f)) + rect.right, AndroidUtilities.dp(16.0f) + i14 + rect.bottom);
         }
     }
 
-    public abstract void b();
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
+        this.f = drawable;
+    }
 
-    public abstract void c(boolean z10);
+    public void setOnTabClick(Utilities.Callback<Integer> callback) {
+        this.s = callback;
+    }
 
-    public void setSendAsPeer(TLRPC.Peer peer) {
-        this.a = peer;
-        int i10 = 0;
-        while (true) {
-            View[] viewArr = this.f.e;
-            if (i10 >= viewArr.length) {
-                return;
-            }
-            View view = viewArr[i10];
-            if (view != null) {
-                zb0 zb0Var = (zb0) view;
-                if (zb0Var.a == 1) {
-                    zb0Var.h();
-                }
-            }
-            i10++;
-        }
+    public void setSelectedTab(float f7) {
+        this.b = f7;
+        invalidate();
     }
 }

@@ -6,11 +6,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class lp0 extends LinearLayout {
-    public final org.telegram.ui.Components.n90 a;
-    public final org.telegram.ui.Components.n90 b;
+    public final org.telegram.ui.Components.p90 a;
+    public final org.telegram.ui.Components.p90 b;
     public final /* synthetic */ np0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,12 +23,12 @@ public final class lp0 extends LinearLayout {
         tp0 tp0Var = np0Var.p0;
         setBackgroundColor(tp0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(getContext());
-        w9Var.setImageDrawable(new org.telegram.ui.Components.ij0(R.raw.utyan_draw, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+        w9Var.setImageDrawable(new org.telegram.ui.Components.kj0(R.raw.utyan_draw, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
         addView(w9Var, w7.y5.t(120, 120, 1, 0, 6, 0, 0));
         Context context2 = getContext();
         int i10 = org.telegram.ui.ActionBar.h6.y6;
         d6Var = ((org.telegram.ui.ActionBar.m2) tp0Var).resourceProvider;
-        org.telegram.ui.Components.n90 a2 = w7.c6.a(context2, 14.0f, i10, false, d6Var);
+        org.telegram.ui.Components.p90 a2 = w7.c6.a(context2, 14.0f, i10, false, d6Var);
         this.a = a2;
         a2.setGravity(17);
         a2.setText(LocaleController.getString(np0Var.m0 == 0 ? R.string.Gift2PeerColorProfileEmptyTitle : R.string.Gift2PeerColorReplyEmptyTitle));
@@ -36,7 +36,7 @@ public final class lp0 extends LinearLayout {
         Context context3 = getContext();
         int i11 = org.telegram.ui.ActionBar.h6.gc;
         d6Var2 = ((org.telegram.ui.ActionBar.m2) tp0Var).resourceProvider;
-        org.telegram.ui.Components.n90 a10 = w7.c6.a(context3, 14.0f, i11, false, d6Var2);
+        org.telegram.ui.Components.p90 a10 = w7.c6.a(context3, 14.0f, i11, false, d6Var2);
         this.b = a10;
         a10.setGravity(17);
         a10.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2PeerColorEmptyButton), new il0(this, 10)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.33f), 1.0f));
@@ -49,8 +49,8 @@ public final class lp0 extends LinearLayout {
         this.a.setTextColor(tp0Var.getThemedColor(org.telegram.ui.ActionBar.h6.y6));
         int i10 = org.telegram.ui.ActionBar.h6.gc;
         int themedColor = tp0Var.getThemedColor(i10);
-        org.telegram.ui.Components.n90 n90Var = this.b;
-        n90Var.setTextColor(themedColor);
-        n90Var.setLinkTextColor(tp0Var.getThemedColor(i10));
+        org.telegram.ui.Components.p90 p90Var = this.b;
+        p90Var.setTextColor(themedColor);
+        p90Var.setLinkTextColor(tp0Var.getThemedColor(i10));
     }
 }

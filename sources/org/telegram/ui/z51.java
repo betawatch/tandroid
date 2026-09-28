@@ -26,16 +26,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class z51 extends org.telegram.ui.Components.vl0 {
+public final class z51 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ a71 c;
 
     public z51(a71 a71Var) {
         this.c = a71Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 2 || i10 == 1 || i10 == 3 || i10 == 8;
@@ -107,7 +107,7 @@ public final class z51 extends org.telegram.ui.Components.vl0 {
         org.telegram.ui.Components.z5 z5Var;
         int cacheType;
         int cacheType2;
-        org.telegram.ui.Components.yx yxVar;
+        org.telegram.ui.Components.zx zxVar;
         ?? r92;
         boolean z12;
         String formatString;
@@ -179,15 +179,15 @@ public final class z51 extends org.telegram.ui.Components.vl0 {
                 f61Var.a(null, false);
                 return;
             }
-            org.telegram.ui.Components.yx yxVar2 = (org.telegram.ui.Components.yx) arrayList5.get(i15);
-            if (yxVar2.d != null) {
-                MediaDataController.getInstance(i13).getStickerSet(yxVar2.d, false);
-                yxVar2.d = null;
+            org.telegram.ui.Components.zx zxVar2 = (org.telegram.ui.Components.zx) arrayList5.get(i15);
+            if (zxVar2.d != null) {
+                MediaDataController.getInstance(i13).getStickerSet(zxVar2.d, false);
+                zxVar2.d = null;
             }
-            if (i12 != 5 && i12 != 7 && i12 != 6 && !yxVar2.e && !UserConfig.getInstance(i13).isPremium()) {
+            if (i12 != 5 && i12 != 7 && i12 != 6 && !zxVar2.e && !UserConfig.getInstance(i13).isPremium()) {
                 z14 = true;
             }
-            f61Var.a(yxVar2.b.title, z14);
+            f61Var.a(zxVar2.b.title, z14);
             return;
         }
         if (i14 == 1) {
@@ -277,13 +277,13 @@ public final class z51 extends org.telegram.ui.Components.vl0 {
         if (i14 == 4) {
             e61 e61Var = (e61) view;
             int i18 = a71Var.y0.get(i10);
-            org.telegram.ui.Components.yx yxVar3 = (i18 < 0 || i18 >= arrayList5.size()) ? null : (org.telegram.ui.Components.yx) arrayList5.get(i18);
+            org.telegram.ui.Components.zx zxVar3 = (i18 < 0 || i18 >= arrayList5.size()) ? null : (org.telegram.ui.Components.zx) arrayList5.get(i18);
             if (i18 == -1) {
                 a71Var.G = e61Var;
                 e61Var.a.setText("+" + ((arrayList4.size() - 40) + (z13 ? 1 : 0) + 1));
                 return;
             }
-            if (yxVar3 == null) {
+            if (zxVar3 == null) {
                 if (a71Var.G == e61Var) {
                     a71Var.G = null;
                     return;
@@ -295,7 +295,7 @@ public final class z51 extends org.telegram.ui.Components.vl0 {
                 }
                 TextView textView2 = e61Var.a;
                 StringBuilder sb2 = new StringBuilder("+");
-                sb2.append(yxVar3.c.size() - 23);
+                sb2.append(zxVar3.c.size() - 23);
                 textView2.setText(sb2.toString());
                 return;
             }
@@ -303,13 +303,13 @@ public final class z51 extends org.telegram.ui.Components.vl0 {
         if (i14 == 5) {
             d61 d61Var = (d61) view;
             int i19 = a71Var.z0.get(i10);
-            if (i19 < 0 || i19 >= arrayList5.size() || (yxVar = (org.telegram.ui.Components.yx) arrayList5.get(i19)) == null) {
+            if (i19 < 0 || i19 >= arrayList5.size() || (zxVar = (org.telegram.ui.Components.zx) arrayList5.get(i19)) == null) {
                 return;
             }
-            String str = yxVar.b.title;
-            boolean z15 = (yxVar.e || UserConfig.getInstance(i13).isPremium()) ? false : true;
-            boolean z16 = yxVar.f;
-            org.telegram.ui.Cells.ua uaVar = new org.telegram.ui.Cells.ua(this, yxVar, i19, 15);
+            String str = zxVar.b.title;
+            boolean z15 = (zxVar.e || UserConfig.getInstance(i13).isPremium()) ? false : true;
+            boolean z16 = zxVar.f;
+            org.telegram.ui.Cells.ua uaVar = new org.telegram.ui.Cells.ua(this, zxVar, i19, 15);
             rg.p0 p0Var = d61Var.c;
             FrameLayout frameLayout = d61Var.a;
             d61Var.d = str;
@@ -473,11 +473,11 @@ public final class z51 extends org.telegram.ui.Components.vl0 {
                 for (int i25 = 0; i25 < sparseIntArray.size(); i25++) {
                     int keyAt = sparseIntArray.keyAt(i25);
                     int valueAt = sparseIntArray.valueAt(i25);
-                    org.telegram.ui.Components.yx yxVar4 = valueAt >= 0 ? (org.telegram.ui.Components.yx) arrayList5.get(valueAt) : null;
-                    if (yxVar4 != null) {
-                        int size2 = yxVar4.h ? yxVar4.c.size() : Math.min(yxVar4.c.size(), 24);
+                    org.telegram.ui.Components.zx zxVar4 = valueAt >= 0 ? (org.telegram.ui.Components.zx) arrayList5.get(valueAt) : null;
+                    if (zxVar4 != null) {
+                        int size2 = zxVar4.h ? zxVar4.c.size() : Math.min(zxVar4.c.size(), 24);
                         int i26 = (i10 - keyAt) - 1;
-                        if (i26 >= 0 && i26 < size2 && (document = (TLRPC.Document) yxVar4.c.get(i26)) != null) {
+                        if (i26 >= 0 && i26 < size2 && (document = (TLRPC.Document) zxVar4.c.get(i26)) != null) {
                             if (a71Var.Q) {
                                 j61Var3.c(document, a71Var.i0);
                             } else {
@@ -560,7 +560,7 @@ public final class z51 extends org.telegram.ui.Components.vl0 {
             d61 d61Var = new d61(a71Var.getContext());
             org.telegram.ui.Cells.u3 u3Var = new org.telegram.ui.Cells.u3(d61Var.getContext(), false, false, false, 4);
             d61Var.b = u3Var;
-            u3Var.b(0.3f, 250L, org.telegram.ui.Components.rr.h);
+            u3Var.b(0.3f, 250L, org.telegram.ui.Components.sr.h);
             u3Var.setTextSize(AndroidUtilities.dp(14.0f));
             u3Var.setTypeface(AndroidUtilities.bold());
             u3Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Sh, d6Var));
@@ -599,6 +599,6 @@ public final class z51 extends org.telegram.ui.Components.vl0 {
             view.setScaleX(0.0f);
             view.setScaleY(0.0f);
         }
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 }

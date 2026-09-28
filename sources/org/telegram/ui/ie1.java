@@ -16,9 +16,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ie1 extends org.telegram.ui.Components.vl0 {
+public final class ie1 extends org.telegram.ui.Components.xl0 {
     public int c;
     public int d;
     public int e;
@@ -31,7 +31,7 @@ public final class ie1 extends org.telegram.ui.Components.vl0 {
         this.r = le1Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.b() >= this.f && c1Var.b() < this.h;
     }
@@ -109,9 +109,9 @@ public final class ie1 extends org.telegram.ui.Components.vl0 {
         if (i10 != 1) {
             if (i10 == 2) {
                 org.telegram.ui.Cells.b7 b7Var = new org.telegram.ui.Cells.b7(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
-                org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false)), org.telegram.ui.ActionBar.h6.V0(viewGroup.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7));
-                qqVar.w = true;
-                b7Var.setBackground(qqVar);
+                org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false)), org.telegram.ui.ActionBar.h6.V0(viewGroup.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7));
+                rqVar.w = true;
+                b7Var.setBackground(rqVar);
                 view2 = b7Var;
             } else if (i10 != 3) {
                 view2 = i10 != 5 ? new org.telegram.ui.Cells.g4(viewGroup.getContext(), 1, 0, false) : new org.telegram.ui.Cells.l3(viewGroup.getContext(), AndroidUtilities.dp(12.0f));
@@ -160,6 +160,6 @@ public final class ie1 extends org.telegram.ui.Components.vl0 {
             le1Var.x.setLayoutParams(p0Var);
             view = qaVar;
         }
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 }

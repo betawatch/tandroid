@@ -20,20 +20,20 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.b7;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.xl0;
 import rg.q1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class m0 extends vl0 {
+public final class m0 extends xl0 {
     public final /* synthetic */ s0 c;
 
     public m0(s0 s0Var) {
         this.c = s0Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 3;
     }
@@ -81,14 +81,14 @@ public final class m0 extends vl0 {
             r0 r0Var = (r0) view;
             s0Var.b0 = r0Var;
             TLRPC.Chat chat = s0Var.Z;
-            n90 n90Var = r0Var.e;
+            p90 p90Var = r0Var.e;
             try {
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
                 SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), h6.gc, 2, new q1(s0Var, 9));
                 int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
                 replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
-                n90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
-                n90Var.post(new qg.v(r0Var, indexOf, 2));
+                p90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
+                p90Var.post(new qg.v(r0Var, indexOf, 2));
             } catch (Exception e) {
                 FileLog.e(e);
             }

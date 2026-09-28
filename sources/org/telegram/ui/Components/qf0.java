@@ -1,107 +1,80 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class qf0 {
-    public float a = 0.0f;
-    public float b = 25.0f;
-    public float c = 50.0f;
-    public float d = 75.0f;
-    public float e = 100.0f;
-    public float[] f;
+public final class qf0 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ja b;
+    public final /* synthetic */ vf0 c;
 
-    public final float[] a() {
-        float f7 = this.a;
-        float f10 = this.b / 100.0f;
-        float f11 = this.c / 100.0f;
-        float f12 = this.d / 100.0f;
-        float f13 = this.e;
-        int i10 = 5;
-        float[] fArr = {-0.001f, f7 / 100.0f, 0.0f, f7 / 100.0f, 0.25f, f10, 0.5f, f11, 0.75f, f12, 1.0f, f13 / 100.0f, 1.001f, f13 / 100.0f};
-        int i11 = 100;
-        ArrayList arrayList = new ArrayList(100);
-        ArrayList arrayList2 = new ArrayList(100);
-        arrayList2.add(Float.valueOf(fArr[0]));
-        arrayList2.add(Float.valueOf(fArr[1]));
-        int i12 = 1;
-        while (i12 < i10) {
-            int i13 = (i12 - 1) * 2;
-            float f14 = fArr[i13];
-            float f15 = fArr[i13 + 1];
-            int i14 = i12 * 2;
-            float f16 = fArr[i14];
-            float f17 = fArr[i14 + 1];
-            int i15 = i12 + 1;
-            int i16 = i15 * 2;
-            float f18 = fArr[i16];
-            float f19 = fArr[i16 + 1];
-            int i17 = (i12 + 2) * 2;
-            float f20 = fArr[i17];
-            float f21 = fArr[i17 + 1];
-            int i18 = 1;
-            while (i18 < i11) {
-                float f22 = i18 * 0.01f;
-                float f23 = f22 * f22;
-                float f24 = f23 * f22;
-                float z10 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.vision.e2.z(f18, f14, f22, f16 * 2.0f)) * 0.5f;
-                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.vision.e2.z(f19, f15, f22, f17 * 2.0f)) * 0.5f));
-                if (z10 > f14) {
-                    arrayList2.add(Float.valueOf(z10));
-                    arrayList2.add(Float.valueOf(max));
-                }
-                if ((i18 - 1) % 2 == 0) {
-                    arrayList.add(Float.valueOf(max));
-                }
-                i18++;
-                i11 = 100;
+    public qf0(vf0 vf0Var, boolean z10, ja jaVar) {
+        this.c = vf0Var;
+        this.a = z10;
+        this.b = jaVar;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        vf0 vf0Var = this.c;
+        TextureView textureView = vf0Var.i0;
+        if (vf0Var.l0 != null || surfaceTexture == null) {
+            return;
+        }
+        xz xzVar = new xz(surfaceTexture, vf0Var.C0, vf0Var.H0, vf0Var.w0, this.a, this.b, i10, i11);
+        vf0Var.l0 = xzVar;
+        if (!this.a) {
+            xzVar.i(vf0Var.J0, vf0Var.K0);
+            xz xzVar2 = vf0Var.l0;
+            Matrix transform = textureView.getTransform(null);
+            int width = textureView.getWidth();
+            int height = textureView.getHeight();
+            pa paVar = xzVar2.I;
+            if (paVar != null) {
+                Matrix matrix = paVar.v;
+                transform.invert(matrix);
+                float f7 = width;
+                float f10 = height;
+                matrix.preScale(f7, f10);
+                matrix.postScale(1.0f / f7, 1.0f / f10);
+                paVar.c(matrix);
+                xzVar2.e(false, false, false);
             }
-            arrayList2.add(Float.valueOf(f18));
-            arrayList2.add(Float.valueOf(f19));
-            i12 = i15;
-            i10 = 5;
-            i11 = 100;
         }
-        arrayList2.add(Float.valueOf(fArr[12]));
-        arrayList2.add(Float.valueOf(fArr[13]));
-        this.f = new float[arrayList.size()];
-        int i19 = 0;
-        while (true) {
-            float[] fArr2 = this.f;
-            if (i19 >= fArr2.length) {
-                break;
-            }
-            fArr2[i19] = ((Float) arrayList.get(i19)).floatValue();
-            i19++;
-        }
-        int size = arrayList2.size();
-        float[] fArr3 = new float[size];
-        for (int i20 = 0; i20 < size; i20++) {
-            fArr3[i20] = ((Float) arrayList2.get(i20)).floatValue();
-        }
-        return fArr3;
+        vf0Var.l0.f(vf0Var);
+        xz xzVar3 = vf0Var.l0;
+        xzVar3.getClass();
+        xzVar3.postRunnable(new tz(xzVar3, i10, i11, 1));
+        vf0Var.l0.e(true, true, false);
     }
 
-    public final boolean b() {
-        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        vf0 vf0Var = this.c;
+        xz xzVar = vf0Var.l0;
+        if (xzVar == null) {
+            return true;
+        }
+        xzVar.postRunnable(new uz(xzVar, 0));
+        vf0Var.l0 = null;
+        return true;
     }
 
-    public final void c(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readFloat(z10);
-        this.b = inputSerializedData.readFloat(z10);
-        this.c = inputSerializedData.readFloat(z10);
-        this.d = inputSerializedData.readFloat(z10);
-        this.e = inputSerializedData.readFloat(z10);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        vf0 vf0Var = this.c;
+        xz xzVar = vf0Var.l0;
+        if (xzVar != null) {
+            xzVar.postRunnable(new tz(xzVar, i10, i11, 1));
+            vf0Var.l0.e(false, true, false);
+            vf0Var.l0.postRunnable(new kc0(this, 7));
+        }
     }
 
-    public final void d(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeFloat(this.a);
-        outputSerializedData.writeFloat(this.b);
-        outputSerializedData.writeFloat(this.c);
-        outputSerializedData.writeFloat(this.d);
-        outputSerializedData.writeFloat(this.e);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

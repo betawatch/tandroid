@@ -1,18 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface tz0 {
-    mz0 createTextLayout(TL_iv.pageTableCell pagetablecell, int i10);
+public final class tz0 {
+    public static final tz0 e = new tz0(false, new qz0(TLObject.FLAG_31, -2147483647), wz0.R, 0.0f);
+    public final boolean a;
+    public final qz0 b;
+    public final iz0 c;
+    public final float d;
 
-    Paint getHeaderPaint();
+    public tz0(boolean z10, qz0 qz0Var, iz0 iz0Var, float f7) {
+        this.a = z10;
+        this.b = qz0Var;
+        this.c = iz0Var;
+        this.d = f7;
+    }
 
-    Paint getLinePaint();
+    public static iz0 a(tz0 tz0Var, boolean z10) {
+        iz0 iz0Var = tz0Var.c;
+        return iz0Var != wz0.R ? iz0Var : tz0Var.d == 0.0f ? z10 ? wz0.S : wz0.T : wz0.U;
+    }
 
-    Paint getStripPaint();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || tz0.class != obj.getClass()) {
+            return false;
+        }
+        tz0 tz0Var = (tz0) obj;
+        return this.c.equals(tz0Var.c) && this.b.equals(tz0Var.b);
+    }
 
-    void onLayoutChild(mz0 mz0Var, int i10, int i11);
+    public final int hashCode() {
+        return this.c.hashCode() + (this.b.hashCode() * 31);
+    }
 }

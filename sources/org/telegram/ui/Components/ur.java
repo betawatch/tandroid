@@ -1,49 +1,46 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ur extends View {
-    public final TextPaint a;
-    public final TextPaint b;
-    public final String c;
-    public final String d;
-    public final Rect e;
+public final class ur extends ImageView {
+    public final /* synthetic */ int a = 1;
+    public Object b;
+    public final /* synthetic */ ViewGroup c;
 
-    public ur(Context context, String str, String str2) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ur(wr wrVar, Context context, n2.e eVar) {
         super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.b = textPaint2;
-        this.e = new Rect();
-        this.c = str;
-        this.d = str2;
-        textPaint.setTextSize(AndroidUtilities.dp(24.0f));
-        textPaint2.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        textPaint2.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.H6, false));
+        this.c = wrVar;
+        this.b = eVar;
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextPaint textPaint = this.b;
-        String str = this.d;
-        float measureText = textPaint.measureText(str);
-        TextPaint textPaint2 = this.a;
-        String str2 = this.c;
-        float measureText2 = textPaint2.measureText(str2);
-        int length = str2.length();
-        Rect rect = this.e;
-        textPaint2.getTextBounds(str2, 0, length, rect);
-        textPaint.getTextBounds(str, 0, str.length(), rect);
-        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
-        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                wr wrVar = (wr) this.c;
+                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (wrVar.n || wrVar.f)) {
+                    wrVar.n = false;
+                    wrVar.f = false;
+                    removeCallbacks(wrVar.r);
+                    removeCallbacks(wrVar.h);
+                }
+                super.onTouchEvent(motionEvent);
+                return ((GestureDetector) ((n2.e) this.b).b).onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ur(sk0 sk0Var, Context context) {
+        super(context);
+        this.c = sk0Var;
     }
 }

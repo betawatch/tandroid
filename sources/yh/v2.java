@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class v2 extends FrameLayout {
     public final xh.f1 a;
@@ -111,9 +111,9 @@ public final class v2 extends FrameLayout {
         }
         frameLayout.setVisibility(0);
         ViewPropertyAnimator alpha = frameLayout.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).alpha(z10 ? 1.0f : 0.0f);
-        rr rrVar = rr.h;
+        sr srVar = sr.h;
         final int i10 = 0;
-        alpha.setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: yh.u2
+        alpha.setInterpolator(srVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: yh.u2
             public final /* synthetic */ v2 b;
 
             {
@@ -158,7 +158,7 @@ public final class v2 extends FrameLayout {
         }).start();
         textView.setVisibility(0);
         final int i11 = 1;
-        textView.animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: yh.u2
+        textView.animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(srVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: yh.u2
             public final /* synthetic */ v2 b;
 
             {
@@ -203,7 +203,7 @@ public final class v2 extends FrameLayout {
         }).start();
         frameLayout2.setVisibility(0);
         final int i12 = 2;
-        frameLayout2.animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(rrVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: yh.u2
+        frameLayout2.animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(srVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: yh.u2
             public final /* synthetic */ v2 b;
 
             {

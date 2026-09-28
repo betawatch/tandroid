@@ -26,13 +26,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.EmuDetector;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.voip.r0;
 import org.telegram.ui.Components.voip.x;
 import rg.w1;
 import yh.x7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class e extends TextureView implements TextureView.SurfaceTextureListener {
     public boolean E;
@@ -360,7 +360,7 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.b.g, f10);
                     ofFloat2.addUpdateListener(bVar2);
                     ofFloat2.setDuration(3000L);
-                    ofFloat2.setInterpolator(rr.h);
+                    ofFloat2.setInterpolator(sr.h);
                     ValueAnimator ofFloat3 = ValueAnimator.ofFloat(f10, 0.0f);
                     ofFloat3.addUpdateListener(bVar2);
                     ofFloat3.setDuration(1000L);
@@ -372,7 +372,7 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
                     ValueAnimator ofFloat4 = ValueAnimator.ofFloat(this.b.g, f11);
                     ofFloat4.addUpdateListener(bVar);
                     ofFloat4.setDuration(2300L);
-                    ofFloat4.setInterpolator(rr.h);
+                    ofFloat4.setInterpolator(sr.h);
                     ValueAnimator ofFloat5 = ValueAnimator.ofFloat(f11, 0.0f);
                     ofFloat5.addUpdateListener(bVar);
                     ofFloat5.setDuration(500L);
@@ -389,7 +389,7 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
                 ValueAnimator ofFloat6 = ValueAnimator.ofFloat(this.b.d, 360.0f);
                 ofFloat6.addUpdateListener(bVar2);
                 ofFloat6.setDuration(8000L);
-                ofFloat6.setInterpolator(rr.f);
+                ofFloat6.setInterpolator(sr.f);
                 this.T.playTogether(ofFloat6);
                 this.T.addListener(new d(this, 0));
                 this.T.start();
@@ -400,13 +400,13 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
                 ValueAnimator ofFloat7 = ValueAnimator.ofFloat(this.b.d, 180.0f);
                 ofFloat7.addUpdateListener(bVar2);
                 ofFloat7.setDuration(600L);
-                rr rrVar = rr.f;
-                ofFloat7.setInterpolator(rrVar);
+                sr srVar = sr.f;
+                ofFloat7.setInterpolator(srVar);
                 ValueAnimator ofFloat8 = ValueAnimator.ofFloat(180.0f, 360.0f);
                 ofFloat8.addUpdateListener(bVar2);
                 ofFloat8.setDuration(600L);
                 ofFloat8.setStartDelay(2000L);
-                ofFloat8.setInterpolator(rrVar);
+                ofFloat8.setInterpolator(srVar);
                 this.T.playTogether(ofFloat7, ofFloat8);
                 this.T.addListener(new d(this, 2));
                 this.T.start();
@@ -416,12 +416,12 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
             ValueAnimator ofFloat9 = ValueAnimator.ofFloat(this.b.d, 184.0f);
             ofFloat9.addUpdateListener(bVar2);
             ofFloat9.setDuration(600L);
-            rr rrVar2 = rr.g;
-            ofFloat9.setInterpolator(rrVar2);
+            sr srVar2 = sr.g;
+            ofFloat9.setInterpolator(srVar2);
             ValueAnimator ofFloat10 = ValueAnimator.ofFloat(this.b.g, 50.0f);
             ofFloat10.addUpdateListener(bVar);
             ofFloat10.setDuration(600L);
-            ofFloat10.setInterpolator(rrVar2);
+            ofFloat10.setInterpolator(srVar2);
             ValueAnimator ofFloat11 = ValueAnimator.ofFloat(180.0f, 0.0f);
             ofFloat11.addUpdateListener(bVar2);
             ofFloat11.setDuration(800L);

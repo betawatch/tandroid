@@ -6,11 +6,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.s00;
+import org.telegram.ui.Components.t00;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class d3 extends wn {
     public boolean Pc;
@@ -35,9 +35,9 @@ public final class d3 extends wn {
         qc O = xc.a0(this).O(this.Qc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Rc)));
         O.r = false;
         O.j();
-        s00 s00Var = this.m9;
-        if (s00Var != null) {
-            s00Var.c(true);
+        t00 t00Var = this.m9;
+        if (t00Var != null) {
+            t00Var.c(true);
         }
     }
 }

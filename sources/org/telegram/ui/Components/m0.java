@@ -12,7 +12,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,16 +41,16 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
         Runnable runnable4;
         switch (this.a) {
             case 0:
-                ed0 ed0Var = (ed0) this.b;
-                ed0 ed0Var2 = (ed0) this.e;
-                ed0 ed0Var3 = (ed0) this.f;
+                gd0 gd0Var = (gd0) this.b;
+                gd0 gd0Var2 = (gd0) this.e;
+                gd0 gd0Var3 = (gd0) this.f;
                 Calendar calendar = (Calendar) this.c;
                 MessagesStorage.IntCallback intCallback = (MessagesStorage.IntCallback) this.h;
                 org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) this.d;
-                e5.b(ed0Var, ed0Var2, ed0Var3);
-                calendar.set(1, ed0Var3.getValue());
-                calendar.set(2, ed0Var2.getValue());
-                calendar.set(5, ed0Var.getValue());
+                e5.b(gd0Var, gd0Var2, gd0Var3);
+                calendar.set(1, gd0Var3.getValue());
+                calendar.set(2, gd0Var2.getValue());
+                calendar.set(5, gd0Var.getValue());
                 calendar.set(12, 0);
                 calendar.set(11, 0);
                 calendar.set(13, 0);
@@ -59,15 +59,15 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                 runnable.run();
                 break;
             case 1:
-                ed0 ed0Var4 = (ed0) this.b;
+                gd0 gd0Var4 = (gd0) this.b;
                 g4 g4Var = (g4) this.e;
                 h4 h4Var = (h4) this.f;
                 Calendar calendar2 = (Calendar) this.c;
                 org.telegram.ui.ds0 ds0Var = (org.telegram.ui.ds0) this.h;
                 org.telegram.ui.ActionBar.z2 z2Var2 = (org.telegram.ui.ActionBar.z2) this.d;
-                boolean g10 = e5.g(null, null, 0L, 0L, 0, ed0Var4, g4Var, h4Var);
+                boolean g10 = e5.g(null, null, 0L, 0L, 0, gd0Var4, g4Var, h4Var);
                 calendar2.setTimeInMillis(System.currentTimeMillis());
-                calendar2.add(6, ed0Var4.getValue());
+                calendar2.add(6, gd0Var4.getValue());
                 calendar2.set(11, g4Var.getValue());
                 calendar2.set(12, h4Var.getValue());
                 if (g10) {
@@ -82,15 +82,15 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                 runnable2.run();
                 break;
             case 2:
-                ed0 ed0Var5 = (ed0) this.b;
+                gd0 gd0Var5 = (gd0) this.b;
                 x3 x3Var = (x3) this.e;
                 z3 z3Var = (z3) this.f;
                 Calendar calendar3 = (Calendar) this.c;
                 d5 d5Var = (d5) this.h;
                 org.telegram.ui.ActionBar.z2 z2Var3 = (org.telegram.ui.ActionBar.z2) this.d;
-                boolean g11 = e5.g(null, null, 0L, 0L, 0, ed0Var5, x3Var, z3Var);
+                boolean g11 = e5.g(null, null, 0L, 0L, 0, gd0Var5, x3Var, z3Var);
                 calendar3.setTimeInMillis(System.currentTimeMillis());
-                calendar3.add(6, ed0Var5.getValue());
+                calendar3.add(6, gd0Var5.getValue());
                 calendar3.set(11, x3Var.getValue());
                 calendar3.set(12, z3Var.getValue());
                 if (g11) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                 runnable3.run();
                 break;
             case 3:
-                fy0.x((fy0) this.b, (int[]) this.e, (EditTextBoldCursor) this.f, (TextView) this.c, (TextView) this.h, (AlertDialog$Builder) this.d);
+                hy0.x((hy0) this.b, (int[]) this.e, (EditTextBoldCursor) this.f, (TextView) this.c, (TextView) this.h, (AlertDialog$Builder) this.d);
                 break;
             case 4:
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.b;
@@ -111,7 +111,7 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                 int[] iArr = (int[]) this.c;
                 h9 h9Var = (h9) this.h;
                 w9 w9Var = (w9) this.d;
-                y70 F = y70.F(e3Var.container, e3Var.getResourcesProvider(), frameLayout);
+                a80 F = a80.F(e3Var.container, e3Var.getResourcesProvider(), frameLayout);
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
@@ -132,12 +132,12 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                 break;
             default:
                 Calendar calendar4 = (Calendar) this.c;
-                ed0 ed0Var6 = (ed0) this.b;
+                gd0 gd0Var6 = (gd0) this.b;
                 tg.g gVar = (tg.g) this.e;
                 tg.h hVar = (tg.h) this.f;
                 tg.u uVar = (tg.u) this.h;
                 org.telegram.ui.ActionBar.z2 z2Var4 = (org.telegram.ui.ActionBar.z2) this.d;
-                calendar4.setTimeInMillis((ed0Var6.getValue() * 86400000) + System.currentTimeMillis());
+                calendar4.setTimeInMillis((gd0Var6.getValue() * 86400000) + System.currentTimeMillis());
                 calendar4.set(11, gVar.getValue());
                 calendar4.set(12, hVar.getValue() * 5);
                 uVar.J((int) (calendar4.getTimeInMillis() / 1000), 0, true);
@@ -147,10 +147,10 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ m0(Calendar calendar, ed0 ed0Var, tg.g gVar, tg.h hVar, tg.u uVar, org.telegram.ui.ActionBar.z2 z2Var) {
+    public /* synthetic */ m0(Calendar calendar, gd0 gd0Var, tg.g gVar, tg.h hVar, tg.u uVar, org.telegram.ui.ActionBar.z2 z2Var) {
         this.a = 5;
         this.c = calendar;
-        this.b = ed0Var;
+        this.b = gd0Var;
         this.e = gVar;
         this.f = hVar;
         this.h = uVar;

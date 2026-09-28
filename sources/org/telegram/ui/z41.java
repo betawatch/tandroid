@@ -16,7 +16,7 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class z41 extends org.telegram.ui.Cells.u1 {
     public boolean Ge;
@@ -28,7 +28,7 @@ public final class z41 extends org.telegram.ui.Cells.u1 {
     public final Path Me;
     public Paint Ne;
     public final Paint Oe;
-    public org.telegram.ui.Components.k21 Pe;
+    public org.telegram.ui.Components.m21 Pe;
     public final org.telegram.ui.Components.e6 Qe;
     public final /* synthetic */ int Re;
     public final /* synthetic */ int Se;
@@ -114,9 +114,9 @@ public final class z41 extends org.telegram.ui.Cells.u1 {
         rectF2.inset(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
         canvas.drawArc(rectF2, -90.0f, (1.0f - b51Var.a0) * (-360.0f), false, paint3);
         if (this.Pe == null) {
-            org.telegram.ui.Components.k21 k21Var = new org.telegram.ui.Components.k21(120);
-            this.Pe = k21Var;
-            k21Var.b = true;
+            org.telegram.ui.Components.m21 m21Var = new org.telegram.ui.Components.m21(120);
+            this.Pe = m21Var;
+            m21Var.b = true;
         }
         paint3.setStrokeWidth(AndroidUtilities.dp(2.8f));
         this.Pe.a((1.0f - b51Var.a0) * (-360.0f), 1.0f, canvas, paint3, rectF2);

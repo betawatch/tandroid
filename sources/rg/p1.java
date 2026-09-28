@@ -23,12 +23,12 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.qp;
 import org.telegram.ui.cx0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class p1 extends ViewGroup {
     public p1 E;
@@ -40,7 +40,7 @@ public class p1 extends ViewGroup {
     public float K;
     public boolean L;
     public boolean M;
-    public final op a;
+    public final pp a;
     public final TextView b;
     public final TextView c;
     public final TextView d;
@@ -63,12 +63,12 @@ public class p1 extends ViewGroup {
         this.v = h6.a7;
         this.y = new Paint();
         this.H = new Matrix();
-        op opVar = new op(context, 24, null);
-        this.a = opVar;
-        opVar.setDrawBackgroundAsArc(10);
+        pp ppVar = new pp(context, 24, null);
+        this.a = ppVar;
+        ppVar.setDrawBackgroundAsArc(10);
         int i10 = h6.g7;
-        opVar.b(i10, i10, h6.k7);
-        addView(opVar);
+        ppVar.b(i10, i10, h6.k7);
+        addView(ppVar);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
@@ -298,14 +298,14 @@ public class p1 extends ViewGroup {
         int i14 = this.h;
         int paddingLeft = getPaddingLeft() + AndroidUtilities.dp(i14);
         int measuredHeight = getMeasuredHeight();
-        op opVar = this.a;
-        rect.set(paddingLeft, (int) ((measuredHeight - opVar.getMeasuredHeight()) / 2.0f), 0, 0);
-        b(opVar);
+        pp ppVar = this.a;
+        rect.set(paddingLeft, (int) ((measuredHeight - ppVar.getMeasuredHeight()) / 2.0f), 0, 0);
+        b(ppVar);
         int measuredHeight2 = getMeasuredHeight();
         TextView textView = this.c;
         int measuredHeight3 = (int) ((measuredHeight2 - textView.getMeasuredHeight()) / 2.0f);
         int i15 = i14 + this.f;
-        int measuredWidth = opVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 24);
+        int measuredWidth = ppVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 24);
         TextView textView2 = this.d;
         int measuredWidth2 = measuredWidth + (textView2.getVisibility() == 0 ? textView2.getMeasuredWidth() : 0);
         TextView textView3 = this.e;
@@ -318,18 +318,18 @@ public class p1 extends ViewGroup {
         rect.set(((getMeasuredWidth() - textView.getMeasuredWidth()) - AndroidUtilities.dp(16.0f)) - getPaddingRight(), measuredHeight3, 0, 0);
         b(textView);
         float f7 = i15;
-        int paddingLeft3 = getPaddingLeft() + opVar.getMeasuredWidth() + AndroidUtilities.dp(f7);
+        int paddingLeft3 = getPaddingLeft() + ppVar.getMeasuredWidth() + AndroidUtilities.dp(f7);
         int visibility = textView3.getVisibility();
         TextView textView5 = this.b;
         rect.set(paddingLeft3, visibility == 8 ? (int) ((getMeasuredHeight() - textView5.getMeasuredHeight()) / 2.0f) : getPaddingTop(), 0, 0);
         b(textView5);
         if (textView4.getVisibility() == 0) {
-            rect.set(textView5.getMeasuredWidth() + getPaddingLeft() + opVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 6), AndroidUtilities.dp(2.0f) + getPaddingTop(), 0, 0);
+            rect.set(textView5.getMeasuredWidth() + getPaddingLeft() + ppVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 6), AndroidUtilities.dp(2.0f) + getPaddingTop(), 0, 0);
             b(textView4);
         }
-        rect.set(getPaddingLeft() + opVar.getMeasuredWidth() + AndroidUtilities.dp(f7), (getMeasuredHeight() - textView2.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
+        rect.set(getPaddingLeft() + ppVar.getMeasuredWidth() + AndroidUtilities.dp(f7), (getMeasuredHeight() - textView2.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
         b(textView2);
-        rect.set(getPaddingLeft() + opVar.getMeasuredWidth() + AndroidUtilities.dp(f7) + (textView2.getVisibility() == 0 ? AndroidUtilities.dp(6.0f) + textView2.getMeasuredWidth() : 0), (getMeasuredHeight() - textView3.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
+        rect.set(getPaddingLeft() + ppVar.getMeasuredWidth() + AndroidUtilities.dp(f7) + (textView2.getVisibility() == 0 ? AndroidUtilities.dp(6.0f) + textView2.getMeasuredWidth() : 0), (getMeasuredHeight() - textView3.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
         b(textView3);
     }
 
@@ -338,24 +338,24 @@ public class p1 extends ViewGroup {
         int size = View.MeasureSpec.getSize(i10);
         int dp = AndroidUtilities.dp(58.0f);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30);
-        op opVar = this.a;
-        opVar.measure(makeMeasureSpec, makeMeasureSpec);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size - opVar.getMeasuredWidth(), TLObject.FLAG_31);
+        pp ppVar = this.a;
+        ppVar.measure(makeMeasureSpec, makeMeasureSpec);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size - ppVar.getMeasuredWidth(), TLObject.FLAG_31);
         int makeMeasureSpec3 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView = this.c;
         textView.measure(makeMeasureSpec2, makeMeasureSpec3);
-        this.b.measure(View.MeasureSpec.makeMeasureSpec((size - opVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
+        this.b.measure(View.MeasureSpec.makeMeasureSpec((size - ppVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
         TextView textView2 = this.r;
         if (textView2.getVisibility() == 0) {
-            textView2.measure(View.MeasureSpec.makeMeasureSpec((size - opVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
+            textView2.measure(View.MeasureSpec.makeMeasureSpec((size - ppVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
         } else {
             textView2.measure(View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30));
         }
-        int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(size - opVar.getMeasuredWidth(), TLObject.FLAG_31);
+        int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(size - ppVar.getMeasuredWidth(), TLObject.FLAG_31);
         int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView3 = this.d;
         textView3.measure(makeMeasureSpec4, makeMeasureSpec5);
-        int c10 = ok.c(6.0f, (size - opVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
+        int c10 = ok.c(6.0f, (size - ppVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
         int makeMeasureSpec6 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView4 = this.e;
         textView4.measure(c10, makeMeasureSpec6);
@@ -385,7 +385,7 @@ public class p1 extends ViewGroup {
         this.K = f7;
     }
 
-    public void setProgressDelegate(pp ppVar) {
-        this.a.setProgressDelegate(ppVar);
+    public void setProgressDelegate(qp qpVar) {
+        this.a.setProgressDelegate(qpVar);
     }
 }

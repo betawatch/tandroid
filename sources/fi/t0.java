@@ -23,14 +23,14 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class t0 implements gi.e {
     public final Context a;
@@ -80,8 +80,8 @@ public final class t0 implements gi.e {
         }
     }
 
-    public final void b(r61 r61Var) {
-        if (this.m || this.n || r61Var.X2.N0() + 10 <= r61Var.Y2.x.size()) {
+    public final void b(t61 t61Var) {
+        if (this.m || this.n || t61Var.X2.N0() + 10 <= t61Var.Y2.x.size()) {
             return;
         }
         d();
@@ -105,7 +105,7 @@ public final class t0 implements gi.e {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = gi.g.a;
-                    v51 J = v51.J(gi.g.class);
+                    x51 J = x51.J(gi.g.class);
                     J.G = new gi.f(peerDialogId, user, z10);
                     J.H = this;
                     J.j = !z11;
@@ -117,7 +117,7 @@ public final class t0 implements gi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(v51.n(29));
+        arrayList.add(x51.n(29));
     }
 
     public final void d() {
@@ -194,17 +194,17 @@ public final class t0 implements gi.e {
         k9Var.setScaleX(1.333f);
         k9Var.setScaleY(1.333f);
         k9Var.a(false);
-        n90 n90Var = pcVar.b;
-        n90Var.setSingleLine(false);
-        n90Var.setMaxLines(2);
-        n90Var.setTextSize(1, 14.0f);
-        n90Var.setText(replaceTags);
-        if (n90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        p90 p90Var = pcVar.b;
+        p90Var.setSingleLine(false);
+        p90Var.setMaxLines(2);
+        p90Var.setTextSize(1, 14.0f);
+        p90Var.setText(replaceTags);
+        if (p90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
             if (LocaleController.isRTL) {
-                ((ViewGroup.MarginLayoutParams) n90Var.getLayoutParams()).rightMargin = dp;
+                ((ViewGroup.MarginLayoutParams) p90Var.getLayoutParams()).rightMargin = dp;
             } else {
-                ((ViewGroup.MarginLayoutParams) n90Var.getLayoutParams()).leftMargin = dp;
+                ((ViewGroup.MarginLayoutParams) p90Var.getLayoutParams()).leftMargin = dp;
             }
         }
         if (LocaleController.isRTL) {

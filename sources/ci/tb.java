@@ -6,10 +6,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.op;
 import org.telegram.ui.v21;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class tb extends View {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final class tb extends View {
                 canvas.restore();
                 break;
             case 1:
-                np npVar = (np) this.w;
+                op opVar = (op) this.w;
                 super.onDraw(canvas);
                 boolean z11 = this.b;
                 Paint paint2 = this.r;
@@ -76,17 +76,17 @@ public final class tb extends View {
                 float f14 = this.e;
                 float f15 = this.d;
                 if (z11) {
-                    float f16 = npVar.S;
+                    float f16 = opVar.S;
                     if (f16 > 0.0f) {
                         this.c.drawCircle(f15, f14, f13 * f16, this.h);
                     }
                     canvas.drawBitmap(this.n, 0.0f, 0.0f, paint2);
                 } else {
-                    canvas.drawCircle(f15, f14, (1.0f - npVar.S) * f13, paint2);
+                    canvas.drawCircle(f15, f14, (1.0f - opVar.S) * f13, paint2);
                 }
                 canvas.save();
                 canvas.translate(this.s, this.v);
-                npVar.G.draw(canvas);
+                opVar.G.draw(canvas);
                 canvas.restore();
                 break;
             default:

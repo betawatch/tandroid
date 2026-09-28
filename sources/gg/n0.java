@@ -17,15 +17,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t3;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.rn0;
-import org.telegram.ui.Components.sn0;
 import org.telegram.ui.Components.ta;
 import org.telegram.ui.Components.tn0;
 import org.telegram.ui.Components.ua;
 import org.telegram.ui.Components.un0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.vn0;
+import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.bj1;
 import org.telegram.ui.xi1;
@@ -34,9 +34,9 @@ import org.telegram.ui.zh0;
 import w7.y5;
 import yh.x3;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class n0 extends vl0 {
+public final class n0 extends xl0 {
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
@@ -45,7 +45,7 @@ public final class n0 extends vl0 {
         this.d = obj;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         switch (this.c) {
         }
@@ -72,7 +72,7 @@ public final class n0 extends vl0 {
             case 1:
                 return 1;
             case 2:
-                return ((un0) obj).r.size();
+                return ((wn0) obj).r.size();
             case 3:
                 return ((zh0) obj).c.size();
             case 4:
@@ -107,64 +107,64 @@ public final class n0 extends vl0 {
                 break;
             case 2:
                 View view = c1Var.a;
-                un0 un0Var = (un0) this.d;
-                ArrayList arrayList = un0Var.r;
+                wn0 wn0Var = (wn0) this.d;
+                ArrayList arrayList = wn0Var.r;
                 if (i10 >= 0 && i10 < arrayList.size()) {
-                    rn0 rn0Var = (rn0) arrayList.get(i10);
-                    tn0 tn0Var = (tn0) view;
-                    zg.o0 o0Var = tn0Var.d;
-                    boolean z10 = o0Var == null || !o0Var.equals(rn0Var.a);
+                    tn0 tn0Var = (tn0) arrayList.get(i10);
+                    vn0 vn0Var = (vn0) view;
+                    zg.o0 o0Var = vn0Var.d;
+                    boolean z10 = o0Var == null || !o0Var.equals(tn0Var.a);
                     if (z10) {
                         TLRPC.TL_reactionCount tL_reactionCount = new TLRPC.TL_reactionCount();
-                        tL_reactionCount.reaction = rn0Var.a.g();
-                        tL_reactionCount.count = rn0Var.b;
-                        un0 un0Var2 = tn0Var.s;
-                        sn0 sn0Var = new sn0(tn0Var, un0Var2.a, tn0Var, tL_reactionCount, un0Var2.c);
-                        tn0Var.a = sn0Var;
-                        sn0Var.F.d(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(100.0f));
-                        sn0 sn0Var2 = tn0Var.a;
-                        sn0Var2.q = true;
-                        sn0Var2.S = true;
+                        tL_reactionCount.reaction = tn0Var.a.g();
+                        tL_reactionCount.count = tn0Var.b;
+                        wn0 wn0Var2 = vn0Var.s;
+                        un0 un0Var = new un0(vn0Var, wn0Var2.a, vn0Var, tL_reactionCount, wn0Var2.c);
+                        vn0Var.a = un0Var;
+                        un0Var.F.d(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(100.0f));
+                        un0 un0Var2 = vn0Var.a;
+                        un0Var2.q = true;
+                        un0Var2.S = true;
                     } else {
-                        tn0Var.a.w = rn0Var.b;
+                        vn0Var.a.w = tn0Var.b;
                     }
-                    tn0Var.d = rn0Var.a;
+                    vn0Var.d = tn0Var.a;
                     if (!z10) {
-                        sn0 sn0Var3 = tn0Var.a;
-                        sn0Var3.f = sn0Var3.A;
+                        un0 un0Var3 = vn0Var.a;
+                        un0Var3.f = un0Var3.A;
                     }
-                    tn0Var.a.A = AndroidUtilities.dp(44.33f);
-                    tn0Var.a.u = !TextUtils.isEmpty(rn0Var.c);
-                    sn0 sn0Var4 = tn0Var.a;
-                    boolean z11 = sn0Var4.u;
-                    o6 o6Var = sn0Var4.G;
+                    vn0Var.a.A = AndroidUtilities.dp(44.33f);
+                    vn0Var.a.u = !TextUtils.isEmpty(tn0Var.c);
+                    un0 un0Var4 = vn0Var.a;
+                    boolean z11 = un0Var4.u;
+                    o6 o6Var = un0Var4.G;
                     if (z11) {
-                        o6Var.q(Emoji.replaceEmoji(rn0Var.c, o6Var.a.getFontMetricsInt(), false), !z10, true);
+                        o6Var.q(Emoji.replaceEmoji(tn0Var.c, o6Var.a.getFontMetricsInt(), false), !z10, true);
                     } else if (o6Var != null) {
                         o6Var.q("", !z10, true);
                     }
-                    sn0 sn0Var5 = tn0Var.a;
-                    Integer.toString(rn0Var.b);
-                    sn0Var5.getClass();
-                    tn0Var.a.F.c(rn0Var.b, !z10);
-                    sn0 sn0Var6 = tn0Var.a;
-                    if (sn0Var6.F != null && (sn0Var6.w > 0 || sn0Var6.u)) {
-                        sn0Var6.A = (int) (AndroidUtilities.dp(tn0Var.a.u ? 4.0f : 0.0f) + ((int) Math.ceil(r3.m)) + tn0Var.a.G.d + sn0Var6.A);
+                    un0 un0Var5 = vn0Var.a;
+                    Integer.toString(tn0Var.b);
+                    un0Var5.getClass();
+                    vn0Var.a.F.c(tn0Var.b, !z10);
+                    un0 un0Var6 = vn0Var.a;
+                    if (un0Var6.F != null && (un0Var6.w > 0 || un0Var6.u)) {
+                        un0Var6.A = (int) (AndroidUtilities.dp(vn0Var.a.u ? 4.0f : 0.0f) + ((int) Math.ceil(r3.m)) + vn0Var.a.G.d + un0Var6.A);
                     }
                     if (z10) {
-                        sn0 sn0Var7 = tn0Var.a;
-                        sn0Var7.f = sn0Var7.A;
+                        un0 un0Var7 = vn0Var.a;
+                        un0Var7.f = un0Var7.A;
                     }
-                    tn0Var.a.B = AndroidUtilities.dp(28.0f);
-                    sn0 sn0Var8 = tn0Var.a;
-                    sn0Var8.p = tn0Var.e;
-                    if (tn0Var.r) {
-                        sn0Var8.a();
+                    vn0Var.a.B = AndroidUtilities.dp(28.0f);
+                    un0 un0Var8 = vn0Var.a;
+                    un0Var8.p = vn0Var.e;
+                    if (vn0Var.r) {
+                        un0Var8.a();
                     }
                     if (!z10) {
-                        tn0Var.requestLayout();
+                        vn0Var.requestLayout();
                     }
-                    ((tn0) view).a(rn0Var.a.h == un0Var.h, false);
+                    ((vn0) view).a(tn0Var.a.h == wn0Var.h, false);
                     break;
                 }
                 break;
@@ -211,17 +211,17 @@ public final class n0 extends vl0 {
                 p0Var.setLayoutParams(new s4.p0(-2, AndroidUtilities.dp(30.0f)));
                 return r0Var;
             case 1:
-                return new gl0(((ua) this.d).X);
+                return new il0(((ua) this.d).X);
             case 2:
-                un0 un0Var = (un0) this.d;
-                return new gl0(new tn0(un0Var, un0Var.getContext()));
+                wn0 wn0Var = (wn0) this.d;
+                return new il0(new vn0(wn0Var, wn0Var.getContext()));
             case 3:
                 yh0 yh0Var = new yh0(viewGroup.getContext());
                 yh0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(50.0f)));
-                return new gl0(yh0Var);
+                return new il0(yh0Var);
             case 4:
                 bj1 bj1Var = (bj1) this.d;
-                return new gl0(new xi1(bj1Var.E, bj1Var.c));
+                return new il0(new xi1(bj1Var.E, bj1Var.c));
             case 5:
                 rg.j jVar = (rg.j) this.d;
                 d6 d6Var = jVar.a;
@@ -251,7 +251,7 @@ public final class n0 extends vl0 {
             default:
                 ta taVar = new ta(((x3) this.d).getContext());
                 taVar.a = 0;
-                return new gl0(taVar);
+                return new il0(taVar);
         }
     }
 
@@ -259,11 +259,11 @@ public final class n0 extends vl0 {
     public void y(s4.c1 c1Var) {
         switch (this.c) {
             case 2:
-                un0 un0Var = (un0) this.d;
-                ArrayList arrayList = un0Var.r;
+                wn0 wn0Var = (wn0) this.d;
+                ArrayList arrayList = wn0Var.r;
                 int b10 = c1Var.b();
                 if (b10 >= 0 && b10 < arrayList.size()) {
-                    ((tn0) c1Var.a).a(((rn0) arrayList.get(b10)).a.h == un0Var.h, false);
+                    ((vn0) c1Var.a).a(((tn0) arrayList.get(b10)).a.h == wn0Var.h, false);
                     break;
                 }
                 break;

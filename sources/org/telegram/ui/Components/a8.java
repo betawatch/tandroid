@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class a8 extends d8 {
     public final /* synthetic */ Context E;
@@ -24,25 +24,25 @@ public final class a8 extends d8 {
     public final TextView a() {
         switch (this.y) {
             case 0:
-                ca0 ca0Var = new ca0(this.E);
-                ca0Var.setTextColor(this.F.getThemedColor(org.telegram.ui.ActionBar.h6.Oi));
-                ca0Var.setTextSize(1, 17.0f);
-                ca0Var.setTypeface(AndroidUtilities.bold());
-                ca0Var.setEllipsize(TextUtils.TruncateAt.END);
-                ca0Var.setSingleLine(true);
-                return ca0Var;
+                ea0 ea0Var = new ea0(this.E);
+                ea0Var.setTextColor(this.F.getThemedColor(org.telegram.ui.ActionBar.h6.Oi));
+                ea0Var.setTextSize(1, 17.0f);
+                ea0Var.setTypeface(AndroidUtilities.bold());
+                ea0Var.setEllipsize(TextUtils.TruncateAt.END);
+                ea0Var.setSingleLine(true);
+                return ea0Var;
             default:
-                ca0 ca0Var2 = new ca0(this.E);
+                ea0 ea0Var2 = new ea0(this.E);
                 int i10 = org.telegram.ui.ActionBar.h6.Si;
                 j8 j8Var = this.F;
-                ca0Var2.setTextColor(j8Var.getThemedColor(i10));
-                ca0Var2.setTextSize(1, 13.0f);
-                ca0Var2.setEllipsize(TextUtils.TruncateAt.END);
-                ca0Var2.setSingleLine(true);
-                ca0Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
-                ca0Var2.setBackground(org.telegram.ui.ActionBar.h6.Y(j8Var.getThemedColor(org.telegram.ui.ActionBar.h6.i6), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
-                ca0Var2.setOnClickListener(new org.telegram.ui.pf(18, this, ca0Var2));
-                return ca0Var2;
+                ea0Var2.setTextColor(j8Var.getThemedColor(i10));
+                ea0Var2.setTextSize(1, 13.0f);
+                ea0Var2.setEllipsize(TextUtils.TruncateAt.END);
+                ea0Var2.setSingleLine(true);
+                ea0Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
+                ea0Var2.setBackground(org.telegram.ui.ActionBar.h6.Y(j8Var.getThemedColor(org.telegram.ui.ActionBar.h6.i6), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
+                ea0Var2.setOnClickListener(new org.telegram.ui.pf(18, this, ea0Var2));
+                return ea0Var2;
         }
     }
 }

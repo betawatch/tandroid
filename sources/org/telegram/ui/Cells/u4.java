@@ -21,14 +21,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v00;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class u4 extends FrameLayout {
-    public static u00 x;
+    public static v00 x;
     public final org.telegram.ui.Components.p6 a;
     public final org.telegram.ui.Components.p6 b;
     public final org.telegram.ui.Components.w9 c;
@@ -56,8 +56,8 @@ public final class u4 extends FrameLayout {
         addView(w9Var, w7.y5.d(42, 42.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 15.0f, 11.0f, z10 ? 15.0f : 0.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, true);
         this.a = p6Var;
-        rr rrVar = rr.h;
-        p6Var.b(0.4f, 350L, rrVar);
+        sr srVar = sr.h;
+        p6Var.b(0.4f, 350L, srVar);
         p6Var.setScaleProperty(0.6f);
         p6Var.setTextSize(AndroidUtilities.dp(16.0f));
         p6Var.setEllipsizeByGradient(true);
@@ -71,7 +71,7 @@ public final class u4 extends FrameLayout {
         org.telegram.ui.Components.p6 p6Var2 = new org.telegram.ui.Components.p6(context, true, true, true);
         this.b = p6Var2;
         p6Var2.setScaleProperty(0.6f);
-        p6Var2.b(0.4f, 350L, rrVar);
+        p6Var2.b(0.4f, 350L, srVar);
         p6Var2.setTextSize(AndroidUtilities.dp(14.0f));
         p6Var2.setEllipsizeByGradient(true);
         p6Var2.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.A6, d6Var));
@@ -132,16 +132,16 @@ public final class u4 extends FrameLayout {
             if ("pin".equals(str) || tL_messageMediaVenue.icon.startsWith("emoji")) {
                 Drawable mutate = getResources().getDrawable(R.drawable.pin).mutate();
                 mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ni, this.f), PorterDuff.Mode.MULTIPLY));
-                qq qqVar = new qq(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), 0), mutate);
+                rq rqVar = new rq(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), 0), mutate);
                 int dp = AndroidUtilities.dp(42.0f);
                 int dp2 = AndroidUtilities.dp(42.0f);
-                qqVar.h = dp;
-                qqVar.n = dp2;
+                rqVar.h = dp;
+                rqVar.n = dp2;
                 int dp3 = AndroidUtilities.dp(24.0f);
                 int dp4 = AndroidUtilities.dp(24.0f);
-                qqVar.e = dp3;
-                qqVar.f = dp4;
-                w9Var.setImageDrawable(qqVar);
+                rqVar.e = dp3;
+                rqVar.f = dp4;
+                w9Var.setImageDrawable(rqVar);
             } else {
                 w9Var.f(tL_messageMediaVenue.icon, null, null);
             }
@@ -214,21 +214,21 @@ public final class u4 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        u00 u00Var = x;
+        v00 v00Var = x;
         org.telegram.ui.ActionBar.d6 d6Var = this.f;
-        if (u00Var == null) {
-            u00 u00Var2 = new u00(getContext(), d6Var);
-            x = u00Var2;
-            u00Var2.setIsSingleCell(true);
+        if (v00Var == null) {
+            v00 v00Var2 = new v00(getContext(), d6Var);
+            x = v00Var2;
+            v00Var2.setIsSingleCell(true);
         }
         int indexOfChild = getParent() instanceof ViewGroup ? ((ViewGroup) getParent()).indexOfChild(this) : 0;
-        u00 u00Var3 = x;
+        v00 v00Var3 = x;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
         int dp = AndroidUtilities.dp(56.0f);
-        u00Var3.O = measuredWidth;
-        u00Var3.P = measuredHeight;
-        u00Var3.Q = dp * (-indexOfChild);
+        v00Var3.O = measuredWidth;
+        v00Var3.P = measuredHeight;
+        v00Var3.Q = dp * (-indexOfChild);
         x.setViewType(4);
         x.e();
         x.h();

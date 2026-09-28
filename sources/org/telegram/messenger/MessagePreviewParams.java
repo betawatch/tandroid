@@ -16,13 +16,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ec0;
-import org.telegram.ui.Components.fc0;
-import org.telegram.ui.Components.rb0;
-import org.telegram.ui.Components.zb0;
+import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.gc0;
+import org.telegram.ui.Components.hc0;
+import org.telegram.ui.Components.tb0;
 import org.telegram.ui.mn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class MessagePreviewParams {
     public CharacterStyle currentLink;
@@ -40,7 +40,7 @@ public class MessagePreviewParams {
     public boolean monoforum;
     public boolean multipleUsers;
     public boolean noforwards;
-    private fc0 previewView;
+    private hc0 previewView;
     public mn quote;
     public int quoteEnd;
     public int quoteStart;
@@ -52,7 +52,7 @@ public class MessagePreviewParams {
     public boolean webpageTop;
     public boolean willSeeSenders;
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class Messages {
         private long dialogId;
         public LongSparseArray<MessageObject.GroupedMessages> groupedMessagesMap;
@@ -206,7 +206,7 @@ public class MessagePreviewParams {
         }
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class PreviewMediaPoll extends TLRPC.TL_messageMediaPoll {
         public int totalVotersCached;
     }
@@ -357,8 +357,8 @@ public class MessagePreviewParams {
         return messageObject3;
     }
 
-    public void attach(fc0 fc0Var) {
-        this.previewView = fc0Var;
+    public void attach(hc0 hc0Var) {
+        this.previewView = hc0Var;
     }
 
     public void checkCurrentLink(MessageObject messageObject) {
@@ -382,7 +382,7 @@ public class MessagePreviewParams {
 
     public void checkEdits(ArrayList<MessageObject> arrayList) {
         boolean z10;
-        fc0 fc0Var;
+        hc0 hc0Var;
         Messages checkEdits;
         Messages checkEdits2;
         Messages checkEdits3;
@@ -403,53 +403,53 @@ public class MessagePreviewParams {
             this.linkMessage = checkEdits;
             z10 = true;
         }
-        if (!z10 || (fc0Var = this.previewView) == null) {
+        if (!z10 || (hc0Var = this.previewView) == null) {
             return;
         }
-        MessagePreviewParams messagePreviewParams = fc0Var.d;
+        MessagePreviewParams messagePreviewParams = hc0Var.d;
         int i10 = 0;
         while (true) {
-            View[] viewArr = fc0Var.f.e;
+            View[] viewArr = hc0Var.f.e;
             if (i10 >= viewArr.length) {
                 return;
             }
             View view = viewArr[i10];
-            if (view instanceof zb0) {
-                zb0 zb0Var = (zb0) view;
-                int i11 = zb0Var.a;
-                rb0 rb0Var = zb0Var.e;
+            if (view instanceof bc0) {
+                bc0 bc0Var = (bc0) view;
+                int i11 = bc0Var.a;
+                tb0 tb0Var = bc0Var.e;
                 if (i11 == 1) {
-                    zb0Var.r = messagePreviewParams.forwardMessages;
+                    bc0Var.r = messagePreviewParams.forwardMessages;
                 } else if (i11 == 0) {
-                    zb0Var.r = messagePreviewParams.replyMessage;
+                    bc0Var.r = messagePreviewParams.replyMessage;
                 } else if (i11 == 2) {
-                    zb0Var.r = messagePreviewParams.linkMessage;
+                    bc0Var.r = messagePreviewParams.linkMessage;
                 }
-                zb0Var.h();
+                bc0Var.h();
                 if (i11 == 0) {
-                    if (!fc0Var.b || messagePreviewParams.isSecret) {
+                    if (!hc0Var.b || messagePreviewParams.isSecret) {
                         messagePreviewParams.quote = null;
-                        rb0Var.f(false);
-                        zb0Var.g(false, true);
+                        tb0Var.f(false);
+                        bc0Var.g(false, true);
                     } else {
-                        org.telegram.ui.Cells.y9 y9Var = rb0Var.W;
-                        MessageObject c10 = zb0Var.c(y9Var != null ? ((org.telegram.ui.Cells.u1) y9Var).getMessageObject() : null);
+                        org.telegram.ui.Cells.y9 y9Var = tb0Var.W;
+                        MessageObject c10 = bc0Var.c(y9Var != null ? ((org.telegram.ui.Cells.u1) y9Var).getMessageObject() : null);
                         if (c10 != null) {
                             messagePreviewParams.quoteStart = 0;
-                            int min = Math.min(MessagesController.getInstance(fc0Var.w).quoteLengthMax, c10.messageOwner.message.length());
+                            int min = Math.min(MessagesController.getInstance(hc0Var.w).quoteLengthMax, c10.messageOwner.message.length());
                             messagePreviewParams.quoteEnd = min;
                             messagePreviewParams.quote = mn.b(messagePreviewParams.quoteStart, min, c10);
-                            View d = zb0Var.d();
+                            View d = bc0Var.d();
                             if (d instanceof org.telegram.ui.Cells.u1) {
-                                rb0Var.a0((org.telegram.ui.Cells.u1) d, messagePreviewParams.quoteStart, messagePreviewParams.quoteEnd);
+                                tb0Var.a0((org.telegram.ui.Cells.u1) d, messagePreviewParams.quoteStart, messagePreviewParams.quoteEnd);
                             }
                         }
                     }
-                    zb0Var.k(true);
+                    bc0Var.k(true);
                 }
-                ec0 ec0Var = zb0Var.G;
-                if (ec0Var != null) {
-                    ec0Var.animate().alpha(messagePreviewParams.hasMedia ? 1.0f : 0.5f).start();
+                gc0 gc0Var = bc0Var.G;
+                if (gc0Var != null) {
+                    gc0Var.animate().alpha(messagePreviewParams.hasMedia ? 1.0f : 0.5f).start();
                 }
             }
             i10++;
@@ -645,32 +645,32 @@ public class MessagePreviewParams {
                 }
             }
         }
-        fc0 fc0Var = this.previewView;
-        if (fc0Var == null) {
+        hc0 hc0Var = this.previewView;
+        if (hc0Var == null) {
             return;
         }
-        MessagePreviewParams messagePreviewParams = fc0Var.d;
+        MessagePreviewParams messagePreviewParams = hc0Var.d;
         int i12 = 0;
         while (true) {
-            View[] viewArr = fc0Var.f.e;
+            View[] viewArr = hc0Var.f.e;
             if (i12 >= viewArr.length) {
                 return;
             }
             View view = viewArr[i12];
             if (view != null) {
-                zb0 zb0Var = (zb0) view;
-                FrameLayout frameLayout = zb0Var.F;
-                if (zb0Var.a == 2) {
-                    ec0 ec0Var = zb0Var.H;
-                    ec0 ec0Var2 = zb0Var.G;
+                bc0 bc0Var = (bc0) view;
+                FrameLayout frameLayout = bc0Var.F;
+                if (bc0Var.a == 2) {
+                    gc0 gc0Var = bc0Var.H;
+                    gc0 gc0Var2 = bc0Var.G;
                     frameLayout.setVisibility((!messagePreviewParams.singleLink || messagePreviewParams.hasMedia) ? 0 : 8);
-                    ec0Var2.setVisibility(messagePreviewParams.isVideo ? 4 : 0);
-                    ec0Var.setVisibility(messagePreviewParams.isVideo ? 0 : 4);
+                    gc0Var2.setVisibility(messagePreviewParams.isVideo ? 4 : 0);
+                    gc0Var.setVisibility(messagePreviewParams.isVideo ? 0 : 4);
                     frameLayout.animate().alpha(messagePreviewParams.hasMedia ? 1.0f : 0.5f).start();
-                    ec0Var2.a(messagePreviewParams.webpageSmall, true);
-                    ec0Var.a(messagePreviewParams.webpageSmall, true);
-                    zb0Var.E.a(!messagePreviewParams.webpageTop, true);
-                    zb0Var.h();
+                    gc0Var2.a(messagePreviewParams.webpageSmall, true);
+                    gc0Var.a(messagePreviewParams.webpageSmall, true);
+                    bc0Var.E.a(!messagePreviewParams.webpageTop, true);
+                    bc0Var.h();
                 }
             }
             i12++;

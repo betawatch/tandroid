@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
         long[] jArr;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0((wb0) this.b, tLObject, (HashSet) this.c, tL_error, 17));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0((wb0) this.b, tLObject, (HashSet) this.c, tL_error, 17));
                 break;
             case 1:
                 qg0 qg0Var = (qg0) this.b;
@@ -55,7 +55,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                     break;
                 }
             case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0((ue0) this.b, tLObject, (String) this.c, tL_error, 20));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0((ue0) this.b, tLObject, (String) this.c, tL_error, 20));
                 break;
             case 3:
                 AndroidUtilities.runOnUIThread(new sq((tf0) this.b, tL_error, (TL_account.confirmPhone) this.c, 29));
@@ -64,7 +64,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new jf0((KeyEvent.Callback) this.b, tLObject, this.c, 4));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0((pg0) this.b, tL_error, tLObject, (String) this.c, 24));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0((pg0) this.b, tL_error, tLObject, (String) this.c, 24));
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new jf0((KeyEvent.Callback) this.b, tLObject, this.c, 7));
@@ -131,7 +131,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                 }
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0((oo0) this.b, tLObject, tL_error, (TL_account.getTmpPassword) this.c, 28));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0((oo0) this.b, tLObject, tL_error, (TL_account.getTmpPassword) this.c, 28));
                 break;
             case 12:
                 AndroidUtilities.runOnUIThread(new jr0((kw0) this.b, tL_error, tLObject, (TL_stars.updatePaidMessagesPrice) this.c, 3));

@@ -37,13 +37,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cu;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.du;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class jc implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.i2, rf.a {
     public static boolean A1;
@@ -225,7 +225,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
 
     public static void j(jc jcVar) {
         p4 p4Var;
-        cu editField;
+        du editField;
         e6 currentPeerView = jcVar.n0.getCurrentPeerView();
         if (currentPeerView == null || currentPeerView.b2 == null || (((p4Var = currentPeerView.b3) != null && p4Var.getVisibility() == 0) || (editField = currentPeerView.b2.getEditField()) == null)) {
             jcVar.m();
@@ -1192,10 +1192,10 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             this.v1.addListener(new n(i10, this, z10));
             if (z10) {
                 this.v1.setDuration(350L);
-                this.v1.setInterpolator(rr.h);
+                this.v1.setInterpolator(sr.h);
             } else {
                 this.v1.setDuration(350L);
-                this.v1.setInterpolator(rr.f);
+                this.v1.setInterpolator(sr.f);
             }
             this.v1.start();
         }

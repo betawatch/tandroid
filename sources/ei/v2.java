@@ -3,17 +3,17 @@ package ei;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.d8;
-import org.telegram.ui.Components.dy;
-import org.telegram.ui.Components.et0;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.ey;
+import org.telegram.ui.Components.gt0;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.rp;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.th0;
+import org.telegram.ui.Components.sp;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.vh0;
 import org.telegram.ui.wq;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class v2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -73,32 +73,32 @@ public final class v2 extends AnimatorListenerAdapter {
                 ((d8) this.c).a[this.b].setVisibility(8);
                 break;
             case 6:
-                ((rp) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(rr.g).setStartDelay(0L).setDuration(100L).start();
+                ((sp) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(sr.g).setStartDelay(0L).setDuration(100L).start();
                 break;
             case 7:
-                dy dyVar = (dy) this.c;
-                rg.p0 p0Var = dyVar.h;
+                ey eyVar = (ey) this.c;
+                rg.p0 p0Var = eyVar.h;
                 int i10 = this.b;
                 p0Var.setVisibility(i10 == 1 ? 0 : 8);
-                dyVar.e.setVisibility(i10 == 2 ? 0 : 8);
-                dyVar.f.setVisibility(i10 == 3 ? 0 : 8);
+                eyVar.e.setVisibility(i10 == 2 ? 0 : 8);
+                eyVar.f.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 8:
-                th0 th0Var = (th0) this.c;
-                th0Var.H = null;
-                th0Var.P.d1.delete(this.b);
+                vh0 vh0Var = (vh0) this.c;
+                vh0Var.H = null;
+                vh0Var.P.d1.delete(this.b);
                 break;
             case 9:
                 wq wqVar = (wq) this.c;
-                ((bl0) wqVar.d).b.remove(this.b);
-                bl0 bl0Var = (bl0) wqVar.d;
-                bl0Var.d = true;
-                bl0Var.a.invalidate();
+                ((dl0) wqVar.d).b.remove(this.b);
+                dl0 dl0Var = (dl0) wqVar.d;
+                dl0Var.d = true;
+                dl0Var.a.invalidate();
                 break;
             case 10:
-                et0 et0Var = (et0) this.c;
-                et0Var.e.O1.remove(this.b);
-                et0Var.a.invalidate();
+                gt0 gt0Var = (gt0) this.c;
+                gt0Var.e.O1.remove(this.b);
+                gt0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.d1 d1Var = (org.telegram.ui.Components.voip.d1) this.c;
@@ -115,10 +115,10 @@ public final class v2 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 7:
-                dy dyVar = (dy) this.c;
-                dyVar.h.setVisibility(0);
-                dyVar.e.setVisibility(0);
-                dyVar.f.setVisibility(0);
+                ey eyVar = (ey) this.c;
+                eyVar.h.setVisibility(0);
+                eyVar.e.setVisibility(0);
+                eyVar.f.setVisibility(0);
                 break;
             default:
                 super.onAnimationStart(animator);

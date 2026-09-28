@@ -17,8 +17,8 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.k40;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.m40;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.pe;
 import org.telegram.ui.wn;
 import w7.a6;
@@ -26,7 +26,7 @@ import w7.y5;
 import yf.h0;
 import yf.i0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements le.e {
     public static final int[] H;
@@ -68,9 +68,9 @@ public class e extends FrameLayout implements le.e {
         this.b = new View.OnClickListener[5];
         this.c = new pe[5];
         this.f = new HashSet();
-        rr rrVar = rr.h;
-        this.v = new le.c(99, this, rrVar, 320L, false);
-        this.w = new le.c(100, this, rrVar, 320L, false);
+        sr srVar = sr.h;
+        this.v = new le.c(99, this, srVar, 320L, false);
+        this.w = new le.c(100, this, srVar, 320L, false);
         this.F = new Paint(1);
         this.G = 0;
         this.n = cVar;
@@ -107,7 +107,7 @@ public class e extends FrameLayout implements le.e {
                 final wn wnVar = peVar.b;
                 switch (i13) {
                     case 26:
-                        if (wnVar.J0 == null && !z10 && (((e4Var = wnVar.L0) == null || !e4Var.V) && k40.h.c())) {
+                        if (wnVar.J0 == null && !z10 && (((e4Var = wnVar.L0) == null || !e4Var.V) && m40.h.c())) {
                             final int i14 = 1;
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bf
                                 @Override // java.lang.Runnable
@@ -134,7 +134,7 @@ public class e extends FrameLayout implements le.e {
                                                 ci.e4 e4Var4 = wnVar2.L0;
                                                 e4Var4.l0 = new of(wnVar2, 16);
                                                 e4Var4.u();
-                                                org.telegram.ui.Components.k40.f.b();
+                                                org.telegram.ui.Components.m40.f.b();
                                                 break;
                                             }
                                             break;
@@ -153,7 +153,7 @@ public class e extends FrameLayout implements le.e {
                                                 ci.e4 e4Var6 = wnVar3.J0;
                                                 e4Var6.l0 = new of(wnVar3, 29);
                                                 e4Var6.u();
-                                                org.telegram.ui.Components.k40.h.b();
+                                                org.telegram.ui.Components.m40.h.b();
                                                 break;
                                             }
                                             break;
@@ -164,7 +164,7 @@ public class e extends FrameLayout implements le.e {
                         }
                         break;
                     default:
-                        if (wnVar.L0 == null && !z10 && k40.f.c()) {
+                        if (wnVar.L0 == null && !z10 && m40.f.c()) {
                             final int i15 = 0;
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bf
                                 @Override // java.lang.Runnable
@@ -191,7 +191,7 @@ public class e extends FrameLayout implements le.e {
                                                 ci.e4 e4Var4 = wnVar2.L0;
                                                 e4Var4.l0 = new of(wnVar2, 16);
                                                 e4Var4.u();
-                                                org.telegram.ui.Components.k40.f.b();
+                                                org.telegram.ui.Components.m40.f.b();
                                                 break;
                                             }
                                             break;
@@ -210,7 +210,7 @@ public class e extends FrameLayout implements le.e {
                                                 ci.e4 e4Var6 = wnVar3.J0;
                                                 e4Var6.l0 = new of(wnVar3, 29);
                                                 e4Var6.u();
-                                                org.telegram.ui.Components.k40.h.b();
+                                                org.telegram.ui.Components.m40.h.b();
                                                 break;
                                             }
                                             break;
@@ -365,7 +365,7 @@ public class e extends FrameLayout implements le.e {
             n[] nVarArr = this.a;
             if (i10 < nVarArr.length && ((nVar = nVarArr[i10]) != null || z10)) {
                 if (nVar == null) {
-                    le.c cVar = new le.c((i10 << 16) | 1, this, rr.h, 300L, false);
+                    le.c cVar = new le.c((i10 << 16) | 1, this, sr.h, 300L, false);
                     ih.a d = ih.a.d(getContext(), this.n, this.r, this.h, H[i10], 48);
                     if (i10 == 1) {
                         d.setContentDescription(LocaleController.getString(R.string.ProfileActionsGift));

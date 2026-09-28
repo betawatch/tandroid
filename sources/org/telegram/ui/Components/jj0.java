@@ -1,22 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class jj0 extends ImageReceiver {
-    public final /* synthetic */ lj0 a;
+public final /* synthetic */ class jj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kj0 b;
 
-    public jj0(lj0 lj0Var) {
-        this.a = lj0Var;
+    public /* synthetic */ jj0(kj0 kj0Var, int i10) {
+        this.a = i10;
+        this.b = kj0Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
-        if (drawable != null) {
-            this.a.c();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                kj0 kj0Var = this.b;
+                kj0Var.getClass();
+                try {
+                    yf.e eVar = kj0Var.B0;
+                    if (eVar != null) {
+                        eVar.b();
+                    }
+                } catch (Throwable unused) {
+                }
+                AndroidUtilities.runOnUIThread(kj0Var.z0);
+                break;
+            case 1:
+                kj0 kj0Var2 = this.b;
+                kj0Var2.P = null;
+                kj0Var2.p();
+                break;
+            case 2:
+                kj0.h(this.b);
+                break;
+            case 3:
+                kj0.e(this.b);
+                break;
+            case 4:
+                kj0.d(this.b);
+                break;
+            case 5:
+                kj0.f(this.b);
+                break;
+            default:
+                this.b.m();
+                break;
         }
-        return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
     }
 }

@@ -20,13 +20,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.i00;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.r20;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.j00;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.t20;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class l8 extends View {
     public final Matrix E;
@@ -34,9 +34,9 @@ public abstract class l8 extends View {
     public final Drawable G;
     public final org.telegram.ui.Components.o6 H;
     public final org.telegram.ui.Components.o6 I;
-    public final pq[] J;
+    public final qq[] J;
     public final Paint K;
-    public final t01 L;
+    public final v01 L;
     public final org.telegram.ui.Components.e6 M;
     public final org.telegram.ui.Components.e6 N;
     public boolean O;
@@ -95,13 +95,13 @@ public abstract class l8 extends View {
         this.H = o6Var;
         org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(false, true, true, false);
         this.I = o6Var2;
-        this.J = new pq[1];
+        this.J = new qq[1];
         Paint paint = new Paint(1);
         this.K = paint;
-        this.L = new t01(LocaleController.getString(R.string.StarsReactionTop), 14.0f, AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
-        rr rrVar = rr.h;
-        this.M = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
-        this.N = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
+        this.L = new v01(LocaleController.getString(R.string.StarsReactionTop), 14.0f, AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
+        sr srVar = sr.h;
+        this.M = new org.telegram.ui.Components.e6(this, 0L, 320L, srVar);
+        this.N = new org.telegram.ui.Components.e6(this, 0L, 320L, srVar);
         this.P = -1L;
         this.Q = new RectF();
         this.R = new RectF();
@@ -113,7 +113,7 @@ public abstract class l8 extends View {
         this.a0 = new RectF();
         this.b0 = new Path();
         this.c0 = 0.0f;
-        this.f0 = new le.c(this, rrVar, 320L);
+        this.f0 = new le.c(this, srVar, 320L);
         this.a = d6Var;
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_premium_liststar).mutate();
         this.G = mutate;
@@ -143,9 +143,9 @@ public abstract class l8 extends View {
         this.l0 = ofFloat;
         ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 26));
         int value = getValue();
-        this.l0.addListener(new i00(this, f7, value));
+        this.l0.addListener(new j00(this, f7, value));
         this.l0.setDuration(320L);
-        this.l0.setInterpolator(rr.h);
+        this.l0.setInterpolator(sr.h);
         this.l0.start();
         if (c(f7) != value) {
             e(c(f7));
@@ -247,7 +247,7 @@ public abstract class l8 extends View {
         long j3 = this.P;
         org.telegram.ui.Components.e6 e6Var3 = this.N;
         org.telegram.ui.Components.e6 e6Var4 = this.M;
-        t01 t01Var = this.L;
+        v01 v01Var = this.L;
         Paint paint5 = this.K;
         if (j3 == -1 || b((int) j3) >= 1.0f || b((int) this.P) <= 0.0f) {
             e6Var = e6Var3;
@@ -263,7 +263,7 @@ public abstract class l8 extends View {
             float clamp01 = (Utilities.clamp01(b((int) this.P)) * (rectF2.width() - AndroidUtilities.dp(24.0f))) + rectF2.left + AndroidUtilities.dp(12.0f);
             float e = e6Var4.e(Math.abs((rectF3.right - ((float) AndroidUtilities.dp(10.0f))) - clamp01) < ((float) AndroidUtilities.dp(14.0f)));
             float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), e6Var3.e(Math.abs((rectF3.right - ((float) AndroidUtilities.dp(10.0f))) - clamp01) < ((float) AndroidUtilities.dp(12.0f))));
-            float f12 = (clamp01 + t01Var.c) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > rectF2.right ? (clamp01 - lerp) - t01Var.c : clamp01 + lerp;
+            float f12 = (clamp01 + v01Var.c) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > rectF2.right ? (clamp01 - lerp) - v01Var.c : clamp01 + lerp;
             paint5.setStrokeWidth(AndroidUtilities.dp(1.0f));
             paint5.setColor(org.telegram.ui.ActionBar.h6.l1(0.6f, d));
             e6Var = e6Var3;
@@ -288,7 +288,7 @@ public abstract class l8 extends View {
             float dp3 = rectF2.left + AndroidUtilities.dp(12.0f) + (Utilities.clamp01(b((int) this.P)) * (rectF2.width() - AndroidUtilities.dp(24.0f)));
             float e7 = e6Var2.e(Math.abs((rectF.right - ((float) AndroidUtilities.dp(10.0f))) - dp3) < ((float) AndroidUtilities.dp(14.0f)));
             float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), e6Var.e(Math.abs((rectF.right - ((float) AndroidUtilities.dp(10.0f))) - dp3) < ((float) AndroidUtilities.dp(12.0f))));
-            float f13 = (t01Var.c + dp3) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > rectF2.right ? (dp3 - lerp2) - t01Var.c : lerp2 + dp3;
+            float f13 = (v01Var.c + dp3) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > rectF2.right ? (dp3 - lerp2) - v01Var.c : lerp2 + dp3;
             paint2.setStrokeWidth(AndroidUtilities.dp(1.0f));
             paint2.setColor(org.telegram.ui.ActionBar.h6.l1(0.4f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, this.a)));
             i11 = i10;
@@ -491,9 +491,9 @@ public abstract class l8 extends View {
         this.x = i11;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.v = ofFloat;
-        ofFloat.addUpdateListener(new r20(this, i12, i10, i13, i11, 2));
+        ofFloat.addUpdateListener(new t20(this, i12, i10, i13, i11, 2));
         this.v.addListener(new k8(this, i12, i10, i13, i11));
-        this.v.setInterpolator(rr.h);
+        this.v.setInterpolator(sr.h);
         this.v.setDuration(420L);
         this.v.start();
     }

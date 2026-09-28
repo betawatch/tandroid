@@ -1,24 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ek0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ qk0 b;
+public final /* synthetic */ class ek0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sk0 b;
 
-    public ek0(qk0 qk0Var, float f7) {
-        this.b = qk0Var;
-        this.a = f7;
+    public /* synthetic */ ek0(sk0 sk0Var, int i10) {
+        this.a = i10;
+        this.b = sk0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        qk0 qk0Var = this.b;
-        qk0Var.o0 = floatValue;
-        qk0Var.n0 = (1.0f - qk0Var.o0) * this.a;
-        qk0Var.invalidate();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        View view = (View) obj;
+        switch (this.a) {
+            case 0:
+                sk0 sk0Var = this.b;
+                ArrayList arrayList = sk0Var.d;
+                sk0Var.b.getClass();
+                int R = RecyclerView.R(view);
+                if (R >= 0 && R < arrayList.size() && (view instanceof qk0)) {
+                    ((qk0) view).f(((jk0) arrayList.get(R)).c, true);
+                    break;
+                }
+                break;
+            default:
+                if (view instanceof qk0) {
+                    qk0 qk0Var = (qk0) view;
+                    pk0 pk0Var = qk0Var.b;
+                    qk0Var.N = false;
+                    pk0Var.setAlpha(1.0f);
+                    if (!this.b.N0) {
+                        qk0Var.d();
+                        break;
+                    } else {
+                        pk0Var.setScaleX(qk0Var.I * (qk0Var.w ? 0.76f : 1.0f));
+                        pk0Var.setScaleY(qk0Var.I * (qk0Var.w ? 0.76f : 1.0f));
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

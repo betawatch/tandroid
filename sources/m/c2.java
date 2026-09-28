@@ -3,11 +3,11 @@ package m;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.gz;
-import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.yy;
+import org.telegram.ui.Components.hz;
+import org.telegram.ui.Components.my;
+import org.telegram.ui.Components.zy;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class c2 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -38,38 +38,38 @@ public final class c2 implements View.OnTouchListener {
                 }
                 break;
             case 1:
-                ly lyVar = (ly) this.b;
+                my myVar = (my) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        lyVar.F.f = false;
+                        myVar.F.f = false;
                         break;
                     }
                 } else {
-                    lyVar.F.f = true;
+                    myVar.F.f = true;
                     break;
                 }
                 break;
             case 2:
-                yy yyVar = (yy) this.b;
+                zy zyVar = (zy) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        yyVar.G.f = false;
+                        zyVar.G.f = false;
                         break;
                     }
                 } else {
-                    yyVar.G.f = true;
+                    zyVar.G.f = true;
                     break;
                 }
                 break;
             default:
-                gz gzVar = (gz) this.b;
+                hz hzVar = (hz) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        gzVar.Q.f = false;
+                        hzVar.Q.f = false;
                         break;
                     }
                 } else {
-                    gzVar.Q.f = true;
+                    hzVar.Q.f = true;
                     break;
                 }
                 break;

@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vl implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -23,14 +23,14 @@ public final /* synthetic */ class vl implements Runnable {
                 WearAuthListenerService.lambda$onMessageReceived$0(this.b, (String) this.c, (byte[]) this.d);
                 break;
             default:
-                ((MediaDataController) this.c).lambda$putEmojiKeywords$215((TLRPC.TL_emojiKeywordsDifference) this.d, this.b);
+                ((MediaDataController) this.c).lambda$processLoadedDiceStickers$88(this.b, (TLRPC.TL_messages_stickerSet) this.d);
                 break;
         }
     }
 
-    public /* synthetic */ vl(MediaDataController mediaDataController, TLRPC.TL_emojiKeywordsDifference tL_emojiKeywordsDifference, String str) {
+    public /* synthetic */ vl(MediaDataController mediaDataController, String str, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         this.c = mediaDataController;
-        this.d = tL_emojiKeywordsDifference;
         this.b = str;
+        this.d = tL_messages_stickerSet;
     }
 }

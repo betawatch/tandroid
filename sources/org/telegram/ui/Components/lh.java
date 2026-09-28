@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lh implements bh.a {
     public final /* synthetic */ int a;
@@ -48,24 +48,24 @@ public final /* synthetic */ class lh implements bh.a {
                 }
                 break;
             case 1:
-                lz lzVar = (lz) this.b;
-                xx xxVar = lzVar.P;
-                gh.d.a(xxVar, canvas, rectF, xxVar, lzVar);
-                nw nwVar = lzVar.h0;
-                gh.d.a(nwVar, canvas, rectF, nwVar, lzVar);
-                tw twVar = lzVar.D0;
-                gh.d.a(twVar, canvas, rectF, twVar, lzVar);
+                mz mzVar = (mz) this.b;
+                yx yxVar = mzVar.P;
+                gh.d.a(yxVar, canvas, rectF, yxVar, mzVar);
+                ow owVar = mzVar.h0;
+                gh.d.a(owVar, canvas, rectF, owVar, mzVar);
+                uw uwVar = mzVar.D0;
+                gh.d.a(uwVar, canvas, rectF, uwVar, mzVar);
                 break;
             default:
-                jv0 jv0Var = (jv0) this.b;
-                for (cu0 cu0Var : jv0Var.k0) {
-                    ah.n nVar = cu0Var.n;
+                lv0 lv0Var = (lv0) this.b;
+                for (eu0 eu0Var : lv0Var.k0) {
+                    ah.n nVar = eu0Var.n;
                     if (nVar != null) {
                         nVar.f(canvas, rectF);
                     }
                 }
-                zr0 zr0Var = jv0Var.V;
-                if (zr0Var != null && (w7Var = zr0Var.R) != null) {
+                bs0 bs0Var = lv0Var.V;
+                if (bs0Var != null && (w7Var = bs0Var.R) != null) {
                     w7Var.f(canvas, rectF);
                     break;
                 }

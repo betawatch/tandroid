@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hh implements Runnable {
     public final /* synthetic */ int a;
@@ -19,8 +19,8 @@ public final /* synthetic */ class hh implements Runnable {
         switch (this.a) {
             case 0:
                 wi wiVar = this.b;
-                ku kuVar = wiVar.c0 ? wiVar.P0 : wiVar.E0;
-                wiVar.M1(kuVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(kuVar.getText().toString().trim()));
+                lu luVar = wiVar.c0 ? wiVar.P0 : wiVar.E0;
+                wiVar.M1(luVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(luVar.getText().toString().trim()));
                 break;
             case 1:
                 wi wiVar2 = this.b;

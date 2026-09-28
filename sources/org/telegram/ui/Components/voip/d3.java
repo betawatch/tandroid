@@ -14,10 +14,10 @@ import android.widget.FrameLayout;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.mc0;
-import org.telegram.ui.Components.q81;
+import org.telegram.ui.Components.oc0;
+import org.telegram.ui.Components.s81;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d3 extends FrameLayout {
     public int E;
@@ -40,18 +40,18 @@ public final class d3 extends FrameLayout {
     public int V;
     public final Drawable a;
     public final Drawable b;
-    public final mc0 c;
-    public final mc0 d;
+    public final oc0 c;
+    public final oc0 d;
     public final Drawable e;
     public final Drawable f;
-    public final mc0 h;
-    public final mc0 n;
+    public final oc0 h;
+    public final oc0 n;
     public final Drawable r;
     public final Drawable s;
-    public final mc0 v;
-    public final mc0 w;
-    public final mc0 x;
-    public final mc0 y;
+    public final oc0 v;
+    public final oc0 w;
+    public final oc0 x;
+    public final oc0 y;
 
     public d3(Activity activity, boolean z10, r1 r1Var) {
         super(activity);
@@ -69,36 +69,36 @@ public final class d3 extends FrameLayout {
         this.T = r1Var;
         boolean isEnabled = LiteMode.isEnabled(512);
         this.U = isEnabled;
-        this.a = z10 ? new c3() : new mc0(-4958504, -8304404, -14637865, -12612630, false, 0, true);
-        this.b = z10 ? new c3() : new mc0(-12224791, -12879119, -16207709, -15226140, false, 0, true);
-        this.c = new mc0(-16275028, -16270749, -5649306, -10833593, false, 0, true);
-        this.d = new mc0(-1545896, -1613425, -2387892, -2198984, false, 0, true);
-        Drawable c3Var = z10 ? new c3() : new mc0(-5818672, -9819171, -15755831, -14124319, false, 0, true);
+        this.a = z10 ? new c3() : new oc0(-4958504, -8304404, -14637865, -12612630, false, 0, true);
+        this.b = z10 ? new c3() : new oc0(-12224791, -12879119, -16207709, -15226140, false, 0, true);
+        this.c = new oc0(-16275028, -16270749, -5649306, -10833593, false, 0, true);
+        this.d = new oc0(-1545896, -1613425, -2387892, -2198984, false, 0, true);
+        Drawable c3Var = z10 ? new c3() : new oc0(-5818672, -9819171, -15755831, -14124319, false, 0, true);
         this.e = c3Var;
-        Drawable c3Var2 = z10 ? new c3() : new mc0(-13803306, -13866273, -16738923, -16608823, false, 0, true);
+        Drawable c3Var2 = z10 ? new c3() : new oc0(-13803306, -13866273, -16738923, -16608823, false, 0, true);
         this.f = c3Var2;
-        mc0 mc0Var = new mc0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
-        this.h = mc0Var;
-        mc0 mc0Var2 = new mc0(-1949911, -1691537, -3705322, -2663914, false, 0, true);
-        this.n = mc0Var2;
-        Drawable c3Var3 = z10 ? new c3() : new mc0(-2726657, -7186179, -13778695, -11034113, false, 0, true);
+        oc0 oc0Var = new oc0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
+        this.h = oc0Var;
+        oc0 oc0Var2 = new oc0(-1949911, -1691537, -3705322, -2663914, false, 0, true);
+        this.n = oc0Var2;
+        Drawable c3Var3 = z10 ? new c3() : new oc0(-2726657, -7186179, -13778695, -11034113, false, 0, true);
         this.r = c3Var3;
-        Drawable c3Var4 = z10 ? new c3() : new mc0(-11170817, -10507265, -16458548, -14105857, false, 0, true);
+        Drawable c3Var4 = z10 ? new c3() : new oc0(-11170817, -10507265, -16458548, -14105857, false, 0, true);
         this.s = c3Var4;
-        mc0 mc0Var3 = new mc0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
-        this.v = mc0Var3;
-        mc0 mc0Var4 = new mc0(-34714, -32091, -85931, -29103, false, 0, true);
-        this.w = mc0Var4;
-        this.x = new mc0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
-        this.y = new mc0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
+        oc0 oc0Var3 = new oc0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
+        this.v = oc0Var3;
+        oc0 oc0Var4 = new oc0(-34714, -32091, -85931, -29103, false, 0, true);
+        this.w = oc0Var4;
+        this.x = new oc0(-16723243, -16129415, -3674272, -9578153, false, 0, true);
+        this.y = new oc0(-16741490, -16673972, -7357129, -13525721, false, 0, true);
         c3Var.setBounds(0, 0, 80, 80);
         c3Var2.setBounds(0, 0, 80, 80);
-        mc0Var.setBounds(0, 0, 80, 80);
-        mc0Var2.setBounds(0, 0, 80, 80);
+        oc0Var.setBounds(0, 0, 80, 80);
+        oc0Var2.setBounds(0, 0, 80, 80);
         c3Var3.setBounds(0, 0, 80, 80);
         c3Var4.setBounds(0, 0, 80, 80);
-        mc0Var3.setBounds(0, 0, 80, 80);
-        mc0Var4.setBounds(0, 0, 80, 80);
+        oc0Var3.setBounds(0, 0, 80, 80);
+        oc0Var4.setBounds(0, 0, 80, 80);
         setWillNotDraw(false);
         setLayerType(2, null);
         AnimatorSet animatorSet = new AnimatorSet();
@@ -171,7 +171,7 @@ public final class d3 extends FrameLayout {
         this.T.e = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, (float) max);
         ofFloat.addUpdateListener(new b3(this, 1));
-        ofFloat.addListener(new q81(this, 12));
+        ofFloat.addListener(new s81(this, 12));
         ofFloat.setDuration(z10 ? 400L : 0L);
         ofFloat.start();
     }

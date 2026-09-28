@@ -16,8 +16,8 @@ import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.z10;
+import org.telegram.ui.Components.b20;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.m51;
 import org.telegram.ui.ny0;
 import org.telegram.ui.rg;
@@ -25,7 +25,7 @@ import org.telegram.ui.wn;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
     public final Rect E;
@@ -56,9 +56,9 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         this.E = new Rect();
         int i10 = 27;
         le.b bVar = new le.b(this, i10);
-        rr rrVar = rr.h;
-        this.H = new le.c(0, bVar, rrVar, 380L, false);
-        this.I = new le.c(0, new le.b(this, i10), rrVar, 380L, false);
+        sr srVar = sr.h;
+        this.H = new le.c(0, bVar, srVar, 380L, false);
+        this.I = new le.c(0, new le.b(this, i10), srVar, 380L, false);
         this.d = wnVar;
         this.x = wnVar.getMessagesController().config.pollAnswerLengthMax.get();
         c6 c6Var = new c6(this, activity, d6Var, 2);
@@ -105,7 +105,7 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
 
     public static void a(c cVar) {
         h5 h5Var = cVar.f;
-        z10.d(h5Var, cVar.H.e);
+        b20.d(h5Var, cVar.H.e);
         int i10 = h6.A6;
         wn wnVar = cVar.d;
         h5Var.setTextColor(i0.a.d(cVar.I.e, h6.v0(i10, wnVar.getResourceProvider()), h6.v0(h6.p7, wnVar.getResourceProvider())));

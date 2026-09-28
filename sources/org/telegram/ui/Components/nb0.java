@@ -1,63 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class nb0 extends s4.t {
-    public final /* synthetic */ zb0 S;
+public final /* synthetic */ class nb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bc0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nb0(zb0 zb0Var) {
-        super(true);
-        this.S = zb0Var;
+    public /* synthetic */ nb0(bc0 bc0Var, int i10) {
+        this.a = i10;
+        this.b = bc0Var;
     }
 
-    @Override // s4.t
-    public final boolean B1(int i10) {
-        byte b10;
-        zb0 zb0Var = this.S;
-        MessageObject messageObject = zb0Var.r.previewMessages.get(i10);
-        MessageObject.GroupedMessages a2 = zb0.a(zb0Var, messageObject);
-        if (a2 != null) {
-            MessageObject.GroupedMessagePosition position = a2.getPosition(messageObject);
-            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
-                int size = a2.posArray.size();
-                for (int i11 = 0; i11 < size; i11++) {
-                    MessageObject.GroupedMessagePosition groupedMessagePosition = a2.posArray.get(i11);
-                    if (groupedMessagePosition != position) {
-                        byte b11 = groupedMessagePosition.minY;
-                        byte b12 = position.minY;
-                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
-                            return true;
-                        }
-                    }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                bc0 bc0Var = this.b;
+                ub0 ub0Var = bc0Var.f;
+                if (!bc0Var.c0.d.webpageTop) {
+                    ub0Var.w0(ub0Var.computeVerticalScrollRange() - (ub0Var.computeVerticalScrollExtent() + ub0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, ji.n.V);
+                    break;
+                } else {
+                    ub0Var.w0(-ub0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, ji.n.V);
+                    break;
                 }
-            }
-        }
-        return false;
-    }
-
-    @Override // s4.t
-    public final boolean C1(View view) {
-        return false;
-    }
-
-    @Override // s4.s, s4.c0, s4.o0
-    public final void b0(of.e eVar, s4.z0 z0Var) {
-        if (BuildVars.DEBUG_PRIVATE_VERSION) {
-            super.b0(eVar, z0Var);
-            return;
-        }
-        try {
-            super.b0(eVar, z0Var);
-        } catch (Exception e) {
-            FileLog.e(e);
-            AndroidUtilities.runOnUIThread(new yp(this, 29));
+            default:
+                this.b.g(true, false);
+                break;
         }
     }
 }

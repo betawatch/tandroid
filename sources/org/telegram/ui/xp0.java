@@ -6,9 +6,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class xp0 extends org.telegram.ui.Components.aw0 {
+public final class xp0 extends org.telegram.ui.Components.cw0 {
     public int w0;
     public boolean x0;
     public final /* synthetic */ cq0 y0;
@@ -24,7 +24,7 @@ public final class xp0 extends org.telegram.ui.Components.aw0 {
     /* JADX WARN: Removed duplicated region for block: B:40:0x00c3  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x00cd  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00a7  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -35,7 +35,7 @@ public final class xp0 extends org.telegram.ui.Components.aw0 {
         int i17;
         int i18;
         int i19;
-        org.telegram.ui.Components.ku kuVar;
+        org.telegram.ui.Components.lu luVar;
         int measuredHeight;
         int measuredHeight2;
         int i20 = this.w0;
@@ -77,8 +77,8 @@ public final class xp0 extends org.telegram.ui.Components.aw0 {
                             i17 = ((i13 - emojiPadding) - i11) - measuredHeight3;
                             i18 = layoutParams.bottomMargin;
                         }
-                        kuVar = cq0Var.M;
-                        if (kuVar != null && kuVar.l(childAt)) {
+                        luVar = cq0Var.M;
+                        if (luVar != null && luVar.l(childAt)) {
                             if (AndroidUtilities.isTablet()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -94,8 +94,8 @@ public final class xp0 extends org.telegram.ui.Components.aw0 {
                         i18 = layoutParams.bottomMargin;
                     }
                     i19 = i17 - i18;
-                    kuVar = cq0Var.M;
-                    if (kuVar != null) {
+                    luVar = cq0Var.M;
+                    if (luVar != null) {
                         if (AndroidUtilities.isTablet()) {
                         }
                         i19 = measuredHeight - measuredHeight2;
@@ -109,8 +109,8 @@ public final class xp0 extends org.telegram.ui.Components.aw0 {
                 if (i24 == 16) {
                 }
                 i19 = i17 - i18;
-                kuVar = cq0Var.M;
-                if (kuVar != null) {
+                luVar = cq0Var.M;
+                if (luVar != null) {
                 }
                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
             }
@@ -140,8 +140,8 @@ public final class xp0 extends org.telegram.ui.Components.aw0 {
         while (i13 < childCount) {
             View childAt = getChildAt(i13);
             if (childAt != null && childAt.getVisibility() != 8) {
-                org.telegram.ui.Components.ku kuVar = cq0Var.M;
-                if (kuVar == null || !kuVar.l(childAt)) {
+                org.telegram.ui.Components.lu luVar = cq0Var.M;
+                if (luVar == null || !luVar.l(childAt)) {
                     i12 = i10;
                     measureChildWithMargins(childAt, i12, 0, i14, 0);
                     i13++;

@@ -10,7 +10,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class cd1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ od1 a;
@@ -154,12 +154,12 @@ public final class cd1 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             od1Var.p1.o1(true);
-            org.telegram.ui.Components.ij0 ij0Var = od1Var.N1;
-            ij0Var.h = true;
+            org.telegram.ui.Components.kj0 kj0Var = od1Var.N1;
+            kj0Var.h = true;
             if (a2) {
-                ij0Var.P(0);
+                kj0Var.P(0);
             } else {
-                ij0Var.P(36);
+                kj0Var.P(36);
             }
             od1Var.N1.start();
             if (od1Var.M1) {
@@ -180,7 +180,7 @@ public final class cd1 extends org.telegram.ui.ActionBar.j {
                 ofFloat.addUpdateListener(new q11(this, 14));
                 od1Var.P1.addListener(new xo0(this, 23));
                 od1Var.P1.setDuration(250L);
-                od1Var.P1.setInterpolator(org.telegram.ui.Components.rr.f);
+                od1Var.P1.setInterpolator(org.telegram.ui.Components.sr.f);
                 od1Var.P1.start();
             }
         }

@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
@@ -215,9 +215,9 @@ public final /* synthetic */ class r1 implements Runnable {
                     ldVar.c0 = (TLRPC.TL_chatInviteExported) ((TLRPC.TL_messages_exportedChatInvites) tLObject3).invites.get(0);
                 }
                 ldVar.b0 = false;
-                org.telegram.ui.Components.g90 g90Var = ldVar.P;
+                org.telegram.ui.Components.i90 i90Var = ldVar.P;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported = ldVar.c0;
-                g90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
+                i90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
                 return;
             case 12:
                 je jeVar = (je) this.d;
@@ -239,17 +239,17 @@ public final /* synthetic */ class r1 implements Runnable {
                 return;
             case 16:
                 wn wnVar2 = (wn) this.d;
-                org.telegram.ui.Components.mm0 mm0Var = (org.telegram.ui.Components.mm0) this.b;
+                org.telegram.ui.Components.om0 om0Var = (org.telegram.ui.Components.om0) this.b;
                 TLRPC.User user = (TLRPC.User) this.c;
                 wnVar2.getClass();
-                mm0Var.dismiss();
+                om0Var.dismiss();
                 wnVar2.presentFragment(ProfileActivity.m4(user.id));
                 return;
             case 17:
                 wn wnVar3 = (wn) this.d;
-                org.telegram.ui.Components.y70 y70Var = (org.telegram.ui.Components.y70) this.c;
+                org.telegram.ui.Components.a80 a80Var = (org.telegram.ui.Components.a80) this.c;
                 String str8 = (String) this.b;
-                y70Var.u();
+                a80Var.u();
                 wj0 wj0Var = new wj0(wnVar3.getParentActivity(), wnVar3);
                 wj0Var.v(str8, false);
                 wj0Var.show();
@@ -406,10 +406,10 @@ public final /* synthetic */ class r1 implements Runnable {
         }
     }
 
-    public /* synthetic */ r1(wn wnVar, org.telegram.ui.Components.y70 y70Var, String str) {
+    public /* synthetic */ r1(wn wnVar, org.telegram.ui.Components.a80 a80Var, String str) {
         this.a = 17;
         this.d = wnVar;
-        this.c = y70Var;
+        this.c = a80Var;
         this.b = str;
     }
 }

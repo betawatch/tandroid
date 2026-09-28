@@ -28,12 +28,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.z70;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public abstract class e0 extends FrameLayout implements x70 {
+public abstract class e0 extends FrameLayout implements z70 {
     public static final /* synthetic */ int x0 = 0;
     public final LinearGradient E;
     public final Matrix F;
@@ -104,10 +104,10 @@ public abstract class e0 extends FrameLayout implements x70 {
         this.w = new Path();
         this.x = new float[8];
         this.H = new a0(this, 2);
-        rr rrVar = rr.h;
-        this.I = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
-        this.J = new org.telegram.ui.Components.e6[]{new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar), new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar), new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar), new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar), new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar)};
-        this.K = new org.telegram.ui.Components.e6(this, 0L, 320L, rrVar);
+        sr srVar = sr.h;
+        this.I = new org.telegram.ui.Components.e6(this, 0L, 320L, srVar);
+        this.J = new org.telegram.ui.Components.e6[]{new org.telegram.ui.Components.e6(this, 0L, 320L, srVar), new org.telegram.ui.Components.e6(this, 0L, 320L, srVar), new org.telegram.ui.Components.e6(this, 0L, 320L, srVar), new org.telegram.ui.Components.e6(this, 0L, 320L, srVar), new org.telegram.ui.Components.e6(this, 0L, 320L, srVar)};
+        this.K = new org.telegram.ui.Components.e6(this, 0L, 320L, srVar);
         this.L = new float[5];
         this.M = new float[5];
         this.P = new RectF();
@@ -196,7 +196,7 @@ public abstract class e0 extends FrameLayout implements x70 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.z70
     public final void a(RectF rectF) {
         d0 d0Var = this.j0;
         if (d0Var == null) {
@@ -212,7 +212,7 @@ public abstract class e0 extends FrameLayout implements x70 {
         rectF.set((getMeasuredWidth() / d) * i10, (getMeasuredHeight() / f7) * i11, (getMeasuredWidth() / d) * (i10 + 1), (getMeasuredHeight() / f7) * (i11 + 1));
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.z70
     public final void b(Canvas canvas, float f7) {
         d0 d0Var = this.j0;
         if (d0Var != null) {

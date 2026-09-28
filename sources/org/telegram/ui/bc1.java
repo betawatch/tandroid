@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bc1 implements Runnable {
     public final /* synthetic */ int a;
@@ -112,11 +112,11 @@ public final /* synthetic */ class bc1 implements Runnable {
             case 2:
                 od1Var.p1.o1(false);
                 boolean a2 = od1Var.a.a();
-                org.telegram.ui.Components.ij0 ij0Var = od1Var.N1;
-                ij0Var.P(a2 ? ij0Var.e[0] : 0);
-                org.telegram.ui.Components.ij0 ij0Var2 = od1Var.N1;
-                if (ij0Var2 != null) {
-                    ij0Var2.start();
+                org.telegram.ui.Components.kj0 kj0Var = od1Var.N1;
+                kj0Var.P(a2 ? kj0Var.e[0] : 0);
+                org.telegram.ui.Components.kj0 kj0Var2 = od1Var.N1;
+                if (kj0Var2 != null) {
+                    kj0Var2.start();
                 }
                 od1Var.b1(false);
                 od1Var.V0();
@@ -144,7 +144,7 @@ public final /* synthetic */ class bc1 implements Runnable {
                     ofFloat.addUpdateListener(new q11(od1Var, 13));
                     od1Var.P1.addListener(new sc1(od1Var, 5));
                     od1Var.P1.setDuration(250L);
-                    od1Var.P1.setInterpolator(org.telegram.ui.Components.rr.f);
+                    od1Var.P1.setInterpolator(org.telegram.ui.Components.sr.f);
                     od1Var.P1.start();
                     break;
                 }
@@ -152,19 +152,19 @@ public final /* synthetic */ class bc1 implements Runnable {
             default:
                 if (od1Var.getParentActivity() != null && od1Var.getParentActivity() != null) {
                     SharedConfig.increaseDayNightWallpaperSiwtchHint();
-                    org.telegram.ui.Components.j40 j40Var = new org.telegram.ui.Components.j40(7, od1Var.getParentActivity(), null, true);
-                    j40Var.setAlpha(0.0f);
-                    j40Var.setVisibility(4);
-                    j40Var.setShowingDuration(4000L);
-                    od1Var.k0.addView(j40Var, w7.y5.d(-2, -2.0f, 51, 4.0f, 0.0f, 4.0f, 0.0f));
+                    org.telegram.ui.Components.l40 l40Var = new org.telegram.ui.Components.l40(7, od1Var.getParentActivity(), null, true);
+                    l40Var.setAlpha(0.0f);
+                    l40Var.setVisibility(4);
+                    l40Var.setShowingDuration(4000L);
+                    od1Var.k0.addView(l40Var, w7.y5.d(-2, -2.0f, 51, 4.0f, 0.0f, 4.0f, 0.0f));
                     if (od1Var.p1.a()) {
-                        j40Var.setText(LocaleController.getString(R.string.PreviewWallpaperDay));
+                        l40Var.setText(LocaleController.getString(R.string.PreviewWallpaperDay));
                     } else {
-                        j40Var.setText(LocaleController.getString(R.string.PreviewWallpaperNight));
+                        l40Var.setText(LocaleController.getString(R.string.PreviewWallpaperNight));
                     }
-                    j40Var.d();
-                    j40Var.f(od1Var.O1, true);
-                    j40Var.setExtraTranslationY(-AndroidUtilities.dp(14.0f));
+                    l40Var.d();
+                    l40Var.f(od1Var.O1, true);
+                    l40Var.setExtraTranslationY(-AndroidUtilities.dp(14.0f));
                     break;
                 }
                 break;

@@ -8,10 +8,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class l70 extends LinearLayout {
-    public final org.telegram.ui.Components.cu a;
+    public final org.telegram.ui.Components.du a;
     public boolean b;
     public int c;
     public tt d;
@@ -27,24 +27,24 @@ public final class l70 extends LinearLayout {
         TextView f7 = org.telegram.messenger.f0.f(context, 1, 16.0f);
         f7.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false));
         f7.setText("t.me/addemoji/");
-        org.telegram.ui.Components.cu cuVar = new org.telegram.ui.Components.cu(context, null);
-        this.a = cuVar;
-        cuVar.setLines(1);
-        cuVar.setSingleLine(true);
-        cuVar.setInputType(16384);
-        cuVar.setTextSize(1, 16.0f);
-        cuVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Ud, false));
-        cuVar.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.hc, false));
-        cuVar.setHighlightColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.uf, false));
+        org.telegram.ui.Components.du duVar = new org.telegram.ui.Components.du(context, null);
+        this.a = duVar;
+        duVar.setLines(1);
+        duVar.setSingleLine(true);
+        duVar.setInputType(16384);
+        duVar.setTextSize(1, 16.0f);
+        duVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Ud, false));
+        duVar.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.hc, false));
+        duVar.setHighlightColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.uf, false));
         int i10 = org.telegram.ui.ActionBar.h6.Vd;
-        cuVar.setHintColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-        cuVar.setHintTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-        cuVar.setCursorColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Wd, false));
-        cuVar.setHandlesColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.vf, false));
-        cuVar.setBackground(null);
-        cuVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
+        duVar.setHintColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+        duVar.setHintTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+        duVar.setCursorColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Wd, false));
+        duVar.setHandlesColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.vf, false));
+        duVar.setBackground(null);
+        duVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
         addView(f7, w7.y5.t(-2, -2, 16, 20, 0, 0, 0));
-        addView(cuVar, w7.y5.t(-1, -2, 16, -4, 0, 0, 0));
+        addView(duVar, w7.y5.t(-1, -2, 16, -4, 0, 0, 0));
         setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
         setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
         setWillNotDraw(false);

@@ -1,71 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class kp implements org.telegram.ui.ActionBar.i6 {
-    public boolean a = false;
-    public final /* synthetic */ np b;
+public final class kp implements ResultCallback {
+    public final /* synthetic */ ChatThemeController a;
+    public final /* synthetic */ op b;
 
-    public kp(np npVar) {
-        this.b = npVar;
+    public kp(op opVar, ChatThemeController chatThemeController) {
+        this.b = opVar;
+        this.a = chatThemeController;
     }
 
-    @Override // org.telegram.ui.ActionBar.i6
-    public final void a(float f7) {
-        ArrayList arrayList;
-        np npVar = this.b;
-        lp lpVar = npVar.h;
-        if (f7 == 0.0f && !this.a) {
-            if (lpVar != null && (arrayList = lpVar.d) != null) {
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((mp) obj).c = npVar.N ? 1 : 0;
-                }
-            }
-            if (!npVar.P) {
-                for (int i11 = 0; i11 < lpVar.h(); i11++) {
-                    ((mp) lpVar.d.get(i11)).getClass();
-                }
-            }
-            this.a = true;
-        }
-        ij0 ij0Var = npVar.F;
-        int i12 = org.telegram.ui.ActionBar.h6.Oh;
-        ij0Var.setColorFilter(new PorterDuffColorFilter(npVar.getThemedColor(i12), PorterDuff.Mode.MULTIPLY));
-        npVar.setOverlayNavBarColor(npVar.getThemedColor(org.telegram.ui.ActionBar.h6.a7));
-        if (npVar.P) {
-            for (int i13 = 0; i13 < lpVar.h(); i13++) {
-                ((mp) lpVar.d.get(i13)).getClass();
-            }
-        }
-        if (f7 == 1.0f && this.a) {
-            npVar.P = false;
-            this.a = false;
-        }
-        npVar.E();
-        ci.m6 m6Var = npVar.Z;
-        if (m6Var != null) {
-            int dp = AndroidUtilities.dp(0.0f);
-            int themedColor = npVar.getThemedColor(org.telegram.ui.ActionBar.h6.d6);
-            int k10 = i0.a.k(npVar.getThemedColor(i12), 76);
-            m6Var.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, themedColor, k10, k10));
-        }
-        p6 p6Var = npVar.a0;
-        if (p6Var != null) {
-            p6Var.setTextColor(npVar.getThemedColor(i12));
-        }
-        npVar.setBackgroundColor(npVar.getThemedColor(org.telegram.ui.ActionBar.h6.h5));
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        int i10;
+        ChatThemeController chatThemeController = this.a;
+        List<org.telegram.ui.ActionBar.b4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
+        op opVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.e3) opVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new kd(21, this, emojiThemes));
+        opVar.b0 = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.i6
-    public final void b() {
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

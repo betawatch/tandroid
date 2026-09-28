@@ -1,57 +1,46 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import android.content.Context;
+import android.graphics.Matrix;
+import android.view.TextureView;
+import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class pf0 {
-    public final qf0 a = new qf0();
-    public final qf0 b = new qf0();
-    public final qf0 c = new qf0();
-    public final qf0 d = new qf0();
-    public final ByteBuffer e;
-    public int f;
+public final class pf0 extends TextureView {
+    public final /* synthetic */ vf0 a;
 
-    public pf0() {
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
-        this.e = allocateDirect;
-        allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pf0(vf0 vf0Var, Context context) {
+        super(context);
+        this.a = vf0Var;
     }
 
-    public final void a() {
-        ByteBuffer byteBuffer = this.e;
-        byteBuffer.position(0);
-        qf0 qf0Var = this.a;
-        if (qf0Var.f == null) {
-            qf0Var.a();
-        }
-        float[] fArr = qf0Var.f;
-        qf0 qf0Var2 = this.b;
-        if (qf0Var2.f == null) {
-            qf0Var2.a();
-        }
-        float[] fArr2 = qf0Var2.f;
-        qf0 qf0Var3 = this.c;
-        if (qf0Var3.f == null) {
-            qf0Var3.a();
-        }
-        float[] fArr3 = qf0Var3.f;
-        qf0 qf0Var4 = this.d;
-        if (qf0Var4.f == null) {
-            qf0Var4.a();
-        }
-        float[] fArr4 = qf0Var4.f;
-        for (int i10 = 0; i10 < 200; i10++) {
-            byteBuffer.put((byte) (fArr2[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr3[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr4[i10] * 255.0f));
-            byteBuffer.put((byte) (fArr[i10] * 255.0f));
-        }
-        byteBuffer.position(0);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View.MeasureSpec.getSize(i10);
+        super.onMeasure(i10, i11);
     }
 
-    public final boolean b() {
-        return this.a.b() && this.b.b() && this.c.b() && this.d.b();
+    @Override // android.view.TextureView
+    public final void setTransform(Matrix matrix) {
+        super.setTransform(matrix);
+        xz xzVar = this.a.l0;
+        if (xzVar != null) {
+            int width = getWidth();
+            int height = getHeight();
+            pa paVar = xzVar.I;
+            if (paVar == null) {
+                return;
+            }
+            Matrix matrix2 = paVar.v;
+            matrix.invert(matrix2);
+            float f7 = width;
+            float f10 = height;
+            matrix2.preScale(f7, f10);
+            matrix2.postScale(1.0f / f7, 1.0f / f10);
+            paVar.c(matrix2);
+            xzVar.e(false, false, false);
+        }
     }
 }

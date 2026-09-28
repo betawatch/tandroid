@@ -26,9 +26,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ii0;
+import org.telegram.ui.Components.ki0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class p3 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -36,7 +36,7 @@ public final class p3 extends FrameLayout implements NotificationCenter.Notifica
     public final TextView b;
     public final TextView c;
     public final org.telegram.ui.Components.w9 d;
-    public final ii0 e;
+    public final ki0 e;
     public final TextView f;
     public final rg.p0 h;
     public AnimatorSet n;
@@ -75,11 +75,11 @@ public final class p3 extends FrameLayout implements NotificationCenter.Notifica
         w9Var.setLayerNum(1);
         boolean z12 = LocaleController.isRTL;
         addView(w9Var, w7.y5.d(48, 48.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 12.0f, 8.0f, z12 ? 12.0f : 0.0f, 0.0f));
-        ii0 ii0Var = new ii0(context);
-        this.e = ii0Var;
-        ii0Var.setText(LocaleController.getString(R.string.Add));
-        ii0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-        addView(ii0Var, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
+        ki0 ki0Var = new ki0(context);
+        this.e = ki0Var;
+        ki0Var.setText(LocaleController.getString(R.string.Add));
+        ki0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
+        addView(ki0Var, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.f = textView3;
         textView3.setGravity(17);
@@ -103,11 +103,11 @@ public final class p3 extends FrameLayout implements NotificationCenter.Notifica
         } catch (Exception unused) {
         }
         addView(this.h, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 10.0f, 0.0f));
-        ii0 ii0Var2 = this.e;
-        ii0Var2.setProgressColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Nh, false));
+        ki0 ki0Var2 = this.e;
+        ki0Var2.setProgressColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Nh, false));
         int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Oh, false);
         org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qh, false);
-        ii0Var2.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{14.0f}, w02));
+        ki0Var2.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{14.0f}, w02));
     }
 
     public final void a(TLRPC.StickerSetCovered stickerSetCovered, boolean z10, boolean z11, boolean z12) {
@@ -214,8 +214,8 @@ public final class p3 extends FrameLayout implements NotificationCenter.Notifica
             stickerSetCovered2 = stickerSetCovered;
             w9Var.i(null, null, "webp", null, stickerSetCovered2);
         }
-        ii0 ii0Var = this.e;
-        ii0Var.setVisibility(0);
+        ki0 ki0Var = this.e;
+        ki0Var.setVisibility(0);
         this.E = z11;
         this.s = z11 || MediaDataController.getInstance(i10).isStickerPackInstalled(stickerSetCovered2.set.id);
         boolean z15 = !UserConfig.getInstance(i10).isPremium() && MessageObject.isPremiumEmojiPack(stickerSetCovered2);
@@ -226,13 +226,13 @@ public final class p3 extends FrameLayout implements NotificationCenter.Notifica
             if (z15) {
                 p0Var.setVisibility(0);
                 textView2.setVisibility(0);
-                ii0Var.setVisibility(0);
+                ki0Var.setVisibility(0);
             } else {
                 p0Var.setVisibility(0);
                 if (this.s) {
                     textView2.setVisibility(0);
                 } else {
-                    ii0Var.setVisibility(0);
+                    ki0Var.setVisibility(0);
                 }
             }
             AnimatorSet animatorSet2 = new AnimatorSet();
@@ -247,7 +247,7 @@ public final class p3 extends FrameLayout implements NotificationCenter.Notifica
             ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, fArr2);
             float[] fArr3 = {(!this.s || this.v) ? 0.0f : 1.0f};
             Property property3 = View.SCALE_Y;
-            animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, fArr3), ObjectAnimator.ofFloat(ii0Var, (Property<ii0, Float>) property, (this.s || this.v) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(ii0Var, (Property<ii0, Float>) property2, (this.s || this.v) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<rg.p0, Float>) property3, !this.v ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<rg.p0, Float>) property2, !this.v ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<rg.p0, Float>) property3, !this.v ? 0.0f : 1.0f));
+            animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, fArr3), ObjectAnimator.ofFloat(ki0Var, (Property<ki0, Float>) property, (this.s || this.v) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(ki0Var, (Property<ki0, Float>) property2, (this.s || this.v) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<rg.p0, Float>) property3, !this.v ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<rg.p0, Float>) property2, !this.v ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<rg.p0, Float>) property3, !this.v ? 0.0f : 1.0f));
             this.n.addListener(new n3(this));
             this.n.setInterpolator(new OvershootInterpolator(1.02f));
             this.n.start();
@@ -258,10 +258,10 @@ public final class p3 extends FrameLayout implements NotificationCenter.Notifica
             p0Var.setAlpha(1.0f);
             p0Var.setScaleX(1.0f);
             p0Var.setScaleY(1.0f);
-            ii0Var.setVisibility(4);
-            ii0Var.setAlpha(0.0f);
-            ii0Var.setScaleX(0.0f);
-            ii0Var.setScaleY(0.0f);
+            ki0Var.setVisibility(4);
+            ki0Var.setAlpha(0.0f);
+            ki0Var.setScaleX(0.0f);
+            ki0Var.setScaleY(0.0f);
             textView2.setVisibility(4);
             textView2.setAlpha(0.0f);
             textView2.setScaleX(0.0f);
@@ -277,16 +277,16 @@ public final class p3 extends FrameLayout implements NotificationCenter.Notifica
             textView2.setAlpha(1.0f);
             textView2.setScaleX(1.0f);
             textView2.setScaleY(1.0f);
-            ii0Var.setVisibility(4);
-            ii0Var.setAlpha(0.0f);
-            ii0Var.setScaleX(0.0f);
-            ii0Var.setScaleY(0.0f);
+            ki0Var.setVisibility(4);
+            ki0Var.setAlpha(0.0f);
+            ki0Var.setScaleX(0.0f);
+            ki0Var.setScaleY(0.0f);
             return;
         }
-        ii0Var.setVisibility(0);
-        ii0Var.setAlpha(1.0f);
-        ii0Var.setScaleX(1.0f);
-        ii0Var.setScaleY(1.0f);
+        ki0Var.setVisibility(0);
+        ki0Var.setAlpha(1.0f);
+        ki0Var.setScaleX(1.0f);
+        ki0Var.setScaleY(1.0f);
         textView2.setVisibility(4);
         textView2.setAlpha(0.0f);
         textView2.setScaleX(0.0f);

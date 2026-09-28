@@ -9,14 +9,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class f9 extends FrameLayout {
     public final int a;
     public final org.telegram.ui.Components.k9 b;
     public final ImageView c;
     public final org.telegram.ui.Cells.i6 d;
-    public final org.telegram.ui.Components.op e;
+    public final org.telegram.ui.Components.pp e;
 
     public f9(Context context, int i10) {
         super(context);
@@ -46,17 +46,17 @@ public final class f9 extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setContentDescription(LocaleController.getString(R.string.Call));
         addView(imageView, w7.y5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
-        org.telegram.ui.Components.op opVar = new org.telegram.ui.Components.op(context, 21, null);
-        this.e = opVar;
-        CheckBoxBase checkBoxBase = opVar.getCheckBoxBase();
+        org.telegram.ui.Components.pp ppVar = new org.telegram.ui.Components.pp(context, 21, null);
+        this.e = ppVar;
+        CheckBoxBase checkBoxBase = ppVar.getCheckBoxBase();
         int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.hl, false);
         if (checkBoxBase.x != w02) {
             checkBoxBase.x = w02;
             checkBoxBase.b();
         }
-        opVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
-        opVar.setDrawUnchecked(false);
-        opVar.setDrawBackgroundAsArc(3);
-        addView(opVar, w7.y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
+        ppVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
+        ppVar.setDrawUnchecked(false);
+        ppVar.setDrawBackgroundAsArc(3);
+        addView(ppVar, w7.y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
     }
 }

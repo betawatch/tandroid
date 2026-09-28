@@ -100,9 +100,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.p71;
-import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.u71;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cy;
 import org.telegram.ui.dv0;
@@ -111,9 +111,9 @@ import org.telegram.ui.web.b1;
 import org.telegram.ui.web.y0;
 import qg.c2;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final class m implements dv0, a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, s, o, p71, OnSuccessListener, n, f6.a, fb.n, x, b2, z3.m, d5, h1 {
+public final class m implements dv0, a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, s, o, r71, OnSuccessListener, n, f6.a, fb.n, x, b2, z3.m, d5, h1 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -451,15 +451,15 @@ public final class m implements dv0, a0, androidx.activity.result.b, WebMessageL
     public void F(ArrayList arrayList) {
         switch (this.a) {
             case 22:
-                eo0 eo0Var = (eo0) this.b;
+                go0 go0Var = (go0) this.b;
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    eo0Var.J.add(((a2) arrayList.get(i10)).a);
+                    go0Var.J.add(((a2) arrayList.get(i10)).a);
                 }
-                cy cyVar = eo0Var.U;
+                cy cyVar = go0Var.U;
                 if (cyVar != null) {
-                    cyVar.d(eo0Var.D0 > 0, false);
+                    cyVar.d(go0Var.D0 > 0, false);
                 }
-                eo0Var.l();
+                go0Var.l();
                 break;
         }
     }
@@ -542,22 +542,22 @@ public final class m implements dv0, a0, androidx.activity.result.b, WebMessageL
     public void a(int i10) {
         switch (this.a) {
             case 22:
-                eo0 eo0Var = (eo0) this.b;
-                eo0Var.D0--;
-                eo0Var.e0 = i10;
-                if (eo0Var.f0 != i10) {
-                    eo0Var.s.clear();
+                go0 go0Var = (go0) this.b;
+                go0Var.D0--;
+                go0Var.e0 = i10;
+                if (go0Var.f0 != i10) {
+                    go0Var.s.clear();
                 }
-                if (eo0Var.g0 != i10) {
-                    eo0Var.I.clear();
+                if (go0Var.g0 != i10) {
+                    go0Var.I.clear();
                 }
-                eo0Var.N = true;
-                cy cyVar = eo0Var.U;
+                go0Var.N = true;
+                cy cyVar = go0Var.U;
                 if (cyVar != null) {
-                    cyVar.d(eo0Var.D0 > 0, true);
+                    cyVar.d(go0Var.D0 > 0, true);
                 }
-                eo0Var.l();
-                cy cyVar2 = eo0Var.U;
+                go0Var.l();
+                cy cyVar2 = go0Var.U;
                 if (cyVar2 != null) {
                     cyVar2.c();
                     break;
@@ -1415,19 +1415,19 @@ public final class m implements dv0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onStateChanged(boolean z10, int i10) {
         b7 b7Var = (b7) this.b;
         z6 z6Var = b7Var.M;
-        s71 s71Var = b7Var.x;
-        if (s71Var == null) {
+        u71 u71Var = b7Var.x;
+        if (u71Var == null) {
             return;
         }
-        if (s71Var.y()) {
+        if (u71Var.y()) {
             AndroidUtilities.runOnUIThread(z6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(z6Var);
@@ -1540,12 +1540,12 @@ public final class m implements dv0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         c2 c2Var = ((b7) this.b).w;
         if (c2Var != null) {
@@ -1599,7 +1599,7 @@ public final class m implements dv0, a0, androidx.activity.result.b, WebMessageL
     public boolean s(int i10) {
         switch (this.a) {
             case 22:
-                return i10 == ((eo0) this.b).d0;
+                return i10 == ((go0) this.b).d0;
             default:
                 return true;
         }
@@ -1695,7 +1695,7 @@ public final class m implements dv0, a0, androidx.activity.result.b, WebMessageL
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public void onRenderedFirstFrame() {
     }
 
@@ -1768,19 +1768,19 @@ public final class m implements dv0, a0, androidx.activity.result.b, WebMessageL
     public /* synthetic */ void m(i1 i1Var) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p71
+    @Override // org.telegram.ui.Components.r71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public void onError(s71 s71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.r71
+    public void onError(u71 u71Var, Exception exc) {
     }
 }

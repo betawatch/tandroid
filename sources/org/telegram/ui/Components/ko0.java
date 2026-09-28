@@ -1,161 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ko0 extends n81 {
-    public final ArrayList a = new ArrayList();
-    public final /* synthetic */ org.telegram.ui.zx b;
+public final class ko0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mo0 b;
 
-    public ko0(org.telegram.ui.zx zxVar) {
-        this.b = zxVar;
-        i();
+    public /* synthetic */ ko0(mo0 mo0Var, int i10) {
+        this.a = i10;
+        this.b = mo0Var;
     }
 
-    @Override // org.telegram.ui.Components.n81
-    public final void b(View view, int i10, int i11) {
-        org.telegram.ui.zx zxVar = this.b;
-        zxVar.O(view, i10, zxVar.K0, true);
-    }
-
-    @Override // org.telegram.ui.Components.n81
-    public final View d(int i10) {
-        org.telegram.ui.zx zxVar = this.b;
-        org.telegram.ui.qy qyVar = zxVar.J0;
-        if (i10 == 1) {
-            return zxVar.U;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                this.b.b.S(i10, i11);
+                break;
+            default:
+                this.b.b.S(i10, i11);
+                break;
         }
-        if (i10 == 3) {
-            return zxVar.f0;
-        }
-        if (i10 == 4) {
-            return zxVar.k0;
-        }
-        if (i10 == 5) {
-            return zxVar.r0;
-        }
-        if (i10 == 2) {
-            in0 in0Var = new in0(zxVar.H0, qyVar);
-            zxVar.G0 = in0Var;
-            in0Var.b(zxVar.U0, zxVar.V0, false);
-            zxVar.G0.b.setClipToPadding(false);
-            zxVar.G0.b.j(new io0(this, 0));
-            zxVar.G0.b.C0(new ic0(zxVar, 24));
-            zxVar.G0.setUiCallback(zxVar);
-            return zxVar.G0;
-        }
-        if (i10 == 6) {
-            return zxVar.p0;
-        }
-        org.telegram.ui.t10 t10Var = new org.telegram.ui.t10(qyVar);
-        t10Var.setChatPreviewDelegate(zxVar.P0);
-        t10Var.setUiCallback(zxVar);
-        t10Var.j(zxVar.U0, zxVar.V0, false);
-        ah.c cVar = zxVar.X0;
-        if (cVar != null) {
-            t10Var.setBlurredBackgroundDrawableFactory(cVar);
-        }
-        ai.w0 w0Var = t10Var.b;
-        w0Var.setClipToPadding(false);
-        w0Var.j(new io0(this, 1));
-        w0Var.C0(new ic0(zxVar, 24));
-        return t10Var;
-    }
-
-    @Override // org.telegram.ui.Components.n81
-    public final int e() {
-        return this.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.n81
-    public final CharSequence g(int i10) {
-        ArrayList arrayList = this.a;
-        if (((jo0) arrayList.get(i10)).a == 0) {
-            return LocaleController.getString(R.string.SearchAllChatsShort);
-        }
-        if (((jo0) arrayList.get(i10)).a == 1) {
-            return LocaleController.getString(R.string.ChannelsTab);
-        }
-        if (((jo0) arrayList.get(i10)).a == 4) {
-            return LocaleController.getString(R.string.AppsTab);
-        }
-        if (((jo0) arrayList.get(i10)).a == 6) {
-            return LocaleController.getString(R.string.SearchPosts);
-        }
-        if (((jo0) arrayList.get(i10)).a == 2) {
-            return LocaleController.getString(R.string.DownloadsTabs);
-        }
-        if (((jo0) arrayList.get(i10)).a == 5) {
-            return LocaleController.getString(R.string.PublicPostsTabs);
-        }
-        gg.q0 q0Var = gg.s0.c3[((jo0) arrayList.get(i10)).b];
-        String str = q0Var.c;
-        return str != null ? str : LocaleController.getString(q0Var.b);
-    }
-
-    @Override // org.telegram.ui.Components.n81
-    public final int h(int i10) {
-        ArrayList arrayList = this.a;
-        if (((jo0) arrayList.get(i10)).a == 0) {
-            return 1;
-        }
-        if (((jo0) arrayList.get(i10)).a == 1) {
-            return 3;
-        }
-        if (((jo0) arrayList.get(i10)).a == 4) {
-            return 4;
-        }
-        if (((jo0) arrayList.get(i10)).a == 2) {
-            return 2;
-        }
-        if (((jo0) arrayList.get(i10)).a == 5) {
-            return 5;
-        }
-        if (((jo0) arrayList.get(i10)).a == 6) {
-            return 6;
-        }
-        return ((jo0) arrayList.get(i10)).a + i10;
-    }
-
-    public final void i() {
-        ArrayList arrayList = this.a;
-        arrayList.clear();
-        arrayList.add(new jo0(0));
-        org.telegram.ui.zx zxVar = this.b;
-        if (zxVar.T0 != 0) {
-            return;
-        }
-        if (zxVar.q0) {
-            arrayList.add(new jo0(5));
-        }
-        arrayList.add(new jo0(1));
-        arrayList.add(new jo0(4));
-        arrayList.add(new jo0(6));
-        if (zxVar.O0) {
-            return;
-        }
-        jo0 jo0Var = new jo0(3);
-        jo0Var.b = 0;
-        arrayList.add(jo0Var);
-        org.telegram.ui.kx kxVar = zxVar.b1.F3;
-        if (kxVar == null || !kxVar.c()) {
-            arrayList.add(new jo0(2));
-        }
-        jo0 jo0Var2 = new jo0(3);
-        jo0Var2.b = 1;
-        arrayList.add(jo0Var2);
-        jo0 jo0Var3 = new jo0(3);
-        jo0Var3.b = 2;
-        arrayList.add(jo0Var3);
-        jo0 jo0Var4 = new jo0(3);
-        jo0Var4.b = 3;
-        arrayList.add(jo0Var4);
-        jo0 jo0Var5 = new jo0(3);
-        jo0Var5.b = 4;
-        arrayList.add(jo0Var5);
     }
 }

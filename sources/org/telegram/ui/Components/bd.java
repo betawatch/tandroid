@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class bd {
     public float A;
@@ -52,19 +52,19 @@ public final class bd {
         Paint paint = new Paint(3);
         this.a = paint;
         paint.setColor(-1);
-        rr rrVar = rr.h;
-        this.e = new e6(ddVar, 650L, rrVar);
-        this.f = new e6(ddVar, 650L, rrVar);
-        rr rrVar2 = rr.g;
-        this.h = new e6(ddVar, 0L, 150L, rrVar2);
+        sr srVar = sr.h;
+        this.e = new e6(ddVar, 650L, srVar);
+        this.f = new e6(ddVar, 650L, srVar);
+        sr srVar2 = sr.g;
+        this.h = new e6(ddVar, 0L, 150L, srVar2);
         this.i = 1.0f;
-        this.j = new e6(ddVar, 0L, 150L, rrVar2);
+        this.j = new e6(ddVar, 0L, 150L, srVar2);
         o6 o6Var = new o6(false, true, true, false);
         this.k = o6Var;
-        this.m = new e6(ddVar, 0L, 150L, rrVar2);
-        this.o = new e6(ddVar, 0L, 200L, rrVar);
+        this.m = new e6(ddVar, 0L, 150L, srVar2);
+        this.o = new e6(ddVar, 0L, 200L, srVar);
         o6Var.r(-1);
-        o6Var.k(0.35f, 200L, rrVar);
+        o6Var.k(0.35f, 200L, srVar);
         o6Var.u(AndroidUtilities.bold());
         o6Var.t(AndroidUtilities.dp(15.0f));
         o6Var.b = 17;

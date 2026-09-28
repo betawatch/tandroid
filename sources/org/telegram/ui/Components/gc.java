@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class gc extends FrameLayout {
     public final e6 a;
@@ -21,9 +21,9 @@ public final class gc extends FrameLayout {
     public gc(hc hcVar, Activity activity) {
         super(activity);
         this.f = hcVar;
-        rr rrVar = rr.h;
-        this.a = new e6(this, 320L, rrVar);
-        this.b = new e6(this, 320L, rrVar);
+        sr srVar = sr.h;
+        this.a = new e6(this, 320L, srVar);
+        this.b = new e6(this, 320L, srVar);
         Paint paint = new Paint(1);
         this.c = paint;
         paint.setStyle(Paint.Style.STROKE);
@@ -51,7 +51,7 @@ public final class gc extends FrameLayout {
         float currentTimeMillis = ((System.currentTimeMillis() - this.e) * 0.45f) % 5400.0f;
         float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
         for (int i10 = 0; i10 < 4; i10++) {
-            u1.a aVar = up.h;
+            u1.a aVar = vp.h;
             aVar.getInterpolation((currentTimeMillis - (i10 * 1350)) / 667.0f);
             max += aVar.getInterpolation((currentTimeMillis - (r8 + 667)) / 667.0f) * 250.0f;
         }

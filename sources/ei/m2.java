@@ -1,64 +1,64 @@
 package ei;
 
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y70 b;
-    public final /* synthetic */ y70 c;
+    public final /* synthetic */ a80 b;
+    public final /* synthetic */ a80 c;
 
-    public /* synthetic */ m2(y70 y70Var, y70 y70Var2, int i10) {
+    public /* synthetic */ m2(a80 a80Var, a80 a80Var2, int i10) {
         this.a = i10;
-        this.b = y70Var;
-        this.c = y70Var2;
+        this.b = a80Var;
+        this.c = a80Var2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        y70 y70Var = this.c;
-        y70 y70Var2 = this.b;
+        a80 a80Var = this.c;
+        a80 a80Var2 = this.b;
         switch (i10) {
             case 0:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 1:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 2:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 3:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 4:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 5:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 6:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 7:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 8:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 9:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             case 10:
                 Drawable[] drawableArr = PhotoViewer.U8;
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
             default:
-                y70Var2.K(y70Var);
+                a80Var2.K(a80Var);
                 break;
         }
     }

@@ -2,44 +2,18 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class fs0 extends cu0 {
-    public final /* synthetic */ jv0 M;
+public final class fs0 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ lv0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fs0(jv0 jv0Var, Context context) {
-        super(context);
-        this.M = jv0Var;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        cu0 cu0Var;
-        super.setTranslationX(f7);
-        jv0 jv0Var = this.M;
-        cu0[] cu0VarArr = jv0Var.k0;
-        if (jv0Var.g1 && (cu0Var = cu0VarArr[0]) == this) {
-            float abs = Math.abs(cu0Var.getTranslationX()) / cu0VarArr[0].getMeasuredWidth();
-            jv0Var.Z0(abs, cu0VarArr[1].F);
-            if (jv0Var.D()) {
-                int i10 = jv0Var.x0;
-                if (i10 == 2) {
-                    jv0Var.o0 = 1.0f - abs;
-                } else if (i10 == 1) {
-                    jv0Var.o0 = abs;
-                }
-                jv0Var.s1(abs);
-                float a02 = jv0Var.a0(abs);
-                jv0Var.p0 = a02;
-                jv0Var.r0.setVisibility((a02 == 0.0f || !jv0Var.D() || jv0Var.q0()) ? 4 : 0);
-            } else {
-                jv0Var.o0 = 0.0f;
-            }
-            jv0Var.q1(false);
-        }
-        jv0Var.I();
-        jv0Var.K();
-        jv0Var.o0();
+    public fs0(lv0 lv0Var, Context context, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.d = lv0Var;
+        this.a = context;
+        this.b = m2Var;
+        this.c = d6Var;
     }
 }

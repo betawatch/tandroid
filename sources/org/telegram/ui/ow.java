@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.ll0, ky, ContactsLoadingObserver.Callback, org.telegram.ui.Components.mv0, org.telegram.ui.Components.ml0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, vt, FileLoader.FileResolver {
+public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.nl0, ky, ContactsLoadingObserver.Callback, org.telegram.ui.Components.ov0, org.telegram.ui.Components.ol0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, vt, FileLoader.FileResolver {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -66,7 +66,7 @@ public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, o
         editTextBoldCursor.setText(qtVar.a);
     }
 
-    @Override // org.telegram.ui.Components.mv0
+    @Override // org.telegram.ui.Components.ov0
     public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
         LaunchActivity launchActivity = (LaunchActivity) this.b;
         int[] iArr = (int[]) this.c;
@@ -80,7 +80,7 @@ public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, o
         launchActivity.p0(cd0Var);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         switch (this.a) {
             case 1:
@@ -92,7 +92,7 @@ public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, o
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         cd0 cd0Var = (cd0) this.b;
         Context context = (Context) this.c;
@@ -121,7 +121,7 @@ public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, o
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         switch (this.a) {
         }
@@ -348,7 +348,7 @@ public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, o
         launchActivity.X(intent, true, false, false, null, true, false);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
         int i10 = this.a;
     }

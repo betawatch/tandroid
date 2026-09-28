@@ -3,7 +3,7 @@ package ai;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class o6 extends f7 {
     public final /* synthetic */ k7 Z2;
@@ -14,7 +14,7 @@ public final class o6 extends f7 {
         this.Z2 = k7Var;
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         this.Z2.n = View.MeasureSpec.getSize(i11);
         super.onMeasure(i10, i11);

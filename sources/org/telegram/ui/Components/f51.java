@@ -1,52 +1,120 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import j$.util.Objects;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class f51 {
-    public final /* synthetic */ o51 a;
-    public final /* synthetic */ r51 b;
+public class f51 extends org.telegram.ui.ActionBar.e3 {
+    public final int b;
+    public final GradientDrawable c;
+    public final e51 d;
+    public final t51 e;
+    public int f;
 
-    public f51(r51 r51Var, o51 o51Var) {
-        this.b = r51Var;
-        this.a = o51Var;
+    public f51(Context context, org.telegram.ui.ActionBar.m2 m2Var, t51 t51Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(1, context, d6Var, true);
+        this.b = AndroidUtilities.dp(12.0f);
+        this.c = new GradientDrawable();
+        e51 e51Var = new e51(this, context);
+        this.d = e51Var;
+        e51Var.addView(t51Var, w7.y5.c(-1.0f, -1));
+        this.containerView = e51Var;
+        this.e = t51Var;
+        t51Var.setParentFragment(m2Var);
+        t51Var.setOnScrollListener(new c51(this));
     }
 
-    public final int a() {
-        return this.b.s.v;
+    public static void m(f51 f51Var) {
+        t51 t51Var = f51Var.e;
+        if (t51Var.c()) {
+            f51Var.f = t51Var.getContentTopOffset();
+            f51Var.containerView.invalidate();
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(boolean z10) {
-        r51 r51Var = this.b;
-        h51 h51Var = r51Var.n;
-        if (z10) {
-            s4.h0 adapter = h51Var.getAdapter();
-            gg.g2 g2Var = r51Var.v;
-            if (adapter != g2Var) {
-                h51Var.setAdapter(g2Var);
-                if (h51Var.getAdapter().h() <= 0) {
-                    r51Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-h51Var.getPaddingTop()) + r51Var.E, false);
-                    return;
-                }
-                return;
-            }
-        }
-        if (z10) {
-            return;
-        }
-        s4.h0 adapter2 = h51Var.getAdapter();
-        q51 q51Var = r51Var.s;
-        if (adapter2 == q51Var) {
-            return;
-        }
-        h51Var.setAdapter(q51Var);
-        if (h51Var.getAdapter().h() <= 0) {
-        }
+    @Override // org.telegram.ui.ActionBar.e3
+    public final boolean canDismissWithSwipe() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public void dismiss() {
+        super.dismiss();
+        t51 t51Var = this.e;
+        NotificationCenter notificationCenter = NotificationCenter.getInstance(t51Var.a);
+        notificationCenter.removeObserver(t51Var, NotificationCenter.stickersDidLoad);
+        notificationCenter.removeObserver(t51Var, NotificationCenter.featuredStickersDidLoad);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 2);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3
+    public final ArrayList getThemeDescriptions() {
+        ArrayList arrayList = new ArrayList();
+        t51 t51Var = this.e;
+        Objects.requireNonNull(t51Var);
+        y6 y6Var = new y6(t51Var, 10);
+        i51 i51Var = t51Var.h;
+        arrayList.add(new org.telegram.ui.ActionBar.j6(i51Var.a, 32, null, null, null, null, org.telegram.ui.ActionBar.h6.O5));
+        ImageView imageView = i51Var.b;
+        int i10 = org.telegram.ui.ActionBar.h6.Q5;
+        arrayList.add(new org.telegram.ui.ActionBar.j6(imageView, 8, null, null, null, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(i51Var.c, 8, null, null, null, null, i10));
+        ci.h2 h2Var = i51Var.e;
+        arrayList.add(new org.telegram.ui.ActionBar.j6(h2Var, 4, null, null, null, null, org.telegram.ui.ActionBar.h6.R5));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(h2Var, TLObject.FLAG_23, null, null, null, null, org.telegram.ui.ActionBar.h6.P5));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(h2Var, 16777216, null, null, null, null, org.telegram.ui.ActionBar.h6.Mh));
+        s51 s51Var = t51Var.s;
+        j51 j51Var = t51Var.n;
+        s51Var.getClass();
+        org.telegram.ui.Cells.s3.a(arrayList, j51Var, y6Var);
+        arrayList.add(new org.telegram.ui.ActionBar.j6(j51Var, 4, new Class[]{org.telegram.ui.Cells.q3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.G6));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(j51Var, 4, new Class[]{org.telegram.ui.Cells.q3.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.z6));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(j51Var, 4, new Class[]{org.telegram.ui.Cells.q3.class}, new String[]{"addButton"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Sh));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(j51Var, 4, new Class[]{org.telegram.ui.Cells.q3.class}, new String[]{"delButton"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Rh));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(j51Var, 0, new Class[]{org.telegram.ui.Cells.q3.class}, org.telegram.ui.ActionBar.h6.k0, null, null, org.telegram.ui.ActionBar.h6.d7));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(null, 0, null, null, null, y6Var, org.telegram.ui.ActionBar.h6.Nh));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(null, 0, null, null, null, y6Var, org.telegram.ui.ActionBar.h6.Qh));
+        org.telegram.ui.Cells.v3.a(arrayList, j51Var);
+        gg.g2 g2Var = t51Var.v;
+        j51 j51Var2 = t51Var.n;
+        g2Var.getClass();
+        org.telegram.ui.Cells.s3.a(arrayList, j51Var2, y6Var);
+        int i11 = org.telegram.ui.ActionBar.h6.Te;
+        arrayList.add(new org.telegram.ui.ActionBar.j6(j51Var2, 4, new Class[]{org.telegram.ui.Cells.o8.class}, new String[]{"textView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(j51Var2, 4, new Class[]{org.telegram.ui.Cells.o8.class}, new String[]{"urlTextView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(j51Var2, 8, new Class[]{org.telegram.ui.Cells.o8.class}, new String[]{"buttonView"}, null, null, -1, null, org.telegram.ui.ActionBar.h6.Ve));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(null, 0, null, null, null, y6Var, org.telegram.ui.ActionBar.h6.Ue));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(null, 0, null, null, null, y6Var, i11));
+        ImageView imageView2 = g2Var.L;
+        int i12 = org.telegram.ui.ActionBar.h6.Le;
+        arrayList.add(new org.telegram.ui.ActionBar.j6(imageView2, 8, null, null, null, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(g2Var.M, 4, null, null, null, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(t51Var.f, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.V5));
+        FrameLayout frameLayout = t51Var.w;
+        int i13 = org.telegram.ui.ActionBar.h6.h5;
+        arrayList.add(new org.telegram.ui.ActionBar.j6(frameLayout, 1, null, null, null, null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, new Drawable[]{this.shadowDrawable}, null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(this.d, 0, null, null, null, null, org.telegram.ui.ActionBar.h6.Ii));
+        return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3
+    public final void setAllowNestedScroll(boolean z10) {
+        this.allowNestedScroll = z10;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
+    public final void show() {
+        super.show();
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 2);
     }
 }

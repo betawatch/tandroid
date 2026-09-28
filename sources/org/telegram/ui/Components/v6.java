@@ -19,11 +19,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class v6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
-    public final n90 b;
+    public final p90 b;
     public final Runnable c;
 
     public v6(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, Runnable runnable, org.telegram.ui.aj ajVar) {
@@ -46,13 +46,13 @@ public final class v6 extends FrameLayout implements NotificationCenter.Notifica
         textView.setGravity(1);
         textView.setText(LocaleController.getString(R.string.ArchiveHintHeader1));
         linearLayout.addView(textView, w7.y5.t(-1, -2, 1, 32, 0, 32, 9));
-        n90 n90Var = new n90(context, null);
-        this.b = n90Var;
-        n90Var.setTextSize(1, 14.0f);
-        n90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
-        n90Var.setGravity(1);
+        p90 p90Var = new p90(context, null);
+        this.b = p90Var;
+        p90Var.setTextSize(1, 14.0f);
+        p90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
+        p90Var.setGravity(1);
         b();
-        linearLayout.addView(n90Var, w7.y5.t(-1, -2, 1, 32, 0, 32, 25));
+        linearLayout.addView(p90Var, w7.y5.t(-1, -2, 1, 32, 0, 32, 25));
         linearLayout.addView(a(R.drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), d6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
         linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), d6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
         linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), d6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
@@ -96,12 +96,12 @@ public final class v6 extends FrameLayout implements NotificationCenter.Notifica
         SpannableString spannableString = new SpannableString(">");
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_arrowright).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
-        pq pqVar = new pq(0, mutate);
-        pqVar.setColorKey(i10);
-        pqVar.setSize(AndroidUtilities.dp(18.0f));
-        pqVar.setWidth(AndroidUtilities.dp(11.0f));
-        pqVar.setTranslateX(-AndroidUtilities.dp(5.0f));
-        spannableString.setSpan(pqVar, 0, spannableString.length(), 33);
+        qq qqVar = new qq(0, mutate);
+        qqVar.setColorKey(i10);
+        qqVar.setSize(AndroidUtilities.dp(18.0f));
+        qqVar.setWidth(AndroidUtilities.dp(11.0f));
+        qqVar.setTranslateX(-AndroidUtilities.dp(5.0f));
+        spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
         this.b.setText(AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString));
     }
 

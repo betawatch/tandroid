@@ -15,11 +15,11 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mc0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.oc0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class ia extends LinearLayout {
     public org.telegram.ui.Components.u9 a;
@@ -135,7 +135,7 @@ public class ia extends LinearLayout {
                 int i11 = (i10 != 1 || this.d == null || (b5Var == null && !this.x)) ? 255 : (int) (255.0f * d);
                 if (i11 > 0) {
                     drawable3.setAlpha(i11);
-                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof mc0)) {
+                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof oc0)) {
                         drawable3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                         if (drawable3 instanceof org.telegram.ui.Components.v9) {
                             this.a = ((org.telegram.ui.Components.v9) drawable3).c(canvas, this);
@@ -235,7 +235,7 @@ public class ia extends LinearLayout {
         this.e = new u1[2];
         this.s = -1;
         this.v = new g(this, 9);
-        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, rr.h);
+        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, sr.h);
         this.n = i12;
         int i13 = UserConfig.selectedAccount;
         this.h = b5Var;

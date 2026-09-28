@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class qh1 extends ViewGroup {
     public AnimatorSet a;
     public boolean b;
     public final ArrayList c;
-    public org.telegram.ui.Components.n30 d;
-    public org.telegram.ui.Components.n30 e;
+    public org.telegram.ui.Components.p30 d;
+    public org.telegram.ui.Components.p30 e;
     public final /* synthetic */ UsersSelectActivity f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -29,14 +29,14 @@ public final class qh1 extends ViewGroup {
         this.c = new ArrayList();
     }
 
-    public final void a(org.telegram.ui.Components.n30 n30Var, boolean z10) {
+    public final void a(org.telegram.ui.Components.p30 p30Var, boolean z10) {
         UsersSelectActivity usersSelectActivity = this.f;
-        usersSelectActivity.O.add(n30Var);
-        long uid = n30Var.getUid();
+        usersSelectActivity.O.add(p30Var);
+        long uid = p30Var.getUid();
         if (uid > -9223372036854775801L) {
             usersSelectActivity.w++;
         }
-        usersSelectActivity.N.k(n30Var, uid);
+        usersSelectActivity.N.k(p30Var, uid);
         ci.h2 h2Var = usersSelectActivity.c;
         h2Var.setHintVisible(false, TextUtils.isEmpty(h2Var.getText()));
         AnimatorSet animatorSet = this.a;
@@ -50,26 +50,26 @@ public final class qh1 extends ViewGroup {
             this.a = animatorSet2;
             animatorSet2.addListener(new xo0(this, 27));
             this.a.setDuration(150L);
-            this.d = n30Var;
+            this.d = p30Var;
             ArrayList arrayList = this.c;
             arrayList.clear();
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.n30, Float>) View.SCALE_X, 0.01f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.n30, Float>) View.SCALE_Y, 0.01f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.n30, Float>) View.ALPHA, 0.0f, 1.0f));
+            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p30, Float>) View.SCALE_X, 0.01f, 1.0f));
+            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p30, Float>) View.SCALE_Y, 0.01f, 1.0f));
+            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p30, Float>) View.ALPHA, 0.0f, 1.0f));
         }
-        addView(n30Var);
+        addView(p30Var);
     }
 
-    public final void b(org.telegram.ui.Components.n30 n30Var) {
+    public final void b(org.telegram.ui.Components.p30 p30Var) {
         UsersSelectActivity usersSelectActivity = this.f;
         usersSelectActivity.v = true;
-        long uid = n30Var.getUid();
+        long uid = p30Var.getUid();
         if (uid > -9223372036854775801L) {
             usersSelectActivity.w--;
         }
         usersSelectActivity.N.l(uid);
-        usersSelectActivity.O.remove(n30Var);
-        n30Var.setOnClickListener(null);
+        usersSelectActivity.O.remove(p30Var);
+        p30Var.setOnClickListener(null);
         AnimatorSet animatorSet = this.a;
         if (animatorSet != null) {
             animatorSet.setupEndValues();
@@ -78,14 +78,14 @@ public final class qh1 extends ViewGroup {
         this.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.al0(16, this, n30Var));
+        animatorSet2.addListener(new org.telegram.ui.Components.cl0(16, this, p30Var));
         this.a.setDuration(150L);
-        this.e = n30Var;
+        this.e = p30Var;
         ArrayList arrayList = this.c;
         arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.n30, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.n30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.n30, Float>) View.ALPHA, 1.0f, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.p30, Float>) View.SCALE_X, 1.0f, 0.01f));
+        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.p30, Float>) View.SCALE_Y, 1.0f, 0.01f));
+        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.p30, Float>) View.ALPHA, 1.0f, 0.0f));
         requestLayout();
     }
 
@@ -121,7 +121,7 @@ public final class qh1 extends ViewGroup {
                 break;
             }
             View childAt = getChildAt(i13);
-            if (childAt instanceof org.telegram.ui.Components.n30) {
+            if (childAt instanceof org.telegram.ui.Components.p30) {
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                 if (childAt != this.e && childAt.getMeasuredWidth() + i14 > dp) {
                     dp2 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp2);
@@ -133,11 +133,11 @@ public final class qh1 extends ViewGroup {
                 }
                 int dp4 = AndroidUtilities.dp(13.0f) + i14;
                 if (!this.b) {
-                    org.telegram.ui.Components.n30 n30Var = this.e;
-                    if (childAt == n30Var) {
+                    org.telegram.ui.Components.p30 p30Var = this.e;
+                    if (childAt == p30Var) {
                         childAt.setTranslationX(AndroidUtilities.dp(13.0f) + i15);
                         childAt.setTranslationY(dp3);
-                    } else if (n30Var != null) {
+                    } else if (p30Var != null) {
                         float f7 = dp4;
                         if (childAt.getTranslationX() != f7) {
                             i12 = 1;

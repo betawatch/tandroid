@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class wa extends aw0 {
+public final class wa extends cw0 {
     public final /* synthetic */ boolean w0;
     public final /* synthetic */ boolean x0;
     public final /* synthetic */ bb y0;
@@ -24,7 +24,7 @@ public final class wa extends aw0 {
         this.x0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         bb bbVar = this.y0;
         bbVar.I(canvas, this);
@@ -57,7 +57,7 @@ public final class wa extends aw0 {
     /* JADX WARN: Removed duplicated region for block: B:31:0x0095  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00c1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00b1  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -110,7 +110,7 @@ public final class wa extends aw0 {
                             i17 = ((i13 - paddingBottom) - i11) - measuredHeight3;
                             i18 = layoutParams.bottomMargin;
                         }
-                        if (childAt instanceof lz) {
+                        if (childAt instanceof mz) {
                             if (AndroidUtilities.isTablet()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -126,7 +126,7 @@ public final class wa extends aw0 {
                         i18 = layoutParams.bottomMargin;
                     }
                     i19 = i17 - i18;
-                    if (childAt instanceof lz) {
+                    if (childAt instanceof mz) {
                     }
                     childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
                 } else {
@@ -137,7 +137,7 @@ public final class wa extends aw0 {
                 if (i22 == 16) {
                 }
                 i19 = i17 - i18;
-                if (childAt instanceof lz) {
+                if (childAt instanceof mz) {
                 }
                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
             }
@@ -149,7 +149,7 @@ public final class wa extends aw0 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         boolean z10;
-        ku kuVar;
+        lu luVar;
         int size = View.MeasureSpec.getSize(i11);
         bb bbVar = this.y0;
         bbVar.h = size;
@@ -164,17 +164,17 @@ public final class wa extends aw0 {
         int size2 = View.MeasureSpec.getSize(i10);
         int size3 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size2, size3);
-        ku kuVar2 = bbVar.Q;
-        if (kuVar2 != null && !kuVar2.N && AndroidUtilities.dp(20.0f) >= 0) {
-            ku kuVar3 = bbVar.Q;
-            if (!kuVar3.e && !kuVar3.O) {
-                kuVar3.j();
+        lu luVar2 = bbVar.Q;
+        if (luVar2 != null && !luVar2.N && AndroidUtilities.dp(20.0f) >= 0) {
+            lu luVar3 = bbVar.Q;
+            if (!luVar3.e && !luVar3.O) {
+                luVar3.j();
             }
         }
         int i13 = 0;
         if (AndroidUtilities.dp(20.0f) >= 0) {
             z10 = ((org.telegram.ui.ActionBar.e3) bbVar).keyboardVisible;
-            int emojiPadding = (z10 || (kuVar = bbVar.Q) == null) ? 0 : kuVar.getEmojiPadding();
+            int emojiPadding = (z10 || (luVar = bbVar.Q) == null) ? 0 : luVar.getEmojiPadding();
             if (!AndroidUtilities.isInMultiwindow) {
                 size3 -= emojiPadding;
                 i11 = View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30);
@@ -185,8 +185,8 @@ public final class wa extends aw0 {
         while (i13 < childCount) {
             View childAt = getChildAt(i13);
             if (childAt != null && childAt.getVisibility() != 8) {
-                ku kuVar4 = bbVar.Q;
-                if (kuVar4 == null || !kuVar4.l(childAt)) {
+                lu luVar4 = bbVar.Q;
+                if (luVar4 == null || !luVar4.l(childAt)) {
                     i12 = i10;
                     measureChildWithMargins(childAt, i12, 0, i14, 0);
                     i13++;

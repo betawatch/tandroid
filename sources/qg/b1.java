@@ -8,13 +8,13 @@ import ci.b6;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.xl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class b1 extends vl0 {
+public final class b1 extends xl0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ ja d;
     public final /* synthetic */ a7 e;
@@ -29,7 +29,7 @@ public final class b1 extends vl0 {
         this.f = z10;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -75,10 +75,10 @@ public final class b1 extends vl0 {
         com.google.firebase.messaging.n nVar = this.h.D0;
         Context context = this.c;
         if (i10 == 1) {
-            return new gl0(new z0(this, context, nVar));
+            return new il0(new z0(this, context, nVar));
         }
         a1 a1Var = new a1(this, context, UserConfig.selectedAccount, nVar);
         a1Var.N7 = true;
-        return new gl0(a1Var);
+        return new il0(a1Var);
     }
 }

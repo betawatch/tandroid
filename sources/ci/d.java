@@ -19,22 +19,22 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.r90;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.t90;
+import org.telegram.ui.Components.vp;
 import org.telegram.ui.ae;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public class d extends FrameLayout implements q90 {
+public class d extends FrameLayout implements s90 {
     public boolean E;
     public int F;
     public ai.ba G;
     public float H;
     public ValueAnimator I;
     public boolean J;
-    public r90 K;
+    public t90 K;
     public boolean L;
     public float M;
     public boolean N;
@@ -50,7 +50,7 @@ public class d extends FrameLayout implements q90 {
     public org.telegram.ui.ActionBar.d6 a;
     public ValueAnimator a0;
     public int b;
-    public up b0;
+    public vp b0;
     public final Paint c;
     public int c0;
     public final org.telegram.ui.Components.o6 d;
@@ -108,7 +108,7 @@ public class d extends FrameLayout implements q90 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public final boolean c() {
         return this.N;
     }
@@ -151,7 +151,7 @@ public class d extends FrameLayout implements q90 {
             ofFloat.addUpdateListener(new b(this, 3));
             this.I.addListener(new c(this, i10));
             this.I.setDuration(200L);
-            this.I.setInterpolator(rr.f);
+            this.I.setInterpolator(sr.f);
             this.I.start();
         }
         if (this.J || !z11) {
@@ -167,7 +167,7 @@ public class d extends FrameLayout implements q90 {
         this.I = ofFloat2;
         ofFloat2.addUpdateListener(new b(this, 4));
         this.I.setDuration(200L);
-        this.I.setInterpolator(rr.f);
+        this.I.setInterpolator(sr.f);
         this.I.start();
     }
 
@@ -241,24 +241,24 @@ public class d extends FrameLayout implements q90 {
         if (this.L) {
             if (this.N) {
                 if (this.K == null) {
-                    r90 r90Var = new r90(this.a);
-                    this.K = r90Var;
-                    r90Var.setCallback(this);
-                    r90 r90Var2 = this.K;
-                    r90Var2.t = 2.0f;
-                    r90Var2.C = true;
-                    r90Var2.w.setStrokeWidth(0.0f);
+                    t90 t90Var = new t90(this.a);
+                    this.K = t90Var;
+                    t90Var.setCallback(this);
+                    t90 t90Var2 = this.K;
+                    t90Var2.t = 2.0f;
+                    t90Var2.C = true;
+                    t90Var2.w.setStrokeWidth(0.0f);
                     this.K.e(org.telegram.ui.ActionBar.h6.l1(0.02f, -1), org.telegram.ui.ActionBar.h6.l1(0.375f, -1));
                 }
-                r90 r90Var3 = this.K;
-                r90Var3.c = -1L;
-                r90Var3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                t90 t90Var3 = this.K;
+                t90Var3.c = -1L;
+                t90Var3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 this.K.j(this.b);
                 this.K.draw(canvas);
             } else {
-                r90 r90Var4 = this.K;
-                if (r90Var4 != null) {
-                    r90Var4.a();
+                t90 t90Var4 = this.K;
+                if (t90Var4 != null) {
+                    t90Var4.a();
                     this.K.draw(canvas);
                     if (this.K.b()) {
                         this.K.b = -1L;
@@ -270,7 +270,7 @@ public class d extends FrameLayout implements q90 {
         org.telegram.ui.Components.o6 o6Var = this.d;
         if (f10 > 0.0f) {
             if (this.b0 == null) {
-                this.b0 = new up(o6Var.a.getColor());
+                this.b0 = new vp(o6Var.a.getColor());
             }
             int dp = (int) ((1.0f - this.M) * AndroidUtilities.dp(24.0f));
             this.b0.setBounds(0, dp, getWidth(), getHeight() + dp);
@@ -465,7 +465,7 @@ public class d extends FrameLayout implements q90 {
         this.c0 = (int) (f7 * 255.0f);
     }
 
-    @Override // org.telegram.ui.Components.q90
+    @Override // org.telegram.ui.Components.s90
     public void setLoading(boolean z10) {
         if (this.N != z10) {
             if (this.L) {
@@ -485,7 +485,7 @@ public class d extends FrameLayout implements q90 {
             ofFloat.addUpdateListener(new b(this, 2));
             this.O.addListener(new ai.n(6, this, z10));
             this.O.setDuration(320L);
-            this.O.setInterpolator(rr.h);
+            this.O.setInterpolator(sr.h);
             this.O.start();
         }
     }
@@ -540,8 +540,8 @@ public class d extends FrameLayout implements q90 {
     public d(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
         super(context);
         this.b = 8;
-        rr rrVar = rr.h;
-        this.n = new org.telegram.ui.Components.e6(350L, rrVar);
+        sr srVar = sr.h;
+        this.n = new org.telegram.ui.Components.e6(350L, srVar);
         this.E = true;
         this.F = 0;
         this.H = 0.0f;
@@ -567,7 +567,7 @@ public class d extends FrameLayout implements q90 {
         paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Sh, d6Var));
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(true, true, false, false);
         this.d = o6Var;
-        o6Var.k(0.3f, 250L, rrVar);
+        o6Var.k(0.3f, 250L, srVar);
         o6Var.setCallback(this);
         o6Var.t(AndroidUtilities.dp(14.0f));
         if (z10) {
@@ -576,13 +576,13 @@ public class d extends FrameLayout implements q90 {
         o6Var.b = 1;
         org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(i(), true, false, false);
         this.e = o6Var2;
-        o6Var2.k(0.3f, 250L, rrVar);
+        o6Var2.k(0.3f, 250L, srVar);
         o6Var2.setCallback(this);
         o6Var2.t(AndroidUtilities.dp(12.0f));
         o6Var2.b = 1;
         org.telegram.ui.Components.o6 o6Var3 = new org.telegram.ui.Components.o6(false, false, true, false);
         this.f = o6Var3;
-        o6Var3.k(0.3f, 250L, rrVar);
+        o6Var3.k(0.3f, 250L, srVar);
         o6Var3.setCallback(this);
         o6Var3.t(AndroidUtilities.dp(12.0f));
         o6Var3.u(AndroidUtilities.bold());

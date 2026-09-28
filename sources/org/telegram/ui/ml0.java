@@ -25,9 +25,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ml0 implements Utilities.Callback5, org.telegram.ui.Cells.x5, org.telegram.ui.Components.h71, org.telegram.ui.ActionBar.z1, org.telegram.ui.ActionBar.l1, r0.n, Utilities.Callback2Return, org.telegram.ui.Cells.a5, LanguageDetector.ExceptionCallback, RequestTimeDelegate, org.telegram.ui.ActionBar.l2, org.telegram.ui.Components.ml0, ig.e, gg.b2 {
+public final /* synthetic */ class ml0 implements Utilities.Callback5, org.telegram.ui.Cells.x5, org.telegram.ui.Components.j71, org.telegram.ui.ActionBar.z1, org.telegram.ui.ActionBar.l1, r0.n, Utilities.Callback2Return, org.telegram.ui.Cells.a5, LanguageDetector.ExceptionCallback, RequestTimeDelegate, org.telegram.ui.ActionBar.l2, org.telegram.ui.Components.ol0, ig.e, gg.b2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -45,9 +45,9 @@ public final /* synthetic */ class ml0 implements Utilities.Callback5, org.teleg
                 i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
                 premiumPreviewFragment.o0 = defaultWindowInsets;
                 premiumPreviewFragment.a.setPadding(0, defaultWindowInsets.b, 0, AndroidUtilities.dp(48.0f) + premiumPreviewFragment.o0.d);
-                org.telegram.ui.Components.wl0 wl0Var = premiumPreviewFragment.a;
+                org.telegram.ui.Components.yl0 yl0Var = premiumPreviewFragment.a;
                 i0.b bVar = premiumPreviewFragment.o0;
-                AndroidUtilities.setViewLayoutMargins(wl0Var, bVar.a, 0, bVar.c, 0);
+                AndroidUtilities.setViewLayoutMargins(yl0Var, bVar.a, 0, bVar.c, 0);
                 ax0 ax0Var = premiumPreviewFragment.U;
                 i0.b bVar2 = premiumPreviewFragment.o0;
                 ax0Var.setPadding(bVar2.a, 0, bVar2.c, 0);
@@ -125,14 +125,14 @@ public final /* synthetic */ class ml0 implements Utilities.Callback5, org.teleg
         }
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public void c(org.telegram.ui.Components.wz wzVar) {
+    @Override // org.telegram.ui.Components.j71
+    public void c(org.telegram.ui.Components.xz xzVar) {
         MediaController.SavedFilterState savedFilterState = (MediaController.SavedFilterState) this.b;
         Drawable[] drawableArr = PhotoViewer.U8;
-        wzVar.f(new org.telegram.ui.Components.xz(savedFilterState));
+        xzVar.f(new org.telegram.ui.Components.yz(savedFilterState));
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         switch (this.a) {
             case 17:
@@ -163,7 +163,7 @@ public final /* synthetic */ class ml0 implements Utilities.Callback5, org.teleg
                     if (messageObject.isStory()) {
                         return false;
                     }
-                    org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(sa1Var, view);
+                    org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(sa1Var, view);
                     final int i15 = 0;
                     H.c(R.drawable.msg_stats, LocaleController.getString(R.string.ViewMessageStatistic), new Runnable() { // from class: org.telegram.ui.n91
                         @Override // java.lang.Runnable
@@ -372,23 +372,23 @@ public final /* synthetic */ class ml0 implements Utilities.Callback5, org.teleg
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                PasskeysActivity.W((PasskeysActivity) this.b, (org.telegram.ui.Components.v51) obj, (View) obj2);
+                PasskeysActivity.W((PasskeysActivity) this.b, (org.telegram.ui.Components.x51) obj, (View) obj2);
                 break;
             default:
                 s31 s31Var = (s31) this.b;
-                org.telegram.ui.Components.v51 v51Var = (org.telegram.ui.Components.v51) obj;
+                org.telegram.ui.Components.x51 x51Var = (org.telegram.ui.Components.x51) obj;
                 ((Integer) obj3).intValue();
                 ((Float) obj4).floatValue();
                 ((Float) obj5).floatValue();
                 t31 t31Var = s31Var.v;
-                if (v51Var.a == 30) {
+                if (x51Var.a == 30) {
                     TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = s31Var.b;
                     if (tL_channels_sponsoredMessageReportResultChooseOption == null) {
                         TLRPC.TL_reportResultChooseOption tL_reportResultChooseOption = s31Var.c;
                         if (tL_reportResultChooseOption == null) {
                             TLRPC.TL_reportResultAddComment tL_reportResultAddComment = s31Var.d;
                             if (tL_reportResultAddComment == null) {
-                                t31.H(t31Var, v51Var.l, null, null);
+                                t31.H(t31Var, x51Var.l, null, null);
                                 break;
                             } else {
                                 byte[] bArr = tL_reportResultAddComment.option;
@@ -398,14 +398,14 @@ public final /* synthetic */ class ml0 implements Utilities.Callback5, org.teleg
                                 }
                             }
                         } else {
-                            TLRPC.TL_messageReportOption tL_messageReportOption = tL_reportResultChooseOption.options.get(v51Var.d);
+                            TLRPC.TL_messageReportOption tL_messageReportOption = tL_reportResultChooseOption.options.get(x51Var.d);
                             if (tL_messageReportOption != null) {
                                 t31.H(t31Var, tL_messageReportOption.text, tL_messageReportOption.option, null);
                                 break;
                             }
                         }
                     } else {
-                        TLRPC.TL_sponsoredMessageReportOption tL_sponsoredMessageReportOption = tL_channels_sponsoredMessageReportResultChooseOption.options.get(v51Var.d);
+                        TLRPC.TL_sponsoredMessageReportOption tL_sponsoredMessageReportOption = tL_channels_sponsoredMessageReportResultChooseOption.options.get(x51Var.d);
                         if (tL_sponsoredMessageReportOption != null) {
                             t31.H(t31Var, tL_sponsoredMessageReportOption.text, tL_sponsoredMessageReportOption.option, null);
                             break;
@@ -434,9 +434,9 @@ public final /* synthetic */ class ml0 implements Utilities.Callback5, org.teleg
             if (!privacyControlActivity.getUserConfig().isPremium()) {
                 if (privacyControlActivity.z0 == null) {
                     SpannableString spannableString = new SpannableString("l");
-                    org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.msg_mini_lock3, 0);
-                    pqVar.translate(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f));
-                    spannableString.setSpan(pqVar, 0, 1, 33);
+                    org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(R.drawable.msg_mini_lock3, 0);
+                    qqVar.translate(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f));
+                    spannableString.setSpan(qqVar, 0, 1, 33);
                     privacyControlActivity.z0 = spannableString;
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();

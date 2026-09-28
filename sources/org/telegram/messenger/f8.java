@@ -1,31 +1,28 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f8 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ SharedPreferences d;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ f8(MediaDataController mediaDataController, TLObject tLObject, SharedPreferences sharedPreferences, int i10) {
+    public /* synthetic */ f8(MediaDataController mediaDataController, String str, boolean z10, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = tLObject;
-        this.d = sharedPreferences;
+        this.c = str;
+        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadRestrictedStatusEmojis$245(this.c, this.d);
+                this.b.lambda$processLoadedDiceStickers$87(this.c, this.d);
                 break;
             default:
-                this.b.lambda$loadReplyIcons$243(this.c, this.d);
+                this.b.lambda$loadStickersByEmojiOrName$83(this.c, this.d);
                 break;
         }
     }

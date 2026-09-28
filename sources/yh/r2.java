@@ -6,14 +6,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,8 +55,8 @@ public final /* synthetic */ class r2 implements Runnable {
                         }
                         int i12 = 1 - u3Var.r0;
                         u3Var.r0 = i12;
-                        ij0 lottieAnimation = w9VarArr[2 - i12].getImageReceiver().getLottieAnimation();
-                        ij0 lottieAnimation2 = w9VarArr[u3Var.r0 + 1].getImageReceiver().getLottieAnimation();
+                        kj0 lottieAnimation = w9VarArr[2 - i12].getImageReceiver().getLottieAnimation();
+                        kj0 lottieAnimation2 = w9VarArr[u3Var.r0 + 1].getImageReceiver().getLottieAnimation();
                         if (lottieAnimation2 != null && lottieAnimation != null) {
                             lottieAnimation2.T(lottieAnimation.t(), false);
                         }
@@ -74,7 +74,7 @@ public final /* synthetic */ class r2 implements Runnable {
                         ofFloat.addUpdateListener(new q3(u3Var, i11));
                         u3Var.h0.addListener(new s3(u3Var));
                         u3Var.h0.setDuration(320L);
-                        u3Var.h0.setInterpolator(rr.h);
+                        u3Var.h0.setInterpolator(sr.h);
                         u3Var.h0.start();
                         break;
                     }
@@ -93,7 +93,7 @@ public final /* synthetic */ class r2 implements Runnable {
                 di.f fVar = (di.f) obj;
                 fVar.getClass();
                 try {
-                    wl0 currentListView = ((w7) fVar.M0).R.getCurrentListView();
+                    yl0 currentListView = ((w7) fVar.M0).R.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;

@@ -1,12 +1,12 @@
 package ci;
 
 import android.content.Context;
-import org.telegram.ui.Components.lx;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mx;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.a71;
 import org.telegram.ui.o51;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class m1 extends ji.o {
     public final /* synthetic */ int q;
@@ -26,7 +26,7 @@ public final class m1 extends ji.o {
                 ((p1) this.r).b3 = true;
                 break;
             case 1:
-                ((lz) this.r).f0 = true;
+                ((mz) this.r).f0 = true;
                 break;
             case 4:
                 ((a71) this.r).w1 = true;
@@ -41,10 +41,10 @@ public final class m1 extends ji.o {
                 ((p1) this.r).b3 = false;
                 break;
             case 1:
-                ((lz) this.r).f0 = false;
+                ((mz) this.r).f0 = false;
                 break;
             case 2:
-                ((lx) this.r).Q.f0 = false;
+                ((mx) this.r).Q.f0 = false;
                 break;
             case 3:
                 ((o51) this.r).R.w1 = false;

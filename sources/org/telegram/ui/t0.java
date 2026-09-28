@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class t0 extends org.telegram.ui.Components.r6 {
     public final /* synthetic */ int b;
@@ -53,10 +53,10 @@ public final class t0 extends org.telegram.ui.Components.r6 {
                         float f11 = 1.0f - (0.1f * f10);
                         secretMediaViewer.S.setScaleX(f11);
                         secretMediaViewer.S.setScaleY(f11);
-                        org.telegram.ui.Components.u71 u71Var = secretMediaViewer.Q;
-                        if (u71Var.y != f10) {
-                            u71Var.y = f10;
-                            u71Var.v.invalidate();
+                        org.telegram.ui.Components.w71 w71Var = secretMediaViewer.Q;
+                        if (w71Var.y != f10) {
+                            w71Var.y = f10;
+                            w71Var.v.invalidate();
                             break;
                         }
                     }

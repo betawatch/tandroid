@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class pq0 extends org.telegram.ui.Components.u00 {
+public final class pq0 extends org.telegram.ui.Components.v00 {
     public final /* synthetic */ int U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class pq0 extends org.telegram.ui.Components.u00 {
         this.U = i10;
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.v00
     public int getColumnsCount() {
         switch (this.U) {
             case 0:
@@ -25,7 +25,7 @@ public final class pq0 extends org.telegram.ui.Components.u00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.v00
     public int getViewType() {
         switch (this.U) {
             case 0:
@@ -35,7 +35,7 @@ public final class pq0 extends org.telegram.ui.Components.u00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u00, android.view.View
+    @Override // org.telegram.ui.Components.v00, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.U) {
             case 1:

@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class n11 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -58,7 +58,7 @@ public final class n11 extends org.telegram.ui.ActionBar.m2 implements Notificat
     public int X;
     public int Y;
     public boolean Z;
-    public org.telegram.ui.Components.wl0 a;
+    public org.telegram.ui.Components.yl0 a;
     public boolean a0;
     public l11 b;
     public AnimatorSet c;
@@ -68,7 +68,7 @@ public final class n11 extends org.telegram.ui.ActionBar.m2 implements Notificat
     public final boolean h;
     public boolean n;
     public m11 r;
-    public org.telegram.ui.Components.fo s;
+    public org.telegram.ui.Components.go s;
     public int v;
     public int w;
     public int x;
@@ -207,10 +207,10 @@ public final class n11 extends org.telegram.ui.ActionBar.m2 implements Notificat
                 int childCount = n11Var.a.getChildCount();
                 ArrayList arrayList = new ArrayList();
                 while (i11 < childCount) {
-                    org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) n11Var.a.T(n11Var.a.getChildAt(i11));
-                    int i16 = gl0Var.f;
-                    View view2 = gl0Var.a;
-                    int b10 = gl0Var.b();
+                    org.telegram.ui.Components.il0 il0Var = (org.telegram.ui.Components.il0) n11Var.a.T(n11Var.a.getChildAt(i11));
+                    int i16 = il0Var.f;
+                    View view2 = il0Var.a;
+                    int b10 = il0Var.b();
                     if (b10 != n11Var.y && b10 != n11Var.W) {
                         if (i16 == 0) {
                             ((org.telegram.ui.Cells.m4) view2).a(arrayList, n11Var.n);
@@ -504,14 +504,14 @@ public final class n11 extends org.telegram.ui.ActionBar.m2 implements Notificat
             l4Var.setValue((c11 / 60) - 1);
             l4Var.setWrapSelectorWheel(false);
             l4Var.setFormatter(new org.telegram.ui.Components.x1(5));
-            org.telegram.ui.Components.ed0 ed0Var = new org.telegram.ui.Components.ed0(parentActivity2, d6Var);
-            ed0Var.setMinValue(0);
-            ed0Var.setMaxValue(0);
-            ed0Var.setTextColor(g02);
-            ed0Var.setValue(0);
-            ed0Var.setWrapSelectorWheel(false);
-            ed0Var.setFormatter(new org.telegram.ui.Components.x1(6));
-            org.telegram.ui.Components.w3 w3Var = new org.telegram.ui.Components.w3(parentActivity2, k4Var, l4Var, ed0Var);
+            org.telegram.ui.Components.gd0 gd0Var = new org.telegram.ui.Components.gd0(parentActivity2, d6Var);
+            gd0Var.setMinValue(0);
+            gd0Var.setMaxValue(0);
+            gd0Var.setTextColor(g02);
+            gd0Var.setValue(0);
+            gd0Var.setWrapSelectorWheel(false);
+            gd0Var.setFormatter(new org.telegram.ui.Components.x1(6));
+            org.telegram.ui.Components.w3 w3Var = new org.telegram.ui.Components.w3(parentActivity2, k4Var, l4Var, gd0Var);
             w3Var.setOrientation(1);
             FrameLayout frameLayout = new FrameLayout(parentActivity2);
             w3Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
@@ -528,7 +528,7 @@ public final class n11 extends org.telegram.ui.ActionBar.m2 implements Notificat
             w3Var.addView(linearLayout, w7.y5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
             ai.p4 p4Var = new ai.p4(parentActivity2, 18);
             linearLayout.addView(k4Var, w7.y5.l(0.4f, 0, 270));
-            linearLayout.addView(ed0Var, w7.y5.o(0, -2, 0.2f, 16));
+            linearLayout.addView(gd0Var, w7.y5.o(0, -2, 0.2f, 16));
             linearLayout.addView(l4Var, w7.y5.l(0.4f, 0, 270));
             p4Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
             p4Var.setGravity(17);
@@ -573,9 +573,9 @@ public final class n11 extends org.telegram.ui.ActionBar.m2 implements Notificat
         long j10 = this.f;
         String sharedPrefKey = NotificationsController.getSharedPrefKey(j3, j10);
         this.actionBar.setActionBarMenuOnItemClick(new k11(this, sharedPrefKey));
-        org.telegram.ui.Components.fo foVar = new org.telegram.ui.Components.fo(context, null, false, d6Var);
-        this.s = foVar;
-        foVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
+        org.telegram.ui.Components.go goVar = new org.telegram.ui.Components.go(context, null, false, d6Var);
+        this.s = goVar;
+        goVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
         this.actionBar.addView(this.s, 0, w7.y5.d(-2, -1.0f, 51, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f));
         this.actionBar.setAllowOverlayTitle(false);
         if (j3 >= 0) {
@@ -602,15 +602,15 @@ public final class n11 extends org.telegram.ui.ActionBar.m2 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, d6Var));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.a = wl0Var;
-        wl0Var.p1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
         frameLayout.addView(this.a, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.wl0 wl0Var2 = this.a;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.a;
         l11 l11Var = new l11(this, context);
         this.b = l11Var;
-        wl0Var2.setAdapter(l11Var);
+        yl0Var2.setAdapter(l11Var);
         this.a.setItemAnimator(null);
         this.a.setLayoutAnimation(null);
         this.a.setLayoutManager(new gg.b0(17));

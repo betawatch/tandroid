@@ -27,18 +27,18 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ct;
-import org.telegram.ui.Components.lc0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.nc0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.xw0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class o6 extends FrameLayout {
-    public static final lc0 G;
-    public static final lc0 H;
-    public static final lc0 I;
-    public static final lc0 J;
+    public static final nc0 G;
+    public static final nc0 H;
+    public static final nc0 I;
+    public static final nc0 J;
     public float E;
     public ValueAnimator F;
     public boolean a;
@@ -50,7 +50,7 @@ public class o6 extends FrameLayout {
     public final org.telegram.ui.Components.w9 h;
     public int n;
     public final org.telegram.ui.Components.h9 r;
-    public final vw0 s;
+    public final xw0 s;
     public final org.telegram.ui.ActionBar.d6 v;
     public final int w;
     public long x;
@@ -59,16 +59,16 @@ public class o6 extends FrameLayout {
     static {
         int i10 = R.drawable.msg_mini_checks;
         int i11 = org.telegram.ui.ActionBar.h6.y6;
-        G = new lc0(i10, i11);
-        lc0 lc0Var = new lc0(R.drawable.msg_reactions, i11);
-        lc0Var.g = 16;
-        lc0Var.h = 16;
-        lc0Var.i = 5.66f;
-        H = lc0Var;
+        G = new nc0(i10, i11);
+        nc0 nc0Var = new nc0(R.drawable.msg_reactions, i11);
+        nc0Var.g = 16;
+        nc0Var.h = 16;
+        nc0Var.i = 5.66f;
+        H = nc0Var;
         int i12 = R.drawable.mini_repost_story;
         int i13 = org.telegram.ui.ActionBar.h6.hk;
-        I = new lc0(i12, i13);
-        J = new lc0(R.drawable.mini_forward_story, i13);
+        I = new nc0(i12, i13);
+        J = new nc0(R.drawable.mini_forward_story, i13);
     }
 
     public o6(int i10, int i11, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
@@ -102,10 +102,10 @@ public class o6 extends FrameLayout {
         float f10 = i10 == 1 ? 7.66f : 5.33f;
         float f11 = i10 == 1 ? 73.0f : 55.0f;
         addView(z5Var, w7.y5.i(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
-        vw0 vw0Var = new vw0(this);
-        this.s = vw0Var;
+        xw0 xw0Var = new xw0(this);
+        this.s = xw0Var;
         z5Var.setDrawablePadding(AndroidUtilities.dp(3.0f));
-        z5Var.i(vw0Var.a);
+        z5Var.i(xw0Var.a);
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
         this.e = h5Var;
         h5Var.setTextSize(13);
@@ -144,7 +144,7 @@ public class o6 extends FrameLayout {
         this.F = ofFloat;
         ofFloat.addUpdateListener(new r(this, 4));
         this.F.addListener(new org.telegram.ui.ActionBar.y0(this, f7, 2));
-        this.F.setInterpolator(rr.h);
+        this.F.setInterpolator(sr.h);
         this.F.setDuration(420L);
         this.F.start();
     }
@@ -332,9 +332,9 @@ public class o6 extends FrameLayout {
                 ?? r622 = this.e;
                 if (j10 != 0) {
                     r622.setVisibility(0);
-                    lc0 lc0Var = storyItem != null ? z11 ? J : I : z12 ? G : H;
+                    nc0 nc0Var = storyItem != null ? z11 ? J : I : z12 ? G : H;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append(lc0Var.a(getContext(), d6Var));
+                    spannableStringBuilder.append(nc0Var.a(getContext(), d6Var));
                     spannableStringBuilder.append((CharSequence) LocaleController.formatSeenDate(j10));
                     if (z11 || storyItem == null) {
                         f10 = 9.0f;
@@ -343,10 +343,10 @@ public class o6 extends FrameLayout {
                         if (!TextUtils.isEmpty(storyItem.caption)) {
                             spannableStringBuilder.append((CharSequence) "\u2004");
                             spannableStringBuilder.append((CharSequence) ".");
-                            ct ctVar = new ct();
-                            ctVar.c = 2.33333f;
-                            ctVar.b = AndroidUtilities.dp(5.0f);
-                            spannableStringBuilder.setSpan(ctVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                            dt dtVar = new dt();
+                            dtVar.c = 2.33333f;
+                            dtVar.b = AndroidUtilities.dp(5.0f);
+                            spannableStringBuilder.setSpan(dtVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                             spannableStringBuilder.append((CharSequence) "\u2004");
                             int length = spannableStringBuilder.length();
                             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.StoryRepostCommented));
@@ -365,10 +365,10 @@ public class o6 extends FrameLayout {
                     if (!z11 && storyItem != null && (storyFwdHeader = storyItem.fwd_from) != null && storyFwdHeader.modified) {
                         spannableStringBuilder.append((CharSequence) "\u2004");
                         spannableStringBuilder.append((CharSequence) ".");
-                        ct ctVar2 = new ct();
-                        ctVar2.c = 2.33333f;
-                        ctVar2.b = AndroidUtilities.dp(5.0f);
-                        spannableStringBuilder.setSpan(ctVar2, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                        dt dtVar2 = new dt();
+                        dtVar2.c = 2.33333f;
+                        dtVar2.b = AndroidUtilities.dp(5.0f);
+                        spannableStringBuilder.setSpan(dtVar2, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                         spannableStringBuilder.append((CharSequence) "\u2004");
                         int length2 = spannableStringBuilder.length();
                         spannableStringBuilder.append((CharSequence) "edited");

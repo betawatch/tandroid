@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q11 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class q11 implements ValueAnimator.AnimatorUpdateLi
                 secretMediaViewer2.a0.invalidate();
                 break;
             case 6:
-                ((SecretMediaViewer) ((org.telegram.ui.Components.qm0) this.b).b).a0.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((SecretMediaViewer) ((org.telegram.ui.Components.sm0) this.b).b).a0.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 7:
                 b51 b51Var = (b51) this.b;
@@ -72,9 +72,9 @@ public final /* synthetic */ class q11 implements ValueAnimator.AnimatorUpdateLi
                     view.setAlpha(floatValue);
                     break;
                 } else {
-                    org.telegram.ui.Components.sg0 sg0Var = p61Var.d;
-                    if (sg0Var != null) {
-                        sg0Var.invalidate();
+                    org.telegram.ui.Components.ug0 ug0Var = p61Var.d;
+                    if (ug0Var != null) {
+                        ug0Var.invalidate();
                         break;
                     }
                 }
@@ -86,7 +86,7 @@ public final /* synthetic */ class q11 implements ValueAnimator.AnimatorUpdateLi
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = w61Var.v;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(floatValue2);
                 org.telegram.ui.ActionBar.i1 i1Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.rr.g.getInterpolation(w61Var.L));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.sr.g.getInterpolation(w61Var.L));
                 int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
                 for (int i10 = 0; i10 < itemsCount; i10++) {
                     float cascade = AndroidUtilities.cascade(w61Var.L, i10, itemsCount, 4.0f);

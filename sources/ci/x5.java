@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.dh;
+import org.telegram.ui.Components.dw0;
 import org.telegram.ui.eu0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class x5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final class x5 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ x5(bw0 bw0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
+    public /* synthetic */ x5(dw0 dw0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
         this.a = i11;
-        this.e = bw0Var;
+        this.e = dw0Var;
         this.c = viewGroup;
         this.d = viewGroup2;
         this.b = i10;

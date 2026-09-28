@@ -18,9 +18,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class g0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -50,7 +50,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
     public g0(Context context, int i10, long j3, org.telegram.ui.k0 k0Var) {
         super(context);
         this.d = true;
-        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, rr.h);
+        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, sr.h);
         this.E = 1.0f;
         this.G = new ArrayList();
         this.H = new ArrayList();

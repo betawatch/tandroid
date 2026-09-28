@@ -15,9 +15,9 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.o90;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class c9 extends FrameLayout {
     public final vh.n a;
@@ -181,14 +181,14 @@ public class c9 extends FrameLayout {
         vh.n nVar = new vh.n(context, d6Var, true);
         this.a = nVar;
         final int i11 = 0;
-        nVar.setOnLinkLongPressListener(new m90(this) { // from class: org.telegram.ui.Cells.a9
+        nVar.setOnLinkLongPressListener(new o90(this) { // from class: org.telegram.ui.Cells.a9
             public final /* synthetic */ c9 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.m90
+            @Override // org.telegram.ui.Components.o90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i11) {
                     case 0:
@@ -246,14 +246,14 @@ public class c9 extends FrameLayout {
         b9 b9Var = new b9(this, context, d6Var, 0);
         this.b = b9Var;
         final int i12 = 1;
-        b9Var.setOnLinkLongPressListener(new m90(this) { // from class: org.telegram.ui.Cells.a9
+        b9Var.setOnLinkLongPressListener(new o90(this) { // from class: org.telegram.ui.Cells.a9
             public final /* synthetic */ c9 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.m90
+            @Override // org.telegram.ui.Components.o90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i12) {
                     case 0:
@@ -314,14 +314,14 @@ public class c9 extends FrameLayout {
         b9 b9Var2 = new b9(this, context, d6Var, 1);
         this.c = b9Var2;
         final int i13 = 2;
-        b9Var2.setOnLinkLongPressListener(new m90(this) { // from class: org.telegram.ui.Cells.a9
+        b9Var2.setOnLinkLongPressListener(new o90(this) { // from class: org.telegram.ui.Cells.a9
             public final /* synthetic */ c9 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.m90
+            @Override // org.telegram.ui.Components.o90
             public final void a(ClickableSpan clickableSpan) {
                 switch (i13) {
                     case 0:

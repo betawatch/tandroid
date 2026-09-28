@@ -18,10 +18,10 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class x2 {
     public final Context a;
@@ -111,7 +111,7 @@ public final class x2 {
         ofFloat.addUpdateListener(new ai.a(this, 17));
         this.i.addListener(new ai.t2(this, f7, runnable, 1));
         this.i.setDuration(j3);
-        this.i.setInterpolator(rr.i);
+        this.i.setInterpolator(sr.i);
         this.i.start();
     }
 

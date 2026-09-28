@@ -40,17 +40,17 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.j5;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.w8;
-import org.telegram.ui.Components.au;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.ky;
 import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
 import w7.g6;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessListener, c3.g, org.telegram.ui.ActionBar.z1, e2.m, au, ii.p0, ky, q5, f2.s {
+public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessListener, c3.g, org.telegram.ui.ActionBar.z1, e2.m, bu, ii.p0, ky, q5, f2.s {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -70,8 +70,8 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
     }
 
     @Override // ii.p0
-    public y70 a(ii.i1 i1Var) {
-        return y70.H((ii.e2) ((a6.i) this.b).b, i1Var);
+    public a80 a(ii.i1 i1Var) {
+        return a80.H((ii.e2) ((a6.i) this.b).b, i1Var);
     }
 
     @Override // f2.s
@@ -273,7 +273,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
         }
     }
 
-    @Override // org.telegram.ui.Components.au
+    @Override // org.telegram.ui.Components.bu
     public void j() {
         switch (this.a) {
             case 14:
@@ -334,7 +334,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((e5) this.b).V((v51) obj);
+                ((e5) this.b).V((x51) obj);
                 break;
             case 1:
             case 2:
@@ -356,12 +356,12 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 break;
             case 3:
                 hg.h1 h1Var = (hg.h1) this.b;
-                v51 v51Var = (v51) obj;
+                x51 x51Var = (x51) obj;
                 View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i11 = v51Var.d;
+                int i11 = x51Var.d;
                 if (i11 == -1) {
                     boolean z10 = !h1Var.e;
                     h1Var.e = z10;
@@ -375,9 +375,9 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                     f2Var.c = new ai.g3(18, h1Var, view2);
                     h1Var.presentFragment(f2Var);
                     break;
-                } else if (v51Var.a == 5 && i11 >= 0 && i11 < h1Var.h.length) {
+                } else if (x51Var.a == 5 && i11 >= 0 && i11 < h1Var.h.length) {
                     if (!LocaleController.isRTL ? floatValue < view2.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i12 = (v51Var.d + 6) % 7;
+                        int i12 = (x51Var.d + 6) % 7;
                         int i13 = 0;
                         for (int i14 = 0; i14 < h1Var.h[i12].size(); i14++) {
                             if (((hg.g1) h1Var.h[i12].get(i14)).b > i13) {
@@ -385,7 +385,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             }
                         }
                         int max = Math.max(0, i13 - 1439);
-                        int i15 = (v51Var.d + 1) % 7;
+                        int i15 = (x51Var.d + 1) % 7;
                         int i16 = 1440;
                         for (int i17 = 0; i17 < h1Var.h[i15].size(); i17++) {
                             if (((hg.g1) h1Var.h[i15].get(i17)).a < i16) {
@@ -393,8 +393,8 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                             }
                         }
                         int i18 = i16 + 1439;
-                        CharSequence charSequence = v51Var.l;
-                        ArrayList arrayList = h1Var.h[v51Var.d];
+                        CharSequence charSequence = x51Var.l;
+                        ArrayList arrayList = h1Var.h[x51Var.d];
                         int i19 = 0;
                         for (int i20 = 0; i20 < 7; i20++) {
                             ArrayList arrayList2 = h1Var.h[i20];
@@ -404,19 +404,19 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                         }
                         hg.j1 j1Var = new hg.j1(charSequence, arrayList, max, i18, 28 - i19);
                         j1Var.f = new rc(h1Var, 23);
-                        j1Var.h = new gg.x1(5, h1Var, v51Var);
+                        j1Var.h = new gg.x1(5, h1Var, x51Var);
                         h1Var.presentFragment(j1Var);
                         break;
                     } else {
-                        if (h1Var.h[v51Var.d].isEmpty()) {
+                        if (h1Var.h[x51Var.d].isEmpty()) {
                             ((j5) view2).setChecked(true);
-                            h1Var.h[v51Var.d].add(new hg.g1(0, 1439));
-                            h1Var.X(v51Var.d);
+                            h1Var.h[x51Var.d].add(new hg.g1(0, 1439));
+                            h1Var.X(x51Var.d);
                         } else {
-                            h1Var.h[v51Var.d].clear();
+                            h1Var.h[x51Var.d].clear();
                             ((j5) view2).setChecked(false);
                         }
-                        ((j5) view2).setValue(hg.h1.a0(h1Var.h[v51Var.d]));
+                        ((j5) view2).setValue(hg.h1.a0(h1Var.h[x51Var.d]));
                         h1Var.Y(true);
                         break;
                     }
@@ -424,7 +424,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 break;
             case 4:
                 final hg.j1 j1Var2 = (hg.j1) this.b;
-                v51 v51Var2 = (v51) obj;
+                x51 x51Var2 = (x51) obj;
                 final View view3 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
@@ -432,7 +432,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 int i21 = j1Var2.c;
                 int i22 = j1Var2.d;
                 ArrayList arrayList3 = j1Var2.b;
-                int i23 = v51Var2.d;
+                int i23 = x51Var2.d;
                 if (i23 == -1) {
                     j1Var2.r = !j1Var2.r;
                     arrayList3.clear();
@@ -441,7 +441,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                     }
                     w8 w8Var = (w8) view3;
                     boolean z11 = j1Var2.r;
-                    v51Var2.e = z11;
+                    x51Var2.e = z11;
                     w8Var.setChecked(z11);
                     boolean z12 = j1Var2.r;
                     w8Var.b(h6.w0(null, z12 ? h6.f6 : h6.e6, false), z12);
@@ -469,13 +469,13 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                     }
                     j1Var2.n.Y2.N(true);
                     break;
-                } else if (v51Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (x51Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i25 = i10 - 1;
                     hg.g1 g1Var = i25 >= 0 ? (hg.g1) arrayList3.get(i25) : null;
                     final hg.g1 g1Var2 = (hg.g1) arrayList3.get(i10);
                     int i26 = i10 + 1;
                     hg.g1 g1Var3 = i26 < arrayList3.size() ? (hg.g1) arrayList3.get(i26) : null;
-                    int i27 = v51Var2.d % 3;
+                    int i27 = x51Var2.d % 3;
                     if (i27 == 0) {
                         Activity parentActivity = j1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
@@ -593,7 +593,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5, OnSuccessL
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                hg.f2.U((hg.f2) this.b, (v51) obj, (View) obj2);
+                hg.f2.U((hg.f2) this.b, (x51) obj, (View) obj2);
                 break;
         }
     }

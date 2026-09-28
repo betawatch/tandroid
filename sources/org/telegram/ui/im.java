@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class im implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ org.telegram.ui.Cells.u1 a;
@@ -44,7 +44,7 @@ public final class im implements ViewTreeObserver.OnPreDrawListener {
         AnimatorSet animatorSet2 = new AnimatorSet();
         animatorSet2.playTogether(ObjectAnimator.ofFloat(sendAnimationData, emVar, imageWidth, 1.0f), ObjectAnimator.ofFloat(sendAnimationData, new gm(this), 0.0f, 1.0f));
         animatorSet.playTogether(ObjectAnimator.ofFloat(sendAnimationData, fmVar, sendAnimationData.x, iArr[0] + (sendAnimationData.fromPreview ? 0.0f : photoImage.getCenterX())), animatorSet2);
-        animatorSet.setInterpolator(org.telegram.ui.Components.rr.h);
+        animatorSet.setInterpolator(org.telegram.ui.Components.sr.h);
         animatorSet.setDuration(460L);
         animatorSet.addListener(new t4(this, 22));
         animatorSet.start();

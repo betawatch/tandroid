@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class xr implements TextWatcher {
     public final /* synthetic */ int a;
@@ -179,9 +179,9 @@ public final class xr implements TextWatcher {
             case 3:
                 gn0 gn0Var = (gn0) this.d;
                 if (!gn0Var.a1) {
-                    org.telegram.ui.Components.g40 g40Var = (org.telegram.ui.Components.g40) gn0Var.Y[2];
-                    int selectionStart3 = g40Var.getSelectionStart();
-                    String obj4 = g40Var.getText().toString();
+                    org.telegram.ui.Components.i40 i40Var = (org.telegram.ui.Components.i40) gn0Var.Y[2];
+                    int selectionStart3 = i40Var.getSelectionStart();
+                    String obj4 = i40Var.getText().toString();
                     if (this.b == 3) {
                         obj4 = obj4.substring(0, this.c) + obj4.substring(this.c + 1);
                         selectionStart3--;
@@ -197,7 +197,7 @@ public final class xr implements TextWatcher {
                         i30 = i31;
                     }
                     gn0Var.a1 = true;
-                    String hintText3 = g40Var.getHintText();
+                    String hintText3 = i40Var.getHintText();
                     if (hintText3 != null) {
                         int i32 = 0;
                         while (true) {
@@ -220,11 +220,11 @@ public final class xr implements TextWatcher {
                             }
                         }
                     }
-                    g40Var.setText(sb4);
+                    i40Var.setText(sb4);
                     if (selectionStart3 >= 0) {
-                        g40Var.setSelection(Math.min(selectionStart3, g40Var.length()));
+                        i40Var.setSelection(Math.min(selectionStart3, i40Var.length()));
                     }
-                    g40Var.invalidate();
+                    i40Var.invalidate();
                     gn0Var.a1 = false;
                     break;
                 }
@@ -232,9 +232,9 @@ public final class xr implements TextWatcher {
             default:
                 oo0 oo0Var = (oo0) this.d;
                 if (!oo0Var.n0) {
-                    org.telegram.ui.Components.g40 g40Var2 = (org.telegram.ui.Components.g40) oo0Var.f[9];
-                    int selectionStart4 = g40Var2.getSelectionStart();
-                    String obj5 = g40Var2.getText().toString();
+                    org.telegram.ui.Components.i40 i40Var2 = (org.telegram.ui.Components.i40) oo0Var.f[9];
+                    int selectionStart4 = i40Var2.getSelectionStart();
+                    String obj5 = i40Var2.getText().toString();
                     if (this.b == 3) {
                         obj5 = obj5.substring(0, this.c) + obj5.substring(this.c + 1);
                         selectionStart4--;
@@ -250,7 +250,7 @@ public final class xr implements TextWatcher {
                         i33 = i34;
                     }
                     oo0Var.n0 = true;
-                    String hintText4 = g40Var2.getHintText();
+                    String hintText4 = i40Var2.getHintText();
                     if (hintText4 != null) {
                         int i35 = 0;
                         while (true) {
@@ -273,11 +273,11 @@ public final class xr implements TextWatcher {
                             }
                         }
                     }
-                    g40Var2.setText(sb5);
+                    i40Var2.setText(sb5);
                     if (selectionStart4 >= 0) {
-                        g40Var2.setSelection(Math.min(selectionStart4, g40Var2.length()));
+                        i40Var2.setSelection(Math.min(selectionStart4, i40Var2.length()));
                     }
-                    g40Var2.invalidate();
+                    i40Var2.invalidate();
                     oo0Var.n0 = false;
                     break;
                 }

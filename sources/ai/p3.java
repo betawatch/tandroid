@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.hy0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.aj;
 import org.telegram.ui.c90;
@@ -27,7 +27,7 @@ import org.telegram.ui.rp;
 import org.telegram.ui.t31;
 import org.telegram.ui.wm0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -101,7 +101,7 @@ public final /* synthetic */ class p3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new m3((kq) obj4, tL_error, (TLRPC.InputCheckPasswordSRP) obj, (TwoStepVerificationActivity) obj3, (TLRPC.TL_channels_editCreator) obj2, 20));
                 break;
             case 7:
-                fy0.p((js0) obj4, this.d, (TLRPC.TL_messages_getAttachedStickers) obj3, (lo) obj2, tLObject, tL_error);
+                hy0.p((js0) obj4, this.d, (TLRPC.TL_messages_getAttachedStickers) obj3, (lo) obj2, tLObject, tL_error);
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new c90(obj4, tL_error, obj, obj3, obj2, 5));

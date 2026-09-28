@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class r5 implements DialogInterface.OnDismissListen
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
-        org.telegram.ui.Components.ij0 ij0Var;
+        org.telegram.ui.Components.kj0 kj0Var;
         int i10 = this.a;
         Object obj = this.b;
         switch (i10) {
@@ -80,17 +80,17 @@ public final /* synthetic */ class r5 implements DialogInterface.OnDismissListen
                 }
             case 8:
                 bf0 bf0Var = (bf0) obj;
-                org.telegram.ui.Components.ij0 ij0Var2 = bf0Var.I;
+                org.telegram.ui.Components.kj0 kj0Var2 = bf0Var.I;
                 id idVar = bf0Var.n;
                 if (!bf0Var.L.h()) {
-                    idVar.setAnimation(ij0Var2);
-                    ij0Var2.P(86);
+                    idVar.setAnimation(kj0Var2);
+                    kj0Var2.P(86);
                     idVar.setOnAnimationEndListener(new od0(bf0Var, 2));
                     idVar.d();
                     break;
                 } else {
-                    idVar.setAnimation(ij0Var2);
-                    ij0Var2.N(0, false, false);
+                    idVar.setAnimation(kj0Var2);
+                    kj0Var2.N(0, false, false);
                     bf0Var.K = true;
                     break;
                 }
@@ -129,11 +129,11 @@ public final /* synthetic */ class r5 implements DialogInterface.OnDismissListen
                 if (!profileActivity.q0.h()) {
                     profileActivity.V.P(86);
                     profileActivity.W.P(86);
-                    org.telegram.ui.Components.oh0 oh0Var = profileActivity.a0;
-                    if (oh0Var != null) {
-                        org.telegram.ui.Components.lh0 j3 = org.telegram.ui.Components.oh0.j(14, oh0Var.a);
-                        if (j3 != null && (ij0Var = j3.k) != null) {
-                            ij0Var.start();
+                    org.telegram.ui.Components.qh0 qh0Var = profileActivity.a0;
+                    if (qh0Var != null) {
+                        org.telegram.ui.Components.nh0 j3 = org.telegram.ui.Components.qh0.j(14, qh0Var.a);
+                        if (j3 != null && (kj0Var = j3.k) != null) {
+                            kj0Var.start();
                         }
                     } else {
                         profileActivity.v.d();

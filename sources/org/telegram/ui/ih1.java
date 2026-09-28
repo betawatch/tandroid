@@ -13,9 +13,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ih1 extends org.telegram.ui.Components.m61 {
+public final class ih1 extends org.telegram.ui.Components.o61 {
     public gh1 d;
     public long e;
     public eh1 f;
@@ -25,19 +25,19 @@ public final class ih1 extends org.telegram.ui.Components.m61 {
 
     /* JADX WARN: Removed duplicated region for block: B:29:0x00aa  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x00ac  */
-    @Override // org.telegram.ui.Components.m61
+    @Override // org.telegram.ui.Components.o61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void U(ArrayList arrayList, org.telegram.ui.Components.j61 j61Var) {
+    public final void U(ArrayList arrayList, org.telegram.ui.Components.l61 l61Var) {
         CharSequence charSequence;
         long j3 = this.e;
         CharSequence charSequence2 = null;
         if (TextUtils.isEmpty(this.h) && j3 != 0) {
-            org.telegram.ui.Components.v51 c10 = org.telegram.ui.Components.v51.c(1, R.drawable.msg_archive_hide, LocaleController.getString(R.string.EditProfileChannelHide));
+            org.telegram.ui.Components.x51 c10 = org.telegram.ui.Components.x51.c(1, R.drawable.msg_archive_hide, LocaleController.getString(R.string.EditProfileChannelHide));
             c10.r = true;
             arrayList.add(c10);
-            arrayList.add(org.telegram.ui.Components.v51.B(null));
+            arrayList.add(org.telegram.ui.Components.x51.B(null));
         }
         if (TextUtils.isEmpty(this.h)) {
             com.google.android.gms.internal.vision.e2.n(R.string.EditProfileChannelSelect, arrayList);
@@ -64,54 +64,54 @@ public final class ih1 extends org.telegram.ui.Components.m61 {
                         if (!org.telegram.messenger.f0.w(" ", lowerCase, lowerCase2) && !translitSafe2.startsWith(translitSafe) && !org.telegram.messenger.f0.w(" ", translitSafe, translitSafe2)) {
                         }
                         long j10 = chat.id;
-                        org.telegram.ui.Components.v51 v51Var = new org.telegram.ui.Components.v51(11);
-                        v51Var.w = true;
-                        v51Var.x = -j10;
-                        v51Var.K(j3 != j10);
-                        arrayList.add(v51Var);
+                        org.telegram.ui.Components.x51 x51Var = new org.telegram.ui.Components.x51(11);
+                        x51Var.w = true;
+                        x51Var.x = -j10;
+                        x51Var.K(j3 != j10);
+                        arrayList.add(x51Var);
                     }
                 }
                 charSequence = charSequence2;
                 long j102 = chat.id;
-                org.telegram.ui.Components.v51 v51Var2 = new org.telegram.ui.Components.v51(11);
-                v51Var2.w = true;
-                v51Var2.x = -j102;
-                v51Var2.K(j3 != j102);
-                arrayList.add(v51Var2);
+                org.telegram.ui.Components.x51 x51Var2 = new org.telegram.ui.Components.x51(11);
+                x51Var2.w = true;
+                x51Var2.x = -j102;
+                x51Var2.K(j3 != j102);
+                arrayList.add(x51Var2);
             }
             charSequence2 = charSequence;
         }
         CharSequence charSequence3 = charSequence2;
         if (TextUtils.isEmpty(this.h) && i10 == 0) {
-            org.telegram.ui.Components.v51 c11 = org.telegram.ui.Components.v51.c(2, R.drawable.msg_channel_create, LocaleController.getString(R.string.EditProfileChannelStartNew));
+            org.telegram.ui.Components.x51 c11 = org.telegram.ui.Components.x51.c(2, R.drawable.msg_channel_create, LocaleController.getString(R.string.EditProfileChannelStartNew));
             c11.q = true;
             arrayList.add(c11);
         }
-        arrayList.add(org.telegram.ui.Components.v51.B(charSequence3));
+        arrayList.add(org.telegram.ui.Components.x51.B(charSequence3));
         org.telegram.ui.ActionBar.u0 u0Var = this.n;
         if (u0Var != null) {
             u0Var.setVisibility(i10 <= 5 ? 8 : 0);
         }
     }
 
-    @Override // org.telegram.ui.Components.m61
+    @Override // org.telegram.ui.Components.o61
     public final CharSequence V() {
         return LocaleController.getString(R.string.EditProfileChannelTitle);
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final void W(org.telegram.ui.Components.v51 v51Var, View view) {
+    @Override // org.telegram.ui.Components.o61
+    public final void W(org.telegram.ui.Components.x51 x51Var, View view) {
         eh1 eh1Var = this.f;
-        int i10 = v51Var.d;
+        int i10 = x51Var.d;
         if (i10 == 1) {
             eh1Var.run(null);
             finishFragment();
             return;
         }
         if (i10 != 2) {
-            if (v51Var.a == 12) {
+            if (x51Var.a == 12) {
                 finishFragment();
-                eh1Var.run(getMessagesController().getChat(Long.valueOf(-v51Var.x)));
+                eh1Var.run(getMessagesController().getChat(Long.valueOf(-x51Var.x)));
                 return;
             }
             return;
@@ -126,12 +126,12 @@ public final class ih1 extends org.telegram.ui.Components.m61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final boolean X(org.telegram.ui.Components.v51 v51Var, View view) {
+    @Override // org.telegram.ui.Components.o61
+    public final boolean X(org.telegram.ui.Components.x51 x51Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.m61, org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.Components.o61, org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         org.telegram.ui.ActionBar.u0 c10 = this.actionBar.n().c(0, R.drawable.outline_header_search, getResourceProvider());
         c10.F();

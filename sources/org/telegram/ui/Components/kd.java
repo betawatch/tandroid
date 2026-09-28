@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kd implements Runnable {
     public final /* synthetic */ int a;
@@ -99,55 +99,55 @@ public final /* synthetic */ class kd implements Runnable {
                 }
                 break;
             case 9:
-                hj hjVar = (hj) this.c;
+                ij ijVar = (ij) this.c;
                 ArrayList arrayList = (ArrayList) this.b;
-                hjVar.H = false;
-                hjVar.I = arrayList;
-                hjVar.P();
+                ijVar.G = false;
+                ijVar.H = arrayList;
+                ijVar.P();
                 break;
             case 10:
-                hj hjVar2 = (hj) this.c;
+                ij ijVar2 = (ij) this.c;
                 ((wi) this.b).Z0();
-                hjVar2.L();
-                hjVar2.b.X1(hjVar2, 0);
+                ijVar2.L();
+                ijVar2.b.X1(ijVar2, 0);
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new kd(12, (yj) this.c, ((xj) this.b).run()));
+                AndroidUtilities.runOnUIThread(new kd(12, (zj) this.c, ((yj) this.b).run()));
                 break;
             case 12:
-                ((yj) this.c).setStatus((CharSequence) this.b);
+                ((zj) this.c).setStatus((CharSequence) this.b);
                 break;
             case 13:
-                ok okVar = (ok) this.c;
+                pk pkVar = (pk) this.c;
                 String str = (String) this.b;
-                okVar.getClass();
-                ArrayList arrayList2 = new ArrayList(okVar.X.v.c);
-                if (okVar.X.v.d.isEmpty()) {
-                    arrayList2.addAll(0, okVar.X.v.e);
+                pkVar.getClass();
+                ArrayList arrayList2 = new ArrayList(pkVar.X.v.c);
+                if (pkVar.X.v.d.isEmpty()) {
+                    arrayList2.addAll(0, pkVar.X.v.e);
                 }
-                Utilities.searchQueue.postRunnable(new ai.s4(okVar, str, !okVar.R.isEmpty(), arrayList2, 18));
+                Utilities.searchQueue.postRunnable(new ai.s4(pkVar, str, !pkVar.R.isEmpty(), arrayList2, 18));
                 break;
             case 14:
-                ok okVar2 = (ok) this.c;
+                pk pkVar2 = (pk) this.c;
                 ArrayList arrayList3 = (ArrayList) this.b;
-                pk pkVar = okVar2.X;
-                boolean z10 = pkVar.b0;
-                ek ekVar = pkVar.r;
+                qk qkVar = pkVar2.X;
+                boolean z10 = qkVar.b0;
+                fk fkVar = qkVar.r;
                 if (z10) {
-                    s4.h0 adapter = ekVar.getAdapter();
-                    ok okVar3 = pkVar.y;
-                    if (adapter != okVar3) {
-                        ekVar.setAdapter(okVar3);
+                    s4.h0 adapter = fkVar.getAdapter();
+                    pk pkVar3 = qkVar.y;
+                    if (adapter != pkVar3) {
+                        fkVar.setAdapter(pkVar3);
                     }
                 }
-                okVar2.s = arrayList3;
-                okVar2.l();
+                pkVar2.s = arrayList3;
+                pkVar2.l();
                 break;
             case 15:
-                hl hlVar = (hl) this.c;
+                il ilVar = (il) this.c;
                 float[] fArr = (float[]) this.b;
-                hlVar.getClass();
-                hlVar.b0(fArr[0], fArr[1]);
+                ilVar.getClass();
+                ilVar.b0(fArr[0], fArr[1]);
                 break;
             case 16:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.c;
@@ -155,43 +155,43 @@ public final /* synthetic */ class kd implements Runnable {
                 boolean z11 = ChatAttachAlertPhotoLayout.q1;
                 int currentItemTop = oiVar.getCurrentItemTop();
                 int listTopPadding = oiVar.getListTopPadding();
-                ul ulVar = chatAttachAlertPhotoLayout.E;
+                vl vlVar = chatAttachAlertPhotoLayout.E;
                 if (currentItemTop > AndroidUtilities.dp(8.0f)) {
                     listTopPadding -= currentItemTop;
                 }
-                ulVar.scrollBy(0, listTopPadding);
+                vlVar.scrollBy(0, listTopPadding);
                 break;
             case 17:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = (ChatAttachAlertPhotoLayout) this.c;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b;
-                em emVar = chatAttachAlertPhotoLayout2.P;
-                if (emVar != null) {
-                    emVar.setLayoutParams(layoutParams);
+                fm fmVar = chatAttachAlertPhotoLayout2.P;
+                if (fmVar != null) {
+                    fmVar.setLayoutParams(layoutParams);
                     break;
                 }
                 break;
             case 18:
-                rm rmVar = (rm) this.c;
+                sm smVar = (sm) this.c;
                 oi oiVar2 = (oi) this.b;
                 int currentItemTop2 = oiVar2.getCurrentItemTop();
                 int listTopPadding2 = oiVar2.getListTopPadding();
-                ai.w0 w0Var = rmVar.r;
+                ai.w0 w0Var = smVar.r;
                 if (currentItemTop2 > AndroidUtilities.dp(7.0f)) {
                     listTopPadding2 -= currentItemTop2;
                 }
                 w0Var.scrollBy(0, listTopPadding2);
                 break;
             case 19:
-                io ioVar = (io) this.c;
+                jo joVar = (jo) this.c;
                 hg.h hVar = (hg.h) this.b;
-                ko.a(ioVar.c);
+                lo.a(joVar.c);
                 hVar.run();
                 break;
             case 20:
-                ((ip) this.c).b.x((List) this.b);
+                ((jp) this.c).b.x((List) this.b);
                 break;
             case 21:
-                ((jp) this.c).b.x((List) this.b);
+                ((kp) this.c).b.x((List) this.b);
                 break;
             case 22:
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.c;
@@ -200,49 +200,49 @@ public final /* synthetic */ class kd implements Runnable {
                 nf.f.s(context, "https://t.me/BotFather?start=deletebot");
                 break;
             case 23:
-                nr nrVar = (nr) this.c;
+                or orVar = (or) this.c;
                 ci.d dVar = (ci.d) this.b;
-                nrVar.getClass();
+                orVar.getClass();
                 dVar.setLoading(false);
-                nrVar.dismiss();
+                orVar.dismiss();
                 break;
             case 24:
-                nr nrVar2 = (nr) this.c;
+                or orVar2 = (or) this.c;
                 TLObject tLObject = (TLObject) this.b;
                 if (tLObject != null && (tLObject instanceof TL_phone.groupCallStreamRtmpUrl)) {
                     TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
-                    nrVar2.b0 = groupcallstreamrtmpurl.url;
-                    nrVar2.c0 = groupcallstreamrtmpurl.key;
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(nrVar2.c0);
-                    nrVar2.d0 = spannableStringBuilder;
-                    b11 b11Var = new b11();
-                    b11Var.a |= 256;
-                    b11Var.b = 0;
-                    b11Var.c = spannableStringBuilder.length();
-                    nrVar2.d0.setSpan(new c11(b11Var, 0), 0, nrVar2.d0.length(), 0);
-                    nrVar2.e0.N(false);
+                    orVar2.b0 = groupcallstreamrtmpurl.url;
+                    orVar2.c0 = groupcallstreamrtmpurl.key;
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(orVar2.c0);
+                    orVar2.d0 = spannableStringBuilder;
+                    d11 d11Var = new d11();
+                    d11Var.a |= 256;
+                    d11Var.b = 0;
+                    d11Var.c = spannableStringBuilder.length();
+                    orVar2.d0.setSpan(new e11(d11Var, 0), 0, orVar2.d0.length(), 0);
+                    orVar2.e0.N(false);
                     break;
                 }
                 break;
             case 25:
-                rs rsVar = (rs) this.c;
+                ss ssVar = (ss) this.c;
                 TLObject tLObject2 = (TLObject) this.b;
-                ns nsVar = rsVar.b;
-                ArrayList arrayList4 = rsVar.h;
-                int i14 = rsVar.a;
+                os osVar = ssVar.b;
+                ArrayList arrayList4 = ssVar.h;
+                int i14 = ssVar.a;
                 if (tLObject2 instanceof TL_bots.popularAppBots) {
                     TL_bots.popularAppBots popularappbots = (TL_bots.popularAppBots) tLObject2;
                     MessagesController.getInstance(i14).putUsers(popularappbots.users, false);
                     MessagesStorage.getInstance(i14).putUsersAndChats(popularappbots.users, null, false, true);
                     arrayList4.addAll(popularappbots.users);
                     String str2 = popularappbots.next_offset;
-                    rsVar.g = str2;
-                    rsVar.e = str2 == null;
+                    ssVar.g = str2;
+                    ssVar.e = str2 == null;
                     long currentTimeMillis = System.currentTimeMillis();
-                    rsVar.f = currentTimeMillis;
-                    if (!rsVar.i) {
-                        rsVar.i = true;
-                        String str3 = rsVar.g;
+                    ssVar.f = currentTimeMillis;
+                    if (!ssVar.i) {
+                        ssVar.i = true;
+                        String str3 = ssVar.g;
                         if (str3 == null) {
                             str3 = "";
                         }
@@ -251,20 +251,20 @@ public final /* synthetic */ class kd implements Runnable {
                         for (int i15 = 0; i15 < arrayList4.size(); i15 = com.google.android.gms.internal.vision.e2.g(((TLRPC.User) arrayList4.get(i15)).id, arrayList5, i15, 1)) {
                         }
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(i14);
-                        messagesStorage.getStorageQueue().postRunnable(new org.telegram.messenger.voip.f(rsVar, messagesStorage, arrayList5, currentTimeMillis, str4, 3));
+                        messagesStorage.getStorageQueue().postRunnable(new org.telegram.messenger.voip.f(ssVar, messagesStorage, arrayList5, currentTimeMillis, str4, 3));
                     }
-                    rsVar.c = false;
-                    nsVar.run();
+                    ssVar.c = false;
+                    osVar.run();
                     break;
                 } else {
-                    rsVar.g = null;
-                    rsVar.e = true;
-                    rsVar.c = false;
-                    nsVar.run();
+                    ssVar.g = null;
+                    ssVar.e = true;
+                    ssVar.c = false;
+                    osVar.run();
                     break;
                 }
             case 26:
-                qt qtVar = (qt) this.c;
+                rt rtVar = (rt) this.c;
                 Bitmap decodeFile = BitmapFactory.decodeFile((String) this.b);
                 Canvas canvas = new Canvas(Bitmap.createBitmap(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), Bitmap.Config.ARGB_8888));
                 Paint paint = new Paint(3);
@@ -272,18 +272,18 @@ public final /* synthetic */ class kd implements Runnable {
                 float max = Math.max(r2.getWidth() / decodeFile.getWidth(), r2.getHeight() / decodeFile.getHeight());
                 canvas.scale(max, max);
                 canvas.drawBitmap(decodeFile, (-decodeFile.getWidth()) / 2.0f, (-decodeFile.getHeight()) / 2.0f, paint);
-                AndroidUtilities.runOnUIThread(new kd(27, qtVar, decodeFile));
+                AndroidUtilities.runOnUIThread(new kd(27, rtVar, decodeFile));
                 break;
             case 27:
-                ((qt) this.c).setImage((Bitmap) this.b);
+                ((rt) this.c).setImage((Bitmap) this.b);
                 break;
             case 28:
                 ((EditTextBoldCursor) this.c).hintLayout.draw((Canvas) this.b);
                 break;
             default:
-                cv cvVar = (cv) this.c;
+                dv dvVar = (dv) this.c;
                 TLRPC.EmojiStatus emojiStatus = (TLRPC.EmojiStatus) this.b;
-                i10 = ((org.telegram.ui.ActionBar.e3) cvVar.a).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.e3) dvVar.a).currentAccount;
                 MessagesController.getInstance(i10).updateEmojiStatus(emojiStatus);
                 break;
         }

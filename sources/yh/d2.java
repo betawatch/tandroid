@@ -9,12 +9,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class d2 extends uq0 {
+public final class d2 extends wq0 {
     public final /* synthetic */ x3 b1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -24,7 +24,7 @@ public final class d2 extends uq0 {
         this.a0 = true;
     }
 
-    @Override // org.telegram.ui.Components.uq0
+    @Override // org.telegram.ui.Components.wq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         xc bulletinFactory;
         if (z10 && (bulletinFactory = getBulletinFactory()) != null) {
@@ -59,7 +59,7 @@ public final class d2 extends uq0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.uq0
+    @Override // org.telegram.ui.Components.wq0
     public final void S0(View view) {
         x3.k1(this.b1, view);
     }

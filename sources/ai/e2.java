@@ -10,17 +10,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.og0;
-import org.telegram.ui.Components.vr;
-import org.telegram.ui.Components.wu;
+import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.qg0;
+import org.telegram.ui.Components.wr;
+import org.telegram.ui.Components.xu;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -71,28 +71,28 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 }
                 break;
             case 9:
-                int i14 = nq.e0;
+                int i14 = oq.e0;
                 break;
             case 10:
-                int i15 = vr.s;
+                int i15 = wr.s;
                 break;
             case 11:
-                float[] fArr = FragmentContextView.O0;
+                float[] fArr = FragmentContextView.P0;
                 MediaController.getInstance().updateSilent(false);
                 break;
             case 12:
-                og0 og0Var = og0.p0;
-                wu wuVar = og0Var.U;
-                if (wuVar != null) {
-                    wuVar.H();
+                qg0 qg0Var = qg0.p0;
+                xu xuVar = qg0Var.U;
+                if (xuVar != null) {
+                    xuVar.H();
                 } else {
-                    PhotoViewer photoViewer = og0Var.V;
+                    PhotoViewer photoViewer = qg0Var.V;
                     if (photoViewer != null) {
                         photoViewer.P0();
                         MediaController.getInstance().tryResumePausedAudio();
                     }
                 }
-                og0.j(false);
+                qg0.j(false);
                 break;
             case 13:
                 org.telegram.ui.Components.voip.k1.j();

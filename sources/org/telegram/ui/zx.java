@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class zx extends org.telegram.ui.Components.lo0 {
+public final class zx extends org.telegram.ui.Components.no0 {
     public final yf.y Z0;
     public final yf.y a1;
     public final /* synthetic */ qy b1;
@@ -39,8 +39,8 @@ public final class zx extends org.telegram.ui.Components.lo0 {
             int dp = AndroidUtilities.dp(54.0f);
             kVar = ((org.telegram.ui.ActionBar.m2) qyVar).actionBar;
             int dp2 = ((AndroidUtilities.dp(qyVar.a) + kVar.getMeasuredHeight()) - AndroidUtilities.dp(2.0f)) - (qyVar.X2 != 0 ? dp : 0);
-            org.telegram.ui.Components.ls lsVar = qyVar.J1;
-            int c10 = dp2 + (lsVar != null ? (int) lsVar.c(AndroidUtilities.dp(7.0f)) : 0);
+            org.telegram.ui.Components.ms msVar = qyVar.J1;
+            int c10 = dp2 + (msVar != null ? (int) msVar.c(AndroidUtilities.dp(7.0f)) : 0);
             int l1 = org.telegram.ui.ActionBar.h6.l1(0.7f, qyVar.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
             yf.y yVar = this.Z0;
             yVar.b(l1);
@@ -72,7 +72,7 @@ public final class zx extends org.telegram.ui.Components.lo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public final void w(boolean z10) {
         if (Build.VERSION.SDK_INT >= 31) {
             qy qyVar = this.b1;
@@ -82,9 +82,9 @@ public final class zx extends org.telegram.ui.Components.lo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public final void x(int i10) {
-        org.telegram.ui.Components.ko0 ko0Var = this.T;
-        this.b1.c5(ko0Var != null && ko0Var.h(i10) == 2);
+        org.telegram.ui.Components.mo0 mo0Var = this.T;
+        this.b1.c5(mo0Var != null && mo0Var.h(i10) == 2);
     }
 }

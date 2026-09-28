@@ -40,15 +40,15 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.lu;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.mu;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.x6;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.z80;
 import org.telegram.ui.u80;
 import yh.m7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int c1 = 0;
@@ -108,7 +108,7 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
     public boolean b1;
     public TextView c;
     public int c0;
-    public lu d;
+    public mu d;
     public final int d0;
     public int e;
     public int e0;
@@ -119,10 +119,10 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
     public boolean h0;
     public boolean i0;
     public boolean j0;
-    public lj0 k0;
+    public nj0 k0;
     public CharSequence l0;
     public z1 m0;
-    public lu n;
+    public mu n;
     public CharSequence n0;
     public z1 o0;
     public String p0;
@@ -132,7 +132,7 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
     public FrameLayout s;
     public z1 s0;
     public ViewGroup t0;
-    public x80 u0;
+    public z80 u0;
     public u1 v;
     public TextView v0;
     public LinearLayout w;
@@ -211,11 +211,11 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        lu luVar;
-        if (i10 != NotificationCenter.emojiLoaded || (luVar = this.n) == null) {
+        mu muVar;
+        if (i10 != NotificationCenter.emojiLoaded || (muVar = this.n) == null) {
             return;
         }
-        luVar.invalidate();
+        muVar.invalidate();
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface
@@ -396,11 +396,11 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
                 this.a1.addView(this.V, w7.y5.t(-1, this.a0, 51, 0, 0, 0, 0));
             }
         } else {
-            lj0 lj0Var = new lj0(getContext());
-            this.k0 = lj0Var;
+            nj0 nj0Var = new nj0(getContext());
+            this.k0 = nj0Var;
             Drawable drawable2 = this.b0;
             if (drawable2 != null) {
-                lj0Var.setImageDrawable(drawable2);
+                nj0Var.setImageDrawable(drawable2);
                 Drawable drawable3 = this.b0;
                 if (drawable3 instanceof x6) {
                     x6 x6Var = (x6) drawable3;
@@ -410,15 +410,15 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
             } else {
                 int i14 = this.U;
                 if (i14 != 0) {
-                    lj0Var.setImageResource(i14);
+                    nj0Var.setImageResource(i14);
                 } else {
-                    lj0Var.setAutoRepeat(this.S0);
-                    lj0 lj0Var2 = this.k0;
+                    nj0Var.setAutoRepeat(this.S0);
+                    nj0 nj0Var2 = this.k0;
                     int i15 = this.X;
                     int i16 = this.Y;
-                    lj0Var2.f(i15, i16, i16, null);
+                    nj0Var2.f(i15, i16, i16, null);
                     if (this.Z != null) {
-                        ij0 animatedDrawable = this.k0.getAnimatedDrawable();
+                        kj0 animatedDrawable = this.k0.getAnimatedDrawable();
                         for (Map.Entry entry : this.Z.entrySet()) {
                             String str = (String) entry.getKey();
                             Integer num = (Integer) entry.getValue();
@@ -500,9 +500,9 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
             f7 = 20.0f;
             f10 = 4.0f;
         }
-        lu luVar = new lu(getContext());
-        this.n = luVar;
-        NotificationCenter.listenEmojiLoading(luVar);
+        mu muVar = new mu(getContext());
+        this.n = muVar;
+        NotificationCenter.listenEmojiLoading(muVar);
         this.n.setTextColor(e(this.W ? h6.y6 : h6.j5));
         this.n.setTextSize(1, 16.0f);
         this.n.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
@@ -515,9 +515,9 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
         int i17 = 19;
         if (i11 == 2) {
             this.a1.addView(this.n, w7.y5.t(-2, -2, (LocaleController.isRTL ? 5 : 3) | 48, 24, this.R == null ? 19 : 0, 24, 20));
-            x80 x80Var = new x80(getContext());
-            this.u0 = x80Var;
-            x80Var.a(this.e0 / 100.0f, false);
+            z80 z80Var = new z80(getContext());
+            this.u0 = z80Var;
+            z80Var.a(this.e0 / 100.0f, false);
             this.u0.setProgressColor(e(h6.F5));
             this.u0.setBackColor(e(h6.G5));
             this.a1.addView(this.u0, w7.y5.t(-1, 4, 19, 24, 0, 24, 0));
@@ -543,18 +543,18 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
             radialProgressView.setProgressColor(e(h6.N5));
             this.r.addView(radialProgressView, w7.y5.e(86, 86, 17));
         } else {
-            lu luVar2 = this.d;
-            if (luVar2 != null) {
-                this.w.addView(luVar2, w7.y5.k(22.0f, 4.0f, 22.0f, 12.0f, -1, -2));
+            mu muVar2 = this.d;
+            if (muVar2 != null) {
+                this.w.addView(muVar2, w7.y5.k(22.0f, 4.0f, 22.0f, 12.0f, -1, -2));
             }
             LinearLayout linearLayout2 = this.w;
-            lu luVar3 = this.n;
+            mu muVar3 = this.n;
             if (this.W) {
                 r15 = 1;
             } else if (!LocaleController.isRTL) {
                 r15 = 3;
             }
-            linearLayout2.addView(luVar3, w7.y5.t(-2, -2, r15 | 48, 24, 0, 24, (this.b == null && this.P == null) ? 0 : this.G));
+            linearLayout2.addView(muVar3, w7.y5.t(-2, -2, r15 | 48, 24, 0, 24, (this.b == null && this.P == null) ? 0 : this.G));
             TextView textView3 = this.c;
             if (textView3 != null) {
                 this.w.addView(textView3, w7.y5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
@@ -880,9 +880,9 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
 
     public final void n(int i10) {
         this.e0 = i10;
-        x80 x80Var = this.u0;
-        if (x80Var != null) {
-            x80Var.a(i10 / 100.0f, true);
+        z80 z80Var = this.u0;
+        if (z80Var != null) {
+            z80Var.a(i10 / 100.0f, true);
             this.v0.setText(String.format("%d%%", Integer.valueOf(this.e0)));
         }
     }
@@ -892,9 +892,9 @@ public class a2 extends Dialog implements Drawable.Callback, NotificationCenter.
         if (nVar != null) {
             nVar.setTextColor(i10);
         }
-        lu luVar = this.n;
-        if (luVar != null) {
-            luVar.setTextColor(i10);
+        mu muVar = this.n;
+        if (muVar != null) {
+            muVar.setTextColor(i10);
         }
     }
 

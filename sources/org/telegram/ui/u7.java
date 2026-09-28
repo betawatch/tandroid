@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class u7 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -49,9 +49,9 @@ public final class u7 extends FrameLayout {
                 int i17 = this.b;
                 if (i17 > 0 && i17 != i16) {
                     setVisibility(8);
-                    org.telegram.ui.Components.a30 a30Var = (org.telegram.ui.Components.a30) this.c;
-                    a30Var.w = false;
-                    a30Var.a();
+                    org.telegram.ui.Components.c30 c30Var = (org.telegram.ui.Components.c30) this.c;
+                    c30Var.w = false;
+                    c30Var.a();
                 }
                 this.b = i16;
                 break;

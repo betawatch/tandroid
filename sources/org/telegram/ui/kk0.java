@@ -10,9 +10,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class kk0 extends org.telegram.ui.Components.vl0 {
+public final class kk0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -28,7 +28,7 @@ public final class kk0 extends org.telegram.ui.Components.vl0 {
         c2Var.a = new du(this, 25);
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -112,6 +112,6 @@ public final class kk0 extends org.telegram.ui.Components.vl0 {
         } else {
             zaVar = new org.telegram.ui.Cells.za(4, 0, this.c, null, false, true);
         }
-        return new org.telegram.ui.Components.gl0(zaVar);
+        return new org.telegram.ui.Components.il0(zaVar);
     }
 }

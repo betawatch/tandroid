@@ -3,9 +3,9 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hb0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.dw0 {
+public final /* synthetic */ class hb0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.fw0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ rb0 b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class hb0 implements org.telegram.ui.Components.d5,
         rb0Var.finishFragment();
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public void h(int i10) {
         switch (this.a) {
             case 2:
@@ -53,7 +53,7 @@ public final /* synthetic */ class hb0 implements org.telegram.ui.Components.d5,
         }
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public /* synthetic */ void n() {
         int i10 = this.a;
     }

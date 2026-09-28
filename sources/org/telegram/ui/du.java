@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class du implements org.telegram.ui.Components.dw0, org.telegram.ui.ActionBar.z1, MessagesController.ErrorDelegate, org.telegram.ui.Components.dh0, Utilities.Callback5, org.telegram.ui.Components.be0, org.telegram.ui.ActionBar.k1, org.telegram.ui.Components.hl0, gg.b2, org.telegram.ui.Components.ml0, r0.n, org.telegram.ui.Components.ll0, vt, le.e, mj0 {
+public final /* synthetic */ class du implements org.telegram.ui.Components.fw0, org.telegram.ui.ActionBar.z1, MessagesController.ErrorDelegate, org.telegram.ui.Components.fh0, Utilities.Callback5, org.telegram.ui.Components.de0, org.telegram.ui.ActionBar.k1, org.telegram.ui.Components.jl0, gg.b2, org.telegram.ui.Components.ol0, r0.n, org.telegram.ui.Components.nl0, vt, le.e, mj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -113,7 +113,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
         ((Layout) this.b).draw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         int U;
         switch (this.a) {
@@ -159,7 +159,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         switch (this.a) {
             case 13:
@@ -236,7 +236,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         switch (this.a) {
         }
@@ -380,8 +380,8 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
         }
     }
 
-    @Override // org.telegram.ui.Components.be0
-    public void g(org.telegram.ui.Components.ce0 ce0Var) {
+    @Override // org.telegram.ui.Components.de0
+    public void g(org.telegram.ui.Components.ee0 ee0Var) {
         ExternalActionActivity externalActionActivity = (ExternalActionActivity) this.b;
         ArrayList arrayList = ExternalActionActivity.x;
         SharedConfig.isWaitingForPasscodeEnter = false;
@@ -394,10 +394,10 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
         if (AndroidUtilities.isTablet()) {
             externalActionActivity.d.c0();
         }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, ce0Var);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, ee0Var);
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public void h(int i10) {
         int i11;
         int i12;
@@ -435,9 +435,9 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
         i14 = ((org.telegram.ui.ActionBar.m2) dataAutoDownloadActivity).currentAccount;
         DownloadController.getInstance(i14).checkAutodownloadSettings();
         for (int i19 = 0; i19 < 4; i19++) {
-            org.telegram.ui.Components.wl0 wl0Var = dataAutoDownloadActivity.b;
+            org.telegram.ui.Components.yl0 yl0Var = dataAutoDownloadActivity.b;
             i15 = dataAutoDownloadActivity.photosRow;
-            s4.c1 K = wl0Var.K(i15 + i19);
+            s4.c1 K = yl0Var.K(i15 + i19);
             if (K != null) {
                 eu euVar = dataAutoDownloadActivity.a;
                 i16 = dataAutoDownloadActivity.photosRow;
@@ -469,12 +469,12 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.hl0
+    @Override // org.telegram.ui.Components.jl0
     public int run() {
         return ((FiltersSetupActivity) this.b).w;
     }
@@ -495,7 +495,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                if (((org.telegram.ui.Components.v51) obj).d == 1 && izVar.b != null) {
+                if (((org.telegram.ui.Components.x51) obj).d == 1 && izVar.b != null) {
                     boolean z10 = !izVar.c;
                     izVar.c = z10;
                     ai.m0 m0Var = izVar.f;
@@ -508,7 +508,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
                 }
                 break;
             default:
-                org.telegram.ui.Components.wl0.O0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((org.telegram.ui.Components.wl0) this.b).p2);
+                org.telegram.ui.Components.yl0.O0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((org.telegram.ui.Components.yl0) this.b).p2);
                 break;
         }
     }
@@ -525,7 +525,7 @@ public final /* synthetic */ class du implements org.telegram.ui.Components.dw0,
     private final /* synthetic */ void l(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public /* synthetic */ void n() {
     }
 

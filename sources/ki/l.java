@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class l implements p {
     public long A;
@@ -355,7 +355,7 @@ public final class l implements p {
         this.f.a(sb2.toString(), runtimeException);
         if (this.h.compareAndSet(false, true)) {
             k2.u uVar = this.g.a;
-            ((s0) uVar.b).h.post(new h0(1, uVar, runtimeException));
+            ((s0) uVar.b).i.post(new h0(1, uVar, runtimeException));
         }
     }
 

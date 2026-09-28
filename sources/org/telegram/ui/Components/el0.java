@@ -1,26 +1,53 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class el0 extends vl0 {
-    public boolean E(wl0 wl0Var) {
-        return true;
+public final class el0 extends Drawable {
+    public final Paint a = new Paint(1);
+    public final /* synthetic */ View b;
+    public final /* synthetic */ Path c;
+    public final /* synthetic */ RectF d;
+    public final /* synthetic */ yl0 e;
+
+    public el0(yl0 yl0Var, View view, Path path, RectF rectF) {
+        this.e = yl0Var;
+        this.b = view;
+        this.c = path;
+        this.d = rectF;
     }
 
-    public abstract String F(int i10);
-
-    public abstract void G(wl0 wl0Var, float f7, int[] iArr);
-
-    public float H(wl0 wl0Var) {
-        return wl0Var.computeVerticalScrollOffset() / ((k() * wl0Var.getChildAt(0).getMeasuredHeight()) - wl0Var.getMeasuredHeight());
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        View view = this.b;
+        canvas.translate(-view.getX(), -view.getY());
+        canvas.clipPath(this.c);
+        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, this.e.p2);
+        Paint paint = this.a;
+        paint.setColor(i0.a.k(v02, paint.getAlpha()));
+        canvas.drawRect(this.d, paint);
+        canvas.restore();
     }
 
-    public void I() {
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public void J(wl0 wl0Var) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
     }
 
-    public void K() {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

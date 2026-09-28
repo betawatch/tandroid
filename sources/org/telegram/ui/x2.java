@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class x2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.p9 {
     public static final /* synthetic */ int V = 0;
@@ -560,7 +560,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
                         int i27 = i17;
                         TL_iv.pageBlockVideo pageblockvideo3 = this.L;
                         g4Var = g4Var2;
-                        b3 p5 = i4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (g4Var2 == null || !g4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.uw0.a(), 0, this.b);
+                        b3 p5 = i4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (g4Var2 == null || !g4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ww0.a(), 0, this.b);
                         this.d = p5;
                         if (p5 != null) {
                             i17 = this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i27;

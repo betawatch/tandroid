@@ -26,11 +26,11 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.t5;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class f1 extends j {
     public boolean A0;
@@ -254,13 +254,13 @@ public abstract class f1 extends j {
     }
 
     @Override // qg.j
-    public sk0 getSelectionBounds() {
+    public uk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new sk0();
+            return new uk0();
         }
         float scaleX = viewGroup.getScaleX();
-        return new sk0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
+        return new uk0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
     }
 
     @Override // qg.j

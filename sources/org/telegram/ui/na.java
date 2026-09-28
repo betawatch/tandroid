@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class na extends FrameLayout {
     public float E;
@@ -33,7 +33,7 @@ public abstract class na extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 b;
     public final org.telegram.ui.ActionBar.h5 c;
     public final ImageView d;
-    public final org.telegram.ui.Components.up e;
+    public final org.telegram.ui.Components.vp e;
     public final org.telegram.ui.Components.p6 f;
     public final Drawable[] h;
     public float n;
@@ -47,8 +47,8 @@ public abstract class na extends FrameLayout {
     public na(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.a = false;
-        this.y = new org.telegram.ui.Components.e6(this, 300L, org.telegram.ui.Components.rr.f);
-        this.I = new org.telegram.ui.Components.e6(this, 400L, org.telegram.ui.Components.rr.h);
+        this.y = new org.telegram.ui.Components.e6(this, 300L, org.telegram.ui.Components.sr.f);
+        this.I = new org.telegram.ui.Components.e6(this, 400L, org.telegram.ui.Components.sr.h);
         this.b = d6Var;
         setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, d6Var));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(getContext());
@@ -59,18 +59,18 @@ public abstract class na extends FrameLayout {
         addView(h5Var, w7.y5.d(-1, -2.0f, 48, 70.0f, 9.0f, 0.0f, 50.0f));
         ImageView imageView = new ImageView(getContext());
         this.d = imageView;
-        org.telegram.ui.Components.up upVar = new org.telegram.ui.Components.up(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(1.35f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.n6, d6Var));
-        this.e = upVar;
+        org.telegram.ui.Components.vp vpVar = new org.telegram.ui.Components.vp(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(1.35f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.n6, d6Var));
+        this.e = vpVar;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageDrawable(upVar);
+        imageView.setImageDrawable(vpVar);
         imageView.setAlpha(0.0f);
         imageView.setVisibility(0);
-        upVar.setBounds(0, 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
+        vpVar.setBounds(0, 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
         addView(imageView, w7.y5.d(14, 14.0f, 48, 70.0f, 35.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(getContext(), false, true, true);
         this.f = p6Var;
         p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
-        p6Var.b(0.4f, 120L, org.telegram.ui.Components.rr.g);
+        p6Var.b(0.4f, 120L, org.telegram.ui.Components.sr.g);
         p6Var.setTextSize(AndroidUtilities.dp(13.0f));
         addView(p6Var, w7.y5.d(-1, -2.0f, 48, 70.0f, 23.0f, 0.0f, 0.0f));
         Drawable[] drawableArr = {context.getDrawable(R.drawable.msg_link_1).mutate(), context.getDrawable(R.drawable.msg_link_2).mutate()};
@@ -115,7 +115,7 @@ public abstract class na extends FrameLayout {
             this.F = ofFloat;
             ofFloat.addUpdateListener(new ma(this, i10));
             this.F.setDuration(120L);
-            this.F.setInterpolator(org.telegram.ui.Components.rr.g);
+            this.F.setInterpolator(org.telegram.ui.Components.sr.g);
             this.F.start();
             return;
         }
@@ -210,7 +210,7 @@ public abstract class na extends FrameLayout {
             this.s = ofFloat;
             ofFloat.addUpdateListener(new ma(this, i10));
             this.s.addListener(new ai.n(26, this, z10));
-            this.s.setInterpolator(org.telegram.ui.Components.rr.g);
+            this.s.setInterpolator(org.telegram.ui.Components.sr.g);
             this.s.setDuration(200L);
             this.s.start();
         }

@@ -22,9 +22,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class x60 extends org.telegram.ui.Components.el0 {
+public final class x60 extends org.telegram.ui.Components.gl0 {
     public int E;
     public int F;
     public int G;
@@ -113,7 +113,7 @@ public final class x60 extends org.telegram.ui.Components.el0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         if (c1Var.f == 0) {
             return false;
@@ -130,7 +130,7 @@ public final class x60 extends org.telegram.ui.Components.el0 {
         return !(object instanceof TLRPC.User) || z60Var.J.h(((TLRPC.User) object).id) < 0;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.gl0
     public final String F(int i10) {
         String str;
         String str2;
@@ -173,8 +173,8 @@ public final class x60 extends org.telegram.ui.Components.el0 {
         return "";
     }
 
-    @Override // org.telegram.ui.Components.el0
-    public final void G(org.telegram.ui.Components.wl0 wl0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(org.telegram.ui.Components.yl0 yl0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
@@ -478,13 +478,13 @@ public final class x60 extends org.telegram.ui.Components.el0 {
         } else if (i10 != 3) {
             v3Var = new org.telegram.ui.Cells.r8(context);
         } else {
-            org.telegram.ui.Components.f70 f70Var = new org.telegram.ui.Components.f70(context, null, 0, null, 1);
-            f70Var.setLayoutParams(new s4.p0(-1, -1));
-            f70Var.e.setVisibility(8);
-            f70Var.d.setText(LocaleController.getString(R.string.NoContacts));
-            f70Var.setAnimateLayoutChange(true);
-            v3Var = f70Var;
+            org.telegram.ui.Components.h70 h70Var = new org.telegram.ui.Components.h70(context, null, 0, null, 1);
+            h70Var.setLayoutParams(new s4.p0(-1, -1));
+            h70Var.e.setVisibility(8);
+            h70Var.d.setText(LocaleController.getString(R.string.NoContacts));
+            h70Var.setAnimateLayoutChange(true);
+            v3Var = h70Var;
         }
-        return new org.telegram.ui.Components.gl0(v3Var);
+        return new org.telegram.ui.Components.il0(v3Var);
     }
 }

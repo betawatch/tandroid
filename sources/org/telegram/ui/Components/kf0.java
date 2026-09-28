@@ -2,145 +2,368 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.text.TextPaint;
+import android.graphics.PointF;
+import android.graphics.RectF;
 import android.view.MotionEvent;
-import android.view.View;
-import java.util.Locale;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class kf0 extends View {
-    public int a;
-    public boolean b;
-    public boolean c;
-    public float d;
-    public sk0 e;
-    public Paint f;
-    public Paint h;
-    public Paint n;
-    public TextPaint r;
-    public Path s;
-    public jf0 v;
-    public pf0 w;
+public final class kf0 extends FrameLayout {
+    public static final float N = AndroidUtilities.dp(20.0f);
+    public static final float O = AndroidUtilities.dp(30.0f);
+    public static final float P = AndroidUtilities.dp(30.0f);
+    public boolean E;
+    public boolean F;
+    public boolean G;
+    public int H;
+    public Paint I;
+    public Paint J;
+    public boolean K;
+    public jf0 L;
+    public int M;
+    public PointF a;
+    public float b;
+    public float c;
+    public wv0 d;
+    public PointF e;
+    public float f;
+    public float h;
+    public float n;
+    public RectF r;
+    public float s;
+    public float v;
+    public float w;
+    public float x;
+    public boolean y;
 
-    public final void a(int i10, MotionEvent motionEvent) {
+    public static float a(float f7) {
+        return (f7 * 3.1415927f) / 180.0f;
+    }
+
+    public static float b(MotionEvent motionEvent) {
+        if (motionEvent.getPointerCount() != 2) {
+            return 0.0f;
+        }
+        float x10 = motionEvent.getX(0);
+        float y3 = motionEvent.getY(0);
+        float x11 = x10 - motionEvent.getX(1);
+        float y10 = y3 - motionEvent.getY(1);
+        return (float) Math.sqrt((y10 * y10) + (x11 * x11));
+    }
+
+    private PointF getActualCenterPoint() {
+        float width = getWidth();
+        wv0 wv0Var = this.d;
+        float f7 = wv0Var.a;
+        float f10 = (this.e.x * f7) + ((width - f7) / 2.0f);
+        int i10 = !this.K ? AndroidUtilities.statusBarHeight : 0;
+        float height = getHeight();
+        float f11 = wv0Var.b;
+        float A = com.google.android.gms.internal.vision.e2.A(height, f11, 2.0f, i10);
+        float f12 = wv0Var.a;
+        return new PointF(f10, (this.e.y * f12) + org.telegram.messenger.f0.x(f12, f11, 2.0f, A));
+    }
+
+    private float getActualInnerRadius() {
+        wv0 wv0Var = this.d;
+        return Math.min(wv0Var.a, wv0Var.b) * this.f;
+    }
+
+    private float getActualOuterRadius() {
+        wv0 wv0Var = this.d;
+        return Math.min(wv0Var.a, wv0Var.b) * this.h;
+    }
+
+    public final void c(int i10, MotionEvent motionEvent) {
+        boolean z10 = this.K;
         float x10 = motionEvent.getX();
         float y3 = motionEvent.getY();
+        PointF actualCenterPoint = getActualCenterPoint();
+        float f7 = x10 - actualCenterPoint.x;
+        float f10 = y3 - actualCenterPoint.y;
+        float sqrt = (float) Math.sqrt((f10 * f10) + (f7 * f7));
+        wv0 wv0Var = this.d;
+        float min = Math.min(wv0Var.a, wv0Var.b);
+        float f11 = this.f * min;
+        float f12 = this.h * min;
+        float abs = (float) Math.abs((Math.sin(a(this.n) + 1.5707963267948966d) * f10) + (Math.cos(a(this.n) + 1.5707963267948966d) * f7));
         if (i10 == 1) {
-            if (this.a != 0) {
+            this.s = motionEvent.getX();
+            this.v = motionEvent.getY();
+            boolean z11 = Math.abs(f12 - f11) < N;
+            float f13 = P;
+            float f14 = z11 ? 0.0f : f13;
+            float f15 = z11 ? 0.0f : f13;
+            int i11 = this.H;
+            float f16 = O;
+            if (i11 != 0) {
+                if (i11 == 1) {
+                    if (sqrt < f16) {
+                        this.M = 2;
+                        this.a = actualCenterPoint;
+                        return;
+                    }
+                    if (sqrt > f11 - f13 && sqrt < f14 + f11) {
+                        this.M = 3;
+                        this.b = sqrt;
+                        this.c = f11;
+                        return;
+                    } else {
+                        if (sqrt <= f12 - f15 || sqrt >= f13 + f12) {
+                            return;
+                        }
+                        this.M = 4;
+                        this.b = sqrt;
+                        this.c = f12;
+                        return;
+                    }
+                }
                 return;
             }
-            sk0 sk0Var = this.e;
-            this.a = (int) Math.floor(com.google.android.gms.internal.vision.e2.A(x10, sk0Var.a, sk0Var.c / 5.0f, 1.0f));
-            return;
+            if (sqrt < f16) {
+                this.M = 2;
+                this.a = actualCenterPoint;
+                return;
+            }
+            float f17 = f11 - f13;
+            if (abs > f17 && abs < f14 + f11) {
+                this.M = 3;
+                this.b = abs;
+                this.c = f11;
+                return;
+            } else if (abs > f12 - f15 && abs < f12 + f13) {
+                this.M = 4;
+                this.b = abs;
+                this.c = f12;
+                return;
+            } else {
+                if (abs <= f17 || abs >= f12 + f13) {
+                    this.M = 6;
+                    return;
+                }
+                return;
+            }
         }
         if (i10 != 2) {
-            if ((i10 == 3 || i10 == 4 || i10 == 5) && this.a != 0) {
-                this.a = 0;
+            if (i10 == 3 || i10 == 4 || i10 == 5) {
+                this.M = 1;
                 return;
             }
             return;
         }
-        float min = Math.min(2.0f, (this.d - y3) / 8.0f);
-        pf0 pf0Var = this.w;
-        int i11 = pf0Var.f;
-        qf0 qf0Var = i11 != 0 ? i11 != 1 ? i11 != 2 ? i11 != 3 ? null : pf0Var.d : pf0Var.c : pf0Var.b : pf0Var.a;
-        int i12 = this.a;
-        if (i12 == 1) {
-            qf0Var.a = Math.max(0.0f, Math.min(100.0f, qf0Var.a + min));
-        } else if (i12 == 2) {
-            qf0Var.b = Math.max(0.0f, Math.min(100.0f, qf0Var.b + min));
-        } else if (i12 == 3) {
-            qf0Var.c = Math.max(0.0f, Math.min(100.0f, qf0Var.c + min));
-        } else if (i12 == 4) {
-            qf0Var.d = Math.max(0.0f, Math.min(100.0f, qf0Var.d + min));
-        } else if (i12 == 5) {
-            qf0Var.e = Math.max(0.0f, Math.min(100.0f, qf0Var.e + min));
-        }
-        invalidate();
-        jf0 jf0Var = this.v;
-        if (jf0Var != null) {
-            tf0 tf0Var = ((lf0) jf0Var).a;
-            tf0Var.g();
-            wz wzVar = tf0Var.l0;
-            if (wzVar != null) {
-                wzVar.e(false, false, false);
+        int i12 = this.H;
+        if (i12 == 0) {
+            int c10 = m1.j.c(this.M);
+            if (c10 == 1) {
+                float f18 = x10 - this.s;
+                float f19 = y3 - this.v;
+                float width = (getWidth() - wv0Var.a) / 2.0f;
+                int i13 = !z10 ? AndroidUtilities.statusBarHeight : 0;
+                float height = getHeight();
+                float f20 = wv0Var.b;
+                float A = com.google.android.gms.internal.vision.e2.A(height, f20, 2.0f, i13);
+                PointF pointF = new PointF(Math.max(width, Math.min(wv0Var.a + width, this.a.x + f18)), Math.max(A, Math.min(f20 + A, this.a.y + f19)));
+                float f21 = pointF.x - width;
+                float f22 = wv0Var.a;
+                this.e = new PointF(f21 / f22, (((f22 - wv0Var.b) / 2.0f) + (pointF.y - A)) / f22);
+            } else if (c10 == 2) {
+                this.f = Math.min(Math.max(0.1f, (this.c + (abs - this.b)) / min), this.h - 0.02f);
+            } else if (c10 == 3) {
+                this.h = Math.max(this.f + 0.02f, (this.c + (abs - this.b)) / min);
+            } else if (c10 == 5) {
+                float f23 = x10 - this.s;
+                float f24 = y3 - this.v;
+                boolean z12 = x10 > actualCenterPoint.x;
+                boolean z13 = y3 > actualCenterPoint.y;
+                boolean z14 = Math.abs(f24) > Math.abs(f23);
+                this.n = (((((float) Math.sqrt((f24 * f24) + (f23 * f23))) * ((((z12 || z13 ? !z12 || z13 ? !(z12 && z13) ? !(!z14 ? f23 < 0.0f : f24 < 0.0f) : !(!z14 ? f23 < 0.0f : f24 > 0.0f) : !z14 ? f23 > 0.0f : f24 > 0.0f : !z14 ? f23 > 0.0f : f24 < 0.0f) ? 0 : 1) * 2) - 1)) / 3.1415927f) / 1.15f) + this.n;
+                this.s = x10;
+                this.v = y3;
+            }
+        } else if (i12 == 1) {
+            int c11 = m1.j.c(this.M);
+            if (c11 == 1) {
+                float f25 = x10 - this.s;
+                float f26 = y3 - this.v;
+                float width2 = (getWidth() - wv0Var.a) / 2.0f;
+                int i14 = !z10 ? AndroidUtilities.statusBarHeight : 0;
+                float height2 = getHeight();
+                float f27 = wv0Var.b;
+                float A2 = com.google.android.gms.internal.vision.e2.A(height2, f27, 2.0f, i14);
+                PointF pointF2 = new PointF(Math.max(width2, Math.min(wv0Var.a + width2, this.a.x + f25)), Math.max(A2, Math.min(f27 + A2, this.a.y + f26)));
+                float f28 = pointF2.x - width2;
+                float f29 = wv0Var.a;
+                this.e = new PointF(f28 / f29, (((f29 - wv0Var.b) / 2.0f) + (pointF2.y - A2)) / f29);
+            } else if (c11 == 2) {
+                this.f = Math.min(Math.max(0.1f, (this.c + (sqrt - this.b)) / min), this.h - 0.02f);
+            } else if (c11 == 3) {
+                this.h = Math.max(this.f + 0.02f, (this.c + (sqrt - this.b)) / min);
             }
         }
-        this.d = y3;
+        invalidate();
+        jf0 jf0Var = this.L;
+        if (jf0Var != null) {
+            PointF pointF3 = this.e;
+            float f30 = this.f;
+            float f31 = this.h;
+            float a2 = a(this.n) + 1.5707964f;
+            vf0 vf0Var = ((nf0) jf0Var).a;
+            vf0Var.a0 = f31;
+            vf0Var.b0 = pointF3;
+            vf0Var.c0 = f30;
+            vf0Var.d0 = a2;
+            xz xzVar = vf0Var.l0;
+            if (xzVar != null) {
+                xzVar.e(false, false, false);
+            }
+        }
+    }
+
+    public final void d(int i10, MotionEvent motionEvent) {
+        if (i10 == 1) {
+            this.w = b(motionEvent);
+            this.x = 1.0f;
+            this.M = 5;
+        } else if (i10 != 2) {
+            if (i10 == 3 || i10 == 4 || i10 == 5) {
+                this.M = 1;
+                return;
+            }
+            return;
+        }
+        float b10 = b(motionEvent);
+        float e = a4.a.e(b10 - this.w, AndroidUtilities.density, 0.01f, this.x);
+        this.x = e;
+        float max = Math.max(0.1f, this.f * e);
+        this.f = max;
+        this.h = Math.max(max + 0.02f, this.h * this.x);
+        this.x = 1.0f;
+        this.w = b10;
+        invalidate();
+        jf0 jf0Var = this.L;
+        if (jf0Var != null) {
+            PointF pointF = this.e;
+            float f7 = this.f;
+            float f10 = this.h;
+            float a2 = a(this.n) + 1.5707964f;
+            vf0 vf0Var = ((nf0) jf0Var).a;
+            vf0Var.a0 = f10;
+            vf0Var.b0 = pointF;
+            vf0Var.c0 = f7;
+            vf0Var.d0 = a2;
+            xz xzVar = vf0Var.l0;
+            if (xzVar != null) {
+                xzVar.e(false, false, false);
+            }
+        }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        qf0 qf0Var;
-        TextPaint textPaint = this.r;
-        Path path = this.s;
-        Paint paint = this.n;
-        pf0 pf0Var = this.w;
-        sk0 sk0Var = this.e;
-        float f7 = sk0Var.c / 5.0f;
-        for (int i10 = 0; i10 < 4; i10++) {
-            float f10 = sk0Var.a;
-            float f11 = i10 * f7;
-            float f12 = f10 + f7 + f11;
-            float f13 = sk0Var.b;
-            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + sk0Var.d, this.f);
-        }
-        float f14 = sk0Var.a;
-        float f15 = sk0Var.b;
-        canvas.drawLine(f14, f15 + sk0Var.d, f14 + sk0Var.c, f15, this.h);
-        int i11 = pf0Var.f;
-        int i12 = 3;
-        int i13 = 2;
-        if (i11 == 0) {
-            paint.setColor(-1);
-            qf0Var = pf0Var.a;
-        } else if (i11 == 1) {
-            paint.setColor(-1229492);
-            qf0Var = pf0Var.b;
-        } else if (i11 == 2) {
-            paint.setColor(-15667555);
-            qf0Var = pf0Var.c;
-        } else if (i11 != 3) {
-            qf0Var = null;
+        Paint paint;
+        Canvas canvas2 = canvas;
+        Paint paint2 = this.J;
+        RectF rectF = this.r;
+        Paint paint3 = paint2;
+        Paint paint4 = this.I;
+        super.onDraw(canvas);
+        PointF actualCenterPoint = getActualCenterPoint();
+        float actualInnerRadius = getActualInnerRadius();
+        float actualOuterRadius = getActualOuterRadius();
+        canvas2.translate(actualCenterPoint.x, actualCenterPoint.y);
+        int i10 = this.H;
+        int i11 = 0;
+        if (i10 == 0) {
+            canvas2.rotate(this.n);
+            float dp = AndroidUtilities.dp(6.0f);
+            float dp2 = AndroidUtilities.dp(12.0f);
+            float dp3 = AndroidUtilities.dp(1.5f);
+            int i12 = 0;
+            while (i12 < 30) {
+                float f7 = dp2 + dp;
+                float f10 = i12 * f7;
+                float f11 = -actualInnerRadius;
+                float f12 = f10 + dp2;
+                float f13 = dp3 - actualInnerRadius;
+                canvas2.drawRect(f10, f11, f12, f13, paint4);
+                float f14 = ((-i12) * f7) - dp;
+                float f15 = f14 - dp2;
+                canvas.drawRect(f15, f11, f14, f13, paint4);
+                float f16 = dp3 + actualInnerRadius;
+                float f17 = actualInnerRadius;
+                canvas.drawRect(f10, f17, f12, f16, paint4);
+                canvas.drawRect(f15, f17, f14, f16, paint4);
+                i12++;
+                actualInnerRadius = f17;
+                canvas2 = canvas;
+            }
+            float dp4 = AndroidUtilities.dp(6.0f);
+            while (i11 < 64) {
+                float f18 = dp4 + dp;
+                float f19 = i11 * f18;
+                float f20 = -actualOuterRadius;
+                float f21 = dp4 + f19;
+                float f22 = dp3 - actualOuterRadius;
+                canvas.drawRect(f19, f20, f21, f22, paint4);
+                float f23 = ((-i11) * f18) - dp;
+                float f24 = f23 - dp4;
+                canvas.drawRect(f24, f20, f23, f22, paint4);
+                float f25 = dp3 + actualOuterRadius;
+                float f26 = actualOuterRadius;
+                canvas.drawRect(f19, f26, f21, f25, paint4);
+                canvas.drawRect(f24, f26, f23, f25, paint4);
+                i11++;
+                actualOuterRadius = f26;
+            }
+            paint = paint4;
         } else {
-            paint.setColor(-13404165);
-            qf0Var = pf0Var.d;
-        }
-        int i14 = 0;
-        while (i14 < 5) {
-            String format = i14 != 0 ? i14 != 1 ? i14 != i13 ? i14 != i12 ? i14 != 4 ? "" : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.e / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.d / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.c / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.b / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(qf0Var.a / 100.0f));
-            canvas.drawText(format, (i14 * f7) + com.google.android.gms.internal.vision.e2.A(f7, textPaint.measureText(format), 2.0f, sk0Var.a), (sk0Var.b + sk0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
-            i14++;
-            i12 = 3;
-            i13 = 2;
-        }
-        float[] a2 = qf0Var.a();
-        invalidate();
-        path.reset();
-        for (int i15 = 0; i15 < a2.length / 2; i15++) {
-            if (i15 == 0) {
-                int i16 = i15 * 2;
-                path.moveTo((a2[i16] * sk0Var.c) + sk0Var.a, ((1.0f - a2[i16 + 1]) * sk0Var.d) + sk0Var.b);
-            } else {
-                int i17 = i15 * 2;
-                path.lineTo((a2[i17] * sk0Var.c) + sk0Var.a, ((1.0f - a2[i17 + 1]) * sk0Var.d) + sk0Var.b);
+            paint = paint4;
+            if (i10 == 1) {
+                float f27 = -actualInnerRadius;
+                rectF.set(f27, f27, actualInnerRadius, actualInnerRadius);
+                int i13 = 0;
+                while (i13 < 22) {
+                    Paint paint5 = paint3;
+                    canvas.drawArc(rectF, i13 * 16.35f, 10.2f, false, paint5);
+                    i13++;
+                    paint3 = paint5;
+                }
+                Paint paint6 = paint3;
+                float f28 = -actualOuterRadius;
+                rectF.set(f28, f28, actualOuterRadius, actualOuterRadius);
+                while (i11 < 64) {
+                    canvas.drawArc(rectF, 5.62f * i11, 3.6f, false, paint6);
+                    i11++;
+                }
             }
         }
-        canvas.drawPath(path, paint);
+        canvas.drawCircle(0.0f, 0.0f, AndroidUtilities.dp(8.0f), paint);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0018, code lost:
     
-        if (r0 != 6) goto L44;
+        if (r2 != 6) goto L11;
      */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r15v1 */
+    /* JADX WARN: Type inference failed for: r15v10 */
+    /* JADX WARN: Type inference failed for: r15v11 */
+    /* JADX WARN: Type inference failed for: r15v2, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r15v3 */
+    /* JADX WARN: Type inference failed for: r15v4 */
+    /* JADX WARN: Type inference failed for: r15v5 */
+    /* JADX WARN: Type inference failed for: r15v6 */
+    /* JADX WARN: Type inference failed for: r15v7 */
+    /* JADX WARN: Type inference failed for: r15v8 */
+    /* JADX WARN: Type inference failed for: r15v9 */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ?? r15;
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked != 0) {
             if (actionMasked != 1) {
@@ -149,47 +372,117 @@ public final class kf0 extends View {
                         if (actionMasked != 5) {
                         }
                     }
-                } else if (this.b) {
-                    a(2, motionEvent);
-                    return true;
+                } else {
+                    if (this.y) {
+                        c(2, motionEvent);
+                        return true;
+                    }
+                    if (this.E) {
+                        d(2, motionEvent);
+                        return true;
+                    }
                 }
                 return true;
             }
-            if (this.b) {
-                a(3, motionEvent);
-                this.b = false;
+            if (this.y) {
+                c(3, motionEvent);
+                this.y = false;
+            } else if (this.E) {
+                this.M = 1;
+                this.E = false;
             }
-            this.c = true;
+            this.F = true;
+            this.G = true;
             return true;
         }
-        if (motionEvent.getPointerCount() == 1) {
-            if (this.c && !this.b) {
-                float x10 = motionEvent.getX();
-                float y3 = motionEvent.getY();
-                this.d = y3;
-                sk0 sk0Var = this.e;
-                float f7 = sk0Var.a;
-                if (x10 >= f7 && x10 <= f7 + sk0Var.c) {
-                    float f10 = sk0Var.b;
-                    if (y3 >= f10 && y3 <= f10 + sk0Var.d) {
-                        this.b = true;
+        if (motionEvent.getPointerCount() != 1) {
+            if (this.y) {
+                c(3, motionEvent);
+                this.F = true;
+                this.y = false;
+            }
+            if (motionEvent.getPointerCount() != 2) {
+                this.M = 1;
+                this.G = true;
+                this.E = false;
+                return true;
+            }
+            if (!this.G || this.E) {
+                return true;
+            }
+            d(1, motionEvent);
+            this.E = true;
+            return true;
+        }
+        if (this.F && !this.y) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            PointF actualCenterPoint = getActualCenterPoint();
+            PointF pointF = new PointF(x10 - actualCenterPoint.x, y3 - actualCenterPoint.y);
+            float f7 = pointF.x;
+            float f10 = pointF.y;
+            float sqrt = (float) Math.sqrt((f10 * f10) + (f7 * f7));
+            float actualInnerRadius = getActualInnerRadius();
+            float actualOuterRadius = getActualOuterRadius();
+            boolean z10 = Math.abs(actualOuterRadius - actualInnerRadius) < N;
+            float f11 = P;
+            float f12 = z10 ? 0.0f : f11;
+            float f13 = z10 ? 0.0f : f11;
+            int i10 = this.H;
+            float f14 = O;
+            if (i10 == 0) {
+                float abs = (float) Math.abs((Math.sin(a(this.n) + 1.5707963267948966d) * pointF.y) + (Math.cos(a(this.n) + 1.5707963267948966d) * pointF.x));
+                if (sqrt < f14) {
+                    r15 = 1;
+                    this.y = true;
+                } else {
+                    r15 = 1;
+                    float f15 = actualInnerRadius - f11;
+                    if (abs <= f15 || abs >= actualInnerRadius + f12) {
+                        if (abs > actualOuterRadius - f13 && abs < actualOuterRadius + f11) {
+                            this.y = true;
+                        } else if (abs <= f15 || abs >= actualOuterRadius + f11) {
+                            r15 = 1;
+                            this.y = true;
+                        }
+                        r15 = 1;
+                    } else {
+                        this.y = true;
                     }
                 }
-                this.c = false;
-                if (this.b) {
-                    a(1, motionEvent);
-                    return true;
+            } else {
+                r15 = 1;
+                r15 = 1;
+                r15 = 1;
+                r15 = 1;
+                r15 = 1;
+                r15 = 1;
+                if (i10 == 1) {
+                    if (sqrt < f14) {
+                        this.y = true;
+                    } else if (sqrt > actualInnerRadius - f11 && sqrt < actualInnerRadius + f12) {
+                        this.y = true;
+                    } else if (sqrt > actualOuterRadius - f13 && sqrt < actualOuterRadius + f11) {
+                        this.y = true;
+                    }
                 }
             }
-        } else if (this.b) {
-            a(3, motionEvent);
-            this.c = true;
-            this.b = false;
+            this.F = false;
+            if (!this.y) {
+                return r15;
+            }
+            c(r15, motionEvent);
+            return r15;
         }
         return true;
     }
 
     public void setDelegate(jf0 jf0Var) {
-        this.v = jf0Var;
+        this.L = jf0Var;
+    }
+
+    public void setType(int i10) {
+        this.H = i10;
+        invalidate();
     }
 }

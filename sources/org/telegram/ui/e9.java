@@ -16,27 +16,27 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class e9 extends org.telegram.ui.Components.u51 {
+public final class e9 extends org.telegram.ui.Components.w51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.u51.setup(new e9());
+        org.telegram.ui.Components.w51.setup(new e9());
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r12v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r12v12 */
     /* JADX WARN: Type inference failed for: r12v9 */
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, org.telegram.ui.Components.v51 v51Var, boolean z10, org.telegram.ui.Components.j61 j61Var, org.telegram.ui.Components.r61 r61Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, org.telegram.ui.Components.x51 x51Var, boolean z10, org.telegram.ui.Components.l61 l61Var, org.telegram.ui.Components.t61 t61Var) {
         SpannableString spannableString;
         boolean z11;
         ?? r12;
-        g9 g9Var = (g9) v51Var.G;
+        g9 g9Var = (g9) x51Var.G;
         f9 f9Var = (f9) view;
-        View.OnClickListener onClickListener = v51Var.D;
+        View.OnClickListener onClickListener = x51Var.D;
         int i10 = f9Var.a;
         org.telegram.ui.Components.k9 k9Var = f9Var.b;
         org.telegram.ui.Cells.i6 i6Var = f9Var.d;
@@ -114,16 +114,16 @@ public final class e9 extends org.telegram.ui.Components.u51 {
         }
         imageView.setTag(g9Var);
         imageView.setOnClickListener(onClickListener);
-        boolean z13 = v51Var.e;
-        org.telegram.ui.Components.op opVar = f9Var.e;
-        if (opVar == null) {
+        boolean z13 = x51Var.e;
+        org.telegram.ui.Components.pp ppVar = f9Var.e;
+        if (ppVar == null) {
             return;
         }
-        opVar.a(z13, z11);
+        ppVar.a(z13, z11);
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, org.telegram.ui.Components.wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, org.telegram.ui.Components.yl0 yl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new f9(context, i10);
     }
 }

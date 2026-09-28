@@ -22,9 +22,9 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class k61 extends org.telegram.ui.Components.vl0 {
+public final class k61 extends org.telegram.ui.Components.xl0 {
     public int c;
     public int d;
     public int h;
@@ -38,7 +38,7 @@ public final class k61 extends org.telegram.ui.Components.vl0 {
         this.s = a71Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 4;
@@ -121,7 +121,7 @@ public final class k61 extends org.telegram.ui.Components.vl0 {
         a71Var.H1 = ofFloat;
         ofFloat.addUpdateListener(new g51(a71Var, z12, i11));
         a71Var.H1.addListener(new t51(a71Var, z12, i11));
-        a71Var.H1.setInterpolator(org.telegram.ui.Components.rr.h);
+        a71Var.H1.setInterpolator(org.telegram.ui.Components.sr.h);
         a71Var.H1.setDuration(100L);
         a71Var.H1.start();
         if (z12) {
@@ -382,7 +382,7 @@ public final class k61 extends org.telegram.ui.Components.vl0 {
         if (i10 == 6) {
             j61Var = new f61(a71Var, a71Var.getContext(), a71Var.W == 6);
         } else if (i10 == 7) {
-            j61Var = new org.telegram.ui.Components.ln(a71Var.getContext(), 25);
+            j61Var = new org.telegram.ui.Components.mn(a71Var.getContext(), 25);
             j61Var.setTag("searchbox");
         } else {
             j61Var = new j61(a71Var, a71Var.getContext());
@@ -391,6 +391,6 @@ public final class k61 extends org.telegram.ui.Components.vl0 {
             j61Var.setScaleX(0.0f);
             j61Var.setScaleY(0.0f);
         }
-        return new org.telegram.ui.Components.gl0(j61Var);
+        return new org.telegram.ui.Components.il0(j61Var);
     }
 }

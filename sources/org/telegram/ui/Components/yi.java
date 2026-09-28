@@ -12,7 +12,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yi implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class yi implements Utilities.CallbackReturn {
     public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                return Boolean.valueOf(hj.K((hj) this.b, (MessageObject) obj));
+                return Boolean.valueOf(ij.K((ij) this.b, (MessageObject) obj));
             case 1:
                 rh.f fVar = (rh.f) this.b;
                 View view = (View) obj;
@@ -35,7 +35,7 @@ public final /* synthetic */ class yi implements Utilities.CallbackReturn {
                 SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, org.telegram.ui.ActionBar.h6.Pb, (org.telegram.ui.ActionBar.h6.I.q() ? 3 : 6) * 0.12f);
                 svgThumb.setAspectCenter(true);
                 svgThumb.setColorKey(org.telegram.ui.ActionBar.h6.qe);
-                imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new fq(svgThumb), (Object) null, 0);
+                imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new gq(svgThumb), (Object) null, 0);
                 view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.q8(imageReceiver, 1));
                 imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
                 return new ed(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
@@ -46,10 +46,10 @@ public final /* synthetic */ class yi implements Utilities.CallbackReturn {
                 }
                 return Boolean.valueOf(i10 == 1);
             default:
-                r61 r61Var = (r61) this.b;
+                t61 t61Var = (t61) this.b;
                 View view2 = (View) obj;
-                r61Var.getClass();
-                return view2.getParent() != r61Var ? Boolean.FALSE : Boolean.valueOf(!j61.K(r61Var.T(view2).f));
+                t61Var.getClass();
+                return view2.getParent() != t61Var ? Boolean.FALSE : Boolean.valueOf(!l61.K(t61Var.T(view2).f));
         }
     }
 }

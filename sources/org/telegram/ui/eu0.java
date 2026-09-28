@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eu0 implements Runnable {
     public final /* synthetic */ int a;
@@ -192,7 +192,7 @@ public final /* synthetic */ class eu0 implements Runnable {
                 c5 c5Var = (c5) this.b;
                 if (!c5Var.w) {
                     c5Var.w = true;
-                    org.telegram.ui.Components.mm0.d(new b5(c5Var, i14));
+                    org.telegram.ui.Components.om0.d(new b5(c5Var, i14));
                     break;
                 }
                 break;
@@ -315,7 +315,7 @@ public final /* synthetic */ class eu0 implements Runnable {
                 ((org.telegram.ui.ActionBar.k) this.b).invalidate();
                 break;
             case 25:
-                ((org.telegram.ui.Components.y70) this.b).s();
+                ((org.telegram.ui.Components.a80) this.b).s();
                 break;
             case 26:
                 ((z) this.b).run(Boolean.FALSE);

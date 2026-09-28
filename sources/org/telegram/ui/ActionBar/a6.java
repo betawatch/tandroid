@@ -22,13 +22,13 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.k11;
-import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.ui0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.wi0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ad;
 import org.telegram.ui.bc;
@@ -51,7 +51,7 @@ import org.telegram.ui.x8;
 import org.telegram.ui.yc;
 import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a6 implements Runnable {
     public final /* synthetic */ int a;
@@ -80,8 +80,8 @@ public final /* synthetic */ class a6 implements Runnable {
         xc a02;
         int i11;
         int i12;
-        j61 j61Var;
-        k11 k11Var;
+        l61 l61Var;
+        m11 m11Var;
         int i13 = this.a;
         int i14 = -1;
         Bitmap bitmap = null;
@@ -196,9 +196,9 @@ public final /* synthetic */ class a6 implements Runnable {
                 z6.Y((z6) obj2, (a2) obj);
                 break;
             case 9:
-                ui0 ui0Var = new ui0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
-                ui0Var.m(R.raw.qr_code_logo);
-                ui0Var.show();
+                wi0 wi0Var = new wi0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
+                wi0Var.m(R.raw.qr_code_logo);
+                wi0Var.show();
                 break;
             case 10:
                 ((x8) obj2).b.j0(((TLRPC.Message) hg.c.g(1, ((g9) obj).c)).id, 100);
@@ -219,7 +219,7 @@ public final /* synthetic */ class a6 implements Runnable {
                 u9 u9Var2 = (u9) obj2;
                 MrzRecognizer.Result result = (MrzRecognizer.Result) obj;
                 u9Var2.f.setText(result.rawMRZ);
-                u9Var2.f.animate().setDuration(200L).alpha(1.0f).setInterpolator(rr.f).start();
+                u9Var2.f.animate().setDuration(200L).alpha(1.0f).setInterpolator(sr.f).start();
                 t9 t9Var2 = u9Var2.L;
                 if (t9Var2 != null) {
                     t9Var2.T0(result);
@@ -338,23 +338,23 @@ public final /* synthetic */ class a6 implements Runnable {
                 if (list != null && !list.isEmpty()) {
                     ycVar.n = true;
                     arrayList5.clear();
-                    arrayList5.add(0, new mp((b4) list.get(0)));
+                    arrayList5.add(0, new np((b4) list.get(0)));
                     if (ycVar.v != null && ycVar.f) {
-                        arrayList5.add(0, new mp(b4.a(i23)));
+                        arrayList5.add(0, new np(b4.a(i23)));
                     }
                     d6 d6Var = ycVar.b;
                     int a2 = d6Var != null ? d6Var.a() : h6.I.q();
                     for (int i24 = 1; i24 < list.size(); i24++) {
                         b4 b4Var = (b4) list.get(i24);
-                        mp mpVar = new mp(b4Var);
+                        np npVar = new np(b4Var);
                         b4Var.n(i23);
-                        mpVar.c = a2;
-                        arrayList5.add(mpVar);
+                        npVar.c = a2;
+                        arrayList5.add(npVar);
                     }
                     for (int i25 = 0; i25 < arrayList5.size(); i25++) {
-                        mp mpVar2 = (mp) arrayList5.get(i25);
-                        boolean z12 = TextUtils.equals(ycVar.s, mpVar2.a()) || (TextUtils.isEmpty(ycVar.s) && mpVar2.a.a);
-                        mpVar2.d = z12;
+                        np npVar2 = (np) arrayList5.get(i25);
+                        boolean z12 = TextUtils.equals(ycVar.s, npVar2.a()) || (TextUtils.isEmpty(ycVar.s) && npVar2.a.a);
+                        npVar2.d = z12;
                         if (z12) {
                             i14 = i25;
                         }
@@ -364,11 +364,11 @@ public final /* synthetic */ class a6 implements Runnable {
                         wcVar.l();
                     }
                     wb1Var.animate().alpha(1.0f).setDuration(150L).start();
-                    u00 u00Var = ycVar.e;
+                    v00 v00Var = ycVar.e;
                     if (ycVar.n) {
-                        AndroidUtilities.updateViewVisibilityAnimated(u00Var, false, 1.0f, true, true);
+                        AndroidUtilities.updateViewVisibilityAnimated(v00Var, false, 1.0f, true, true);
                     } else {
-                        AndroidUtilities.updateViewVisibilityAnimated(u00Var, true, 1.0f, true, true);
+                        AndroidUtilities.updateViewVisibilityAnimated(v00Var, true, 1.0f, true, true);
                     }
                     if (i14 >= 0 && (wb1Var.getLayoutManager() instanceof s4.c0)) {
                         ((s4.c0) wb1Var.getLayoutManager()).h1(i14, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
@@ -419,9 +419,9 @@ public final /* synthetic */ class a6 implements Runnable {
                 if (tL_premium_boostsStatus2 != null) {
                     jeVar.B0 = tL_premium_boostsStatus2.level;
                 }
-                r61 r61Var = jeVar.a1;
-                if (r61Var != null && (j61Var = r61Var.Y2) != null) {
-                    j61Var.N(true);
+                t61 t61Var = jeVar.a1;
+                if (t61Var != null && (l61Var = t61Var.Y2) != null) {
+                    l61Var.N(true);
                     break;
                 }
                 break;
@@ -430,13 +430,13 @@ public final /* synthetic */ class a6 implements Runnable {
                 break;
             case 25:
                 wn wnVar = (wn) obj2;
-                k11[] k11VarArr = (k11[]) obj;
-                if (!wnVar.jb && (k11Var = k11VarArr[0]) != null) {
-                    k11VarArr[0] = null;
-                    if (wnVar.v0 == k11Var) {
+                m11[] m11VarArr = (m11[]) obj;
+                if (!wnVar.jb && (m11Var = m11VarArr[0]) != null) {
+                    m11VarArr[0] = null;
+                    if (wnVar.v0 == m11Var) {
                         wnVar.v0 = null;
                     }
-                    AndroidUtilities.removeFromParent(k11Var);
+                    AndroidUtilities.removeFromParent(m11Var);
                     break;
                 }
                 break;

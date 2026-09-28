@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Comparator {
     public final /* synthetic */ int a;
@@ -32,11 +32,12 @@ public final /* synthetic */ class p implements Comparator {
         int lambda$removePart$1;
         int lambda$loadGalleryPhotosAlbums$56;
         int lambda$sortPlaylist$13;
+        int lambda$getTextStyleRunsLegacy$181;
         int lambda$static$160;
-        int lambda$increaseWebappRating$151;
-        int lambda$getTextStyleRuns$180;
         int lambda$increasePeerRaiting$155;
+        int lambda$increaseWebappRating$151;
         int lambda$increaseInlineRating$150;
+        int lambda$getTextStyleRunsSafe$180;
         int lambda$handleFoundWords$3;
         int lambda$addEntitiesToText$2;
         int lambda$processUpdatesQueue$328;
@@ -53,7 +54,6 @@ public final /* synthetic */ class p implements Comparator {
         int lambda$switchToAvailable$3;
         int lambda$quotesFor$0;
         int lambda$updatePinnedOrder$4;
-        int lambda$updatePinnedOrder$5;
         switch (this.a) {
             case 0:
                 lambda$pruneOverlaps$10 = AndroidUtilities.lambda$pruneOverlaps$10((AndroidUtilities.LinkSpec) obj, (AndroidUtilities.LinkSpec) obj2);
@@ -80,71 +80,71 @@ public final /* synthetic */ class p implements Comparator {
                 lambda$sortPlaylist$13 = MediaController.lambda$sortPlaylist$13((MessageObject) obj, (MessageObject) obj2);
                 return lambda$sortPlaylist$13;
             case 8:
+                lambda$getTextStyleRunsLegacy$181 = MediaDataController.lambda$getTextStyleRunsLegacy$181((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
+                return lambda$getTextStyleRunsLegacy$181;
+            case 9:
                 lambda$static$160 = MediaDataController.lambda$static$160((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
                 return lambda$static$160;
-            case 9:
-                lambda$increaseWebappRating$151 = MediaDataController.lambda$increaseWebappRating$151((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
-                return lambda$increaseWebappRating$151;
             case 10:
-                lambda$getTextStyleRuns$180 = MediaDataController.lambda$getTextStyleRuns$180((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
-                return lambda$getTextStyleRuns$180;
-            case 11:
                 lambda$increasePeerRaiting$155 = MediaDataController.lambda$increasePeerRaiting$155((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
                 return lambda$increasePeerRaiting$155;
+            case 11:
+                lambda$increaseWebappRating$151 = MediaDataController.lambda$increaseWebappRating$151((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
+                return lambda$increaseWebappRating$151;
             case 12:
                 lambda$increaseInlineRating$150 = MediaDataController.lambda$increaseInlineRating$150((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
                 return lambda$increaseInlineRating$150;
             case 13:
+                lambda$getTextStyleRunsSafe$180 = MediaDataController.lambda$getTextStyleRunsSafe$180((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
+                return lambda$getTextStyleRunsSafe$180;
+            case 14:
                 lambda$handleFoundWords$3 = MessageObject.lambda$handleFoundWords$3((String) obj, (String) obj2);
                 return lambda$handleFoundWords$3;
-            case 14:
+            case 15:
                 lambda$addEntitiesToText$2 = MessageObject.lambda$addEntitiesToText$2((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
                 return lambda$addEntitiesToText$2;
-            case 15:
+            case 16:
                 lambda$processUpdatesQueue$328 = MessagesController.lambda$processUpdatesQueue$328((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
                 return lambda$processUpdatesQueue$328;
-            case 16:
+            case 17:
                 lambda$processUpdatesQueue$329 = MessagesController.lambda$processUpdatesQueue$329((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
                 return lambda$processUpdatesQueue$329;
-            case 17:
+            case 18:
                 lambda$processChannelsUpdatesQueue$326 = MessagesController.lambda$processChannelsUpdatesQueue$326((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
                 return lambda$processChannelsUpdatesQueue$326;
-            case 18:
+            case 19:
                 lambda$processLoadedMessages$190 = MessagesController.lambda$processLoadedMessages$190((MessageObject) obj, (MessageObject) obj2);
                 return lambda$processLoadedMessages$190;
-            case 19:
+            case 20:
                 lambda$processLoadedDialogFilters$21 = MessagesController.lambda$processLoadedDialogFilters$21((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
                 return lambda$processLoadedDialogFilters$21;
-            case 20:
+            case 21:
                 lambda$processLoadedMessages$191 = MessagesController.lambda$processLoadedMessages$191((MessageObject) obj, (MessageObject) obj2);
                 return lambda$processLoadedMessages$191;
-            case 21:
+            case 22:
                 lambda$processLoadedMessages$192 = MessagesController.lambda$processLoadedMessages$192((MessageObject) obj, (MessageObject) obj2);
                 return lambda$processLoadedMessages$192;
-            case 22:
+            case 23:
                 lambda$loadDialogFilters$66 = MessagesStorage.lambda$loadDialogFilters$66((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
                 return lambda$loadDialogFilters$66;
-            case 23:
+            case 24:
                 lambda$getMessagesInternal$159 = MessagesStorage.lambda$getMessagesInternal$159((TLRPC.Message) obj, (TLRPC.Message) obj2);
                 return lambda$getMessagesInternal$159;
-            case 24:
+            case 25:
                 lambda$processLoadedFilterPeersInternal$70 = MessagesStorage.lambda$processLoadedFilterPeersInternal$70((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
                 return lambda$processLoadedFilterPeersInternal$70;
-            case 25:
+            case 26:
                 lambda$localSearch$260 = MessagesStorage.lambda$localSearch$260((gg.d0) obj, (gg.d0) obj2);
                 return lambda$localSearch$260;
-            case 26:
+            case 27:
                 lambda$switchToAvailable$3 = ProxyRotationController.lambda$switchToAvailable$3((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
                 return lambda$switchToAvailable$3;
-            case 27:
+            case 28:
                 lambda$quotesFor$0 = RichMessageLayout.lambda$quotesFor$0((RichMessageLayout.QuoteBackground) obj, (RichMessageLayout.QuoteBackground) obj2);
                 return lambda$quotesFor$0;
-            case 28:
+            default:
                 lambda$updatePinnedOrder$4 = SavedMessagesController.lambda$updatePinnedOrder$4((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
                 return lambda$updatePinnedOrder$4;
-            default:
-                lambda$updatePinnedOrder$5 = SavedMessagesController.lambda$updatePinnedOrder$5((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
-                return lambda$updatePinnedOrder$5;
         }
     }
 }

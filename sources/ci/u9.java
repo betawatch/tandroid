@@ -12,18 +12,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.ix0;
-import org.telegram.ui.Components.ln;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class u9 extends og.b {
     public final Context d;
     public final org.telegram.ui.ActionBar.d6 e;
     public final r9 f;
-    public wl0 h;
+    public yl0 h;
     public final /* synthetic */ y9 n;
 
     public u9(y9 y9Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, r9 r9Var, ai.r5 r5Var) {
@@ -33,7 +33,7 @@ public final class u9 extends og.b {
         this.f = r9Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 3 && this.n.W.F) || i10 == 7 || i10 == 9 || i10 == 10;
@@ -118,8 +118,8 @@ public final class u9 extends og.b {
         }
         if (i14 == -1) {
             if (k9Var.o > 0) {
-                wl0 wl0Var = this.h;
-                i12 = Math.max(((wl0Var == null || wl0Var.getMeasuredHeight() <= 0) ? AndroidUtilities.displaySize.y : this.h.getMeasuredHeight() + y9Var.T) - k9Var.o, AndroidUtilities.dp(120.0f));
+                yl0 yl0Var = this.h;
+                i12 = Math.max(((yl0Var == null || yl0Var.getMeasuredHeight() <= 0) ? AndroidUtilities.displaySize.y : this.h.getMeasuredHeight() + y9Var.T) - k9Var.o, AndroidUtilities.dp(120.0f));
                 view.setTag(33);
             } else {
                 i12 = k9Var.p;
@@ -153,7 +153,7 @@ public final class u9 extends og.b {
         }
         if (i14 == 5) {
             try {
-                ((ix0) view).b.getImageReceiver().startAnimation();
+                ((kx0) view).b.getImageReceiver().startAnimation();
                 return;
             } catch (Exception unused) {
                 return;
@@ -242,11 +242,11 @@ public final class u9 extends og.b {
                     z7Var = new org.telegram.ui.Cells.m4(context, d6Var);
                     z7Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, d6Var));
                 } else if (i10 == 5) {
-                    ix0 ix0Var = new ix0(context, null, 1, d6Var);
-                    ix0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                    ix0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                    ix0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                    view = ix0Var;
+                    kx0 kx0Var = new kx0(context, null, 1, d6Var);
+                    kx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                    kx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                    kx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                    view = kx0Var;
                 } else if (i10 == 6) {
                     z7Var = new org.telegram.ui.Cells.e9(context, d6Var);
                     z7Var.setBackgroundColor(-15921907);
@@ -256,13 +256,13 @@ public final class u9 extends og.b {
                     } else if (i10 == 9) {
                         r8Var = new org.telegram.ui.Cells.r8(23, this.d, this.e, true, false);
                     } else {
-                        z7Var = i10 == 10 ? new org.telegram.ui.Cells.z7(context, d6Var) : new ln(context, 2);
+                        z7Var = i10 == 10 ? new org.telegram.ui.Cells.z7(context, d6Var) : new mn(context, 2);
                     }
                     z7Var = r8Var;
                 }
                 z7Var = view;
             }
         }
-        return new gl0(z7Var);
+        return new il0(z7Var);
     }
 }

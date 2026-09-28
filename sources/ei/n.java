@@ -23,15 +23,15 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.m90;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.of;
 import org.telegram.ui.wn;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class n extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -41,7 +41,7 @@ public final class n extends FrameLayout {
     public final TextView d;
     public final TextView e;
     public final TextView f;
-    public final n90 h;
+    public final p90 h;
 
     public n(Activity activity, d6 d6Var) {
         super(activity);
@@ -83,13 +83,13 @@ public final class n extends FrameLayout {
         textView3.setTypeface(AndroidUtilities.bold());
         linearLayout.addView(textView3, y5.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
         NotificationCenter.listenEmojiLoading(textView3);
-        n90 n90Var = new n90(activity, null);
-        this.h = n90Var;
-        n90Var.setTextSize(1, 13.0f);
-        n90Var.setLinkTextColor(h6.v0(h6.gc, d6Var));
-        n90Var.setTextColor(h6.v0(i11, d6Var));
-        linearLayout.addView(n90Var, y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-        NotificationCenter.listenEmojiLoading(n90Var);
+        p90 p90Var = new p90(activity, null);
+        this.h = p90Var;
+        p90Var.setTextSize(1, 13.0f);
+        p90Var.setLinkTextColor(h6.v0(h6.gc, d6Var));
+        p90Var.setTextColor(h6.v0(i11, d6Var));
+        linearLayout.addView(p90Var, y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        NotificationCenter.listenEmojiLoading(p90Var);
         w9 w9Var = new w9(activity);
         this.b = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(4.0f));
@@ -125,8 +125,8 @@ public final class n extends FrameLayout {
         TextView textView = this.d;
         CharSequence replaceEmoji = Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), false);
         CharSequence charSequence = messageObject.messageText;
-        n90 n90Var = this.h;
-        CharSequence replaceEmoji2 = Emoji.replaceEmoji(charSequence, n90Var.getPaint().getFontMetricsInt(), false);
+        p90 p90Var = this.h;
+        CharSequence replaceEmoji2 = Emoji.replaceEmoji(charSequence, p90Var.getPaint().getFontMetricsInt(), false);
         String str2 = messageObject.sponsoredUrl;
         TLRPC.MessageMedia messageMedia = messageObject.sponsoredMedia;
         ImageView imageView = this.c;
@@ -171,9 +171,9 @@ public final class n extends FrameLayout {
                     textView3.setVisibility(8);
                 }
                 textView.setText(spannableStringBuilder);
-                n90Var.setText(replaceEmoji2);
-                n90Var.setOnLinkPressListener(new m90() { // from class: ei.m
-                    @Override // org.telegram.ui.Components.m90
+                p90Var.setText(replaceEmoji2);
+                p90Var.setOnLinkPressListener(new o90() { // from class: ei.m
+                    @Override // org.telegram.ui.Components.o90
                     public final void a(ClickableSpan clickableSpan) {
                         n nVar = n.this;
                         nVar.getClass();
@@ -218,9 +218,9 @@ public final class n extends FrameLayout {
         if (measureText <= measureText2) {
         }
         textView.setText(spannableStringBuilder2);
-        n90Var.setText(replaceEmoji2);
-        n90Var.setOnLinkPressListener(new m90() { // from class: ei.m
-            @Override // org.telegram.ui.Components.m90
+        p90Var.setText(replaceEmoji2);
+        p90Var.setOnLinkPressListener(new o90() { // from class: ei.m
+            @Override // org.telegram.ui.Components.o90
             public final void a(ClickableSpan clickableSpan) {
                 n nVar = n.this;
                 nVar.getClass();

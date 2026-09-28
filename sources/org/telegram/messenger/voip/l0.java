@@ -21,10 +21,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.iw0;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.ss;
-import org.telegram.ui.Components.us;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.ts;
+import org.telegram.ui.Components.vs;
 import org.telegram.ui.d60;
 import org.telegram.ui.gn0;
 import org.telegram.ui.jl;
@@ -33,7 +33,7 @@ import org.telegram.ui.sj0;
 import org.telegram.ui.wl0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -89,43 +89,43 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 break;
             case 3:
-                ss ssVar = (ss) this.d;
+                ts tsVar = (ts) this.d;
                 int i13 = this.b;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.e;
                 boolean z11 = this.c;
-                if (i13 == ssVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, ssVar.e0)) {
-                    ConnectionsManager.getInstance(ssVar.N).sendRequest(tL_messages_searchGlobal, new k0(ssVar, i13, tL_messages_searchGlobal, z11, 1));
+                if (i13 == tsVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, tsVar.e0)) {
+                    ConnectionsManager.getInstance(tsVar.N).sendRequest(tL_messages_searchGlobal, new k0(tsVar, i13, tL_messages_searchGlobal, z11, 1));
                     break;
                 }
                 break;
             case 4:
-                us usVar = (us) this.d;
+                vs vsVar = (vs) this.d;
                 int i14 = this.b;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) this.e;
                 boolean z12 = this.c;
-                if (i14 == usVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, usVar.b0)) {
-                    ConnectionsManager.getInstance(usVar.N).sendRequest(tL_messages_searchGlobal2, new k0(usVar, i14, tL_messages_searchGlobal2, z12, 2));
+                if (i14 == vsVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, vsVar.b0)) {
+                    ConnectionsManager.getInstance(vsVar.N).sendRequest(tL_messages_searchGlobal2, new k0(vsVar, i14, tL_messages_searchGlobal2, z12, 2));
                     break;
                 }
                 break;
             case 5:
-                iw0 iw0Var = (iw0) this.d;
+                kw0 kw0Var = (kw0) this.d;
                 boolean z13 = this.c;
                 int i15 = this.b;
                 u1 u1Var = (u1) this.e;
-                if (z13 && iw0Var.Q == null && iw0Var.R == null && iw0Var.P == null) {
-                    iw0Var.J = 2;
-                    iw0Var.X0 = true;
+                if (z13 && kw0Var.Q == null && kw0Var.R == null && kw0Var.P == null) {
+                    kw0Var.J = 2;
+                    kw0Var.X0 = true;
                 }
-                iw0Var.V0 = false;
-                if (iw0Var.Y0 || !iw0Var.W0) {
-                    iw0Var.U0 = iw0Var.i1[0];
+                kw0Var.V0 = false;
+                if (kw0Var.Y0 || !kw0Var.W0) {
+                    kw0Var.U0 = kw0Var.i1[0];
                     DownloadController.getInstance(i15).removeLoadingFileObserver(u1Var);
-                    iw0Var.I();
-                    iw0Var.x();
+                    kw0Var.I();
+                    kw0Var.x();
                     break;
                 } else {
-                    iw0Var.C(true);
+                    kw0Var.C(true);
                     break;
                 }
                 break;
@@ -263,17 +263,17 @@ public final /* synthetic */ class l0 implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ l0(iw0 iw0Var, boolean z10, int i10, u1 u1Var) {
+    public /* synthetic */ l0(kw0 kw0Var, boolean z10, int i10, u1 u1Var) {
         this.a = 5;
-        this.d = iw0Var;
+        this.d = kw0Var;
         this.c = z10;
         this.b = i10;
         this.e = u1Var;
     }
 
-    public /* synthetic */ l0(j61 j61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
+    public /* synthetic */ l0(l61 l61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
         this.a = i11;
-        this.d = j61Var;
+        this.d = l61Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class wx extends lu0 {
     public final /* synthetic */ boolean[] a;
@@ -38,18 +38,18 @@ public final class wx extends lu0 {
     public final void D() {
         int i10;
         qy qyVar = this.b;
-        org.telegram.ui.Components.zq0 zq0Var = qyVar.G2;
-        if (zq0Var != null) {
+        org.telegram.ui.Components.br0 br0Var = qyVar.G2;
+        if (br0Var != null) {
             i10 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
-            zq0Var.i(i10, qyVar.D2);
+            br0Var.i(i10, qyVar.D2);
         }
     }
 
     @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         qy qyVar = this.b;
-        org.telegram.ui.Components.zq0 zq0Var = qyVar.G2;
-        org.telegram.ui.Components.w9 f7 = zq0Var != null ? zq0Var.f(i10) : null;
+        org.telegram.ui.Components.br0 br0Var = qyVar.G2;
+        org.telegram.ui.Components.w9 f7 = br0Var != null ? br0Var.f(i10) : null;
         if (f7 == null) {
             return null;
         }
@@ -167,8 +167,8 @@ public final class wx extends lu0 {
 
     @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Components.zq0 zq0Var = this.b.G2;
-        org.telegram.ui.Components.w9 f7 = zq0Var != null ? zq0Var.f(i10) : null;
+        org.telegram.ui.Components.br0 br0Var = this.b.G2;
+        org.telegram.ui.Components.w9 f7 = br0Var != null ? br0Var.f(i10) : null;
         if (f7 != null) {
             return f7.getImageReceiver().getBitmapSafe();
         }
@@ -190,10 +190,10 @@ public final class wx extends lu0 {
             }
             axVar.setFieldText(charSequence);
         }
-        org.telegram.ui.Components.zq0 zq0Var = qyVar.G2;
-        if (zq0Var != null) {
+        org.telegram.ui.Components.br0 br0Var = qyVar.G2;
+        if (br0Var != null) {
             i13 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
-            zq0Var.i(i13, qyVar.D2);
+            br0Var.i(i13, qyVar.D2);
         }
         if ((z10 && i11 == 0) || qyVar.C2 == null || arrayList2.isEmpty()) {
             PhotoViewer.t1().G0(true, false);

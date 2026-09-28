@@ -13,10 +13,10 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGL10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class ok {
     public static int A(float f7, int i10, int i11) {
@@ -125,8 +125,8 @@ public abstract /* synthetic */ class ok {
         viewPropertyAnimator.alpha(f7).setDuration(j3).start();
     }
 
-    public static void s(ViewPropertyAnimator viewPropertyAnimator, rr rrVar, long j3) {
-        viewPropertyAnimator.setInterpolator(rrVar).setDuration(j3).start();
+    public static void s(ViewPropertyAnimator viewPropertyAnimator, sr srVar, long j3) {
+        viewPropertyAnimator.setInterpolator(srVar).setDuration(j3).start();
     }
 
     public static void t(TextView textView, int i10, int i11, float f7, int i12) {

@@ -8,9 +8,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class pw implements org.telegram.ui.Components.f00 {
+public final class pw implements org.telegram.ui.Components.g00 {
     public final /* synthetic */ Context a;
     public final /* synthetic */ qy b;
 
@@ -60,25 +60,25 @@ public final class pw implements org.telegram.ui.Components.f00 {
         }
     }
 
-    public final void c(org.telegram.ui.Components.h00 h00Var, boolean z10) {
+    public final void c(org.telegram.ui.Components.i00 i00Var, boolean z10) {
         int i10;
         int i11;
         qy qyVar = this.b;
         int i12 = qyVar.e0[0].h;
-        int i13 = h00Var.a;
+        int i13 = i00Var.a;
         if (i12 == i13) {
             return;
         }
-        if (h00Var.f) {
+        if (i00Var.f) {
             qyVar.z0.i(i13);
             i11 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
             qyVar.showDialog(new rg.j0(3, i11, this.a, qyVar, null));
             return;
         }
         ArrayList<MessagesController.DialogFilter> dialogFilters = qyVar.getMessagesController().getDialogFilters();
-        if (h00Var.e || ((i10 = h00Var.a) >= 0 && i10 < dialogFilters.size())) {
+        if (i00Var.e || ((i10 = i00Var.a) >= 0 && i10 < dialogFilters.size())) {
             py pyVar = qyVar.e0[1];
-            pyVar.h = h00Var.a;
+            pyVar.h = i00Var.a;
             pyVar.setVisibility(0);
             qyVar.e0[1].setTranslationX(r7[0].getMeasuredWidth());
             qy.f1(qyVar, false);
@@ -91,7 +91,7 @@ public final class pw implements org.telegram.ui.Components.f00 {
         boolean isChatlist = dialogFilter.isChatlist();
         qy qyVar = this.b;
         if (isChatlist) {
-            org.telegram.ui.Components.d10.T(qyVar, dialogFilter.id, null);
+            org.telegram.ui.Components.e10.T(qyVar, dialogFilter.id, null);
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qyVar.getParentActivity());

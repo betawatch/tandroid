@@ -25,27 +25,27 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.fq;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.gq;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.vp;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class f1 extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
     public int F;
     public boolean G;
-    public r61 a;
-    public qr b;
+    public t61 a;
+    public rr b;
     public org.telegram.ui.ActionBar.u0 c;
     public boolean d;
     public FrameLayout e;
     public c1 f;
     public FrameLayout h;
     public e1 n;
-    public fq r;
+    public gq r;
     public y5 s;
     public boolean v;
     public TLRPC.TL_businessLocation w;
@@ -70,8 +70,8 @@ public final class f1 extends m2 implements NotificationCenter.NotificationCente
             this.c.setScaleX(V ? 1.0f : 0.0f);
             this.c.setScaleY(V ? 1.0f : 0.0f);
         }
-        r61 r61Var = this.a;
-        if (r61Var == null || r61Var.Y2 == null) {
+        t61 t61Var = this.a;
+        if (t61Var == null || t61Var.Y2 == null) {
             return;
         }
         if (this.G != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
@@ -159,7 +159,7 @@ public final class f1 extends m2 implements NotificationCenter.NotificationCente
     }
 
     public final void X() {
-        j61 j61Var;
+        l61 l61Var;
         if (this.v) {
             return;
         }
@@ -186,9 +186,9 @@ public final class f1 extends m2 implements NotificationCenter.NotificationCente
             this.d = false;
         }
         Y();
-        r61 r61Var = this.a;
-        if (r61Var != null && (j61Var = r61Var.Y2) != null) {
-            j61Var.N(true);
+        t61 t61Var = this.a;
+        if (t61Var != null && (l61Var = t61Var.Y2) != null) {
+            l61Var.N(true);
         }
         this.v = true;
     }
@@ -225,7 +225,7 @@ public final class f1 extends m2 implements NotificationCenter.NotificationCente
         int i11 = h6.v8;
         int i12 = 0;
         mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
-        this.b = new qr(mutate, new up(h6.w0(null, i11, false)));
+        this.b = new rr(mutate, new vp(h6.w0(null, i11, false)));
         this.c = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.b);
         U(false);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -269,9 +269,9 @@ public final class f1 extends m2 implements NotificationCenter.NotificationCente
         svgThumb.setColorKey(i13, getResourceProvider());
         svgThumb.setAspectCenter(true);
         svgThumb.setParent(this.s.getImageReceiver());
-        fq fqVar = new fq(svgThumb);
-        this.r = fqVar;
-        fqVar.setCallback(this.s);
+        gq gqVar = new gq(svgThumb);
+        this.r = gqVar;
+        gqVar.setCallback(this.s);
         this.s.setBackgroundColor(getThemedColor(i15));
         this.n = new e1(this, context);
         FrameLayout frameLayout4 = new FrameLayout(context);
@@ -279,12 +279,12 @@ public final class f1 extends m2 implements NotificationCenter.NotificationCente
         frameLayout4.addView(this.s, w7.y5.c(-1.0f, -1));
         this.h.addView(this.n, w7.y5.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
         Y();
-        r61 r61Var = new r61(this, new bi.v(this, 26), new a1(this, i12), null);
-        this.a = r61Var;
-        r61Var.p1();
-        r61 r61Var2 = this.a;
-        r61Var2.Y2.r = false;
-        frameLayout.addView(r61Var2, w7.y5.c(-1.0f, -1));
+        t61 t61Var = new t61(this, new bi.v(this, 26), new a1(this, i12), null);
+        this.a = t61Var;
+        t61Var.p1();
+        t61 t61Var2 = this.a;
+        t61Var2.Y2.r = false;
+        frameLayout.addView(t61Var2, w7.y5.c(-1.0f, -1));
         this.actionBar.z(this.a, true);
         X();
         this.fragmentView = frameLayout;

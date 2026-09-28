@@ -12,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.oc0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class w0 extends z4.a {
     public final /* synthetic */ x0 c;
@@ -45,7 +45,7 @@ public final class w0 extends z4.a {
         int i11 = 1;
         if (z10 && i10 == 0) {
             ?? frameLayout = new FrameLayout(x0Var.getContext());
-            frameLayout.setBackground(new mc0(true, -14602694, -13935795, -14395293, -14203560));
+            frameLayout.setBackground(new oc0(true, -14602694, -13935795, -14395293, -14203560));
             ImageView imageView2 = new ImageView(x0Var.getContext());
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
             imageView2.setImageResource(R.drawable.screencast_big);

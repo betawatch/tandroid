@@ -11,10 +11,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.cu;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.du;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class e implements Runnable {
                         mVar.q0.setDuration(420L);
                     }
                     mVar.q0.start();
-                    cu editText = gVar.getEditText();
+                    du editText = gVar.getEditText();
                     if (editText != null && editText.getLayout() != null) {
                         ObjectAnimator objectAnimator = mVar.g0;
                         if (objectAnimator != null) {
@@ -86,7 +86,7 @@ public final /* synthetic */ class e implements Runnable {
                         ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", scrollY, z10 ? editText.getLayout().getLineTop(editText.getLineCount()) - ((editText.getHeight() - editText.getPaddingTop()) - editText.getPaddingBottom()) : 0);
                         mVar.g0 = ofInt;
                         ofInt.setDuration(360L);
-                        mVar.g0.setInterpolator(rr.h);
+                        mVar.g0.setInterpolator(sr.h);
                         mVar.g0.start();
                     }
                     gVar.setSuggestionsEnabled(z10);

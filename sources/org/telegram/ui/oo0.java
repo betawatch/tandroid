@@ -69,7 +69,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class oo0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public static final List g1 = Arrays.asList("http", "https");
@@ -153,9 +153,9 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
     public boolean o0;
     public String p0;
     public String q0;
-    public org.telegram.ui.Components.uq r;
+    public org.telegram.ui.Components.vq r;
     public org.telegram.ui.ActionBar.m2 r0;
-    public org.telegram.ui.Components.uq s;
+    public org.telegram.ui.Components.vq s;
     public rn0 s0;
     public ArrayList t0;
     public int u0;
@@ -496,7 +496,7 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                         i10 = 0;
                         if (i10 != 2 && !paymentForm.additional_methods.isEmpty()) {
                             Objects.requireNonNull(view);
-                            oo0Var.G0(new org.telegram.ui.Components.ou(0, view));
+                            oo0Var.G0(new org.telegram.ui.Components.pu(0, view));
                             return;
                         } else {
                             oo0 oo0Var2 = new oo0(oo0Var.b1, oo0Var.C0, oo0Var.N0, oo0Var.O0, i10, oo0Var.E0, oo0Var.G0, oo0Var.H0, oo0Var.w0, oo0Var.x0, oo0Var.I0, oo0Var.U0, null, oo0Var.r0, oo0Var.W0);
@@ -1091,20 +1091,20 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                     ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.1f);
                     TextView textView3 = this.U;
                     Property property3 = View.ALPHA;
-                    animatorSet2.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, 0.0f), ObjectAnimator.ofFloat(this.s, (Property<org.telegram.ui.Components.uq, Float>) property, 1.0f), ObjectAnimator.ofFloat(this.s, (Property<org.telegram.ui.Components.uq, Float>) property2, 1.0f), ObjectAnimator.ofFloat(this.s, (Property<org.telegram.ui.Components.uq, Float>) property3, 1.0f));
+                    animatorSet2.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, 0.0f), ObjectAnimator.ofFloat(this.s, (Property<org.telegram.ui.Components.vq, Float>) property, 1.0f), ObjectAnimator.ofFloat(this.s, (Property<org.telegram.ui.Components.vq, Float>) property2, 1.0f), ObjectAnimator.ofFloat(this.s, (Property<org.telegram.ui.Components.vq, Float>) property3, 1.0f));
                 } else {
                     this.U.setVisibility(0);
                     this.W.setEnabled(true);
                     AnimatorSet animatorSet3 = this.v;
-                    org.telegram.ui.Components.uq uqVar = this.s;
+                    org.telegram.ui.Components.vq vqVar = this.s;
                     Property property4 = View.SCALE_X;
-                    ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(uqVar, (Property<org.telegram.ui.Components.uq, Float>) property4, 0.1f);
-                    org.telegram.ui.Components.uq uqVar2 = this.s;
+                    ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(vqVar, (Property<org.telegram.ui.Components.vq, Float>) property4, 0.1f);
+                    org.telegram.ui.Components.vq vqVar2 = this.s;
                     Property property5 = View.SCALE_Y;
-                    ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(uqVar2, (Property<org.telegram.ui.Components.uq, Float>) property5, 0.1f);
-                    org.telegram.ui.Components.uq uqVar3 = this.s;
+                    ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(vqVar2, (Property<org.telegram.ui.Components.vq, Float>) property5, 0.1f);
+                    org.telegram.ui.Components.vq vqVar3 = this.s;
                     Property property6 = View.ALPHA;
-                    animatorSet3.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofFloat(uqVar3, (Property<org.telegram.ui.Components.uq, Float>) property6, 0.0f), ObjectAnimator.ofFloat(this.U, (Property<TextView, Float>) property4, 1.0f), ObjectAnimator.ofFloat(this.U, (Property<TextView, Float>) property5, 1.0f), ObjectAnimator.ofFloat(this.U, (Property<TextView, Float>) property6, 1.0f));
+                    animatorSet3.playTogether(ofFloat3, ofFloat4, ObjectAnimator.ofFloat(vqVar3, (Property<org.telegram.ui.Components.vq, Float>) property6, 0.0f), ObjectAnimator.ofFloat(this.U, (Property<TextView, Float>) property4, 1.0f), ObjectAnimator.ofFloat(this.U, (Property<TextView, Float>) property5, 1.0f), ObjectAnimator.ofFloat(this.U, (Property<TextView, Float>) property6, 1.0f));
                 }
                 this.v.addListener(new fo0(this, z11, i10));
                 this.v.setDuration(150L);
@@ -1127,22 +1127,22 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
             ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(contentView2, (Property<View, Float>) property8, 0.1f);
             View contentView3 = this.n.getContentView();
             Property property9 = View.ALPHA;
-            animatorSet5.playTogether(ofFloat5, ofFloat6, ObjectAnimator.ofFloat(contentView3, (Property<View, Float>) property9, 0.0f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.uq, Float>) property7, 1.0f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.uq, Float>) property8, 1.0f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.uq, Float>) property9, 1.0f));
+            animatorSet5.playTogether(ofFloat5, ofFloat6, ObjectAnimator.ofFloat(contentView3, (Property<View, Float>) property9, 0.0f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.vq, Float>) property7, 1.0f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.vq, Float>) property8, 1.0f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.vq, Float>) property9, 1.0f));
         } else if (this.w != null) {
-            animatorSet4.playTogether(ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.uq, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.uq, Float>) View.SCALE_Y, 0.1f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.uq, Float>) View.ALPHA, 0.0f));
+            animatorSet4.playTogether(ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.vq, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.vq, Float>) View.SCALE_Y, 0.1f), ObjectAnimator.ofFloat(this.r, (Property<org.telegram.ui.Components.vq, Float>) View.ALPHA, 0.0f));
         } else {
             this.n.getContentView().setVisibility(0);
             this.n.setEnabled(true);
             AnimatorSet animatorSet6 = this.v;
-            org.telegram.ui.Components.uq uqVar4 = this.r;
+            org.telegram.ui.Components.vq vqVar4 = this.r;
             Property property10 = View.SCALE_X;
-            ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(uqVar4, (Property<org.telegram.ui.Components.uq, Float>) property10, 0.1f);
-            org.telegram.ui.Components.uq uqVar5 = this.r;
+            ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(vqVar4, (Property<org.telegram.ui.Components.vq, Float>) property10, 0.1f);
+            org.telegram.ui.Components.vq vqVar5 = this.r;
             Property property11 = View.SCALE_Y;
-            ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(uqVar5, (Property<org.telegram.ui.Components.uq, Float>) property11, 0.1f);
-            org.telegram.ui.Components.uq uqVar6 = this.r;
+            ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(vqVar5, (Property<org.telegram.ui.Components.vq, Float>) property11, 0.1f);
+            org.telegram.ui.Components.vq vqVar6 = this.r;
             Property property12 = View.ALPHA;
-            animatorSet6.playTogether(ofFloat7, ofFloat8, ObjectAnimator.ofFloat(uqVar6, (Property<org.telegram.ui.Components.uq, Float>) property12, 0.0f));
+            animatorSet6.playTogether(ofFloat7, ofFloat8, ObjectAnimator.ofFloat(vqVar6, (Property<org.telegram.ui.Components.vq, Float>) property12, 0.0f));
             if (!isFinishing()) {
                 this.v.playTogether(ObjectAnimator.ofFloat(this.n.getContentView(), (Property<View, Float>) property10, 1.0f), ObjectAnimator.ofFloat(this.n.getContentView(), (Property<View, Float>) property11, 1.0f), ObjectAnimator.ofFloat(this.n.getContentView(), (Property<View, Float>) property12, 1.0f));
             }
@@ -1422,9 +1422,9 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         int i14 = 3;
         if (i12 == 0 || i12 == 1 || i12 == 2 || i12 == 3 || i12 == 4 || i12 == 6) {
             this.n = n10.h(1, R.drawable.ic_ab_done, LocaleController.getString(R.string.Done), AndroidUtilities.dp(56.0f));
-            org.telegram.ui.Components.uq uqVar = new org.telegram.ui.Components.uq(context, 1);
-            this.r = uqVar;
-            uqVar.setAlpha(0.0f);
+            org.telegram.ui.Components.vq vqVar = new org.telegram.ui.Components.vq(context, 1);
+            this.r = vqVar;
+            vqVar.setAlpha(0.0f);
             this.r.setScaleX(0.1f);
             this.r.setScaleY(0.1f);
             this.r.setVisibility(4);
@@ -1522,14 +1522,14 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                                 z12 = false;
                             }
                             if (z12) {
-                                org.telegram.ui.Components.ln lnVar = new org.telegram.ui.Components.ln(context, 18);
-                                lnVar.setBackgroundColor(getThemedColor(i18));
-                                this.J.add(lnVar);
-                                frameLayout.addView(lnVar, new FrameLayout.LayoutParams(-1, 1, 83));
+                                org.telegram.ui.Components.mn mnVar = new org.telegram.ui.Components.mn(context, 18);
+                                mnVar.setBackgroundColor(getThemedColor(i18));
+                                this.J.add(mnVar);
+                                frameLayout.addView(mnVar, new FrameLayout.LayoutParams(-1, 1, 83));
                             }
                         }
                         if (i10 == 9) {
-                            this.f[i10] = new org.telegram.ui.Components.g40(context);
+                            this.f[i10] = new org.telegram.ui.Components.i40(context);
                         } else {
                             this.f[i10] = new EditTextBoldCursor(context);
                         }
@@ -1974,9 +1974,9 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                     this.n.setEnabled(false);
                     this.n.getContentView().setVisibility(4);
                     AndroidUtilities.checkAndroidTheme(context, true);
-                    org.telegram.ui.Components.h91 h91Var = new org.telegram.ui.Components.h91(this, context);
-                    this.w = h91Var;
-                    h91Var.getSettings().setJavaScriptEnabled(true);
+                    org.telegram.ui.Components.j91 j91Var = new org.telegram.ui.Components.j91(this, context);
+                    this.w = j91Var;
+                    j91Var.getSettings().setJavaScriptEnabled(true);
                     this.w.getSettings().setDomStorageEnabled(true);
                     this.w.getSettings().setSupportZoom(true);
                     this.w.getSettings().setBuiltInZoomControls(true);
@@ -2263,10 +2263,10 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                                 frameLayout3.addView(this.O, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, 0.0f, 4.0f, 0.0f));
                             }
                             if (!z14) {
-                                org.telegram.ui.Components.ln lnVar2 = new org.telegram.ui.Components.ln(context, 19);
-                                lnVar2.setBackgroundColor(getThemedColor(i26));
-                                this.J.add(lnVar2);
-                                frameLayout3.addView(lnVar2, new FrameLayout.LayoutParams(-1, 1, 83));
+                                org.telegram.ui.Components.mn mnVar2 = new org.telegram.ui.Components.mn(context, 19);
+                                mnVar2.setBackgroundColor(getThemedColor(i26));
+                                this.J.add(mnVar2);
+                                frameLayout3.addView(mnVar2, new FrameLayout.LayoutParams(-1, 1, 83));
                             }
                             if ((i24 == 4 && !this.g0) || ((i24 == 5 && !this.h0) || (i24 == 2 && !this.i0))) {
                                 frameLayout3.setVisibility(8);
@@ -2452,10 +2452,10 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                             z15 = false;
                         }
                         if (z15) {
-                            org.telegram.ui.Components.ln lnVar3 = new org.telegram.ui.Components.ln(context, i23);
-                            lnVar3.setBackgroundColor(getThemedColor(i34));
-                            this.J.add(lnVar3);
-                            frameLayout4.addView(lnVar3, new FrameLayout.LayoutParams(-1, 1, 83));
+                            org.telegram.ui.Components.mn mnVar3 = new org.telegram.ui.Components.mn(context, i23);
+                            mnVar3.setBackgroundColor(getThemedColor(i34));
+                            this.J.add(mnVar3);
+                            frameLayout4.addView(mnVar3, new FrameLayout.LayoutParams(-1, 1, 83));
                         }
                         this.f[i32] = new EditTextBoldCursor(context);
                         this.f[i32].setTag(Integer.valueOf(i32));
@@ -2853,9 +2853,9 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                         this.U.setGravity(17);
                         this.U.setTypeface(AndroidUtilities.bold());
                         this.W.addView(this.U, w7.y5.c(-1.0f, -1));
-                        org.telegram.ui.Components.uq uqVar2 = new org.telegram.ui.Components.uq(context, 0);
-                        this.s = uqVar2;
-                        uqVar2.setVisibility(4);
+                        org.telegram.ui.Components.vq vqVar2 = new org.telegram.ui.Components.vq(context, 0);
+                        this.s = vqVar2;
+                        vqVar2.setVisibility(4);
                         int themedColor2 = getThemedColor(i49);
                         this.s.a(805306367 & themedColor2, themedColor2);
                         this.W.addView(this.s, w7.y5.c(-1.0f, -1));
@@ -2892,7 +2892,7 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                                 int lastIndexOf = string2.lastIndexOf(42);
                                 if (indexOf != -1 && lastIndexOf != -1) {
                                     SpannableString spannableString = new SpannableString(string2.substring(indexOf + 1, lastIndexOf));
-                                    spannableString.setSpan(new org.telegram.ui.Components.z51(this.C0.invoice.terms_url), 0, spannableString.length(), 33);
+                                    spannableString.setSpan(new org.telegram.ui.Components.b61(this.C0.invoice.terms_url), 0, spannableString.length(), 33);
                                     int i50 = lastIndexOf + 1;
                                     spannableStringBuilder.replace(indexOf, i50, (CharSequence) spannableString);
                                     string2.substring(0, indexOf);
@@ -2906,7 +2906,7 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                                 int lastIndexOf2 = string3.lastIndexOf(42);
                                 if (indexOf2 != -1 && lastIndexOf2 != -1) {
                                     SpannableString spannableString2 = new SpannableString(string3.substring(indexOf2 + 1, lastIndexOf2));
-                                    spannableString2.setSpan(new org.telegram.ui.Components.z51(this.C0.invoice.terms_url), 0, spannableString2.length(), 33);
+                                    spannableString2.setSpan(new org.telegram.ui.Components.b61(this.C0.invoice.terms_url), 0, spannableString2.length(), 33);
                                     int i51 = lastIndexOf2 + 1;
                                     spannableStringBuilder.replace(indexOf2, i51, (CharSequence) spannableString2);
                                     string3 = string3.substring(0, indexOf2) + ((Object) spannableString2) + string3.substring(i51);
@@ -2914,7 +2914,7 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                                 int indexOf3 = string3.indexOf("%1$s");
                                 if (indexOf3 != -1) {
                                     spannableStringBuilder.replace(indexOf3, indexOf3 + 4, (CharSequence) this.p0);
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.s51(AndroidUtilities.bold()), indexOf3, this.p0.length() + indexOf3, 33);
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.u51(AndroidUtilities.bold()), indexOf3, this.p0.length() + indexOf3, 33);
                                 }
                             }
                             this.V.setText(spannableStringBuilder);
@@ -3093,10 +3093,10 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
                         int i57 = org.telegram.ui.ActionBar.h6.d6;
                         frameLayout6.setBackgroundColor(getThemedColor(i57));
                         if (i55 == 0) {
-                            org.telegram.ui.Components.ln lnVar4 = new org.telegram.ui.Components.ln(context, 17);
-                            lnVar4.setBackgroundColor(getThemedColor(i57));
-                            this.J.add(lnVar4);
-                            frameLayout6.addView(lnVar4, new FrameLayout.LayoutParams(-1, 1, 83));
+                            org.telegram.ui.Components.mn mnVar4 = new org.telegram.ui.Components.mn(context, 17);
+                            mnVar4.setBackgroundColor(getThemedColor(i57));
+                            this.J.add(mnVar4);
+                            frameLayout6.addView(mnVar4, new FrameLayout.LayoutParams(-1, 1, 83));
                         }
                         this.f[i55] = new EditTextBoldCursor(context);
                         this.f[i55].setTag(Integer.valueOf(i55));
@@ -3289,12 +3289,12 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, TLObject.FLAG_27, null, null, null, null, org.telegram.ui.ActionBar.h6.C8));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 67108864, null, null, null, null, org.telegram.ui.ActionBar.h6.D8));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.Q, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.h6.k0, null, null, org.telegram.ui.ActionBar.h6.d7));
-        org.telegram.ui.Components.uq uqVar = this.r;
+        org.telegram.ui.Components.vq vqVar = this.r;
         int i11 = org.telegram.ui.ActionBar.h6.D7;
-        arrayList.add(new org.telegram.ui.ActionBar.j6(uqVar, 0, null, null, null, null, i11));
-        org.telegram.ui.Components.uq uqVar2 = this.r;
+        arrayList.add(new org.telegram.ui.ActionBar.j6(vqVar, 0, null, null, null, null, i11));
+        org.telegram.ui.Components.vq vqVar2 = this.r;
         int i12 = org.telegram.ui.ActionBar.h6.E7;
-        arrayList.add(new org.telegram.ui.ActionBar.j6(uqVar2, 0, null, null, null, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.j6(vqVar2, 0, null, null, null, null, i12));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.s, 0, null, null, null, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.j6(this.s, 0, null, null, null, null, i12));
         if (this.f != null) {

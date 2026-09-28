@@ -36,9 +36,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.telegram.ui.Components.ll0, org.telegram.ui.ActionBar.z1, ky, v4, org.telegram.ui.Components.d5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.zj0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, mg1 {
+public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.telegram.ui.Components.nl0, org.telegram.ui.ActionBar.z1, ky, v4, org.telegram.ui.Components.d5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.bk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, mg1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -88,7 +88,7 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
         return false;
     }
 
-    @Override // org.telegram.ui.Components.zj0
+    @Override // org.telegram.ui.Components.bk0
     public void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         ei eiVar = (ei) this.b;
         MessageObject messageObject = (MessageObject) this.c;
@@ -128,7 +128,7 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         i4 i4Var = (i4) this.b;
         m3 m3Var = (m3) this.c;
@@ -209,7 +209,7 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -317,9 +317,9 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
                 }
             case 27:
                 TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) this.b;
-                org.telegram.ui.Components.ed0 ed0Var = (org.telegram.ui.Components.ed0) this.c;
+                org.telegram.ui.Components.gd0 gd0Var = (org.telegram.ui.Components.gd0) this.c;
                 int i12 = encryptedChat.ttl;
-                int value = ed0Var.getValue();
+                int value = gd0Var.getValue();
                 if (value >= 0 && value < 16) {
                     encryptedChat.ttl = value;
                 } else if (value == 16) {
@@ -359,7 +359,7 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
         un unVar = (un) this.b;
-        org.telegram.ui.Components.mc0 mc0Var = (org.telegram.ui.Components.mc0) this.c;
+        org.telegram.ui.Components.oc0 oc0Var = (org.telegram.ui.Components.oc0) this.c;
         Pair pair = (Pair) obj;
         unVar.getClass();
         if (pair == null) {
@@ -371,8 +371,8 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
         if (b4Var == null || longValue != b4Var.i(unVar.G ? 1 : 0) || bitmap == null) {
             return;
         }
-        mc0Var.x = bitmap;
-        mc0Var.i();
+        oc0Var.x = bitmap;
+        oc0Var.i();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -540,7 +540,7 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

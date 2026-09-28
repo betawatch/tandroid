@@ -23,7 +23,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class kj0 extends org.telegram.ui.Components.bb {
     public static kj0 u0;
@@ -44,7 +44,7 @@ public final class kj0 extends org.telegram.ui.Components.bb {
     public int l0;
     public int m0;
     public float n0;
-    public org.telegram.ui.Components.db0 o0;
+    public org.telegram.ui.Components.fb0 o0;
     public final int p0;
     public final jj0 q0;
     public final Boolean r0;
@@ -81,7 +81,7 @@ public final class kj0 extends org.telegram.ui.Components.bb {
         gj0Var.setText(y());
         gj0Var.setCloseImageVisible(false);
         gj0Var.e.c(0.0f, false);
-        this.o0 = new org.telegram.ui.Components.db0(this, 1);
+        this.o0 = new org.telegram.ui.Components.fb0(this, 1);
         hj0 hj0Var = new hj0(this, getContext(), this.resourcesProvider);
         this.Y = hj0Var;
         int i11 = org.telegram.ui.ActionBar.h6.h5;
@@ -99,7 +99,7 @@ public final class kj0 extends org.telegram.ui.Components.bb {
         ViewGroup viewGroup3 = this.containerView;
         int i14 = this.backgroundPaddingLeft;
         viewGroup3.addView(n50Var, w7.y5.f(1.0f, 55, i14, 0, i14, 0));
-        j20 j20Var = new j20(getContext(), this.resourcesProvider, (org.telegram.ui.Components.wl0) null);
+        j20 j20Var = new j20(getContext(), this.resourcesProvider, (org.telegram.ui.Components.yl0) null);
         j20Var.setClickable(true);
         j20Var.setOrientation(1);
         j20Var.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
@@ -112,16 +112,16 @@ public final class kj0 extends org.telegram.ui.Components.bb {
         int i15 = this.backgroundPaddingLeft;
         viewGroup4.addView(j20Var, w7.y5.f(-2.0f, 87, i15, 0, i15, 0));
         ug.h hVar = this.k0;
-        org.telegram.ui.Components.wl0 wl0Var = this.d;
+        org.telegram.ui.Components.yl0 yl0Var = this.d;
         hVar.n = arrayList;
-        hVar.f = wl0Var;
+        hVar.f = yl0Var;
         int i16 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(60.0f));
+        yl0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(60.0f));
         this.d.j(new i3(this, 21));
         this.d.setOnItemClickListener(new i2.s(this, i10, 15));
         s4.j jVar = new s4.j();
         jVar.n(350L);
-        jVar.o(org.telegram.ui.Components.rr.h);
+        jVar.o(org.telegram.ui.Components.sr.h);
         jVar.C = false;
         jVar.m = false;
         this.d.setItemAnimator(jVar);
@@ -447,11 +447,11 @@ public final class kj0 extends org.telegram.ui.Components.bb {
         int i11 = -1;
         int i12 = 0;
         while (true) {
-            org.telegram.ui.Components.wl0 wl0Var = this.d;
-            if (i10 >= wl0Var.getChildCount()) {
+            org.telegram.ui.Components.yl0 yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 break;
             }
-            View childAt = wl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if ((childAt instanceof xg.l) && (R = RecyclerView.R(childAt)) > 0) {
                 if (i11 == -1) {
                     i11 = R;
@@ -503,7 +503,7 @@ public final class kj0 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
+    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
         ug.h hVar = new ug.h(getContext(), this.resourcesProvider, true);
         this.k0 = hVar;
         hVar.s = true;

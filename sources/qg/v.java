@@ -9,12 +9,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.b5;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.p90;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.st0;
 import yh.s5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -46,10 +46,10 @@ public final /* synthetic */ class v implements Runnable {
                 n2Var.h();
                 break;
             case 2:
-                n90 n90Var = ((tg.r0) obj).e;
+                p90 p90Var = ((tg.r0) obj).e;
                 try {
-                    if (n90Var.getLayout().getLineForOffset(i11) == 0) {
-                        n90Var.getEditableText().insert(i11, "\n");
+                    if (p90Var.getLayout().getLineForOffset(i11) == 0) {
+                        p90Var.getEditableText().insert(i11, "\n");
                         break;
                     }
                 } catch (Exception e) {

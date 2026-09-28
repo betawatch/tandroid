@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                 ((ChatObject.Call) this.c).lambda$loadMembers$3(this.b, (TL_phone.getGroupParticipants) this.d, tLObject, tL_error);
                 break;
             case 1:
-                ((MediaDataController) this.c).lambda$loadAvatarConstructor$242((SharedPreferences) this.d, this.b, tLObject, tL_error);
+                ((MediaDataController) this.c).lambda$loadAvatarConstructor$243((SharedPreferences) this.d, this.b, tLObject, tL_error);
                 break;
             case 2:
                 ((MediaDataController) this.c).lambda$loadStickersByEmojiOrName$85((String) this.d, this.b, tLObject, tL_error);

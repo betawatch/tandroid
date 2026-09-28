@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class pi extends ri {
     public TLRPC.User b;
@@ -44,7 +44,7 @@ public final class pi extends ri {
     public final void a(boolean z10) {
         boolean z11 = this.c != null && (-this.b.id) == this.d.W0;
         this.a.e(z11, z10);
-        ij0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
+        kj0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
         if (!z10) {
             if (lottieAnimation != null) {
                 lottieAnimation.stop();

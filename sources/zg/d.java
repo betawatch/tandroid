@@ -14,12 +14,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.cz;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
@@ -107,13 +107,13 @@ public final class d {
             cVar3.h = min;
             float clamp = Utilities.clamp(min, 1.0f, 0.0f);
             cVar3.h = clamp;
-            rr rrVar = rr.g;
-            float interpolation = rrVar.getInterpolation(clamp);
+            sr srVar = sr.g;
+            float interpolation = srVar.getInterpolation(clamp);
             float lerp = AndroidUtilities.lerp(cVar3.a, cVar3.c, interpolation);
             d dVar = cVar3.l;
             q5 q5Var = dVar.a;
             float f10 = cVar3.h;
-            float lerp2 = f10 < 0.3f ? AndroidUtilities.lerp(cVar3.b, cVar3.d, rrVar.getInterpolation(f10 / 0.3f)) : AndroidUtilities.lerp(cVar3.d, cVar3.e, rr.i.getInterpolation((f10 - 0.3f) / 0.7f));
+            float lerp2 = f10 < 0.3f ? AndroidUtilities.lerp(cVar3.b, cVar3.d, srVar.getInterpolation(f10 / 0.3f)) : AndroidUtilities.lerp(cVar3.d, cVar3.e, sr.i.getInterpolation((f10 - 0.3f) / 0.7f));
             float lerp3 = AndroidUtilities.lerp(cVar3.f, cVar3.g, interpolation);
             if (!dVar.f) {
                 float height = dVar.b.height() * 0.8f;
@@ -249,7 +249,7 @@ public final class d {
             }
         }
         if (!z11) {
-            imageReceiver.setImageBitmap(new ij0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
+            imageReceiver.setImageBitmap(new kj0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
             return;
         }
         if (imageReceiver.getLottieAnimation() != null) {

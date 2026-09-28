@@ -1,27 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.content.Context;
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class bq implements dw0 {
-    public final /* synthetic */ zp a;
-    public final /* synthetic */ dq b;
+public final class bq extends LinearLayout {
+    public final /* synthetic */ eq a;
 
-    public bq(dq dqVar, zp zpVar) {
-        this.b = dqVar;
-        this.a = zpVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bq(eq eqVar, Context context) {
+        super(context);
+        this.a = eqVar;
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public final void h(int i10) {
-        dq dqVar = this.b;
-        dqVar.r = i10;
-        dqVar.p(true);
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void n() {
-        int measuredHeight = this.b.c.getMeasuredHeight();
-        zp zpVar = this.a;
-        zpVar.y(0 - zpVar.getScrollX(), measuredHeight - zpVar.getScrollY(), false);
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        eq.m(this.a);
     }
 }

@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h21 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class h21 implements Runnable {
             case 1:
                 w21 w21Var = this.b;
                 w21Var.d0(0, w21Var.J, true);
-                org.telegram.ui.Components.ij0 animatedDrawable = w21Var.F.getAnimatedDrawable();
+                org.telegram.ui.Components.kj0 animatedDrawable = w21Var.F.getAnimatedDrawable();
                 if (w21Var.I == null && animatedDrawable != null) {
                     w21Var.I = Bitmap.createBitmap(animatedDrawable.b, animatedDrawable.c, Bitmap.Config.ARGB_8888);
                     animatedDrawable.b();

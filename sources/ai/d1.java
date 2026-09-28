@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.nq;
+import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.p90;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class d1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -90,11 +90,11 @@ public final class d1 extends LinearLayout {
             case 3:
                 RectF rectF = (RectF) this.b;
                 Paint paint = (Paint) this.c;
-                nq nqVar = (nq) this.d;
-                paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i5, nqVar.d0));
-                int left = nqVar.E[0].getLeft() - AndroidUtilities.dp(13.0f);
+                oq oqVar = (oq) this.d;
+                paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i5, oqVar.d0));
+                int left = oqVar.E[0].getLeft() - AndroidUtilities.dp(13.0f);
                 float dp = AndroidUtilities.dp(91.0f);
-                org.telegram.ui.ActionBar.j0 j0Var = nqVar.F;
+                org.telegram.ui.ActionBar.j0 j0Var = oqVar.F;
                 if (j0Var.getVisibility() == 0) {
                     f7 = j0Var.getAlpha() * AndroidUtilities.dp(25.0f);
                 } else {
@@ -110,10 +110,10 @@ public final class d1 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d1(nq nqVar, Context context) {
+    public d1(oq oqVar, Context context) {
         super(context);
         this.a = 3;
-        this.d = nqVar;
+        this.d = oqVar;
         this.b = new RectF();
         this.c = new Paint(1);
     }
@@ -142,13 +142,13 @@ public final class d1 extends LinearLayout {
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
                 textView.setGravity(17);
                 addView(textView, w7.y5.t(-2, -2, 1, 0, 2, 0, 0));
-                n90 n90Var = new n90(context, d6Var);
-                this.d = n90Var;
-                n90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.gc, d6Var));
-                n90Var.setTextSize(1, 14.0f);
-                n90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-                n90Var.setGravity(17);
-                addView(n90Var, w7.y5.t(-2, -2, 1, 0, 9, 0, 18));
+                p90 p90Var = new p90(context, d6Var);
+                this.d = p90Var;
+                p90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.gc, d6Var));
+                p90Var.setTextSize(1, 14.0f);
+                p90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+                p90Var.setGravity(17);
+                addView(p90Var, w7.y5.t(-2, -2, 1, 0, 9, 0, 18));
                 break;
             default:
                 setOrientation(1);

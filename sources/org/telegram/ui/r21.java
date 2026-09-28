@@ -11,9 +11,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r21 implements org.telegram.ui.Components.kl0 {
+public final /* synthetic */ class r21 implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -22,9 +22,9 @@ public final /* synthetic */ class r21 implements org.telegram.ui.Components.kl0
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
-        org.telegram.ui.Components.wq0 wq0Var;
+        org.telegram.ui.Components.yq0 yq0Var;
         float f7;
         s4.c1 K;
         int i11 = 0;
@@ -32,25 +32,25 @@ public final /* synthetic */ class r21 implements org.telegram.ui.Components.kl0
         switch (this.a) {
             case 0:
                 v21 v21Var = (v21) this.b;
-                org.telegram.ui.Components.wl0 wl0Var = v21Var.y;
-                org.telegram.ui.Components.lp lpVar = v21Var.b;
-                if (lpVar.d.get(i10) == v21Var.K || v21Var.O != null) {
+                org.telegram.ui.Components.yl0 yl0Var = v21Var.y;
+                org.telegram.ui.Components.mp mpVar = v21Var.b;
+                if (mpVar.d.get(i10) == v21Var.K || v21Var.O != null) {
                     return;
                 }
                 v21Var.Q = false;
-                v21Var.K = (org.telegram.ui.Components.mp) lpVar.d.get(i10);
-                lpVar.E(i10);
+                v21Var.K = (org.telegram.ui.Components.np) mpVar.d.get(i10);
+                mpVar.E(i10);
                 v21Var.h.postDelayed(new org.telegram.ui.Components.ld(v21Var, i10, 26), 100L);
-                while (i11 < wl0Var.getChildCount()) {
-                    org.telegram.ui.Components.h21 h21Var = (org.telegram.ui.Components.h21) wl0Var.getChildAt(i11);
-                    if (h21Var != view && (wq0Var = h21Var.J) != null) {
-                        AndroidUtilities.cancelRunOnUIThread(wq0Var);
-                        h21Var.J.run();
+                while (i11 < yl0Var.getChildCount()) {
+                    org.telegram.ui.Components.j21 j21Var = (org.telegram.ui.Components.j21) yl0Var.getChildAt(i11);
+                    if (j21Var != view && (yq0Var = j21Var.J) != null) {
+                        AndroidUtilities.cancelRunOnUIThread(yq0Var);
+                        j21Var.J.run();
                     }
                     i11++;
                 }
-                if (!((org.telegram.ui.Components.mp) lpVar.d.get(i10)).a.a) {
-                    ((org.telegram.ui.Components.h21) view).d();
+                if (!((org.telegram.ui.Components.np) mpVar.d.get(i10)).a.a) {
+                    ((org.telegram.ui.Components.j21) view).d();
                 }
                 g21 g21Var = v21Var.J;
                 if (g21Var != null) {
@@ -113,7 +113,7 @@ public final /* synthetic */ class r21 implements org.telegram.ui.Components.kl0
                 }
             case 4:
                 k71 k71Var = (k71) this.b;
-                org.telegram.ui.Components.v51 G = k71Var.i0.G(i10 - 1);
+                org.telegram.ui.Components.x51 G = k71Var.i0.G(i10 - 1);
                 if (G == null) {
                     return;
                 }
@@ -220,18 +220,18 @@ public final /* synthetic */ class r21 implements org.telegram.ui.Components.kl0
                         le1Var.v = -1;
                         le1Var.n.animate().setListener(null).cancel();
                         le1Var.n.animate().translationY(i20).setDuration(200L).setListener(new he1(le1Var, i11)).start();
-                        org.telegram.ui.Components.wl0 wl0Var2 = le1Var.s.getVisibility() == 0 ? le1Var.b : le1Var.a;
-                        wl0Var2.d1(false);
-                        int N0 = ((s4.c0) wl0Var2.getLayoutManager()).N0();
+                        org.telegram.ui.Components.yl0 yl0Var2 = le1Var.s.getVisibility() == 0 ? le1Var.b : le1Var.a;
+                        yl0Var2.d1(false);
+                        int N0 = ((s4.c0) yl0Var2.getLayoutManager()).N0();
                         f7 = 12.0f;
-                        if ((N0 == wl0Var2.getAdapter().h() - 1 || (N0 == wl0Var2.getAdapter().h() - 2 && wl0Var2 == le1Var.a)) && (K = wl0Var2.K(N0)) != null) {
+                        if ((N0 == yl0Var2.getAdapter().h() - 1 || (N0 == yl0Var2.getAdapter().h() - 2 && yl0Var2 == le1Var.a)) && (K = yl0Var2.K(N0)) != null) {
                             int bottom = K.a.getBottom();
                             if (N0 == le1Var.d.c - 2) {
                                 bottom += AndroidUtilities.dp(12.0f);
                             }
-                            if (wl0Var2.getMeasuredHeight() - bottom <= i20) {
-                                wl0Var2.setTranslationY(-(wl0Var2.getMeasuredHeight() - bottom));
-                                wl0Var2.animate().translationY(0.0f).setDuration(200L).start();
+                            if (yl0Var2.getMeasuredHeight() - bottom <= i20) {
+                                yl0Var2.setTranslationY(-(yl0Var2.getMeasuredHeight() - bottom));
+                                yl0Var2.animate().translationY(0.0f).setDuration(200L).start();
                             }
                         }
                         le1Var.a.setPadding(0, 0, 0, 0);
@@ -254,10 +254,10 @@ public final /* synthetic */ class r21 implements org.telegram.ui.Components.kl0
                     if (hashSet.isEmpty()) {
                         return;
                     }
-                    org.telegram.ui.Components.wl0 wl0Var3 = le1Var.s.getVisibility() == 0 ? le1Var.b : le1Var.a;
-                    int height = wl0Var3.getHeight() - view.getBottom();
+                    org.telegram.ui.Components.yl0 yl0Var3 = le1Var.s.getVisibility() == 0 ? le1Var.b : le1Var.a;
+                    int height = yl0Var3.getHeight() - view.getBottom();
                     if (height < i20) {
-                        wl0Var3.v0(0, i20 - height, null);
+                        yl0Var3.v0(0, i20 - height, null);
                         return;
                     }
                     return;

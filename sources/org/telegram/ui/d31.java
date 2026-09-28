@@ -14,11 +14,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d31 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout a;
-    public org.telegram.ui.Components.wl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public z21 c;
     public int d;
     public int e;
@@ -111,16 +111,16 @@ public final class d31 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.actionBar.setActionBarMenuOnItemClick(new q70(this, 25));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.b = wl0Var;
-        wl0Var.p1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         ((s4.j) this.b.getItemAnimator()).m = false;
         this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.wl0 wl0Var2 = this.b;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.b;
         z21 z21Var = new z21(this, context);
         this.c = z21Var;
-        wl0Var2.setAdapter(z21Var);
+        yl0Var2.setAdapter(z21Var);
         this.b.setOnItemClickListener(new r21(this, 1));
         linearLayout.addView(this.b, w7.y5.n(-1, -1));
         this.a = linearLayout;

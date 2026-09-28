@@ -31,28 +31,28 @@ import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.bb0;
-import org.telegram.ui.Components.cu;
 import org.telegram.ui.Components.d8;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.go;
+import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.du;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.ku;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.n30;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.s51;
-import org.telegram.ui.Components.so0;
-import org.telegram.ui.Components.uq;
-import org.telegram.ui.Components.w80;
+import org.telegram.ui.Components.ho;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.lu;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.oz;
+import org.telegram.ui.Components.p30;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.uo0;
+import org.telegram.ui.Components.vq;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.y80;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class j6 {
     public final View a;
@@ -81,8 +81,8 @@ public final class j6 {
         this.k = i10;
         this.e = clsArr;
         this.h = null;
-        if (view instanceof ku) {
-            this.a = ((ku) view).getEditText();
+        if (view instanceof lu) {
+            this.a = ((lu) view).getEditText();
         }
     }
 
@@ -100,8 +100,8 @@ public final class j6 {
             ((View) obj).invalidate();
         }
         String str = this.g;
-        if (str != null && (obj instanceof lj0)) {
-            ((lj0) obj).h(i10, str);
+        if (str != null && (obj instanceof nj0)) {
+            ((nj0) obj).h(i10, str);
         }
         int i11 = this.k;
         if ((131072 & i11) != 0 && z10) {
@@ -110,26 +110,26 @@ public final class j6 {
         if ((i11 & 1) != 0 && (obj instanceof View)) {
             View view2 = (View) obj;
             Drawable background = view2.getBackground();
-            if (!(background instanceof bb0)) {
+            if (!(background instanceof db0)) {
                 view2.setBackgroundColor(i10);
                 return;
             }
-            bb0 bb0Var = (bb0) background;
-            bb0Var.a.setColor(i10);
-            bb0Var.b = null;
+            db0 db0Var = (db0) background;
+            db0Var.a.setColor(i10);
+            db0Var.b = null;
             return;
         }
-        if (obj instanceof cu) {
+        if (obj instanceof du) {
             if ((8388608 & i11) != 0) {
-                cu cuVar = (cu) obj;
-                cuVar.setHintColor(i10);
-                cuVar.setHintTextColor(i10);
+                du duVar = (du) obj;
+                duVar.setHintColor(i10);
+                duVar.setHintTextColor(i10);
                 return;
             } else if ((16777216 & i11) != 0) {
-                ((cu) obj).setCursorColor(i10);
+                ((du) obj).setCursorColor(i10);
                 return;
             } else {
-                ((cu) obj).setTextColor(i10);
+                ((du) obj).setTextColor(i10);
                 return;
             }
         }
@@ -168,12 +168,12 @@ public final class j6 {
             CharSequence text = textView.getText();
             if (text instanceof SpannedString) {
                 SpannedString spannedString = (SpannedString) text;
-                s51[] s51VarArr = (s51[]) spannedString.getSpans(0, spannedString.length(), s51.class);
-                if (s51VarArr == null || s51VarArr.length <= 0) {
+                u51[] u51VarArr = (u51[]) spannedString.getSpans(0, spannedString.length(), u51.class);
+                if (u51VarArr == null || u51VarArr.length <= 0) {
                     return;
                 }
-                for (s51 s51Var : s51VarArr) {
-                    s51Var.b = i10;
+                for (u51 u51Var : u51VarArr) {
+                    u51Var.b = i10;
                 }
                 return;
             }
@@ -182,11 +182,11 @@ public final class j6 {
         if (obj instanceof ImageView) {
             ImageView imageView = (ImageView) obj;
             Drawable drawable2 = imageView.getDrawable();
-            if (!(drawable2 instanceof qq)) {
+            if (!(drawable2 instanceof rq)) {
                 imageView.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
                 return;
             }
-            Drawable drawable3 = (i11 & 32) != 0 ? ((qq) drawable2).a : ((qq) drawable2).b;
+            Drawable drawable3 = (i11 & 32) != 0 ? ((rq) drawable2).a : ((rq) drawable2).b;
             if (drawable3 != null) {
                 drawable3.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
                 return;
@@ -196,14 +196,14 @@ public final class j6 {
         if (obj instanceof w9) {
             w9 w9Var = (w9) obj;
             Drawable staticThumb = w9Var.getImageReceiver() != null ? w9Var.getImageReceiver().getStaticThumb() : null;
-            if (!(staticThumb instanceof qq)) {
+            if (!(staticThumb instanceof rq)) {
                 if (staticThumb != null) {
                     staticThumb.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
                     return;
                 }
                 return;
             } else {
-                Drawable drawable4 = (i11 & 32) != 0 ? ((qq) staticThumb).a : ((qq) staticThumb).b;
+                Drawable drawable4 = (i11 & 32) != 0 ? ((rq) staticThumb).a : ((rq) staticThumb).b;
                 if (drawable4 != null) {
                     drawable4.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
                     return;
@@ -212,17 +212,17 @@ public final class j6 {
             }
         }
         if (obj instanceof Drawable) {
-            if (obj instanceof w80) {
+            if (obj instanceof y80) {
                 if ((i11 & 32) != 0) {
-                    w80.j.setColor(i10);
+                    y80.j.setColor(i10);
                     return;
                 } else {
-                    ((w80) obj).h.setColor(i10);
+                    ((y80) obj).h.setColor(i10);
                     return;
                 }
             }
-            if (obj instanceof qq) {
-                Drawable drawable5 = (i11 & 32) != 0 ? ((qq) obj).a : ((qq) obj).b;
+            if (obj instanceof rq) {
+                Drawable drawable5 = (i11 & 32) != 0 ? ((rq) obj).a : ((rq) obj).b;
                 if (drawable5 != null) {
                     drawable5.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
                     return;
@@ -282,12 +282,12 @@ public final class j6 {
                 return;
             }
         }
-        if (obj instanceof x80) {
+        if (obj instanceof z80) {
             if ((i11 & 2048) != 0) {
-                ((x80) obj).setProgressColor(i10);
+                ((z80) obj).setProgressColor(i10);
                 return;
             } else {
-                ((x80) obj).setBackColor(i10);
+                ((z80) obj).setBackColor(i10);
                 return;
             }
         }
@@ -300,12 +300,12 @@ public final class j6 {
             view.invalidate();
             return;
         }
-        if (obj instanceof so0) {
+        if (obj instanceof uo0) {
             if ((i11 & 2048) != 0) {
-                ((so0) obj).setOuterColor(i10);
+                ((uo0) obj).setOuterColor(i10);
                 return;
             } else {
-                ((so0) obj).setInnerColor(i10);
+                ((uo0) obj).setInnerColor(i10);
                 return;
             }
         }
@@ -319,10 +319,10 @@ public final class j6 {
                         CharSequence text2 = textView2.getText();
                         if (text2 instanceof SpannedString) {
                             SpannedString spannedString2 = (SpannedString) text2;
-                            s51[] s51VarArr2 = (s51[]) spannedString2.getSpans(0, spannedString2.length(), s51.class);
-                            if (s51VarArr2 != null && s51VarArr2.length > 0) {
-                                for (s51 s51Var2 : s51VarArr2) {
-                                    s51Var2.b = i10;
+                            u51[] u51VarArr2 = (u51[]) spannedString2.getSpans(0, spannedString2.length(), u51.class);
+                            if (u51VarArr2 != null && u51VarArr2.length > 0) {
+                                for (u51 u51Var2 : u51VarArr2) {
+                                    u51Var2.b = i10;
                                 }
                             }
                         }
@@ -342,10 +342,10 @@ public final class j6 {
                             CharSequence text3 = textView3.getText();
                             if (text3 instanceof SpannedString) {
                                 SpannedString spannedString3 = (SpannedString) text3;
-                                s51[] s51VarArr3 = (s51[]) spannedString3.getSpans(0, spannedString3.length(), s51.class);
-                                if (s51VarArr3 != null && s51VarArr3.length > 0) {
-                                    for (s51 s51Var3 : s51VarArr3) {
-                                        s51Var3.b = i10;
+                                u51[] u51VarArr3 = (u51[]) spannedString3.getSpans(0, spannedString3.length(), u51.class);
+                                if (u51VarArr3 != null && u51VarArr3.length > 0) {
+                                    for (u51 u51Var3 : u51VarArr3) {
+                                        u51Var3.b = i10;
                                     }
                                 }
                             }
@@ -387,16 +387,16 @@ public final class j6 {
                         Drawable background = view.getBackground();
                         if (background != null) {
                             if ((i12 & 16) == 0) {
-                                if (background instanceof qq) {
-                                    background = ((qq) background).b;
+                                if (background instanceof rq) {
+                                    background = ((rq) background).b;
                                 } else if ((background instanceof StateListDrawable) || (background instanceof RippleDrawable)) {
                                     h6.B1(background, i10, (i12 & 65536) != 0);
                                 }
                                 if (background != null) {
                                     background.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
                                 }
-                            } else if (background instanceof qq) {
-                                Drawable drawable = ((qq) background).a;
+                            } else if (background instanceof rq) {
+                                Drawable drawable = ((rq) background).a;
                                 if (drawable instanceof ColorDrawable) {
                                     ((ColorDrawable) drawable).setColor(i10);
                                 }
@@ -462,15 +462,15 @@ public final class j6 {
                             }
                         }
                     }
-                } else if (view instanceof n30) {
-                    ((n30) view).c();
+                } else if (view instanceof p30) {
+                    ((p30) view).c();
                 }
             }
         }
     }
 
     public final void e(int i10, boolean z10, boolean z11) {
-        dl0 dl0Var;
+        fl0 fl0Var;
         Drawable[] compoundDrawables;
         int i11 = this.f;
         if (z11) {
@@ -499,18 +499,18 @@ public final class j6 {
                 if (drawable != null) {
                     if (drawable instanceof f2) {
                         ((f2) drawable).a(i10);
-                    } else if (drawable instanceof jm0) {
-                        ((jm0) drawable).b(i10);
-                    } else if (drawable instanceof ij0) {
+                    } else if (drawable instanceof lm0) {
+                        ((lm0) drawable).b(i10);
+                    } else if (drawable instanceof kj0) {
                         String str = this.g;
                         if (str != null) {
-                            ((ij0) drawable).Q(i10, str);
+                            ((kj0) drawable).Q(i10, str);
                         }
-                    } else if (drawable instanceof qq) {
+                    } else if (drawable instanceof rq) {
                         if ((i13 & 32) != 0) {
-                            ((qq) drawable).a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
+                            ((rq) drawable).a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
                         } else {
-                            ((qq) drawable).b.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
+                            ((rq) drawable).b.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
                         }
                     } else if (drawable instanceof h9) {
                         ((h9) drawable).h(i10);
@@ -529,10 +529,10 @@ public final class j6 {
         if (view != null && clsArr == null && this.l == null && ((i13 & 262144) == 0 || b(i11, view))) {
             if ((i13 & 1) != 0) {
                 Drawable background = view.getBackground();
-                if (background instanceof bb0) {
-                    bb0 bb0Var = (bb0) background;
-                    bb0Var.a.setColor(i10);
-                    bb0Var.b = null;
+                if (background instanceof db0) {
+                    db0 db0Var = (db0) background;
+                    db0Var.a.setColor(i10);
+                    db0Var.b = null;
                 } else {
                     view.setBackgroundColor(i10);
                 }
@@ -540,8 +540,8 @@ public final class j6 {
             if ((i13 & 32) != 0) {
                 if ((i13 & 2048) == 0) {
                     Drawable background2 = view.getBackground();
-                    if (background2 instanceof qq) {
-                        background2 = (i13 & 65536) != 0 ? ((qq) background2).a : ((qq) background2).b;
+                    if (background2 instanceof rq) {
+                        background2 = (i13 & 65536) != 0 ? ((rq) background2).a : ((rq) background2).b;
                     }
                     if (background2 != null) {
                         if ((background2 instanceof StateListDrawable) || (background2 instanceof RippleDrawable)) {
@@ -595,25 +595,25 @@ public final class j6 {
                 ((k) view).E(i10, false);
             }
         }
-        if (view instanceof nz) {
+        if (view instanceof oz) {
             if ((i13 & 4) != 0) {
-                ((nz) view).setTextColor(i10);
+                ((oz) view).setTextColor(i10);
             } else if ((i13 & 2048) != 0) {
-                ((nz) view).setProgressBarColor(i10);
+                ((oz) view).setProgressBarColor(i10);
             }
         }
         if (view instanceof RadialProgressView) {
             ((RadialProgressView) view).setProgressColor(i10);
-        } else if (view instanceof x80) {
+        } else if (view instanceof z80) {
             if ((i13 & 2048) != 0) {
-                ((x80) view).setProgressColor(i10);
+                ((z80) view).setProgressColor(i10);
             } else {
-                ((x80) view).setBackColor(i10);
+                ((z80) view).setBackColor(i10);
             }
-        } else if (view instanceof uq) {
-            ((uq) view).b();
-        } else if ((view instanceof so0) && (i13 & 2048) != 0) {
-            ((so0) view).setOuterColor(i10);
+        } else if (view instanceof vq) {
+            ((vq) view).b();
+        } else if ((view instanceof uo0) && (i13 & 2048) != 0) {
+            ((uo0) view).setOuterColor(i10);
         }
         if ((i13 & 4) != 0 && ((i13 & 262144) == 0 || b(i11, view))) {
             if (view instanceof TextView) {
@@ -622,8 +622,8 @@ public final class j6 {
                 ((NumberTextView) view).setTextColor(i10);
             } else if (view instanceof h5) {
                 ((h5) view).setTextColor(i10);
-            } else if (view instanceof go) {
-                ((go) view).setTextColor(i10);
+            } else if (view instanceof ho) {
+                ((ho) view).setTextColor(i10);
             }
         }
         if ((16777216 & i13) != 0 && (view instanceof EditTextBoldCursor)) {
@@ -668,32 +668,32 @@ public final class j6 {
         if ((view instanceof z4.g) && (i13 & 32768) != 0) {
             AndroidUtilities.setViewPagerEdgeEffectColor((z4.g) view, i10);
         }
-        boolean z12 = view instanceof wl0;
+        boolean z12 = view instanceof yl0;
         if (z12) {
-            wl0 wl0Var = (wl0) view;
+            yl0 yl0Var = (yl0) view;
             if ((i13 & 4096) != 0) {
-                wl0Var.setListSelectorColor(Integer.valueOf(i10));
+                yl0Var.setListSelectorColor(Integer.valueOf(i10));
             }
-            if ((33554432 & i13) != 0 && (dl0Var = wl0Var.f1) != null) {
-                dl0Var.c();
+            if ((33554432 & i13) != 0 && (fl0Var = yl0Var.f1) != null) {
+                fl0Var.c();
             }
             if ((32768 & i13) != 0) {
-                wl0Var.setGlowColor(i10);
+                yl0Var.setGlowColor(i10);
             }
             if ((524288 & i13) != 0) {
-                ArrayList<View> headers = wl0Var.getHeaders();
+                ArrayList<View> headers = yl0Var.getHeaders();
                 if (headers != null) {
                     for (int i15 = 0; i15 < headers.size(); i15++) {
                         d(i10, headers.get(i15));
                     }
                 }
-                ArrayList<View> headersCache = wl0Var.getHeadersCache();
+                ArrayList<View> headersCache = yl0Var.getHeadersCache();
                 if (headersCache != null) {
                     for (int i16 = 0; i16 < headersCache.size(); i16++) {
                         d(i10, headersCache.get(i16));
                     }
                 }
-                View pinnedHeader = wl0Var.getPinnedHeader();
+                View pinnedHeader = yl0Var.getPinnedHeader();
                 if (pinnedHeader != null) {
                     d(i10, pinnedHeader);
                 }
@@ -707,19 +707,19 @@ public final class j6 {
         }
         if (clsArr != null) {
             if (z12) {
-                wl0 wl0Var2 = (wl0) view;
-                wl0Var2.getRecycledViewPool().a();
-                int hiddenChildCount = wl0Var2.getHiddenChildCount();
+                yl0 yl0Var2 = (yl0) view;
+                yl0Var2.getRecycledViewPool().a();
+                int hiddenChildCount = yl0Var2.getHiddenChildCount();
                 for (int i17 = 0; i17 < hiddenChildCount; i17++) {
-                    d(i10, wl0Var2.V(i17));
+                    d(i10, yl0Var2.V(i17));
                 }
-                int cachedChildCount = wl0Var2.getCachedChildCount();
+                int cachedChildCount = yl0Var2.getCachedChildCount();
                 for (int i18 = 0; i18 < cachedChildCount; i18++) {
-                    d(i10, wl0Var2.P(i18));
+                    d(i10, yl0Var2.P(i18));
                 }
-                int attachedScrapChildCount = wl0Var2.getAttachedScrapChildCount();
+                int attachedScrapChildCount = yl0Var2.getAttachedScrapChildCount();
                 for (int i19 = 0; i19 < attachedScrapChildCount; i19++) {
-                    d(i10, wl0Var2.O(i19));
+                    d(i10, yl0Var2.O(i19));
                 }
             }
             if (view instanceof ViewGroup) {
@@ -752,22 +752,22 @@ public final class j6 {
         this.k = i10;
         this.e = clsArr;
         this.h = i6Var;
-        if (view instanceof ku) {
-            this.a = ((ku) view).getEditText();
+        if (view instanceof lu) {
+            this.a = ((lu) view).getEditText();
         }
     }
 
-    public j6(View view, Class[] clsArr, ij0[] ij0VarArr, String str, int i10) {
+    public j6(View view, Class[] clsArr, kj0[] kj0VarArr, String str, int i10) {
         this.b = -1;
         this.j = new boolean[1];
         this.f = i10;
         this.g = str;
-        this.d = ij0VarArr;
+        this.d = kj0VarArr;
         this.a = view;
         this.k = 0;
         this.e = clsArr;
-        if (view instanceof ku) {
-            this.a = ((ku) view).getEditText();
+        if (view instanceof lu) {
+            this.a = ((lu) view).getEditText();
         }
     }
 
@@ -788,8 +788,8 @@ public final class j6 {
         this.h = i6Var;
         this.m = new HashMap();
         this.n = new HashMap();
-        if (view instanceof ku) {
-            this.a = ((ku) view).getEditText();
+        if (view instanceof lu) {
+            this.a = ((lu) view).getEditText();
         }
     }
 

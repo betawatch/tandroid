@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gq0 implements org.telegram.ui.Components.d5, org.telegram.ui.Components.ml0, org.telegram.ui.ActionBar.k1, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class gq0 implements org.telegram.ui.Components.d5, org.telegram.ui.Components.ol0, org.telegram.ui.ActionBar.k1, org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ tq0 b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class gq0 implements org.telegram.ui.Components.d5,
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         tq0 tq0Var = this.b;
         if (tq0Var.Y) {
@@ -36,10 +36,10 @@ public final /* synthetic */ class gq0 implements org.telegram.ui.Components.d5,
         if (!(view instanceof org.telegram.ui.Cells.t5)) {
             return false;
         }
-        org.telegram.ui.Components.yl0 yl0Var = tq0Var.V;
+        org.telegram.ui.Components.am0 am0Var = tq0Var.V;
         boolean z10 = !((org.telegram.ui.Cells.t5) view).a();
         tq0Var.X = z10;
-        yl0Var.d(view, i10, z10);
+        am0Var.d(view, i10, z10);
         return false;
     }
 

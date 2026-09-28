@@ -19,14 +19,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.om0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.n00;
 import org.telegram.ui.qe;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -116,13 +116,13 @@ public final /* synthetic */ class ga implements Runnable {
                 break;
             case 2:
                 wn wnVar = (wn) obj5;
-                mm0 mm0Var = (mm0) obj;
-                ((y70) obj4).n0 = true;
+                om0 om0Var = (om0) obj;
+                ((a80) obj4).n0 = true;
                 Activity parentActivity = wnVar.getParentActivity();
                 long j10 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j11 = this.c;
-                ci.y6 y6Var = new ci.y6(wnVar, (ArrayList) obj2, j11, mm0Var, 1);
-                qe qeVar = new qe(mm0Var, i11);
+                ci.y6 y6Var = new ci.y6(wnVar, (ArrayList) obj2, j11, om0Var, 1);
+                qe qeVar = new qe(om0Var, i11);
                 Pattern pattern = org.telegram.ui.Components.e5.a;
                 org.telegram.ui.Components.e5.K(parentActivity, j11, j10, 0, true, y6Var, qeVar, new org.telegram.ui.Components.c5(null), null);
                 break;

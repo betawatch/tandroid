@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class uu0 extends FrameLayout {
     public final /* synthetic */ PhotoViewer a;
@@ -230,11 +230,5 @@ public final class uu0 extends FrameLayout {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer = this.a;
         return photoViewer.e && PhotoViewer.k(photoViewer, motionEvent);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        super.requestLayout();
-        AndroidUtilities.printStackTrace("requestLayout");
     }
 }

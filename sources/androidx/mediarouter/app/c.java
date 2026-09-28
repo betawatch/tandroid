@@ -15,14 +15,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.i20;
-import org.telegram.ui.Components.j20;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.l20;
 import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.n20;
+import org.telegram.ui.Components.o20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -264,59 +264,59 @@ public final class c extends Handler {
                 }
                 return;
             case 7:
-                k20 k20Var = (k20) this.b;
-                j20 j20Var = k20Var.g;
+                m20 m20Var = (m20) this.b;
+                l20 l20Var = m20Var.g;
                 int i15 = msg.what;
                 if (i15 == 1) {
-                    j20Var.getClass();
+                    l20Var.getClass();
                     return;
                 }
                 if (i15 == 2) {
-                    k20Var.f.removeMessages(3);
-                    k20Var.j = false;
-                    k20Var.k = true;
-                    j20Var.onLongPress(k20Var.n);
+                    m20Var.f.removeMessages(3);
+                    m20Var.j = false;
+                    m20Var.k = true;
+                    l20Var.onLongPress(m20Var.n);
                     return;
                 }
                 if (i15 != 3) {
                     throw new RuntimeException("Unknown message " + msg);
                 }
-                i20 i20Var = k20Var.h;
-                if (i20Var != null) {
-                    if (k20Var.i) {
-                        k20Var.j = true;
+                k20 k20Var = m20Var.h;
+                if (k20Var != null) {
+                    if (m20Var.i) {
+                        m20Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) i20Var).Z1(k20Var.n);
+                        ((PhotoViewer) k20Var).Z1(m20Var.n);
                         return;
                     }
                 }
                 return;
             case 8:
-                l20 l20Var = (l20) this.b;
-                m20 m20Var = l20Var.f;
+                n20 n20Var = (n20) this.b;
+                o20 o20Var = n20Var.f;
                 int i16 = msg.what;
                 if (i16 == 1) {
-                    m20Var.onShowPress(l20Var.m);
+                    o20Var.onShowPress(n20Var.m);
                     return;
                 }
                 if (i16 == 2) {
-                    l20Var.e.removeMessages(3);
-                    l20Var.i = false;
-                    l20Var.j = true;
-                    m20Var.onLongPress(l20Var.m);
+                    n20Var.e.removeMessages(3);
+                    n20Var.i = false;
+                    n20Var.j = true;
+                    o20Var.onLongPress(n20Var.m);
                     return;
                 }
                 if (i16 != 3) {
                     throw new RuntimeException("Unknown message " + msg);
                 }
-                m20 m20Var2 = l20Var.g;
-                if (m20Var2 != null) {
-                    if (l20Var.h) {
-                        l20Var.i = true;
+                o20 o20Var2 = n20Var.g;
+                if (o20Var2 != null) {
+                    if (n20Var.h) {
+                        n20Var.i = true;
                         return;
                     } else {
-                        m20Var2.onSingleTapConfirmed(l20Var.m);
+                        o20Var2.onSingleTapConfirmed(n20Var.m);
                         return;
                     }
                 }

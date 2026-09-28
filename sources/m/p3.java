@@ -14,10 +14,10 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class p3 implements n5.b {
     public Object a;
@@ -48,9 +48,9 @@ public final class p3 implements n5.b {
 
     public void a() {
         c(null);
-        y70 y70Var = (y70) this.c;
-        if (y70Var != null) {
-            y70Var.u();
+        a80 a80Var = (a80) this.c;
+        if (a80Var != null) {
+            a80Var.u();
             this.c = null;
         }
         this.d = null;
@@ -94,8 +94,8 @@ public final class p3 implements n5.b {
     }
 
     public void d(e6 e6Var, String str) {
-        y70 y70Var;
-        y70 y70Var2;
+        a80 a80Var;
+        a80 a80Var2;
         if (str == null) {
             a();
             return;
@@ -106,13 +106,13 @@ public final class p3 implements n5.b {
             return;
         }
         c(e6Var);
-        if (((e6) this.f) == e6Var && a2.equals((ArrayList) this.e) && (y70Var2 = (y70) this.c) != null && y70Var2.D()) {
+        if (((e6) this.f) == e6Var && a2.equals((ArrayList) this.e) && (a80Var2 = (a80) this.c) != null && a80Var2.D()) {
             return;
         }
-        if (((e6) this.f) == e6Var && (y70Var = (y70) this.c) != null && y70Var.D() && ((LinearLayout) this.d) != null) {
+        if (((e6) this.f) == e6Var && (a80Var = (a80) this.c) != null && a80Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
             b(e6Var, a2);
-            ((y70) this.c).O();
+            ((a80) this.c).O();
             return;
         }
         a();
@@ -123,7 +123,7 @@ public final class p3 implements n5.b {
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         b(e6Var, a2);
-        y70 a10 = ((ii.p0) this.a).a(e6Var.getEditText());
+        a80 a10 = ((ii.p0) this.a).a(e6Var.getEditText());
         a10.Q = true;
         a10.s = 0;
         a10.t = false;

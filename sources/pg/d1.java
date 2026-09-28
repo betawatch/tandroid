@@ -21,10 +21,10 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ok;
 import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.wv0;
 import w7.n6;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d1 extends DispatchQueue {
     public final SurfaceTexture a;
@@ -236,16 +236,16 @@ public final class d1 extends DispatchQueue {
                                         i10 = 0;
                                     }
                                     s0Var.r = DesugarCollections.unmodifiableMap(hashMap);
-                                    uv0 uv0Var = s0Var.g;
-                                    if (f1Var.h.getWidth() != uv0Var.a || f1Var.h.getHeight() != uv0Var.b) {
-                                        Bitmap createBitmap = Bitmap.createBitmap((int) uv0Var.a, (int) uv0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap).drawBitmap(f1Var.h, (Rect) null, new RectF(0.0f, 0.0f, uv0Var.a, uv0Var.b), (Paint) null);
+                                    wv0 wv0Var = s0Var.g;
+                                    if (f1Var.h.getWidth() != wv0Var.a || f1Var.h.getHeight() != wv0Var.b) {
+                                        Bitmap createBitmap = Bitmap.createBitmap((int) wv0Var.a, (int) wv0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap).drawBitmap(f1Var.h, (Rect) null, new RectF(0.0f, 0.0f, wv0Var.a, wv0Var.b), (Paint) null);
                                         f1Var.h = createBitmap;
                                         f1Var.r = true;
                                     }
-                                    if (f1Var.n != null && (r5.getWidth() != uv0Var.a || f1Var.n.getHeight() != uv0Var.b)) {
-                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) uv0Var.a, (int) uv0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap2).drawBitmap(f1Var.n, (Rect) null, new RectF(0.0f, 0.0f, uv0Var.a, uv0Var.b), (Paint) null);
+                                    if (f1Var.n != null && (r5.getWidth() != wv0Var.a || f1Var.n.getHeight() != wv0Var.b)) {
+                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) wv0Var.a, (int) wv0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap2).drawBitmap(f1Var.n, (Rect) null, new RectF(0.0f, 0.0f, wv0Var.a, wv0Var.b), (Paint) null);
                                         f1Var.n = createBitmap2;
                                         f1Var.r = true;
                                     }

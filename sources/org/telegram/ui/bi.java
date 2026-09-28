@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class bi implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -59,9 +59,9 @@ public final class bi implements ViewTreeObserver.OnPreDrawListener {
                     }
                     cq0Var.n.l();
                 }
-                org.telegram.ui.Components.wl0 wl0Var = ((cq0) this.b).h;
-                if (wl0Var != null) {
-                    wl0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Components.yl0 yl0Var = ((cq0) this.b).h;
+                if (yl0Var != null) {
+                    yl0Var.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;
@@ -168,9 +168,9 @@ public final class bi implements ViewTreeObserver.OnPreDrawListener {
                     }
                     wallpapersListActivity.C0();
                 }
-                org.telegram.ui.Components.wl0 wl0Var2 = ((WallpapersListActivity) this.b).H;
-                if (wl0Var2 != null) {
-                    wl0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Components.yl0 yl0Var2 = ((WallpapersListActivity) this.b).H;
+                if (yl0Var2 != null) {
+                    yl0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;

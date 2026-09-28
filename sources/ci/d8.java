@@ -29,15 +29,15 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c20;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.e20;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class d8 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener, le.e {
     public String A0;
@@ -74,7 +74,7 @@ public final class d8 extends org.telegram.ui.Components.bb implements Notificat
     public final fh.d n0;
     public final ah.c o0;
     public final w7 p0;
-    public j61 q0;
+    public l61 q0;
     public MessageObject r0;
     public String s0;
     public int t0;
@@ -89,8 +89,8 @@ public final class d8 extends org.telegram.ui.Components.bb implements Notificat
     /* JADX WARN: Type inference failed for: r1v3, types: [ci.v7] */
     public d8(Context context, boolean z10, d8 d8Var, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var) {
         super(2, context, d6Var, true);
-        rr rrVar = rr.h;
-        this.X = new le.c(0, this, rrVar, 380L, false);
+        sr srVar = sr.h;
+        this.X = new le.c(0, this, srVar, 380L, false);
         this.b0 = new ArrayList();
         this.c0 = new ArrayList();
         this.d0 = new ArrayList();
@@ -185,28 +185,28 @@ public final class d8 extends org.telegram.ui.Components.bb implements Notificat
         viVar.setVisibility(4);
         FrameLayout frameLayout = new FrameLayout(context);
         this.j0 = frameLayout;
-        c20 c20Var = new c20(context, d6Var);
-        c20Var.r.setOnFocusChangeListener(new a8(this));
-        c20Var.w = true;
-        c20Var.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        c20Var.e();
-        c20Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        c20Var.r.addTextChangedListener(new b8(this));
-        c20Var.r.setHint(LocaleController.getString(R.string.Search));
+        e20 e20Var = new e20(context, d6Var);
+        e20Var.r.setOnFocusChangeListener(new a8(this));
+        e20Var.w = true;
+        e20Var.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        e20Var.e();
+        e20Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        e20Var.r.addTextChangedListener(new b8(this));
+        e20Var.r.setHint(LocaleController.getString(R.string.Search));
         frameLayout.addView(viVar, w7.y5.g());
-        frameLayout.addView(c20Var, w7.y5.d(-1, 48.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f));
-        c20Var.setupBlurredBackground(this.o0.c(c20Var, eh.b.n(d6Var), false));
+        frameLayout.addView(e20Var, w7.y5.d(-1, 48.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f));
+        e20Var.setupBlurredBackground(this.o0.c(e20Var, eh.b.n(d6Var), false));
         frameLayout.setPadding(AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0);
         this.containerView.addView(frameLayout, w7.y5.e(-1, -2, 55));
         setBackgroundColor(getThemedColor(i12));
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i13, 0, i13, 0);
+        yl0Var.setPadding(i13, 0, i13, 0);
         this.d.p1();
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
-        jVar.o(rrVar);
+        jVar.o(srVar);
         jVar.n(350L);
         this.d.setItemAnimator(jVar);
         if (z10) {
@@ -302,7 +302,7 @@ public final class d8 extends org.telegram.ui.Components.bb implements Notificat
 
     public static void Q(d8 d8Var, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var, View view, int i10) {
         if (!(view instanceof org.telegram.ui.Cells.j7)) {
-            v51 G = d8Var.q0.G(i10 - 1);
+            x51 G = d8Var.q0.G(i10 - 1);
             if (G != null && G.d == 1) {
                 new d8(d8Var.getContext(), true, d8Var, callback, d6Var).show();
                 return;
@@ -533,11 +533,11 @@ public final class d8 extends org.telegram.ui.Components.bb implements Notificat
                 if (arrayList.isEmpty() || arrayList.size() <= 1) {
                     i11 = 0;
                 } else {
-                    arrayList.add(v51.B(null));
+                    arrayList.add(x51.B(null));
                     i11 = AndroidUtilities.dp(12.0f);
                 }
                 this.q0.U();
-                arrayList.add(v51.t(str));
+                arrayList.add(x51.t(str));
                 int size2 = arrayList3.size();
                 int i14 = 0;
                 while (i14 < size2) {
@@ -545,20 +545,20 @@ public final class d8 extends org.telegram.ui.Components.bb implements Notificat
                     i14++;
                     x7 x7Var = new x7(this, i12);
                     int i15 = org.telegram.ui.Cells.i7.a;
-                    v51 J = v51.J(org.telegram.ui.Cells.i7.class);
+                    x51 J = x51.J(org.telegram.ui.Cells.i7.class);
                     J.G = (MessageObject) obj2;
                     J.H = x7Var;
                     arrayList.add(J);
                     i11 += AndroidUtilities.dp(56.0f);
                 }
                 if (z11) {
-                    arrayList.add(v51.n(4));
-                    arrayList.add(v51.n(4));
-                    arrayList.add(v51.n(4));
+                    arrayList.add(x51.n(4));
+                    arrayList.add(x51.n(4));
+                    arrayList.add(x51.n(4));
                     i11 += AndroidUtilities.dp(56.0f) * 3;
                 }
                 if (z12 && !z11) {
-                    v51 c10 = v51.c(i10, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
+                    x51 c10 = x51.c(i10, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
                     c10.q = true;
                     arrayList.add(c10);
                     i11 += AndroidUtilities.dp(50.0f);
@@ -697,11 +697,11 @@ public final class d8 extends org.telegram.ui.Components.bb implements Notificat
         float f7 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            wl0 wl0Var = this.d;
-            if (i10 >= wl0Var.getChildCount()) {
+            yl0 yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 break;
             }
-            View childAt = wl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -759,11 +759,11 @@ public final class d8 extends org.telegram.ui.Components.bb implements Notificat
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        j61 j61Var = new j61(wl0Var, getContext(), this.currentAccount, 0, false, new u7(this, 0), this.resourcesProvider);
-        this.q0 = j61Var;
-        j61Var.r = false;
-        return j61Var;
+    public final xl0 v(yl0 yl0Var) {
+        l61 l61Var = new l61(yl0Var, getContext(), this.currentAccount, 0, false, new u7(this, 0), this.resourcesProvider);
+        this.q0 = l61Var;
+        l61Var.r = false;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

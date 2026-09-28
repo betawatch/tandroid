@@ -22,12 +22,12 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.z70;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public class xa extends NestedScrollView implements x70 {
+public class xa extends NestedScrollView implements z70 {
     public final org.telegram.ui.Cells.aa W;
     public final o1.k a0;
     public final wa b0;
@@ -115,7 +115,7 @@ public class xa extends NestedScrollView implements x70 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new pa(this, scrollY, f7, 0));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(rr.f);
+            ofFloat.setInterpolator(sr.f);
             ofFloat.start();
         }
     }
@@ -128,7 +128,7 @@ public class xa extends NestedScrollView implements x70 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new pa(this, scrollY, f7, 1));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(rr.f);
+            ofFloat.setInterpolator(sr.f);
             ofFloat.start();
         }
     }
@@ -195,7 +195,7 @@ public class xa extends NestedScrollView implements x70 {
         }
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.z70
     public final void a(RectF rectF) {
         va vaVar;
         wa waVar = this.b0;
@@ -214,7 +214,7 @@ public class xa extends NestedScrollView implements x70 {
         rectF.offset(frameLayout.getX() + x10, frameLayout.getY() + (waVar.getY() - getScrollY()));
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.z70
     public final void b(Canvas canvas, float f7) {
         va vaVar;
         wa waVar = this.b0;

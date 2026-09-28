@@ -33,10 +33,10 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import v7.p8;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class v4 extends a0 implements org.telegram.ui.ActionBar.x5, p9, m0 {
     public static Paint k0;
@@ -91,7 +91,7 @@ public final class v4 extends a0 implements org.telegram.ui.ActionBar.x5, p9, m0
         this.K = new ArrayList();
         this.L = new HashMap();
         this.T = -1;
-        this.U = new org.telegram.ui.Components.e6(this, 0L, 320L, rr.h);
+        this.U = new org.telegram.ui.Components.e6(this, 0L, 320L, sr.h);
         this.j0 = new Path();
         this.n = d6Var;
         setWillNotDraw(false);
@@ -151,7 +151,7 @@ public final class v4 extends a0 implements org.telegram.ui.ActionBar.x5, p9, m0
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a0, i11 - r7);
             this.i0 = ofFloat;
             ofFloat.setDuration(220L);
-            this.i0.setInterpolator(rr.h);
+            this.i0.setInterpolator(sr.h);
             this.i0.addUpdateListener(new ai.a(this, 28));
             this.i0.addListener(new ei.v2(this, i11, 2));
             this.i0.start();
@@ -161,7 +161,7 @@ public final class v4 extends a0 implements org.telegram.ui.ActionBar.x5, p9, m0
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.a0, i112 - r7);
         this.i0 = ofFloat2;
         ofFloat2.setDuration(220L);
-        this.i0.setInterpolator(rr.h);
+        this.i0.setInterpolator(sr.h);
         this.i0.addUpdateListener(new ai.a(this, 28));
         this.i0.addListener(new ei.v2(this, i112, 2));
         this.i0.start();

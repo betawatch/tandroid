@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pe implements org.telegram.ui.Components.d60, org.telegram.ui.Components.g60, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.jo, MessagesStorage.BooleanCallback, org.telegram.ui.Components.xj0, ResultCallback, wh.c, jh.a, jh.b, u60, ls, org.telegram.ui.Components.ml0, jh.d, org.telegram.ui.Components.yk0 {
+public final /* synthetic */ class pe implements org.telegram.ui.Components.f60, org.telegram.ui.Components.i60, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.ko, MessagesStorage.BooleanCallback, org.telegram.ui.Components.zj0, ResultCallback, wh.c, jh.a, jh.b, u60, ls, org.telegram.ui.Components.ol0, jh.d, org.telegram.ui.Components.al0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ wn b;
 
@@ -24,7 +24,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.d60,
         this.b = wnVar;
     }
 
-    @Override // org.telegram.ui.Components.yk0
+    @Override // org.telegram.ui.Components.al0
     public void a() {
         wn wnVar = this.b;
         wnVar.q9(1);
@@ -41,7 +41,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.d60,
         wnVar.y3.m(wnVar.T5, wnVar.f, 8);
     }
 
-    @Override // org.telegram.ui.Components.jo
+    @Override // org.telegram.ui.Components.ko
     public void c(TLRPC.Document document) {
         switch (this.a) {
             case 4:
@@ -53,7 +53,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.d60,
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         wn wnVar = this.b;
         boolean z10 = false;
@@ -67,7 +67,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.d60,
                 Object J = wnVar.I1.getAdapter().J(i10 - 1);
                 if (J instanceof gg.h1) {
                     gg.h1 h1Var = (gg.h1) J;
-                    if (wnVar.I1.getAdapter().J != null && org.telegram.ui.Components.w51.h) {
+                    if (wnVar.I1.getAdapter().J != null && org.telegram.ui.Components.y51.h) {
                         wnVar.Y.setFieldText("");
                         jk jkVar = wnVar.Y;
                         String str = h1Var.a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.d60,
                         wnVar.showDialog(alertDialog$Builder.a);
                         return true;
                     }
-                    if (org.telegram.ui.Components.w51.h) {
+                    if (org.telegram.ui.Components.y51.h) {
                         wnVar.Y.setFieldText("");
                         jk jkVar2 = wnVar.Y;
                         String str2 = (String) J;
@@ -105,7 +105,7 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.d60,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xj0
+    @Override // org.telegram.ui.Components.zj0
     public void e(ArrayList arrayList) {
         switch (this.a) {
             case 11:
@@ -179,9 +179,9 @@ public final /* synthetic */ class pe implements org.telegram.ui.Components.d60,
                 adapter.w.c();
                 adapter.I.clear();
                 adapter.l();
-                org.telegram.ui.Components.ua0 ua0Var = adapter.V;
-                if (ua0Var != null) {
-                    ua0Var.a(false);
+                org.telegram.ui.Components.wa0 wa0Var = adapter.V;
+                if (wa0Var != null) {
+                    wa0Var.a(false);
                     break;
                 }
                 break;

@@ -12,14 +12,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class c9 extends View {
     public a9 a;
     public final e6 b;
     public boolean c;
     public boolean d;
-    public final p20 e;
+    public final r20 e;
     public Drawable f;
     public Drawable h;
     public boolean n;
@@ -34,7 +34,7 @@ public final class c9 extends View {
         this.w = e9Var;
         e6 e6Var = new e6(400L, AndroidUtilities.overshootInterpolator);
         this.b = e6Var;
-        this.e = new p20();
+        this.e = new r20();
         e6Var.a = this;
     }
 
@@ -60,10 +60,10 @@ public final class c9 extends View {
             int i11 = a9Var.d;
             int i12 = a9Var.e;
             int i13 = a9Var.f;
-            p20 p20Var = this.e;
-            p20Var.d(i10, i11, i12, i13);
-            p20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            paint = p20Var.c;
+            r20 r20Var = this.e;
+            r20Var.d(i10, i11, i12, i13);
+            r20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            paint = r20Var.c;
         } else {
             if (this.s == null) {
                 Paint paint2 = new Paint(1);

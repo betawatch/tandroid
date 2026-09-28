@@ -6,9 +6,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.il0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class t extends s4.n0 {
     public final /* synthetic */ int a;
@@ -57,38 +57,38 @@ public final class t extends s4.n0 {
                 rect.right = AndroidUtilities.dp(2.0f);
                 break;
             case 5:
-                gl0 gl0Var = (gl0) recyclerView.T(view);
-                if (gl0Var == null) {
+                il0 il0Var = (il0) recyclerView.T(view);
+                if (il0Var == null) {
                     rect.left = AndroidUtilities.dp(4.0f);
                     rect.right = AndroidUtilities.dp(4.0f);
                     break;
                 } else {
-                    int b10 = gl0Var.b() % 4;
+                    int b10 = il0Var.b() % 4;
                     rect.left = b10 == 0 ? 0 : AndroidUtilities.dp(4.0f);
                     rect.right = b10 != 3 ? AndroidUtilities.dp(4.0f) : 0;
                     break;
                 }
             case 6:
-                gl0 gl0Var2 = (gl0) recyclerView.T(view);
-                if (gl0Var2 == null) {
+                il0 il0Var2 = (il0) recyclerView.T(view);
+                if (il0Var2 == null) {
                     rect.left = AndroidUtilities.dp(4.0f);
                     rect.right = AndroidUtilities.dp(4.0f);
                     break;
                 } else {
-                    int b11 = gl0Var2.b() % 4;
+                    int b11 = il0Var2.b() % 4;
                     rect.left = b11 == 0 ? 0 : AndroidUtilities.dp(4.0f);
                     rect.right = b11 != 3 ? AndroidUtilities.dp(4.0f) : 0;
                     break;
                 }
             case 7:
-                gl0 gl0Var3 = (gl0) recyclerView.T(view);
-                if (gl0Var3 == null) {
+                il0 il0Var3 = (il0) recyclerView.T(view);
+                if (il0Var3 == null) {
                     rect.left = AndroidUtilities.dp(4.0f);
                     rect.right = AndroidUtilities.dp(4.0f);
                     break;
                 } else {
-                    if (gl0Var3.f == 5) {
-                        int b12 = gl0Var3.b() % 4;
+                    if (il0Var3.f == 5) {
+                        int b12 = il0Var3.b() % 4;
                         rect.left = b12 == 0 ? 0 : AndroidUtilities.dp(4.0f);
                         rect.right = b12 != 3 ? AndroidUtilities.dp(4.0f) : 0;
                         break;

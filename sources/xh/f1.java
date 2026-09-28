@@ -26,10 +26,10 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import v7.v7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class f1 extends Drawable {
     public static n1 C = new n1();
@@ -74,7 +74,7 @@ public final class f1 extends Drawable {
         this.o = new Matrix();
         Paint paint3 = new Paint(1);
         this.q = paint3;
-        this.r = new e6(new rg.q1(this, 16), 320L, rr.h);
+        this.r = new e6(new rg.q1(this, 16), 320L, sr.h);
         this.s = AndroidUtilities.dp(11.0f);
         this.u = true;
         this.v = 0;

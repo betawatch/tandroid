@@ -48,11 +48,11 @@ import org.telegram.ui.ActionBar.z2;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.c4;
 import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.ed0;
-import org.telegram.ui.Components.kr;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.gd0;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.s20;
 import org.telegram.ui.zm0;
@@ -60,7 +60,7 @@ import w7.y5;
 import yh.f7;
 import yh.s5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class a0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList X;
@@ -139,33 +139,33 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         }
         s4.j jVar = new s4.j();
         jVar.n(350L);
-        jVar.o(rr.h);
+        jVar.o(sr.h);
         jVar.C = false;
         jVar.m = false;
         this.d.setItemAnimator(jVar);
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f));
+        yl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f));
         this.d.setOnScrollListener(new z());
         this.d.setOnItemClickListener(new n6(23, this, m2Var));
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
         this.b0 = chat;
         ug.b bVar = this.g0;
         ArrayList arrayList = this.X;
-        wl0 wl0Var2 = this.d;
+        yl0 yl0Var2 = this.d;
         u uVar = new u(this);
         u uVar2 = new u(this);
         u uVar3 = new u(this);
         bVar.e = arrayList;
         bVar.v = chat;
-        bVar.f = wl0Var2;
+        bVar.f = yl0Var2;
         bVar.h = uVar;
         bVar.n = uVar2;
         bVar.s = uVar3;
         a0(false, false);
         vg.a aVar = new vg.a(getContext(), this.resourcesProvider);
         this.q0 = aVar;
-        aVar.setOnClickListener(new kr(this, prepaidGiveaway, j3, m2Var));
+        aVar.setOnClickListener(new lr(this, prepaidGiveaway, j3, m2Var));
         Z(false);
         this.containerView.addView(aVar, y5.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         s.j(this.currentAccount, chat, new v(this, 5));
@@ -576,10 +576,10 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
                 }
             } else {
                 vg.c cVar = (vg.c) view;
-                wl0 wl0Var = a0Var.d;
+                yl0 yl0Var = a0Var.d;
                 if (cVar.b()) {
-                    for (int i15 = 0; i15 < wl0Var.getChildCount(); i15++) {
-                        View childAt = wl0Var.getChildAt(i15);
+                    for (int i15 = 0; i15 < yl0Var.getChildCount(); i15++) {
+                        View childAt = yl0Var.getChildAt(i15);
                         if (childAt.getClass().isInstance(cVar)) {
                             ((vg.c) childAt).c(childAt == cVar, true);
                         }
@@ -638,11 +638,11 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         c5 c5Var2 = new c5(d6Var);
         z2 z2Var = new z2(context, d6Var);
         z2Var.a();
-        ed0 ed0Var = new ed0(context, d6Var);
+        gd0 gd0Var = new gd0(context, d6Var);
         int i16 = c5Var2.a;
-        ed0Var.setTextColor(i16);
-        ed0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-        ed0Var.setItemCount(5);
+        gd0Var.setTextColor(i16);
+        gd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+        gd0Var.setItemCount(5);
         g gVar = new g(context, d6Var);
         gVar.setWrapSelectorWheel(true);
         gVar.setAllItemsCount(24);
@@ -656,7 +656,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         hVar.setItemCount(5);
         hVar.setTextColor(i16);
         hVar.setTextOffset(-AndroidUtilities.dp(34.0f));
-        c4 c4Var = new c4(context, c5Var2, ed0Var, gVar, hVar);
+        c4 c4Var = new c4(context, c5Var2, gd0Var, gVar, hVar);
         c4Var.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
         c4Var.addView(frameLayout, y5.t(-1, -2, 51, 22, 0, 0, 4));
@@ -683,14 +683,14 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         calendar2.add(14, (int) j10);
         int i19 = calendar2.get(11);
         int i20 = calendar.get(12);
-        linearLayout.addView(ed0Var, y5.l(0.5f, 0, 270));
-        ed0Var.setMinValue(0);
-        ed0Var.setMaxValue(i18 - 1);
-        ed0Var.setWrapSelectorWheel(false);
-        ed0Var.setTag("DAY");
-        ed0Var.setFormatter(new s20(currentTimeMillis, calendar, i17, 1));
-        u4 u4Var = new u4(c4Var, gVar, hVar, i19, i20, ed0Var);
-        ed0Var.setOnValueChangedListener(u4Var);
+        linearLayout.addView(gd0Var, y5.l(0.5f, 0, 270));
+        gd0Var.setMinValue(0);
+        gd0Var.setMaxValue(i18 - 1);
+        gd0Var.setWrapSelectorWheel(false);
+        gd0Var.setTag("DAY");
+        gd0Var.setFormatter(new s20(currentTimeMillis, calendar, i17, 1));
+        u4 u4Var = new u4(c4Var, gVar, hVar, i19, i20, gd0Var);
+        gd0Var.setOnValueChangedListener(u4Var);
         gVar.setMinValue(0);
         gVar.setMaxValue(23);
         linearLayout.addView(gVar, y5.l(0.2f, 0, 270));
@@ -713,9 +713,9 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
             calendar.setTimeInMillis(j3);
             hVar.setValue(calendar.get(12) / 5);
             gVar.setValue(calendar.get(11));
-            ed0Var.setValue(timeInMillis);
-            ed0Var.getValue();
-            u4Var.q(ed0Var, ed0Var.getValue());
+            gd0Var.setValue(timeInMillis);
+            gd0Var.getValue();
+            u4Var.q(gd0Var, gd0Var.getValue());
             gVar.getValue();
             u4Var.q(gVar, gVar.getValue());
         } else {
@@ -729,7 +729,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         zm0Var.setBackground(w5.e(new float[]{8.0f}, c5Var.h));
         zm0Var.setText(LocaleController.getString("BoostingConfirm", R.string.BoostingConfirm));
         c4Var.addView(zm0Var, y5.t(-1, 48, 83, 16, 15, 16, 16));
-        zm0Var.setOnClickListener(new org.telegram.ui.Components.m0(calendar, ed0Var, gVar, hVar, uVar, z2Var));
+        zm0Var.setOnClickListener(new org.telegram.ui.Components.m0(calendar, gd0Var, gVar, hVar, uVar, z2Var));
         z2Var.b(c4Var);
         e3 e3Var = z2Var.a;
         e3Var.show();
@@ -1280,8 +1280,8 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        wl0 wl0Var;
-        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (wl0Var = this.d) != null && wl0Var.G) {
+        yl0 yl0Var;
+        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (yl0Var = this.d) != null && yl0Var.G) {
             a0(true, true);
         }
     }
@@ -1296,7 +1296,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         ug.b bVar = new ug.b(this.resourcesProvider);
         this.g0 = bVar;
         return bVar;

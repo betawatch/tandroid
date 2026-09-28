@@ -12,19 +12,19 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.xl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class b0 extends vl0 {
+public final class b0 extends xl0 {
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -60,12 +60,12 @@ public final class b0 extends vl0 {
         a0 a0Var = (a0) c1Var.a;
         String str = (String) this.c.get(i10);
         if (((Boolean) this.e.get(i10)).booleanValue()) {
-            pq pqVar = new pq(R.drawable.mini_ephemeral_hidden_14, 0);
-            pqVar.setColorKey(h6.A6);
-            pqVar.setTopOffset(1);
+            qq qqVar = new qq(R.drawable.mini_ephemeral_hidden_14, 0);
+            qqVar.setColorKey(h6.A6);
+            qqVar.setTopOffset(1);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             spannableStringBuilder.append((CharSequence) " *");
-            spannableStringBuilder.setSpan(pqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(qqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
             a0Var.a.setText(spannableStringBuilder);
         } else {
             a0Var.a.setText(str);
@@ -98,6 +98,6 @@ public final class b0 extends vl0 {
         textView.setTag(Integer.valueOf(i12));
         a0Var.addView(textView, y5.o(-2, -2, 0.0f, 16));
         a0Var.setLayoutParams(new s4.p0(-1, -2));
-        return new gl0(a0Var);
+        return new il0(a0Var);
     }
 }

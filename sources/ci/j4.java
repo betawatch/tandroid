@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class j4 extends FrameLayout {
     public static final /* synthetic */ int d = 0;
@@ -46,7 +46,7 @@ public final class j4 extends FrameLayout {
         if (i10 != 0 || this.c) {
             return;
         }
-        this.a.setImageDrawable(new ij0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        this.a.setImageDrawable(new kj0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         this.c = true;
     }
 }

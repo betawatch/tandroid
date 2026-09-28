@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class tm0 implements TextWatcher {
     public final /* synthetic */ gn0 a;
@@ -31,10 +31,10 @@ public final class tm0 implements TextWatcher {
         gn0Var.Z0 = true;
         String d = gf.b.d(gn0Var.Y[1].getText().toString(), false);
         gn0Var.Y[1].setText(d);
-        org.telegram.ui.Components.g40 g40Var = (org.telegram.ui.Components.g40) gn0Var.Y[2];
+        org.telegram.ui.Components.i40 i40Var = (org.telegram.ui.Components.i40) gn0Var.Y[2];
         if (d.length() == 0) {
-            g40Var.setHintText((String) null);
-            g40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+            i40Var.setHintText((String) null);
+            i40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
             gn0Var.Y[0].setText(LocaleController.getString(R.string.ChooseCountry));
         } else {
             int i10 = 4;
@@ -68,15 +68,15 @@ public final class tm0 implements TextWatcher {
             }
             String str3 = (String) hashMap.get(d);
             if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
-                g40Var.setHintText((String) null);
-                g40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+                i40Var.setHintText((String) null);
+                i40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
                 gn0Var.Y[0].setText(LocaleController.getString(R.string.WrongCountry));
             } else {
                 gn0Var.Y[0].setText((CharSequence) arrayList.get(indexOf));
                 String str4 = (String) gn0Var.X0.get(d);
                 if (str4 != null) {
-                    g40Var.setHintText(str4.replace('X', (char) 8211));
-                    g40Var.setHint((CharSequence) null);
+                    i40Var.setHintText(str4.replace('X', (char) 8211));
+                    i40Var.setHint((CharSequence) null);
                 }
             }
             if (!z10) {
@@ -84,9 +84,9 @@ public final class tm0 implements TextWatcher {
                 editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
             }
             if (str != null) {
-                g40Var.requestFocus();
-                g40Var.setText(str);
-                g40Var.setSelection(g40Var.length());
+                i40Var.requestFocus();
+                i40Var.setText(str);
+                i40Var.setSelection(i40Var.length());
             }
         }
         gn0Var.Z0 = false;

@@ -15,9 +15,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class rh0 extends org.telegram.ui.Components.vl0 {
+public final class rh0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ sh0 d;
 
@@ -34,7 +34,7 @@ public final class rh0 extends org.telegram.ui.Components.vl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         sh0 sh0Var = this.d;
@@ -163,26 +163,26 @@ public final class rh0 extends org.telegram.ui.Components.vl0 {
             }
         }
         if (i12 == 2) {
-            org.telegram.ui.Components.g90 g90Var = (org.telegram.ui.Components.g90) view;
-            g90Var.setCanEdit(j3 == sh0Var.getAccountInstance().getUserConfig().clientUserId);
+            org.telegram.ui.Components.i90 i90Var = (org.telegram.ui.Components.i90) view;
+            i90Var.setCanEdit(j3 == sh0Var.getAccountInstance().getUserConfig().clientUserId);
             if (sh0Var.o0 && j3 == sh0Var.getAccountInstance().getUserConfig().clientUserId) {
                 if (sh0Var.d != null) {
-                    g90Var.setLink("https://t.me/" + ChatObject.getPublicUsername(sh0Var.c));
-                    g90Var.d(0, null, false);
-                    g90Var.b(true);
+                    i90Var.setLink("https://t.me/" + ChatObject.getPublicUsername(sh0Var.c));
+                    i90Var.d(0, null, false);
+                    i90Var.b(true);
                     return;
                 }
                 return;
             }
-            g90Var.b(!sh0Var.p0);
+            i90Var.b(!sh0Var.p0);
             TLRPC.TL_chatInviteExported tL_chatInviteExported2 = sh0Var.e;
             if (tL_chatInviteExported2 != null) {
-                g90Var.setLink(tL_chatInviteExported2.link);
-                g90Var.c(tL_chatInviteExported2, j10);
+                i90Var.setLink(tL_chatInviteExported2.link);
+                i90Var.c(tL_chatInviteExported2, j10);
                 return;
             } else {
-                g90Var.setLink(null);
-                g90Var.d(0, null, false);
+                i90Var.setLink(null);
+                i90Var.d(0, null, false);
                 return;
             }
         }
@@ -195,11 +195,11 @@ public final class rh0 extends org.telegram.ui.Components.vl0 {
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
             drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.k7, false), mode));
-            org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(drawable, drawable2);
+            org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(drawable, drawable2);
             String string = LocaleController.getString(R.string.CreateNewLink);
             boolean z11 = !arrayList.isEmpty();
             g2Var.a.l(string, false);
-            g2Var.b.setImageDrawable(qqVar);
+            g2Var.b.setImageDrawable(rqVar);
             g2Var.c = z11;
             return;
         }
@@ -279,10 +279,10 @@ public final class rh0 extends org.telegram.ui.Components.vl0 {
                 view = new org.telegram.ui.Cells.m4(context, 23);
                 break;
             case 2:
-                org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(this.c, sh0Var, null, true, sh0Var.h);
-                g90Var.setPermanent(true);
-                g90Var.setDelegate(new qh0(this, g90Var));
-                view = g90Var;
+                org.telegram.ui.Components.i90 i90Var = new org.telegram.ui.Components.i90(this.c, sh0Var, null, true, sh0Var.h);
+                i90Var.setPermanent(true);
+                i90Var.setDelegate(new qh0(this, i90Var));
+                view = i90Var;
                 break;
             case 3:
                 d6Var = ((org.telegram.ui.ActionBar.m2) sh0Var).resourceProvider;
@@ -295,11 +295,11 @@ public final class rh0 extends org.telegram.ui.Components.vl0 {
                 view = new ph0(sh0Var, context);
                 break;
             case 6:
-                org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(context, null);
-                u00Var.setIsSingleCell(true);
-                u00Var.setViewType(9);
-                u00Var.w = false;
-                view = u00Var;
+                org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(context, null);
+                v00Var.setIsSingleCell(true);
+                v00Var.setViewType(9);
+                v00Var.w = false;
+                view = v00Var;
                 break;
             case 7:
                 view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null);

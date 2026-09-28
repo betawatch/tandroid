@@ -15,7 +15,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class th implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class th implements Runnable {
             case 0:
                 break;
             case 1:
-                int i10 = vn.m1;
+                int i10 = wn.m1;
                 break;
             case 2:
                 PhotoViewer.t1().G0(false, false);
@@ -39,7 +39,7 @@ public final /* synthetic */ class th implements Runnable {
                 PhotoViewer.t1().G0(false, false);
                 break;
             case 4:
-                int i11 = cu.b;
+                int i11 = du.b;
                 break;
             case 5:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
@@ -66,20 +66,20 @@ public final /* synthetic */ class th implements Runnable {
                 }
                 break;
             case 10:
-                int i12 = u01.f;
+                int i12 = w01.f;
                 break;
             case 11:
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                k11.f = Boolean.TRUE;
+                m11.f = Boolean.TRUE;
                 edit.putBoolean("nothanos", true).apply();
                 break;
             case 12:
                 SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
-                k11.f = Boolean.TRUE;
+                m11.f = Boolean.TRUE;
                 edit2.putBoolean("nothanos", true).apply();
                 break;
             case 13:
-                int i13 = k31.f0;
+                int i13 = m31.f0;
                 break;
             case 14:
                 SavedMessagesController.openSavedMessages();

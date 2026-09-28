@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dh1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class dh1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (ai.m0) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f, (List) this.g, tL_error, 5));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (org.telegram.ui.Components.o80) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 6));
+                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (org.telegram.ui.Components.q80) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 6));
                 break;
         }
     }

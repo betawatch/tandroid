@@ -5,16 +5,16 @@ import java.util.HashMap;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ii implements qj {
+public final class ii implements rj {
     public final /* synthetic */ wi a;
 
     public ii(wi wiVar) {
         this.a = wiVar;
     }
 
-    @Override // org.telegram.ui.Components.qj
+    @Override // org.telegram.ui.Components.rj
     public final void a(TLRPC.User user, boolean z10, int i10, long j3) {
         org.telegram.ui.wn wnVar = (org.telegram.ui.wn) this.a.f0;
         if (wnVar.f7()) {
@@ -30,7 +30,7 @@ public final class ii implements qj {
         }
     }
 
-    @Override // org.telegram.ui.Components.qj
+    @Override // org.telegram.ui.Components.rj
     public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j3, boolean z11) {
         ((org.telegram.ui.wn) this.a.f0).db(arrayList, str, z10, i10, j3, z11);
     }

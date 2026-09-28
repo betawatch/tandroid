@@ -21,15 +21,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.ek;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.ok;
+import org.telegram.ui.Components.fk;
+import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.pk;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.qk;
+import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -67,7 +67,7 @@ public final /* synthetic */ class t3 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:79:0x01ff, code lost:
     
-        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.wq(r13, (org.telegram.ui.Components.u00) r2, r1, r12));
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.wq(r13, (org.telegram.ui.Components.v00) r2, r1, r12));
      */
     /* JADX WARN: Code restructure failed: missing block: B:80:0x020d, code lost:
     
@@ -171,30 +171,30 @@ public final /* synthetic */ class t3 implements Runnable {
                 }
                 break;
             default:
-                ok okVar = (ok) obj6;
+                pk pkVar = (pk) obj6;
                 AccountInstance accountInstance = (AccountInstance) obj5;
                 String str = (String) obj4;
                 ArrayList arrayList4 = (ArrayList) obj3;
                 ArrayList arrayList5 = (ArrayList) obj2;
                 ArrayList arrayList6 = (ArrayList) obj;
-                ArrayList arrayList7 = okVar.P;
-                SparseArray sparseArray = okVar.O;
-                ArrayList arrayList8 = okVar.M;
-                HashMap hashMap = okVar.Q;
-                ArrayList arrayList9 = okVar.N;
-                ArrayList arrayList10 = okVar.L;
-                pk pkVar = okVar.X;
-                d7 d7Var = pkVar.L;
-                if (this.b == okVar.T) {
-                    okVar.S = false;
+                ArrayList arrayList7 = pkVar.P;
+                SparseArray sparseArray = pkVar.O;
+                ArrayList arrayList8 = pkVar.M;
+                HashMap hashMap = pkVar.Q;
+                ArrayList arrayList9 = pkVar.N;
+                ArrayList arrayList10 = pkVar.L;
+                qk qkVar = pkVar.X;
+                d7 d7Var = qkVar.L;
+                if (this.b == pkVar.T) {
+                    pkVar.S = false;
                     if (tL_error == null) {
-                        ek ekVar = pkVar.r;
+                        fk fkVar = qkVar.r;
                         d7Var.e(false, true);
-                        n90 n90Var = d7Var.e;
+                        p90 p90Var = d7Var.e;
                         vh.n nVar = d7Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                        okVar.G = messages_messages.next_rate;
-                        ek ekVar2 = ekVar;
+                        pkVar.G = messages_messages.next_rate;
+                        fk fkVar2 = fkVar;
                         accountInstance.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
                         accountInstance.getMessagesController().putUsers(messages_messages.users, false);
                         accountInstance.getMessagesController().putChats(messages_messages.chats, false);
@@ -205,7 +205,7 @@ public final /* synthetic */ class t3 implements Runnable {
                             hashMap.clear();
                         }
                         int i16 = messages_messages.count;
-                        okVar.K = str;
+                        pkVar.K = str;
                         int size = arrayList4.size();
                         int i17 = 0;
                         while (i17 < size) {
@@ -228,16 +228,16 @@ public final /* synthetic */ class t3 implements Runnable {
                         if (arrayList9.size() > i16) {
                             i16 = arrayList9.size();
                         }
-                        okVar.V = arrayList9.size() >= i16;
+                        pkVar.V = arrayList9.size() >= i16;
                         if (arrayList9.isEmpty()) {
-                            if (TextUtils.isEmpty(okVar.K) && this.f == 0 && j3 == 0) {
+                            if (TextUtils.isEmpty(pkVar.K) && this.f == 0 && j3 == 0) {
                                 nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
-                                n90Var.setVisibility(0);
-                                n90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                                p90Var.setVisibility(0);
+                                p90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
                             } else {
                                 nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                                n90Var.setVisibility(0);
-                                n90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                                p90Var.setVisibility(0);
+                                p90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                             }
                         }
                         if (!z10) {
@@ -257,26 +257,26 @@ public final /* synthetic */ class t3 implements Runnable {
                             }
                             arrayList8.clear();
                             arrayList8.addAll(arrayList6);
-                            okVar.a0(arrayList10, arrayList8, TextUtils.isEmpty(okVar.K));
+                            pkVar.a0(arrayList10, arrayList8, TextUtils.isEmpty(pkVar.K));
                         }
                         int i19 = -1;
                         View view = null;
                         int i20 = 0;
                         while (i20 < size) {
-                            ek ekVar3 = ekVar2;
-                            View childAt = ekVar3.getChildAt(i20);
-                            if (childAt instanceof u00) {
+                            fk fkVar3 = fkVar2;
+                            View childAt = fkVar3.getChildAt(i20);
+                            if (childAt instanceof v00) {
                                 i19 = RecyclerView.R(childAt);
                                 view = childAt;
                             }
                             i20++;
-                            ekVar2 = ekVar3;
+                            fkVar2 = fkVar3;
                         }
-                        ek ekVar4 = ekVar2;
+                        fk fkVar4 = fkVar2;
                         if (view != null) {
-                            ekVar4.removeView(view);
+                            fkVar4.removeView(view);
                         }
-                        if (pkVar.J.getVisibility() != 0) {
+                        if (qkVar.J.getVisibility() != 0) {
                             i10 = 1;
                             break;
                         } else {
@@ -285,10 +285,10 @@ public final /* synthetic */ class t3 implements Runnable {
                         }
                     } else {
                         vh.n nVar2 = d7Var.d;
-                        n90 n90Var2 = d7Var.e;
+                        p90 p90Var2 = d7Var.e;
                         nVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        n90Var2.setVisibility(0);
-                        n90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        p90Var2.setVisibility(0);
+                        p90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                         d7Var.e(false, true);
                         break;
                     }
@@ -297,8 +297,8 @@ public final /* synthetic */ class t3 implements Runnable {
         }
     }
 
-    public /* synthetic */ t3(ok okVar, int i10, TLRPC.TL_error tL_error, TLObject tLObject, AccountInstance accountInstance, boolean z10, String str, ArrayList arrayList, long j3, long j10, ArrayList arrayList2, ArrayList arrayList3) {
-        this.n = okVar;
+    public /* synthetic */ t3(pk pkVar, int i10, TLRPC.TL_error tL_error, TLObject tLObject, AccountInstance accountInstance, boolean z10, String str, ArrayList arrayList, long j3, long j10, ArrayList arrayList2, ArrayList arrayList3) {
+        this.n = pkVar;
         this.b = i10;
         this.c = tL_error;
         this.d = tLObject;

@@ -1,67 +1,102 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.util.SparseArray;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class z30 extends jv0 {
-    public final /* synthetic */ c40 f2;
+public final class z30 extends bb {
+    public final LinearLayout X;
+    public l61 Y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z30(c40 c40Var, Context context, bv0 bv0Var, c40 c40Var2, y30 y30Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, 0L, bv0Var, 0, null, null, null, 8, 0, c40Var2, y30Var, 0, d6Var, null);
-        this.f2 = c40Var;
+    public z30(Activity activity, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.User user, TLObject tLObject, org.telegram.ui.aq aqVar) {
+        super(activity, null, false, false, 1, d6Var);
+        fixNavigationBar();
+        LinearLayout linearLayout = new LinearLayout(activity);
+        this.X = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        org.telegram.ui.d01 P = P(activity, AndroidUtilities.dp(60.0f), user);
+        org.telegram.ui.d01 P2 = P(activity, AndroidUtilities.dp(60.0f), tLObject);
+        ImageView imageView = new ImageView(activity);
+        imageView.setImageResource(R.drawable.msg_arrow_avatar);
+        imageView.setColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        LinearLayout linearLayout2 = new LinearLayout(activity);
+        linearLayout2.setOrientation(0);
+        linearLayout2.setGravity(16);
+        linearLayout2.setClipChildren(false);
+        linearLayout2.addView(P, w7.y5.n(60, 60));
+        linearLayout2.addView(imageView, w7.y5.t(24, 24, 16, 7, 0, 7, 0));
+        linearLayout2.addView(P2, w7.y5.n(60, 60));
+        frameLayout.addView(linearLayout2, w7.y5.e(-2, -2, 17));
+        linearLayout.addView(frameLayout, w7.y5.t(-1, -2, 1, 0, 23, 0, 19));
+        TextView textView = new TextView(activity);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        textView.setText(LocaleController.getString(R.string.GuardBotReplaceTitle));
+        textView.setTextSize(1, 20.0f);
+        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        linearLayout.addView(textView, w7.y5.t(-1, -2, 17, 20, 0, 20, 6));
+        String shortName = DialogObject.getShortName(user);
+        String shortName2 = DialogObject.getShortName(tLObject);
+        TextView textView2 = new TextView(activity);
+        textView2.setGravity(17);
+        textView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GuardBotReplaceMessage, shortName, shortName2)));
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        textView2.setLineSpacing(AndroidUtilities.dp(2.66f), 1.0f);
+        linearLayout.addView(textView2, w7.y5.t(-1, -2, 17, 24, 0, 24, 29));
+        ci.d dVar = new ci.d(activity, d6Var, true);
+        dVar.e();
+        dVar.g(LocaleController.formatString(R.string.GuardBotReplaceUseNew, shortName2), false, true);
+        dVar.setOnClickListener(new ft(6, this, aqVar));
+        linearLayout.addView(dVar, w7.y5.k(14.0f, 0.0f, 14.0f, 10.0f, -1, 48));
+        ci.d dVar2 = new ci.d(activity, d6Var, true);
+        dVar2.e();
+        dVar2.d();
+        dVar2.g(LocaleController.formatString(R.string.GuardBotReplaceKeepCurrent, shortName), false, true);
+        dVar2.setOnClickListener(new f0(this, 24));
+        linearLayout.addView(dVar2, w7.y5.k(14.0f, 0.0f, 14.0f, 14.0f, -1, 48));
+        yl0 yl0Var = this.d;
+        int i11 = this.backgroundPaddingLeft;
+        yl0Var.setPadding(i11, 0, i11, 0);
+        this.Y.N(false);
     }
 
-    @Override // org.telegram.ui.Components.jv0
-    public final int getInitialTab() {
-        return 8;
+    public static org.telegram.ui.d01 P(Context context, int i10, TLObject tLObject) {
+        org.telegram.ui.d01 d01Var = new org.telegram.ui.d01(context);
+        d01Var.setRoundRadius(i10 / 2);
+        h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
+        h9Var.p(tLObject);
+        d01Var.setImageDrawable(h9Var);
+        d01Var.setLayoutParams(new FrameLayout.LayoutParams(i10, i10));
+        return d01Var;
     }
 
-    @Override // org.telegram.ui.Components.jv0
-    public final String getStoriesHashtag() {
-        return this.f2.b;
+    @Override // org.telegram.ui.Components.bb
+    public final xl0 v(yl0 yl0Var) {
+        l61 l61Var = new l61(this.d, getContext(), this.currentAccount, 0, true, new d(this, 14), this.resourcesProvider);
+        this.Y = l61Var;
+        l61Var.r = false;
+        return l61Var;
     }
 
-    @Override // org.telegram.ui.Components.jv0
-    public final String getStoriesHashtagUsername() {
-        return this.f2.c;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final boolean t0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void D0(SparseArray sparseArray) {
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void K0(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void M0(float f7) {
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void N0(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void b1(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void o0() {
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void P(Canvas canvas, float f7, Rect rect, Paint paint) {
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence y() {
+        return "";
     }
 }

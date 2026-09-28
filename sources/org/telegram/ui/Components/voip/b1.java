@@ -9,10 +9,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.oc0;
 import org.telegram.ui.fi1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b1 extends TextView {
     public final Paint a;
@@ -26,22 +26,22 @@ public final class b1 extends TextView {
         Paint paint = new Paint();
         this.a = paint;
         this.b = new Paint[fi1Var.e.length];
-        mc0 mc0Var = fi1Var.R;
-        mc0Var.setBounds(0, 0, 80, 80);
-        mc0 mc0Var2 = fi1Var.S;
-        mc0Var2.setBounds(0, 0, 80, 80);
+        oc0 oc0Var = fi1Var.R;
+        oc0Var.setBounds(0, 0, 80, 80);
+        oc0 oc0Var2 = fi1Var.S;
+        oc0Var2.setBounds(0, 0, 80, 80);
         com.google.firebase.messaging.n nVar = fi1Var.P;
         nVar.z(0.0f, 0.0f, 80.0f, 80.0f);
         com.google.firebase.messaging.n nVar2 = fi1Var.Q;
         nVar2.z(0.0f, 0.0f, 80.0f, 80.0f);
-        mc0Var.setAlpha(255);
-        mc0Var2.setAlpha(255);
+        oc0Var.setAlpha(255);
+        oc0Var2.setAlpha(255);
         Canvas canvas = (Canvas) nVar.b;
         PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
         canvas.drawColor(0, mode);
         ((Canvas) nVar2.b).drawColor(0, mode);
-        mc0Var.draw((Canvas) nVar.b);
-        mc0Var2.draw((Canvas) nVar2.b);
+        oc0Var.draw((Canvas) nVar.b);
+        oc0Var2.draw((Canvas) nVar2.b);
         paint.setColor(-1);
     }
 

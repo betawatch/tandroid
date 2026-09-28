@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class d2 extends ci.d {
     public final na h0;
@@ -82,12 +82,12 @@ public abstract class d2 extends ci.d {
     public void setCutOutState(boolean z10) {
         this.j0 = 0;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        pq pqVar = new pq(R.drawable.media_magic_cut, 0);
-        pqVar.setSize(AndroidUtilities.dp(22.0f));
-        pqVar.setTranslateX(AndroidUtilities.dp(1.0f));
-        pqVar.setTranslateY(AndroidUtilities.dp(2.0f));
-        pqVar.spaceScaleX = 1.2f;
-        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
+        qq qqVar = new qq(R.drawable.media_magic_cut, 0);
+        qqVar.setSize(AndroidUtilities.dp(22.0f));
+        qqVar.setTranslateX(AndroidUtilities.dp(1.0f));
+        qqVar.setTranslateY(AndroidUtilities.dp(2.0f));
+        qqVar.spaceScaleX = 1.2f;
+        spannableStringBuilder.setSpan(qqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationCutObject));
         g(spannableStringBuilder, z10, true);
     }
@@ -95,10 +95,10 @@ public abstract class d2 extends ci.d {
     public void setEraseState(boolean z10) {
         this.j0 = 3;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        pq pqVar = new pq(R.drawable.media_button_erase, 0);
-        pqVar.setSize(AndroidUtilities.dp(20.0f));
-        pqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
+        qq qqVar = new qq(R.drawable.media_button_erase, 0);
+        qqVar.setSize(AndroidUtilities.dp(20.0f));
+        qqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(qqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationErase));
         g(spannableStringBuilder, z10, true);
     }
@@ -106,10 +106,10 @@ public abstract class d2 extends ci.d {
     public void setOutlineState(boolean z10) {
         this.j0 = 6;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        pq pqVar = new pq(R.drawable.media_sticker_stroke, 0);
-        pqVar.setSize(AndroidUtilities.dp(20.0f));
-        pqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
+        qq qqVar = new qq(R.drawable.media_sticker_stroke, 0);
+        qqVar.setSize(AndroidUtilities.dp(20.0f));
+        qqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(qqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationOutline));
         g(spannableStringBuilder, z10, true);
     }
@@ -122,10 +122,10 @@ public abstract class d2 extends ci.d {
     public void setRestoreState(boolean z10) {
         this.j0 = 4;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        pq pqVar = new pq(R.drawable.media_button_restore, 0);
-        pqVar.setSize(AndroidUtilities.dp(20.0f));
-        pqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
+        qq qqVar = new qq(R.drawable.media_button_restore, 0);
+        qqVar.setSize(AndroidUtilities.dp(20.0f));
+        qqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(qqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationRestore));
         g(spannableStringBuilder, z10, true);
     }
@@ -137,10 +137,10 @@ public abstract class d2 extends ci.d {
     public void setUndoState(boolean z10) {
         this.j0 = 5;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        pq pqVar = new pq(R.drawable.photo_undo2, 0);
-        pqVar.setSize(AndroidUtilities.dp(20.0f));
-        pqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(pqVar, 0, 1, 0);
+        qq qqVar = new qq(R.drawable.photo_undo2, 0);
+        qqVar.setSize(AndroidUtilities.dp(20.0f));
+        qqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(qqVar, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationUndo));
         g(spannableStringBuilder, z10, true);
     }

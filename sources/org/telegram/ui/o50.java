@@ -11,19 +11,19 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class o50 {
-    public final org.telegram.ui.Components.t01 d;
-    public final org.telegram.ui.Components.t01 e;
-    public final org.telegram.ui.Components.t01 f;
+    public final org.telegram.ui.Components.v01 d;
+    public final org.telegram.ui.Components.v01 e;
+    public final org.telegram.ui.Components.v01 f;
     public n50 g;
     public int j;
     public final Paint a = new Paint(1);
     public final Paint b = new Paint(1);
     public final q50[] c = new q50[4];
     public boolean h = true;
-    public final org.telegram.ui.Components.e6 i = new org.telegram.ui.Components.e6(new c10(this, 7), 320, org.telegram.ui.Components.rr.h, 0);
+    public final org.telegram.ui.Components.e6 i = new org.telegram.ui.Components.e6(new c10(this, 7), 320, org.telegram.ui.Components.sr.h, 0);
     public final RectF k = new RectF();
     public final RectF l = new RectF();
     public final Path m = new Path();
@@ -34,13 +34,13 @@ public final class o50 {
             q50[] q50VarArr = this.c;
             if (i10 >= q50VarArr.length) {
                 this.a.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.tg, false));
-                this.d = new org.telegram.ui.Components.t01(LocaleController.getString(R.string.ConferenceEncrypted), 12.0f, AndroidUtilities.bold());
-                org.telegram.ui.Components.t01 t01Var = new org.telegram.ui.Components.t01(LocaleController.getString(R.string.ConferenceEncryptedInfo), 11.0f, null);
-                t01Var.n(99);
-                t01Var.q(AndroidUtilities.dp(200.0f));
-                t01Var.m(AndroidUtilities.dp(2.66f));
-                this.e = t01Var;
-                this.f = new org.telegram.ui.Components.t01(LocaleController.getString(R.string.ConferenceEncryptedClose), 14.0f, AndroidUtilities.bold());
+                this.d = new org.telegram.ui.Components.v01(LocaleController.getString(R.string.ConferenceEncrypted), 12.0f, AndroidUtilities.bold());
+                org.telegram.ui.Components.v01 v01Var = new org.telegram.ui.Components.v01(LocaleController.getString(R.string.ConferenceEncryptedInfo), 11.0f, null);
+                v01Var.n(99);
+                v01Var.q(AndroidUtilities.dp(200.0f));
+                v01Var.m(AndroidUtilities.dp(2.66f));
+                this.e = v01Var;
+                this.f = new org.telegram.ui.Components.v01(LocaleController.getString(R.string.ConferenceEncryptedClose), 14.0f, AndroidUtilities.bold());
                 b(null);
                 return;
             }
@@ -51,13 +51,13 @@ public final class o50 {
 
     public final boolean a(Canvas canvas, float f7, float f10) {
         canvas.save();
-        org.telegram.ui.Components.t01 t01Var = this.d;
-        t01Var.p = f7 - AndroidUtilities.dp(132.0f);
+        org.telegram.ui.Components.v01 v01Var = this.d;
+        v01Var.p = f7 - AndroidUtilities.dp(132.0f);
         int d = i0.a.d(f10, this.j, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.tg, false));
         Paint paint = this.a;
         paint.setColor(d);
         float e = this.i.e(this.h);
-        float l4 = t01Var.l() + AndroidUtilities.dp(86.0f) + AndroidUtilities.dp(14.0f);
+        float l4 = v01Var.l() + AndroidUtilities.dp(86.0f) + AndroidUtilities.dp(14.0f);
         float dp = AndroidUtilities.dp(28.0f);
         float dp2 = AndroidUtilities.dp(232.0f);
         float j3 = this.e.j() + AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(50.0f);
@@ -101,8 +101,8 @@ public final class o50 {
         if (q50VarArr[1].b(canvas, rectF3, f10)) {
             z10 = true;
         }
-        org.telegram.ui.Components.t01 t01Var2 = this.d;
-        t01Var2.c(f14 - (t01Var2.l() / 2.0f), dp / 2.0f, AndroidUtilities.lerp(1.0f, 0.75f, e) * (1.0f - f10), -1, canvas);
+        org.telegram.ui.Components.v01 v01Var2 = this.d;
+        v01Var2.c(f14 - (v01Var2.l() / 2.0f), dp / 2.0f, AndroidUtilities.lerp(1.0f, 0.75f, e) * (1.0f - f10), -1, canvas);
         rectF2.set((AndroidUtilities.dp(10.0f) + (((int) rectF.right) - AndroidUtilities.dp(47.0f))) - f11, f12, AndroidUtilities.dp(10.0f) + (((int) rectF.right) - AndroidUtilities.dp(47.0f)) + f11, f13);
         float f19 = (int) ((dp6 * 2.5f) + f15);
         rectF3.set(f19 - f17, (int) ((rectF.top + AndroidUtilities.dp(27.33f)) - f17), f19 + f17, (int) (rectF.top + AndroidUtilities.dp(27.33f) + f17));

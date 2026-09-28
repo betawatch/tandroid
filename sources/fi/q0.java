@@ -11,23 +11,23 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.o2;
 import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class q0 extends u51 {
+public final class q0 extends w51 {
     static {
-        u51.setup(new q0());
+        w51.setup(new q0());
     }
 
-    public static v51 a(MessagesController.CommunityPeerDialog communityPeerDialog, k0 k0Var) {
+    public static x51 a(MessagesController.CommunityPeerDialog communityPeerDialog, k0 k0Var) {
         TLRPC.User user = communityPeerDialog.user;
         if (user != null) {
-            v51 J = v51.J(q0.class);
+            x51 J = x51.J(q0.class);
             long j3 = user.id;
             J.B = j3;
             J.d = (int) (j3 ^ (j3 >>> 32));
@@ -36,7 +36,7 @@ public final class q0 extends u51 {
             return J;
         }
         TLRPC.Chat chat = communityPeerDialog.chat;
-        v51 J2 = v51.J(q0.class);
+        x51 J2 = x51.J(q0.class);
         long j10 = chat != null ? -chat.id : 0L;
         J2.B = j10;
         J2.d = (int) (j10 ^ (j10 >>> 32));
@@ -45,11 +45,11 @@ public final class q0 extends u51 {
         return J2;
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
         s2 s2Var = (s2) view;
-        s2Var.setDialogCellDelegate((o2) v51Var.H);
-        Object obj = v51Var.G;
+        s2Var.setDialogCellDelegate((o2) x51Var.H);
+        Object obj = x51Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             s2Var.Q0 = ChatObject.isHiddenInCommunity(UserConfig.selectedAccount, chat);
@@ -80,20 +80,20 @@ public final class q0 extends u51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final boolean contentsEquals(v51 v51Var, v51 v51Var2) {
-        return v51Var.d == v51Var2.d;
+    @Override // org.telegram.ui.Components.w51
+    public final boolean contentsEquals(x51 x51Var, x51 x51Var2) {
+        return x51Var.d == x51Var2.d;
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, wl0 wl0Var, int i10, int i11, d6 d6Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, yl0 yl0Var, int i10, int i11, d6 d6Var) {
         s2 s2Var = new s2(null, context, false, i10, d6Var);
         s2Var.O0 = true;
         return s2Var;
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final boolean equals(v51 v51Var, v51 v51Var2) {
-        return v51Var.d == v51Var2.d;
+    @Override // org.telegram.ui.Components.w51
+    public final boolean equals(x51 x51Var, x51 x51Var2) {
+        return x51Var.d == x51Var2.d;
     }
 }

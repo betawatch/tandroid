@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class qf extends ng {
     public boolean e;
@@ -32,7 +32,7 @@ public final class qf extends ng {
         this.e = true;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.eu, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.fu, android.widget.TextView, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ChatActivityEnterView chatActivityEnterView = this.r;
@@ -49,7 +49,7 @@ public final class qf extends ng {
         }
     }
 
-    @Override // org.telegram.ui.Components.cu, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.eu, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.du, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.fu, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (getLayout() == null || !this.e) {
@@ -59,7 +59,7 @@ public final class qf extends ng {
         this.r.K(true);
     }
 
-    @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.cu, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.du, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         ChatActivityEnterView chatActivityEnterView = this.r;
@@ -73,7 +73,7 @@ public final class qf extends ng {
         }
     }
 
-    @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.cu, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.du, android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i10) {
         if (i10 == 16908322) {
             ChatActivityEnterView chatActivityEnterView = this.r;
@@ -98,14 +98,14 @@ public final class qf extends ng {
                                     }
                                     int max = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                     int min = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
-                                    cj0[] cj0VarArr = (cj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, cj0.class);
-                                    if (cj0VarArr == null || cj0VarArr.length <= 0) {
-                                        dj0.a(spannableStringBuilder);
+                                    ej0[] ej0VarArr = (ej0[]) chatActivityEnterView.E0.getText().getSpans(max, min, ej0.class);
+                                    if (ej0VarArr == null || ej0VarArr.length <= 0) {
+                                        fj0.a(spannableStringBuilder);
                                     } else {
-                                        cj0[] cj0VarArr2 = (cj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), cj0.class);
-                                        for (int i11 = 0; i11 < cj0VarArr2.length; i11++) {
-                                            spannableStringBuilder.removeSpan(cj0VarArr2[i11]);
-                                            spannableStringBuilder.removeSpan(cj0VarArr2[i11].a);
+                                        ej0[] ej0VarArr2 = (ej0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), ej0.class);
+                                        for (int i11 = 0; i11 < ej0VarArr2.length; i11++) {
+                                            spannableStringBuilder.removeSpan(ej0VarArr2[i11]);
+                                            spannableStringBuilder.removeSpan(ej0VarArr2[i11].a);
                                         }
                                     }
                                     qf qfVar = chatActivityEnterView.E0;
@@ -166,7 +166,7 @@ public final class qf extends ng {
         return this.n;
     }
 
-    @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.eu
+    @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.fu
     public final void setOffsetY(float f7) {
         super.setOffsetY(f7);
         this.r.y1.invalidate();

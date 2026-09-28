@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.f40;
-import org.telegram.ui.Components.zq0;
+import org.telegram.ui.Components.br0;
+import org.telegram.ui.Components.h40;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.d9;
 import org.telegram.ui.da;
 import org.telegram.ui.dy0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -60,10 +60,10 @@ public final /* synthetic */ class u implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new c9((m2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new c9((f40) this.d, this.b, tLObject, (String) this.c, 20));
+                AndroidUtilities.runOnUIThread(new c9((h40) this.d, this.b, tLObject, (String) this.c, 20));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new c9((zq0) this.d, this.b, tLObject, (String) this.c, 22));
+                AndroidUtilities.runOnUIThread(new c9((br0) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new dy0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);

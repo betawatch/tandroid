@@ -14,11 +14,11 @@ import android.view.ViewConfiguration;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class fd {
     public static final int[] p = {R.attr.state_enabled, R.attr.state_pressed};
-    public vq a;
+    public wq a;
     public final ArrayList b = new ArrayList();
     public int c;
     public boolean d;
@@ -136,11 +136,11 @@ public final class fd {
             return;
         }
         if (!this.i) {
-            vq vqVar = this.a;
-            if (vqVar == null) {
-                this.a = new vq(0);
+            wq wqVar = this.a;
+            if (wqVar == null) {
+                this.a = new wq(0);
             } else {
-                vqVar.rewind();
+                wqVar.rewind();
             }
             int i12 = 0;
             int i13 = 0;
@@ -185,9 +185,9 @@ public final class fd {
             this.i = true;
         }
         paint.setPathEffect(cornerPathEffect);
-        vq vqVar2 = this.a;
-        if (vqVar2 != null) {
-            canvas.drawPath(vqVar2, paint);
+        wq wqVar2 = this.a;
+        if (wqVar2 != null) {
+            canvas.drawPath(wqVar2, paint);
         }
     }
 

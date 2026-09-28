@@ -14,16 +14,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class a6 extends FrameLayout {
     public final y5 a;
     public final z5 b;
     public final TextView[] c;
-    public mj0 d;
+    public oj0 d;
     public final c6 e;
     public Paint f;
     public float h;
@@ -88,12 +88,12 @@ public final class a6 extends FrameLayout {
             }
             z11 = false;
         }
-        mj0 mj0Var = this.d;
+        oj0 oj0Var = this.d;
         y5 y5Var = this.a;
-        if (mj0Var == null) {
-            mj0 mj0Var2 = new mj0(y5Var);
-            this.d = mj0Var2;
-            mj0Var2.d(null, true, false);
+        if (oj0Var == null) {
+            oj0 oj0Var2 = new oj0(y5Var);
+            this.d = oj0Var2;
+            oj0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = y5Var.getImageReceiver();
@@ -107,9 +107,9 @@ public final class a6 extends FrameLayout {
             if (f7 != 1.0f) {
                 Paint t10 = ia.t(imageReceiver, false);
                 t10.setAlpha((int) (this.h * 255.0f));
-                mj0 mj0Var3 = this.d;
-                mj0Var3.t = t10;
-                mj0Var3.a(canvas);
+                oj0 oj0Var3 = this.d;
+                oj0Var3.t = t10;
+                oj0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -120,9 +120,9 @@ public final class a6 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f7 * this.h));
-            mj0 mj0Var4 = this.d;
-            mj0Var4.t = this.f;
-            mj0Var4.a(canvas);
+            oj0 oj0Var4 = this.d;
+            oj0Var4.t = this.f;
+            oj0Var4.a(canvas);
         }
     }
 
@@ -155,7 +155,7 @@ public final class a6 extends FrameLayout {
         this.s = ofFloat;
         ofFloat.addUpdateListener(new a(this, i10));
         this.s.addListener(new b(this, 5));
-        this.s.setInterpolator(rr.h);
+        this.s.setInterpolator(sr.h);
         this.s.setDuration(340L);
         this.s.start();
     }

@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class oc1 implements org.telegram.ui.ActionBar.d6 {
     public org.telegram.ui.ActionBar.d6 a;
@@ -100,11 +100,11 @@ public final class oc1 implements org.telegram.ui.ActionBar.d6 {
         if (drawable == null) {
             drawable = drawable2;
         }
-        boolean z10 = drawable instanceof org.telegram.ui.Components.mc0;
+        boolean z10 = drawable instanceof org.telegram.ui.Components.oc0;
         TextPaint textPaint = this.h;
         TextPaint textPaint2 = this.f;
         if ((z10 || (drawable instanceof BitmapDrawable)) && SharedConfig.getDevicePerformanceClass() != 0 && LiteMode.isEnabled(32)) {
-            Bitmap bitmap = z10 ? ((org.telegram.ui.Components.mc0) drawable).k : drawable instanceof BitmapDrawable ? ((BitmapDrawable) drawable).getBitmap() : null;
+            Bitmap bitmap = z10 ? ((org.telegram.ui.Components.oc0) drawable).k : drawable instanceof BitmapDrawable ? ((BitmapDrawable) drawable).getBitmap() : null;
             if (this.r != bitmap) {
                 this.r = bitmap;
                 Bitmap bitmap2 = this.r;
@@ -139,7 +139,7 @@ public final class oc1 implements org.telegram.ui.ActionBar.d6 {
         }
         ColorMatrix colorMatrix = new ColorMatrix();
         if (z10) {
-            if (((org.telegram.ui.Components.mc0) drawable).q >= 0.0f) {
+            if (((org.telegram.ui.Components.oc0) drawable).q >= 0.0f) {
                 colorMatrix.setSaturation(1.6f);
                 AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, a() ? 0.97f : 0.92f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, a() ? 0.12f : -0.06f);
@@ -154,7 +154,7 @@ public final class oc1 implements org.telegram.ui.ActionBar.d6 {
             AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, a() ? -0.04f : 0.06f);
         }
         if (z10) {
-            float f10 = ((org.telegram.ui.Components.mc0) drawable).q;
+            float f10 = ((org.telegram.ui.Components.oc0) drawable).q;
             if (f7 != null) {
                 f10 = f7.floatValue();
             }

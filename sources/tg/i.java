@@ -23,12 +23,12 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.lu;
+import org.telegram.ui.Components.mu;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import rg.q1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class i {
     public static void a(a2 a2Var, boolean z10) {
@@ -36,13 +36,13 @@ public abstract class i {
         if (nVar != null) {
             nVar.setTextSize(1, 20);
         }
-        lu luVar = a2Var.n;
-        if (luVar != null) {
-            luVar.setTextSize(1, 14);
+        mu muVar = a2Var.n;
+        if (muVar != null) {
+            muVar.setTextSize(1, 14);
         }
-        lu luVar2 = a2Var.n;
-        if (luVar2 != null) {
-            luVar2.setLineSpacing(AndroidUtilities.dp(2.5f), 1.0f);
+        mu muVar2 = a2Var.n;
+        if (muVar2 != null) {
+            muVar2.setLineSpacing(AndroidUtilities.dp(2.5f), 1.0f);
         }
         if (z10) {
             return;
@@ -282,15 +282,15 @@ public abstract class i {
             string = LocaleController.getString("BoostingGiveawayYouNotWon", R.string.BoostingGiveawayYouNotWon);
             alertDialog$Builder.k(LocaleController.getString("Close", R.string.Close), new s0.b(i12));
         }
-        lu luVar = new lu(context);
-        NotificationCenter.listenEmojiLoading(luVar);
-        luVar.setTextColor(h6.v0(h6.j5, d6Var));
-        luVar.setTextSize(1, 14.0f);
-        luVar.setGravity(17);
-        luVar.setText(string);
-        luVar.setBackground(h6.c0(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), h6.v0(h6.yh, d6Var)));
-        luVar.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(9.0f));
-        a2Var.d = luVar;
+        mu muVar = new mu(context);
+        NotificationCenter.listenEmojiLoading(muVar);
+        muVar.setTextColor(h6.v0(h6.j5, d6Var));
+        muVar.setTextSize(1, 14.0f);
+        muVar.setGravity(17);
+        muVar.setText(string);
+        muVar.setBackground(h6.c0(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), h6.v0(h6.yh, d6Var)));
+        muVar.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(9.0f));
+        a2Var.d = muVar;
         a(alertDialog$Builder.o(), false);
     }
 

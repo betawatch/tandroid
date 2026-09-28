@@ -11,9 +11,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class l extends Drawable {
     public final Paint a;
@@ -42,19 +42,19 @@ public final class l extends Drawable {
         this.d = kVar2;
         this.e = false;
         androidx.fragment.app.a0 a0Var = new androidx.fragment.app.a0(this, 6);
-        rr rrVar = rr.h;
-        this.f = new org.telegram.ui.Components.e6(a0Var, 350L, rrVar, 0);
+        sr srVar = sr.h;
+        this.f = new org.telegram.ui.Components.e6(a0Var, 350L, srVar, 0);
         this.g = new Path();
         this.i = 21.0f;
         this.h = i10;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        kVar.k(0.3f, 250L, rrVar);
+        kVar.k(0.3f, 250L, srVar);
         kVar.u(AndroidUtilities.getTypeface("fonts/num.otf"));
         kVar.t(AndroidUtilities.dpf2(12.0f));
         kVar.b = 17;
-        kVar2.k(0.3f, 250L, rrVar);
+        kVar2.k(0.3f, 250L, srVar);
         kVar2.u(AndroidUtilities.getTypeface("fonts/num.otf"));
         kVar2.t(AndroidUtilities.dpf2(12.0f));
         kVar2.b = 17;

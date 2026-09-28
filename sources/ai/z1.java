@@ -24,12 +24,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.k31;
-import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.m31;
 import org.telegram.ui.Components.nf;
 import org.telegram.ui.Components.oi;
-import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.u71;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cy;
@@ -39,7 +39,7 @@ import org.telegram.ui.u60;
 import org.telegram.ui.wn;
 import org.telegram.ui.xc0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements RequestDelegateTimestamp, MessagesStorage.StringCallback, m4.z0, ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.d5, xc0, MessagesStorage.BooleanCallback, g2.g, org.telegram.ui.ActionBar.z1, u60, s5.f {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class z1 implements RequestDelegateTimestamp, Messa
         Object obj = this.c;
         switch (i12) {
             case 5:
-                float[] fArr = FragmentContextView.O0;
+                float[] fArr = FragmentContextView.P0;
                 SendMessagesHelper.getInstance(((LocationController.SharingLocationInfo) obj).messageObject.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(messageMedia, this.b, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
                 break;
             default:
@@ -109,7 +109,7 @@ public final /* synthetic */ class z1 implements RequestDelegateTimestamp, Messa
 
     @Override // g2.g
     public g2.h createDataSource() {
-        return new n71(((s71) this.c).h.createDataSource(), this.b);
+        return new p71(((u71) this.c).h.createDataSource(), this.b);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -138,17 +138,17 @@ public final /* synthetic */ class z1 implements RequestDelegateTimestamp, Messa
     public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 8:
-                eo0 eo0Var = ((qy) this.c).C0.b0;
-                a0.i iVar = eo0Var.x0;
+                go0 go0Var = ((qy) this.c).C0.b0;
+                a0.i iVar = go0Var.x0;
                 long j3 = this.b;
                 gg.h0 h0Var = (gg.h0) iVar.f(j3);
                 if (h0Var != null) {
-                    eo0Var.x0.l(j3);
-                    eo0Var.t0.remove(h0Var);
-                    eo0Var.v0.remove(h0Var);
-                    eo0Var.u0.remove(h0Var);
-                    eo0Var.l();
-                    MessagesStorage.getInstance(eo0Var.s0).getStorageQueue().postRunnable(new gg.q(eo0Var, j3, 0));
+                    go0Var.x0.l(j3);
+                    go0Var.t0.remove(h0Var);
+                    go0Var.v0.remove(h0Var);
+                    go0Var.u0.remove(h0Var);
+                    go0Var.l();
+                    MessagesStorage.getInstance(go0Var.s0).getStorageQueue().postRunnable(new gg.q(go0Var, j3, 0));
                     break;
                 }
                 break;
@@ -248,7 +248,7 @@ public final /* synthetic */ class z1 implements RequestDelegateTimestamp, Messa
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
-        wn wnVar = ((k31) this.c).h;
+        wn wnVar = ((m31) this.c).h;
         if (com.google.android.gms.internal.vision.e2.u(wnVar)) {
             wnVar.qa(this.b, false);
         }

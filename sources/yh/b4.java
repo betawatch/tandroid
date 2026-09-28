@@ -16,13 +16,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.w21;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.y21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class b4 extends View {
     public ValueAnimator E;
@@ -55,7 +55,7 @@ public final class b4 extends View {
         this.h = new RectF();
         this.n = new Paint();
         new Paint();
-        this.s = new org.telegram.ui.Components.e6(this, 0L, 420L, rr.h);
+        this.s = new org.telegram.ui.Components.e6(this, 0L, 420L, sr.h);
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
         this.v = o6Var;
         new Matrix();
@@ -106,7 +106,7 @@ public final class b4 extends View {
                 TLRPC.Chat chat = wnVar.getMessagesController().getChat(Long.valueOf(-a2));
                 str = chat == null ? "" : chat.title;
             }
-            new l7(wnVar.getParentActivity(), wnVar.getResourceProvider(), E, 5, str, new w21(this, y3, messageObject, E, 9), 0L).show();
+            new l7(wnVar.getParentActivity(), wnVar.getResourceProvider(), E, 5, str, new y21(this, y3, messageObject, E, 9), 0L).show();
         }
     }
 
@@ -120,7 +120,7 @@ public final class b4 extends View {
         this.E = ofFloat;
         ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 24));
         this.E.addListener(new ai.t2(this, f7, a4Var, 4));
-        this.E.setInterpolator(rr.h);
+        this.E.setInterpolator(sr.h);
         this.E.setDuration(320L);
         this.E.start();
     }
@@ -151,17 +151,17 @@ public final class b4 extends View {
             if (arrayList.size() <= 4) {
                 break;
             } else {
-                ((ij0) arrayList.remove(0)).C(true);
+                ((kj0) arrayList.remove(0)).C(true);
             }
         }
         Random random = Utilities.fastRandom;
         int[] iArr = this.K;
-        ij0 ij0Var = new ij0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-        ij0Var.R(this);
-        ij0Var.J(true);
-        ij0Var.K(0);
-        ij0Var.start();
-        arrayList.add(ij0Var);
+        kj0 kj0Var = new kj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        kj0Var.R(this);
+        kj0Var.J(true);
+        kj0Var.K(0);
+        kj0Var.start();
+        arrayList.add(kj0Var);
         invalidate();
         zg.m0 l4 = reactionsLayoutInBubble.l("stars");
         if (l4 != null) {
@@ -322,15 +322,15 @@ public final class b4 extends View {
                     if (i12 >= arrayList.size()) {
                         break;
                     }
-                    ij0 ij0Var = (ij0) arrayList.get(i12);
-                    if (ij0Var.a0 >= ij0Var.e[c11]) {
+                    kj0 kj0Var = (kj0) arrayList.get(i12);
+                    if (kj0Var.a0 >= kj0Var.e[c11]) {
                         arrayList.remove(i12);
                         i12--;
                     } else {
                         float f15 = dp / 2.0f;
-                        ij0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
-                        ij0Var.setAlpha((int) (this.y * f10));
-                        ij0Var.draw(canvas);
+                        kj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
+                        kj0Var.setAlpha((int) (this.y * f10));
+                        kj0Var.draw(canvas);
                     }
                     i12++;
                 }

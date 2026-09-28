@@ -12,12 +12,12 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.vj;
 import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.wj;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -100,10 +100,10 @@ public final /* synthetic */ class i0 implements Runnable {
                     }
                 }
             case 2:
-                vj vjVar = (vj) obj4;
+                wj wjVar = (wj) obj4;
                 ArrayList arrayList2 = (ArrayList) obj2;
                 ArrayList arrayList3 = (ArrayList) obj;
-                vjVar.getClass();
+                wjVar.getClass();
                 String lowerCase = ((String) obj3).trim().toLowerCase();
                 if (lowerCase.length() != 0) {
                     String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -117,7 +117,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         strArr[1] = translitString;
                     }
                     ArrayList arrayList4 = new ArrayList();
-                    vj vjVar2 = vjVar;
+                    wj wjVar2 = wjVar;
                     ArrayList arrayList5 = new ArrayList();
                     LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
                     int i16 = 0;
@@ -125,7 +125,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         ContactsController.Contact contact = (ContactsController.Contact) arrayList2.get(i16);
                         String lowerCase2 = ContactsController.formatName(contact.first_name, contact.last_name).toLowerCase();
                         String translitString2 = LocaleController.getInstance().getTranslitString(lowerCase2);
-                        vj vjVar3 = vjVar2;
+                        wj wjVar3 = wjVar2;
                         TLRPC.User user = contact.user;
                         if (user != null) {
                             arrayList = arrayList2;
@@ -174,17 +174,17 @@ public final /* synthetic */ class i0 implements Runnable {
                                 }
                                 arrayList4.add(contact);
                                 i16++;
-                                vjVar2 = vjVar3;
+                                wjVar2 = wjVar3;
                                 arrayList2 = arrayList;
                                 strArr = strArr2;
                             }
                         }
                         i16++;
-                        vjVar2 = vjVar3;
+                        wjVar2 = wjVar3;
                         arrayList2 = arrayList;
                         strArr = strArr2;
                     }
-                    vj vjVar4 = vjVar2;
+                    wj wjVar4 = wjVar2;
                     String[] strArr3 = strArr;
                     int i19 = 0;
                     while (i19 < arrayList3.size()) {
@@ -227,11 +227,11 @@ public final /* synthetic */ class i0 implements Runnable {
                         i10 = i19;
                         i19 = i10 + 1;
                     }
-                    AndroidUtilities.runOnUIThread(new c9(vjVar4, this.c, arrayList4, arrayList5, 15));
+                    AndroidUtilities.runOnUIThread(new c9(wjVar4, this.c, arrayList4, arrayList5, 15));
                     break;
                 } else {
-                    vjVar.h = -1;
-                    AndroidUtilities.runOnUIThread(new c9(vjVar, vjVar.h, new ArrayList(), new ArrayList(), 15));
+                    wjVar.h = -1;
+                    AndroidUtilities.runOnUIThread(new c9(wjVar, wjVar.h, new ArrayList(), new ArrayList(), 15));
                     break;
                 }
                 break;
@@ -284,8 +284,8 @@ public final /* synthetic */ class i0 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ i0(vj vjVar, String str, ArrayList arrayList, ArrayList arrayList2, int i10, int i11) {
-        this.d = vjVar;
+    public /* synthetic */ i0(wj wjVar, String str, ArrayList arrayList, ArrayList arrayList2, int i10, int i11) {
+        this.d = wjVar;
         this.e = str;
         this.f = arrayList;
         this.h = arrayList2;

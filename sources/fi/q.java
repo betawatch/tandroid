@@ -2,10 +2,10 @@ package fi;
 
 import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.x51;
 import r0.l1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
     public final /* synthetic */ s a;
@@ -30,6 +30,6 @@ public final /* synthetic */ class q implements Utilities.Callback5, Utilities.C
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        s.U(this.a, (v51) obj);
+        s.U(this.a, (x51) obj);
     }
 }

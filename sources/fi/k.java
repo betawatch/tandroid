@@ -12,8 +12,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.u40;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.w40;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.c10;
 import org.telegram.ui.d60;
@@ -25,7 +25,7 @@ import org.telegram.ui.lo;
 import org.telegram.ui.ro;
 import org.telegram.ui.z81;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ double f;
     public final /* synthetic */ TLRPC.PhotoSize h;
     public final /* synthetic */ TLRPC.PhotoSize n;
-    public final /* synthetic */ u40 r;
+    public final /* synthetic */ w40 r;
 
     public /* synthetic */ k(p pVar, TLRPC.PhotoSize photoSize, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.PhotoSize photoSize2) {
         this.a = 0;
@@ -191,7 +191,7 @@ public final /* synthetic */ class k implements Runnable {
                     y5Var.h(forLocal, "50_50", h9Var, obj);
                     roVar.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetNewPhoto", R.string.ChatSetNewPhoto), true);
                     if (roVar.R0 == null) {
-                        roVar.R0 = new ij0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                        roVar.R0 = new kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                     }
                     roVar.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                     roVar.b0.e.setAnimation(roVar.R0);
@@ -281,7 +281,7 @@ public final /* synthetic */ class k implements Runnable {
     /* JADX WARN: Multi-variable type inference failed */
     public /* synthetic */ k(m2 m2Var, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, String str, double d, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, int i10) {
         this.a = i10;
-        this.r = (u40) m2Var;
+        this.r = (w40) m2Var;
         this.b = inputFile;
         this.c = inputFile2;
         this.d = videoSize;
@@ -303,9 +303,9 @@ public final /* synthetic */ class k implements Runnable {
         this.e = str;
     }
 
-    public /* synthetic */ k(u40 u40Var, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, int i10) {
+    public /* synthetic */ k(w40 w40Var, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, int i10) {
         this.a = i10;
-        this.r = u40Var;
+        this.r = w40Var;
         this.b = inputFile;
         this.c = inputFile2;
         this.d = videoSize;

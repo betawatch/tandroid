@@ -13,9 +13,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class e8 extends FrameLayout {
     public final int a;
@@ -60,7 +60,7 @@ public final class e8 extends FrameLayout {
             setAlpha(z10 ? 1.0f : 0.0f);
         } else {
             setVisibility(0);
-            ViewPropertyAnimator duration = animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(rr.h).withEndAction(new bi.f(4, this, z10)).setDuration(320L);
+            ViewPropertyAnimator duration = animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(sr.h).withEndAction(new bi.f(4, this, z10)).setDuration(320L);
             this.e = duration;
             duration.start();
         }

@@ -1,15 +1,15 @@
 package yh;
 
 import android.text.SpannableStringBuilder;
+import android.view.ViewParent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z5 implements Runnable {
     public final /* synthetic */ int a;
@@ -92,11 +92,11 @@ public final /* synthetic */ class z5 implements Runnable {
                 break;
             case 5:
                 zg.b0 b0Var = (zg.b0) this.b;
-                qk0 qk0Var = (qk0) this.c;
+                sk0 sk0Var = (sk0) this.c;
                 b0Var.l = true;
                 b0Var.a.invalidate();
-                qk0Var.b1 = false;
-                qk0Var.invalidate();
+                sk0Var.b1 = false;
+                sk0Var.invalidate();
                 b0Var.c(true);
                 break;
             case 6:
@@ -111,9 +111,9 @@ public final /* synthetic */ class z5 implements Runnable {
                 zg.m0 m0Var = (zg.m0) this.c;
                 p0Var.getClass();
                 TLRPC.ReactionCount reactionCount = m0Var.a;
-                xv0 xv0Var = p0Var.z;
-                if (com.google.android.gms.internal.vision.e2.u(xv0Var)) {
-                    ((org.telegram.ui.Cells.o4) xv0Var).f(reactionCount, true, 0.0f, 0.0f);
+                ViewParent viewParent = p0Var.z;
+                if (com.google.android.gms.internal.vision.e2.u(viewParent)) {
+                    ((org.telegram.ui.Cells.o4) viewParent).f(reactionCount, true, 0.0f, 0.0f);
                 }
                 m0Var.Y.c(false);
                 p0Var.S = null;

@@ -38,9 +38,9 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.o80;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.q80;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.no0;
 import r0.l1;
@@ -62,9 +62,9 @@ import yh.w7;
 import yh.z3;
 import z3.g;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, ll0, uh.a, Continuation, m, yf.m, n, BillingController.ProductDetailsResponseListenerLegacy, d5, le.e, Utilities.Callback5, no0, h {
+public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, nl0, uh.a, Continuation, m, yf.m, n, BillingController.ProductDetailsResponseListenerLegacy, d5, le.e, Utilities.Callback5, no0, h {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -130,14 +130,14 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, ll0, uh.a,
                 }
                 break;
             default:
-                o80 o80Var = (o80) this.b;
+                q80 q80Var = (q80) this.b;
                 if (i10 != 1) {
                     if (i10 != 3) {
-                        o80Var.run(Boolean.FALSE, null);
+                        q80Var.run(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    o80Var.run(Boolean.TRUE, null);
+                    q80Var.run(Boolean.TRUE, null);
                     break;
                 }
                 break;
@@ -174,12 +174,12 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, ll0, uh.a,
         return u10.i();
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         z0.Q((z0) this.b, view);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -370,13 +370,13 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, ll0, uh.a,
                 break;
             default:
                 t7 t7Var = (t7) this.b;
-                v51 v51Var = (v51) obj;
+                x51 x51Var = (x51) obj;
                 ((Integer) obj3).intValue();
                 ((Float) obj4).floatValue();
                 ((Float) obj5).floatValue();
                 t7Var.getClass();
-                if (v51Var.G instanceof TL_stars.StarsTransaction) {
-                    w7.h1(t7Var.getContext(), false, 0L, t7Var.c, (TL_stars.StarsTransaction) v51Var.G, t7Var.b);
+                if (x51Var.G instanceof TL_stars.StarsTransaction) {
+                    w7.h1(t7Var.getContext(), false, 0L, t7Var.c, (TL_stars.StarsTransaction) x51Var.G, t7Var.b);
                     break;
                 }
                 break;
@@ -393,7 +393,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, ll0, uh.a,
     public /* synthetic */ void C(float f7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

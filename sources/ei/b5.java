@@ -23,13 +23,13 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.x6;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class b5 extends Drawable implements x6, NotificationCenter.NotificationCenterDelegate {
     public final Paint a;
@@ -38,7 +38,7 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
     public final ImageReceiver d;
     public int e;
     public final q5[] f;
-    public final t01 h;
+    public final v01 h;
     public final RectF n;
     public final boolean r;
     public final e6 s;
@@ -57,7 +57,7 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         this.e = 1;
         this.f = new q5[2];
         this.n = new RectF();
-        this.s = new e6(new a5(this, 1), 320L, rr.h, 0);
+        this.s = new e6(new a5(this, 1), 320L, sr.h, 0);
         this.r = false;
         int i10 = h6.d6;
         paint.setColor(h6.w0(null, i10, false));
@@ -68,14 +68,14 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         imageReceiver.setForUserOrChat(user, h9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         d();
-        this.h = new t01(UserObject.getUserName(user), 14.0f, null);
+        this.h = new v01(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // org.telegram.ui.Components.x6
-    public final void a(lj0 lj0Var) {
-        this.x = lj0Var;
-        this.d.setParentView(lj0Var);
-        this.c.setParentView(lj0Var);
+    public final void a(nj0 nj0Var) {
+        this.x = nj0Var;
+        this.d.setParentView(nj0Var);
+        this.c.setParentView(nj0Var);
     }
 
     @Override // org.telegram.ui.Components.x6
@@ -232,7 +232,7 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         this.e = 1;
         this.f = new q5[2];
         this.n = new RectF();
-        this.s = new e6(new a5(this, 1), 320L, rr.h, 0);
+        this.s = new e6(new a5(this, 1), 320L, sr.h, 0);
         this.r = true;
         int i10 = h6.d6;
         paint.setColor(h6.w0(null, i10, false));
@@ -243,7 +243,7 @@ public final class b5 extends Drawable implements x6, NotificationCenter.Notific
         imageReceiver.setForUserOrChat(user, h9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         imageReceiver2.setImage(ImageLocation.getForDocument(document), "120_120", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 120), document), "120_120", DocumentObject.getSvgThumb(document.thumbs, h6.a7, 0.35f), 0L, null, null, 0);
-        this.h = new t01(UserObject.getUserName(user), 14.0f, null);
+        this.h = new v01(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -1,31 +1,22 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r80 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
-    public final /* synthetic */ long d;
+public final class l80 extends FrameLayout {
+    public TextView a;
 
-    public /* synthetic */ l80(r80 r80Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j3, int i10) {
-        this.a = i10;
-        this.b = r80Var;
-        this.c = tL_chatInviteJoinResultWebView;
-        this.d = j3;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                r80.p(this.b, this.c, this.d);
-                break;
-            default:
-                r80.o(this.b, this.c, this.d);
-                break;
-        }
+    public void setText(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

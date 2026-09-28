@@ -31,13 +31,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.o90;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.yc;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ba implements Runnable {
     public final /* synthetic */ int a;
@@ -80,17 +80,17 @@ public final /* synthetic */ class ba implements Runnable {
                 return;
             case 1:
                 va vaVar = (va) this.b;
-                o90 o90Var = (o90) this.c;
-                o90 o90Var2 = vaVar.a;
-                if (o90Var != o90Var2 || o90Var2 == null) {
+                q90 q90Var = (q90) this.c;
+                q90 q90Var2 = vaVar.a;
+                if (q90Var != q90Var2 || q90Var2 == null) {
                     return;
                 }
-                CharacterStyle characterStyle = o90Var2.i;
+                CharacterStyle characterStyle = q90Var2.i;
                 if (characterStyle instanceof URLSpan) {
                     wa waVar = vaVar.v;
-                    k90 k90Var = vaVar.c;
-                    Objects.requireNonNull(k90Var);
-                    waVar.J.H((URLSpan) characterStyle, waVar, new a3.d(k90Var, 18));
+                    m90 m90Var = vaVar.c;
+                    Objects.requireNonNull(m90Var);
+                    waVar.J.H((URLSpan) characterStyle, waVar, new a3.d(m90Var, 18));
                     vaVar.a = null;
                     return;
                 }
@@ -279,7 +279,7 @@ public final /* synthetic */ class ba implements Runnable {
                 pVar.w.addUpdateListener(new ci.m7(pVar, n7Var.getScaleX(), width, ((c2Var.getWidth() / 2.0f) + c2Var.getX()) - ((n7Var.getWidth() / 2.0f) + n7Var.getX()), ((c2Var.getHeight() / 2.0f) + c2Var.getY()) - ((n7Var.getHeight() / 2.0f) + n7Var.getY()), 0));
                 pVar.w.addListener(new z(4, pVar, c2Var));
                 pVar.w.setDuration(320L);
-                pVar.w.setInterpolator(rr.h);
+                pVar.w.setInterpolator(sr.h);
                 pVar.v = c2Var;
                 pVar.w.start();
                 return;
@@ -334,7 +334,7 @@ public final /* synthetic */ class ba implements Runnable {
                 if ((TextUtils.isEmpty(h3Var.getText()) || TextUtils.equals(h3Var.getText(), "https://") || TextUtils.isEmpty(h3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip()) {
                     i13 = 1;
                 }
-                ok.s(textView.animate().alpha(i13 != 0 ? 1.0f : 0.0f).scaleX(i13 != 0 ? 1.0f : 0.7f).scaleY(i13 == 0 ? 0.7f : 1.0f), rr.h, 300L);
+                ok.s(textView.animate().alpha(i13 != 0 ? 1.0f : 0.0f).scaleX(i13 != 0 ? 1.0f : 0.7f).scaleY(i13 == 0 ? 0.7f : 1.0f), sr.h, 300L);
                 return;
         }
     }

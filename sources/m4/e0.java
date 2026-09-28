@@ -17,12 +17,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.ss;
-import org.telegram.ui.Components.us;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.ts;
+import org.telegram.ui.Components.vs;
 import yh.b7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,13 +86,13 @@ public final /* synthetic */ class e0 implements Runnable {
                 ((MessagesController) this.d).lambda$startShortPoll$333((TLRPC.Chat) this.e, this.b, this.c, (q0.a) this.f);
                 break;
             case 2:
-                ss ssVar = (ss) this.d;
+                ts tsVar = (ts) this.d;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.e;
                 TLObject tLObject = (TLObject) this.f;
-                ArrayList arrayList = ssVar.T;
-                int i11 = ssVar.N;
-                if (this.c == ssVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, ssVar.e0)) {
-                    ssVar.Z = false;
+                ArrayList arrayList = tsVar.T;
+                int i11 = tsVar.N;
+                if (this.c == tsVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, tsVar.e0)) {
+                    tsVar.Z = false;
                     if (!this.b) {
                         arrayList.clear();
                     }
@@ -108,25 +108,25 @@ public final /* synthetic */ class e0 implements Runnable {
                             TLRPC.Message message = arrayList2.get(i12);
                             i12++;
                             MessageObject messageObject = new MessageObject(i11, message, false, true);
-                            messageObject.setQuery(ssVar.e0);
+                            messageObject.setQuery(tsVar.e0);
                             arrayList.add(messageObject);
                         }
-                        ssVar.b0 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
+                        tsVar.b0 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
                         Math.max(arrayList.size(), messages_messages.count);
-                        ssVar.c0 = messages_messages.next_rate;
+                        tsVar.c0 = messages_messages.next_rate;
                     }
-                    ssVar.N(true);
+                    tsVar.N(true);
                     break;
                 }
                 break;
             case 3:
-                us usVar = (us) this.d;
+                vs vsVar = (vs) this.d;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) this.e;
                 TLObject tLObject2 = (TLObject) this.f;
-                ArrayList arrayList3 = usVar.P;
-                int i13 = usVar.N;
-                if (this.c == usVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, usVar.b0)) {
-                    usVar.W = false;
+                ArrayList arrayList3 = vsVar.P;
+                int i13 = vsVar.N;
+                if (this.c == vsVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, vsVar.b0)) {
+                    vsVar.W = false;
                     if (!this.b) {
                         arrayList3.clear();
                     }
@@ -142,14 +142,14 @@ public final /* synthetic */ class e0 implements Runnable {
                             TLRPC.Message message2 = arrayList4.get(i14);
                             i14++;
                             MessageObject messageObject2 = new MessageObject(i13, message2, false, true);
-                            messageObject2.setQuery(usVar.b0);
+                            messageObject2.setQuery(vsVar.b0);
                             arrayList3.add(messageObject2);
                         }
-                        usVar.Y = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
+                        vsVar.Y = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
                         Math.max(arrayList3.size(), messages_messages2.count);
-                        usVar.Z = messages_messages2.next_rate;
+                        vsVar.Z = messages_messages2.next_rate;
                     }
-                    usVar.N(true);
+                    vsVar.N(true);
                     break;
                 }
                 break;
@@ -240,9 +240,9 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ e0(j61 j61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ e0(l61 l61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = j61Var;
+        this.d = l61Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z10;

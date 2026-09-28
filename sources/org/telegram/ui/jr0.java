@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -233,7 +233,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 String str2 = (String) obj2;
                 String str3 = (String) obj;
                 if (AndroidUtilities.isContextSafe(profileActivity3.getParentActivity())) {
-                    org.telegram.ui.Components.i41.K(profileActivity3.getParentActivity(), profileActivity3, strArr[0], str2, str3, new h20(profileActivity3, i13), null);
+                    org.telegram.ui.Components.k41.K(profileActivity3.getParentActivity(), profileActivity3, strArr[0], str2, str3, new h20(profileActivity3, i13), null);
                     break;
                 }
                 break;
@@ -488,7 +488,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                         logger.warning(str9);
                         gVar.a(new IllegalArgumentException(str9));
                     } else {
-                        ((s5.h) aVar.e).f(new org.telegram.ui.Components.s50(aVar, iVar, ((j5.b) a2).a(hVar), 5));
+                        ((s5.h) aVar.e).f(new org.telegram.ui.Components.u50(aVar, iVar, ((j5.b) a2).a(hVar), 5));
                         gVar.a(null);
                     }
                     break;
@@ -538,7 +538,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj3;
                 xh.j1 j1Var = (xh.j1) obj2;
                 final View view = (View) obj;
-                org.telegram.ui.Components.zr0 zr0Var = o2Var.a;
+                org.telegram.ui.Components.bs0 bs0Var = o2Var.a;
                 if (savedStarGift.unsaved) {
                     savedStarGift.unsaved = false;
                     j1Var.h(savedStarGift, true, false);
@@ -550,7 +550,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 boolean z10 = savedStarGift.pinned_to_top;
                 final boolean z11 = !z10;
                 if (o2Var.e.m(savedStarGift, z11, false)) {
-                    new xh.r2(o2Var.getContext(), zr0Var.c, savedStarGift, o2Var.c, new Utilities.Callback0Return() { // from class: xh.h2
+                    new xh.r2(o2Var.getContext(), bs0Var.c, savedStarGift, o2Var.c, new Utilities.Callback0Return() { // from class: xh.h2
                         @Override // org.telegram.messenger.Utilities.Callback0Return
                         public final Object run() {
                             ((j1) view).c(z11, true);
@@ -562,9 +562,9 @@ public final /* synthetic */ class jr0 implements Runnable {
                     break;
                 } else {
                     if (z10) {
-                        org.telegram.messenger.f0.p(R.string.Gift2Unpinned, org.telegram.ui.Components.xc.a0(zr0Var.a), R.raw.ic_unpin, 36);
+                        org.telegram.messenger.f0.p(R.string.Gift2Unpinned, org.telegram.ui.Components.xc.a0(bs0Var.a), R.raw.ic_unpin, 36);
                     } else {
-                        org.telegram.ui.Components.xc.a0(zr0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
+                        org.telegram.ui.Components.xc.a0(bs0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
                     }
                     ((xh.j1) view).c(z11, true);
                     o2Var.f.u0(0);

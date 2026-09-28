@@ -33,13 +33,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.bh;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class x2 extends FrameLayout {
     public final org.telegram.ui.Components.y5 E;
@@ -47,7 +47,7 @@ public final class x2 extends FrameLayout {
     public final LinearLayout G;
     public final org.telegram.ui.Components.p6 H;
     public final org.telegram.ui.Components.p6 I;
-    public final lj0 J;
+    public final nj0 J;
     public final TextView K;
     public final TextView L;
     public final TextView M;
@@ -79,7 +79,7 @@ public final class x2 extends FrameLayout {
     public boolean i0;
     public boolean j0;
     public Runnable k0;
-    public lj0 l0;
+    public nj0 l0;
     public SpannableStringBuilder m0;
     public final v2[] n;
     public final vh.n r;
@@ -150,12 +150,12 @@ public final class x2 extends FrameLayout {
         layoutTransition.setDuration(0, 320L);
         layoutTransition.setDuration(1, 320L);
         layoutTransition.setDuration(4, 320L);
-        rr rrVar = rr.h;
-        layoutTransition.setInterpolator(2, rrVar);
-        layoutTransition.setInterpolator(3, rrVar);
-        layoutTransition.setInterpolator(0, rrVar);
-        layoutTransition.setInterpolator(1, rrVar);
-        layoutTransition.setInterpolator(4, rrVar);
+        sr srVar = sr.h;
+        layoutTransition.setInterpolator(2, srVar);
+        layoutTransition.setInterpolator(3, srVar);
+        layoutTransition.setInterpolator(0, srVar);
+        layoutTransition.setInterpolator(1, srVar);
+        layoutTransition.setInterpolator(4, srVar);
         linearLayout.setLayoutTransition(layoutTransition);
         linearLayout.setOrientation(0);
         linearLayout.setGravity(17);
@@ -167,11 +167,11 @@ public final class x2 extends FrameLayout {
         layoutTransition2.setDuration(0, 320L);
         layoutTransition2.setDuration(1, 320L);
         layoutTransition2.setDuration(4, 320L);
-        layoutTransition2.setInterpolator(2, rrVar);
-        layoutTransition2.setInterpolator(3, rrVar);
-        layoutTransition2.setInterpolator(0, rrVar);
-        layoutTransition2.setInterpolator(1, rrVar);
-        layoutTransition2.setInterpolator(4, rrVar);
+        layoutTransition2.setInterpolator(2, srVar);
+        layoutTransition2.setInterpolator(3, srVar);
+        layoutTransition2.setInterpolator(0, srVar);
+        layoutTransition2.setInterpolator(1, srVar);
+        layoutTransition2.setInterpolator(4, srVar);
         linearLayout2.setLayoutTransition(layoutTransition2);
         linearLayout2.setOrientation(0);
         linearLayout2.setAlpha(0.0f);
@@ -281,11 +281,11 @@ public final class x2 extends FrameLayout {
         LinearLayout linearLayout6 = new LinearLayout(context);
         linearLayout6.setOrientation(0);
         linearLayout6.setGravity(17);
-        lj0 lj0Var = new lj0(context);
-        this.J = lj0Var;
-        lj0Var.setAutoRepeat(true);
-        lj0Var.f(R.raw.gift_crafting, 30, 30, null);
-        linearLayout6.addView(lj0Var, w7.y5.t(30, 30, 17, 0, 0, 4, 0));
+        nj0 nj0Var = new nj0(context);
+        this.J = nj0Var;
+        nj0Var.setAutoRepeat(true);
+        nj0Var.f(R.raw.gift_crafting, 30, 30, null);
+        linearLayout6.addView(nj0Var, w7.y5.t(30, 30, 17, 0, 0, 4, 0));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 20.0f);
         textView2.setTextColor(-1);
@@ -501,10 +501,10 @@ public final class x2 extends FrameLayout {
         if (giftsSelectedCount <= 0) {
             if (this.m0 == null) {
                 this.m0 = new SpannableStringBuilder("+");
-                pq pqVar = new pq(R.drawable.filled_add_album, 0);
-                pqVar.setScale(0.65f, 0.65f);
+                qq qqVar = new qq(R.drawable.filled_add_album, 0);
+                qqVar.setScale(0.65f, 0.65f);
                 SpannableStringBuilder spannableStringBuilder = this.m0;
-                spannableStringBuilder.setSpan(pqVar, 0, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.setSpan(qqVar, 0, spannableStringBuilder.length(), 33);
             }
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.GiftCraftButtonEmpty));
             AndroidUtilities.replaceMultipleCharSequence("+", spannableStringBuilder2, this.m0);

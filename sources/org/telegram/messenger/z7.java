@@ -1,28 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.Document c;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ z7(int i10, MediaDataController mediaDataController, TLRPC.Document document) {
+    public /* synthetic */ z7(MediaDataController mediaDataController, boolean z10, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = document;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$removeRecentGif$25(this.c);
+                this.b.lambda$loadFeaturedStickers$55(this.c);
                 break;
             default:
-                this.b.lambda$addRecentGif$26(this.c);
+                this.b.lambda$processLoadedFeaturedStickers$59(this.c);
                 break;
         }
     }

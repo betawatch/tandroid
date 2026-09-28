@@ -84,12 +84,12 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.gz0;
-import org.telegram.ui.Components.pk;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.uz0;
+import org.telegram.ui.Components.iz0;
+import org.telegram.ui.Components.qk;
+import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.wz0;
 import org.telegram.ui.sq0;
 import org.telegram.ui.wn;
 import org.xmlpull.v1.XmlPullParserException;
@@ -104,9 +104,9 @@ import w7.g6;
 import zg.o0;
 import zg.p0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public class h implements pk0, sq0, n5.b, t0.h {
+public class h implements rk0, sq0, n5.b, t0.h {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -133,7 +133,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
     public static Object[] v(Object[] objArr, int[] iArr) {
         int length = objArr.length;
         Class<?> componentType = objArr.getClass().getComponentType();
-        gz0 gz0Var = uz0.R;
+        iz0 iz0Var = wz0.R;
         int i10 = -1;
         for (int i11 : iArr) {
             i10 = Math.max(i10, i11);
@@ -765,7 +765,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
 
     @Override // org.telegram.ui.sq0
     public void g() {
-        ((pk) this.d).Q.w();
+        ((qk) this.d).Q.w();
     }
 
     @Override // fd.a
@@ -779,7 +779,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -799,7 +799,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
             if (m11 == null) {
                 f11 = 0.0f;
                 f7 = f11;
-                wnVar.ab(q82, (MessageObject) this.b, (qk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+                wnVar.ab(q82, (MessageObject) this.b, (sk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
             } else {
                 f12 = p0Var2.c + m11.x + (m11.A / 2.0f);
                 f10 = p0Var2.d + m11.y;
@@ -807,7 +807,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
             }
         } else if (!(q82 instanceof w0) || (m10 = (p0Var = ((w0) q82).C0).m(o0Var)) == null) {
             f7 = 0.0f;
-            wnVar.ab(q82, (MessageObject) this.b, (qk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+            wnVar.ab(q82, (MessageObject) this.b, (sk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
         } else {
             f12 = p0Var.c + m10.x + (m10.A / 2.0f);
             f10 = p0Var.d + m10.y;
@@ -815,7 +815,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
         }
         f11 = f10 + (i10 / 2.0f);
         f7 = f11;
-        wnVar.ab(q82, (MessageObject) this.b, (qk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+        wnVar.ab(q82, (MessageObject) this.b, (sk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
     }
 
     @Override // org.telegram.ui.sq0
@@ -823,14 +823,14 @@ public class h implements pk0, sq0, n5.b, t0.h {
         if (z10) {
             return;
         }
-        pk pkVar = (pk) this.d;
+        qk qkVar = (qk) this.d;
         HashMap hashMap = (HashMap) this.b;
         ArrayList arrayList = (ArrayList) this.c;
-        wi wiVar = pkVar.b;
-        if (hashMap.isEmpty() || pkVar.Q == null || pkVar.K) {
+        wi wiVar = qkVar.b;
+        if (hashMap.isEmpty() || qkVar.Q == null || qkVar.K) {
             return;
         }
-        pkVar.K = true;
+        qkVar.K = true;
         ArrayList arrayList2 = new ArrayList();
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             Object obj = hashMap.get(arrayList.get(i11));
@@ -855,15 +855,15 @@ public class h implements pk0, sq0, n5.b, t0.h {
                 sendingMediaInfo.ttl = photoEntry.ttl;
             }
         }
-        e5.a0(wiVar.J1, wiVar.j1() + arrayList2.size(), wiVar.n1(), new d4(i10, 2, pkVar, arrayList2, z11));
+        e5.a0(wiVar.J1, wiVar.j1() + arrayList2.size(), wiVar.n1(), new d4(i10, 2, qkVar, arrayList2, z11));
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ boolean k() {
         return false;
     }
@@ -873,7 +873,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ boolean p() {
         return false;
     }
@@ -1140,7 +1140,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
     public void d() {
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ void n() {
     }
 
@@ -1237,7 +1237,7 @@ public class h implements pk0, sq0, n5.b, t0.h {
         this.d = v(objArr2, iArr);
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.rk0
     public /* synthetic */ void m(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

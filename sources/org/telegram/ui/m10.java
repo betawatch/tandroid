@@ -5,16 +5,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class m10 extends org.telegram.ui.Components.vl0 {
+public final class m10 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ t10 c;
 
     public m10(t10 t10Var) {
         this.c = t10Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -42,7 +42,7 @@ public final class m10 extends org.telegram.ui.Components.vl0 {
             s2Var.O = t10Var.p0;
             s2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
             s2Var.s2 = i10 != h() - 1;
-            s2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.nk(this, s2Var, messageObject, s2Var.getMessage() != null && s2Var.getMessage().getId() == messageObject.getId(), 1));
+            s2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.ok(this, s2Var, messageObject, s2Var.getMessage() != null && s2Var.getMessage().getId() == messageObject.getId(), 1));
         }
     }
 
@@ -57,10 +57,10 @@ public final class m10 extends org.telegram.ui.Components.vl0 {
             v3Var.setText(LocaleController.getString(R.string.SearchMessages));
             a0Var = v3Var;
         } else {
-            org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(viewGroup.getContext(), null);
-            u00Var.setIsSingleCell(true);
-            u00Var.setViewType(1);
-            a0Var = u00Var;
+            org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(viewGroup.getContext(), null);
+            v00Var.setIsSingleCell(true);
+            v00Var.setViewType(1);
+            a0Var = v00Var;
         }
         return com.google.android.gms.internal.vision.e2.k(a0Var, a0Var, -1, -2);
     }

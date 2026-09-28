@@ -1,272 +1,212 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.view.View;
+import android.graphics.drawable.TransitionDrawable;
+import android.util.StateSet;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.Date;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AppGlobalConfig;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class kc0 extends FrameLayout {
-    public boolean E;
-    public float F;
-    public final int a;
-    public final int b;
-    public final org.telegram.ui.ActionBar.d6 c;
-    public final LinearLayout d;
-    public final TextView e;
-    public final TextView f;
-    public final TextView h;
-    public final long n;
-    public final int r;
-    public final int s;
-    public final int v;
-    public final int w;
-    public final Runnable x;
-    public final int y;
+public final /* synthetic */ class kc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public kc0(Context context, int i10, MessageObject messageObject, Runnable runnable, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        TLRPC.MessageFwdHeader messageFwdHeader;
-        this.E = false;
-        this.F = -1.0f;
-        this.b = i10;
-        int i11 = messageObject.currentAccount;
-        this.a = i11;
-        this.c = d6Var;
-        this.x = runnable;
-        this.y = ConnectionsManager.getInstance(i11).getCurrentTime() - messageObject.messageOwner.date;
-        this.n = messageObject.getDialogId();
-        this.r = messageObject.getId();
-        TLRPC.Message message = messageObject.messageOwner;
-        this.s = message == null ? 0 : message.date;
-        this.v = message == null ? 0 : message.edit_date;
-        this.w = (message == null || (messageFwdHeader = message.fwd_from) == null) ? 0 : messageFwdHeader.date;
-        ImageView imageView = new ImageView(context);
-        addView(imageView, w7.y5.d(24, 24.0f, 19, 11.0f, 0.0f, 0.0f, 0.0f));
-        Drawable mutate = context.getDrawable(i10 == 1 ? AppGlobalConfig.getInstance(i11).messagePrimaryEditedDate.get() ? R.drawable.outline_message_time_24 : R.drawable.menu_edited_stamp : i10 == 2 ? R.drawable.menu_forward_stamp : messageObject.isVoice() ? R.drawable.msg_played : R.drawable.msg_seen).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.F8, d6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageDrawable(mutate);
-        TextView textView = new TextView(context);
-        this.h = textView;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("loading text ");
-        spannableStringBuilder.setSpan(new s90(textView, AndroidUtilities.dp(96.0f), AndroidUtilities.dp(2.0f), d6Var), 0, spannableStringBuilder.length() - 1, 17);
-        int i12 = org.telegram.ui.ActionBar.h6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.7f, org.telegram.ui.ActionBar.h6.v0(i12, d6Var)));
-        textView.setText(spannableStringBuilder);
-        textView.setTextSize(1, 13.0f);
-        addView(textView, w7.y5.d(96, -2.0f, 19, 40.0f, -1.0f, 8.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.d = linearLayout;
-        linearLayout.setOrientation(0);
-        linearLayout.setAlpha(0.0f);
-        addView(linearLayout, w7.y5.d(-1, -2.0f, 19, 38.0f, 0.0f, 8.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        org.telegram.messenger.ok.n(i12, d6Var, textView2, 1, 14.0f);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView2, w7.y5.t(-2, -2, 19, 0, -1, 0, 0), context);
-        this.f = h;
-        h.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(20.0f), org.telegram.ui.ActionBar.h6.l1(0.75f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d7, d6Var))));
-        org.telegram.messenger.ok.n(i12, d6Var, h, 1, 11.0f);
-        h.setPadding(AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.33f));
-        linearLayout.addView(h, w7.y5.t(-2, -2, 19, 4, 0, 0, 0));
-        a();
+    public /* synthetic */ kc0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public static void b(final Context context, final int i10, long j3, final boolean z10, Runnable runnable, final Runnable runnable2, final org.telegram.ui.ActionBar.d6 d6Var) {
-        final org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, context, d6Var, false);
-        e3Var.fixNavigationBar(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, d6Var));
-        boolean premiumFeaturesBlocked = MessagesController.getInstance(i10).premiumFeaturesBlocked();
-        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
-        f7.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        lj0 lj0Var = new lj0(context);
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        lj0Var.f(z10 ? R.raw.large_lastseen : R.raw.large_readtime, 70, 70, null);
-        lj0Var.d();
-        lj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        lj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var)));
-        f7.addView(lj0Var, w7.y5.t(80, 80, 1, 0, 16, 0, 16));
-        TextView textView = new TextView(context);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(17);
-        int i11 = org.telegram.ui.ActionBar.h6.j5;
-        org.telegram.messenger.ok.n(i11, d6Var, textView, 1, 20.0f);
-        textView.setText(LocaleController.getString(z10 ? R.string.PremiumLastSeenHeader1 : R.string.PremiumReadHeader1));
-        f7.addView(textView, w7.y5.t(-1, -2, 1, 12, 0, 12, 0));
-        TextView textView2 = new TextView(context);
-        textView2.setGravity(17);
-        org.telegram.messenger.ok.n(i11, d6Var, textView2, 1, 14.0f);
-        String firstName = j3 > 0 ? UserObject.getFirstName(MessagesController.getInstance(i10).getUser(Long.valueOf(j3))) : "";
-        org.telegram.messenger.ok.q(z10 ? premiumFeaturesBlocked ? R.string.PremiumLastSeenText1Locked : R.string.PremiumLastSeenText1 : premiumFeaturesBlocked ? R.string.PremiumReadText1Locked : R.string.PremiumReadText1, new Object[]{firstName}, textView2);
-        f7.addView(textView2, w7.y5.t(-1, -2, 1, 32, 9, 32, 19));
-        final ci.d g10 = org.telegram.messenger.ok.g(24, context, d6Var, true);
-        g10.g(LocaleController.getString(z10 ? R.string.PremiumLastSeenButton1 : R.string.PremiumReadButton1), false, true);
-        f7.addView(g10, w7.y5.q(-1, 48, 1));
-        g10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.gc0
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                ci.d dVar = ci.d.this;
-                dVar.setLoading(true);
-                boolean z11 = z10;
-                int i12 = i10;
-                org.telegram.ui.ActionBar.e3 e3Var2 = e3Var;
-                Runnable runnable3 = runnable2;
-                if (z11) {
-                    TL_account.setPrivacy setprivacy = new TL_account.setPrivacy();
-                    setprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
-                    setprivacy.rules.add(new TLRPC.TL_inputPrivacyValueAllowAll());
-                    ConnectionsManager.getInstance(i12).sendRequest(setprivacy, new ai.s5(dVar, e3Var2, runnable3, 11));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((mc0) this.b).a();
+                break;
+            case 1:
+                ((oc0) this.b).z();
+                break;
+            case 2:
+                ((ci.u) this.b).invalidateSelf();
+                break;
+            case 3:
+                ((wc0) this.b).invalidateSelf();
+                break;
+            case 4:
+                ((qd0) this.b).d();
+                break;
+            case 5:
+                zd0 zd0Var = (zd0) this.b;
+                zd0Var.getClass();
+                try {
+                    zd0Var.d.I.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
                     return;
                 }
-                TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
-                TLRPC.GlobalPrivacySettings globalPrivacySettings = ContactsController.getInstance(i12).getGlobalPrivacySettings();
-                setglobalprivacysettings.settings = globalPrivacySettings;
-                if (globalPrivacySettings == null) {
-                    setglobalprivacysettings.settings = new TLRPC.TL_globalPrivacySettings();
+            case 6:
+                ((me0) this.b).f.start();
+                break;
+            case 7:
+                xz xzVar = ((qf0) this.b).c.l0;
+                if (xzVar != null) {
+                    xzVar.e(false, true, false);
+                    break;
                 }
-                setglobalprivacysettings.settings.hide_read_marks = false;
-                ConnectionsManager.getInstance(i12).sendRequest(setglobalprivacysettings, new ci.hd(context, d6Var, dVar, e3Var2, runnable3, 5));
-            }
-        });
-        if (!premiumFeaturesBlocked) {
-            jc0 jc0Var = new jc0(context, d6Var);
-            jc0Var.setGravity(17);
-            jc0Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
-            jc0Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, d6Var));
-            jc0Var.l(" " + LocaleController.getString(R.string.PremiumOr) + " ", false);
-            jc0Var.setTextSize(14);
-            f7.addView(jc0Var, w7.y5.t(270, -2, 1, 12, 17, 12, 17));
-            TextView textView3 = new TextView(context);
-            textView3.setTypeface(AndroidUtilities.bold());
-            textView3.setGravity(17);
-            textView3.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-            textView3.setTextSize(1, 20.0f);
-            textView3.setText(LocaleController.getString(z10 ? R.string.PremiumLastSeenHeader2 : R.string.PremiumReadHeader2));
-            f7.addView(textView3, w7.y5.t(-1, -2, 1, 12, 0, 12, 0));
-            TextView textView4 = new TextView(context);
-            textView4.setGravity(17);
-            org.telegram.messenger.ok.n(i11, d6Var, textView4, 1, 14.0f);
-            org.telegram.messenger.ok.q(z10 ? R.string.PremiumLastSeenText2 : R.string.PremiumReadText2, new Object[]{firstName}, textView4);
-            f7.addView(textView4, w7.y5.t(-1, -2, 1, 32, 9, 32, 19));
-            rg.p0 p0Var = new rg.p0(context, d6Var, true);
-            p0Var.setOnClickListener(new hc0(z10, e3Var, runnable));
-            p0Var.b(LocaleController.getString(z10 ? R.string.PremiumLastSeenButton2 : R.string.PremiumReadButton2), false, false);
-            f7.addView(p0Var, w7.y5.t(-1, 48, 1, 0, 0, 0, 4));
-        }
-        e3Var.setCustomView(f7);
-        e3Var.show();
-    }
-
-    public final void a() {
-        TextView textView = this.e;
-        int i10 = this.a;
-        TextView textView2 = this.f;
-        TextView textView3 = this.h;
-        LinearLayout linearLayout = this.d;
-        int i11 = this.b;
-        if (i11 == 1) {
-            linearLayout.setAlpha(1.0f);
-            textView3.setAlpha(0.0f);
-            textView2.setVisibility(8);
-            textView.setText(AppGlobalConfig.getInstance(i10).messagePrimaryEditedDate.get() ? LocaleController.formatPmSentDate(this.s) : LocaleController.formatPmEditedDate(this.v));
-            return;
-        }
-        if (i11 == 2) {
-            linearLayout.setAlpha(1.0f);
-            textView3.setAlpha(0.0f);
-            textView2.setVisibility(8);
-            textView.setText(LocaleController.formatPmFwdDate(this.w));
-            return;
-        }
-        setOnClickListener(null);
-        linearLayout.setAlpha(0.0f);
-        textView3.setAlpha(1.0f);
-        textView2.setVisibility(0);
-        TLRPC.TL_messages_getOutboxReadDate tL_messages_getOutboxReadDate = new TLRPC.TL_messages_getOutboxReadDate();
-        tL_messages_getOutboxReadDate.peer = MessagesController.getInstance(i10).getInputPeer(this.n);
-        tL_messages_getOutboxReadDate.msg_id = this.r;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getOutboxReadDate, new y1(this, 8));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        ub ubVar;
-        super.onDetachedFromWindow();
-        qc qcVar = qc.w;
-        if (qcVar == null || (ubVar = qcVar.e) == null || ubVar.getParent() == null || !(qcVar.e.getParent().getParent() instanceof kb)) {
-            return;
-        }
-        qcVar.b();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        float f7;
-        View view = (View) getParent();
-        int size = View.MeasureSpec.getSize(i10);
-        int mode = View.MeasureSpec.getMode(i10);
-        if (this.F < 0.0f) {
-            this.F = 0.0f;
-            int i12 = this.b;
-            TextView textView = this.e;
-            if (i12 == 0) {
-                long currentTimeMillis = System.currentTimeMillis();
-                float max = Math.max(this.F, AndroidUtilities.dp(144.0f));
-                this.F = max;
-                float max2 = Math.max(max, textView.getPaint().measureText(LocaleController.getString(R.string.PmReadUnknown)) + AndroidUtilities.dp(48.0f));
-                this.F = max2;
-                float max3 = Math.max(max2, textView.getPaint().measureText(LocaleController.getString(R.string.PmRead) + this.f.getPaint().measureText(LocaleController.getString(R.string.PmReadShowWhen))) + AndroidUtilities.dp(64.0f));
-                this.F = max3;
-                float max4 = Math.max(max3, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadTodayAt, LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + ((float) AndroidUtilities.dp(48.0f)));
-                this.F = max4;
-                int i13 = this.y;
-                if (i13 > 86400) {
-                    f7 = 48.0f;
-                    this.F = Math.max(max4, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadYesterdayAt, LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(48.0f));
-                } else {
-                    f7 = 48.0f;
+                break;
+            case 8:
+                tf0 tf0Var = (tf0) this.b;
+                tf0Var.r = false;
+                tf0Var.invalidate();
+                break;
+            case 9:
+                ((wf0) this.b).h = null;
+                break;
+            case 10:
+                wf0 wf0Var = (wf0) ((n7.z0) this.b).c;
+                wf0Var.d.L(wf0Var.e, false);
+                break;
+            case 11:
+                org.telegram.ui.au0 au0Var = (org.telegram.ui.au0) this.b;
+                if (au0Var.x) {
+                    au0Var.h("pollPosition();");
                 }
-                if (i13 > 172800) {
-                    float max5 = Math.max(this.F, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadDateTimeAt, LocaleController.getInstance().getFormatterDayMonth().format(new Date(currentTimeMillis)), LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(f7));
-                    this.F = max5;
-                    this.F = Math.max(max5, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadDateTimeAt, LocaleController.getInstance().getFormatterYear().format(new Date(currentTimeMillis)), LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(f7));
+                if (au0Var.G) {
+                    AndroidUtilities.runOnUIThread(au0Var.L, 500L);
+                    break;
                 }
-            } else {
-                this.F = textView.getPaint().measureText(textView.getText().toString()) + AndroidUtilities.dp(48.0f);
-            }
+                break;
+            case 12:
+                ((FrameLayout) this.b).invalidate();
+                break;
+            case 13:
+                qg0 qg0Var = (qg0) ((lg.b) this.b).b;
+                qg0Var.d.invalidate();
+                qg0Var.e.requestLayout();
+                break;
+            case 14:
+                ((sg0) this.b).f();
+                break;
+            case 15:
+                try {
+                    ri0 ri0Var = ((qi0) this.b).b;
+                    if (ri0Var.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) ri0Var.getParent()).removeView(ri0Var);
+                    }
+                    ri0Var.Q.run();
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 16:
+                ((RLottieNative) this.b).d();
+                break;
+            case 17:
+                sk0 sk0Var = (sk0) this.b;
+                sk0Var.x0 = null;
+                sk0Var.j();
+                rk0 rk0Var = sk0Var.g0;
+                if (rk0Var != null) {
+                    rk0Var.n();
+                    break;
+                }
+                break;
+            case 18:
+                ((pk0) this.b).H.a.setVisibility(4);
+                break;
+            case 19:
+                tk0 tk0Var = (tk0) this.b;
+                u71 u71Var = tk0Var.n;
+                if (u71Var != null) {
+                    boolean y3 = u71Var.y();
+                    float n10 = tk0Var.n.n() / tk0Var.n.p();
+                    float f7 = tk0Var.s;
+                    if (n10 < f7) {
+                        tk0Var.n.L((long) (f7 * r2.p()), false);
+                    } else if (n10 > tk0Var.v) {
+                        tk0Var.setPlaying(false);
+                        y3 = false;
+                    }
+                    if (y3) {
+                        AndroidUtilities.runOnUIThread(tk0Var.x, 16L);
+                    }
+                }
+                tk0Var.invalidate();
+                break;
+            case 20:
+                yl0 yl0Var = (yl0) this.b;
+                yl0Var.V1 = null;
+                yl0Var.U1 = null;
+                org.telegram.ui.Cells.z zVar = yl0Var.D1;
+                if (zVar != null) {
+                    Drawable current = zVar.getCurrent();
+                    if (current instanceof TransitionDrawable) {
+                        ((TransitionDrawable) current).resetTransition();
+                    }
+                }
+                org.telegram.ui.Cells.z zVar2 = yl0Var.D1;
+                if (zVar2 != null && zVar2.isStateful()) {
+                    yl0Var.D1.setState(StateSet.NOTHING);
+                    break;
+                }
+                break;
+            case 21:
+                kn0 kn0Var = (kn0) this.b;
+                ArrayList<MessageObject> arrayList = new ArrayList<>();
+                ArrayList<MessageObject> arrayList2 = new ArrayList<>();
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                int i10 = kn0Var.d;
+                FileLoader.getInstance(i10).getCurrentLoadingFiles(arrayList);
+                FileLoader.getInstance(i10).getRecentLoadingFiles(arrayList2);
+                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                    if (FileLoader.getInstance(i10).getPathToMessage(arrayList.get(i11).messageOwner).exists()) {
+                        arrayList3.add(arrayList.get(i11));
+                    }
+                }
+                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                    if (!FileLoader.getInstance(i10).getPathToMessage(arrayList2.get(i12).messageOwner).exists()) {
+                        arrayList4.add(arrayList2.get(i12));
+                    }
+                }
+                AndroidUtilities.runOnUIThread(new en0((Object) kn0Var, (Object) arrayList3, (Object) arrayList4, 0));
+                break;
+            case 22:
+                ((mn0) this.b).invalidateSelf();
+                break;
+            case 23:
+                ((wn0) this.b).f.setVisibility(8);
+                break;
+            case 24:
+                ((org.telegram.ui.zx) this.b).s();
+                break;
+            case 25:
+                ((a80) this.b).s();
+                break;
+            case 26:
+                ((uo0) this.b).getClass();
+                break;
+            case 27:
+                org.telegram.ui.Cells.u1 u1Var = ((xo0) this.b).n;
+                if (u1Var != null) {
+                    u1Var.invalidate();
+                    break;
+                }
+                break;
+            case 28:
+                zo0 zo0Var = (zo0) this.b;
+                zo0Var.q = false;
+                zo0Var.b.run();
+                break;
+            default:
+                ((wq0) ((ci.i2) this.b).b).a1(1);
+                break;
         }
-        int i14 = TLObject.FLAG_30;
-        if (view != null && view.getWidth() > 0) {
-            size = view.getWidth();
-            mode = TLObject.FLAG_30;
-        }
-        float f10 = size;
-        float f11 = this.F;
-        if (f10 < f11 || mode == Integer.MIN_VALUE) {
-            size = (int) f11;
-        } else {
-            i14 = mode;
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, i14), i11);
     }
 }

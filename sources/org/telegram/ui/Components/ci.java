@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ci implements org.telegram.ui.web.g0 {
     public ValueAnimator a;
@@ -96,12 +96,12 @@ public final class ci implements org.telegram.ui.web.g0 {
             AndroidUtilities.hideKeyboard(q4Var);
             Activity parentActivity = m2Var.getParentActivity();
             int i11 = wi.O2;
-            kd0 kd0Var = new kd0(parentActivity);
-            kd0Var.show();
-            oo0Var.Z0 = new ai.q5(kd0Var, q4Var, str, 24);
+            md0 md0Var = new md0(parentActivity);
+            md0Var.show();
+            oo0Var.Z0 = new ai.q5(md0Var, q4Var, str, 24);
             d6Var = ((org.telegram.ui.ActionBar.e3) wiVar).resourcesProvider;
             oo0Var.Y0 = d6Var;
-            kd0Var.c(oo0Var);
+            md0Var.c(oo0Var);
         }
     }
 
@@ -185,7 +185,7 @@ public final class ci implements org.telegram.ui.web.g0 {
         d6Var2 = ((org.telegram.ui.ActionBar.e3) wiVar).resourcesProvider;
         c2Var.c(c2Var.b, i13, d6Var2);
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
-        duration.setInterpolator(rr.f);
+        duration.setInterpolator(sr.f);
         final ei.q4 q4Var = this.b;
         duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.sh
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -238,10 +238,10 @@ public final class ci implements org.telegram.ui.web.g0 {
         org.telegram.ui.qy qyVar = new org.telegram.ui.qy(bundle);
         Context context = wiVar.getContext();
         int i10 = wi.O2;
-        kd0 kd0Var = new kd0(context);
-        qyVar.C2 = new a1.d(this, user, str, kd0Var, 7);
-        kd0Var.show();
-        kd0Var.c(qyVar);
+        md0 md0Var = new md0(context);
+        qyVar.C2 = new a1.d(this, user, str, md0Var, 7);
+        md0Var.show();
+        md0Var.c(qyVar);
     }
 
     @Override // org.telegram.ui.web.g0

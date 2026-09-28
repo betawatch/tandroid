@@ -88,13 +88,13 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.a2;
 import org.telegram.ui.Cells.e9;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.op;
+import org.telegram.ui.Components.pp;
 import org.telegram.ui.ProfileActivity;
 import rg.x0;
 import v0.i;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -194,7 +194,7 @@ public final /* synthetic */ class e implements Runnable {
                     m4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
                     f7.addView(m4Var, y5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
                     final a2 a2Var = new a2(4, 21, context, b1Var, true);
-                    op checkBoxRound = a2Var.getCheckBoxRound();
+                    pp checkBoxRound = a2Var.getCheckBoxRound();
                     int i14 = h6.V6;
                     int i15 = h6.g7;
                     int i16 = h6.k7;

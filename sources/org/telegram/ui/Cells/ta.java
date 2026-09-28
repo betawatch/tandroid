@@ -15,12 +15,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ta implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -52,11 +52,11 @@ public final /* synthetic */ class ta implements View.OnClickListener {
                 int i13 = org.telegram.ui.ActionBar.h6.Gi;
                 SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i13, 0, new g(qyVar, 10));
                 SpannableString spannableString = new SpannableString(">");
-                pq pqVar = new pq(R.drawable.attach_arrow_right, 0);
-                pqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.w0(null, i13, false));
-                pqVar.setScale(0.7f, 0.7f);
-                pqVar.setWidth(AndroidUtilities.dp(12.0f));
-                spannableString.setSpan(pqVar, 0, spannableString.length(), 33);
+                qq qqVar = new qq(R.drawable.attach_arrow_right, 0);
+                qqVar.setOverrideColor(org.telegram.ui.ActionBar.h6.w0(null, i13, false));
+                qqVar.setScale(0.7f, 0.7f);
+                qqVar.setWidth(AndroidUtilities.dp(12.0f));
+                spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
                 AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString);
                 xc.a0(qyVar).M(LocaleController.getString(z10 ? R.string.UnconfirmedAuthConfirmedBot : R.string.UnconfirmedAuthConfirmed), replaceSingleTag, R.raw.contact_check).j();
                 MessagesController.getInstance(i11).getUnconfirmedAuthController().confirm(arrayList, new ai.i(8));

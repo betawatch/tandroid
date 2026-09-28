@@ -1,128 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public abstract class ym0 extends HorizontalScrollView {
-    public boolean a;
-    public LinearLayout b;
-    public ValueAnimator c;
-    public boolean d;
-    public int e;
-    public ValueAnimator f;
+public final class ym0 extends y5 {
+    public final e6 d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ScrollSlidingTextTabStrip f;
 
-    public ym0(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ym0(ScrollSlidingTextTabStrip scrollSlidingTextTabStrip, Context context, int i10) {
         super(context);
-        this.e = -1;
-    }
-
-    public final void a(int i10) {
-        if (this.e == i10) {
-            return;
-        }
+        this.f = scrollSlidingTextTabStrip;
         this.e = i10;
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (getScrollX() == i10) {
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i10);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new s70(this, 14));
-        this.f.setInterpolator(rr.h);
-        this.f.setDuration(250L);
-        this.f.addListener(new fd0(this, 10));
-        this.f.start();
+        this.d = new e6(this, 360L, sr.h);
     }
 
-    public final void b(int i10, int i11) {
-        int measuredWidth;
-        if (getChildCount() <= 0) {
-            return;
-        }
-        int dp = AndroidUtilities.dp(50.0f);
-        if (i10 < getScrollX() + dp) {
-            measuredWidth = i10 - dp;
+    @Override // org.telegram.ui.Components.y5, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        float e = this.d.e(this.f.n0);
+        if (e > 0.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (AndroidUtilities.lerp(1.0f, 0.5f, e) * 255.0f));
         } else {
-            if (i11 <= (getMeasuredWidth() - dp) + getScrollX()) {
-                return;
-            } else {
-                measuredWidth = (i11 - getMeasuredWidth()) + dp;
-            }
+            canvas2 = canvas;
         }
-        a(w7.q.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
-    }
-
-    public final void c() {
-        q5 q5Var;
-        ai.l4 l4Var;
-        ij0 ij0Var;
-        ValueAnimator valueAnimator;
-        int childCount = this.b.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = this.b.getChildAt(i10);
-            if (childAt instanceof zv) {
-                zv zvVar = (zv) childAt;
-                boolean z10 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
-                boolean z11 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
-                if (!zvVar.y && z10 && (ij0Var = zvVar.e) != null && !ij0Var.k0 && !z11) {
-                    zvVar.e.T(0.0f, true);
-                    zvVar.e.start();
-                }
-                if (zvVar.y != z10) {
-                    zvVar.y = z10;
-                    if (z10) {
-                        zvVar.invalidate();
-                        rg.b1 b1Var = zvVar.f;
-                        if (b1Var != null) {
-                            b1Var.invalidate();
-                        }
-                        rg.b1 b1Var2 = zvVar.f;
-                        if (b1Var2 != null && (q5Var = zvVar.w) != null && (l4Var = q5Var.k) != null) {
-                            b1Var2.setImageReceiver(l4Var);
-                        }
-                        w9 w9Var = zvVar.d;
-                        if (w9Var != null) {
-                            w9Var.invalidate();
-                        }
-                    } else {
-                        zvVar.b();
-                    }
-                    zvVar.c();
-                }
-            }
+        super.onDraw(canvas2);
+        if (e > 0.0f) {
+            canvas2.restore();
         }
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        c();
     }
 
     @Override // android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        if ((Math.abs(i11 - i13) < 2 || i11 >= getMeasuredHeight() || i11 == 0) && !this.a) {
-            requestDisallowInterceptTouchEvent(false);
-        }
-        c();
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 1) {
-            motionEvent.getAction();
-        }
-        return super.onTouchEvent(motionEvent);
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setSelected(this.f.r == this.e);
     }
 }

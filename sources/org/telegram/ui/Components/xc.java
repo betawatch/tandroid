@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class xc {
     public final org.telegram.ui.ActionBar.m2 a;
@@ -761,7 +761,7 @@ public final class xc {
     /* JADX WARN: Type inference failed for: r15v5 */
     /* JADX WARN: Type inference failed for: r15v8 */
     public final qc h(TLRPC.Document document, int i10, final Utilities.Callback callback) {
-        s90 s90Var;
+        u90 u90Var;
         TLRPC.InputStickerSet inputStickerSet;
         int i11;
         TLRPC.StickerSet stickerSet;
@@ -791,12 +791,12 @@ public final class xc {
         int indexOf = spannableStringBuilder.toString().indexOf("<{LOADING}>");
         org.telegram.ui.ActionBar.d6 d6Var = this.c;
         if (indexOf >= 0) {
-            s90Var = new s90(null, AndroidUtilities.dp(100.0f), AndroidUtilities.dp(2.0f), d6Var);
-            spannableStringBuilder.setSpan(s90Var, indexOf, indexOf + 11, 33);
+            u90Var = new u90(null, AndroidUtilities.dp(100.0f), AndroidUtilities.dp(2.0f), d6Var);
+            spannableStringBuilder.setSpan(u90Var, indexOf, indexOf + 11, 33);
             int i14 = org.telegram.ui.ActionBar.h6.Hi;
-            s90Var.a(i0.a.k(org.telegram.ui.ActionBar.h6.v0(i14, d6Var), 32), i0.a.k(org.telegram.ui.ActionBar.h6.v0(i14, d6Var), 72));
+            u90Var.a(i0.a.k(org.telegram.ui.ActionBar.h6.v0(i14, d6Var), 32), i0.a.k(org.telegram.ui.ActionBar.h6.v0(i14, d6Var), 72));
         } else {
-            s90Var = null;
+            u90Var = null;
         }
         long currentTimeMillis = System.currentTimeMillis();
         String string = LocaleController.getString(R.string.ViewAction);
@@ -815,16 +815,16 @@ public final class xc {
         };
         Context W = W();
         wb wbVar = new wb(W, d6Var);
-        n90 n90Var = new n90(W, null);
-        wbVar.d = n90Var;
-        n90Var.setDisablePaddingsOffset(true);
-        n90Var.setSingleLine();
-        n90Var.setTypeface(Typeface.SANS_SERIF);
-        n90Var.setTextSize(1, 15.0f);
-        n90Var.setEllipsize(TextUtils.TruncateAt.END);
-        n90Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        p90 p90Var = new p90(W, null);
+        wbVar.d = p90Var;
+        p90Var.setDisablePaddingsOffset(true);
+        p90Var.setSingleLine();
+        p90Var.setTypeface(Typeface.SANS_SERIF);
+        p90Var.setTextSize(1, 15.0f);
+        p90Var.setEllipsize(TextUtils.TruncateAt.END);
+        p90Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         wbVar.b.setVisibility(8);
-        wbVar.addView(n90Var, w7.y5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
+        wbVar.addView(p90Var, w7.y5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
         int i15 = org.telegram.ui.ActionBar.h6.Hi;
         wbVar.setTextColor(wbVar.getThemedColor(i15));
         if (MessageObject.isTextColorEmoji(document)) {
@@ -839,19 +839,19 @@ public final class xc {
         wbVar.b.setTextSize(1, 14.0f);
         wbVar.b.setSingleLine(i11);
         wbVar.b.setMaxLines(3);
-        n90Var.setText(spannableStringBuilder);
-        n90Var.setTextSize(1, 14.0f);
-        n90Var.setSingleLine(i11);
-        n90Var.setMaxLines(3);
+        p90Var.setText(spannableStringBuilder);
+        p90Var.setTextSize(1, 14.0f);
+        p90Var.setSingleLine(i11);
+        p90Var.setMaxLines(3);
         oc ocVar = new oc(W(), d6Var, true);
         ocVar.e(string);
         ocVar.a = runnable;
         wbVar.setButton(ocVar);
         qc b10 = b(wbVar, 2750);
-        if (s90Var != null) {
+        if (u90Var != null) {
             ub ubVar = b10.e;
             if (ubVar instanceof wb) {
-                s90Var.b = ((wb) ubVar).d;
+                u90Var.b = ((wb) ubVar).d;
             }
         }
         MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet(inputStickerSet, null, false, new tc(i10, b10, currentTimeMillis));
@@ -959,12 +959,12 @@ public final class xc {
     public final qc s(TLRPC.Document document, String str, CharSequence charSequence) {
         nc ncVar = new nc(W(), this.c);
         boolean isTextColorEmoji = MessageObject.isTextColorEmoji(document);
-        lj0 lj0Var = ncVar.a;
+        nj0 nj0Var = ncVar.a;
         if (isTextColorEmoji) {
-            lj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Hi, false), PorterDuff.Mode.SRC_IN));
+            nj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Hi, false), PorterDuff.Mode.SRC_IN));
         }
-        lj0Var.setAutoRepeat(true);
-        lj0Var.g(36, 36, document);
+        nj0Var.setAutoRepeat(true);
+        nj0Var.g(36, 36, document);
         ncVar.b.setText(str);
         ncVar.c.setText(charSequence);
         return b(ncVar, charSequence.length() + str.length() < 20 ? 1500 : 2750);

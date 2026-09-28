@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -172,12 +172,12 @@ public final /* synthetic */ class t3 implements Utilities.Callback {
                 privacySettingsActivity.A0(true);
                 break;
             case 20:
-                org.telegram.ui.Components.n90[] n90VarArr = (org.telegram.ui.Components.n90[]) obj2;
+                org.telegram.ui.Components.p90[] p90VarArr = (org.telegram.ui.Components.p90[]) obj2;
                 Boolean bool = (Boolean) obj;
-                ViewPropertyAnimator scaleY = n90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
-                org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-                org.telegram.messenger.ok.s(scaleY, rrVar, 600L);
-                n90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(rrVar).setDuration(600L).start();
+                ViewPropertyAnimator scaleY = p90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
+                org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+                org.telegram.messenger.ok.s(scaleY, srVar, 600L);
+                p90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(srVar).setDuration(600L).start();
                 break;
             case 21:
                 org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj2;

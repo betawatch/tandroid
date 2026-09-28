@@ -36,12 +36,12 @@ import org.telegram.ui.Cells.ba;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.au;
-import org.telegram.ui.Components.dm0;
-import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.fm0;
+import org.telegram.ui.Components.xi0;
 import v7.p8;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x5, p9 {
     public static final /* synthetic */ int V = 0;
@@ -50,9 +50,9 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
     public l2 G;
     public String H;
     public int I;
-    public dm0 J;
+    public fm0 J;
     public Drawable K;
-    public vi0 L;
+    public xi0 L;
     public final RectF M;
     public boolean N;
     public int O;
@@ -111,14 +111,14 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
         i1Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         i1Var.setListener(new y5(this));
         final int i10 = 0;
-        i1Var.setDelegate(new au(this) { // from class: ii.v5
+        i1Var.setDelegate(new bu(this) { // from class: ii.v5
             public final /* synthetic */ e6 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.au
+            @Override // org.telegram.ui.Components.bu
             public final void j() {
                 switch (i10) {
                     case 0:
@@ -157,14 +157,14 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
         i1Var2.setInputType(147457);
         i1Var2.setListener(new z5(this));
         final int i11 = 1;
-        i1Var2.setDelegate(new au(this) { // from class: ii.v5
+        i1Var2.setDelegate(new bu(this) { // from class: ii.v5
             public final /* synthetic */ e6 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.au
+            @Override // org.telegram.ui.Components.bu
             public final void j() {
                 switch (i11) {
                     case 0:
@@ -859,9 +859,9 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
                 canvas2 = canvas;
                 if (aVar != null && (aVar.b instanceof TL_iv.pageBlockPullquote)) {
                     if (this.J == null) {
-                        dm0 dm0Var = new dm0(this);
-                        this.J = dm0Var;
-                        dm0Var.a(null, null, null, this.a, 1);
+                        fm0 fm0Var = new fm0(this);
+                        this.J = fm0Var;
+                        fm0Var.a(null, null, null, this.a, 1);
                         p8.a(this.J, d6Var);
                     }
                     if (this.K == null) {
@@ -923,9 +923,9 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
                 }
             } else {
                 if (this.J == null) {
-                    dm0 dm0Var2 = new dm0(this);
-                    this.J = dm0Var2;
-                    dm0Var2.a(null, null, null, this.a, 1);
+                    fm0 fm0Var2 = new fm0(this);
+                    this.J = fm0Var2;
+                    fm0Var2.a(null, null, null, this.a, 1);
                     p8.a(this.J, d6Var);
                 }
                 RectF rectF2 = AndroidUtilities.rectTmp;
@@ -999,7 +999,7 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
         super.dispatchDraw(canvas);
         if (o()) {
             if (this.L == null) {
-                this.L = new vi0(this);
+                this.L = new xi0(this);
             }
             TL_iv.pageBlockBlockquote pageblockblockquote = (TL_iv.pageBlockBlockquote) this.x.b;
             int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var);
@@ -1067,9 +1067,9 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
         if (drawable != null) {
             drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var), PorterDuff.Mode.SRC_IN));
         }
-        dm0 dm0Var = this.J;
-        if (dm0Var != null) {
-            p8.a(dm0Var, d6Var);
+        fm0 fm0Var = this.J;
+        if (fm0Var != null) {
+            p8.a(fm0Var, d6Var);
         }
     }
 
@@ -1321,7 +1321,7 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
             i1 i1Var = this.h;
             if (i1Var.getVisibility() == 0 && (layout = i1Var.getLayout()) != null && layout.getLineCount() > 0) {
                 if (this.L == null) {
-                    this.L = new vi0(this);
+                    this.L = new xi0(this);
                 }
                 int lineCount = layout.getLineCount() - 1;
                 int measuredHeight = this.b.getMeasuredHeight() + getPaddingTop();
@@ -1430,9 +1430,9 @@ public final class e6 extends FrameLayout implements org.telegram.ui.ActionBar.x
         if (super.verifyDrawable(drawable)) {
             return true;
         }
-        vi0 vi0Var = this.L;
-        if (vi0Var != null) {
-            return drawable == vi0Var.b || drawable == vi0Var.e;
+        xi0 xi0Var = this.L;
+        if (xi0Var != null) {
+            return drawable == xi0Var.b || drawable == xi0Var.e;
         }
         return false;
     }

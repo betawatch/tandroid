@@ -1,36 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ax0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class ax0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bx0 b;
+    public final /* synthetic */ dx0 b;
 
-    public /* synthetic */ ax0(bx0 bx0Var, int i10) {
+    public /* synthetic */ ax0(dx0 dx0Var, int i10) {
         this.a = i10;
-        this.b = bx0Var;
+        this.b = dx0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                bx0 bx0Var = this.b;
-                bx0Var.y = 1.0f;
-                bx0Var.invalidate();
-                bx0Var.G = null;
+                dx0 dx0Var = this.b;
+                dx0Var.getClass();
+                dx0Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dx0Var.invalidate();
                 break;
             case 1:
-                bx0 bx0Var2 = this.b;
-                bx0Var2.m(((Float) bx0Var2.v.getAnimatedValue()).floatValue());
-                bx0Var2.v = null;
+                dx0 dx0Var2 = this.b;
+                dx0Var2.getClass();
+                dx0Var2.m(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                super.onAnimationEnd(animator);
-                this.b.F = null;
+                dx0 dx0Var3 = this.b;
+                dx0Var3.getClass();
+                dx0Var3.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dx0Var3.invalidate();
                 break;
         }
     }

@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.jt;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.kt;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class n1 extends jt {
+public final class n1 extends kt {
     public int M;
     public int N;
     public ArrayList O;
@@ -39,7 +39,7 @@ public final class n1 extends jt {
         }
     }
 
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     public final void a(Canvas canvas, long j3, int i10, int i11, float f7) {
         if (this.O == null) {
             return;
@@ -64,7 +64,7 @@ public final class n1 extends jt {
         k();
     }
 
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     public final void c(Canvas canvas) {
         int i10 = 0;
         while (true) {
@@ -83,7 +83,7 @@ public final class n1 extends jt {
         }
     }
 
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     public final void d(Canvas canvas, float f7) {
         org.telegram.ui.Components.q5 q5Var;
         if (this.O != null) {
@@ -121,7 +121,7 @@ public final class n1 extends jt {
         }
     }
 
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     public final void g() {
         int i10 = 0;
         while (true) {
@@ -140,7 +140,7 @@ public final class n1 extends jt {
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x00e2  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00fd  */
-    @Override // org.telegram.ui.Components.jt
+    @Override // org.telegram.ui.Components.kt
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -177,7 +177,7 @@ public final class n1 extends jt {
                 }
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(o1Var.getPaddingLeft(), o1Var.getPaddingTop(), o1Var.getWidth() - o1Var.getPaddingRight(), o1Var.getHeight() - o1Var.getPaddingBottom());
-                ij0 lottieAnimation = imageReceiver.getLottieAnimation();
+                kj0 lottieAnimation = imageReceiver.getLottieAnimation();
                 if (lottieAnimation == null || (i10 = lottieAnimation.c) == 0) {
                     org.telegram.ui.Components.d6 animation = imageReceiver.getAnimation();
                     if (animation == null || animation.getIntrinsicHeight() == 0) {

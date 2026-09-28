@@ -54,10 +54,10 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xr0;
+import org.telegram.ui.Components.zr0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -106,9 +106,9 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 3:
                 bi.u uVar = (bi.u) this.b;
-                xr0 xr0Var = uVar.W;
+                zr0 zr0Var = uVar.W;
                 u8 u8Var = uVar.a;
-                xr0Var.a(u8Var == null ? "" : u8Var.E);
+                zr0Var.a(u8Var == null ? "" : u8Var.E);
                 return;
             case 4:
                 ((c1.e) this.b).e().onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));

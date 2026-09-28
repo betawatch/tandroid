@@ -26,9 +26,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class t0 extends View {
     public float E;
@@ -72,7 +72,7 @@ public class t0 extends View {
         this.E = 1.0f;
         this.O = new RectF();
         new Path();
-        this.P = new e6(this, 350L, rr.h);
+        this.P = new e6(this, 350L, sr.h);
         this.y = f7;
         imageReceiver.setCrossfadeWithOldImage(true);
         imageReceiver.setInvalidateAll(true);

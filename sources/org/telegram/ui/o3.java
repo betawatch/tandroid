@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class o3 implements pu0 {
     public final TLRPC.WebPage a;
@@ -172,11 +172,11 @@ public final class o3 implements pu0 {
                     return C;
                 }
                 Spannable spannable = (Spannable) C;
-                org.telegram.ui.Components.x01[] x01VarArr = (org.telegram.ui.Components.x01[]) spannable.getSpans(0, C.length(), org.telegram.ui.Components.x01.class);
+                org.telegram.ui.Components.z01[] z01VarArr = (org.telegram.ui.Components.z01[]) spannable.getSpans(0, C.length(), org.telegram.ui.Components.z01.class);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(C.toString());
-                if (x01VarArr != null && x01VarArr.length > 0) {
-                    for (int i11 = 0; i11 < x01VarArr.length; i11++) {
-                        spannableStringBuilder2.setSpan(new n3(this, x01VarArr[i11].b, 1), spannable.getSpanStart(x01VarArr[i11]), spannable.getSpanEnd(x01VarArr[i11]), 33);
+                if (z01VarArr != null && z01VarArr.length > 0) {
+                    for (int i11 = 0; i11 < z01VarArr.length; i11++) {
+                        spannableStringBuilder2.setSpan(new n3(this, z01VarArr[i11].b, 1), spannable.getSpanStart(z01VarArr[i11]), spannable.getSpanEnd(z01VarArr[i11]), 33);
                     }
                 }
                 return spannableStringBuilder2;

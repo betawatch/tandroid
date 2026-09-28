@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class jv0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ rv0 a;
@@ -38,7 +38,7 @@ public final class jv0 extends org.telegram.ui.ActionBar.j {
         if (i10 == 1) {
             int i17 = 0;
             if (rv0Var.d0) {
-                CharSequence[] charSequenceArr2 = {org.telegram.ui.Components.vn.Y(rv0Var.E)};
+                CharSequence[] charSequenceArr2 = {org.telegram.ui.Components.wn.Y(rv0Var.E)};
                 i14 = ((org.telegram.ui.ActionBar.m2) rv0Var).currentAccount;
                 ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(i14).getEntities(charSequenceArr2, true);
                 CharSequence charSequence = charSequenceArr2[0];
@@ -72,8 +72,8 @@ public final class jv0 extends org.telegram.ui.ActionBar.j {
                     i15 = 0;
                 }
                 for (int i20 = 0; i20 < charSequenceArr.length; i20++) {
-                    if (!TextUtils.isEmpty(org.telegram.ui.Components.vn.Y(charSequenceArr[i20]))) {
-                        CharSequence[] charSequenceArr3 = {org.telegram.ui.Components.vn.Y(charSequenceArr[i20])};
+                    if (!TextUtils.isEmpty(org.telegram.ui.Components.wn.Y(charSequenceArr[i20]))) {
+                        CharSequence[] charSequenceArr3 = {org.telegram.ui.Components.wn.Y(charSequenceArr[i20])};
                         i16 = ((org.telegram.ui.ActionBar.m2) rv0Var).currentAccount;
                         ArrayList<TLRPC.MessageEntity> entities2 = MediaDataController.getInstance(i16).getEntities(charSequenceArr3, true);
                         CharSequence charSequence2 = charSequenceArr3[0];
@@ -111,7 +111,7 @@ public final class jv0 extends org.telegram.ui.ActionBar.j {
             if (rv0Var.L && rv0Var.a.getAlpha() != 1.0f) {
                 int i22 = 0;
                 while (i17 < zArr.length) {
-                    if (!TextUtils.isEmpty(org.telegram.ui.Components.vn.Y(charSequenceArr[i17])) && zArr[i17]) {
+                    if (!TextUtils.isEmpty(org.telegram.ui.Components.wn.Y(charSequenceArr[i17])) && zArr[i17]) {
                         i22++;
                     }
                     i17++;
@@ -137,7 +137,7 @@ public final class jv0 extends org.telegram.ui.ActionBar.j {
                 }
                 return;
             }
-            CharSequence[] charSequenceArr4 = {org.telegram.ui.Components.vn.Y(rv0Var.E)};
+            CharSequence[] charSequenceArr4 = {org.telegram.ui.Components.wn.Y(rv0Var.E)};
             i11 = ((org.telegram.ui.ActionBar.m2) rv0Var).currentAccount;
             ArrayList<TLRPC.MessageEntity> entities3 = MediaDataController.getInstance(i11).getEntities(charSequenceArr4, true);
             CharSequence charSequence3 = charSequenceArr4[0];
@@ -160,9 +160,9 @@ public final class jv0 extends org.telegram.ui.ActionBar.j {
             ArrayList arrayList = new ArrayList(rv0Var.n);
             int i25 = 0;
             while (i25 < charSequenceArr.length) {
-                if (!TextUtils.isEmpty(org.telegram.ui.Components.vn.Y(charSequenceArr[i25]))) {
+                if (!TextUtils.isEmpty(org.telegram.ui.Components.wn.Y(charSequenceArr[i25]))) {
                     CharSequence[] charSequenceArr5 = new CharSequence[1];
-                    charSequenceArr5[i17] = org.telegram.ui.Components.vn.Y(charSequenceArr[i25]);
+                    charSequenceArr5[i17] = org.telegram.ui.Components.wn.Y(charSequenceArr[i25]);
                     i13 = ((org.telegram.ui.ActionBar.m2) rv0Var).currentAccount;
                     ArrayList<TLRPC.MessageEntity> entities4 = MediaDataController.getInstance(i13).getEntities(charSequenceArr5, true);
                     CharSequence charSequence4 = charSequenceArr5[i17];
@@ -188,7 +188,7 @@ public final class jv0 extends org.telegram.ui.ActionBar.j {
                 i17 = 0;
             }
             tL_messageMediaPoll.results = new TLRPC.TL_pollResults();
-            CharSequence Y = org.telegram.ui.Components.vn.Y(rv0Var.F);
+            CharSequence Y = org.telegram.ui.Components.wn.Y(rv0Var.F);
             if (Y != null) {
                 tL_messageMediaPoll.results.solution = Y.toString();
                 CharSequence[] charSequenceArr6 = {Y};

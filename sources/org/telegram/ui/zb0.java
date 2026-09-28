@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class zb0 {
     public final LaunchActivity a;
@@ -481,7 +481,7 @@ public final class zb0 {
         }
         k();
         TLRPC.User[] userArr = {null};
-        MessagesController.getInstance(this.b).getUserNameResolver().resolve(str, new z(this, userArr, new org.telegram.ui.Components.vn0(this, U, userArr, tL_requestPeerTypeCreateBot, 16), 10));
+        MessagesController.getInstance(this.b).getUserNameResolver().resolve(str, new z(this, userArr, new org.telegram.ui.Components.xn0(this, U, userArr, tL_requestPeerTypeCreateBot, 16), 10));
     }
 
     public final boolean i(Uri uri, String str) {
@@ -686,7 +686,7 @@ public final class zb0 {
                                 }
                                 NotificationsSettingsActivity notificationsSettingsActivity = new NotificationsSettingsActivity();
                                 k();
-                                notificationsSettingsActivity.A0(new org.telegram.ui.Components.f21(this, notificationsSettingsActivity, i12, str7, 4));
+                                notificationsSettingsActivity.A0(new org.telegram.ui.Components.h21(this, notificationsSettingsActivity, i12, str7, 4));
                                 return true;
                             }
                             m(new NotificationsSettingsActivity());

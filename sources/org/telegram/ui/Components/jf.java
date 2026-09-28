@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class jf implements Runnable {
     public final /* synthetic */ int a;
@@ -53,15 +53,15 @@ public final class jf implements Runnable {
                 break;
             case 1:
                 int i11 = this.b;
-                np npVar = (np) callback;
-                s4.o0 layoutManager = npVar.w.getLayoutManager();
+                op opVar = (op) callback;
+                s4.o0 layoutManager = opVar.w.getLayoutManager();
                 if (layoutManager != null) {
-                    int min = i11 > npVar.Q ? Math.min(i11 + 1, npVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
-                    hp hpVar = npVar.H;
-                    hpVar.a = min;
-                    layoutManager.w0(hpVar);
+                    int min = i11 > opVar.Q ? Math.min(i11 + 1, opVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
+                    ip ipVar = opVar.H;
+                    ipVar.a = min;
+                    layoutManager.w0(ipVar);
                 }
-                npVar.Q = i11;
+                opVar.Q = i11;
                 break;
             default:
                 int i12 = this.b;
@@ -83,7 +83,7 @@ public final class jf implements Runnable {
                     j9Var.e = animatorSet;
                     animatorSet.setDuration(150L);
                     ((AnimatorSet) j9Var.e).playTogether(arrayList);
-                    ((AnimatorSet) j9Var.e).addListener(new fd0(this, 3));
+                    ((AnimatorSet) j9Var.e).addListener(new hd0(this, 3));
                     ((AnimatorSet) j9Var.e).start();
                     break;
                 }

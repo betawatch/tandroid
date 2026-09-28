@@ -3,20 +3,20 @@ package org.telegram.ui.web;
 import android.view.KeyEvent;
 import android.webkit.JsPromptResult;
 import android.widget.TextView;
-import org.telegram.ui.Components.cu;
+import org.telegram.ui.Components.du;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class t0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ JsPromptResult b;
-    public final /* synthetic */ cu c;
+    public final /* synthetic */ du c;
     public final /* synthetic */ org.telegram.ui.ActionBar.a2 d;
 
-    public t0(boolean[] zArr, JsPromptResult jsPromptResult, cu cuVar, org.telegram.ui.ActionBar.a2 a2Var) {
+    public t0(boolean[] zArr, JsPromptResult jsPromptResult, du duVar, org.telegram.ui.ActionBar.a2 a2Var) {
         this.a = zArr;
         this.b = jsPromptResult;
-        this.c = cuVar;
+        this.c = duVar;
         this.d = a2Var;
     }
 

@@ -6,11 +6,11 @@ import android.graphics.RectF;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class sw0 extends lw0 {
     public final /* synthetic */ int r = 0;
-    public final /* synthetic */ org.telegram.ui.Components.vl0 s;
+    public final /* synthetic */ org.telegram.ui.Components.xl0 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public sw0(rg.j1 j1Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {

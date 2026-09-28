@@ -1,44 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.graphics.SurfaceTexture;
+import android.os.Looper;
+import android.view.Surface;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uz implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ xz b;
 
-    public /* synthetic */ uz(Object obj, boolean z10, boolean z11, boolean z12, int i10) {
+    public /* synthetic */ uz(xz xzVar, int i10) {
         this.a = i10;
-        this.e = obj;
-        this.b = z10;
-        this.c = z11;
-        this.d = z12;
+        this.b = xzVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                wz wzVar = (wz) this.e;
-                if (this.b) {
-                    a00 a00Var = wzVar.J;
-                    a00Var.a = true;
-                    a00Var.b = true;
-                }
-                if (this.c) {
-                    wzVar.x = true;
-                }
-                long currentTimeMillis = System.currentTimeMillis();
-                if (this.d || Math.abs(wzVar.a0 - currentTimeMillis) > 30) {
-                    wzVar.a0 = currentTimeMillis;
-                    wzVar.d0.run();
+                this.b.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
                     break;
                 }
                 break;
+            case 1:
+                xz.b(this.b);
+                break;
             default:
-                ((org.telegram.ui.qg0) this.e).w1(this.b, this.c, this.d);
+                xz xzVar = this.b;
+                nv nvVar = xzVar.b0;
+                SurfaceTexture surfaceTexture = xzVar.w;
+                k71 k71Var = (k71) nvVar.b;
+                if (k71Var.a != null) {
+                    k71Var.a.T(new Surface(surfaceTexture));
+                    break;
+                }
                 break;
         }
     }

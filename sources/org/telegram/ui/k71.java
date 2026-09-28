@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k71 extends org.telegram.ui.Components.bb {
     public TLRPC.Chat X;
@@ -41,7 +41,7 @@ public final class k71 extends org.telegram.ui.Components.bb {
     public final j71 f0;
     public final j71 g0;
     public final ci.d h0;
-    public org.telegram.ui.Components.j61 i0;
+    public org.telegram.ui.Components.l61 i0;
     public Context j0;
 
     public k71(Context context, TLRPC.Chat chat, TLRPC.User user, ai.o8 o8Var, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -90,7 +90,7 @@ public final class k71 extends org.telegram.ui.Components.bb {
         e71 e71Var = new e71(context);
         this.d0 = e71Var;
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        w9Var.setImageDrawable(new org.telegram.ui.Components.ij0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        w9Var.setImageDrawable(new org.telegram.ui.Components.kj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         e71Var.addView(w9Var, w7.y5.e(130, 130, 17));
         j71 j71Var = new j71(this.currentAccount, chat.id, new TLRPC.TL_channelParticipantsAdmins());
         j71Var.e.add(new vz0(this, 15));
@@ -101,15 +101,15 @@ public final class k71 extends org.telegram.ui.Components.bb {
         j71 j71Var3 = new j71(this.currentAccount, chat.id, new TLRPC.TL_channelParticipantsSearch());
         j71Var3.e.add(new vz0(this, 15));
         this.g0 = j71Var3;
-        org.telegram.ui.Components.wl0 wl0Var = this.d;
+        org.telegram.ui.Components.yl0 yl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
+        yl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new r21(this, 4));
         f71 f71Var = new f71(this);
         f71Var.m = false;
         f71Var.C = false;
-        f71Var.o(org.telegram.ui.Components.rr.h);
+        f71Var.o(org.telegram.ui.Components.sr.h);
         f71Var.n(350L);
         this.d.setItemAnimator(f71Var);
         this.d.addOnLayoutChangeListener(new g71(this));
@@ -124,9 +124,9 @@ public final class k71 extends org.telegram.ui.Components.bb {
         float f10 = (this.backgroundPaddingLeft / AndroidUtilities.density) + 10.0f;
         viewGroup2.addView(dVar, w7.y5.d(-1, 48.0f, 87, f10, 10.0f, f10, 10.0f));
         dVar.setOnClickListener(new y31(this, 4));
-        org.telegram.ui.Components.j61 j61Var = this.i0;
-        if (j61Var != null) {
-            j61Var.N(false);
+        org.telegram.ui.Components.l61 l61Var = this.i0;
+        if (l61Var != null) {
+            l61Var.N(false);
         }
         j71Var.b();
         j71Var2.b();
@@ -154,7 +154,7 @@ public final class k71 extends org.telegram.ui.Components.bb {
             ArrayList arrayList3 = j71Var2.d;
             HashSet hashSet = new HashSet();
             hashSet.add(Long.valueOf(UserConfig.getInstance(k71Var.currentAccount).getClientUserId()));
-            arrayList.add(org.telegram.ui.Components.v51.D(3, AndroidUtilities.dp(64.0f)));
+            arrayList.add(org.telegram.ui.Components.x51.D(3, AndroidUtilities.dp(64.0f)));
             if (j71Var != null && !TextUtils.isEmpty(j71Var.c.q)) {
                 ArrayList arrayList4 = j71Var.d;
                 int size = arrayList4.size();
@@ -165,18 +165,18 @@ public final class k71 extends org.telegram.ui.Components.bb {
                     TLObject tLObject = (TLObject) obj;
                     if (!hashSet.contains(Long.valueOf(DialogObject.getDialogId(tLObject)))) {
                         hashSet.add(Long.valueOf(DialogObject.getDialogId(tLObject)));
-                        org.telegram.ui.Components.v51 v = org.telegram.ui.Components.v51.v(tLObject);
+                        org.telegram.ui.Components.x51 v = org.telegram.ui.Components.x51.v(tLObject);
                         v.K(DialogObject.getDialogId(tLObject) == DialogObject.getDialogId(k71Var.a0));
                         arrayList.add(v);
                     }
                 }
                 if (j71Var.f) {
-                    arrayList.add(org.telegram.ui.Components.v51.n(29));
-                    arrayList.add(org.telegram.ui.Components.v51.n(29));
-                    arrayList.add(org.telegram.ui.Components.v51.n(29));
+                    arrayList.add(org.telegram.ui.Components.x51.n(29));
+                    arrayList.add(org.telegram.ui.Components.x51.n(29));
+                    arrayList.add(org.telegram.ui.Components.x51.n(29));
                 }
                 if (arrayList.size() == 1) {
-                    arrayList.add(org.telegram.ui.Components.v51.k(k71Var.d0));
+                    arrayList.add(org.telegram.ui.Components.x51.k(k71Var.d0));
                     return;
                 }
                 return;
@@ -192,9 +192,9 @@ public final class k71 extends org.telegram.ui.Components.bb {
                     i11++;
                     if (DialogObject.getDialogId((TLObject) obj2) == DialogObject.getDialogId(user)) {
                         if (!hashSet.contains(Long.valueOf(DialogObject.getDialogId(user)))) {
-                            arrayList.add(org.telegram.ui.Components.v51.q(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(k71Var.X) ? R.string.ChannelAdmins : R.string.GroupAdmins)));
+                            arrayList.add(org.telegram.ui.Components.x51.q(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(k71Var.X) ? R.string.ChannelAdmins : R.string.GroupAdmins)));
                             hashSet.add(Long.valueOf(DialogObject.getDialogId(user)));
-                            org.telegram.ui.Components.v51 v9 = org.telegram.ui.Components.v51.v(user);
+                            org.telegram.ui.Components.x51 v9 = org.telegram.ui.Components.x51.v(user);
                             v9.K(DialogObject.getDialogId(user) == DialogObject.getDialogId(k71Var.a0));
                             arrayList.add(v9);
                             z10 = false;
@@ -211,26 +211,26 @@ public final class k71 extends org.telegram.ui.Components.bb {
                 TLObject tLObject2 = (TLObject) obj3;
                 if (!hashSet.contains(Long.valueOf(DialogObject.getDialogId(tLObject2)))) {
                     if (z10) {
-                        arrayList.add(org.telegram.ui.Components.v51.q(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(k71Var.X) ? R.string.ChannelAdmins : R.string.GroupAdmins)));
+                        arrayList.add(org.telegram.ui.Components.x51.q(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(k71Var.X) ? R.string.ChannelAdmins : R.string.GroupAdmins)));
                         z10 = false;
                     }
                     hashSet.add(Long.valueOf(DialogObject.getDialogId(tLObject2)));
-                    org.telegram.ui.Components.v51 v10 = org.telegram.ui.Components.v51.v(tLObject2);
+                    org.telegram.ui.Components.x51 v10 = org.telegram.ui.Components.x51.v(tLObject2);
                     v10.K(DialogObject.getDialogId(tLObject2) == DialogObject.getDialogId(k71Var.a0));
                     arrayList.add(v10);
                 }
             }
             if (j71Var3.f) {
-                arrayList.add(org.telegram.ui.Components.v51.n(29));
-                arrayList.add(org.telegram.ui.Components.v51.n(29));
-                arrayList.add(org.telegram.ui.Components.v51.n(29));
+                arrayList.add(org.telegram.ui.Components.x51.n(29));
+                arrayList.add(org.telegram.ui.Components.x51.n(29));
+                arrayList.add(org.telegram.ui.Components.x51.n(29));
             }
             if (user == null || hashSet.contains(Long.valueOf(DialogObject.getDialogId(user)))) {
                 z11 = true;
             } else {
-                arrayList.add(org.telegram.ui.Components.v51.q(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(k71Var.X) ? R.string.ChannelSubscribers2 : R.string.GroupMembers2)));
+                arrayList.add(org.telegram.ui.Components.x51.q(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(k71Var.X) ? R.string.ChannelSubscribers2 : R.string.GroupMembers2)));
                 hashSet.add(Long.valueOf(DialogObject.getDialogId(user)));
-                org.telegram.ui.Components.v51 v11 = org.telegram.ui.Components.v51.v(user);
+                org.telegram.ui.Components.x51 v11 = org.telegram.ui.Components.x51.v(user);
                 v11.K(DialogObject.getDialogId(user) == DialogObject.getDialogId(k71Var.a0));
                 arrayList.add(v11);
                 z11 = false;
@@ -243,11 +243,11 @@ public final class k71 extends org.telegram.ui.Components.bb {
                 TLObject tLObject3 = (TLObject) obj4;
                 if (!hashSet.contains(Long.valueOf(DialogObject.getDialogId(tLObject3)))) {
                     if (z11) {
-                        arrayList.add(org.telegram.ui.Components.v51.q(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(k71Var.X) ? R.string.ChannelSubscribers2 : R.string.GroupMembers2)));
+                        arrayList.add(org.telegram.ui.Components.x51.q(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(k71Var.X) ? R.string.ChannelSubscribers2 : R.string.GroupMembers2)));
                         z11 = false;
                     }
                     hashSet.add(Long.valueOf(DialogObject.getDialogId(tLObject3)));
-                    org.telegram.ui.Components.v51 v12 = org.telegram.ui.Components.v51.v(tLObject3);
+                    org.telegram.ui.Components.x51 v12 = org.telegram.ui.Components.x51.v(tLObject3);
                     v12.K(DialogObject.getDialogId(tLObject3) == DialogObject.getDialogId(k71Var.a0));
                     arrayList.add(v12);
                 }
@@ -255,9 +255,9 @@ public final class k71 extends org.telegram.ui.Components.bb {
             if (arrayList3.isEmpty() || !j71Var2.f) {
                 return;
             }
-            arrayList.add(org.telegram.ui.Components.v51.n(29));
-            arrayList.add(org.telegram.ui.Components.v51.n(29));
-            arrayList.add(org.telegram.ui.Components.v51.n(29));
+            arrayList.add(org.telegram.ui.Components.x51.n(29));
+            arrayList.add(org.telegram.ui.Components.x51.n(29));
+            arrayList.add(org.telegram.ui.Components.x51.n(29));
         }
     }
 
@@ -529,14 +529,14 @@ public final class k71 extends org.telegram.ui.Components.bb {
     }
 
     public static void S(k71 k71Var) {
-        org.telegram.ui.Components.wl0 wl0Var = k71Var.d;
+        org.telegram.ui.Components.yl0 yl0Var = k71Var.d;
         float f7 = -AndroidUtilities.dp(64.0f);
         int i10 = 0;
         while (true) {
-            if (i10 >= wl0Var.getChildCount()) {
+            if (i10 >= yl0Var.getChildCount()) {
                 break;
             }
-            View childAt = wl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if (childAt.getId() == 3) {
                 f7 = childAt.getY();
                 break;
@@ -592,10 +592,10 @@ public final class k71 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
-        org.telegram.ui.Components.j61 j61Var = new org.telegram.ui.Components.j61(wl0Var, getContext(), this.currentAccount, 0, false, new b5(this, 23), this.resourcesProvider);
-        this.i0 = j61Var;
-        return j61Var;
+    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
+        org.telegram.ui.Components.l61 l61Var = new org.telegram.ui.Components.l61(yl0Var, getContext(), this.currentAccount, 0, false, new b5(this, 23), this.resourcesProvider);
+        this.i0 = l61Var;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

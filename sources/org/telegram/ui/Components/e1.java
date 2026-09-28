@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -35,19 +35,19 @@ public final /* synthetic */ class e1 implements TextView.OnEditorActionListener
                 }
                 break;
             case 2:
-                yq yqVar = (yq) this.b;
+                zq zqVar = (zq) this.b;
                 if (i10 == 6) {
-                    yqVar.run();
+                    zqVar.run();
                     break;
                 }
                 break;
             case 3:
-                ce0 ce0Var = (ce0) this.b;
+                ee0 ee0Var = (ee0) this.b;
                 if (i10 != 6) {
-                    ce0Var.getClass();
+                    ee0Var.getClass();
                     break;
                 } else {
-                    ce0Var.k(false);
+                    ee0Var.k(false);
                     break;
                 }
             case 4:
@@ -58,7 +58,7 @@ public final /* synthetic */ class e1 implements TextView.OnEditorActionListener
                 }
                 break;
             case 5:
-                ci.h2 h2Var = ((jn0) this.b).e;
+                ci.h2 h2Var = ((ln0) this.b).e;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
                         h2Var.hideActionMode();
@@ -68,10 +68,10 @@ public final /* synthetic */ class e1 implements TextView.OnEditorActionListener
                 }
                 break;
             case 6:
-                uq0 uq0Var = (uq0) this.b;
+                wq0 wq0Var = (wq0) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(uq0Var.y0.r);
+                        AndroidUtilities.hideKeyboard(wq0Var.y0.r);
                         break;
                     }
                 }
@@ -91,19 +91,19 @@ public final /* synthetic */ class e1 implements TextView.OnEditorActionListener
                 }
                 break;
             case 9:
-                c21 c21Var = (c21) this.b;
+                e21 e21Var = (e21) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(c21Var.b);
+                        AndroidUtilities.hideKeyboard(e21Var.b);
                         break;
                     }
                 }
                 break;
             default:
-                a71 a71Var = (a71) this.b;
+                c71 c71Var = (c71) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(a71Var.J);
+                        AndroidUtilities.hideKeyboard(c71Var.J);
                         break;
                     }
                 }

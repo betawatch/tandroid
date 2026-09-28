@@ -36,13 +36,13 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.bz;
 import org.telegram.ui.cz;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -81,7 +81,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
         this.h = view;
         this.n = d6Var;
         this.x = new org.telegram.ui.Components.e6(view, 0L, 120L, new LinearInterpolator());
-        this.y = new org.telegram.ui.Components.e6(view, 0L, 360L, rr.h);
+        this.y = new org.telegram.ui.Components.e6(view, 0L, 360L, sr.h);
         setClipChildren(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
@@ -533,14 +533,14 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     e4Var2.k(11.0f, 7.0f, 11.0f, 7.0f);
                     z10 = true;
                     SpannableString spannableString = new SpannableString(">");
-                    pq pqVar = new pq(R.drawable.photos_arrow, 0);
-                    pqVar.translate(AndroidUtilities.dp(!z10 ? 1.0f : 2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
-                    spannableString.setSpan(pqVar, 0, spannableString.length(), 33);
+                    qq qqVar = new qq(R.drawable.photos_arrow, 0);
+                    qqVar.translate(AndroidUtilities.dp(!z10 ? 1.0f : 2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
+                    spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
                     SpannableString spannableString2 = new SpannableString("<");
-                    pq pqVar2 = new pq(R.drawable.attach_arrow_right, 0);
-                    pqVar2.translate(AndroidUtilities.dp(!z10 ? -1.0f : -2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
-                    pqVar2.setScale(-1.0f, 1.0f);
-                    spannableString2.setSpan(pqVar2, 0, spannableString2.length(), 33);
+                    qq qqVar2 = new qq(R.drawable.attach_arrow_right, 0);
+                    qqVar2.translate(AndroidUtilities.dp(!z10 ? -1.0f : -2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
+                    qqVar2.setScale(-1.0f, 1.0f);
+                    spannableString2.setSpan(qqVar2, 0, spannableString2.length(), 33);
                     if (AndroidUtilities.isRTL(spannableStringBuilder)) {
                         spannableString = spannableString2;
                     }
@@ -568,14 +568,14 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
             }
             z10 = false;
             SpannableString spannableString3 = new SpannableString(">");
-            pq pqVar3 = new pq(R.drawable.photos_arrow, 0);
-            pqVar3.translate(AndroidUtilities.dp(!z10 ? 1.0f : 2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
-            spannableString3.setSpan(pqVar3, 0, spannableString3.length(), 33);
+            qq qqVar3 = new qq(R.drawable.photos_arrow, 0);
+            qqVar3.translate(AndroidUtilities.dp(!z10 ? 1.0f : 2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
+            spannableString3.setSpan(qqVar3, 0, spannableString3.length(), 33);
             SpannableString spannableString22 = new SpannableString("<");
-            pq pqVar22 = new pq(R.drawable.attach_arrow_right, 0);
-            pqVar22.translate(AndroidUtilities.dp(!z10 ? -1.0f : -2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
-            pqVar22.setScale(-1.0f, 1.0f);
-            spannableString22.setSpan(pqVar22, 0, spannableString22.length(), 33);
+            qq qqVar22 = new qq(R.drawable.attach_arrow_right, 0);
+            qqVar22.translate(AndroidUtilities.dp(!z10 ? -1.0f : -2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
+            qqVar22.setScale(-1.0f, 1.0f);
+            spannableString22.setSpan(qqVar22, 0, spannableString22.length(), 33);
             if (AndroidUtilities.isRTL(spannableStringBuilder)) {
             }
             AndroidUtilities.replaceCharSequence(">", spannableStringBuilder, spannableString3);

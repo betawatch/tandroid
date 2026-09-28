@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class y6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public r6 a;
@@ -23,7 +23,7 @@ public final class y6 extends FrameLayout implements NotificationCenter.Notifica
     public final org.telegram.ui.Components.w9 e;
     public boolean f;
     public boolean h;
-    public org.telegram.ui.Components.op n;
+    public org.telegram.ui.Components.pp n;
 
     public y6(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
@@ -41,7 +41,7 @@ public final class y6 extends FrameLayout implements NotificationCenter.Notifica
         addView(textView, w7.y5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21.0f : 72.0f, 0.0f, z10 ? 72.0f : 21.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, !LocaleController.isRTL);
         this.d = p6Var;
-        p6Var.b(0.55f, 320L, org.telegram.ui.Components.rr.h);
+        p6Var.b(0.55f, 320L, org.telegram.ui.Components.sr.h);
         p6Var.setTextSize(AndroidUtilities.dp(16.0f));
         p6Var.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
         p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.I6, d6Var));
@@ -134,9 +134,9 @@ public final class y6 extends FrameLayout implements NotificationCenter.Notifica
             ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).rightMargin = dp;
         }
         textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth - dp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-        org.telegram.ui.Components.op opVar = this.n;
-        if (opVar != null) {
-            opVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
+        org.telegram.ui.Components.pp ppVar = this.n;
+        if (ppVar != null) {
+            ppVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
         }
     }
 

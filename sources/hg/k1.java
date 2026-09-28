@@ -31,11 +31,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.fq;
+import org.telegram.ui.Components.sr;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class k1 extends LinearLayout {
     public boolean E;
@@ -48,7 +48,7 @@ public abstract class k1 extends LinearLayout {
     public final ViewGroup[] f;
     public final TextView[] h;
     public final TextView[][] n;
-    public final eq r;
+    public final fq r;
     public final FrameLayout s;
     public final LinearLayout v;
     public int w;
@@ -110,12 +110,12 @@ public abstract class k1 extends LinearLayout {
                 imageView.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.z6, d6Var), PorterDuff.Mode.SRC_IN));
                 this.s.addView(imageView, y5.h(20.0f, 20.0f, 8388629));
                 this.v.addView(this.s, new LinearLayout.LayoutParams(y5.z(-1.0f), y5.z(-1.0f), Gravity.getAbsoluteGravity(119, LocaleController.isRTL ? 1 : 0)));
-                eq eqVar = new eq(context);
-                this.r = eqVar;
-                eqVar.getDrawable().F = true;
-                eqVar.setTextSize(AndroidUtilities.dp(13.0f));
-                eqVar.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
-                eqVar.setGravity(LocaleController.isRTL ? 3 : 5);
+                fq fqVar = new fq(context);
+                this.r = fqVar;
+                fqVar.getDrawable().F = true;
+                fqVar.setTextSize(AndroidUtilities.dp(13.0f));
+                fqVar.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
+                fqVar.setGravity(LocaleController.isRTL ? 3 : 5);
                 int dp = AndroidUtilities.dp(8.0f);
                 int i14 = h6.o6;
                 int v02 = h6.v0(i14, d6Var);
@@ -124,13 +124,13 @@ public abstract class k1 extends LinearLayout {
                 int v03 = h6.v0(i14, d6Var);
                 a(v03);
                 int l12 = h6.l1(0.22f, v03);
-                eqVar.setBackground(h6.i0(dp, dp, dp, dp, l1, l12, l12));
+                fqVar.setBackground(h6.i0(dp, dp, dp, dp, l1, l12, l12));
                 int v04 = h6.v0(i14, d6Var);
                 a(v04);
-                eqVar.setTextColor(v04);
-                eqVar.getDrawable().v = 0.6f;
-                eqVar.setVisibility(8);
-                this.v.addView(eqVar, y5.u(-1.0f, 17.0f, 8388613, 0.0f, 4.0f, 18.0f, 0.0f));
+                fqVar.setTextColor(v04);
+                fqVar.getDrawable().v = 0.6f;
+                fqVar.setVisibility(8);
+                this.v.addView(fqVar, y5.u(-1.0f, 17.0f, 8388613, 0.0f, 4.0f, 18.0f, 0.0f));
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.e = frameLayout;
                 frameLayout.addView(this.v, y5.i(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -264,8 +264,8 @@ public abstract class k1 extends LinearLayout {
             if (offset != 0 && !z13) {
                 i10 = 0;
             }
-            eq eqVar = this.r;
-            eqVar.setVisibility(i10);
+            fq fqVar = this.r;
+            fqVar.setVisibility(i10);
             boolean z19 = offset != 0 ? false : z11;
             invalidate();
             z14 = this.y;
@@ -273,12 +273,12 @@ public abstract class k1 extends LinearLayout {
             textViewArr = this.n;
             if (z14) {
                 ViewPropertyAnimator duration = textViewArr3[0].animate().alpha((z18 || z19) ? 0.0f : 1.0f).setDuration(320L);
-                rr rrVar = rr.h;
-                duration.setInterpolator(rrVar).start();
-                textViewArr3[1].animate().alpha((z18 || !z19) ? 0.0f : 1.0f).setDuration(320L).setInterpolator(rrVar).start();
-                textViewArr[0][0].animate().alpha(z18 ? 1.0f : 0.0f).setDuration(320L).setInterpolator(rrVar).start();
-                textViewArr[0][1].animate().alpha(z18 ? 1.0f : 0.0f).setDuration(320L).setInterpolator(rrVar).start();
-                imageView.animate().rotation(z18 ? 180.0f : 0.0f).setDuration(320L).setInterpolator(rrVar).start();
+                sr srVar = sr.h;
+                duration.setInterpolator(srVar).start();
+                textViewArr3[1].animate().alpha((z18 || !z19) ? 0.0f : 1.0f).setDuration(320L).setInterpolator(srVar).start();
+                textViewArr[0][0].animate().alpha(z18 ? 1.0f : 0.0f).setDuration(320L).setInterpolator(srVar).start();
+                textViewArr[0][1].animate().alpha(z18 ? 1.0f : 0.0f).setDuration(320L).setInterpolator(srVar).start();
+                imageView.animate().rotation(z18 ? 180.0f : 0.0f).setDuration(320L).setInterpolator(srVar).start();
             } else {
                 textViewArr3[0].setAlpha((z18 || z19) ? 0.0f : 1.0f);
                 textViewArr3[1].setAlpha((z18 || !z19) ? 0.0f : 1.0f);
@@ -294,7 +294,7 @@ public abstract class k1 extends LinearLayout {
                             if ((i26 == i22) == z19) {
                                 f10 = 1.0f;
                                 if (this.y) {
-                                    textViewArr4[i26].animate().alpha(f10).setDuration(320L).setInterpolator(rr.h).start();
+                                    textViewArr4[i26].animate().alpha(f10).setDuration(320L).setInterpolator(sr.h).start();
                                 } else {
                                     textViewArr4[i26].setAlpha(f10);
                                 }
@@ -312,7 +312,7 @@ public abstract class k1 extends LinearLayout {
                 i11++;
                 i22 = 1;
             }
-            eqVar.c(LocaleController.getString(!z19 ? R.string.BusinessHoursProfileSwitchMy : R.string.BusinessHoursProfileSwitchLocal), LocaleController.isRTL && !this.y, true);
+            fqVar.c(LocaleController.getString(!z19 ? R.string.BusinessHoursProfileSwitchMy : R.string.BusinessHoursProfileSwitchLocal), LocaleController.isRTL && !this.y, true);
             this.y = false;
             ArrayList[] Z = h1.Z(new ArrayList(tL_businessWorkHours.weekly_open));
             int i27 = (calendar.get(7) + 5) % 7;
@@ -532,12 +532,12 @@ public abstract class k1 extends LinearLayout {
             }
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.e.getLayoutParams();
             f7 = 6.0f;
-            layoutParams.topMargin = AndroidUtilities.dp((this.w <= 2 || eqVar.getVisibility() == 0) ? 6.0f : 12.0f);
-            if (this.w <= 2 && eqVar.getVisibility() != 0) {
+            layoutParams.topMargin = AndroidUtilities.dp((this.w <= 2 || fqVar.getVisibility() == 0) ? 6.0f : 12.0f);
+            if (this.w <= 2 && fqVar.getVisibility() != 0) {
                 f7 = 12.0f;
             }
             layoutParams.bottomMargin = AndroidUtilities.dp(f7);
-            layoutParams.gravity = ((this.w <= 2 || eqVar.getVisibility() == 0) ? 16 : 80) | (!LocaleController.isRTL ? 3 : 5);
+            layoutParams.gravity = ((this.w <= 2 || fqVar.getVisibility() == 0) ? 16 : 80) | (!LocaleController.isRTL ? 3 : 5);
             if (i14 == this.w || i38 != this.x) {
                 requestLayout();
             }
@@ -558,8 +558,8 @@ public abstract class k1 extends LinearLayout {
         if (offset != 0) {
             i10 = 0;
         }
-        eq eqVar2 = this.r;
-        eqVar2.setVisibility(i10);
+        fq fqVar2 = this.r;
+        fqVar2.setVisibility(i10);
         if (offset != 0) {
         }
         invalidate();
@@ -571,7 +571,7 @@ public abstract class k1 extends LinearLayout {
         i11 = 0;
         while (i11 < textViewArr.length) {
         }
-        eqVar2.c(LocaleController.getString(!z19 ? R.string.BusinessHoursProfileSwitchMy : R.string.BusinessHoursProfileSwitchLocal), LocaleController.isRTL && !this.y, true);
+        fqVar2.c(LocaleController.getString(!z19 ? R.string.BusinessHoursProfileSwitchMy : R.string.BusinessHoursProfileSwitchLocal), LocaleController.isRTL && !this.y, true);
         this.y = false;
         ArrayList[] Z3 = h1.Z(new ArrayList(tL_businessWorkHours.weekly_open));
         int i272 = (calendar2.get(7) + 5) % 7;
@@ -604,12 +604,12 @@ public abstract class k1 extends LinearLayout {
         }
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.e.getLayoutParams();
         f7 = 6.0f;
-        layoutParams2.topMargin = AndroidUtilities.dp((this.w <= 2 || eqVar2.getVisibility() == 0) ? 6.0f : 12.0f);
+        layoutParams2.topMargin = AndroidUtilities.dp((this.w <= 2 || fqVar2.getVisibility() == 0) ? 6.0f : 12.0f);
         if (this.w <= 2) {
             f7 = 12.0f;
         }
         layoutParams2.bottomMargin = AndroidUtilities.dp(f7);
-        layoutParams2.gravity = ((this.w <= 2 || eqVar2.getVisibility() == 0) ? 16 : 80) | (!LocaleController.isRTL ? 3 : 5);
+        layoutParams2.gravity = ((this.w <= 2 || fqVar2.getVisibility() == 0) ? 16 : 80) | (!LocaleController.isRTL ? 3 : 5);
         if (i14 == this.w) {
         }
         requestLayout();
@@ -634,9 +634,9 @@ public abstract class k1 extends LinearLayout {
         if (!this.F) {
             int dp2 = AndroidUtilities.dp(60.0f);
             int i12 = this.w;
-            eq eqVar = this.r;
-            if (i12 > 2 || eqVar.getVisibility() == 0) {
-                dp = AndroidUtilities.dp(eqVar.getVisibility() == 0 ? 21.0f : 0.0f) + AndroidUtilities.dp(15.0f) + this.x;
+            fq fqVar = this.r;
+            if (i12 > 2 || fqVar.getVisibility() == 0) {
+                dp = AndroidUtilities.dp(fqVar.getVisibility() == 0 ? 21.0f : 0.0f) + AndroidUtilities.dp(15.0f) + this.x;
             } else {
                 dp = 0;
             }
@@ -647,8 +647,8 @@ public abstract class k1 extends LinearLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        eq eqVar = this.r;
-        if (eqVar == null || eqVar.getVisibility() != 0) {
+        fq fqVar = this.r;
+        if (fqVar == null || fqVar.getVisibility() != 0) {
             return super.onTouchEvent(motionEvent);
         }
         float x10 = motionEvent.getX();
@@ -657,13 +657,13 @@ public abstract class k1 extends LinearLayout {
         FrameLayout frameLayout = this.e;
         float x12 = x11 - frameLayout.getX();
         FrameLayout frameLayout2 = this.s;
-        return eqVar.getClickBounds().contains((int) ((x12 - frameLayout2.getX()) - eqVar.getX()), (int) ((((motionEvent.getY() - viewGroupArr[0].getY()) - frameLayout.getY()) - frameLayout2.getY()) - eqVar.getY()));
+        return fqVar.getClickBounds().contains((int) ((x12 - frameLayout2.getX()) - fqVar.getX()), (int) ((((motionEvent.getY() - viewGroupArr[0].getY()) - frameLayout.getY()) - frameLayout2.getY()) - fqVar.getY()));
     }
 
     public void setOnTimezoneSwitchClick(View.OnClickListener onClickListener) {
-        eq eqVar = this.r;
-        if (eqVar != null) {
-            eqVar.setOnClickListener(onClickListener);
+        fq fqVar = this.r;
+        if (fqVar != null) {
+            fqVar.setOnClickListener(onClickListener);
         }
     }
 }

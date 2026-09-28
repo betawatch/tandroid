@@ -1,21 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ev extends tv {
-    public final /* synthetic */ tv W;
+public final class ev extends rv {
+    public final /* synthetic */ uv h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ev(tv tvVar, org.telegram.ui.ActionBar.m2 m2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
-        super(m2Var, context, d6Var, arrayList);
-        this.W = tvVar;
-    }
-
-    @Override // org.telegram.ui.Components.tv
-    public final void Y() {
-        this.W.dismiss();
+    public ev(int i10, ArrayList arrayList, uv uvVar) {
+        super(i10, arrayList, uvVar);
+        this.h = uvVar;
     }
 }

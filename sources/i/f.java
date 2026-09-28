@@ -4,13 +4,13 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import ii.u0;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.fq;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.gq;
+import org.telegram.ui.Components.s31;
+import org.telegram.ui.Components.zo0;
 import yh.l3;
 import zg.m0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class f implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -25,16 +25,16 @@ public final class f implements Drawable.Callback {
                 ((u0) this.b).b.invalidate();
                 break;
             case 2:
-                ((fq) this.b).invalidateSelf();
+                ((gq) this.b).invalidateSelf();
                 break;
             case 3:
-                ((xo0) this.b).b.run();
+                ((zo0) this.b).b.run();
                 break;
             case 4:
                 ((ed) this.b).invalidateSelf();
                 break;
             case 5:
-                ((q31) this.b).invalidateSelf();
+                ((s31) this.b).invalidateSelf();
                 break;
             case 6:
                 ((wg.a) this.b).c.invalidate();
@@ -75,7 +75,7 @@ public final class f implements Drawable.Callback {
             case 1:
                 break;
             case 2:
-                ((fq) this.b).scheduleSelf(runnable, j3);
+                ((gq) this.b).scheduleSelf(runnable, j3);
                 break;
             case 3:
                 break;
@@ -118,7 +118,7 @@ public final class f implements Drawable.Callback {
             case 1:
                 break;
             case 2:
-                ((fq) this.b).unscheduleSelf(runnable);
+                ((gq) this.b).unscheduleSelf(runnable);
                 break;
             case 3:
                 break;

@@ -2,12 +2,12 @@ package ci;
 
 import android.content.Context;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.cx0;
-import org.telegram.ui.Components.gx0;
+import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.ix0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class k2 extends gx0 {
+public final class k2 extends ix0 {
     public final /* synthetic */ l2 A3;
     public final /* synthetic */ boolean z3;
 
@@ -18,42 +18,42 @@ public final class k2 extends gx0 {
         this.z3 = z10;
     }
 
-    @Override // org.telegram.ui.Components.gx0
+    @Override // org.telegram.ui.Components.ix0
     public final boolean A1() {
         return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 
-    @Override // org.telegram.ui.Components.gx0
-    public final cx0[] B1(cx0[] cx0VarArr) {
-        if (cx0VarArr != null && this.z3) {
+    @Override // org.telegram.ui.Components.ix0
+    public final ex0[] B1(ex0[] ex0VarArr) {
+        if (ex0VarArr != null && this.z3) {
             int i10 = 0;
             while (true) {
-                if (i10 >= cx0VarArr.length) {
+                if (i10 >= ex0VarArr.length) {
                     i10 = -1;
                     break;
                 }
-                cx0 cx0Var = cx0VarArr[i10];
-                if (cx0Var != null && cx0Var.b) {
+                ex0 ex0Var = ex0VarArr[i10];
+                if (ex0Var != null && ex0Var.b) {
                     break;
                 }
                 i10++;
             }
             if (i10 >= 0) {
-                int length = cx0VarArr.length;
-                cx0[] cx0VarArr2 = new cx0[length];
-                cx0VarArr2[0] = cx0VarArr[i10];
+                int length = ex0VarArr.length;
+                ex0[] ex0VarArr2 = new ex0[length];
+                ex0VarArr2[0] = ex0VarArr[i10];
                 int i11 = 1;
                 while (i11 < length) {
-                    cx0VarArr2[i11] = cx0VarArr[i11 <= i10 ? i11 - 1 : i11];
+                    ex0VarArr2[i11] = ex0VarArr[i11 <= i10 ? i11 - 1 : i11];
                     i11++;
                 }
-                return cx0VarArr2;
+                return ex0VarArr2;
             }
         }
-        return cx0VarArr;
+        return ex0VarArr;
     }
 
-    @Override // org.telegram.ui.Components.gx0
+    @Override // org.telegram.ui.Components.ix0
     public final void E1(int i10) {
         super.E1(i10);
         this.A3.d(false);

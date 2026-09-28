@@ -20,12 +20,12 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.ag0;
+import org.telegram.ui.Components.cg0;
 import org.telegram.ui.Components.dg;
-import org.telegram.ui.Components.gh0;
-import org.telegram.ui.Components.jh0;
-import org.telegram.ui.Components.wf0;
+import org.telegram.ui.Components.ih0;
+import org.telegram.ui.Components.lh0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yf0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
@@ -36,7 +36,7 @@ import org.telegram.ui.sa1;
 import org.telegram.ui.wn;
 import org.telegram.ui.yb0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -215,12 +215,12 @@ public final /* synthetic */ class j implements Runnable {
                 dgVar.presentFragment(wn.R9(j3));
                 break;
             case 21:
-                ag0 ag0Var = (ag0) obj;
-                ag0Var.h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
-                AndroidUtilities.runOnUIThread(new wf0(ag0Var, 1), 100L);
+                cg0 cg0Var = (cg0) obj;
+                cg0Var.h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
+                AndroidUtilities.runOnUIThread(new yf0(cg0Var, 1), 100L);
                 break;
             case 22:
-                jh0 jh0Var = (jh0) obj;
+                lh0 lh0Var = (lh0) obj;
                 Activity activity2 = AndroidUtilities.getActivity();
                 org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
                 if (PhotoViewer.t1().Q1() || (U2 != null && U2.hasShownSheet())) {
@@ -228,7 +228,7 @@ public final /* synthetic */ class j implements Runnable {
                 } else if (U2 != null) {
                     d6Var2 = U2.getResourceProvider();
                 }
-                new yh.l7(activity2, d6Var2, this.b, 15, "", new gh0(jh0Var, 0), 0L).show();
+                new yh.l7(activity2, d6Var2, this.b, 15, "", new ih0(lh0Var, 0), 0L).show();
                 break;
             case 23:
                 qy qyVar = (qy) obj;

@@ -29,9 +29,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ae0 extends org.telegram.ui.Components.fw0 {
+public final class ae0 extends org.telegram.ui.Components.hw0 {
     public boolean E;
     public GoogleSignInAccount F;
     public int G;
@@ -61,8 +61,8 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
     public final ai.p4 n;
     public final ai.p4 r;
     public final TextView s;
-    public final org.telegram.ui.Components.u90 v;
-    public final org.telegram.ui.Components.lj0 w;
+    public final org.telegram.ui.Components.w90 v;
+    public final org.telegram.ui.Components.nj0 w;
     public boolean x;
     public Bundle y;
 
@@ -87,16 +87,16 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         final int i11 = 1;
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.w = lj0Var;
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        this.w = nj0Var;
         if (!z10 || qg0Var.F == 3) {
-            lj0Var.f(R.raw.email_check_inbox, 120, 120, null);
+            nj0Var.f(R.raw.email_check_inbox, 120, 120, null);
         } else {
-            lj0Var.f(R.raw.email_setup_heart, 120, 120, null);
+            nj0Var.f(R.raw.email_setup_heart, 120, 120, null);
         }
         final int i12 = 0;
-        lj0Var.setAutoRepeat(false);
-        frameLayout.addView(lj0Var, w7.y5.e(120, 120, 1));
+        nj0Var.setAutoRepeat(false);
+        frameLayout.addView(nj0Var, w7.y5.e(120, 120, 1));
         if (!AndroidUtilities.isSmallScreen()) {
             Point point = AndroidUtilities.displaySize;
             if (point.x <= point.y || AndroidUtilities.isTablet()) {
@@ -131,7 +131,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
                 Drawable drawable = context.getDrawable(org.telegram.messenger.beta.R.drawable.googleg_standard_color_18);
                 drawable.setBounds(0, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(27.0f));
                 spannableStringBuilder.setSpan(new ImageSpan(drawable, 0), 0, 1, 33);
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.mz(i13), 1, 2, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.nz(i13), 1, 2, 33);
                 spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.SignInWithGoogle));
                 textView2.setText(spannableStringBuilder);
                 textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.wd0
@@ -326,17 +326,17 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
                     }
                 });
                 AndroidUtilities.updateViewVisibilityAnimated(textView3, false, 1.0f, false);
-                org.telegram.ui.Components.u90 u90Var = new org.telegram.ui.Components.u90(context);
-                this.v = u90Var;
-                n7.z0.k(u90Var);
+                org.telegram.ui.Components.w90 w90Var = new org.telegram.ui.Components.w90(context);
+                this.v = w90Var;
+                n7.z0.k(w90Var);
                 zd0 zd0Var = new zd0(context, i12);
                 this.Q = zd0Var;
                 Animation loadAnimation = AnimationUtils.loadAnimation(context, R.anim.text_in);
-                org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.lt.e;
-                loadAnimation.setInterpolator(rrVar);
+                org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.mt.e;
+                loadAnimation.setInterpolator(srVar);
                 zd0Var.setInAnimation(loadAnimation);
                 Animation loadAnimation2 = AnimationUtils.loadAnimation(context, R.anim.text_out);
-                loadAnimation2.setInterpolator(rrVar);
+                loadAnimation2.setInterpolator(srVar);
                 zd0Var.setOutAnimation(loadAnimation2);
                 FrameLayout frameLayout3 = new FrameLayout(context);
                 this.e = frameLayout3;
@@ -354,7 +354,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
                 if (z10) {
                     frameLayout4.addView(zd0Var, w7.y5.e(-1, -2, 48));
                     frameLayout4.addView(frameLayout2, w7.y5.e(-1, -2, 48));
-                    frameLayout4.addView(u90Var, w7.y5.d(-1, 16.0f, 17, 0.0f, 0.0f, 0.0f, 16.0f));
+                    frameLayout4.addView(w90Var, w7.y5.d(-1, 16.0f, 17, 0.0f, 0.0f, 0.0f, 16.0f));
                     frameLayout4.addView(textView2, w7.y5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 16.0f));
                 } else {
                     frameLayout4.addView(zd0Var, w7.y5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
@@ -393,7 +393,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         Drawable drawable2 = context.getDrawable(org.telegram.messenger.beta.R.drawable.googleg_standard_color_18);
         drawable2.setBounds(0, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(27.0f));
         spannableStringBuilder2.setSpan(new ImageSpan(drawable2, 0), 0, 1, 33);
-        spannableStringBuilder2.setSpan(new org.telegram.ui.Components.mz(i132), 1, 2, 33);
+        spannableStringBuilder2.setSpan(new org.telegram.ui.Components.nz(i132), 1, 2, 33);
         spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.SignInWithGoogle));
         textView22.setText(spannableStringBuilder2);
         textView22.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.wd0
@@ -588,17 +588,17 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
             }
         });
         AndroidUtilities.updateViewVisibilityAnimated(textView32, false, 1.0f, false);
-        org.telegram.ui.Components.u90 u90Var2 = new org.telegram.ui.Components.u90(context);
-        this.v = u90Var2;
-        n7.z0.k(u90Var2);
+        org.telegram.ui.Components.w90 w90Var2 = new org.telegram.ui.Components.w90(context);
+        this.v = w90Var2;
+        n7.z0.k(w90Var2);
         zd0 zd0Var2 = new zd0(context, i12);
         this.Q = zd0Var2;
         Animation loadAnimation3 = AnimationUtils.loadAnimation(context, R.anim.text_in);
-        org.telegram.ui.Components.rr rrVar2 = org.telegram.ui.Components.lt.e;
-        loadAnimation3.setInterpolator(rrVar2);
+        org.telegram.ui.Components.sr srVar2 = org.telegram.ui.Components.mt.e;
+        loadAnimation3.setInterpolator(srVar2);
         zd0Var2.setInAnimation(loadAnimation3);
         Animation loadAnimation22 = AnimationUtils.loadAnimation(context, R.anim.text_out);
-        loadAnimation22.setInterpolator(rrVar2);
+        loadAnimation22.setInterpolator(srVar2);
         zd0Var2.setOutAnimation(loadAnimation22);
         FrameLayout frameLayout32 = new FrameLayout(context);
         this.e = frameLayout32;
@@ -618,20 +618,20 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         addView(frameLayout42, w7.y5.l(1.0f, -1, 0));
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void g() {
         if (this.H != 0) {
             AndroidUtilities.cancelRunOnUIThread(this.U);
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public String getHeaderName() {
         return LocaleController.getString(R.string.VerificationCode);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void h(String str) {
         TLRPC.TL_auth_signIn tL_auth_signIn;
         int i10;
@@ -711,7 +711,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_signIn, new qd0(this, code, 0), 10);
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void j() {
         if (this.x) {
             this.x = false;
@@ -720,7 +720,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("emailcode_params");
         this.y = bundle2;
@@ -733,7 +733,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void l(Bundle bundle) {
         String code = this.a.getCode();
         if (code != null && code.length() != 0) {
@@ -745,7 +745,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -794,12 +794,12 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
             int indexOf = string.indexOf(42);
             int lastIndexOf = string.lastIndexOf(42);
             if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                org.telegram.ui.Components.b11 b11Var = new org.telegram.ui.Components.b11();
-                b11Var.a |= 256;
-                b11Var.b = indexOf;
+                org.telegram.ui.Components.d11 d11Var = new org.telegram.ui.Components.d11();
+                d11Var.a |= 256;
+                d11Var.b = indexOf;
                 int i13 = lastIndexOf + 1;
-                b11Var.c = i13;
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.c11(b11Var, 0), indexOf, i13, 0);
+                d11Var.c = i13;
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.e11(d11Var, 0), indexOf, i13, 0);
             }
             nVar.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.CheckYourEmailSubtitle), spannableStringBuilder));
         }
@@ -818,7 +818,7 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void n() {
         this.b.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
         int i10 = org.telegram.ui.ActionBar.h6.D6;
@@ -876,10 +876,10 @@ public final class ae0 extends org.telegram.ui.Components.fw0 {
     public final void q(boolean z10) {
         AndroidUtilities.updateViewVisibilityAnimated(this.f, z10);
         AndroidUtilities.updateViewVisibilityAnimated(this.h, (z10 || this.W.F == 3 || this.P) ? false : true);
-        org.telegram.ui.Components.u90 u90Var = this.v;
-        if (u90Var.getVisibility() != 8) {
-            u90Var.setLayoutParams(w7.y5.d(-1, 16.0f, 17, 0.0f, 0.0f, 0.0f, z10 ? 8.0f : 16.0f));
-            u90Var.requestLayout();
+        org.telegram.ui.Components.w90 w90Var = this.v;
+        if (w90Var.getVisibility() != 8) {
+            w90Var.setLayoutParams(w7.y5.d(-1, 16.0f, 17, 0.0f, 0.0f, 0.0f, z10 ? 8.0f : 16.0f));
+            w90Var.requestLayout();
         }
     }
 

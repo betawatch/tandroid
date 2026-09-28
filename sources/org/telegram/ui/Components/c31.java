@@ -2,52 +2,89 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.Rect;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class c31 extends Drawable {
-    public final Drawable a;
-    public final Paint b = new Paint(1);
-    public final RectF c = new RectF();
+public final class c31 extends t61 {
+    public final org.telegram.ui.g20 f3;
+    public final e6 g3;
+    public Drawable h3;
+    public int i3;
+    public final Paint j3;
 
-    public c31(Context context) {
-        this.a = context.getResources().getDrawable(R.drawable.menu_topic_add).mutate();
+    public c31(Context context, int i10, z21 z21Var, r21 r21Var, r21 r21Var2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, i10, 0, false, z21Var, r21Var, r21Var2, d6Var);
+        this.f3 = new org.telegram.ui.g20();
+        this.g3 = new e6(this, 320L, sr.h);
+        this.j3 = new Paint(1);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.drawRoundRect(this.c, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.b);
-        this.a.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.c.set(rect);
-        int centerX = rect.centerX() - AndroidUtilities.dp(12.0f);
-        int centerY = rect.centerY() - AndroidUtilities.dp(12.0f);
-        this.a.setBounds(centerX, centerY, AndroidUtilities.dp(24.0f) + centerX, AndroidUtilities.dp(24.0f) + centerY);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.Components.t61, org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        float e = this.g3.e(canScrollVertically(-1));
+        if (e > 0.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        } else {
+            canvas2 = canvas;
+        }
+        float height = getHeight();
+        float f7 = 0.0f;
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof l31) {
+                l31 l31Var = (l31) childAt;
+                if (l31Var.y) {
+                    if (height > l31Var.getY()) {
+                        height = l31Var.getY();
+                        RecyclerView.R(l31Var);
+                    }
+                    if (f7 < l31Var.getY() + l31Var.getHeight()) {
+                        f7 = l31Var.getY() + l31Var.getHeight();
+                        RecyclerView.R(l31Var);
+                    }
+                }
+            }
+        }
+        if (f7 > height) {
+            int i11 = org.telegram.ui.ActionBar.h6.s9;
+            org.telegram.ui.ActionBar.d6 d6Var = this.p2;
+            int v02 = org.telegram.ui.ActionBar.h6.v0(i11, d6Var);
+            Paint paint = this.j3;
+            paint.setColor(v02);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set((getWidth() - AndroidUtilities.dp(56.0f)) / 2.0f, height, (AndroidUtilities.dp(56.0f) + getWidth()) / 2.0f, f7);
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint);
+            if (this.h3 == null) {
+                this.h3 = getContext().getResources().getDrawable(R.drawable.msg_limit_pin).mutate();
+            }
+            int v03 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.b9, d6Var);
+            if (this.i3 != v03) {
+                Drawable drawable = this.h3;
+                this.i3 = v03;
+                drawable.setColorFilter(new PorterDuffColorFilter(v03, PorterDuff.Mode.SRC_IN));
+            }
+            this.h3.setBounds((int) (rectF.left + AndroidUtilities.dp(4.0f)), (int) (rectF.top + AndroidUtilities.dp(2.66f)), (int) (rectF.left + AndroidUtilities.dp(13.66f)), (int) (rectF.top + AndroidUtilities.dp(12.32f)));
+            this.h3.draw(canvas2);
+        }
+        super.dispatchDraw(canvas2);
+        if (e > 0.0f) {
+            canvas2.save();
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            rectF2.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(12.0f));
+            this.f3.b(canvas2, rectF2, 1, e);
+            canvas2.restore();
+            canvas2.restore();
+        }
     }
 }

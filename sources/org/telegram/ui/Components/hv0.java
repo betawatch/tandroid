@@ -1,33 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class hv0 extends gv0 {
-    public final /* synthetic */ iv0 G;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hv0(iv0 iv0Var, Context context, int i10) {
-        super(iv0Var.e, context, i10, false);
-        this.G = iv0Var;
-    }
-
-    @Override // org.telegram.ui.Components.gv0, s4.h0
-    public final void l() {
-        super.l();
-        iv0 iv0Var = this.G;
-        jv0 jv0Var = iv0Var.e;
-        int i10 = iv0Var.a;
-        int[] iArr = jv0.d2;
-        cu0 W = jv0Var.W(i10);
-        if (W != null && W.r.getVisibility() == 0) {
-            iv0Var.d.l();
-        }
-        if (W != null) {
-            ts0 ts0Var = W.w;
-            ai.d9 d9Var = this.s;
-            ts0Var.e(d9Var != null && (d9Var.k() || (jv0Var.i0() && this.s.g() > 0)), true);
-        }
+public final class hv0 extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final float getProgress() {
+        return this.uploadingStory.h;
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class k6 extends FrameLayout {
     public final k0 a;
@@ -36,8 +36,8 @@ public class k6 extends FrameLayout {
         }
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(true, true, true, false);
         this.b = o6Var;
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        o6Var.k(0.25f, 300L, rrVar);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        o6Var.k(0.25f, 300L, srVar);
         o6Var.setCallback(k0Var);
         o6Var.t(AndroidUtilities.dp(14.0f));
         o6Var.q(LocaleController.getString(R.string.ClearCache), true, true);
@@ -47,7 +47,7 @@ public class k6 extends FrameLayout {
         o6Var.r(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
         org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(true, true, true, false);
         this.c = o6Var2;
-        o6Var2.k(0.25f, 300L, rrVar);
+        o6Var2.k(0.25f, 300L, srVar);
         o6Var2.setCallback(k0Var);
         o6Var2.t(AndroidUtilities.dp(14.0f));
         o6Var2.u(AndroidUtilities.bold());

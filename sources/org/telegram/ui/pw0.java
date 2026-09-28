@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class pw0 extends FrameLayout {
     public boolean a;
@@ -112,7 +112,7 @@ public final class pw0 extends FrameLayout {
         premiumPreviewFragment.V.setTranslationY(premiumPreviewFragment.U.c.getY() + premiumPreviewFragment.U.getY() + ((-(r1.getMeasuredHeight() - premiumPreviewFragment.U.d.getMeasuredWidth())) / 2.0f));
         float dp5 = AndroidUtilities.dp(72.0f) - premiumPreviewFragment.U.a.getLeft();
         float f15 = premiumPreviewFragment.f0;
-        premiumPreviewFragment.U.a.setTranslationX((1.0f - org.telegram.ui.Components.rr.h.getInterpolation(1.0f - (f15 > 0.3f ? (f15 - 0.3f) / 0.7f : 0.0f))) * dp5);
+        premiumPreviewFragment.U.a.setTranslationX((1.0f - org.telegram.ui.Components.sr.h.getInterpolation(1.0f - (f15 > 0.3f ? (f15 - 0.3f) / 0.7f : 0.0f))) * dp5);
         ax0 ax0Var = premiumPreviewFragment.U;
         ax0Var.d.b.p = (((getMeasuredWidth() * 0.1f) * premiumPreviewFragment.b0) + (premiumPreviewFragment.U.c.getX() + ax0Var.getX())) / getMeasuredWidth();
         ax0 ax0Var2 = premiumPreviewFragment.U;
@@ -224,9 +224,9 @@ public final class pw0 extends FrameLayout {
         if (frameLayout != null && frameLayout.getVisibility() != 8) {
             i12 = AndroidUtilities.dp(68.0f);
         }
-        org.telegram.ui.Components.qz qzVar = premiumPreviewFragment.P;
-        qzVar.M = (premiumPreviewFragment.X + i12) - AndroidUtilities.dp(16.0f);
-        qzVar.p1();
+        org.telegram.ui.Components.rz rzVar = premiumPreviewFragment.P;
+        rzVar.M = (premiumPreviewFragment.X + i12) - AndroidUtilities.dp(16.0f);
+        rzVar.p1();
         premiumPreviewFragment.P.S = i12;
         super.onMeasure(i10, i11);
         if (((getMeasuredWidth() + getMeasuredHeight()) << 16) != 0) {

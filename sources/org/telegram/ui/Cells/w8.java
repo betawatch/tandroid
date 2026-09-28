@@ -23,16 +23,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class w8 extends FrameLayout {
     public static final t8 J = new t8("animationProgress", 0);
     public int E;
     public final org.telegram.ui.ActionBar.d6 F;
-    public lj0 G;
+    public nj0 G;
     public boolean H;
     public boolean I;
     public boolean a;
@@ -95,15 +95,15 @@ public class w8 extends FrameLayout {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, J, 0.0f, 1.0f);
         this.x = ofFloat;
         ofFloat.addListener(new u8(this, i10, 0));
-        this.x.setInterpolator(rr.g);
+        this.x.setInterpolator(sr.g);
         this.x.setDuration(240L).start();
     }
 
     public final void c(int i10, int i11) {
         if (this.G == null) {
-            lj0 lj0Var = new lj0(getContext());
-            this.G = lj0Var;
-            lj0Var.setScaleType(ImageView.ScaleType.CENTER);
+            nj0 nj0Var = new nj0(getContext());
+            this.G = nj0Var;
+            nj0Var.setScaleType(ImageView.ScaleType.CENTER);
             addView(this.G, w7.y5.d(29, 29.0f, (LocaleController.isRTL ? 5 : 3) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
             this.E = AndroidUtilities.dp(65.0f);
             TextView textView = this.c;
@@ -296,7 +296,7 @@ public class w8 extends FrameLayout {
         ObjectAnimator duration = ObjectAnimator.ofFloat(this, J, 1.0f, 0.0f).setDuration(240L);
         this.x = duration;
         duration.addListener(new u8(this, i10, 1));
-        this.x.setInterpolator(rr.g);
+        this.x.setInterpolator(sr.g);
         this.x.start();
     }
 

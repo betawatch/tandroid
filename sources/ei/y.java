@@ -9,10 +9,10 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class y extends FrameLayout {
     public ObjectAnimator a;
@@ -55,7 +55,7 @@ public abstract class y extends FrameLayout {
         this.a = ofFloat;
         ofFloat.addListener(new ai.b(this, 20));
         this.a.setDuration(150L);
-        this.a.setInterpolator(rr.f);
+        this.a.setInterpolator(sr.f);
         this.a.start();
         c0 c0Var = ((of) this).v.l0;
         if (c0Var != null) {
@@ -75,7 +75,7 @@ public abstract class y extends FrameLayout {
             this.a.setInterpolator(new OvershootInterpolator(0.8f));
         } else {
             ofFloat.setDuration(150L);
-            this.a.setInterpolator(rr.f);
+            this.a.setInterpolator(sr.f);
         }
         this.a.start();
     }
@@ -88,7 +88,7 @@ public abstract class y extends FrameLayout {
         return false;
     }
 
-    public wl0 getListView() {
+    public yl0 getListView() {
         return this.c;
     }
 

@@ -11,16 +11,16 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class n71 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
-    public final org.telegram.ui.Components.oz X;
+    public final org.telegram.ui.Components.pz X;
     public final ci.d Y;
     public final ai.d9 Z;
     public final HashMap a0;
     public final int b0;
     public int c0;
-    public org.telegram.ui.Components.j61 d0;
+    public org.telegram.ui.Components.l61 d0;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
@@ -57,15 +57,15 @@ public final class n71 extends org.telegram.ui.Components.bb implements Notifica
         dVar.setOnClickListener(new ny0(3, this, tcVar));
         frameLayout.addView(dVar, w7.y5.d(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
         getContext();
-        org.telegram.ui.Components.oz ozVar = new org.telegram.ui.Components.oz(i10, false);
-        this.X = ozVar;
-        ozVar.O = new l71(this);
-        org.telegram.ui.Components.wl0 wl0Var = this.d;
+        org.telegram.ui.Components.pz pzVar = new org.telegram.ui.Components.pz(i10, false);
+        this.X = pzVar;
+        pzVar.O = new l71(this);
+        org.telegram.ui.Components.yl0 yl0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i12, 0, i12, 0);
+        yl0Var.setPadding(i12, 0, i12, 0);
         this.d.setSelectorType(9);
         this.d.setSelectorDrawableColor(0);
-        this.d.setLayoutManager(ozVar);
+        this.d.setLayoutManager(pzVar);
         this.d.setOnItemClickListener(new r21(this, 5));
         this.d.setOnItemLongClickListener(new ml0(this, 17));
         this.d.setOnScrollListener(new m71(this));
@@ -73,9 +73,9 @@ public final class n71 extends org.telegram.ui.Components.bb implements Notifica
     }
 
     public final void P() {
-        org.telegram.ui.Components.oz ozVar = this.X;
-        int L0 = ozVar.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(ozVar.N0() - L0) + 1;
+        org.telegram.ui.Components.pz pzVar = this.X;
+        int L0 = pzVar.L0();
+        int abs = L0 == -1 ? 0 : Math.abs(pzVar.N0() - L0) + 1;
         ai.d9 d9Var = this.Z;
         if (d9Var != null) {
             int i10 = L0 + abs;
@@ -88,9 +88,9 @@ public final class n71 extends org.telegram.ui.Components.bb implements Notifica
     }
 
     public final boolean Q(int i10, View view) {
-        org.telegram.ui.Components.v51 G;
-        org.telegram.ui.Components.j61 j61Var = this.d0;
-        if (j61Var == null || i10 == 0 || (G = j61Var.G(i10 - 1)) == null) {
+        org.telegram.ui.Components.x51 G;
+        org.telegram.ui.Components.l61 l61Var = this.d0;
+        if (l61Var == null || i10 == 0 || (G = l61Var.G(i10 - 1)) == null) {
             return false;
         }
         Object obj = G.G;
@@ -139,11 +139,11 @@ public final class n71 extends org.telegram.ui.Components.bb implements Notifica
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
-        org.telegram.ui.Components.j61 j61Var = new org.telegram.ui.Components.j61(wl0Var, getContext(), this.currentAccount, 0, false, new b5(this, 25), this.resourcesProvider);
-        this.d0 = j61Var;
-        j61Var.r = false;
-        return j61Var;
+    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
+        org.telegram.ui.Components.l61 l61Var = new org.telegram.ui.Components.l61(yl0Var, getContext(), this.currentAccount, 0, false, new b5(this, 25), this.resourcesProvider);
+        this.d0 = l61Var;
+        l61Var.r = false;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

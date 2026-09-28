@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class da1 extends ca1 {
     public final int v;
@@ -23,7 +23,7 @@ public abstract class da1 extends ca1 {
         int i10;
         sa1 sa1Var = this.w;
         i10 = ((org.telegram.ui.ActionBar.m2) sa1Var).classGuid;
-        ea1Var.a(this.v, i10, sa1Var.a.stats_dc, new org.telegram.ui.Components.f61(1, sa1Var, this.r));
+        ea1Var.a(this.v, i10, sa1Var.a.stats_dc, new org.telegram.ui.Components.h61(1, sa1Var, this.r));
     }
 
     @Override // org.telegram.ui.ca1

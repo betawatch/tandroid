@@ -13,15 +13,15 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.wn;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final int a;
@@ -30,7 +30,7 @@ public final class f extends FrameLayout {
     public final LinearLayout d;
     public final p6 e;
     public final p6 f;
-    public final eq h;
+    public final fq h;
     public final ImageView n;
     public boolean r;
     public long s;
@@ -75,25 +75,25 @@ public final class f extends FrameLayout {
         p6Var2.setEllipsizeByGradient(true);
         linearLayout.addView(p6Var2, y5.n(-1, 17));
         addView(linearLayout, y5.d(-2, -2.0f, 16, 52.0f, 0.0f, 49.0f, 0.0f));
-        eq eqVar = new eq(activity);
-        this.h = eqVar;
-        eqVar.getDrawable().o(true, true, false);
-        eqVar.b(0.75f, 350L, rr.h);
-        eqVar.setScaleProperty(0.6f);
-        eqVar.setTypeface(AndroidUtilities.bold());
+        fq fqVar = new fq(activity);
+        this.h = fqVar;
+        fqVar.getDrawable().o(true, true, false);
+        fqVar.b(0.75f, 350L, sr.h);
+        fqVar.setScaleProperty(0.6f);
+        fqVar.setTypeface(AndroidUtilities.bold());
         int dp = AndroidUtilities.dp(14.0f);
         int i10 = h6.Oh;
         int v02 = h6.v0(i10, d6Var);
         int v = h6.v(h6.v0(i10, d6Var), h6.l1(0.12f, -1));
-        eqVar.setBackgroundDrawable(h6.i0(dp, dp, dp, dp, v02, v, v));
-        eqVar.setTextSize(AndroidUtilities.dp(14.0f));
-        eqVar.setGravity(5);
-        eqVar.setTextColor(h6.v0(h6.Sh, d6Var));
-        eqVar.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), 0);
-        eqVar.setOnClickListener(new ai.v0(this, 24));
-        eqVar.setOnWidthUpdatedListener(new e(this, 0));
-        eqVar.setText(LocaleController.getString(this.r ? R.string.BizBotStart : R.string.BizBotStop));
-        addView(eqVar, y5.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
+        fqVar.setBackgroundDrawable(h6.i0(dp, dp, dp, dp, v02, v, v));
+        fqVar.setTextSize(AndroidUtilities.dp(14.0f));
+        fqVar.setGravity(5);
+        fqVar.setTextColor(h6.v0(h6.Sh, d6Var));
+        fqVar.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), 0);
+        fqVar.setOnClickListener(new ai.v0(this, 24));
+        fqVar.setOnWidthUpdatedListener(new e(this, 0));
+        fqVar.setText(LocaleController.getString(this.r ? R.string.BizBotStart : R.string.BizBotStop));
+        addView(fqVar, y5.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);

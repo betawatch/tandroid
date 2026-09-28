@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class y extends n0 {
     public int E;
@@ -48,7 +48,7 @@ public class y extends n0 {
     public final ArrayList F = new ArrayList();
     public final pg.c1 I = new pg.c1(this, 3);
     public View M = null;
-    public final rl0 P = new rl0(this);
+    public final tl0 P = new tl0(this);
 
     public y(v vVar) {
         this.x = vVar;
@@ -147,17 +147,17 @@ public class y extends n0 {
         }
     }
 
-    public final void e(wl0 wl0Var) {
+    public final void e(yl0 yl0Var) {
         RecyclerView recyclerView = this.H;
-        if (recyclerView == wl0Var) {
+        if (recyclerView == yl0Var) {
             return;
         }
-        rl0 rl0Var = this.P;
+        tl0 tl0Var = this.P;
         if (recyclerView != null) {
             recyclerView.p0(this);
             RecyclerView recyclerView2 = this.H;
-            recyclerView2.E.remove(rl0Var);
-            if (recyclerView2.F == rl0Var) {
+            recyclerView2.E.remove(tl0Var);
+            if (recyclerView2.F == tl0Var) {
                 recyclerView2.F = null;
             }
             ArrayList arrayList = this.H.P;
@@ -189,14 +189,14 @@ public class y extends n0 {
                 this.N = null;
             }
         }
-        this.H = wl0Var;
-        if (wl0Var != null) {
-            wl0Var.getResources();
+        this.H = yl0Var;
+        if (yl0Var != null) {
+            yl0Var.getResources();
             this.f = AndroidUtilities.dp(120.0f);
             this.h = AndroidUtilities.dp(800.0f);
             this.G = ViewConfiguration.get(this.H.getContext()).getScaledTouchSlop();
             this.H.i(this);
-            this.H.E.add(rl0Var);
+            this.H.E.add(tl0Var);
             RecyclerView recyclerView3 = this.H;
             if (recyclerView3.P == null) {
                 recyclerView3.P = new ArrayList();

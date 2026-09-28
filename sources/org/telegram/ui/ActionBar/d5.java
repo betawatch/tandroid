@@ -22,13 +22,13 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.oc0;
 import v7.v7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class d5 extends Drawable {
-    public static final mc0[] Q = new mc0[3];
+    public static final oc0[] Q = new oc0[3];
     public NinePatchDrawable D;
     public int E;
     public boolean G;
@@ -84,19 +84,19 @@ public class d5 extends Drawable {
         if (this.a instanceof BitmapShader) {
             boolean z10 = this.J;
             Matrix matrix = this.k;
-            mc0[] mc0VarArr = Q;
+            oc0[] oc0VarArr = Q;
             int i10 = this.l;
             char c10 = 2;
             if (z10 && (bitmap = this.L) != null) {
                 char c11 = i10 == 2 ? (char) 1 : (char) 0;
-                float min = 1.0f / Math.min(bitmap.getWidth() / mc0VarArr[c11].getBounds().width(), this.L.getHeight() / mc0VarArr[c11].getBounds().height());
+                float min = 1.0f / Math.min(bitmap.getWidth() / oc0VarArr[c11].getBounds().width(), this.L.getHeight() / oc0VarArr[c11].getBounds().height());
                 matrix.postScale(min, min);
             } else {
                 if (!this.v) {
                     c10 = i10 == 2 ? (char) 1 : (char) 0;
                 }
-                Bitmap bitmap2 = mc0VarArr[c10].k;
-                float min2 = 1.0f / Math.min(bitmap2.getWidth() / mc0VarArr[c10].getBounds().width(), bitmap2.getHeight() / mc0VarArr[c10].getBounds().height());
+                Bitmap bitmap2 = oc0VarArr[c10].k;
+                float min2 = 1.0f / Math.min(bitmap2.getWidth() / oc0VarArr[c10].getBounds().width(), bitmap2.getHeight() / oc0VarArr[c10].getBounds().height());
                 matrix.postScale(min2, min2);
             }
         }
@@ -456,13 +456,13 @@ public class d5 extends Drawable {
         return d6Var != null ? d6Var.g1(i10) : h6.rl.get(i10);
     }
 
-    public final mc0 i() {
+    public final oc0 i() {
         boolean z10 = this.v;
-        mc0[] mc0VarArr = Q;
+        oc0[] oc0VarArr = Q;
         if (z10) {
-            return mc0VarArr[2];
+            return oc0VarArr[2];
         }
-        return mc0VarArr[this.l == 2 ? (char) 1 : (char) 0];
+        return oc0VarArr[this.l == 2 ? (char) 1 : (char) 0];
     }
 
     public final Drawable j() {
@@ -636,12 +636,12 @@ public class d5 extends Drawable {
                 int i22 = this.l;
                 char c12 = !z16 ? (char) 2 : i22 == 2 ? (char) 1 : (char) 0;
                 z13 = this.J;
-                mc0[] mc0VarArr = Q;
+                oc0[] oc0VarArr = Q;
                 if (z13 && i19 != 0 && z12) {
                     c10 = 3;
-                    mc0 mc0Var = mc0VarArr[c12];
-                    if (mc0Var != null) {
-                        int[] iArr = mc0Var.a;
+                    oc0 oc0Var = oc0VarArr[c12];
+                    if (oc0Var != null) {
+                        int[] iArr = oc0Var.a;
                         this.e = iArr[0];
                         this.f = iArr[1];
                         this.g = iArr[2];
@@ -657,27 +657,27 @@ public class d5 extends Drawable {
                                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                                     this.M = new BitmapShader(bitmap, tileMode, tileMode);
                                 }
-                                if (mc0VarArr[c12] == null) {
-                                    mc0 mc0Var2 = new mc0();
-                                    mc0VarArr[c12] = mc0Var2;
+                                if (oc0VarArr[c12] == null) {
+                                    oc0 oc0Var2 = new oc0();
+                                    oc0VarArr[c12] = oc0Var2;
                                     if (i22 != 2) {
                                         c11 = 1;
-                                        mc0Var2.t = true;
+                                        oc0Var2.t = true;
                                     } else {
                                         c11 = 1;
                                     }
-                                    mc0Var2.w(b(1.0f));
+                                    oc0Var2.w(b(1.0f));
                                 } else {
                                     c11 = 1;
                                 }
-                                mc0 mc0Var3 = mc0VarArr[c12];
+                                oc0 oc0Var3 = oc0VarArr[c12];
                                 Bitmap bitmap2 = this.L;
-                                int[] iArr2 = mc0Var3.a;
+                                int[] iArr2 = oc0Var3.a;
                                 iArr2[0] = g10;
                                 iArr2[c11] = i18;
                                 iArr2[2] = i19;
                                 iArr2[c10] = i20;
-                                Utilities.generateGradient(bitmap2, mc0Var3.i, mc0Var3.e.getInterpolation(mc0Var3.h), iArr2);
+                                Utilities.generateGradient(bitmap2, oc0Var3.i, oc0Var3.e.getInterpolation(oc0Var3.h), iArr2);
                                 this.M.setLocalMatrix(this.k);
                             }
                             BitmapShader bitmapShader = this.M;
@@ -691,16 +691,16 @@ public class d5 extends Drawable {
                             this.h = i20;
                         } else if (i18 == 0 && (this.a == null || i16 != this.b || this.e != g10 || this.f != i18 || this.g != i19 || this.h != i20 || this.i != z12)) {
                             if (i19 != 0 && z12) {
-                                if (mc0VarArr[c12] == null) {
-                                    mc0 mc0Var4 = new mc0();
-                                    mc0VarArr[c12] = mc0Var4;
+                                if (oc0VarArr[c12] == null) {
+                                    oc0 oc0Var4 = new oc0();
+                                    oc0VarArr[c12] = oc0Var4;
                                     if (i22 != 2) {
-                                        mc0Var4.t = true;
+                                        oc0Var4.t = true;
                                     }
-                                    mc0Var4.w(b(1.0f));
+                                    oc0Var4.w(b(1.0f));
                                 }
-                                mc0VarArr[c12].n(g10, i18, i19, i20);
-                                this.a = mc0VarArr[c12].v;
+                                oc0VarArr[c12].n(g10, i18, i19, i20);
+                                this.a = oc0VarArr[c12].v;
                             } else if (i19 == 0) {
                                 this.a = new LinearGradient(0.0f, i17, 0.0f, i16, new int[]{i18, g10}, (float[]) null, Shader.TileMode.CLAMP);
                             } else if (i20 != 0) {
@@ -724,7 +724,7 @@ public class d5 extends Drawable {
                         }
                         if (this.a instanceof BitmapShader) {
                             i21 = 0;
-                            mc0VarArr[c12].setBounds(0, i17, i11, i16 - i13);
+                            oc0VarArr[c12].setBounds(0, i17, i11, i16 - i13);
                         } else {
                             i21 = 0;
                         }
@@ -769,7 +769,7 @@ public class d5 extends Drawable {
         if (!z162) {
         }
         z13 = this.J;
-        mc0[] mc0VarArr2 = Q;
+        oc0[] oc0VarArr2 = Q;
         if (z13) {
         }
         c10 = 3;

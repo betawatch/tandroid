@@ -10,9 +10,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x1 implements ad0, org.telegram.ui.ActionBar.z1, d5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a {
+public final /* synthetic */ class x1 implements cd0, org.telegram.ui.ActionBar.z1, d5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a {
     public final /* synthetic */ int a;
 
     public /* synthetic */ x1(int i10) {
@@ -43,11 +43,11 @@ public final /* synthetic */ class x1 implements ad0, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Drawable drawable = imageReceiver.getDrawable();
-        if (drawable instanceof ij0) {
-            ij0 ij0Var = (ij0) drawable;
-            ij0Var.P(0);
-            ij0Var.stop();
-            ij0Var.T(0.0f, false);
+        if (drawable instanceof kj0) {
+            kj0 kj0Var = (kj0) drawable;
+            kj0Var.P(0);
+            kj0Var.stop();
+            kj0Var.T(0.0f, false);
         }
     }
 
@@ -71,7 +71,7 @@ public final /* synthetic */ class x1 implements ad0, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.ui.Components.ad0
+    @Override // org.telegram.ui.Components.cd0
     public String j(int i10) {
         switch (this.a) {
             case 0:
@@ -185,7 +185,7 @@ public final /* synthetic */ class x1 implements ad0, org.telegram.ui.ActionBar.
             case 26:
                 return CheckBoxBase.I;
             default:
-                int i10 = lz.O2;
+                int i10 = mz.O2;
                 return 0;
         }
     }

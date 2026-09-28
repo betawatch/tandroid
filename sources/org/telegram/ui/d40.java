@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class d40 extends org.telegram.ui.Components.ku {
+public final class d40 extends org.telegram.ui.Components.lu {
     public final /* synthetic */ d60 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -28,11 +28,11 @@ public final class d40 extends org.telegram.ui.Components.ku {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void f() {
         ViewGroup viewGroup;
         super.f();
-        org.telegram.ui.Components.lz emojiView = getEmojiView();
+        org.telegram.ui.Components.mz emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
             emojiView.w2 = false;
@@ -53,7 +53,7 @@ public final class d40 extends org.telegram.ui.Components.ku {
         }
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void p() {
         ph.i iVar = this.V.C1;
         int max = this.e ? Math.max(0, getEmojiPadding()) : this.N ? Math.max(0, getKeyboardHeight()) : 0;
@@ -64,7 +64,7 @@ public final class d40 extends org.telegram.ui.Components.ku {
         }
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void y() {
         ViewGroup viewGroup;
         viewGroup = ((org.telegram.ui.ActionBar.e3) this.V).containerView;

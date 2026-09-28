@@ -12,10 +12,10 @@ import b2.x1;
 import b2.y0;
 import b2.z0;
 import java.util.List;
-import org.telegram.ui.Components.b60;
-import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.d60;
+import org.telegram.ui.Components.u71;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class i0 implements z0 {
     public final /* synthetic */ int a;
@@ -61,8 +61,8 @@ public final class i0 implements z0 {
         switch (this.a) {
             case 0:
                 s0 s0Var = (s0) this.b;
-                if (s0Var.V == 5) {
-                    s0Var.w(z10);
+                if (s0Var.W == 5) {
+                    s0Var.x(z10);
                     break;
                 }
                 break;
@@ -105,10 +105,10 @@ public final class i0 implements z0 {
         switch (this.a) {
             case 0:
                 s0 s0Var = (s0) this.b;
-                s0Var.l.b("preview playback state=" + i10);
-                if (s0Var.V == 5 && i10 == 4 && (f0Var = s0Var.R) != null) {
-                    f0Var.W0(5, s0Var.F);
-                    s0Var.R.i();
+                s0Var.m.b("preview playback state=" + i10);
+                if (s0Var.W == 5 && i10 == 4 && (f0Var = s0Var.S) != null) {
+                    f0Var.W0(5, s0Var.G);
+                    s0Var.S.i();
                     break;
                 }
                 break;
@@ -125,8 +125,8 @@ public final class i0 implements z0 {
         switch (this.a) {
             case 0:
                 s0 s0Var = (s0) this.b;
-                s0Var.l.b("preview player error: code=" + u0Var.a);
-                s0Var.g(u0Var);
+                s0Var.m.b("preview player error: code=" + u0Var.a);
+                s0Var.h(u0Var);
                 break;
         }
     }
@@ -142,11 +142,11 @@ public final class i0 implements z0 {
             case 0:
                 break;
             default:
-                s71 s71Var = (s71) this.b;
-                if (!s71Var.H && i10 == 3) {
-                    s71Var.H = true;
-                    if (s71Var.G && s71Var.I) {
-                        s71Var.C();
+                u71 u71Var = (u71) this.b;
+                if (!u71Var.H && i10 == 3) {
+                    u71Var.H = true;
+                    if (u71Var.G && u71Var.I) {
+                        u71Var.C();
                         break;
                     }
                 }
@@ -169,8 +169,8 @@ public final class i0 implements z0 {
         switch (this.a) {
             case 0:
                 s0 s0Var = (s0) this.b;
-                if (s0Var.V == 5) {
-                    b60.l((b60) s0Var.c.a);
+                if (s0Var.W == 5) {
+                    d60.l((d60) s0Var.d.a);
                     break;
                 }
                 break;

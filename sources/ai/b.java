@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -249,9 +249,9 @@ public final class b extends AnimatorListenerAdapter {
             case 9:
                 super.onAnimationStart(animator);
                 p9 p9Var = (p9) this.b;
-                ij0 ij0Var = ((o9) p9Var.a.get(p9Var.d)).c;
-                ij0Var.L = 2;
-                ij0Var.start();
+                kj0 kj0Var = ((o9) p9Var.a.get(p9Var.d)).c;
+                kj0Var.L = 2;
+                kj0Var.start();
                 break;
             case 29:
                 ((org.telegram.ui.q4) this.b).setVisibility(0);

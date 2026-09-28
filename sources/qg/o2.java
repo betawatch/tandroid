@@ -11,13 +11,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.wv0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class o2 extends j {
     public final TLRPC.Document q0;
@@ -25,11 +25,11 @@ public class o2 extends j {
     public final int s0;
     public boolean t0;
     public final e6 u0;
-    public final uv0 v0;
+    public final wv0 v0;
     public final ai.f0 w0;
     public final ImageReceiver x0;
 
-    public o2(Context context, PointF pointF, float f7, float f10, uv0 uv0Var, TLRPC.Document document, Object obj) {
+    public o2(Context context, PointF pointF, float f7, float f10, wv0 wv0Var, TLRPC.Document document, Object obj) {
         super(context, pointF);
         this.s0 = -1;
         int i10 = 0;
@@ -38,7 +38,7 @@ public class o2 extends j {
         setRotation(f7);
         setScale(f10);
         this.q0 = document;
-        this.v0 = uv0Var;
+        this.v0 = wv0Var;
         this.r0 = obj;
         while (true) {
             if (i10 >= document.attributes.size()) {
@@ -57,7 +57,7 @@ public class o2 extends j {
         ai.f0 f0Var = new ai.f0(this, context);
         this.w0 = f0Var;
         addView(f0Var, y5.c(-1.0f, -1));
-        this.u0 = new e6(f0Var, 0L, 500L, rr.h);
+        this.u0 = new e6(f0Var, 0L, 500L, sr.h);
         this.x0.setAspectFit(true);
         this.x0.setInvalidateAll(true);
         this.x0.setParentView(f0Var);
@@ -77,13 +77,13 @@ public class o2 extends j {
         return this.s0;
     }
 
-    public uv0 getBaseSize() {
+    public wv0 getBaseSize() {
         return this.v0;
     }
 
     public long getDuration() {
         ImageReceiver imageReceiver = this.x0;
-        ij0 lottieAnimation = imageReceiver.getLottieAnimation();
+        kj0 lottieAnimation = imageReceiver.getLottieAnimation();
         if (lottieAnimation != null) {
             return lottieAnimation.r();
         }
@@ -98,16 +98,16 @@ public class o2 extends j {
     }
 
     @Override // qg.j
-    public sk0 getSelectionBounds() {
+    public uk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new sk0();
+            return new uk0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.5f) * getMeasuredWidth();
         float f7 = scale / 2.0f;
         float f10 = scale * scaleX;
-        return new sk0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
+        return new uk0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
     }
 
     public TLRPC.Document getSticker() {
@@ -116,9 +116,9 @@ public class o2 extends j {
 
     @Override // qg.j
     public final void k() {
-        uv0 uv0Var = this.v0;
-        float f7 = uv0Var.a / 2.0f;
-        float f10 = uv0Var.b / 2.0f;
+        wv0 wv0Var = this.v0;
+        float f7 = wv0Var.a / 2.0f;
+        float f10 = wv0Var.b / 2.0f;
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
         m();
@@ -138,8 +138,8 @@ public class o2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        uv0 uv0Var = this.v0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) uv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) uv0Var.b, TLObject.FLAG_30));
+        wv0 wv0Var = this.v0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) wv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) wv0Var.b, TLObject.FLAG_30));
     }
 
     public final void r(boolean z10) {
@@ -158,6 +158,6 @@ public class o2 extends j {
         }
     }
 
-    public void q(ij0 ij0Var) {
+    public void q(kj0 kj0Var) {
     }
 }

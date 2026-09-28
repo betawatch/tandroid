@@ -10,9 +10,9 @@ import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class m0 extends Visibility {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class m0 extends Visibility {
                 }
                 AnimatorSet animatorSet = new AnimatorSet();
                 animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
-                animatorSet.setInterpolator(rr.f);
+                animatorSet.setInterpolator(sr.f);
                 return animatorSet;
             case 1:
                 if (!(view instanceof t0)) {
@@ -38,12 +38,12 @@ public final class m0 extends Visibility {
                 }
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
-                animatorSet2.setInterpolator(rr.f);
+                animatorSet2.setInterpolator(sr.f);
                 return animatorSet2;
             case 2:
                 AnimatorSet animatorSet3 = new AnimatorSet();
                 animatorSet3.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
-                animatorSet3.setInterpolator(rr.f);
+                animatorSet3.setInterpolator(sr.f);
                 return animatorSet3;
             case 3:
                 AnimatorSet animatorSet4 = new AnimatorSet();
@@ -51,7 +51,7 @@ public final class m0 extends Visibility {
                 view.setScaleY(0.6f);
                 view.setScaleX(0.6f);
                 animatorSet4.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.6f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.6f, 1.0f));
-                animatorSet4.setInterpolator(rr.k);
+                animatorSet4.setInterpolator(sr.k);
                 return animatorSet4;
             case 4:
                 ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(100.0f), 0.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, 0.0f, 1.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, 0.0f, 1.0f));
@@ -71,7 +71,7 @@ public final class m0 extends Visibility {
             default:
                 AnimatorSet animatorSet5 = new AnimatorSet();
                 animatorSet5.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(20.0f), 0.0f));
-                animatorSet5.setInterpolator(rr.f);
+                animatorSet5.setInterpolator(sr.f);
                 return animatorSet5;
         }
     }
@@ -85,7 +85,7 @@ public final class m0 extends Visibility {
                 }
                 AnimatorSet animatorSet = new AnimatorSet();
                 animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
-                animatorSet.setInterpolator(rr.f);
+                animatorSet.setInterpolator(sr.f);
                 return animatorSet;
             case 1:
                 if (!(view instanceof t0)) {
@@ -93,12 +93,12 @@ public final class m0 extends Visibility {
                 }
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
-                animatorSet2.setInterpolator(rr.f);
+                animatorSet2.setInterpolator(sr.f);
                 return animatorSet2;
             case 2:
                 AnimatorSet animatorSet3 = new AnimatorSet();
                 animatorSet3.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
-                animatorSet3.setInterpolator(rr.f);
+                animatorSet3.setInterpolator(sr.f);
                 return animatorSet3;
             case 3:
                 AnimatorSet animatorSet4 = new AnimatorSet();
@@ -106,14 +106,14 @@ public final class m0 extends Visibility {
                     ((org.telegram.ui.Components.voip.h2) view).d = true;
                 }
                 animatorSet4.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.7f, 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 1.0f, 0.6f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.6f));
-                animatorSet4.setInterpolator(rr.f);
+                animatorSet4.setInterpolator(sr.f);
                 return animatorSet4;
             case 4:
                 return ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_Y, view.getTranslationY(), AndroidUtilities.dp(100.0f)), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, view.getScaleY(), 0.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, view.getScaleX(), 0.0f));
             default:
                 AnimatorSet animatorSet5 = new AnimatorSet();
                 animatorSet5.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, 0.0f, -AndroidUtilities.dp(20.0f)));
-                animatorSet5.setInterpolator(rr.f);
+                animatorSet5.setInterpolator(sr.f);
                 return animatorSet5;
         }
     }

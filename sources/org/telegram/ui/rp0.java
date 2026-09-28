@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class rp0 extends FrameLayout {
     public final RectF E;
@@ -45,7 +45,7 @@ public class rp0 extends FrameLayout {
         this.e = h9Var;
         this.v = new org.telegram.ui.Components.o5(AndroidUtilities.dp(20.0f), 13, this, false);
         this.w = new ai.ea(this);
-        this.x = new org.telegram.ui.Components.e6(this, 320L, org.telegram.ui.Components.rr.h);
+        this.x = new org.telegram.ui.Components.e6(this, 320L, org.telegram.ui.Components.sr.h);
         this.E = new RectF();
         this.b = i10;
         this.a = d6Var;

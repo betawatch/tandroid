@@ -2,10 +2,10 @@ package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
 import android.view.ViewTreeObserver;
-import org.telegram.ui.Components.q81;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class t1 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ float a;
@@ -43,7 +43,7 @@ public final class t1 implements ViewTreeObserver.OnPreDrawListener {
         v1Var.setScaleX(0.23f);
         v1Var.setScaleY(0.23f);
         v1Var.animate().setListener(null).cancel();
-        v1Var.animate().setListener(new q81(this, 8)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(rr.f).start();
+        v1Var.animate().setListener(new s81(this, 8)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(sr.f).start();
         return false;
     }
 }

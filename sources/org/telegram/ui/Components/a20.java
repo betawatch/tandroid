@@ -1,36 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.transition.Transition;
+import android.graphics.Paint;
+import android.graphics.Path;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class a20 implements Transition.TransitionListener {
-    public final /* synthetic */ c20 a;
+public final class a20 {
+    public z10[] a;
+    public z10 b;
+    public z10 c;
+    public z10 d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public long j;
+    public float k;
+    public ArrayList l;
+    public Paint m;
+    public Path n;
 
-    public a20(c20 c20Var) {
-        this.a = c20Var;
+    public final void a(float f7) {
+        this.g = f7;
+        float f10 = this.e;
+        this.h = (f7 - f10) / 250.0f;
+        this.i = (f7 - f10) / 120.0f;
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionCancel(Transition transition) {
-        this.a.E.unlock();
+    public final void b(int i10, boolean z10) {
+        z10 z10Var = this.b;
+        if (z10Var == null || z10Var.i != i10) {
+            if (VoIPService.getSharedInstance() == null && this.b == null) {
+                this.b = this.d;
+                return;
+            }
+            z10 z10Var2 = z10 ? this.b : null;
+            this.c = z10Var2;
+            this.b = this.a[i10];
+            if (z10Var2 != null) {
+                this.k = 0.0f;
+            } else {
+                this.k = 1.0f;
+            }
+        }
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionEnd(Transition transition) {
-        this.a.E.unlock();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionStart(Transition transition) {
-        this.a.E.lock();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionPause(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionResume(Transition transition) {
+    public final void c(boolean z10) {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null) {
+            int callState = sharedInstance.getCallState();
+            if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+                b(2, z10);
+                return;
+            }
+            ChatObject.Call call = sharedInstance.groupCall;
+            if (call == null) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z10);
+                return;
+            }
+            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
+            if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z10);
+            } else {
+                sharedInstance.setMicMute(true, false, false);
+                b(3, z10);
+            }
+        }
     }
 }

@@ -1,37 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class l21 extends TextView {
-    public View a;
-    public ViewPropertyAnimator b;
-    public boolean c;
-    public wq0 d;
-
-    public final void a() {
-        if (this.a == null) {
-            return;
-        }
-        View view = (View) getParent();
-        int i10 = 0;
-        int i11 = 0;
-        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
-            i11 += view2.getTop();
-            i10 += view2.getLeft();
-        }
-        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
-        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
-        setTranslationY(i11 - getMeasuredHeight());
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        a();
-    }
+public final class l21 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
 }

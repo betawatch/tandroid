@@ -8,7 +8,7 @@ import android.util.Property;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class wl extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -50,7 +50,7 @@ public final class wl extends AnimatorListenerAdapter {
                 return;
             }
             animatorSetArr[1] = new AnimatorSet();
-            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.rr.h);
+            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.sr.h);
             animatorSetArr[1].setDuration(360L);
             ArrayList arrayList = new ArrayList();
             if (z11) {

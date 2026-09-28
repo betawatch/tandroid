@@ -32,7 +32,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import u2.b1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] N1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -234,16 +234,16 @@ public final class n extends r2.r {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x0740, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x0741, code lost:
     
         if (r0.equals("ELUGA_Ray_X") == false) goto L101;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x08ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x08cb, code lost:
     
         if (r13.equals("JSN-L21") == false) goto L664;
      */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008b A[FALL_THROUGH] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008c A[FALL_THROUGH] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

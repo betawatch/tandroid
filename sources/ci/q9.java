@@ -19,8 +19,8 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.or;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.d60;
@@ -28,9 +28,9 @@ import org.telegram.ui.mg1;
 import org.telegram.ui.qy;
 import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q9 implements org.telegram.ui.ActionBar.z1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, ll0, MessagesController.IsInChatCheckedCallback, t5.b, s5.f, pa.a, mg1 {
+public final /* synthetic */ class q9 implements org.telegram.ui.ActionBar.z1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, nl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.f, pa.a, mg1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -69,12 +69,12 @@ public final /* synthetic */ class q9 implements org.telegram.ui.ActionBar.z1, C
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         ProfileActivity.b0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -136,7 +136,7 @@ public final /* synthetic */ class q9 implements org.telegram.ui.ActionBar.z1, C
                 y9Var.x.K = true;
                 break;
             case 3:
-                nr.Q((nr) this.c, (d) this.d, this.b);
+                or.Q((or) this.c, (d) this.d, this.b);
                 break;
             default:
                 d60 d60Var = (d60) this.c;
@@ -184,7 +184,7 @@ public final /* synthetic */ class q9 implements org.telegram.ui.ActionBar.z1, C
         this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

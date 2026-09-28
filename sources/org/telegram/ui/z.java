@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -159,26 +159,26 @@ public final /* synthetic */ class z implements Utilities.Callback {
                     if (emojiGameInfo instanceof TLRPC.TL_emojiGameDiceInfo) {
                         long j3 = ((TLRPC.TL_emojiGameDiceInfo) emojiGameInfo).prev_stake;
                         org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(wnVar2.getContext(), wnVar2.getResourceProvider());
-                        org.telegram.ui.Components.lj0 lj0Var = ybVar.a;
-                        lj0Var.setScaleX(1.25f);
-                        lj0Var.setScaleY(1.25f);
+                        org.telegram.ui.Components.nj0 nj0Var = ybVar.a;
+                        nj0Var.setScaleX(1.25f);
+                        nj0Var.setScaleY(1.25f);
                         int i17 = 2;
                         if (diceValue == 1) {
-                            lj0Var.setImageResource(R.drawable.dice1);
+                            nj0Var.setImageResource(R.drawable.dice1);
                         } else if (diceValue == 2) {
-                            lj0Var.setImageResource(R.drawable.dice2);
+                            nj0Var.setImageResource(R.drawable.dice2);
                         } else if (diceValue == 3) {
-                            lj0Var.setImageResource(R.drawable.dice3);
+                            nj0Var.setImageResource(R.drawable.dice3);
                         } else if (diceValue == 4) {
-                            lj0Var.setImageResource(R.drawable.dice4);
+                            nj0Var.setImageResource(R.drawable.dice4);
                         } else if (diceValue == 5) {
-                            lj0Var.setImageResource(R.drawable.dice5);
+                            nj0Var.setImageResource(R.drawable.dice5);
                         } else if (diceValue == 6) {
-                            lj0Var.setImageResource(R.drawable.dice6);
+                            nj0Var.setImageResource(R.drawable.dice6);
                         } else {
-                            lj0Var.setScaleX(0.8f);
-                            lj0Var.setScaleY(0.8f);
-                            lj0Var.setImageDrawable(Emoji.getEmojiBigDrawable("🎲"));
+                            nj0Var.setScaleX(0.8f);
+                            nj0Var.setScaleY(0.8f);
+                            nj0Var.setImageDrawable(Emoji.getEmojiBigDrawable("🎲"));
                         }
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.StakeDiceToast));
                         spannableStringBuilder2.append((CharSequence) yh.w7.M0(j3));
@@ -280,7 +280,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
             case 10:
                 zb0 zb0Var = (zb0) obj4;
                 TLRPC.User[] userArr = (TLRPC.User[]) obj3;
-                org.telegram.ui.Components.vn0 vn0Var = (org.telegram.ui.Components.vn0) obj2;
+                org.telegram.ui.Components.xn0 xn0Var = (org.telegram.ui.Components.xn0) obj2;
                 Long l12 = (Long) obj;
                 TLRPC.User user = l12 == null ? null : MessagesController.getInstance(zb0Var.b).getUser(l12);
                 userArr[0] = user;
@@ -289,7 +289,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                     org.telegram.messenger.ok.p(R.string.NoUsernameFound, zb0.b(), null);
                     break;
                 } else {
-                    vn0Var.run();
+                    xn0Var.run();
                     break;
                 }
             case 11:

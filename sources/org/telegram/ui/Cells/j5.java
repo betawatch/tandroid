@@ -15,9 +15,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class j5 extends FrameLayout {
     public final TextView a;
@@ -205,7 +205,7 @@ public class j5 extends FrameLayout {
         addView(textView, w7.y5.d(-1, -2.0f, i12, f7, f15, f10, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
         this.b = p6Var;
-        p6Var.b(0.55f, 320L, rr.h);
+        p6Var.b(0.55f, 320L, sr.h);
         int i14 = org.telegram.ui.ActionBar.h6.z6;
         p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i14, d6Var));
         p6Var.setTextSize(AndroidUtilities.dp(13.0f));

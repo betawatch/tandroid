@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class c70 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final class c70 extends AnimatorListenerAdapter {
                 float f7 = this.b ? 1.0f : 0.0f;
                 w61Var.L = f7;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(f7);
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.rr.g.getInterpolation(w61Var.L));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.sr.g.getInterpolation(w61Var.L));
                 int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
                 for (int i10 = 0; i10 < itemsCount; i10++) {
                     float cascade = AndroidUtilities.cascade(w61Var.L, i10, itemsCount, 4.0f);
@@ -251,7 +251,7 @@ public final class c70 extends AnimatorListenerAdapter {
                 break;
             default:
                 zg.b0 b0Var = (zg.b0) this.c;
-                org.telegram.ui.Components.qk0 qk0Var = b0Var.n;
+                org.telegram.ui.Components.sk0 sk0Var = b0Var.n;
                 b0Var.k();
                 b0Var.l();
                 boolean z10 = this.b;
@@ -262,14 +262,14 @@ public final class c70 extends AnimatorListenerAdapter {
                     b0Var.k = true;
                     b0Var.a.invalidate();
                 }
-                qk0Var.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
+                sk0Var.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
                 if (!z10) {
-                    qk0Var.setImportantForAccessibility(0);
-                    qk0Var.setSkipDraw(false);
+                    sk0Var.setImportantForAccessibility(0);
+                    sk0Var.setSkipDraw(false);
                     b0Var.f();
                     Runtime.getRuntime().gc();
                     int i11 = b0Var.y;
-                    qk0Var.setCustomEmojiReactionsBackground((i11 == 4 || i11 == 5) ? false : true);
+                    sk0Var.setCustomEmojiReactionsBackground((i11 == 4 || i11 == 5) ? false : true);
                 }
                 b0Var.C = false;
                 break;

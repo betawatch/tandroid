@@ -5,7 +5,7 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class x51 extends c61 {
     public final /* synthetic */ int f3;
@@ -49,16 +49,16 @@ public final class x51 extends c61 {
                         }
                         int keyAt = sparseIntArray.keyAt(i13);
                         int valueAt = sparseIntArray.valueAt(i13);
-                        org.telegram.ui.Components.yx yxVar = valueAt >= 0 ? (org.telegram.ui.Components.yx) a71Var.M0.get(valueAt) : null;
-                        if (yxVar != null) {
-                            boolean z10 = yxVar.h;
-                            int size = yxVar.c.size();
+                        org.telegram.ui.Components.zx zxVar = valueAt >= 0 ? (org.telegram.ui.Components.zx) a71Var.M0.get(valueAt) : null;
+                        if (zxVar != null) {
+                            boolean z10 = zxVar.h;
+                            int size = zxVar.c.size();
                             if (!z10) {
                                 size = Math.min(24, size);
                             }
                             if (I0 > keyAt && I0 <= keyAt + 1 + size) {
-                                org.telegram.ui.Components.dw dwVar = a71Var.d0;
-                                dwVar.j(((dwVar.E == null || !dwVar.b0) ? 0 : 1) + (dwVar.y != null ? 1 : 0) + valueAt, true);
+                                org.telegram.ui.Components.ew ewVar = a71Var.d0;
+                                ewVar.j(((ewVar.E == null || !ewVar.b0) ? 0 : 1) + (ewVar.y != null ? 1 : 0) + valueAt, true);
                             }
                         }
                         i13++;

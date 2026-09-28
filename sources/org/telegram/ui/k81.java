@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class k81 extends org.telegram.ui.Components.vl0 {
+public final class k81 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ SessionsActivity d;
 
@@ -32,7 +32,7 @@ public final class k81 extends org.telegram.ui.Components.vl0 {
         C(true);
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10;
         int i11;
@@ -279,12 +279,12 @@ public final class k81 extends org.telegram.ui.Components.vl0 {
                 v6Var.s = true;
                 Drawable mutate = ApplicationLoader.applicationContext.getDrawable(AndroidUtilities.isTablet() ? R.drawable.device_tablet_android : R.drawable.device_phone_android).mutate();
                 mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.J7, false), PorterDuff.Mode.SRC_IN));
-                org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.R7, false)), mutate);
+                org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.R7, false)), mutate);
                 org.telegram.ui.Components.w9 w9Var = v6Var.f;
                 if (w9Var != null) {
-                    w9Var.setImageDrawable(qqVar);
+                    w9Var.setImageDrawable(rqVar);
                 } else {
-                    v6Var.h.setImageDrawable(qqVar);
+                    v6Var.h.setImageDrawable(rqVar);
                 }
                 v6Var.invalidate();
                 return;
@@ -465,6 +465,6 @@ public final class k81 extends org.telegram.ui.Components.vl0 {
         } else {
             frameLayout = new org.telegram.ui.Cells.m4(context);
         }
-        return new org.telegram.ui.Components.gl0(frameLayout);
+        return new org.telegram.ui.Components.il0(frameLayout);
     }
 }

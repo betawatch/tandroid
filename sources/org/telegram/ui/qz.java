@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qz implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class qz implements View.OnClickListener {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredWidth(), 0), View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredHeight(), 0));
                         org.telegram.ui.ActionBar.m1 m1Var = new org.telegram.ui.ActionBar.m1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                         wzVar2.x = m1Var;
-                        m1Var.setOnDismissListener(new org.telegram.ui.Components.c90(wzVar2, r6Var, overlayContainerView, biVar, 1));
+                        m1Var.setOnDismissListener(new org.telegram.ui.Components.e90(wzVar2, r6Var, overlayContainerView, biVar, 1));
                         wzVar2.x.setOutsideTouchable(true);
                         wzVar2.x.setFocusable(true);
                         wzVar2.x.setBackgroundDrawable(new ColorDrawable(0));
@@ -177,9 +177,9 @@ public final /* synthetic */ class qz implements View.OnClickListener {
                     m1Var3.d(true);
                 }
                 if (wzVar6.s != null) {
-                    org.telegram.ui.Components.ui0 ui0Var = new org.telegram.ui.Components.ui0(wzVar6.getContext(), LocaleController.getString(R.string.InviteByQRCode), wzVar6.s, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
-                    ui0Var.m(R.raw.qr_code_logo);
-                    ui0Var.show();
+                    org.telegram.ui.Components.wi0 wi0Var = new org.telegram.ui.Components.wi0(wzVar6.getContext(), LocaleController.getString(R.string.InviteByQRCode), wzVar6.s, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
+                    wi0Var.m(R.raw.qr_code_logo);
+                    wi0Var.show();
                     break;
                 }
                 break;

@@ -29,9 +29,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ed0;
-import org.telegram.ui.Components.on0;
+import org.telegram.ui.Components.gd0;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.qn0;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
@@ -44,7 +44,7 @@ import org.telegram.ui.g50;
 import org.telegram.ui.kh;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d2 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.z1, e2.m, m4.j0, e2.h, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
@@ -144,15 +144,15 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                 }
                 break;
             case 9:
-                on0 on0Var = (on0) this.c;
+                qn0 qn0Var = (qn0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj2 = on0Var.getText().toString();
+                String obj2 = qn0Var.getText().toString();
                 if (obj2.length() <= 12) {
                     MessagesController.getInstance(this.b).renameSavedReactionTag(zg.o0.d(reaction), obj2);
                     a2Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.shakeView(on0Var);
+                    AndroidUtilities.shakeView(qn0Var);
                     break;
                 }
             case 11:
@@ -185,7 +185,7 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                 ((cd0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
                 break;
             case 14:
-                PasscodeActivity.U((PasscodeActivity) this.c, (ed0) this.d, this.b);
+                PasscodeActivity.U((PasscodeActivity) this.c, (gd0) this.d, this.b);
                 break;
             case 16:
                 SessionsActivity.X((SessionsActivity) this.c, this.b, (boolean[]) this.d);

@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class zb extends og.b {
     public int d = -1;
@@ -28,7 +28,7 @@ public final class zb extends og.b {
         this.f = bcVar;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return ((ac) this.f.x.get(c1Var.b())).b;
     }
@@ -109,7 +109,7 @@ public final class zb extends og.b {
             }
         }
         if (i13 == 3) {
-            ((org.telegram.ui.Components.g90) view).setLink(((ac) arrayList.get(i10)).c);
+            ((org.telegram.ui.Components.i90) view).setLink(((ac) arrayList.get(i10)).c);
             return;
         }
         if (i13 == 11) {
@@ -164,13 +164,13 @@ public final class zb extends og.b {
                 view = new org.telegram.ui.Cells.b7(viewGroup.getContext(), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false), 0);
                 break;
             case 3:
-                org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(bcVar.getContext(), bcVar.c, null, false, false);
-                g90Var.d.setVisibility(8);
-                g90Var.a.setGravity(17);
-                g90Var.h.setVisibility(8);
-                g90Var.v.setVisibility(8);
-                g90Var.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(24.0f));
-                view = g90Var;
+                org.telegram.ui.Components.i90 i90Var = new org.telegram.ui.Components.i90(bcVar.getContext(), bcVar.c, null, false, false);
+                i90Var.d.setVisibility(8);
+                i90Var.a.setGravity(17);
+                i90Var.h.setVisibility(8);
+                i90Var.v.setVisibility(8);
+                i90Var.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(24.0f));
+                view = i90Var;
                 break;
             case 4:
                 LimitPreviewView limitPreviewView = new LimitPreviewView(bcVar.getContext(), R.drawable.filled_limit_boost, 0, bcVar.e, 0);

@@ -26,13 +26,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public TL_iv.pageBlockChannel E;
     public final p70 a;
     public final g4 b;
-    public final org.telegram.ui.Components.uq c;
+    public final org.telegram.ui.Components.vq c;
     public final TextView d;
     public final ImageView e;
     public int f;
@@ -65,9 +65,9 @@ public final class d1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         imageView.setImageResource(R.drawable.list_check);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         addView(imageView, w7.y5.e(39, 39, 53));
-        org.telegram.ui.Components.uq uqVar = new org.telegram.ui.Components.uq(context, 0);
-        this.c = uqVar;
-        addView(uqVar, w7.y5.e(39, 39, 53));
+        org.telegram.ui.Components.vq vqVar = new org.telegram.ui.Components.vq(context, 0);
+        this.c = vqVar;
+        addView(vqVar, w7.y5.e(39, 39, 53));
     }
 
     public final void a(int i10, boolean z10) {
@@ -77,15 +77,15 @@ public final class d1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         }
         this.f = i10;
         ImageView imageView = this.e;
-        org.telegram.ui.Components.uq uqVar = this.c;
+        org.telegram.ui.Components.vq vqVar = this.c;
         TextView textView = this.d;
         if (!z10) {
             textView.setAlpha(i10 == 0 ? 1.0f : 0.0f);
             textView.setScaleX(i10 == 0 ? 1.0f : 0.1f);
             textView.setScaleY(i10 == 0 ? 1.0f : 0.1f);
-            uqVar.setAlpha(i10 == 1 ? 1.0f : 0.0f);
-            uqVar.setScaleX(i10 == 1 ? 1.0f : 0.1f);
-            uqVar.setScaleY(i10 == 1 ? 1.0f : 0.1f);
+            vqVar.setAlpha(i10 == 1 ? 1.0f : 0.0f);
+            vqVar.setScaleX(i10 == 1 ? 1.0f : 0.1f);
+            vqVar.setScaleY(i10 == 1 ? 1.0f : 0.1f);
             imageView.setAlpha(i10 == 2 ? 1.0f : 0.0f);
             imageView.setScaleX(i10 == 2 ? 1.0f : 0.1f);
             imageView.setScaleY(i10 == 2 ? 1.0f : 0.1f);
@@ -101,7 +101,7 @@ public final class d1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, fArr2);
         float f7 = i10 == 0 ? 1.0f : 0.1f;
         Property property3 = View.SCALE_Y;
-        animatorSet2.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, f7), ObjectAnimator.ofFloat(uqVar, (Property<org.telegram.ui.Components.uq, Float>) property, i10 == 1 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(uqVar, (Property<org.telegram.ui.Components.uq, Float>) property2, i10 == 1 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(uqVar, (Property<org.telegram.ui.Components.uq, Float>) property3, i10 == 1 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, i10 == 2 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, i10 == 2 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, i10 == 2 ? 1.0f : 0.1f));
+        animatorSet2.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, f7), ObjectAnimator.ofFloat(vqVar, (Property<org.telegram.ui.Components.vq, Float>) property, i10 == 1 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(vqVar, (Property<org.telegram.ui.Components.vq, Float>) property2, i10 == 1 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(vqVar, (Property<org.telegram.ui.Components.vq, Float>) property3, i10 == 1 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, i10 == 2 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, i10 == 2 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, i10 == 2 ? 1.0f : 0.1f));
         this.x.setDuration(150L);
         this.x.start();
     }
@@ -194,7 +194,7 @@ public final class d1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             String str = pageblockchannel.channel.title;
             int dp = (size - AndroidUtilities.dp(52.0f)) - this.n;
             TL_iv.pageBlockChannel pageblockchannel2 = this.E;
-            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.uw0.a;
+            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.ww0.a;
             this.h = i4.p(this.a, this, str, null, dp, this.s, pageblockchannel2, alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL, 1, this.b);
             int i12 = this.r;
             g4 g4Var = this.b;

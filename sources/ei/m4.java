@@ -2,15 +2,15 @@ package ei;
 
 import android.view.ViewGroup;
 import java.util.LinkedList;
-import org.telegram.ui.Components.ce0;
+import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.hh;
 import org.telegram.ui.Components.hi;
-import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.wi;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements o1.f {
     public final /* synthetic */ int a;
@@ -75,18 +75,18 @@ public final /* synthetic */ class m4 implements o1.f {
                 wiVar.a2(0);
                 break;
             default:
-                ce0 ce0Var = (ce0) this.b;
-                mc0 mc0Var = (mc0) this.c;
-                LinkedList linkedList = ce0Var.M;
-                ce0Var.L = null;
-                mc0Var.D = null;
-                mc0Var.z();
+                ee0 ee0Var = (ee0) this.b;
+                oc0 oc0Var = (oc0) this.c;
+                LinkedList linkedList = ee0Var.M;
+                ee0Var.L = null;
+                oc0Var.D = null;
+                oc0Var.z();
                 if (!z10) {
-                    mc0Var.h = 1.0f;
-                    mc0Var.z();
+                    oc0Var.h = 1.0f;
+                    oc0Var.z();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        ce0Var.N.poll();
+                        ee0Var.N.poll();
                         break;
                     }
                 }

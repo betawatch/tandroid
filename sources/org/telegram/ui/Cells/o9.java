@@ -7,9 +7,9 @@ import android.view.MenuItem;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.zt;
+import org.telegram.ui.Components.au;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class o9 extends ActionMode.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final class o9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onActionItemClicked(actionMode, menuItem);
             default:
-                return ((zt) this.b).onActionItemClicked(actionMode, menuItem);
+                return ((au) this.b).onActionItemClicked(actionMode, menuItem);
         }
     }
 
@@ -43,7 +43,7 @@ public final class o9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onCreateActionMode(actionMode, menu);
             default:
-                return ((zt) this.b).onCreateActionMode(actionMode, menu);
+                return ((au) this.b).onCreateActionMode(actionMode, menu);
         }
     }
 
@@ -59,7 +59,7 @@ public final class o9 extends ActionMode.Callback2 {
                 ((EditTextBoldCursor) this.c).floatingActionMode = null;
                 break;
             default:
-                ((zt) this.b).onDestroyActionMode(actionMode);
+                ((au) this.b).onDestroyActionMode(actionMode);
                 break;
         }
     }
@@ -128,12 +128,12 @@ public final class o9 extends ActionMode.Callback2 {
             case 1:
                 return this.b.onPrepareActionMode(actionMode, menu);
             default:
-                return ((zt) this.b).a.onPrepareActionMode(actionMode, menu);
+                return ((au) this.b).a.onPrepareActionMode(actionMode, menu);
         }
     }
 
-    public o9(zt ztVar, ActionMode.Callback callback) {
-        this.b = ztVar;
+    public o9(au auVar, ActionMode.Callback callback) {
+        this.b = auVar;
         this.c = callback;
     }
 

@@ -1,57 +1,15 @@
 package org.telegram.ui.Components;
 
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dr0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jv0 b;
-
-    public /* synthetic */ dr0(jv0 jv0Var, int i10) {
-        this.a = i10;
-        this.b = jv0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                jv0 jv0Var = this.b;
-                ls lsVar = jv0Var.P0;
-                jv0Var.b2 = (int) lsVar.c(AndroidUtilities.dp(14.0f));
-                zr0 zr0Var = jv0Var.V;
-                if (zr0Var != null) {
-                    zr0Var.setPaddingTop(AndroidUtilities.dp(48.0f) + ((int) lsVar.c(AndroidUtilities.dp(7.0f))));
-                }
-                cu0[] cu0VarArr = jv0Var.k0;
-                if (cu0VarArr != null) {
-                    for (cu0 cu0Var : cu0VarArr) {
-                        if (cu0Var != null) {
-                            int paddingTop = cu0Var.h.getPaddingTop();
-                            is0 is0Var = cu0Var.h;
-                            int paddingLeft = is0Var.getPaddingLeft();
-                            int Z = jv0Var.Z(cu0Var.F);
-                            int paddingRight = cu0Var.h.getPaddingRight();
-                            is0 is0Var2 = cu0Var.h;
-                            int Y = jv0Var.Y(jv0Var.v0());
-                            is0Var2.e3 = Y;
-                            is0Var.setPadding(paddingLeft, Z, paddingRight, Y);
-                            AndroidUtilities.doOnLayout(cu0Var.h, new ld(cu0Var, paddingTop - cu0Var.h.getPaddingTop(), 8));
-                        }
-                    }
-                    break;
-                }
-                break;
-            case 1:
-                jv0 jv0Var2 = this.b;
-                jv0Var2.b1(false);
-                jv0Var2.G.h(true);
-                jv0Var2.a1 = 0;
-                break;
-            default:
-                this.b.k0();
-                break;
-        }
+public final class dr0 extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(300.0f), View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(32.0f)), TLObject.FLAG_31), i11);
     }
 }

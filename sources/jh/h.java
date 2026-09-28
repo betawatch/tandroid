@@ -8,12 +8,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.yq;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements le.e {
     public static final int[] s;
@@ -122,8 +122,8 @@ public final class h extends FrameLayout implements le.e {
         if (aVar != null || z10) {
             if (aVar == null) {
                 int i13 = i10 << 16;
-                le.c cVar = new le.c(i13 | 1, this, i10 == 0 ? rr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
-                le.c cVar2 = new le.c(i13 | 2, this, i10 == 0 ? rr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
+                le.c cVar = new le.c(i13 | 1, this, i10 == 0 ? sr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
+                le.c cVar2 = new le.c(i13 | 2, this, i10 == 0 ? sr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
                 if (i10 == 0) {
                     i11 = 50;
                     i12 = 32;
@@ -154,9 +154,9 @@ public final class h extends FrameLayout implements le.e {
                 }
                 if (i10 == 1) {
                     bVar.d = true;
-                    xq xqVar = bVar.c;
-                    if (xqVar != null) {
-                        xqVar.setReverse(true);
+                    yq yqVar = bVar.c;
+                    if (yqVar != null) {
+                        yqVar.setReverse(true);
                     }
                 }
                 addView(bVar, y5.e(i11, i11 + 8, this.r));

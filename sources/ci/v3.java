@@ -10,12 +10,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.xl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public abstract class v3 extends vl0 {
+public abstract class v3 extends xl0 {
     public boolean d;
     public String f;
     public String h;
@@ -31,7 +31,7 @@ public abstract class v3 extends vl0 {
         this.w = w3Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -112,6 +112,6 @@ public abstract class v3 extends vl0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new gl0(new u3(this.w.getContext(), 0));
+        return new il0(new u3(this.w.getContext(), 0));
     }
 }

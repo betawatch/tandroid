@@ -18,7 +18,7 @@ import org.telegram.ui.n80;
 import org.telegram.ui.qg0;
 import org.telegram.ui.zf0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jb implements Runnable {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class jb implements Runnable {
                             TL_bots.checkUsername checkusername = new TL_bots.checkUsername();
                             checkusername.username = str;
                             dVar.setLoading(true);
-                            iArr[0] = ConnectionsManager.getInstance(i11).sendRequestTyped(checkusername, new a(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.ar
+                            iArr[0] = ConnectionsManager.getInstance(i11).sendRequestTyped(checkusername, new a(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.br
                                 @Override // org.telegram.messenger.Utilities.Callback2
                                 public final void run(Object obj9, Object obj10) {
                                     ci.d dVar2 = ci.d.this;

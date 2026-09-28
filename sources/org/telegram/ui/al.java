@@ -5,9 +5,9 @@ import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class al extends org.telegram.ui.Components.qk0 {
+public final class al extends org.telegram.ui.Components.sk0 {
     public final int[] l1;
     public ValueAnimator m1;
     public boolean n1;
@@ -59,7 +59,7 @@ public final class al extends org.telegram.ui.Components.qk0 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.U0, f7);
         this.m1 = ofFloat;
         ofFloat.addUpdateListener(new c3(this, 6));
-        this.m1.setInterpolator(org.telegram.ui.Components.rr.h);
+        this.m1.setInterpolator(org.telegram.ui.Components.sr.h);
         this.m1.setDuration(420L);
         this.m1.start();
     }

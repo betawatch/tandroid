@@ -36,13 +36,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.c40;
 import vh.n;
 import zg.o0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class c extends ViewGroup implements me.a, NotificationCenter.NotificationCenterDelegate, le.e {
     public static final Rect L = new Rect();
@@ -70,9 +70,9 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
 
     public c(Context context) {
         super(context);
-        rr rrVar = rr.h;
-        this.a = new le.c(0, this, rrVar, 320L, false);
-        this.b = new le.c(1, this, rrVar, 320L, false);
+        sr srVar = sr.h;
+        this.a = new le.c(0, this, srVar, 320L, false);
+        this.b = new le.c(1, this, srVar, 320L, false);
         this.c = new me.b(this);
         Paint paint = new Paint(1);
         this.e = paint;
@@ -412,7 +412,7 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
         }
         this.r = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(name);
-        spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(this.J, 0, spannableStringBuilder.length(), 33);
         o0 o0Var = groupCallMessage.visibleReaction;
         n nVar = this.v;

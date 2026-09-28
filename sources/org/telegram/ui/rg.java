@@ -12,7 +12,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rg implements Runnable {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final /* synthetic */ class rg implements Runnable {
                 if (wnVar.getParentActivity() != null && wnVar.fragmentView != null && wnVar.Y != null && wnVar.Ea == null && wnVar.getMessagesController().getSendPaidMessagesStars(wnVar.a()) <= 0 && (sendButton = wnVar.Y.getSendButton()) != null && wnVar.Y.getEditField() != null && wnVar.Y.getEditField().getText().length() != 0) {
                     SharedConfig.increaseScheduledHintShowed();
                     if (wnVar.i2 == null) {
-                        org.telegram.ui.Components.j40 j40Var = new org.telegram.ui.Components.j40(4, wnVar.getParentActivity(), wnVar.ea, false);
-                        wnVar.i2 = j40Var;
-                        j40Var.a();
+                        org.telegram.ui.Components.l40 l40Var = new org.telegram.ui.Components.l40(4, wnVar.getParentActivity(), wnVar.ea, false);
+                        wnVar.i2 = l40Var;
+                        l40Var.a();
                         wnVar.i2.setAlpha(0.0f);
                         wnVar.i2.setVisibility(4);
                         wnVar.i2.setText(LocaleController.getString(R.string.ScheduledHint));

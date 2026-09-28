@@ -5,9 +5,9 @@ import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.l61;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class w implements TextWatcher {
     public final /* synthetic */ x a;
@@ -23,9 +23,9 @@ public final class w implements TextWatcher {
         if (richMessage != null && richMessage != null) {
             xVar.i0 = null;
             xVar.f0.g(LocaleController.getString(R.string.ArticleAIGenerate), true, true);
-            j61 j61Var = xVar.Z;
-            if (j61Var != null) {
-                j61Var.N(true);
+            l61 l61Var = xVar.Z;
+            if (l61Var != null) {
+                l61Var.N(true);
             }
         }
         xVar.P();

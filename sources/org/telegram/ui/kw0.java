@@ -17,14 +17,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class kw0 extends org.telegram.ui.ActionBar.m2 {
     public final long a;
     public org.telegram.ui.Cells.z7 b;
-    public org.telegram.ui.Components.g90 c;
-    public org.telegram.ui.Components.r61 d;
-    public org.telegram.ui.Components.qr e;
+    public org.telegram.ui.Components.i90 c;
+    public org.telegram.ui.Components.t61 d;
+    public org.telegram.ui.Components.rr e;
     public org.telegram.ui.ActionBar.u0 f;
     public final boolean h;
     public final long n;
@@ -149,7 +149,7 @@ public final class kw0 extends org.telegram.ui.ActionBar.m2 {
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
         int i10 = org.telegram.ui.ActionBar.h6.v8;
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-        this.e = new org.telegram.ui.Components.qr(mutate, new org.telegram.ui.Components.up(org.telegram.ui.ActionBar.h6.w0(null, i10, false)));
+        this.e = new org.telegram.ui.Components.rr(mutate, new org.telegram.ui.Components.vp(org.telegram.ui.ActionBar.h6.w0(null, i10, false)));
         this.f = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.e);
         V(false);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -160,15 +160,15 @@ public final class kw0 extends org.telegram.ui.ActionBar.m2 {
         this.b = z7Var;
         int i11 = org.telegram.ui.ActionBar.h6.d6;
         z7Var.setBackgroundColor(getThemedColor(i11));
-        org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(context, this, null, true, true);
-        this.c = g90Var;
-        g90Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), 0);
+        org.telegram.ui.Components.i90 i90Var = new org.telegram.ui.Components.i90(context, this, null, true, true);
+        this.c = i90Var;
+        i90Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), 0);
         this.c.setBackgroundColor(getThemedColor(i11));
         this.c.b(true);
         this.c.d(0, null, false);
-        org.telegram.ui.Components.r61 r61Var = new org.telegram.ui.Components.r61(context, this.currentAccount, this.classGuid, false, new b5(this, 16), new jw0(this, 2), null, this.resourceProvider);
-        this.d = r61Var;
-        r61Var.p1();
+        org.telegram.ui.Components.t61 t61Var = new org.telegram.ui.Components.t61(context, this.currentAccount, this.classGuid, false, new b5(this, 16), new jw0(this, 2), null, this.resourceProvider);
+        this.d = t61Var;
+        t61Var.p1();
         frameLayout2.addView(this.d, w7.y5.e(-1, -1, 51));
         this.actionBar.setAdaptiveBackground(this.d);
         return this.fragmentView;
@@ -198,13 +198,13 @@ public final class kw0 extends org.telegram.ui.ActionBar.m2 {
 
     @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
-        org.telegram.ui.Components.j61 j61Var;
+        org.telegram.ui.Components.l61 l61Var;
         super.onFragmentCreate();
-        org.telegram.ui.Components.r61 r61Var = this.d;
-        if (r61Var == null || (j61Var = r61Var.Y2) == null) {
+        org.telegram.ui.Components.t61 t61Var = this.d;
+        if (t61Var == null || (l61Var = t61Var.Y2) == null) {
             return true;
         }
-        j61Var.N(false);
+        l61Var.N(false);
         return true;
     }
 }

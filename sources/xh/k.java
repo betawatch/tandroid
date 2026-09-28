@@ -14,24 +14,24 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.w9;
 import w7.y5;
 import yh.w7;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final class k extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final w9 a;
     public final p6 b;
     public final p6 c;
     public final p6 d;
-    public final pq[] e;
+    public final qq[] e;
     public boolean f;
 
     public k(Context context, d6 d6Var) {
         super(context);
-        this.e = new pq[1];
+        this.e = new qq[1];
         setOrientation(0);
         p6 p6Var = new p6(context, false, false, false);
         this.c = p6Var;

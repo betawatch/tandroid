@@ -4,19 +4,19 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ap0 extends org.telegram.ui.Components.u51 {
+public final class ap0 extends org.telegram.ui.Components.w51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.u51.setup(new ap0());
+        org.telegram.ui.Components.w51.setup(new ap0());
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, org.telegram.ui.Components.v51 v51Var, boolean z10, org.telegram.ui.Components.j61 j61Var, org.telegram.ui.Components.r61 r61Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, org.telegram.ui.Components.x51 x51Var, boolean z10, org.telegram.ui.Components.l61 l61Var, org.telegram.ui.Components.t61 t61Var) {
         bp0 bp0Var = (bp0) view;
-        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) v51Var.G;
+        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) x51Var.G;
         xh.k1 k1Var = bp0Var.h;
         xh.f1 f1Var = bp0Var.e;
         bp0Var.a = savedStarGift.gift.id;
@@ -32,11 +32,11 @@ public final class ap0 extends org.telegram.ui.Components.u51 {
             k1Var.b = h;
             k1Var.a.e(9, h, false);
         }
-        bp0Var.b(v51Var.e, false);
+        bp0Var.b(x51Var.e, false);
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, org.telegram.ui.Components.wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, org.telegram.ui.Components.yl0 yl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         return new bp0(context, d6Var, true);
     }
 }

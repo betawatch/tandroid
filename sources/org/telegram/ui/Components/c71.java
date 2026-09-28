@@ -1,18 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class c71 extends ImageReceiver {
-    public final /* synthetic */ d71 a;
+public final class c71 extends e20 {
+    public final ci.h2 J;
+    public final /* synthetic */ d71 K;
 
-    public c71(d71 d71Var) {
-        this.a = d71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c71(d71 d71Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.K = d71Var;
+        ci.h2 h2Var = this.r;
+        this.J = h2Var;
+        h2Var.setImeOptions(268435459);
+        h2Var.setHint(LocaleController.getString(R.string.VoipGroupSearchMembers));
+        h2Var.addTextChangedListener(new ci.i2(this, 14));
+        h2Var.setOnEditorActionListener(new e1(this, 10));
     }
 
-    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.w5
-    public final void invalidate() {
-        this.a.invalidate();
+    @Override // org.telegram.ui.Components.e20
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.K.E(motionEvent, this.J);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

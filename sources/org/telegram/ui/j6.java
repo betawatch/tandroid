@@ -14,14 +14,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class j6 extends FrameLayout {
     public final /* synthetic */ z6 E;
     public final org.telegram.ui.Components.p6 a;
     public final TextView[] b;
     public final RectF c;
-    public final org.telegram.ui.Components.r90 d;
+    public final org.telegram.ui.Components.t90 d;
     public Float e;
     public Float f;
     public final org.telegram.ui.Components.e6 h;
@@ -39,17 +39,17 @@ public final class j6 extends FrameLayout {
         this.E = z6Var;
         this.b = new TextView[3];
         this.c = new RectF();
-        this.d = new org.telegram.ui.Components.r90();
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        this.h = new org.telegram.ui.Components.e6(this, 450L, rrVar);
-        this.n = new org.telegram.ui.Components.e6(this, 450L, rrVar);
-        this.r = new org.telegram.ui.Components.e6(this, 450L, rrVar);
+        this.d = new org.telegram.ui.Components.t90();
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        this.h = new org.telegram.ui.Components.e6(this, 450L, srVar);
+        this.n = new org.telegram.ui.Components.e6(this, 450L, srVar);
+        this.r = new org.telegram.ui.Components.e6(this, 450L, srVar);
         this.s = new Paint(1);
         this.v = new Paint(1);
         this.w = new Paint(1);
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
         this.a = p6Var;
-        p6Var.b(0.35f, 350L, rrVar);
+        p6Var.b(0.35f, 350L, srVar);
         p6Var.setTypeface(AndroidUtilities.bold());
         p6Var.setTextSize(AndroidUtilities.dp(20.0f));
         p6Var.setText(LocaleController.getString(R.string.StorageUsage));
@@ -150,7 +150,7 @@ public final class j6 extends FrameLayout {
         }
         if (!z10) {
             final int i10 = 1;
-            textView.animate().alpha(0.0f).translationY(AndroidUtilities.dp(8.0f)).setListener(new org.telegram.ui.Components.ca(textView)).setInterpolator(org.telegram.ui.Components.rr.h).setDuration(340L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.i6
+            textView.animate().alpha(0.0f).translationY(AndroidUtilities.dp(8.0f)).setListener(new org.telegram.ui.Components.ca(textView)).setInterpolator(org.telegram.ui.Components.sr.h).setDuration(340L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.i6
                 public final /* synthetic */ j6 b;
 
                 {
@@ -177,7 +177,7 @@ public final class j6 extends FrameLayout {
             textView.setTranslationY(AndroidUtilities.dp(8.0f));
         }
         final int i11 = 0;
-        textView.animate().alpha(1.0f).translationY(0.0f).setInterpolator(org.telegram.ui.Components.rr.h).setDuration(340L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.i6
+        textView.animate().alpha(1.0f).translationY(0.0f).setInterpolator(org.telegram.ui.Components.sr.h).setDuration(340L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.i6
             public final /* synthetic */ j6 b;
 
             {
@@ -225,10 +225,10 @@ public final class j6 extends FrameLayout {
             rectF = rectF3;
             a(AndroidUtilities.dp(AndroidUtilities.lerp(1, 2, d)), AndroidUtilities.dp(2.0f), canvas, paint, rectF2);
         }
-        org.telegram.ui.Components.r90 r90Var = this.d;
-        r90Var.d(rectF);
-        r90Var.setAlpha((int) (255.0f * alpha * d));
-        r90Var.draw(canvas);
+        org.telegram.ui.Components.t90 t90Var = this.d;
+        t90Var.d(rectF);
+        t90Var.setAlpha((int) (255.0f * alpha * d));
+        t90Var.draw(canvas);
         int i12 = org.telegram.ui.ActionBar.h6.h7;
         int d12 = i0.a.d(0.75f, org.telegram.ui.ActionBar.h6.w0(null, i12, false), org.telegram.ui.ActionBar.h6.w0(null, i11, false));
         Paint paint2 = this.w;

@@ -1,54 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.SystemClock;
-import android.view.TextureView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class y50 extends TextureView {
+public final /* synthetic */ class y50 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ d60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y50(Object obj, Context context, int i10) {
-        super(context);
+    public /* synthetic */ y50(d60 d60Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = d60Var;
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        ki.r0 r0Var;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                b60 b60Var = (b60) this.b;
-                if (!b60Var.A0 && (r0Var = b60Var.R) != null && r0Var.a == 3) {
-                    b60Var.A0 = true;
-                    try {
-                        b60Var.y0 = SystemClock.elapsedRealtimeNanos();
-                        b60Var.w();
-                    } finally {
-                        b60Var.A0 = false;
-                    }
-                }
-                super.invalidate();
-                return;
-            default:
-                super.invalidate();
-                return;
-        }
-    }
-
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                vh.f fVar = (vh.f) this.b;
-                setMeasuredDimension(fVar.g, fVar.h);
+                d60 d60Var = this.b;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * d60Var.getMeasuredHeight() * 0.5f;
+                d60Var.p0 = floatValue;
+                d60Var.v.setTranslationY(floatValue + d60Var.o0);
                 break;
             default:
-                super.onMeasure(i10, i11);
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d60 d60Var2 = this.b;
+                d60Var2.r0 = floatValue2;
+                ki.s0 s0Var = d60Var2.P;
+                if (s0Var != null) {
+                    s0Var.w(floatValue2);
+                    break;
+                }
                 break;
         }
     }

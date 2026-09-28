@@ -37,11 +37,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Cells.c6;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.zr0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.a61;
@@ -67,9 +67,9 @@ import xh.r2;
 import yh.j2;
 import yh.x3;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, androidx.car.app.utils.b, q9.d, j2, Utilities.Callback5, ll0, mg1, a61 {
+public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, androidx.car.app.utils.b, q9.d, j2, Utilities.Callback5, nl0, mg1, a61 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -246,12 +246,12 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
     public void b(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
         o2 o2Var = (o2) this.b;
         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-        zr0 zr0Var = o2Var.a;
+        bs0 bs0Var = o2Var.a;
         o2Var.e.l.remove(savedStarGift);
         o2Var.f(true);
         int i10 = o2Var.b;
         if (j3 == UserConfig.getInstance(i10).getClientUserId()) {
-            xc a02 = xc.a0(zr0Var.a);
+            xc a02 = xc.a0(bs0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
             String string = LocaleController.getString(R.string.BoughtResoldGiftTitle);
             int i11 = R.string.BoughtResoldGiftText;
@@ -262,7 +262,7 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
             O.r = false;
             O.j();
         } else {
-            qc O2 = xc.a0(zr0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j3)));
+            qc O2 = xc.a0(bs0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j3)));
             O2.r = false;
             O2.j();
         }
@@ -272,7 +272,7 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         h4.Q((h4) this.b, (g4) this.c, i10);
     }
@@ -292,7 +292,7 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
         return new o[]{pVar.c.W(sVar) ? new z3.h(pVar.c.x(sVar), null) : new k3.a(sVar)};
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -369,7 +369,7 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
         ci.d dVar = (ci.d) this.c;
         View view = (View) obj2;
         r2Var.getClass();
-        long j3 = ((TL_stars.SavedStarGift) ((v51) obj).G).gift.id;
+        long j3 = ((TL_stars.SavedStarGift) ((x51) obj).G).gift.id;
         if (r2Var.b == j3) {
             r2Var.b = 0L;
         } else {
@@ -420,7 +420,7 @@ public final /* synthetic */ class e implements f, z1, no0, ky, r, e2.h, android
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

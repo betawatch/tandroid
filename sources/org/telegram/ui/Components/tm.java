@@ -1,29 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tm implements Runnable {
+public final /* synthetic */ class tm implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vn b;
+    public final /* synthetic */ wn b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ tm(vn vnVar, int i10, int i11) {
+    public /* synthetic */ tm(wn wnVar, int i10, int i11) {
         this.a = i11;
-        this.b = vnVar;
+        this.b = wnVar;
         this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.e0(this.c, null);
-                break;
-            case 1:
-                this.b.b0(this.c);
+                this.b.e0(this.c, (qh.e) obj);
                 break;
             default:
-                this.b.e0(this.c, null);
+                wn wnVar = this.b;
+                wnVar.getClass();
+                wnVar.e0(this.c, new rh.e((String) obj));
                 break;
         }
     }

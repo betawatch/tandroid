@@ -1,17 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.Build;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class sc0 extends Drawable.ConstantState {
-    @Override // android.graphics.drawable.Drawable.ConstantState
-    public final int getChangingConfigurations() {
-        return 0;
+public final class sc0 {
+    public final Shader.TileMode a;
+    public final Matrix b = new Matrix();
+    public boolean c;
+    public BitmapShader d;
+    public WeakReference e;
+
+    public sc0(Shader.TileMode tileMode) {
+        this.a = tileMode;
     }
 
-    @Override // android.graphics.drawable.Drawable.ConstantState
-    public final Drawable newDrawable() {
-        return new tc0();
+    public final void a(boolean z10) {
+        BitmapShader bitmapShader;
+        if (this.c != z10) {
+            this.c = z10;
+            if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
+                return;
+            }
+            bitmapShader.setFilterMode(z10 ? 1 : 2);
+        }
+    }
+
+    public final boolean b(Bitmap bitmap) {
+        WeakReference weakReference = this.e;
+        if (weakReference != null && weakReference.get() == bitmap) {
+            return false;
+        }
+        this.e = new WeakReference(bitmap);
+        Shader.TileMode tileMode = this.a;
+        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+        this.d = bitmapShader;
+        bitmapShader.setLocalMatrix(this.b);
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.d.setFilterMode(this.c ? 1 : 2);
+        }
+        return true;
     }
 }

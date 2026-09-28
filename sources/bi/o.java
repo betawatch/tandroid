@@ -16,15 +16,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.j90;
+import org.telegram.ui.Components.t90;
 import org.telegram.ui.Components.voip.x0;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.y70;
 import rg.i0;
 import rg.v1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class o extends TextView {
     public final /* synthetic */ int a;
@@ -40,17 +40,17 @@ public final class o extends TextView {
     }
 
     public void a() {
-        r90 r90Var = (r90) this.c;
-        h90 h90Var = (h90) this.b;
-        if (h90Var == null || r90Var == null) {
+        t90 t90Var = (t90) this.c;
+        j90 j90Var = (j90) this.b;
+        if (j90Var == null || t90Var == null) {
             return;
         }
-        h90Var.rewind();
+        j90Var.rewind();
         if (getLayout() != null && getLayout().getText() != null) {
-            h90Var.e(getLayout(), 0, getPaddingLeft(), getPaddingTop());
-            getLayout().getSelectionPath(0, getLayout().getText().length(), h90Var);
+            j90Var.e(getLayout(), 0, getPaddingLeft(), getPaddingTop());
+            getLayout().getSelectionPath(0, getLayout().getText().length(), j90Var);
         }
-        r90Var.k();
+        t90Var.k();
     }
 
     @Override // android.view.View
@@ -135,7 +135,7 @@ public final class o extends TextView {
         switch (this.a) {
             case 7:
                 super.onDetachedFromWindow();
-                ((r90) this.c).b = -1L;
+                ((t90) this.c).b = -1L;
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -358,7 +358,7 @@ public final class o extends TextView {
         switch (this.a) {
             case 7:
                 super.setTextColor(h6.l1(0.2f, i10));
-                ((r90) this.c).f(h6.l1(0.03f, i10), h6.l1(0.175f, i10), h6.l1(0.2f, i10), h6.l1(0.45f, i10));
+                ((t90) this.c).f(h6.l1(0.03f, i10), h6.l1(0.175f, i10), h6.l1(0.2f, i10), h6.l1(0.45f, i10));
                 break;
             default:
                 super.setTextColor(i10);
@@ -390,14 +390,14 @@ public final class o extends TextView {
         switch (i10) {
             case 7:
                 super(context);
-                h90 h90Var = new h90(0);
-                this.b = h90Var;
-                r90 r90Var = new r90();
-                this.c = r90Var;
-                r90Var.x = h90Var;
-                r90Var.u = 0.65f;
-                r90Var.j(4.0f);
-                setBackground(r90Var);
+                j90 j90Var = new j90(0);
+                this.b = j90Var;
+                t90 t90Var = new t90();
+                this.c = t90Var;
+                t90Var.x = j90Var;
+                t90Var.u = 0.65f;
+                t90Var.j(4.0f);
+                setBackground(t90Var);
                 break;
             default:
                 this.c = new Path();

@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class u6 extends FrameLayout {
     public View a;
@@ -54,7 +54,7 @@ public final class u6 extends FrameLayout {
             this.s.setInterpolator(new LinearInterpolator());
         } else {
             this.s.setDuration(350L);
-            this.s.setInterpolator(rr.h);
+            this.s.setInterpolator(sr.h);
         }
         this.s.start();
     }
@@ -94,7 +94,7 @@ public final class u6 extends FrameLayout {
             View childAt = getChildAt(i10);
             float f7 = this.n;
             if (this.r) {
-                f7 = rr.h.getInterpolation(AndroidUtilities.cascade(f7, i10 - 1, getChildCount() - 1, 3.0f));
+                f7 = sr.h.getInterpolation(AndroidUtilities.cascade(f7, i10 - 1, getChildCount() - 1, 3.0f));
             }
             childAt.setAlpha(f7);
             childAt.setTranslationY((1.0f - f7) * AndroidUtilities.dp(24.0f));

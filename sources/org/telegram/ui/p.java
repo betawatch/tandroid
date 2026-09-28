@@ -9,9 +9,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class p extends org.telegram.ui.Components.vl0 {
+public final class p extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ q d;
 
@@ -20,7 +20,7 @@ public final class p extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -70,19 +70,19 @@ public final class p extends org.telegram.ui.Components.vl0 {
         org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) view;
         TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList.get(i12);
         wVar.b(stickerSetCovered, i12 != arrayList.size() - 1);
-        org.telegram.ui.Components.ii0 ii0Var = wVar.f;
+        org.telegram.ui.Components.ki0 ki0Var = wVar.f;
         i11 = ((org.telegram.ui.ActionBar.m2) qVar).currentAccount;
         boolean isStickerPackInstalled = MediaDataController.getInstance(i11).isStickerPackInstalled(stickerSetCovered.set.id);
         wVar.a(isStickerPackInstalled, false, false);
         if (isStickerPackInstalled) {
             iVar.l(stickerSetCovered.set.id);
-            if (ii0Var != null) {
-                ii0Var.a(false, false);
+            if (ki0Var != null) {
+                ki0Var.a(false, false);
             }
         } else {
             boolean z10 = iVar.h(stickerSetCovered.set.id) >= 0;
-            if (ii0Var != null) {
-                ii0Var.a(z10, false);
+            if (ki0Var != null) {
+                ki0Var.a(z10, false);
             }
         }
         wVar.setOnCheckedChangeListener(new o(0, this, stickerSetCovered));
@@ -102,6 +102,6 @@ public final class p extends org.telegram.ui.Components.vl0 {
             view = new org.telegram.ui.Cells.e9(context);
         }
         view.setLayoutParams(new s4.p0(-1, -2));
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 }

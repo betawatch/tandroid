@@ -63,9 +63,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.zj;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.hi;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.s50;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.u50;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.da;
 import org.telegram.ui.web.o1;
 import org.xmlpull.v1.XmlPullParserException;
@@ -94,7 +94,7 @@ import z7.x;
 import z7.y;
 import z7.zf;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class a implements i, r {
     public final /* synthetic */ int a;
@@ -722,7 +722,7 @@ public class a implements i, r {
     }
 
     public void v(int i10) {
-        w(i10, 200L, rr.f);
+        w(i10, 200L, sr.f);
     }
 
     public void w(int i10, long j3, Interpolator interpolator) {
@@ -758,7 +758,7 @@ public class a implements i, r {
         u2.b0 b0Var = new u2.b0(1, i10, null, 3, null, e2.d0.e0(j3), e2.d0.e0(j10));
         f0 f0Var = (f0) this.c;
         f0Var.getClass();
-        j(new s50(this, f0Var, b0Var, 10));
+        j(new u50(this, f0Var, b0Var, 10));
     }
 
     public void z(String str, k6.c cVar) {
@@ -888,9 +888,9 @@ public class a implements i, r {
         this.b = i10;
     }
 
-    public a(wl0 wl0Var) {
+    public a(yl0 yl0Var) {
         this.a = 15;
-        this.d = wl0Var;
+        this.d = yl0Var;
     }
 
     public a(ByteBuffer byteBuffer, int i10, RectF rectF) {

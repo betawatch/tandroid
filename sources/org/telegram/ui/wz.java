@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class wz extends rz {
     public final /* synthetic */ xz E;
@@ -40,9 +40,9 @@ public final class wz extends rz {
         int i11 = org.telegram.ui.ActionBar.h6.G6;
         h5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
         SpannableString spannableString = new SpannableString("t.me/folder/N3k/dImA/bIo");
-        org.telegram.ui.Components.b11 b11Var = new org.telegram.ui.Components.b11();
-        b11Var.a |= 256;
-        spannableString.setSpan(new org.telegram.ui.Components.c11(b11Var, 0), 0, spannableString.length(), 33);
+        org.telegram.ui.Components.d11 d11Var = new org.telegram.ui.Components.d11();
+        d11Var.a |= 256;
+        spannableString.setSpan(new org.telegram.ui.Components.e11(d11Var, 0), 0, spannableString.length(), 33);
         h5Var.l(spannableString, false);
         h5Var.setAlpha(1.0f);
         frameLayout.addView(h5Var, w7.y5.d(-1, -2.0f, 23, 20.0f, 0.0f, 40.0f, 0.0f));
@@ -81,7 +81,7 @@ public final class wz extends rz {
         p4Var.setTypeface(AndroidUtilities.bold());
         p4Var.setTextSize(14.0f);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.pq(0, activity.getDrawable(R.drawable.msg_copy_filled)), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.qq(0, activity.getDrawable(R.drawable.msg_copy_filled)), 0, 1, 0);
         spannableStringBuilder.setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(8.0f)), 1, 2, 0);
         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.LinkActionCopy));
         spannableStringBuilder.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(5.0f)), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
@@ -98,7 +98,7 @@ public final class wz extends rz {
         p4Var2.setTypeface(AndroidUtilities.bold());
         p4Var2.setTextSize(14.0f);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        spannableStringBuilder2.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.pq(0, activity.getDrawable(R.drawable.msg_share_filled)), 0, 1, 0);
+        spannableStringBuilder2.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.qq(0, activity.getDrawable(R.drawable.msg_share_filled)), 0, 1, 0);
         spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(8.0f)), 1, 2, 0);
         spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.LinkActionShare));
         spannableStringBuilder2.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(5.0f)), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 0);

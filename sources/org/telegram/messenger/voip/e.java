@@ -22,14 +22,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.c70;
+import org.telegram.ui.Components.e70;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ke;
 import org.telegram.ui.l31;
 import org.telegram.ui.t31;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -59,7 +59,7 @@ public final /* synthetic */ class e implements Runnable {
                 ((ConferenceCall) this.c).lambda$poll$7((TL_phone.getGroupCallChainBlocks) this.d, this.b, (TLObject) this.e, (TLRPC.TL_error) this.f, (AtomicBoolean) this.h, (AtomicInteger) this.n);
                 break;
             case 1:
-                c70.n((c70) this.c, (a2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.h, (TLRPC.ChannelParticipant) this.n);
+                e70.n((e70) this.c, (a2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.h, (TLRPC.ChannelParticipant) this.n);
                 break;
             case 2:
                 TLObject tLObject = (TLObject) this.e;
@@ -151,8 +151,8 @@ public final /* synthetic */ class e implements Runnable {
         this.b = j3;
     }
 
-    public /* synthetic */ e(c70 c70Var, a2 a2Var, Context context, long j3, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
-        this.c = c70Var;
+    public /* synthetic */ e(e70 e70Var, a2 a2Var, Context context, long j3, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
+        this.c = e70Var;
         this.d = a2Var;
         this.e = context;
         this.b = j3;

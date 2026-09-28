@@ -30,10 +30,10 @@ import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.m9;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import yf.p;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements DownloadController.FileDownloadProgressListener {
     public final RadialProgress2 E;
@@ -66,7 +66,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
         this.G = new a5.a((char) 0, 14);
         this.e = i10;
         this.d = u1Var;
-        this.y = new le.c(u1Var, rr.h, 380L);
+        this.y = new le.c(u1Var, sr.h, 380L);
         o6 o6Var = new o6(false, false, false, false);
         this.a = o6Var;
         o6Var.b = 21;

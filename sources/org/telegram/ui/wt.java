@@ -10,11 +10,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class wt extends org.telegram.ui.ActionBar.m2 {
-    public org.telegram.ui.Components.wl0 a;
-    public org.telegram.ui.Components.nz b;
+    public org.telegram.ui.Components.yl0 a;
+    public org.telegram.ui.Components.oz b;
     public st c;
     public ut d;
     public boolean e;
@@ -46,7 +46,7 @@ public final class wt extends org.telegram.ui.ActionBar.m2 {
         String languageFlag = LocaleController.getLanguageFlag(qtVar.d);
         if (languageFlag != null) {
             spannableStringBuilder.append((CharSequence) languageFlag).append((CharSequence) " ");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.mz(1), languageFlag.length(), languageFlag.length() + 1, 0);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.nz(1), languageFlag.length(), languageFlag.length() + 1, 0);
         }
         spannableStringBuilder.append((CharSequence) qtVar.a);
         return spannableStringBuilder;
@@ -78,15 +78,15 @@ public final class wt extends org.telegram.ui.ActionBar.m2 {
         this.d = new ut(this, context, stVar.s);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.nz nzVar = new org.telegram.ui.Components.nz(context, null);
-        this.b = nzVar;
-        nzVar.c();
+        org.telegram.ui.Components.oz ozVar = new org.telegram.ui.Components.oz(context, null);
+        this.b = ozVar;
+        ozVar.c();
         this.b.setShowAtCenter(true);
         this.b.setText(LocaleController.getString(R.string.NoResult));
         frameLayout.addView(this.b, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.a = wl0Var;
-        wl0Var.setSectionsType(3);
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.setSectionsType(3);
         this.a.setEmptyView(this.b);
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setFastScrollEnabled(0);

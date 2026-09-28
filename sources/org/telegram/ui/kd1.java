@@ -15,9 +15,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class kd1 extends org.telegram.ui.Components.vl0 {
+public final class kd1 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final ArrayList d;
     public final boolean e;
@@ -465,7 +465,7 @@ public final class kd1 extends org.telegram.ui.Components.vl0 {
         arrayList.add(messageObject11);
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -586,7 +586,7 @@ public final class kd1 extends org.telegram.ui.Components.vl0 {
                 m51Var.addView(od1Var.y0, w7.y5.e(-1, 76, 17));
                 view = m51Var;
             } else if (i10 == 5) {
-                view = new org.telegram.ui.Components.ln(od1Var.getParentActivity(), 26);
+                view = new org.telegram.ui.Components.mn(od1Var.getParentActivity(), 26);
             } else {
                 if (od1Var.z0.getParent() != null) {
                     ((ViewGroup) od1Var.z0.getParent()).removeView(od1Var.z0);

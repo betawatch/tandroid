@@ -1,37 +1,19 @@
 package org.telegram.ui.Components;
 
 import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class c61 extends z51 {
-    public final int e;
-    public final b11 f;
-
-    public c61(String str, int i10, b11 b11Var) {
-        super(str, (b11) null);
-        this.e = i10;
-        this.f = b11Var;
+public final class c61 extends b61 {
+    public c61(String str) {
+        super(str != null ? str.replace((char) 8238, ' ') : str, (d11) null);
     }
 
-    @Override // org.telegram.ui.Components.z51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    @Override // org.telegram.ui.Components.b61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
         super.updateDrawState(textPaint);
-        int i10 = this.e;
-        if (i10 == 3) {
-            textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.J6, false));
-        } else if (i10 == 2) {
-            textPaint.setColor(-1);
-        } else if (i10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.hc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.gc, false));
-        }
-        b11 b11Var = this.f;
-        if (b11Var != null) {
-            b11Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
-        }
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setUnderlineText(false);
     }
 }

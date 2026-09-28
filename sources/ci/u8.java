@@ -16,13 +16,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.ec0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.gc0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class u8 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public q8 X;
@@ -99,12 +99,12 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
         p8 p8Var = new p8(this);
         p8Var.m = false;
         p8Var.C = false;
-        p8Var.o(rr.h);
+        p8Var.o(sr.h);
         p8Var.n(350L);
         this.d.setItemAnimator(p8Var);
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i10, 0, i10, 0);
+        yl0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new ai.u0(this, context, b7Var, 2));
         q8 q8Var = this.X;
         if (q8Var != null) {
@@ -116,7 +116,7 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
         TLRPC.WebPage webPage;
         org.telegram.ui.Cells.j3 j3Var = u8Var.Z;
         org.telegram.ui.Cells.j3 j3Var2 = u8Var.Y;
-        v51 G = u8Var.X.G(i10 - 1);
+        x51 G = u8Var.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -147,11 +147,11 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
         ai.y1 y1Var = new ai.y1(u8Var, 15);
         t2Var.G = o0Var;
         int i11 = (webPage2 == null || (webPage2.photo == null && !MessageObject.isVideoDocument(webPage2.document))) ? 8 : 0;
-        ec0 ec0Var = t2Var.x;
-        ec0Var.setVisibility(i11);
+        gc0 gc0Var = t2Var.x;
+        gc0Var.setVisibility(i11);
         t2Var.f.b(t2Var.a, o0Var, false);
         t2Var.w.a(!o0Var.f, false);
-        ec0Var.a(!o0Var.e, false);
+        gc0Var.a(!o0Var.e, false);
         t2Var.H = y1Var;
         t2Var.e.setImageDrawable(new d4(b7Var, 8));
         t2Var.show();
@@ -333,7 +333,7 @@ public final class u8 extends org.telegram.ui.Components.bb implements Notificat
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         q8 q8Var = new q8(this.d, getContext(), this.currentAccount, 0, true, new bi.v(this, 7), this.resourcesProvider);
         this.X = q8Var;
         return q8Var;

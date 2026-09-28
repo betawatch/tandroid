@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class w8 extends org.telegram.ui.Components.aw0 {
+public final class w8 extends org.telegram.ui.Components.cw0 {
     public final /* synthetic */ int w0;
     public final /* synthetic */ Object x0;
 
@@ -30,7 +30,7 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
         this.x0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
         switch (this.w0) {
             case 0:
@@ -103,7 +103,7 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public boolean P() {
         switch (this.w0) {
             case 2:
@@ -113,7 +113,7 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public boolean Q() {
         switch (this.w0) {
             case 2:
@@ -123,7 +123,7 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.w0) {
             case 0:
@@ -252,7 +252,7 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.w0) {
             case 1:
-                if (motionEvent.getY() < ((org.telegram.ui.Components.zb0) this.x0).T) {
+                if (motionEvent.getY() < ((org.telegram.ui.Components.bc0) this.x0).T) {
                     return false;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -261,7 +261,7 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, org.telegram.ui.ActionBar.x5
+    @Override // org.telegram.ui.Components.cw0, org.telegram.ui.ActionBar.x5
     public void e() {
         switch (this.w0) {
             case 7:
@@ -270,11 +270,11 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public Drawable getNewDrawable() {
         switch (this.w0) {
             case 1:
-                Drawable d = ((un) ((org.telegram.ui.Components.zb0) this.x0).c0.F).d();
+                Drawable d = ((un) ((org.telegram.ui.Components.bc0) this.x0).c0.F).d();
                 if (d == null) {
                     break;
                 }
@@ -283,11 +283,11 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
         return super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public org.telegram.ui.ActionBar.d6 getResourceProvider() {
         switch (this.w0) {
             case 2:
-                return ((org.telegram.ui.Components.l01) this.x0).c;
+                return ((org.telegram.ui.Components.n01) this.x0).c;
             default:
                 return super.getResourceProvider();
         }
@@ -297,7 +297,7 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
     /* JADX WARN: Removed duplicated region for block: B:28:0x0090  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x007c  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -442,7 +442,7 @@ public final class w8 extends org.telegram.ui.Components.aw0 {
                 break;
             case 2:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.l01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.n01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
                 break;
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.x0;

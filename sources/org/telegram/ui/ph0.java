@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ph0 extends FrameLayout {
     public float E;
@@ -30,7 +30,7 @@ public final class ph0 extends FrameLayout {
     public boolean G;
     public boolean H;
     public boolean I;
-    public final org.telegram.ui.Components.k21 J;
+    public final org.telegram.ui.Components.m21 J;
     public final /* synthetic */ sh0 K;
     public int a;
     public final LinearLayout b;
@@ -56,7 +56,7 @@ public final class ph0 extends FrameLayout {
         this.v = paint;
         this.w = new RectF();
         this.E = 1.0f;
-        this.J = new org.telegram.ui.Components.k21();
+        this.J = new org.telegram.ui.Components.m21();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -210,9 +210,9 @@ public final class ph0 extends FrameLayout {
         }
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(formatPluralString);
         if (tL_chatInviteExported.permanent && !tL_chatInviteExported.revoked) {
-            org.telegram.ui.Components.ct ctVar = new org.telegram.ui.Components.ct();
-            ctVar.b = AndroidUtilities.dp(1.5f);
-            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(ctVar, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+            org.telegram.ui.Components.dt dtVar = new org.telegram.ui.Components.dt();
+            dtVar.b = AndroidUtilities.dp(1.5f);
+            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dtVar, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
             spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.Permanent));
         } else if (tL_chatInviteExported.expired || tL_chatInviteExported.revoked) {
             if (tL_chatInviteExported.revoked && tL_chatInviteExported.usage == 0) {
@@ -220,9 +220,9 @@ public final class ph0 extends FrameLayout {
                 spannableStringBuilder2.clear();
                 spannableStringBuilder2.append((CharSequence) string);
             }
-            org.telegram.ui.Components.ct ctVar2 = new org.telegram.ui.Components.ct();
-            ctVar2.b = AndroidUtilities.dp(1.5f);
-            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(ctVar2, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+            org.telegram.ui.Components.dt dtVar2 = new org.telegram.ui.Components.dt();
+            dtVar2.b = AndroidUtilities.dp(1.5f);
+            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dtVar2, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
             boolean z10 = tL_chatInviteExported.revoked;
             if (z10 || (i12 = tL_chatInviteExported.usage_limit) <= 0 || tL_chatInviteExported.usage < i12) {
                 spannableStringBuilder2.append((CharSequence) LocaleController.getString(z10 ? R.string.Revoked : R.string.Expired));
@@ -230,9 +230,9 @@ public final class ph0 extends FrameLayout {
                 spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.LinkLimitReached));
             }
         } else if (tL_chatInviteExported.expire_date > 0) {
-            org.telegram.ui.Components.ct ctVar3 = new org.telegram.ui.Components.ct();
-            ctVar3.b = AndroidUtilities.dp(1.5f);
-            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(ctVar3, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+            org.telegram.ui.Components.dt dtVar3 = new org.telegram.ui.Components.dt();
+            dtVar3.b = AndroidUtilities.dp(1.5f);
+            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dtVar3, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
             long currentTimeMillis = (tL_chatInviteExported.expire_date * 1000) - ((sh0Var.n0 * 1000) + System.currentTimeMillis());
             if (currentTimeMillis < 0) {
                 currentTimeMillis = 0;
@@ -251,9 +251,9 @@ public final class ph0 extends FrameLayout {
             }
         }
         if (tL_chatInviteExported.request_needed) {
-            org.telegram.ui.Components.ct ctVar4 = new org.telegram.ui.Components.ct();
-            ctVar4.b = AndroidUtilities.dp(1.5f);
-            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(ctVar4, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+            org.telegram.ui.Components.dt dtVar4 = new org.telegram.ui.Components.dt();
+            dtVar4.b = AndroidUtilities.dp(1.5f);
+            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(dtVar4, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
             spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.ApprovalRequired));
         }
         this.d.setText(spannableStringBuilder2);

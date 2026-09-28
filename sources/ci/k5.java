@@ -4,10 +4,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.q80;
 import org.telegram.ui.da0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k5 implements q0.a {
     public final /* synthetic */ int a;
@@ -61,10 +61,10 @@ public final /* synthetic */ class k5 implements q0.a {
                 break;
             case 4:
                 c5.h hVar3 = (c5.h) this.b;
-                o80 o80Var = (o80) this.c;
+                q80 q80Var = (q80) this.c;
                 int i10 = hVar3.a;
                 boolean z10 = i10 == 0;
-                AndroidUtilities.runOnUIThread(new da0(o80Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 14));
+                AndroidUtilities.runOnUIThread(new da0(q80Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 14));
                 break;
             default:
                 c5.h hVar4 = (c5.h) this.b;

@@ -13,12 +13,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.c60;
-import org.telegram.ui.Components.j40;
+import org.telegram.ui.Components.e60;
+import org.telegram.ui.Components.l40;
 import org.telegram.ui.Components.og;
 import org.telegram.ui.mn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class b4 implements og {
     public final /* synthetic */ e6 a;
@@ -65,9 +65,9 @@ public final class b4 implements og {
 
     @Override // org.telegram.ui.Components.og
     public final void K(float f7, int i10) {
-        c60 c60Var = this.a.J2;
-        if (c60Var != null) {
-            c60Var.b(f7, i10);
+        e60 e60Var = this.a.J2;
+        if (e60Var != null) {
+            e60Var.b(f7, i10);
         }
     }
 
@@ -110,8 +110,8 @@ public final class b4 implements og {
 
     @Override // org.telegram.ui.Components.og
     public final boolean i1() {
-        c60 c60Var = this.a.J2;
-        return (c60Var == null || c60Var.j0) ? false : true;
+        e60 e60Var = this.a.J2;
+        return (e60Var == null || e60Var.j0) ? false : true;
     }
 
     @Override // org.telegram.ui.Components.og
@@ -123,9 +123,9 @@ public final class b4 implements og {
             return;
         }
         if (e6Var.W2 == null) {
-            j40 j40Var = new j40(9, e6Var.getContext(), e6Var.B0, false);
-            e6Var.W2 = j40Var;
-            j40Var.setVisibility(8);
+            l40 l40Var = new l40(9, e6Var.getContext(), e6Var.B0, false);
+            e6Var.W2 = l40Var;
+            l40Var.setVisibility(8);
             e6Var.addView(e6Var.W2, w7.y5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
         }
         if (e6Var.B1 >= 0) {
@@ -142,19 +142,19 @@ public final class b4 implements og {
     public final void k2(int i10, int i11, int i12, long j3, long j10, boolean z10) {
         e6 e6Var = this.a;
         if (e6Var.J2 == null && CameraView.isCameraAllowed()) {
-            e6Var.J2 = new c60(e6Var.getContext(), new r4(e6Var), e6Var.B0, false);
+            e6Var.J2 = new e60(e6Var.getContext(), new r4(e6Var), e6Var.B0, false);
             e6Var.addView(e6Var.J2, Math.min(e6Var.indexOfChild(e6Var.b2.getRecordCircle()), e6Var.indexOfChild(e6Var.b2.O1)), w7.y5.e(-1, -1, 51));
         }
-        c60 c60Var = e6Var.J2;
-        if (c60Var != null) {
+        e60 e60Var = e6Var.J2;
+        if (e60Var != null) {
             if (i10 == 0) {
-                c60Var.h(false);
+                e60Var.h(false);
                 return;
             }
             if (i10 == 1 || i10 == 3 || i10 == 4) {
-                c60Var.f(i10, i11, i12, j3, j10, z10);
+                e60Var.f(i10, i11, i12, j3, j10, z10);
             } else if (i10 == 2 || i10 == 5) {
-                c60Var.a(i10 == 2);
+                e60Var.a(i10 == 2);
             }
         }
     }
@@ -226,9 +226,9 @@ public final class b4 implements og {
 
     @Override // org.telegram.ui.Components.og
     public final void n1() {
-        c60 c60Var = this.a.J2;
-        if (c60Var != null) {
-            c60Var.i();
+        e60 e60Var = this.a.J2;
+        if (e60Var != null) {
+            e60Var.i();
         }
     }
 

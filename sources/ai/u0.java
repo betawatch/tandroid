@@ -8,13 +8,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.fb0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u0 implements kl0 {
+public final /* synthetic */ class u0 implements ml0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class u0 implements kl0 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         int i11 = this.a;
         int i12 = 5;
@@ -40,7 +40,7 @@ public final /* synthetic */ class u0 implements kl0 {
                 r3 r3Var = (r3) obj3;
                 h1 h1Var = (h1) view;
                 m1 m1Var = h1Var.K;
-                y70 F = y70.F((ViewGroup) obj2, new d(), view);
+                a80 F = a80.F((ViewGroup) obj2, new d(), view);
                 F.p(15, -1, LocaleController.formatString(R.string.LiveStoryMessageSent, LocaleController.formatDateTime(m1Var.d, true)));
                 F.k();
                 F.c(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new a1.e(i12, (jc) obj, m1Var), false);

@@ -69,7 +69,7 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ub extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public static int Q0 = 10;
@@ -86,7 +86,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
     public int G0;
     public FrameLayout H;
     public int H0;
-    public org.telegram.ui.Components.fo I;
+    public org.telegram.ui.Components.go I;
     public xa I0;
     public LinearLayout J;
     public org.telegram.ui.Cells.u1 J0;
@@ -149,7 +149,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
     public a0.i w0;
     public gg.b0 x;
     public final AnimationNotificationsLocker x0;
-    public org.telegram.ui.Components.zk0 y;
+    public org.telegram.ui.Components.bl0 y;
     public final HashMap y0;
     public HashMap z0;
 
@@ -230,9 +230,9 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         MessagesController messagesController = ubVar.getMessagesController();
         TLRPC.Chat chat = ubVar.f;
         TLRPC.ChatFull chatFull = messagesController.getChatFull(chat.id);
-        org.telegram.ui.Components.c70 c70Var = new org.telegram.ui.Components.c70(ubVar.X.getContext(), (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvite.invite, chatFull, hashMap, ubVar, chatFull.id, false, ChatObject.isChannel(chat));
-        c70Var.j0 = new hb(ubVar);
-        c70Var.show();
+        org.telegram.ui.Components.e70 e70Var = new org.telegram.ui.Components.e70(ubVar.X.getContext(), (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvite.invite, chatFull, hashMap, ubVar, chatFull.id, false, ChatObject.isChannel(chat));
+        e70Var.j0 = new hb(ubVar);
+        e70Var.show();
     }
 
     public static void K0(ub ubVar) {
@@ -246,9 +246,9 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         if (!(charSequence instanceof Spannable)) {
             return null;
         }
-        for (org.telegram.ui.Components.pq pqVar : (org.telegram.ui.Components.pq[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.pq.class)) {
-            if (pqVar != null) {
-                Drawable drawable = pqVar.drawable;
+        for (org.telegram.ui.Components.qq qqVar : (org.telegram.ui.Components.qq[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.qq.class)) {
+            if (qqVar != null) {
+                Drawable drawable = qqVar.drawable;
                 if (drawable instanceof b11) {
                     return (b11) drawable;
                 }
@@ -503,9 +503,9 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                         if (b0Var.N0() < ubVar.x.B() - 1) {
                             int L0 = ubVar.x.L0();
                             ubVar.g0 = L0;
-                            org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) ubVar.v.K(L0);
-                            if (gl0Var != null) {
-                                ubVar.h0 = gl0Var.a.getTop();
+                            org.telegram.ui.Components.il0 il0Var = (org.telegram.ui.Components.il0) ubVar.v.K(L0);
+                            if (il0Var != null) {
+                                ubVar.h0 = il0Var.a.getTop();
                             } else {
                                 ubVar.g0 = -1;
                             }
@@ -571,7 +571,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         } else if (intValue != 7) {
             switch (intValue) {
                 case 9:
-                    ubVar.showDialog(new org.telegram.ui.Components.fy0(ubVar.getParentActivity(), ubVar, ubVar.Y.getInputStickerSet(), null, null, null));
+                    ubVar.showDialog(new org.telegram.ui.Components.hy0(ubVar.getParentActivity(), ubVar, ubVar.Y.getInputStickerSet(), null, null, null));
                     break;
                 case 10:
                     int i13 = Build.VERSION.SDK_INT;
@@ -984,7 +984,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
             }
             S0.setBounds(0, 0, S0.getIntrinsicWidth(), AndroidUtilities.dp(17.33f));
             spannableStringBuilder.append((CharSequence) " S");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.pq(0, S0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.qq(0, S0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         }
         messageObject.messageText = spannableStringBuilder;
         MessageObject messageObject2 = arrayList.size() > 0 ? (MessageObject) hg.c.g(1, arrayList) : null;
@@ -1160,9 +1160,9 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                         if (channelAdminLogEventAction2 instanceof TLRPC.TL_channelAdminLogEventActionParticipantJoinByInvite) {
                             TLRPC.TL_channelAdminLogEventActionParticipantJoinByInvite tL_channelAdminLogEventActionParticipantJoinByInvite = (TLRPC.TL_channelAdminLogEventActionParticipantJoinByInvite) channelAdminLogEventAction2;
                             if (tL_channelAdminLogEventActionParticipantJoinByInvite.invite != null) {
-                                org.telegram.ui.Components.c70 c70Var = new org.telegram.ui.Components.c70(getParentActivity(), tL_channelAdminLogEventActionParticipantJoinByInvite.invite, getMessagesController().getChatFull(chat3.id), null, this, chat3.id, false, ChatObject.isChannelAndNotMegaGroup(chat3));
-                                c70Var.k0 = false;
-                                c70Var.show();
+                                org.telegram.ui.Components.e70 e70Var = new org.telegram.ui.Components.e70(getParentActivity(), tL_channelAdminLogEventActionParticipantJoinByInvite.invite, getMessagesController().getChatFull(chat3.id), null, this, chat3.id, false, ChatObject.isChannelAndNotMegaGroup(chat3));
+                                e70Var.k0 = false;
+                                e70Var.show();
                                 return true;
                             }
                         }
@@ -1196,7 +1196,7 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                                 }
                                 TLRPC.InputStickerSet inputStickerSet3 = inputStickerSet2;
                                 if (inputStickerSet3 != null) {
-                                    showDialog(new org.telegram.ui.Components.fy0(getParentActivity(), this, inputStickerSet3, null, null, null));
+                                    showDialog(new org.telegram.ui.Components.hy0(getParentActivity(), this, inputStickerSet3, null, null, null));
                                     return true;
                                 }
                                 arrayList = arrayList3;
@@ -1225,9 +1225,9 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                             chat2 = chat;
                             z11 = false;
                             if (tL_channelAdminLogEvent4 != null && (tL_channelAdminLogEvent4.action instanceof TLRPC.TL_channelAdminLogEventActionChangeHistoryTTL) && ChatObject.canUserDoAdminAction(chat2, 13)) {
-                                org.telegram.ui.Components.dq dqVar = new org.telegram.ui.Components.dq(getParentActivity(), chat2);
-                                dqVar.v = new cb(this);
-                                showDialog(dqVar);
+                                org.telegram.ui.Components.eq eqVar = new org.telegram.ui.Components.eq(getParentActivity(), chat2);
+                                eqVar.v = new cb(this);
+                                showDialog(eqVar);
                             }
                         } else {
                             chat2 = chat;
@@ -1759,12 +1759,12 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
                             tb tbVar = this.L0;
                             tbVar.a = messageObject;
                             tbVar.e = max;
-                            org.telegram.ui.Components.zk0 zk0Var = this.y;
-                            zk0Var.b = i10;
+                            org.telegram.ui.Components.bl0 bl0Var = this.y;
+                            bl0Var.b = i10;
                             tbVar.b = indexOf2;
                             tbVar.d = max;
                             tbVar.c = false;
-                            zk0Var.c(indexOf2, max, false, false);
+                            bl0Var.c(indexOf2, max, false, false);
                             return;
                         }
                         return;
@@ -1945,17 +1945,17 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         this.actionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
         hg.c.v(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 28));
-        org.telegram.ui.Components.fo foVar = new org.telegram.ui.Components.fo(context, null, false, null);
-        this.I = foVar;
-        hl hlVar = foVar.h;
+        org.telegram.ui.Components.go goVar = new org.telegram.ui.Components.go(context, null, false, null);
+        this.I = goVar;
+        hl hlVar = goVar.h;
         if (hlVar != null) {
             hlVar.setTextSizePx(AndroidUtilities.dp(17.5f));
         }
-        hl hlVar2 = foVar.r;
+        hl hlVar2 = goVar.r;
         if (hlVar2 != null) {
             hlVar2.setTextSizePx(AndroidUtilities.dp(13.5f));
         }
-        foVar.k0 = true;
+        goVar.k0 = true;
         this.I.setOccupyStatusBar(!AndroidUtilities.isTablet());
         this.actionBar.addView(this.I, 0, w7.y5.d(-2, -1.0f, 51, 54.0f, 0.0f, 52.0f, 0.0f));
         org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
@@ -1965,9 +1965,9 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         this.N.setSearchPaddingStart(7);
         this.I.setEnabled(false);
-        org.telegram.ui.Components.fo foVar2 = this.I;
+        org.telegram.ui.Components.go goVar2 = this.I;
         TLRPC.Chat chat = this.f;
-        foVar2.setTitle(chat.title);
+        goVar2.setTitle(chat.title);
         this.I.setSubtitle(LocaleController.getString(R.string.EventLogAllEvents));
         this.I.setChatAvatar(chat);
         ib ibVar = new ib(this, context);
@@ -2031,10 +2031,10 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         b0Var.j1(1);
         this.x.l1(true);
         this.v.setLayoutManager(this.x);
-        org.telegram.ui.Components.zk0 zk0Var = new org.telegram.ui.Components.zk0(this.v, this.x);
-        this.y = zk0Var;
-        zk0Var.h = new ya(this);
-        zk0Var.i = this.L0;
+        org.telegram.ui.Components.bl0 bl0Var = new org.telegram.ui.Components.bl0(this.v, this.x);
+        this.y = bl0Var;
+        bl0Var.h = new ya(this);
+        bl0Var.i = this.L0;
         this.X.addView(this.v, w7.y5.c(-1.0f, -1));
         this.v.setOnScrollListener(new i3(this));
         this.glassEngine.a(this.v);
@@ -2726,9 +2726,9 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         super.onPause();
         rb rbVar = this.X;
         if (rbVar != null) {
-            org.telegram.ui.Components.z81 z81Var = rbVar.v;
-            if (z81Var != null) {
-                z81Var.c(false);
+            org.telegram.ui.Components.b91 b91Var = rbVar.v;
+            if (b91Var != null) {
+                b91Var.c(false);
             }
             rbVar.F = true;
         }
@@ -2762,9 +2762,9 @@ public final class ub extends org.telegram.ui.ActionBar.m2 implements Notificati
         System.currentTimeMillis();
         rb rbVar = this.X;
         if (rbVar != null) {
-            org.telegram.ui.Components.z81 z81Var = rbVar.v;
-            if (z81Var != null) {
-                z81Var.c(true);
+            org.telegram.ui.Components.b91 b91Var = rbVar.v;
+            if (b91Var != null) {
+                b91Var.c(true);
             }
             rbVar.F = false;
         }

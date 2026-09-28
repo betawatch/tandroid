@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class t1 implements RequestDelegate {
                 ((MediaDataController) this.b).lambda$removeRecentGif$24((TLRPC.TL_messages_saveGif) this.c, tLObject, tL_error);
                 break;
             case 4:
-                ((MediaDataController) this.b).lambda$saveToRingtones$204((TLRPC.Document) this.c, tLObject, tL_error);
+                ((MediaDataController) this.b).lambda$saveToRingtones$205((TLRPC.Document) this.c, tLObject, tL_error);
                 break;
             case 5:
                 ((MediaDataController) this.b).lambda$loadAttachMenuBots$4((Runnable) this.c, tLObject, tL_error);

@@ -25,14 +25,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bh;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.xy0;
 import org.telegram.ui.Components.zg;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public class d6 extends FrameLayout implements vy0, le.e {
+public class d6 extends FrameLayout implements xy0, le.e {
     public Integer E;
     public final le.c a;
     public final le.c b;
@@ -42,7 +42,7 @@ public class d6 extends FrameLayout implements vy0, le.e {
     public final ImageView f;
     public final ImageView h;
     public org.telegram.ui.ActionBar.h5 n;
-    public final op r;
+    public final pp r;
     public boolean s;
     public boolean v;
     public AnimatorSet w;
@@ -51,9 +51,9 @@ public class d6 extends FrameLayout implements vy0, le.e {
 
     public d6(Context context, int i10, View.OnClickListener onClickListener, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        rr rrVar = rr.h;
-        this.a = new le.c(0, this, rrVar, 380L, false);
-        this.b = new le.c(1, this, rrVar, 380L, false);
+        sr srVar = sr.h;
+        this.a = new le.c(0, this, srVar, 380L, false);
+        this.b = new le.c(1, this, srVar, 380L, false);
         this.c = d6Var;
         c6 c6Var = new c6(this, context, d6Var, 0);
         this.d = c6Var;
@@ -100,17 +100,17 @@ public class d6 extends FrameLayout implements vy0, le.e {
             View view = this.n;
             boolean z12 = LocaleController.isRTL;
             addView(view, w7.y5.d(48, 24.0f, (z12 ? 3 : 5) | 48, z12 ? 20.0f : 0.0f, 43.0f, z12 ? 0.0f : 20.0f, 0.0f));
-            op opVar = new op(context, 21, d6Var);
-            this.r = opVar;
-            opVar.b(-1, i12, org.telegram.ui.ActionBar.h6.k7);
-            opVar.setContentDescription(LocaleController.getString(R.string.AccDescrQuizCorrectAnswer));
-            opVar.setDrawUnchecked(true);
-            opVar.a(true, false);
-            opVar.setAlpha(0.0f);
-            opVar.setDrawBackgroundAsArc(8);
-            addView(opVar, w7.y5.d(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
+            pp ppVar = new pp(context, 21, d6Var);
+            this.r = ppVar;
+            ppVar.b(-1, i12, org.telegram.ui.ActionBar.h6.k7);
+            ppVar.setContentDescription(LocaleController.getString(R.string.AccDescrQuizCorrectAnswer));
+            ppVar.setDrawUnchecked(true);
+            ppVar.a(true, false);
+            ppVar.setAlpha(0.0f);
+            ppVar.setDrawBackgroundAsArc(8);
+            addView(ppVar, w7.y5.d(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
             final int i13 = 0;
-            opVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.b6
+            ppVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.b6
                 public final /* synthetic */ d6 b;
 
                 {
@@ -184,15 +184,15 @@ public class d6 extends FrameLayout implements vy0, le.e {
     public final void D(int i10, float f7, float f10, le.f fVar) {
         bh bhVar;
         if (i10 == 0) {
-            op opVar = this.r;
-            if (opVar != null) {
-                CheckBoxBase checkBoxBase = opVar.getCheckBoxBase();
+            pp ppVar = this.r;
+            if (ppVar != null) {
+                CheckBoxBase checkBoxBase = ppVar.getCheckBoxBase();
                 float f11 = this.a.e;
                 if (checkBoxBase.w != f11) {
                     checkBoxBase.w = f11;
                     checkBoxBase.b();
                 }
-                opVar.invalidate();
+                ppVar.invalidate();
                 return;
             }
             return;
@@ -216,7 +216,7 @@ public class d6 extends FrameLayout implements vy0, le.e {
         }
     }
 
-    @Override // org.telegram.ui.Components.vy0
+    @Override // org.telegram.ui.Components.xy0
     public final void a(ci.i2 i2Var) {
         this.d.addTextChangedListener(i2Var);
     }
@@ -277,16 +277,16 @@ public class d6 extends FrameLayout implements vy0, le.e {
         return false;
     }
 
-    public op getCheckBox() {
+    public pp getCheckBox() {
         return this.r;
     }
 
-    @Override // org.telegram.ui.Components.vy0
+    @Override // org.telegram.ui.Components.xy0
     public EditTextBoldCursor getEditField() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.Components.vy0
+    @Override // org.telegram.ui.Components.xy0
     public Editable getEditText() {
         return this.d.getText();
     }
@@ -295,7 +295,7 @@ public class d6 extends FrameLayout implements vy0, le.e {
         return this.y;
     }
 
-    @Override // org.telegram.ui.Components.vy0
+    @Override // org.telegram.ui.Components.xy0
     public CharSequence getFieldText() {
         c6 c6Var = this.d;
         if (c6Var.length() > 0) {
@@ -304,7 +304,7 @@ public class d6 extends FrameLayout implements vy0, le.e {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.vy0
+    @Override // org.telegram.ui.Components.xy0
     public org.telegram.ui.ActionBar.m2 getParentFragment() {
         return null;
     }
@@ -330,8 +330,8 @@ public class d6 extends FrameLayout implements vy0, le.e {
     }
 
     public final void m(boolean z10, boolean z11) {
-        op opVar = this.r;
-        if (z10 == (opVar.getTag() != null)) {
+        pp ppVar = this.r;
+        if (z10 == (ppVar.getTag() != null)) {
             return;
         }
         AnimatorSet animatorSet = this.w;
@@ -339,10 +339,10 @@ public class d6 extends FrameLayout implements vy0, le.e {
             animatorSet.cancel();
             this.w = null;
         }
-        opVar.setTag(z10 ? 1 : null);
+        ppVar.setTag(z10 ? 1 : null);
         ImageView imageView = this.h;
         if (!z11) {
-            opVar.setAlpha(z10 ? 1.0f : 0.0f);
+            ppVar.setAlpha(z10 ? 1.0f : 0.0f);
             imageView.setAlpha(z10 ? 0.0f : 1.0f);
             return;
         }
@@ -350,7 +350,7 @@ public class d6 extends FrameLayout implements vy0, le.e {
         this.w = animatorSet2;
         float[] fArr = {z10 ? 1.0f : 0.0f};
         Property property = View.ALPHA;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(opVar, (Property<op, Float>) property, fArr), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, z10 ? 0.0f : 1.0f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(ppVar, (Property<pp, Float>) property, fArr), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, z10 ? 0.0f : 1.0f));
         this.w.setDuration(180L);
         this.w.start();
     }
@@ -377,10 +377,10 @@ public class d6 extends FrameLayout implements vy0, le.e {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        op opVar = this.r;
-        if (opVar != null) {
+        pp ppVar = this.r;
+        if (ppVar != null) {
             m(o(), false);
-            opVar.a(f(this), false);
+            ppVar.a(f(this), false);
         }
     }
 
@@ -437,9 +437,9 @@ public class d6 extends FrameLayout implements vy0, le.e {
                         if (childAt == h5Var) {
                             h5Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
                         } else {
-                            op opVar = this.r;
-                            if (childAt == opVar) {
-                                opVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+                            pp ppVar = this.r;
+                            if (childAt == ppVar) {
+                                ppVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
                             } else {
                                 ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
                                 if (layoutParams != null) {
@@ -468,7 +468,7 @@ public class d6 extends FrameLayout implements vy0, le.e {
         this.b.a(z10, true);
     }
 
-    @Override // org.telegram.ui.Components.vy0
+    @Override // org.telegram.ui.Components.xy0
     public void setFieldText(CharSequence charSequence) {
         this.d.setText(charSequence);
     }

@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ax0 extends LinearLayout {
     public final TextView a;
@@ -247,8 +247,8 @@ public final class ax0 extends LinearLayout {
         } else if (xw0Var.getVisibility() == 0 && z10 && this.h == z10) {
             ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
             duration.addUpdateListener(new vw0(this, xw0Var, duration, r2));
-            duration.addListener(new org.telegram.ui.Components.al0(10, this, xw0Var));
-            duration.setInterpolator(org.telegram.ui.Components.rr.f);
+            duration.addListener(new org.telegram.ui.Components.cl0(10, this, xw0Var));
+            duration.setInterpolator(org.telegram.ui.Components.sr.f);
             duration.start();
         }
         this.h = !z10;

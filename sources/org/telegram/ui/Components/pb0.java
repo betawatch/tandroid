@@ -1,52 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
-import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class pb0 extends s4.n0 {
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        org.telegram.ui.Cells.u1 u1Var;
-        MessageObject.GroupedMessages currentMessagesGroup;
-        MessageObject.GroupedMessagePosition currentPosition;
-        int i10 = 0;
-        rect.bottom = 0;
-        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+public final class pb0 extends s4.t {
+    public final /* synthetic */ bc0 S;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pb0(bc0 bc0Var) {
+        super(true);
+        this.S = bc0Var;
+    }
+
+    @Override // s4.t
+    public final boolean B1(int i10) {
+        byte b10;
+        bc0 bc0Var = this.S;
+        MessageObject messageObject = bc0Var.r.previewMessages.get(i10);
+        MessageObject.GroupedMessages a2 = bc0.a(bc0Var, messageObject);
+        if (a2 != null) {
+            MessageObject.GroupedMessagePosition position = a2.getPosition(messageObject);
+            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+                int size = a2.posArray.size();
+                for (int i11 = 0; i11 < size; i11++) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition = a2.posArray.get(i11);
+                    if (groupedMessagePosition != position) {
+                        byte b11 = groupedMessagePosition.minY;
+                        byte b12 = position.minY;
+                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // s4.t
+    public final boolean C1(View view) {
+        return false;
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final void b0(of.e eVar, s4.z0 z0Var) {
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            super.b0(eVar, z0Var);
             return;
         }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int extraInsetHeight = u1Var.getExtraInsetHeight();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= currentPosition.siblingHeights.length) {
-                break;
-            }
-            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
-            i11++;
+        try {
+            super.b0(eVar, z0Var);
+        } catch (Exception e) {
+            FileLog.e(e);
+            AndroidUtilities.runOnUIThread(new zp(this, 29));
         }
-        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
-        int size = currentMessagesGroup.posArray.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
-                byte b10 = groupedMessagePosition.minY;
-                byte b11 = currentPosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
-                    round = org.telegram.messenger.f0.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
-                    break;
-                }
-                i10++;
-            } else {
-                break;
-            }
-        }
-        rect.bottom = -round;
     }
 }

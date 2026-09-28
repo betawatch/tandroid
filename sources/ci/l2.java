@@ -9,15 +9,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cx0;
-import org.telegram.ui.Components.kn0;
+import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.mn0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class l2 extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
     public final FrameLayout b;
-    public final kn0 c;
+    public final mn0 c;
     public final h2 d;
     public final int e;
     public k2 f;
@@ -42,12 +42,12 @@ public final class l2 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        kn0 kn0Var = new kn0();
-        this.c = kn0Var;
-        kn0Var.c(0, false, false);
+        mn0 mn0Var = new mn0();
+        this.c = mn0Var;
+        mn0Var.c(0, false, false);
         int i10 = org.telegram.ui.ActionBar.h6.Je;
-        kn0Var.a(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
-        imageView.setImageDrawable(kn0Var);
+        mn0Var.a(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        imageView.setImageDrawable(mn0Var);
         frameLayout.addView(imageView, w7.y5.e(36, 36, 51));
         h2 h2Var = new h2(this, context, 0);
         this.d = h2Var;
@@ -179,13 +179,13 @@ public final class l2 extends FrameLayout {
                             l2Var.d(false);
                             break;
                         default:
-                            cx0 cx0Var = (cx0) obj;
+                            ex0 ex0Var = (ex0) obj;
                             l2 l2Var2 = this.b;
                             k2 k2Var3 = l2Var2.f;
                             if (k2Var3 != null) {
-                                if (k2Var3.getSelectedCategory() != cx0Var) {
-                                    l2Var2.f.F1(cx0Var);
-                                    String str = cx0Var.a;
+                                if (k2Var3.getSelectedCategory() != ex0Var) {
+                                    l2Var2.f.F1(ex0Var);
+                                    String str = ex0Var.a;
                                     int categoryIndex = l2Var2.f.getCategoryIndex();
                                     Utilities.Callback2 callback2 = l2Var2.v;
                                     if (callback2 != null) {
@@ -224,13 +224,13 @@ public final class l2 extends FrameLayout {
                             l2Var.d(false);
                             break;
                         default:
-                            cx0 cx0Var = (cx0) obj;
+                            ex0 ex0Var = (ex0) obj;
                             l2 l2Var2 = this.b;
                             k2 k2Var3 = l2Var2.f;
                             if (k2Var3 != null) {
-                                if (k2Var3.getSelectedCategory() != cx0Var) {
-                                    l2Var2.f.F1(cx0Var);
-                                    String str = cx0Var.a;
+                                if (k2Var3.getSelectedCategory() != ex0Var) {
+                                    l2Var2.f.F1(ex0Var);
+                                    String str = ex0Var.a;
                                     int categoryIndex = l2Var2.f.getCategoryIndex();
                                     Utilities.Callback2 callback2 = l2Var2.v;
                                     if (callback2 != null) {

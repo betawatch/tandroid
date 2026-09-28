@@ -20,14 +20,14 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.fy;
-import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.l30;
-import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.m30;
-import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.n30;
+import org.telegram.ui.Components.o30;
 import org.telegram.ui.Components.od0;
-import org.telegram.ui.Components.y61;
+import org.telegram.ui.Components.qd0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PopupNotificationActivity;
 import org.telegram.ui.ProfileActivity;
@@ -49,7 +49,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.xg0;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -133,28 +133,28 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                 chatAttachAlertPhotoLayout.w.M(null, null);
                 break;
             case 9:
-                ((m30) obj).b.x(i14, true);
+                ((o30) obj).b.x(i14, true);
                 break;
             case 10:
-                m30 m30Var = ((l30) obj).c;
-                m30Var.n(i14);
-                m30Var.dismiss();
+                o30 o30Var = ((n30) obj).c;
+                o30Var.n(i14);
+                o30Var.dismiss();
                 break;
             case 11:
-                od0 od0Var = (od0) obj;
-                if (od0Var.e.getAdapter() instanceof md0) {
-                    lz lzVar = ((fy) ((md0) od0Var.e.getAdapter())).c;
-                    if ((i14 != 1 && i14 != 2) || !lzVar.w1) {
-                        if (i14 == 0 && lzVar.v1) {
-                            lzVar.P(true, true, false);
+                qd0 qd0Var = (qd0) obj;
+                if (qd0Var.e.getAdapter() instanceof od0) {
+                    mz mzVar = ((gy) ((od0) qd0Var.e.getAdapter())).c;
+                    if ((i14 != 1 && i14 != 2) || !mzVar.w1) {
+                        if (i14 == 0 && mzVar.v1) {
+                            mzVar.P(true, true, false);
                             break;
                         }
                     } else {
-                        lzVar.P(true, false, i14 == 1);
+                        mzVar.P(true, false, i14 == 1);
                         break;
                     }
                 }
-                od0Var.e.x(i14, false);
+                qd0Var.e.x(i14, false);
                 break;
             case 12:
                 org.telegram.ui.Components.q4 q4Var = (org.telegram.ui.Components.q4) obj;
@@ -168,20 +168,20 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                 scrollSlidingTextTabStrip.h(view, i14, scrollSlidingTextTabStrip.a.indexOfChild(view));
                 break;
             case 14:
-                y61 y61Var = (y61) obj;
-                int i15 = y61Var.b.i.q;
+                a71 a71Var = (a71) obj;
+                int i15 = a71Var.b.i.q;
                 if (i15 == 2) {
                     ApplicationLoader.applicationLoaderInstance.downloadUpdate();
-                    y61Var.updateAppUpdateViews(i14, true);
+                    a71Var.updateAppUpdateViews(i14, true);
                     break;
                 } else if (i15 == 3) {
                     ApplicationLoader.applicationLoaderInstance.cancelDownloadingUpdate();
-                    y61Var.updateAppUpdateViews(i14, true);
+                    a71Var.updateAppUpdateViews(i14, true);
                     break;
                 } else {
                     File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
                     if (downloadedUpdateFile != null) {
-                        AndroidUtilities.openForView(downloadedUpdateFile, "Telegram.apk", "application/vnd.android.package-archive", y61Var.d, null, false);
+                        AndroidUtilities.openForView(downloadedUpdateFile, "Telegram.apk", "application/vnd.android.package-archive", a71Var.d, null, false);
                         break;
                     }
                 }
@@ -324,7 +324,7 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                 if (i14 == 0) {
                     c01 c01Var = profileActivity.O;
                     if (!c01Var.C1) {
-                        if (jv0.w0(c01Var.getClosestTab())) {
+                        if (lv0.w0(c01Var.getClosestTab())) {
                             c01 c01Var2 = profileActivity.O;
                             profileActivity.O.O0(profileActivity, profileActivity.a(), c01Var2.h1(c01Var2.getClosestTab()));
                             break;
@@ -340,11 +340,11 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                         }
                     }
                 }
-                if (!jv0.w0(profileActivity.O.getClosestTab())) {
+                if (!lv0.w0(profileActivity.O.getClosestTab())) {
                     long clientUserId = profileActivity.getUserConfig().getClientUserId();
-                    org.telegram.messenger.u8 u8Var = profileActivity.x5;
-                    if (u8Var != null) {
-                        u8Var.run();
+                    org.telegram.messenger.o8 o8Var = profileActivity.x5;
+                    if (o8Var != null) {
+                        o8Var.run();
                         profileActivity.x5 = null;
                     }
                     org.telegram.ui.Components.qc.e();
@@ -377,7 +377,7 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                         profileActivity.getMessagesController().getStoriesController().n0(clientUserId, arrayList6, false);
                         boolean[] zArr3 = {false};
                         boolean z13 = z12;
-                        profileActivity.x5 = new org.telegram.messenger.u8(profileActivity, clientUserId, arrayList6, z12, 9);
+                        profileActivity.x5 = new org.telegram.messenger.o8(profileActivity, clientUserId, arrayList6, z12, 9);
                         org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(profileActivity, zArr3, arrayList6, zArr2, clientUserId, 7);
                         (z13 ? org.telegram.ui.Components.xc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), fVar).j() : org.telegram.ui.Components.xc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, fVar).j()).v = new jx0(11, profileActivity, zArr3);
                         break;
@@ -387,9 +387,9 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                     c01 c01Var3 = profileActivity.O;
                     int h12 = c01Var3.h1(c01Var3.getClosestTab());
                     String w10 = profileActivity.getMessagesController().getStoriesController().w(h12, a2);
-                    org.telegram.messenger.u8 u8Var2 = profileActivity.x5;
-                    if (u8Var2 != null) {
-                        u8Var2.run();
+                    org.telegram.messenger.o8 o8Var2 = profileActivity.x5;
+                    if (o8Var2 != null) {
+                        o8Var2.run();
                         profileActivity.x5 = null;
                     }
                     org.telegram.ui.Components.qc.e();
@@ -405,9 +405,9 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                     }
                     profileActivity.O.L(false);
                     if (!arrayList7.isEmpty()) {
-                        org.telegram.messenger.j7 j7Var = new org.telegram.messenger.j7(profileActivity, a2, h12, arrayList7, 14);
+                        org.telegram.messenger.g7 g7Var = new org.telegram.messenger.g7(profileActivity, a2, h12, arrayList7, 14);
                         profileActivity.getMessagesController().getStoriesController().c0(h12, a2, arrayList7);
-                        org.telegram.ui.Components.xc.a0(profileActivity).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", arrayList7.size(), w10)), LocaleController.getString(R.string.UndoNoCaps), j7Var).j();
+                        org.telegram.ui.Components.xc.a0(profileActivity).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", arrayList7.size(), w10)), LocaleController.getString(R.string.UndoNoCaps), g7Var).j();
                         break;
                     }
                 }

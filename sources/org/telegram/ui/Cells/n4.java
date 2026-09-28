@@ -20,12 +20,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class n4 extends FrameLayout {
     public boolean E;
@@ -43,8 +43,8 @@ public final class n4 extends FrameLayout {
     public final int h;
     public float n;
     public boolean r;
-    public final xq s;
-    public final op v;
+    public final yq s;
+    public final pp v;
     public final boolean w;
     public boolean x;
     public final org.telegram.ui.Components.e6 y;
@@ -54,9 +54,9 @@ public final class n4 extends FrameLayout {
         this.c = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         new RectF();
         this.h = UserConfig.selectedAccount;
-        rr rrVar = rr.h;
-        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, rrVar);
-        this.F = new org.telegram.ui.Components.e6(this, 0L, 350L, rrVar);
+        sr srVar = sr.h;
+        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, srVar);
+        this.F = new org.telegram.ui.Components.e6(this, 0L, 350L, srVar);
         this.H = org.telegram.ui.ActionBar.h6.d6;
         this.w = z10;
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
@@ -73,24 +73,24 @@ public final class n4 extends FrameLayout {
         p4Var.setLines(1);
         p4Var.setEllipsize(TextUtils.TruncateAt.END);
         addView(p4Var, w7.y5.d(-1, -2.0f, 51, 6.0f, 64.0f, 6.0f, 0.0f));
-        xq xqVar = new xq(context, d6Var);
-        this.s = xqVar;
-        addView(xqVar, w7.y5.d(-1, 28.0f, 48, 0.0f, 4.0f, 0.0f, 0.0f));
+        yq yqVar = new yq(context, d6Var);
+        this.s = yqVar;
+        addView(yqVar, w7.y5.d(-1, 28.0f, 48, 0.0f, 4.0f, 0.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.h6.W8;
         int i11 = org.telegram.ui.ActionBar.h6.U8;
-        wq wqVar = xqVar.a;
-        wqVar.v = i10;
-        wqVar.w = i11;
-        xqVar.setGravity(5);
+        xq xqVar = yqVar.a;
+        xqVar.v = i10;
+        xqVar.w = i11;
+        yqVar.setGravity(5);
         if (z10) {
-            op opVar = new op(context, 21, d6Var);
-            this.v = opVar;
-            opVar.b(org.telegram.ui.ActionBar.h6.B5, org.telegram.ui.ActionBar.h6.h5, org.telegram.ui.ActionBar.h6.C5);
-            opVar.setDrawUnchecked(false);
-            opVar.setDrawBackgroundAsArc(4);
-            opVar.setProgressDelegate(new la(this, 4));
-            addView(opVar, w7.y5.d(24, 24.0f, 49, 19.0f, 42.0f, 0.0f, 0.0f));
-            opVar.a(false, false);
+            pp ppVar = new pp(context, 21, d6Var);
+            this.v = ppVar;
+            ppVar.b(org.telegram.ui.ActionBar.h6.B5, org.telegram.ui.ActionBar.h6.h5, org.telegram.ui.ActionBar.h6.C5);
+            ppVar.setDrawUnchecked(false);
+            ppVar.setDrawBackgroundAsArc(4);
+            ppVar.setProgressDelegate(new la(this, 4));
+            addView(ppVar, w7.y5.d(24, 24.0f, 49, 19.0f, 42.0f, 0.0f, 0.0f));
+            ppVar.a(false, false);
             setWillNotDraw(false);
         }
     }
@@ -148,13 +148,13 @@ public final class n4 extends FrameLayout {
             return;
         }
         TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i13).dialogs_dict.f(this.f);
-        xq xqVar = this.s;
+        yq yqVar = this.s;
         if (dialog == null || (i11 = dialog.unread_count) == 0) {
             this.d = 0;
-            xqVar.a.c(0, this.r);
+            yqVar.a.c(0, this.r);
         } else if (this.d != i11) {
             this.d = i11;
-            xqVar.a.c(i11, this.r);
+            yqVar.a.c(i11, this.r);
         }
     }
 

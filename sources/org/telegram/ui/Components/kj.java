@@ -1,133 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.aj1;
+import org.telegram.ui.bj1;
+import org.telegram.ui.od1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class kj extends oi {
-    public ai.w0 n;
-    public int r;
-    public bi.l s;
-    public za v;
-    public int w;
-    public q0.a x;
+public final class kj extends org.telegram.ui.Cells.eb {
+    public final /* synthetic */ int w;
+    public final /* synthetic */ xl0 x;
 
-    @Override // org.telegram.ui.Components.oi
-    public final void E(oi oiVar) {
-        wi wiVar = this.b;
-        try {
-            wiVar.X0.getTitleTextView().setBuildFullLayout(true);
-        } catch (Exception unused) {
-        }
-        wiVar.X0.setTitle(LocaleController.getString(R.string.SelectColor));
-        this.s.h1(0, 0);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ kj(xl0 xl0Var, Context context, int i10) {
+        super(context, 5);
+        this.w = i10;
+        this.x = xl0Var;
     }
 
-    @Override // org.telegram.ui.Components.oi
-    public final void G() {
-        this.n.x0(0);
-    }
-
-    @Override // org.telegram.ui.Components.oi
-    public int getCurrentItemTop() {
-        ai.w0 w0Var = this.n;
-        if (w0Var.getChildCount() <= 0) {
-            w0Var.setTopGlowOffset(w0Var.getPaddingTop());
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        View childAt = w0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) w0Var.G(childAt);
-        int top = childAt.getTop();
-        int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || gl0Var == null || gl0Var.b() != 0) {
-            top = dp;
-        }
-        w0Var.setTopGlowOffset(top);
-        return top;
-    }
-
-    @Override // org.telegram.ui.Components.oi
-    public int getFirstOffset() {
-        return AndroidUtilities.dp(56.0f) + getListTopPadding();
-    }
-
-    @Override // org.telegram.ui.Components.oi
-    public int getListTopPadding() {
-        return this.n.getPaddingTop();
-    }
-
-    @Override // org.telegram.ui.Components.oi
-    public final int h() {
-        return 1;
-    }
-
-    public void setDelegate(q0.a aVar) {
-        this.x = aVar;
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        this.b.getSheetContainer().invalidate();
-        invalidate();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.oi
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void y(int i10, int i11) {
-        int i12;
-        int i13;
-        ai.w0 w0Var = this.n;
-        za zaVar = this.v;
-        if (AndroidUtilities.isTablet()) {
-            this.w = 4;
-        } else {
-            Point point = AndroidUtilities.displaySize;
-            if (point.x > point.y) {
-                this.w = 4;
-            } else {
-                this.w = 3;
-            }
-        }
-        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        int dp = ((i10 - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(10.0f)) / this.w;
-        if (this.r != dp) {
-            this.r = dp;
-            zaVar.l();
-        }
-        this.s.y1(Math.max(1, ((this.w - 1) * AndroidUtilities.dp(5.0f)) + (this.w * dp)));
-        int ceil = (int) Math.ceil((((ArrayList) zaVar.e).size() - 1) / this.w);
-        Math.max(0, ((i11 - ((AndroidUtilities.dp(5.0f) * (ceil - 1)) + (dp * ceil))) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(60.0f));
-        if (!AndroidUtilities.isTablet()) {
-            Point point2 = AndroidUtilities.displaySize;
-            if (point2.x > point2.y) {
-                i12 = (int) (i11 / 3.5f);
-                int dp2 = i12 - AndroidUtilities.dp(52.0f);
-                i13 = dp2 >= 0 ? dp2 : 0;
-                if (w0Var.getPaddingTop() == i13) {
-                    w0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
-                    return;
+    @Override // org.telegram.ui.Cells.eb
+    public final void a(int i10, Object obj) {
+        switch (this.w) {
+            case 0:
+                q0.a aVar = ((lj) ((za) this.x).f).x;
+                if (aVar != null) {
+                    aVar.accept(obj);
+                    break;
                 }
-                return;
-            }
+                break;
+            case 1:
+                WallpapersListActivity.r0(((aj1) this.x).d, this, obj, i10);
+                break;
+            default:
+                ((bj1) this.x).E.presentFragment(new od1(obj, null, true));
+                break;
         }
-        i12 = (i11 / 5) * 2;
-        int dp22 = i12 - AndroidUtilities.dp(52.0f);
-        if (dp22 >= 0) {
+    }
+
+    @Override // org.telegram.ui.Cells.eb
+    public boolean b(Object obj, int i10) {
+        switch (this.w) {
+            case 1:
+                return WallpapersListActivity.s0(((aj1) this.x).d, this, obj, i10);
+            default:
+                return super.b(obj, i10);
         }
-        if (w0Var.getPaddingTop() == i13) {
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kj(za zaVar, Context context) {
+        super(context, 1);
+        this.w = 0;
+        this.x = zaVar;
     }
 }

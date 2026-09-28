@@ -64,13 +64,13 @@ import org.telegram.ui.Cells.ia;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.l20;
-import org.telegram.ui.Components.m20;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.og0;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.n20;
+import org.telegram.ui.Components.o20;
+import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.qg0;
 import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.ro0;
+import org.telegram.ui.Components.to0;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.hv0;
@@ -90,9 +90,9 @@ import u2.d1;
 import u2.p1;
 import v7.h5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s0, w2.d, Continuation {
+public class c implements k, to0, o0.b, c1, l1, j, l71, n, w1, r2.k, o, h1, s, s0, w2.d, Continuation {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -467,9 +467,9 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
     @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        mm0 mm0Var = (mm0) this.b;
-        mm0Var.v.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        mm0Var.s.requestLayout();
+        om0 om0Var = (om0) this.b;
+        om0Var.v.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
+        om0Var.s.requestLayout();
         return r0.l1.b;
     }
 
@@ -733,7 +733,7 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void X(float f7, boolean z10) {
         h hVar = (h) this.b;
         float f10 = hVar.b;
@@ -957,17 +957,17 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
         MotionEvent motionEvent2;
         MotionEvent motionEvent3;
         boolean onFling;
-        m20 m20Var;
+        o20 o20Var;
         boolean z11;
-        l20 l20Var = (l20) this.b;
-        int i10 = l20.w;
-        m20 m20Var2 = l20Var.f;
-        androidx.mediarouter.app.c cVar = l20Var.e;
+        n20 n20Var = (n20) this.b;
+        int i10 = n20.w;
+        o20 o20Var2 = n20Var.f;
+        androidx.mediarouter.app.c cVar = n20Var.e;
         int action = motionEvent.getAction();
-        if (l20Var.v == null) {
-            l20Var.v = VelocityTracker.obtain();
+        if (n20Var.v == null) {
+            n20Var.v = VelocityTracker.obtain();
         }
-        l20Var.v.addMovement(motionEvent);
+        n20Var.v.addMovement(motionEvent);
         int i11 = action & 255;
         boolean z12 = i11 == 6;
         int actionIndex = z12 ? motionEvent.getActionIndex() : -1;
@@ -984,100 +984,100 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
         float f12 = f7 / f11;
         float f13 = f10 / f11;
         if (i11 == 0) {
-            if (l20Var.g != null && m20Var2.a()) {
+            if (n20Var.g != null && o20Var2.a()) {
                 boolean hasMessages = cVar.hasMessages(3);
                 if (hasMessages) {
                     cVar.removeMessages(3);
                 }
-                MotionEvent motionEvent4 = l20Var.m;
-                if (motionEvent4 != null && (motionEvent3 = l20Var.n) != null && hasMessages && l20Var.l && motionEvent.getEventTime() - motionEvent3.getEventTime() <= 220) {
+                MotionEvent motionEvent4 = n20Var.m;
+                if (motionEvent4 != null && (motionEvent3 = n20Var.n) != null && hasMessages && n20Var.l && motionEvent.getEventTime() - motionEvent3.getEventTime() <= 220) {
                     int x10 = ((int) motionEvent4.getX()) - ((int) motionEvent.getX());
                     int y3 = ((int) motionEvent4.getY()) - ((int) motionEvent.getY());
-                    if ((y3 * y3) + (x10 * x10) < l20Var.b) {
-                        l20Var.o = true;
-                        z10 = l20Var.g.onDoubleTap(l20Var.m) | l20Var.g.onDoubleTapEvent(motionEvent);
-                        l20Var.p = f12;
-                        l20Var.r = f12;
-                        l20Var.q = f13;
-                        l20Var.s = f13;
-                        motionEvent2 = l20Var.m;
+                    if ((y3 * y3) + (x10 * x10) < n20Var.b) {
+                        n20Var.o = true;
+                        z10 = n20Var.g.onDoubleTap(n20Var.m) | n20Var.g.onDoubleTapEvent(motionEvent);
+                        n20Var.p = f12;
+                        n20Var.r = f12;
+                        n20Var.q = f13;
+                        n20Var.s = f13;
+                        motionEvent2 = n20Var.m;
                         if (motionEvent2 != null) {
                             motionEvent2.recycle();
                         }
-                        l20Var.m = MotionEvent.obtain(motionEvent);
-                        l20Var.k = true;
-                        l20Var.l = true;
-                        l20Var.h = true;
-                        l20Var.j = false;
-                        l20Var.i = false;
-                        if (l20Var.t) {
+                        n20Var.m = MotionEvent.obtain(motionEvent);
+                        n20Var.k = true;
+                        n20Var.l = true;
+                        n20Var.h = true;
+                        n20Var.j = false;
+                        n20Var.i = false;
+                        if (n20Var.t) {
                             cVar.removeMessages(2);
-                            cVar.sendEmptyMessageAtTime(2, l20Var.m.getDownTime() + i10 + l20Var.u);
+                            cVar.sendEmptyMessageAtTime(2, n20Var.m.getDownTime() + i10 + n20Var.u);
                         }
-                        cVar.sendEmptyMessageAtTime(1, l20Var.m.getDownTime() + i10);
-                        return m20Var2.onDown(motionEvent) | z10;
+                        cVar.sendEmptyMessageAtTime(1, n20Var.m.getDownTime() + i10);
+                        return o20Var2.onDown(motionEvent) | z10;
                     }
                 }
                 cVar.sendEmptyMessageDelayed(3, 220L);
             }
             z10 = false;
-            l20Var.p = f12;
-            l20Var.r = f12;
-            l20Var.q = f13;
-            l20Var.s = f13;
-            motionEvent2 = l20Var.m;
+            n20Var.p = f12;
+            n20Var.r = f12;
+            n20Var.q = f13;
+            n20Var.s = f13;
+            motionEvent2 = n20Var.m;
             if (motionEvent2 != null) {
             }
-            l20Var.m = MotionEvent.obtain(motionEvent);
-            l20Var.k = true;
-            l20Var.l = true;
-            l20Var.h = true;
-            l20Var.j = false;
-            l20Var.i = false;
-            if (l20Var.t) {
+            n20Var.m = MotionEvent.obtain(motionEvent);
+            n20Var.k = true;
+            n20Var.l = true;
+            n20Var.h = true;
+            n20Var.j = false;
+            n20Var.i = false;
+            if (n20Var.t) {
             }
-            cVar.sendEmptyMessageAtTime(1, l20Var.m.getDownTime() + i10);
-            return m20Var2.onDown(motionEvent) | z10;
+            cVar.sendEmptyMessageAtTime(1, n20Var.m.getDownTime() + i10);
+            return o20Var2.onDown(motionEvent) | z10;
         }
         if (i11 == 1) {
-            l20Var.h = false;
+            n20Var.h = false;
             MotionEvent obtain = MotionEvent.obtain(motionEvent);
-            if (l20Var.o) {
-                onFling = l20Var.g.onDoubleTapEvent(motionEvent);
+            if (n20Var.o) {
+                onFling = n20Var.g.onDoubleTapEvent(motionEvent);
             } else {
-                if (l20Var.j) {
+                if (n20Var.j) {
                     cVar.removeMessages(3);
-                    l20Var.j = false;
-                } else if (l20Var.k) {
-                    boolean onSingleTapUp = m20Var2.onSingleTapUp(motionEvent);
-                    if (l20Var.i && (m20Var = l20Var.g) != null) {
-                        m20Var.onSingleTapConfirmed(motionEvent);
+                    n20Var.j = false;
+                } else if (n20Var.k) {
+                    boolean onSingleTapUp = o20Var2.onSingleTapUp(motionEvent);
+                    if (n20Var.i && (o20Var = n20Var.g) != null) {
+                        o20Var.onSingleTapConfirmed(motionEvent);
                     }
                     onFling = onSingleTapUp;
                 } else {
-                    VelocityTracker velocityTracker = l20Var.v;
+                    VelocityTracker velocityTracker = n20Var.v;
                     int pointerId = motionEvent.getPointerId(0);
-                    velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, l20Var.d);
+                    velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, n20Var.d);
                     float yVelocity = velocityTracker.getYVelocity(pointerId);
                     float xVelocity = velocityTracker.getXVelocity(pointerId);
-                    if (Math.abs(yVelocity) > l20Var.c || Math.abs(xVelocity) > l20Var.c) {
-                        onFling = m20Var2.onFling(l20Var.m, motionEvent, xVelocity, yVelocity);
+                    if (Math.abs(yVelocity) > n20Var.c || Math.abs(xVelocity) > n20Var.c) {
+                        onFling = o20Var2.onFling(n20Var.m, motionEvent, xVelocity, yVelocity);
                     }
                 }
                 onFling = false;
             }
-            MotionEvent motionEvent5 = l20Var.n;
+            MotionEvent motionEvent5 = n20Var.n;
             if (motionEvent5 != null) {
                 motionEvent5.recycle();
             }
-            l20Var.n = obtain;
-            VelocityTracker velocityTracker2 = l20Var.v;
+            n20Var.n = obtain;
+            VelocityTracker velocityTracker2 = n20Var.v;
             if (velocityTracker2 != null) {
                 velocityTracker2.recycle();
-                l20Var.v = null;
+                n20Var.v = null;
             }
-            l20Var.o = false;
-            l20Var.i = false;
+            n20Var.o = false;
+            n20Var.i = false;
             cVar.removeMessages(1);
             cVar.removeMessages(2);
             return onFling;
@@ -1087,83 +1087,83 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
                 cVar.removeMessages(1);
                 cVar.removeMessages(2);
                 cVar.removeMessages(3);
-                l20Var.v.recycle();
-                l20Var.v = null;
-                l20Var.o = false;
-                l20Var.h = false;
-                l20Var.k = false;
-                l20Var.l = false;
-                l20Var.i = false;
-                if (l20Var.j) {
-                    l20Var.j = false;
+                n20Var.v.recycle();
+                n20Var.v = null;
+                n20Var.o = false;
+                n20Var.h = false;
+                n20Var.k = false;
+                n20Var.l = false;
+                n20Var.i = false;
+                if (n20Var.j) {
+                    n20Var.j = false;
                     return false;
                 }
             } else if (i11 == 5) {
-                l20Var.p = f12;
-                l20Var.r = f12;
-                l20Var.q = f13;
-                l20Var.s = f13;
+                n20Var.p = f12;
+                n20Var.r = f12;
+                n20Var.q = f13;
+                n20Var.s = f13;
                 cVar.removeMessages(1);
                 cVar.removeMessages(2);
                 cVar.removeMessages(3);
-                l20Var.o = false;
-                l20Var.k = false;
-                l20Var.l = false;
-                l20Var.i = false;
-                if (l20Var.j) {
-                    l20Var.j = false;
+                n20Var.o = false;
+                n20Var.k = false;
+                n20Var.l = false;
+                n20Var.i = false;
+                if (n20Var.j) {
+                    n20Var.j = false;
                     return false;
                 }
             } else if (i11 == 6) {
-                l20Var.p = f12;
-                l20Var.r = f12;
-                l20Var.q = f13;
-                l20Var.s = f13;
-                l20Var.v.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, l20Var.d);
+                n20Var.p = f12;
+                n20Var.r = f12;
+                n20Var.q = f13;
+                n20Var.s = f13;
+                n20Var.v.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, n20Var.d);
                 int actionIndex2 = motionEvent.getActionIndex();
                 int pointerId2 = motionEvent.getPointerId(actionIndex2);
-                float xVelocity2 = l20Var.v.getXVelocity(pointerId2);
-                float yVelocity2 = l20Var.v.getYVelocity(pointerId2);
+                float xVelocity2 = n20Var.v.getXVelocity(pointerId2);
+                float yVelocity2 = n20Var.v.getYVelocity(pointerId2);
                 for (int i13 = 0; i13 < pointerCount; i13++) {
                     if (i13 != actionIndex2) {
                         int pointerId3 = motionEvent.getPointerId(i13);
-                        if ((l20Var.v.getYVelocity(pointerId3) * yVelocity2) + (l20Var.v.getXVelocity(pointerId3) * xVelocity2) < 0.0f) {
-                            l20Var.v.clear();
+                        if ((n20Var.v.getYVelocity(pointerId3) * yVelocity2) + (n20Var.v.getXVelocity(pointerId3) * xVelocity2) < 0.0f) {
+                            n20Var.v.clear();
                             return false;
                         }
                     }
                 }
             }
-        } else if (!l20Var.j) {
-            float f14 = l20Var.p - f12;
-            float f15 = l20Var.q - f13;
-            if (l20Var.o) {
-                return l20Var.g.onDoubleTapEvent(motionEvent);
+        } else if (!n20Var.j) {
+            float f14 = n20Var.p - f12;
+            float f15 = n20Var.q - f13;
+            if (n20Var.o) {
+                return n20Var.g.onDoubleTapEvent(motionEvent);
             }
-            if (l20Var.k) {
-                int i14 = (int) (f12 - l20Var.r);
-                int i15 = (int) (f13 - l20Var.s);
+            if (n20Var.k) {
+                int i14 = (int) (f12 - n20Var.r);
+                int i15 = (int) (f13 - n20Var.s);
                 int i16 = (i15 * i15) + (i14 * i14);
-                if (i16 > l20Var.a) {
-                    z11 = m20Var2.onScroll(l20Var.m, motionEvent, f14, f15);
-                    l20Var.p = f12;
-                    l20Var.q = f13;
-                    l20Var.k = false;
+                if (i16 > n20Var.a) {
+                    z11 = o20Var2.onScroll(n20Var.m, motionEvent, f14, f15);
+                    n20Var.p = f12;
+                    n20Var.q = f13;
+                    n20Var.k = false;
                     cVar.removeMessages(3);
                     cVar.removeMessages(1);
                     cVar.removeMessages(2);
                 } else {
                     z11 = false;
                 }
-                if (i16 > l20Var.a) {
-                    l20Var.l = false;
+                if (i16 > n20Var.a) {
+                    n20Var.l = false;
                 }
                 return z11;
             }
             if (Math.abs(f14) >= 1.0f || Math.abs(f15) >= 1.0f) {
-                boolean onScroll = m20Var2.onScroll(l20Var.m, motionEvent, f14, f15);
-                l20Var.p = f12;
-                l20Var.q = f13;
+                boolean onScroll = o20Var2.onScroll(n20Var.m, motionEvent, f14, f15);
+                n20Var.p = f12;
+                n20Var.q = f13;
                 return onScroll;
             }
         }
@@ -1178,7 +1178,7 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
         return currentBrush == null ? u0.e(i10).i : u0.e(i10).f(String.valueOf(m.a.indexOf(currentBrush)), currentBrush.d());
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public CharSequence getContentDescription() {
         h hVar = (h) this.b;
         float f7 = hVar.b;
@@ -1200,9 +1200,9 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
         return org.telegram.ui.Cells.c1.a(messageObject);
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.l71
     public void invalidate() {
-        ((og0) this.b).h.invalidate();
+        ((qg0) this.b).h.invalidate();
     }
 
     public void j0(int i10) {
@@ -1244,7 +1244,7 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
         kVar.G.m(kVar);
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ int m0() {
         return 0;
     }
@@ -1375,9 +1375,9 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
         this.b = context.getContentResolver().acquireUnstableContentProviderClient(uri);
     }
 
-    public c(Context context, m20 m20Var) {
+    public c(Context context, o20 o20Var) {
         this.a = 10;
-        this.b = new l20(context, m20Var);
+        this.b = new n20(context, o20Var);
     }
 
     public c(int i10) {
@@ -1392,7 +1392,7 @@ public class c implements k, ro0, o0.b, c1, l1, j, j71, n, w1, r2.k, o, h1, s, s
         }
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void B() {
     }
 

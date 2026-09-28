@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class v3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.ActionBar.s3 {
     public ValueAnimator E;
@@ -116,7 +116,7 @@ public final class v3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.A
         this.E = ofFloat;
         ofFloat.addUpdateListener(new s3(this, i10));
         this.E.addListener(new androidx.fragment.app.g(this, z10, eu0Var, i10));
-        this.E.setInterpolator(org.telegram.ui.Components.rr.h);
+        this.E.setInterpolator(org.telegram.ui.Components.sr.h);
         this.E.setDuration(250L);
         this.E.start();
     }
@@ -130,7 +130,7 @@ public final class v3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.A
         this.y = ofFloat;
         ofFloat.addUpdateListener(new s3(this, 1));
         this.y.addListener(new ai.b(this, 28));
-        this.y.setInterpolator(org.telegram.ui.Components.rr.h);
+        this.y.setInterpolator(org.telegram.ui.Components.sr.h);
         this.y.setDuration(320L);
         this.y.start();
     }

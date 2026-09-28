@@ -15,11 +15,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.or;
-import org.telegram.ui.Components.q81;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.s81;
 import org.telegram.ui.d60;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class p extends t2 {
     public float g0;
@@ -88,7 +88,7 @@ public final class p extends t2 {
         ImageView imageView = uVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (uVar.x0.getAlpha() == 1.0f) {
-                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new q81(this, 4)).start();
+                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new s81(this, 4)).start();
             } else if (uVar.x0.getParent() != null) {
                 pVar.removeView(uVar.x0);
             }
@@ -110,7 +110,7 @@ public final class p extends t2 {
     */
     public final void dispatchDraw(Canvas canvas) {
         float f7;
-        or orVar;
+        pr prVar;
         float f10;
         int b10;
         float f11;
@@ -119,7 +119,7 @@ public final class p extends t2 {
         float f13;
         float f14;
         u uVar = this.s0;
-        or orVar2 = uVar.u0;
+        pr prVar2 = uVar.u0;
         Drawable drawable = uVar.v0;
         p pVar = uVar.a;
         ImageReceiver imageReceiver = uVar.l0;
@@ -172,7 +172,7 @@ public final class p extends t2 {
                 if (rVar.getVisibility() != 4) {
                     rVar.setVisibility(4);
                 }
-                orVar = orVar2;
+                prVar = prVar2;
             } else if (videoParticipant.presentation && videoParticipant.participant.self) {
                 if (rVar.getVisibility() != 0) {
                     rVar.setVisibility(0);
@@ -200,7 +200,7 @@ public final class p extends t2 {
                 }
                 float f21 = f11;
                 int dp3 = (int) ((AndroidUtilities.dp(17.0f) * f20) + ((((getMeasuredHeight() - b10) / 2) - AndroidUtilities.dp(28.0f)) - (((((uVar.b || uVar.r) ? m0Var.c : 0.0f) * AndroidUtilities.dp(74.0f)) + AndroidUtilities.dp(17.0f)) * f21)));
-                orVar = orVar2;
+                prVar = prVar2;
                 int i11 = dp3 + b10;
                 drawable.setBounds(measuredWidth, dp3, measuredWidth + b10, i11);
                 drawable.draw(canvas);
@@ -230,7 +230,7 @@ public final class p extends t2 {
                     canvas.restore();
                 }
             } else {
-                orVar = orVar2;
+                prVar = prVar2;
                 if (rVar.getVisibility() != 4) {
                     rVar.setVisibility(4);
                 }
@@ -276,7 +276,7 @@ public final class p extends t2 {
             }
             invalidate();
         } else {
-            orVar = orVar2;
+            prVar = prVar2;
         }
         textView.setTranslationY((((getMeasuredHeight() - textView.getMeasuredHeight()) / 2.0f) + uVar.p0) - this.N);
         textView.setTranslationX(((getMeasuredWidth() - textView.getMeasuredWidth()) / 2.0f) - this.O);
@@ -337,9 +337,9 @@ public final class p extends t2 {
                     } else {
                         canvas.save();
                     }
-                    or orVar3 = orVar;
-                    orVar3.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                    orVar3.draw(canvas);
+                    pr prVar3 = prVar;
+                    prVar3.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
+                    prVar3.draw(canvas);
                     canvas.restore();
                     float f32 = f14 * m0Var.c;
                     if (f32 <= 0.0f || uVar.w == call.videoNotAvailableParticipant) {

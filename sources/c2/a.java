@@ -10,17 +10,17 @@ import java.security.MessageDigest;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.cz;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.dz;
 import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.qf;
-import org.telegram.ui.Components.rx;
+import org.telegram.ui.Components.sx;
 import r0.m0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final class a implements m0, rx {
+public final class a implements m0, sx {
     public boolean a;
     public int b;
     public Object c;
@@ -51,18 +51,18 @@ public final class a implements m0, rx {
     }
 
     public boolean d() {
-        cz czVar;
+        dz dzVar;
         qf qfVar;
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
         if (chatActivityEnterView.x3) {
-            return (chatActivityEnterView.z3 || (qfVar = chatActivityEnterView.E0) == null || qfVar.length() <= 0) && (czVar = chatActivityEnterView.U0.y0) != null && czVar.h() > 0 && !chatActivityEnterView.k3;
+            return (chatActivityEnterView.z3 || (qfVar = chatActivityEnterView.E0) == null || qfVar.length() <= 0) && (dzVar = chatActivityEnterView.U0.y0) != null && dzVar.h() > 0 && !chatActivityEnterView.k3;
         }
         return false;
     }
 
     public void e() {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        aw0 aw0Var = chatActivityEnterView.m1;
+        cw0 cw0Var = chatActivityEnterView.m1;
         if (d()) {
             AnimatorSet animatorSet = chatActivityEnterView.B3;
             if (animatorSet != null) {
@@ -72,7 +72,7 @@ public final class a implements m0, rx {
             this.a = chatActivityEnterView.z3;
             chatActivityEnterView.z3 = true;
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
-            int height = ((((aw0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
+            int height = ((((cw0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
             chatActivityEnterView.D3 = height;
             if (chatActivityEnterView.R1 == 2) {
                 int dp = AndroidUtilities.dp(175.0f);
@@ -83,9 +83,9 @@ public final class a implements m0, rx {
                 chatActivityEnterView.U0.getLayoutParams().height = chatActivityEnterView.D3;
             }
             chatActivityEnterView.U0.setLayerType(2, null);
-            aw0Var.requestLayout();
+            cw0Var.requestLayout();
             if (chatActivityEnterView.y4) {
-                aw0Var.setForeground(new ed(chatActivityEnterView));
+                cw0Var.setForeground(new ed(chatActivityEnterView));
             }
             this.b = (int) chatActivityEnterView.getTranslationY();
             og ogVar = chatActivityEnterView.Z2;

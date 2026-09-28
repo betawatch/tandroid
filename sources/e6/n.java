@@ -15,16 +15,16 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.f0;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.po;
+import org.telegram.ui.Components.qo;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cg1;
 import org.telegram.ui.n11;
 import v7.a9;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l2.h, po {
+public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l2.h, qo {
     public final /* synthetic */ int a;
     public long b;
     public Object c;
@@ -208,7 +208,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         ((c3.p) this.c).l(i10);
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public void m() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
@@ -220,7 +220,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         profileActivity.presentFragment(cg1Var);
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public void n() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         boolean z10 = !profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.g1);
@@ -232,7 +232,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         profileActivity.g5(true);
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public void o() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         long j3 = this.b;
@@ -277,7 +277,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         ((c3.p) this.c).q(i10);
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public void r() {
         int i10;
         ProfileActivity profileActivity = (ProfileActivity) this.c;
@@ -331,7 +331,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         }
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public void u(int i10) {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         if (i10 == 0) {
@@ -414,7 +414,7 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         }
     }
 
-    @Override // org.telegram.ui.Components.po
+    @Override // org.telegram.ui.Components.qo
     public /* synthetic */ void dismiss() {
     }
 }

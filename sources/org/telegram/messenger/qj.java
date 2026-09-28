@@ -3,12 +3,12 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsSettingsActivity;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qj implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -35,12 +35,12 @@ public final /* synthetic */ class qj implements Runnable {
                 break;
             case 1:
                 wn wnVar = (wn) this.e;
-                qk0 qk0Var = (qk0) this.f;
+                sk0 sk0Var = (sk0) this.f;
                 org.telegram.ui.ActionBar.m1 m1Var = wnVar.Q8;
                 if (m1Var != null && wnVar.fragmentView != null && !m1Var.isShowing() && AndroidUtilities.isActivityRunning(wnVar.getParentActivity())) {
                     wnVar.Q8.showAtLocation(wnVar.x0, 51, this.b, this.c);
-                    if (this.d && qk0Var != null) {
-                        qk0Var.r(true);
+                    if (this.d && sk0Var != null) {
+                        sk0Var.r(true);
                     }
                     AndroidUtilities.runOnUIThread(new org.telegram.ui.of(wnVar, 26), 420L);
                     break;
@@ -99,12 +99,12 @@ public final /* synthetic */ class qj implements Runnable {
         }
     }
 
-    public /* synthetic */ qj(wn wnVar, int i10, int i11, boolean z10, qk0 qk0Var) {
+    public /* synthetic */ qj(wn wnVar, int i10, int i11, boolean z10, sk0 sk0Var) {
         this.e = wnVar;
         this.b = i10;
         this.c = i11;
         this.d = z10;
-        this.f = qk0Var;
+        this.f = sk0Var;
     }
 
     public /* synthetic */ qj(org.telegram.ui.Components.ac acVar, zg.o0 o0Var, boolean z10, int i10, int i11) {

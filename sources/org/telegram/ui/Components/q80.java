@@ -1,63 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class q80 extends org.telegram.ui.wn {
-    public boolean Pc;
-    public final /* synthetic */ boolean Qc;
-    public final /* synthetic */ long Rc;
-    public final /* synthetic */ r80 Sc;
+public final /* synthetic */ class q80 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3 c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q80(r80 r80Var, Bundle bundle, boolean z10, long j3) {
-        super(bundle);
-        this.Sc = r80Var;
-        this.Qc = z10;
-        this.Rc = j3;
-        this.Pc = false;
+    public /* synthetic */ q80(bb bbVar, Object obj, long j3, int i10) {
+        this.a = i10;
+        this.c = bbVar;
+        this.d = obj;
+        this.b = j3;
     }
 
-    public static void Xc(q80 q80Var, long j3, TLRPC.Chat chat) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        if (AndroidUtilities.isContextSafe(q80Var.getParentActivity())) {
-            Activity parentActivity = q80Var.getParentActivity();
-            int i10 = q80Var.currentAccount;
-            long j10 = -j3;
-            TLRPC.User currentUser = q80Var.getUserConfig().getCurrentUser();
-            boolean z10 = chat.admin_rights != null;
-            boolean z11 = chat.creator;
-            d6Var = ((org.telegram.ui.ActionBar.e3) q80Var.Sc).resourcesProvider;
-            l01.c(parentActivity, i10, j10, currentUser, null, z10, z11, d6Var);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                t80.m((t80) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                xh.h4.V((xh.h4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (yh.a3) obj, (nf.e) obj2);
+                break;
+            default:
+                yh.h7.Q((yh.h7) this.c, (x51) this.d, this.b, (Boolean) obj, (String) obj2);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.m2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Pc || !this.Qc) {
-            return;
-        }
-        this.Pc = true;
-        MessagesController messagesController = getMessagesController();
-        long j3 = this.Rc;
-        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j3));
-        if (ChatObject.canManageMyTag(chat)) {
-            qc J = xc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.h0(this, j3, chat, 21));
-            J.r = false;
-            J.k(true);
-        } else {
-            qc Q = xc.a0(this).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.JoinedGroup));
-            Q.r = false;
-            Q.k(true);
-        }
+    public /* synthetic */ q80(t80 t80Var, long j3, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.a = 0;
+        this.c = t80Var;
+        this.b = j3;
+        this.d = tL_messages_importChatInvite;
     }
 }

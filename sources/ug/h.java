@@ -23,12 +23,12 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.ix0;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.ny0;
 import org.telegram.ui.web.o1;
 import s4.c1;
@@ -36,12 +36,12 @@ import s4.p0;
 import w7.y5;
 import xg.l;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class h extends og.b {
     public final d6 d;
     public final Context e;
-    public wl0 f;
+    public yl0 f;
     public ArrayList n;
     public boolean s;
     public v3 v;
@@ -60,7 +60,7 @@ public final class h extends og.b {
         messagesStorage.getStorageQueue().postRunnable(new o1(25, messagesStorage, q1Var));
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -139,7 +139,7 @@ public final class h extends og.b {
             }
             if (i12 == 5) {
                 try {
-                    ((ix0) view).b.getImageReceiver().startAnimation();
+                    ((kx0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -186,8 +186,8 @@ public final class h extends og.b {
             return;
         }
         l lVar = (l) view;
-        qq qqVar = gVar.r;
-        if (qqVar != null) {
+        rq rqVar = gVar.r;
+        if (rqVar != null) {
             CharSequence charSequence = gVar.g;
             String str3 = gVar.h;
             lVar.v.setVisibility(8);
@@ -195,16 +195,16 @@ public final class h extends og.b {
             lVar.H = null;
             w9 w9Var = lVar.c;
             w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-            w9Var.setImageDrawable(qqVar);
+            w9Var.setImageDrawable(rqVar);
             z5 z5Var = lVar.d;
             z5Var.k(charSequence);
             boolean[] zArr = lVar.r;
             zArr[0] = false;
             lVar.setSubtitle(str3);
             lVar.e.setTextColor(h6.v0(zArr[0] ? h6.n5 : h6.r5, lVar.a));
-            op opVar = lVar.s;
-            if (opVar != null) {
-                opVar.setAlpha(1.0f);
+            pp ppVar = lVar.s;
+            if (ppVar != null) {
+                ppVar.setAlpha(1.0f);
             }
             z5Var.i(null);
         } else {
@@ -277,11 +277,11 @@ public final class h extends og.b {
         } else {
             d6 d6Var = this.d;
             if (i10 == 5) {
-                ix0 ix0Var = new ix0(context, null, 1, d6Var);
-                ix0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                ix0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                ix0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                lVar = ix0Var;
+                kx0 kx0Var = new kx0(context, null, 1, d6Var);
+                kx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                kx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                kx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                lVar = kx0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {
@@ -318,7 +318,7 @@ public final class h extends og.b {
                 }
             }
         }
-        return new gl0(lVar);
+        return new il0(lVar);
     }
 
     @Override // s4.h0

@@ -1,38 +1,39 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k31 b;
+public final /* synthetic */ class r21 implements le.e, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ m31 a;
 
-    public /* synthetic */ r21(k31 k31Var, int i10) {
-        this.a = i10;
-        this.b = k31Var;
+    public /* synthetic */ r21(m31 m31Var) {
+        this.a = m31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k31 k31Var = this.b;
-                a31 a31Var = k31Var.G;
-                a31Var.w1(true);
-                y21 y21Var = k31Var.s;
-                y21Var.w1(true);
-                k31Var.J.a(true, true);
-                AndroidUtilities.updateVisibleRows(y21Var);
-                AndroidUtilities.updateVisibleRows(a31Var);
-                break;
-            default:
-                k31 k31Var2 = this.b;
-                if (k31Var2.k()) {
-                    k31Var2.l();
-                    break;
-                }
-                break;
-        }
+    @Override // le.e
+    public void D(int i10, float f7, float f10, le.f fVar) {
+        this.a.g();
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(m31.c(this.a, (x51) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        m31.a(this.a, (x51) obj);
+    }
+
+    @Override // le.e
+    public /* synthetic */ void C(float f7, int i10) {
     }
 }

@@ -14,11 +14,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v51;
 import yf.p;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final /* synthetic */ int a = 1;
@@ -29,14 +29,14 @@ public final class a extends View {
 
     public a(Activity activity, d6 d6Var) {
         super(activity);
-        this.c = new le.c(this, rr.h, 380L);
+        this.c = new le.c(this, sr.h, 380L);
         this.b = new Paint(1);
         this.d = d6Var;
-        t51 t51Var = new t51(true);
-        this.e = t51Var;
-        t51Var.setCallback(this);
-        t51Var.b(-1);
-        t51Var.i = true;
+        v51 v51Var = new v51(true);
+        this.e = v51Var;
+        v51Var.setCallback(this);
+        v51Var.b(-1);
+        v51Var.i = true;
     }
 
     @Override // android.view.View
@@ -44,7 +44,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onAttachedToWindow();
-                ((t51) this.e).d();
+                ((v51) this.e).d();
                 break;
             case 2:
                 super.onAttachedToWindow();
@@ -62,7 +62,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onDetachedFromWindow();
-                ((t51) this.e).e();
+                ((v51) this.e).e();
                 break;
             case 2:
                 super.onDetachedFromWindow();
@@ -99,7 +99,7 @@ public final class a extends View {
                 float f7 = ((le.c) this.c).e;
                 float f10 = 1.0f - f7;
                 if (f10 > 0.0f) {
-                    p.b(canvas, (t51) this.e, f10 * 1.35f);
+                    p.b(canvas, (v51) this.e, f10 * 1.35f);
                     invalidate();
                 }
                 if (f7 > 0.0f) {
@@ -144,7 +144,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onSizeChanged(i10, i11, i12, i13);
-                p.d((t51) this.e, i10 / 2.0f, i11 / 2.0f, 17);
+                p.d((v51) this.e, i10 / 2.0f, i11 / 2.0f, 17);
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -156,7 +156,7 @@ public final class a extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 1:
-                return super.verifyDrawable(drawable) || (drawable == ((t51) this.e) && !((le.c) this.c).f);
+                return super.verifyDrawable(drawable) || (drawable == ((v51) this.e) && !((le.c) this.c).f);
             default:
                 return super.verifyDrawable(drawable);
         }

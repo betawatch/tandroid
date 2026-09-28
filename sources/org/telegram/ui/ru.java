@@ -17,9 +17,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.StatsController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ru extends org.telegram.ui.Components.wl0 {
+public final class ru extends org.telegram.ui.Components.yl0 {
     public static final /* synthetic */ int p3 = 0;
     public boolean X2;
     public int Y2;
@@ -62,7 +62,7 @@ public final class ru extends org.telegram.ui.Components.wl0 {
         setOnItemClickListener(new i(this, 7));
         s4.j jVar = new s4.j();
         jVar.n(220L);
-        jVar.o(org.telegram.ui.Components.rr.h);
+        jVar.o(org.telegram.ui.Components.sr.h);
         jVar.C = false;
         jVar.m = false;
         setItemAnimator(jVar);
@@ -111,7 +111,7 @@ public final class ru extends org.telegram.ui.Components.wl0 {
                     format = String.format("%d%%", objArr2);
                 }
                 SpannableString spannableString3 = new SpannableString(format);
-                spannableString3.setSpan(new org.telegram.ui.Components.s51(AndroidUtilities.bold()), i12, spannableString3.length(), 33);
+                spannableString3.setSpan(new org.telegram.ui.Components.u51(AndroidUtilities.bold()), i12, spannableString3.length(), 33);
                 spannableString3.setSpan(new RelativeSizeSpan(0.8f), i12, spannableString3.length(), 33);
                 lu luVar = new lu();
                 luVar.a = 0.1d;
@@ -239,7 +239,7 @@ public final class ru extends org.telegram.ui.Components.wl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
     }

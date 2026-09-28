@@ -23,9 +23,9 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.function.Consumer;
-import org.telegram.ui.Components.jx0;
+import org.telegram.ui.Components.lx0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public class FilesMigrationService extends Service {
     public static FilesMigrationBottomSheet filesMigrationBottomSheet = null;
@@ -36,7 +36,7 @@ public class FilesMigrationService extends Service {
     private int movedFilesCount;
     private int totalFilesCount;
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class 1 extends Thread {
         public 1() {
         }
@@ -216,7 +216,7 @@ public class FilesMigrationService extends Service {
         return super.onStartCommand(intent, i10, i11);
     }
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public static class FilesMigrationBottomSheet extends org.telegram.ui.ActionBar.e3 {
         org.telegram.ui.ActionBar.m2 fragment;
 
@@ -226,10 +226,10 @@ public class FilesMigrationService extends Service {
             setCanceledOnTouchOutside(false);
             Activity parentActivity = m2Var.getParentActivity();
             LinearLayout e = f0.e(parentActivity, 1);
-            jx0 jx0Var = new jx0(parentActivity, this.currentAccount);
-            jx0Var.setStickerNum(7);
-            jx0Var.getImageReceiver().setAutoRepeat(1);
-            e.addView(jx0Var, w7.y5.t(144, 144, 1, 0, 16, 0, 0));
+            lx0 lx0Var = new lx0(parentActivity, this.currentAccount);
+            lx0Var.setStickerNum(7);
+            lx0Var.getImageReceiver().setAutoRepeat(1);
+            e.addView(lx0Var, w7.y5.t(144, 144, 1, 0, 16, 0, 0));
             TextView textView = new TextView(parentActivity);
             textView.setGravity(8388611);
             int i10 = org.telegram.ui.ActionBar.h6.j5;

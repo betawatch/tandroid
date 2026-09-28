@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout {
     public final int a;
@@ -36,7 +36,7 @@ public final class d0 extends FrameLayout {
         b0 b0Var = new b0(this, context, d6Var);
         this.c = b0Var;
         b0Var.setOrientation(0);
-        this.h = new e6(b0Var, 0L, 320L, rr.h);
+        this.h = new e6(b0Var, 0L, 320L, sr.h);
         if (!z10) {
             addView(b0Var, w7.y5.e(-1, -1, 119));
             return;

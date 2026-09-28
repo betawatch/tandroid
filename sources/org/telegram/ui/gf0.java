@@ -5,7 +5,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class gf0 implements Runnable {
         tf0 tf0Var = this.b;
         switch (i10) {
             case 0:
-                org.telegram.ui.Components.lj0 lj0Var = tf0Var.G;
+                org.telegram.ui.Components.nj0 nj0Var = tf0Var.G;
                 yr yrVar = tf0Var.f;
                 int i13 = tf0Var.f0;
                 if (i13 != 3 && (asVarArr = yrVar.f) != null) {
@@ -38,13 +38,13 @@ public final /* synthetic */ class gf0 implements Runnable {
                         }
                     }
                 }
-                org.telegram.ui.Components.ij0 ij0Var = tf0Var.a;
-                if (ij0Var != null) {
-                    ij0Var.start();
+                org.telegram.ui.Components.kj0 kj0Var = tf0Var.a;
+                if (kj0Var != null) {
+                    kj0Var.start();
                 }
                 if (i13 == 15) {
-                    lj0Var.getAnimatedDrawable().N(0, false, false);
-                    lj0Var.getAnimatedDrawable().start();
+                    nj0Var.getAnimatedDrawable().N(0, false, false);
+                    nj0Var.getAnimatedDrawable().start();
                     break;
                 }
                 break;
@@ -69,13 +69,13 @@ public final /* synthetic */ class gf0 implements Runnable {
                 AndroidUtilities.runOnUIThread(new gf0(tf0Var, 4));
                 break;
             case 4:
-                org.telegram.ui.Components.lj0 lj0Var2 = tf0Var.s;
-                lj0Var2.setAutoRepeat(true);
-                org.telegram.ui.Components.ij0 ij0Var2 = tf0Var.O;
-                ij0Var2.N(0, false, false);
-                ij0Var2.K(1);
-                lj0Var2.setAnimation(ij0Var2);
-                lj0Var2.d();
+                org.telegram.ui.Components.nj0 nj0Var2 = tf0Var.s;
+                nj0Var2.setAutoRepeat(true);
+                org.telegram.ui.Components.kj0 kj0Var2 = tf0Var.O;
+                kj0Var2.N(0, false, false);
+                kj0Var2.K(1);
+                nj0Var2.setAnimation(kj0Var2);
+                nj0Var2.d();
                 break;
             case 5:
                 try {
@@ -92,13 +92,13 @@ public final /* synthetic */ class gf0 implements Runnable {
                 alertDialog$Builder.o();
                 break;
             case 6:
-                org.telegram.ui.Components.ij0 ij0Var3 = tf0Var.P;
-                ij0Var3.t0 = new gf0(tf0Var, 8);
-                org.telegram.ui.Components.lj0 lj0Var3 = tf0Var.s;
-                lj0Var3.setAutoRepeat(false);
-                ij0Var3.N(0, false, false);
-                lj0Var3.setAnimation(ij0Var3);
-                lj0Var3.d();
+                org.telegram.ui.Components.kj0 kj0Var3 = tf0Var.P;
+                kj0Var3.t0 = new gf0(tf0Var, 8);
+                org.telegram.ui.Components.nj0 nj0Var3 = tf0Var.s;
+                nj0Var3.setAutoRepeat(false);
+                kj0Var3.N(0, false, false);
+                nj0Var3.setAnimation(kj0Var3);
+                nj0Var3.d();
                 break;
             case 7:
                 tf0Var.postDelayed(new gf0(tf0Var, 9), 150L);
@@ -120,9 +120,9 @@ public final /* synthetic */ class gf0 implements Runnable {
                     }
                 }
             default:
-                org.telegram.ui.Components.lj0 lj0Var4 = tf0Var.s;
-                lj0Var4.setAutoRepeat(false);
-                lj0Var4.setAnimation(tf0Var.a);
+                org.telegram.ui.Components.nj0 nj0Var4 = tf0Var.s;
+                nj0Var4.setAutoRepeat(false);
+                nj0Var4.setAnimation(tf0Var.a);
                 break;
         }
     }

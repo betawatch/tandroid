@@ -1,75 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.webkit.JavascriptInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import android.view.View;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class zf0 {
-    public final /* synthetic */ org.telegram.ui.au0 a;
+public final /* synthetic */ class zf0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bg0 b;
 
-    public zf0(org.telegram.ui.au0 au0Var) {
-        this.a = au0Var;
+    public /* synthetic */ zf0(bg0 bg0Var, int i10) {
+        this.a = i10;
+        this.b = bg0Var;
     }
 
-    @JavascriptInterface
-    public void onPlayerError(String str) {
-        AndroidUtilities.runOnUIThread(new ld(this, Integer.parseInt(str), 5));
-    }
-
-    @JavascriptInterface
-    public void onPlayerLoaded() {
-        AndroidUtilities.runOnUIThread(new xf0(this, 0));
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyBufferedPosition(float f7) {
-        this.a.J = f7;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyCurrentPosition(int i10) {
-        this.a.I = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyDuration(int i10) {
-        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-        org.telegram.ui.au0 au0Var = this.a;
-        au0Var.H = i11;
-        String str = au0Var.s;
-        if (str != null) {
-            ag0.a(au0Var, str);
-            au0Var.s = null;
-        }
-    }
-
-    @JavascriptInterface
-    public void onPlayerStateChange(String str) {
-        int parseInt = Integer.parseInt(str);
-        org.telegram.ui.au0 au0Var = this.a;
-        boolean z10 = au0Var.G;
-        boolean z11 = false;
-        int i10 = 1;
-        au0Var.G = parseInt == 1 || parseInt == 3;
-        au0Var.b(z10);
-        if (parseInt != 0) {
-            if (parseInt == 1) {
-                z11 = true;
-            } else if (parseInt != 2) {
-                if (parseInt == 3) {
-                    z11 = true;
-                    i10 = 2;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.au0 au0Var = this.b.a;
+                RadialProgressView radialProgressView = au0Var.n;
+                View view = au0Var.r;
+                radialProgressView.setVisibility(4);
+                if (au0Var.F) {
+                    au0Var.F = false;
+                    au0Var.setPlaybackSpeed(au0Var.E);
                 }
-            }
-            i10 = 3;
-        } else {
-            i10 = 4;
+                view.setEnabled(true);
+                view.setAlpha(1.0f);
+                PhotoViewer photoViewer = au0Var.b;
+                if (photoViewer != null) {
+                    photoViewer.z0();
+                    break;
+                }
+                break;
+            default:
+                this.b.a.h.setVisibility(4);
+                break;
         }
-        if (i10 == 3 && au0Var.h.getVisibility() != 4) {
-            AndroidUtilities.runOnUIThread(new xf0(this, 1), 300L);
-        }
-        AndroidUtilities.runOnUIThread(new i2.g0(this, z11, i10, 1));
     }
 }

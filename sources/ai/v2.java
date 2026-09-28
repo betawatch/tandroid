@@ -11,21 +11,21 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class v2 {
     public final long a;
     public final float b;
     public final float c;
-    public final ij0 d;
+    public final kj0 d;
     public final Paint e;
     public final ImageReceiver f;
-    public final t01 g;
+    public final v01 g;
     public boolean h;
     public final org.telegram.ui.Components.e6 i;
     public final org.telegram.ui.Components.e6 j;
@@ -38,12 +38,12 @@ public final class v2 {
         this.c = Utilities.clamp01(Utilities.fastRandom.nextFloat());
         if (z10) {
             int[] iArr = w2Var.f;
-            ij0 ij0Var = new ij0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-            this.d = ij0Var;
-            ij0Var.R(view);
-            ij0Var.J(true);
-            ij0Var.K(0);
-            ij0Var.start();
+            kj0 kj0Var = new kj0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+            this.d = kj0Var;
+            kj0Var.R(view);
+            kj0Var.J(true);
+            kj0Var.K(0);
+            kj0Var.start();
         }
         TLObject userOrChat = MessagesController.getInstance(i10).getUserOrChat(j3);
         org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
@@ -59,16 +59,16 @@ public final class v2 {
         }
         paint.setColor(-1135603);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("⭐️");
-        pq pqVar = new pq(R.drawable.star, 0);
-        pqVar.spaceScaleX = 0.875f;
-        spannableStringBuilder.setSpan(pqVar, 0, spannableStringBuilder.length(), 33);
+        qq qqVar = new qq(R.drawable.star, 0);
+        qqVar.spaceScaleX = 0.875f;
+        spannableStringBuilder.setSpan(qqVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
         spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i11, ','));
-        this.g = new t01(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        this.g = new v01(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
         org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(view, 2000L, new LinearInterpolator());
         this.i = e6Var;
         e6Var.d(0.0f, true);
         e6Var.d(1.0f, false);
-        this.j = new org.telegram.ui.Components.e6(view, 350L, 240L, rr.h);
+        this.j = new org.telegram.ui.Components.e6(view, 350L, 240L, sr.h);
     }
 }

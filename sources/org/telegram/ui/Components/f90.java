@@ -1,13 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public interface f90 {
-    void c();
+public final class f90 extends wi0 {
+    public final /* synthetic */ i90 n;
 
-    void e();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f90(i90 i90Var, Context context, String str, String str2, String str3) {
+        super(context, str, str2, str3, false);
+        this.n = i90Var;
+    }
 
-    void j();
-
-    void k();
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        super.dismiss();
+        this.n.E = null;
+    }
 }

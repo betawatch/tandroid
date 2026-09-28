@@ -4,18 +4,18 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class wa0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.lj0 a;
-    public final /* synthetic */ org.telegram.ui.Components.ij0 b;
+    public final /* synthetic */ org.telegram.ui.Components.nj0 a;
+    public final /* synthetic */ org.telegram.ui.Components.kj0 b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ LaunchActivity d;
 
-    public wa0(LaunchActivity launchActivity, org.telegram.ui.Components.lj0 lj0Var, org.telegram.ui.Components.ij0 ij0Var, boolean z10) {
+    public wa0(LaunchActivity launchActivity, org.telegram.ui.Components.nj0 nj0Var, org.telegram.ui.Components.kj0 kj0Var, boolean z10) {
         this.d = launchActivity;
-        this.a = lj0Var;
-        this.b = ij0Var;
+        this.a = nj0Var;
+        this.b = kj0Var;
         this.c = z10;
     }
 
@@ -28,13 +28,13 @@ public final class wa0 extends AnimatorListenerAdapter {
         launchActivity.o0.setImageDrawable(null);
         launchActivity.o0.setVisibility(8);
         launchActivity.p0.setVisibility(8);
-        org.telegram.ui.Components.lj0 lj0Var = this.a;
-        if (lj0Var != null) {
-            lj0Var.setImageDrawable(this.b);
+        org.telegram.ui.Components.nj0 nj0Var = this.a;
+        if (nj0Var != null) {
+            nj0Var.setImageDrawable(this.b);
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeAccentListUpdated, new Object[0]);
-        if (!this.c && lj0Var != null) {
-            lj0Var.setVisibility(0);
+        if (!this.c && nj0Var != null) {
+            nj0Var.setVisibility(0);
         }
         qy.w4 = false;
     }

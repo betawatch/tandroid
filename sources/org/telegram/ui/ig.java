@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ig implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class ig implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                ((org.telegram.ui.Components.vn) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((org.telegram.ui.Components.wn) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 3:
                 ((rv0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
@@ -60,12 +60,12 @@ public final /* synthetic */ class ig implements ValueAnimator.AnimatorUpdateLis
                 x11Var.b.setTranslationX(lerp);
                 ImageView imageView = x11Var.c;
                 imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.op opVar = x11Var.f;
-                opVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
+                org.telegram.ui.Components.pp ppVar = x11Var.f;
+                ppVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
                 float f7 = (floatValue3 * 0.5f) + 0.5f;
-                opVar.setScaleX(f7);
-                opVar.setScaleY(f7);
-                opVar.setAlpha(floatValue3);
+                ppVar.setScaleX(f7);
+                ppVar.setScaleY(f7);
+                ppVar.setAlpha(floatValue3);
                 float f10 = 1.0f - floatValue3;
                 float f11 = (f10 * 0.5f) + 0.5f;
                 imageView.setScaleX(f11);

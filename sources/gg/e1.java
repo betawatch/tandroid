@@ -38,12 +38,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.r80;
-import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.t80;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.yn0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.c90;
@@ -70,7 +70,7 @@ import org.telegram.ui.zf0;
 import xh.p4;
 import yh.s5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -227,7 +227,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 togglegroupcallsettings.call = inputGroupCall;
                 togglegroupcallsettings.reset_invite_hash = true;
                 int i17 = this.b;
-                ConnectionsManager.getInstance(i17).sendRequest(togglegroupcallsettings, new u8(i17, inputGroupCall, (String[]) obj5, (FrameLayout) obj4, (n90) obj3, (e3) obj2, (d6) obj));
+                ConnectionsManager.getInstance(i17).sendRequest(togglegroupcallsettings, new u8(i17, inputGroupCall, (String[]) obj5, (FrameLayout) obj4, (p90) obj3, (e3) obj2, (d6) obj));
                 break;
             case 5:
                 TLObject tLObject3 = (TLObject) obj2;
@@ -271,7 +271,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     if (!MediaDataController.getInstance(i13).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
                         MediaDataController.getInstance(i13).toggleStickerSet(null, tLObject5, 2, null, false, false);
                     }
-                    AndroidUtilities.runOnUIThread(new wn0(10, tLObject5, document), 250L);
+                    AndroidUtilities.runOnUIThread(new yn0(10, tLObject5, document), 250L);
                     break;
                 } else if (tL_error2 != null) {
                     if (FileRefController.isFileRefError(tL_error2.text)) {
@@ -350,7 +350,7 @@ public final /* synthetic */ class e1 implements Runnable {
                         TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
                         if (tL_starsSubscriptionPricing == null || chatInvite.can_refulfill_subscription) {
                             m2 m2Var = (m2) hg.c.g(1, arrayList4);
-                            m2Var.showDialog(new r80(launchActivity, chatInvite, str2, m2Var, m2Var instanceof wn ? ((wn) m2Var).ea : null));
+                            m2Var.showDialog(new t80(launchActivity, chatInvite, str2, m2Var, m2Var instanceof wn ? ((wn) m2Var).ea : null));
                         } else {
                             long j3 = tL_starsSubscriptionPricing.amount;
                             MessagesController.getInstance(i13).putChat(chatInvite.chat, false);
@@ -479,7 +479,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 String[] strArr = (String[]) obj2;
                 String str9 = (String) obj;
                 if (profileActivity.getParentActivity() != null) {
-                    y70 H = y70.H(profileActivity, view);
+                    a80 H = a80.H(profileActivity, view);
                     H.W(profileActivity.a.V0(view, false));
                     H.w = false;
                     H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new wl0(profileActivity, str8, i13, 5), false);
@@ -516,7 +516,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 a4.a.A(sb2, MessagesController.getInstance(i13).linkPrefix, "/", (String) obj5, "/c/");
                 sb2.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
                 String sb3 = sb2.toString();
-                new xh.z1((zr0) obj6, (Context) obj3, sb3, sb3, (d6) obj2, (m2) obj).show();
+                new xh.z1((bs0) obj6, (Context) obj3, sb3, sb3, (d6) obj2, (m2) obj).show();
                 break;
         }
     }

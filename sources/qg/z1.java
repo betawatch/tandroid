@@ -11,10 +11,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.c70;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class z1 extends View {
     public Bitmap a;
@@ -37,7 +37,7 @@ public abstract class z1 extends View {
         }
         this.v = true;
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
-        duration.setInterpolator(rr.f);
+        duration.setInterpolator(sr.f);
         duration.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 10));
         duration.addListener(new c70(14, this, z10));
         duration.start();

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ij0 extends ci.d {
     public final /* synthetic */ kj0 h0;
@@ -19,7 +19,7 @@ public final class ij0 extends ci.d {
         boolean z10 = kj0Var.n0 == 0.0f;
         kj0Var.n0 = f7;
         if (z10) {
-            kj0Var.o0 = new org.telegram.ui.Components.db0(kj0Var, 1);
+            kj0Var.o0 = new org.telegram.ui.Components.fb0(kj0Var, 1);
             kj0Var.S(false);
         }
         return f7;

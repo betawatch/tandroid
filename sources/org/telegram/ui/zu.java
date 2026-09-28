@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class zu implements View.OnClickListener {
     public final /* synthetic */ Context a;
@@ -54,27 +54,27 @@ public final class zu implements View.OnClickListener {
             String str3 = str2;
             boolean z10 = !q6;
             org.telegram.ui.ActionBar.g6 N0 = q6 ? org.telegram.ui.ActionBar.h6.N0(str3) : org.telegram.ui.ActionBar.h6.N0(str);
-            org.telegram.ui.Components.ij0 ij0Var = this.c.d;
-            ij0Var.P(q6 ? ij0Var.e[0] - 1 : 0);
+            org.telegram.ui.Components.kj0 kj0Var = this.c.d;
+            kj0Var.P(q6 ? kj0Var.e[0] - 1 : 0);
             this.c.e.getImageView().d();
             int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.f0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
             this.c.e.getImageView().getLocationInWindow(iArr);
             int i10 = iArr[0];
             int i11 = iArr[1];
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), this.c.e.getImageView(), this.c.e, new org.telegram.messenger.y7(this, w02, this.a, w03, z10, this.b));
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), this.c.e.getImageView(), this.c.e, new org.telegram.messenger.v7(this, w02, this.a, w03, z10, this.b));
         }
         str = string;
         boolean q62 = org.telegram.ui.ActionBar.h6.I.q();
         String str32 = str2;
         boolean z102 = !q62;
         org.telegram.ui.ActionBar.g6 N02 = q62 ? org.telegram.ui.ActionBar.h6.N0(str32) : org.telegram.ui.ActionBar.h6.N0(str);
-        org.telegram.ui.Components.ij0 ij0Var2 = this.c.d;
-        ij0Var2.P(q62 ? ij0Var2.e[0] - 1 : 0);
+        org.telegram.ui.Components.kj0 kj0Var2 = this.c.d;
+        kj0Var2.P(q62 ? kj0Var2.e[0] - 1 : 0);
         this.c.e.getImageView().d();
         int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.f0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
         this.c.e.getImageView().getLocationInWindow(iArr2);
         int i102 = iArr2[0];
         int i112 = iArr2[1];
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N02, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), this.c.e.getImageView(), this.c.e, new org.telegram.messenger.y7(this, w02, this.a, w03, z102, this.b));
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N02, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), this.c.e.getImageView(), this.c.e, new org.telegram.messenger.v7(this, w02, this.a, w03, z102, this.b));
     }
 }

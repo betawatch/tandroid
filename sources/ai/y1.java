@@ -20,17 +20,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.pg0;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.rg0;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
     public final void run(Object obj) {
         String str;
         int i10;
-        j61 j61Var;
+        l61 l61Var;
         boolean z10;
-        j61 j61Var2;
+        l61 l61Var2;
         int i11 = 3;
         int i12 = 5;
         int i13 = 0;
@@ -161,7 +161,7 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 if (view2 instanceof ci.s4) {
                     o4Var.getClass();
                     int R = RecyclerView.R(view2);
-                    v51 G = o4Var.Y2.G(R);
+                    x51 G = o4Var.Y2.G(R);
                     if (G != null) {
                         ci.s4 s4Var = (ci.s4) view2;
                         s4Var.setPosition(t4Var.b(R));
@@ -195,7 +195,7 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 if (l8Var != null && lcVar.O1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(l8Var.y);
                     boolean z11 = !isEmpty;
-                    ((pg0) lcVar.j1.c).a(!lcVar.X0.k(), false);
+                    ((rg0) lcVar.j1.c).a(!lcVar.X0.k(), false);
                     lcVar.j1.setVisibility(0);
                     lcVar.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new bi.f(i12, nbVar, z11)).start();
                 }
@@ -217,9 +217,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 break;
             case 13:
                 ci.k8 k8Var = (ci.k8) obj;
-                i71 i71Var = ((ci.b7) this.b).n;
-                if (i71Var != null) {
-                    i71Var.setHDRInfo(k8Var);
+                k71 k71Var = ((ci.b7) this.b).n;
+                if (k71Var != null) {
+                    k71Var.setHDRInfo(k8Var);
                     break;
                 }
                 break;
@@ -248,9 +248,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 ArrayList arrayList4 = uVar.b;
                 arrayList4.clear();
                 arrayList4.addAll((ArrayList) obj);
-                r61 r61Var = uVar.a;
-                if (r61Var != null && (j61Var = r61Var.Y2) != null) {
-                    j61Var.N(true);
+                t61 t61Var = uVar.a;
+                if (t61Var != null && (l61Var = t61Var.Y2) != null) {
+                    l61Var.N(true);
                     break;
                 }
                 break;
@@ -260,9 +260,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 ArrayList arrayList6 = fVar.h;
                 boolean z12 = arrayList6 == null || arrayList6.isEmpty();
                 fVar.h = arrayList5;
-                r61 r61Var2 = fVar.e;
-                if (r61Var2 != null) {
-                    r61Var2.Y2.N(z12);
+                t61 t61Var2 = fVar.e;
+                if (t61Var2 != null) {
+                    t61Var2.Y2.N(z12);
                     break;
                 }
                 break;
@@ -271,15 +271,15 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 break;
             case 21:
                 TLRPC.User user = (TLRPC.User) obj;
-                eo0 eo0Var = (eo0) ((gg.i0) this.b);
-                zx zxVar = eo0Var.K0;
+                go0 go0Var = (go0) ((gg.i0) this.b);
+                zx zxVar = go0Var.K0;
                 if (user != null) {
                     qy qyVar = zxVar.J0;
                     if (qyVar != null) {
                         qyVar.K3();
                     }
                     MessagesController.getInstance(zxVar.H0).openApp(user, 0);
-                    eo0Var.R(user.id, user);
+                    go0Var.R(user.id, user);
                     break;
                 }
                 break;
@@ -312,12 +312,12 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 if (c0Var2 != null) {
                     c0Var2.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                r61 r61Var3 = v0Var.c;
-                if (r61Var3 == null || (j61Var2 = r61Var3.Y2) == null) {
+                t61 t61Var3 = v0Var.c;
+                if (t61Var3 == null || (l61Var2 = t61Var3.Y2) == null) {
                     z10 = true;
                 } else {
                     z10 = true;
-                    j61Var2.N(true);
+                    l61Var2.N(true);
                 }
                 v0Var.Y(z10);
                 v0Var.T = z10;

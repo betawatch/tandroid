@@ -6,7 +6,7 @@ import org.telegram.messenger.SecretChatHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ai implements Comparator {
     public final /* synthetic */ int a;
@@ -17,6 +17,7 @@ public final /* synthetic */ class ai implements Comparator {
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
+        int lambda$updatePinnedOrder$5;
         int lambda$updateAllDialogs$0;
         int lambda$resendMessages$13;
         int lambda$checkSecretHoles$16;
@@ -24,15 +25,18 @@ public final /* synthetic */ class ai implements Comparator {
         int lambda$sortTopics$9;
         switch (this.a) {
             case 0:
+                lambda$updatePinnedOrder$5 = SavedMessagesController.lambda$updatePinnedOrder$5((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
+                return lambda$updatePinnedOrder$5;
+            case 1:
                 lambda$updateAllDialogs$0 = SavedMessagesController.lambda$updateAllDialogs$0((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
                 return lambda$updateAllDialogs$0;
-            case 1:
+            case 2:
                 lambda$resendMessages$13 = SecretChatHelper.lambda$resendMessages$13((TLRPC.Message) obj, (TLRPC.Message) obj2);
                 return lambda$resendMessages$13;
-            case 2:
+            case 3:
                 lambda$checkSecretHoles$16 = SecretChatHelper.lambda$checkSecretHoles$16((SecretChatHelper.TL_decryptedMessageHolder) obj, (SecretChatHelper.TL_decryptedMessageHolder) obj2);
                 return lambda$checkSecretHoles$16;
-            case 3:
+            case 4:
                 lambda$saveProxyList$4 = SharedConfig.lambda$saveProxyList$4((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
                 return lambda$saveProxyList$4;
             default:

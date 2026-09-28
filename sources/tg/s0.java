@@ -16,14 +16,14 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.j20;
 import org.telegram.ui.ny0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class s0 extends bb {
     public final ArrayList X;
@@ -65,9 +65,9 @@ public final class s0 extends bb {
         ViewGroup viewGroup = this.containerView;
         int i11 = this.backgroundPaddingLeft;
         viewGroup.addView(j20Var, y5.f(-2.0f, 87, i11, 0, i11, 0));
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
+        yl0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
         this.d.setOnItemClickListener(new n6(24, this, chat));
         fixNavigationBar();
         N();
@@ -125,7 +125,7 @@ public final class s0 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         return new m0(this);
     }
 

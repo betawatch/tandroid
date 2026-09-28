@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class g2 implements Utilities.Callback {
                 ((FileRefController) this.b).lambda$requestReferenceFromServer$1((String) this.c, (String) this.d, (ai.t8) obj);
                 break;
             case 3:
-                MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.w9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
+                MediaDataController.lambda$fillWithAnimatedEmoji$227((boolean[]) this.b, (ArrayList[]) this.c, (Runnable) this.d, (ArrayList) obj);
                 break;
             case 4:
-                MediaDataController.lambda$fillWithAnimatedEmoji$226((boolean[]) this.b, (ArrayList[]) this.c, (Runnable) this.d, (ArrayList) obj);
+                MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.w9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
                 break;
             default:
                 MessagesController.lambda$openApp$499((boolean[]) this.b, (TL_bots.BotInfo[]) this.c, (Runnable) this.d, (TLRPC.UserFull) obj);

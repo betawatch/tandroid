@@ -11,9 +11,9 @@ import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class t2 extends View {
     public final Paint a;
@@ -35,7 +35,7 @@ public final class t2 extends View {
         this.c = paint;
         this.d = new RadialGradient[2];
         this.e = new Matrix();
-        this.f = new org.telegram.ui.Components.e6(1.0f, this, 0L, 420L, rr.h);
+        this.f = new org.telegram.ui.Components.e6(1.0f, this, 0L, 420L, sr.h);
         this.h = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
         this.n = new Path();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));

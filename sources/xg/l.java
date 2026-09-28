@@ -23,12 +23,12 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.pp;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.xw0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class l extends vg.c {
     public final ImageView E;
@@ -36,9 +36,9 @@ public final class l extends vg.c {
     public TLRPC.User G;
     public TLRPC.Chat H;
     public TL_stories.TL_myBoost I;
-    public final vw0 J;
+    public final xw0 J;
     public final boolean[] r;
-    public final op s;
+    public final pp s;
     public final ImageView v;
     public boolean w;
     public final ImageView x;
@@ -48,31 +48,31 @@ public final class l extends vg.c {
         super(context, d6Var);
         this.r = new boolean[1];
         this.F = true;
-        this.J = new vw0(this);
+        this.J = new xw0(this);
         this.d.setTypeface(AndroidUtilities.bold());
         this.f.setVisibility(8);
         if (z11) {
-            op opVar = new op(context, 21, d6Var);
-            this.s = opVar;
-            opVar.b(h6.B5, h6.h5, h6.k7);
-            opVar.setDrawUnchecked(false);
-            opVar.setDrawBackgroundAsArc(3);
+            pp ppVar = new pp(context, 21, d6Var);
+            this.s = ppVar;
+            ppVar.b(h6.B5, h6.h5, h6.k7);
+            ppVar.setDrawUnchecked(false);
+            ppVar.setDrawBackgroundAsArc(3);
             boolean z13 = LocaleController.isRTL;
-            addView(opVar, y5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
+            addView(ppVar, y5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
             d();
         } else if (z10) {
-            op opVar2 = new op(context, 21, d6Var);
-            this.s = opVar2;
+            pp ppVar2 = new pp(context, 21, d6Var);
+            this.s = ppVar2;
             if (z12) {
-                opVar2.b(h6.i7, h6.j7, h6.C5);
+                ppVar2.b(h6.i7, h6.j7, h6.C5);
             } else {
-                opVar2.b(h6.B5, h6.j7, h6.C5);
+                ppVar2.b(h6.B5, h6.j7, h6.C5);
             }
-            opVar2.setDrawUnchecked(true);
-            opVar2.setDrawBackgroundAsArc(10);
-            addView(opVar2);
-            opVar2.a(false, false);
-            opVar2.setLayoutParams(y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+            ppVar2.setDrawUnchecked(true);
+            ppVar2.setDrawBackgroundAsArc(10);
+            addView(ppVar2);
+            ppVar2.a(false, false);
+            ppVar2.setLayoutParams(y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
             d();
         } else {
             this.s = null;
@@ -122,15 +122,15 @@ public final class l extends vg.c {
 
     @Override // vg.c
     public final boolean b() {
-        op opVar = this.s;
-        return opVar != null && opVar.getDrawUnchecked();
+        pp ppVar = this.s;
+        return ppVar != null && ppVar.getDrawUnchecked();
     }
 
     @Override // vg.c
     public final void c(boolean z10, boolean z11) {
-        op opVar = this.s;
-        if (opVar != null && opVar.getVisibility() == 0) {
-            opVar.a(z10, z11);
+        pp ppVar = this.s;
+        if (ppVar != null && ppVar.getVisibility() == 0) {
+            ppVar.a(z10, z11);
         }
     }
 
@@ -256,16 +256,16 @@ public final class l extends vg.c {
     }
 
     public final void i(float f7, boolean z10) {
-        op opVar = this.s;
-        if (opVar == null) {
+        pp ppVar = this.s;
+        if (ppVar == null) {
             return;
         }
         if (!z10) {
-            opVar.animate().cancel();
-            opVar.setAlpha(f7);
-        } else if (Math.abs(opVar.getAlpha() - f7) > 0.1d) {
-            opVar.animate().cancel();
-            opVar.animate().alpha(f7).start();
+            ppVar.animate().cancel();
+            ppVar.setAlpha(f7);
+        } else if (Math.abs(ppVar.getAlpha() - f7) > 0.1d) {
+            ppVar.animate().cancel();
+            ppVar.animate().alpha(f7).start();
         }
     }
 
@@ -348,13 +348,13 @@ public final class l extends vg.c {
             setSubtitle(LocaleController.formatUserStatus(UserConfig.selectedAccount, user, zArr));
         }
         this.e.setTextColor(h6.v0(zArr[0] ? h6.n5 : h6.r5, this.a));
-        op opVar = this.s;
-        if (opVar != null) {
-            opVar.setAlpha(1.0f);
+        pp ppVar = this.s;
+        if (ppVar != null) {
+            ppVar.setAlpha(1.0f);
         }
         int w02 = h6.w0(null, h6.z9, false);
         boolean u10 = e2.u(user);
-        vw0 vw0Var = this.J;
-        z5Var.i(u10 ? vw0Var.a(user, null, w02, false) : vw0Var.a(null, null, w02, false));
+        xw0 xw0Var = this.J;
+        z5Var.i(u10 ? xw0Var.a(user, null, w02, false) : xw0Var.a(null, null, w02, false));
     }
 }

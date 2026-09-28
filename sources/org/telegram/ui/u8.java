@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -24,13 +24,13 @@ public final /* synthetic */ class u8 implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ u8(int i10, TLRPC.InputGroupCall inputGroupCall, String[] strArr, FrameLayout frameLayout, org.telegram.ui.Components.n90 n90Var, org.telegram.ui.ActionBar.e3 e3Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public /* synthetic */ u8(int i10, TLRPC.InputGroupCall inputGroupCall, String[] strArr, FrameLayout frameLayout, org.telegram.ui.Components.p90 p90Var, org.telegram.ui.ActionBar.e3 e3Var, org.telegram.ui.ActionBar.d6 d6Var) {
         this.a = 0;
         this.b = i10;
         this.c = inputGroupCall;
         this.d = strArr;
         this.e = frameLayout;
-        this.f = n90Var;
+        this.f = p90Var;
         this.g = e3Var;
         this.h = d6Var;
     }
@@ -49,7 +49,7 @@ public final /* synthetic */ class u8 implements RequestDelegate {
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) obj6;
                 String[] strArr = (String[]) obj5;
                 FrameLayout frameLayout = (FrameLayout) obj4;
-                org.telegram.ui.Components.n90 n90Var = (org.telegram.ui.Components.n90) obj3;
+                org.telegram.ui.Components.p90 p90Var = (org.telegram.ui.Components.p90) obj3;
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj2;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
                 boolean z10 = tLObject instanceof TLRPC.Updates;
@@ -59,7 +59,7 @@ public final /* synthetic */ class u8 implements RequestDelegate {
                 }
                 TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
                 exportgroupcallinvite.call = inputGroupCall;
-                ConnectionsManager.getInstance(i11).sendRequest(exportgroupcallinvite, new ci.hd(strArr, frameLayout, n90Var, e3Var, d6Var, 1));
+                ConnectionsManager.getInstance(i11).sendRequest(exportgroupcallinvite, new ci.hd(strArr, frameLayout, p90Var, e3Var, d6Var, 1));
                 break;
             case 1:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj6;

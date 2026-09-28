@@ -10,9 +10,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class x1 extends View {
     public pg.f1 E;
@@ -134,13 +134,13 @@ public final class x1 extends View {
                         }
                         canvas.save();
                         float dp4 = AndroidUtilities.dp(32.0f);
-                        rr rrVar = rr.f;
-                        canvas.translate(rrVar.getInterpolation(this.r) * dp4, rectF.top);
+                        sr srVar = sr.f;
+                        canvas.translate(srVar.getInterpolation(this.r) * dp4, rectF.top);
                         canvas.drawPath(path, this.a);
                         canvas.restore();
                         float f12 = (d - d10) / (d11 - d10);
                         float f13 = dp2 * 1.5f;
-                        a(rrVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
+                        a(srVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.v && this.E != null) {
                             pg.f1 f1Var = this.E;
                             float f14 = f1Var.c.g.a;
@@ -185,13 +185,13 @@ public final class x1 extends View {
                 }
                 canvas.save();
                 float dp42 = AndroidUtilities.dp(32.0f);
-                rr rrVar2 = rr.f;
-                canvas.translate(rrVar2.getInterpolation(this.r) * dp42, rectF3.top);
+                sr srVar2 = sr.f;
+                canvas.translate(srVar2.getInterpolation(this.r) * dp42, rectF3.top);
                 canvas.drawPath(path2, this.a);
                 canvas.restore();
                 float f122 = (d - d10) / (d11 - d10);
                 float f132 = dp22 * 1.5f;
-                a(rrVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
+                a(srVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
                 if (this.J) {
                     pg.f1 f1Var2 = this.E;
                     float f142 = f1Var2.c.g.a;
@@ -238,13 +238,13 @@ public final class x1 extends View {
         }
         canvas.save();
         float dp422 = AndroidUtilities.dp(32.0f);
-        rr rrVar22 = rr.f;
-        canvas.translate(rrVar22.getInterpolation(this.r) * dp422, rectF32.top);
+        sr srVar22 = sr.f;
+        canvas.translate(srVar22.getInterpolation(this.r) * dp422, rectF32.top);
         canvas.drawPath(path22, this.a);
         canvas.restore();
         float f1222 = (d - d10) / (d11 - d10);
         float f1322 = dp222 * 1.5f;
-        a(rrVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
+        a(srVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
         if (this.J) {
         }
         if (this.n != 0.0f) {

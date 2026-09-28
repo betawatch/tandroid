@@ -46,7 +46,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class SecretMediaViewer implements NotificationCenter.NotificationCenterDelegate, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer x1;
@@ -78,7 +78,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
     public float O0;
     public int P;
     public float P0;
-    public org.telegram.ui.Components.u71 Q;
+    public org.telegram.ui.Components.w71 Q;
     public float Q0;
     public n50 R;
     public float R0;
@@ -90,7 +90,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
     public float U0;
     public ImageView V;
     public float V0;
-    public org.telegram.ui.Components.pg0 W;
+    public org.telegram.ui.Components.rg0 W;
     public float W0;
     public FrameLayout X;
     public float X0;
@@ -118,7 +118,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
     public long f0;
     public boolean f1;
     public WindowInsets g0;
-    public org.telegram.ui.Components.zm0 g1;
+    public org.telegram.ui.Components.bn0 g1;
     public MessageObject h0;
     public boolean h1;
     public ImageReceiver.BitmapHolder i0;
@@ -163,7 +163,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
     public boolean k0 = true;
     public final PhotoBackgroundDrawable l0 = new PhotoBackgroundDrawable();
 
-    /* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
     public class PhotoBackgroundDrawable extends ColorDrawable {
         public jx0 a;
         public int b;
@@ -266,9 +266,9 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         ImageReceiver imageReceiver = secretMediaViewer.h;
         if (secretMediaViewer.j0) {
             if (secretMediaViewer.K0 != null) {
-                org.telegram.ui.Components.zm0 zm0Var = secretMediaViewer.g1;
-                if (!zm0Var.q) {
-                    zm0Var.a();
+                org.telegram.ui.Components.bn0 bn0Var = secretMediaViewer.g1;
+                if (!bn0Var.q) {
+                    bn0Var.a();
                 }
                 float f25 = secretMediaViewer.y0;
                 float f26 = secretMediaViewer.B0;
@@ -313,16 +313,16 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                     secretMediaViewer.n(f36);
                     secretMediaViewer.e1 = false;
                 }
-                org.telegram.ui.Components.zm0 zm0Var2 = secretMediaViewer.g1;
-                if (!zm0Var2.q && zm0Var2.b()) {
-                    org.telegram.ui.Components.zm0 zm0Var3 = secretMediaViewer.g1;
-                    float f37 = zm0Var3.b;
+                org.telegram.ui.Components.bn0 bn0Var2 = secretMediaViewer.g1;
+                if (!bn0Var2.q && bn0Var2.b()) {
+                    org.telegram.ui.Components.bn0 bn0Var3 = secretMediaViewer.g1;
+                    float f37 = bn0Var3.b;
                     if (f37 < secretMediaViewer.W0 && f37 > secretMediaViewer.V0) {
-                        secretMediaViewer.w0 = zm0Var3.j;
+                        secretMediaViewer.w0 = bn0Var3.j;
                     }
-                    float f38 = zm0Var3.c;
+                    float f38 = bn0Var3.c;
                     if (f38 < secretMediaViewer.Y0 && f38 > secretMediaViewer.X0) {
-                        secretMediaViewer.x0 = zm0Var3.k;
+                        secretMediaViewer.x0 = bn0Var3.k;
                     }
                     secretMediaViewer.e.invalidate();
                 }
@@ -812,7 +812,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                     this.o0 = new n41(this, vu0Var, 0);
                     this.K0.setInterpolator(new DecelerateInterpolator());
                     this.K0.setDuration(250L);
-                    this.K0.addListener(new org.telegram.ui.Components.al0(14, this, vu0Var));
+                    this.K0.addListener(new org.telegram.ui.Components.cl0(14, this, vu0Var));
                     this.n0 = System.currentTimeMillis();
                     this.e.setLayerType(2, null);
                     this.K0.start();
@@ -948,7 +948,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             TransitionSet duration = new TransitionSet().addTransition(new q41(this, isEmpty2, isEmpty, 1)).addTransition(new q41(this, isEmpty2, isEmpty, 0)).setDuration(200L);
             if (!isEmpty2) {
                 this.a0.l0 = true;
-                duration.addTransition(new org.telegram.ui.Components.qm0(this, 3));
+                duration.addTransition(new org.telegram.ui.Components.sm0(this, 3));
             }
             if (isEmpty2 && !isEmpty) {
                 duration.addTarget((View) this.Z);
@@ -975,7 +975,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         } else {
             org.telegram.ui.ActionBar.h6.J(null, true);
             TLRPC.Message message = messageObject.messageOwner;
-            if (message == null || message.translatedText == null || !TextUtils.equals(message.translatedToLanguage, org.telegram.ui.Components.i41.A())) {
+            if (message == null || message.translatedText == null || !TextUtils.equals(message.translatedToLanguage, org.telegram.ui.Components.k41.A())) {
                 if (messageObject.messageOwner.entities.isEmpty()) {
                     cloneSpans = Emoji.replaceEmoji(new SpannableStringBuilder(cloneSpans), nextView.getPaint().getFontMetricsInt(), false);
                 } else {
@@ -1014,7 +1014,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         this.m1 = z12;
         this.V.animate().cancel();
         if (z11) {
-            this.V.animate().scaleX(z12 ? 1.0f : 0.6f).scaleY(z12 ? 1.0f : 0.6f).alpha(z12 ? 1.0f : 0.0f).setDuration(340L).setInterpolator(org.telegram.ui.Components.rr.h).start();
+            this.V.animate().scaleX(z12 ? 1.0f : 0.6f).scaleY(z12 ? 1.0f : 0.6f).alpha(z12 ? 1.0f : 0.0f).setDuration(340L).setInterpolator(org.telegram.ui.Components.sr.h).start();
             return;
         }
         this.V.setScaleX(z12 ? 1.0f : 0.6f);
@@ -1035,9 +1035,9 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         ci.e4 e4Var3 = this.r;
         e4Var3.getClass();
         e4Var3.d0 = 0.0f;
-        org.telegram.ui.Components.ij0 ij0Var = new org.telegram.ui.Components.ij0(R.raw.fire_on, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
-        ij0Var.start();
-        e4Var3.j(ij0Var);
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.fire_on, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+        kj0Var.start();
+        e4Var3.j(kj0Var);
         this.r.u();
         MessagesController.getGlobalMainSettings().edit().putInt("viewoncehint", MessagesController.getGlobalMainSettings().getInt("viewoncehint", 0) + 1).commit();
     }

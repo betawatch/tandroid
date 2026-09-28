@@ -21,9 +21,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class jy extends org.telegram.ui.Components.aw0 {
+public final class jy extends org.telegram.ui.Components.cw0 {
     public VelocityTracker A0;
     public final Rect B0;
     public boolean C0;
@@ -59,7 +59,7 @@ public final class jy extends org.telegram.ui.Components.aw0 {
     
         if (org.telegram.ui.ActionBar.h6.I.q() == false) goto L18;
      */
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -94,17 +94,17 @@ public final class jy extends org.telegram.ui.Components.aw0 {
         canvas.drawRect(rect, paint);
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public final void L(Canvas canvas, ArrayList arrayList) {
         zx zxVar;
-        org.telegram.ui.Components.wl0 p5;
+        org.telegram.ui.Components.yl0 p5;
         qy qyVar = this.E0;
         if (qyVar.p3 && (zxVar = qyVar.C0) != null && zxVar.getVisibility() == 0) {
             zx zxVar2 = qyVar.C0;
             View[] viewArr = zxVar2.e;
             for (int i10 = 0; i10 < viewArr.length; i10++) {
                 View view = viewArr[i10];
-                if (view != null && view.getVisibility() == 0 && (p5 = org.telegram.ui.Components.w81.p(viewArr[i10])) != null) {
+                if (view != null && view.getVisibility() == 0 && (p5 = org.telegram.ui.Components.y81.p(viewArr[i10])) != null) {
                     for (int i11 = 0; i11 < p5.getChildCount(); i11++) {
                         View childAt = p5.getChildAt(i11);
                         if (childAt.getY() < AndroidUtilities.dp(100.0f) + AndroidUtilities.dp(203.0f)) {
@@ -119,13 +119,13 @@ public final class jy extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public final void M() {
         super.M();
         this.E0.m3();
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public final boolean O() {
         return true;
     }
@@ -226,7 +226,7 @@ public final class jy extends org.telegram.ui.Components.aw0 {
     /* JADX WARN: Removed duplicated region for block: B:158:0x01fa  */
     /* JADX WARN: Removed duplicated region for block: B:89:0x01f7  */
     /* JADX WARN: Removed duplicated region for block: B:92:0x0210  */
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -452,7 +452,7 @@ public final class jy extends org.telegram.ui.Components.aw0 {
         if (view == qyVar.K0) {
             return true;
         }
-        if (org.telegram.ui.Components.aw0.v0) {
+        if (org.telegram.ui.Components.cw0.v0) {
             return super.drawChild(canvas, view, j3);
         }
         py[] pyVarArr = qyVar.e0;
@@ -498,7 +498,7 @@ public final class jy extends org.telegram.ui.Components.aw0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         org.telegram.ui.Components.o5 o5Var = this.E0.D3;
@@ -507,7 +507,7 @@ public final class jy extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         org.telegram.ui.Components.o5 o5Var = this.E0.D3;
@@ -538,7 +538,7 @@ public final class jy extends org.telegram.ui.Components.aw0 {
     /* JADX WARN: Removed duplicated region for block: B:66:0x010a  */
     /* JADX WARN: Removed duplicated region for block: B:71:0x0134  */
     /* JADX WARN: Removed duplicated region for block: B:75:0x007b  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -967,7 +967,7 @@ public final class jy extends org.telegram.ui.Components.aw0 {
                                 float f11 = measuredWidth2 / 2;
                                 float distanceInfluenceForSnapDuration = (AndroidUtilities.distanceInfluenceForSnapDuration(Math.min(1.0f, (measuredWidth * 1.0f) / measuredWidth2)) * f11) + f11;
                                 qyVar.f3.setDuration(Math.max(ImageReceiver.DEFAULT_CROSSFADE_DURATION, Math.min(Math.abs(f7) > 0.0f ? Math.round(Math.abs(distanceInfluenceForSnapDuration / r6) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
-                                qyVar.f3.addListener(new org.telegram.ui.Components.q81(this, 19));
+                                qyVar.f3.addListener(new org.telegram.ui.Components.s81(this, 19));
                                 qyVar.f3.start();
                                 qyVar.g3 = true;
                                 qyVar.l3 = false;

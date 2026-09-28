@@ -8,13 +8,13 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.ui.Components.b60;
-import org.telegram.ui.Components.g60;
-import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.d60;
+import org.telegram.ui.Components.i60;
+import org.telegram.ui.Components.k81;
 import org.telegram.ui.jk;
 import org.telegram.ui.pe;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,37 +40,37 @@ public final /* synthetic */ class d0 implements Runnable {
         b2.f0 f0Var;
         File file;
         jk jkVar;
-        i81 i81Var;
+        k81 k81Var;
         switch (this.a) {
             case 0:
                 s0 s0Var = this.b;
                 long j10 = this.c;
-                if (s0Var.V == 6) {
-                    s0Var.D = j10;
-                    s0Var.J = 0L;
-                    s0Var.F = 0L;
-                    s0Var.G = j10;
-                    s0Var.u(2);
-                    s0Var.k.C(s0Var.P, s0Var.D * 1000, s0Var.o);
+                if (s0Var.W == 6) {
+                    s0Var.E = j10;
+                    s0Var.K = 0L;
+                    s0Var.G = 0L;
+                    s0Var.H = j10;
+                    s0Var.v(2);
+                    s0Var.l.C(s0Var.Q, s0Var.E * 1000, s0Var.p);
                     break;
                 }
                 break;
             default:
                 s0 s0Var2 = this.b;
                 long j11 = this.c;
-                if (s0Var2.V == 4) {
-                    s0Var2.J = j11;
-                    long min = Math.min(s0Var2.n, j11);
-                    s0Var2.D = min;
-                    s0Var2.F = 0L;
-                    s0Var2.G = min;
+                if (s0Var2.W == 4) {
+                    s0Var2.K = j11;
+                    long min = Math.min(s0Var2.o, j11);
+                    s0Var2.E = min;
+                    s0Var2.G = 0L;
+                    s0Var2.H = min;
                     s0Var2.b.setSurfaceTextureListener(null);
-                    s0Var2.b.setTransform(s0Var2.g);
+                    s0Var2.b.setTransform(s0Var2.h);
                     i2.f0 a2 = new i2.p(s0Var2.a).a();
-                    s0Var2.R = a2;
+                    s0Var2.S = a2;
                     a2.v1(s0Var2.b);
-                    i2.f0 f0Var2 = s0Var2.R;
-                    Uri fromFile = Uri.fromFile(s0Var2.Q);
+                    i2.f0 f0Var2 = s0Var2.S;
+                    Uri fromFile = Uri.fromFile(s0Var2.R);
                     b2.y yVar = new b2.y();
                     b2.b0 b0Var = new b2.b0();
                     List list = Collections.EMPTY_LIST;
@@ -94,39 +94,39 @@ public final /* synthetic */ class d0 implements Runnable {
                     b2.k0 k0Var = new b2.k0("", new b2.a0(yVar), f0Var, new b2.e0(d0Var), b2.n0.K, g0Var);
                     f0Var2.getClass();
                     f0Var2.I0(e9.i0.z(k0Var));
-                    s0Var2.R.j(r32);
-                    s0Var2.R.U(1.0f);
-                    s0Var2.R.n0(s0Var2.U);
-                    s0Var2.R.b();
-                    s0Var2.R.W0(5, s0Var2.F);
-                    s0Var2.l.b("preview player prepared: durationMs=" + s0Var2.D + ", trim=" + s0Var2.F + ".." + s0Var2.G);
-                    s0Var2.u(5);
-                    l.d dVar = s0Var2.c;
-                    long j12 = s0Var2.D;
-                    long j13 = s0Var2.F;
-                    long j14 = s0Var2.G;
-                    ((b60) dVar.a).w.setProgress(((float) j12) / 60000.0f);
-                    b60 b60Var = (b60) dVar.a;
-                    b60Var.h0 = r32;
-                    b60Var.I.setAlpha(0.0f);
-                    s0 s0Var3 = ((b60) dVar.a).P;
+                    s0Var2.S.j(r32);
+                    s0Var2.S.U(1.0f);
+                    s0Var2.S.n0(s0Var2.V);
+                    s0Var2.S.b();
+                    s0Var2.S.W0(5, s0Var2.G);
+                    s0Var2.m.b("preview player prepared: durationMs=" + s0Var2.E + ", trim=" + s0Var2.G + ".." + s0Var2.H);
+                    s0Var2.v(5);
+                    l.d dVar = s0Var2.d;
+                    long j12 = s0Var2.E;
+                    long j13 = s0Var2.G;
+                    long j14 = s0Var2.H;
+                    ((d60) dVar.a).w.setProgress(((float) j12) / 60000.0f);
+                    d60 d60Var = (d60) dVar.a;
+                    d60Var.h0 = r32;
+                    d60Var.I.setAlpha(0.0f);
+                    s0 s0Var3 = ((d60) dVar.a).P;
                     if (s0Var3 == null) {
                         file = null;
                     } else {
-                        s0.s();
-                        file = s0Var3.Q;
+                        s0.t();
+                        file = s0Var3.R;
                     }
                     if (file != null) {
-                        b60 b60Var2 = (b60) dVar.a;
-                        b60Var2.U = b60Var2.p(file, j12, null);
-                        b60 b60Var3 = (b60) dVar.a;
-                        VideoEditedInfo videoEditedInfo = b60Var3.U;
+                        d60 d60Var2 = (d60) dVar.a;
+                        d60Var2.U = d60Var2.p(file, j12, null);
+                        d60 d60Var3 = (d60) dVar.a;
+                        VideoEditedInfo videoEditedInfo = d60Var3.U;
                         videoEditedInfo.startTime = j13 > j3 ? j13 : -1L;
                         videoEditedInfo.endTime = j14 < j12 ? j14 : -1L;
-                        NotificationCenter notificationCenter = NotificationCenter.getInstance(b60Var3.h);
+                        NotificationCenter notificationCenter = NotificationCenter.getInstance(d60Var3.h);
                         int i10 = NotificationCenter.audioDidSent;
-                        Integer valueOf = Integer.valueOf(((b60) dVar.a).n);
-                        VideoEditedInfo videoEditedInfo2 = ((b60) dVar.a).U;
+                        Integer valueOf = Integer.valueOf(((d60) dVar.a).n);
+                        VideoEditedInfo videoEditedInfo2 = ((d60) dVar.a).U;
                         String absolutePath = file.getAbsolutePath();
                         ArrayList arrayList = new ArrayList();
                         Object[] objArr = new Object[4];
@@ -138,15 +138,15 @@ public final /* synthetic */ class d0 implements Runnable {
                         float max = Math.max(1L, j12);
                         float f7 = j13 / max;
                         float f10 = j14 / max;
-                        g60 g60Var = ((b60) dVar.a).b;
-                        if (g60Var != null && (jkVar = ((pe) g60Var).b.Y) != null && (i81Var = jkVar.f1) != null) {
+                        i60 i60Var = ((d60) dVar.a).b;
+                        if (i60Var != null && (jkVar = ((pe) i60Var).b.Y) != null && (k81Var = jkVar.f1) != null) {
                             float max2 = Math.max(0.0f, Math.min(1.0f, f7));
-                            i81Var.b = max2;
-                            i81Var.c = Math.max(max2, Math.min(1.0f, f10));
-                            i81Var.invalidate();
+                            k81Var.b = max2;
+                            k81Var.c = Math.max(max2, Math.min(1.0f, f10));
+                            k81Var.invalidate();
                         }
                     }
-                    s0Var2.p();
+                    s0Var2.q();
                     break;
                 }
                 break;

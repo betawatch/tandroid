@@ -12,10 +12,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class x2 extends View {
     public float E;
@@ -40,9 +40,9 @@ public final class x2 extends View {
         super(context);
         this.b = new RectF();
         this.c = new Path();
-        rr rrVar = rr.h;
-        this.e = new org.telegram.ui.Components.e6(this, 320L, rrVar);
-        this.f = new org.telegram.ui.Components.e6(this, 320L, rrVar);
+        sr srVar = sr.h;
+        this.e = new org.telegram.ui.Components.e6(this, 320L, srVar);
+        this.f = new org.telegram.ui.Components.e6(this, 320L, srVar);
         Paint paint = new Paint(1);
         this.n = paint;
         Paint paint2 = new Paint(1);
@@ -64,7 +64,7 @@ public final class x2 extends View {
         o6Var.D = true;
         paint.setColor(-14670806);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        new pq(R.drawable.star, 0).setScale(1.8f, 1.8f);
+        new qq(R.drawable.star, 0).setScale(1.8f, 1.8f);
         setCount(0);
         this.d = new yh.i8(1, 50);
     }

@@ -26,12 +26,12 @@ import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.wv0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.a71;
 import org.telegram.ui.zk0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b8 implements Runnable {
     public final /* synthetic */ int a;
@@ -297,8 +297,8 @@ public final /* synthetic */ class b8 implements Runnable {
                 Bitmap[] bitmapArr = (Bitmap[]) obj2;
                 CountDownLatch countDownLatch = (CountDownLatch) obj;
                 pg.s0 s0Var = ((pg.d1) obj3).y.c;
-                uv0 uv0Var = s0Var.g;
-                n7.z0 h = s0Var.h(new RectF(0.0f, 0.0f, uv0Var.a, uv0Var.b), false, z11, z10);
+                wv0 wv0Var = s0Var.g;
+                n7.z0 h = s0Var.h(new RectF(0.0f, 0.0f, wv0Var.a, wv0Var.b), false, z11, z10);
                 if (h != null) {
                     bitmapArr[0] = (Bitmap) h.b;
                 }

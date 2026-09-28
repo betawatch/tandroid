@@ -1,44 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class a40 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c40 b;
-
-    public /* synthetic */ a40(c40 c40Var, int i10) {
-        this.a = i10;
-        this.b = c40Var;
+public final class a40 implements xt0 {
+    @Override // org.telegram.ui.Components.xt0
+    public final boolean T() {
+        return false;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.xn xnVar;
-        ai.w0 w0Var;
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c40 c40Var = this.b;
-                c40Var.w = floatValue;
-                c40Var.e.setTranslationY(floatValue * AndroidUtilities.dp(48.0f));
-                c40Var.e.setPadding(0, 0, 0, (int) (c40Var.w * AndroidUtilities.dp(48.0f)));
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c40 c40Var2 = this.b;
-                c40Var2.E = floatValue2;
-                c40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, floatValue2));
-                c40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, c40Var2.E));
-                org.telegram.ui.fk fkVar = c40Var2.f;
-                if (fkVar != null && (xnVar = fkVar.a) != null && (w0Var = xnVar.L3) != null) {
-                    w0Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, c40Var2.E));
-                    c40Var2.f.a.L3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, c40Var2.E));
-                }
-                c40Var2.h.setAlpha(c40Var2.E);
-                break;
-        }
+    @Override // org.telegram.ui.Components.xt0
+    public final yl0 f() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final boolean p() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final void E() {
+    }
+
+    @Override // org.telegram.ui.Components.xt0
+    public final void R() {
     }
 }

@@ -1,26 +1,23 @@
 package org.telegram.ui.Components;
 
+import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class rz0 {
-    public static final rz0 e = new rz0(false, new oz0(TLObject.FLAG_31, -2147483647), uz0.R, 0.0f);
-    public final boolean a;
-    public final oz0 b;
-    public final gz0 c;
-    public final float d;
+public final class rz0 extends ViewGroup.MarginLayoutParams {
+    public tz0 a;
+    public tz0 b;
 
-    public rz0(boolean z10, oz0 oz0Var, gz0 gz0Var, float f7) {
-        this.a = z10;
-        this.b = oz0Var;
-        this.c = gz0Var;
-        this.d = f7;
-    }
-
-    public static gz0 a(rz0 rz0Var, boolean z10) {
-        gz0 gz0Var = rz0Var.c;
-        return gz0Var != uz0.R ? gz0Var : rz0Var.d == 0.0f ? z10 ? uz0.S : uz0.T : uz0.U;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rz0() {
+        super(-2, -2);
+        tz0 tz0Var = tz0.e;
+        this.a = tz0Var;
+        this.b = tz0Var;
+        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
+        this.a = tz0Var;
+        this.b = tz0Var;
     }
 
     public final boolean equals(Object obj) {
@@ -31,10 +28,10 @@ public final class rz0 {
             return false;
         }
         rz0 rz0Var = (rz0) obj;
-        return this.c.equals(rz0Var.c) && this.b.equals(rz0Var.b);
+        return this.b.equals(rz0Var.b) && this.a.equals(rz0Var.a);
     }
 
     public final int hashCode() {
-        return this.c.hashCode() + (this.b.hashCode() * 31);
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

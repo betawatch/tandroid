@@ -15,7 +15,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class y7 extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ int t1;
@@ -198,7 +198,7 @@ public final class y7 extends org.telegram.ui.ActionBar.k {
                 break;
             case 2:
                 super.setAlpha(f7);
-                viewGroup3 = ((org.telegram.ui.ActionBar.e3) ((ah0) this.u1)).containerView;
+                viewGroup3 = ((org.telegram.ui.ActionBar.e3) ((ch0) this.u1)).containerView;
                 viewGroup3.invalidate();
                 break;
             case 3:

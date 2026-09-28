@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.vp;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class o0 extends p6 {
     public final /* synthetic */ int s;
@@ -26,7 +26,7 @@ public final class o0 extends p6 {
                 p0 p0Var = this.v;
                 if (p0Var.M > 0.0f) {
                     if (p0Var.L == null) {
-                        p0Var.L = new up(p0Var.d.getTextColor());
+                        p0Var.L = new vp(p0Var.d.getTextColor());
                     }
                     int dp = (int) ((1.0f - p0Var.M) * AndroidUtilities.dp(24.0f));
                     p0Var.L.setBounds(0, dp, getWidth(), getHeight() + dp);
@@ -53,7 +53,7 @@ public final class o0 extends p6 {
                 p0 p0Var2 = this.v;
                 if (p0Var2.M > 0.0f) {
                     if (p0Var2.L == null) {
-                        p0Var2.L = new up(p0Var2.d.getTextColor());
+                        p0Var2.L = new vp(p0Var2.d.getTextColor());
                     }
                     int dp2 = (int) ((1.0f - p0Var2.M) * AndroidUtilities.dp(24.0f));
                     p0Var2.L.setBounds(0, dp2, getWidth(), getHeight() + dp2);

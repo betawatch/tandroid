@@ -12,12 +12,12 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.w9;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class f0 extends h0 {
     public final w9 h;
@@ -37,12 +37,12 @@ public final class f0 extends h0 {
         u uVar = new u(k0Var, 3);
         u uVar2 = new u(k0Var, 4);
         d6Var = ((e3) k0Var).resourcesProvider;
-        r61 r61Var = new r61(context, i10, 0, false, tVar, uVar, uVar2, d6Var);
-        this.d = r61Var;
-        r61Var.p1();
-        r61 r61Var2 = this.d;
-        r61Var2.Y2.r = false;
-        r61Var2.setClipToPadding(false);
+        t61 t61Var = new t61(context, i10, 0, false, tVar, uVar, uVar2, d6Var);
+        this.d = t61Var;
+        t61Var.p1();
+        t61 t61Var2 = this.d;
+        t61Var2.Y2.r = false;
+        t61Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         AndroidUtilities.removeFromParent(this.b);
         this.c.addView(k0Var.F, y5.g());
@@ -80,10 +80,10 @@ public final class f0 extends h0 {
         ci.d dVar = new ci.d(context2, d6Var3, true);
         dVar.e();
         if (ChatObject.canAddChatToCommunity(k0Var.f)) {
-            pq pqVar = new pq(R.drawable.filled_add_album, 0);
+            qq qqVar = new qq(R.drawable.filled_add_album, 0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.CommunityAddAChatToCommunity));
-            spannableStringBuilder.setSpan(pqVar, 0, 1, 33);
+            spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
             dVar.setText(spannableStringBuilder);
         } else {
             dVar.setText(LocaleController.getString(R.string.OK));

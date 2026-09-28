@@ -9,17 +9,17 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zi implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hj b;
+    public final /* synthetic */ ij b;
     public final /* synthetic */ MessagesController c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ zi(hj hjVar, MessagesController messagesController, int i10, int i11) {
+    public /* synthetic */ zi(ij ijVar, MessagesController messagesController, int i10, int i11) {
         this.a = i11;
-        this.b = hjVar;
+        this.b = ijVar;
         this.c = messagesController;
         this.d = i10;
     }
@@ -31,9 +31,9 @@ public final /* synthetic */ class zi implements Utilities.Callback2 {
         switch (this.a) {
             case 0:
                 TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) obj;
-                hj hjVar = this.b;
-                hjVar.e0 = -1;
-                hjVar.n0 = false;
+                ij ijVar = this.b;
+                ijVar.d0 = -1;
+                ijVar.m0 = false;
                 if (messages_botresults != null) {
                     this.c.putUsers(messages_botresults.users, false);
                     ArrayList<TLRPC.BotInlineResult> arrayList = messages_botresults.results;
@@ -48,8 +48,8 @@ public final /* synthetic */ class zi implements Utilities.Callback2 {
                             if (tL_botInlineMediaResult.document != null) {
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                                 tL_message.out = true;
-                                int i11 = hjVar.m0;
-                                hjVar.m0 = i11 - 1;
+                                int i11 = ijVar.l0;
+                                ijVar.l0 = i11 - 1;
                                 tL_message.id = i11;
                                 tL_message.peer_id = new TLRPC.TL_peerUser();
                                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
@@ -85,25 +85,25 @@ public final /* synthetic */ class zi implements Utilities.Callback2 {
                                         audioEntry.author = tL_documentAttributeAudio.performer;
                                         audioEntry.title = tL_documentAttributeAudio.title;
                                         audioEntry.duration = (int) tL_documentAttributeAudio.duration;
-                                        hjVar.N.add(audioEntry);
+                                        ijVar.M.add(audioEntry);
                                     }
                                 }
                             }
                         }
                     }
-                    hjVar.l0 = messages_botresults.next_offset;
-                    hjVar.h0 = !TextUtils.isEmpty(r13);
-                    hjVar.P();
+                    ijVar.k0 = messages_botresults.next_offset;
+                    ijVar.g0 = !TextUtils.isEmpty(r13);
+                    ijVar.P();
                     break;
                 }
                 break;
             default:
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj;
-                hj hjVar2 = this.b;
-                ArrayList arrayList2 = hjVar2.M;
-                hjVar2.V = -1;
+                ij ijVar2 = this.b;
+                ArrayList arrayList2 = ijVar2.L;
+                ijVar2.U = -1;
                 boolean z10 = false;
-                hjVar2.a0 = false;
+                ijVar2.W = false;
                 if (messages_messages != null) {
                     ArrayList<TLRPC.User> arrayList3 = messages_messages.users;
                     MessagesController messagesController = this.c;
@@ -139,12 +139,12 @@ public final /* synthetic */ class zi implements Utilities.Callback2 {
                         }
                     }
                     int i16 = messages_messages.next_rate;
-                    hjVar2.c0 = i16;
+                    ijVar2.b0 = i16;
                     if (i16 != 0 || (messages_messages.count > 0 && arrayList2.size() < messages_messages.count)) {
                         z10 = true;
                     }
-                    hjVar2.d0 = z10;
-                    hjVar2.P();
+                    ijVar2.c0 = z10;
+                    ijVar2.P();
                     break;
                 }
                 break;

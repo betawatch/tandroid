@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oh implements o1.g {
     public final /* synthetic */ int a = 1;
@@ -33,7 +33,7 @@ public final /* synthetic */ class oh implements o1.g {
                 wiVar.X0.setAlpha(AndroidUtilities.lerp(this.c, this.d, f11));
                 wiVar.X1(wiVar.y0, 0);
                 wiVar.X1(wiVar.z0, 0);
-                if (!(wiVar.z0 instanceof rm) || this.b) {
+                if (!(wiVar.z0 instanceof sm) || this.b) {
                     f11 = 1.0f - f11;
                 }
                 float clamp = Utilities.clamp(f11, 1.0f, 0.0f);
@@ -44,21 +44,21 @@ public final /* synthetic */ class oh implements o1.g {
                 linearLayout2.setTranslationX(f12 * AndroidUtilities.dp(16.0f));
                 break;
             default:
-                jp0 jp0Var = (jp0) this.e;
+                lp0 lp0Var = (lp0) this.e;
                 boolean z10 = this.b;
                 if (z10) {
-                    if (f7 > this.c / 2.0f || !jp0Var.s) {
+                    if (f7 > this.c / 2.0f || !lp0Var.s) {
                     }
-                } else if (f7 < this.d / 2.0f || !jp0Var.r) {
+                } else if (f7 < this.d / 2.0f || !lp0Var.r) {
                 }
-                jp0Var.s = !z10;
-                jp0Var.r = z10;
+                lp0Var.s = !z10;
+                lp0Var.r = z10;
                 break;
         }
     }
 
-    public /* synthetic */ oh(jp0 jp0Var, boolean z10, float f7, float f10) {
-        this.e = jp0Var;
+    public /* synthetic */ oh(lp0 lp0Var, boolean z10, float f7, float f10) {
+        this.e = lp0Var;
         this.b = z10;
         this.c = f7;
         this.d = f10;

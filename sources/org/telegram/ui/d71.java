@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class d71 implements TextWatcher {
     public final vz0 a = new vz0(this, 16);
@@ -50,9 +50,9 @@ public final class d71 implements TextWatcher {
             }
             j71Var.b();
         }
-        org.telegram.ui.Components.j61 j61Var = k71Var.i0;
-        if (j61Var != null) {
-            j61Var.N(true);
+        org.telegram.ui.Components.l61 l61Var = k71Var.i0;
+        if (l61Var != null) {
+            l61Var.N(true);
         }
     }
 

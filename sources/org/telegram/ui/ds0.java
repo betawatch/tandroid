@@ -36,9 +36,9 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.d5, GenericProvider, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.ll0, org.telegram.ui.Components.ml0, qv0, MessagesStorage.BooleanCallback, m11, OnSuccessListener, pa.a, OnFailureListener, t5.b {
+public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.d5, GenericProvider, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.nl0, org.telegram.ui.Components.ol0, qv0, MessagesStorage.BooleanCallback, m11, OnSuccessListener, pa.a, OnFailureListener, t5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -83,12 +83,12 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
         wnVar.getSendMessagesHelper().editMessage(de1Var.G, null, null, null, null, null, null, false, false, null);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         ThemeActivity.W((ThemeActivity) this.b, (Context) this.c, view, i10, f7);
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         final yb1 yb1Var = (yb1) this.b;
         final ac1 ac1Var = (ac1) this.c;
@@ -122,7 +122,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
                                 return;
                             }
                             String str = "https://" + themeActivity2.getMessagesController().linkPrefix + "/addtheme/" + f6Var2.r.slug;
-                            themeActivity2.showDialog(new org.telegram.ui.Components.uq0(themeActivity2.getParentActivity(), null, str, false, str, false, null));
+                            themeActivity2.showDialog(new org.telegram.ui.Components.wq0(themeActivity2.getParentActivity(), null, str, false, str, false, null));
                             return;
                         }
                         if (i11 == 2) {
@@ -158,7 +158,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -552,7 +552,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
     public /* synthetic */ void c0() {
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

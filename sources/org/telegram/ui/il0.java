@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class il0 implements Runnable {
     public final /* synthetic */ int a;
@@ -228,21 +228,21 @@ public final /* synthetic */ class il0 implements Runnable {
                 }
                 break;
             case 17:
-                org.telegram.ui.Components.al0 al0Var = (org.telegram.ui.Components.al0) ((xo0) obj).b;
-                PhotoViewer photoViewer3 = (PhotoViewer) al0Var.c;
+                org.telegram.ui.Components.cl0 cl0Var = (org.telegram.ui.Components.cl0) ((xo0) obj).b;
+                PhotoViewer photoViewer3 = (PhotoViewer) cl0Var.c;
                 photoViewer3.H2 = false;
-                org.telegram.ui.Components.s71 s71Var = photoViewer3.F2;
-                if (s71Var != null) {
-                    s71Var.C();
+                org.telegram.ui.Components.u71 u71Var = photoViewer3.F2;
+                if (u71Var != null) {
+                    u71Var.C();
                 }
-                ((PhotoViewer) al0Var.c).I2 = null;
+                ((PhotoViewer) cl0Var.c).I2 = null;
                 break;
             case 18:
                 PhotoViewer photoViewer4 = ((ls0) obj).a;
                 photoViewer4.H2 = false;
-                org.telegram.ui.Components.s71 s71Var2 = photoViewer4.F2;
-                if (s71Var2 != null) {
-                    s71Var2.C();
+                org.telegram.ui.Components.u71 u71Var2 = photoViewer4.F2;
+                if (u71Var2 != null) {
+                    u71Var2.C();
                 }
                 photoViewer4.I2 = null;
                 break;

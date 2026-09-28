@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class i {
     public CaptureRequest.Builder A;
@@ -365,7 +365,7 @@ public final class i {
         this.N = false;
         this.K = 0.0f;
         k2.u uVar = this.k;
-        ((s0) uVar.b).h.post(new h0(0, uVar, l0Var));
+        ((s0) uVar.b).i.post(new h0(0, uVar, l0Var));
         this.i0 = SystemClock.elapsedRealtimeNanos();
         this.j.b("camera device switch started: from=" + this.D + ", to=" + l0Var);
         q qVar = this.v;
@@ -884,7 +884,7 @@ public final class i {
     public final void t(Exception exc) {
         this.j.a("camera error", exc);
         k2.u uVar = this.k;
-        ((s0) uVar.b).h.post(new h0(1, uVar, exc));
+        ((s0) uVar.b).i.post(new h0(1, uVar, exc));
     }
 
     public final void u() {

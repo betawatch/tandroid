@@ -18,10 +18,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class j3 {
     public final l3 a;
@@ -43,8 +43,8 @@ public final class j3 {
     public final Bitmap q;
     public final Drawable r;
     public int s;
-    public final t01 t;
-    public t01 u;
+    public final v01 t;
+    public v01 u;
     public float v;
     public final float[] w;
     public final Path x;
@@ -71,13 +71,13 @@ public final class j3 {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        rr rrVar = rr.h;
-        this.d = new org.telegram.ui.Components.e6(view, 320L, rrVar);
-        this.e = new org.telegram.ui.Components.e6(view, 320L, rrVar);
+        sr srVar = sr.h;
+        this.d = new org.telegram.ui.Components.e6(view, 320L, srVar);
+        this.e = new org.telegram.ui.Components.e6(view, 320L, srVar);
         this.q = l3Var.F;
         String b10 = l3Var.b();
         textPaint = m3.getTextPaint();
-        this.t = new t01(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
+        this.t = new v01(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
         int i10 = l3Var.q;
         this.m = i10;
         this.o = AndroidUtilities.computePerceivedBrightness(i10) < 0.721f;
@@ -201,16 +201,16 @@ public final class j3 {
                 i10 = intrinsicHeight - AndroidUtilities.dp(2.0f);
             }
         }
-        t01 t01Var = this.u;
-        if (t01Var != null) {
-            t01Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
-            t01Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.f0.z(1.0f, this.v, f10, f11), d10, canvas2);
+        v01 v01Var = this.u;
+        if (v01Var != null) {
+            v01Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
+            v01Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.f0.z(1.0f, this.v, f10, f11), d10, canvas2);
         }
         float width = rectF.width() - AndroidUtilities.dp(100.0f);
         float f19 = i10;
-        t01 t01Var2 = this.t;
-        t01Var2.p = (int) (width - f19);
-        t01Var2.c(f19 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.u == null ? 1.0f : this.v) * f10 * f11, d10, canvas);
+        v01 v01Var2 = this.t;
+        v01Var2.p = (int) (width - f19);
+        v01Var2.c(f19 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.u == null ? 1.0f : this.v) * f10 * f11, d10, canvas);
     }
 
     public final float b() {

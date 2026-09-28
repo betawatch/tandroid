@@ -33,14 +33,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.fq;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.o90;
-import org.telegram.ui.Components.s51;
-import org.telegram.ui.Components.z51;
+import org.telegram.ui.Components.b61;
+import org.telegram.ui.Components.gq;
+import org.telegram.ui.Components.j90;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class h0 extends View {
     public final ImageReceiver E;
@@ -58,8 +58,8 @@ public abstract class h0 extends View {
     public int f;
     public int h;
     public int n;
-    public o90 r;
-    public final k90 s;
+    public q90 r;
+    public final m90 s;
     public f0 v;
     public final int w;
     public final org.telegram.ui.ActionBar.d6 x;
@@ -67,7 +67,7 @@ public abstract class h0 extends View {
 
     public h0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.s = new k90(this);
+        this.s = new m90(this);
         this.H = AndroidUtilities.dp(4.0f);
         this.w = i10;
         this.x = d6Var;
@@ -126,7 +126,7 @@ public abstract class h0 extends View {
         if (z13) {
             if (!Objects.equals(this.d, "setup")) {
                 this.d = "setup";
-                imageReceiver.setImageBitmap(new fq(new g0(getContext())));
+                imageReceiver.setImageBitmap(new gq(new g0(getContext())));
                 int dp = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(2.0f);
                 int dp2 = AndroidUtilities.dp(4.0f);
                 if (!this.G) {
@@ -205,7 +205,7 @@ public abstract class h0 extends View {
                             z11 = false;
                             MessageObject.addLinks(false, spannableStringBuilder);
                             if (z10) {
-                                spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), 0, string.length(), 33);
+                                spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold()), 0, string.length(), 33);
                             }
                         }
                         Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.h6.o2.getFontMetricsInt(), z11);
@@ -410,11 +410,11 @@ public abstract class h0 extends View {
                             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                             if (clickableSpanArr.length != 0) {
                                 a();
-                                this.r = new o90(clickableSpanArr[0], this.x, f7, i10, 0);
+                                this.r = new q90(clickableSpanArr[0], this.x, f7, i10, 0);
                                 try {
                                     try {
                                         int spanStart = spannable.getSpanStart(clickableSpanArr[0]);
-                                        h90 b10 = this.r.b();
+                                        j90 b10 = this.r.b();
                                         b10.d(this.a, spanStart, 0.0f);
                                         this.a.getSelectionPath(spanStart, spannable.getSpanEnd(clickableSpanArr[0]), b10);
                                     } catch (Exception e) {
@@ -444,12 +444,12 @@ public abstract class h0 extends View {
                         z11 = false;
                     }
                 } else {
-                    o90 o90Var = this.r;
-                    if (o90Var != null) {
+                    q90 q90Var = this.r;
+                    if (q90Var != null) {
                         try {
-                            ClickableSpan clickableSpan = (ClickableSpan) o90Var.i;
-                            if (clickableSpan instanceof z51) {
-                                String url = ((z51) clickableSpan).getURL();
+                            ClickableSpan clickableSpan = (ClickableSpan) q90Var.i;
+                            if (clickableSpan instanceof b61) {
+                                String url = ((b61) clickableSpan).getURL();
                                 if (!url.startsWith("@")) {
                                     if (!url.startsWith("#")) {
                                         if (!url.startsWith("/")) {

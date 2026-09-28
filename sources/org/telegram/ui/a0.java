@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.ak0 ak0Var = (org.telegram.ui.Components.ak0) obj3;
+                org.telegram.ui.Components.ck0 ck0Var = (org.telegram.ui.Components.ck0) obj3;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj2;
                 int[] iArr = (int[]) obj;
-                if (ak0Var == null || ak0Var.w) {
+                if (ck0Var == null || ck0Var.w) {
                     actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(iArr[0]);
                     break;
                 }
@@ -140,7 +140,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 MessageObject messageObject2 = (MessageObject) obj2;
                 PhotoViewer photoViewer = ((rr) obj3).c.a;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                ArrayList arrayList = ((org.telegram.ui.Components.o71) obj).d;
+                ArrayList arrayList = ((org.telegram.ui.Components.q71) obj).d;
                 if (arrayList.isEmpty()) {
                     document = null;
                 } else {
@@ -150,21 +150,21 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                         if (i13 < size) {
                             Object obj4 = arrayList.get(i13);
                             i13++;
-                            org.telegram.ui.Components.q71 q71Var = (org.telegram.ui.Components.q71) obj4;
-                            if (q71Var.b()) {
-                                document = q71Var.g;
+                            org.telegram.ui.Components.s71 s71Var = (org.telegram.ui.Components.s71) obj4;
+                            if (s71Var.b()) {
+                                document = s71Var.g;
                             }
                         } else {
                             long j10 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.q71 q71Var2 = null;
+                            org.telegram.ui.Components.s71 s71Var2 = null;
                             for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                org.telegram.ui.Components.q71 q71Var3 = (org.telegram.ui.Components.q71) arrayList.get(i14);
-                                if (q71Var3.k < j10 && org.telegram.ui.Components.s71.Y(q71Var3.m)) {
-                                    j10 = q71Var3.k;
-                                    q71Var2 = q71Var3;
+                                org.telegram.ui.Components.s71 s71Var3 = (org.telegram.ui.Components.s71) arrayList.get(i14);
+                                if (s71Var3.k < j10 && org.telegram.ui.Components.u71.Y(s71Var3.m)) {
+                                    j10 = s71Var3.k;
+                                    s71Var2 = s71Var3;
                                 }
                             }
-                            document = q71Var2 != null ? q71Var2.g : ((org.telegram.ui.Components.q71) arrayList.get(0)).g;
+                            document = s71Var2 != null ? s71Var2.g : ((org.telegram.ui.Components.s71) arrayList.get(0)).g;
                         }
                     }
                 }
@@ -192,7 +192,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 break;
             case 11:
                 yg0 yg0Var = (yg0) obj3;
-                ((org.telegram.ui.Components.y70) obj2).u();
+                ((org.telegram.ui.Components.a80) obj2).u();
                 int i15 = ((MessagesController.DialogFilter) obj).id;
                 if (yg0Var.c.getCurrentPosition() != 0 || (qyVar = yg0Var.J) == null) {
                     if (yg0Var.J == null) {

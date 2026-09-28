@@ -20,10 +20,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.wv0;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class x0 extends FrameLayout {
     public float E;
@@ -44,7 +44,7 @@ public abstract class x0 extends FrameLayout {
     public final TextView s;
     public final TextView v;
     public final x1 w;
-    public uv0 x;
+    public wv0 x;
     public boolean y;
 
     public x0(Context context, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, MediaController.CropState cropState) {
@@ -110,23 +110,23 @@ public abstract class x0 extends FrameLayout {
         frameLayout.addView(h, y5.d(-2, 44.0f, 5, 0.0f, 0.0f, -8.0f, 0.0f));
     }
 
-    private uv0 getPaintingSize() {
-        uv0 uv0Var = this.x;
-        if (uv0Var != null) {
-            return uv0Var;
+    private wv0 getPaintingSize() {
+        wv0 wv0Var = this.x;
+        if (wv0Var != null) {
+            return wv0Var;
         }
         Bitmap bitmap = this.f;
-        uv0 uv0Var2 = new uv0(bitmap.getWidth(), bitmap.getHeight());
+        wv0 wv0Var2 = new wv0(bitmap.getWidth(), bitmap.getHeight());
         float f7 = 1280;
-        uv0Var2.a = f7;
+        wv0Var2.a = f7;
         float floor = (float) Math.floor((f7 * r0) / r1);
-        uv0Var2.b = floor;
+        wv0Var2.b = floor;
         if (floor > f7) {
-            uv0Var2.b = f7;
-            uv0Var2.a = (float) Math.floor((f7 * r1) / r0);
+            wv0Var2.b = f7;
+            wv0Var2.a = (float) Math.floor((f7 * r1) / r0);
         }
-        this.x = uv0Var2;
-        return uv0Var2;
+        this.x = wv0Var2;
+        return wv0Var2;
     }
 
     public final void a(MotionEvent motionEvent) {

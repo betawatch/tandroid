@@ -33,7 +33,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class yg0 extends th1 implements NotificationCenter.NotificationCenterDelegate, le.e {
     public FrameLayout E;
@@ -54,7 +54,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
     public IUpdateLayout w;
     public boolean x;
     public bh1 y;
-    public final le.c v = new le.c(0, this, org.telegram.ui.Components.rr.h, 380, true);
+    public final le.c v = new le.c(0, this, org.telegram.ui.Components.sr.h, 380, true);
     public final RectF T = new RectF();
 
     public yg0() {
@@ -71,11 +71,11 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
         org.telegram.ui.Components.qc.a(this.b, z8Var);
     }
 
-    public static /* synthetic */ void Y(yg0 yg0Var, int i10, org.telegram.ui.Components.y70 y70Var) {
+    public static /* synthetic */ void Y(yg0 yg0Var, int i10, org.telegram.ui.Components.a80 a80Var) {
         if (yg0Var.currentAccount == i10) {
             return;
         }
-        y70Var.u();
+        a80Var.u();
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null) {
             launchActivity.K0(i10);
@@ -104,7 +104,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
         if (yg0Var.getParentActivity() == null || yg0Var.getParentActivity() == null || (dialogFilters = yg0Var.getMessagesController().getDialogFilters()) == null || dialogFilters.size() <= 1) {
             return false;
         }
-        org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(yg0Var, view);
+        org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(yg0Var, view);
         int i10 = 0;
         while (i10 < dialogFilters.size()) {
             MessagesController.DialogFilter dialogFilter = dialogFilters.get(i10);
@@ -166,7 +166,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                 e1Var = e1Var3;
             }
             e1Var.setEmojiCacheType(dialogFilter.title_noanimate ? 26 : 0);
-            e1Var.g(replaceEmoji, 0, new org.telegram.ui.Components.e10(yg0Var.getParentActivity(), R.drawable.msg_folders, yg0Var.getMessagesController().folderTags ? dialogFilter.color : -1));
+            e1Var.g(replaceEmoji, 0, new org.telegram.ui.Components.f10(yg0Var.getParentActivity(), R.drawable.msg_folders, yg0Var.getMessagesController().folderTags ? dialogFilter.color : -1));
             e1Var.getTextView().setEmojiColor(yg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.Oh));
             e1Var.setMinimumWidth(160);
             e1Var.setOnClickListener(new a0(yg0Var, H, dialogFilter, 11));
@@ -319,7 +319,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                     case 1:
                         yg0 yg0Var = this.b;
                         if (yg0Var.getParentActivity() != null && yg0Var.getParentActivity() != null) {
-                            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(yg0Var, view);
+                            org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(yg0Var, view);
                             H.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new ug0(yg0Var, 5), false);
                             H.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new ug0(yg0Var, 6), false);
                             H.u = true;
@@ -336,7 +336,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                     case 2:
                         yg0 yg0Var2 = this.b;
                         if (yg0Var2.getParentActivity() != null && yg0Var2.getParentActivity() != null) {
-                            org.telegram.ui.Components.y70 H2 = org.telegram.ui.Components.y70.H(yg0Var2, view);
+                            org.telegram.ui.Components.a80 H2 = org.telegram.ui.Components.a80.H(yg0Var2, view);
                             H2.c(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new ug0(yg0Var2, 1), false);
                             if (yg0Var2.getUserConfig().showCallsTab) {
                                 H2.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new ug0(yg0Var2, 2), false);
@@ -376,7 +376,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                     case 1:
                         yg0 yg0Var = this.b;
                         if (yg0Var.getParentActivity() != null && yg0Var.getParentActivity() != null) {
-                            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(yg0Var, view);
+                            org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(yg0Var, view);
                             H.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new ug0(yg0Var, 5), false);
                             H.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new ug0(yg0Var, 6), false);
                             H.u = true;
@@ -393,7 +393,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                     case 2:
                         yg0 yg0Var2 = this.b;
                         if (yg0Var2.getParentActivity() != null && yg0Var2.getParentActivity() != null) {
-                            org.telegram.ui.Components.y70 H2 = org.telegram.ui.Components.y70.H(yg0Var2, view);
+                            org.telegram.ui.Components.a80 H2 = org.telegram.ui.Components.a80.H(yg0Var2, view);
                             H2.c(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new ug0(yg0Var2, 1), false);
                             if (yg0Var2.getUserConfig().showCallsTab) {
                                 H2.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new ug0(yg0Var2, 2), false);
@@ -433,7 +433,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                     case 1:
                         yg0 yg0Var = this.b;
                         if (yg0Var.getParentActivity() != null && yg0Var.getParentActivity() != null) {
-                            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(yg0Var, view);
+                            org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(yg0Var, view);
                             H.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new ug0(yg0Var, 5), false);
                             H.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new ug0(yg0Var, 6), false);
                             H.u = true;
@@ -450,7 +450,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                     case 2:
                         yg0 yg0Var2 = this.b;
                         if (yg0Var2.getParentActivity() != null && yg0Var2.getParentActivity() != null) {
-                            org.telegram.ui.Components.y70 H2 = org.telegram.ui.Components.y70.H(yg0Var2, view);
+                            org.telegram.ui.Components.a80 H2 = org.telegram.ui.Components.a80.H(yg0Var2, view);
                             H2.c(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new ug0(yg0Var2, 1), false);
                             if (yg0Var2.getUserConfig().showCallsTab) {
                                 H2.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new ug0(yg0Var2, 2), false);
@@ -490,7 +490,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                     case 1:
                         yg0 yg0Var = this.b;
                         if (yg0Var.getParentActivity() != null && yg0Var.getParentActivity() != null) {
-                            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(yg0Var, view);
+                            org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(yg0Var, view);
                             H.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new ug0(yg0Var, 5), false);
                             H.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new ug0(yg0Var, 6), false);
                             H.u = true;
@@ -507,7 +507,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                     case 2:
                         yg0 yg0Var2 = this.b;
                         if (yg0Var2.getParentActivity() != null && yg0Var2.getParentActivity() != null) {
-                            org.telegram.ui.Components.y70 H2 = org.telegram.ui.Components.y70.H(yg0Var2, view);
+                            org.telegram.ui.Components.a80 H2 = org.telegram.ui.Components.a80.H(yg0Var2, view);
                             H2.c(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new ug0(yg0Var2, 1), false);
                             if (yg0Var2.getUserConfig().showCallsTab) {
                                 H2.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new ug0(yg0Var2, 2), false);
@@ -828,7 +828,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
             }
         }
         Collections.sort(arrayList, new cf(23));
-        org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(this, view);
+        org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(this, view);
         if (UserConfig.getActivatedAccountsCount() < 4) {
             H.c(R.drawable.msg_addbot, LocaleController.getString(R.string.AddAccount), new ug0(this, 0), false);
         }
@@ -849,8 +849,8 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                 TLRPC.User currentUser = UserConfig.getInstance(intValue).getCurrentUser();
                 org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
                 h9Var.r(currentUser);
-                org.telegram.ui.Components.sg0 sg0Var = new org.telegram.ui.Components.sg0(this, getParentActivity(), z10);
-                linearLayout.addView(sg0Var, w7.y5.t(34, 34, 16, 12, 0, 0, 0));
+                org.telegram.ui.Components.ug0 ug0Var = new org.telegram.ui.Components.ug0(this, getParentActivity(), z10);
+                linearLayout.addView(ug0Var, w7.y5.t(34, 34, 16, 12, 0, 0, 0));
                 org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(getParentActivity());
                 if (z10) {
                     w9Var.setScaleX(0.833f);
@@ -859,7 +859,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
                 w9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
                 w9Var.getImageReceiver().setCurrentAccount(intValue);
                 w9Var.e(currentUser, h9Var);
-                sg0Var.addView(w9Var, w7.y5.t(32, 32, 17, 1, 1, 1, 1));
+                ug0Var.addView(w9Var, w7.y5.t(32, 32, 17, 1, 1, 1, 1));
                 TextView textView = new TextView(getParentActivity());
                 textView.setTextSize(1, 16.0f);
                 textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.j5));
@@ -878,7 +878,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
         b02.getPaint().setShadowLayer(AndroidUtilities.dp(6.0f), 0.0f, AndroidUtilities.dp(1.0f), org.telegram.ui.ActionBar.h6.l1(0.15f, -16777216));
         H.W(b02);
         H.Z();
-        org.telegram.ui.Components.k40.r.a();
+        org.telegram.ui.Components.m40.r.a();
     }
 
     public final qy l0(Bundle bundle) {
@@ -975,7 +975,7 @@ public final class yg0 extends th1 implements NotificationCenter.NotificationCen
         if (this.Q) {
             return;
         }
-        if (this.P == null && org.telegram.ui.Components.k40.r.c()) {
+        if (this.P == null && org.telegram.ui.Components.m40.r.c()) {
             AndroidUtilities.runOnUIThread(new ug0(this, 7), 1500L);
         }
         this.Q = true;

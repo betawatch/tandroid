@@ -8,12 +8,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class pc extends nb {
     public final k9 a;
-    public final n90 b;
-    public final n90 c;
+    public final p90 b;
+    public final p90 c;
     public final LinearLayout d;
 
     public pc(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
@@ -39,15 +39,15 @@ public final class pc extends nb {
             xbVar.setEllipsize(truncateAt);
             xbVar.setMaxLines(1);
             linearLayout.addView(xbVar);
-            n90 n90Var = new n90(context, null);
-            this.c = n90Var;
-            n90Var.setTypeface(typeface);
-            n90Var.setTextSize(1, 12.0f);
-            n90Var.setEllipsize(truncateAt);
-            n90Var.setSingleLine(false);
-            n90Var.setMaxLines(3);
-            n90Var.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Gi));
-            linearLayout.addView(n90Var, w7.y5.t(-2, -2, 0, 0, 0, 0, 0));
+            p90 p90Var = new p90(context, null);
+            this.c = p90Var;
+            p90Var.setTypeface(typeface);
+            p90Var.setTextSize(1, 12.0f);
+            p90Var.setEllipsize(truncateAt);
+            p90Var.setSingleLine(false);
+            p90Var.setMaxLines(3);
+            p90Var.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Gi));
+            linearLayout.addView(p90Var, w7.y5.t(-2, -2, 0, 0, 0, 0, 0));
         } else {
             xb xbVar2 = new xb(context, 1, null);
             this.b = xbVar2;
@@ -71,9 +71,9 @@ public final class pc extends nb {
 
     public void setTextColor(int i10) {
         this.b.setTextColor(i10);
-        n90 n90Var = this.c;
-        if (n90Var != null) {
-            n90Var.setTextColor(i10);
+        p90 p90Var = this.c;
+        if (p90Var != null) {
+            p90Var.setTextColor(i10);
         }
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class pk extends TextView {
     public final /* synthetic */ int a;
@@ -26,8 +26,8 @@ public final class pk extends TextView {
     public void a(int i10) {
         FragmentContextView fragmentContextView = (FragmentContextView) this.b;
         if (fragmentContextView.M != i10) {
-            org.telegram.ui.Components.s10 s10Var = fragmentContextView.d;
-            s10Var.setPadding(s10Var.getPaddingLeft(), fragmentContextView.d.getPaddingTop(), (fragmentContextView.d.getPaddingRight() - fragmentContextView.M) + i10, fragmentContextView.d.getPaddingBottom());
+            org.telegram.ui.Components.t10 t10Var = fragmentContextView.d;
+            t10Var.setPadding(t10Var.getPaddingLeft(), fragmentContextView.d.getPaddingTop(), (fragmentContextView.d.getPaddingRight() - fragmentContextView.M) + i10, fragmentContextView.d.getPaddingBottom());
             fragmentContextView.M = i10;
         }
     }
@@ -121,7 +121,7 @@ public final class pk extends TextView {
             case 2:
                 super.onMeasure(i10, i11);
                 if (LocaleController.isRTL) {
-                    ((org.telegram.ui.Components.g41) this.b).b.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.i41) this.b).b.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;

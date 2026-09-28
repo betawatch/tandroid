@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,16 +42,16 @@ public final /* synthetic */ class d5 implements RequestDelegate {
                 FileRefController.lambda$onUpdateObjectReference$39(tLObject, tL_error);
                 break;
             case 8:
-                MediaDataController.lambda$saveDraft$188(tLObject, tL_error);
+                MediaDataController.lambda$saveDraft$189(tLObject, tL_error);
                 break;
             case 9:
                 MediaDataController.lambda$removeInline$152(tLObject, tL_error);
                 break;
             case 10:
-                MediaDataController.lambda$markFeaturedStickersByIdAsRead$66(tLObject, tL_error);
+                MediaDataController.lambda$removePeer$154(tLObject, tL_error);
                 break;
             case 11:
-                MediaDataController.lambda$removePeer$154(tLObject, tL_error);
+                MediaDataController.lambda$markFeaturedStickersByIdAsRead$66(tLObject, tL_error);
                 break;
             case 12:
                 MediaDataController.lambda$markFeaturedStickersAsRead$65(tLObject, tL_error);

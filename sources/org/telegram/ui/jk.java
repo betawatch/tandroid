@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class jk extends ChatActivityEnterView {
     public int o5;
@@ -16,8 +16,8 @@ public final class jk extends ChatActivityEnterView {
     public final /* synthetic */ wn r5;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jk(wn wnVar, Activity activity, org.telegram.ui.Components.aw0 aw0Var, wn wnVar2, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity, aw0Var, wnVar2, z10, d6Var);
+    public jk(wn wnVar, Activity activity, org.telegram.ui.Components.cw0 cw0Var, wn wnVar2, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity, cw0Var, wnVar2, z10, d6Var);
         this.r5 = wnVar;
     }
 

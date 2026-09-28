@@ -1,56 +1,80 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class b80 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ h80 b;
+public final /* synthetic */ class b80 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b80(h80 h80Var, Context context) {
-        super(context);
-        this.b = h80Var;
+    public /* synthetic */ b80(Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, xc xcVar, org.telegram.messenger.video.d dVar, int i10) {
+        this.b = context;
+        this.e = a1Var;
+        this.c = j3;
+        this.f = bArr;
+        this.g = aVar;
+        this.h = xcVar;
+        this.i = dVar;
+        this.d = i10;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        h80 h80Var = this.b;
-        ArrayList arrayList = h80Var.h;
-        if (h80Var.s == 0) {
-            int size = View.MeasureSpec.getSize(i10);
-            int dp = AndroidUtilities.dp(95.0f) * arrayList.size();
-            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) h80Var.d.getLayoutParams();
-            if (dp > size) {
-                layoutParams.width = -1;
-                layoutParams.gravity = 51;
-                if (!this.a) {
-                    TLRPC.Peer peer = h80Var.v;
-                    if (peer != null) {
-                        arrayList.remove(peer);
-                        arrayList.add(0, h80Var.v);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new ei.g1((org.telegram.ui.ActionBar.a2) this.e, tLObject, (AccountInstance) this.f, (h80) this.g, this.c, this.b, (org.telegram.ui.ActionBar.m2) this.h, this.d, (TLRPC.Peer) this.i));
+                break;
+            default:
+                ai.a1 a1Var = (ai.a1) this.e;
+                byte[] bArr = (byte[]) this.f;
+                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
+                xc xcVar = (xc) this.h;
+                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.i;
+                Context context = this.b;
+                if (tLObject == null) {
+                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.i31(aVar, xcVar, context, a1Var, 1), 200L);
+                        break;
                     }
-                    this.a = true;
-                }
-            } else {
-                layoutParams.width = -2;
-                layoutParams.gravity = 49;
-                if (!this.a) {
-                    if (h80Var.v != null) {
-                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
-                        arrayList.remove(h80Var.v);
-                        arrayList.add(max, h80Var.v);
+                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
+                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
+                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
+                            AndroidUtilities.runOnUIThread(new org.telegram.ui.wl0(aVar, xcVar, this.d, 8), 200L);
+                            break;
+                        }
+                    } else {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.i31(aVar, xcVar, context, a1Var, 0), 200L);
+                        break;
                     }
-                    this.a = true;
+                } else {
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.aw(tLObject, context, a1Var, this.c, bArr, aVar, xcVar, dVar));
+                    break;
                 }
-            }
+                break;
         }
-        super.onMeasure(i10, i11);
+    }
+
+    public /* synthetic */ b80(org.telegram.ui.ActionBar.a2 a2Var, AccountInstance accountInstance, h80 h80Var, long j3, Context context, org.telegram.ui.ActionBar.m2 m2Var, int i10, TLRPC.Peer peer) {
+        this.e = a2Var;
+        this.f = accountInstance;
+        this.g = h80Var;
+        this.c = j3;
+        this.b = context;
+        this.h = m2Var;
+        this.d = i10;
+        this.i = peer;
     }
 }

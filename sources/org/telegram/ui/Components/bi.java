@@ -8,9 +8,9 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class bi extends ku {
+public final class bi extends lu {
     public boolean V;
     public int W;
     public int a0;
@@ -23,7 +23,7 @@ public final class bi extends ku {
         this.c0 = wiVar;
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void c(float f7) {
         wi wiVar = this.c0;
         wiVar.g2 = f7;
@@ -37,7 +37,7 @@ public final class bi extends ku {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.V) {
-            cu editText = this.c0.E0.getEditText();
+            du editText = this.c0.E0.getEditText();
             editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
             ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
             ofFloat.addUpdateListener(new ai.x(14, this, editText));
@@ -47,22 +47,22 @@ public final class bi extends ku {
             }
             this.b0 = ofFloat;
             ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(rr.f);
+            ofFloat.setInterpolator(sr.f);
             ofFloat.start();
             this.V = false;
         }
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void e() {
         super/*org.telegram.ui.ActionBar.e3*/.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void f() {
         super.f();
-        lz emojiView = getEmojiView();
+        mz emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
             emojiView.w2 = false;
@@ -71,7 +71,7 @@ public final class bi extends ku {
         }
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void i(Menu menu) {
         org.telegram.ui.ActionBar.m2 m2Var = this.c0.f0;
         if (m2Var instanceof org.telegram.ui.wn) {
@@ -99,7 +99,7 @@ public final class bi extends ku {
         this.c0.U1();
     }
 
-    @Override // org.telegram.ui.Components.ku
+    @Override // org.telegram.ui.Components.lu
     public final void q(int i10, int i11) {
         wi wiVar = this.c0;
         yh yhVar = wiVar.D0;

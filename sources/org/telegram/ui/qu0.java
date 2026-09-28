@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class qu0 extends View {
     public final Paint a;
@@ -38,12 +38,12 @@ public final class qu0 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         this.r = false;
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        this.s = new org.telegram.ui.Components.e6(this, 0L, 350L, rrVar);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        this.s = new org.telegram.ui.Components.e6(this, 0L, 350L, srVar);
         paint.setColor(2130706432);
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
         this.b = o6Var;
-        o6Var.k(0.3f, 320L, rrVar);
+        o6Var.k(0.3f, 320L, srVar);
         o6Var.r(-1);
         o6Var.t(AndroidUtilities.dp(14.0f));
         o6Var.u(AndroidUtilities.bold());
@@ -56,7 +56,7 @@ public final class qu0 extends View {
         c();
         org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(false, true, true, false);
         this.h = o6Var2;
-        o6Var2.k(0.3f, 320L, rrVar);
+        o6Var2.k(0.3f, 320L, srVar);
         o6Var2.r(-1);
         o6Var2.t(AndroidUtilities.dp(14.0f));
         o6Var2.u(AndroidUtilities.bold());

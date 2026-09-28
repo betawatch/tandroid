@@ -1,36 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class hx extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ lz c;
+public final class hx extends q51 {
+    public final /* synthetic */ mz b;
 
-    public /* synthetic */ hx(lz lzVar, boolean z10, int i10) {
-        this.a = i10;
-        this.c = lzVar;
-        this.b = z10;
+    public hx(mz mzVar) {
+        this.b = mzVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (!this.b) {
-                    this.c.x.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!this.b) {
-                    this.c.y.setVisibility(4);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.q51
+    public final boolean a() {
+        return this.b.t1.b();
+    }
+
+    @Override // org.telegram.ui.Components.q51
+    public final String[] b() {
+        return this.b.W0;
+    }
+
+    @Override // org.telegram.ui.Components.q51
+    public final boolean c() {
+        return this.b.t1.c();
+    }
+
+    @Override // org.telegram.ui.Components.q51
+    public final boolean d(j51 j51Var, MotionEvent motionEvent) {
+        org.telegram.ui.nt q6 = org.telegram.ui.nt.q();
+        mz mzVar = this.b;
+        mzVar.getMeasuredHeight();
+        return q6.r(motionEvent, j51Var, mzVar.g2, mzVar.Z1);
+    }
+
+    @Override // org.telegram.ui.Components.q51
+    public final boolean e(j51 j51Var, j jVar, MotionEvent motionEvent) {
+        org.telegram.ui.nt q6 = org.telegram.ui.nt.q();
+        mz mzVar = this.b;
+        mzVar.getMeasuredHeight();
+        return q6.s(motionEvent, j51Var, jVar, mzVar.g2, mzVar.Z1);
+    }
+
+    @Override // org.telegram.ui.Components.q51
+    public final void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
+        this.b.t1.m(null, document, null, obj, null, z10, i10);
+    }
+
+    @Override // org.telegram.ui.Components.q51
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
+        mz mzVar = this.b;
+        mzVar.t1.r(stickerSetCovered);
+        if (z10) {
+            mzVar.X(true);
         }
+    }
+
+    @Override // org.telegram.ui.Components.q51
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        this.b.t1.h(stickerSetCovered);
+    }
+
+    @Override // org.telegram.ui.Components.q51
+    public final void i(String[] strArr) {
+        this.b.W0 = strArr;
     }
 }

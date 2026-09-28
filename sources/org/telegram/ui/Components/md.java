@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class md extends ci.m {
     public boolean S0;
@@ -31,7 +31,7 @@ public abstract class md extends ci.m {
     public boolean U0;
     public final ImageView V0;
     public final ci.l W0;
-    public y70 X0;
+    public a80 X0;
     public final i0 Y0;
     public final ImageView Z0;
     public ci.e4 a1;
@@ -54,18 +54,18 @@ public abstract class md extends ci.m {
     public Utilities.Callback r1;
     public boolean s1;
 
-    public md(Context context, FrameLayout frameLayout, aw0 aw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar, Runnable runnable) {
-        super(context, frameLayout, aw0Var, frameLayout2, d6Var, jaVar);
+    public md(Context context, FrameLayout frameLayout, cw0 cw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar, Runnable runnable) {
+        super(context, frameLayout, cw0Var, frameLayout2, d6Var, jaVar);
         this.b1 = 0;
         this.c1 = new int[]{ConnectionsManager.DEFAULT_DATACENTER_ID, 3, 10, 30, 0};
         this.f1 = new RectF();
         o6 o6Var = new o6(false, false, false, false);
         this.h1 = o6Var;
         this.i1 = new yc(this);
-        rr rrVar = rr.h;
-        this.k1 = new e6(this, 0L, 350L, rrVar);
-        this.l1 = new e6(this, 0L, 350L, rrVar);
-        this.m1 = new e6(this, 0L, 350L, rrVar);
+        sr srVar = sr.h;
+        this.k1 = new e6(this, 0L, 350L, srVar);
+        this.l1 = new e6(this, 0L, 350L, srVar);
+        this.m1 = new e6(this, 0L, 350L, srVar);
         this.p1 = new pg(this, 17);
         this.e1 = runnable;
         o6Var.t(AndroidUtilities.dp(14.0f));
@@ -189,7 +189,7 @@ public abstract class md extends ci.m {
         this.s1 = z10;
         ImageView imageView = this.Z0;
         imageView.setVisibility(0);
-        imageView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).setInterpolator(rr.h).setDuration(420L).withEndAction(new jd(this, z10, 0)).start();
+        imageView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).setInterpolator(sr.h).setDuration(420L).withEndAction(new jd(this, z10, 0)).start();
         if (!z10) {
             ci.e4 e4Var = this.a1;
             if (e4Var != null) {
@@ -230,9 +230,9 @@ public abstract class md extends ci.m {
         int dp = AndroidUtilities.dp(16.0f);
         int i10 = org.telegram.ui.ActionBar.h6.zf;
         ShapeDrawable K = org.telegram.ui.ActionBar.h6.K(dp, org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
-        qq qqVar = this.n;
-        qqVar.a = K;
-        qqVar.invalidateSelf();
+        rq rqVar = this.n;
+        rqVar.a = K;
+        rqVar.invalidateSelf();
         this.W0.e(-1, org.telegram.ui.ActionBar.h6.v0(i10, d6Var), -1);
     }
 

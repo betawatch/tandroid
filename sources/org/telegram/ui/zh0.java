@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class zh0 extends FrameLayout {
     public final ArrayList a;
@@ -28,7 +28,7 @@ public final class zh0 extends FrameLayout {
     public final org.telegram.ui.ActionBar.h5 e;
     public final int f;
     public final boolean h;
-    public final org.telegram.ui.Components.u00 n;
+    public final org.telegram.ui.Components.v00 n;
     public boolean r;
     public wb1 s;
 
@@ -40,12 +40,12 @@ public final class zh0 extends FrameLayout {
         this.f = i10;
         boolean z10 = messageObject.isRoundVideo() || messageObject.isVoice();
         this.h = z10;
-        org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(context, null);
-        this.n = u00Var;
-        u00Var.f(org.telegram.ui.ActionBar.h6.G8, org.telegram.ui.ActionBar.h6.i6, -1);
-        u00Var.setViewType(13);
-        u00Var.setIsSingleCell(false);
-        addView(u00Var, w7.y5.c(-1.0f, -2));
+        org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(context, null);
+        this.n = v00Var;
+        v00Var.f(org.telegram.ui.ActionBar.h6.G8, org.telegram.ui.ActionBar.h6.i6, -1);
+        v00Var.setViewType(13);
+        v00Var.setIsSingleCell(false);
+        addView(v00Var, w7.y5.c(-1.0f, -2));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
         this.e = h5Var;
         h5Var.setTextSize(16);
@@ -74,7 +74,7 @@ public final class zh0 extends FrameLayout {
         setEnabled(false);
     }
 
-    public final org.telegram.ui.Components.wl0 a() {
+    public final org.telegram.ui.Components.yl0 a() {
         wb1 wb1Var = this.s;
         if (wb1Var != null) {
             return wb1Var;
@@ -128,8 +128,8 @@ public final class zh0 extends FrameLayout {
         }
         h5Var.animate().alpha(1.0f).setDuration(220L).start();
         k9Var.animate().alpha(1.0f).setDuration(220L).start();
-        org.telegram.ui.Components.u00 u00Var = this.n;
-        u00Var.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.ca(u00Var)).start();
+        org.telegram.ui.Components.v00 v00Var = this.n;
+        v00Var.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.ca(v00Var)).start();
         wb1 wb1Var = this.s;
         if (wb1Var != null) {
             wb1Var.getAdapter();
@@ -143,17 +143,17 @@ public final class zh0 extends FrameLayout {
             i10 = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
         }
         this.r = true;
-        org.telegram.ui.Components.u00 u00Var = this.n;
-        boolean z10 = u00Var.getVisibility() == 0;
+        org.telegram.ui.Components.v00 v00Var = this.n;
+        boolean z10 = v00Var.getVisibility() == 0;
         org.telegram.ui.ActionBar.h5 h5Var = this.e;
         h5Var.setVisibility(8);
         if (z10) {
-            u00Var.setVisibility(8);
+            v00Var.setVisibility(8);
         }
         super.onMeasure(i10, i11);
         if (z10) {
-            u00Var.getLayoutParams().width = getMeasuredWidth();
-            u00Var.setVisibility(0);
+            v00Var.getLayoutParams().width = getMeasuredWidth();
+            v00Var.setVisibility(0);
         }
         h5Var.setVisibility(0);
         h5Var.getLayoutParams().width = getMeasuredWidth() - AndroidUtilities.dp(40.0f);

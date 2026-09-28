@@ -1,21 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class pu implements DialogInterface.OnShowListener {
-    public final /* synthetic */ wu a;
+public final /* synthetic */ class pu implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public pu(wu wuVar) {
-        this.a = wuVar;
+    public /* synthetic */ pu(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        o91 o91Var = this.a.c;
-        if (og0.p0.P && o91Var.f()) {
-            o91Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.fa(this, 1));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.callOnClick();
+                break;
+            default:
+                this.b.invalidate();
+                break;
         }
     }
 }

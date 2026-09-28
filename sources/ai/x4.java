@@ -5,9 +5,9 @@ import android.view.View;
 import ci.xc;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                     q6Var.W0.getChildAt(i10).setAlpha(((i10 == q6Var.Z0 ? q6Var.a1 : i10 == q6Var.Y0 ? 1.0f - q6Var.a1 : 0.0f) * 0.4f) + 0.6f);
                     i10++;
                 }
-                float interpolation = rr.f.getInterpolation(q6Var.a1);
+                float interpolation = sr.f.getInterpolation(q6Var.a1);
                 if (view != null && view2 != null) {
                     float f7 = 1.0f - interpolation;
                     float f10 = (f7 * 0.4f) + 0.6f;
@@ -116,7 +116,7 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                     n0Var.f1.getChildAt(i11).setAlpha(((i11 == n0Var.h1 ? n0Var.i1 : i11 == n0Var.g1 ? 1.0f - n0Var.i1 : 0.0f) * 0.4f) + 0.6f);
                     i11++;
                 }
-                float interpolation2 = rr.f.getInterpolation(n0Var.i1);
+                float interpolation2 = sr.f.getInterpolation(n0Var.i1);
                 if (view3 != null && view4 != null) {
                     float f12 = 1.0f - interpolation2;
                     float f13 = (f12 * 0.4f) + 0.6f;

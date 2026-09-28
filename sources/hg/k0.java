@@ -17,19 +17,19 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.oi;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.oz;
 import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.wi;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k0 extends oi implements NotificationCenter.NotificationCenterDelegate, le.e {
-    public final nz E;
+    public final oz E;
     public final si F;
     public final le.c n;
     public final FrameLayout r;
@@ -41,7 +41,7 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
 
     public k0(Context context, d6 d6Var, wi wiVar) {
         super(context, d6Var, wiVar);
-        this.n = new le.c(0, this, rr.h, 380L, false);
+        this.n = new le.c(0, this, sr.h, 380L, false);
         this.w = new HashSet();
         this.y = new i0(this, context);
         vi viVar = new vi(context, h6.d6, d6Var);
@@ -59,10 +59,10 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
         FrameLayout.LayoutParams d = y5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
         frameLayout.addView(siVar, d);
-        nz nzVar = new nz(context, d6Var);
-        this.E = nzVar;
-        nzVar.c();
-        addView(nzVar, y5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+        oz ozVar = new oz(context, d6Var);
+        this.E = ozVar;
+        ozVar.c();
+        addView(ozVar, y5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         ai.w0 w0Var = new ai.w0(this, context, d6Var, 3);
         this.s = w0Var;
         w0Var.p1();
@@ -101,12 +101,12 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
         }
         int i10 = 0;
         View childAt = w0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) w0Var.G(childAt);
-        if (gl0Var == null) {
+        il0 il0Var = (il0) w0Var.G(childAt);
+        if (il0Var == null) {
             return -1000;
         }
         int paddingTop = w0Var.getPaddingTop();
-        if (gl0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (il0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
@@ -129,9 +129,9 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
 
     public final void M() {
         View childAt;
-        nz nzVar = this.E;
-        if (nzVar.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
-            nzVar.setTranslationY((childAt.getTop() + (nzVar.getMeasuredHeight() - getMeasuredHeight())) / 2);
+        oz ozVar = this.E;
+        if (ozVar.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
+            ozVar.setTranslationY((childAt.getTop() + (ozVar.getMeasuredHeight() - getMeasuredHeight())) / 2);
         }
     }
 
@@ -142,11 +142,11 @@ public final class k0 extends oi implements NotificationCenter.NotificationCente
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        gl0 gl0Var = (gl0) w0Var.G(childAt);
+        il0 il0Var = (il0) w0Var.G(childAt);
         int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || gl0Var == null || gl0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || il0Var == null || il0Var.b() != 0) ? 0 : top;
         le.c cVar = this.n;
-        if (top < 0 || gl0Var == null || gl0Var.b() != 0) {
+        if (top < 0 || il0Var == null || il0Var.b() != 0) {
             cVar.a(true, true);
             top = i10;
         } else {

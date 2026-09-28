@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class w5 implements Runnable {
     public final /* synthetic */ int a;
@@ -90,9 +90,9 @@ public final class w5 implements Runnable {
                     t10Var.f.clear();
                     t10Var.n.clear();
                     t10Var.r.clear();
-                    org.telegram.ui.Components.vl0 vl0Var = t10Var.d;
-                    if (vl0Var != null) {
-                        vl0Var.l();
+                    org.telegram.ui.Components.xl0 xl0Var = t10Var.d;
+                    if (xl0Var != null) {
+                        xl0Var.l();
                         break;
                     }
                 }

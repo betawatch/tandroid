@@ -24,12 +24,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.ic0;
-import org.telegram.ui.Components.ow0;
+import org.telegram.ui.Components.aw;
+import org.telegram.ui.Components.kc0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.zv;
+import org.telegram.ui.Components.qw0;
+import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.b61;
 import org.telegram.ui.c70;
 import org.telegram.ui.j61;
@@ -42,7 +42,7 @@ import yh.r2;
 import yh.t3;
 import yh.z5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final int[] A;
@@ -62,9 +62,9 @@ public final class b0 {
     public boolean k;
     public boolean l;
     public final x m;
-    public final qk0 n;
+    public final sk0 n;
     public final List o;
-    public ic0 p;
+    public kc0 p;
     public boolean q;
     public final m2 r;
     public final d6 s;
@@ -78,7 +78,7 @@ public final class b0 {
     public final RectF f = new RectF();
     public final RectF i = new RectF();
 
-    public b0(int i10, m2 m2Var, ArrayList arrayList, HashSet hashSet, qk0 qk0Var, d6 d6Var, boolean z10) {
+    public b0(int i10, m2 m2Var, ArrayList arrayList, HashSet hashSet, sk0 sk0Var, d6 d6Var, boolean z10) {
         new Path();
         this.A = new int[2];
         this.B = new AnimationNotificationsLocker();
@@ -90,7 +90,7 @@ public final class b0 {
         this.o = arrayList;
         this.r = m2Var;
         this.s = d6Var;
-        Context context = m2Var != null ? m2Var.getContext() : qk0Var.getContext();
+        Context context = m2Var != null ? m2Var.getContext() : sk0Var.getContext();
         t3 t3Var = new t3(this, context);
         this.c = t3Var;
         t3Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 28));
@@ -100,12 +100,12 @@ public final class b0 {
         a0 a0Var = new a0(this, context);
         this.a = a0Var;
         boolean z12 = z11;
-        x xVar = new x(this, m2Var, context, qk0Var.getWindowType(), i10 != 1, d6Var, qk0Var, m2Var);
+        x xVar = new x(this, m2Var, context, sk0Var.getWindowType(), i10 != 1, d6Var, sk0Var, m2Var);
         this.m = xVar;
         xVar.setOutlineProvider(new y(this));
         xVar.setClipToOutline(true);
-        boolean z13 = qk0Var.f1;
-        boolean z14 = qk0Var.g1;
+        boolean z13 = sk0Var.f1;
+        boolean z14 = sk0Var.g1;
         if (xVar.K1 != z13) {
             xVar.K1 = z13;
             xVar.L1 = z14;
@@ -118,7 +118,7 @@ public final class b0 {
                 n51Var.invalidate();
             }
         }
-        xVar.setOnLongPressedListener(new z2.b(qk0Var));
+        xVar.setOnLongPressedListener(new z2.b(sk0Var));
         xVar.setOnRecentClearedListener(new t7.u());
         xVar.setRecentReactions(arrayList);
         xVar.setSelectedReactions((HashSet<o0>) hashSet);
@@ -135,11 +135,11 @@ public final class b0 {
         float f7 = i13;
         t3Var.addView(a0Var, y5.d(-1, -1.0f, i10 == 5 ? 85 : 48, f7, f7, f7, 16.0f));
         t3Var.setClipChildren(false);
-        if (i10 == 1 || (qk0Var.getDelegate() != null && qk0Var.getDelegate().p())) {
-            xVar.setBackgroundDelegate(new s5.e(19, this, qk0Var));
+        if (i10 == 1 || (sk0Var.getDelegate() != null && sk0Var.getDelegate().p())) {
+            xVar.setBackgroundDelegate(new s5.e(19, this, sk0Var));
         }
         if (z12) {
-            ((ViewGroup) qk0Var.getParent()).addView(t3Var);
+            ((ViewGroup) sk0Var.getParent()).addView(t3Var);
         } else {
             WindowManager.LayoutParams b10 = b(false);
             WindowManager windowManager = AndroidUtilities.findActivity(context).getWindowManager();
@@ -147,11 +147,11 @@ public final class b0 {
             AndroidUtilities.setPreferredMaxRefreshRate(windowManager, t3Var, b10);
             windowManager.addView(t3Var, b10);
         }
-        this.n = qk0Var;
-        qk0Var.setOnSwitchedToLoopView(new u(this, i11));
-        qk0Var.b1 = true;
-        qk0Var.invalidate();
-        AndroidUtilities.runOnUIThread(new z5(i12, this, qk0Var), 50L);
+        this.n = sk0Var;
+        sk0Var.setOnSwitchedToLoopView(new u(this, i11));
+        sk0Var.b1 = true;
+        sk0Var.invalidate();
+        AndroidUtilities.runOnUIThread(new z5(i12, this, sk0Var), 50L);
         if (i10 != 5) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 7);
         }
@@ -159,7 +159,7 @@ public final class b0 {
 
     public static void a(b0 b0Var, boolean z10) {
         View view;
-        qk0 qk0Var = b0Var.n;
+        sk0 sk0Var = b0Var.n;
         x xVar = b0Var.m;
         if (b0Var.E.isEmpty()) {
             b0Var.h(false);
@@ -174,7 +174,7 @@ public final class b0 {
                 x51Var.f1();
                 xVar.f0.b();
                 xVar.sendAccessibilityEvent(32);
-                qk0Var.setImportantForAccessibility(4);
+                sk0Var.setImportantForAccessibility(4);
                 int i10 = 0;
                 while (true) {
                     if (i10 >= x51Var.getChildCount()) {
@@ -193,30 +193,30 @@ public final class b0 {
                 } else {
                     xVar.performAccessibilityAction(64, null);
                 }
-                if (qk0Var.getPullingLeftProgress() > 0.0f) {
-                    qk0Var.O0 = false;
-                    ValueAnimator valueAnimator = qk0Var.y0;
+                if (sk0Var.getPullingLeftProgress() > 0.0f) {
+                    sk0Var.O0 = false;
+                    ValueAnimator valueAnimator = sk0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    qk0Var.B0 = 0.0f;
-                    m6 m6Var = qk0Var.S;
+                    sk0Var.B0 = 0.0f;
+                    m6 m6Var = sk0Var.S;
                     if (m6Var != null) {
                         m6Var.invalidate();
                     }
-                    qk0Var.invalidate();
+                    sk0Var.invalidate();
                 } else {
-                    qk0Var.O0 = true;
-                    ValueAnimator valueAnimator2 = qk0Var.y0;
+                    sk0Var.O0 = true;
+                    ValueAnimator valueAnimator2 = sk0Var.y0;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                     }
-                    qk0Var.B0 = 0.0f;
-                    m6 m6Var2 = qk0Var.S;
+                    sk0Var.B0 = 0.0f;
+                    m6 m6Var2 = sk0Var.S;
                     if (m6Var2 != null) {
                         m6Var2.invalidate();
                     }
-                    qk0Var.invalidate();
+                    sk0Var.invalidate();
                 }
                 n51 n51Var = xVar.i0;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
@@ -250,7 +250,7 @@ public final class b0 {
     public static void g(View view, float f7) {
         if (view instanceof j61) {
             ((j61) view).setAnimatedScale(f7);
-        } else if (view instanceof zv) {
+        } else if (view instanceof aw) {
             view.setScaleX(f7);
             view.setScaleY(f7);
         }
@@ -283,16 +283,16 @@ public final class b0 {
         int[] iArr = this.A;
         a0 a0Var = this.a;
         RectF rectF = this.f;
-        qk0 qk0Var = this.n;
-        rectF.set(qk0Var.w);
-        this.e = qk0Var.y;
+        sk0 sk0Var = this.n;
+        rectF.set(sk0Var.w);
+        this.e = sk0Var.y;
         int[] iArr2 = new int[2];
         if (z10) {
-            qk0Var.getLocationOnScreen(iArr);
+            sk0Var.getLocationOnScreen(iArr);
         }
         t3Var.getLocationOnScreen(iArr2);
-        float topOffset = qk0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - AndroidUtilities.dp(44.0f)) - AndroidUtilities.dp(52.0f)) - (xVar.O0 ? AndroidUtilities.dp(26.0f) : 0));
-        if (qk0Var.F0) {
+        float topOffset = sk0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - AndroidUtilities.dp(44.0f)) - AndroidUtilities.dp(52.0f)) - (xVar.O0 ? AndroidUtilities.dp(26.0f) : 0));
+        if (sk0Var.F0) {
             topOffset = (iArr[1] - iArr2[1]) - AndroidUtilities.dp(12.0f);
         }
         if (a0Var.getMeasuredHeight() + topOffset > t3Var.getMeasuredHeight() - AndroidUtilities.dp(32.0f)) {
@@ -326,7 +326,7 @@ public final class b0 {
         float y3 = (iArr[c10] - iArr2[c10]) - a0Var.getY();
         this.h = y3;
         rectF.offset(x10, y3);
-        qk0Var.setCustomEmojiEnterProgress(this.j);
+        sk0Var.setCustomEmojiEnterProgress(this.j);
         if (z10) {
             this.w = SharedConfig.getDevicePerformanceClass() >= 2 && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
             this.k = false;
@@ -353,11 +353,11 @@ public final class b0 {
             valueAnimator = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
         } else {
             float f10 = z10 ? 1.0f : 0.0f;
-            ow0 ow0Var = new ow0();
-            ow0Var.a = 0;
-            ow0Var.b = 0;
-            ow0Var.setFloatValues(new float[]{f7, f10});
-            valueAnimator = ow0Var;
+            qw0 qw0Var = new qw0();
+            qw0Var.a = 0;
+            qw0Var.b = 0;
+            qw0Var.setFloatValues(new float[]{f7, f10});
+            valueAnimator = qw0Var;
         }
         this.x = valueAnimator;
         valueAnimator.addUpdateListener(new bb(12, this, z10));
@@ -367,18 +367,18 @@ public final class b0 {
         this.x.addListener(new c70(17, this, z10));
         if (i10 == 4) {
             this.x.setDuration(420L);
-            this.x.setInterpolator(rr.h);
+            this.x.setInterpolator(sr.h);
         } else if (this.w) {
             this.x.setDuration(450L);
             this.x.setInterpolator(new OvershootInterpolator(0.5f));
         } else {
             this.x.setDuration(350L);
-            this.x.setInterpolator(rr.f);
+            this.x.setInterpolator(sr.f);
         }
         a0Var.invalidate();
         h(true);
         if (z10) {
-            qk0Var.setCustomEmojiReactionsBackground(false);
+            sk0Var.setCustomEmojiReactionsBackground(false);
             ValueAnimator valueAnimator3 = this.x;
             Objects.requireNonNull(valueAnimator3);
             r2 r2Var = new r2(valueAnimator3, 10);
@@ -390,8 +390,8 @@ public final class b0 {
             }
             e0.c = r2Var;
         } else {
-            qk0Var.O0 = true;
-            qk0Var.invalidate();
+            sk0Var.O0 = true;
+            sk0Var.invalidate();
             this.x.setStartDelay(30L);
             this.x.start();
         }
@@ -412,18 +412,18 @@ public final class b0 {
         if (this.q) {
             return;
         }
-        qk0 qk0Var = this.n;
-        if (qk0Var != null) {
-            ValueAnimator valueAnimator = qk0Var.y0;
+        sk0 sk0Var = this.n;
+        if (sk0Var != null) {
+            ValueAnimator valueAnimator = sk0Var.y0;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
-            qk0Var.B0 = 0.0f;
-            m6 m6Var = qk0Var.S;
+            sk0Var.B0 = 0.0f;
+            m6 m6Var = sk0Var.S;
             if (m6Var != null) {
                 m6Var.invalidate();
             }
-            qk0Var.invalidate();
+            sk0Var.invalidate();
         }
         qc.e();
         this.q = true;
@@ -560,7 +560,7 @@ public final class b0 {
             ofFloat.addListener(new androidx.fragment.app.g(this, ofFloat, z10, 13));
             if (this.y == 4) {
                 ofFloat.setDuration(420L);
-                ofFloat.setInterpolator(rr.h);
+                ofFloat.setInterpolator(sr.h);
             } else {
                 ofFloat.setDuration(350L);
                 ofFloat.setInterpolator(new OvershootInterpolator(1.0f));

@@ -28,7 +28,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class cl0 {
     public static org.telegram.ui.ActionBar.e3 a;
@@ -421,7 +421,7 @@ public abstract class cl0 {
                         tL_messages_checkUrlAuthMatchCode.url = tL_messages_requestUrlAuth.url;
                         ConnectionsManager.getInstance(i10).sendRequestTyped(tL_messages_checkUrlAuthMatchCode, new org.telegram.messenger.a(), new xk0(a2Var, j3, string, d6Var2, 0));
                     }
-                }, false, new org.telegram.ui.Components.f21(zArr, b1Var, tL_messages_requestUrlAuth, i10, 6), U5.getResourceProvider());
+                }, false, new org.telegram.ui.Components.h21(zArr, b1Var, tL_messages_requestUrlAuth, i10, 6), U5.getResourceProvider());
             } else {
                 a = j3;
                 j3.show();
@@ -468,7 +468,7 @@ public abstract class cl0 {
             frameLayout.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(70.0f), org.telegram.ui.ActionBar.h6.l1(0.05f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var))));
             Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(str2);
             if (emojiBigDrawable == null) {
-                drawable = new bl0(new org.telegram.ui.Components.t01(str2, 30.0f, AndroidUtilities.bold()), d6Var);
+                drawable = new bl0(new org.telegram.ui.Components.v01(str2, 30.0f, AndroidUtilities.bold()), d6Var);
                 z11 = false;
             } else {
                 drawable = emojiBigDrawable;

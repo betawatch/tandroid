@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class hz extends LinearLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -38,7 +38,7 @@ public final class hz extends LinearLayout {
         addView(frameLayout, w7.y5.o(-1, 226, 1.0f, 119));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.c = w9Var;
-        w9Var.setImageDrawable(new org.telegram.ui.Components.ij0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
+        w9Var.setImageDrawable(new org.telegram.ui.Components.kj0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
         frameLayout.addView(w9Var, w7.y5.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         int i10 = org.telegram.ui.ActionBar.h6.z6;
@@ -63,7 +63,7 @@ public final class hz extends LinearLayout {
         addView(frameLayout4, w7.y5.o(-1, 226, 1.0f, 119));
         org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
         this.f = w9Var2;
-        w9Var2.setImageDrawable(new org.telegram.ui.Components.ij0(R.raw.topics_list, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
+        w9Var2.setImageDrawable(new org.telegram.ui.Components.kj0(R.raw.topics_list, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
         frameLayout4.addView(w9Var2, w7.y5.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout5 = new FrameLayout(context);
         TextView b12 = w7.c6.b(context, 14.0f, i10, true, null);
@@ -93,14 +93,14 @@ public final class hz extends LinearLayout {
         FrameLayout frameLayout2 = this.d;
         if (z11) {
             ViewPropertyAnimator alpha = frameLayout2.animate().scaleX(!z10 ? 0.0f : 1.0f).scaleY(!z10 ? 0.0f : 1.0f).alpha(!z10 ? 0.0f : 1.0f);
-            org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-            alpha.setInterpolator(rrVar).setDuration(320L).start();
-            frameLayout.animate().scaleX(z10 ? 0.0f : 1.0f).scaleY(z10 ? 0.0f : 1.0f).alpha(z10 ? 0.0f : 1.0f).setInterpolator(rrVar).setDuration(320L).start();
+            org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+            alpha.setInterpolator(srVar).setDuration(320L).start();
+            frameLayout.animate().scaleX(z10 ? 0.0f : 1.0f).scaleY(z10 ? 0.0f : 1.0f).alpha(z10 ? 0.0f : 1.0f).setInterpolator(srVar).setDuration(320L).start();
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, z10 ? 1.0f : 0.0f);
             this.n = ofFloat;
             ofFloat.addUpdateListener(new c3(this, 11));
             this.n.addListener(new org.telegram.ui.Components.ca(27, this, z10));
-            this.n.setInterpolator(rrVar);
+            this.n.setInterpolator(srVar);
             this.n.setDuration(320L);
             this.n.start();
         } else {
@@ -127,7 +127,7 @@ public final class hz extends LinearLayout {
         if (z10) {
             w9Var = w9Var2;
         }
-        org.telegram.ui.Components.ij0 lottieAnimation = w9Var.getImageReceiver().getLottieAnimation();
+        org.telegram.ui.Components.kj0 lottieAnimation = w9Var.getImageReceiver().getLottieAnimation();
         if (lottieAnimation != null) {
             if (lottieAnimation.t() > (z10 ? 0.85f : 0.8f)) {
                 lottieAnimation.T(0.0f, false);

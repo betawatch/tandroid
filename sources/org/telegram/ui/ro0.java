@@ -7,7 +7,7 @@ import android.util.SparseIntArray;
 import java.io.File;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ro0 implements Runnable {
     public final /* synthetic */ int a;
@@ -91,11 +91,11 @@ public final /* synthetic */ class ro0 implements Runnable {
                         z10 = tp0Var.S;
                         if (tp0Var.a0 != z10) {
                             tp0Var.a0 = z10;
-                            org.telegram.ui.Components.ij0 ij0Var = tp0Var.T;
-                            ij0Var.P(z10 ? ij0Var.e[0] : 0);
-                            org.telegram.ui.Components.ij0 ij0Var2 = tp0Var.T;
-                            if (ij0Var2 != null) {
-                                ij0Var2.start();
+                            org.telegram.ui.Components.kj0 kj0Var = tp0Var.T;
+                            kj0Var.P(z10 ? kj0Var.e[0] : 0);
+                            org.telegram.ui.Components.kj0 kj0Var2 = tp0Var.T;
+                            if (kj0Var2 != null) {
+                                kj0Var2.start();
                             }
                         }
                         tp0Var.F0();

@@ -14,9 +14,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ux0 extends org.telegram.ui.Components.vl0 {
+public final class ux0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ PrivacySettingsActivity d;
 
@@ -25,7 +25,7 @@ public final class ux0 extends org.telegram.ui.Components.vl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10;
         int i11;
@@ -630,12 +630,12 @@ public final class ux0 extends org.telegram.ui.Components.vl0 {
                         int indexOf = privacySettingsActivity.d.login_email_pattern.indexOf(42);
                         int lastIndexOf = privacySettingsActivity.d.login_email_pattern.lastIndexOf(42);
                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                            org.telegram.ui.Components.b11 b11Var = new org.telegram.ui.Components.b11();
-                            b11Var.a |= 256;
-                            b11Var.b = indexOf;
+                            org.telegram.ui.Components.d11 d11Var = new org.telegram.ui.Components.d11();
+                            d11Var.a |= 256;
+                            d11Var.b = indexOf;
                             int i44 = lastIndexOf + 1;
-                            b11Var.c = i44;
-                            valueOf.setSpan(new org.telegram.ui.Components.c11(b11Var, 0), indexOf, i44, 0);
+                            d11Var.c = i44;
+                            valueOf.setSpan(new org.telegram.ui.Components.e11(d11Var, 0), indexOf, i44, 0);
                         }
                         z12 = false;
                         str4 = valueOf;
@@ -653,12 +653,12 @@ public final class ux0 extends org.telegram.ui.Components.vl0 {
                     h5Var2.l(str4, false);
                     p6Var.setVisibility(8);
                     r8Var.h.setVisibility(8);
-                    org.telegram.ui.Components.lj0 lj0Var = r8Var.e;
-                    lj0Var.setVisibility(0);
-                    lj0Var.setTranslationX(0.0f);
-                    lj0Var.setTranslationY(0.0f);
-                    lj0Var.setPadding(0, AndroidUtilities.dp(7.0f), 0, 0);
-                    lj0Var.setImageResource(i45);
+                    org.telegram.ui.Components.nj0 nj0Var = r8Var.e;
+                    nj0Var.setVisibility(0);
+                    nj0Var.setTranslationX(0.0f);
+                    nj0Var.setTranslationY(0.0f);
+                    nj0Var.setPadding(0, AndroidUtilities.dp(7.0f), 0, 0);
+                    nj0Var.setImageResource(i45);
                     r8Var.r = true;
                     r8Var.setWillNotDraw(false);
                     Switch r02 = r8Var.f;
@@ -747,6 +747,6 @@ public final class ux0 extends org.telegram.ui.Components.vl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        return new org.telegram.ui.Components.gl0(i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.w8(context) : new org.telegram.ui.Cells.r8(context) : new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null) : new org.telegram.ui.Cells.m4(context) : new org.telegram.ui.Cells.e9(context) : new org.telegram.ui.Cells.ea(context));
+        return new org.telegram.ui.Components.il0(i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.w8(context) : new org.telegram.ui.Cells.r8(context) : new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null) : new org.telegram.ui.Cells.m4(context) : new org.telegram.ui.Cells.e9(context) : new org.telegram.ui.Cells.ea(context));
     }
 }

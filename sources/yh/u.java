@@ -21,13 +21,13 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.oo0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -144,11 +144,11 @@ public final /* synthetic */ class u implements Runnable {
             case 2:
                 s5 s5Var2 = (s5) obj5;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj;
-                o80 o80Var = (o80) obj4;
+                q80 q80Var = (q80) obj4;
                 TLObject tLObject2 = (TLObject) obj3;
                 TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars2 = (TLRPC.TL_inputInvoiceStars) obj2;
                 if (tL_error3 != null) {
-                    o80Var.run(Boolean.FALSE, tL_error3.text);
+                    q80Var.run(Boolean.FALSE, tL_error3.text);
                     return;
                 }
                 if (tLObject2 instanceof TLRPC.PaymentForm) {
@@ -160,10 +160,10 @@ public final /* synthetic */ class u implements Runnable {
                     oo0Var2 = new oo0((TLRPC.PaymentReceipt) tLObject2);
                 }
                 if (oo0Var2 == null) {
-                    o80Var.run(Boolean.FALSE, "UNKNOWN_RESPONSE");
+                    q80Var.run(Boolean.FALSE, "UNKNOWN_RESPONSE");
                     return;
                 }
-                oo0Var2.Z0 = new r5.d(o80Var, 26);
+                oo0Var2.Z0 = new r5.d(q80Var, 26);
                 org.telegram.ui.ActionBar.m2 R2 = LaunchActivity.R();
                 if (R2 == null) {
                     return;

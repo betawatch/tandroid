@@ -1,29 +1,33 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
+import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class l51 implements cy0 {
-    public final /* synthetic */ r51 a;
+public final class l51 extends g.p {
+    public final /* synthetic */ t51 c;
 
-    public l51(r51 r51Var) {
-        this.a = r51Var;
+    public l51(t51 t51Var) {
+        this.c = t51Var;
     }
 
-    @Override // org.telegram.ui.Components.cy0
-    public final boolean b() {
-        return this.a.b.a();
-    }
-
-    @Override // org.telegram.ui.Components.cy0
-    public final boolean c() {
-        return this.a.b.c();
-    }
-
-    @Override // org.telegram.ui.Components.cy0
-    public final void d(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i10, int i11) {
-        this.a.b.f(document, obj, z11, i10);
+    @Override // g.p
+    public final int i(int i10) {
+        t51 t51Var = this.c;
+        s4.h0 adapter = t51Var.n.getAdapter();
+        s51 s51Var = t51Var.s;
+        if (adapter == s51Var) {
+            if ((s51Var.d.get(i10) instanceof Integer) || i10 >= s51Var.w) {
+                return s51Var.v;
+            }
+            return 1;
+        }
+        gg.g2 g2Var = t51Var.v;
+        SparseArray sparseArray = g2Var.s;
+        if (i10 == g2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
+            return g2Var.e.a();
+        }
+        return 1;
     }
 }

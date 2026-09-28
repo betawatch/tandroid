@@ -1,36 +1,38 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zb0 b;
-    public final /* synthetic */ Context c;
+public final class kb0 extends p81 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ hc0 b;
 
-    public /* synthetic */ kb0(zb0 zb0Var, Context context, int i10) {
-        this.a = i10;
-        this.b = zb0Var;
-        this.c = context;
+    public kb0(hc0 hc0Var, Context context) {
+        this.b = hc0Var;
+        this.a = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                zb0 zb0Var = this.b;
-                zb0Var.c0.a(false);
-                AndroidUtilities.runOnUIThread(new kb0(zb0Var, this.c, 1));
-                break;
-            default:
-                Context context = this.c;
-                if (AndroidUtilities.isContextSafe(context)) {
-                    new rg.x0(context, 43, this.b.c0.F).show();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.p81
+    public final void b(View view, int i10, int i11) {
+        bc0 bc0Var = (bc0) view;
+        bc0Var.h();
+        bc0Var.k(false);
+    }
+
+    @Override // org.telegram.ui.Components.p81
+    public final View d(int i10) {
+        return new bc0(this.b, this.a, i10);
+    }
+
+    @Override // org.telegram.ui.Components.p81
+    public final int e() {
+        return this.b.e.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.p81
+    public final int h(int i10) {
+        return ((ec0) this.b.e.a.get(i10)).a;
     }
 }

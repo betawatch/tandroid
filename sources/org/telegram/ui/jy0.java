@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jy0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class jy0 implements Utilities.Callback {
                 profileActivity2.getClass();
                 ArrayList arrayList = new ArrayList(1);
                 arrayList.add((TLRPC.InputStickerSet) obj);
-                profileActivity2.showDialog(new org.telegram.ui.Components.tv(profileActivity2, profileActivity2.getParentActivity(), profileActivity2.z0, arrayList));
+                profileActivity2.showDialog(new org.telegram.ui.Components.uv(profileActivity2, profileActivity2.getParentActivity(), profileActivity2.z0, arrayList));
                 break;
             case 2:
                 View view2 = (View) obj;
@@ -55,7 +55,7 @@ public final /* synthetic */ class jy0 implements Utilities.Callback {
                     ((org.telegram.ui.Cells.j5) view2).getCheckBox().invalidate();
                 } else if (view2 instanceof hg.k1) {
                     hg.k1 k1Var = (hg.k1) view2;
-                    org.telegram.ui.Components.eq eqVar = k1Var.r;
+                    org.telegram.ui.Components.fq fqVar = k1Var.r;
                     int dp = AndroidUtilities.dp(8.0f);
                     int i10 = org.telegram.ui.ActionBar.h6.o6;
                     org.telegram.ui.ActionBar.d6 d6Var = k1Var.a;
@@ -65,10 +65,10 @@ public final /* synthetic */ class jy0 implements Utilities.Callback {
                     int v03 = org.telegram.ui.ActionBar.h6.v0(i10, d6Var);
                     k1Var.a(v03);
                     int l12 = org.telegram.ui.ActionBar.h6.l1(0.22f, v03);
-                    eqVar.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, l1, l12, l12));
+                    fqVar.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, l1, l12, l12));
                     int v04 = org.telegram.ui.ActionBar.h6.v0(i10, d6Var);
                     k1Var.a(v04);
-                    eqVar.setTextColor(v04);
+                    fqVar.setTextColor(v04);
                 } else if (view2 instanceof org.telegram.ui.Cells.h6) {
                     ((org.telegram.ui.Cells.h6) view2).e();
                 }

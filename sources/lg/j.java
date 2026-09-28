@@ -42,12 +42,12 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.bf0;
+import org.telegram.ui.Components.it0;
 import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.uq0;
 import org.telegram.ui.Components.voip.e1;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.ze0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.cz0;
 import org.telegram.ui.d60;
@@ -69,7 +69,7 @@ import pg.k1;
 import pg.m1;
 import pg.n1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -189,14 +189,14 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 5:
-                ze0 ze0Var = (ze0) this.b;
+                bf0 bf0Var = (bf0) this.b;
                 AndroidUtilities.VcardItem vcardItem = (AndroidUtilities.VcardItem) this.c;
-                ze0Var.getClass();
+                bf0Var.getClass();
                 if (i10 == 0) {
                     try {
                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vcardItem.getValue(false)));
                         if (AndroidUtilities.shouldShowClipboardToast()) {
-                            Toast.makeText(ze0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
+                            Toast.makeText(bf0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
                             return;
                         }
                         return;
@@ -207,13 +207,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 6:
-                gt0 gt0Var = (gt0) this.b;
+                it0 it0Var = (it0) this.b;
                 String str6 = (String) this.c;
                 if (i10 == 0) {
-                    gt0Var.a.R0(str6);
+                    it0Var.a.R0(str6);
                     return;
                 }
-                gt0Var.getClass();
+                it0Var.getClass();
                 if (i10 == 1) {
                     if (str6.startsWith("mailto:")) {
                         str6 = str6.substring(7);
@@ -332,7 +332,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         return;
                     }
                     String str8 = "https://" + themeActivity.getMessagesController().linkPrefix + "/addtheme/" + g6Var.F.slug;
-                    themeActivity.showDialog(new uq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    themeActivity.showDialog(new wq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
                     return;
                 }
                 if (i10 != 1) {

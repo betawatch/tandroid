@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i00 extends FrameLayout {
     public final TextView a;
@@ -41,7 +41,7 @@ public final class i00 extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
         drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.k7, false), mode));
-        imageView.setImageDrawable(new org.telegram.ui.Components.qq(drawable, drawable2));
+        imageView.setImageDrawable(new org.telegram.ui.Components.rq(drawable, drawable2));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         boolean z12 = LocaleController.isRTL;
         addView(imageView, w7.y5.d(32, 32.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f));

@@ -13,16 +13,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.vp;
 import yf.p;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class e extends qh.e implements Drawable.Callback, le.e {
     public final String b;
     public final Drawable d;
-    public final up f;
+    public final vp f;
     public qh.d h;
     public TLRPC.WebPage n;
     public final le.c r;
@@ -31,17 +31,17 @@ public final class e extends qh.e implements Drawable.Callback, le.e {
     public final Paint e = new Paint(1);
 
     public e(String str) {
-        up upVar = new up(-1);
-        this.f = upVar;
-        rr rrVar = rr.h;
-        this.r = new le.c(0, this, rrVar, 320L, false);
-        this.s = new le.c(0, this, rrVar, 320L, false);
+        vp vpVar = new vp(-1);
+        this.f = vpVar;
+        sr srVar = sr.h;
+        this.r = new le.c(0, this, srVar, 320L, false);
+        this.s = new le.c(0, this, srVar, 320L, false);
         this.b = str;
         this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
         this.d = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.media_link_24).mutate();
-        upVar.setCallback(this);
-        upVar.b(h6.w0(null, h6.o7, false));
-        upVar.a = AndroidUtilities.dp(15.0f);
+        vpVar.setCallback(this);
+        vpVar.b(h6.w0(null, h6.o7, false));
+        vpVar.a = AndroidUtilities.dp(15.0f);
     }
 
     @Override // le.e
@@ -71,8 +71,8 @@ public final class e extends qh.e implements Drawable.Callback, le.e {
         ImageReceiver imageReceiver = this.a;
         imageReceiver.setImageCoords(0.0f, 0.0f, f7, f10);
         imageReceiver.draw(canvas);
-        up upVar = this.f;
-        upVar.setBounds(0, 0, i10, i11);
+        vp vpVar = this.f;
+        vpVar.setBounds(0, 0, i10, i11);
         int w02 = h6.w0(null, h6.a7, false);
         le.c cVar = this.s;
         int d = i0.a.d(cVar.e, w02, TLObject.FLAG_30);
@@ -94,7 +94,7 @@ public final class e extends qh.e implements Drawable.Callback, le.e {
         p.e(this.d, f7 / 2.0f, f10 / 2.0f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), 17);
         le.c cVar2 = this.r;
         p.b(canvas, drawable, 1.0f - cVar2.e);
-        p.b(canvas, upVar, cVar2.e);
+        p.b(canvas, vpVar, cVar2.e);
     }
 
     @Override // android.graphics.drawable.Drawable.Callback

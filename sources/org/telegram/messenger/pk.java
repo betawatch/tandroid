@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pk implements Runnable {
     public final /* synthetic */ int a;
@@ -80,22 +80,22 @@ public final /* synthetic */ class pk implements Runnable {
                 ((MediaController) this.d).lambda$generateWaveform$38((String) this.c, (byte[]) this.e, (MessageObject) this.b);
                 break;
             case 14:
-                ((MediaDataController) this.d).lambda$loadSavedReactions$239((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
+                ((MediaDataController) this.d).lambda$getEmojiSuggestions$220((String[]) this.c, (MediaDataController.KeywordResultCallback) this.e, (ArrayList) this.b);
                 break;
             case 15:
-                ((MediaDataController) this.d).lambda$getEmojiSuggestions$219((String[]) this.c, (MediaDataController.KeywordResultCallback) this.e, (ArrayList) this.b);
+                MediaDataController.lambda$getEmojiSuggestions$223((CountDownLatch) this.d, (MediaDataController.KeywordResultCallback) this.c, (ArrayList) this.e, (String) this.b);
                 break;
             case 16:
-                MediaDataController.lambda$getEmojiSuggestions$222((CountDownLatch) this.d, (MediaDataController.KeywordResultCallback) this.c, (ArrayList) this.e, (String) this.b);
+                MediaDataController.lambda$getAnimatedEmojiByKeywords$217((String) this.d, (ArrayList) this.c, (ArrayList) this.e, (Utilities.Callback) this.b);
                 break;
             case 17:
-                MediaDataController.lambda$getAnimatedEmojiByKeywords$216((String) this.d, (ArrayList) this.c, (ArrayList) this.e, (Utilities.Callback) this.b);
+                ((MediaDataController) this.d).lambda$getEmojiNames$219((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
                 break;
             case 18:
-                ((MediaDataController) this.d).lambda$getEmojiNames$218((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
+                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$228((boolean[]) this.c, (ArrayList[]) this.e, (t6) this.b);
                 break;
             case 19:
-                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$227((boolean[]) this.c, (ArrayList[]) this.e, (t6) this.b);
+                ((MediaDataController) this.d).lambda$loadSavedReactions$240((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
                 break;
             case 20:
                 ((MessagesController) this.d).lambda$setUserAdminRole$106((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.m2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);

@@ -18,21 +18,21 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ez;
-import org.telegram.ui.Components.gx0;
-import org.telegram.ui.Components.gz;
-import org.telegram.ui.Components.i11;
-import org.telegram.ui.Components.j11;
+import org.telegram.ui.Components.fz;
+import org.telegram.ui.Components.hz;
+import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.k11;
-import org.telegram.ui.Components.sl;
+import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.th;
+import org.telegram.ui.Components.tl;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ar0;
 import org.telegram.ui.j51;
 import org.telegram.ui.jf0;
 import org.telegram.ui.mr0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ed implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -76,11 +76,11 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                 callback.run(kdVar);
                 break;
             case 1:
-                sl slVar = (sl) this.c;
+                tl tlVar = (tl) this.c;
                 File file = (File) this.d;
                 boolean z11 = this.b;
                 Integer num = (Integer) obj;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = slVar.e;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tlVar.e;
                 chatAttachAlertPhotoLayout.s0 = false;
                 if (file != null && !chatAttachAlertPhotoLayout.b.V) {
                     ChatAttachAlertPhotoLayout.q1 = false;
@@ -113,18 +113,18 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                 }
                 break;
             case 2:
-                ez ezVar = (ez) this.c;
+                fz fzVar = (fz) this.c;
                 boolean z12 = this.b;
                 Runnable runnable = (Runnable) this.d;
                 ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = ezVar.r;
-                gz gzVar = ezVar.w;
-                if (gzVar.M == ezVar.b) {
+                ArrayList arrayList2 = fzVar.r;
+                hz hzVar = fzVar.w;
+                if (hzVar.M == fzVar.b) {
                     int i14 = 0;
                     if (z12) {
                         int size = arrayList2.size();
                         arrayList2.clear();
-                        gzVar.y = size == arrayList.size();
+                        hzVar.y = size == arrayList.size();
                     }
                     arrayList2.addAll(arrayList);
                     int size2 = arrayList.size();
@@ -132,9 +132,9 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                         Object obj2 = arrayList.get(i14);
                         i14++;
                         TLRPC.Document document = (TLRPC.Document) obj2;
-                        ezVar.v.put(document.id, document);
+                        fzVar.v.put(document.id, document);
                     }
-                    ezVar.f.put(arrayList2, gzVar.N);
+                    fzVar.f.put(arrayList2, hzVar.N);
                     runnable.run();
                     break;
                 }
@@ -149,7 +149,7 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                     photoViewer.t5.setCutOutState(true);
                     photoViewer.W2(false, true);
                 } else {
-                    k11 thanosEffect = photoViewer.p5.getThanosEffect();
+                    m11 thanosEffect = photoViewer.p5.getThanosEffect();
                     qg.n2 n2Var2 = photoViewer.p5;
                     n2Var2.L = true;
                     n2Var2.E = k2Var;
@@ -290,12 +290,12 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                                 ar0 ar0Var = new ar0(photoViewer, 13);
                                 jf0 jf0Var = new jf0(photoViewer, b10, ar0Var, 18);
                                 th thVar = new th(28);
-                                i11 i11Var = thanosEffect.a;
-                                if (i11Var != null) {
-                                    i11Var.c(matrix3, bitmap2, jf0Var, thVar);
+                                k11 k11Var = thanosEffect.a;
+                                if (k11Var != null) {
+                                    k11Var.c(matrix3, bitmap2, jf0Var, thVar);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new j11(matrix3, bitmap2, jf0Var, thVar));
+                                    thanosEffect.c.add(new l11(matrix3, bitmap2, jf0Var, thVar));
                                 }
                                 AndroidUtilities.runOnUIThread(ar0Var, 1200L);
                             }
@@ -314,15 +314,15 @@ public final /* synthetic */ class ed implements Utilities.Callback {
                     runnable2.run();
                     break;
                 } else {
-                    gx0.y3.fetch(UserConfig.selectedAccount, str2, new j51(linkedHashSet, runnable2, 1));
+                    ix0.y3.fetch(UserConfig.selectedAccount, str2, new j51(linkedHashSet, runnable2, 1));
                     break;
                 }
         }
     }
 
-    public /* synthetic */ ed(sl slVar, File file, boolean z10) {
+    public /* synthetic */ ed(tl tlVar, File file, boolean z10) {
         this.a = 1;
-        this.c = slVar;
+        this.c = tlVar;
         this.d = file;
         this.b = z10;
     }

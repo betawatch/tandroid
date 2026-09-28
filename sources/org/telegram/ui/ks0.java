@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class ks0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 a;
@@ -257,7 +257,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
         TLObject tLObject;
         Activity activity7;
         MessageObject messageObject16;
-        org.telegram.ui.Components.fy0 fy0Var;
+        org.telegram.ui.Components.hy0 hy0Var;
         MessageObject messageObject17;
         ImageLocation imageLocation;
         ImageLocation imageLocation2;
@@ -322,7 +322,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
         MessageObject messageObject23;
         org.telegram.ui.ActionBar.u0 u0Var;
         View findViewWithTag;
-        org.telegram.ui.Components.ag0 ag0Var;
+        org.telegram.ui.Components.cg0 cg0Var;
         PhotoViewer photoViewer;
         Activity activity9;
         tu0 tu0Var2;
@@ -1020,17 +1020,17 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                     photoViewer2.s4 = true;
                     Bundle bundle = new Bundle();
                     bundle.putLong("dialog_id", photoViewer2.E5);
-                    org.telegram.ui.Components.na0 na0Var = new org.telegram.ui.Components.na0(bundle, null);
+                    org.telegram.ui.Components.pa0 pa0Var = new org.telegram.ui.Components.pa0(bundle, null);
                     wnVar8 = photoViewer2.l4;
                     if (wnVar8 != null) {
                         wnVar9 = photoViewer2.l4;
-                        na0Var.X(wnVar9.v8());
+                        pa0Var.X(wnVar9.v8());
                     }
                     photoViewer2.G0(false, false);
                     activity16 = photoViewer2.y;
                     if (activity16 instanceof LaunchActivity) {
                         activity17 = photoViewer2.y;
-                        ((LaunchActivity) activity17).q0(na0Var, false, true);
+                        ((LaunchActivity) activity17).q0(pa0Var, false, true);
                         return;
                     }
                     return;
@@ -1521,8 +1521,8 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                             activity7 = photoViewer2.y;
                             messageObject16 = photoViewer2.T4;
                             photoViewer2.U3 = new js0(this, activity7, messageObject16, tLObject2, this.a);
-                            fy0Var = photoViewer2.U3;
-                            fy0Var.show();
+                            hy0Var = photoViewer2.U3;
+                            hy0Var.show();
                             return;
                         }
                         return;
@@ -1537,8 +1537,8 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                             photoViewer2.g3();
                             return;
                         }
-                        ag0Var = photoViewer2.f0;
-                        if (ag0Var.e()) {
+                        cg0Var = photoViewer2.f0;
+                        if (cg0Var.e()) {
                             if (PhotoViewer.b9 != null) {
                                 PhotoViewer.b9.P0();
                             }
@@ -1715,10 +1715,10 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         photoViewer2.d7.add(0, message);
                         photoViewer2.P4 = -1;
                         photoViewer2.A2(0);
-                        org.telegram.ui.Components.w30 w30Var = photoViewer2.l1;
-                        w30Var.d.clear();
-                        w30Var.e.clear();
-                        w30Var.c.clear();
+                        org.telegram.ui.Components.y30 y30Var = photoViewer2.l1;
+                        y30Var.d.clear();
+                        y30Var.e.clear();
+                        y30Var.c.clear();
                         photoViewer2.l1.b();
                         undoView = photoViewer2.n1;
                         j13 = photoViewer2.z5;
@@ -1862,10 +1862,10 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         photoViewer2.Z2 = !photoViewer2.Z2;
                         boolean z31 = photoViewer2.Z2;
                         messageObject18 = photoViewer2.T4;
-                        org.telegram.ui.Components.s71.I(messageObject18, z31);
-                        org.telegram.ui.Components.s71 s71Var = photoViewer2.F2;
-                        if (s71Var != null) {
-                            s71Var.N(photoViewer2.Z2);
+                        org.telegram.ui.Components.u71.I(messageObject18, z31);
+                        org.telegram.ui.Components.u71 u71Var = photoViewer2.F2;
+                        if (u71Var != null) {
+                            u71Var.N(photoViewer2.Z2);
                         }
                         photoViewer2.s0.d(photoViewer2.Z2);
                         photoViewer2.s0.setSelectorColor(photoViewer2.Z2 ? 259241196 : 268435455);

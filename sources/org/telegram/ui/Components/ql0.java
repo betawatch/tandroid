@@ -1,140 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.view.View;
-import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ql0 extends m20 {
-    public View a;
-    public final /* synthetic */ rl0 b;
+public final /* synthetic */ class ql0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Object d;
 
-    public ql0(rl0 rl0Var) {
-        this.b = rl0Var;
+    public /* synthetic */ ql0(Object obj, float f7, float f10, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = f7;
+        this.c = f10;
     }
 
-    @Override // org.telegram.ui.Components.m20
-    public final boolean a() {
-        return ((wl0) this.b.b).Y0 != null;
-    }
-
-    public final void b(MotionEvent motionEvent, View view) {
-        wl0 wl0Var = (wl0) this.b.b;
-        if (view != null) {
-            if (wl0Var.V0 == null && wl0Var.W0 == null) {
-                return;
-            }
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            wl0Var.h1(view, x10, y3, true);
-            int i10 = wl0Var.O1;
-            if (wl0Var.R1 && i10 != -1) {
-                try {
-                    view.playSoundEffect(0);
-                } catch (Exception unused) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        View view;
+        int i10 = this.a;
+        float f7 = this.c;
+        float f10 = this.b;
+        Object obj = this.d;
+        switch (i10) {
+            case 0:
+                yl0 yl0Var = (yl0) ((tl0) obj).b;
+                if (yl0Var.e1 != null && (view = yl0Var.N1) != null) {
+                    yl0Var.h1(view, f10, f7, true);
+                    yl0Var.e1 = null;
+                    break;
                 }
-                view.sendAccessibilityEvent(1);
-                kl0 kl0Var = wl0Var.V0;
-                if (kl0Var != null) {
-                    kl0Var.d(i10, view);
+                break;
+            default:
+                ai.j6 j6Var = (ai.j6) obj;
+                sg.e eVar = (sg.e) j6Var.b;
+                ValueAnimator valueAnimator = eVar.S;
+                sg.b bVar = eVar.a0;
+                sg.b bVar2 = eVar.W;
+                if (valueAnimator != null) {
+                    valueAnimator.removeAllListeners();
+                    eVar.S.cancel();
+                    eVar.S = null;
+                }
+                AnimatorSet animatorSet = eVar.T;
+                if (animatorSet != null) {
+                    animatorSet.removeAllListeners();
+                    eVar.T.cancel();
+                    eVar.T = null;
+                }
+                if (Math.abs(eVar.b.d) <= 10.0f) {
+                    AndroidUtilities.cancelRunOnUIThread(eVar.U);
+                    eVar.T = new AnimatorSet();
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(eVar.b.d, f10);
+                    ofFloat.addUpdateListener(bVar2);
+                    long j3 = 220;
+                    ofFloat.setDuration(j3);
+                    sr srVar = sr.h;
+                    ofFloat.setInterpolator(srVar);
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, 0.0f);
+                    ofFloat2.addUpdateListener(bVar2);
+                    ofFloat2.setStartDelay(j3);
+                    ofFloat2.setDuration(600L);
+                    ofFloat2.setInterpolator(AndroidUtilities.overshootInterpolator);
+                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(eVar.b.g, f7);
+                    ofFloat3.addUpdateListener(bVar);
+                    ofFloat3.setDuration(j3);
+                    ofFloat3.setInterpolator(srVar);
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f7, 0.0f);
+                    ofFloat4.addUpdateListener(bVar);
+                    ofFloat4.setStartDelay(j3);
+                    ofFloat4.setDuration(600L);
+                    ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
+                    eVar.T.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
+                    eVar.T.addListener(new pg.d0(j6Var, 6));
+                    eVar.T.start();
+                    break;
                 } else {
-                    ll0 ll0Var = wl0Var.W0;
-                    if (ll0Var != null) {
-                        ll0Var.c(x10 - view.getX(), y3 - view.getY(), i10, view);
-                    }
+                    eVar.i();
+                    break;
                 }
-            }
-            pl0 pl0Var = new pl0(this, view, i10, x10, y3);
-            wl0Var.S1 = pl0Var;
-            AndroidUtilities.runOnUIThread(pl0Var, ViewConfiguration.getPressedStateDuration());
-            ol0 ol0Var = wl0Var.e1;
-            if (ol0Var != null) {
-                AndroidUtilities.cancelRunOnUIThread(ol0Var);
-                wl0Var.e1 = null;
-                wl0Var.N1 = null;
-                wl0Var.P1 = false;
-                wl0Var.k1(motionEvent, view);
-            }
         }
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onDoubleTap(MotionEvent motionEvent) {
-        ll0 ll0Var;
-        wl0 wl0Var = (wl0) this.b.b;
-        View view = this.a;
-        if (view == null || (ll0Var = wl0Var.W0) == null || !ll0Var.d1(view)) {
-            return false;
-        }
-        wl0Var.W0.r0(this.a, motionEvent.getX(), motionEvent.getY());
-        this.a = null;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-        int i10;
-        wl0 wl0Var = (wl0) this.b.b;
-        View view = wl0Var.N1;
-        if (view == null || (i10 = wl0Var.O1) == -1) {
-            return;
-        }
-        ml0 ml0Var = wl0Var.X0;
-        if (ml0Var == null && wl0Var.Y0 == null) {
-            return;
-        }
-        if (ml0Var != null) {
-            if (ml0Var.d(i10, view)) {
-                try {
-                    view.performHapticFeedback(0);
-                } catch (Exception unused) {
-                }
-                view.sendAccessibilityEvent(2);
-                return;
-            }
-            return;
-        }
-        if (wl0Var.Y0.c(motionEvent.getX() - wl0Var.N1.getX(), motionEvent.getY() - wl0Var.N1.getY(), i10, view)) {
-            try {
-                view.performHapticFeedback(0);
-            } catch (Exception unused2) {
-            }
-            view.sendAccessibilityEvent(2);
-            wl0Var.Z0 = true;
-        }
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-        ll0 ll0Var;
-        View view = this.a;
-        if (view == null || (ll0Var = ((wl0) this.b.b).W0) == null || !ll0Var.d1(view)) {
-            return false;
-        }
-        b(motionEvent, this.a);
-        this.a = null;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        wl0 wl0Var = (wl0) this.b.b;
-        View view = wl0Var.N1;
-        if (view != null) {
-            ll0 ll0Var = wl0Var.W0;
-            if (ll0Var != null && ll0Var.d1(view)) {
-                this.a = wl0Var.N1;
-                return false;
-            }
-            b(motionEvent, wl0Var.N1);
-        }
-        return false;
     }
 }

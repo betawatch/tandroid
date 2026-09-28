@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class k91 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int d0 = 0;
@@ -30,7 +30,7 @@ public final class k91 extends org.telegram.ui.Components.bb {
     public final LinearLayout Z;
     public boolean a0;
     public boolean b0;
-    public org.telegram.ui.Components.j61 c0;
+    public org.telegram.ui.Components.l61 c0;
 
     public k91(final Context context, final int i10, final org.telegram.ui.ActionBar.d6 d6Var, final oc ocVar) {
         super(1, context, d6Var, true);
@@ -77,19 +77,19 @@ public final class k91 extends org.telegram.ui.Components.bb {
             TextView b12 = w7.c6.b(context, 14.0f, org.telegram.ui.ActionBar.h6.L6, true, null);
             b12.setText(LocaleController.getString(R.string.StakeDiceReturns));
             linearLayout2.addView(b12, w7.y5.k(0.0f, 0.0f, 0.0f, 8.0f, -1, -2));
-            org.telegram.ui.Components.zz0 zz0Var = new org.telegram.ui.Components.zz0(context, d6Var);
-            linearLayout2.addView(zz0Var, w7.y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+            org.telegram.ui.Components.b01 b01Var = new org.telegram.ui.Components.b01(context, d6Var);
+            linearLayout2.addView(b01Var, w7.y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
             TableRow tableRow = new TableRow(context);
-            zz0Var.addView(tableRow);
+            b01Var.addView(tableRow);
             TableRow tableRow2 = new TableRow(context);
-            zz0Var.addView(tableRow2);
+            b01Var.addView(tableRow2);
             int i12 = R.drawable.dice1;
             int i13 = R.drawable.dice2;
             int i14 = R.drawable.dice3;
             int i15 = R.drawable.dice4;
             int i16 = R.drawable.dice5;
             int i17 = R.drawable.dice6;
-            a1.d dVar = new a1.d(context, new int[]{i12, i13, i14, i15, i16, i17, i17}, d6Var, zz0Var, 18);
+            a1.d dVar = new a1.d(context, new int[]{i12, i13, i14, i15, i16, i17, i17}, d6Var, b01Var, 18);
             if (tL_emojiGameDiceInfo.params.size() == 7) {
                 tableRow.addView((View) dVar.run((Object) 1, (Object) Float.valueOf(tL_emojiGameDiceInfo.params.get(0).intValue() / 1000.0f)), new TableRow.LayoutParams(0, -1, 1.0f));
                 tableRow.addView((View) dVar.run((Object) 2, (Object) Float.valueOf(tL_emojiGameDiceInfo.params.get(1).intValue() / 1000.0f)), new TableRow.LayoutParams(0, -1, 1.0f));
@@ -102,10 +102,10 @@ public final class k91 extends org.telegram.ui.Components.bb {
             TextView b13 = w7.c6.b(context, 14.0f, org.telegram.ui.ActionBar.h6.y6, false, null);
             b13.setGravity(17);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("🎲");
-            org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.dice6, 0);
-            pqVar.recolorDrawable = false;
-            pqVar.setScale(0.8f, 0.8f);
-            spannableStringBuilder2.setSpan(pqVar, 0, spannableStringBuilder2.length(), 33);
+            org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(R.drawable.dice6, 0);
+            qqVar.recolorDrawable = false;
+            qqVar.setScale(0.8f, 0.8f);
+            spannableStringBuilder2.setSpan(qqVar, 0, spannableStringBuilder2.length(), 33);
             b13.setText(AndroidUtilities.replaceMultipleCharSequence("🎲", LocaleController.getString(R.string.StakeDiceReturnsInfo), spannableStringBuilder2));
             linearLayout2.addView(b13, w7.y5.k(0.0f, 4.0f, 0.0f, 16.0f, -1, -2));
             linearLayout.addView(linearLayout2, w7.y5.k(8.0f, 0.0f, 8.0f, 0.0f, -1, -2));
@@ -115,10 +115,10 @@ public final class k91 extends org.telegram.ui.Components.bb {
             linearLayout3.setPadding(AndroidUtilities.dp(42.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(42.0f), AndroidUtilities.dp(7.0f));
             linearLayout3.setClipToPadding(false);
             final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-            final org.telegram.ui.Components.jd0 jd0Var = new org.telegram.ui.Components.jd0(context, d6Var);
-            jd0Var.setForceForceUseCenter(true);
-            jd0Var.setText(LocaleController.getString(R.string.StakeDicePlaceholder));
-            jd0Var.setLeftPadding(AndroidUtilities.dp(36.0f));
+            final org.telegram.ui.Components.ld0 ld0Var = new org.telegram.ui.Components.ld0(context, d6Var);
+            ld0Var.setForceForceUseCenter(true);
+            ld0Var.setText(LocaleController.getString(R.string.StakeDicePlaceholder));
+            ld0Var.setLeftPadding(AndroidUtilities.dp(36.0f));
             editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
             editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
             editTextBoldCursor.setCursorWidth(1.5f);
@@ -133,7 +133,7 @@ public final class k91 extends org.telegram.ui.Components.bb {
             editTextBoldCursor.setHighlightColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.uf, d6Var));
             editTextBoldCursor.setHandlesColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.vf, d6Var));
             editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
-            editTextBoldCursor.setOnFocusChangeListener(new ei.w1(jd0Var, editTextBoldCursor, 1));
+            editTextBoldCursor.setOnFocusChangeListener(new ei.w1(ld0Var, editTextBoldCursor, 1));
             LinearLayout linearLayout4 = new LinearLayout(context);
             linearLayout4.setOrientation(0);
             ImageView imageView2 = new ImageView(context);
@@ -141,21 +141,21 @@ public final class k91 extends org.telegram.ui.Components.bb {
             imageView2.setImageResource(R.drawable.diamond);
             linearLayout4.addView(imageView2, w7.y5.p(-2, -2, 0.0f, 19, 14, 0, 0, 0));
             linearLayout4.addView(editTextBoldCursor, w7.y5.o(-1, -2, 1.0f, 119));
-            jd0Var.e(editTextBoldCursor);
-            jd0Var.addView(linearLayout4, w7.y5.e(-1, -2, 48));
-            linearLayout3.addView(jd0Var, w7.y5.n(-1, -2));
+            ld0Var.e(editTextBoldCursor);
+            ld0Var.addView(linearLayout4, w7.y5.e(-1, -2, 48));
+            linearLayout3.addView(ld0Var, w7.y5.n(-1, -2));
             TextView textView = new TextView(context);
             textView.setTextSize(1, 16.0f);
             textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.A6, false));
-            jd0Var.addView(textView, w7.y5.d(-2, -2.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
+            ld0Var.addView(textView, w7.y5.d(-2, -2.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
             long j3 = tL_emojiGameDiceInfo.prev_stake;
             j3 = j3 <= 0 ? 1000000000L : j3;
             editTextBoldCursor.setText(yh.w7.M0(j3));
             textView.setAlpha(1.0f);
             textView.setText("≈" + BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * (j3 / 1.0E9d) * 100.0d), "USD", 2));
             final int[] iArr = {2};
-            jd0Var.c(false, TextUtils.isEmpty(editTextBoldCursor.getText()) ^ true);
-            editTextBoldCursor.addTextChangedListener(new j91(i10, editTextBoldCursor, jd0Var, iArr, textView));
+            ld0Var.c(false, TextUtils.isEmpty(editTextBoldCursor.getText()) ^ true);
+            editTextBoldCursor.addTextChangedListener(new j91(i10, editTextBoldCursor, ld0Var, iArr, textView));
             Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: org.telegram.ui.g91
                 @Override // org.telegram.messenger.Utilities.CallbackReturn
                 public final Object run(Object obj) {
@@ -189,9 +189,9 @@ public final class k91 extends org.telegram.ui.Components.bb {
             }
             ci.d dVar2 = new ci.d(context, d6Var, true);
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder("🎲");
-            org.telegram.ui.Components.pq pqVar2 = new org.telegram.ui.Components.pq(R.drawable.mini_roll, 0);
-            pqVar2.setTranslateY(AndroidUtilities.dp(1.0f));
-            spannableStringBuilder3.setSpan(pqVar2, 0, spannableStringBuilder3.length(), 33);
+            org.telegram.ui.Components.qq qqVar2 = new org.telegram.ui.Components.qq(R.drawable.mini_roll, 0);
+            qqVar2.setTranslateY(AndroidUtilities.dp(1.0f));
+            spannableStringBuilder3.setSpan(qqVar2, 0, spannableStringBuilder3.length(), 33);
             spannableStringBuilder3.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.StakeDiceButton));
             dVar2.g(spannableStringBuilder3, false, true);
             dVar2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.h91
@@ -203,14 +203,14 @@ public final class k91 extends org.telegram.ui.Components.bb {
                         double parseDouble = TextUtils.isEmpty(text) ? 0.0d : Double.parseDouble(text.toString());
                         int i21 = i10;
                         double d = MessagesController.getInstance(i21).tonStakeddiceStakeAmountMax / 1.0E9d;
-                        org.telegram.ui.Components.jd0 jd0Var2 = jd0Var;
+                        org.telegram.ui.Components.ld0 ld0Var2 = ld0Var;
                         int[] iArr2 = iArr;
                         if (parseDouble > d) {
                             editTextBoldCursor2.setText(Double.toString(MessagesController.getInstance(i21).tonStakeddiceStakeAmountMax / 1.0E9d));
                             editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
                             int i22 = -iArr2[0];
                             iArr2[0] = i22;
-                            AndroidUtilities.shakeViewSpring(jd0Var2, i22);
+                            AndroidUtilities.shakeViewSpring(ld0Var2, i22);
                             return;
                         }
                         if (TextUtils.isEmpty(text) || parseDouble >= MessagesController.getInstance(i21).tonStakeddiceStakeAmountMin / 1.0E9d) {
@@ -227,7 +227,7 @@ public final class k91 extends org.telegram.ui.Components.bb {
                         editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
                         int i23 = -iArr2[0];
                         iArr2[0] = i23;
-                        AndroidUtilities.shakeViewSpring(jd0Var2, i23);
+                        AndroidUtilities.shakeViewSpring(ld0Var2, i23);
                     } catch (Exception unused) {
                     }
                 }
@@ -237,9 +237,9 @@ public final class k91 extends org.telegram.ui.Components.bb {
             ViewGroup viewGroup = this.containerView;
             int i21 = this.backgroundPaddingLeft;
             viewGroup.addView(frameLayout, w7.y5.f(-2.0f, 87, i21, 0, i21, 0));
-            org.telegram.ui.Components.wl0 wl0Var = this.d;
+            org.telegram.ui.Components.yl0 yl0Var = this.d;
             int i22 = this.backgroundPaddingLeft;
-            wl0Var.setPadding(i22, 0, i22, AndroidUtilities.dp(68.0f));
+            yl0Var.setPadding(i22, 0, i22, AndroidUtilities.dp(68.0f));
             this.c0.N(false);
         }
     }
@@ -287,10 +287,10 @@ public final class k91 extends org.telegram.ui.Components.bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final org.telegram.ui.Components.vl0 v(org.telegram.ui.Components.wl0 wl0Var) {
-        org.telegram.ui.Components.j61 j61Var = new org.telegram.ui.Components.j61(wl0Var, getContext(), this.currentAccount, 0, false, new b5(this, 27), this.resourcesProvider);
-        this.c0 = j61Var;
-        return j61Var;
+    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
+        org.telegram.ui.Components.l61 l61Var = new org.telegram.ui.Components.l61(yl0Var, getContext(), this.currentAccount, 0, false, new b5(this, 27), this.resourcesProvider);
+        this.c0 = l61Var;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

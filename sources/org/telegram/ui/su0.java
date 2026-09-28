@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class su0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final FrameLayout a;
@@ -53,7 +53,7 @@ public final class su0 extends FrameLayout implements NotificationCenter.Notific
         }
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(activity, true, false, false);
         this.d = p6Var;
-        p6Var.b(0.4f, 320L, org.telegram.ui.Components.rr.h);
+        p6Var.b(0.4f, 320L, org.telegram.ui.Components.sr.h);
         p6Var.setTextSize(AndroidUtilities.dp(14.0f));
         p6Var.setGravity(19);
         p6Var.setTextColor(-1);
@@ -89,7 +89,7 @@ public final class su0 extends FrameLayout implements NotificationCenter.Notific
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 this.f = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                this.f.setInterpolator(org.telegram.ui.Components.rr.h);
+                this.f.setInterpolator(org.telegram.ui.Components.sr.h);
                 this.f.start();
             } else {
                 p6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
@@ -186,7 +186,7 @@ public final class su0 extends FrameLayout implements NotificationCenter.Notific
         animatorSet2.playTogether(arrayList);
         this.e.addListener(new xo0(this, 10));
         this.e.setDuration(320L);
-        this.e.setInterpolator(org.telegram.ui.Components.rr.h);
+        this.e.setInterpolator(org.telegram.ui.Components.sr.h);
         this.e.start();
     }
 

@@ -6,9 +6,9 @@ import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.oj0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class sb extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class sb extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         e6 t10;
-        mj0 mj0Var;
+        oj0 oj0Var;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
@@ -50,14 +50,14 @@ public final class sb extends AnimatorListenerAdapter {
                     imageReceiver2.setAlpha(1.0f);
                     gcVar.c.setVisible(true, true);
                 }
-                if (gcVar.d != null && (t10 = jcVar.t()) != null && (mj0Var = t10.o1.d) != null) {
-                    mj0 mj0Var2 = gcVar.d;
-                    mj0Var2.getClass();
-                    mj0Var2.c = mj0Var.c;
-                    mj0Var2.f = mj0Var.f;
-                    mj0Var2.b = mj0Var.b;
-                    mj0Var2.a = System.currentTimeMillis();
-                    mj0Var2.c();
+                if (gcVar.d != null && (t10 = jcVar.t()) != null && (oj0Var = t10.o1.d) != null) {
+                    oj0 oj0Var2 = gcVar.d;
+                    oj0Var2.getClass();
+                    oj0Var2.c = oj0Var.c;
+                    oj0Var2.f = oj0Var.f;
+                    oj0Var2.b = oj0Var.b;
+                    oj0Var2.a = System.currentTimeMillis();
+                    oj0Var2.c();
                 }
                 d6 d6Var = jcVar.G0;
                 if (d6Var != null) {

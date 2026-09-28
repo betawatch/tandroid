@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class r0 extends oh.c implements le.e {
     public static final /* synthetic */ int s = 0;
@@ -17,7 +17,7 @@ public final class r0 extends oh.c implements le.e {
 
     public r0(Context context, org.telegram.ui.ActionBar.d6 d6Var, ii.q1 q1Var) {
         super(context);
-        this.f = new le.f(0, this, rr.h, 1600L);
+        this.f = new le.f(0, this, sr.h, 1600L);
         this.h = q1Var;
         int i10 = org.telegram.ui.ActionBar.h6.Wk;
         int l1 = org.telegram.ui.ActionBar.h6.l1(0.09411765f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var));

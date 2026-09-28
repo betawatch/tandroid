@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.nd1;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ap implements nd1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wi b;
-    public final /* synthetic */ org.telegram.ui.ec c;
+public final class ap implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a = false;
+    public final /* synthetic */ op b;
 
-    public /* synthetic */ ap(wi wiVar, org.telegram.ui.ec ecVar, int i10) {
-        this.a = i10;
-        this.b = wiVar;
-        this.c = ecVar;
+    public ap(op opVar) {
+        this.b = opVar;
     }
 
-    @Override // org.telegram.ui.nd1
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                this.b.dismissInternal();
-                this.c.run(tL_wallPaper);
-                break;
-            default:
-                this.b.dismissInternal();
-                this.c.run(tL_wallPaper);
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        op opVar = this.b;
+        opVar.S = floatValue;
+        opVar.R.invalidate();
+        if (this.a || opVar.S <= 0.5f) {
+            return;
         }
+        this.a = true;
     }
 }

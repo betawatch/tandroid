@@ -34,10 +34,10 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.uv;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -50,7 +50,7 @@ import org.telegram.ui.sa1;
 import org.telegram.ui.sd;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -133,7 +133,7 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                 v5 v5Var = (v5) this.b;
                 db dbVar = (db) this.c;
                 e6 e6Var3 = v5Var.l;
-                tv alert = dbVar.getAlert();
+                uv alert = dbVar.getAlert();
                 if (alert != null && (x5Var = e6Var3.Q1) != null) {
                     ((ac) x5Var).h(alert);
                     e6Var3.t1.a();
@@ -181,9 +181,9 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                         AndroidUtilities.openForView(file2, file2.getName(), null, LaunchActivity.G1, null, true);
                     }
                 }
-                y70 y70Var = k3Var.K0;
-                if (y70Var != null) {
-                    y70Var.u();
+                a80 a80Var = k3Var.K0;
+                if (a80Var != null) {
+                    a80Var.u();
                     k3Var.K0 = null;
                     break;
                 }
@@ -334,10 +334,10 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                             m3Var.b.x0(0);
                             break;
                         } else {
-                            jw0 jw0Var = new jw0(activity);
-                            jw0Var.a = 1;
-                            jw0Var.s = -AndroidUtilities.dp(32.0f);
-                            m3Var.d.w0(jw0Var);
+                            lw0 lw0Var = new lw0(activity);
+                            lw0Var.a = 1;
+                            lw0Var.s = -AndroidUtilities.dp(32.0f);
+                            m3Var.d.w0(lw0Var);
                             break;
                         }
                     } else if (m3Var.getWebView() != null && !i4Var.h0.W) {

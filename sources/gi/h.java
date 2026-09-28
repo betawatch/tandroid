@@ -20,12 +20,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.x5;
-import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.w9;
 import w7.y5;
 import yf.f0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout implements x5 {
     public static final /* synthetic */ int F = 0;
@@ -38,7 +38,7 @@ public final class h extends FrameLayout implements x5 {
     public final TextView f;
     public final TextView h;
     public final TextView n;
-    public final pq r;
+    public final qq r;
     public final fh.d s;
     public final ch.d v;
     public boolean w;
@@ -67,9 +67,9 @@ public final class h extends FrameLayout implements x5 {
         this.c = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(52.0f) / 2);
         addView(w9Var, y5.d(52, 52.0f, 51, 11.0f, 9.0f, 0.0f, 0.0f));
-        pq pqVar = new pq(R.drawable.mini_user_channels_10, 0);
-        this.r = pqVar;
-        pqVar.setTranslateX(AndroidUtilities.dp(2.0f));
+        qq qqVar = new qq(R.drawable.mini_user_channels_10, 0);
+        this.r = qqVar;
+        qqVar.setTranslateX(AndroidUtilities.dp(2.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTypeface(AndroidUtilities.bold());
@@ -232,7 +232,7 @@ public final class h extends FrameLayout implements x5 {
         h.setSingleLine(true);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
-        spannableStringBuilder.setSpan(new pq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
+        spannableStringBuilder.setSpan(new qq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.CommunityPendingRequestOnlyVisibleToMembers));
         h.setText(spannableStringBuilder);
         h.setVisibility(8);

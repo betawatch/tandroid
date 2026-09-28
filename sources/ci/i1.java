@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.w81;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.y81;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.de1;
 import org.telegram.ui.dw0;
 import org.telegram.ui.hk;
@@ -22,9 +22,9 @@ import org.telegram.ui.t31;
 import org.telegram.ui.tp0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
-public final class i1 extends w81 {
+public final class i1 extends y81 {
     public final /* synthetic */ int T;
     public final /* synthetic */ Object U;
 
@@ -39,7 +39,7 @@ public final class i1 extends w81 {
     /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -60,8 +60,8 @@ public final class i1 extends w81 {
                 }
                 y9 y9Var = (y9) currentView;
                 ArrayList arrayList = y9Var.L;
-                wl0 wl0Var = y9Var.f;
-                if (y9Var.a == 0 && motionEvent != null && (E = wl0Var.E(motionEvent.getX(), motionEvent.getY() - y9Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
+                yl0 yl0Var = y9Var.f;
+                if (y9Var.a == 0 && motionEvent != null && (E = yl0Var.E(motionEvent.getX(), motionEvent.getY() - y9Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
                     k9 k9Var = (k9) arrayList.get(R);
                     if (k9Var.a == 3 && !k9Var.n) {
                         boolean z10 = LocaleController.isRTL;
@@ -106,7 +106,7 @@ public final class i1 extends w81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public boolean j(MotionEvent motionEvent) {
         switch (this.T) {
             case 2:
@@ -116,7 +116,7 @@ public final class i1 extends w81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public boolean k(MotionEvent motionEvent) {
         switch (this.T) {
             case 2:
@@ -141,7 +141,7 @@ public final class i1 extends w81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81, android.view.View
+    @Override // org.telegram.ui.Components.y81, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.T) {
             case 3:
@@ -151,7 +151,7 @@ public final class i1 extends w81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public void t(View view, View view2, int i10, int i11) {
         boolean z10;
         switch (this.T) {
@@ -166,7 +166,7 @@ public final class i1 extends w81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public void u() {
         switch (this.T) {
             case 2:
@@ -184,7 +184,7 @@ public final class i1 extends w81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public void v() {
         r31 r31Var;
         switch (this.T) {
@@ -197,7 +197,7 @@ public final class i1 extends w81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public final void w(boolean z10) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
@@ -271,7 +271,7 @@ public final class i1 extends w81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w81
+    @Override // org.telegram.ui.Components.y81
     public void z(int i10) {
         switch (this.T) {
             case 3:

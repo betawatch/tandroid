@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class td implements RequestDelegate {
                                     }
                                     jeVar3.j1 = tL_payments_starsRevenueStats.usd_rate;
                                     jeVar3.g0(true, tL_payments_starsRevenueStats.status);
-                                    jeVar3.c1.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.rr.h).withEndAction(new nd(jeVar3, 6)).start();
+                                    jeVar3.c1.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.sr.h).withEndAction(new nd(jeVar3, 6)).start();
                                     jeVar3.a0();
                                     break;
                                 }
@@ -106,7 +106,7 @@ public final /* synthetic */ class td implements RequestDelegate {
                                     }
                                     jeVar32.j1 = tL_payments_starsRevenueStats.usd_rate;
                                     jeVar32.g0(true, tL_payments_starsRevenueStats.status);
-                                    jeVar32.c1.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.rr.h).withEndAction(new nd(jeVar32, 6)).start();
+                                    jeVar32.c1.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.sr.h).withEndAction(new nd(jeVar32, 6)).start();
                                     jeVar32.a0();
                                     break;
                                 }

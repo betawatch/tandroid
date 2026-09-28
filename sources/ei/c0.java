@@ -18,11 +18,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.uw0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class c0 extends View {
     public boolean E;
@@ -31,7 +31,7 @@ public final class c0 extends View {
     public final Paint b;
     public final TextPaint c;
     public final z d;
-    public final ij0 e;
+    public final kj0 e;
     public boolean f;
     public float h;
     public String n;
@@ -51,15 +51,15 @@ public final class c0 extends View {
         this.c = textPaint;
         z zVar = new z(this);
         this.d = zVar;
-        ij0 ij0Var = new ij0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
-        this.e = ij0Var;
+        kj0 kj0Var = new kj0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
+        this.e = kj0Var;
         this.n = LocaleController.getString(R.string.BotsMenuTitle);
         this.E = true;
         paint.setColor(h6.w0(null, h6.cf, false));
         int w02 = h6.w0(null, h6.ef, false);
         zVar.k = w02;
         zVar.j = w02;
-        ij0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+        kj0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         textPaint.setColor(w02);
         zVar.n = true;
         zVar.h = false;
@@ -73,8 +73,8 @@ public final class c0 extends View {
         org.telegram.ui.Cells.z i02 = h6.i0(dp, dp, dp, dp, 0, w03, w03);
         this.y = i02;
         i02.setCallback(this);
-        ij0Var.setCallback(this);
-        ij0Var.R(this);
+        kj0Var.setCallback(this);
+        kj0Var.R(this);
         setContentDescription(LocaleController.getString("AccDescrBotMenu", R.string.AccDescrBotMenu));
     }
 
@@ -103,7 +103,7 @@ public final class c0 extends View {
                     } else {
                         invalidate();
                     }
-                    interpolation = rr.f.getInterpolation(this.h);
+                    interpolation = sr.f.getInterpolation(this.h);
                     if (z11 && interpolation > 0.0f) {
                         this.c.setAlpha((int) (255.0f * interpolation));
                     }
@@ -118,11 +118,11 @@ public final class c0 extends View {
                     if (this.w) {
                         canvas.save();
                         canvas.translate(AndroidUtilities.dp(9.5f), AndroidUtilities.dp(6.0f));
-                        ij0 ij0Var = this.e;
-                        ij0Var.setBounds(0, 0, ij0Var.b, ij0Var.c);
-                        ij0Var.draw(canvas);
+                        kj0 kj0Var = this.e;
+                        kj0Var.setBounds(0, 0, kj0Var.b, kj0Var.c);
+                        kj0Var.draw(canvas);
                         canvas.restore();
-                        if (ij0Var.k0) {
+                        if (kj0Var.k0) {
                             invalidate();
                         }
                     } else {
@@ -152,7 +152,7 @@ public final class c0 extends View {
                     } else {
                         invalidate();
                     }
-                    interpolation = rr.f.getInterpolation(this.h);
+                    interpolation = sr.f.getInterpolation(this.h);
                     if (z11) {
                         this.c.setAlpha((int) (255.0f * interpolation));
                     }
@@ -167,7 +167,7 @@ public final class c0 extends View {
                 }
             }
             z11 = false;
-            interpolation = rr.f.getInterpolation(this.h);
+            interpolation = sr.f.getInterpolation(this.h);
             if (z11) {
             }
             if (this.E) {
@@ -204,7 +204,7 @@ public final class c0 extends View {
             textPaint.setTextSize(dp);
             this.F = size;
             int i12 = (int) (AndroidUtilities.displaySize.x * 0.6f);
-            StaticLayout c10 = uw0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
+            StaticLayout c10 = ww0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
             this.r = c10;
             this.s = c10.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
@@ -230,11 +230,11 @@ public final class c0 extends View {
             return;
         }
         if (this.x != z10) {
-            ij0 ij0Var = this.e;
-            ij0Var.stop();
-            ij0Var.h = true;
-            ij0Var.P(z10 ? ij0Var.e[0] : 1);
-            ij0Var.start();
+            kj0 kj0Var = this.e;
+            kj0Var.stop();
+            kj0Var.h = true;
+            kj0Var.P(z10 ? kj0Var.e[0] : 1);
+            kj0Var.start();
             this.x = z10;
         }
     }

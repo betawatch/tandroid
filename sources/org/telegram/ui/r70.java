@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class r70 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public TextView a;
@@ -81,7 +81,7 @@ public final class r70 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.a.setLinksClickable(true);
         this.a.setClickable(true);
         this.a.setGravity(17);
-        this.a.setMovementMethod(new org.telegram.ui.Components.rv(1));
+        this.a.setMovementMethod(new org.telegram.ui.Components.sv(1));
         this.e.addView(this.a, w7.y5.e(-2, -2, 1));
         TextView textView3 = new TextView(context);
         this.c = textView3;
@@ -91,16 +91,16 @@ public final class r70 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.d.addView(this.c, w7.y5.c(-2.0f, -2));
         TLRPC.EncryptedChat encryptedChat = MessagesController.getInstance(this.currentAccount).getEncryptedChat(Integer.valueOf(this.h));
         if (encryptedChat != null) {
-            org.telegram.ui.Components.n40 n40Var = new org.telegram.ui.Components.n40();
-            imageView.setImageDrawable(n40Var);
+            org.telegram.ui.Components.p40 p40Var = new org.telegram.ui.Components.p40();
+            imageView.setImageDrawable(p40Var);
             byte[] bArr = encryptedChat.key_hash;
-            n40Var.a = bArr;
+            p40Var.a = bArr;
             if (bArr == null) {
                 byte[] calcAuthKeyHash = AndroidUtilities.calcAuthKeyHash(encryptedChat.auth_key);
-                n40Var.a = calcAuthKeyHash;
+                p40Var.a = calcAuthKeyHash;
                 encryptedChat.key_hash = calcAuthKeyHash;
             }
-            n40Var.invalidateSelf();
+            p40Var.invalidateSelf();
             TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(encryptedChat.user_id));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             StringBuilder sb2 = new StringBuilder();
@@ -145,7 +145,7 @@ public final class r70 extends org.telegram.ui.ActionBar.m2 implements Notificat
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("EncryptionKeyDescription", i16, objArr)));
             int indexOf = spannableStringBuilder.toString().indexOf("telegram.org");
             if (indexOf != -1) {
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.b61(LocaleController.getString(R.string.EncryptionKeyLink), null), indexOf, indexOf + 12, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.d61(LocaleController.getString(R.string.EncryptionKeyLink), null), indexOf, indexOf + 12, 33);
             }
             this.a.setText(spannableStringBuilder);
         }

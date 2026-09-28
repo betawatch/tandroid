@@ -43,13 +43,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.s6;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.eb0;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class e3 extends Dialog implements i2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -240,7 +240,7 @@ public class e3 extends Dialog implements i2 {
         e3Var.currentSheetAnimation.playTogether(arrayList);
         if (e3Var.transitionFromRight) {
             e3Var.currentSheetAnimation.setDuration(250L);
-            e3Var.currentSheetAnimation.setInterpolator(rr.f);
+            e3Var.currentSheetAnimation.setInterpolator(sr.f);
         } else {
             e3Var.currentSheetAnimation.setDuration(e3Var.openDuration);
             e3Var.currentSheetAnimation.setInterpolator(e3Var.openInterpolator);
@@ -371,12 +371,12 @@ public class e3 extends Dialog implements i2 {
                 this.currentSheetAnimation.playTogether(arrayList);
                 if (this.transitionFromRight) {
                     this.currentSheetAnimation.setDuration(200L);
-                    this.currentSheetAnimation.setInterpolator(rr.f);
+                    this.currentSheetAnimation.setInterpolator(sr.f);
                     j3 = 0;
                 } else {
                     j3 = 250;
                     this.currentSheetAnimation.setDuration(250L);
-                    this.currentSheetAnimation.setInterpolator(rr.g);
+                    this.currentSheetAnimation.setInterpolator(sr.g);
                 }
                 this.currentSheetAnimation.addListener(new v2(this, i10));
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
@@ -428,7 +428,7 @@ public class e3 extends Dialog implements i2 {
         ofFloat.addUpdateListener(new o2(this, 2));
         this.currentSheetAnimation.playTogether(ofFloat, ObjectAnimator.ofInt(this.backDrawable, s6.d, 0));
         this.currentSheetAnimation.setDuration(this.cellType == 4 ? 330L : 180L);
-        this.currentSheetAnimation.setInterpolator(rr.g);
+        this.currentSheetAnimation.setInterpolator(sr.g);
         this.currentSheetAnimation.addListener(new w2(this, i10, i11));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
@@ -440,13 +440,13 @@ public class e3 extends Dialog implements i2 {
         ValueAnimator ofArgb = ValueAnimator.ofArgb(currentTextColor, currentTextColor2);
         ofArgb.addUpdateListener(new o2(this, 7));
         ofArgb.setDuration(130L);
-        rr rrVar = rr.f;
-        ofArgb.setInterpolator(rrVar);
+        sr srVar = sr.f;
+        ofArgb.setInterpolator(srVar);
         ofArgb.start();
         ValueAnimator ofArgb2 = ValueAnimator.ofArgb(currentTextColor2, currentTextColor);
         ofArgb2.addUpdateListener(new p2(this, i10, i11));
         ofArgb2.setDuration(130L);
-        ofArgb2.setInterpolator(rrVar);
+        ofArgb2.setInterpolator(srVar);
         ofArgb2.start();
     }
 
@@ -982,7 +982,7 @@ public class e3 extends Dialog implements i2 {
 
     public void setHideSystemVerticalInsets(boolean z10) {
         ValueAnimator duration = ValueAnimator.ofFloat(this.hideSystemVerticalInsetsProgress, z10 ? 1.0f : 0.0f).setDuration(180L);
-        duration.setInterpolator(rr.f);
+        duration.setInterpolator(sr.f);
         duration.addUpdateListener(new o2(this, 5));
         duration.start();
     }
@@ -1165,7 +1165,7 @@ public class e3 extends Dialog implements i2 {
         this.allowCustomAnimation = true;
         this.statusBarHeight = AndroidUtilities.statusBarHeight;
         this.openDuration = 400;
-        this.openInterpolator = rr.h;
+        this.openInterpolator = sr.h;
         this.focusableSoftInputMode = 16;
         this.dimBehind = true;
         this.dimBehindAlpha = 51;

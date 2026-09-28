@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class rb0 extends org.telegram.ui.ActionBar.m2 {
     public org.telegram.ui.Cells.m4 E;
@@ -34,7 +34,7 @@ public final class rb0 extends org.telegram.ui.ActionBar.m2 {
     public org.telegram.ui.Cells.e9 G;
     public FrameLayout H;
     public org.telegram.ui.Cells.ea I;
-    public org.telegram.ui.Components.mo0 J;
+    public org.telegram.ui.Components.oo0 J;
     public nb0 K;
     public org.telegram.ui.Cells.e9 L;
     public TextView M;
@@ -50,8 +50,8 @@ public final class rb0 extends org.telegram.ui.ActionBar.m2 {
     public int W;
     public final int a;
     public final long b;
-    public org.telegram.ui.Components.ew0 c;
-    public org.telegram.ui.Components.ew0 d;
+    public org.telegram.ui.Components.gw0 c;
+    public org.telegram.ui.Components.gw0 d;
     public TLRPC.TL_chatInviteExported e;
     public ob0 f;
     public org.telegram.ui.Cells.e9 h;
@@ -692,19 +692,19 @@ public final class rb0 extends org.telegram.ui.ActionBar.m2 {
         w7.a6.a(this.M);
         this.actionBar.addView(this.M, w7.y5.d(-2, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / AndroidUtilities.density, 8388693, 0.0f, 0.0f, 12.0f, 0.0f));
         mb0 mb0Var = new mb0(this, context);
-        org.telegram.ui.Components.mo0 mo0Var = new org.telegram.ui.Components.mo0(context, mb0Var, this.resourceProvider, true);
-        this.J = mo0Var;
-        this.actionBar.setAdaptiveBackground(mo0Var);
+        org.telegram.ui.Components.oo0 oo0Var = new org.telegram.ui.Components.oo0(context, mb0Var, this.resourceProvider, true);
+        this.J = oo0Var;
+        this.actionBar.setAdaptiveBackground(oo0Var);
         w8 w8Var = new w8(this, context, 4);
         this.fragmentView = w8Var;
         LayoutTransition layoutTransition = new LayoutTransition();
         layoutTransition.setDuration(420L);
-        org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-        layoutTransition.setInterpolator(2, rrVar);
-        layoutTransition.setInterpolator(0, rrVar);
-        layoutTransition.setInterpolator(4, rrVar);
-        layoutTransition.setInterpolator(1, rrVar);
-        layoutTransition.setInterpolator(3, rrVar);
+        org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+        layoutTransition.setInterpolator(2, srVar);
+        layoutTransition.setInterpolator(0, srVar);
+        layoutTransition.setInterpolator(4, srVar);
+        layoutTransition.setInterpolator(1, srVar);
+        layoutTransition.setInterpolator(3, srVar);
         mb0Var.setLayoutTransition(layoutTransition);
         mb0Var.setOrientation(1);
         mb0Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(91.0f));
@@ -713,9 +713,9 @@ public final class rb0 extends org.telegram.ui.ActionBar.m2 {
         this.x = m4Var;
         m4Var.setText(LocaleController.getString(R.string.LimitByPeriod));
         mb0Var.addView(this.x);
-        org.telegram.ui.Components.ew0 ew0Var = new org.telegram.ui.Components.ew0(context, null);
-        this.d = ew0Var;
-        mb0Var.addView(ew0Var);
+        org.telegram.ui.Components.gw0 gw0Var = new org.telegram.ui.Components.gw0(context, null);
+        this.d = gw0Var;
+        mb0Var.addView(gw0Var);
         TextView textView2 = new TextView(context);
         this.w = textView2;
         textView2.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
@@ -744,9 +744,9 @@ public final class rb0 extends org.telegram.ui.ActionBar.m2 {
         this.E = m4Var2;
         m4Var2.setText(LocaleController.getString(R.string.LimitNumberOfUses));
         mb0Var.addView(this.E);
-        org.telegram.ui.Components.ew0 ew0Var2 = new org.telegram.ui.Components.ew0(context, null);
-        this.c = ew0Var2;
-        ew0Var2.setCallback(new hb0(this, i11));
+        org.telegram.ui.Components.gw0 gw0Var2 = new org.telegram.ui.Components.gw0(context, null);
+        this.c = gw0Var2;
+        gw0Var2.setCallback(new hb0(this, i11));
         X();
         mb0Var.addView(this.c);
         nb0 nb0Var = new nb0(context, 0);

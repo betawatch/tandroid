@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.h3;
 import org.telegram.ui.Cells.j3;
-import org.telegram.ui.Components.b60;
+import org.telegram.ui.Components.d60;
 import org.telegram.ui.Components.voip.h2;
 import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.Components.voip.u2;
@@ -29,7 +29,7 @@ import org.telegram.ui.wf1;
 import org.telegram.ui.wn;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -95,10 +95,10 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((kh.b) this.b).invalidate();
                 return;
             case 10:
-                b60 b60Var = (b60) ((l.d) this.b).a;
-                il ilVar = b60Var.E;
-                if (b60Var.l0) {
-                    b60Var.l0 = false;
+                d60 d60Var = (d60) ((l.d) this.b).a;
+                il ilVar = d60Var.E;
+                if (d60Var.l0) {
+                    d60Var.l0 = false;
                     ilVar.animate().cancel();
                     ilVar.animate().alpha(0.0f).setDuration(100L).setInterpolator(new DecelerateInterpolator()).start();
                     return;

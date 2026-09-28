@@ -8,7 +8,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class p00 extends org.telegram.ui.Cells.m4 {
     public final TextView r;
@@ -39,7 +39,7 @@ public final class p00 extends org.telegram.ui.Cells.m4 {
         textView.setAlpha(0.0f);
         o00 o00Var = new o00(this, getContext());
         this.s = o00Var;
-        this.w = new org.telegram.ui.Components.h5(o00Var, 320L, org.telegram.ui.Components.rr.h, 0);
+        this.w = new org.telegram.ui.Components.h5(o00Var, 320L, org.telegram.ui.Components.sr.h, 0);
         o00Var.setTextSize(AndroidUtilities.dp(10.0f));
         o00Var.setTypeface(AndroidUtilities.bold());
         o00Var.setGravity(5);
@@ -71,9 +71,9 @@ public final class p00 extends org.telegram.ui.Cells.m4 {
         if (z11 != this.x) {
             this.x = z11;
             ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
-            org.telegram.ui.Components.rr rrVar = org.telegram.ui.Components.rr.h;
-            duration.setInterpolator(rrVar).start();
-            o00Var.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(rrVar).start();
+            org.telegram.ui.Components.sr srVar = org.telegram.ui.Components.sr.h;
+            duration.setInterpolator(srVar).start();
+            o00Var.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(srVar).start();
         }
     }
 

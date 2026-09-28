@@ -9,7 +9,7 @@ import android.util.SparseIntArray;
 import j$.util.Objects;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public class d implements org.telegram.ui.ActionBar.d6 {
     public final HashSet a = new HashSet();
@@ -88,6 +88,8 @@ public class d implements org.telegram.ui.ActionBar.d6 {
         sparseIntArray.put(org.telegram.ui.ActionBar.h6.i5, -16777216);
         sparseIntArray.put(org.telegram.ui.ActionBar.h6.M5, -15393241);
         sparseIntArray.put(org.telegram.ui.ActionBar.h6.d6, -15198183);
+        sparseIntArray.put(org.telegram.ui.ActionBar.h6.Yk, -15198183);
+        sparseIntArray.put(org.telegram.ui.ActionBar.h6.cl, -1);
         sparseIntArray.put(org.telegram.ui.ActionBar.h6.G6, -1);
         sparseIntArray.put(org.telegram.ui.ActionBar.h6.Le, -8553090);
         sparseIntArray.put(org.telegram.ui.ActionBar.h6.h6, -10177027);

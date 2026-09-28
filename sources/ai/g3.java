@@ -51,16 +51,16 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.or;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                 str4 = i4Var.u0[0].getWebView().getUrl();
             }
             String v = org.telegram.ui.web.b1.v(str4);
-            i4Var.a0(new uq0(i4Var.L, null, v, false, v, false, AndroidUtilities.computePerceivedBrightness(i4Var.h0.getBackgroundColor()) < 0.721f ? new d() : null));
+            i4Var.a0(new wq0(i4Var.L, null, v, false, v, false, AndroidUtilities.computePerceivedBrightness(i4Var.h0.getBackgroundColor()) < 0.721f ? new d() : null));
             return;
         }
         if (num.intValue() == 6) {
@@ -388,7 +388,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                         nbVar.N1.playTogether(arrayList);
                         if (z10) {
                             nbVar.N1.setDuration(350L);
-                            nbVar.N1.setInterpolator(rr.h);
+                            nbVar.N1.setInterpolator(sr.h);
                         } else {
                             nbVar.N1.setDuration(250L);
                             nbVar.N1.setInterpolator(org.telegram.ui.ActionBar.o1.w);
@@ -396,7 +396,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                         nbVar.N1.start();
                         for (i10 = 0; i10 < arrayList.size(); i10++) {
                             ((Animator) arrayList.get(i10)).setDuration(z10 ? 350L : 250L);
-                            ((Animator) arrayList.get(i10)).setInterpolator(z10 ? rr.h : org.telegram.ui.ActionBar.o1.w);
+                            ((Animator) arrayList.get(i10)).setInterpolator(z10 ? sr.h : org.telegram.ui.ActionBar.o1.w);
                             ((Animator) arrayList.get(i10)).start();
                         }
                         if (!z10) {
@@ -465,7 +465,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                 }
             case 5:
                 ci.y9 y9Var = (ci.y9) obj3;
-                ((y70) obj2).u();
+                ((a80) obj2).u();
                 y9Var.g(true);
                 ci.fa faVar = y9Var.W;
                 ci.ia iaVar = faVar.X;
@@ -477,7 +477,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
             case 6:
                 ci.y9 y9Var2 = (ci.y9) obj3;
                 y9Var2.W.G = true;
-                ((nr[]) obj2)[0].dismiss();
+                ((or[]) obj2)[0].dismiss();
                 y9Var2.g(true);
                 break;
             case 7:

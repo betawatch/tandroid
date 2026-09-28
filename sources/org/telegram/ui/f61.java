@@ -14,11 +14,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class f61 extends FrameLayout {
     public final TextView a;
-    public final org.telegram.ui.Components.lj0 b;
+    public final org.telegram.ui.Components.nj0 b;
     public final ImageView c;
     public float d;
     public ValueAnimator e;
@@ -30,13 +30,13 @@ public final class f61 extends FrameLayout {
         this.f = a71Var;
         LinearLayout f7 = org.telegram.messenger.ok.f(context, 0);
         addView(f7, w7.y5.e(-2, -2, z10 ? 3 : 17));
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.b = lj0Var;
-        lj0Var.f(R.raw.unlock_icon, 20, 20, null);
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        this.b = nj0Var;
+        nj0Var.f(R.raw.unlock_icon, 20, 20, null);
         int i10 = org.telegram.ui.ActionBar.h6.Te;
         org.telegram.ui.ActionBar.d6 d6Var = a71Var.Z0;
-        lj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
-        f7.addView(lj0Var, w7.y5.n(20, 20));
+        nj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
+        f7.addView(nj0Var, w7.y5.n(20, 20));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
@@ -68,10 +68,10 @@ public final class f61 extends FrameLayout {
         }
         this.d = z10 ? 1.0f : 0.0f;
         float dp = (1.0f - this.d) * AndroidUtilities.dp(-8.0f);
-        org.telegram.ui.Components.lj0 lj0Var = this.b;
-        lj0Var.setTranslationX(dp);
+        org.telegram.ui.Components.nj0 nj0Var = this.b;
+        nj0Var.setTranslationX(dp);
         this.a.setTranslationX((1.0f - this.d) * AndroidUtilities.dp(-8.0f));
-        lj0Var.setAlpha(this.d);
+        nj0Var.setAlpha(this.d);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

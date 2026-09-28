@@ -4,31 +4,31 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w2 implements Utilities.Callback5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ i4 b;
-    public final /* synthetic */ y70 c;
+    public final /* synthetic */ a80 c;
 
-    public /* synthetic */ w2(i4 i4Var, y70 y70Var, int i10) {
+    public /* synthetic */ w2(i4 i4Var, a80 a80Var, int i10) {
         this.a = i10;
         this.b = i4Var;
-        this.c = y70Var;
+        this.c = a80Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         int i10 = this.a;
-        v51 v51Var = (v51) obj;
+        x51 x51Var = (x51) obj;
         i4 i4Var = this.b;
         i4Var.getClass();
         switch (i10) {
             case 0:
-                long j3 = ((TL_stars.starGiftAttributePattern) v51Var.G).document.id;
+                long j3 = ((TL_stars.starGiftAttributePattern) x51Var.G).document.id;
                 v3 v3Var = i4Var.d;
                 HashSet hashSet = v3Var.l;
                 if (hashSet.contains(Long.valueOf(j3))) {
@@ -52,7 +52,7 @@ public final /* synthetic */ class w2 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             case 1:
-                int i12 = ((TL_stars.starGiftAttributeBackdrop) v51Var.G).backdrop_id;
+                int i12 = ((TL_stars.starGiftAttributeBackdrop) x51Var.G).backdrop_id;
                 v3 v3Var2 = i4Var.d;
                 HashSet hashSet2 = v3Var2.k;
                 if (hashSet2.contains(Integer.valueOf(i12))) {
@@ -76,7 +76,7 @@ public final /* synthetic */ class w2 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             default:
-                long j11 = ((TL_stars.starGiftAttributeModel) v51Var.G).document.id;
+                long j11 = ((TL_stars.starGiftAttributeModel) x51Var.G).document.id;
                 v3 v3Var3 = i4Var.d;
                 HashSet hashSet3 = v3Var3.j;
                 if (hashSet3.contains(Long.valueOf(j11))) {

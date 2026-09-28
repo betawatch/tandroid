@@ -27,16 +27,16 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.cu;
+import org.telegram.ui.Components.du;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.s50;
+import org.telegram.ui.Components.u50;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ds0;
 import org.telegram.ui.i4;
 import org.telegram.ui.m3;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class v0 extends WebChromeClient {
     public org.telegram.ui.ActionBar.a2 a;
@@ -209,30 +209,30 @@ public final class v0 extends WebChromeClient {
         org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
         a2Var.R = name;
         a2Var.T = str2;
-        cu cuVar = new cu(context, d6Var);
-        cuVar.lineYFix = true;
-        cuVar.setTextSize(1, 18.0f);
-        cuVar.setTextColor(h6.v0(h6.j5, d6Var));
-        cuVar.setHintColor(h6.v0(h6.Xh, d6Var));
-        cuVar.setFocusable(true);
-        cuVar.setInputType(147457);
-        cuVar.setLineColors(h6.v0(h6.k6, d6Var), h6.v0(h6.l6, d6Var), h6.v0(h6.p7, d6Var));
-        cuVar.setImeOptions(6);
-        cuVar.setBackgroundDrawable(null);
-        cuVar.setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f));
-        cuVar.setText(str3);
+        du duVar = new du(context, d6Var);
+        duVar.lineYFix = true;
+        duVar.setTextSize(1, 18.0f);
+        duVar.setTextColor(h6.v0(h6.j5, d6Var));
+        duVar.setHintColor(h6.v0(h6.Xh, d6Var));
+        duVar.setFocusable(true);
+        duVar.setInputType(147457);
+        duVar.setLineColors(h6.v0(h6.k6, d6Var), h6.v0(h6.l6, d6Var), h6.v0(h6.p7, d6Var));
+        duVar.setImeOptions(6);
+        duVar.setBackgroundDrawable(null);
+        duVar.setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f));
+        duVar.setText(str3);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        linearLayout.addView(cuVar, y5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        linearLayout.addView(duVar, y5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         alertDialog$Builder.c();
         alertDialog$Builder.n(linearLayout);
         a2Var.a = AndroidUtilities.dp(292.0f);
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ds0(zArr, jsPromptResult));
-        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s50(zArr, jsPromptResult, cuVar, 4));
+        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new u50(zArr, jsPromptResult, duVar, 4));
         alertDialog$Builder.j(new ei.e0(14, zArr, jsPromptResult));
-        a2Var.O = new ii.q1(cuVar, 2);
-        cuVar.setOnEditorActionListener(new t0(zArr, jsPromptResult, cuVar, alertDialog$Builder.o()));
-        AndroidUtilities.runOnUIThread(new q0(cuVar, i10));
+        a2Var.O = new ii.q1(duVar, 2);
+        duVar.setOnEditorActionListener(new t0(zArr, jsPromptResult, duVar, alertDialog$Builder.o()));
+        AndroidUtilities.runOnUIThread(new q0(duVar, i10));
         return true;
     }
 

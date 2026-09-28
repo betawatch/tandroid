@@ -9,9 +9,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class q51 implements org.telegram.ui.Components.nl0 {
+public final class q51 implements org.telegram.ui.Components.pl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
@@ -26,7 +26,7 @@ public final class q51 implements org.telegram.ui.Components.nl0 {
         this.d = num;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public final boolean c(float f7, float f10, int i10, View view) {
         a71 a71Var = this.e;
         int i11 = a71Var.V;
@@ -83,7 +83,7 @@ public final class q51 implements org.telegram.ui.Components.nl0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public final void g() {
         a71 a71Var = this.e;
         if (a71Var.S0 != null) {
@@ -92,12 +92,12 @@ public final class q51 implements org.telegram.ui.Components.nl0 {
             ofFloat.addUpdateListener(new q11(this, 8));
             ofFloat.addListener(new xo0(this, 20));
             ofFloat.setDuration(150L);
-            ofFloat.setInterpolator(org.telegram.ui.Components.rr.f);
+            ofFloat.setInterpolator(org.telegram.ui.Components.sr.f);
             ofFloat.start();
         }
     }
 
-    @Override // org.telegram.ui.Components.nl0
+    @Override // org.telegram.ui.Components.pl0
     public final /* synthetic */ void q(float f7) {
     }
 }

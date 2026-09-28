@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class w7 extends s4.h0 {
     public final /* synthetic */ int c;
@@ -219,10 +219,10 @@ public final class w7 extends s4.h0 {
                     textView.setText(LocaleController.getString(i22));
                 } else {
                     SpannableString spannableString = new SpannableString(org.telegram.messenger.f0.g(i22, new StringBuilder("d ")));
-                    org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(R.drawable.msg_mini_premiumlock, 0);
-                    pqVar.setTopOffset(1);
-                    pqVar.setSize(AndroidUtilities.dp(13.0f));
-                    spannableString.setSpan(pqVar, 0, 1, 33);
+                    org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(R.drawable.msg_mini_premiumlock, 0);
+                    qqVar.setTopOffset(1);
+                    qqVar.setSize(AndroidUtilities.dp(13.0f));
+                    spannableString.setSpan(qqVar, 0, 1, 33);
                     marginLayoutParams.rightMargin = AndroidUtilities.dp(4.0f);
                     textView.setText(spannableString);
                 }
@@ -297,7 +297,7 @@ public final class w7 extends s4.h0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         switch (this.c) {
             case 0:
-                return new org.telegram.ui.Components.gl0(new e8((h8) this.d, viewGroup.getContext()));
+                return new org.telegram.ui.Components.il0(new e8((h8) this.d, viewGroup.getContext()));
             case 1:
                 Context context = viewGroup.getContext();
                 org.telegram.ui.Cells.s sVar = new org.telegram.ui.Cells.s(context);
@@ -320,26 +320,26 @@ public final class w7 extends s4.h0 {
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(0.5f)));
                 paint2.setColor(-1);
-                return new org.telegram.ui.Components.gl0(sVar);
+                return new org.telegram.ui.Components.il0(sVar);
             case 2:
                 org.telegram.ui.Components.b9 b9Var = (org.telegram.ui.Components.b9) this.d;
-                return new org.telegram.ui.Components.gl0(new org.telegram.ui.Components.c9(b9Var.c3, b9Var.getContext()));
+                return new org.telegram.ui.Components.il0(new org.telegram.ui.Components.c9(b9Var.c3, b9Var.getContext()));
             case 3:
-                return new org.telegram.ui.Components.gl0(((org.telegram.ui.Components.rm) this.d).v);
+                return new org.telegram.ui.Components.il0(((org.telegram.ui.Components.sm) this.d).v);
             case 4:
-                return new org.telegram.ui.Components.gl0(new ci.bb(this, ((org.telegram.ui.Components.wn) this.d).getContext(), 15));
+                return new org.telegram.ui.Components.il0(new ci.bb(this, ((org.telegram.ui.Components.xn) this.d).getContext(), 15));
             default:
-                org.telegram.ui.Components.n90 n90Var = new org.telegram.ui.Components.n90(viewGroup.getContext(), null);
-                n90Var.setGravity(17);
-                n90Var.setTypeface(AndroidUtilities.bold());
-                n90Var.setTextSize(1, 14.0f);
-                n90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-                n90Var.setEllipsize(TextUtils.TruncateAt.END);
-                n90Var.setSingleLine();
-                n90Var.setMaxLines(1);
-                n90Var.setLayoutParams(new s4.p0(-2, AndroidUtilities.dp(28.0f)));
-                w7.a6.b(n90Var, 0.075f, 1.4f);
-                return new org.telegram.ui.Components.gl0(n90Var);
+                org.telegram.ui.Components.p90 p90Var = new org.telegram.ui.Components.p90(viewGroup.getContext(), null);
+                p90Var.setGravity(17);
+                p90Var.setTypeface(AndroidUtilities.bold());
+                p90Var.setTextSize(1, 14.0f);
+                p90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                p90Var.setEllipsize(TextUtils.TruncateAt.END);
+                p90Var.setSingleLine();
+                p90Var.setMaxLines(1);
+                p90Var.setLayoutParams(new s4.p0(-2, AndroidUtilities.dp(28.0f)));
+                w7.a6.b(p90Var, 0.075f, 1.4f);
+                return new org.telegram.ui.Components.il0(p90Var);
         }
     }
 

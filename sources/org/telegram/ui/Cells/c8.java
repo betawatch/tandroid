@@ -15,11 +15,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.la1;
 import org.telegram.ui.pa1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public abstract class c8 extends FrameLayout {
     public final a8 a;
@@ -111,19 +111,19 @@ public abstract class c8 extends FrameLayout {
         mutate.setTint(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
         Drawable mutate2 = context.getDrawable(R.drawable.mini_stats_shares).mutate();
         mutate2.setTint(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
-        qq qqVar = new qq(null, mutate, 0, AndroidUtilities.dp(1.0f));
+        rq rqVar = new rq(null, mutate, 0, AndroidUtilities.dp(1.0f));
         int intrinsicWidth = mutate2.getIntrinsicWidth();
         int intrinsicHeight = mutate2.getIntrinsicHeight();
-        qqVar.h = intrinsicWidth;
-        qqVar.n = intrinsicHeight;
-        textView4.setCompoundDrawablesWithIntrinsicBounds(qqVar, (Drawable) null, (Drawable) null, (Drawable) null);
+        rqVar.h = intrinsicWidth;
+        rqVar.n = intrinsicHeight;
+        textView4.setCompoundDrawablesWithIntrinsicBounds(rqVar, (Drawable) null, (Drawable) null, (Drawable) null);
         textView4.setCompoundDrawablePadding(AndroidUtilities.dp(2.0f));
-        qq qqVar2 = new qq(null, mutate2, 0, AndroidUtilities.dp(1.0f));
+        rq rqVar2 = new rq(null, mutate2, 0, AndroidUtilities.dp(1.0f));
         int intrinsicWidth2 = mutate2.getIntrinsicWidth();
         int intrinsicHeight2 = mutate2.getIntrinsicHeight();
-        qqVar2.h = intrinsicWidth2;
-        qqVar2.n = intrinsicHeight2;
-        textView3.setCompoundDrawablesWithIntrinsicBounds(qqVar2, (Drawable) null, (Drawable) null, (Drawable) null);
+        rqVar2.h = intrinsicWidth2;
+        rqVar2.n = intrinsicHeight2;
+        textView3.setCompoundDrawablesWithIntrinsicBounds(rqVar2, (Drawable) null, (Drawable) null, (Drawable) null);
         textView3.setCompoundDrawablePadding(AndroidUtilities.dp(2.0f));
         setWillNotDraw(false);
     }

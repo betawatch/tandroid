@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class v10 extends FrameLayout {
     public final /* synthetic */ FiltersSetupActivity E;
@@ -29,9 +29,9 @@ public final class v10 extends FrameLayout {
     public int e;
     public final View f;
     public final ImageView h;
-    public final org.telegram.ui.Components.k30 n;
+    public final org.telegram.ui.Components.m30 n;
     public boolean r;
-    public final org.telegram.ui.Components.r90 s;
+    public final org.telegram.ui.Components.t90 s;
     public boolean v;
     public float w;
     public MessagesController.DialogFilter x;
@@ -90,30 +90,30 @@ public final class v10 extends FrameLayout {
         boolean z11 = LocaleController.isRTL;
         addView(textView, w7.y5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 80.0f : 64.0f, 35.0f, z11 ? 64.0f : 80.0f, 0.0f));
         textView.setVisibility(8);
-        org.telegram.ui.Components.r90 r90Var = new org.telegram.ui.Components.r90();
-        this.s = r90Var;
-        r90Var.C = true;
-        r90Var.t = 2.0f;
+        org.telegram.ui.Components.t90 t90Var = new org.telegram.ui.Components.t90();
+        this.s = t90Var;
+        t90Var.C = true;
+        t90Var.t = 2.0f;
         int i12 = org.telegram.ui.ActionBar.h6.i6;
         int w03 = org.telegram.ui.ActionBar.h6.w0(null, i12, false);
-        r90Var.f(org.telegram.ui.ActionBar.h6.l1(0.4f, w03), org.telegram.ui.ActionBar.h6.l1(1.0f, w03), org.telegram.ui.ActionBar.h6.l1(0.9f, w03), org.telegram.ui.ActionBar.h6.l1(1.7f, w03));
+        t90Var.f(org.telegram.ui.ActionBar.h6.l1(0.4f, w03), org.telegram.ui.ActionBar.h6.l1(1.0f, w03), org.telegram.ui.ActionBar.h6.l1(0.9f, w03), org.telegram.ui.ActionBar.h6.l1(1.7f, w03));
         int dp = AndroidUtilities.dp(1.0f);
-        r90Var.w.setStrokeWidth(dp);
-        r90Var.j(40.0f);
-        org.telegram.ui.Components.k30 k30Var = new org.telegram.ui.Components.k30(this, context, dp, 1);
-        this.n = k30Var;
-        r90Var.setCallback(k30Var);
-        k30Var.setFocusable(false);
-        k30Var.setScaleType(scaleType);
-        k30Var.setBackground(org.telegram.ui.ActionBar.h6.f0(w03, 1, -1));
-        k30Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), mode));
-        k30Var.setContentDescription(LocaleController.getString(R.string.FilterShare));
-        k30Var.setVisibility(8);
-        k30Var.setImageResource(R.drawable.msg_link_folder);
-        k30Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), mode));
+        t90Var.w.setStrokeWidth(dp);
+        t90Var.j(40.0f);
+        org.telegram.ui.Components.m30 m30Var = new org.telegram.ui.Components.m30(this, context, dp, 1);
+        this.n = m30Var;
+        t90Var.setCallback(m30Var);
+        m30Var.setFocusable(false);
+        m30Var.setScaleType(scaleType);
+        m30Var.setBackground(org.telegram.ui.ActionBar.h6.f0(w03, 1, -1));
+        m30Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), mode));
+        m30Var.setContentDescription(LocaleController.getString(R.string.FilterShare));
+        m30Var.setVisibility(8);
+        m30Var.setImageResource(R.drawable.msg_link_folder);
+        m30Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), mode));
         boolean z12 = LocaleController.isRTL;
-        addView(k30Var, w7.y5.d(40, 40.0f, (z12 ? 3 : 5) | 16, z12 ? 52.0f : 6.0f, 0.0f, z12 ? 6.0f : 52.0f, 0.0f));
-        k30Var.setOnClickListener(new a(this, 26));
+        addView(m30Var, w7.y5.d(40, 40.0f, (z12 ? 3 : 5) | 16, z12 ? 52.0f : 6.0f, 0.0f, z12 ? 6.0f : 52.0f, 0.0f));
+        m30Var.setOnClickListener(new a(this, 26));
         ImageView imageView2 = new ImageView(context);
         this.h = imageView2;
         imageView2.setFocusable(false);

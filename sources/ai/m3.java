@@ -37,14 +37,14 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.fy0;
-import org.telegram.ui.Components.k31;
-import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.ry0;
-import org.telegram.ui.Components.w81;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.m31;
+import org.telegram.ui.Components.or;
+import org.telegram.ui.Components.ty0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.y81;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ad;
@@ -54,13 +54,12 @@ import org.telegram.ui.in;
 import org.telegram.ui.kq;
 import org.telegram.ui.ld;
 import org.telegram.ui.nt;
-import org.telegram.ui.or;
 import org.telegram.ui.pr;
 import org.telegram.ui.qy;
 import org.telegram.ui.ro;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a;
@@ -298,12 +297,12 @@ public final /* synthetic */ class m3 implements Runnable {
                 ci.fa faVar = y9Var.W;
                 a2Var.dismiss();
                 if (tLObject instanceof TL_phone.groupCallStreamRtmpUrl) {
-                    nr[] nrVarArr = new nr[1];
+                    or[] orVarArr = new or[1];
                     Context context = y9Var.getContext();
                     i11 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
-                    nr nrVar = new nr(context, i11, getgroupcallstreamrtmpurl, (TL_phone.groupCallStreamRtmpUrl) tLObject, faVar.L ? null : new g3(6, y9Var, nrVarArr), new d());
-                    nrVarArr[0] = nrVar;
-                    nrVar.show();
+                    or orVar = new or(context, i11, getgroupcallstreamrtmpurl, (TL_phone.groupCallStreamRtmpUrl) tLObject, faVar.L ? null : new g3(6, y9Var, orVarArr), new d());
+                    orVarArr[0] = orVar;
+                    orVar.show();
                     break;
                 } else if (tL_error2 != null) {
                     org.telegram.ui.ActionBar.c3 c3Var = faVar.container;
@@ -428,11 +427,11 @@ public final /* synthetic */ class m3 implements Runnable {
                 aVar.e.b = false;
                 tL_documentAttributeAudio.title = str4;
                 tL_documentAttributeAudio.performer = str5;
-                w81 w81Var = s7Var.h;
-                for (int i24 = 0; i24 < w81Var.getViewPages().length; i24++) {
-                    wl0 wl0Var = (wl0) w81Var.getViewPages()[i24];
-                    if (wl0Var != null && ((org.telegram.ui.f7) wl0Var.getAdapter()).d == 3) {
-                        org.telegram.ui.f7 f7Var = (org.telegram.ui.f7) wl0Var.getAdapter();
+                y81 y81Var = s7Var.h;
+                for (int i24 = 0; i24 < y81Var.getViewPages().length; i24++) {
+                    yl0 yl0Var = (yl0) y81Var.getViewPages()[i24];
+                    if (yl0Var != null && ((org.telegram.ui.f7) yl0Var.getAdapter()).d == 3) {
+                        org.telegram.ui.f7 f7Var = (org.telegram.ui.f7) yl0Var.getAdapter();
                         int i25 = 0;
                         while (true) {
                             if (i25 >= f7Var.e.size()) {
@@ -678,30 +677,30 @@ public final /* synthetic */ class m3 implements Runnable {
                 kq.Y((kq) this.c, (TLRPC.TL_error) this.d, (TLRPC.InputCheckPasswordSRP) this.e, (TwoStepVerificationActivity) this.f, (TLRPC.TL_channels_editCreator) this.b);
                 break;
             case 21:
-                or orVar = (or) this.c;
+                org.telegram.ui.or orVar2 = (org.telegram.ui.or) this.c;
                 ArrayList arrayList15 = (ArrayList) this.d;
                 a0.i iVar = (a0.i) this.e;
                 ArrayList arrayList16 = (ArrayList) this.f;
                 ArrayList arrayList17 = (ArrayList) this.b;
-                gg.c2 c2Var4 = orVar.h;
-                pr prVar = orVar.y;
+                gg.c2 c2Var4 = orVar2.h;
+                pr prVar = orVar2.y;
                 if (prVar.o1) {
-                    orVar.s = false;
-                    orVar.d = arrayList15;
-                    orVar.e = iVar;
-                    orVar.f = arrayList16;
+                    orVar2.s = false;
+                    orVar2.d = arrayList15;
+                    orVar2.e = iVar;
+                    orVar2.f = arrayList16;
                     c2Var4.f(arrayList15, null);
                     if (!ChatObject.isChannel(prVar.r)) {
                         ArrayList arrayList18 = c2Var4.g;
                         arrayList18.clear();
                         arrayList18.addAll(arrayList17);
                     }
-                    int i32 = orVar.r;
-                    orVar.l();
-                    if (orVar.r > i32) {
+                    int i32 = orVar2.r;
+                    orVar2.l();
+                    if (orVar2.r > i32) {
                         prVar.y0(i32);
                     }
-                    if (!c2Var4.e() && orVar.r == 0) {
+                    if (!c2Var4.e() && orVar2.r == 0) {
                         prVar.b.e(false, true);
                         break;
                     }
@@ -721,29 +720,29 @@ public final /* synthetic */ class m3 implements Runnable {
                 windowManager.removeView(view4);
                 break;
             case 23:
-                fy0 fy0Var = (fy0) this.c;
+                hy0 hy0Var = (hy0) this.c;
                 String str12 = (String) this.d;
                 TLRPC.TL_error tL_error8 = (TLRPC.TL_error) this.e;
                 TLObject tLObject7 = (TLObject) this.f;
                 TextView textView = (TextView) this.b;
-                fy0Var.p0 = 0;
-                String str13 = fy0Var.o0;
+                hy0Var.p0 = 0;
+                String str13 = hy0Var.o0;
                 if (str13 != null && str13.equals(str12)) {
                     if (tL_error8 != null || !(tLObject7 instanceof TLRPC.TL_boolTrue)) {
                         textView.setText(LocaleController.getString(R.string.ImportStickersLinkTaken));
-                        textView.setTextColor(fy0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
-                        fy0Var.q0 = false;
+                        textView.setTextColor(hy0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
+                        hy0Var.q0 = false;
                         break;
                     } else {
                         textView.setText(LocaleController.getString(R.string.ImportStickersLinkAvailable));
-                        textView.setTextColor(fy0Var.getThemedColor(org.telegram.ui.ActionBar.h6.w6));
-                        fy0Var.q0 = true;
+                        textView.setTextColor(hy0Var.getThemedColor(org.telegram.ui.ActionBar.h6.w6));
+                        hy0Var.q0 = true;
                         break;
                     }
                 }
                 break;
             case 24:
-                ry0 ry0Var = (ry0) this.c;
+                ty0 ty0Var = (ty0) this.c;
                 TLObject tLObject8 = (TLObject) this.d;
                 TLRPC.UserFull userFull = (TLRPC.UserFull) this.e;
                 TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) this.f;
@@ -763,10 +762,10 @@ public final /* synthetic */ class m3 implements Runnable {
                                 userFull.flags2 |= 32;
                             }
                             userFull.birthday = tL_birthday;
-                            MessagesStorage.getInstance(ry0Var.a).updateUserInfo(userFull, false);
+                            MessagesStorage.getInstance(ty0Var.a).updateUserInfo(userFull, false);
                         }
                         if (tL_error9 != null && (str = tL_error9.text) != null && str.startsWith("FLOOD_WAIT_")) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ry0Var.b.getContext());
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ty0Var.b.getContext());
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage);
                             org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
@@ -779,21 +778,21 @@ public final /* synthetic */ class m3 implements Runnable {
                 }
                 break;
             case 25:
-                k31 k31Var = (k31) this.c;
+                m31 m31Var = (m31) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.e;
-                y70 y70Var = (y70) this.f;
-                y70 y70Var2 = (y70) this.b;
-                wn wnVar3 = k31Var.h;
-                if (messagesController.isDialogMuted(k31Var.c, tL_forumTopic.id)) {
-                    y70Var.u();
-                    NotificationsController.getInstance(k31Var.b).muteDialog(k31Var.c, tL_forumTopic.id, false);
+                a80 a80Var = (a80) this.f;
+                a80 a80Var2 = (a80) this.b;
+                wn wnVar3 = m31Var.h;
+                if (messagesController.isDialogMuted(m31Var.c, tL_forumTopic.id)) {
+                    a80Var.u();
+                    NotificationsController.getInstance(m31Var.b).muteDialog(m31Var.c, tL_forumTopic.id, false);
                     if (xc.a(wnVar3)) {
-                        xc.z(wnVar3, 4, 0, k31Var.d).j();
+                        xc.z(wnVar3, 4, 0, m31Var.d).j();
                         break;
                     }
                 } else {
-                    y70Var.K(y70Var2);
+                    a80Var.K(a80Var2);
                     break;
                 }
                 break;

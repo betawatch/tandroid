@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -57,11 +57,11 @@ public final /* synthetic */ class i implements View.OnLongClickListener {
                     arrayList.add(chatActivityEnterView.g0(messageObject, true));
                 }
                 vi0Var.q(arrayList);
-                y70 F = y70.F(chatActivityEnterView.m1, d6Var, chatActivityEnterView.F1);
-                ec0 ec0Var = new ec0(chatActivityEnterView.getContext(), R.raw.position_below, LocaleController.getString(R.string.CaptionAbove), R.raw.position_above, LocaleController.getString(R.string.CaptionBelow), chatActivityEnterView.W3);
-                ec0Var.a(!chatActivityEnterView.R4, false);
-                ec0Var.setOnClickListener(new ai.o5(chatActivityEnterView, arrayList, ec0Var, vi0Var, 10));
-                F.q(ec0Var);
+                a80 F = a80.F(chatActivityEnterView.m1, d6Var, chatActivityEnterView.F1);
+                gc0 gc0Var = new gc0(chatActivityEnterView.getContext(), R.raw.position_below, LocaleController.getString(R.string.CaptionAbove), R.raw.position_above, LocaleController.getString(R.string.CaptionBelow), chatActivityEnterView.W3);
+                gc0Var.a(!chatActivityEnterView.R4, false);
+                gc0Var.setOnClickListener(new ai.o5(chatActivityEnterView, arrayList, gc0Var, vi0Var, 10));
+                F.q(gc0Var);
                 F.Y();
                 vi0Var.p(F);
                 vi0Var.r(chatActivityEnterView.F1, false, new ai.o5(chatActivityEnterView, groupedMessages, messageObject, vi0Var, 11));

@@ -1,34 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.TextView;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class bl extends gg.u0 {
-    public final /* synthetic */ hl N;
+public final class bl extends s4.s0 {
+    public final /* synthetic */ il a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bl(hl hlVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        super(context, d6Var, z10, false);
-        this.N = hlVar;
+    public bl(il ilVar) {
+        this.a = ilVar;
     }
 
-    @Override // s4.h0
-    public final void l() {
-        hl hlVar = this.N;
-        bl blVar = hlVar.R;
-        org.telegram.ui.ActionBar.u0 u0Var = hlVar.E;
-        if (u0Var != null) {
-            u0Var.setShowSearchProgress(blVar.J);
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        il0 il0Var;
+        il ilVar = this.a;
+        ai.w0 w0Var = ilVar.P;
+        wi wiVar = ilVar.b;
+        boolean z10 = i10 != 0;
+        ilVar.L = z10;
+        if (!z10 && ilVar.J != null) {
+            ilVar.J = null;
         }
-        TextView textView = hlVar.y;
-        if (textView != null) {
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, blVar.x)));
+        if (i10 == 0) {
+            int dp = AndroidUtilities.dp(13.0f);
+            int backgroundPaddingTop = wiVar.getBackgroundPaddingTop();
+            if (((wiVar.b2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (il0Var = (il0) w0Var.K(0)) == null) {
+                return;
+            }
+            View view = il0Var.a;
+            if (view.getTop() > ilVar.A0 - ilVar.z0) {
+                w0Var.v0(0, view.getTop() - (ilVar.A0 - ilVar.z0), null);
+            }
         }
-        super.l();
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        il ilVar = this.a;
+        ilVar.e0();
+        if (ilVar.J != null) {
+            ilVar.K += i11;
+        }
+        ilVar.b.X1(ilVar, i11);
     }
 }

@@ -23,13 +23,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 import org.webrtc.RendererCommon;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class k4 extends FrameLayout implements RendererCommon.RendererEvents, NotificationCenter.NotificationCenterDelegate {
     public int a;
@@ -100,7 +100,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         j4 j4Var = this.b;
         j4Var.setVisibility(0);
         d dVar = j4Var.b;
-        j4Var.animate().alpha(this.y ? 1.0f : 0.0f).setInterpolator(rr.h).setDuration(320L).withEndAction(new bi.f(2, this, z10)).start();
+        j4Var.animate().alpha(this.y ? 1.0f : 0.0f).setInterpolator(sr.h).setDuration(320L).withEndAction(new bi.f(2, this, z10)).start();
         dVar.setVisibility((!z10 || runnable == null) ? 8 : 0);
         dVar.setOnClickListener(runnable == null ? null : new bi.p(1, runnable));
     }
@@ -255,7 +255,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
     public final void e(boolean z10, boolean z11) {
         if (z10 || !z11) {
             if (z11) {
-                ok.s(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), rr.h, 320L);
+                ok.s(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), sr.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z10 ? 1.0f : 0.0f);

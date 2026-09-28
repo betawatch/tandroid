@@ -12,9 +12,9 @@ import android.view.View;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class r01 extends View implements org.telegram.ui.Components.uh0 {
+public final class r01 extends View implements org.telegram.ui.Components.wh0 {
     public boolean E;
     public float F;
     public float G;
@@ -97,7 +97,7 @@ public final class r01 extends View implements org.telegram.ui.Components.uh0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.h = ofFloat;
                 ofFloat.setDuration(250L);
-                ofFloat.setInterpolator(org.telegram.ui.Components.rr.j);
+                ofFloat.setInterpolator(org.telegram.ui.Components.sr.j);
                 ofFloat.addUpdateListener(new c3(this, 28));
                 ofFloat.addListener(new xo0(this, 15));
             }
@@ -138,29 +138,29 @@ public final class r01 extends View implements org.telegram.ui.Components.uh0 {
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat2;
         ofFloat2.setDuration(250L);
-        ofFloat2.setInterpolator(org.telegram.ui.Components.rr.j);
+        ofFloat2.setInterpolator(org.telegram.ui.Components.sr.j);
         ofFloat2.addUpdateListener(new c3(this, 28));
         ofFloat2.addListener(new xo0(this, 15));
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.wh0
     public final void a() {
         Arrays.fill(this.x, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.wh0
     public final void b(boolean z10) {
         this.x[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.wh0
     public final void c() {
         this.P.i5(false);
     }
 
-    @Override // org.telegram.ui.Components.uh0
+    @Override // org.telegram.ui.Components.wh0
     public final void d() {
         invalidate();
     }
@@ -324,7 +324,7 @@ public final class r01 extends View implements org.telegram.ui.Components.uh0 {
                     if (i16 != this.M) {
                         this.H[i16] = 0.75f;
                     } else if (profileActivity.A0 == 3) {
-                        paint4.setAlpha((int) (AndroidUtilities.lerp(i11, 255, org.telegram.ui.Components.rr.j.getInterpolation(this.H[i16])) * this.G));
+                        paint4.setAlpha((int) (AndroidUtilities.lerp(i11, 255, org.telegram.ui.Components.sr.j.getInterpolation(this.H[i16])) * this.G));
                     }
                     canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i16 != this.M ? paint : paint4);
                     i16++;

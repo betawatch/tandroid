@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class y00 extends og.b {
     public final Context d;
@@ -26,7 +26,7 @@ public final class y00 extends og.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 3 || i10 == 0 || i10 == 2 || i10 == 5 || i10 == 9 || i10 == 11) ? false : true;
@@ -163,7 +163,7 @@ public final class y00 extends og.b {
             g00Var.e = Boolean.valueOf(z10);
             if (g00Var.c == i14) {
                 textView.clearAnimation();
-                textView.animate().translationX(z10 ? AndroidUtilities.dp(i15 * (-7)) : 0.0f).setDuration(180L).setInterpolator(org.telegram.ui.Components.rr.h).start();
+                textView.animate().translationX(z10 ? AndroidUtilities.dp(i15 * (-7)) : 0.0f).setDuration(180L).setInterpolator(org.telegram.ui.Components.sr.h).start();
             } else {
                 textView.setTranslationX(z10 ? AndroidUtilities.dp(i15 * (-7)) : 0.0f);
             }
@@ -194,10 +194,10 @@ public final class y00 extends og.b {
                 view = zaVar;
                 break;
             case 2:
-                org.telegram.ui.Components.aw0 aw0Var = (org.telegram.ui.Components.aw0) b10Var.fragmentView;
+                org.telegram.ui.Components.cw0 cw0Var = (org.telegram.ui.Components.cw0) b10Var.fragmentView;
                 String string = LocaleController.getString(R.string.FilterNameHint);
                 d6Var = ((org.telegram.ui.ActionBar.m2) b10Var).resourceProvider;
-                v00 v00Var = new v00(this.d, aw0Var, string, false, 12, d6Var);
+                v00 v00Var = new v00(this.d, cw0Var, string, false, 12, d6Var);
                 b10Var.K = v00Var;
                 v00Var.n = false;
                 org.telegram.ui.Cells.e3 e3Var = v00Var.b;
@@ -206,7 +206,7 @@ public final class y00 extends og.b {
                 e3Var.setText(b10Var.w);
                 i11 = ((org.telegram.ui.ActionBar.m2) b10Var).currentAccount;
                 org.telegram.ui.Components.q5.s(i11, b10Var.x);
-                org.telegram.ui.Components.cu editText = e3Var.getEditText();
+                org.telegram.ui.Components.du editText = e3Var.getEditText();
                 editText.addTextChangedListener(new org.telegram.ui.Cells.i3());
                 editText.addTextChangedListener(new w00(this));
                 editText.setPadding(AndroidUtilities.dp(7.0f), editText.getPaddingTop(), editText.getPaddingRight(), editText.getPaddingBottom());
@@ -238,13 +238,13 @@ public final class y00 extends og.b {
                 break;
             case 5:
                 r00 r00Var = new r00(context);
-                org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-                r00Var.a = lj0Var;
-                lj0Var.f(R.raw.filter_new, 100, 100, null);
-                lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-                lj0Var.d();
-                r00Var.addView(lj0Var, w7.y5.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
-                lj0Var.setOnClickListener(new a(r00Var, 24));
+                org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+                r00Var.a = nj0Var;
+                nj0Var.f(R.raw.filter_new, 100, 100, null);
+                nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                nj0Var.d();
+                r00Var.addView(nj0Var, w7.y5.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
+                nj0Var.setOnClickListener(new a(r00Var, 24));
                 view = r00Var;
                 break;
             case 6:
@@ -272,7 +272,7 @@ public final class y00 extends og.b {
                 view = new q00(context, d6Var3);
                 break;
         }
-        return new org.telegram.ui.Components.gl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 
     @Override // s4.h0

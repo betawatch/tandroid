@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.s2;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.xm;
+import org.telegram.ui.Components.ym;
 import org.telegram.ui.am;
 import org.telegram.ui.in;
 import org.telegram.ui.jm;
@@ -26,7 +26,7 @@ import org.telegram.ui.py;
 import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class a0 implements Runnable {
                             }
                             UndoView Y3 = qyVar.Y3();
                             if (Y3 != null) {
-                                Y3.l(dialog.id, z10 ? 2 : 3, null, new xm(oyVar, dialog, i11, 26));
+                                Y3.l(dialog.id, z10 ? 2 : 3, null, new ym(oyVar, dialog, i11, 26));
                             }
                         }
                         if (qyVar.V2 != 0 && qyVar.R1.isEmpty()) {

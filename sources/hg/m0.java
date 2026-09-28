@@ -24,17 +24,17 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class m0 extends bb {
     public static final int g0 = -1;
@@ -45,7 +45,7 @@ public final class m0 extends bb {
     public final LinearLayout a0;
     public final ci.d b0;
     public final ci.d c0;
-    public j61 d0;
+    public l61 d0;
     public boolean e0;
     public Boolean f0;
 
@@ -96,9 +96,9 @@ public final class m0 extends bb {
         int i10 = h6.a7;
         setBackgroundColor(getThemedColor(i10));
         fixNavigationBar(getThemedColor(i10));
-        wl0 wl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        wl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
+        yl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
         this.d.p1();
         this.d.setOnItemClickListener(new ai.g(this, 11));
         FrameLayout frameLayout = new FrameLayout(activity);
@@ -127,12 +127,12 @@ public final class m0 extends bb {
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
-        jVar.o(rr.h);
+        jVar.o(sr.h);
         jVar.n(350L);
         this.d.setItemAnimator(jVar);
-        j61 j61Var = this.d0;
-        if (j61Var != null) {
-            j61Var.N(false);
+        l61 l61Var = this.d0;
+        if (l61Var != null) {
+            l61Var.N(false);
         }
     }
 
@@ -197,9 +197,9 @@ public final class m0 extends bb {
             if (z10) {
                 dVar2.setVisibility(0);
                 ViewPropertyAnimator duration = dVar2.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.8f).scaleY(z11 ? 1.0f : 0.8f).setDuration(320L);
-                rr rrVar = rr.h;
+                sr srVar = sr.h;
                 final int i10 = 0;
-                duration.setInterpolator(rrVar).withEndAction(new Runnable(this) { // from class: hg.l0
+                duration.setInterpolator(srVar).withEndAction(new Runnable(this) { // from class: hg.l0
                     public final /* synthetic */ m0 b;
 
                     {
@@ -234,7 +234,7 @@ public final class m0 extends bb {
                 }).start();
                 dVar.setVisibility(0);
                 final int i11 = 1;
-                dVar.animate().alpha(z11 ? 0.0f : 1.0f).scaleX(!z11 ? 1.0f : 0.8f).scaleY(z11 ? 0.8f : 1.0f).setDuration(320L).setInterpolator(rrVar).withEndAction(new Runnable(this) { // from class: hg.l0
+                dVar.animate().alpha(z11 ? 0.0f : 1.0f).scaleX(!z11 ? 1.0f : 0.8f).scaleY(z11 ? 0.8f : 1.0f).setDuration(320L).setInterpolator(srVar).withEndAction(new Runnable(this) { // from class: hg.l0
                     public final /* synthetic */ m0 b;
 
                     {
@@ -301,11 +301,11 @@ public final class m0 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final vl0 v(wl0 wl0Var) {
-        j61 j61Var = new j61(wl0Var, getContext(), this.currentAccount, 0, true, new bi.v(this, 23), this.resourcesProvider);
-        this.d0 = j61Var;
-        j61Var.r = false;
-        return j61Var;
+    public final xl0 v(yl0 yl0Var) {
+        l61 l61Var = new l61(yl0Var, getContext(), this.currentAccount, 0, true, new bi.v(this, 23), this.resourcesProvider);
+        this.d0 = l61Var;
+        l61Var.r = false;
+        return l61Var;
     }
 
     @Override // org.telegram.ui.Components.bb

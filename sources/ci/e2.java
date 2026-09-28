@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class e2 extends a2 {
     public final p1 b;
@@ -46,7 +46,7 @@ public final class e2 extends a2 {
         jVar.e = 220L;
         jVar.f = 160L;
         jVar.g = 160L;
-        jVar.i = rr.g;
+        jVar.i = sr.g;
         p1Var.setItemAnimator(jVar);
         addView(p1Var, w7.y5.c(-1.0f, -1));
         d6Var = ((org.telegram.ui.ActionBar.e3) s2Var).resourcesProvider;

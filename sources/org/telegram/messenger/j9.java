@@ -1,30 +1,30 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j9 implements Utilities.Callback {
+public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.StickerSet c;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ j9(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
+    public /* synthetic */ j9(MediaDataController mediaDataController, String str, TLObject tLObject, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = stickerSet;
+        this.c = str;
+        this.d = tLObject;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleStickerSetInternal$115(this.c, (ArrayList) obj);
+                this.b.lambda$fetchStickerSetInternal$41(this.c, this.d);
                 break;
             default:
-                this.b.lambda$toggleStickerSetInternal$112(this.c, (ArrayList) obj);
+                this.b.lambda$verifyAnimatedStickerMessageInternal$69(this.c, this.d);
                 break;
         }
     }

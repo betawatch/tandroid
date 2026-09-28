@@ -1,18 +1,138 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class cc0 {
-    public final int a;
-    public final t01 b;
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
+public final class cc0 extends Drawable {
+    public final /* synthetic */ int a;
+    public boolean b;
+    public Object c;
+    public Object d;
+    public Object e;
 
-    public cc0(int i10, String str) {
+    public cc0(int i10) {
         this.a = i10;
-        this.b = new t01(str, 14.0f, AndroidUtilities.bold());
+        switch (i10) {
+            case 1:
+                this.c = new Paint(1);
+                Paint paint = new Paint(1);
+                this.d = paint;
+                this.e = new Matrix();
+                paint.setStyle(Paint.Style.STROKE);
+                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{1308622847, 0, 452984831}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP));
+                break;
+        }
+    }
+
+    public void b(int i10, int i11) {
+        ((Paint) this.c).setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                kj0 kj0Var = (kj0) this.d;
+                kj0 kj0Var2 = (kj0) this.c;
+                Rect rect = AndroidUtilities.rectTmp2;
+                rect.set(getBounds().centerX() - AndroidUtilities.dp(12.0f), getBounds().centerY() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + getBounds().centerX(), AndroidUtilities.dp(12.0f) + getBounds().centerY());
+                if (((kj0) this.e).A()) {
+                    kj0 kj0Var3 = (kj0) this.e;
+                    boolean z10 = this.b;
+                    if (kj0Var3 != (z10 ? kj0Var2 : kj0Var)) {
+                        if (z10) {
+                            kj0Var = kj0Var2;
+                        }
+                        this.e = kj0Var;
+                        kj0Var.M(kj0Var.e[0] - 1);
+                    }
+                }
+                ((kj0) this.e).setBounds(rect);
+                ((kj0) this.e).draw(canvas);
+                break;
+            default:
+                Paint paint = (Paint) this.d;
+                float dp = AndroidUtilities.dp(10.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(getBounds());
+                Matrix matrix = (Matrix) this.e;
+                matrix.reset();
+                matrix.postTranslate(rectF.left, rectF.top);
+                canvas.drawRoundRect(rectF, dp, dp, (Paint) this.c);
+                if (this.b) {
+                    float dp2 = AndroidUtilities.dp(1.0f);
+                    paint.setStrokeWidth(dp2);
+                    matrix.reset();
+                    matrix.postTranslate(rectF.left, rectF.top);
+                    float f7 = dp2 / 2.0f;
+                    rectF.inset(f7, f7);
+                    canvas.drawRoundRect(rectF, dp, dp, paint);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                ((kj0) this.c).setAlpha(i10);
+                ((kj0) this.d).setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                ((kj0) this.c).setColorFilter(colorFilter);
+                ((kj0) this.d).setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    private final void a(int i10) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
     }
 }

@@ -1,52 +1,33 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n7 implements RequestDelegate {
+public final /* synthetic */ class n7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Utilities.Callback d;
 
-    public /* synthetic */ n7(MediaDataController mediaDataController, int i10) {
+    public /* synthetic */ n7(MediaDataController mediaDataController, String str, Utilities.Callback callback, int i10) {
         this.a = i10;
         this.b = mediaDataController;
+        this.c = str;
+        this.d = callback;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
         switch (this.a) {
             case 0:
-                this.b.lambda$checkGenericAnimations$80(tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$clearRecentStickers$19(tLObject, tL_error);
-                break;
-            case 2:
-                this.b.lambda$preloadPremiumPreviewStickers$206(tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$loadPremiumPromo$8(tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$loadReactions$14(tLObject, tL_error);
-                break;
-            case 5:
-                this.b.lambda$checkPremiumGiftStickers$76(tLObject, tL_error);
-                break;
-            case 6:
-                this.b.lambda$loadDraftsIfNeed$187(tLObject, tL_error);
-                break;
-            case 7:
-                this.b.lambda$checkDefaultTopicIcons$82(tLObject, tL_error);
-                break;
-            case 8:
-                this.b.lambda$loadGroupStickerSet$46(tLObject, tL_error);
+                this.b.lambda$getStickerSet$32(this.c, this.d, bool, tL_messages_stickerSet);
                 break;
             default:
-                this.b.lambda$checkTonGiftStickers$78(tLObject, tL_error);
+                this.b.lambda$getStickerSet$35(this.c, this.d, bool, tL_messages_stickerSet);
                 break;
         }
     }

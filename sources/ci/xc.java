@@ -16,9 +16,9 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public class xc extends View implements w2 {
     public final Path a;
@@ -38,7 +38,7 @@ public class xc extends View implements w2 {
         this.b = paint;
         Paint paint2 = new Paint(3);
         this.c = paint2;
-        this.e = new org.telegram.ui.Components.e6(this, 0L, 380L, rr.h);
+        this.e = new org.telegram.ui.Components.e6(this, 0L, 380L, sr.h);
         paint.setColor(-1);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
     }

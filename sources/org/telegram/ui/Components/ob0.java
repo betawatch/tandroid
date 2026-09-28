@@ -1,25 +1,89 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagePreviewParams;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class ob0 extends g.p {
-    public final /* synthetic */ zb0 c;
+public final /* synthetic */ class ob0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public ob0(zb0 zb0Var) {
-        this.c = zb0Var;
+    public /* synthetic */ ob0(FrameLayout frameLayout, boolean z10, Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.c = frameLayout;
+        this.b = z10;
+        this.d = obj;
+        this.e = obj2;
+        this.f = obj3;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        MessageObject messageObject;
-        MessageObject.GroupedMessages a2;
-        if (i10 < 0) {
-            return MediaDataController.MAX_STYLE_RUNS_COUNT;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        boolean z10 = this.b;
+        FrameLayout frameLayout = this.c;
+        int i11 = 0;
+        switch (i10) {
+            case 0:
+                bc0 bc0Var = (bc0) frameLayout;
+                Context context = (Context) obj3;
+                gc0 gc0Var = (gc0) obj2;
+                gc0 gc0Var2 = (gc0) obj;
+                hc0 hc0Var = bc0Var.c0;
+                MessagePreviewParams messagePreviewParams = hc0Var.d;
+                if (!z10) {
+                    new xc(hc0Var, hc0Var.F).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceSingleTag("Subscribe to **Telegram Premium** to forward formatted messages without the sender’s name.", new mb0(bc0Var, context, i11))).j();
+                    break;
+                } else {
+                    boolean z11 = messagePreviewParams.hideForwardSendersName;
+                    messagePreviewParams.hideForwardSendersName = !z11;
+                    hc0Var.x = false;
+                    if (z11) {
+                        messagePreviewParams.hideCaption = false;
+                        if (gc0Var != null) {
+                            gc0Var.a(false, true);
+                        }
+                    }
+                    gc0Var2.a(messagePreviewParams.hideForwardSendersName, true);
+                    bc0Var.h();
+                    bc0Var.k(true);
+                    break;
+                }
+            default:
+                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
+                a80 a80Var = (a80) obj;
+                bs0 bs0Var = ((xh.o2) frameLayout).a;
+                if (z10) {
+                    bs0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
+                    xc.a0(bs0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, yh.x3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                } else {
+                    yh.j5 j5Var = bs0Var.e;
+                    int i12 = tL_starGiftCollection.collection_id;
+                    j5Var.getClass();
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(savedStarGift);
+                    j5Var.a(i12, arrayList);
+                    xc.a0(bs0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.x3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                }
+                a80Var.u();
+                bs0Var.n();
+                break;
         }
-        zb0 zb0Var = this.c;
-        return (i10 >= zb0Var.r.previewMessages.size() || (a2 = zb0.a(zb0Var, (messageObject = zb0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
     }
 }

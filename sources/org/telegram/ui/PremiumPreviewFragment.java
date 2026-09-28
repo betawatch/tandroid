@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -59,7 +59,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.m2 impleme
     public rg.p1 M;
     public int N;
     public int O;
-    public org.telegram.ui.Components.qz P;
+    public org.telegram.ui.Components.rz P;
     public final Paint Q;
     public LinearGradient R;
     public final Matrix S;
@@ -70,7 +70,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.m2 impleme
     public int X;
     public int Y;
     public boolean Z;
-    public org.telegram.ui.Components.wl0 a;
+    public org.telegram.ui.Components.yl0 a;
     public boolean a0;
     public final ArrayList b;
     public float b0;
@@ -234,7 +234,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.m2 impleme
                     Bundle bundle = new Bundle();
                     bundle.putLong("dialog_id", UserConfig.getInstance(premiumPreviewFragment.currentAccount).getClientUserId());
                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                    premiumPreviewFragment.presentFragment(new org.telegram.ui.Components.na0(bundle, null));
+                    premiumPreviewFragment.presentFragment(new org.telegram.ui.Components.pa0(bundle, null));
                     return;
                 }
                 if (i15 != 12) {
@@ -809,18 +809,18 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.m2 impleme
         ah.c cVar2 = this.w0;
         cVar2.f = kVar2;
         cVar2.g = pw0Var2;
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.a = wl0Var;
-        wl0Var.setClipToOutline(true);
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.setClipToOutline(true);
         this.a.setOutlineProvider(new ch.b(this, 6));
         this.a.C0(new nw0(this, i11));
         this.a.setCaptureSectionsDecoratorAllowed(true);
         this.a.setSections(true);
         this.a.setClipToPadding(false);
-        org.telegram.ui.Components.wl0 wl0Var2 = this.a;
-        org.telegram.ui.Components.qz qzVar = new org.telegram.ui.Components.qz(this.a, (AndroidUtilities.dp(68.0f) + this.X) - AndroidUtilities.dp(16.0f));
-        this.P = qzVar;
-        wl0Var2.setLayoutManager(qzVar);
+        org.telegram.ui.Components.yl0 yl0Var2 = this.a;
+        org.telegram.ui.Components.rz rzVar = new org.telegram.ui.Components.rz(this.a, (AndroidUtilities.dp(68.0f) + this.X) - AndroidUtilities.dp(16.0f));
+        this.P = rzVar;
+        yl0Var2.setLayoutManager(rzVar);
         this.P.R = true;
         this.a.setAdapter(new tw0(this));
         int i14 = 24;
@@ -1289,9 +1289,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.m2 impleme
         }
         AndroidUtilities.updateViewVisibilityAnimated(frameLayout, z10, 1.0f, false);
         int dp = this.J.getVisibility() == 0 ? AndroidUtilities.dp(64.0f) : 0;
-        org.telegram.ui.Components.qz qzVar = this.P;
-        qzVar.M = (this.X + dp) - AndroidUtilities.dp(16.0f);
-        qzVar.p1();
+        org.telegram.ui.Components.rz rzVar = this.P;
+        rzVar.M = (this.X + dp) - AndroidUtilities.dp(16.0f);
+        rzVar.p1();
         this.P.S = dp;
     }
 

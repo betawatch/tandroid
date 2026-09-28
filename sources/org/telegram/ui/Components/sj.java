@@ -1,35 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ContactsController;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sj implements xj {
+public final /* synthetic */ class sj implements yj {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ ContactsController.Contact b;
 
-    public /* synthetic */ sj(int i10, TLRPC.User user) {
+    public /* synthetic */ sj(ContactsController.Contact contact, int i10) {
         this.a = i10;
-        this.b = user;
+        this.b = contact;
     }
 
-    @Override // org.telegram.ui.Components.xj
+    @Override // org.telegram.ui.Components.yj
     public final String run() {
-        gf.b c10;
-        StringBuilder sb2;
-        String str;
         switch (this.a) {
             case 0:
-                c10 = gf.b.c();
-                sb2 = new StringBuilder("+");
-                str = this.b.phone;
-                break;
+                ContactsController.Contact contact = this.b;
+                return contact.phones.isEmpty() ? "" : gf.b.c().b(contact.phones.get(0));
             default:
-                c10 = gf.b.c();
-                sb2 = new StringBuilder("+");
-                str = this.b.phone;
-                break;
+                ContactsController.Contact contact2 = this.b;
+                return contact2.phones.isEmpty() ? "" : gf.b.c().b(contact2.phones.get(0));
         }
-        return org.telegram.messenger.ok.h(sb2, str, c10);
     }
 }

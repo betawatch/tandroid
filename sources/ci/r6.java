@@ -17,11 +17,11 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.a30;
-import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.c30;
+import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.pg0;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.rg0;
+import org.telegram.ui.Components.sr;
 import org.telegram.ui.a71;
 import org.telegram.ui.bf0;
 import org.telegram.ui.g70;
@@ -35,7 +35,7 @@ import org.telegram.ui.wz;
 import org.telegram.ui.z81;
 import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class r6 extends View implements le.e {
     public final /* synthetic */ int a;
@@ -120,11 +120,11 @@ public final class r6 extends View implements le.e {
                 Paint paint = (Paint) this.b;
                 paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
                 canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(10.0f), paint);
-                pg0 pg0Var = (pg0) this.c;
-                pg0Var.setBounds(0, 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
+                rg0 rg0Var = (rg0) this.c;
+                rg0Var.setBounds(0, 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
                 canvas.save();
                 canvas.translate((getWidth() - AndroidUtilities.dp(10.0f)) / 2.0f, (getHeight() - AndroidUtilities.dp(10.0f)) / 2.0f);
-                pg0Var.draw(canvas);
+                rg0Var.draw(canvas);
                 canvas.restore();
                 break;
             case 1:
@@ -319,42 +319,42 @@ public final class r6 extends View implements le.e {
                 break;
             case 6:
                 Paint paint7 = (Paint) this.b;
-                a30 a30Var = (a30) this.c;
-                boolean z11 = a30Var.y;
+                c30 c30Var = (c30) this.c;
+                boolean z11 = c30Var.y;
                 if (z11) {
-                    float f16 = a30Var.E;
+                    float f16 = c30Var.E;
                     if (f16 != 1.0f) {
                         float f17 = f16 + 0.064f;
-                        a30Var.E = f17;
+                        c30Var.E = f17;
                         if (f17 > 1.0f) {
-                            a30Var.E = 1.0f;
+                            c30Var.E = 1.0f;
                         }
                         invalidate();
-                        paint7.setColor(i0.a.d(a30Var.E, 1711607061, 1714752530));
-                        canvas.drawCircle(getMeasuredWidth() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(25.0f), (AndroidUtilities.dp(5.0f) * a30Var.E) + AndroidUtilities.dp(35.0f), paint7);
+                        paint7.setColor(i0.a.d(c30Var.E, 1711607061, 1714752530));
+                        canvas.drawCircle(getMeasuredWidth() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(25.0f), (AndroidUtilities.dp(5.0f) * c30Var.E) + AndroidUtilities.dp(35.0f), paint7);
                         break;
                     }
                 }
                 if (!z11) {
-                    float f18 = a30Var.E;
+                    float f18 = c30Var.E;
                     if (f18 != 0.0f) {
                         float f19 = f18 - 0.064f;
-                        a30Var.E = f19;
+                        c30Var.E = f19;
                         if (f19 < 0.0f) {
-                            a30Var.E = 0.0f;
+                            c30Var.E = 0.0f;
                         }
                         invalidate();
                     }
                 }
-                paint7.setColor(i0.a.d(a30Var.E, 1711607061, 1714752530));
-                canvas.drawCircle(getMeasuredWidth() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(25.0f), (AndroidUtilities.dp(5.0f) * a30Var.E) + AndroidUtilities.dp(35.0f), paint7);
+                paint7.setColor(i0.a.d(c30Var.E, 1711607061, 1714752530));
+                canvas.drawCircle(getMeasuredWidth() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(25.0f), (AndroidUtilities.dp(5.0f) * c30Var.E) + AndroidUtilities.dp(35.0f), paint7);
             case 7:
                 canvas.drawColor(855638016);
-                g90 g90Var = (g90) this.c;
-                FrameLayout frameLayout = g90Var.n;
+                i90 i90Var = (i90) this.c;
+                FrameLayout frameLayout = i90Var.n;
                 FrameLayout frameLayout2 = (FrameLayout) this.b;
-                float[] fArr = g90Var.I;
-                g90.a(frameLayout, frameLayout2, fArr);
+                float[] fArr = i90Var.I;
+                i90.a(frameLayout, frameLayout2, fArr);
                 canvas.save();
                 float y3 = frameLayout.getY() + ((View) frameLayout.getParent()).getY();
                 if (y3 < 1.0f) {
@@ -518,7 +518,7 @@ public final class r6 extends View implements le.e {
                 break;
             case 6:
                 super.setAlpha(f7);
-                ((a30) this.c).d.setAlpha(f7);
+                ((c30) this.c).d.setAlpha(f7);
                 break;
         }
     }
@@ -528,7 +528,7 @@ public final class r6 extends View implements le.e {
         switch (this.a) {
             case 6:
                 super.setScaleX(f7);
-                ((a30) this.c).d.setScaleX(f7);
+                ((c30) this.c).d.setScaleX(f7);
                 break;
             default:
                 super.setScaleX(f7);
@@ -541,7 +541,7 @@ public final class r6 extends View implements le.e {
         switch (this.a) {
             case 6:
                 super.setScaleY(f7);
-                ((a30) this.c).d.setScaleY(f7);
+                ((c30) this.c).d.setScaleY(f7);
                 break;
             default:
                 super.setScaleY(f7);
@@ -554,7 +554,7 @@ public final class r6 extends View implements le.e {
         switch (this.a) {
             case 6:
                 super.setTranslationY(f7);
-                ((a30) this.c).d.setTranslationY(f7);
+                ((c30) this.c).d.setTranslationY(f7);
                 break;
             default:
                 super.setTranslationY(f7);
@@ -583,7 +583,7 @@ public final class r6 extends View implements le.e {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 0:
-                return drawable == ((pg0) this.c) || super.verifyDrawable(drawable);
+                return drawable == ((rg0) this.c) || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -593,7 +593,7 @@ public final class r6 extends View implements le.e {
     public r6(Context context, org.telegram.ui.ActionBar.b5 b5Var) {
         super(context);
         this.a = 11;
-        this.c = new le.c(0, this, rr.h, 380L, true);
+        this.c = new le.c(0, this, sr.h, 380L, true);
         this.b = b5Var;
     }
 
@@ -603,13 +603,13 @@ public final class r6 extends View implements le.e {
         this.a = 0;
         Paint paint = new Paint(1);
         this.b = paint;
-        pg0 pg0Var = new pg0(10);
-        this.c = pg0Var;
+        rg0 rg0Var = new rg0(10);
+        this.c = rg0Var;
         paint.setColor(-1);
         paint.setShadowLayer(1.0f, 0.0f, 0.0f, 419430400);
         paint.setStyle(Paint.Style.STROKE);
-        pg0Var.setCallback(this);
-        pg0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        rg0Var.setCallback(this);
+        rg0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -621,10 +621,10 @@ public final class r6 extends View implements le.e {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r6(a30 a30Var, Context context) {
+    public r6(c30 c30Var, Context context) {
         super(context);
         this.a = 6;
-        this.c = a30Var;
+        this.c = c30Var;
         this.b = new Paint(1);
     }
 

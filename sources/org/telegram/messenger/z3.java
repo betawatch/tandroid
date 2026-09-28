@@ -5,7 +5,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class z3 implements Utilities.Callback2 {
                 ((GiftAuctionController) this.b).lambda$sendBid$9((Utilities.Callback2) this.c, (GiftAuctionController.AuctionInternal) this.d, (TLRPC.TL_payments_getPaymentForm) this.e, (TLRPC.PaymentForm) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                ((MediaDataController) this.b).lambda$searchStickers$247((MediaDataController.SearchStickersKey) this.c, (MediaDataController.SearchStickersResult) this.d, (Utilities.Callback) this.e, (TLRPC.messages_FoundStickers) obj, (TLRPC.TL_error) obj2);
+                ((MediaDataController) this.b).lambda$searchStickers$248((MediaDataController.SearchStickersKey) this.c, (MediaDataController.SearchStickersResult) this.d, (Utilities.Callback) this.e, (TLRPC.messages_FoundStickers) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
                 ((MediaDataController) this.b).lambda$getStickerSet$38((String) this.c, (Utilities.Callback) this.d, (TLRPC.InputStickerSet) this.e, (Boolean) obj, (TLRPC.TL_messages_stickerSet) obj2);

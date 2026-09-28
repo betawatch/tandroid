@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.ContextThemeWrapper;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class jd extends RadialProgressView {
     public final /* synthetic */ int K;
     public final /* synthetic */ Object L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jd(org.telegram.ui.Components.u40 u40Var, Context context, int i10) {
+    public /* synthetic */ jd(org.telegram.ui.Components.w40 w40Var, Context context, int i10) {
         super(context, null);
         this.K = i10;
-        this.L = u40Var;
+        this.L = w40Var;
     }
 
     @Override // android.view.View

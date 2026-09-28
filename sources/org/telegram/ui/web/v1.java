@@ -32,10 +32,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.e5;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.i00;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.x80;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.j00;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.z80;
 import org.telegram.ui.c70;
 import org.telegram.ui.g20;
 import org.telegram.ui.i4;
@@ -45,7 +45,7 @@ import org.telegram.ui.v3;
 import org.telegram.ui.xd;
 import w7.y5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class v1 extends FrameLayout {
     public boolean A0;
@@ -75,7 +75,7 @@ public abstract class v1 extends FrameLayout {
     public float c;
     public int c0;
     public final float[] d;
-    public final x80 d0;
+    public final z80 d0;
     public final boolean[] e;
     public boolean e0;
     public final Paint[] f;
@@ -194,7 +194,7 @@ public abstract class v1 extends FrameLayout {
                         if (l0Var2.getParent() instanceof ViewGroup) {
                             x7 x7Var = new x7(l0Var2, 2);
                             Utilities.Callback callback2 = null;
-                            y70 F = y70.F((ViewGroup) l0Var2.getParent(), null, l0Var2.R);
+                            a80 F = a80.F((ViewGroup) l0Var2.getParent(), null, l0Var2.R);
                             F.s = 0;
                             F.S(l0Var2.m0, l0Var2.n0);
                             F.a0(0.0f, -AndroidUtilities.dp(52.0f));
@@ -391,7 +391,7 @@ public abstract class v1 extends FrameLayout {
                         if (l0Var2.getParent() instanceof ViewGroup) {
                             x7 x7Var = new x7(l0Var2, 2);
                             Utilities.Callback callback2 = null;
-                            y70 F = y70.F((ViewGroup) l0Var2.getParent(), null, l0Var2.R);
+                            a80 F = a80.F((ViewGroup) l0Var2.getParent(), null, l0Var2.R);
                             F.s = 0;
                             F.S(l0Var2.m0, l0Var2.n0);
                             F.a0(0.0f, -AndroidUtilities.dp(52.0f));
@@ -478,11 +478,11 @@ public abstract class v1 extends FrameLayout {
             }
         });
         addView(imageView4, y5.e(54, 56, 85));
-        x80 x80Var = new x80(context);
-        this.d0 = x80Var;
-        x80Var.setPivotX(0.0f);
-        x80Var.setPivotY(AndroidUtilities.dp(2.0f));
-        addView(x80Var, y5.e(-1, 2, 87));
+        z80 z80Var = new z80(context);
+        this.d0 = z80Var;
+        z80Var.setPivotX(0.0f);
+        z80Var.setPivotY(AndroidUtilities.dp(2.0f));
+        addView(z80Var, y5.e(-1, 2, 87));
         setWillNotDraw(false);
         this.b[0] = new u1(l0Var);
         this.b[1] = new u1(l0Var);
@@ -598,7 +598,7 @@ public abstract class v1 extends FrameLayout {
                     v1Var.c(i0.a.d(floatValue, v1Var.h0, i10), AndroidUtilities.lerp(f10, f11, floatValue), false);
                 }
             });
-            this.k0.addListener(new i00(this, i10, f11, 1));
+            this.k0.addListener(new j00(this, i10, f11, 1));
             this.k0.start();
             return;
         }
@@ -810,7 +810,7 @@ public abstract class v1 extends FrameLayout {
         this.t0 = ofFloat;
         ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 6));
         this.t0.addListener(new c70(12, this, z10));
-        this.t0.setInterpolator(rr.h);
+        this.t0.setInterpolator(sr.h);
         this.t0.setDuration(320L);
         this.t0.start();
         boolean z12 = !z10;

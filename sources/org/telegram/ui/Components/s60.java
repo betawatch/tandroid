@@ -1,47 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s60 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ vl0 h;
+public final class s60 extends s4.s0 {
+    public final /* synthetic */ s4.c0 a;
+    public final /* synthetic */ e70 b;
 
-    public /* synthetic */ s60(vl0 vl0Var, TLRPC.User user, String str, boolean z10, boolean z11, boolean z12, int i10) {
-        this.a = i10;
-        this.h = vl0Var;
-        this.b = user;
-        this.c = str;
-        this.d = z10;
-        this.e = z11;
-        this.f = z12;
+    public s60(e70 e70Var, s4.c0 c0Var) {
+        this.b = e70Var;
+        this.a = c0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        switch (this.a) {
-            case 0:
-                c70 c70Var = ((x60) this.h).c;
-                Context context = c70Var.getContext();
-                i10 = ((org.telegram.ui.ActionBar.e3) c70Var).currentAccount;
-                long j3 = -c70Var.g0;
-                d6Var = ((org.telegram.ui.ActionBar.e3) c70Var).resourcesProvider;
-                l01.b(context, i10, j3, this.b, this.c, this.d, this.e, this.f, d6Var);
-                break;
-            default:
-                jv0 jv0Var = ((tt0) this.h).f;
-                l01.b(jv0Var.getContext(), jv0Var.v1.getCurrentAccount(), jv0Var.j1, this.b, this.c, this.d, this.e, this.f, jv0Var.F1);
-                break;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        e70 e70Var = this.b;
+        e70.O(e70Var);
+        if (!e70Var.R || e70Var.Q) {
+            return;
+        }
+        if (e70Var.S - this.a.N0() < 10) {
+            e70Var.X();
         }
     }
 }

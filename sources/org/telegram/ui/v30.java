@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class v30 extends org.telegram.ui.Components.voip.m0 {
     public final /* synthetic */ d60 Q0;
@@ -32,7 +32,7 @@ public final class v30 extends org.telegram.ui.Components.voip.m0 {
         b60 b60Var = d60Var.B1;
         z40 z40Var = d60Var.O;
         j50 j50Var = d60Var.Q;
-        org.telegram.ui.Components.t20 t20Var = d60Var.p2;
+        org.telegram.ui.Components.v20 v20Var = d60Var.p2;
         v30 v30Var = d60Var.a2;
         r30 r30Var = d60Var.m2;
         d60Var.s0 = z10;
@@ -57,10 +57,10 @@ public final class v30 extends org.telegram.ui.Components.voip.m0 {
             d60Var.e.requestLayout();
             if (r30Var.getVisibility() != 0) {
                 r30Var.setVisibility(0);
-                t20Var.F(r30Var, true);
-                t20Var.G(r30Var, false);
+                v20Var.F(r30Var, true);
+                v20Var.G(r30Var, false);
             } else {
-                t20Var.F(r30Var, true);
+                v20Var.F(r30Var, true);
                 d60Var.O0(true);
             }
         } else {
@@ -72,7 +72,7 @@ public final class v30 extends org.telegram.ui.Components.voip.m0 {
                 }
             } else {
                 r30Var.setVisibility(8);
-                t20Var.F(r30Var, false);
+                v20Var.F(r30Var, false);
             }
             if (r30Var.getVisibility() == 0) {
                 for (int i10 = 0; i10 < r30Var.getChildCount(); i10++) {
@@ -82,7 +82,7 @@ public final class v30 extends org.telegram.ui.Components.voip.m0 {
                     childAt.setScaleY(1.0f);
                     childAt.setTranslationX(0.0f);
                     childAt.setTranslationY(0.0f);
-                    ((org.telegram.ui.Components.s20) childAt).setProgressToFullscreen(v30Var.c);
+                    ((org.telegram.ui.Components.u20) childAt).setProgressToFullscreen(v30Var.c);
                 }
             }
         }

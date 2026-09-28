@@ -4,7 +4,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class om extends org.telegram.ui.ActionBar.o1 {
     public final /* synthetic */ pm x;
@@ -51,7 +51,7 @@ public final class om extends org.telegram.ui.ActionBar.o1 {
     @Override // org.telegram.ui.ActionBar.o1
     public final void e(float f7, float f10, boolean z10) {
         org.telegram.ui.ActionBar.k kVar;
-        fj fjVar;
+        org.telegram.ui.Components.w10 w10Var;
         pm pmVar = this.x;
         wn wnVar = pmVar.J0;
         if (wnVar.getParentLayout() == null || !((ActionBarLayout) wnVar.getParentLayout()).n) {
@@ -80,9 +80,9 @@ public final class om extends org.telegram.ui.ActionBar.o1 {
                 wnVar.P.setTranslationY(f7 / 2.0f);
                 int i10 = (int) f7;
                 wnVar.X0.setBackgroundTranslation(i10);
-                org.telegram.ui.Components.h60 h60Var = wnVar.b3;
-                if (h60Var != null) {
-                    h60Var.e(f7);
+                org.telegram.ui.Components.j60 j60Var = wnVar.b3;
+                if (j60Var != null) {
+                    j60Var.e(f7);
                 }
                 ci.r6 r6Var = wnVar.y2;
                 if (r6Var != null) {
@@ -109,15 +109,15 @@ public final class om extends org.telegram.ui.ActionBar.o1 {
                     qyVar.X4();
                 }
             }
-            org.telegram.ui.Components.j40 j40Var = wnVar.s2;
-            if (j40Var != null && j40Var.getVisibility() == 0) {
+            org.telegram.ui.Components.l40 l40Var = wnVar.s2;
+            if (l40Var != null && l40Var.getVisibility() == 0) {
                 wnVar.s2.f(wnVar.Y.getAudioVideoButtonContainer(), false);
             }
             ek ekVar = wnVar.X1;
-            if (ekVar == null || (fjVar = ekVar.A0) == null) {
+            if (ekVar == null || (w10Var = ekVar.A0) == null) {
                 return;
             }
-            fjVar.setExtraTranslationY(AndroidUtilities.dp(72.0f) + f7);
+            w10Var.setExtraTranslationY(AndroidUtilities.dp(72.0f) + f7);
         }
     }
 
@@ -130,8 +130,8 @@ public final class om extends org.telegram.ui.ActionBar.o1 {
             jeVar.run();
             jkVar.u0 = null;
         }
-        org.telegram.ui.Components.j40 j40Var = wnVar.s2;
-        if (j40Var == null || j40Var.getVisibility() != 0) {
+        org.telegram.ui.Components.l40 l40Var = wnVar.s2;
+        if (l40Var == null || l40Var.getVisibility() != 0) {
             return;
         }
         wnVar.s2.f(wnVar.Y.getAudioVideoButtonContainer(), false);
@@ -154,9 +154,9 @@ public final class om extends org.telegram.ui.ActionBar.o1 {
                 jkVar.W.run();
             }
         }
-        org.telegram.ui.Components.j40 j40Var = wnVar.f2;
-        if (j40Var != null) {
-            j40Var.b(false);
+        org.telegram.ui.Components.l40 l40Var = wnVar.f2;
+        if (l40Var != null) {
+            l40Var.b(false);
         }
         ci.e4 e4Var = wnVar.A1;
         if (e4Var != null) {

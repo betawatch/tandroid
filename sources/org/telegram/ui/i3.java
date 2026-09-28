@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class i3 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -203,7 +203,7 @@ public final class i3 extends s4.s0 {
         org.telegram.ui.ActionBar.k kVar;
         ah.h hVar;
         ah.h hVar2;
-        org.telegram.ui.Components.j40 j40Var;
+        org.telegram.ui.Components.l40 l40Var;
         ah.h hVar3;
         ViewGroup viewGroup;
         ah.h hVar4;
@@ -357,12 +357,12 @@ public final class i3 extends s4.s0 {
                 break;
             case 23:
                 rv0 rv0Var = (rv0) obj;
-                if (i11 != 0 && (j40Var = rv0Var.h) != null) {
-                    j40Var.b(true);
+                if (i11 != 0 && (l40Var = rv0Var.h) != null) {
+                    l40Var.b(true);
                 }
-                org.telegram.ui.Components.xy0 xy0Var = rv0Var.Q;
-                if (xy0Var != null && xy0Var.s) {
-                    org.telegram.ui.Components.vy0 delegate = xy0Var.getDelegate();
+                org.telegram.ui.Components.zy0 zy0Var = rv0Var.Q;
+                if (zy0Var != null && zy0Var.s) {
+                    org.telegram.ui.Components.xy0 delegate = zy0Var.getDelegate();
                     if (!(delegate instanceof org.telegram.ui.Cells.d6)) {
                         rv0Var.Q.f();
                         break;

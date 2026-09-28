@@ -5,19 +5,19 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.vp;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class va extends TextView {
     public boolean a;
     public final org.telegram.ui.Components.e6 b;
-    public up c;
+    public vp c;
 
     public va(Context context) {
         super(context);
-        this.b = new org.telegram.ui.Components.e6(this, 0L, 350L, rr.h);
+        this.b = new org.telegram.ui.Components.e6(this, 0L, 350L, sr.h);
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -53,9 +53,9 @@ public final class va extends TextView {
             canvas2 = canvas;
         }
         if (this.c == null) {
-            up upVar = new up(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(2.0f), getCurrentTextColor());
-            this.c = upVar;
-            upVar.setCallback(this);
+            vp vpVar = new vp(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(2.0f), getCurrentTextColor());
+            this.c = vpVar;
+            vpVar.setCallback(this);
         }
         this.c.b(getCurrentTextColor());
         float f10 = 1.0f - e;

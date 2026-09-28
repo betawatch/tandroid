@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class on extends org.telegram.ui.ActionBar.e5 {
     public float f;
@@ -241,7 +241,7 @@ public final class on extends org.telegram.ui.ActionBar.e5 {
         wnVar.Wc(false);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f, 0.0f);
         ofFloat.addUpdateListener(new nn(this, 1));
-        ofFloat.setInterpolator(org.telegram.ui.Components.rr.h);
+        ofFloat.setInterpolator(org.telegram.ui.Components.sr.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         wnVar.xc.a(false, true);
@@ -285,14 +285,14 @@ public final class on extends org.telegram.ui.ActionBar.e5 {
             if (fjVar != null) {
                 fjVar.b(true);
             }
-            org.telegram.ui.Components.j40 j40Var = wnVar.i2;
-            if (j40Var != null) {
-                j40Var.b(true);
+            org.telegram.ui.Components.l40 l40Var = wnVar.i2;
+            if (l40Var != null) {
+                l40Var.b(true);
             }
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f, 1.0f);
         ofFloat.addUpdateListener(new nn(this, 0));
-        ofFloat.setInterpolator(org.telegram.ui.Components.rr.h);
+        ofFloat.setInterpolator(org.telegram.ui.Components.sr.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         vk vkVar = wnVar.o1;
@@ -351,14 +351,14 @@ public final class on extends org.telegram.ui.ActionBar.e5 {
             if (wnVar.t3.contains("@")) {
                 String str = wnVar.t3;
                 d6Var = ((org.telegram.ui.ActionBar.m2) wnVar).resourceProvider;
-                wnVar.presentFragment(new org.telegram.ui.Components.c40(str, d6Var));
+                wnVar.presentFragment(new org.telegram.ui.Components.e40(str, d6Var));
                 return;
             }
             if (wnVar.u3 == null) {
                 wnVar.u3 = wnVar.t3;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f, 1.0f);
                 ofFloat.addUpdateListener(new nn(this, 2));
-                ofFloat.setInterpolator(org.telegram.ui.Components.rr.h);
+                ofFloat.setInterpolator(org.telegram.ui.Components.sr.h);
                 ofFloat.setDuration(320L);
                 ofFloat.start();
                 vk vkVar = wnVar.o1;

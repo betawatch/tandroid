@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ov implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,9 +63,9 @@ public final /* synthetic */ class ov implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 qy qyVar = (qy) this.b;
-                org.telegram.ui.Components.y70 y70Var = (org.telegram.ui.Components.y70) this.c;
+                org.telegram.ui.Components.a80 a80Var = (org.telegram.ui.Components.a80) this.c;
                 qyVar.getClass();
-                y70Var.u();
+                a80Var.u();
                 qyVar.presentFragment(new ProxyListActivity());
                 break;
             case 1:
@@ -153,9 +153,9 @@ public final /* synthetic */ class ov implements View.OnClickListener {
                 nf.f.s((Context) this.b, ((TL_fragment.TL_collectibleInfo) this.c).url);
                 break;
             case 8:
-                org.telegram.ui.Components.f21 f21Var = (org.telegram.ui.Components.f21) this.b;
+                org.telegram.ui.Components.h21 h21Var = (org.telegram.ui.Components.h21) this.b;
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.c;
-                f21Var.run();
+                h21Var.run();
                 e3Var.dismiss();
                 break;
             case 9:
@@ -172,9 +172,9 @@ public final /* synthetic */ class ov implements View.OnClickListener {
                 new m50((Context) this.c, (n50) this.b).show();
                 break;
             case 11:
-                y70 y70Var2 = (y70) this.b;
-                org.telegram.ui.Components.lj0 lj0Var = (org.telegram.ui.Components.lj0) this.c;
-                y70Var2.getClass();
+                y70 y70Var = (y70) this.b;
+                org.telegram.ui.Components.nj0 nj0Var = (org.telegram.ui.Components.nj0) this.c;
+                y70Var.getClass();
                 if (!qy.w4) {
                     qy.w4 = true;
                     boolean q6 = org.telegram.ui.ActionBar.h6.I.q();
@@ -183,15 +183,15 @@ public final /* synthetic */ class ov implements View.OnClickListener {
                     org.telegram.ui.ActionBar.h6.o = 0;
                     org.telegram.ui.ActionBar.h6.q1();
                     org.telegram.ui.ActionBar.h6.A();
-                    org.telegram.ui.Components.ij0 ij0Var = y70Var2.v;
-                    ij0Var.P(!q6 ? ij0Var.e[0] - 1 : 0);
-                    lj0Var.d();
-                    int[] iArr = {(lj0Var.getMeasuredWidth() / 2) + r7, (lj0Var.getMeasuredHeight() / 2) + r7};
-                    lj0Var.getLocationInWindow(iArr);
+                    org.telegram.ui.Components.kj0 kj0Var = y70Var.v;
+                    kj0Var.P(!q6 ? kj0Var.e[0] - 1 : 0);
+                    nj0Var.d();
+                    int[] iArr = {(nj0Var.getMeasuredWidth() / 2) + r7, (nj0Var.getMeasuredHeight() / 2) + r7};
+                    nj0Var.getLocationInWindow(iArr);
                     int i18 = iArr[0];
                     int i19 = iArr[1];
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), lj0Var);
-                    lj0Var.setContentDescription(LocaleController.getString(!q6 ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), nj0Var);
+                    nj0Var.setContentDescription(LocaleController.getString(!q6 ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
                     break;
                 }
                 break;
@@ -301,12 +301,12 @@ public final /* synthetic */ class ov implements View.OnClickListener {
                 int indexOf = string.indexOf(42);
                 int lastIndexOf = string.lastIndexOf(42);
                 if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                    org.telegram.ui.Components.b11 b11Var = new org.telegram.ui.Components.b11();
-                    b11Var.a |= 256;
-                    b11Var.b = indexOf;
+                    org.telegram.ui.Components.d11 d11Var = new org.telegram.ui.Components.d11();
+                    d11Var.a |= 256;
+                    d11Var.b = indexOf;
                     int i23 = lastIndexOf + 1;
-                    b11Var.c = i23;
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.c11(b11Var, 0), indexOf, i23, 0);
+                    d11Var.c = i23;
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.e11(d11Var, 0), indexOf, i23, 0);
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.LoginEmailResetTitle);
@@ -445,9 +445,9 @@ public final /* synthetic */ class ov implements View.OnClickListener {
                 break;
             case 25:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
-                org.telegram.ui.Components.y70 y70Var3 = (org.telegram.ui.Components.y70) this.c;
+                org.telegram.ui.Components.a80 a80Var2 = (org.telegram.ui.Components.a80) this.c;
                 if (photoViewer.T4 != null) {
-                    y70Var3.u();
+                    a80Var2.u();
                     org.telegram.ui.ActionBar.m2 m2Var2 = photoViewer.m4;
                     if (m2Var2 instanceof wn) {
                         ((wn) m2Var2).J9(photoViewer.T4, false, true);
@@ -478,7 +478,7 @@ public final /* synthetic */ class ov implements View.OnClickListener {
                                 if (photoViewer2.E != null) {
                                     photoViewer2.k1 = new ci.e4(photoViewer2.E, 3);
                                     SpannableStringBuilder append = new SpannableStringBuilder("x ").append((CharSequence) LocaleController.getString(isHighQuality ? R.string.PhotoWillBeSentInHD : R.string.PhotoWillBeSentInSD));
-                                    append.setSpan(new org.telegram.ui.Components.pq(isHighQuality ? R.drawable.menu_quality_hd_filled : R.drawable.menu_quality_sd_filled, 0), 0, 1, 33);
+                                    append.setSpan(new org.telegram.ui.Components.qq(isHighQuality ? R.drawable.menu_quality_hd_filled : R.drawable.menu_quality_sd_filled, 0), 0, 1, 33);
                                     photoViewer2.k1.s(append);
                                     photoViewer2.e0.addView(photoViewer2.k1, w7.y5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 48.0f));
                                     photoViewer2.k1.setTranslationY(photoViewer2.P0.getTranslationY());
@@ -501,38 +501,38 @@ public final /* synthetic */ class ov implements View.OnClickListener {
                     } else if (photoViewer2.k8) {
                         if (photoViewer2.m1 == null) {
                             nu0 nu0Var = photoViewer2.e0;
-                            org.telegram.ui.Components.l21 l21Var = new org.telegram.ui.Components.l21(activity);
-                            l21Var.d = new org.telegram.ui.Components.wq0(l21Var, i11);
-                            l21Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(3.0f), -871296751));
-                            l21Var.setTextColor(-1);
-                            l21Var.setTextSize(1, 14.0f);
-                            l21Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.0f));
-                            l21Var.setGravity(16);
-                            nu0Var.addView(l21Var, w7.y5.d(-2, -2.0f, 51, 5.0f, 0.0f, 5.0f, 3.0f));
-                            l21Var.setVisibility(8);
-                            photoViewer2.m1 = l21Var;
+                            org.telegram.ui.Components.n21 n21Var = new org.telegram.ui.Components.n21(activity);
+                            n21Var.d = new org.telegram.ui.Components.yq0(n21Var, i11);
+                            n21Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(3.0f), -871296751));
+                            n21Var.setTextColor(-1);
+                            n21Var.setTextSize(1, 14.0f);
+                            n21Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(7.0f));
+                            n21Var.setGravity(16);
+                            nu0Var.addView(n21Var, w7.y5.d(-2, -2.0f, 51, 5.0f, 0.0f, 5.0f, 3.0f));
+                            n21Var.setVisibility(8);
+                            photoViewer2.m1 = n21Var;
                         }
                         photoViewer2.m1.setText(LocaleController.getString("VideoQualityIsTooLow", R.string.VideoQualityIsTooLow));
-                        org.telegram.ui.Components.l21 l21Var2 = photoViewer2.m1;
-                        org.telegram.ui.Components.f71 f71Var = photoViewer2.j1;
-                        org.telegram.ui.Components.wq0 wq0Var = l21Var2.d;
-                        if (f71Var != null) {
-                            l21Var2.a = f71Var;
-                            l21Var2.a();
-                            l21Var2.c = true;
-                            AndroidUtilities.cancelRunOnUIThread(wq0Var);
-                            AndroidUtilities.runOnUIThread(wq0Var, 2000L);
-                            ViewPropertyAnimator viewPropertyAnimator = l21Var2.b;
+                        org.telegram.ui.Components.n21 n21Var2 = photoViewer2.m1;
+                        org.telegram.ui.Components.h71 h71Var = photoViewer2.j1;
+                        org.telegram.ui.Components.yq0 yq0Var = n21Var2.d;
+                        if (h71Var != null) {
+                            n21Var2.a = h71Var;
+                            n21Var2.a();
+                            n21Var2.c = true;
+                            AndroidUtilities.cancelRunOnUIThread(yq0Var);
+                            AndroidUtilities.runOnUIThread(yq0Var, 2000L);
+                            ViewPropertyAnimator viewPropertyAnimator = n21Var2.b;
                             if (viewPropertyAnimator != null) {
                                 viewPropertyAnimator.setListener(null);
-                                l21Var2.b.cancel();
-                                l21Var2.b = null;
+                                n21Var2.b.cancel();
+                                n21Var2.b = null;
                             }
-                            if (l21Var2.getVisibility() != 0) {
-                                l21Var2.setAlpha(0.0f);
-                                l21Var2.setVisibility(0);
-                                ViewPropertyAnimator listener = l21Var2.animate().setDuration(300L).alpha(1.0f).setListener(null);
-                                l21Var2.b = listener;
+                            if (n21Var2.getVisibility() != 0) {
+                                n21Var2.setAlpha(0.0f);
+                                n21Var2.setVisibility(0);
+                                ViewPropertyAnimator listener = n21Var2.animate().setDuration(300L).alpha(1.0f).setListener(null);
+                                n21Var2.b = listener;
                                 listener.start();
                                 break;
                             }
@@ -541,7 +541,7 @@ public final /* synthetic */ class ov implements View.OnClickListener {
                 }
                 break;
             case 27:
-                ((org.telegram.ui.Components.y70) this.c).K((org.telegram.ui.Components.y70) this.b);
+                ((org.telegram.ui.Components.a80) this.c).K((org.telegram.ui.Components.a80) this.b);
                 break;
             case 28:
                 PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) this.b;
@@ -567,9 +567,9 @@ public final /* synthetic */ class ov implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ ov(org.telegram.ui.Components.y70 y70Var, org.telegram.ui.Components.y70 y70Var2) {
+    public /* synthetic */ ov(org.telegram.ui.Components.a80 a80Var, org.telegram.ui.Components.a80 a80Var2) {
         this.a = 27;
-        this.c = y70Var;
-        this.b = y70Var2;
+        this.c = a80Var;
+        this.b = a80Var2;
     }
 }

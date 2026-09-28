@@ -44,12 +44,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -167,9 +167,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 return;
             case 5:
                 hg.h1 h1Var = (hg.h1) this.b;
-                v51 v51Var = (v51) this.c;
+                x51 x51Var = (x51) this.c;
                 h1Var.getClass();
-                h1Var.X(v51Var.d);
+                h1Var.X(x51Var.d);
                 return;
             case 6:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -340,7 +340,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 while (i14 < size) {
                     Object obj2 = arrayList6.get(i14);
                     i14++;
-                    ((s71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((u71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 11:
@@ -373,9 +373,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 xVar.c0.set(richMessage);
                 dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.P();
-                j61 j61Var = xVar.Z;
-                if (j61Var != null) {
-                    j61Var.N(true);
+                l61 l61Var = xVar.Z;
+                if (l61Var != null) {
+                    l61Var.N(true);
                     return;
                 }
                 return;

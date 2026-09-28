@@ -30,16 +30,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.Components.gk, NotificationCenter.NotificationCenterDelegate {
+public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.Components.hk, NotificationCenter.NotificationCenterDelegate {
     public int E;
     public int F;
     public int G;
     public qk0 H;
     public boolean I;
     public final SparseArray J;
-    public org.telegram.ui.Components.fo K;
+    public org.telegram.ui.Components.go K;
     public long L;
     public int M;
     public qk0 N;
@@ -50,7 +50,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.teleg
     public final ArrayList b;
     public final ArrayList c;
     public NumberTextView d;
-    public org.telegram.ui.Components.wl0 e;
+    public org.telegram.ui.Components.yl0 e;
     public pk0 f;
     public final org.telegram.ui.ActionBar.d6 h;
     public int n;
@@ -259,9 +259,9 @@ public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.teleg
                 this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsSoundReactions));
             }
         } else {
-            org.telegram.ui.Components.fo foVar = new org.telegram.ui.Components.fo(context, null, false, this.h);
-            this.K = foVar;
-            foVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
+            org.telegram.ui.Components.go goVar = new org.telegram.ui.Components.go(context, null, false, this.h);
+            this.K = goVar;
+            goVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
             this.actionBar.addView(this.K, 0, w7.y5.d(-2, -1.0f, 51, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f));
             if (this.L >= 0) {
                 TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.L));
@@ -293,9 +293,9 @@ public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.teleg
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, this.h));
-        org.telegram.ui.Components.wl0 wl0Var = new org.telegram.ui.Components.wl0(context, null);
-        this.e = wl0Var;
-        wl0Var.p1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.e = yl0Var;
+        yl0Var.p1();
         this.actionBar.setAdaptiveBackground(this.e);
         frameLayout.addView(this.e, w7.y5.c(-1.0f, -1));
         pk0 pk0Var = new pk0(this);
@@ -454,7 +454,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.teleg
         return true;
     }
 
-    @Override // org.telegram.ui.Components.gk
+    @Override // org.telegram.ui.Components.hk
     public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             getMediaDataController().uploadRingtone((String) arrayList.get(i11));
@@ -643,7 +643,7 @@ public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.teleg
         getNotificationCenter().addObserver(this, NotificationCenter.onUserRingtonesUpdated);
     }
 
-    @Override // org.telegram.ui.Components.gk
+    @Override // org.telegram.ui.Components.hk
     public final void w() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
@@ -655,11 +655,11 @@ public final class sk0 extends org.telegram.ui.ActionBar.m2 implements org.teleg
         }
     }
 
-    @Override // org.telegram.ui.Components.gk
+    @Override // org.telegram.ui.Components.hk
     public final /* synthetic */ void O() {
     }
 
-    @Override // org.telegram.ui.Components.gk
+    @Override // org.telegram.ui.Components.hk
     public final /* synthetic */ void l(long j3, ArrayList arrayList, boolean z10, int i10) {
     }
 }

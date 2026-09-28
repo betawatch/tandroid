@@ -6,9 +6,9 @@ import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public final class pc extends ReplacementSpan {
     public View a;
@@ -19,7 +19,7 @@ public final class pc extends ReplacementSpan {
     public boolean r;
     public int b = 1;
     public int c = 2;
-    public final rr h = new rr(0.0f, 0.5f, 0.5f, 1.0f);
+    public final sr h = new sr(0.0f, 0.5f, 0.5f, 1.0f);
 
     public final void a(org.telegram.ui.Cells.w0 w0Var) {
         this.a = w0Var;

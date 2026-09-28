@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fr implements q0.a {
     public final /* synthetic */ int a;
@@ -30,15 +30,15 @@ public final /* synthetic */ class fr implements q0.a {
                 break;
             case 2:
                 View view2 = (View) obj;
-                if (view2 instanceof org.telegram.ui.Components.tn0) {
-                    ((org.telegram.ui.Components.tn0) view2).a(false, true);
+                if (view2 instanceof org.telegram.ui.Components.vn0) {
+                    ((org.telegram.ui.Components.vn0) view2).a(false, true);
                     break;
                 }
                 break;
             default:
                 View view3 = (View) obj;
-                if (view3 instanceof org.telegram.ui.Components.tn0) {
-                    ((org.telegram.ui.Components.tn0) view3).a(false, true);
+                if (view3 instanceof org.telegram.ui.Components.vn0) {
+                    ((org.telegram.ui.Components.vn0) view3).a(false, true);
                     break;
                 }
                 break;

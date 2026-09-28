@@ -3,14 +3,14 @@ package i2;
 import java.util.Set;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.kn0;
+import org.telegram.ui.Components.bg0;
+import org.telegram.ui.Components.mn0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.zf0;
 import org.telegram.ui.b10;
 import yh.s5;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,12 +38,12 @@ public final /* synthetic */ class g0 implements Runnable {
                 fVar.q(p5, 1033, new hg.r(p5, i10, i11, this.b));
                 break;
             case 1:
-                ((zf0) this.d).a.b.x3(this.c, this.b);
+                ((bg0) this.d).a.b.x3(this.c, this.b);
                 break;
             case 2:
-                kn0 kn0Var = (kn0) this.d;
-                kn0Var.o = null;
-                kn0Var.c(this.c, this.b, true);
+                mn0 mn0Var = (mn0) this.d;
+                mn0Var.o = null;
+                mn0Var.c(this.c, this.b, true);
                 break;
             case 3:
                 xc a02 = xc.a0((b10) this.d);

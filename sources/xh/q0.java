@@ -3,9 +3,9 @@ package xh;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.l61;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class q0 implements Utilities.Callback {
                     r1Var2.Z = c10;
                     if (!((ArrayList) c10).isEmpty()) {
                         r1Var2.W();
-                        j61 j61Var = r1Var2.Y;
-                        if (j61Var != null) {
-                            j61Var.N(true);
+                        l61 l61Var = r1Var2.Y;
+                        if (l61Var != null) {
+                            l61Var.N(true);
                             break;
                         }
                     }

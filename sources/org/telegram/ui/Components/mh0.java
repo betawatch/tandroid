@@ -1,105 +1,157 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.R;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityNodeProvider;
+import android.widget.Button;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.ui.ProfileActivity;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
-public final class mh0 {
-    public static final mh0 E;
-    public static final mh0 F;
-    public static final mh0 G;
-    public static final mh0 H;
-    public static final mh0 I;
-    public static final mh0 J;
-    public static final mh0 K;
-    public static final /* synthetic */ mh0[] L;
-    public static final mh0 d;
-    public static final mh0 e;
-    public static final mh0 f;
-    public static final mh0 h;
-    public static final mh0 n;
-    public static final mh0 r;
-    public static final mh0 s;
-    public static final mh0 v;
-    public static final mh0 w;
-    public static final mh0 x;
-    public static final mh0 y;
-    public final int a;
-    public final int b;
-    public final int c;
+public class mh0 extends AccessibilityNodeProvider {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
 
-    static {
-        int i10 = R.string.ProfileActionsMessage;
-        int i11 = R.drawable.filled_profile_message_24;
-        int i12 = R.drawable.outline_profile_message_24;
-        mh0 mh0Var = new mh0("MESSAGE", 0, i10, i11, i12);
-        d = mh0Var;
-        mh0 mh0Var2 = new mh0("NOTIFICATION_MUTE", 1, R.string.ProfileButtonMute, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24);
-        e = mh0Var2;
-        mh0 mh0Var3 = new mh0("NOTIFICATION_UNMUTE", 2, R.string.ProfileButtonUnmute, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24);
-        f = mh0Var3;
-        mh0 mh0Var4 = new mh0("DISCUSS", 3, R.string.ProfileActionsDiscuss, i11, i12);
-        h = mh0Var4;
-        mh0 mh0Var5 = new mh0("GIFT", 4, R.string.ProfileActionsGift, R.drawable.gift, R.drawable.input_gift_s);
-        n = mh0Var5;
-        mh0 mh0Var6 = new mh0("SHARE", 5, R.string.ProfileActionsShare, R.drawable.action_share, R.drawable.msg_share);
-        r = mh0Var6;
-        mh0 mh0Var7 = new mh0("CALL", 6, R.string.ProfileActionsCall, R.drawable.filled_profile_call_24, R.drawable.outline_profile_call_24);
-        s = mh0Var7;
-        mh0 mh0Var8 = new mh0("VIDEO", 7, R.string.ProfileActionsVideo, R.drawable.filled_profile_video_24, R.drawable.outline_profile_video_24);
-        v = mh0Var8;
-        mh0 mh0Var9 = new mh0("JOIN", 8, R.string.ProfileActionsJoin, R.drawable.filled_profile_member_24, R.drawable.outline_profile_member_24);
-        w = mh0Var9;
-        mh0 mh0Var10 = new mh0("REPORT", 9, R.string.ProfileActionsReport, R.drawable.report, R.drawable.msg_report);
-        x = mh0Var10;
-        int i13 = R.string.ProfileActionsLeave;
-        int i14 = R.drawable.leave;
-        mh0 mh0Var11 = new mh0("LEAVE", 10, i13, i14, i14);
-        y = mh0Var11;
-        int i15 = R.string.ProfileActionsVoiceChat;
-        int i16 = R.drawable.live_stream;
-        mh0 mh0Var12 = new mh0("VOICE_CHAT", 11, i15, i16, i16);
-        E = mh0Var12;
-        mh0 mh0Var13 = new mh0("STREAM", 12, R.string.ProfileActionsLiveStream, i16, i16);
-        F = mh0Var13;
-        mh0 mh0Var14 = new mh0("STORY", 13, R.string.ProfileActionsAddStory, R.drawable.filled_profile_story, R.drawable.outline_profile_story);
-        G = mh0Var14;
-        mh0 mh0Var15 = new mh0("STOP", 14, R.string.ProfileActionsStop, R.drawable.filled_profile_stop_24, R.drawable.outline_profile_stop_24);
-        H = mh0Var15;
-        mh0 mh0Var16 = new mh0("SET_PHOTO", 15, R.string.ProfileActionsEditPhoto2, R.drawable.filled_profile_photo, R.drawable.outline_profile_photo);
-        I = mh0Var16;
-        int i17 = R.string.ProfileActionsEditUsername;
-        int i18 = R.drawable.filled_profile_edit_24;
-        int i19 = R.drawable.outline_profile_edit_24;
-        mh0 mh0Var17 = new mh0("EDIT_USERNAME", 16, i17, i18, i19);
-        mh0 mh0Var18 = new mh0("EDIT_INFO", 17, R.string.ProfileActionsEditInfo, i18, i19);
-        J = mh0Var18;
-        mh0 mh0Var19 = new mh0("SETTINGS", 18, R.string.Settings, R.drawable.filled_profile_settings, R.drawable.outline_profile_settings);
-        K = mh0Var19;
-        L = new mh0[]{mh0Var, mh0Var2, mh0Var3, mh0Var4, mh0Var5, mh0Var6, mh0Var7, mh0Var8, mh0Var9, mh0Var10, mh0Var11, mh0Var12, mh0Var13, mh0Var14, mh0Var15, mh0Var16, mh0Var17, mh0Var18, mh0Var19};
+    public mh0(n2.e eVar) {
+        this.b = eVar;
     }
 
-    public mh0(String str, int i10, int i11, int i12, int i13) {
-        this.a = i11;
-        this.b = i12;
-        this.c = i13;
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i10) {
+        nh0 nh0Var;
+        switch (this.a) {
+            case 0:
+                int[] iArr = {0, 0};
+                qh0 qh0Var = (qh0) this.b;
+                ArrayList arrayList = qh0Var.a;
+                qh0Var.getLocationOnScreen(iArr);
+                if (i10 == -1) {
+                    AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(qh0Var);
+                    qh0Var.onInitializeAccessibilityNodeInfo(obtain);
+                    obtain.setEnabled(true);
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        obtain.addChild(qh0Var, ((nh0) arrayList.get(i11)).a);
+                    }
+                    return obtain;
+                }
+                int i12 = 0;
+                while (true) {
+                    if (i12 >= arrayList.size()) {
+                        nh0Var = null;
+                    } else if (((nh0) arrayList.get(i12)).a == i10) {
+                        nh0Var = (nh0) arrayList.get(i12);
+                    } else {
+                        i12++;
+                    }
+                }
+                if (nh0Var != null) {
+                    RectF rectF = nh0Var.d;
+                    if (!rectF.isEmpty()) {
+                        AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
+                        obtain2.setSource(qh0Var, i10);
+                        obtain2.setParent(qh0Var);
+                        obtain2.setPackageName(qh0Var.getContext().getPackageName());
+                        obtain2.addAction(16);
+                        obtain2.addAction(64);
+                        obtain2.setClickable(true);
+                        obtain2.setFocusable(true);
+                        obtain2.setEnabled(true);
+                        obtain2.setVisibleToUser(true);
+                        obtain2.setClassName(Button.class.getName());
+                        obtain2.setText(nh0Var.l.k());
+                        Rect rect = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+                        obtain2.setBoundsInParent(rect);
+                        rect.offset(iArr[0], iArr[1]);
+                        obtain2.setBoundsInScreen(rect);
+                        return obtain2;
+                    }
+                }
+                return null;
+            default:
+                s0.d u10 = ((n2.e) this.b).u(i10);
+                if (u10 == null) {
+                    return null;
+                }
+                return u10.a;
+        }
     }
 
-    public static mh0 valueOf(String str) {
-        return (mh0) Enum.valueOf(mh0.class, str);
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public List findAccessibilityNodeInfosByText(String str, int i10) {
+        switch (this.a) {
+            case 1:
+                ((n2.e) this.b).getClass();
+                return null;
+            default:
+                return super.findAccessibilityNodeInfosByText(str, i10);
+        }
     }
 
-    public static mh0[] values() {
-        return (mh0[]) L.clone();
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public AccessibilityNodeInfo findFocus(int i10) {
+        switch (this.a) {
+            case 1:
+                s0.d v = ((n2.e) this.b).v(i10);
+                if (v == null) {
+                    return null;
+                }
+                return v.a;
+            default:
+                return super.findFocus(i10);
+        }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final boolean performAction(int i10, int i11, Bundle bundle) {
+        nh0 nh0Var;
+        switch (this.a) {
+            case 0:
+                qh0 qh0Var = (qh0) this.b;
+                ArrayList arrayList = qh0Var.a;
+                if (i10 == -1) {
+                    return qh0Var.performAccessibilityAction(i11, bundle);
+                }
+                int i12 = 0;
+                while (true) {
+                    if (i12 >= arrayList.size()) {
+                        nh0Var = null;
+                    } else if (((nh0) arrayList.get(i12)).a == i10) {
+                        nh0Var = (nh0) arrayList.get(i12);
+                    } else {
+                        i12++;
+                    }
+                }
+                if (nh0Var != null) {
+                    if (i11 == 64) {
+                        if (((AccessibilityManager) qh0Var.getContext().getSystemService("accessibility")).isTouchExplorationEnabled()) {
+                            AccessibilityEvent obtain = AccessibilityEvent.obtain(32768);
+                            obtain.setPackageName(qh0Var.getContext().getPackageName());
+                            obtain.setSource(qh0Var, i10);
+                            if (qh0Var.getParent() != null) {
+                                qh0Var.getParent().requestSendAccessibilityEvent(qh0Var, obtain);
+                            }
+                        }
+                    } else if (i11 == 16) {
+                        ph0 ph0Var = qh0Var.F;
+                        if (ph0Var != null) {
+                            ProfileActivity.Y(((org.telegram.ui.by0) ph0Var).b, i10, 0.0f, 0.0f);
+                        }
+                    }
+                    return true;
+                }
+                return false;
+            default:
+                return ((n2.e) this.b).H(i10, i11, bundle);
+        }
+    }
+
+    public mh0(qh0 qh0Var) {
+        this.b = qh0Var;
     }
 }

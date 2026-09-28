@@ -15,7 +15,7 @@ import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes3.dex */
 public final class f3 extends lu0 {
     public final int[] a = new int[2];
@@ -70,7 +70,7 @@ public final class f3 extends lu0 {
     */
     public final void X(int i10) {
         TL_iv.PageBlock pageBlock;
-        org.telegram.ui.Components.s71 s71Var;
+        org.telegram.ui.Components.u71 u71Var;
         TextureView textureView;
         a0.i iVar;
         int i11;
@@ -84,7 +84,7 @@ public final class f3 extends lu0 {
             List list = this.b;
             if (i10 < list.size()) {
                 pageBlock = (TL_iv.PageBlock) list.get(i10);
-                s71Var = PhotoViewer.t1().F2;
+                u71Var = PhotoViewer.t1().F2;
                 textureView = PhotoViewer.t1().B2;
                 SurfaceView surfaceView = PhotoViewer.t1().C2;
                 i4 i4Var = this.c;
@@ -107,10 +107,10 @@ public final class f3 extends lu0 {
                     }
                     i11++;
                 }
-                if (x2Var != null && s71Var != null && textureView != null) {
+                if (x2Var != null && u71Var != null && textureView != null) {
                     long j3 = x2Var.L.video_id;
                     y2 y2Var3 = new y2();
-                    y2Var3.a = s71Var.n();
+                    y2Var3.a = u71Var.n();
                     if (textureView.getSurfaceTexture() != null) {
                         if (Build.VERSION.SDK_INT >= 24) {
                             Surface surface = new Surface(textureView.getSurfaceTexture());
@@ -131,10 +131,10 @@ public final class f3 extends lu0 {
                         x2Var.e.setImageBitmap(bitmap2);
                     }
                 }
-                if (x2Var != null && s71Var != null && surfaceView != null) {
+                if (x2Var != null && u71Var != null && surfaceView != null) {
                     long j10 = x2Var.L.video_id;
                     y2 y2Var4 = new y2();
-                    y2Var4.a = s71Var.n();
+                    y2Var4.a = u71Var.n();
                     if (Build.VERSION.SDK_INT >= 24) {
                         Bitmap createBitmap2 = Bitmap.createBitmap(surfaceView.getMeasuredWidth(), surfaceView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
                         AndroidUtilities.getBitmapFromSurface(surfaceView, createBitmap2);
@@ -153,7 +153,7 @@ public final class f3 extends lu0 {
             }
         }
         pageBlock = null;
-        s71Var = PhotoViewer.t1().F2;
+        u71Var = PhotoViewer.t1().F2;
         textureView = PhotoViewer.t1().B2;
         SurfaceView surfaceView2 = PhotoViewer.t1().C2;
         i4 i4Var2 = this.c;
@@ -170,7 +170,7 @@ public final class f3 extends lu0 {
         if (x2Var != null) {
             long j32 = x2Var.L.video_id;
             y2 y2Var32 = new y2();
-            y2Var32.a = s71Var.n();
+            y2Var32.a = u71Var.n();
             if (textureView.getSurfaceTexture() != null) {
             }
             x2Var.c(y2Var32);
@@ -185,7 +185,7 @@ public final class f3 extends lu0 {
         if (x2Var != null) {
             long j102 = x2Var.L.video_id;
             y2 y2Var42 = new y2();
-            y2Var42.a = s71Var.n();
+            y2Var42.a = u71Var.n();
             if (Build.VERSION.SDK_INT >= 24) {
             }
             x2Var.c(y2Var42);
@@ -212,7 +212,7 @@ public final class f3 extends lu0 {
     }
 
     public final ImageReceiver d0(View view, TL_iv.PageBlock pageBlock, int[] iArr) {
-        org.telegram.ui.Components.gl0 gl0Var;
+        org.telegram.ui.Components.il0 il0Var;
         ImageReceiver d02;
         ImageReceiver d03;
         VideoPlayerHolderBase videoPlayerHolderBase;
@@ -263,13 +263,13 @@ public final class f3 extends lu0 {
             return null;
         }
         if (view instanceof y1) {
-            org.telegram.ui.Components.gl0 gl0Var2 = ((y1) view).d;
-            if (gl0Var2 == null || (d03 = d0(gl0Var2.a, pageBlock, iArr)) == null) {
+            org.telegram.ui.Components.il0 il0Var2 = ((y1) view).d;
+            if (il0Var2 == null || (d03 = d0(il0Var2.a, pageBlock, iArr)) == null) {
                 return null;
             }
             return d03;
         }
-        if (!(view instanceof b2) || (gl0Var = ((b2) view).d) == null || (d02 = d0(gl0Var.a, pageBlock, iArr)) == null) {
+        if (!(view instanceof b2) || (il0Var = ((b2) view).d) == null || (d02 = d0(il0Var.a, pageBlock, iArr)) == null) {
             return null;
         }
         return d02;

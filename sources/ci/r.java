@@ -23,17 +23,17 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.rr;
-import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-8159789691d0b3bb0641ef1f4646484974d69719884d0b33e845acec3d7c3062 */
+/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
 /* loaded from: classes4.dex */
 public abstract class r extends m {
     public static final int[] Q1 = {21600, 43200, 86400, 172800};
-    public t01 A1;
+    public v01 A1;
     public Utilities.Callback B1;
     public Utilities.Callback C1;
     public p D1;
@@ -52,7 +52,7 @@ public abstract class r extends m {
     public final ImageView S0;
     public final ImageView T0;
     public final l U0;
-    public y70 V0;
+    public a80 V0;
     public boolean W0;
     public int X0;
     public Drawable Y0;
@@ -80,20 +80,20 @@ public abstract class r extends m {
     public final RectF u1;
     public final RectF v1;
     public final Path w1;
-    public t01 x1;
+    public v01 x1;
     public Path y1;
     public Paint z1;
 
-    public r(Context context, FrameLayout frameLayout, aw0 aw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ja jaVar) {
-        super(context, frameLayout, aw0Var, frameLayout2, dVar, jaVar);
+    public r(Context context, FrameLayout frameLayout, cw0 cw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ja jaVar) {
+        super(context, frameLayout, cw0Var, frameLayout2, dVar, jaVar);
         this.W0 = true;
         this.X0 = 0;
         bc bcVar = (bc) this;
         this.a1 = new q(bcVar, bcVar);
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
         this.b1 = o6Var;
-        rr rrVar = rr.f;
-        o6Var.k(0.16f, 50L, rrVar);
+        sr srVar = sr.f;
+        o6Var.k(0.16f, 50L, srVar);
         o6Var.t(AndroidUtilities.dp(15.0f));
         o6Var.u(AndroidUtilities.bold());
         o6Var.q("0:00.0", true, true);
@@ -115,7 +115,7 @@ public abstract class r extends m {
         baVar2.b = AndroidUtilities.dp(55.0f);
         baVar2.b();
         this.j1 = getContext().getResources().getDrawable(R.drawable.input_video_pressed).mutate();
-        this.l1 = new org.telegram.ui.Components.e6(new n(bcVar, 0), 200L, rrVar, 0);
+        this.l1 = new org.telegram.ui.Components.e6(new n(bcVar, 0), 200L, srVar, 0);
         this.m1 = new Path();
         this.n1 = new Path();
         this.o1 = new Paint(1);
@@ -125,16 +125,16 @@ public abstract class r extends m {
         this.r1 = paint3;
         paint3.setStyle(Paint.Style.STROKE);
         n nVar = new n(bcVar, 0);
-        rr rrVar2 = rr.h;
-        this.s1 = new org.telegram.ui.Components.e6(nVar, 350L, rrVar2);
+        sr srVar2 = sr.h;
+        this.s1 = new org.telegram.ui.Components.e6(nVar, 350L, srVar2);
         this.t1 = new RectF();
         this.u1 = new RectF();
         this.v1 = new RectF();
         this.w1 = new Path();
-        this.G1 = new org.telegram.ui.Components.e6(this, 0L, 350L, rrVar2);
-        this.H1 = new org.telegram.ui.Components.e6(new n(bcVar, 0), 420L, rrVar2, 0);
-        this.I1 = new org.telegram.ui.Components.e6(this, 0L, 350L, rrVar2);
-        this.J1 = new org.telegram.ui.Components.e6(new n(bcVar, 0), 350L, rrVar2, 0);
+        this.G1 = new org.telegram.ui.Components.e6(this, 0L, 350L, srVar2);
+        this.H1 = new org.telegram.ui.Components.e6(new n(bcVar, 0), 420L, srVar2, 0);
+        this.I1 = new org.telegram.ui.Components.e6(this, 0L, 350L, srVar2);
+        this.J1 = new org.telegram.ui.Components.e6(new n(bcVar, 0), 350L, srVar2, 0);
         this.P1 = new n(bcVar, 1);
         ImageView imageView = new ImageView(context);
         this.S0 = imageView;
@@ -283,10 +283,10 @@ public abstract class r extends m {
                         imageView.setVisibility(4);
                         this.T0.setVisibility(4);
                         qVar.g = true;
-                        ij0 ij0Var = qVar.h;
-                        ij0Var.T(0.0f, true);
+                        kj0 kj0Var = qVar.h;
+                        kj0Var.T(0.0f, true);
                         if (qVar.f) {
-                            ij0Var.start();
+                            kj0Var.start();
                         }
                         p pVar2 = this.D1;
                         if (pVar2 != null) {
@@ -338,9 +338,9 @@ public abstract class r extends m {
             this.L1 = false;
             this.M1 = false;
             qVar.g = false;
-            ij0 ij0Var2 = qVar.h;
-            ij0Var2.stop();
-            ij0Var2.T(0.0f, true);
+            kj0 kj0Var2 = qVar.h;
+            kj0Var2.stop();
+            kj0Var2.T(0.0f, true);
             this.O1 = true;
             this.e1 = System.currentTimeMillis();
             this.K0 = true;
@@ -449,7 +449,7 @@ public abstract class r extends m {
             }
             if (f7 > 0.0f) {
                 if (this.x1 == null) {
-                    this.x1 = new t01(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
+                    this.x1 = new v01(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
                 }
                 if (this.y1 == null) {
                     Path path = new Path();
@@ -481,7 +481,7 @@ public abstract class r extends m {
             }
             if (e7 > f13) {
                 if (this.A1 == null) {
-                    this.A1 = new t01(LocaleController.getString(R.string.CancelRound), f12, AndroidUtilities.bold());
+                    this.A1 = new v01(LocaleController.getString(R.string.CancelRound), f12, AndroidUtilities.bold());
                 }
                 this.A1.p = (int) ((rectF.width() - AndroidUtilities.dp(116.0f)) - o6Var.d());
                 float width = ((rectF.width() / 4.0f) * f14) + (rectF.centerX() - (this.A1.l() / 2.0f));
@@ -683,12 +683,12 @@ public abstract class r extends m {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         q qVar = this.a1;
-        ij0 ij0Var = qVar.h;
+        kj0 kj0Var = qVar.h;
         qVar.f = true;
         if (qVar.g) {
-            ij0Var.start();
+            kj0Var.start();
         }
-        ij0Var.R(qVar.i);
+        kj0Var.R(qVar.i);
     }
 
     @Override // ci.m, android.view.ViewGroup, android.view.View
@@ -696,9 +696,9 @@ public abstract class r extends m {
         super.onDetachedFromWindow();
         q qVar = this.a1;
         qVar.f = false;
-        ij0 ij0Var = qVar.h;
-        ij0Var.stop();
-        ij0Var.R(null);
+        kj0 kj0Var = qVar.h;
+        kj0Var.stop();
+        kj0Var.R(null);
     }
 
     public void setAmplitude(double d) {
