@@ -25,9 +25,9 @@ import org.telegram.ui.jk;
 import org.telegram.ui.wn;
 import s4.j;
 import w7.y5;
-import yh.s5;
+import yh.t5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class h extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final zf.a X;
@@ -57,7 +57,7 @@ public final class h extends bb implements NotificationCenter.NotificationCenter
         final int i12 = 1;
         d1 d1Var = new d1(context, 1, d6Var);
         this.Y = d1Var;
-        ((TextView) d1Var.c).setText(LocaleController.formatString(R.string.TonNeededTitle, zf.a.i(aVar.b - s5.y(this.currentAccount, true).s().b, zf.b.b).d()));
+        ((TextView) d1Var.c).setText(LocaleController.formatString(R.string.TonNeededTitle, zf.a.i(aVar.b - t5.y(this.currentAccount, true).s().b, zf.b.b).d()));
         TextView textView = (TextView) d1Var.d;
         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
         textView.setMaxWidth(e4.a(textView.getText(), textView.getPaint()));
@@ -123,7 +123,7 @@ public final class h extends bb implements NotificationCenter.NotificationCenter
             if (l61Var != null) {
                 l61Var.N(true);
             }
-            zf.a s10 = s5.y(this.currentAccount, true).s();
+            zf.a s10 = t5.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
             int i12 = R.string.TonNeededTitle;
             zf.a aVar = this.X;
@@ -160,7 +160,7 @@ public final class h extends bb implements NotificationCenter.NotificationCenter
     @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
     public final void show() {
         jk jkVar;
-        if (s5.y(this.currentAccount, true).s().b >= this.X.b) {
+        if (t5.y(this.currentAccount, true).s().b >= this.X.b) {
             Runnable runnable = this.a0;
             if (runnable != null) {
                 runnable.run();

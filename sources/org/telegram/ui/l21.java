@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l21 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,15 +30,15 @@ public final /* synthetic */ class l21 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.xc a02;
+        org.telegram.ui.Components.yc a02;
         int i10 = 0;
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                org.telegram.ui.Components.yc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 1:
                 org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                if (U != null && (a02 = org.telegram.ui.Components.xc.a0(U)) != null) {
+                if (U != null && (a02 = org.telegram.ui.Components.yc.a0(U)) != null) {
                     org.telegram.ui.Components.qc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
                     M.j = 5000;
                     M.j();
@@ -83,7 +83,7 @@ public final /* synthetic */ class l21 implements Runnable {
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
-                AndroidUtilities.runOnUIThread(new p81(28, arrayList, longSparseArray));
+                AndroidUtilities.runOnUIThread(new n81(29, arrayList, longSparseArray));
                 break;
             case 8:
                 try {
@@ -197,7 +197,7 @@ public final /* synthetic */ class l21 implements Runnable {
                 }
                 break;
             case 21:
-                yh.s5[][] s5VarArr = yh.s5.S;
+                yh.t5[][] t5VarArr = yh.t5.S;
                 break;
             default:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);

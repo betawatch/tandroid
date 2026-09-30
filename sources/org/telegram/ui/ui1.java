@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ui1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class ui1 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new p81(22, (vi1) this.b, (int[]) this.c));
+                AndroidUtilities.runOnUIThread(new n81(23, (vi1) this.b, (int[]) this.c));
                 break;
             case 1:
                 AndroidUtilities.runOnUIThread(new jr0((qg.n2) this.b, tLObject, (qg.l2) this.c, tL_error, 25));
@@ -49,7 +49,7 @@ public final /* synthetic */ class ui1 implements RequestDelegate {
                             arrayList.add(user);
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(24, btVar, arrayList));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(25, btVar, arrayList));
                     break;
                 }
                 break;
@@ -72,10 +72,10 @@ public final /* synthetic */ class ui1 implements RequestDelegate {
                 yh.x3.V0((yh.x3) this.b, (org.telegram.ui.ActionBar.a2) this.c, tLObject, tL_error);
                 break;
             case 10:
-                AndroidUtilities.runOnUIThread(new tg.r((yh.s5) this.b, tLObject, tL_error, (Utilities.Callback) this.c, 17));
+                AndroidUtilities.runOnUIThread(new tg.r((yh.t5) this.b, tLObject, tL_error, (Utilities.Callback) this.c, 17));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new tg.r((yh.s5) this.b, tLObject, (Runnable) this.c, 18));
+                AndroidUtilities.runOnUIThread(new tg.r((yh.t5) this.b, tLObject, (Runnable) this.c, 18));
                 break;
         }
     }

@@ -15,10 +15,10 @@ import java.util.concurrent.Executors;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.d60;
-import org.telegram.ui.Components.nv;
+import org.telegram.ui.Components.ov;
 import org.telegram.ui.Components.q01;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class s0 {
     public boolean A;
@@ -45,7 +45,7 @@ public final class s0 {
     public final File c;
     public final l.d d;
     public final p0 e;
-    public final nv f;
+    public final ov f;
     public final i l;
     public final m m;
     public final q0 n;
@@ -463,9 +463,9 @@ public final class s0 {
             return;
         }
         this.v = z10;
-        nv nvVar = this.f;
-        if (nvVar != null) {
-            ((d60) nvVar.b).setScreenFlashEnabled(z10);
+        ov ovVar = this.f;
+        if (ovVar != null) {
+            ((d60) ovVar.b).setScreenFlashEnabled(z10);
         }
     }
 

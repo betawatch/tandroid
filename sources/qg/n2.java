@@ -57,7 +57,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.gr0;
 import org.telegram.ui.l21;
 import org.telegram.ui.ui1;
@@ -66,7 +66,7 @@ import x7.fa;
 import x7.m7;
 import x7.o7;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class n2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -2889,7 +2889,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
         if (tL_error == null || "PACK_TITLE_INVALID".equals(tL_error.text)) {
             return;
         }
-        new xc((FrameLayout) getParent(), this.a0).t(tL_error.text, null).j();
+        new yc((FrameLayout) getParent(), this.a0).t(tL_error.text, null).j();
     }
 
     public final void o() {

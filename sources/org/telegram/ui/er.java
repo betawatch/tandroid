@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class er implements ir {
     public final /* synthetic */ pr a;
@@ -27,7 +27,7 @@ public final class er implements ir {
         a0.i iVar = prVar.K;
         TLRPC.User user = prVar.getMessagesController().getUser(Long.valueOf(j3));
         if (user != null) {
-            AndroidUtilities.runOnUIThread(new fh(23, this, user), 200L);
+            AndroidUtilities.runOnUIThread(new dh(24, this, user), 200L);
         }
         if (iVar.f(j3) == null) {
             jr w02 = prVar.w0();

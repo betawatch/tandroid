@@ -70,7 +70,7 @@ import org.telegram.ui.zh0;
 import org.telegram.ui.zy;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n6 implements ml0 {
     public final /* synthetic */ int a;
@@ -437,8 +437,8 @@ public final /* synthetic */ class n6 implements ml0 {
                                     } else {
                                         ArrayList arrayList4 = new ArrayList(bb0Var.getAdapter().R);
                                         bb0Var.P = arrayList4;
-                                        PhotoViewer.t1().J2(null, bb0Var.h, bb0Var.a);
-                                        PhotoViewer.t1().f2(arrayList4, bb0Var.getAdapter().M(i15), 3, false, bb0Var.Q, null);
+                                        PhotoViewer.t1().K2(null, bb0Var.h, bb0Var.a);
+                                        PhotoViewer.t1().g2(arrayList4, bb0Var.getAdapter().M(i15), 3, false, bb0Var.Q, null);
                                         break;
                                     }
                                 }

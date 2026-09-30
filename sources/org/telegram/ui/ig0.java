@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ig0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                     if (str2 == null || !str2.contains("SESSION_PASSWORD_NEEDED")) {
                         if (str2 != null) {
                             if (BuildVars.DEBUG_VERSION) {
-                                org.telegram.ui.Components.xc.a0(qg0Var).c0(str2, false);
+                                org.telegram.ui.Components.yc.a0(qg0Var).c0(str2, false);
                                 break;
                             }
                         }
@@ -167,7 +167,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                                     Drawable[] drawableArr2 = PhotoViewer.U8;
                                     PhotoViewer photoViewer2 = PhotoViewer.this;
                                     if (i14 == 0) {
-                                        photoViewer2.W1(clickableSpan, textView);
+                                        photoViewer2.X1(clickableSpan, textView);
                                         return;
                                     }
                                     if (i14 == 1) {
@@ -175,7 +175,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                                         AndroidUtilities.addToClipboard(str3);
                                         String string3 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                         if (AndroidUtilities.shouldShowClipboardToast()) {
-                                            new org.telegram.ui.Components.xc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string3).j();
+                                            new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string3).j();
                                         }
                                     }
                                 }
@@ -213,7 +213,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                                 Drawable[] drawableArr2 = PhotoViewer.U8;
                                 PhotoViewer photoViewer2 = PhotoViewer.this;
                                 if (i14 == 0) {
-                                    photoViewer2.W1(clickableSpan, textView);
+                                    photoViewer2.X1(clickableSpan, textView);
                                     return;
                                 }
                                 if (i14 == 1) {
@@ -221,7 +221,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                                     AndroidUtilities.addToClipboard(str3);
                                     String string32 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                     if (AndroidUtilities.shouldShowClipboardToast()) {
-                                        new org.telegram.ui.Components.xc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string32).j();
+                                        new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string32).j();
                                     }
                                 }
                             }
@@ -258,7 +258,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                             Drawable[] drawableArr2 = PhotoViewer.U8;
                             PhotoViewer photoViewer2 = PhotoViewer.this;
                             if (i14 == 0) {
-                                photoViewer2.W1(clickableSpan, textView);
+                                photoViewer2.X1(clickableSpan, textView);
                                 return;
                             }
                             if (i14 == 1) {
@@ -266,7 +266,7 @@ public final /* synthetic */ class ig0 implements Utilities.Callback3 {
                                 AndroidUtilities.addToClipboard(str3);
                                 String string322 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                 if (AndroidUtilities.shouldShowClipboardToast()) {
-                                    new org.telegram.ui.Components.xc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string322).j();
+                                    new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string322).j();
                                 }
                             }
                         }

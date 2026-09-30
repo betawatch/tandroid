@@ -74,7 +74,7 @@ import s4.p0;
 import yh.r2;
 import yh.x3;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public class e implements o0.b, l71, d5, ya0, lg.o, r71, b2, t9, com.google.android.gms.common.api.internal.s, h1, w2.a, lq0, rk0 {
     public final /* synthetic */ int a;
@@ -548,7 +548,7 @@ public class e implements o0.b, l71, d5, ya0, lg.o, r71, b2, t9, com.google.andr
             PhotoViewer photoViewer = ((ls0) ff0Var).a;
             if (photoViewer.c2 == 1) {
                 photoViewer.H2 = true;
-                photoViewer.p3();
+                photoViewer.q3();
             }
         }
     }

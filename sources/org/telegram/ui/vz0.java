@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,13 +50,13 @@ public final /* synthetic */ class vz0 implements Runnable {
                 ((ai.x8) obj).e();
                 break;
             case 7:
-                org.telegram.ui.Components.xc xcVar = (org.telegram.ui.Components.xc) obj;
+                org.telegram.ui.Components.yc ycVar = (org.telegram.ui.Components.yc) obj;
                 if (LaunchActivity.U() != null) {
-                    if (xcVar == null) {
-                        xcVar = org.telegram.ui.Components.xc.a0(LaunchActivity.U());
+                    if (ycVar == null) {
+                        ycVar = org.telegram.ui.Components.yc.a0(LaunchActivity.U());
                     }
-                    if (xcVar != null) {
-                        org.telegram.ui.Components.qc M = xcVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                    if (ycVar != null) {
+                        org.telegram.ui.Components.qc M = ycVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
                         M.j = 5000;
                         M.j();
                         break;

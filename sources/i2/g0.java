@@ -6,11 +6,11 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.bg0;
 import org.telegram.ui.Components.mn0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.b10;
-import yh.s5;
+import yh.t5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 fVar.q(p5, 1033, new hg.r(p5, i10, i11, this.b));
                 break;
             case 1:
-                ((bg0) this.d).a.b.x3(this.c, this.b);
+                ((bg0) this.d).a.b.y3(this.c, this.b);
                 break;
             case 2:
                 mn0 mn0Var = (mn0) this.d;
@@ -46,7 +46,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 mn0Var.c(this.c, this.b, true);
                 break;
             case 3:
-                xc a02 = xc.a0((b10) this.d);
+                yc a02 = yc.a0((b10) this.d);
                 boolean z10 = this.b;
                 int i12 = z10 ? R.raw.folder_in : R.raw.folder_out;
                 int i13 = this.c;
@@ -55,15 +55,15 @@ public final /* synthetic */ class g0 implements Runnable {
                 M.j();
                 break;
             default:
-                s5 s5Var = (s5) this.d;
+                t5 t5Var = (t5) this.d;
                 if (!this.b) {
-                    s5Var.getClass();
+                    t5Var.getClass();
                     break;
                 } else {
-                    Set set = s5Var.Q;
+                    Set set = t5Var.Q;
                     int i14 = this.c;
                     set.remove(Integer.valueOf(i14));
-                    Runnable runnable = (Runnable) s5Var.R.remove(Integer.valueOf(i14));
+                    Runnable runnable = (Runnable) t5Var.R.remove(Integer.valueOf(i14));
                     if (runnable != null) {
                         runnable.run();
                         break;

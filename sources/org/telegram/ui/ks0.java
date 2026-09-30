@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ks0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 a;
@@ -453,7 +453,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
         MessageObject messageObject60;
         Activity activity21;
         Activity activity22;
-        boolean H1;
+        boolean I1;
         org.telegram.ui.ActionBar.d6 d6Var = this.a;
         boolean z23 = true;
         z23 = true;
@@ -462,8 +462,8 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
         if (i10 == -1) {
             st0 st0Var = photoViewer2.L1;
             if (st0Var == null || !st0Var.p0()) {
-                H1 = photoViewer2.H1();
-                if (H1) {
+                I1 = photoViewer2.I1();
+                if (I1) {
                     photoViewer2.E0(false);
                     return;
                 } else {
@@ -565,14 +565,14 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                                         MediaController.saveFile(pathToAttach2.toString(), photoViewer4.y, isVideo ? 1 : 0, null, null, new es0(ks0Var2, isVideo, 0));
                                                         break;
                                                     } else {
-                                                        photoViewer4.T2();
+                                                        photoViewer4.U2();
                                                         break;
                                                     }
                                                 } else if (pathToAttach2 != null && pathToAttach2.exists() && file3 != null && file3.exists()) {
                                                     MediaController.saveFile(pathToAttach2.toString(), file3.toString(), photoViewer4.y, new as0(ks0Var2, 1));
                                                     break;
                                                 } else {
-                                                    photoViewer4.T2();
+                                                    photoViewer4.U2();
                                                     break;
                                                 }
                                             }
@@ -736,14 +736,14 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                             MediaController.saveFile(pathToAttach2.toString(), photoViewer4.y, isVideo ? 1 : 0, null, null, new es0(ks0Var2, isVideo, 0));
                                             break;
                                         } else {
-                                            photoViewer4.T2();
+                                            photoViewer4.U2();
                                             break;
                                         }
                                     } else if (pathToAttach2 != null && pathToAttach2.exists() && file3 != null && file3.exists()) {
                                         MediaController.saveFile(pathToAttach2.toString(), file3.toString(), photoViewer4.y, new as0(ks0Var2, 1));
                                         break;
                                     } else {
-                                        photoViewer4.T2();
+                                        photoViewer4.U2();
                                         break;
                                     }
                                 }
@@ -962,7 +962,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                 }
                                 if (z22) {
                                     if (file == null || !file.exists()) {
-                                        photoViewer2.T2();
+                                        photoViewer2.U2();
                                         return;
                                     }
                                     String file3 = file.toString();
@@ -971,7 +971,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                     return;
                                 }
                                 if (file == null || !file.exists() || file2 == null || !file2.exists()) {
-                                    photoViewer2.T2();
+                                    photoViewer2.U2();
                                     return;
                                 }
                                 String file4 = file.toString();
@@ -1122,9 +1122,9 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         wnVar7 = photoViewer2.l4;
                         ArrayList arrayList3 = new ArrayList();
                         arrayList3.add(new MediaController.PhotoEntry(0, 0, 0L, str2, 0, false, 0, 0, 0L));
-                        this.b.f2(arrayList3, 0, 11, false, new is0(), wnVar7);
+                        this.b.g2(arrayList3, 0, 11, false, new is0(), wnVar7);
                         photoViewer2.X0(null, null, false, null);
-                        photoViewer2.l2();
+                        photoViewer2.m2();
                         nt.q().x();
                         return;
                     }
@@ -1237,14 +1237,14 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                                     MediaController.saveFile(pathToAttach2.toString(), photoViewer4.y, isVideo ? 1 : 0, null, null, new es0(ks0Var2, isVideo, 0));
                                                     break;
                                                 } else {
-                                                    photoViewer4.T2();
+                                                    photoViewer4.U2();
                                                     break;
                                                 }
                                             } else if (pathToAttach2 != null && pathToAttach2.exists() && file32 != null && file32.exists()) {
                                                 MediaController.saveFile(pathToAttach2.toString(), file32.toString(), photoViewer4.y, new as0(ks0Var2, 1));
                                                 break;
                                             } else {
-                                                photoViewer4.T2();
+                                                photoViewer4.U2();
                                                 break;
                                             }
                                         }
@@ -1409,7 +1409,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                 alertDialog$Builder3.k(LocaleController.getString("Delete", R.string.Delete), new ds0(0, this, zArr));
                                 alertDialog$Builder3.h(LocaleController.getString(str3, R.string.Cancel), null);
                                 org.telegram.ui.ActionBar.a2 a12 = alertDialog$Builder3.a();
-                                photoViewer2.R2(alertDialog$Builder3);
+                                photoViewer2.S2(alertDialog$Builder3);
                                 textView = (TextView) a12.d(-1);
                                 if (textView == null) {
                                     z12 = photoViewer2.z1(org.telegram.ui.ActionBar.h6.q7);
@@ -1435,7 +1435,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                     alertDialog$Builder32.k(LocaleController.getString("Delete", R.string.Delete), new ds0(0, this, zArr2));
                     alertDialog$Builder32.h(LocaleController.getString(str32, R.string.Cancel), null);
                     org.telegram.ui.ActionBar.a2 a122 = alertDialog$Builder32.a();
-                    photoViewer2.R2(alertDialog$Builder32);
+                    photoViewer2.S2(alertDialog$Builder32);
                     textView = (TextView) a122.d(-1);
                     if (textView == null) {
                     }
@@ -1468,7 +1468,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                         photoViewer2.G0(false, false);
                                         return;
                                     } else {
-                                        photoViewer2.T2();
+                                        photoViewer2.U2();
                                         return;
                                     }
                                 }
@@ -1490,7 +1490,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                                 photoViewer2.G0(false, false);
                                 return;
                             } else {
-                                photoViewer2.T2();
+                                photoViewer2.U2();
                                 return;
                             }
                         } catch (Exception e) {
@@ -1534,7 +1534,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                             return;
                         }
                         if (!photoViewer2.t4) {
-                            photoViewer2.g3();
+                            photoViewer2.h3();
                             return;
                         }
                         cg0Var = photoViewer2.f0;
@@ -1568,7 +1568,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         FileLoader fileLoader5 = FileLoader.getInstance(i40);
                         messageObject23 = photoViewer2.T4;
                         fileLoader5.cancelLoadFile(messageObject23.getDocument());
-                        photoViewer2.n2(false);
+                        photoViewer2.o2(false);
                         photoViewer2.i0.setTag(r3);
                         photoViewer2.i0.setVisibility(0);
                         return;
@@ -1616,7 +1616,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         }
                         nu0 nu0Var = photoViewer2.e0;
                         if (nu0Var != null) {
-                            org.telegram.ui.Components.xc.Z(nu0Var, d6Var).o(org.telegram.ui.Components.wc.y, d6Var).j();
+                            org.telegram.ui.Components.yc.Z(nu0Var, d6Var).o(org.telegram.ui.Components.xc.y, d6Var).j();
                             return;
                         }
                         return;
@@ -1714,7 +1714,7 @@ public final class ks0 extends org.telegram.ui.ActionBar.j {
                         arrayList14.remove(i31);
                         photoViewer2.d7.add(0, message);
                         photoViewer2.P4 = -1;
-                        photoViewer2.A2(0);
+                        photoViewer2.B2(0);
                         org.telegram.ui.Components.y30 y30Var = photoViewer2.l1;
                         y30Var.d.clear();
                         y30Var.e.clear();

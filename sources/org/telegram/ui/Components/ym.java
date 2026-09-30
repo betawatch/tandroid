@@ -47,7 +47,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ym implements Runnable {
     public final /* synthetic */ int a;
@@ -217,10 +217,10 @@ public final /* synthetic */ class ym implements Runnable {
                     return;
                 }
             case 1:
-                hv hvVar = (hv) this.c;
+                iv ivVar = (iv) this.c;
                 a0.i iVar = (a0.i) this.d;
                 int i17 = this.b;
-                org.telegram.ui.ActionBar.m2 m2Var = hvVar.b1.c;
+                org.telegram.ui.ActionBar.m2 m2Var = ivVar.b1.c;
                 if (m2Var instanceof org.telegram.ui.wn) {
                     org.telegram.ui.wn wnVar2 = (org.telegram.ui.wn) m2Var;
                     wnVar2.Q7();

@@ -1,50 +1,37 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.messenger.voip.Instance;
-import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.d60;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n0 implements NativeInstance.AudioLevelsCallback, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback, Instance.OnStateUpdatedListener {
+public final /* synthetic */ class n0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
 
-    public /* synthetic */ n0(VoIPService voIPService, int i10, int i11) {
+    public /* synthetic */ n0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
         this.a = i11;
-        this.b = voIPService;
-        this.c = i10;
+        this.d = notificationCenterDelegate;
+        this.b = i10;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
-    public void onStateUpdated(int i10, boolean z10) {
-        this.b.lambda$createGroupInstance$80(this.c, i10, z10);
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.RequestCurrentTimeCallback
-    public void run(long j3) {
-        this.b.lambda$createGroupInstance$79(this.c, j3);
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
-    public void run(long j3, long j10, int i10, int i11) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
-            case 2:
-                this.b.lambda$createGroupInstance$75(this.c, j3, j10, i10, i11);
+            case 0:
+                ((VoIPService) this.d).lambda$startGroupCall$29(this.b, this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$createGroupInstance$77(this.c, j3, j10, i10, i11);
+                d60 d60Var = (d60) this.d;
+                AndroidUtilities.runOnUIThread(new m0(this.b, 6, d60Var, tLObject, this.c));
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
-    public void run(long j3, int[] iArr) {
-        this.b.lambda$createGroupInstance$70(this.c, j3, iArr);
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
-        this.b.lambda$createGroupInstance$68(this.c, iArr, fArr, zArr);
     }
 }

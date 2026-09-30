@@ -55,7 +55,7 @@ import org.telegram.ui.Components.rm;
 import org.telegram.ui.Components.s80;
 import org.telegram.ui.Components.sm;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.aa0;
@@ -71,7 +71,7 @@ import org.telegram.ui.sq;
 import org.telegram.ui.v90;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -390,10 +390,10 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j24 = this.b;
                 prVar.getMessagesController().deleteParticipantFromChat(prVar.N, user2);
                 prVar.v0(j24);
-                if (prVar.r == null || user2 == null || !xc.a(prVar)) {
+                if (prVar.r == null || user2 == null || !yc.a(prVar)) {
                     return;
                 }
-                xc.D(prVar, user2, prVar.r.title).j();
+                yc.D(prVar, user2, prVar.r.title).j();
                 return;
             case 17:
                 Runnable runnable = (Runnable) this.c;

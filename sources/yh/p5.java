@@ -5,52 +5,52 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r5 b;
+    public final /* synthetic */ s5 b;
 
-    public /* synthetic */ p5(r5 r5Var, int i10) {
+    public /* synthetic */ p5(s5 s5Var, int i10) {
         this.a = i10;
-        this.b = r5Var;
+        this.b = s5Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        r5 r5Var = this.b;
+        s5 s5Var = this.b;
         switch (i10) {
             case 0:
-                r5Var.b();
+                s5Var.b();
                 break;
             case 1:
-                r5Var.a();
+                s5Var.a();
                 break;
             default:
-                qc qcVar = r5Var.d;
-                s5 s5Var = r5Var.q;
-                p5 p5Var = r5Var.p;
-                MessageObject messageObject = r5Var.b;
-                if (!r5Var.l) {
-                    r5Var.l = true;
-                    messageObject.addPaidReactions((int) r5Var.k, true, r5Var.c());
-                    long j3 = s5Var.g;
-                    int i11 = s5Var.a;
-                    s5Var.g = j3 + r5Var.k;
+                qc qcVar = s5Var.d;
+                t5 t5Var = s5Var.q;
+                p5 p5Var = s5Var.p;
+                MessageObject messageObject = s5Var.b;
+                if (!s5Var.l) {
+                    s5Var.l = true;
+                    messageObject.addPaidReactions((int) s5Var.k, true, s5Var.c());
+                    long j3 = t5Var.g;
+                    int i11 = t5Var.a;
+                    t5Var.g = j3 + s5Var.k;
                     NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
-                    r5Var.k = 0L;
+                    s5Var.k = 0L;
                     NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(messageObject.getDialogId()), Integer.valueOf(messageObject.getId()), messageObject.messageOwner.reactions);
                 }
-                if (!r5Var.m) {
-                    r5Var.m = true;
-                    r5Var.f.b = 5000L;
+                if (!s5Var.m) {
+                    s5Var.m = true;
+                    s5Var.f.b = 5000L;
                     AndroidUtilities.cancelRunOnUIThread(p5Var);
                     AndroidUtilities.runOnUIThread(p5Var, 5000L);
                     qcVar.k(true);
                     qcVar.v = p5Var;
                 }
-                r5Var.e.b.setText(r5Var.d());
+                s5Var.e.b.setText(s5Var.d());
                 break;
         }
     }

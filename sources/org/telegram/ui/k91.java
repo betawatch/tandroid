@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class k91 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int d0 = 0;
@@ -214,7 +214,7 @@ public final class k91 extends org.telegram.ui.Components.bb {
                             return;
                         }
                         if (TextUtils.isEmpty(text) || parseDouble >= MessagesController.getInstance(i21).tonStakeddiceStakeAmountMin / 1.0E9d) {
-                            if (yh.s5.y(i21, true).f.toDouble() < parseDouble) {
+                            if (yh.t5.y(i21, true).f.toDouble() < parseDouble) {
                                 new di.h(context, d6Var, zf.a.i((long) (parseDouble * 1.0E9d), zf.b.b), true, new l21(2));
                                 return;
                             } else {

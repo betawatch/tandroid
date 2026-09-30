@@ -29,7 +29,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class g6 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -366,7 +366,7 @@ public final class g6 implements NotificationCenter.NotificationCenterDelegate {
             }
             if (str.equals(this.g0)) {
                 this.g0 = null;
-                Utilities.globalQueue.postRunnable(new a6(1, this, (File) objArr[1]));
+                Utilities.globalQueue.postRunnable(new a6(2, this, (File) objArr[1]));
                 return;
             }
             if (str.equals(FileLoader.getAttachFileName(this.F.document))) {

@@ -13,7 +13,7 @@ import ru.noties.jlatexmath.android.R;
 import ru.noties.jlatexmath.awt.Color;
 import v7.j;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public class JLatexMathView extends View {
     public static final int ALIGN_CENTER = 1;
@@ -29,7 +29,7 @@ public class JLatexMathView extends View {
     private int textSize;
     private float top;
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     @Retention(RetentionPolicy.CLASS)
     public @interface Align {
     }

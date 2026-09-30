@@ -4,21 +4,21 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.ad;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.tgnet.e b;
-    public final /* synthetic */ zc[] c;
+    public final /* synthetic */ ad[] c;
     public final /* synthetic */ TL_stars.UniqueStarGiftValueInfo d;
     public final /* synthetic */ String e;
 
-    public /* synthetic */ r1(org.telegram.tgnet.e eVar, zc[] zcVarArr, TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo, String str, int i10) {
+    public /* synthetic */ r1(org.telegram.tgnet.e eVar, ad[] adVarArr, TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo, String str, int i10) {
         this.a = i10;
         this.b = eVar;
-        this.c = zcVarArr;
+        this.c = adVarArr;
         this.d = uniqueStarGiftValueInfo;
         this.e = str;
     }
@@ -28,14 +28,14 @@ public final /* synthetic */ class r1 implements Runnable {
         int i10 = this.a;
         String str = this.e;
         TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo = this.d;
-        zc[] zcVarArr = this.c;
+        ad[] adVarArr = this.c;
         org.telegram.tgnet.e eVar = this.b;
         switch (i10) {
             case 0:
-                eVar.run(zcVarArr[0], LocaleController.formatString(R.string.GiftValueMinPriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
+                eVar.run(adVarArr[0], LocaleController.formatString(R.string.GiftValueMinPriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
                 break;
             default:
-                eVar.run(zcVarArr[0], LocaleController.formatString(R.string.GiftValueAveragePriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
+                eVar.run(adVarArr[0], LocaleController.formatString(R.string.GiftValueAveragePriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
                 break;
         }
     }

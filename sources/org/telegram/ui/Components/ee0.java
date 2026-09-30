@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class ee0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] a0 = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
@@ -1114,7 +1114,7 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
             kVar.c();
         }
         o1.j jVar = new o1.j(0.0f);
-        oc0Var.D = new nv(jVar, 9);
+        oc0Var.D = new ov(jVar, 9);
         oc0Var.z();
         o1.k kVar2 = new o1.k(jVar);
         kVar2.u = org.telegram.ui.Cells.c1.l(100.0f, 300.0f, 1.0f);
@@ -1281,7 +1281,7 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
         }
     }
 
-    public final void j(boolean z10, int i10, int i11, org.telegram.ui.n80 n80Var) {
+    public final void j(boolean z10, int i10, int i11, org.telegram.ui.m80 m80Var) {
         View currentFocus;
         boolean z11;
         int i12;
@@ -1397,7 +1397,7 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
         ci.j9.a(j9Var, false);
         if (z10) {
             setAlpha(0.0f);
-            getViewTreeObserver().addOnGlobalLayoutListener(new zd0(this, i10, i11, n80Var));
+            getViewTreeObserver().addOnGlobalLayoutListener(new zd0(this, i10, i11, m80Var));
             requestLayout();
         } else {
             setAlpha(1.0f);
@@ -1408,8 +1408,8 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
             nj0Var.setScaleY(1.0f);
             nj0Var.i();
             nj0Var.getAnimatedDrawable().N(38, false, false);
-            if (n80Var != null) {
-                n80Var.run();
+            if (m80Var != null) {
+                m80Var.run();
             }
         }
         setOnTouchListener(new bi.d(19));

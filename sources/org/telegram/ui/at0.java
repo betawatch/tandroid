@@ -9,7 +9,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class at0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class at0 extends AnimatorListenerAdapter {
                 break;
             case 2:
                 Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.f3();
+                photoViewer.g3();
                 break;
             case 3:
                 photoViewer.L1.o0(false);
@@ -67,17 +67,17 @@ public final class at0 extends AnimatorListenerAdapter {
                     i4Var.b(photoViewer.u4 != 3);
                 }
                 photoViewer.o6 = -1;
-                float q22 = photoViewer.q2(false);
-                photoViewer.a6 = q22;
-                photoViewer.e6 = q22;
+                float r22 = photoViewer.r2(false);
+                photoViewer.a6 = r22;
+                photoViewer.e6 = r22;
                 photoViewer.c6 = 0.0f;
                 photoViewer.d6 = 0.0f;
-                photoViewer.v3(q22);
+                photoViewer.w3(r22);
                 photoViewer.t2 = true;
                 photoViewer.e0.invalidate();
                 tu0 tu0Var = photoViewer.d;
                 if (tu0Var == null || !tu0Var.O()) {
-                    photoViewer.R1();
+                    photoViewer.S1();
                     break;
                 }
                 break;

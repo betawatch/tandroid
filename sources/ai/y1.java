@@ -30,7 +30,7 @@ import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                         DispatchQueue dispatchQueue = Utilities.globalQueue;
                         NativeInstance nativeInstance = d2Var.E;
                         Objects.requireNonNull(nativeInstance);
-                        dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance, 3));
+                        dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance, 3));
                         d2Var.M.clear();
                         d2Var.E = null;
                     }

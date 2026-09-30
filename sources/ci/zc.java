@@ -14,14 +14,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class zc extends View {
     public final kj0 a;
     public final org.telegram.ui.Components.o6 b;
     public final Paint c;
     public final Paint d;
-    public final org.telegram.ui.Components.yc e;
+    public final org.telegram.ui.Components.zc e;
     public boolean f;
     public final org.telegram.ui.Components.e6 h;
 
@@ -31,7 +31,7 @@ public final class zc extends View {
         this.c = paint;
         Paint paint2 = new Paint(1);
         this.d = paint2;
-        this.e = new org.telegram.ui.Components.yc(this);
+        this.e = new org.telegram.ui.Components.zc(this);
         sr srVar = sr.h;
         this.h = new org.telegram.ui.Components.e6(this, 0L, 240L, srVar);
         paint.setColor(-1);

@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.se1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class m31 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, le.e {
     public static final /* synthetic */ int f0 = 0;
@@ -1723,12 +1723,12 @@ public final class m31 extends FrameLayout implements NotificationCenter.Notific
             }
         }
         if (view instanceof h31) {
-            dw dwVar = new dw(i11, b10);
+            ew ewVar = new ew(i11, b10);
             Paint paint = new Paint((int) r62);
-            dwVar.c = paint;
-            dwVar.b = new RectF();
+            ewVar.c = paint;
+            ewVar.b = new RectF();
             paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G8, d6Var));
-            a80Var.W(dwVar);
+            a80Var.W(ewVar);
             a80Var.a0(AndroidUtilities.dp(16.0f), 0.0f);
         } else {
             int dp = AndroidUtilities.dp(5.0f);

@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.voip.g2;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private AccountInstance accountInstance;
@@ -32,8 +32,8 @@ public final class VoIPPendingCall {
             }
         };
         this.observer = notificationCenterDelegate;
-        r0 r0Var = new r0(this, 2);
-        this.releaseRunnable = r0Var;
+        s0 s0Var = new s0(this, 2);
+        this.releaseRunnable = s0Var;
         this.activity = activity;
         this.userId = j3;
         this.video = z10;
@@ -46,7 +46,7 @@ public final class VoIPPendingCall {
         notificationCenter.addObserver(notificationCenterDelegate, NotificationCenter.didUpdateConnectionState);
         Handler handler = new Handler(Looper.myLooper());
         this.handler = handler;
-        handler.postDelayed(r0Var, j10);
+        handler.postDelayed(s0Var, j10);
     }
 
     private boolean isAirplaneMode() {

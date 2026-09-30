@@ -17,7 +17,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class my extends xl0 {
     public boolean E;
@@ -37,7 +37,7 @@ public final class my extends xl0 {
 
     public my(mz mzVar, Context context) {
         this.F = mzVar;
-        hy hyVar = new hy(context, mzVar.c1, new d(this, 11), new nv(this, 1), mzVar.Z1);
+        hy hyVar = new hy(context, mzVar.c1, new d(this, 11), new ov(this, 1), mzVar.Z1);
         this.c = hyVar;
         hyVar.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
         hyVar.setClipToPadding(false);

@@ -4,7 +4,7 @@ import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class pz0 extends org.telegram.ui.Components.wq0 {
     public final /* synthetic */ ProfileActivity b1;
@@ -18,7 +18,7 @@ public final class pz0 extends org.telegram.ui.Components.wq0 {
     @Override // org.telegram.ui.Components.wq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         if (z10) {
-            AndroidUtilities.runOnUIThread(new jx0(this, iVar, i10, 13), 250L);
+            AndroidUtilities.runOnUIThread(new ix0(this, iVar, i10, 14), 250L);
         }
     }
 }

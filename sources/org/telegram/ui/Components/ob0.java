@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ob0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class ob0 implements View.OnClickListener {
                 hc0 hc0Var = bc0Var.c0;
                 MessagePreviewParams messagePreviewParams = hc0Var.d;
                 if (!z10) {
-                    new xc(hc0Var, hc0Var.F).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceSingleTag("Subscribe to **Telegram Premium** to forward formatted messages without the sender’s name.", new mb0(bc0Var, context, i11))).j();
+                    new yc(hc0Var, hc0Var.F).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceSingleTag("Subscribe to **Telegram Premium** to forward formatted messages without the sender’s name.", new mb0(bc0Var, context, i11))).j();
                     break;
                 } else {
                     boolean z11 = messagePreviewParams.hideForwardSendersName;
@@ -71,7 +71,7 @@ public final /* synthetic */ class ob0 implements View.OnClickListener {
                 bs0 bs0Var = ((xh.o2) frameLayout).a;
                 if (z10) {
                     bs0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    xc.a0(bs0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, yh.x3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    yc.a0(bs0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, yh.x3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 } else {
                     yh.j5 j5Var = bs0Var.e;
                     int i12 = tL_starGiftCollection.collection_id;
@@ -79,7 +79,7 @@ public final /* synthetic */ class ob0 implements View.OnClickListener {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(savedStarGift);
                     j5Var.a(i12, arrayList);
-                    xc.a0(bs0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.x3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    yc.a0(bs0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.x3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
                 a80Var.u();
                 bs0Var.n();

@@ -2,7 +2,7 @@ package org.telegram.messenger.voip;
 
 import org.telegram.messenger.voip.VideoCapturerDevice;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -24,22 +24,22 @@ public final /* synthetic */ class k implements Runnable {
                 VoIPPreNotificationService.lambda$dismiss$5();
                 break;
             case 3:
-                VoIPService.lambda$startConferenceGroupCall$35();
+                VoIPService.lambda$acceptIncomingCall$100();
                 break;
             case 4:
-                VoIPService.lambda$startOutgoingCall$6();
+                VoIPService.lambda$configureDeviceForCall$110();
                 break;
             case 5:
-                VoIPService.lambda$startGroupCall$24();
+                VoIPService.lambda$startConferenceGroupCall$35();
                 break;
             case 6:
-                VoIPService.lambda$onDestroy$97();
+                VoIPService.lambda$startOutgoingCall$6();
                 break;
             case 7:
-                VoIPService.lambda$configureDeviceForCall$109();
+                VoIPService.lambda$startGroupCall$24();
                 break;
             default:
-                VoIPService.lambda$acceptIncomingCall$100();
+                VoIPService.lambda$onDestroy$97();
                 break;
         }
     }

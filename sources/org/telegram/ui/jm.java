@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class jm extends org.telegram.ui.Components.zk0 {
     public int E;
@@ -1898,7 +1898,7 @@ public final class jm extends org.telegram.ui.Components.zk0 {
                 if (z14 && wnVar.P7 != null) {
                     long currentTimeMillis = System.currentTimeMillis();
                     if (!u1Var.T3(wnVar.P7, true, wnVar.N7 || currentTimeMillis - wnVar.O7 < 200, wnVar.S7) && wnVar.M7) {
-                        org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString(R.string.QuoteNotFound)).k(true);
+                        org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString(R.string.QuoteNotFound)).k(true);
                     }
                     wnVar.M7 = false;
                     if (wnVar.N7) {

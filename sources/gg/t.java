@@ -36,9 +36,9 @@ import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o01;
 import org.telegram.ui.Components.q01;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -126,14 +126,14 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject2 = (TLObject) this.d;
                 if (tL_error != null) {
                     dVar.a.a(0.0f);
-                    xc.b0(tL_error);
+                    yc.b0(tL_error);
                     return;
                 } else if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
                     dVar.finishFragment();
                     return;
                 } else {
                     dVar.a.a(0.0f);
-                    ok.p(R.string.UnknownError, xc.a0(dVar), null);
+                    ok.p(R.string.UnknownError, yc.a0(dVar), null);
                     return;
                 }
             case 6:
@@ -142,11 +142,11 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject3 = (TLObject) this.d;
                 if (tL_error2 != null) {
                     nVar.e.a(0.0f);
-                    xc.b0(tL_error2);
+                    yc.b0(tL_error2);
                     return;
                 } else if (tLObject3 instanceof TLRPC.TL_boolFalse) {
                     nVar.e.a(0.0f);
-                    ok.p(R.string.UnknownError, xc.a0(nVar), null);
+                    ok.p(R.string.UnknownError, yc.a0(nVar), null);
                     return;
                 } else {
                     if (nVar.E != null) {
@@ -187,14 +187,14 @@ public final /* synthetic */ class t implements Runnable {
                 TLObject tLObject5 = (TLObject) this.d;
                 if (tL_error3 != null) {
                     x0Var.a.a(0.0f);
-                    xc.b0(tL_error3);
+                    yc.b0(tL_error3);
                     return;
                 } else if (!(tLObject5 instanceof TLRPC.TL_boolFalse)) {
                     x0Var.finishFragment();
                     return;
                 } else {
                     x0Var.a.a(0.0f);
-                    ok.p(R.string.UnknownError, xc.a0(x0Var), null);
+                    ok.p(R.string.UnknownError, yc.a0(x0Var), null);
                     return;
                 }
             case 11:

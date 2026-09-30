@@ -11,7 +11,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class n50 extends View {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final class n50 extends View {
         org.telegram.ui.ActionBar.d6 d6Var;
         switch (this.a) {
             case 1:
-                canvas.drawColor(((kj0) this.b).getThemedColor(org.telegram.ui.ActionBar.h6.e7));
+                canvas.drawColor(((lj0) this.b).getThemedColor(org.telegram.ui.ActionBar.h6.e7));
                 break;
             case 2:
                 cq0 cq0Var = (cq0) this.b;

@@ -1,6 +1,7 @@
 package tg;
 
 import ai.n6;
+import ai.s5;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -58,9 +59,9 @@ import org.telegram.ui.s20;
 import org.telegram.ui.zm0;
 import w7.y5;
 import yh.f7;
-import yh.s5;
+import yh.t5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class a0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList X;
@@ -222,7 +223,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
             int i14 = a0Var.j0;
             int i15 = vg.u.s;
             boolean z10 = i14 == 1;
-            s5 y3 = s5.y(a0Var.currentAccount, false);
+            t5 y3 = t5.y(a0Var.currentAccount, false);
             int l4 = s.l(a0Var.m0);
             boolean z11 = a0Var.x0;
             boolean z12 = a0Var.w0;
@@ -232,10 +233,10 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
             if (!MessagesController.getInstance(i16).starsPurchaseAvailable()) {
                 m2 R2 = LaunchActivity.R();
                 if (R2 == null || R2.getContext() == null) {
-                    s5.e0(findActivity, null);
+                    t5.e0(findActivity, null);
                     return;
                 } else {
-                    s5.e0(R2.getContext(), R2.getResourceProvider());
+                    t5.e0(R2.getContext(), R2.getResourceProvider());
                     return;
                 }
             }
@@ -287,7 +288,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
             TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars = new TLRPC.TL_inputInvoiceStars();
             tL_inputInvoiceStars.purpose = tL_inputStorePaymentStarsGiveaway;
             TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-            JSONObject p5 = k3.p(s5.I(), false);
+            JSONObject p5 = k3.p(t5.I(), false);
             if (p5 != null) {
                 TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
                 tL_payments_getPaymentForm.theme_params = tL_dataJSON;
@@ -295,7 +296,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceStars;
-            ConnectionsManager.getInstance(i16).sendRequest(tL_payments_getPaymentForm, new ai.s5(y3, m0Var, tL_inputInvoiceStars, 26));
+            ConnectionsManager.getInstance(i16).sendRequest(tL_payments_getPaymentForm, new s5(y3, m0Var, tL_inputInvoiceStars, 26));
             return;
         }
         int i19 = 22;
@@ -813,7 +814,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
     }
 
     public final TL_stars.TL_starsGiveawayOption W(long j3) {
-        ArrayList v = s5.y(this.currentAccount, false).v();
+        ArrayList v = t5.y(this.currentAccount, false).v();
         if (v == null) {
             return null;
         }
@@ -962,7 +963,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
                 aVar5.c = string;
                 aVar5.i = V;
                 arrayList.add(aVar5);
-                ArrayList v = s5.y(this.currentAccount, false).v();
+                ArrayList v = t5.y(this.currentAccount, false).v();
                 ArrayList arrayList6 = new ArrayList();
                 if (v != null) {
                     int i15 = 0;

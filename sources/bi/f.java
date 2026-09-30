@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.b4;
 import org.telegram.ui.Components.e10;
 import org.telegram.ui.Components.e40;
 import org.telegram.ui.Components.e60;
-import org.telegram.ui.Components.ew;
+import org.telegram.ui.Components.fw;
 import org.telegram.ui.Components.kn0;
 import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Components.mp;
@@ -44,7 +44,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.nm;
 import org.telegram.ui.ro;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -206,9 +206,9 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 23:
-                ew ewVar = (ew) obj;
+                fw fwVar = (fw) obj;
                 if (!z10) {
-                    ewVar.E.setVisibility(8);
+                    fwVar.E.setVisibility(8);
                     break;
                 }
                 break;

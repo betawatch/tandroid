@@ -4,7 +4,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class om extends org.telegram.ui.ActionBar.o1 {
     public final /* synthetic */ pm x;
@@ -148,9 +148,9 @@ public final class om extends org.telegram.ui.ActionBar.o1 {
                 AndroidUtilities.cancelRunOnUIThread(tdVar);
                 jkVar.V.run();
             }
-            org.telegram.ui.Components.kd kdVar = jkVar.W;
-            if (kdVar != null) {
-                AndroidUtilities.cancelRunOnUIThread(kdVar);
+            org.telegram.ui.Components.uc ucVar = jkVar.W;
+            if (ucVar != null) {
+                AndroidUtilities.cancelRunOnUIThread(ucVar);
                 jkVar.W.run();
             }
         }

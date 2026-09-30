@@ -42,7 +42,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class nt {
     public static TextPaint f0;
@@ -379,7 +379,7 @@ public final class nt {
                                 }
                             }
                             i10 = -1;
-                        } else if (childAt instanceof org.telegram.ui.Components.lv) {
+                        } else if (childAt instanceof org.telegram.ui.Components.mv) {
                             imageReceiver.setRoundRadius(0);
                         } else if (!(childAt instanceof org.telegram.ui.Components.vy) || ((org.telegram.ui.Components.vy) childAt).getSpan() == null) {
                             if ((childAt instanceof org.telegram.ui.Components.yy0) && (((org.telegram.ui.Components.yy0) childAt).b instanceof org.telegram.ui.Components.q5)) {
@@ -429,7 +429,7 @@ public final class nt {
         lt ltVar3 = this.l;
         if ((ltVar3 == null || ltVar3.i()) && (this.j != null || this.E)) {
             if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3 || motionEvent.getAction() == 6) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yn0(28, yl0Var, obj), 150L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yn0(29, yl0Var, obj), 150L);
                 org.telegram.ui.Components.h21 h21Var = this.j;
                 if (h21Var != null) {
                     AndroidUtilities.cancelRunOnUIThread(h21Var);
@@ -494,7 +494,7 @@ public final class nt {
                                             }
                                             i10 = i11;
                                         } else {
-                                            if (childAt instanceof org.telegram.ui.Components.lv) {
+                                            if (childAt instanceof org.telegram.ui.Components.mv) {
                                                 imageReceiver.setRoundRadius(0);
                                             } else if (!(childAt instanceof org.telegram.ui.Components.vy) || ((org.telegram.ui.Components.vy) childAt).getSpan() == null) {
                                                 i10 = -1;
@@ -547,8 +547,8 @@ public final class nt {
                                                 if (i10 != 1 || this.m) {
                                                     f2Var2.setScaled(true);
                                                 }
-                                            } else if (view2 instanceof org.telegram.ui.Components.lv) {
-                                                TLRPC.Document document3 = ((org.telegram.ui.Components.lv) view2).getDocument();
+                                            } else if (view2 instanceof org.telegram.ui.Components.mv) {
+                                                TLRPC.Document document3 = ((org.telegram.ui.Components.mv) view2).getDocument();
                                                 if (document3 != null) {
                                                     t(document3, null, MessageObject.findAnimatedEmojiEmoticon(document3, null, Integer.valueOf(this.r)), null, null, i10, false, null, d6Var, 0);
                                                 }

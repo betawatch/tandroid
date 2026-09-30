@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.nl0, ky, ContactsLoadingObserver.Callback, org.telegram.ui.Components.ov0, org.telegram.ui.Components.ol0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, vt, FileLoader.FileResolver {
     public final /* synthetic */ int a;
@@ -373,7 +373,7 @@ public final /* synthetic */ class ow implements org.telegram.ui.ActionBar.z1, o
         h80Var.d = k80Var.f0;
         h80Var.U();
         k80Var.g0.presentFragment(h80Var);
-        AndroidUtilities.runOnUIThread(new tt(28, h80Var, keepMediaException), 150L);
+        AndroidUtilities.runOnUIThread(new tt(29, h80Var, keepMediaException), 150L);
         return true;
     }
 

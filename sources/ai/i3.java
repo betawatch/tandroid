@@ -34,16 +34,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.v81;
 import org.telegram.ui.Components.w81;
-import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.x81;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.da0;
 import org.telegram.ui.wn;
 import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 boolean z11 = this.b;
                 a5 a5Var = e6Var.c1;
                 org.telegram.ui.ActionBar.d6 d6Var = e6Var.B0;
-                new xc(a5Var, d6Var).o(z11 ? wc.h : wc.e, d6Var).j();
+                new yc(a5Var, d6Var).o(z11 ? xc.h : xc.e, d6Var).j();
                 break;
             case 1:
                 Utilities.Callback callback = (Utilities.Callback) this.c;
@@ -252,7 +252,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 boolean z17 = this.b;
                 ProfileActivity profileActivity = yz0Var.b;
                 if (profileActivity.getParentActivity() != null) {
-                    xc.a0(profileActivity).o(z17 ? wc.h : wc.e, null).j();
+                    yc.a0(profileActivity).o(z17 ? xc.h : xc.e, null).j();
                     break;
                 }
                 break;
@@ -265,13 +265,13 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 z1Var.a.Y2.N(true);
                 break;
             default:
-                yh.s5 s5Var = (yh.s5) this.c;
+                yh.t5 t5Var = (yh.t5) this.c;
                 HashSet hashSet = (HashSet) obj;
                 if (this.b) {
-                    SendMessagesHelper.getInstance(s5Var.a).cancelSendingMessage(new ArrayList<>(hashSet));
+                    SendMessagesHelper.getInstance(t5Var.a).cancelSendingMessage(new ArrayList<>(hashSet));
                     break;
                 } else {
-                    s5Var.getClass();
+                    t5Var.getClass();
                     break;
                 }
         }

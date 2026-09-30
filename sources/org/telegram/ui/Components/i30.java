@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class i30 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
     public final int E;
@@ -169,12 +169,12 @@ public final class i30 extends FrameLayout implements NotificationCenter.Notific
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onCameraFirstFrameAvailable() {
-        org.telegram.messenger.voip.u0.b(this);
+        org.telegram.messenger.voip.v0.b(this);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onCameraSwitch(boolean z10) {
-        org.telegram.messenger.voip.u0.c(this, z10);
+        org.telegram.messenger.voip.v0.c(this, z10);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -589,17 +589,17 @@ public final class i30 extends FrameLayout implements NotificationCenter.Notific
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onMediaStateUpdated(int i10, int i11) {
-        org.telegram.messenger.voip.u0.d(this, i10, i11);
+        org.telegram.messenger.voip.v0.d(this, i10, i11);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onScreenOnChange(boolean z10) {
-        org.telegram.messenger.voip.u0.e(this, z10);
+        org.telegram.messenger.voip.v0.e(this, z10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onSignalBarsCountChanged(int i10) {
-        org.telegram.messenger.voip.u0.f(this, i10);
+        org.telegram.messenger.voip.v0.f(this, i10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
@@ -609,7 +609,7 @@ public final class i30 extends FrameLayout implements NotificationCenter.Notific
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onVideoAvailableChange(boolean z10) {
-        org.telegram.messenger.voip.u0.h(this, z10);
+        org.telegram.messenger.voip.v0.h(this, z10);
     }
 
     public void setPinnedProgress(float f7) {

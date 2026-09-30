@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class br0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -57,12 +57,12 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 PhotoViewer photoViewer = this.b;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 photoViewer.m0();
-                photoViewer.d3(0);
+                photoViewer.e3(0);
                 break;
             case 1:
                 PhotoViewer photoViewer2 = this.b;
                 if (!photoViewer2.I1.d()) {
-                    photoViewer2.d3(0);
+                    photoViewer2.e3(0);
                     break;
                 } else {
                     Activity activity = photoViewer2.y;
@@ -72,7 +72,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                         alertDialog$Builder.a.R = LocaleController.getString("AppName", R.string.AppName);
                         alertDialog$Builder.k(LocaleController.getString("OK", R.string.OK), new ir0(photoViewer2));
                         alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
-                        photoViewer2.R2(alertDialog$Builder);
+                        photoViewer2.S2(alertDialog$Builder);
                         break;
                     }
                 }
@@ -81,8 +81,8 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 PhotoViewer photoViewer3 = this.b;
                 photoViewer3.Y7 = photoViewer3.a8;
                 photoViewer3.R0();
-                photoViewer3.X2(false);
-                photoViewer3.o2(2);
+                photoViewer3.Y2(false);
+                photoViewer3.p2(2);
                 break;
             case 3:
                 PhotoViewer photoViewer4 = this.b;
@@ -90,31 +90,31 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 if (obj instanceof MediaController.MediaEditState) {
                     ((MediaController.MediaEditState) obj).editedInfo = photoViewer4.n1();
                 }
-                photoViewer4.X2(false);
-                photoViewer4.o2(2);
+                photoViewer4.Y2(false);
+                photoViewer4.p2(2);
                 break;
             case 4:
                 PhotoViewer photoViewer5 = this.b;
                 Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer5.v2(false, 0, 0, false, false, false);
+                photoViewer5.w2(false, 0, 0, false, false, false);
                 break;
             case 5:
                 PhotoViewer photoViewer6 = this.b;
                 photoViewer6.v5.m(false, true);
                 photoViewer6.w5.m(false, true);
-                photoViewer6.d3(0);
+                photoViewer6.e3(0);
                 break;
             case 6:
                 PhotoViewer photoViewer7 = this.b;
                 photoViewer7.v5.m(false, true);
                 photoViewer7.w5.m(false, true);
                 photoViewer7.m0();
-                photoViewer7.d3(0);
+                photoViewer7.e3(0);
                 break;
             case 7:
                 PhotoViewer photoViewer8 = this.b;
                 Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer8.d3(5);
+                photoViewer8.e3(5);
                 break;
             case 8:
                 PhotoViewer photoViewer9 = this.b;
@@ -135,7 +135,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
             case 10:
                 final PhotoViewer photoViewer11 = this.b;
                 Drawable[] drawableArr5 = PhotoViewer.U8;
-                if (!photoViewer11.H1()) {
+                if (!photoViewer11.I1()) {
                     photoViewer11.r = !photoViewer11.r;
                     ArrayList arrayList = photoViewer11.h1;
                     if (arrayList != null) {
@@ -188,8 +188,8 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                         photoViewer11.h1.add(e4Var);
                         e4Var.u();
                     }
-                    photoViewer11.w3();
-                    photoViewer11.A3();
+                    photoViewer11.x3();
+                    photoViewer11.B3();
                     if (photoViewer11.r) {
                         CheckBox checkBox = photoViewer11.N0;
                         if (!checkBox.x) {
@@ -207,25 +207,25 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
             case 11:
                 final PhotoViewer photoViewer12 = this.b;
                 Drawable[] drawableArr6 = PhotoViewer.U8;
-                boolean P1 = photoViewer12.P1();
-                boolean z10 = !P1;
+                boolean Q1 = photoViewer12.Q1();
+                boolean z10 = !Q1;
                 int i15 = photoViewer12.P4;
                 if (i15 >= 0 && i15 < photoViewer12.g7.size()) {
                     Object obj4 = photoViewer12.g7.get(photoViewer12.P4);
                     if (obj4 instanceof MediaController.PhotoEntry) {
                         ((MediaController.PhotoEntry) obj4).discardLivePhoto = Boolean.valueOf(z10);
                         SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit();
-                        SharedConfig.photoLiveDefault = P1;
-                        edit.putBoolean("photoLiveDefault", P1).apply();
+                        SharedConfig.photoLiveDefault = Q1;
+                        edit.putBoolean("photoLiveDefault", Q1).apply();
                         tu0 tu0Var2 = photoViewer12.d;
                         if (tu0Var2 != null) {
                             tu0Var2.m();
                         }
                     }
                 }
-                photoViewer12.f1.a(!photoViewer12.P1(), true);
-                photoViewer12.S7.animate().alpha(photoViewer12.P1() ? 0.45f : 1.0f).start();
-                if (photoViewer12.P1() && (u71Var = photoViewer12.F2) != null) {
+                photoViewer12.f1.a(!photoViewer12.Q1(), true);
+                photoViewer12.S7.animate().alpha(photoViewer12.Q1() ? 0.45f : 1.0f).start();
+                if (photoViewer12.Q1() && (u71Var = photoViewer12.F2) != null) {
                     u71Var.B();
                 }
                 photoViewer12.e0.invalidate();
@@ -244,7 +244,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                     ((ci.e4) obj5).e(true);
                 }
                 final ci.e4 e4Var2 = new ci.e4(photoViewer12.y, 3);
-                e4Var2.s(AndroidUtilities.replaceTags(LocaleController.getString(photoViewer12.P1() ? R.string.LivePhotoOff : R.string.LivePhotoOn)));
+                e4Var2.s(AndroidUtilities.replaceTags(LocaleController.getString(photoViewer12.Q1() ? R.string.LivePhotoOff : R.string.LivePhotoOn)));
                 e4Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
                 e4Var2.l(0.0f, 28.0f);
                 final char c11 = c10 == true ? 1 : 0;
@@ -282,7 +282,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 break;
             case 12:
                 PhotoViewer photoViewer13 = this.b;
-                if (photoViewer13.d != null && !photoViewer13.H1()) {
+                if (photoViewer13.d != null && !photoViewer13.I1()) {
                     photoViewer13.d.n();
                     photoViewer13.G0(true, false);
                     break;
@@ -290,7 +290,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 break;
             case 13:
                 PhotoViewer photoViewer14 = this.b;
-                if (photoViewer14.d != null && !photoViewer14.H1()) {
+                if (photoViewer14.d != null && !photoViewer14.I1()) {
                     photoViewer14.d.n();
                     photoViewer14.G0(true, false);
                     break;
@@ -320,12 +320,12 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                                 }
                                 imageReceiver.setImageBitmap(bitmap);
                                 photoViewer15.t5.setCutOutState(true);
-                                photoViewer15.W2(false, true);
+                                photoViewer15.X2(false, true);
                                 photoViewer15.m0();
                                 break;
                             } else {
                                 fu0Var2.setCutOutState(true);
-                                photoViewer15.W2(false, true);
+                                photoViewer15.X2(false, true);
                                 photoViewer15.p5.f();
                                 photoViewer15.e0.invalidate();
                                 break;
@@ -372,7 +372,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 if (rt0Var != null) {
                     rt0Var.setEraser(true);
                 }
-                photoViewer16.d3(4);
+                photoViewer16.e3(4);
                 break;
             case 16:
                 PhotoViewer photoViewer17 = this.b;
@@ -387,7 +387,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 if (rt0Var2 != null) {
                     rt0Var2.setEraser(false);
                 }
-                photoViewer17.d3(4);
+                photoViewer17.e3(4);
                 break;
             case 17:
                 PhotoViewer photoViewer18 = this.b;
@@ -399,7 +399,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                         break;
                     }
                 }
-                photoViewer18.d3(0);
+                photoViewer18.e3(0);
                 photoViewer18.p5.l();
                 boolean isEmpty2 = TextUtils.isEmpty(((MediaController.MediaEditState) photoViewer18.g7.get(photoViewer18.P4)).filterPath);
                 qg.n2 n2Var5 = photoViewer18.p5;
@@ -416,7 +416,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 if (n2Var6 == null || !n2Var6.G) {
                     photoViewer18.t5.setCutOutState(true);
                 }
-                photoViewer18.Z2(true, true);
+                photoViewer18.a3(true, true);
                 break;
             case 18:
                 PhotoViewer photoViewer19 = this.b;
@@ -433,7 +433,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                     if (photoViewer20.m4 == null || (of2 = photoViewer20.l4.g5) == null) {
                         of2 = MessageSuggestionParams.of(photoViewer20.l4.p5.messageOwner.suggested_post);
                     }
-                    if (!yh.s5.U(photoViewer20.T, of2.amount)) {
+                    if (!yh.t5.U(photoViewer20.T, of2.amount)) {
                         wn wnVar2 = photoViewer20.l4;
                         if (wnVar2 != null) {
                             wnVar2.Tb(of2);
@@ -444,10 +444,10 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 if (!photoViewer20.U1.o()) {
                     wn wnVar3 = photoViewer20.l4;
                     if (wnVar3 == null || !wnVar3.c() || ((g4Var = photoViewer20.l4.J1) != null && g4Var.H1 != null)) {
-                        photoViewer20.v2(true, 0, 0, false, false, false);
+                        photoViewer20.w2(true, 0, 0, false, false, false);
                         break;
                     } else {
-                        photoViewer20.Y2();
+                        photoViewer20.Z2();
                         break;
                     }
                 } else {
@@ -457,7 +457,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                     AndroidUtilities.shakeViewSpring(p6Var, f7);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
                     if (!MessagesController.getInstance(photoViewer20.T).premiumFeaturesBlocked() && MessagesController.getInstance(photoViewer20.T).captionLengthLimitPremium > photoViewer20.U1.getCodePointCount()) {
-                        photoViewer20.S2(photoViewer20.e0);
+                        photoViewer20.T2(photoViewer20.e0);
                         break;
                     }
                 }
@@ -477,7 +477,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 PhotoViewer photoViewer22 = this.b;
                 Drawable[] drawableArr7 = PhotoViewer.U8;
                 photoViewer22.t0();
-                if (!photoViewer22.H1()) {
+                if (!photoViewer22.I1()) {
                     if (photoViewer22.r1) {
                         if (photoViewer22.k8) {
                             TextureView textureView = photoViewer22.B2;
@@ -488,7 +488,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                             }
                         }
                     }
-                    photoViewer22.d3(1);
+                    photoViewer22.e3(1);
                     break;
                 }
                 break;
@@ -506,7 +506,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 PhotoViewer photoViewer25 = this.b;
                 Drawable[] drawableArr10 = PhotoViewer.U8;
                 photoViewer25.t0();
-                if (!photoViewer25.H1()) {
+                if (!photoViewer25.I1()) {
                     if (photoViewer25.r1) {
                         if (photoViewer25.k8) {
                             TextureView textureView2 = photoViewer25.B2;
@@ -517,7 +517,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                             }
                         }
                     }
-                    photoViewer25.d3(3);
+                    photoViewer25.e3(3);
                     break;
                 }
                 break;
@@ -526,7 +526,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                 Drawable[] drawableArr11 = PhotoViewer.U8;
                 if (view.getAlpha() >= 0.9f) {
                     photoViewer26.t0();
-                    if (!photoViewer26.H1()) {
+                    if (!photoViewer26.I1()) {
                         if (photoViewer26.r1) {
                             if (photoViewer26.k8) {
                                 TextureView textureView3 = photoViewer26.B2;
@@ -537,7 +537,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                                 }
                             }
                         }
-                        photoViewer26.d3(2);
+                        photoViewer26.e3(2);
                         break;
                     }
                 }
@@ -568,7 +568,7 @@ public final /* synthetic */ class br0 implements View.OnClickListener {
                     }
                 }
                 photoViewer28.m0();
-                photoViewer28.d3(0);
+                photoViewer28.e3(0);
                 break;
             default:
                 PhotoViewer photoViewer29 = this.b;

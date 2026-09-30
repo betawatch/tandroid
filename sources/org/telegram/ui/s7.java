@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class s7 extends FrameLayout implements org.telegram.ui.Components.xc0 {
     public final ArrayList a;
@@ -138,13 +138,13 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
 
     public static void a(s7 s7Var, m7 m7Var, o7 o7Var, org.telegram.ui.Components.yl0 yl0Var) {
         ArrayList arrayList = o7Var.e;
-        PhotoViewer.t1().J2(null, s7Var.d, null);
+        PhotoViewer.t1().K2(null, s7Var.d, null);
         if (s7Var.r == null) {
             s7Var.r = new h7(s7Var);
         }
         s7Var.r.a = yl0Var;
         if (arrayList.indexOf(m7Var) >= 0) {
-            PhotoViewer.t1().f2(o7Var.r, arrayList.indexOf(m7Var), -1, false, s7Var.r, null);
+            PhotoViewer.t1().g2(o7Var.r, arrayList.indexOf(m7Var), -1, false, s7Var.r, null);
         }
     }
 
@@ -155,7 +155,7 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
             if (!(yl0Var.getAdapter() instanceof l7)) {
                 return;
             }
-            PhotoViewer.t1().J2(null, m2Var, null);
+            PhotoViewer.t1().K2(null, m2Var, null);
             if (s7Var.r == null) {
                 s7Var.r = new h7(s7Var);
             }
@@ -165,7 +165,7 @@ public abstract class s7 extends FrameLayout implements org.telegram.ui.Componen
             if (file.getName().endsWith("mp4") || file.getName().endsWith(".jpg") || lowerCase.endsWith(".jpeg") || lowerCase.endsWith(".png") || lowerCase.endsWith(".gif")) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(new MediaController.PhotoEntry(0, 0, 0L, file.getPath(), 0, aVar.d == 1, 0, 0, 0L));
-                PhotoViewer.t1().f2(arrayList, 0, -1, false, s7Var.r, null);
+                PhotoViewer.t1().g2(arrayList, 0, -1, false, s7Var.r, null);
             } else {
                 AndroidUtilities.openForView(file, file.getName(), null, m2Var.getParentActivity(), null, false);
             }

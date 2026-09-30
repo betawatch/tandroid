@@ -44,15 +44,15 @@ import org.telegram.ui.Components.lh0;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.pa0;
 import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.uv;
 import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.vv;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cp;
+import org.telegram.ui.dh;
 import org.telegram.ui.ep;
-import org.telegram.ui.fh;
 import org.telegram.ui.in;
 import org.telegram.ui.l80;
 import org.telegram.ui.mp;
@@ -63,7 +63,7 @@ import org.telegram.ui.rp;
 import org.telegram.ui.wn;
 import org.telegram.ui.yz;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
@@ -496,7 +496,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 wn wnVar = ((in) obj2).a;
                 wnVar.zb.b();
                 if (!(tLObject2 instanceof TLRPC.TL_messages_stickerSet)) {
-                    org.telegram.ui.Components.xc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString(z10 ? R.string.AddEmojiNotFound : R.string.AddStickersNotFound)).k(true);
+                    org.telegram.ui.Components.yc.a0(wnVar).Q(R.raw.error, 36, LocaleController.getString(z10 ? R.string.AddEmojiNotFound : R.string.AddStickersNotFound)).k(true);
                     return;
                 }
                 i11 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
@@ -517,9 +517,9 @@ public final /* synthetic */ class y0 implements Runnable {
                 } else {
                     ArrayList arrayList11 = new ArrayList(1);
                     arrayList11.add(tL_inputStickerSetID);
-                    uv uvVar = new uv(wnVar, wnVar.getParentActivity(), wnVar.ea, arrayList11);
-                    uvVar.setCalcMandatoryInsets(wnVar.x9());
-                    wnVar.showDialog(uvVar);
+                    vv vvVar = new vv(wnVar, wnVar.getParentActivity(), wnVar.ea, arrayList11);
+                    vvVar.setCalcMandatoryInsets(wnVar.x9());
+                    wnVar.showDialog(vvVar);
                     return;
                 }
             case 15:
@@ -543,7 +543,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 }
                 chat.join_request = false;
                 rpVar.P = true;
-                rpVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new mp(npVar, i14), new fh(21, npVar, chat));
+                rpVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new mp(npVar, i14), new dh(22, npVar, chat));
                 return;
             case 17:
                 AnimatedPhoneNumberEditText.j((AnimatedPhoneNumberEditText) obj2, z10, (String) obj);

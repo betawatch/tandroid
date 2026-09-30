@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,17 +45,17 @@ public final /* synthetic */ class mr0 implements Runnable {
             case 4:
                 photoViewer.C4.setImageBitmap(bitmap);
                 photoViewer.t5.setUndoCutState(true);
-                photoViewer.Z2(true, true);
+                photoViewer.a3(true, true);
                 break;
             case 5:
                 photoViewer.C4.setImageBitmap(bitmap);
                 photoViewer.t5.setUndoCutState(true);
-                photoViewer.Z2(true, true);
+                photoViewer.a3(true, true);
                 break;
             default:
                 photoViewer.C4.setImageBitmap(bitmap);
                 photoViewer.t5.setUndoCutState(true);
-                photoViewer.Z2(true, true);
+                photoViewer.a3(true, true);
                 break;
         }
     }

@@ -28,7 +28,7 @@ import org.telegram.ui.Components.ts;
 import org.telegram.ui.Components.vs;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
@@ -45,7 +45,7 @@ import org.telegram.ui.wl0;
 import org.telegram.ui.wn;
 import org.telegram.ui.zb0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -582,14 +582,14 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                             a0Var.dismiss();
                             wn R9 = wn.R9(-a0Var.b0.id);
                             U.presentFragment(R9);
-                            U.whenFullyVisible(new org.telegram.ui.web.o1(26, R9, tL_starsGiveawayOption));
+                            U.whenFullyVisible(new org.telegram.ui.web.f1(27, R9, tL_starsGiveawayOption));
                             if (ab0Var != null) {
                                 ab0Var.c(true);
                                 break;
                             }
                         } else if (str3 != null) {
                             a0Var.dismiss();
-                            hg.c.q(R.string.UnknownErrorCode, new Object[]{str3}, xc.a0(U), R.raw.error, 36);
+                            hg.c.q(R.string.UnknownErrorCode, new Object[]{str3}, yc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }

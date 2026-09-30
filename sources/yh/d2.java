@@ -10,9 +10,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wq0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class d2 extends wq0 {
     public final /* synthetic */ x3 b1;
@@ -26,7 +26,7 @@ public final class d2 extends wq0 {
 
     @Override // org.telegram.ui.Components.wq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        xc bulletinFactory;
+        yc bulletinFactory;
         if (z10 && (bulletinFactory = getBulletinFactory()) != null) {
             if (iVar.m() == 1) {
                 long j3 = iVar.j(0);

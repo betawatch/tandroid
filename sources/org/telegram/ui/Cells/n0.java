@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.ww0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class n0 {
     public final u1 a;
@@ -38,7 +38,7 @@ public final class n0 {
     public final v01 k;
     public boolean l;
     public boolean m;
-    public final yc n;
+    public final zc n;
     public final TLObject o;
 
     public n0(int i10, u1 u1Var, TLObject[] tLObjectArr, int i11) {

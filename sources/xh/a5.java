@@ -19,10 +19,10 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.z5;
-import yh.s5;
+import yh.t5;
 import yh.w7;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class a5 extends View {
     public final yh.z3 a;
@@ -49,10 +49,10 @@ public final class a5 extends View {
         z3Var.N = null;
         z3Var.O = null;
         z3Var.p = false;
-        z3Var.k = (TL_stars.starGiftAttributeBackdrop) s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        z3Var.l = (TL_stars.starGiftAttributePattern) s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        z3Var.k = (TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        z3Var.l = (TL_stars.starGiftAttributePattern) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         TL_stars.starGiftAttributeModel stargiftattributemodel = z3Var.m;
-        z3Var.m = (TL_stars.starGiftAttributeModel) s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        z3Var.m = (TL_stars.starGiftAttributeModel) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
         Paint paint = z3Var.f;
         z3Var.h = null;
         paint.setShader(null);

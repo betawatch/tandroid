@@ -10,7 +10,7 @@ import androidx.car.app.ICarHost;
 import androidx.car.app.IOnDoneCallback;
 import v7.u;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public interface ICarApp extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$ICarApp".replace('$', '.');
@@ -35,7 +35,7 @@ public interface ICarApp extends IInterface {
 
     void onNewIntent(Intent intent, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static abstract class Stub extends Binder implements ICarApp {
         static final int TRANSACTION_getAppInfo = 10;
         static final int TRANSACTION_getManager = 9;
@@ -48,7 +48,7 @@ public interface ICarApp extends IInterface {
         static final int TRANSACTION_onHandshakeCompleted = 11;
         static final int TRANSACTION_onNewIntent = 7;
 
-        /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+        /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
         public static class Proxy implements ICarApp {
             private IBinder mRemote;
 
@@ -257,7 +257,7 @@ public interface ICarApp extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static class Default implements ICarApp {
         @Override // android.os.IInterface
         public IBinder asBinder() {

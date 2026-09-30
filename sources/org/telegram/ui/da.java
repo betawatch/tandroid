@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class da implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.m6, org.telegram.ui.Components.ol0, MessagesStorage.BooleanCallback, c5.p, org.telegram.ui.Components.voip.j3, BillingController.ProductDetailsResponseListenerLegacy, e2.h, org.telegram.ui.Components.w40 {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class da implements org.telegram.ui.ActionBar.z1, o
     @Override // e2.h
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.c;
-        ((u2.j0) obj).h(aVar.b, (u2.f0) aVar.c, (u2.t) this.d, (u2.b0) this.e, this.b);
+        ((u2.k0) obj).h(aVar.b, (u2.f0) aVar.c, (u2.t) this.d, (u2.b0) this.e, this.b);
     }
 
     @Override // org.telegram.ui.Components.m6

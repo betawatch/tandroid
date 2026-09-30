@@ -42,7 +42,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -287,7 +287,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                             zf0Var.e = tL_error2.text;
                             zf0Var.f = false;
                             dVar.setLoading(false);
-                            new org.telegram.ui.Components.xc(qg0Var2.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, tL_error2.text));
+                            new org.telegram.ui.Components.yc(qg0Var2.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, tL_error2.text));
                             break;
                         } else {
                             qg0Var2.u1(0, true, null, true);
@@ -372,7 +372,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                     }
                 }
             case 6:
-                AndroidUtilities.runOnUIThread(new sj0(2, (bt) this.c, MessagesStorage.getInstance(((wj0) this.b).currentAccount).getUser(((TLRPC.TL_contact) this.d).user_id)));
+                AndroidUtilities.runOnUIThread(new xi0(3, (bt) this.c, MessagesStorage.getInstance(((wj0) this.b).currentAccount).getUser(((TLRPC.TL_contact) this.d).user_id)));
                 break;
             case 7:
                 wj0.m((wj0) this.b, (TLObject) this.c, (bt) this.d);
@@ -644,9 +644,9 @@ public final /* synthetic */ class jf0 implements Runnable {
             case 16:
                 oo0 oo0Var = (oo0) this.b;
                 TLRPC.TL_payments_validatedRequestedInfo tL_payments_validatedRequestedInfo = (TLRPC.TL_payments_validatedRequestedInfo) this.d;
-                sj0 sj0Var = (sj0) this.c;
+                xi0 xi0Var = (xi0) this.c;
                 oo0Var.E0 = tL_payments_validatedRequestedInfo;
-                sj0Var.run();
+                xi0Var.run();
                 oo0Var.D0(false);
                 oo0Var.H0(true, false);
                 break;
@@ -669,7 +669,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                 ar0 ar0Var = (ar0) this.c;
                 photoViewer2.C4.setImageBitmap(bitmap);
                 photoViewer2.t5.setUndoCutState(true);
-                photoViewer2.Z2(true, true);
+                photoViewer2.a3(true, true);
                 AndroidUtilities.cancelRunOnUIThread(ar0Var);
                 AndroidUtilities.runOnUIThread(ar0Var, 800L);
                 break;
@@ -708,7 +708,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                     if (photoViewer5.k8) {
                         PhotoViewer photoViewer6 = bu0Var.d;
                         photoViewer6.b8 = iArr[8];
-                        photoViewer6.C3();
+                        photoViewer6.D3();
                         if (bu0Var.d.Y7 > bu0Var.d.Z7 - 1) {
                             PhotoViewer photoViewer7 = bu0Var.d;
                             photoViewer7.Y7 = photoViewer7.Z7 - 1;
@@ -738,8 +738,8 @@ public final /* synthetic */ class jf0 implements Runnable {
                         }
                         bu0Var.d.Z7 = 0;
                     }
-                    bu0Var.d.A3();
-                    bu0Var.d.w3();
+                    bu0Var.d.B3();
+                    bu0Var.d.x3();
                     break;
                 }
                 break;
@@ -767,10 +767,10 @@ public final /* synthetic */ class jf0 implements Runnable {
                 TLRPC.TL_error tL_error6 = (TLRPC.TL_error) this.d;
                 TLObject tLObject6 = (TLObject) this.c;
                 if (tL_error6 != null) {
-                    org.telegram.ui.Components.xc.b0(tL_error6);
+                    org.telegram.ui.Components.yc.b0(tL_error6);
                     break;
                 } else if (!(tLObject6 instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.messenger.ok.p(R.string.UnknownError, org.telegram.ui.Components.xc.a0(premiumPreviewFragment), null);
+                    org.telegram.messenger.ok.p(R.string.UnknownError, org.telegram.ui.Components.yc.a0(premiumPreviewFragment), null);
                     break;
                 }
                 break;
@@ -822,7 +822,7 @@ public final /* synthetic */ class jf0 implements Runnable {
                 profileActivity2.N3();
                 break;
             case 25:
-                org.telegram.ui.Components.xc.D((ub) this.b, (TLRPC.User) this.d, ((TLRPC.Chat) this.c).title).j();
+                org.telegram.ui.Components.yc.D((ub) this.b, (TLRPC.User) this.d, ((TLRPC.Chat) this.c).title).j();
                 break;
             case 26:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;

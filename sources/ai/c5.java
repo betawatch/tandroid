@@ -21,11 +21,11 @@ import org.telegram.ui.Components.fy;
 import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.ly0;
 import org.telegram.ui.Components.s90;
-import org.telegram.ui.Components.uv;
+import org.telegram.ui.Components.vv;
 import org.telegram.ui.Components.wn;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c5 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -56,10 +56,10 @@ public final /* synthetic */ class c5 implements Utilities.Callback {
                 g5Var.getClass();
                 ArrayList arrayList2 = new ArrayList(1);
                 arrayList2.add((TLRPC.InputStickerSet) obj);
-                uv uvVar = new uv(((jc) obj3).f, g5Var.getContext(), (org.telegram.ui.ActionBar.d6) obj2, arrayList2);
+                vv vvVar = new vv(((jc) obj3).f, g5Var.getContext(), (org.telegram.ui.ActionBar.d6) obj2, arrayList2);
                 x5 x5Var = g5Var.z0.Q1;
                 if (x5Var != null) {
-                    ((ac) x5Var).h(uvVar);
+                    ((ac) x5Var).h(vvVar);
                     break;
                 }
                 break;
@@ -91,7 +91,7 @@ public final /* synthetic */ class c5 implements Utilities.Callback {
                 e9 e9Var = (e9) obj;
                 e6 e6Var2 = ((v5) obj4).l;
                 e6Var2.S1.c(e9Var.a, e6Var2.B1, (TL_stories.StoryItem) obj3);
-                new xc(e6Var2.c1, (org.telegram.ui.ActionBar.d6) obj2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoryAddedToAlbumX, e9Var.b))).j();
+                new yc(e6Var2.c1, (org.telegram.ui.ActionBar.d6) obj2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoryAddedToAlbumX, e9Var.b))).j();
                 break;
             case 3:
                 ci.p7 p7Var = (ci.p7) obj4;
@@ -246,7 +246,7 @@ public final /* synthetic */ class c5 implements Utilities.Callback {
                     x3Var2.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new u2.p0(17, x3Var2, tL_error));
+                    AndroidUtilities.runOnUIThread(new u2.i0(18, x3Var2, tL_error));
                     break;
                 }
         }

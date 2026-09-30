@@ -2,14 +2,14 @@ package org.telegram.messenger.voip;
 
 import android.media.AudioManager;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o0 implements Runnable {
+public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
     public final /* synthetic */ AudioManager c;
 
-    public /* synthetic */ o0(VoIPService voIPService, AudioManager audioManager, int i10) {
+    public /* synthetic */ f0(VoIPService voIPService, AudioManager audioManager, int i10) {
         this.a = i10;
         this.b = voIPService;
         this.c = audioManager;
@@ -22,7 +22,7 @@ public final /* synthetic */ class o0 implements Runnable {
                 this.b.lambda$configureDeviceForCall$111(this.c);
                 break;
             default:
-                this.b.lambda$configureDeviceForCall$110(this.c);
+                this.b.lambda$configureDeviceForCall$112(this.c);
                 break;
         }
     }

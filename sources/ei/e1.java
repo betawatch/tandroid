@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.w6;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ej1;
 import org.telegram.ui.qy;
@@ -32,7 +32,7 @@ import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.wn;
 import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -58,7 +58,7 @@ public final /* synthetic */ class e1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        xc a02;
+        yc a02;
         int i10;
         qy qyVar;
         switch (this.a) {
@@ -190,16 +190,16 @@ public final /* synthetic */ class e1 implements Runnable {
                                 wnVar.W9(user.id, str5, false);
                                 break;
                             } else {
-                                a02 = xc.a0(m2Var);
+                                a02 = yc.a0(m2Var);
                                 i10 = R.string.BotAlreadyAddedToAttachMenu;
                             }
                         } else {
-                            a02 = xc.a0(m2Var);
+                            a02 = yc.a0(m2Var);
                             i10 = R.string.BotAlreadyAddedToAttachMenu;
                         }
                     }
                 } else {
-                    a02 = xc.a0((org.telegram.ui.ActionBar.m2) hg.c.g(1, arrayList2));
+                    a02 = yc.a0((org.telegram.ui.ActionBar.m2) hg.c.g(1, arrayList2));
                     i10 = R.string.BotCantAddToAttachMenu;
                 }
                 ok.p(i10, a02, null);

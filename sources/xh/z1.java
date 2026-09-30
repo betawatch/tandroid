@@ -11,9 +11,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.bs0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wq0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class z1 extends wq0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.m2 b1;
@@ -28,8 +28,8 @@ public final class z1 extends wq0 {
 
     @Override // org.telegram.ui.Components.wq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        xc a02;
-        if (z10 && (a02 = xc.a0(this.b1)) != null) {
+        yc a02;
+        if (z10 && (a02 = yc.a0(this.b1)) != null) {
             if (iVar.m() == 1) {
                 long j3 = iVar.j(0);
                 if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {

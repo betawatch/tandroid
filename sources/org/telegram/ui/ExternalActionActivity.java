@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class ExternalActionActivity extends Activity implements org.telegram.ui.ActionBar.y4 {
     public static final ArrayList x = new ArrayList();
@@ -211,7 +211,7 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
         SharedConfig.appLocked = true;
         if (SecretMediaViewer.g() && SecretMediaViewer.f().s) {
             SecretMediaViewer.f().e(false, false);
-        } else if (PhotoViewer.C1() && PhotoViewer.t1().Q1()) {
+        } else if (PhotoViewer.D1() && PhotoViewer.t1().R1()) {
             PhotoViewer.t1().G0(false, true);
         } else if (i4.I() && i4.x().V) {
             i4.x().o(false, true);
@@ -259,7 +259,7 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
             finish();
             return;
         }
-        if (PhotoViewer.t1().Q1()) {
+        if (PhotoViewer.t1().R1()) {
             PhotoViewer.t1().G0(true, false);
             return;
         }

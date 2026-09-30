@@ -11,7 +11,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.au0;
 import org.telegram.ui.il0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class v implements f81 {
     public int a;
@@ -69,7 +69,7 @@ public final class v implements f81 {
             this.b = z10;
             if (z10) {
                 photoViewer.H2 = false;
-                photoViewer.g2();
+                photoViewer.h2();
                 photoViewer.e0.invalidate();
             }
         }
@@ -99,7 +99,7 @@ public final class v implements f81 {
         }
         if (i11 == 1 || this.b) {
             photoViewer.H2 = false;
-            photoViewer.i2();
+            photoViewer.j2();
         }
     }
 
@@ -127,7 +127,7 @@ public final class v implements f81 {
         h(f7);
         photoViewer.q3.h(1.0f, false);
         photoViewer.S7.setProgress(f7);
-        photoViewer.A3();
+        photoViewer.B3();
     }
 
     public void g() {
@@ -158,7 +158,7 @@ public final class v implements f81 {
             }
             return;
         }
-        photoViewer.s2(this.a);
+        photoViewer.t2(this.a);
         if (photoViewer.c2 == 1) {
             long j3 = this.a;
             photoViewer.X7 = j3;

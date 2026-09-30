@@ -8,7 +8,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class an0 extends HorizontalScrollView {
     public boolean a;
@@ -70,34 +70,34 @@ public abstract class an0 extends HorizontalScrollView {
         int childCount = this.b.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = this.b.getChildAt(i10);
-            if (childAt instanceof aw) {
-                aw awVar = (aw) childAt;
+            if (childAt instanceof bw) {
+                bw bwVar = (bw) childAt;
                 boolean z10 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
                 boolean z11 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
-                if (!awVar.y && z10 && (kj0Var = awVar.e) != null && !kj0Var.k0 && !z11) {
-                    awVar.e.T(0.0f, true);
-                    awVar.e.start();
+                if (!bwVar.y && z10 && (kj0Var = bwVar.e) != null && !kj0Var.k0 && !z11) {
+                    bwVar.e.T(0.0f, true);
+                    bwVar.e.start();
                 }
-                if (awVar.y != z10) {
-                    awVar.y = z10;
+                if (bwVar.y != z10) {
+                    bwVar.y = z10;
                     if (z10) {
-                        awVar.invalidate();
-                        rg.b1 b1Var = awVar.f;
+                        bwVar.invalidate();
+                        rg.b1 b1Var = bwVar.f;
                         if (b1Var != null) {
                             b1Var.invalidate();
                         }
-                        rg.b1 b1Var2 = awVar.f;
-                        if (b1Var2 != null && (q5Var = awVar.w) != null && (l4Var = q5Var.k) != null) {
+                        rg.b1 b1Var2 = bwVar.f;
+                        if (b1Var2 != null && (q5Var = bwVar.w) != null && (l4Var = q5Var.k) != null) {
                             b1Var2.setImageReceiver(l4Var);
                         }
-                        w9 w9Var = awVar.d;
+                        w9 w9Var = bwVar.d;
                         if (w9Var != null) {
                             w9Var.invalidate();
                         }
                     } else {
-                        awVar.b();
+                        bwVar.b();
                     }
-                    awVar.c();
+                    bwVar.c();
                 }
             }
         }

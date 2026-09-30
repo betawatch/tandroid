@@ -47,7 +47,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class hy0 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int u0 = 0;
@@ -201,7 +201,7 @@ public class hy0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
         if (i10 == 2) {
             try {
                 AndroidUtilities.addToClipboard(str2);
-                new xc((FrameLayout) hy0Var.containerView, hy0Var.resourcesProvider).k(false).j();
+                new yc((FrameLayout) hy0Var.containerView, hy0Var.resourcesProvider).k(false).j();
                 return;
             } catch (Exception e) {
                 FileLog.e(e);
@@ -253,7 +253,7 @@ public class hy0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
             hy0Var.dismiss();
             org.telegram.ui.ActionBar.m2 m2Var = hy0Var.L;
             if (m2Var != null) {
-                org.telegram.messenger.ok.p(R.string.AddStickersNotFound, xc.a0(m2Var), null);
+                org.telegram.messenger.ok.p(R.string.AddStickersNotFound, yc.a0(m2Var), null);
                 return;
             }
             return;

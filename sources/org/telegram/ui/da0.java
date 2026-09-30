@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class da0 implements Runnable {
     public final /* synthetic */ int a;
@@ -141,7 +141,7 @@ public final /* synthetic */ class da0 implements Runnable {
                     photoViewer.getClass();
                     view.setVisibility(8);
                 }
-                photoViewer.r3();
+                photoViewer.s3();
                 return;
             case 5:
                 PhotoViewer photoViewer2 = (PhotoViewer) obj2;
@@ -382,7 +382,7 @@ public final /* synthetic */ class da0 implements Runnable {
                 org.telegram.ui.web.c cVar = kVar.w;
                 ArrayList arrayList4 = kVar.x;
                 arrayList4.clear();
-                org.telegram.ui.web.n1.a().getClass();
+                org.telegram.ui.web.o1.a().getClass();
                 ArrayList arrayList5 = new ArrayList();
                 try {
                     JSONArray jSONArray = new JSONArray(str2).getJSONArray(1);

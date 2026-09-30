@@ -17,7 +17,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class w61 extends Drawable {
     public final Drawable a;
@@ -27,7 +27,7 @@ public final class w61 extends Drawable {
     public final TextPaint e;
     public final Paint f;
     public final RectF g;
-    public final yc h;
+    public final zc h;
     public final me.b i;
     public Runnable j;
     public StaticLayout k;
@@ -55,8 +55,8 @@ public final class w61 extends Drawable {
         this.e = textPaint3;
         this.f = new Paint(1);
         this.g = new RectF();
-        yc ycVar = new yc((View) null);
-        this.h = ycVar;
+        zc zcVar = new zc((View) null);
+        this.h = zcVar;
         this.i = new me.b(new k2.u(this, 16));
         this.s = AndroidUtilities.dp(62.33f);
         this.t = AndroidUtilities.dp(12.0f);
@@ -67,7 +67,7 @@ public final class w61 extends Drawable {
         this.y = AndroidUtilities.dp(2.0f);
         this.a = ApplicationLoader.applicationContext.getDrawable(R.drawable.send_plane_26).mutate();
         this.b = ApplicationLoader.applicationContext.getDrawable(R.drawable.large_unsupported).mutate();
-        ycVar.f = new yq0(this, 29);
+        zcVar.f = new yq0(this, 29);
         textPaint.setTypeface(AndroidUtilities.bold());
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
         textPaint2.setTextSize(AndroidUtilities.dp(12.0f));

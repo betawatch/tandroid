@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class hg implements ny {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -113,7 +113,7 @@ public final class hg implements ny {
         if (wnVar == null) {
             return;
         }
-        PhotoViewer.t1().J2(null, wnVar, wnVar.ea);
+        PhotoViewer.t1().K2(null, wnVar, wnVar.ea);
         File pathToAttach = obj instanceof TLRPC.Document ? FileLoader.getInstance(chatActivityEnterView.Q).getPathToAttach((TLRPC.Document) obj) : null;
         if (pathToAttach == null) {
             return;
@@ -131,7 +131,7 @@ public final class hg implements ny {
         photoEntry.caption = null;
         photoEntry.isVideo = true;
         arrayList.add(photoEntry);
-        PhotoViewer.t1().f2(arrayList, 0, 12, false, new fg(this, obj, obj2, photoEntry), chatActivityEnterView.P2);
+        PhotoViewer.t1().g2(arrayList, 0, 12, false, new fg(this, obj, obj2, photoEntry), chatActivityEnterView.P2);
     }
 
     @Override // org.telegram.ui.Components.ny

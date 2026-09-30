@@ -13,12 +13,12 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lb;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.t31;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -147,10 +147,10 @@ public final /* synthetic */ class e2 implements Runnable {
             case 14:
                 int i13 = k3Var.G;
                 Context context = k3Var.getContext();
-                xc xcVar = new xc(lb.a(k3Var.getContext()), k3Var.E);
+                yc ycVar = new yc(lb.a(k3Var.getContext()), k3Var.E);
                 long j3 = k3Var.H;
                 int i14 = t31.v;
-                t31.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
+                t31.K(i13, context, j3, false, false, new ArrayList(), ycVar, null, new byte[0], null, null);
                 break;
             case 15:
                 k3.j(k3Var.G, k3Var.H, new e2(k3Var, 16));

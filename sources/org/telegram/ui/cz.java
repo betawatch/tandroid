@@ -32,7 +32,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class cz implements NotificationCenter.NotificationCenterDelegate {
     public static final HashSet L = new HashSet();
@@ -811,7 +811,7 @@ public class cz implements NotificationCenter.NotificationCenterDelegate {
         mx0Var.c.setText(LocaleController.getString(R.string.PremiumStickerTooltip));
         org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(wnVar.getParentActivity(), wnVar.getResourceProvider(), true);
         mx0Var.setButton(ocVar);
-        ocVar.a = new tt(11, this, messageObject);
+        ocVar.a = new tt(12, this, messageObject);
         ocVar.e(LocaleController.getString(R.string.ViewAction));
         org.telegram.ui.Components.qc g10 = org.telegram.ui.Components.qc.g(wnVar, mx0Var, 2750);
         g10.b = messageObject.getId();

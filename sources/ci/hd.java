@@ -36,7 +36,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.ye;
 import org.telegram.ui.zf0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class hd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -136,7 +136,7 @@ public final /* synthetic */ class hd implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ye(tL_error, (Utilities.Callback) obj5, tLObject, (MessagesController) obj4, (TLRPC.TL_inputInvoicePremiumGiftCode) obj3, (org.telegram.ui.ActionBar.m2) obj2, (Utilities.Callback) obj, 9));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ye((yh.s5) obj5, tLObject, (MessageObject) obj4, (TLRPC.InputInvoice) obj3, (Utilities.Callback) obj2, (org.telegram.ui.Components.xc) obj, tL_error, 11));
+                AndroidUtilities.runOnUIThread(new ye((yh.t5) obj5, tLObject, (MessageObject) obj4, (TLRPC.InputInvoice) obj3, (Utilities.Callback) obj2, (org.telegram.ui.Components.yc) obj, tL_error, 11));
                 break;
         }
     }

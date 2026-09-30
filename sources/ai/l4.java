@@ -11,7 +11,7 @@ import org.telegram.ui.Components.sr;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class l4 extends ImageReceiver {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final class l4 extends ImageReceiver {
                 return imageBitmapByKey2;
             case 5:
                 boolean imageBitmapByKey3 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                ((PhotoViewer) obj).l2();
+                ((PhotoViewer) obj).m2();
                 return imageBitmapByKey3;
             case 6:
                 boolean imageBitmapByKey4 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);

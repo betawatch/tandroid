@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class yx0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.yl0 a;
@@ -41,7 +41,7 @@ public final class yx0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(this, view);
         H.W(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false)));
         int i10 = this.y;
-        H.l(0, LocaleController.getString(R.string.Unblock), new jx0(3, this, l4), i10 == 1);
+        H.l(0, LocaleController.getString(R.string.Unblock), new ix0(4, this, l4), i10 == 1);
         H.m(i10 != 1, i10 == 0 ? R.drawable.msg_user_remove : 0, LocaleController.getString(R.string.Remove), true, new wx0(this, l4));
         H.S = 190;
         H.Z();

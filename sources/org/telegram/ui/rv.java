@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rv implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -43,13 +43,13 @@ public final /* synthetic */ class rv implements View.OnClickListener {
                         i10++;
                         ((MediaController.PhotoEntry) obj).caption = fieldText;
                     }
-                    PhotoViewer.t1().J2(null, qyVar, qyVar.getResourceProvider());
+                    PhotoViewer.t1().K2(null, qyVar, qyVar.getResourceProvider());
                     PhotoViewer.t1().p7 = true;
                     PhotoViewer.t1().q7 = fieldText;
                     ArrayList arrayList3 = new ArrayList(qyVar.D2);
                     boolean[] zArr = new boolean[qyVar.D2.size()];
                     Arrays.fill(zArr, true);
-                    PhotoViewer.t1().f2(arrayList3, 0, 0, false, new wx(qyVar, zArr), null);
+                    PhotoViewer.t1().g2(arrayList3, 0, 0, false, new wx(qyVar, zArr), null);
                     PhotoViewer t12 = PhotoViewer.t1();
                     t12.f4 = true;
                     CheckBox checkBox = t12.N0;

@@ -32,9 +32,9 @@ import org.telegram.ui.Components.bn0;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.t90;
 import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class o0 {
     public boolean A;
@@ -58,7 +58,7 @@ public final class o0 {
     public t90 s;
     public final org.telegram.ui.Components.e6 u;
     public v01 v;
-    public final yc y;
+    public final zc y;
     public final TextPaint f = new TextPaint(1);
     public final Paint k = new Paint(1);
     public final Path l = new Path();
@@ -74,7 +74,7 @@ public final class o0 {
     public o0(u1 u1Var) {
         this.a = u1Var;
         this.E = new bn0(u1Var.getContext(), null);
-        this.y = new yc(u1Var);
+        this.y = new zc(u1Var);
         this.u = new org.telegram.ui.Components.e6(u1Var, 350L, sr.h);
     }
 
@@ -113,7 +113,7 @@ public final class o0 {
                 i10++;
             }
             boolean contains = this.x.contains(motionEvent.getX(), motionEvent.getY());
-            yc ycVar = this.y;
+            zc zcVar = this.y;
             if (action == 0) {
                 this.E.a();
                 if (!this.t) {
@@ -136,7 +136,7 @@ public final class o0 {
                             n0Var.n.c(true);
                         }
                         if (contains) {
-                            ycVar.c(true);
+                            zcVar.c(true);
                         }
                         naVar = this.G;
                         if (naVar != null) {
@@ -211,7 +211,7 @@ public final class o0 {
                         if (z11 && (velocityTracker = this.D) != null) {
                             velocityTracker.computeCurrentVelocity(500);
                             this.E.c((int) this.o, 0, (int) (-this.D.getXVelocity()), 0, -2147483647, ConnectionsManager.DEFAULT_DATACENTER_ID, 0, 0);
-                        } else if (ycVar.h && u1Var.getDelegate() != null) {
+                        } else if (zcVar.h && u1Var.getDelegate() != null) {
                             u1Var.getDelegate().z(u1Var);
                         }
                     } else if (!n0Var.g) {
@@ -223,7 +223,7 @@ public final class o0 {
                         u1Var.getDelegate().x2();
                     }
                 }
-                ycVar.c(false);
+                zcVar.c(false);
                 this.A = false;
                 VelocityTracker velocityTracker5 = this.D;
                 if (velocityTracker5 != null) {

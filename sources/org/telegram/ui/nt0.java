@@ -14,7 +14,7 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class nt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final class nt0 extends AnimatorListenerAdapter {
         } else if (i10 == 4) {
             photoViewer.O1 = true;
             photoViewer.e0.invalidate();
-            photoViewer.e0.post(new sj0(22, this, photoViewer.N1));
+            photoViewer.e0.post(new xi0(23, this, photoViewer.N1));
             photoViewer.N1 = null;
             photoViewer.v5.m(false, true);
             photoViewer.w5.m(false, true);
@@ -91,10 +91,10 @@ public final class nt0 extends AnimatorListenerAdapter {
             photoViewer.e6 = photoViewer.j6;
             photoViewer.f6 = photoViewer.k6;
         } else {
-            float q22 = photoViewer.q2(false);
-            photoViewer.e6 = q22;
-            photoViewer.a6 = q22;
-            photoViewer.v3(q22);
+            float r22 = photoViewer.r2(false);
+            photoViewer.e6 = r22;
+            photoViewer.a6 = r22;
+            photoViewer.w3(r22);
             photoViewer.c6 = 0.0f;
             photoViewer.d6 = 0.0f;
         }
@@ -113,12 +113,12 @@ public final class nt0 extends AnimatorListenerAdapter {
             photoViewer2.e0.setAlpha(1.0f);
             ArrayList arrayList = yu0Var.b;
             int i12 = yu0Var.a;
-            photoViewer2.Y1(null, null, null, null, arrayList, null, null, i12, yu0Var.c.E((MessageObject) arrayList.get(i12), null, yu0Var.a, true, false));
+            photoViewer2.Z1(null, null, null, null, arrayList, null, null, i12, yu0Var.c.E((MessageObject) arrayList.get(i12), null, yu0Var.a, true, false));
             photoViewer.i7 = null;
             du0 du0Var = new du0();
             du0Var.c = false;
-            photoViewer.j3(false, false, du0Var);
-            photoViewer.j3(true, true, du0Var);
+            photoViewer.k3(false, false, du0Var);
+            photoViewer.k3(true, true, du0Var);
             return;
         }
         AnimatorSet animatorSet = new AnimatorSet();

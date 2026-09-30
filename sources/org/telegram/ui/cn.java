@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class cn extends org.telegram.ui.Components.wq0 {
     public final /* synthetic */ MessageObject b1;
@@ -34,7 +34,7 @@ public final class cn extends org.telegram.ui.Components.wq0 {
         if (iVar.m() != 1) {
             inVar.a.y3.k(0L, 53, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
         } else {
-            if (((TLRPC.Dialog) iVar.n(0)).id == inVar.a.getUserConfig().getClientUserId() && org.telegram.ui.Components.xc.a0(inVar.a).e0(i10, ((TLRPC.Dialog) iVar.n(0)).id)) {
+            if (((TLRPC.Dialog) iVar.n(0)).id == inVar.a.getUserConfig().getClientUserId() && org.telegram.ui.Components.yc.a0(inVar.a).e0(i10, ((TLRPC.Dialog) iVar.n(0)).id)) {
                 return;
             }
             inVar.a.y3.k(((TLRPC.Dialog) iVar.n(0)).id, 53, Integer.valueOf(i10), tL_forumTopic, null, null);
@@ -64,7 +64,7 @@ public final class cn extends org.telegram.ui.Components.wq0 {
                 ci.ec ecVar = null;
                 if (booleanValue) {
                     cn cnVar = cn.this;
-                    AndroidUtilities.runOnUIThread(new fh(12, cnVar, l4));
+                    AndroidUtilities.runOnUIThread(new dh(13, cnVar, l4));
                     cnVar.dismiss();
                     lcVar.Y(null);
                 } else {

@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class g0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -105,7 +105,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                     hashSet.add(Long.valueOf(((TLRPC.TL_emojiStatusCollectible) emojiStatus).collectible_id));
                 }
                 int i14 = 0;
-                G = s5.y(i13, false).G(j3, true);
+                G = t5.y(i13, false).G(j3, true);
                 this.F = G;
                 if (G != null) {
                     for (int i15 = 0; i15 < this.F.l.size(); i15++) {
@@ -238,7 +238,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i142 = 0;
-            G = s5.y(i13, false).G(j3, true);
+            G = t5.y(i13, false).G(j3, true);
             this.F = G;
             if (G != null) {
             }
@@ -264,7 +264,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 }
                 int i1422 = 0;
-                G = s5.y(i13, false).G(j3, true);
+                G = t5.y(i13, false).G(j3, true);
                 this.F = G;
                 if (G != null) {
                 }
@@ -288,7 +288,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i14222 = 0;
-            G = s5.y(i13, false).G(j3, true);
+            G = t5.y(i13, false).G(j3, true);
             this.F = G;
             if (G != null) {
             }

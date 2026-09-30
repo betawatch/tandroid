@@ -15,7 +15,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class lt implements SensorEventListener {
     public int E;
@@ -263,7 +263,7 @@ public final class lt implements SensorEventListener {
                             break;
                         }
                     }
-                    if (!VoIPService.isAnyKindOfCallActive() && !PhotoViewer.t1().Q1()) {
+                    if (!VoIPService.isAnyKindOfCallActive() && !PhotoViewer.t1().R1()) {
                         z11 = true;
                         wakeLock = this.h;
                         if (wakeLock != null && !Build.MANUFACTURER.equalsIgnoreCase("samsung")) {

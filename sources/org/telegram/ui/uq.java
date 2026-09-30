@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uq implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -82,7 +82,7 @@ public final /* synthetic */ class uq implements Utilities.Callback {
                             sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i11).isUserContactBlocked(longValue));
                         }
                         edit.putLong(org.telegram.ui.Cells.c1.j(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
-                        yh.s5.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
+                        yh.t5.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
                     }
                     edit.apply();
                 }
@@ -91,7 +91,7 @@ public final /* synthetic */ class uq implements Utilities.Callback {
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i13 = i11;
-                        long j12 = yh.s5.y(i13, false).p().amount;
+                        long j12 = yh.t5.y(i13, false).p().amount;
                         long j13 = j11;
                         Utilities.Callback callback2 = callback;
                         HashMap hashMap2 = hashMap;
@@ -107,8 +107,8 @@ public final /* synthetic */ class uq implements Utilities.Callback {
                         new yh.l7(activity2, d6Var, j13, 13, DialogObject.getShortName(i13, longValue2), new b2(callback2, hashMap2, 0), longValue2).show();
                     }
                 };
-                if (!yh.s5.y(i11, false).e) {
-                    yh.s5 y3 = yh.s5.y(i11, false);
+                if (!yh.t5.y(i11, false).e) {
+                    yh.t5 y3 = yh.t5.y(i11, false);
                     y3.e = false;
                     y3.q(false, true, runnable);
                     y3.e = true;

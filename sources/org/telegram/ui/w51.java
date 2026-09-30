@@ -8,25 +8,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
-public final class w51 extends org.telegram.ui.Components.ew {
+public final class w51 extends org.telegram.ui.Components.fw {
     public final /* synthetic */ int g0;
     public final /* synthetic */ a71 h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w51(a71 a71Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11, int i10, jx0 jx0Var, int i11, int i12) {
-        super(context, d6Var, z10, z11, false, true, i10, jx0Var, i11, false);
+    public w51(a71 a71Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11, int i10, ix0 ix0Var, int i11, int i12) {
+        super(context, d6Var, z10, z11, false, true, i10, ix0Var, i11, false);
         this.h0 = a71Var;
         this.g0 = i12;
     }
 
-    @Override // org.telegram.ui.Components.ew
+    @Override // org.telegram.ui.Components.fw
     public final ColorFilter getEmojiColorFilter() {
         return this.h0.k1;
     }
 
-    @Override // org.telegram.ui.Components.ew
+    @Override // org.telegram.ui.Components.fw
     public final boolean h(int i10) {
         int i11;
         o61 o61Var;
@@ -39,18 +39,18 @@ public final class w51 extends org.telegram.ui.Components.ew {
         if (i12 == 4 && i10 == 0) {
             a71Var.Q = !a71Var.Q;
             a71Var.d0.setVisibility(8);
-            org.telegram.ui.Components.ew ewVar = a71Var.c0[a71Var.Q ? 1 : 0];
-            a71Var.d0 = ewVar;
-            ewVar.setVisibility(0);
+            org.telegram.ui.Components.fw fwVar = a71Var.c0[a71Var.Q ? 1 : 0];
+            a71Var.d0 = fwVar;
+            fwVar.setVisibility(0);
             a71Var.d0.x.setDrawable(getContext().getDrawable(a71Var.Q ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
             a71Var.d0.x.setContentDescription(LocaleController.getString(a71Var.Q ? R.string.AccDescrStickers : R.string.Emoji));
             a71Var.B(true, false, false);
             a71Var.r0.h1(0, 0);
             return true;
         }
-        org.telegram.ui.Components.aw awVar = this.E;
-        int i13 = ((awVar == null || !this.b0) ? 0 : 1) + 1;
-        if (awVar != null && this.b0 && i10 == 1) {
+        org.telegram.ui.Components.bw bwVar = this.E;
+        int i13 = ((bwVar == null || !this.b0) ? 0 : 1) + 1;
+        if (bwVar != null && this.b0 && i10 == 1) {
             i11 = a71Var.n;
         } else {
             if ((i12 != 4 || i10 != 0) && i10 > 0) {
@@ -72,12 +72,12 @@ public final class w51 extends org.telegram.ui.Components.ew {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ew
-    public final void i(org.telegram.ui.Components.aw awVar) {
+    @Override // org.telegram.ui.Components.fw
+    public final void i(org.telegram.ui.Components.bw bwVar) {
         ValueAnimator valueAnimator = this.h0.U1;
         if (valueAnimator == null || valueAnimator.isRunning()) {
-            awVar.setScaleX(0.0f);
-            awVar.setScaleY(0.0f);
+            bwVar.setScaleX(0.0f);
+            bwVar.setScaleY(0.0f);
         }
     }
 }

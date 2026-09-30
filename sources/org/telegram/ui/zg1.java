@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class zg1 extends org.telegram.ui.ActionBar.m2 {
     public org.telegram.ui.ActionBar.j0 E;
@@ -2443,7 +2443,7 @@ public class zg1 extends org.telegram.ui.ActionBar.m2 {
             xd0 xd0Var = this.w;
             as[] asVarArr = xd0Var.f;
             if (i10 >= asVarArr.length) {
-                xd0Var.postDelayed(new p81(18, this, runnable), (asVarArr.length * 75) + 350);
+                xd0Var.postDelayed(new n81(19, this, runnable), (asVarArr.length * 75) + 350);
                 return;
             } else {
                 as asVar = asVarArr[i10];

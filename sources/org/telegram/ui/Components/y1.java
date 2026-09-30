@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class y1 implements RequestDelegate {
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         int i10 = this.a;
-        int i11 = 23;
+        int i11 = 26;
         int i12 = 14;
         int i13 = 0;
         Object obj = this.b;
@@ -37,35 +37,35 @@ public final /* synthetic */ class y1 implements RequestDelegate {
             case 1:
                 da daVar = (da) obj;
                 daVar.getClass();
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.fh(27, daVar, tLObject));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.dh(28, daVar, tLObject));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new kd(24, (or) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new uc(25, (or) obj, tLObject));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new kd(25, (ss) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new uc(i11, (ss) obj, tLObject));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new ww(1, (gx) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new dv(2, (gx) obj, tLObject));
                 break;
             case 5:
                 ry ryVar = (ry) obj;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new ww(6, ryVar, tLObject));
+                    AndroidUtilities.runOnUIThread(new dv(7, ryVar, tLObject));
                     break;
                 }
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new ww(i12, (e70) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new dv(15, (e70) obj, tLObject));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((o70) obj, tL_error, tLObject, i11));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((o70) obj, tL_error, tLObject, 23));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((mc0) obj, tL_error, tLObject, 26));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((mc0) obj, tL_error, tLObject, i11));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new ww(i11, (lh0) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new dv(24, (lh0) obj, tLObject));
                 break;
             case 10:
                 sj0 sj0Var = (sj0) obj;
@@ -97,13 +97,13 @@ public final /* synthetic */ class y1 implements RequestDelegate {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                     MessagesController.getInstance(m31Var.b).processUpdates(updates, false);
                     if (!updates.chats.isEmpty()) {
-                        AndroidUtilities.runOnUIThread(new yn0(13, m31Var, updates), 1000L);
+                        AndroidUtilities.runOnUIThread(new yn0(i12, m31Var, updates), 1000L);
                         break;
                     }
                 }
                 break;
             case 16:
-                AndroidUtilities.runOnUIThread(new yn0(15, (k41) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new yn0(16, (k41) obj, tLObject));
                 break;
             case 17:
                 s51 s51Var = (s51) obj;
@@ -112,7 +112,7 @@ public final /* synthetic */ class y1 implements RequestDelegate {
                 break;
             default:
                 int i15 = UndoView.e0;
-                AndroidUtilities.runOnUIThread(new yn0(19, (UndoView) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new yn0(20, (UndoView) obj, tLObject));
                 break;
         }
     }

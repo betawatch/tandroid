@@ -16,10 +16,10 @@ import org.telegram.ui.Components.fk;
 import org.telegram.ui.Components.ij;
 import org.telegram.ui.Components.il;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.l40;
 import org.telegram.ui.Components.lj;
 import org.telegram.ui.Components.ln;
+import org.telegram.ui.Components.lv;
 import org.telegram.ui.Components.m00;
 import org.telegram.ui.Components.of;
 import org.telegram.ui.Components.op;
@@ -30,8 +30,8 @@ import org.telegram.ui.Components.rk;
 import org.telegram.ui.Components.tb0;
 import org.telegram.ui.Components.ua0;
 import org.telegram.ui.Components.ub0;
-import org.telegram.ui.Components.uv;
 import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.vv;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.wn;
 import org.telegram.ui.Components.xn;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.yl0;
 import org.telegram.ui.hx;
 import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class r extends s4.s0 {
     public final /* synthetic */ int a;
@@ -457,11 +457,11 @@ public final class r extends s4.s0 {
                 }
                 break;
             case 25:
-                uv uvVar = (uv) this.b;
-                kv kvVar = uvVar.f;
-                if (kvVar != null && uvVar.h.K1 && kvVar.w) {
-                    kvVar.w = false;
-                    kvVar.invalidate();
+                vv vvVar = (vv) this.b;
+                lv lvVar = vvVar.f;
+                if (lvVar != null && vvVar.h.K1 && lvVar.w) {
+                    lvVar.w = false;
+                    lvVar.invalidate();
                     break;
                 }
                 break;

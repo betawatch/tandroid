@@ -50,7 +50,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.Components.w40, NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_chatBannedRights A0;
@@ -153,7 +153,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     public static void U(ro roVar, FrameLayout frameLayout, View view) {
         if (!roVar.G0) {
             TLRPC.ChatFull chatFull = roVar.y0;
-            org.telegram.ui.Components.xc.a0(roVar).Q(R.raw.topics, 36, (chatFull == null || chatFull.linked_chat_id == 0) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("ChannelTopicsForbidden", roVar.getMessagesController().forumUpgradeParticipantsMin, new Object[0])) : AndroidUtilities.replaceTags(LocaleController.getString("ChannelTopicsDiscussionForbidden", R.string.ChannelTopicsDiscussionForbidden))).j();
+            org.telegram.ui.Components.yc.a0(roVar).Q(R.raw.topics, 36, (chatFull == null || chatFull.linked_chat_id == 0) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("ChannelTopicsForbidden", roVar.getMessagesController().forumUpgradeParticipantsMin, new Object[0])) : AndroidUtilities.replaceTags(LocaleController.getString("ChannelTopicsDiscussionForbidden", R.string.ChannelTopicsDiscussionForbidden))).j();
             try {
                 frameLayout.performHapticFeedback(3);
                 return;
@@ -225,7 +225,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         j0Var.H1(j3);
         TLRPC.Chat chat = roVar.getMessagesController().getChat(Long.valueOf(-j3));
         if (chat != null) {
-            j0Var.Q0 = new fh(13, roVar, chat);
+            j0Var.Q0 = new dh(14, roVar, chat);
         }
         roVar.showDialog(j0Var);
     }
@@ -433,7 +433,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat3 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat3.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat3.photo;
                                         int i17 = chatPhoto2.dc_id;
                                         if (i17 != 0) {
@@ -446,19 +446,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat3.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat3.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i18 = userProfilePhoto2.dc_id;
                                         if (i18 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i18;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -735,7 +735,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -748,19 +748,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i18 = userProfilePhoto2.dc_id;
                                         if (i18 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i18;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -1046,7 +1046,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                         TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                         if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                             int i172 = chatPhoto2.dc_id;
                                             if (i172 != 0) {
@@ -1059,19 +1059,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                     imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                 }
                                             }
-                                            PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     } else {
                                         TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                         if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                             int i182 = userProfilePhoto2.dc_id;
                                             if (i182 != 0) {
                                                 userProfilePhoto2.photo_big.dc_id = i182;
                                             }
-                                            PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     }
@@ -1320,7 +1320,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                         TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                         if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                             int i172 = chatPhoto2.dc_id;
                                             if (i172 != 0) {
@@ -1333,19 +1333,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                     imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                 }
                                             }
-                                            PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     } else {
                                         TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                         if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                             int i182 = userProfilePhoto2.dc_id;
                                             if (i182 != 0) {
                                                 userProfilePhoto2.photo_big.dc_id = i182;
                                             }
-                                            PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     }
@@ -1594,7 +1594,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                         TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                         if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                             int i172 = chatPhoto2.dc_id;
                                             if (i172 != 0) {
@@ -1607,19 +1607,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                     imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                 }
                                             }
-                                            PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     } else {
                                         TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                         if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                             int i182 = userProfilePhoto2.dc_id;
                                             if (i182 != 0) {
                                                 userProfilePhoto2.photo_big.dc_id = i182;
                                             }
-                                            PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     }
@@ -1869,7 +1869,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                         TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                         if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                             int i172 = chatPhoto2.dc_id;
                                             if (i172 != 0) {
@@ -1882,19 +1882,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                     imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                 }
                                             }
-                                            PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     } else {
                                         TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                         if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                             int i182 = userProfilePhoto2.dc_id;
                                             if (i182 != 0) {
                                                 userProfilePhoto2.photo_big.dc_id = i182;
                                             }
-                                            PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     }
@@ -2144,7 +2144,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                         TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                         if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                             int i172 = chatPhoto2.dc_id;
                                             if (i172 != 0) {
@@ -2157,19 +2157,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                     imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                 }
                                             }
-                                            PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     } else {
                                         TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                         if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                             int i182 = userProfilePhoto2.dc_id;
                                             if (i182 != 0) {
                                                 userProfilePhoto2.photo_big.dc_id = i182;
                                             }
-                                            PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     }
@@ -2502,7 +2502,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                         TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                         if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                             int i172 = chatPhoto2.dc_id;
                                             if (i172 != 0) {
@@ -2515,19 +2515,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                     imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                 }
                                             }
-                                            PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     } else {
                                         TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                         if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                            PhotoViewer.t1().J2(null, roVar4, null);
+                                            PhotoViewer.t1().K2(null, roVar4, null);
                                             TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                             int i182 = userProfilePhoto2.dc_id;
                                             if (i182 != 0) {
                                                 userProfilePhoto2.photo_big.dc_id = i182;
                                             }
-                                            PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                            PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                             break;
                                         }
                                     }
@@ -2828,7 +2828,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                             TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                             TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                             if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                 int i172 = chatPhoto2.dc_id;
                                                 if (i172 != 0) {
@@ -2841,19 +2841,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                         imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                     }
                                                 }
-                                                PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         } else {
                                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                             if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                 int i182 = userProfilePhoto2.dc_id;
                                                 if (i182 != 0) {
                                                     userProfilePhoto2.photo_big.dc_id = i182;
                                                 }
-                                                PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         }
@@ -3099,7 +3099,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                             TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                             TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                             if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                 int i172 = chatPhoto2.dc_id;
                                                 if (i172 != 0) {
@@ -3112,19 +3112,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                         imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                     }
                                                 }
-                                                PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         } else {
                                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                             if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                 int i182 = userProfilePhoto2.dc_id;
                                                 if (i182 != 0) {
                                                     userProfilePhoto2.photo_big.dc_id = i182;
                                                 }
-                                                PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         }
@@ -3370,7 +3370,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                             TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                             TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                             if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                 int i172 = chatPhoto2.dc_id;
                                                 if (i172 != 0) {
@@ -3383,19 +3383,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                         imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                     }
                                                 }
-                                                PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         } else {
                                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                             if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                 int i182 = userProfilePhoto2.dc_id;
                                                 if (i182 != 0) {
                                                     userProfilePhoto2.photo_big.dc_id = i182;
                                                 }
-                                                PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         }
@@ -3642,7 +3642,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                                 TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                                 if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                    PhotoViewer.t1().J2(null, roVar4, null);
+                                                    PhotoViewer.t1().K2(null, roVar4, null);
                                                     TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                     int i172 = chatPhoto2.dc_id;
                                                     if (i172 != 0) {
@@ -3655,19 +3655,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                             imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                         }
                                                     }
-                                                    PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                    PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                     break;
                                                 }
                                             } else {
                                                 TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                                 if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                    PhotoViewer.t1().J2(null, roVar4, null);
+                                                    PhotoViewer.t1().K2(null, roVar4, null);
                                                     TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                     int i182 = userProfilePhoto2.dc_id;
                                                     if (i182 != 0) {
                                                         userProfilePhoto2.photo_big.dc_id = i182;
                                                     }
-                                                    PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                    PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                     break;
                                                 }
                                             }
@@ -3915,7 +3915,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                             TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                             TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                             if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                 int i172 = chatPhoto2.dc_id;
                                                 if (i172 != 0) {
@@ -3928,19 +3928,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                         imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                     }
                                                 }
-                                                PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         } else {
                                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                             if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                 int i182 = userProfilePhoto2.dc_id;
                                                 if (i182 != 0) {
                                                     userProfilePhoto2.photo_big.dc_id = i182;
                                                 }
-                                                PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         }
@@ -4186,7 +4186,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                             TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                             TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                             if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                 int i172 = chatPhoto2.dc_id;
                                                 if (i172 != 0) {
@@ -4199,19 +4199,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                         imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                     }
                                                 }
-                                                PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         } else {
                                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                             if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                 int i182 = userProfilePhoto2.dc_id;
                                                 if (i182 != 0) {
                                                     userProfilePhoto2.photo_big.dc_id = i182;
                                                 }
-                                                PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         }
@@ -4458,7 +4458,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                                 TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                                 if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                    PhotoViewer.t1().J2(null, roVar4, null);
+                                                    PhotoViewer.t1().K2(null, roVar4, null);
                                                     TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                     int i172 = chatPhoto2.dc_id;
                                                     if (i172 != 0) {
@@ -4471,19 +4471,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                             imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                         }
                                                     }
-                                                    PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                    PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                     break;
                                                 }
                                             } else {
                                                 TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                                 if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                    PhotoViewer.t1().J2(null, roVar4, null);
+                                                    PhotoViewer.t1().K2(null, roVar4, null);
                                                     TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                     int i182 = userProfilePhoto2.dc_id;
                                                     if (i182 != 0) {
                                                         userProfilePhoto2.photo_big.dc_id = i182;
                                                     }
-                                                    PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                    PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                     break;
                                                 }
                                             }
@@ -4731,7 +4731,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                             TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                             TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                             if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                 int i172 = chatPhoto2.dc_id;
                                                 if (i172 != 0) {
@@ -4744,19 +4744,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                         imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                     }
                                                 }
-                                                PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         } else {
                                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                             if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                 int i182 = userProfilePhoto2.dc_id;
                                                 if (i182 != 0) {
                                                     userProfilePhoto2.photo_big.dc_id = i182;
                                                 }
-                                                PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         }
@@ -5004,7 +5004,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                                 TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                                 if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                    PhotoViewer.t1().J2(null, roVar4, null);
+                                                    PhotoViewer.t1().K2(null, roVar4, null);
                                                     TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                     int i172 = chatPhoto2.dc_id;
                                                     if (i172 != 0) {
@@ -5017,19 +5017,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                             imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                         }
                                                     }
-                                                    PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                    PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                     break;
                                                 }
                                             } else {
                                                 TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                                 if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                    PhotoViewer.t1().J2(null, roVar4, null);
+                                                    PhotoViewer.t1().K2(null, roVar4, null);
                                                     TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                     int i182 = userProfilePhoto2.dc_id;
                                                     if (i182 != 0) {
                                                         userProfilePhoto2.photo_big.dc_id = i182;
                                                     }
-                                                    PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                    PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                     break;
                                                 }
                                             }
@@ -5277,7 +5277,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                                 TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                                 if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                    PhotoViewer.t1().J2(null, roVar4, null);
+                                                    PhotoViewer.t1().K2(null, roVar4, null);
                                                     TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                     int i172 = chatPhoto2.dc_id;
                                                     if (i172 != 0) {
@@ -5290,19 +5290,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                             imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                         }
                                                     }
-                                                    PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                    PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                     break;
                                                 }
                                             } else {
                                                 TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                                 if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                    PhotoViewer.t1().J2(null, roVar4, null);
+                                                    PhotoViewer.t1().K2(null, roVar4, null);
                                                     TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                                     int i182 = userProfilePhoto2.dc_id;
                                                     if (i182 != 0) {
                                                         userProfilePhoto2.photo_big.dc_id = i182;
                                                     }
-                                                    PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                    PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                     break;
                                                 }
                                             }
@@ -5593,7 +5593,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -5606,19 +5606,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -5864,7 +5864,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -5877,19 +5877,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -6135,7 +6135,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -6148,19 +6148,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -6408,7 +6408,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -6421,19 +6421,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -6679,7 +6679,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -6692,19 +6692,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -6953,7 +6953,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -6966,19 +6966,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -7227,7 +7227,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -7240,19 +7240,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -7539,7 +7539,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -7552,19 +7552,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -7812,7 +7812,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -7825,19 +7825,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -8101,7 +8101,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -8114,19 +8114,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -8374,7 +8374,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -8387,19 +8387,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -8647,7 +8647,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -8660,19 +8660,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -8941,7 +8941,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -8954,19 +8954,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user2.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user2.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -9484,7 +9484,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                             TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                             TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                             if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                                 int i172 = chatPhoto2.dc_id;
                                                 if (i172 != 0) {
@@ -9497,19 +9497,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                         imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                                     }
                                                 }
-                                                PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         } else {
                                             TLRPC.UserProfilePhoto userProfilePhoto = user22.photo;
                                             if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                                PhotoViewer.t1().J2(null, roVar4, null);
+                                                PhotoViewer.t1().K2(null, roVar4, null);
                                                 TLRPC.UserProfilePhoto userProfilePhoto2 = user22.photo;
                                                 int i182 = userProfilePhoto2.dc_id;
                                                 if (i182 != 0) {
                                                     userProfilePhoto2.photo_big.dc_id = i182;
                                                 }
-                                                PhotoViewer.t1().e2(null, user22.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                                PhotoViewer.t1().f2(null, user22.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                                 break;
                                             }
                                         }
@@ -9797,7 +9797,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     TLRPC.Chat chat32 = roVar4.getMessagesController().getChat(Long.valueOf(roVar4.w0));
                                     TLRPC.ChatPhoto chatPhoto = chat32.photo;
                                     if (chatPhoto != null && chatPhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.ChatPhoto chatPhoto2 = chat32.photo;
                                         int i172 = chatPhoto2.dc_id;
                                         if (i172 != 0) {
@@ -9810,19 +9810,19 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                                 imageLocation = ImageLocation.getForPhoto(roVar4.y0.chat_photo.video_sizes.get(0), roVar4.y0.chat_photo);
                                             }
                                         }
-                                        PhotoViewer.t1().e2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, chat32.photo.photo_big, null, imageLocation, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 } else {
                                     TLRPC.UserProfilePhoto userProfilePhoto = user22.photo;
                                     if (userProfilePhoto != null && userProfilePhoto.photo_big != null) {
-                                        PhotoViewer.t1().J2(null, roVar4, null);
+                                        PhotoViewer.t1().K2(null, roVar4, null);
                                         TLRPC.UserProfilePhoto userProfilePhoto2 = user22.photo;
                                         int i182 = userProfilePhoto2.dc_id;
                                         if (i182 != 0) {
                                             userProfilePhoto2.photo_big.dc_id = i182;
                                         }
-                                        PhotoViewer.t1().e2(null, user22.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
+                                        PhotoViewer.t1().f2(null, user22.photo.photo_big, null, null, null, null, null, 0, noVar, null, 0L, 0L, 0L, true, null, null);
                                         break;
                                     }
                                 }
@@ -10599,7 +10599,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                     this.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                     this.b0.e.setAnimation(this.R0);
                 }
-                if (PhotoViewer.C1() && PhotoViewer.t1().Q1()) {
+                if (PhotoViewer.D1() && PhotoViewer.t1().R1()) {
                     PhotoViewer.t1().y0();
                 }
                 if (this.Z == null && getMessagesController().starrefConnectAllowed && ChatObject.isChannelAndNotMegaGroup(this.x0)) {
@@ -10612,7 +10612,7 @@ public class ro extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         z10 = false;
         if (this.b0 != null) {
         }
-        if (PhotoViewer.C1()) {
+        if (PhotoViewer.D1()) {
             PhotoViewer.t1().y0();
         }
         if (this.Z == null) {

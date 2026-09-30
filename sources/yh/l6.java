@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l6 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -48,7 +48,7 @@ public final /* synthetic */ class l6 implements View.OnClickListener {
                 String str = (String) this.s;
                 if (!dVar.N) {
                     int i10 = this.b;
-                    s5 y3 = s5.y(i10, false);
+                    t5 y3 = t5.y(i10, false);
                     long j3 = this.e;
                     ai.m8 m8Var = new ai.m8(dVar, starsSubscription, i10, e3VarArr, j3, 13);
                     if (y3.f.amount >= starsSubscription.pricing.amount) {
@@ -70,7 +70,7 @@ public final /* synthetic */ class l6 implements View.OnClickListener {
                     if ((o8Var.P != null || (messageObject != null && wnVar != null)) && o8Var.V == null) {
                         int i11 = this.b;
                         if (!MessagesController.getInstance(i11).isFrozen()) {
-                            s5 y10 = s5.y(i11, false);
+                            t5 y10 = t5.y(i11, false);
                             org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(o8Var, value, y10, messageObject, wnVar, 15);
                             if (y10.e && y10.p().amount < value) {
                                 boolean z10 = this.c;

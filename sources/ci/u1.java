@@ -55,7 +55,7 @@ import org.telegram.ui.qy;
 import org.telegram.ui.wn;
 import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
@@ -446,8 +446,8 @@ public final /* synthetic */ class u1 implements Runnable {
                 } else if (MessageObject.isVideoStickerDocument(document)) {
                     photoEntry.averageDuration = (long) (MessageObject.getDocumentDuration(document) * 1000.0d);
                 }
-                PhotoViewer.t1().J2(m2Var.getParentActivity(), null, m2Var.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList6, 0, 11, false, new yx0(), wnVar2);
+                PhotoViewer.t1().K2(m2Var.getParentActivity(), null, m2Var.getResourceProvider());
+                PhotoViewer.t1().g2(arrayList6, 0, 11, false, new yx0(), wnVar2);
                 PhotoViewer.t1().X0(document, z21 ? document : null, true, null);
                 nt.q().T = z21 ? tL_messages_stickerSet : null;
                 return;

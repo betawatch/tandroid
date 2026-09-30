@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class hz extends xl0 {
     public int L;
@@ -52,7 +52,7 @@ public final class hz extends xl0 {
     public hz(mz mzVar, Context context) {
         this.Q = mzVar;
         this.h = context;
-        gz gzVar = new gz(context, mzVar.c1, new d(this, 12), new nv(this, 3), mzVar.Z1);
+        gz gzVar = new gz(context, mzVar.c1, new d(this, 12), new ov(this, 3), mzVar.Z1);
         this.c = gzVar;
         gzVar.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
         gzVar.setClipToPadding(false);

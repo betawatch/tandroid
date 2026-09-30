@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class go extends FrameLayout implements le.e, NotificationCenter.NotificationCenterDelegate {
     public final ImageView E;
@@ -78,7 +78,7 @@ public class go extends FrameLayout implements le.e, NotificationCenter.Notifica
     public final o5 f0;
     public final o5 g0;
     public final org.telegram.ui.hl h;
-    public final yc h0;
+    public final zc h0;
     public final yn i0;
     public boolean j0;
     public boolean k0;
@@ -143,7 +143,7 @@ public class go extends FrameLayout implements le.e, NotificationCenter.Notifica
         this.U = -1;
         this.a0 = -1;
         this.e0 = false;
-        this.h0 = new yc(this);
+        this.h0 = new zc(this);
         this.i0 = new yn(this, 2);
         this.m0 = false;
         this.n0 = false;
@@ -1558,17 +1558,17 @@ public class go extends FrameLayout implements le.e, NotificationCenter.Notifica
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
-        yc ycVar = this.h0;
+        zc zcVar = this.h0;
         yn ynVar = this.i0;
         if (action == 0 && a()) {
             this.j0 = true;
-            ycVar.c(true);
+            zcVar.c(true);
             AndroidUtilities.cancelRunOnUIThread(ynVar);
             AndroidUtilities.runOnUIThread(ynVar, ViewConfiguration.getLongPressTimeout());
             return true;
         }
         if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && this.j0) {
-            ycVar.c(false);
+            zcVar.c(false);
             this.j0 = false;
             if (isClickable()) {
                 e(false, false);

@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class rq0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
@@ -69,7 +69,7 @@ public final class rq0 extends org.telegram.ui.Components.xl0 {
 
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
-        boolean L1;
+        boolean M1;
         tq0 tq0Var = this.d;
         MediaController.AlbumEntry albumEntry = tq0Var.J;
         ArrayList arrayList = tq0Var.n;
@@ -87,16 +87,16 @@ public final class rq0 extends org.telegram.ui.Components.xl0 {
                 MediaController.PhotoEntry photoEntry = albumEntry.photos.get(i10);
                 t5Var.d(photoEntry, arrayList2.size() > 1, true, false, false);
                 t5Var.b(tq0Var.e ? arrayList2.indexOf(Integer.valueOf(photoEntry.imageId)) : -1, hashMap.containsKey(Integer.valueOf(photoEntry.imageId)), false);
-                L1 = PhotoViewer.L1(photoEntry.path);
+                M1 = PhotoViewer.M1(photoEntry.path);
             } else {
                 MediaController.SearchImage searchImage = (MediaController.SearchImage) tq0Var.f.get(i10);
                 t5Var.e(searchImage);
                 t5Var.getVideoInfoContainer().setVisibility(4);
                 t5Var.b(tq0Var.e ? arrayList2.indexOf(searchImage.id) : -1, hashMap.containsKey(searchImage.id), false);
-                L1 = PhotoViewer.L1(searchImage.getPathToAttach());
+                M1 = PhotoViewer.M1(searchImage.getPathToAttach());
             }
-            imageView.getImageReceiver().setVisible(!L1, true);
-            t5Var.getCheckBox().setVisibility((tq0Var.T != 0 || L1) ? 8 : 0);
+            imageView.getImageReceiver().setVisible(!M1, true);
+            t5Var.getCheckBox().setVisibility((tq0Var.T != 0 || M1) ? 8 : 0);
             return;
         }
         if (i11 == 1) {

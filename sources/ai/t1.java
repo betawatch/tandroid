@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.ui.Components.pe0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class t1 implements Runnable {
                     DispatchQueue dispatchQueue = Utilities.globalQueue;
                     NativeInstance nativeInstance = d2Var2.E;
                     Objects.requireNonNull(nativeInstance);
-                    dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance, 3));
+                    dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance, 3));
                     d2Var2.M.clear();
                     d2Var2.E = null;
                 }
@@ -67,7 +67,7 @@ public final /* synthetic */ class t1 implements Runnable {
                     DispatchQueue dispatchQueue2 = Utilities.globalQueue;
                     NativeInstance nativeInstance2 = d2Var3.E;
                     Objects.requireNonNull(nativeInstance2);
-                    dispatchQueue2.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance2, 3));
+                    dispatchQueue2.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance2, 3));
                     d2Var3.M.clear();
                     d2Var3.E = null;
                 }

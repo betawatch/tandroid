@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class wu0 extends org.telegram.ui.Components.k60 {
     public final /* synthetic */ xu0 d;
@@ -51,7 +51,7 @@ public final class wu0 extends org.telegram.ui.Components.k60 {
             int i11 = this.d.s.Y7;
             xu0 xu0Var2 = this.d;
             if (i11 != xu0Var2.r) {
-                xu0Var2.s.o2(1);
+                xu0Var2.s.p2(1);
             }
         }
     }

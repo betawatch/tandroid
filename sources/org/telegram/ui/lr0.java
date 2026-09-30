@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lr0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -58,23 +58,23 @@ public final /* synthetic */ class lr0 implements Runnable {
                     photoViewer.U6 = VelocityTracker.obtain();
                 }
                 photoViewer.B7 = 3;
-                photoViewer.o3(false, false);
-                photoViewer.i3(true, false);
+                photoViewer.p3(false, false);
+                photoViewer.j3(true, false);
                 wn wnVar = photoViewer.l4;
                 if (wnVar == null || wnVar.Y == null || !wnVar.x9()) {
-                    photoViewer.R1();
+                    photoViewer.S1();
                 } else {
                     photoViewer.l4.Y.P();
                 }
                 photoViewer.L0.setAlpha(255);
                 photoViewer.e0.setAlpha(1.0f);
-                photoViewer.Y1(null, null, null, null, null, null, Collections.singletonList(orientation), 0, null);
+                photoViewer.Z1(null, null, null, null, null, null, Collections.singletonList(orientation), 0, null);
                 photoViewer.P0.setTranslationY(AndroidUtilities.dp(photoViewer.r1 ? 154.0f : 96.0f));
                 photoViewer.S0.setTranslationY(AndroidUtilities.dp(photoViewer.r1 ? 154.0f : 96.0f));
                 photoViewer.F.setTranslationY(-r1.getHeight());
                 photoViewer.Q1.setTranslationY(AndroidUtilities.dp(photoViewer.r1 ? 154.0f : 96.0f));
                 photoViewer.K0();
-                photoViewer.f3();
+                photoViewer.g3();
                 photoViewer.B7 = 0;
                 break;
             default:
@@ -88,7 +88,7 @@ public final /* synthetic */ class lr0 implements Runnable {
                     boolean z11 = this.b;
                     int i14 = (this.c ? 1 : 0) + (z11 ? 1 : 0);
                     boolean z12 = this.d;
-                    new org.telegram.ui.Components.xc(nu0Var, null).m(i14 + (z12 ? 1 : 0) > 1 ? org.telegram.ui.Components.wc.v : z12 ? i13 > 1 ? org.telegram.ui.Components.wc.s : org.telegram.ui.Components.wc.r : z11 ? i13 > 1 ? org.telegram.ui.Components.wc.n : org.telegram.ui.Components.wc.h : i13 > 1 ? org.telegram.ui.Components.wc.f : org.telegram.ui.Components.wc.e, i13, -115203550, -1, null).j();
+                    new org.telegram.ui.Components.yc(nu0Var, null).m(i14 + (z12 ? 1 : 0) > 1 ? org.telegram.ui.Components.xc.v : z12 ? i13 > 1 ? org.telegram.ui.Components.xc.s : org.telegram.ui.Components.xc.r : z11 ? i13 > 1 ? org.telegram.ui.Components.xc.n : org.telegram.ui.Components.xc.h : i13 > 1 ? org.telegram.ui.Components.xc.f : org.telegram.ui.Components.xc.e, i13, -115203550, -1, null).j();
                     break;
                 }
                 break;

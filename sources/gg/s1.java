@@ -6,10 +6,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.xl0;
-import org.telegram.ui.Components.yn0;
+import org.telegram.ui.tt;
 import org.telegram.ui.ut;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class s1 extends TimerTask {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class s1 extends TimerTask {
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
-                Utilities.searchQueue.postRunnable(new yn0(29, (ut) this.c, this.b));
+                Utilities.searchQueue.postRunnable(new tt(0, (ut) this.c, this.b));
                 break;
         }
     }

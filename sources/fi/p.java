@@ -51,7 +51,7 @@ import org.telegram.ui.wn;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class p extends m2 implements w40, NotificationCenter.NotificationCenterDelegate, le.e {
     public x40 E;
@@ -130,7 +130,7 @@ public final class p extends m2 implements w40, NotificationCenter.NotificationC
                 return;
             }
             ImageLocation imageLocation = null;
-            PhotoViewer.t1().J2(null, pVar, null);
+            PhotoViewer.t1().K2(null, pVar, null);
             TLRPC.ChatPhoto chatPhoto2 = chat.photo;
             int i11 = chatPhoto2.dc_id;
             if (i11 != 0) {
@@ -143,7 +143,7 @@ public final class p extends m2 implements w40, NotificationCenter.NotificationC
                     imageLocation = ImageLocation.getForPhoto(pVar.I.chat_photo.video_sizes.get(0), pVar.I.chat_photo);
                 }
             }
-            PhotoViewer.t1().e2(null, chat.photo.photo_big, null, imageLocation, null, null, null, 0, pVar.K, null, 0L, 0L, 0L, true, null, null);
+            PhotoViewer.t1().f2(null, chat.photo.photo_big, null, imageLocation, null, null, null, 0, pVar.K, null, 0L, 0L, 0L, true, null, null);
             return;
         }
         if (i10 == 141) {

@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class k00 extends u00 {
     public final /* synthetic */ l00 E;
@@ -43,7 +43,7 @@ public final class k00 extends u00 {
                         k00 k00Var = this.b;
                         String str = k00Var.x;
                         if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.xc(k00Var.E.d.Z, null).k(false).j();
+                            new org.telegram.ui.Components.yc(k00Var.E.d.Z, null).k(false).j();
                             break;
                         }
                         break;
@@ -71,7 +71,7 @@ public final class k00 extends u00 {
                         k00 k00Var = this.b;
                         String str = k00Var.x;
                         if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.xc(k00Var.E.d.Z, null).k(false).j();
+                            new org.telegram.ui.Components.yc(k00Var.E.d.Z, null).k(false).j();
                             break;
                         }
                         break;
@@ -99,7 +99,7 @@ public final class k00 extends u00 {
                         k00 k00Var = this.b;
                         String str = k00Var.x;
                         if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.xc(k00Var.E.d.Z, null).k(false).j();
+                            new org.telegram.ui.Components.yc(k00Var.E.d.Z, null).k(false).j();
                             break;
                         }
                         break;

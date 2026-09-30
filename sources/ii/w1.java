@@ -12,9 +12,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class w1 extends cw0 {
     public boolean w0;
@@ -83,7 +83,7 @@ public final class w1 extends cw0 {
         e2 e2Var = this.z0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (e2Var.q0()) {
-                org.telegram.messenger.f0.p(R.string.RichEditorDraftSaved, new xc(e2Var.X, e2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.f0.p(R.string.RichEditorDraftSaved, new yc(e2Var.X, e2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!e2Var.P.h3(keyEvent)) {

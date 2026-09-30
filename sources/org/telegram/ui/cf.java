@@ -13,7 +13,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cf implements Comparator {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class cf implements Comparator {
                 id3 = ((org.telegram.ui.Components.n9) obj).b;
                 break;
             case 8:
-                return Long.compare(((org.telegram.ui.Components.cd) obj).c, ((org.telegram.ui.Components.cd) obj2).c);
+                return Long.compare(((org.telegram.ui.Components.dd) obj).c, ((org.telegram.ui.Components.dd) obj2).c);
             case 9:
                 Size size = (Size) obj;
                 Size size2 = (Size) obj2;

@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class jl implements km {
     public final /* synthetic */ wn a;
@@ -64,10 +64,10 @@ public final class jl implements km {
         int G8 = z12 ? wnVar2.G8() : wnVar.G8();
         ArrayList arrayList3 = new ArrayList(wnVar.h4 ? wnVar2.H4 : wnVar.H4);
         org.telegram.messenger.v7 v7Var = new org.telegram.messenger.v7(this, z11, arrayList, arrayList2, G8, i11);
-        org.telegram.messenger.voip.l0 l0Var = new org.telegram.messenger.voip.l0(this, z11, arrayList3, i11);
+        org.telegram.messenger.voip.m0 m0Var = new org.telegram.messenger.voip.m0(this, z11, arrayList3, i11);
         un unVar = wnVar.ea;
         if (wnVar.getParentActivity() == null) {
-            l0Var.run();
+            m0Var.run();
         } else {
             if (z11) {
                 org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(wnVar.getParentActivity(), unVar);
@@ -83,7 +83,7 @@ public final class jl implements km {
             }
             org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(wnVar.getParentActivity(), unVar, true);
             ocVar.a = v7Var;
-            ocVar.b = l0Var;
+            ocVar.b = m0Var;
             nbVar.setButton(ocVar);
             qcVar = org.telegram.ui.Components.qc.g(wnVar, nbVar, 5000);
         }

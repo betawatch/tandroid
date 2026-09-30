@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class m4 extends b61 {
     public final /* synthetic */ int e;
@@ -36,7 +36,7 @@ public final class m4 extends b61 {
                 break;
             case 2:
                 AndroidUtilities.addToClipboard(getURL());
-                xc.a0((hg.x) this.f).k(false).j();
+                yc.a0((hg.x) this.f).k(false).j();
                 break;
             case 3:
                 org.telegram.ui.o70 o70Var = ((org.telegram.ui.m70) this.f).d;

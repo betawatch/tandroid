@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class li0 implements org.telegram.ui.Components.rk0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.m2 a;
@@ -134,7 +134,7 @@ public final class li0 implements org.telegram.ui.Components.rk0 {
                 }
             }
             if (z14 && (m2Var = this.a) != null) {
-                new org.telegram.ui.Components.xc(vi0Var.G, vi0Var.b).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.AnimatedEffectPremium), new ki0(0, m2Var))).j();
+                new org.telegram.ui.Components.yc(vi0Var.G, vi0Var.b).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.AnimatedEffectPremium), new ki0(0, m2Var))).j();
             }
             vi0Var.H.invalidate();
         }

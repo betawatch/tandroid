@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ck0 extends FrameLayout {
     public bk0 E;
@@ -69,7 +69,7 @@ public final class ck0 extends FrameLayout {
         this.f = vj0Var;
         uj0Var.setAdapter(vj0Var);
         uj0Var.setOnItemClickListener(new j(this, 10));
-        uj0Var.setOnItemLongClickListener(new nv(this, 15));
+        uj0Var.setOnItemLongClickListener(new ov(this, 15));
         uj0Var.j(new wj0(this, c0Var));
         uj0Var.setVerticalScrollBarEnabled(true);
         uj0Var.setAlpha(0.0f);

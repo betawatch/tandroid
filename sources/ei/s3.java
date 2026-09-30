@@ -13,11 +13,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.gf1;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s3 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -87,7 +87,7 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
                         org.telegram.ui.Components.e5.f(i10, chat, tL_messages_invitedUsers);
                         break;
                     } else {
-                        xc a02 = xc.a0(wf1Var);
+                        yc a02 = yc.a0(wf1Var);
                         TLRPC.Chat chat2 = wf1Var.getMessagesController().getChat(Long.valueOf(j10));
                         a02.getClass();
                         if (arrayList.size() == 0) {

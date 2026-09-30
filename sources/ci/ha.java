@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ha implements Runnable {
     public final /* synthetic */ int a;
@@ -344,7 +344,7 @@ public final /* synthetic */ class ha implements Runnable {
             case 19:
                 kc kcVar2 = lcVar.n;
                 ai.d dVar = lcVar.a;
-                new org.telegram.ui.Components.xc(kcVar2, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.h6.gc, 0, new ha(lcVar, 27), dVar)).k(true);
+                new org.telegram.ui.Components.yc(kcVar2, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.h6.gc, 0, new ha(lcVar, 27), dVar)).k(true);
                 break;
             case 20:
                 fa faVar = lcVar.q0;

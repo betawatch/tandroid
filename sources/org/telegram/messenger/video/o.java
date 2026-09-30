@@ -87,9 +87,9 @@ import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.ss;
 import org.telegram.ui.Components.sv0;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xz;
 import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.au0;
 import org.telegram.ui.hb;
@@ -98,7 +98,7 @@ import org.telegram.ui.qb;
 import org.telegram.ui.ub;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -406,7 +406,7 @@ public final /* synthetic */ class o implements Runnable {
             case 19:
                 e10 e10Var = (e10) obj3;
                 e10Var.z0 = -1;
-                qc M = xc.a0((m2) obj2).M(LocaleController.formatString(R.string.FolderLinkDeletedTitle, e10Var.c0), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", ((ArrayList) obj).size(), new Object[0]), R.raw.ic_delete);
+                qc M = yc.a0((m2) obj2).M(LocaleController.formatString(R.string.FolderLinkDeletedTitle, e10Var.c0), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", ((ArrayList) obj).size(), new Object[0]), R.raw.ic_delete);
                 M.j = 5000;
                 M.j();
                 e10Var.A0 = true;
@@ -532,7 +532,7 @@ public final /* synthetic */ class o implements Runnable {
                     } else {
                         textView2.setText(LocaleController.getString("UnknownError"));
                         textView.setVisibility(8);
-                        new xc(lb.a(mc0Var.getContext()), d6Var).d0(tL_error2, false);
+                        new yc(lb.a(mc0Var.getContext()), d6Var).d0(tL_error2, false);
                     }
                 } else if (tLObject4 instanceof TLRPC.TL_outboxReadDate) {
                     textView2.setText(LocaleController.formatPmSeenDate(((TLRPC.TL_outboxReadDate) tLObject4).date));

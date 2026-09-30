@@ -3,17 +3,17 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class k31 implements p31 {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ org.telegram.ui.Components.xc c;
+    public final /* synthetic */ org.telegram.ui.Components.yc c;
 
-    public k31(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.xc xcVar) {
+    public k31(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.yc ycVar) {
         this.a = zArr;
         this.b = callback;
-        this.c = xcVar;
+        this.c = ycVar;
     }
 
     @Override // org.telegram.ui.p31

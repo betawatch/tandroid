@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public class SavedMessagesController {
     private final int currentAccount;
@@ -38,7 +38,7 @@ public class SavedMessagesController {
     private final Runnable saveCacheRunnable = new yh(this, 1);
     private final a0.i checkMessagesCallbacks = new a0.i();
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static class SavedDialog {
         public long dialogId;
         private int lastDate;

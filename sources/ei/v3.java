@@ -20,7 +20,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.n01;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -132,7 +132,7 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
                                 if (TextUtils.isEmpty(tL_messages_editChatParticipantRank2.rank) || U == null) {
                                     return;
                                 }
-                                qc M = xc.a0(U).M(LocaleController.getString(z11 ? R.string.TagAdded : R.string.TagEdited), tL_messages_editChatParticipantRank2.rank, R.raw.contact_check);
+                                qc M = yc.a0(U).M(LocaleController.getString(z11 ? R.string.TagAdded : R.string.TagEdited), tL_messages_editChatParticipantRank2.rank, R.raw.contact_check);
                                 ub ubVar = M.e;
                                 if (ubVar.getLayoutParams() instanceof FrameLayout.LayoutParams) {
                                     ((FrameLayout.LayoutParams) ubVar.getLayoutParams()).width = -2;

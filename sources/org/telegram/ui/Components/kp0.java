@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class kp0 extends org.telegram.ui.ActionBar.m1 {
     public boolean A;
@@ -124,7 +124,7 @@ public abstract class kp0 extends org.telegram.ui.ActionBar.m1 {
         if (wnVar != null) {
             hp0 hp0Var = ffVar.B;
             org.telegram.ui.un unVar = wnVar.ea;
-            yn0 yn0Var2 = new yn0(2, ffVar, wnVar);
+            yn0 yn0Var2 = new yn0(3, ffVar, wnVar);
             ap0 ap0Var = new ap0(context, unVar);
             Drawable drawable = context.getDrawable(R.drawable.msg_premium_prolfilestar);
             w9 w9Var = ap0Var.a;
@@ -139,7 +139,7 @@ public abstract class kp0 extends org.telegram.ui.ActionBar.m1 {
             f7.e.addCallback(new ip0(ffVar, f7));
             f7.j();
         }
-        yn0 yn0Var3 = new yn0(3, ffVar, windowManager);
+        yn0 yn0Var3 = new yn0(4, ffVar, windowManager);
         ffVar.C = yn0Var3;
         AndroidUtilities.runOnUIThread(yn0Var3, 2500L);
     }

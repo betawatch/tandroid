@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dn0 implements ml0 {
     public final /* synthetic */ int a;
@@ -77,11 +77,11 @@ public final /* synthetic */ class dn0 implements ml0 {
                                         canPreviewDocument = canPreviewDocument || z10;
                                     }
                                     if (canPreviewDocument) {
-                                        PhotoViewer.t1().J2(null, m2Var, null);
+                                        PhotoViewer.t1().K2(null, m2Var, null);
                                         ArrayList arrayList = new ArrayList();
                                         arrayList.add(message);
-                                        PhotoViewer.t1().J2(null, m2Var, null);
-                                        PhotoViewer.t1().a2(arrayList, 0, 0L, 0L, 0L, new org.telegram.ui.lu0());
+                                        PhotoViewer.t1().K2(null, m2Var, null);
+                                        PhotoViewer.t1().b2(arrayList, 0, 0L, 0L, 0L, new org.telegram.ui.lu0());
                                         break;
                                     } else {
                                         AndroidUtilities.openDocument(message, kn0Var.F, m2Var);

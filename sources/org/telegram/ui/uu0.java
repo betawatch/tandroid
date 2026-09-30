@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class uu0 extends FrameLayout {
     public final /* synthetic */ PhotoViewer a;
@@ -64,7 +64,7 @@ public final class uu0 extends FrameLayout {
         if (photoViewer.Q.y()) {
             photoViewer.Q.f(false);
         }
-        if (photoViewer.H1()) {
+        if (photoViewer.I1()) {
             photoViewer.E0(true);
             return false;
         }
@@ -95,7 +95,7 @@ public final class uu0 extends FrameLayout {
                 }
                 MessageObject messageObject = photoViewer.T4;
                 if (messageObject == null || !messageObject.isSponsored()) {
-                    photoViewer.r2();
+                    photoViewer.s2();
                 }
             }
             AndroidUtilities.cancelRunOnUIThread(photoViewer.x2);
@@ -187,11 +187,11 @@ public final class uu0 extends FrameLayout {
         photoViewer.T5 = true;
         if (z10) {
             if (!photoViewer.U5) {
-                float q22 = photoViewer.q2(true);
-                photoViewer.a6 = q22;
+                float r22 = photoViewer.r2(true);
+                photoViewer.a6 = r22;
                 photoViewer.X5 = 0.0f;
                 photoViewer.Y5 = 0.0f;
-                photoViewer.v3(q22);
+                photoViewer.w3(r22);
             }
             CheckBox checkBox = photoViewer.N0;
             if (checkBox != null) {
@@ -199,7 +199,7 @@ public final class uu0 extends FrameLayout {
             }
         }
         if (photoViewer.U5) {
-            photoViewer.M2();
+            photoViewer.N2();
             photoViewer.U5 = false;
         }
     }

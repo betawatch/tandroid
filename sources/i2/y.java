@@ -3,10 +3,10 @@ package i2;
 import android.os.Bundle;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements e2.m, e2.h, p.a, GenericProvider {
     public final /* synthetic */ int a;
@@ -18,8 +18,8 @@ public final /* synthetic */ class y implements e2.m, e2.h, p.a, GenericProvider
     }
 
     @Override // p.a
-    public qc a(xc xcVar) {
-        return xcVar.k(this.b);
+    public qc a(yc ycVar) {
+        return ycVar.k(this.b);
     }
 
     @Override // e2.h

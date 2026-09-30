@@ -50,7 +50,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class EditTextBoldCursor extends fu {
     private static final String BLINK_CLASS = "android.widget.Editor$Blink";
@@ -694,7 +694,7 @@ public class EditTextBoldCursor extends fu {
                     f10 = 150.0f;
                     Utilities.Callback2<Canvas, Runnable> callback2 = this.drawHint;
                     if (callback2 != null) {
-                        callback2.run(canvas2, new kd(28, this, canvas2));
+                        callback2.run(canvas2, new uc(29, this, canvas2));
                     } else {
                         this.hintLayout.draw(canvas2);
                     }

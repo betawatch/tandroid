@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class wn extends oi implements bw0, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int m1 = 0;
@@ -388,8 +388,8 @@ public final class wn extends oi implements bw0, NotificationCenter.Notification
         if (b10 instanceof rh.d) {
             ArrayList arrayList = new ArrayList(1);
             arrayList.add(((rh.d) b10).b);
-            PhotoViewer.t1().J2(parentActivity, null, null);
-            PhotoViewer.t1().f2(arrayList, 0, 14, false, new bn(wnVar, i10), null);
+            PhotoViewer.t1().K2(parentActivity, null, null);
+            PhotoViewer.t1().g2(arrayList, 0, 14, false, new bn(wnVar, i10), null);
             return;
         }
         if (b10 instanceof rh.h) {

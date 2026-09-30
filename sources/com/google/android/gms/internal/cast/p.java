@@ -33,7 +33,7 @@ import z7.hb;
 import z7.we;
 import z7.wf;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -334,7 +334,7 @@ public final /* synthetic */ class p implements Runnable {
             case 5:
                 Handler handler = (Handler) this.b;
                 if (((AtomicBoolean) this.e).compareAndSet(false, true)) {
-                    handler.removeCallbacks((org.telegram.ui.web.o1) this.d);
+                    handler.removeCallbacks((org.telegram.ui.web.f1) this.d);
                     if (Looper.myLooper() == handler.getLooper()) {
                         ((rf.b) this.c).a(false);
                         return;
@@ -427,10 +427,10 @@ public final /* synthetic */ class p implements Runnable {
         this.e = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        org.telegram.ui.web.o1 o1Var = new org.telegram.ui.web.o1(21, this, bVar);
-        this.d = o1Var;
+        org.telegram.ui.web.f1 f1Var = new org.telegram.ui.web.f1(22, this, bVar);
+        this.d = f1Var;
         if (j3 > 0) {
-            handler.postDelayed(o1Var, j3);
+            handler.postDelayed(f1Var, j3);
         }
     }
 }

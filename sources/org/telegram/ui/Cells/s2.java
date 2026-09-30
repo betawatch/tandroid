@@ -80,9 +80,9 @@ import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.cf0;
 import org.telegram.ui.Components.ej0;
 import org.telegram.ui.Components.f71;
-import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.fj0;
 import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.gd;
 import org.telegram.ui.Components.hd0;
 import org.telegram.ui.Components.is;
 import org.telegram.ui.Components.js;
@@ -96,14 +96,14 @@ import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.vi0;
 import org.telegram.ui.Components.ww0;
-import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.a10;
 import org.telegram.ui.d41;
 import org.telegram.ui.kx;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
     public boolean A0;
@@ -134,7 +134,7 @@ public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
     public final p2 E4;
     public boolean F;
     public final int F0;
-    public final yc F1;
+    public final zc F1;
     public Paint F2;
     public float F3;
     public final org.telegram.ui.ActionBar.d6 F4;
@@ -261,7 +261,7 @@ public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
     public boolean b2;
     public int b3;
     public int b4;
-    public fd c0;
+    public gd c0;
     public float c1;
     public float c2;
     public int c3;
@@ -4411,11 +4411,11 @@ public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
                     s2Var4.b0 = new Paint(1);
                 }
                 if (s2Var4.c0 == null) {
-                    fd fdVar = new fd(s2Var4);
-                    s2Var4.c0 = fdVar;
+                    gd gdVar = new gd(s2Var4);
+                    s2Var4.c0 = gdVar;
                     z23 = false;
                     final boolean z31 = false ? 1 : 0;
-                    fdVar.e(new Runnable(s2Var4) { // from class: org.telegram.ui.Cells.i2
+                    gdVar.e(new Runnable(s2Var4) { // from class: org.telegram.ui.Cells.i2
                         public final /* synthetic */ s2 b;
 
                         {
@@ -4444,7 +4444,7 @@ public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
                             }
                         }
                     });
-                    fd fdVar2 = s2Var4.c0;
+                    gd gdVar2 = s2Var4.c0;
                     final int i33 = 1;
                     Runnable runnable = new Runnable(s2Var4) { // from class: org.telegram.ui.Cells.i2
                         public final /* synthetic */ s2 b;
@@ -4475,16 +4475,16 @@ public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
                             }
                         }
                     };
-                    fdVar2.l = true;
-                    fdVar2.j = runnable;
+                    gdVar2.l = true;
+                    gdVar2.j = runnable;
                 } else {
                     z23 = false;
                 }
                 if (s2Var4.f0 && s2Var4.I4 != 0 && ((i23 = s2Var4.j1) == 0 || i23 == 7 || i23 == 8)) {
                     s2Var4.c0.d(i0.a.k(s2Var4.a0.getColor(), org.telegram.ui.ActionBar.h6.e1() ? 36 : 26));
-                    fd fdVar3 = s2Var4.c0;
-                    fdVar3.i = z23;
-                    fdVar3.c = z23 ? 1 : 0;
+                    gd gdVar3 = s2Var4.c0;
+                    gdVar3.i = z23;
+                    gdVar3.c = z23 ? 1 : 0;
                     int i34 = s2Var4.I4;
                     if (i34 != 0 && i34 > 0) {
                         float f39 = s2Var4.a3;
@@ -4506,9 +4506,9 @@ public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
                     rectF4.set(s2Var4.c3 + lineLeft + AndroidUtilities.dp(f21), AndroidUtilities.dp(f21) + s2Var4.g3, s2Var4.h3.getLineWidth(z23 ? 1 : 0) + s2Var4.c3 + lineLeft + AndroidUtilities.dp(12.0f), s2Var4.h3.getHeight() + s2Var4.g3);
                     rectF4.inset(-AndroidUtilities.dp(8.0f), -AndroidUtilities.dp(3.0f));
                     s2Var4.c0.a(rectF4);
-                    fd fdVar4 = s2Var4.c0;
-                    fdVar4.c(canvas3, fdVar4.g);
-                    z zVar = fdVar4.e;
+                    gd gdVar4 = s2Var4.c0;
+                    gdVar4.c(canvas3, gdVar4.g);
+                    z zVar = gdVar4.e;
                     if (zVar != null) {
                         zVar.draw(canvas3);
                     }
@@ -5493,27 +5493,27 @@ public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
                 if (this.E1) {
                     boolean contains = this.H1.contains(motionEvent.getX(), motionEvent.getY());
                     int action = motionEvent.getAction();
-                    yc ycVar = this.F1;
+                    zc zcVar = this.F1;
                     if (action == 0 || motionEvent.getAction() == 2) {
-                        ycVar.c(contains);
+                        zcVar.c(contains);
                     } else {
-                        if (ycVar.h && motionEvent.getAction() == 1) {
+                        if (zcVar.h && motionEvent.getAction() == 1) {
                             ai.y1 y1Var = this.K1;
                             if (y1Var != null) {
                                 y1Var.run(this.f2);
                             }
-                            ycVar.c(false);
+                            zcVar.c(false);
                             return true;
                         }
-                        if (ycVar.h && motionEvent.getAction() == 3) {
-                            ycVar.c(false);
+                        if (zcVar.h && motionEvent.getAction() == 3) {
+                            zcVar.c(false);
                             return true;
                         }
                     }
                 }
                 if (this.f0) {
-                    fd fdVar = this.c0;
-                    if (fdVar != null) {
+                    gd gdVar = this.c0;
+                    if (gdVar != null) {
                         if (this.h3 != null) {
                             int i10 = this.j1;
                             if (i10 != 0) {
@@ -9760,7 +9760,7 @@ public class s2 extends a0 implements ai.r9, org.telegram.ui.ActionBar.x5 {
         this.C0 = 0.0f;
         this.d1 = false;
         this.e1 = false;
-        this.F1 = new yc(this);
+        this.F1 = new zc(this);
         this.G1 = new Paint(1);
         this.H1 = new RectF();
         this.L1 = false;

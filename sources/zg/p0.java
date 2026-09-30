@@ -45,9 +45,9 @@ import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.db1;
 import org.telegram.ui.pm;
-import yh.z5;
+import yh.r5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class p0 {
     public static int Z;
@@ -67,7 +67,7 @@ public final class p0 {
     public float R;
     public m0 S;
     public boolean T;
-    public z5 U;
+    public r5 U;
     public float a;
     public boolean b;
     public int c;
@@ -380,15 +380,15 @@ public final class p0 {
                     this.Q = motionEvent.getX();
                     this.R = y3;
                     this.S = (m0) arrayList.get(i10);
-                    z5 z5Var = this.U;
-                    if (z5Var != null) {
-                        AndroidUtilities.cancelRunOnUIThread(z5Var);
+                    r5 r5Var = this.U;
+                    if (r5Var != null) {
+                        AndroidUtilities.cancelRunOnUIThread(r5Var);
                         this.U = null;
                     }
                     this.S.Y.c(true);
-                    z5 z5Var2 = new z5(7, this, this.S);
-                    this.U = z5Var2;
-                    AndroidUtilities.runOnUIThread(z5Var2, ViewConfiguration.getLongPressTimeout());
+                    r5 r5Var2 = new r5(8, this, this.S);
+                    this.U = r5Var2;
+                    AndroidUtilities.runOnUIThread(r5Var2, ViewConfiguration.getLongPressTimeout());
                     this.T = true;
                 }
             }
@@ -402,16 +402,16 @@ public final class p0 {
                     m0Var.Y.c(false);
                 }
                 this.S = null;
-                z5 z5Var3 = this.U;
-                if (z5Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(z5Var3);
+                r5 r5Var3 = this.U;
+                if (r5Var3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(r5Var3);
                     this.U = null;
                 }
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            z5 z5Var4 = this.U;
-            if (z5Var4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(z5Var4);
+            r5 r5Var4 = this.U;
+            if (r5Var4 != null) {
+                AndroidUtilities.cancelRunOnUIThread(r5Var4);
                 this.U = null;
             }
             if (this.T && this.S != null && motionEvent.getAction() == 1) {

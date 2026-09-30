@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class wg0 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -260,9 +260,9 @@ public final class wg0 extends s4.s0 {
                 }
                 break;
             case 10:
-                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) this.b;
-                if (g1Var.a.K1) {
-                    AndroidUtilities.hideKeyboard(g1Var.fragmentView);
+                org.telegram.ui.web.h1 h1Var = (org.telegram.ui.web.h1) this.b;
+                if (h1Var.a.K1) {
+                    AndroidUtilities.hideKeyboard(h1Var.fragmentView);
                     break;
                 }
                 break;

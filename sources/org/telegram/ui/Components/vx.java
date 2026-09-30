@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class vx extends xl0 {
     public int E;
@@ -328,13 +328,13 @@ public final class vx extends xl0 {
         if (qxVar != null) {
             boolean isEmpty = recentEmoji.isEmpty();
             boolean z13 = !isEmpty;
-            aw awVar = qxVar.y;
+            bw bwVar = qxVar.y;
             if (qxVar.W != z13) {
                 qxVar.W = z13;
                 if (qxVar.V) {
-                    awVar.setAlpha(isEmpty ? 0.0f : 1.0f);
+                    bwVar.setAlpha(isEmpty ? 0.0f : 1.0f);
                 } else {
-                    awVar.animate().alpha(isEmpty ? 0.0f : 1.0f).setDuration(200L).setInterpolator(sr.h).start();
+                    bwVar.animate().alpha(isEmpty ? 0.0f : 1.0f).setDuration(200L).setInterpolator(sr.h).start();
                 }
                 if (!isEmpty || qxVar.M != 0) {
                     z10 = isEmpty ? true : true;

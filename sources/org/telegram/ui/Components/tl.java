@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class tl implements qv0 {
     public File a;
@@ -36,7 +36,7 @@ public final class tl implements qv0 {
             }
             if (m2Var != null && m2Var.getParentActivity() != null) {
                 if (!chatAttachAlertPhotoLayout.w0) {
-                    org.telegram.messenger.ok.p(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
+                    org.telegram.messenger.ok.p(R.string.GlobalAttachVideoRestricted, new yc(chatAttachAlertPhotoLayout.P, this.c), null);
                     return false;
                 }
                 if (Build.VERSION.SDK_INT >= 23 && chatAttachAlertPhotoLayout.getContext().checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
@@ -133,7 +133,7 @@ public final class tl implements qv0 {
             shutterButton.a(rv0.a);
         } else {
             if (!chatAttachAlertPhotoLayout.x0) {
-                org.telegram.messenger.ok.p(R.string.GlobalAttachPhotoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);
+                org.telegram.messenger.ok.p(R.string.GlobalAttachPhotoRestricted, new yc(chatAttachAlertPhotoLayout.P, this.c), null);
                 return;
             }
             org.telegram.ui.ActionBar.m2 m2Var = wiVar.f0;

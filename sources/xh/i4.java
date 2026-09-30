@@ -45,7 +45,7 @@ import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wg0;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.f81;
 import org.telegram.ui.ny0;
@@ -53,9 +53,9 @@ import org.telegram.ui.w8;
 import w7.a6;
 import w7.y5;
 import yh.k7;
-import yh.s5;
+import yh.t5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public class i4 extends org.telegram.ui.ActionBar.m2 implements le.e {
     public LinearLayout E;
@@ -99,7 +99,7 @@ public class i4 extends org.telegram.ui.ActionBar.m2 implements le.e {
             i4Var.d.d.remove(tL_starGiftUnique);
             i4Var.e0(false);
             if (j3 == UserConfig.getInstance(i4Var.currentAccount).getClientUserId()) {
-                xc a02 = xc.a0(i4Var);
+                yc a02 = yc.a0(i4Var);
                 TLRPC.Document document = tL_starGiftUnique.getDocument();
                 String string = LocaleController.getString(R.string.BoughtResoldGiftTitle);
                 int i10 = R.string.BoughtResoldGiftText;
@@ -110,7 +110,7 @@ public class i4 extends org.telegram.ui.ActionBar.m2 implements le.e {
                 O.r = false;
                 O.j();
             } else {
-                qc O2 = xc.a0(i4Var).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i4Var.currentAccount, j3)));
+                qc O2 = yc.a0(i4Var).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i4Var.currentAccount, j3)));
                 O2.r = false;
                 O2.j();
             }
@@ -548,7 +548,7 @@ public class i4 extends org.telegram.ui.ActionBar.m2 implements le.e {
         this.s.addView(linearLayout2, y5.c(-1.0f, -2));
         a6.b(this.s, 0.04f, 1.5f);
         w8Var.addView(this.s, y5.d(-2, 52.0f, 81, 0.0f, 0.0f, 0.0f, AndroidUtilities.navigationBarHeight / AndroidUtilities.density));
-        s5 y3 = s5.y(this.currentAccount, true);
+        t5 y3 = t5.y(this.currentAccount, true);
         if (y3.e && !y3.s().k()) {
             this.s.setVisibility(8);
         }

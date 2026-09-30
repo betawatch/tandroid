@@ -25,7 +25,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class b51 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public final int a;
@@ -143,7 +143,7 @@ public abstract class b51 extends FrameLayout implements org.telegram.ui.ActionB
                 p90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i14, d6Var2));
                 p90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.gc, d6Var2));
                 p90Var.setEmojiColor(org.telegram.ui.ActionBar.h6.v0(i14, d6Var2));
-                CharSequence concat = TextUtils.concat(AndroidUtilities.replaceTags(LocaleController.getString(R.string.CocoonPoweredBy)), " ", AndroidUtilities.premiumText(LocaleController.getString(R.string.CocoonPoweredByLink), new yn0(17, wkVar2, m1Var)));
+                CharSequence concat = TextUtils.concat(AndroidUtilities.replaceTags(LocaleController.getString(R.string.CocoonPoweredBy)), " ", AndroidUtilities.premiumText(LocaleController.getString(R.string.CocoonPoweredByLink), new yn0(18, wkVar2, m1Var)));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("🥚");
                 spannableStringBuilder.setSpan(new z5(5197252827247841976L, p90Var.getPaint().getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);

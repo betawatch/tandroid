@@ -60,9 +60,9 @@ import org.telegram.ui.Components.s90;
 import org.telegram.ui.Components.t00;
 import org.telegram.ui.Components.u50;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.LaunchActivity;
@@ -78,7 +78,7 @@ import org.telegram.ui.wn;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class j0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int V0 = 0;
@@ -569,7 +569,7 @@ public class j0 extends bb implements NotificationCenter.NotificationCenterDeleg
                     AndroidUtilities.shakeViewSpring(g4Var, i11);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
                     String forcedFirstName = j3 >= 0 ? UserObject.getForcedFirstName(MessagesController.getInstance(j0Var.currentAccount).getUser(Long.valueOf(j3))) : "";
-                    (MessagesController.getInstance(j0Var.currentAccount).premiumFeaturesBlocked() ? new xc((FrameLayout) j0Var.containerView, j0Var.resourcesProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, forcedFirstName))) : new xc((FrameLayout) j0Var.containerView, j0Var.resourcesProvider).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, forcedFirstName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new w(j0Var, 0))).j();
+                    (MessagesController.getInstance(j0Var.currentAccount).premiumFeaturesBlocked() ? new yc((FrameLayout) j0Var.containerView, j0Var.resourcesProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, forcedFirstName))) : new yc((FrameLayout) j0Var.containerView, j0Var.resourcesProvider).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, forcedFirstName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new w(j0Var, 0))).j();
                 }
             }
         }
@@ -1386,7 +1386,7 @@ public class j0 extends bb implements NotificationCenter.NotificationCenterDeleg
             canApplyBoost.boostedNow = true;
             canApplyBoost.setMyBoosts(tL_premium_myBoosts);
             if (B1()) {
-                qc Q = new xc(this.container, this.resourcesProvider).Q(R.raw.ic_boosts_replace, 30, LocaleController.formatPluralString("BoostingReassignedFromPlural", intValue, LocaleController.formatPluralString("BoostingFromOtherChannel", intValue2, new Object[0])));
+                qc Q = new yc(this.container, this.resourcesProvider).Q(R.raw.ic_boosts_replace, 30, LocaleController.formatPluralString("BoostingReassignedFromPlural", intValue, LocaleController.formatPluralString("BoostingFromOtherChannel", intValue2, new Object[0])));
                 Q.j = 4000;
                 Q.k(true);
                 return;
@@ -1508,7 +1508,7 @@ public class j0 extends bb implements NotificationCenter.NotificationCenterDeleg
                             if (startsWith) {
                                 int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
                                 if (intValue <= 5) {
-                                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(18, this.b, s90Var2), intValue * 1000);
+                                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(19, this.b, s90Var2), intValue * 1000);
                                     break;
                                 } else {
                                     tg.i.g(intValue);
@@ -1540,7 +1540,7 @@ public class j0 extends bb implements NotificationCenter.NotificationCenterDeleg
                             if (startsWith) {
                                 int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
                                 if (intValue <= 5) {
-                                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(18, this.b, s90Var2), intValue * 1000);
+                                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(19, this.b, s90Var2), intValue * 1000);
                                     break;
                                 } else {
                                     tg.i.g(intValue);

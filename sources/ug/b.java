@@ -38,7 +38,7 @@ import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yl0;
-import org.telegram.ui.web.o1;
+import org.telegram.ui.web.f1;
 import s4.c1;
 import tg.u;
 import vg.d0;
@@ -51,7 +51,7 @@ import vg.x;
 import vg.y;
 import yh.f7;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class b extends og.b {
     public final d6 d;
@@ -68,7 +68,7 @@ public final class b extends og.b {
         this.d = d6Var;
         q1 q1Var = new q1(this, 16);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new o1(25, messagesStorage, q1Var));
+        messagesStorage.getStorageQueue().postRunnable(new f1(26, messagesStorage, q1Var));
     }
 
     @Override // org.telegram.ui.Components.xl0

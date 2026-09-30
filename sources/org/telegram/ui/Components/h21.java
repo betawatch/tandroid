@@ -42,7 +42,7 @@ import org.telegram.ui.de1;
 import org.telegram.ui.ke1;
 import org.telegram.ui.le1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h21 implements Runnable {
     public final /* synthetic */ int a;
@@ -142,8 +142,8 @@ public final /* synthetic */ class h21 implements Runnable {
                     if (i11 != 1 || r52.m) {
                         f2Var.setScaled(true);
                     }
-                } else if (view instanceof lv) {
-                    TLRPC.Document document3 = ((lv) view).getDocument();
+                } else if (view instanceof mv) {
+                    TLRPC.Document document3 = ((mv) view).getDocument();
                     if (document3 == null) {
                         return;
                     } else {
@@ -194,10 +194,10 @@ public final /* synthetic */ class h21 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.e;
                 AndroidUtilities.addToClipboard(str);
                 if (i12 == 1) {
-                    org.telegram.messenger.ok.o(R.string.PhoneCopied, new xc(e3Var.getContainer(), d6Var2));
+                    org.telegram.messenger.ok.o(R.string.PhoneCopied, new yc(e3Var.getContainer(), d6Var2));
                     return;
                 } else {
-                    new xc(e3Var.getContainer(), d6Var2).k(false).j();
+                    new yc(e3Var.getContainer(), d6Var2).k(false).j();
                     return;
                 }
             case 3:
@@ -428,7 +428,7 @@ public final /* synthetic */ class h21 implements Runnable {
                 org.telegram.ui.ys0 ys0Var = (org.telegram.ui.ys0) this.c;
                 FrameLayout frameLayout = (FrameLayout) this.d;
                 a0.i iVar = (a0.i) this.e;
-                xc.v(ys0Var.d1.y, null, frameLayout, iVar.m(), iVar.m() == 1 ? ((TLRPC.Dialog) iVar.n(0)).id : 0L, this.b, -115203550, -1, 1500, false, null).j();
+                yc.v(ys0Var.d1.y, null, frameLayout, iVar.m(), iVar.m() == 1 ? ((TLRPC.Dialog) iVar.n(0)).id : 0L, this.b, -115203550, -1, 1500, false, null).j();
                 return;
             case 10:
                 e5.f0(this.b, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.m2) this.d, (TLRPC.TL_payments_assignPlayMarketTransaction) this.e, new Object[0]);

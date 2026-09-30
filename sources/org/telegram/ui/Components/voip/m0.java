@@ -47,7 +47,7 @@ import org.telegram.ui.r30;
 import org.telegram.ui.v30;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class m0 extends FrameLayout {
     public boolean A0;
@@ -984,7 +984,7 @@ public abstract class m0 extends FrameLayout {
                     uVar11.setScaleX(0.5f);
                     uVar11.setScaleY(0.5f);
                     uVar11.E = true;
-                    yn0 yn0Var = new yn0(27, this, uVar11);
+                    yn0 yn0Var = new yn0(28, this, uVar11);
                     if (uVar11.a.d.isFirstFrameRendered()) {
                         yn0Var.run();
                     } else {

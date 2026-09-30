@@ -83,7 +83,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class i4 extends p70 implements NotificationCenter.NotificationCenterDelegate {
     public static Paint B1;
@@ -947,7 +947,7 @@ public final class i4 extends p70 implements NotificationCenter.NotificationCent
         webPage.url = v;
         webPage.display_url = v;
         NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.bookmarkAdded, new MessageObject(i10, tL_message, false, false));
-        new org.telegram.ui.Components.xc(frameLayout, d6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.WebBookmarkedToast), new ai.j(v3Var, clientUserId, 18))).k(true);
+        new org.telegram.ui.Components.yc(frameLayout, d6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.WebBookmarkedToast), new ai.j(v3Var, clientUserId, 18))).k(true);
     }
 
     public static void g0(i4 i4Var) {
@@ -2193,7 +2193,7 @@ public final class i4 extends p70 implements NotificationCenter.NotificationCent
                 animatorSet.setInterpolator(this.c0);
                 animatorSet.addListener(new s0(this));
                 this.b0 = System.currentTimeMillis();
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(4, this, animatorSet));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(5, this, animatorSet));
             } else if (r52 != 0) {
                 v3Var.a.unlock();
             } else if (!v3Var.h) {
@@ -2834,7 +2834,7 @@ public final class i4 extends p70 implements NotificationCenter.NotificationCent
         } else {
             frameLayout = this.u0[0].f;
         }
-        new org.telegram.ui.Components.xc(frameLayout, null).G(R.raw.chats_infotip, 4, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BrowserExternalRestricted), new b0(this, 10))).k(true);
+        new org.telegram.ui.Components.yc(frameLayout, null).G(R.raw.chats_infotip, 4, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BrowserExternalRestricted), new b0(this, 10))).k(true);
     }
 
     @Override // org.telegram.ui.p70
@@ -2852,8 +2852,8 @@ public final class i4 extends p70 implements NotificationCenter.NotificationCent
                 indexOf = 0;
             }
             PhotoViewer t12 = PhotoViewer.t1();
-            t12.J2(null, this.M, null);
-            if (t12.e2(null, null, null, null, null, null, null, indexOf, new f3(this, list), null, 0L, 0L, 0L, true, new o3(this, g4Var.E, list), null)) {
+            t12.K2(null, this.M, null);
+            if (t12.f2(null, null, null, null, null, null, null, indexOf, new f3(this, list), null, 0L, 0L, 0L, true, new o3(this, g4Var.E, list), null)) {
                 n();
                 return true;
             }

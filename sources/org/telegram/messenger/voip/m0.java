@@ -1,37 +1,281 @@
 package org.telegram.messenger.voip;
 
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.MrzRecognizer;
+import org.telegram.messenger.SecureDocument;
+import org.telegram.messenger.SecureDocumentKey;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.ts;
+import org.telegram.ui.Components.vs;
 import org.telegram.ui.d60;
+import org.telegram.ui.gn0;
+import org.telegram.ui.jl;
+import org.telegram.ui.jm0;
+import org.telegram.ui.wl0;
+import org.telegram.ui.wn;
+import org.telegram.ui.xi0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m0 implements RequestDelegate {
+public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ m0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
+    public /* synthetic */ m0(int i10, int i11, Object obj, Object obj2, boolean z10) {
         this.a = i11;
-        this.d = notificationCenterDelegate;
+        this.d = obj;
+        this.e = obj2;
         this.b = i10;
         this.c = z10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0108 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x011b A[SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        TLRPC.PhotoSize scaleAndSaveImage;
+        int i10;
+        RandomAccessFile randomAccessFile;
+        MrzRecognizer.Result recognize;
         switch (this.a) {
             case 0:
-                ((VoIPService) this.d).lambda$startGroupCall$29(this.b, this.c, tLObject, tL_error);
+                ((VoIPService) this.d).lambda$startConferenceGroupCall$55((String) this.e, this.b, this.c);
+                break;
+            case 1:
+                ((ConnectionsManager) this.d).lambda$cancelRequest$10((Runnable) this.e, this.b, this.c);
+                break;
+            case 2:
+                jl jlVar = (jl) this.d;
+                boolean z10 = this.c;
+                ArrayList arrayList = (ArrayList) this.e;
+                int i11 = this.b;
+                wn wnVar = jlVar.b;
+                if (!z10) {
+                    if (wnVar.h4) {
+                        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                            wnVar.getMessagesController().pinMessage(wnVar.e, wnVar.f, ((Integer) arrayList.get(i12)).intValue(), true, false, false);
+                        }
+                    } else {
+                        wnVar.getMessagesController().unpinAllMessages(wnVar.e, wnVar.f);
+                    }
+                }
+                if (i11 == wnVar.C3) {
+                    wnVar.A3 = null;
+                    break;
+                }
+                break;
+            case 3:
+                ts tsVar = (ts) this.d;
+                int i13 = this.b;
+                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.e;
+                boolean z11 = this.c;
+                if (i13 == tsVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, tsVar.e0)) {
+                    ConnectionsManager.getInstance(tsVar.N).sendRequest(tL_messages_searchGlobal, new l0(tsVar, i13, tL_messages_searchGlobal, z11, 1));
+                    break;
+                }
+                break;
+            case 4:
+                vs vsVar = (vs) this.d;
+                int i14 = this.b;
+                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) this.e;
+                boolean z12 = this.c;
+                if (i14 == vsVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, vsVar.b0)) {
+                    ConnectionsManager.getInstance(vsVar.N).sendRequest(tL_messages_searchGlobal2, new l0(vsVar, i14, tL_messages_searchGlobal2, z12, 2));
+                    break;
+                }
+                break;
+            case 5:
+                kw0 kw0Var = (kw0) this.d;
+                boolean z13 = this.c;
+                int i15 = this.b;
+                u1 u1Var = (u1) this.e;
+                if (z13 && kw0Var.Q == null && kw0Var.R == null && kw0Var.P == null) {
+                    kw0Var.J = 2;
+                    kw0Var.X0 = true;
+                }
+                kw0Var.V0 = false;
+                if (kw0Var.Y0 || !kw0Var.W0) {
+                    kw0Var.U0 = kw0Var.i1[0];
+                    DownloadController.getInstance(i15).removeLoadingFileObserver(u1Var);
+                    kw0Var.I();
+                    kw0Var.x();
+                    break;
+                } else {
+                    kw0Var.C(true);
+                    break;
+                }
+                break;
+            case 6:
+                d60 d60Var = (d60) this.d;
+                TLObject tLObject = (TLObject) this.e;
+                int i16 = this.b;
+                boolean z14 = this.c;
+                String[] strArr = d60Var.T2;
+                if (tLObject instanceof TL_phone.exportedGroupCallInvite) {
+                    strArr[i16] = ((TL_phone.exportedGroupCallInvite) tLObject).link;
+                } else {
+                    strArr[i16] = "";
+                }
+                for (int i17 = 0; i17 < 2; i17++) {
+                    String str = strArr[i17];
+                    if (str == null) {
+                        break;
+                    } else {
+                        if (str.length() == 0) {
+                            strArr[i17] = null;
+                        }
+                    }
+                }
+                if (!z14 && d60Var.Q0() && !d60Var.a1.call.join_muted) {
+                    strArr[0] = null;
+                }
+                if (strArr[0] != null || strArr[1] != null || !ChatObject.isPublic(d60Var.Z0)) {
+                    d60Var.u1(strArr[0], strArr[1], false, z14);
+                    break;
+                } else {
+                    d60Var.u1(null, d60Var.d.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(d60Var.Z0), true, z14);
+                    break;
+                }
                 break;
             default:
-                d60 d60Var = (d60) this.d;
-                AndroidUtilities.runOnUIThread(new l0(this.b, 6, d60Var, tLObject, this.c));
+                gn0 gn0Var = (gn0) this.d;
+                ArrayList arrayList2 = (ArrayList) this.e;
+                int i18 = this.b;
+                boolean z15 = this.c;
+                int i19 = gn0Var.S0;
+                int min = Math.min((i19 == 0 || i19 == 4) ? 20 : 1, arrayList2.size());
+                boolean z16 = false;
+                int i20 = 0;
+                boolean z17 = false;
+                while (i20 < min) {
+                    SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList2.get(i20);
+                    Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, sendingMediaInfo.uri, 2048.0f, 2048.0f, z16);
+                    if (loadBitmap == null || (scaleAndSaveImage = ImageLoader.scaleAndSaveImage(loadBitmap, 2048.0f, 2048.0f, 89, false, 320, 320)) == null) {
+                        i10 = i20;
+                    } else {
+                        TLRPC.TL_secureFile tL_secureFile = new TLRPC.TL_secureFile();
+                        tL_secureFile.dc_id = (int) scaleAndSaveImage.location.volume_id;
+                        tL_secureFile.id = r0.local_id;
+                        tL_secureFile.date = (int) (System.currentTimeMillis() / 1000);
+                        jm0 jm0Var = (jm0) gn0Var.B1;
+                        jm0Var.getClass();
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append(FileLoader.getDirectory(4));
+                        sb2.append("/");
+                        sb2.append(tL_secureFile.dc_id);
+                        sb2.append("_");
+                        i10 = i20;
+                        String s10 = a4.a.s(sb2, tL_secureFile.id, ".jpg");
+                        gn0 gn0Var2 = jm0Var.d;
+                        byte[] bArr = new byte[(int) new File(s10).length()];
+                        RandomAccessFile randomAccessFile2 = null;
+                        try {
+                            randomAccessFile = new RandomAccessFile(s10, "rws");
+                        } catch (Exception unused) {
+                        }
+                        try {
+                            randomAccessFile.readFully(bArr);
+                        } catch (Exception unused2) {
+                            randomAccessFile2 = randomAccessFile;
+                            randomAccessFile = randomAccessFile2;
+                            cf.c k12 = gn0Var2.k1(bArr);
+                            randomAccessFile.seek(0L);
+                            randomAccessFile.write((byte[]) k12.c);
+                            randomAccessFile.close();
+                            SecureDocument secureDocument = new SecureDocument((SecureDocumentKey) k12.e, tL_secureFile, s10, (byte[]) k12.d, (byte[]) k12.a);
+                            secureDocument.type = i18;
+                            AndroidUtilities.runOnUIThread(new wl0(gn0Var, secureDocument, i18, 0));
+                            if (z15) {
+                                try {
+                                    recognize = MrzRecognizer.recognize(loadBitmap, gn0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
+                                    if (recognize == null) {
+                                    }
+                                } catch (Throwable th2) {
+                                    th = th2;
+                                }
+                            }
+                            i20 = i10 + 1;
+                            z16 = false;
+                        }
+                        cf.c k122 = gn0Var2.k1(bArr);
+                        try {
+                            randomAccessFile.seek(0L);
+                            randomAccessFile.write((byte[]) k122.c);
+                            randomAccessFile.close();
+                        } catch (Exception unused3) {
+                        }
+                        SecureDocument secureDocument2 = new SecureDocument((SecureDocumentKey) k122.e, tL_secureFile, s10, (byte[]) k122.d, (byte[]) k122.a);
+                        secureDocument2.type = i18;
+                        AndroidUtilities.runOnUIThread(new wl0(gn0Var, secureDocument2, i18, 0));
+                        if (z15 && !z17) {
+                            recognize = MrzRecognizer.recognize(loadBitmap, gn0Var.F.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
+                            if (recognize == null) {
+                                try {
+                                    AndroidUtilities.runOnUIThread(new xi0(8, gn0Var, recognize));
+                                    z17 = true;
+                                } catch (Throwable th3) {
+                                    th = th3;
+                                    z17 = true;
+                                    FileLog.e(th);
+                                    i20 = i10 + 1;
+                                    z16 = false;
+                                }
+                            }
+                        }
+                    }
+                    i20 = i10 + 1;
+                    z16 = false;
+                }
+                SharedConfig.saveConfig();
                 break;
         }
+    }
+
+    public /* synthetic */ m0(jl jlVar, boolean z10, ArrayList arrayList, int i10) {
+        this.a = 2;
+        this.d = jlVar;
+        this.c = z10;
+        this.e = arrayList;
+        this.b = i10;
+    }
+
+    public /* synthetic */ m0(kw0 kw0Var, boolean z10, int i10, u1 u1Var) {
+        this.a = 5;
+        this.d = kw0Var;
+        this.c = z10;
+        this.b = i10;
+        this.e = u1Var;
+    }
+
+    public /* synthetic */ m0(l61 l61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
+        this.a = i11;
+        this.d = l61Var;
+        this.b = i10;
+        this.e = tL_messages_searchGlobal;
+        this.c = z10;
     }
 }

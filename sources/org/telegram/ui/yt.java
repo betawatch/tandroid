@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class yt extends org.telegram.ui.Components.bb {
     public final FrameLayout X;
@@ -210,7 +210,7 @@ public final class yt extends org.telegram.ui.Components.bb {
             i10++;
             groupCall2 = ((TL_update.TL_updateGroupCall) obj).call;
         }
-        Utilities.stageQueue.postRunnable(new tt(1, ytVar, updates));
+        Utilities.stageQueue.postRunnable(new tt(2, ytVar, updates));
         if (groupCall2 == null || LaunchActivity.G1 == null) {
             ytVar.c0 = false;
             dVar.setLoading(false);

@@ -19,7 +19,7 @@ import org.telegram.ui.mo;
 import org.telegram.ui.sa1;
 import qg.v2;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,8 +40,8 @@ public final /* synthetic */ class q0 implements Runnable {
                 nf.f.s(((u0) this.b).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 return;
             case 2:
-                f1 f1Var = (f1) this.b;
-                Utilities.searchQueue.postRunnable(new en0(f1Var, new ArrayList(f1Var.h.e), f1Var.h.n, 22));
+                g1 g1Var = (g1) this.b;
+                Utilities.searchQueue.postRunnable(new en0(g1Var, new ArrayList(g1Var.h.e), g1Var.h.n, 22));
                 return;
             case 3:
                 ((HttpGetFileTask) this.b).lambda$doInBackground$1();

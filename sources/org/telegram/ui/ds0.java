@@ -36,7 +36,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.d5, GenericProvider, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.nl0, org.telegram.ui.Components.ol0, qv0, MessagesStorage.BooleanCallback, m11, OnSuccessListener, pa.a, OnFailureListener, t5.b {
     public final /* synthetic */ int a;
@@ -219,7 +219,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
                             MessagesController.getInstance(photoViewer.T).deleteMessages(arrayList9, null, null, MessageObject.getDialogId(message), message.quick_reply_shortcut_id, true, 0);
                             NotificationCenter.getInstance(photoViewer.T).lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadDialogPhotos, new Object[0]);
                         }
-                        if (!photoViewer.I1()) {
+                        if (!photoViewer.J1()) {
                             TLRPC.Photo photo = (TLRPC.Photo) arrayList6.get(photoViewer.P4);
                             if (photo != null) {
                                 TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
@@ -247,7 +247,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
                                         i14 = arrayList6.size() - 1;
                                     }
                                     photoViewer.P4 = -1;
-                                    photoViewer.A2(i14);
+                                    photoViewer.B2(i14);
                                 }
                                 if (message == null) {
                                     NotificationCenter.getInstance(photoViewer.T).lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadDialogPhotos, new Object[0]);
@@ -273,7 +273,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
                             i15 = arrayList5.size() - 1;
                         }
                         photoViewer.P4 = -1;
-                        photoViewer.A2(i15);
+                        photoViewer.B2(i15);
                         break;
                     } else {
                         photoViewer.G0(false, false);
@@ -347,7 +347,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
                 ab1.m((ab1) this.b, (qy) this.c);
                 break;
             case 12:
-                ThemeActivity.X((ThemeActivity) this.b, (p81) this.c);
+                ThemeActivity.X((ThemeActivity) this.b, (n81) this.c);
                 break;
             case 15:
                 yb1 yb1Var = (yb1) this.b;
@@ -467,7 +467,7 @@ public final /* synthetic */ class ds0 implements org.telegram.ui.ActionBar.z1, 
         y1Var.B0 = false;
         FileLog.e(exc);
         if (Build.VERSION.SDK_INT >= 24 && (exc instanceof mb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && y1Var.isAttachedToWindow()) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o1(11, y1Var, bitmap), 2000L);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(12, y1Var, bitmap), 2000L);
         } else {
             y1Var.C0 = true;
         }

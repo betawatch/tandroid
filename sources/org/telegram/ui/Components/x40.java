@@ -40,7 +40,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class x40 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.eq0 {
     public String E;
@@ -463,7 +463,7 @@ public final class x40 implements NotificationCenter.NotificationCenterDelegate,
             }
             if (i10 == 13) {
                 this.a.getParentActivity().overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
-                PhotoViewer.t1().J2(null, this.a, null);
+                PhotoViewer.t1().K2(null, this.a, null);
                 p(this.f, null, AndroidUtilities.getImageOrientation(this.f), false);
                 AndroidUtilities.addMediaToGallery(this.f);
                 this.f = null;
@@ -473,7 +473,7 @@ public final class x40 implements NotificationCenter.NotificationCenterDelegate,
                 if (intent == null || intent.getData() == null) {
                     return;
                 }
-                AndroidUtilities.runOnUIThread(new ww(11, this, intent.getData()));
+                AndroidUtilities.runOnUIThread(new dv(12, this, intent.getData()));
                 return;
             }
             if (i10 == 15) {
@@ -652,8 +652,8 @@ public final class x40 implements NotificationCenter.NotificationCenterDelegate,
         orientation.isVideo = z10;
         orientation.thumbPath = str2;
         arrayList.add(orientation);
-        PhotoViewer.t1().J2(null, this.a, null);
-        PhotoViewer.t1().f2(arrayList, 0, 1, false, new u40(this, arrayList), null);
+        PhotoViewer.t1().K2(null, this.a, null);
+        PhotoViewer.t1().g2(arrayList, 0, 1, false, new u40(this, arrayList), null);
         PhotoViewer.t1().P = true;
     }
 

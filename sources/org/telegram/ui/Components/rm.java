@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class rm extends ViewGroup {
     public qm E;
@@ -755,15 +755,15 @@ public final class rm extends ViewGroup {
                                     AndroidUtilities.hideKeyboard(m2Var.getFragmentView().findFocus());
                                     AndroidUtilities.hideKeyboard(wiVar.getContainer().findFocus());
                                 }
-                                PhotoViewer.t1().J2(null, m2Var, smVar.a);
-                                PhotoViewer.t1().K2(wiVar);
+                                PhotoViewer.t1().K2(null, m2Var, smVar.a);
+                                PhotoViewer.t1().L2(wiVar);
                                 PhotoViewer t12 = PhotoViewer.t1();
                                 int i22 = wiVar.S1;
                                 boolean z11 = wiVar.T1;
                                 t12.h = i22;
                                 t12.n = z11;
                                 this.N.a = arrayList6;
-                                PhotoViewer.t1().f2(new ArrayList(arrayList6), indexOf, i10, false, this.N, wnVar);
+                                PhotoViewer.t1().g2(new ArrayList(arrayList6), indexOf, i10, false, this.N, wnVar);
                                 smVar.P.getClass();
                                 if (ChatAttachAlertPhotoLayout.T()) {
                                     PhotoViewer t13 = PhotoViewer.t1();
@@ -771,8 +771,8 @@ public final class rm extends ViewGroup {
                                     t13.p7 = true;
                                     t13.q7 = text;
                                     pmVar4 = null;
-                                    t13.z2(null, text, false, false);
-                                    t13.s3(null);
+                                    t13.A2(null, text, false, false);
+                                    t13.t3(null);
                                     this.F = pmVar4;
                                     this.y = 0L;
                                     smVar.J = pmVar4;
@@ -786,15 +786,15 @@ public final class rm extends ViewGroup {
                             }
                             if (!wiVar.Z1.c0()) {
                             }
-                            PhotoViewer.t1().J2(null, m2Var, smVar.a);
-                            PhotoViewer.t1().K2(wiVar);
+                            PhotoViewer.t1().K2(null, m2Var, smVar.a);
+                            PhotoViewer.t1().L2(wiVar);
                             PhotoViewer t122 = PhotoViewer.t1();
                             int i222 = wiVar.S1;
                             boolean z112 = wiVar.T1;
                             t122.h = i222;
                             t122.n = z112;
                             this.N.a = arrayList6;
-                            PhotoViewer.t1().f2(new ArrayList(arrayList6), indexOf, i10, false, this.N, wnVar);
+                            PhotoViewer.t1().g2(new ArrayList(arrayList6), indexOf, i10, false, this.N, wnVar);
                             smVar.P.getClass();
                             if (ChatAttachAlertPhotoLayout.T()) {
                             }

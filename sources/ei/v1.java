@@ -9,12 +9,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qy;
 import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements Utilities.Callback {
     public final /* synthetic */ wf1 a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class v1 implements Utilities.Callback {
                 chat = chat2;
             }
         }
-        xc a02 = xc.a0(U);
+        yc a02 = yc.a0(U);
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(bool.booleanValue() ? R.string.BotSentRevokeVerifyRequest : R.string.BotSentVerifyRequest, str));
         a02.getClass();
         a02.V(Arrays.asList(chat), replaceTags, null, null).k(false);

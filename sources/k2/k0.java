@@ -9,7 +9,7 @@ import org.telegram.ui.Components.t71;
 import org.telegram.ui.Components.u71;
 import org.telegram.ui.Components.yn0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class k0 extends c2.i {
     public final t71 i;
@@ -95,7 +95,7 @@ public final class k0 extends c2.i {
                         }
                         if (System.currentTimeMillis() - t71Var.e >= 64) {
                             t71Var.e = System.currentTimeMillis();
-                            handler.postDelayed(new yn0(22, t71Var, fArr2), 130L);
+                            handler.postDelayed(new yn0(23, t71Var, fArr2), 130L);
                         }
                     }
                 }

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class fe extends LinearLayout {
     public final int a;
@@ -133,7 +133,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
                                                 if (tL_error2 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error2);
+                                                    org.telegram.ui.Components.yc.b0(tL_error2);
                                                 }
                                             }
                                             if (feVar2.a() != z10 && (ndVar = feVar2.e) != null) {
@@ -161,7 +161,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
                                                 if (tL_error3 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error3);
+                                                    org.telegram.ui.Components.yc.b0(tL_error3);
                                                 }
                                             }
                                             if (feVar3.a() != z10 && (ndVar2 = feVar3.e) != null) {
@@ -205,7 +205,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
                                                 if (tL_error2 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error2);
+                                                    org.telegram.ui.Components.yc.b0(tL_error2);
                                                 }
                                             }
                                             if (feVar22.a() != z12 && (ndVar = feVar22.e) != null) {
@@ -233,7 +233,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
                                                 if (tL_error3 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error3);
+                                                    org.telegram.ui.Components.yc.b0(tL_error3);
                                                 }
                                             }
                                             if (feVar3.a() != z12 && (ndVar2 = feVar3.e) != null) {
@@ -300,7 +300,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
                                                 if (tL_error2 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error2);
+                                                    org.telegram.ui.Components.yc.b0(tL_error2);
                                                 }
                                             }
                                             if (feVar22.a() != z10 && (ndVar = feVar22.e) != null) {
@@ -328,7 +328,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
                                                 if (tL_error3 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error3);
+                                                    org.telegram.ui.Components.yc.b0(tL_error3);
                                                 }
                                             }
                                             if (feVar3.a() != z10 && (ndVar2 = feVar3.e) != null) {
@@ -372,7 +372,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
                                                 if (tL_error2 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error2);
+                                                    org.telegram.ui.Components.yc.b0(tL_error2);
                                                 }
                                             }
                                             if (feVar22.a() != z12 && (ndVar = feVar22.e) != null) {
@@ -400,7 +400,7 @@ public final class fe extends LinearLayout {
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
                                                 if (tL_error3 != null) {
-                                                    org.telegram.ui.Components.xc.b0(tL_error3);
+                                                    org.telegram.ui.Components.yc.b0(tL_error3);
                                                 }
                                             }
                                             if (feVar3.a() != z12 && (ndVar2 = feVar3.e) != null) {

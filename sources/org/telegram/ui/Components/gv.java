@@ -1,46 +1,21 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
-public final class gv extends g.p {
-    public final /* synthetic */ uv c;
+public final class gv extends vv {
+    public final /* synthetic */ vv W;
 
-    public gv(uv uvVar) {
-        this.c = uvVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gv(vv vvVar, org.telegram.ui.ActionBar.m2 m2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
+        super(m2Var, context, d6Var, arrayList);
+        this.W = vvVar;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        TLRPC.StickerSet stickerSet;
-        uv uvVar = this.c;
-        s4.s sVar = uvVar.y;
-        ev evVar = uvVar.e;
-        ci.v vVar = uvVar.h;
-        if (vVar.getAdapter() == null || vVar.getAdapter().j(i10) != 1) {
-            return sVar.J;
-        }
-        int i11 = 0;
-        int i12 = 0;
-        while (true) {
-            ArrayList[] arrayListArr = evVar.c;
-            if (i11 >= arrayListArr.length) {
-                break;
-            }
-            int size = arrayListArr[i11].size();
-            if (evVar.c.length > 1) {
-                size = Math.min(sVar.J * 2, size);
-            }
-            i12 += size + 2;
-            if (i10 < i12) {
-                break;
-            }
-            i11++;
-        }
-        ArrayList arrayList = evVar.b;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (arrayList == null || i11 >= arrayList.size()) ? null : (TLRPC.TL_messages_stickerSet) evVar.b.get(i11);
-        return (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || stickerSet.emojis) ? 5 : 8;
+    @Override // org.telegram.ui.Components.vv
+    public final void Y() {
+        this.W.dismiss();
     }
 }

@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class x50 implements Runnable {
     public DispatchQueue B0;
@@ -309,7 +309,7 @@ public final class x50 implements Runnable {
         } else {
             if (!x50Var.G0) {
                 x50Var.G0 = true;
-                AndroidUtilities.runOnUIThread(new ww(12, x50Var, s50Var));
+                AndroidUtilities.runOnUIThread(new dv(13, x50Var, s50Var));
             }
             z10 = false;
         }

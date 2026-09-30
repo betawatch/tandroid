@@ -16,7 +16,7 @@ import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.l21;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class j1 implements Runnable {
                     x3Var.q0 = true;
                     x3Var.l1 = null;
                     x3Var.r1(inputSavedStarGift, (TLRPC.Updates) tLObject, new b1(x3Var, 5));
-                    Utilities.stageQueue.postRunnable(new u2.p0(18, x3Var, tLObject));
+                    Utilities.stageQueue.postRunnable(new u2.i0(19, x3Var, tLObject));
                     break;
                 }
             default:

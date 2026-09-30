@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class wx extends lu0 {
     public final /* synthetic */ boolean[] a;
@@ -215,7 +215,7 @@ public final class wx extends lu0 {
         org.telegram.ui.Components.md f12;
         PhotoViewer t12 = PhotoViewer.t1();
         CharSequence charSequence = null;
-        if (t12.Q1() && (f12 = t12.f1()) != null) {
+        if (t12.R1() && (f12 = t12.f1()) != null) {
             charSequence = f12.getText();
         }
         qy qyVar = this.b;

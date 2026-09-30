@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.video.VideoAds;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ar0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,37 +29,37 @@ public final /* synthetic */ class ar0 implements Runnable {
             case 1:
                 PhotoViewer photoViewer2 = this.b;
                 Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer2.d3(0);
+                photoViewer2.e3(0);
                 break;
             case 2:
                 PhotoViewer photoViewer3 = this.b;
                 Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer3.v2(true, 0, 0, false, true, false);
+                photoViewer3.w2(true, 0, 0, false, true, false);
                 break;
             case 3:
                 PhotoViewer photoViewer4 = this.b;
                 Drawable[] drawableArr4 = PhotoViewer.U8;
-                photoViewer4.v2(true, 0, 0, false, false, false);
+                photoViewer4.w2(true, 0, 0, false, false, false);
                 break;
             case 4:
                 PhotoViewer photoViewer5 = this.b;
                 Drawable[] drawableArr5 = PhotoViewer.U8;
-                photoViewer5.v2(false, 0, 0, true, false, false);
+                photoViewer5.w2(false, 0, 0, true, false, false);
                 break;
             case 5:
                 PhotoViewer photoViewer6 = this.b;
                 Drawable[] drawableArr6 = PhotoViewer.U8;
-                photoViewer6.Y2();
+                photoViewer6.Z2();
                 break;
             case 6:
                 PhotoViewer photoViewer7 = this.b;
                 Drawable[] drawableArr7 = PhotoViewer.U8;
-                photoViewer7.v2(false, 0, 0, false, false, false);
+                photoViewer7.w2(false, 0, 0, false, false, false);
                 break;
             case 7:
                 PhotoViewer photoViewer8 = this.b;
                 Drawable[] drawableArr8 = PhotoViewer.U8;
-                photoViewer8.h2();
+                photoViewer8.i2();
                 break;
             case 8:
                 org.telegram.ui.Components.gf0 gf0Var = this.b.C1;
@@ -77,17 +77,17 @@ public final /* synthetic */ class ar0 implements Runnable {
             case 10:
                 PhotoViewer photoViewer10 = this.b;
                 photoViewer10.q5.b.setLoading(false);
-                photoViewer10.d3(0);
+                photoViewer10.e3(0);
                 break;
             case 11:
                 PhotoViewer photoViewer11 = this.b;
                 photoViewer11.q5.b.setLoading(false);
-                photoViewer11.d3(0);
+                photoViewer11.e3(0);
                 break;
             case 12:
                 PhotoViewer photoViewer12 = this.b;
                 Drawable[] drawableArr10 = PhotoViewer.U8;
-                photoViewer12.d3(0);
+                photoViewer12.e3(0);
                 break;
             case 13:
                 this.b.p5.V = false;
@@ -99,22 +99,22 @@ public final /* synthetic */ class ar0 implements Runnable {
                 PhotoViewer photoViewer13 = this.b;
                 photoViewer13.i7 = null;
                 photoViewer13.m0();
-                photoViewer13.d3(0);
+                photoViewer13.e3(0);
                 break;
             case 16:
                 PhotoViewer photoViewer14 = this.b;
                 photoViewer14.q5.b.setLoading(false);
-                photoViewer14.d3(0);
+                photoViewer14.e3(0);
                 break;
             case 17:
                 PhotoViewer photoViewer15 = this.b;
                 photoViewer15.q5.b.setLoading(false);
-                photoViewer15.d3(0);
+                photoViewer15.e3(0);
                 break;
             case 18:
                 PhotoViewer photoViewer16 = this.b;
                 Drawable[] drawableArr11 = PhotoViewer.U8;
-                photoViewer16.r3();
+                photoViewer16.s3();
                 break;
             case 19:
                 PhotoViewer photoViewer17 = this.b;
@@ -124,14 +124,14 @@ public final /* synthetic */ class ar0 implements Runnable {
             case 20:
                 PhotoViewer photoViewer18 = this.b;
                 Drawable[] drawableArr13 = PhotoViewer.U8;
-                photoViewer18.m3(true);
+                photoViewer18.n3(true);
                 break;
             case 21:
                 PhotoViewer photoViewer19 = this.b;
                 if (photoViewer19.v0.isEnabled() && AndroidUtilities.checkInlinePermissions(photoViewer19.y) && !org.telegram.ui.Components.qg0.p0.P && photoViewer19.P3) {
                     if (!photoViewer19.t4) {
                         photoViewer19.K3 = false;
-                        photoViewer19.g3();
+                        photoViewer19.h3();
                         break;
                     } else {
                         au0 au0Var = photoViewer19.f0;
@@ -161,14 +161,14 @@ public final /* synthetic */ class ar0 implements Runnable {
             case 22:
                 PhotoViewer photoViewer20 = this.b;
                 if (photoViewer20.e && photoViewer20.n4 == 0) {
-                    photoViewer20.u3(photoViewer20.J);
+                    photoViewer20.v3(photoViewer20.J);
                     break;
                 }
                 break;
             case 23:
                 PhotoViewer photoViewer21 = this.b;
                 Drawable[] drawableArr14 = PhotoViewer.U8;
-                photoViewer21.F1();
+                photoViewer21.G1();
                 break;
             case 24:
                 PhotoViewer photoViewer22 = this.b;
@@ -232,12 +232,12 @@ public final /* synthetic */ class ar0 implements Runnable {
             case 28:
                 PhotoViewer photoViewer25 = this.b;
                 Drawable[] drawableArr16 = PhotoViewer.U8;
-                photoViewer25.y3();
+                photoViewer25.z3();
                 break;
             default:
                 PhotoViewer photoViewer26 = this.b;
-                photoViewer26.D1.e(photoViewer26.J2, photoViewer26.K2, photoViewer26.L2, photoViewer26.P2, photoViewer26.R2, photoViewer26.O2, photoViewer26.q2(true), photoViewer26.q2(true), photoViewer26.M2, photoViewer26.N2, 0.0f, 0.0f, photoViewer26.Q2);
-                photoViewer26.d3(0);
+                photoViewer26.D1.e(photoViewer26.J2, photoViewer26.K2, photoViewer26.L2, photoViewer26.P2, photoViewer26.R2, photoViewer26.O2, photoViewer26.r2(true), photoViewer26.r2(true), photoViewer26.M2, photoViewer26.N2, 0.0f, 0.0f, photoViewer26.Q2);
+                photoViewer26.e3(0);
                 break;
         }
     }

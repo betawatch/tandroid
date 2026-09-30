@@ -82,7 +82,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class lv0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Cells.o2 {
     public static final int[] d2 = {0, 1, 2, 4};
@@ -1440,7 +1440,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(storyItem);
         storiesController.c0(i10, j3, arrayList);
-        xc.a0(lv0Var.v1).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", 1, str)), LocaleController.getString(R.string.UndoNoCaps), ymVar).j();
+        yc.a0(lv0Var.v1).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", 1, str)), LocaleController.getString(R.string.UndoNoCaps), ymVar).j();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1450,7 +1450,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
 
     public static /* synthetic */ void h(lv0 lv0Var, TL_stories.StoryItem storyItem) {
         lv0Var.getStoriesController().o0(lv0Var.j1, new ArrayList(Collections.singletonList(storyItem)), false, null);
-        xc.a0(lv0Var.v1).G(R.raw.chats_archived, 5000, LocaleController.formatPluralString("StoryArchived", 1, new Object[0])).j();
+        yc.a0(lv0Var.v1).G(R.raw.chats_archived, 5000, LocaleController.formatPluralString("StoryArchived", 1, new Object[0])).j();
     }
 
     public static void i(lv0 lv0Var, long j3, int i10, String str) {
@@ -1471,7 +1471,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
 
     public static void j(lv0 lv0Var, TL_stories.StoryItem storyItem, ai.e9 e9Var) {
         lv0Var.getStoriesController().c(e9Var.a, lv0Var.j1, storyItem);
-        AndroidUtilities.runOnUIThread(new yn0(6, lv0Var, e9Var), 100L);
+        AndroidUtilities.runOnUIThread(new yn0(7, lv0Var, e9Var), 100L);
     }
 
     public static void m(lv0 lv0Var, HashSet hashSet, TL_stories.StoryItem storyItem, a80 a80Var, ai.e9 e9Var) {
@@ -1489,7 +1489,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
             storiesController.c0(i10, j3, arrayList);
             formatString = LocaleController.formatString(R.string.StoryRemovedFromAlbumX, e9Var.b);
         }
-        xc.a0(lv0Var.v1).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
+        yc.a0(lv0Var.v1).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
         a80Var.u();
     }
 
@@ -1580,7 +1580,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
         eu0Var.G.setScaleY(0.8f);
         eu0Var.G.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
         eu0Var.invalidate();
-        yn0 yn0Var2 = new yn0(5, eu0Var, dr0Var);
+        yn0 yn0Var2 = new yn0(6, eu0Var, dr0Var);
         eu0Var.H = yn0Var2;
         AndroidUtilities.runOnUIThread(yn0Var2, 4000L);
     }
@@ -1990,7 +1990,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
                                     long j11 = lv0Var.j1;
                                     ArrayList arrayList4 = arrayList3;
                                     storiesController.s(j11, arrayList4);
-                                    xc.a0(m2Var2).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", arrayList4.size(), new Object[0])).j();
+                                    yc.a0(m2Var2).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", arrayList4.size(), new Object[0])).j();
                                     lv0Var.L(false);
                                     break;
                                 default:
@@ -2105,7 +2105,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
                         long j112 = lv0Var.j1;
                         ArrayList arrayList42 = arrayList5;
                         storiesController.s(j112, arrayList42);
-                        xc.a0(m2Var2).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", arrayList42.size(), new Object[0])).j();
+                        yc.a0(m2Var2).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("StoriesDeleted", arrayList42.size(), new Object[0])).j();
                         lv0Var.L(false);
                         break;
                     default:
@@ -2408,20 +2408,20 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
                     av0 av0Var = av0VarArr[i11];
                     int i14 = i10 - av0Var.m;
                     if (i14 >= 0 && i14 < av0Var.a.size()) {
-                        PhotoViewer.t1().J2(null, m2Var, null);
-                        PhotoViewer.t1().a2(av0VarArr[i11].a, i14, this.j1, this.c1, this.F, ls0Var);
+                        PhotoViewer.t1().K2(null, m2Var, null);
+                        PhotoViewer.t1().b2(av0VarArr[i11].a, i14, this.j1, this.c1, this.F, ls0Var);
                     }
                 } else if (i11 == 2 || i11 == 4) {
                     if (view instanceof org.telegram.ui.Cells.j7) {
                         ((org.telegram.ui.Cells.j7) view).a();
                     }
                 } else if (i11 == 5) {
-                    PhotoViewer.t1().J2(null, m2Var, null);
+                    PhotoViewer.t1().K2(null, m2Var, null);
                     int indexOf = av0VarArr[i11].a.indexOf(messageObject);
                     if (indexOf < 0) {
-                        PhotoViewer.t1().a2(org.telegram.messenger.f0.k(messageObject), 0, 0L, 0L, 0L, ls0Var);
+                        PhotoViewer.t1().b2(org.telegram.messenger.f0.k(messageObject), 0, 0L, 0L, 0L, ls0Var);
                     } else {
-                        PhotoViewer.t1().a2(av0VarArr[i11].a, indexOf, this.j1, this.c1, this.F, ls0Var);
+                        PhotoViewer.t1().b2(av0VarArr[i11].a, indexOf, this.j1, this.c1, this.F, ls0Var);
                     }
                 } else if (i11 == 1) {
                     if (view instanceof org.telegram.ui.Cells.k7) {
@@ -2429,13 +2429,13 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
                         TLRPC.Document document = messageObject.getDocument();
                         if (k7Var.G) {
                             if (messageObject.canPreviewDocument()) {
-                                PhotoViewer.t1().J2(null, m2Var, null);
+                                PhotoViewer.t1().K2(null, m2Var, null);
                                 int indexOf2 = av0VarArr[i11].a.indexOf(messageObject);
                                 if (indexOf2 < 0) {
-                                    PhotoViewer.t1().a2(org.telegram.messenger.f0.k(messageObject), 0, 0L, 0L, 0L, ls0Var);
+                                    PhotoViewer.t1().b2(org.telegram.messenger.f0.k(messageObject), 0, 0L, 0L, 0L, ls0Var);
                                     return;
                                 } else {
-                                    PhotoViewer.t1().a2(av0VarArr[i11].a, indexOf2, this.j1, this.c1, this.F, ls0Var);
+                                    PhotoViewer.t1().b2(av0VarArr[i11].a, indexOf2, this.j1, this.c1, this.F, ls0Var);
                                     return;
                                 }
                             }
@@ -2494,7 +2494,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
                     Context context = getContext();
                     int id2 = messageObject.getId();
                     ai.u9 a2 = ai.u9.a(this.k0[0].h);
-                    a2.e = new nv(d9Var, 19);
+                    a2.e = new ov(d9Var, 19);
                     if ((m2Var instanceof ProfileActivity) && ((ProfileActivity) m2Var).s1) {
                         i12 = AndroidUtilities.dp(68.0f);
                     }
@@ -3399,7 +3399,7 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
         }
         org.telegram.ui.ActionBar.m2 m2Var = this.v1;
         if (z10 && arrayList.size() > m2Var.getMessagesController().storiesPinnedToTopCountMax) {
-            xc.a0(m2Var).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinLimit", m2Var.getMessagesController().storiesPinnedToTopCountMax, new Object[0]))).j();
+            yc.a0(m2Var).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinLimit", m2Var.getMessagesController().storiesPinnedToTopCountMax, new Object[0]))).j();
             return;
         }
         ai.d9 d9Var = tt0Var.s;
@@ -3444,11 +3444,11 @@ public abstract class lv0 extends FrameLayout implements NotificationCenter.Noti
             z11 = z12;
         }
         if (z11) {
-            xc.a0(m2Var).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinLimit", m2Var.getMessagesController().storiesPinnedToTopCountMax, new Object[0]))).j();
+            yc.a0(m2Var).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinLimit", m2Var.getMessagesController().storiesPinnedToTopCountMax, new Object[0]))).j();
         } else if (z10) {
-            xc.a0(m2Var).M(AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinned", arrayList.size(), new Object[0])), LocaleController.formatPluralString("StoriesPinnedText", arrayList.size(), new Object[0]), R.raw.ic_pin).j();
+            yc.a0(m2Var).M(AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesPinned", arrayList.size(), new Object[0])), LocaleController.formatPluralString("StoriesPinnedText", arrayList.size(), new Object[0]), R.raw.ic_pin).j();
         } else {
-            xc.a0(m2Var).Q(R.raw.ic_unpin, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesUnpinned", arrayList.size(), new Object[0]))).j();
+            yc.a0(m2Var).Q(R.raw.ic_unpin, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoriesUnpinned", arrayList.size(), new Object[0]))).j();
         }
     }
 

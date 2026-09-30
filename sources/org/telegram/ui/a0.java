@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                     str = "about:blank";
                 }
                 AndroidUtilities.addToClipboard(str);
-                new org.telegram.ui.Components.xc(m3Var.f, null).k(false).k(true);
+                new org.telegram.ui.Components.yc(m3Var.f, null).k(false).k(true);
                 break;
             case 1:
                 e7 e7Var = (e7) obj3;

@@ -11,7 +11,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class of implements Runnable {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class of implements Runnable {
                 if (wnVar.getUserConfig().isPremium()) {
                     wnVar.Lb = null;
                     wnVar.Qc(true);
-                    org.telegram.ui.Components.xc.a0(wnVar).c(LocaleController.getString(R.string.AdHidden)).j();
+                    org.telegram.ui.Components.yc.a0(wnVar).c(LocaleController.getString(R.string.AdHidden)).j();
                     wnVar.getMessagesController().disableAds(true);
                     break;
                 } else {
@@ -131,7 +131,7 @@ public final /* synthetic */ class of implements Runnable {
                 wn.q0(wnVar);
                 break;
             case 13:
-                org.telegram.ui.Components.xc.a0(wnVar).M(LocaleController.getString(R.string.BoostingRemoveRestrictionsSuccessTitle), LocaleController.getString(R.string.BoostingRemoveRestrictionsSuccessSubTitle), R.raw.chats_infotip).j();
+                org.telegram.ui.Components.yc.a0(wnVar).M(LocaleController.getString(R.string.BoostingRemoveRestrictionsSuccessTitle), LocaleController.getString(R.string.BoostingRemoveRestrictionsSuccessSubTitle), R.raw.chats_infotip).j();
                 break;
             case 14:
                 wnVar.g8(false, true, 0.0f);

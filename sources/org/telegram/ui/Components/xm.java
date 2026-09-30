@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xm implements ml0 {
     public final /* synthetic */ int a = 1;
@@ -291,13 +291,13 @@ public final /* synthetic */ class xm implements ml0 {
                 }
                 break;
             default:
-                uv.n((uv) this.c, (ArrayList) this.d, (org.telegram.ui.ActionBar.m2) this.e, this.b, view, i10);
+                vv.n((vv) this.c, (ArrayList) this.d, (org.telegram.ui.ActionBar.m2) this.e, this.b, view, i10);
                 break;
         }
     }
 
-    public /* synthetic */ xm(uv uvVar, ArrayList arrayList, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.c = uvVar;
+    public /* synthetic */ xm(vv vvVar, ArrayList arrayList, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.c = vvVar;
         this.d = arrayList;
         this.e = m2Var;
         this.b = d6Var;

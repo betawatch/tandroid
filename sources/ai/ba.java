@@ -34,10 +34,10 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.m90;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ba implements Runnable {
     public final /* synthetic */ int a;
@@ -67,9 +67,9 @@ public final /* synthetic */ class ba implements Runnable {
                     view.performHapticFeedback(0);
                 } catch (Exception unused) {
                 }
-                yc ycVar = caVar.H;
-                if (ycVar != null) {
-                    ycVar.c(false);
+                zc zcVar = caVar.H;
+                if (zcVar != null) {
+                    zcVar.c(false);
                 }
                 ViewParent parent = view.getParent();
                 if (parent instanceof ViewGroup) {

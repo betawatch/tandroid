@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class LanguageSelectActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public p80 a;
@@ -97,7 +97,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.m2 impleme
                         HashSet Y = w31.Y();
                         HashSet hashSet = new HashSet(Y);
                         if (Y.contains(str2) && !Y.contains(str)) {
-                            Collection.-EL.removeIf(hashSet, new m80(str2, 0));
+                            Collection.-EL.removeIf(hashSet, new n80(str2, 0));
                         }
                         if (str != null && !BuildConfig.BETA_URL.equals(str)) {
                             hashSet.add(str);
@@ -352,7 +352,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.m2 impleme
 
     public final void i0(String str) {
         if (str != null) {
-            Utilities.searchQueue.postRunnable(new n80(0, this, str));
+            Utilities.searchQueue.postRunnable(new m80(1, this, str));
             return;
         }
         this.e = null;

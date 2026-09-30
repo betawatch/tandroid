@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ly implements az {
     public final /* synthetic */ my a;
@@ -22,18 +22,18 @@ public final class ly implements az {
         }
         ArrayList arrayList = new ArrayList();
         myVar.F.V.e(true);
-        my.E(myVar, new ww(4, this, arrayList), arrayList, true);
+        my.E(myVar, new dv(5, this, arrayList), arrayList, true);
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         LinkedHashSet linkedHashSet = new LinkedHashSet();
         String str = this.a.v;
-        ww wwVar = new ww(3, this, str);
+        dv dvVar = new dv(4, this, str);
         if (Emoji.fullyConsistsOfEmojis(str)) {
-            ix0.y3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.oc(22, linkedHashSet, wwVar));
+            ix0.y3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.oc(22, linkedHashSet, dvVar));
         } else {
-            wwVar.run();
+            dvVar.run();
         }
     }
 }

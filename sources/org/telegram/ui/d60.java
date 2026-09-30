@@ -94,7 +94,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class d60 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, le.e {
     public static d60 D3;
@@ -1195,7 +1195,7 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
         a2Var.dismiss();
         if (!(tLObject instanceof TL_phone.exportedGroupCallInvite)) {
             if (tL_error != null) {
-                new org.telegram.ui.Components.xc(d60Var.topBulletinContainer, new ai.a1()).d0(tL_error, false);
+                new org.telegram.ui.Components.yc(d60Var.topBulletinContainer, new ai.a1()).d0(tL_error, false);
                 return;
             }
             return;
@@ -5315,7 +5315,7 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
                 this.P2 = true;
                 j60Var.r = false;
                 if (!arrayList2.isEmpty()) {
-                    AndroidUtilities.runOnUIThread(new tt(20, this, arrayList2));
+                    AndroidUtilities.runOnUIThread(new tt(21, this, arrayList2));
                 }
             }
             boolean z11 = !v30Var.b;
@@ -5368,7 +5368,7 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
                 TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
                 exportgroupcallinvite.call = this.a1.getInputGroupCall();
                 exportgroupcallinvite.can_self_unmute = i10 == 1;
-                accountInstance.getConnectionsManager().sendRequest(exportgroupcallinvite, new org.telegram.messenger.voip.m0(this, i10, z10, 1));
+                accountInstance.getConnectionsManager().sendRequest(exportgroupcallinvite, new org.telegram.messenger.voip.n0(this, i10, z10, 1));
                 i10++;
             }
             return;
@@ -5546,7 +5546,7 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onCameraFirstFrameAvailable() {
-        org.telegram.messenger.voip.u0.b(this);
+        org.telegram.messenger.voip.v0.b(this);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
@@ -5581,17 +5581,17 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onMediaStateUpdated(int i10, int i11) {
-        org.telegram.messenger.voip.u0.d(this, i10, i11);
+        org.telegram.messenger.voip.v0.d(this, i10, i11);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onScreenOnChange(boolean z10) {
-        org.telegram.messenger.voip.u0.e(this, z10);
+        org.telegram.messenger.voip.v0.e(this, z10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onSignalBarsCountChanged(int i10) {
-        org.telegram.messenger.voip.u0.f(this, i10);
+        org.telegram.messenger.voip.v0.f(this, i10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
@@ -5602,7 +5602,7 @@ public final class d60 extends org.telegram.ui.ActionBar.e3 implements Notificat
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onVideoAvailableChange(boolean z10) {
-        org.telegram.messenger.voip.u0.h(this, z10);
+        org.telegram.messenger.voip.v0.h(this, z10);
     }
 
     public final boolean q1() {

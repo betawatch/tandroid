@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Map;
 import v7.n7;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class r0 implements y2.i {
     public final Uri a;
@@ -61,7 +61,7 @@ public final class r0 implements y2.i {
                 if (open != -1) {
                     open += j3;
                     u0 u0Var = this.x;
-                    u0Var.H.post(new o0(u0Var, 0));
+                    u0Var.H.post(new p0(u0Var, 0));
                 }
                 long j10 = open;
                 this.x.J = p3.b.d(this.b.a.getResponseHeaders());

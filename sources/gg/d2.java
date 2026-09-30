@@ -33,7 +33,7 @@ import org.telegram.ui.Components.gd0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.qn0;
 import org.telegram.ui.Components.ub;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
@@ -44,7 +44,7 @@ import org.telegram.ui.g50;
 import org.telegram.ui.kh;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d2 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.z1, e2.m, m4.j0, e2.h, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
             case 6:
                 wn wnVar = (wn) this.c;
                 wnVar.getMessagesController().pinMessage(wnVar.e, wnVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
-                qc B = xc.B(wnVar, true, null, null, wnVar.ea);
+                qc B = yc.B(wnVar, true, null, null, wnVar.ea);
                 B.j();
                 ub ubVar = B.e;
                 ubVar.postDelayed(new kh(0, ubVar), 550L);

@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cq implements Runnable {
     public final /* synthetic */ int a;
@@ -37,11 +37,11 @@ public final /* synthetic */ class cq implements Runnable {
                 } else {
                     wn wnVar = new wn(i12);
                     kqVar.presentFragment(wnVar, true);
-                    if (org.telegram.ui.Components.xc.a(wnVar)) {
+                    if (org.telegram.ui.Components.yc.a(wnVar)) {
                         boolean z10 = kqVar.Z0;
                         if (!z10 || !kqVar.K) {
                             if (!z10 && !kqVar.L && kqVar.K) {
-                                org.telegram.ui.Components.xc.C(wnVar, user.first_name).j();
+                                org.telegram.ui.Components.yc.C(wnVar, user.first_name).j();
                                 break;
                             }
                         } else {

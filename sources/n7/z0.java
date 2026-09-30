@@ -57,7 +57,7 @@ import org.telegram.ui.Components.wf0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.i5;
-import org.telegram.ui.jx0;
+import org.telegram.ui.ix0;
 import org.telegram.ui.l4;
 import org.telegram.ui.n41;
 import org.telegram.ui.nw;
@@ -66,7 +66,7 @@ import org.telegram.ui.qy;
 import v7.e8;
 import w7.pa;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2.n, SuccessContinuation {
     public final /* synthetic */ int a;
@@ -414,7 +414,7 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
             return;
         }
         secretMediaViewer.b0 = i10 - 1;
-        AndroidUtilities.runOnUIThread(new jx0(27, this, (File) this.b), 100L);
+        AndroidUtilities.runOnUIThread(new ix0(28, this, (File) this.b), 100L);
     }
 
     @Override // org.telegram.ui.Components.r71

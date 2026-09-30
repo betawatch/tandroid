@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class g10 extends lu0 {
     public final /* synthetic */ t10 a;
@@ -81,7 +81,7 @@ public final class g10 extends lu0 {
                     vu0Var.e = vu0Var.a.getBitmapSafe();
                     vu0Var.d.getLocationInWindow(iArr);
                     vu0Var.j = 0;
-                    if (PhotoViewer.M1(messageObject) && (pinnedHeader = w0Var.getPinnedHeader()) != null) {
+                    if (PhotoViewer.N1(messageObject) && (pinnedHeader = w0Var.getPinnedHeader()) != null) {
                         int dp = (childAt instanceof org.telegram.ui.Cells.k7 ? AndroidUtilities.dp(8.0f) : 0) - vu0Var.c;
                         if (dp > childAt.getHeight()) {
                             w0Var.scrollBy(0, -(pinnedHeader.getHeight() + dp));

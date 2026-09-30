@@ -22,7 +22,7 @@ import org.telegram.ui.Components.y21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class b4 extends View {
     public ValueAnimator E;
@@ -44,7 +44,7 @@ public final class b4 extends View {
     public final org.telegram.ui.Components.e6 s;
     public final org.telegram.ui.Components.o6 v;
     public boolean w;
-    public final u2.p0 x;
+    public final u2.i0 x;
     public float y;
 
     public b4(wn wnVar) {
@@ -71,7 +71,7 @@ public final class b4 extends View {
         o6Var.r(-1);
         o6Var.b = 17;
         this.H = new a4(this, 0);
-        this.x = new u2.p0(25, this, wnVar);
+        this.x = new u2.i0(26, this, wnVar);
     }
 
     private MessageObject getMessageObject() {
@@ -90,14 +90,14 @@ public final class b4 extends View {
         if (getMessageObject() != null) {
             MessageObject messageObject = getMessageObject();
             wn wnVar = this.a;
-            s5 y3 = s5.y(wnVar.getCurrentAccount(), false);
+            t5 y3 = t5.y(wnVar.getCurrentAccount(), false);
             long E = y3.E(messageObject);
             if (!y3.e || y3.q(false, false, null).amount >= E) {
                 return;
             }
-            r5 r5Var = s5.y(wnVar.getCurrentAccount(), false).B;
-            if (r5Var != null) {
-                r5Var.a();
+            s5 s5Var = t5.y(wnVar.getCurrentAccount(), false).B;
+            if (s5Var != null) {
+                s5Var.a();
             }
             long a2 = wnVar.a();
             if (a2 >= 0) {
@@ -145,7 +145,7 @@ public final class b4 extends View {
             return;
         }
         wn wnVar = this.a;
-        s5 y3 = s5.y(wnVar.getCurrentAccount(), false);
+        t5 y3 = t5.y(wnVar.getCurrentAccount(), false);
         while (true) {
             arrayList = this.J;
             if (arrayList.size() <= 4) {
@@ -172,7 +172,7 @@ public final class b4 extends View {
                 performHapticFeedback(3, 1);
             } catch (Exception unused) {
             }
-            s5.y(wnVar.getCurrentAccount(), false).d0(messageObject, this.a, 1L, true, false, null);
+            t5.y(wnVar.getCurrentAccount(), false).d0(messageObject, this.a, 1L, true, false, null);
         }
         org.telegram.ui.Components.o6 o6Var = this.v;
         o6Var.b();
@@ -389,7 +389,7 @@ public final class b4 extends View {
             return false;
         }
         int action = motionEvent.getAction();
-        u2.p0 p0Var = this.x;
+        u2.i0 i0Var = this.x;
         if (action == 0) {
             if (this.h.contains(motionEvent.getX(), motionEvent.getY())) {
                 this.w = true;
@@ -397,8 +397,8 @@ public final class b4 extends View {
                 if (l4 != null) {
                     l4.Y.c(true);
                 }
-                AndroidUtilities.cancelRunOnUIThread(p0Var);
-                AndroidUtilities.runOnUIThread(p0Var, ViewConfiguration.getLongPressTimeout());
+                AndroidUtilities.cancelRunOnUIThread(i0Var);
+                AndroidUtilities.runOnUIThread(i0Var, ViewConfiguration.getLongPressTimeout());
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
             zg.m0 l10 = reactionsLayoutInBubble.l("stars");
@@ -409,7 +409,7 @@ public final class b4 extends View {
                 l10.Y.c(false);
             }
             this.w = false;
-            AndroidUtilities.cancelRunOnUIThread(p0Var);
+            AndroidUtilities.cancelRunOnUIThread(i0Var);
         }
         return this.w;
     }

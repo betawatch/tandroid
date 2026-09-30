@@ -28,7 +28,7 @@ import org.telegram.ui.a71;
 import org.telegram.ui.iz0;
 import org.telegram.ui.ye;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g6 implements dc, OnFailureListener, org.telegram.ui.ActionBar.z1, ed0, c5.p, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ Object a;
@@ -109,7 +109,7 @@ public final /* synthetic */ class g6 implements dc, OnFailureListener, org.tele
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
     public void onProductDetailsResponse(c5.h hVar, List list) {
-        AndroidUtilities.runOnUIThread(new ye((yh.s5) this.a, list, (q80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
+        AndroidUtilities.runOnUIThread(new ye((yh.t5) this.a, list, (q80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
     }
 
     @Override // org.telegram.ui.Components.ed0

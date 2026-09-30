@@ -14,7 +14,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class d2 extends WebViewClient {
     public boolean a = true;
@@ -38,17 +38,17 @@ public final class d2 extends WebViewClient {
         i2 i2Var = this.d;
         if (str == null || !str.endsWith("/index.html")) {
             oi.f fVar = i2Var.b;
-            k1 k1Var = fVar != null ? (k1) ((HashMap) fVar.c).get(str) : null;
-            if (k1Var == null) {
+            l1 l1Var = fVar != null ? (l1) ((HashMap) fVar.c).get(str) : null;
+            if (l1Var == null) {
                 return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
             }
-            l1 l1Var = (l1) k1Var.a.get("content-type");
-            String str3 = l1Var == null ? null : l1Var.a;
+            m1 m1Var = (m1) l1Var.a.get("content-type");
+            String str3 = m1Var == null ? null : m1Var.a;
             if (!"text/html".equalsIgnoreCase(str3) && !"text/css".equalsIgnoreCase(str3)) {
                 return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
             }
             try {
-                a2 = k1Var.a();
+                a2 = l1Var.a();
                 str2 = str3;
             } catch (IOException e) {
                 FileLog.e(e);
@@ -58,12 +58,12 @@ public final class d2 extends WebViewClient {
             str2 = "application/octet-stream";
             if (this.b) {
                 oi.f fVar2 = i2Var.b;
-                k1 k1Var2 = fVar2 != null ? (k1) ((ArrayList) fVar2.b).get(0) : null;
-                if (k1Var2 == null) {
+                l1 l1Var2 = fVar2 != null ? (l1) ((ArrayList) fVar2.b).get(0) : null;
+                if (l1Var2 == null) {
                     return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
                 }
                 try {
-                    a2 = k1Var2.a();
+                    a2 = l1Var2.a();
                 } catch (IOException e7) {
                     FileLog.e(e7);
                     return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);

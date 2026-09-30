@@ -10,9 +10,9 @@ import org.telegram.ui.Components.jc;
 import org.telegram.ui.Components.kc;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class o5 {
     public final org.telegram.ui.ActionBar.m2 a;
@@ -68,7 +68,7 @@ public final class o5 {
         this.p = r22;
         this.a = m2Var;
         this.b = j3;
-        Context t10 = s5.t(m2Var);
+        Context t10 = t5.t(m2Var);
         kc kcVar = new kc(t10, m2Var.getResourceProvider());
         this.d = kcVar;
         kcVar.c(R.raw.stars_topup, new String[0]);
@@ -113,7 +113,7 @@ public final class o5 {
         ocVar.addView(jcVar, w7.y5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
         ocVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
         kcVar.setButton(ocVar);
-        qc b10 = xc.a0(m2Var).b(kcVar, -1);
+        qc b10 = yc.a0(m2Var).b(kcVar, -1);
         this.c = b10;
         b10.r = false;
         b10.k(true);

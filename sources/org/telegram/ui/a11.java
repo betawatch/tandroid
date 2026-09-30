@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class a11 extends org.telegram.ui.Components.xl0 {
     public TLRPC.WebPage E;
@@ -36,7 +36,7 @@ public class a11 extends org.telegram.ui.Components.xl0 {
     public final int f;
     public final Context h;
     public boolean w;
-    public jx0 x;
+    public ix0 x;
     public String y;
     public final ArrayList d = new ArrayList();
     public ArrayList n = new ArrayList();
@@ -83,7 +83,7 @@ public class a11 extends org.telegram.ui.Components.xl0 {
         z01 z01Var21;
         z01 z01Var22;
         final int currentAccount = m2Var.getCurrentAccount();
-        z01 z01Var23 = new z01(LocaleController.getString(R.string.EditName), 500, 0, new jx0(15, m2Var, m2Var.getResourceProvider()));
+        z01 z01Var23 = new z01(LocaleController.getString(R.string.EditName), 500, 0, new ix0(16, m2Var, m2Var.getResourceProvider()));
         final int i10 = 24;
         z01 z01Var24 = new z01(LocaleController.getString(R.string.ChangePhoneNumber), 501, 0, new Runnable() { // from class: org.telegram.ui.v01
             @Override // java.lang.Runnable
@@ -1908,7 +1908,7 @@ public class a11 extends org.telegram.ui.Components.xl0 {
                         boolean isPremium = UserConfig.getInstance(currentAccount).isPremium();
                         org.telegram.ui.ActionBar.m2 m2Var2 = m2Var;
                         if (!isPremium) {
-                            org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(m2Var2);
+                            org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(m2Var2);
                             a02.getClass();
                             org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(a02.W(), null);
                             ybVar.d(R.raw.voip_muted, new String[0]);
@@ -3388,7 +3388,7 @@ public class a11 extends org.telegram.ui.Components.xl0 {
                         boolean isPremium = UserConfig.getInstance(currentAccount).isPremium();
                         org.telegram.ui.ActionBar.m2 m2Var2 = m2Var;
                         if (!isPremium) {
-                            org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(m2Var2);
+                            org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(m2Var2);
                             a02.getClass();
                             org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(a02.W(), null);
                             ybVar.d(R.raw.voip_muted, new String[0]);
@@ -13450,9 +13450,9 @@ public class a11 extends org.telegram.ui.Components.xl0 {
         }
         if (!TextUtils.isEmpty(str)) {
             DispatchQueue dispatchQueue = Utilities.searchQueue;
-            jx0 jx0Var = new jx0(16, this, str);
-            this.x = jx0Var;
-            dispatchQueue.postRunnable(jx0Var, 300L);
+            ix0 ix0Var = new ix0(17, this, str);
+            this.x = ix0Var;
+            dispatchQueue.postRunnable(ix0Var, 300L);
             return;
         }
         this.w = false;

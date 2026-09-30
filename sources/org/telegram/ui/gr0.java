@@ -15,7 +15,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gr0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class gr0 implements Utilities.Callback {
                     qg.k2 k2Var2 = n2Var.E;
                     photoViewer.C4.setImageBitmap(k2Var2 == null ? n2Var.I : (isEmpty || bitmap == null) ? k2Var2.b() : n2Var.e(bitmap));
                     photoViewer.t5.setUndoCutState(true);
-                    photoViewer.Z2(true, true);
+                    photoViewer.a3(true, true);
                     photoViewer.t5.post(new ar0(photoViewer, i11));
                     break;
                 } catch (Exception e) {
@@ -54,7 +54,7 @@ public final /* synthetic */ class gr0 implements Utilities.Callback {
                     return;
                 }
             case 1:
-                org.telegram.ui.Components.xc.F(this.b.e0, true).j();
+                org.telegram.ui.Components.yc.F(this.b.e0, true).j();
                 break;
             case 2:
                 PhotoViewer photoViewer2 = this.b;
@@ -137,7 +137,7 @@ public final /* synthetic */ class gr0 implements Utilities.Callback {
                     ((MediaController.SearchImage) obj2).ttl = num.intValue();
                 }
                 if (num.intValue() != 0 && !photoViewer4.d.x(photoViewer4.P4)) {
-                    photoViewer4.L2();
+                    photoViewer4.M2();
                 }
                 photoViewer4.V1.setTimer(num.intValue());
                 break;
@@ -167,7 +167,7 @@ public final /* synthetic */ class gr0 implements Utilities.Callback {
                     ((MediaController.SearchImage) obj3).ttl = num3.intValue();
                 }
                 if (num3.intValue() != 0 && !photoViewer6.d.x(photoViewer6.P4)) {
-                    photoViewer6.L2();
+                    photoViewer6.M2();
                 }
                 photoViewer6.U1.setTimer(num3.intValue());
                 break;

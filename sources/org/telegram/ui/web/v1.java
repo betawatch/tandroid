@@ -45,7 +45,7 @@ import org.telegram.ui.v3;
 import org.telegram.ui.xd;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public abstract class v1 extends FrameLayout {
     public boolean A0;
@@ -254,9 +254,9 @@ public abstract class v1 extends FrameLayout {
                                     org.telegram.ui.ActionBar.e1 y3 = F.y();
                                     y3.setEnabled(instantViewLoader.b() != null);
                                     y3.setAlpha(y3.isEnabled() ? 1.0f : 0.5f);
-                                    o1 o1Var = new o1(0, y3, instantViewLoader);
-                                    instantViewLoader.m.add(o1Var);
-                                    F.p = new o1(instantViewLoader, o1Var, 4);
+                                    f1 f1Var = new f1(1, y3, instantViewLoader);
+                                    instantViewLoader.m.add(f1Var);
+                                    F.p = new f1(5, instantViewLoader, f1Var);
                                 }
                                 F.c(R.drawable.msg_reset, LocaleController.getString(R.string.Refresh), (Runnable) x7Var.run(5), false);
                                 F.c(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) x7Var.run(1), false);
@@ -337,7 +337,7 @@ public abstract class v1 extends FrameLayout {
         oVar2.setTextSize(1, 15.66f);
         oVar2.setSingleLine(true);
         this.c0 = SharedConfig.searchEngineType;
-        oVar2.setHint(LocaleController.formatString(R.string.AddressPlaceholder, n1.a().a));
+        oVar2.setHint(LocaleController.formatString(R.string.AddressPlaceholder, o1.a().a));
         oVar2.setBackgroundResource(0);
         oVar2.setCursorWidth(1.5f);
         oVar2.setGravity(112);
@@ -451,9 +451,9 @@ public abstract class v1 extends FrameLayout {
                                     org.telegram.ui.ActionBar.e1 y3 = F.y();
                                     y3.setEnabled(instantViewLoader.b() != null);
                                     y3.setAlpha(y3.isEnabled() ? 1.0f : 0.5f);
-                                    o1 o1Var = new o1(0, y3, instantViewLoader);
-                                    instantViewLoader.m.add(o1Var);
-                                    F.p = new o1(instantViewLoader, o1Var, 4);
+                                    f1 f1Var = new f1(1, y3, instantViewLoader);
+                                    instantViewLoader.m.add(f1Var);
+                                    F.p = new f1(5, instantViewLoader, f1Var);
                                 }
                                 F.c(R.drawable.msg_reset, LocaleController.getString(R.string.Refresh), (Runnable) x7Var.run(5), false);
                                 F.c(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) x7Var.run(1), false);

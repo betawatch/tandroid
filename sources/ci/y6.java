@@ -19,11 +19,11 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.d60;
 import org.telegram.ui.qy;
 import org.telegram.ui.vu0;
-import org.telegram.ui.web.o1;
+import org.telegram.ui.web.f1;
 import org.telegram.ui.wn;
 import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, t5.b, r9.g, w40 {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class y6 implements j8, org.telegram.ui.Components.
                 return fVar2.b.schedule(new Callable() { // from class: r9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new o1(16, callable, eVar));
+                        return f.this.a.submit(new f1(17, callable, eVar));
                     }
                 }, this.b, (TimeUnit) this.e);
         }

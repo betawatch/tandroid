@@ -40,11 +40,11 @@ import s4.j;
 import tg.m1;
 import w7.y5;
 import yh.o;
-import yh.s5;
+import yh.t5;
 import yh.v7;
 import yh.w7;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class i extends m20 implements NotificationCenter.NotificationCenterDelegate {
     public FrameLayout P;
@@ -85,10 +85,10 @@ public final class i extends m20 implements NotificationCenter.NotificationCente
             return;
         }
         if (i11 == -2) {
-            s5.y(iVar.currentAccount, true).u();
+            t5.y(iVar.currentAccount, true).u();
             m1.e0(1, BirthdayController.getInstance(iVar.currentAccount).getState());
         } else if (i11 == -3) {
-            s5.y(iVar.currentAccount, true).W();
+            t5.y(iVar.currentAccount, true).W();
             iVar.f0.N(true);
         } else if (i11 == -4) {
             if (MessagesController.getInstance(iVar.currentAccount).isFrozen()) {
@@ -103,7 +103,7 @@ public final class i extends m20 implements NotificationCenter.NotificationCente
         if (getParentActivity() == null) {
             return;
         }
-        s5 y3 = s5.y(this.currentAccount, true);
+        t5 y3 = t5.y(this.currentAccount, true);
         bb bbVar = (bb) super.r0(getParentActivity());
         x51 x51Var = new x51(-2);
         x51Var.c = bbVar;
@@ -127,7 +127,7 @@ public final class i extends m20 implements NotificationCenter.NotificationCente
 
     public final void D0() {
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
-        s5 y3 = s5.y(this.currentAccount, true);
+        t5 y3 = t5.y(this.currentAccount, true);
         double d = getMessagesController().config.tonUsdRate.get();
         TL_stars.StarsAmount p5 = y3.p();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -234,7 +234,7 @@ public final class i extends m20 implements NotificationCenter.NotificationCente
         this.c.setItemAnimator(jVar);
         this.c.setOnItemClickListener(new ai.g(this, 6));
         this.s.addView(new t00(getParentActivity()), y5.c(-1.0f, -1));
-        s5.y(this.currentAccount, true);
+        t5.y(this.currentAccount, true);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.U = linearLayout;
         linearLayout.setOrientation(1);
@@ -395,7 +395,7 @@ public final class i extends m20 implements NotificationCenter.NotificationCente
             return;
         }
         if (i10 == NotificationCenter.starTransactionsLoaded) {
-            s5 y3 = s5.y(this.currentAccount, true);
+            t5 y3 = t5.y(this.currentAccount, true);
             if (this.d0 != y3.O(0)) {
                 this.d0 = y3.O(0);
                 s0();
@@ -451,9 +451,9 @@ public final class i extends m20 implements NotificationCenter.NotificationCente
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starTransactionsLoaded);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starSubscriptionsLoaded);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.botStarsUpdated);
-        s5.y(this.currentAccount, true).T(true);
-        s5.y(this.currentAccount, true).S();
-        s5.y(this.currentAccount, true).z();
+        t5.y(this.currentAccount, true).T(true);
+        t5.y(this.currentAccount, true).S();
+        t5.y(this.currentAccount, true).z();
         return super.onFragmentCreate();
     }
 

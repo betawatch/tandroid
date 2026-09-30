@@ -35,7 +35,7 @@ import org.telegram.ui.db1;
 import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public int E;
@@ -296,14 +296,14 @@ public final class k extends FrameLayout {
             }
             return;
         }
-        i1 i1Var = new i1(new i3(7, this, z10));
-        String str3 = n1.a().c;
+        j1 j1Var = new j1(new i3(7, this, z10));
+        String str3 = o1.a().c;
         if (str3 != null) {
             StringBuilder v = a4.a.v(str3);
             v.append(URLEncoder.encode(str));
             str2 = v.toString();
         }
-        this.O = i1Var.execute(str2);
+        this.O = j1Var.execute(str2);
     }
 
     public void setOpenProgress(float f7) {

@@ -29,12 +29,12 @@ import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.m20;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class l extends m20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -140,7 +140,7 @@ public final class l extends m20 implements NotificationCenter.NotificationCente
         a2Var.dismiss();
         if (!(tLObject instanceof TL_payments.starRefProgram)) {
             if (tL_error != null) {
-                xc.b0(tL_error);
+                yc.b0(tL_error);
                 return;
             }
             return;
@@ -160,7 +160,7 @@ public final class l extends m20 implements NotificationCenter.NotificationCente
         a2Var.dismiss();
         if (!(tLObject instanceof TL_payments.starRefProgram)) {
             if (tL_error != null) {
-                xc.b0(tL_error);
+                yc.b0(tL_error);
                 return;
             }
             return;
@@ -210,9 +210,9 @@ public final class l extends m20 implements NotificationCenter.NotificationCente
         }
         if (m2Var != null) {
             if (z10) {
-                xc.a0(m2Var).M(LocaleController.getString(R.string.AffiliateProgramEndedTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.AffiliateProgramEndedText)), R.raw.linkbroken).j();
+                yc.a0(m2Var).M(LocaleController.getString(R.string.AffiliateProgramEndedTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.AffiliateProgramEndedText)), R.raw.linkbroken).j();
             } else {
-                xc.a0(m2Var).M(LocaleController.getString(R.string.AffiliateProgramStartedTitle), LocaleController.getString(R.string.AffiliateProgramStartedText), R.raw.contact_check).j();
+                yc.a0(m2Var).M(LocaleController.getString(R.string.AffiliateProgramStartedTitle), LocaleController.getString(R.string.AffiliateProgramStartedText), R.raw.contact_check).j();
             }
         }
     }

@@ -74,7 +74,7 @@ import org.telegram.ui.Components.yh;
 import org.telegram.ui.Components.zg;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public abstract class q6 extends dw0 implements qg.r1, qg.h, qg.n1, bw0, hc {
     public final qg.g1 A0;
@@ -2901,7 +2901,7 @@ public abstract class q6 extends dw0 implements qg.r1, qg.h, qg.n1, bw0, hc {
                                                             z15 = z18;
                                                         } else {
                                                             imageReceiver3.setVisible(false, false);
-                                                            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) yh.s5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+                                                            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) yh.t5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
                                                             if (stargiftattributemodel != null) {
                                                                 float dp = AndroidUtilities.dp(110.0f);
                                                                 f1Var = f1Var3;

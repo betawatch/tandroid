@@ -43,11 +43,11 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.a0;
 import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.e11;
-import org.telegram.ui.Components.gd;
+import org.telegram.ui.Components.hd;
 import pg.d0;
 import w7.q;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class g extends Drawable {
     public static final int A;
@@ -104,7 +104,7 @@ public final class g extends Drawable {
         this.h = new ArrayList();
         this.n = -1.0f;
         this.s = 255;
-        this.t = new gd(1);
+        this.t = new hd(1);
         this.z = new RectF();
         for (int i10 = 0; i10 < fArr.length; i10++) {
             this.a[i10] = new Paint();

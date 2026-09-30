@@ -20,7 +20,7 @@ import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public abstract class t4 extends FrameLayout {
     public final Paint E;
@@ -39,7 +39,7 @@ public abstract class t4 extends FrameLayout {
     public ArrayList e;
     public int f;
     public final androidx.fragment.app.a0 h;
-    public final org.telegram.ui.Components.yc n;
+    public final org.telegram.ui.Components.zc n;
     public final RectF r;
     public final RectF s;
     public final Paint v;
@@ -55,7 +55,7 @@ public abstract class t4 extends FrameLayout {
         this.e = new ArrayList();
         final cb cbVar = (cb) this;
         this.h = new androidx.fragment.app.a0(cbVar, 18);
-        this.n = new org.telegram.ui.Components.yc(this);
+        this.n = new org.telegram.ui.Components.zc(this);
         this.r = new RectF();
         this.s = new RectF();
         Paint paint = new Paint(1);
@@ -392,9 +392,9 @@ public abstract class t4 extends FrameLayout {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean contains = this.r.contains(motionEvent.getX(), motionEvent.getY());
         int action = motionEvent.getAction();
-        org.telegram.ui.Components.yc ycVar = this.n;
+        org.telegram.ui.Components.zc zcVar = this.n;
         if (action == 0) {
-            ycVar.c(contains);
+            zcVar.c(contains);
             if (this.M && !contains) {
                 if (!this.y.contains(motionEvent.getX(), motionEvent.getY())) {
                     c(false, true);
@@ -403,17 +403,17 @@ public abstract class t4 extends FrameLayout {
             }
         } else if (motionEvent.getAction() == 2) {
             if (!contains) {
-                ycVar.c(false);
+                zcVar.c(false);
             }
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar.h) {
+            if (zcVar.h) {
                 c(!this.M, true);
             }
-            ycVar.c(false);
+            zcVar.c(false);
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            zcVar.c(false);
         }
-        return ycVar.h || super.onTouchEvent(motionEvent);
+        return zcVar.h || super.onTouchEvent(motionEvent);
     }
 
     public void setSelected(int i10) {

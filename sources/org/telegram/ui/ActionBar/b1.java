@@ -30,11 +30,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ed;
+import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class b1 extends FrameLayout {
     public final Paint E;
@@ -205,7 +205,7 @@ public abstract class b1 extends FrameLayout {
         a1 a1Var = (a1) this;
         String str2 = a1Var.f0;
         if (str2 == null) {
-            str2 = ed.a((a2 * 2.8f) + 0.2f) + "x";
+            str2 = fd.a((a2 * 2.8f) + 0.2f) + "x";
         }
         if (str2 != null) {
             x0 x0Var = this.c;
@@ -215,7 +215,7 @@ public abstract class b1 extends FrameLayout {
             }
         }
         if (a1Var.f0 != null) {
-            str = ed.a((a2 * 2.8f) + 0.2f) + "x";
+            str = fd.a((a2 * 2.8f) + 0.2f) + "x";
         }
         if (str != null) {
             x0 x0Var2 = this.d;

@@ -76,7 +76,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class gn0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout A0;
@@ -1345,7 +1345,7 @@ public final class gn0 extends org.telegram.ui.ActionBar.m2 implements Notificat
             }
             z10 = z11;
         }
-        Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.l0(this.S0, 7, this, arrayList, z10));
+        Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.m0(this.S0, 7, this, arrayList, z10));
     }
 
     public final TLRPC.TL_secureValue H1(TLRPC.TL_secureRequiredType tL_secureRequiredType) {

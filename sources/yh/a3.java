@@ -3,7 +3,7 @@ package yh;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class a3 {
     public final zf.b a;
@@ -14,7 +14,7 @@ public final class a3 {
         long j3;
         this.a = bVar;
         this.b = tL_payments_paymentFormStarGift;
-        s5[][] s5VarArr = s5.S;
+        t5[][] t5VarArr = t5.S;
         if (tL_payments_paymentFormStarGift != null) {
             ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStarGift.invoice.prices;
             int size = arrayList.size();

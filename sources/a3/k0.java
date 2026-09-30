@@ -86,13 +86,13 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.web.b1;
 import v7.m8;
 import w7.y5;
 import zg.q0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
@@ -766,7 +766,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.d;
                 k3 k3Var = f3Var.d;
                 if (!(tLObject8 instanceof TLRPC.TL_boolTrue)) {
-                    new xc(k3Var.p0, k3Var.E).Y(tL_error2).k(true);
+                    new yc(k3Var.p0, k3Var.E).Y(tL_error2).k(true);
                     return;
                 }
                 b3 b3Var = k3Var.x;
@@ -778,7 +778,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.c;
                 TLRPC.User user3 = (TLRPC.User) this.d;
                 AndroidUtilities.addToClipboard(connectedbotstarref.url);
-                xc.a0(e4Var).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user3))), R.raw.copy).j();
+                yc.a0(e4Var).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user3))), R.raw.copy).j();
                 return;
             case 28:
                 e4.A0((e4) this.b, (TLObject) this.c, (a2) this.d);

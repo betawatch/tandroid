@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class qu0 implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ int a;
@@ -380,8 +380,8 @@ public final class qu0 implements org.telegram.ui.Cells.l1 {
             return;
         }
         messageObject.pollMediaMapping = arrayList;
-        PhotoViewer.t1().J2(null, lv0Var.v1, d6Var);
-        PhotoViewer.t1().a2(arrayList2, i11, lv0Var.j1, 0L, 0L, new pu0(this));
+        PhotoViewer.t1().K2(null, lv0Var.v1, d6Var);
+        PhotoViewer.t1().b2(arrayList2, i11, lv0Var.j1, 0L, 0L, new pu0(this));
     }
 
     @Override // org.telegram.ui.Cells.l1

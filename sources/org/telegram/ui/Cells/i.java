@@ -9,12 +9,12 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.kd;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.uc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.td1;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -58,8 +58,8 @@ public final class i extends ClickableSpan {
             case 3:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (xc.a((org.telegram.ui.qa) this.c)) {
-                        xc.j((org.telegram.ui.qa) this.c).j();
+                    if (yc.a((org.telegram.ui.qa) this.c)) {
+                        yc.j((org.telegram.ui.qa) this.c).j();
                         break;
                     }
                 } catch (Exception e) {
@@ -74,7 +74,7 @@ public final class i extends ClickableSpan {
                 nf.f.s(((zo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
-                ((kd) this.c).run();
+                ((uc) this.c).run();
                 break;
             case 7:
                 AndroidUtilities.addToClipboard((CharSequence) this.b);
@@ -83,8 +83,8 @@ public final class i extends ClickableSpan {
             default:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (xc.a((td1) this.c)) {
-                        xc.j((td1) this.c).j();
+                    if (yc.a((td1) this.c)) {
+                        yc.j((td1) this.c).j();
                         break;
                     }
                 } catch (Exception e7) {

@@ -16,10 +16,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ry extends xl0 {
-    public ww E;
+    public dv E;
     public boolean F;
     public int G;
     public int H;
@@ -153,8 +153,8 @@ public final class ry extends xl0 {
         }
         int i11 = mzVar.c1;
         HashMap hashMap = mzVar.l0;
-        ow owVar = mzVar.h0;
-        rw rwVar = mzVar.o0;
+        pw pwVar = mzVar.h0;
+        sw swVar = mzVar.o0;
         int i12 = mzVar.c1;
         TLObject userOrChat = MessagesController.getInstance(i11).getUserOrChat(MessagesController.getInstance(i12).gifSearchBot);
         boolean z13 = userOrChat instanceof TLRPC.User;
@@ -170,13 +170,13 @@ public final class ry extends xl0 {
                 if (z14) {
                     return;
                 }
-                rwVar.e(true);
+                swVar.e(true);
                 return;
             }
             return;
         }
         if (!z14 && TextUtils.isEmpty(str2)) {
-            rwVar.e(true);
+            swVar.e(true);
         }
         this.n = (TLRPC.User) userOrChat;
         final String j3 = com.google.android.gms.internal.vision.e2.j("gif_search_", str, "_", str2);
@@ -201,8 +201,8 @@ public final class ry extends xl0 {
         if (!z12 && !z14 && z11 && TextUtils.isEmpty(str2)) {
             this.x.clear();
             this.y.clear();
-            if (owVar.getAdapter() != this) {
-                owVar.setAdapter(this);
+            if (pwVar.getAdapter() != this) {
+                pwVar.setAdapter(this);
             }
             l();
             mzVar.i0.h1(0, 0);
@@ -248,9 +248,9 @@ public final class ry extends xl0 {
         if (tyVar != null) {
             tyVar.a(false);
         }
-        ww wwVar = this.E;
-        if (wwVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(wwVar);
+        dv dvVar = this.E;
+        if (dvVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(dvVar);
         }
         if (!TextUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
@@ -258,9 +258,9 @@ public final class ry extends xl0 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            ww wwVar2 = new ww(5, this, str);
-            this.E = wwVar2;
-            AndroidUtilities.runOnUIThread(wwVar2, z10 ? 300L : 0L);
+            dv dvVar2 = new dv(6, this, str);
+            this.E = dvVar2;
+            AndroidUtilities.runOnUIThread(dvVar2, z10 ? 300L : 0L);
             return;
         }
         this.w = null;
@@ -269,16 +269,16 @@ public final class ry extends xl0 {
             return;
         }
         tx txVar = mzVar.p0;
-        ow owVar = mzVar.h0;
+        pw pwVar = mzVar.h0;
         int currentPosition = txVar.getCurrentPosition();
         if (currentPosition != mzVar.r0 && currentPosition != mzVar.s0) {
             H(MessagesController.getInstance(mzVar.c1).gifSearchEmojies.get(currentPosition - mzVar.t0));
             return;
         }
-        s4.h0 adapter = owVar.getAdapter();
+        s4.h0 adapter = pwVar.getAdapter();
         ry ryVar = mzVar.n0;
         if (adapter != ryVar) {
-            owVar.setAdapter(ryVar);
+            pwVar.setAdapter(ryVar);
         }
     }
 
@@ -338,9 +338,9 @@ public final class ry extends xl0 {
             if (i10 == Integer.MAX_VALUE) {
                 this.H = mzVar.i1.size();
             } else {
-                ow owVar = mzVar.h0;
+                pw pwVar = mzVar.h0;
                 sy syVar = mzVar.i0;
-                if (owVar.getMeasuredWidth() != 0) {
+                if (pwVar.getMeasuredWidth() != 0) {
                     int measuredWidth = mzVar.h0.getMeasuredWidth();
                     int i11 = syVar.J;
                     int dp = AndroidUtilities.dp(100.0f);

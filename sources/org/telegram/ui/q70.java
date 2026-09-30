@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class q70 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -86,16 +86,16 @@ public final class q70 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 9:
-                dj0 dj0Var = (dj0) obj;
+                ej0 ej0Var = (ej0) obj;
                 if (i10 != -1) {
                     if (i10 == 1) {
                         Bundle bundle = new Bundle();
-                        bundle.putLong("chat_id", dj0Var.b);
-                        dj0Var.presentFragment(new sa1(bundle));
+                        bundle.putLong("chat_id", ej0Var.b);
+                        ej0Var.presentFragment(new sa1(bundle));
                         break;
                     }
                 } else {
-                    dj0Var.finishFragment();
+                    ej0Var.finishFragment();
                     break;
                 }
                 break;

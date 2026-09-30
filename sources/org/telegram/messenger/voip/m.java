@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -38,16 +38,16 @@ public final /* synthetic */ class m implements Runnable {
                 VoIPPreNotificationService.lambda$acknowledge$2((TLObject) this.b, (TLRPC.TL_error) this.c, (Context) this.d, (Runnable) this.e);
                 break;
             case 3:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$44((TLObject) this.c, (TL_phone.PhoneCall) this.d, (TL_phone.exportGroupCallInvite) this.e);
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$31((TLObject) this.c, (AccountInstance) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 4:
-                ((VoIPService) this.b).lambda$startOutgoingCall$9((TLRPC.TL_error) this.c, (TLObject) this.d, (byte[]) this.e);
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$44((TLObject) this.c, (TL_phone.PhoneCall) this.d, (TL_phone.exportGroupCallInvite) this.e);
                 break;
             case 5:
-                ((VoIPService) this.b).lambda$startGroupCheckShortpoll$63((TLRPC.TL_error) this.c, (TLObject) this.d, (TL_phone.checkGroupCall) this.e);
+                ((VoIPService) this.b).lambda$startOutgoingCall$9((TLRPC.TL_error) this.c, (TLObject) this.d, (byte[]) this.e);
                 break;
             default:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$31((TLObject) this.c, (AccountInstance) this.d, (TLRPC.TL_error) this.e);
+                ((VoIPService) this.b).lambda$startGroupCheckShortpoll$63((TLRPC.TL_error) this.c, (TLObject) this.d, (TL_phone.checkGroupCall) this.e);
                 break;
         }
     }

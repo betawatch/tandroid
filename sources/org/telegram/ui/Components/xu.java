@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class xu extends org.telegram.ui.ActionBar.e3 {
     public static xu S;
@@ -76,8 +76,8 @@ public final class xu extends org.telegram.ui.ActionBar.e3 {
             xuVar.H();
         }
         if (((messageObject == null || (messageMedia = messageObject.messageOwner.media) == null || messageMedia.webpage == null) ? null : q91.e(str4)) != null) {
-            PhotoViewer.t1().J2(null, m2Var, null);
-            PhotoViewer.t1().e2(messageObject, null, null, null, null, null, null, 0, lu0Var, null, 0L, 0L, 0L, true, null, Integer.valueOf(i12));
+            PhotoViewer.t1().K2(null, m2Var, null);
+            PhotoViewer.t1().f2(messageObject, null, null, null, null, null, null, 0, lu0Var, null, 0L, 0L, 0L, true, null, Integer.valueOf(i12));
             return;
         }
         Activity parentActivity = m2Var.getParentActivity();

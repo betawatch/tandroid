@@ -24,7 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class c6 implements NotificationCenter.NotificationCenterDelegate {
     public static c6 c;
@@ -55,7 +55,7 @@ public final class c6 implements NotificationCenter.NotificationCenterDelegate {
             c6 c6Var = new c6();
             c6Var.a = UserConfig.selectedAccount;
             if (arrayList2 != null) {
-                Utilities.globalQueue.postRunnable(new ki.h0(29, c6Var, arrayList2));
+                Utilities.globalQueue.postRunnable(new a6(0, c6Var, arrayList2));
             }
             c = c6Var;
         }
@@ -160,7 +160,7 @@ public final class c6 implements NotificationCenter.NotificationCenterDelegate {
         if (i10 == NotificationCenter.fileLoaded) {
             b6 b6Var = (b6) hashMap.remove((String) objArr[0]);
             if (b6Var != null) {
-                Utilities.globalQueue.postRunnable(new a6(0, this, b6Var));
+                Utilities.globalQueue.postRunnable(new a6(1, this, b6Var));
                 return;
             }
             return;

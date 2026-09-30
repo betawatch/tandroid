@@ -4,7 +4,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mo implements Utilities.Callback {
     public final /* synthetic */ a80 a;
@@ -35,8 +35,8 @@ public final /* synthetic */ class mo implements Utilities.Callback {
         org.telegram.ui.ActionBar.d6 d6Var = this.f;
         if (intValue != 0) {
             NotificationsController.getInstance(i10).muteUntil(j3, j10, num.intValue());
-            if (xc.a(m2Var)) {
-                xc.z(m2Var, 5, num.intValue(), d6Var).j();
+            if (yc.a(m2Var)) {
+                yc.z(m2Var, 5, num.intValue(), d6Var).j();
                 return;
             }
             return;
@@ -44,8 +44,8 @@ public final /* synthetic */ class mo implements Utilities.Callback {
         if (MessagesController.getInstance(i10).isDialogMuted(j3, j10)) {
             NotificationsController.getInstance(i10).muteDialog(j3, j10, false);
         }
-        if (xc.a(m2Var)) {
-            xc.z(m2Var, 4, num.intValue(), d6Var).j();
+        if (yc.a(m2Var)) {
+            yc.z(m2Var, 4, num.intValue(), d6Var).j();
         }
     }
 }

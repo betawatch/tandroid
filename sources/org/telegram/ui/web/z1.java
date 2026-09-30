@@ -49,7 +49,7 @@ import org.telegram.ui.bt;
 import org.telegram.ui.u6;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class z1 extends o61 implements NotificationCenter.NotificationCenterDelegate {
     public t3 d;
@@ -209,7 +209,7 @@ public final class z1 extends o61 implements NotificationCenter.NotificationCent
             arrayList.add(x51.B(null));
         }
         arrayList.size();
-        arrayList.add(x51.d(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), n1.a().a));
+        arrayList.add(x51.d(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), o1.a().a));
         hg.c.n(R.string.BrowserSettingsSearchEngineInfo, arrayList);
         if (BuildVars.DEBUG_PRIVATE_VERSION) {
             x51 i15 = x51.i(12, "adaptable colors");
@@ -591,10 +591,10 @@ public final class z1 extends o61 implements NotificationCenter.NotificationCent
             return;
         }
         if (i10 == 9) {
-            g1[] g1VarArr = {null};
-            org.telegram.ui.ActionBar.m2 g1Var = new g1(null, new bt(20, this, g1VarArr));
-            g1VarArr[0] = g1Var;
-            presentFragment(g1Var);
+            h1[] h1VarArr = {null};
+            org.telegram.ui.ActionBar.m2 h1Var = new h1(null, new bt(20, this, h1VarArr));
+            h1VarArr[0] = h1Var;
+            presentFragment(h1Var);
             return;
         }
         if (i10 == 5) {
@@ -703,7 +703,7 @@ public final class z1 extends o61 implements NotificationCenter.NotificationCent
             String str2 = y1Var.e;
             a80 F = a80.F((ViewGroup) this.fragmentView, null, y1Var);
             F.s = 40;
-            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new o1(i13, this, str2), false);
+            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new f1(i15, this, str2), false);
             F.Z();
             return;
         }
@@ -715,12 +715,12 @@ public final class z1 extends o61 implements NotificationCenter.NotificationCent
             AtomicReference atomicReference = new AtomicReference();
             LinearLayout linearLayout = new LinearLayout(getParentActivity());
             linearLayout.setOrientation(1);
-            ArrayList b10 = n1.b();
+            ArrayList b10 = o1.b();
             int size2 = b10.size();
             CharSequence[] charSequenceArr = new CharSequence[size2];
             int i19 = 0;
             while (i19 < size2) {
-                charSequenceArr[i19] = ((n1) b10.get(i19)).a;
+                charSequenceArr[i19] = ((o1) b10.get(i19)).a;
                 l6 l6Var = new l6(getParentActivity(), null);
                 l6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
                 l6Var.a(h6.w0(null, h6.g7, false), h6.w0(null, h6.E5, false));

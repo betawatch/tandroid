@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class f0 {
     public final long a;
@@ -24,17 +24,17 @@ public final class f0 {
     public org.telegram.ui.Components.q5 j;
     public org.telegram.ui.Components.e6 k;
     public final RectF l;
-    public final yc m;
+    public final zc m;
 
     public f0(g0 g0Var, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         new Matrix();
         this.l = new RectF();
-        this.m = new yc(g0Var);
+        this.m = new zc(g0Var);
         this.a = tL_starGiftUnique.id;
         TLRPC.Document document = tL_starGiftUnique.getDocument();
         this.b = document;
         this.c = document == null ? 0L : document.id;
-        this.d = ((TL_stars.starGiftAttributeBackdrop) s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class)).center_color | (-16777216);
+        this.d = ((TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class)).center_color | (-16777216);
         this.e = tL_starGiftUnique.slug;
         this.f = new i8(1, 6);
         float dp = AndroidUtilities.dp(36.0f);

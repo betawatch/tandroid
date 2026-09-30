@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.TextureView;
 import java.io.File;
 import org.telegram.ui.Components.a60;
-import org.telegram.ui.Components.nv;
+import org.telegram.ui.Components.ov;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class j0 {
     public final Context a;
@@ -20,7 +20,7 @@ public final class j0 {
     public boolean i = true;
     public l.d j;
     public p0 k;
-    public nv l;
+    public ov l;
 
     public j0(Context context, a60 a60Var) {
         this.a = context;

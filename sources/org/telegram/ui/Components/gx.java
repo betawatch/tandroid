@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class gx implements org.telegram.ui.lt {
     public final /* synthetic */ mz a;
@@ -93,7 +93,7 @@ public final class gx implements org.telegram.ui.lt {
         if (AndroidUtilities.addToClipboard(valueOf)) {
             mz mzVar = this.a;
             org.telegram.ui.ActionBar.m2 m2Var = mzVar.Y1;
-            org.telegram.messenger.ok.o(R.string.EmojiCopied, m2Var != null ? xc.a0(m2Var) : new xc(mzVar.r, mzVar.Z1));
+            org.telegram.messenger.ok.o(R.string.EmojiCopied, m2Var != null ? yc.a0(m2Var) : new yc(mzVar.r, mzVar.Z1));
         }
     }
 
@@ -254,10 +254,10 @@ public final class gx implements org.telegram.ui.lt {
     @Override // org.telegram.ui.lt
     public final void t(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
         mz mzVar = this.a;
-        ow owVar = mzVar.h0;
-        if (owVar.getAdapter() == mzVar.n0) {
+        pw pwVar = mzVar.h0;
+        if (pwVar.getAdapter() == mzVar.n0) {
             mzVar.t1.v(null, tLObject, null, obj, z10, i10, i11);
-        } else if (owVar.getAdapter() == mzVar.j0) {
+        } else if (pwVar.getAdapter() == mzVar.j0) {
             mzVar.t1.v(null, tLObject, null, obj, z10, i10, i11);
         }
     }
@@ -301,9 +301,9 @@ public final class gx implements org.telegram.ui.lt {
         TLRPC.User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
         Object tL_emojiStatusEmpty = currentUser == null ? new TLRPC.TL_emojiStatusEmpty() : currentUser.emoji_status;
         MessagesController.getInstance(mzVar.c1).updateEmojiStatus(emojiStatus);
-        ww wwVar = new ww(0, this, tL_emojiStatusEmpty);
+        dv dvVar = new dv(1, this, tL_emojiStatusEmpty);
         if (document != null) {
-            (m2Var != null ? xc.a0(m2Var) : new xc(frameLayout, d6Var)).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), wwVar).j();
+            (m2Var != null ? yc.a0(m2Var) : new yc(frameLayout, d6Var)).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), dvVar).j();
             return;
         }
         ic icVar = new ic(mzVar.getContext(), d6Var);
@@ -315,7 +315,7 @@ public final class gx implements org.telegram.ui.lt {
         imageView.setScaleY(0.8f);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z9, d6Var), PorterDuff.Mode.MULTIPLY));
         oc ocVar = new oc(mzVar.getContext(), d6Var, true);
-        ocVar.a = wwVar;
+        ocVar.a = dvVar;
         icVar.setButton(ocVar);
         if (m2Var != null) {
             qc.g(m2Var, icVar, 1500).j();
@@ -327,8 +327,8 @@ public final class gx implements org.telegram.ui.lt {
     @Override // org.telegram.ui.lt
     public final void x(TLObject tLObject, Object obj) {
         mz mzVar = this.a;
-        ow owVar = mzVar.h0;
-        if (owVar.getAdapter() == mzVar.n0 || owVar.getAdapter() == mzVar.j0) {
+        pw pwVar = mzVar.h0;
+        if (pwVar.getAdapter() == mzVar.n0 || pwVar.getAdapter() == mzVar.j0) {
             mzVar.t1.e(tLObject, obj);
         }
     }

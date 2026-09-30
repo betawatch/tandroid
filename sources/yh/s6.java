@@ -4,13 +4,13 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class s6 extends ClickableSpan {
-    public final /* synthetic */ v5 a;
+    public final /* synthetic */ w5 a;
 
-    public s6(v5 v5Var) {
-        this.a = v5Var;
+    public s6(w5 w5Var) {
+        this.a = w5Var;
     }
 
     @Override // android.text.style.ClickableSpan

@@ -5,7 +5,7 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class x51 extends c61 {
     public final /* synthetic */ int f3;
@@ -57,8 +57,8 @@ public final class x51 extends c61 {
                                 size = Math.min(24, size);
                             }
                             if (I0 > keyAt && I0 <= keyAt + 1 + size) {
-                                org.telegram.ui.Components.ew ewVar = a71Var.d0;
-                                ewVar.j(((ewVar.E == null || !ewVar.b0) ? 0 : 1) + (ewVar.y != null ? 1 : 0) + valueAt, true);
+                                org.telegram.ui.Components.fw fwVar = a71Var.d0;
+                                fwVar.j(((fwVar.E == null || !fwVar.b0) ? 0 : 1) + (fwVar.y != null ? 1 : 0) + valueAt, true);
                             }
                         }
                         i13++;

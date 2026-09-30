@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class nu0 extends org.telegram.ui.Components.dw0 {
     public final Paint A0;
@@ -163,7 +163,7 @@ public final class nu0 extends org.telegram.ui.Components.dw0 {
         Canvas canvas2;
         Drawable[] drawableArr = PhotoViewer.U8;
         PhotoViewer photoViewer = this.E0;
-        photoViewer.U1(canvas);
+        photoViewer.V1(canvas);
         if (AndroidUtilities.statusBarHeight == 0 || (y7Var = photoViewer.F) == null) {
             return;
         }
@@ -414,7 +414,7 @@ public final class nu0 extends org.telegram.ui.Components.dw0 {
             if (childAt.getVisibility() != 8 && childAt != photoViewer.l1) {
                 kt0 kt0Var = photoViewer.y2;
                 if (childAt == kt0Var) {
-                    childAt.measure(i12, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y + AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
+                    childAt.measure(i12, View.MeasureSpec.makeMeasureSpec(nu0Var.getMeasuredHeight(), TLObject.FLAG_30));
                 } else if (childAt == photoViewer.y4) {
                     if (kt0Var == null || kt0Var.getVisibility() != 0) {
                         bitmapWidth = photoViewer.C4.getBitmapWidth();

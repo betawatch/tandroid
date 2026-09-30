@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class kj extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -169,7 +169,7 @@ public final class kj extends org.telegram.ui.ActionBar.j {
                             }
                         }
                         i16 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
-                        yh.s5.y(i16, false).i0(j11, j3, false, false);
+                        yh.t5.y(i16, false).i0(j11, j3, false, false);
                         return;
                     }
                     if (i10 == 71) {
@@ -184,7 +184,7 @@ public final class kj extends org.telegram.ui.ActionBar.j {
                         long j13 = j12;
                         long j14 = j3;
                         i14 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
-                        yh.s5.y(i14, false).C(j13, j14, new bh(this, j13, j14, 1));
+                        yh.t5.y(i14, false).C(j13, j14, new bh(this, j13, j14, 1));
                         return;
                     }
                     if (i10 == 28) {
@@ -496,7 +496,7 @@ public final class kj extends org.telegram.ui.ActionBar.j {
                     }
                     if (i10 == 65) {
                         AndroidUtilities.addToClipboard(wnVar.P3.link);
-                        org.telegram.ui.Components.xc.a0(LaunchActivity.R()).k(false).j();
+                        org.telegram.ui.Components.yc.a0(LaunchActivity.R()).k(false).j();
                         return;
                     }
                     if (i10 == 66) {
@@ -569,7 +569,7 @@ public final class kj extends org.telegram.ui.ActionBar.j {
                     } else {
                         if (i10 == 889) {
                             HashSet hashSet = i4.b1;
-                            org.telegram.ui.Components.xc.a0(wnVar).t("No rich message copied", null).j();
+                            org.telegram.ui.Components.yc.a0(wnVar).t("No rich message copied", null).j();
                             return;
                         }
                         return;

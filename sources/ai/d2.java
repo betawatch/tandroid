@@ -27,7 +27,7 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class d2 implements NotificationCenter.NotificationCenterDelegate, AudioManager.OnAudioFocusChangeListener {
     public static d2 W;
@@ -172,7 +172,7 @@ public final class d2 implements NotificationCenter.NotificationCenterDelegate, 
             DispatchQueue dispatchQueue = Utilities.globalQueue;
             NativeInstance nativeInstance = this.E;
             Objects.requireNonNull(nativeInstance);
-            dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance, 3));
+            dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance, 3));
             this.M.clear();
             this.E = null;
         }

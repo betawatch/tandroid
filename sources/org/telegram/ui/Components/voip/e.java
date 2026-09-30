@@ -23,10 +23,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.ki1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -57,8 +57,8 @@ public final class e extends View {
     public final StaticLayout e;
     public final StaticLayout f;
     public final StaticLayout h;
-    public final yc n;
-    public final yc r;
+    public final zc n;
+    public final zc r;
     public b s;
     public final int v;
     public float w;
@@ -68,8 +68,8 @@ public final class e extends View {
     public e(Activity activity) {
         super(activity);
         Paint paint = new Paint(1);
-        this.n = new yc(this);
-        this.r = new yc(this);
+        this.n = new zc(this);
+        this.r = new zc(this);
         this.y = true;
         this.E = true;
         this.M = new Rect();
@@ -341,8 +341,8 @@ public final class e extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             int action = motionEvent.getAction();
-            yc ycVar = this.n;
-            yc ycVar2 = this.r;
+            zc zcVar = this.n;
+            zc zcVar2 = this.r;
             if (action != 0) {
                 if (action != 1) {
                     if (action == 2) {
@@ -375,8 +375,8 @@ public final class e extends View {
                 }
                 getParent().requestDisallowInterceptTouchEvent(false);
                 this.F = false;
-                ycVar2.c(false);
-                ycVar.c(false);
+                zcVar2.c(false);
+                zcVar.c(false);
                 setPressed(false);
                 return false;
             }
@@ -386,8 +386,8 @@ public final class e extends View {
                 this.S = h6.h0(AndroidUtilities.dp(52.0f), 0, this.R ? h6.w0(null, h6.i6, false) : -51130);
                 this.F = true;
                 this.G = true;
-                ycVar2.c(true);
-                ycVar.c(false);
+                zcVar2.c(true);
+                zcVar.c(false);
                 setPressed(true);
                 invalidate();
                 return true;
@@ -396,8 +396,8 @@ public final class e extends View {
                 this.S = h6.h0(AndroidUtilities.dp(52.0f), 0, -11677354);
                 this.F = true;
                 this.G = false;
-                ycVar2.c(false);
-                ycVar.c(true);
+                zcVar2.c(false);
+                zcVar.c(true);
                 setPressed(true);
                 ValueAnimator valueAnimator = this.P;
                 if (valueAnimator != null) {

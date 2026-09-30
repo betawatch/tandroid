@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class u0 implements d0, c3.q, y2.g, y2.j, z0 {
     public static final Map g0;
     public static final b2.s h0;
     public final e2.g E;
-    public final o0 F;
-    public final o0 G;
+    public final p0 F;
+    public final p0 G;
     public final Handler H;
     public c0 I;
     public p3.b J;
@@ -84,8 +84,8 @@ public final class u0 implements d0, c3.q, y2.g, y2.j, z0 {
         this.y = hVar2;
         this.w = j3;
         this.E = new e2.g();
-        this.F = new o0(this, 1);
-        this.G = new o0(this, 2);
+        this.F = new p0(this, 1);
+        this.G = new p0(this, 2);
         this.H = e2.d0.o(null);
         this.L = new t0[0];
         this.K = new a1[0];
@@ -159,7 +159,7 @@ public final class u0 implements d0, c3.q, y2.g, y2.j, z0 {
 
     @Override // c3.q
     public final void X1(c3.b0 b0Var) {
-        this.H.post(new p0(0, this, b0Var));
+        this.H.post(new i0(1, this, b0Var));
     }
 
     @Override // c3.q

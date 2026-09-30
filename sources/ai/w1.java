@@ -22,7 +22,7 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.ui.Components.tv0;
 import org.telegram.ui.Components.uv0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, tv0, uv0, org.telegram.ui.ActionBar.z1, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
     public final /* synthetic */ int a;

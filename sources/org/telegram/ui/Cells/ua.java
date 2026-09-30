@@ -38,8 +38,8 @@ import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Components.o40;
 import org.telegram.ui.Components.pp;
 import org.telegram.ui.Components.ut0;
-import org.telegram.ui.Components.uv;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.vv;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yn0;
 import org.telegram.ui.Components.z41;
 import org.telegram.ui.Components.ze0;
@@ -64,7 +64,7 @@ import org.telegram.ui.x51;
 import org.telegram.ui.yg0;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ua implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -120,11 +120,11 @@ public final /* synthetic */ class ua implements View.OnClickListener {
                             twoStepVerificationActivity.s0(new sd(jeVar, sa1Var, twoStepVerificationActivity, i13));
                             break;
                         } else {
-                            xc.a0(sa1Var).L(jeVar.getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("BotStarsWithdrawMinLimit", (int) MessagesController.getInstance(i16).starsRevenueWithdrawalMin, new Object[0]), new md(jeVar, i16, i15))).j();
+                            yc.a0(sa1Var).L(jeVar.getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("BotStarsWithdrawMinLimit", (int) MessagesController.getInstance(i16).starsRevenueWithdrawalMin, new Object[0]), new md(jeVar, i16, i15))).j();
                             break;
                         }
                     } else {
-                        jeVar.Z0 = xc.a0(sa1Var).Q(R.raw.timer_3, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotStarsWithdrawalToast, yh.g.j0(jeVar.L0 - currentTime)))).j();
+                        jeVar.Z0 = yc.a0(sa1Var).Q(R.raw.timer_3, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotStarsWithdrawalToast, yh.g.j0(jeVar.L0 - currentTime)))).j();
                         break;
                     }
                 }
@@ -278,7 +278,7 @@ public final /* synthetic */ class ua implements View.OnClickListener {
                     lv0Var.F();
                 }
                 m2Var2.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelRecommendationsLoaded, Long.valueOf(-lv0Var.j1));
-                m2Var2.getMessagesController().addUserToChat(chat.id, m2Var2.getUserConfig().getCurrentUser(), 0, null, m2Var2, new yn0(7, ut0Var, chat));
+                m2Var2.getMessagesController().addUserToChat(chat.id, m2Var2.getUserConfig().getCurrentUser(), 0, null, m2Var2, new yn0(8, ut0Var, chat));
                 break;
             case 10:
                 ((z41) obj2).run();
@@ -334,7 +334,7 @@ public final /* synthetic */ class ua implements View.OnClickListener {
                     if (num != null) {
                         a71Var.i(num.intValue(), view2);
                     }
-                    uv.W(null, zxVar.b, false, null, null);
+                    vv.W(null, zxVar.b, false, null, null);
                     a71Var.B0.add(Long.valueOf(zxVar.b.id));
                     a71Var.B(true, true, true);
                     break;
@@ -361,7 +361,7 @@ public final /* synthetic */ class ua implements View.OnClickListener {
                 break;
             case 17:
                 SharedConfig.setSearchEngineType(i16);
-                ((r8) ((View) obj2)).u(org.telegram.ui.web.n1.a().a, true);
+                ((r8) ((View) obj2)).u(org.telegram.ui.web.o1.a().a, true);
                 ((Dialog) ((AtomicReference) obj).get()).dismiss();
                 break;
             case 18:
@@ -376,7 +376,7 @@ public final /* synthetic */ class ua implements View.OnClickListener {
                 pp ppVar = bs0Var.F;
                 ppVar.a(!ppVar.a.q, true);
                 boolean z13 = ppVar.a.q;
-                xc.a0(m2Var3).P(z13 ? R.raw.silent_unmute : R.raw.silent_mute, LocaleController.getString(z13 ? R.string.Gift2ChannelNotifyChecked : R.string.Gift2ChannelNotifyNotChecked)).j();
+                yc.a0(m2Var3).P(z13 ? R.raw.silent_unmute : R.raw.silent_mute, LocaleController.getString(z13 ? R.string.Gift2ChannelNotifyChecked : R.string.Gift2ChannelNotifyNotChecked)).j();
                 bs0Var.d.h = Boolean.valueOf(z13);
                 if (bs0Var.H >= 0) {
                     ConnectionsManager.getInstance(i16).cancelRequest(bs0Var.H, true);

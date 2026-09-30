@@ -15,14 +15,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class sf1 extends org.telegram.ui.Components.y81 implements s10 {
     public final FrameLayout T;
     public final org.telegram.ui.Components.yl0 U;
     public final s4.c0 V;
     public final pf1 W;
-    public p81 a0;
+    public n81 a0;
     public String b0;
     public final ArrayList c0;
     public final ArrayList d0;
@@ -130,9 +130,9 @@ public final class sf1 extends org.telegram.ui.Components.y81 implements s10 {
             }
             return;
         }
-        p81 p81Var = this.a0;
-        if (p81Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(p81Var);
+        n81 n81Var = this.a0;
+        if (n81Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(n81Var);
             this.a0 = null;
         }
         this.p0 = false;
@@ -145,9 +145,9 @@ public final class sf1 extends org.telegram.ui.Components.y81 implements s10 {
             L();
             this.l0 = true;
             this.n0.e(true, true);
-            p81 p81Var2 = new p81(12, this, str);
-            this.a0 = p81Var2;
-            AndroidUtilities.runOnUIThread(p81Var2, 200L);
+            n81 n81Var2 = new n81(13, this, str);
+            this.a0 = n81Var2;
+            AndroidUtilities.runOnUIThread(n81Var2, 200L);
             return;
         }
         this.l0 = false;

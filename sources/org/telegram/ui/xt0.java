@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class xt0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
@@ -41,7 +41,7 @@ public final class xt0 implements ViewTreeObserver.OnPreDrawListener {
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public final boolean onPreDraw() {
         char c10;
-        float q22;
+        float r22;
         float v;
         float v9;
         boolean z10;
@@ -69,16 +69,16 @@ public final class xt0 implements ViewTreeObserver.OnPreDrawListener {
             float f11 = min / 2.0f;
             float f12 = f10 - f11;
             float f13 = (f10 + f11) - f12;
-            q22 = Math.max(((measuredWidth + f11) - (measuredWidth - f11)) / layoutParams.width, f13 / layoutParams.height);
-            v = ((f13 - (layoutParams.height * q22)) / 2.0f) + f12;
+            r22 = Math.max(((measuredWidth + f11) - (measuredWidth - f11)) / layoutParams.width, f13 / layoutParams.height);
+            v = ((f13 - (layoutParams.height * r22)) / 2.0f) + f12;
             int measuredWidth2 = photoViewer.g0.getMeasuredWidth();
-            v9 = com.google.android.gms.internal.vision.e2.v(layoutParams.width, q22, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
+            v9 = com.google.android.gms.internal.vision.e2.v(layoutParams.width, r22, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
         } else {
             c10 = 0;
             float min2 = Math.min(photoViewer.g0.getMeasuredWidth() / layoutParams.width, (AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0)) / layoutParams.height);
-            q22 = photoViewer.c2 == 11 ? photoViewer.q2(true) * min2 : min2;
-            v = com.google.android.gms.internal.vision.e2.v(layoutParams.height, q22, AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0), 2.0f);
-            v9 = com.google.android.gms.internal.vision.e2.v(layoutParams.width, q22, photoViewer.g0.getMeasuredWidth(), 2.0f);
+            r22 = photoViewer.c2 == 11 ? photoViewer.r2(true) * min2 : min2;
+            v = com.google.android.gms.internal.vision.e2.v(layoutParams.height, r22, AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0), 2.0f);
+            v9 = com.google.android.gms.internal.vision.e2.v(layoutParams.width, r22, photoViewer.g0.getMeasuredWidth(), 2.0f);
             photoViewer.b6 = 0.0f;
             photoViewer.f6 = 0.0f;
         }
@@ -122,8 +122,8 @@ public final class xt0 implements ViewTreeObserver.OnPreDrawListener {
         fArr3[11] = abs2 * f18;
         fArr3[12] = f16 * f18;
         float[] fArr4 = fArr[1];
-        fArr4[c10] = q22;
-        fArr4[1] = q22;
+        fArr4[c10] = r22;
+        fArr4[1] = r22;
         fArr4[2] = v9;
         fArr4[3] = v;
         fArr4[4] = 0.0f;
@@ -179,11 +179,11 @@ public final class xt0 implements ViewTreeObserver.OnPreDrawListener {
             animatorSet.setDuration(200L);
             animatorSet.addListener(new xo0(this, 8));
             photoViewer.e0.setLayerType(2, null);
-            photoViewer.x2(false);
+            photoViewer.y2(false);
             photoViewer.o4 = System.currentTimeMillis();
-            AndroidUtilities.runOnUIThread(new sj0(24, this, animatorSet));
+            AndroidUtilities.runOnUIThread(new xi0(25, this, animatorSet));
         }
-        backgroundDrawable.d = new sj0(25, this, vu0Var);
+        backgroundDrawable.d = new xi0(26, this, vu0Var);
         wn wnVar = photoViewer.l4;
         if (wnVar == null || wnVar.getFragmentView() == null) {
             return true;

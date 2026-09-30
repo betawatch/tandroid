@@ -114,7 +114,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.PhotoViewer;
 import p4.x;
 import p4.z;
@@ -127,7 +127,7 @@ import w7.d9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public class b implements h, f0, s, OnCompleteListener, com.google.android.gms.internal.clearcut.h, cf.b, f6.a, g2.g, n, m, v3, a0, Continuation {
     public static volatile b d;
@@ -901,10 +901,10 @@ public class b implements h, f0, s, OnCompleteListener, com.google.android.gms.i
             String str = castDevice != null ? castDevice.d : null;
             PhotoViewer t12 = PhotoViewer.t1();
             d.i();
-            if (t12.E == null || t12.e0 == null || !t12.Q1()) {
+            if (t12.E == null || t12.e0 == null || !t12.R1()) {
                 return;
             }
-            new xc(t12.e0, new ai.d()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
+            new yc(t12.e0, new ai.d()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
         }
     }
 

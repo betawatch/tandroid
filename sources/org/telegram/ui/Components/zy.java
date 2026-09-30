@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class zy extends FrameLayout implements le.e {
     public zp E;
@@ -350,7 +350,7 @@ public abstract class zy extends FrameLayout implements le.e {
         fz fzVar = hzVar.O;
         mz mzVar2 = hzVar.Q;
         yw ywVar = mzVar2.G0;
-        uw uwVar = mzVar2.D0;
+        vw vwVar = mzVar2.D0;
         if (hzVar.L != 0) {
             ConnectionsManager.getInstance(mzVar2.c1).cancelRequest(hzVar.L, true);
             hzVar.L = 0;
@@ -360,10 +360,10 @@ public abstract class zy extends FrameLayout implements le.e {
             hzVar.E.clear();
             hzVar.H.clear();
             hzVar.K = new ArrayList();
-            s4.h0 adapter = uwVar.getAdapter();
+            s4.h0 adapter = vwVar.getAdapter();
             dz dzVar = mzVar2.y0;
             if (adapter != dzVar) {
-                uwVar.setAdapter(dzVar);
+                vwVar.setAdapter(dzVar);
             }
             hzVar.d = 0L;
             mzVar2.a.a(false, true);

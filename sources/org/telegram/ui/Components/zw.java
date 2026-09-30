@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class zw extends tx {
     public static final /* synthetic */ int H0 = 0;
@@ -72,12 +72,12 @@ public final class zw extends tx {
             SharedConfig.toggleUpdateStickersOrderOnSend();
             org.telegram.ui.ActionBar.m2 m2Var = this.E0;
             if (m2Var != null) {
-                xc.a0(m2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new ud(i16, m2Var)).j();
+                yc.a0(m2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new ud(i16, m2Var)).j();
                 return;
             }
             FrameLayout frameLayout = mzVar.r;
             if (frameLayout != null) {
-                new xc(frameLayout, mzVar.Z1).M(LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), R.raw.filter_reorder).j();
+                new yc(frameLayout, mzVar.Z1).M(LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), R.raw.filter_reorder).j();
             }
         }
     }

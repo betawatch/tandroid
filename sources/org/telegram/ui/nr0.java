@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,21 +60,21 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
         int i14 = 1;
         switch (i12) {
             case 0:
-                if (!photoViewer.e2 && !photoViewer.H1()) {
-                    photoViewer.L2();
+                if (!photoViewer.e2 && !photoViewer.I1()) {
+                    photoViewer.M2();
                     break;
                 }
                 break;
             case 1:
                 Drawable[] drawableArr = PhotoViewer.U8;
-                if (!photoViewer.H1() && (tu0Var = photoViewer.d) != null && tu0Var.c() != null && !photoViewer.d.c().isEmpty()) {
-                    photoViewer.o3(!photoViewer.K, true);
+                if (!photoViewer.I1() && (tu0Var = photoViewer.d) != null && tu0Var.c() != null && !photoViewer.d.c().isEmpty()) {
+                    photoViewer.p3(!photoViewer.K, true);
                     break;
                 }
                 break;
             case 2:
                 Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer.T1(true);
+                photoViewer.U1(true);
                 photoViewer.B0(0, true);
                 break;
             case 3:
@@ -113,7 +113,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                                     new rg.x0(photoViewer2.m4, 3, true).show();
                                                     break;
                                                 } else {
-                                                    new org.telegram.ui.Components.xc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                    new org.telegram.ui.Components.yc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
                                                     MessagesController.getInstance(i17).disableAds(true);
                                                     org.telegram.ui.ActionBar.m2 m2Var = photoViewer2.m4;
                                                     if (m2Var instanceof wn) {
@@ -130,7 +130,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                                     new rg.x0(photoViewer2.m4, 3, true).show();
                                                     break;
                                                 } else {
-                                                    new org.telegram.ui.Components.xc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                    new org.telegram.ui.Components.yc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
                                                     MessagesController.getInstance(i17).disableAds(true);
                                                     org.telegram.ui.ActionBar.m2 m2Var2 = photoViewer2.m4;
                                                     if (m2Var2 instanceof wn) {
@@ -146,7 +146,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                 }, false);
                             }
                             if (photoViewer.T4.sponsoredCanReport) {
-                                G.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new sj0(15, photoViewer, dVar), false);
+                                G.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new xi0(16, photoViewer, dVar), false);
                                 if ((photoViewer.m4 instanceof wn) && !MessagesController.getInstance(i15).premiumFeaturesBlocked()) {
                                     G.k();
                                     final int i16 = 1;
@@ -164,7 +164,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                                         new rg.x0(photoViewer2.m4, 3, true).show();
                                                         break;
                                                     } else {
-                                                        new org.telegram.ui.Components.xc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                        new org.telegram.ui.Components.yc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
                                                         MessagesController.getInstance(i17).disableAds(true);
                                                         org.telegram.ui.ActionBar.m2 m2Var = photoViewer2.m4;
                                                         if (m2Var instanceof wn) {
@@ -181,7 +181,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                                         new rg.x0(photoViewer2.m4, 3, true).show();
                                                         break;
                                                     } else {
-                                                        new org.telegram.ui.Components.xc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                        new org.telegram.ui.Components.yc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
                                                         MessagesController.getInstance(i17).disableAds(true);
                                                         org.telegram.ui.ActionBar.m2 m2Var2 = photoViewer2.m4;
                                                         if (m2Var2 instanceof wn) {
@@ -207,7 +207,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                         e1Var.setItemHeight(44);
                         e1Var.g(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back, null);
                         e1Var.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
-                        e1Var.setOnClickListener(new dh(G, 1));
+                        e1Var.setOnClickListener(new eh(G, 1));
                         J.r(e1Var, w7.y5.n(-1, -2));
                         J.r(new org.telegram.ui.ActionBar.j1(photoViewer.E, dVar), w7.y5.n(-1, 8));
                         ArrayList arrayList = new ArrayList();
@@ -242,14 +242,14 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                                 case 0:
                                                     PhotoViewer photoViewer2 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
-                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), dVar));
+                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(photoViewer2.E), dVar));
                                                         break;
                                                     }
                                                     break;
                                                 default:
                                                     PhotoViewer photoViewer3 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
-                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), dVar));
+                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(photoViewer3.E), dVar));
                                                         break;
                                                     }
                                                     break;
@@ -274,14 +274,14 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                                 case 0:
                                                     PhotoViewer photoViewer2 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
-                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), dVar));
+                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(photoViewer2.E), dVar));
                                                         break;
                                                     }
                                                     break;
                                                 default:
                                                     PhotoViewer photoViewer3 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
-                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), dVar));
+                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(photoViewer3.E), dVar));
                                                         break;
                                                     }
                                                     break;
@@ -320,7 +320,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                                         new rg.x0(photoViewer2.m4, 3, true).show();
                                                         break;
                                                     } else {
-                                                        new org.telegram.ui.Components.xc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                        new org.telegram.ui.Components.yc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
                                                         MessagesController.getInstance(i172).disableAds(true);
                                                         org.telegram.ui.ActionBar.m2 m2Var = photoViewer2.m4;
                                                         if (m2Var instanceof wn) {
@@ -337,7 +337,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                                                         new rg.x0(photoViewer2.m4, 3, true).show();
                                                         break;
                                                     } else {
-                                                        new org.telegram.ui.Components.xc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                        new org.telegram.ui.Components.yc(photoViewer2.e0, dVar2).c(LocaleController.getString(R.string.AdHidden)).j();
                                                         MessagesController.getInstance(i172).disableAds(true);
                                                         org.telegram.ui.ActionBar.m2 m2Var2 = photoViewer2.m4;
                                                         if (m2Var2 instanceof wn) {
@@ -447,7 +447,7 @@ public final /* synthetic */ class nr0 implements View.OnClickListener {
                     } else {
                         photoViewer.y.setRequestedOrientation(0);
                     }
-                    photoViewer.i3(false, false);
+                    photoViewer.j3(false, false);
                     break;
                 }
                 break;

@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class pm extends org.telegram.ui.Components.cw0 {
     public final ArrayList A0;
@@ -1495,7 +1495,7 @@ public final class pm extends org.telegram.ui.Components.cw0 {
         wn wnVar = this.J0;
         boolean z12 = false;
         if ((wnVar.J8 == null && ((ArrayList) wnVar.M9.c).size() <= 0) || (view != wnVar.j1 && view != wnVar.X2 && view != wnVar.Y2 && view != wnVar.m9 && view != wnVar.X9 && view != wnVar.e2 && view != null && view != wnVar.y3 && view != wnVar.z3)) {
-            if ((view != wnVar.y3 || !PhotoViewer.t1().Q1()) && (!wnVar.S9 || view != wnVar.x0)) {
+            if ((view != wnVar.y3 || !PhotoViewer.t1().R1()) && (!wnVar.S9 || view != wnVar.x0)) {
                 if (wnVar.ka) {
                     kVar3 = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
                 }

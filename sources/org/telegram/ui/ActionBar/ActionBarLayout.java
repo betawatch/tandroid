@@ -71,7 +71,7 @@ import org.telegram.ui.un;
 import org.telegram.ui.wn;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements b5, mg.b {
     public static Drawable p1;
@@ -759,7 +759,6 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
         vVar3.setVisibility(0);
         setInnerTranslationX(0.0f);
         this.s.setTranslationY(0.0f);
-        int i17 = 28;
         if (z13) {
             if (!(m2Var2 instanceof wn)) {
                 float dp4 = AndroidUtilities.dp(actionBarPopupWindow$ActionBarPopupWindowLayout == null ? 24.0f : 12.0f);
@@ -818,7 +817,7 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
             T(m2Var, z10);
             this.v0 = System.currentTimeMillis();
             this.W = true;
-            this.z0 = new ki.h0(i17, m2Var, m2Var2);
+            this.z0 = new ki.h0(29, m2Var, m2Var2);
             ArrayList arrayList4 = new ArrayList();
             Property property = View.ALPHA;
             arrayList4.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 0.0f, 1.0f));
@@ -2044,7 +2043,7 @@ public class ActionBarLayout extends FrameLayout implements b5, mg.b {
             } else {
                 this.v0 = System.currentTimeMillis();
                 this.W = true;
-                this.y0 = new ki.h0(27, this, m2Var);
+                this.y0 = new ki.h0(28, this, m2Var);
                 ArrayList arrayList = new ArrayList();
                 Property property = View.ALPHA;
                 arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 1.0f, 0.0f));

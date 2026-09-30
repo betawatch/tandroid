@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f60 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -217,7 +217,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -311,7 +311,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -401,7 +401,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -491,7 +491,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -581,7 +581,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                                             try {
                                                 if (ph0Var3.n.link != null) {
                                                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", ph0Var3.n.link));
-                                                    org.telegram.ui.Components.xc.j(ph0Var3.K).j();
+                                                    org.telegram.ui.Components.yc.j(ph0Var3.K).j();
                                                     break;
                                                 } else {
                                                     break;
@@ -648,20 +648,20 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                 }
                 break;
             case 10:
-                dj0 dj0Var = (dj0) this.b;
-                long j3 = dj0Var.b;
-                if (!dj0Var.n.isStory()) {
-                    if (dj0Var.getParentLayout().getFragmentStack().size() > 1) {
-                        org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) dj0Var.getParentLayout().getFragmentStack().get(dj0Var.getParentLayout().getFragmentStack().size() - 2);
+                ej0 ej0Var = (ej0) this.b;
+                long j3 = ej0Var.b;
+                if (!ej0Var.n.isStory()) {
+                    if (ej0Var.getParentLayout().getFragmentStack().size() > 1) {
+                        org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) ej0Var.getParentLayout().getFragmentStack().get(ej0Var.getParentLayout().getFragmentStack().size() - 2);
                         if ((m2Var instanceof wn) && ((wn) m2Var).e.id == j3) {
-                            dj0Var.finishFragment();
+                            ej0Var.finishFragment();
                             break;
                         }
                     }
                     Bundle e = v7.j.e(j3, "chat_id");
-                    e.putInt("message_id", dj0Var.c);
+                    e.putInt("message_id", ej0Var.c);
                     e.putBoolean("need_remove_previous_same_chat_activity", false);
-                    dj0Var.presentFragment(new wn(e));
+                    ej0Var.presentFragment(new wn(e));
                     break;
                 }
                 break;
@@ -770,7 +770,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                         if (Q == 0) {
                             photoViewer.p1.m(0);
                         }
-                        photoViewer.z3();
+                        photoViewer.A3();
                         break;
                     }
                 } else {
@@ -785,7 +785,7 @@ public final /* synthetic */ class f60 implements View.OnClickListener {
                             photoViewer.p1.m(0);
                         }
                     }
-                    photoViewer.z3();
+                    photoViewer.A3();
                     break;
                 }
                 break;

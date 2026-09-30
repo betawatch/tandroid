@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class am implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ jm a;
@@ -231,7 +231,7 @@ public final class am implements org.telegram.ui.Cells.t0 {
         MessageObject messageObject = w0Var.getMessageObject();
         PhotoViewer t12 = PhotoViewer.t1();
         wn wnVar = this.a.Q;
-        t12.J2(null, wnVar, wnVar.ea);
+        t12.K2(null, wnVar, wnVar.ea);
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 640);
         if (w0Var.getMessageObject().type == 24) {
             ai.jc orCreateStoryViewer = wnVar.getOrCreateStoryViewer();
@@ -306,20 +306,20 @@ public final class am implements org.telegram.ui.Cells.t0 {
         }
         if (w0Var.getMessageObject().type != 21 || messageObject.isOutOwner()) {
             if (videoSize != null) {
-                PhotoViewer.t1().d2(videoSize.location, ImageLocation.getForPhoto(videoSize, messageObject.messageOwner.action.photo), wnVar.Fa);
+                PhotoViewer.t1().e2(videoSize.location, ImageLocation.getForPhoto(videoSize, messageObject.messageOwner.action.photo), wnVar.Fa);
                 if (w0Var.getMessageObject().type == 21) {
-                    PhotoViewer.t1().N2(LocaleController.getString(R.string.SuggestedVideo));
+                    PhotoViewer.t1().O2(LocaleController.getString(R.string.SuggestedVideo));
                     return;
                 }
                 return;
             }
             if (closestPhotoSizeWithSize == null) {
-                PhotoViewer.t1().c2(messageObject, null, 0L, 0L, 0L, wnVar.Fa);
+                PhotoViewer.t1().d2(messageObject, null, 0L, 0L, 0L, wnVar.Fa);
                 return;
             }
-            PhotoViewer.t1().d2(closestPhotoSizeWithSize.location, ImageLocation.getForPhoto(closestPhotoSizeWithSize, messageObject.messageOwner.action.photo), wnVar.Fa);
+            PhotoViewer.t1().e2(closestPhotoSizeWithSize.location, ImageLocation.getForPhoto(closestPhotoSizeWithSize, messageObject.messageOwner.action.photo), wnVar.Fa);
             if (w0Var.getMessageObject().type == 21) {
-                PhotoViewer.t1().N2(LocaleController.getString(R.string.SuggestedPhoto));
+                PhotoViewer.t1().O2(LocaleController.getString(R.string.SuggestedPhoto));
                 return;
             }
             return;
@@ -351,16 +351,16 @@ public final class am implements org.telegram.ui.Cells.t0 {
         photoEntry.caption = wnVar.Y.getFieldText();
         photoEntry.isVideo = videoSize != null;
         arrayList2.add(photoEntry);
-        PhotoViewer.t1().f2(arrayList2, 0, 1, false, new zl(this, messageObject, photoEntry), null);
+        PhotoViewer.t1().g2(arrayList2, 0, 1, false, new zl(this, messageObject, photoEntry), null);
         if (photoEntry.isVideo) {
-            PhotoViewer.t1().N2(LocaleController.getString(R.string.SuggestedVideo));
+            PhotoViewer.t1().O2(LocaleController.getString(R.string.SuggestedVideo));
         } else {
-            PhotoViewer.t1().N2(LocaleController.getString(R.string.SuggestedPhoto));
+            PhotoViewer.t1().O2(LocaleController.getString(R.string.SuggestedPhoto));
         }
         org.telegram.ui.Components.v40 v40Var = new org.telegram.ui.Components.v40(1, wnVar.getUserConfig().getCurrentUser());
         v40Var.e = videoSize != null;
         v40Var.b = wnVar.getMessagesController().getUser(Long.valueOf(wnVar.T5));
-        PhotoViewer.t1().w2(v40Var);
+        PhotoViewer.t1().x2(v40Var);
     }
 
     @Override // org.telegram.ui.Cells.t0

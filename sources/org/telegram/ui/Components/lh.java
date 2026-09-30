@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lh implements bh.a {
     public final /* synthetic */ int a;
@@ -51,10 +51,10 @@ public final /* synthetic */ class lh implements bh.a {
                 mz mzVar = (mz) this.b;
                 yx yxVar = mzVar.P;
                 gh.d.a(yxVar, canvas, rectF, yxVar, mzVar);
-                ow owVar = mzVar.h0;
-                gh.d.a(owVar, canvas, rectF, owVar, mzVar);
-                uw uwVar = mzVar.D0;
-                gh.d.a(uwVar, canvas, rectF, uwVar, mzVar);
+                pw pwVar = mzVar.h0;
+                gh.d.a(pwVar, canvas, rectF, pwVar, mzVar);
+                vw vwVar = mzVar.D0;
+                gh.d.a(vwVar, canvas, rectF, vwVar, mzVar);
                 break;
             default:
                 lv0 lv0Var = (lv0) this.b;

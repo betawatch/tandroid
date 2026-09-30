@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ek0 implements org.telegram.ui.Components.qo {
     public final /* synthetic */ long a;
@@ -91,7 +91,7 @@ public final class ek0 implements org.telegram.ui.Components.qo {
         long j3 = 0;
         long j10 = this.a;
         notificationsCustomSettingsActivity.getNotificationsController().muteDialog(this.a, j3, !messagesController.isDialogMuted(j10, j3));
-        org.telegram.ui.Components.xc.A(notificationsCustomSettingsActivity, notificationsCustomSettingsActivity.getMessagesController().isDialogMuted(j10, j3), null).j();
+        org.telegram.ui.Components.yc.A(notificationsCustomSettingsActivity, notificationsCustomSettingsActivity.getMessagesController().isDialogMuted(j10, j3), null).j();
         b();
     }
 
@@ -115,8 +115,8 @@ public final class ek0 implements org.telegram.ui.Components.qo {
         boolean z10 = notificationsSettings.getBoolean("sound_enabled_" + sharedPrefKey, true);
         boolean z11 = !z10;
         notificationsSettings.edit().putBoolean("sound_enabled_" + sharedPrefKey, z11).apply();
-        if (org.telegram.ui.Components.xc.a(notificationsCustomSettingsActivity)) {
-            org.telegram.ui.Components.xc.S(z10 ? 1 : 0, notificationsCustomSettingsActivity, notificationsCustomSettingsActivity.getResourceProvider()).j();
+        if (org.telegram.ui.Components.yc.a(notificationsCustomSettingsActivity)) {
+            org.telegram.ui.Components.yc.S(z10 ? 1 : 0, notificationsCustomSettingsActivity, notificationsCustomSettingsActivity.getResourceProvider()).j();
         }
     }
 
@@ -127,13 +127,13 @@ public final class ek0 implements org.telegram.ui.Components.qo {
             if (notificationsCustomSettingsActivity.getMessagesController().isDialogMuted(this.a, 0)) {
                 n();
             }
-            if (org.telegram.ui.Components.xc.a(notificationsCustomSettingsActivity)) {
-                org.telegram.ui.Components.xc.z(notificationsCustomSettingsActivity, 4, i10, notificationsCustomSettingsActivity.getResourceProvider()).j();
+            if (org.telegram.ui.Components.yc.a(notificationsCustomSettingsActivity)) {
+                org.telegram.ui.Components.yc.z(notificationsCustomSettingsActivity, 4, i10, notificationsCustomSettingsActivity.getResourceProvider()).j();
             }
         } else {
             notificationsCustomSettingsActivity.getNotificationsController().muteUntil(this.a, 0, i10);
-            if (org.telegram.ui.Components.xc.a(notificationsCustomSettingsActivity)) {
-                org.telegram.ui.Components.xc.z(notificationsCustomSettingsActivity, 5, i10, notificationsCustomSettingsActivity.getResourceProvider()).j();
+            if (org.telegram.ui.Components.yc.a(notificationsCustomSettingsActivity)) {
+                org.telegram.ui.Components.yc.z(notificationsCustomSettingsActivity, 5, i10, notificationsCustomSettingsActivity.getResourceProvider()).j();
             }
         }
         b();

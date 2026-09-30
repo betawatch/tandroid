@@ -22,9 +22,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class nb extends View {
     public int a;
@@ -39,7 +39,7 @@ public final class nb extends View {
     public boolean s;
     public final Paint v;
     public final Path w;
-    public final yc x;
+    public final zc x;
 
     public nb(Context context) {
         super(context);
@@ -51,7 +51,7 @@ public final class nb extends View {
         Paint paint = new Paint(1);
         this.v = paint;
         this.w = new Path();
-        this.x = new yc(this, 0.6f, 5.0f);
+        this.x = new zc(this, 0.6f, 5.0f);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);

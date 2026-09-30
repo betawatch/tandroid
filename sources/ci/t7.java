@@ -24,7 +24,7 @@ import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class t7 extends View {
     public s7 E;
@@ -47,7 +47,7 @@ public final class t7 extends View {
     public v01 s;
     public final Path v;
     public final Paint w;
-    public final org.telegram.ui.Components.yc x;
+    public final org.telegram.ui.Components.zc x;
     public boolean y;
 
     public t7(Activity activity, int i10, ha haVar) {
@@ -58,7 +58,7 @@ public final class t7 extends View {
         this.h = new ImageReceiver(this);
         this.v = new Path();
         this.w = new Paint(1);
-        this.x = new org.telegram.ui.Components.yc(this);
+        this.x = new org.telegram.ui.Components.zc(this);
         this.J = new int[2];
         this.K = new int[2];
         this.a = i10;
@@ -166,10 +166,10 @@ public final class t7 extends View {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         ia iaVar;
         boolean z10 = this.y;
-        org.telegram.ui.Components.yc ycVar = this.x;
+        org.telegram.ui.Components.zc zcVar = this.x;
         if (!z10 || this.E == null) {
             this.L = false;
-            ycVar.c(false);
+            zcVar.c(false);
             return false;
         }
         int action = motionEvent.getAction();
@@ -177,23 +177,23 @@ public final class t7 extends View {
         if (action == 0) {
             if (rectF.contains(motionEvent.getX(), motionEvent.getY())) {
                 this.L = true;
-                ycVar.c(true);
+                zcVar.c(true);
             }
         } else if (motionEvent.getAction() == 2) {
-            if (ycVar.h && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                ycVar.c(false);
+            if (zcVar.h && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+                zcVar.c(false);
             }
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar.h && (iaVar = this.c) != null && this.E != null) {
+            if (zcVar.h && (iaVar = this.c) != null && this.E != null) {
                 iaVar.run(new p7(this, 1));
             }
-            ycVar.c(false);
+            zcVar.c(false);
             this.L = false;
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            zcVar.c(false);
             this.L = false;
         }
-        return this.L || ycVar.h;
+        return this.L || zcVar.h;
     }
 
     @Override // android.view.View

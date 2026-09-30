@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class t80 extends org.telegram.ui.ActionBar.e3 {
     public static final /* synthetic */ int r = 0;
@@ -32,7 +32,7 @@ public final class t80 extends org.telegram.ui.ActionBar.e3 {
     public final TLRPC.Chat e;
     public final TextView f;
     public final RadialProgressView h;
-    public xc n;
+    public yc n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Removed duplicated region for block: B:101:0x0129  */
@@ -529,7 +529,7 @@ public final class t80 extends org.telegram.ui.ActionBar.e3 {
         return TextUtils.ellipsize(str.trim(), textView.getPaint(), AndroidUtilities.dp(120.0f), TextUtils.TruncateAt.END);
     }
 
-    public static void w(Context context, org.telegram.ui.ActionBar.m2 m2Var, xc xcVar, boolean z10) {
+    public static void w(Context context, org.telegram.ui.ActionBar.m2 m2Var, yc ycVar, boolean z10) {
         if (context == null) {
             if (m2Var != null) {
                 m2Var.getContext();
@@ -537,13 +537,13 @@ public final class t80 extends org.telegram.ui.ActionBar.e3 {
             }
             return;
         }
-        if (xcVar == null) {
-            xcVar = xc.a0(m2Var);
+        if (ycVar == null) {
+            ycVar = yc.a0(m2Var);
         }
         nc ncVar = new nc(context, m2Var.getResourceProvider());
         ncVar.a.f(R.raw.timer_3, 28, 28, null);
         ncVar.b.setText(LocaleController.getString(R.string.RequestToJoinSent));
         ncVar.c.setText(z10 ? LocaleController.getString(R.string.RequestToJoinChannelSentDescription) : LocaleController.getString(R.string.RequestToJoinGroupSentDescription));
-        xcVar.b(ncVar, 2750).j();
+        ycVar.b(ncVar, 2750).j();
     }
 }

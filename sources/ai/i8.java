@@ -17,7 +17,7 @@ import org.telegram.ui.bj1;
 import org.telegram.ui.ji;
 import org.telegram.ui.wl0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final /* synthetic */ class i8 implements RequestDelegate {
                 yh.x3.U((yh.x3) obj, i13, tLObject);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new wl0((yh.s5) obj, i13, tLObject, 17));
+                AndroidUtilities.runOnUIThread(new wl0((yh.t5) obj, i13, tLObject, 17));
                 break;
         }
     }

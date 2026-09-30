@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ex implements z4.e {
     public final /* synthetic */ boolean a;
@@ -33,17 +33,17 @@ public final class ex implements z4.e {
         mzVar.Q(z10, true);
         if (mzVar.t1.z()) {
             if (i10 == 0) {
-                lw lwVar = mzVar.V;
-                if (lwVar != null) {
-                    lwVar.d.requestFocus();
+                mw mwVar = mzVar.V;
+                if (mwVar != null) {
+                    mwVar.d.requestFocus();
                     return;
                 }
                 return;
             }
             if (i10 == 1) {
-                rw rwVar = mzVar.o0;
-                if (rwVar != null) {
-                    rwVar.d.requestFocus();
+                sw swVar = mzVar.o0;
+                if (swVar != null) {
+                    swVar.d.requestFocus();
                     return;
                 }
                 return;
@@ -63,9 +63,9 @@ public final class ex implements z4.e {
         zy zyVar2 = mzVar.o0;
         zy zyVar3 = mzVar.V;
         ax axVar = mzVar.C0;
-        uw uwVar = mzVar.D0;
+        vw vwVar = mzVar.D0;
         tx txVar = mzVar.p0;
-        ow owVar = mzVar.h0;
+        pw pwVar = mzVar.h0;
         yx yxVar = mzVar.P;
         boolean z10 = true;
         if (mzVar.x0 == null || mzVar.g0 == null) {
@@ -74,9 +74,9 @@ public final class ex implements z4.e {
             if (i10 == 0) {
                 yxVar.setVisibility(0);
                 f10 = 0.0f;
-                owVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                pwVar.setVisibility(f7 == 0.0f ? 8 : 0);
                 txVar.setVisibility(f7 == 0.0f ? 8 : 0);
-                uwVar.setVisibility(8);
+                vwVar.setVisibility(8);
                 if (axVar != null) {
                     axVar.setVisibility(8);
                 }
@@ -84,17 +84,17 @@ public final class ex implements z4.e {
                 f10 = 0.0f;
                 if (i10 == 1) {
                     yxVar.setVisibility(8);
-                    owVar.setVisibility(0);
+                    pwVar.setVisibility(0);
                     txVar.setVisibility(0);
-                    uwVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                    vwVar.setVisibility(f7 == 0.0f ? 8 : 0);
                     if (axVar != null) {
                         axVar.setVisibility(f7 != 0.0f ? 0 : 8);
                     }
                 } else if (i10 == 2) {
                     yxVar.setVisibility(8);
-                    owVar.setVisibility(8);
+                    pwVar.setVisibility(8);
                     txVar.setVisibility(8);
-                    uwVar.setVisibility(0);
+                    vwVar.setVisibility(0);
                     if (axVar != null) {
                         axVar.setVisibility(0);
                     }

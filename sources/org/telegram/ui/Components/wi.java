@@ -77,7 +77,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ej1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.y2, le.e {
     public static final /* synthetic */ int O2 = 0;
@@ -746,8 +746,8 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         wiVar3.k1.M(null, null);
                         PhotoViewer t12 = PhotoViewer.t1();
                         org.telegram.ui.ActionBar.m2 m2Var2 = wiVar3.f0;
-                        t12.J2(null, m2Var2, d6Var);
-                        PhotoViewer.t1().K2(wiVar3);
+                        t12.K2(null, m2Var2, d6Var);
+                        PhotoViewer.t1().L2(wiVar3);
                         PhotoViewer t13 = PhotoViewer.t1();
                         int i21 = wiVar3.S1;
                         boolean z15 = wiVar3.T1;
@@ -776,7 +776,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         ArrayList arrayList3 = new ArrayList();
                         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, w10.getAbsolutePath(), 0, false, 0, 0, 0L);
                         arrayList3.add(photoEntry);
-                        PhotoViewer.t1().f2(arrayList3, 0, 11, false, new xh(wiVar3, photoEntry), m2Var2 instanceof org.telegram.ui.wn ? (org.telegram.ui.wn) m2Var2 : null);
+                        PhotoViewer.t1().g2(arrayList3, 0, 11, false, new xh(wiVar3, photoEntry), m2Var2 instanceof org.telegram.ui.wn ? (org.telegram.ui.wn) m2Var2 : null);
                         if (wiVar3.G) {
                             PhotoViewer.t1().X0(null, null, true, wiVar3.J);
                             break;
@@ -1340,8 +1340,8 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         wiVar3.k1.M(null, null);
                         PhotoViewer t12 = PhotoViewer.t1();
                         org.telegram.ui.ActionBar.m2 m2Var2 = wiVar3.f0;
-                        t12.J2(null, m2Var2, d6Var);
-                        PhotoViewer.t1().K2(wiVar3);
+                        t12.K2(null, m2Var2, d6Var);
+                        PhotoViewer.t1().L2(wiVar3);
                         PhotoViewer t13 = PhotoViewer.t1();
                         int i212 = wiVar3.S1;
                         boolean z15 = wiVar3.T1;
@@ -1370,7 +1370,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         ArrayList arrayList3 = new ArrayList();
                         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, w10.getAbsolutePath(), 0, false, 0, 0, 0L);
                         arrayList3.add(photoEntry);
-                        PhotoViewer.t1().f2(arrayList3, 0, 11, false, new xh(wiVar3, photoEntry), m2Var2 instanceof org.telegram.ui.wn ? (org.telegram.ui.wn) m2Var2 : null);
+                        PhotoViewer.t1().g2(arrayList3, 0, 11, false, new xh(wiVar3, photoEntry), m2Var2 instanceof org.telegram.ui.wn ? (org.telegram.ui.wn) m2Var2 : null);
                         if (wiVar3.G) {
                             PhotoViewer.t1().X0(null, null, true, wiVar3.J);
                             break;
@@ -1594,8 +1594,8 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         wiVar3.k1.M(null, null);
                         PhotoViewer t12 = PhotoViewer.t1();
                         org.telegram.ui.ActionBar.m2 m2Var2 = wiVar3.f0;
-                        t12.J2(null, m2Var2, d6Var);
-                        PhotoViewer.t1().K2(wiVar3);
+                        t12.K2(null, m2Var2, d6Var);
+                        PhotoViewer.t1().L2(wiVar3);
                         PhotoViewer t13 = PhotoViewer.t1();
                         int i212 = wiVar3.S1;
                         boolean z15 = wiVar3.T1;
@@ -1624,7 +1624,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         ArrayList arrayList3 = new ArrayList();
                         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, w10.getAbsolutePath(), 0, false, 0, 0, 0L);
                         arrayList3.add(photoEntry);
-                        PhotoViewer.t1().f2(arrayList3, 0, 11, false, new xh(wiVar3, photoEntry), m2Var2 instanceof org.telegram.ui.wn ? (org.telegram.ui.wn) m2Var2 : null);
+                        PhotoViewer.t1().g2(arrayList3, 0, 11, false, new xh(wiVar3, photoEntry), m2Var2 instanceof org.telegram.ui.wn ? (org.telegram.ui.wn) m2Var2 : null);
                         if (wiVar3.G) {
                             PhotoViewer.t1().X0(null, null, true, wiVar3.J);
                             break;
@@ -2523,7 +2523,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         wiVar.d1.m(1.0f, -((wiVar.containerView.getWidth() - ((u0Var.getWidth() / 2.0f) + u0Var.getX())) - AndroidUtilities.dp(14.0f)));
         wiVar.d1.setTranslationY(wiVar.a1.getTranslationY());
         ci.e4 e4Var3 = wiVar.d1;
-        e4Var3.l0 = new kd(5, wiVar, e4Var2);
+        e4Var3.l0 = new uc(6, wiVar, e4Var2);
         wiVar.containerView.addView(e4Var3, w7.y5.d(-1, 60.0f, 48, 0.0f, 46.0f, 0.0f, 0.0f));
         wiVar.d1.u();
     }
@@ -3350,7 +3350,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
 
     public final void O1(org.telegram.ui.ActionBar.m2 m2Var) {
         if ((m2Var instanceof org.telegram.ui.wn) && ChatObject.isChannelAndNotMegaGroup(((org.telegram.ui.wn) m2Var).e)) {
-            new xc(this.r1, this.resourcesProvider).f(MessagesController.getInstance(this.J1).captionLengthLimitPremium, new kd(6, this, m2Var)).j();
+            new yc(this.r1, this.resourcesProvider).f(MessagesController.getInstance(this.J1).captionLengthLimitPremium, new uc(7, this, m2Var)).j();
         }
     }
 
@@ -5593,7 +5593,7 @@ public class wi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             if (messageSuggestionParams == null) {
                 messageSuggestionParams = MessageSuggestionParams.of(this.H1.messageOwner.suggested_post);
             }
-            if (!yh.s5.U(i10, messageSuggestionParams.amount)) {
+            if (!yh.t5.U(i10, messageSuggestionParams.amount)) {
                 wnVar.Tb(messageSuggestionParams);
                 return;
             }

@@ -57,7 +57,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class wq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int a1 = 0;
@@ -1204,7 +1204,7 @@ public class wq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
         boolean premiumFeaturesBlocked = MessagesController.getInstance(this.currentAccount).premiumFeaturesBlocked();
         int i11 = 1;
         FrameLayout frameLayout = this.v;
-        (premiumFeaturesBlocked ? new xc(frameLayout, this.resourcesProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : new xc(frameLayout, this.resourcesProvider).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new rp0(this, i11))).j();
+        (premiumFeaturesBlocked ? new yc(frameLayout, this.resourcesProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName))) : new yc(frameLayout, this.resourcesProvider).J(R.raw.star_premium_2, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserBlockedNonPremium, userName)), LocaleController.getString(R.string.UserBlockedNonPremiumButton), new rp0(this, i11))).j();
     }
 
     public final void Y0() {
@@ -1963,7 +1963,7 @@ public class wq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                                         }
                                         if (m2Var != null) {
                                             wq0Var.dismiss();
-                                            m2Var.presentFragment(new org.telegram.ui.dj0(messageObject3));
+                                            m2Var.presentFragment(new org.telegram.ui.ej0(messageObject3));
                                             break;
                                         }
                                         break;
@@ -1975,7 +1975,7 @@ public class wq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                                         }
                                         if (m2Var2 != null) {
                                             wq0Var2.dismiss();
-                                            m2Var2.presentFragment(new org.telegram.ui.dj0(messageObject3));
+                                            m2Var2.presentFragment(new org.telegram.ui.ej0(messageObject3));
                                             break;
                                         }
                                         break;
@@ -2063,7 +2063,7 @@ public class wq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                                         }
                                         if (m2Var != null) {
                                             wq0Var.dismiss();
-                                            m2Var.presentFragment(new org.telegram.ui.dj0(messageObject4));
+                                            m2Var.presentFragment(new org.telegram.ui.ej0(messageObject4));
                                             break;
                                         }
                                         break;
@@ -2075,7 +2075,7 @@ public class wq0 extends org.telegram.ui.ActionBar.e3 implements NotificationCen
                                         }
                                         if (m2Var2 != null) {
                                             wq0Var2.dismiss();
-                                            m2Var2.presentFragment(new org.telegram.ui.dj0(messageObject4));
+                                            m2Var2.presentFragment(new org.telegram.ui.ej0(messageObject4));
                                             break;
                                         }
                                         break;

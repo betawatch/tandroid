@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.sr;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class t0 extends View {
     public boolean E;
@@ -38,7 +38,7 @@ public final class t0 extends View {
     public final Paint d;
     public final Paint e;
     public final Paint f;
-    public final org.telegram.ui.Components.yc h;
+    public final org.telegram.ui.Components.zc h;
     public kj0 n;
     public final StaticLayout r;
     public final float s;
@@ -198,13 +198,13 @@ public final class t0 extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean contains = this.M.contains(motionEvent.getX(), motionEvent.getY());
         int action = motionEvent.getAction();
-        org.telegram.ui.Components.yc ycVar = this.h;
+        org.telegram.ui.Components.zc zcVar = this.h;
         if (action == 0 && (this.G || contains)) {
-            ycVar.c(contains);
+            zcVar.c(contains);
             return true;
         }
         if (motionEvent.getAction() == 1) {
-            if (ycVar.h) {
+            if (zcVar.h) {
                 if (contains) {
                     if (this.G) {
                         Runnable runnable = this.Q;
@@ -215,11 +215,11 @@ public final class t0 extends View {
                         a();
                     }
                 }
-                ycVar.c(false);
+                zcVar.c(false);
                 return true;
             }
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            zcVar.c(false);
             return true;
         }
         return super.onTouchEvent(motionEvent);
@@ -253,7 +253,7 @@ public final class t0 extends View {
         this.e = paint3;
         Paint paint4 = new Paint(1);
         this.f = paint4;
-        this.h = new org.telegram.ui.Components.yc(this);
+        this.h = new org.telegram.ui.Components.zc(this);
         this.E = false;
         this.F = new org.telegram.ui.Components.e6(0.0f, this, 0L, 350L, sr.h);
         this.G = true;

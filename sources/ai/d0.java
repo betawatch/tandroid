@@ -45,20 +45,20 @@ import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.j41;
 import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.kc0;
-import org.telegram.ui.Components.kd;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.Components.lu;
 import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.mr;
 import org.telegram.ui.Components.nf;
-import org.telegram.ui.Components.nv;
 import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.or;
+import org.telegram.ui.Components.ov;
 import org.telegram.ui.Components.q20;
-import org.telegram.ui.Components.uv;
+import org.telegram.ui.Components.uc;
+import org.telegram.ui.Components.vv;
 import org.telegram.ui.Components.wf0;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yn0;
 import org.telegram.ui.Components.zp;
 import org.telegram.ui.st0;
@@ -66,7 +66,7 @@ import org.telegram.ui.wk;
 import org.telegram.ui.wn;
 import org.telegram.ui.z60;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.c;
                 jc jcVar = (jc) this.d;
                 e1Var.performHapticFeedback(3);
-                xc X = xc.X();
+                yc X = yc.X();
                 if (X != null) {
                     X.Q(R.raw.ic_save_to_gallery, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SaveStoryToGalleryPremiumHint), new a1.e(12, v5Var3, jcVar))).j();
                     break;
@@ -127,7 +127,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 a80 a80Var = (a80) this.d;
                 y3 y3Var = new y3(s6Var, 1);
                 k7 k7Var = s6Var.b;
-                new uv(y3Var, k7Var.getContext(), k7Var.s, arrayList).show();
+                new vv(y3Var, k7Var.getContext(), k7Var.s, arrayList).show();
                 a80Var.u();
                 break;
             case 4:
@@ -349,7 +349,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 or orVar = (or) this.b;
                 Utilities.Callback callback2 = (Utilities.Callback) this.c;
                 ci.d dVar2 = (ci.d) this.d;
-                callback2.run(new nf.e(new zp(dVar2, 4), new kd(23, orVar, dVar2)));
+                callback2.run(new nf.e(new zp(dVar2, 4), new uc(24, orVar, dVar2)));
                 break;
             case 19:
                 mr mrVar = (mr) this.b;
@@ -426,7 +426,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(context3);
                 alertDialog$Builder2.a.R = LocaleController.getString(R.string.GigagroupConvertAlertTitle);
                 alertDialog$Builder2.a.T = AndroidUtilities.replaceTags(LocaleController.getString(R.string.GigagroupConvertAlertText));
-                alertDialog$Builder2.k(LocaleController.getString(R.string.GigagroupConvertAlertConver), new nv(q20Var, 5));
+                alertDialog$Builder2.k(LocaleController.getString(R.string.GigagroupConvertAlertConver), new ov(q20Var, 5));
                 alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
                 m2Var3.showDialog(alertDialog$Builder2.a);
                 break;
@@ -438,9 +438,9 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                     if (i90Var.b != null) {
                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", i90Var.b));
                         if (e3Var2 == null || e3Var2.getContainer() == null) {
-                            xc.j(m2Var4).j();
+                            yc.j(m2Var4).j();
                         } else {
-                            new xc(e3Var2.getContainer(), null).k(false).j();
+                            new yc(e3Var2.getContainer(), null).k(false).j();
                         }
                     }
                     break;
@@ -520,7 +520,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 long j3 = wkVar.b;
                 translateController.setHideTranslateDialog(j3, true);
                 TLRPC.Chat chat2 = MessagesController.getInstance(wkVar.a).getChat(Long.valueOf(-j3));
-                xc.a0(wkVar.c).J(R.raw.msg_translate, AndroidUtilities.replaceTags((chat2 == null || !ChatObject.isChannelAndNotMegaGroup(chat2)) ? chat2 != null ? LocaleController.getString(R.string.TranslationBarHiddenForGroup) : LocaleController.getString(R.string.TranslationBarHiddenForChat) : LocaleController.getString(R.string.TranslationBarHiddenForChannel)), LocaleController.getString(R.string.UndoNoCaps), new yn0(18, wkVar, translateController)).j();
+                yc.a0(wkVar.c).J(R.raw.msg_translate, AndroidUtilities.replaceTags((chat2 == null || !ChatObject.isChannelAndNotMegaGroup(chat2)) ? chat2 != null ? LocaleController.getString(R.string.TranslationBarHiddenForGroup) : LocaleController.getString(R.string.TranslationBarHiddenForChat) : LocaleController.getString(R.string.TranslationBarHiddenForChannel)), LocaleController.getString(R.string.UndoNoCaps), new yn0(19, wkVar, translateController)).j();
                 m1Var.d(true);
                 break;
             default:

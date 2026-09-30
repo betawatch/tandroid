@@ -1,9 +1,27 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
-public interface jj0 {
-    void a(ArrayList arrayList);
+public final class jj0 extends ci.d {
+    public final /* synthetic */ lj0 h0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jj0(lj0 lj0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var, true);
+        this.h0 = lj0Var;
+    }
+
+    @Override // ci.d
+    public final float a(float f7, float f10) {
+        lj0 lj0Var = this.h0;
+        boolean z10 = lj0Var.n0 == 0.0f;
+        lj0Var.n0 = f7;
+        if (z10) {
+            lj0Var.o0 = new org.telegram.ui.Components.fb0(lj0Var, 1);
+            lj0Var.S(false);
+        }
+        return f7;
+    }
 }

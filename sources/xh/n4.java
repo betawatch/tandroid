@@ -14,11 +14,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
-import yh.s5;
+import org.telegram.ui.Components.yc;
+import yh.t5;
 import yh.w7;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n4 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -127,7 +127,7 @@ public final /* synthetic */ class n4 implements Utilities.Callback2 {
                         x51 i17 = x51.i(3, w7.X0(false, LocaleController.formatString(R.string.Gift2MessageStars, Integer.valueOf((int) kVar.g())), 0.78f, null));
                         i17.K(z4Var.r0);
                         arrayList.add(i17);
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatNumber(s5.y(i13, false).p().amount, ','));
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatNumber(t5.y(i13, false).p().amount, ','));
                         spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
                         arrayList.add(x51.A(-7, TextUtils.concat(w7.X0(false, LocaleController.formatSpannable(R.string.Gift2MessageStarsInfo, spannableStringBuilder), 0.66f, null), " ", AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new p4(z4Var, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)))));
                     }
@@ -146,7 +146,7 @@ public final /* synthetic */ class n4 implements Utilities.Callback2 {
                         if ("STARGIFT_USER_USAGE_LIMITED".equalsIgnoreCase(str2)) {
                             AndroidUtilities.hideKeyboard(u4Var);
                             z4Var.dismiss();
-                            xc X = z4Var.X();
+                            yc X = z4Var.X();
                             if (X != null && starGift2 != null && starGift2.limited_per_user) {
                                 X.R(starGift2.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", starGift2.per_user_total))).j();
                                 break;
@@ -155,7 +155,7 @@ public final /* synthetic */ class n4 implements Utilities.Callback2 {
                     } else {
                         AndroidUtilities.hideKeyboard(u4Var);
                         z4Var.dismiss();
-                        s5 y3 = s5.y(z4Var.Y, false);
+                        t5 y3 = t5.y(z4Var.Y, false);
                         if (starGift2 != null && y3.D) {
                             starGift2.availability_remains = 0;
                             y3.c0(y3.F, y3.G, y3.H);

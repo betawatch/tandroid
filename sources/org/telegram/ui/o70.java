@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class o70 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -127,14 +127,14 @@ public final class o70 extends org.telegram.ui.ActionBar.m2 implements Notificat
         int i10 = o70Var.n;
         if (tL_messages_stickerSet == null) {
             if (o70Var.r != null) {
-                org.telegram.messenger.f0.p(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(o70Var), R.raw.done, 36);
+                org.telegram.messenger.f0.p(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.yc.a0(o70Var), R.raw.done, 36);
             }
             o70Var.r = null;
             o70Var.s = true;
         } else {
             o70Var.r = tL_messages_stickerSet;
             o70Var.s = false;
-            org.telegram.messenger.f0.p(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(o70Var), R.raw.done, 36);
+            org.telegram.messenger.f0.p(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.yc.a0(o70Var), R.raw.done, 36);
         }
         o70Var.h0();
         o70Var.f0(o70Var.r, false);

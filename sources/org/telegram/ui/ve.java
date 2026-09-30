@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -103,13 +103,13 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                 break;
             case 8:
                 if (AndroidUtilities.addToClipboard(wnVar.d5.sponsoredInfo)) {
-                    org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(wnVar.getParentActivity()), wnVar.ea));
+                    org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(wnVar.getParentActivity()), wnVar.ea));
                     break;
                 }
                 break;
             case 9:
                 if (AndroidUtilities.addToClipboard(wnVar.d5.sponsoredAdditionalInfo)) {
-                    org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(wnVar.getParentActivity()), wnVar.ea));
+                    org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(wnVar.getParentActivity()), wnVar.ea));
                     break;
                 }
                 break;

@@ -33,7 +33,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.v9;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
@@ -71,7 +71,7 @@ public abstract class d {
     public static void C() {
         int i10 = a;
         if (i10 == 0) {
-            PhotoViewer.t1().h3();
+            PhotoViewer.t1().i3();
         } else if (i10 == 1) {
             MediaController.getInstance().syncCastedPlayer();
         }

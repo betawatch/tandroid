@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class t61 extends yl0 {
     public s4.c0 X2;
@@ -93,7 +93,7 @@ public class t61 extends yl0 {
 
     @Override // org.telegram.ui.Components.yl0
     public final void q1(int i10, float f7, boolean z10) {
-        s1(new yi(this, 3), new ei.c(6), i10, f7, new nv(this, 28), z10);
+        s1(new yi(this, 3), new ei.c(6), i10, f7, new ov(this, 28), z10);
     }
 
     public void setReorderLongPressEnabled(boolean z10) {

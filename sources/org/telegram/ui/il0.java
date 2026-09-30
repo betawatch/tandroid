@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class il0 implements Runnable {
     public final /* synthetic */ int a;
@@ -193,7 +193,7 @@ public final /* synthetic */ class il0 implements Runnable {
                 PhotoViewer photoViewer = (PhotoViewer) vVar.d;
                 long j3 = vVar.a;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.s2(j3);
+                photoViewer.t2(j3);
                 if (photoViewer.c2 == 1) {
                     long j10 = vVar.a;
                     photoViewer.X7 = j10;
@@ -255,7 +255,7 @@ public final /* synthetic */ class il0 implements Runnable {
                     runnable.run();
                     photoViewer5.p4 = null;
                 }
-                photoViewer5.x2(true);
+                photoViewer5.y2(true);
                 break;
             case 20:
                 PhotoViewer photoViewer6 = ((at0) obj).b;

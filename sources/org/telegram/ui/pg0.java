@@ -55,7 +55,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBoxSquare;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class pg0 extends org.telegram.ui.Components.hw0 implements AdapterView.OnItemSelectedListener, NotificationCenter.NotificationCenterDelegate {
     public final ArrayList E;
@@ -168,10 +168,10 @@ public final class pg0 extends org.telegram.ui.Components.hw0 implements Adapter
                             qg0Var2.y = z10;
                             ((org.telegram.ui.Cells.a2) view).c(z10, true);
                             if (!qg0Var2.y) {
-                                new org.telegram.ui.Components.xc(qg0Var2.Z, null).Q(R.raw.contacts_sync_off, 36, LocaleController.getString("SyncContactsOff", R.string.SyncContactsOff)).j();
+                                new org.telegram.ui.Components.yc(qg0Var2.Z, null).Q(R.raw.contacts_sync_off, 36, LocaleController.getString("SyncContactsOff", R.string.SyncContactsOff)).j();
                                 break;
                             } else {
-                                new org.telegram.ui.Components.xc(qg0Var2.Z, null).Q(R.raw.contacts_sync_on, 36, LocaleController.getString("SyncContactsOn", R.string.SyncContactsOn)).j();
+                                new org.telegram.ui.Components.yc(qg0Var2.Z, null).Q(R.raw.contacts_sync_on, 36, LocaleController.getString("SyncContactsOn", R.string.SyncContactsOn)).j();
                                 break;
                             }
                         }
@@ -326,10 +326,10 @@ public final class pg0 extends org.telegram.ui.Components.hw0 implements Adapter
                                 qg0Var2.y = z10;
                                 ((org.telegram.ui.Cells.a2) view2).c(z10, true);
                                 if (!qg0Var2.y) {
-                                    new org.telegram.ui.Components.xc(qg0Var2.Z, null).Q(R.raw.contacts_sync_off, 36, LocaleController.getString("SyncContactsOff", R.string.SyncContactsOff)).j();
+                                    new org.telegram.ui.Components.yc(qg0Var2.Z, null).Q(R.raw.contacts_sync_off, 36, LocaleController.getString("SyncContactsOff", R.string.SyncContactsOff)).j();
                                     break;
                                 } else {
-                                    new org.telegram.ui.Components.xc(qg0Var2.Z, null).Q(R.raw.contacts_sync_on, 36, LocaleController.getString("SyncContactsOn", R.string.SyncContactsOn)).j();
+                                    new org.telegram.ui.Components.yc(qg0Var2.Z, null).Q(R.raw.contacts_sync_on, 36, LocaleController.getString("SyncContactsOn", R.string.SyncContactsOn)).j();
                                     break;
                                 }
                             }
@@ -694,7 +694,7 @@ public final class pg0 extends org.telegram.ui.Components.hw0 implements Adapter
                     }
                 } else {
                     tL_codeSettings.unknown_number = false;
-                    tL_codeSettings.current_number = Collection.-EL.stream(V0).anyMatch(new m80(d, 1));
+                    tL_codeSettings.current_number = Collection.-EL.stream(V0).anyMatch(new n80(d, 1));
                 }
             } catch (Exception e7) {
                 tL_codeSettings.unknown_number = true;

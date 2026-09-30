@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class px extends lz {
     public final /* synthetic */ mz d;
@@ -45,7 +45,7 @@ public final class px extends lz {
         if (mxVar.N0() + 20 > myVar.h()) {
             ly lyVar = myVar.x;
             Objects.requireNonNull(lyVar);
-            AndroidUtilities.runOnUIThread(new tw(lyVar, 1));
+            AndroidUtilities.runOnUIThread(new uw(lyVar, 1));
         }
     }
 }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.db1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class k5 implements l5 {
     public final int a;
@@ -343,7 +343,7 @@ public final class k5 implements l5 {
             Object obj = arrayList.get(i11);
             i11++;
             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj;
-            if (s5.k(savedStarGift2, savedStarGift)) {
+            if (t5.k(savedStarGift2, savedStarGift)) {
                 if (!z10) {
                     savedStarGift2.collection_id.remove(Integer.valueOf(i10));
                 } else if (!savedStarGift2.collection_id.contains(Integer.valueOf(i10))) {
@@ -362,7 +362,7 @@ public final class k5 implements l5 {
             Object obj = arrayList.get(i10);
             i10++;
             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj;
-            if (s5.k(savedStarGift2, savedStarGift) && savedStarGift2.unsaved != z10) {
+            if (t5.k(savedStarGift2, savedStarGift) && savedStarGift2.unsaved != z10) {
                 savedStarGift2.unsaved = z10;
                 z11 = true;
             }

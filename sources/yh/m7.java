@@ -15,14 +15,14 @@ import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.t00;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class m7 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final FrameLayout X;
@@ -83,7 +83,7 @@ public final class m7 extends bb implements NotificationCenter.NotificationCente
             if (findActivity == null) {
                 return;
             }
-            s5.y(m7Var.currentAccount, false).f(findActivity, (TL_stars.TL_starsTopupOption) G.G, new ai.m0(26, m7Var, G), null);
+            t5.y(m7Var.currentAccount, false).f(findActivity, (TL_stars.TL_starsTopupOption) G.G, new ai.m0(26, m7Var, G), null);
         }
     }
 
@@ -92,13 +92,13 @@ public final class m7 extends bb implements NotificationCenter.NotificationCente
             return;
         }
         m7Var.dismiss();
-        s5.y(m7Var.currentAccount, false).T(true);
+        t5.y(m7Var.currentAccount, false).T(true);
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
         if (U == null) {
             return;
         }
         if (bool.booleanValue()) {
-            xc.a0(U).M(LocaleController.getString(R.string.StarsAcquired), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsAcquiredInfo", (int) x51Var.B, new Object[0])), R.raw.stars_topup).j();
+            yc.a0(U).M(LocaleController.getString(R.string.StarsAcquired), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsAcquiredInfo", (int) x51Var.B, new Object[0])), R.raw.stars_topup).j();
             LaunchActivity launchActivity = LaunchActivity.G1;
             if (launchActivity != null) {
                 launchActivity.x0.c(true);
@@ -107,13 +107,13 @@ public final class m7 extends bb implements NotificationCenter.NotificationCente
             return;
         }
         if (str != null) {
-            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, xc.a0(U), R.raw.error, 36);
+            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, yc.a0(U), R.raw.error, 36);
         }
     }
 
     public final void R(ArrayList arrayList, l61 l61Var) {
         com.google.android.gms.internal.vision.e2.n(R.string.TelegramStarsChoose, arrayList);
-        ArrayList z10 = s5.y(this.currentAccount, false).z();
+        ArrayList z10 = t5.y(this.currentAccount, false).z();
         if (z10 == null || z10.isEmpty()) {
             arrayList.add(x51.n(31));
             arrayList.add(x51.n(31));
@@ -166,7 +166,7 @@ public final class m7 extends bb implements NotificationCenter.NotificationCente
     @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
     public final void show() {
         jk jkVar;
-        long j3 = s5.y(this.currentAccount, false).p().amount;
+        long j3 = t5.y(this.currentAccount, false).p().amount;
         org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
         if (R instanceof wn) {
             wn wnVar = (wn) R;

@@ -103,14 +103,14 @@ import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.cd0;
 import org.telegram.ui.qc0;
 import org.telegram.ui.xc0;
 import u2.b0;
 import v7.m8;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener, q9.d, nl0, OnCompleteListener, Continuation, ol0, Utilities.Callback3Return, xc0, p0, bu, j4, e2.n, e2.m, j0, e2.h, z0 {
     public final /* synthetic */ int a;
@@ -354,14 +354,14 @@ public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener,
                     if (b10) {
                         c3 c3Var = faVar.container;
                         d6Var6 = ((e3) faVar).resourcesProvider;
-                        qc G = new xc(c3Var, d6Var6).G(R.raw.ic_save_to_gallery, 4, LocaleController.getString(z10 ? R.string.StoryEnabledScreenshotsShare : R.string.StoryEnabledScreenshots));
+                        qc G = new yc(c3Var, d6Var6).G(R.raw.ic_save_to_gallery, 4, LocaleController.getString(z10 ? R.string.StoryEnabledScreenshotsShare : R.string.StoryEnabledScreenshots));
                         G.j = 5000;
                         G.k(true);
                         return;
                     }
                     c3 c3Var2 = faVar.container;
                     d6Var5 = ((e3) faVar).resourcesProvider;
-                    qc G2 = new xc(c3Var2, d6Var5).G(R.raw.passcode_lock_close, 4, LocaleController.getString(z10 ? R.string.StoryDisabledScreenshotsShare : R.string.StoryDisabledScreenshots));
+                    qc G2 = new yc(c3Var2, d6Var5).G(R.raw.passcode_lock_close, 4, LocaleController.getString(z10 ? R.string.StoryDisabledScreenshotsShare : R.string.StoryDisabledScreenshots));
                     G2.j = 5000;
                     G2.k(true);
                     return;
@@ -380,13 +380,13 @@ public final /* synthetic */ class b implements hh.i, h9, z1, OnFailureListener,
                 if (b11) {
                     c3 c3Var3 = faVar.container;
                     d6Var4 = ((e3) faVar).resourcesProvider;
-                    qc G3 = new xc(c3Var3, d6Var4).G(R.raw.msg_story_keep, 4, LocaleController.getString(z11 ? R.string.StoryChannelEnableKeep : R.string.StoryEnableKeep));
+                    qc G3 = new yc(c3Var3, d6Var4).G(R.raw.msg_story_keep, 4, LocaleController.getString(z11 ? R.string.StoryChannelEnableKeep : R.string.StoryEnableKeep));
                     G3.j = 5000;
                     G3.k(true);
                 } else {
                     c3 c3Var4 = faVar.container;
                     d6Var3 = ((e3) faVar).resourcesProvider;
-                    qc G4 = new xc(c3Var4, d6Var3).G(R.raw.fire_on, 4, LocaleController.getString(z11 ? R.string.StoryChannelDisableKeep : R.string.StoryDisableKeep));
+                    qc G4 = new yc(c3Var4, d6Var3).G(R.raw.fire_on, 4, LocaleController.getString(z11 ? R.string.StoryChannelDisableKeep : R.string.StoryDisableKeep));
                     G4.j = 5000;
                     G4.k(true);
                 }

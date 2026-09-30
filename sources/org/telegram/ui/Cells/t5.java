@@ -37,7 +37,7 @@ import org.telegram.ui.Components.pp;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public static final Rect a0 = new Rect();
@@ -241,7 +241,7 @@ public final class t5 extends FrameLayout {
                 p5Var.f("vthumb://" + this.G.imageId + ":" + this.G.path, null, org.telegram.ui.ActionBar.h6.R4);
             }
         }
-        boolean z16 = z11 && PhotoViewer.L1(this.G.path);
+        boolean z16 = z11 && PhotoViewer.M1(this.G.path);
         p5Var.getImageReceiver().setVisible(!z16, true);
         this.d.setAlpha(z16 ? 0.0f : 1.0f);
         q5Var.setAlpha(z16 ? 0.0f : 1.0f);
@@ -295,10 +295,10 @@ public final class t5 extends FrameLayout {
                             p5Var = p5Var2;
                             p5Var.setImageDrawable(drawable);
                         }
-                        boolean L1 = PhotoViewer.L1(searchImage.getPathToAttach());
-                        p5Var.getImageReceiver().setVisible(!L1, true);
-                        this.d.setAlpha(!L1 ? 0.0f : 1.0f);
-                        this.h.setAlpha(L1 ? 0.0f : 1.0f);
+                        boolean M1 = PhotoViewer.M1(searchImage.getPathToAttach());
+                        p5Var.getImageReceiver().setVisible(!M1, true);
+                        this.d.setAlpha(!M1 ? 0.0f : 1.0f);
+                        this.h.setAlpha(M1 ? 0.0f : 1.0f);
                         requestLayout();
                         setHasSpoiler(false);
                         setHighQuality(false);
@@ -313,10 +313,10 @@ public final class t5 extends FrameLayout {
             }
         }
         p5Var = p5Var2;
-        boolean L12 = PhotoViewer.L1(searchImage.getPathToAttach());
-        p5Var.getImageReceiver().setVisible(!L12, true);
-        this.d.setAlpha(!L12 ? 0.0f : 1.0f);
-        this.h.setAlpha(L12 ? 0.0f : 1.0f);
+        boolean M12 = PhotoViewer.M1(searchImage.getPathToAttach());
+        p5Var.getImageReceiver().setVisible(!M12, true);
+        this.d.setAlpha(!M12 ? 0.0f : 1.0f);
+        this.h.setAlpha(M12 ? 0.0f : 1.0f);
         requestLayout();
         setHasSpoiler(false);
         setHighQuality(false);
@@ -457,7 +457,7 @@ public final class t5 extends FrameLayout {
         MediaController.SearchImage searchImage;
         boolean z10 = this.d.a.q;
         p5 p5Var = this.a;
-        if (!z10 && this.b.getScaleX() == 1.0f && p5Var.getImageReceiver().hasNotThumb() && p5Var.getImageReceiver().getCurrentAlpha() == 1.0f && (((photoEntry = this.G) == null || !PhotoViewer.L1(photoEntry.path)) && ((searchImage = this.H) == null || !PhotoViewer.L1(searchImage.getPathToAttach())))) {
+        if (!z10 && this.b.getScaleX() == 1.0f && p5Var.getImageReceiver().hasNotThumb() && p5Var.getImageReceiver().getCurrentAlpha() == 1.0f && (((photoEntry = this.G) == null || !PhotoViewer.M1(photoEntry.path)) && ((searchImage = this.H) == null || !PhotoViewer.M1(searchImage.getPathToAttach())))) {
             return;
         }
         int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.X9, this.K);

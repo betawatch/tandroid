@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eh1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class eh1 implements Utilities.Callback {
                 if (userInfoActivity2.K != chat) {
                     userInfoActivity2.K = chat;
                     if (chat != null) {
-                        org.telegram.messenger.f0.p(R.string.EditProfileChannelSet, org.telegram.ui.Components.xc.a0(userInfoActivity2), R.raw.contact_check, 36);
+                        org.telegram.messenger.f0.p(R.string.EditProfileChannelSet, org.telegram.ui.Components.yc.a0(userInfoActivity2), R.raw.contact_check, 36);
                     }
                     userInfoActivity2.b0(true);
                     org.telegram.ui.Components.n61 n61Var2 = userInfoActivity2.x;

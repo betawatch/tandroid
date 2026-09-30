@@ -14,29 +14,29 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class er {
-    public static void a(Context context, final int i10, TLRPC.User user, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot, boolean z10, final Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var, xc xcVar) {
-        xc xcVar2;
+    public static void a(Context context, final int i10, TLRPC.User user, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot, boolean z10, final Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var, yc ycVar) {
+        yc ycVar2;
         String userName;
         if (!user.bot_can_manage_bots) {
-            if (xcVar == null) {
+            if (ycVar == null) {
                 org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U == null) {
                     callback.run(null);
                     return;
                 }
-                xcVar2 = xc.a0(U);
+                ycVar2 = yc.a0(U);
             } else {
-                xcVar2 = xcVar;
+                ycVar2 = ycVar;
             }
             if (TextUtils.isEmpty(UserObject.getPublicUsername(user))) {
                 userName = UserObject.getUserName(user);
             } else {
                 userName = "@" + UserObject.getPublicUsername(user);
             }
-            xcVar2.Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var))).j();
+            ycVar2.Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var))).j();
             callback.run(null);
             return;
         }

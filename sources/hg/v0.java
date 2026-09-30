@@ -34,11 +34,11 @@ import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class v0 extends m2 {
     public static final int U = -1;
@@ -110,12 +110,12 @@ public final class v0 extends m2 {
         m2 U2;
         if (tL_error != null) {
             v0Var.a.a(0.0f);
-            xc.b0(tL_error);
+            yc.b0(tL_error);
             return;
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             v0Var.a.a(0.0f);
-            ok.p(R.string.UnknownError, xc.a0(v0Var), null);
+            ok.p(R.string.UnknownError, yc.a0(v0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -131,12 +131,12 @@ public final class v0 extends m2 {
                 if (user == null || (U2 = LaunchActivity.U()) == null) {
                     return;
                 }
-                c.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, xc.a0(U2), R.raw.contact_check, 36);
+                c.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, yc.a0(U2), R.raw.contact_check, 36);
                 return;
             }
             m2 U3 = LaunchActivity.U();
             if (U3 != null) {
-                c.q(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, xc.a0(U3), R.raw.contact_check, 36);
+                c.q(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, yc.a0(U3), R.raw.contact_check, 36);
             }
         }
     }

@@ -56,13 +56,13 @@ import xh.j0;
 import xh.r1;
 import yh.e0;
 import yh.l3;
-import yh.s5;
+import yh.t5;
 import yh.t7;
 import yh.w7;
 import yh.z3;
 import z3.g;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, nl0, uh.a, Continuation, m, yf.m, n, BillingController.ProductDetailsResponseListenerLegacy, d5, le.e, Utilities.Callback5, no0, h {
     public final /* synthetic */ int a;
@@ -366,7 +366,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, z1, nl0, uh.a,
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         switch (this.a) {
             case 23:
-                s5.b((s5) this.b, (ArrayList) obj, (Integer) obj2, (Long) obj3, (ArrayList) obj4, (ArrayList) obj5);
+                t5.b((t5) this.b, (ArrayList) obj, (Integer) obj2, (Long) obj3, (ArrayList) obj4, (ArrayList) obj5);
                 break;
             default:
                 t7 t7Var = (t7) this.b;

@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h7 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -76,7 +76,7 @@ public final /* synthetic */ class h7 implements RequestDelegate {
                                     }
                                     lh0Var2.d();
                                     t61Var.Y2.N(true);
-                                    yh.s5.y(i10, false).q(true, true, new ai.j(lh0Var2, j10, 22));
+                                    yh.t5.y(i10, false).q(true, true, new ai.j(lh0Var2, j10, 22));
                                     return;
                                 }
                             }
@@ -158,7 +158,7 @@ public final /* synthetic */ class h7 implements RequestDelegate {
                         if (!z11 || j10 <= 0 || z14) {
                             return;
                         }
-                        xc.a0(lh0Var2.a).Q(R.raw.stars_topup, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("SearchPaidStars", (int) j10))).j();
+                        yc.a0(lh0Var2.a).Q(R.raw.stars_topup, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("SearchPaidStars", (int) j10))).j();
                     }
                 });
                 break;

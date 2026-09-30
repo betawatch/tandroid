@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class w5 implements Runnable {
     public final /* synthetic */ int a;
@@ -107,7 +107,7 @@ public final class w5 implements Runnable {
                     d60 d60Var2 = (d60) this.b;
                     v30 v30Var = d60Var2.a2;
                     if (v30Var != null && !v30Var.b && (I0 = d60.I0(d60Var2)) != null && I0.isAttachedToWindow() && (renderer = I0.getRenderer()) != null && (pVar = renderer.a) != null) {
-                        d60.H3.postRunnable(new tt(22, this, pVar));
+                        d60.H3.postRunnable(new tt(23, this, pVar));
                         break;
                     }
                 } catch (Exception e) {
@@ -185,13 +185,13 @@ public final class w5 implements Runnable {
                 }
                 break;
             case 10:
-                ((dj0) this.b).T.animate().alpha(1.0f).setDuration(230L);
+                ((ej0) this.b).T.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 11:
-                kj0 kj0Var = (kj0) this.b;
-                String str = kj0Var.j0;
+                lj0 lj0Var = (lj0) this.b;
+                String str = lj0Var.j0;
                 if (str != null) {
-                    kj0.Q(kj0Var, str);
+                    lj0.Q(lj0Var, str);
                     break;
                 }
                 break;

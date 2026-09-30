@@ -26,18 +26,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.mj;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class bb extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int O = 0;
     public final z E;
-    public final yc F;
+    public final zc F;
     public final org.telegram.ui.Components.j9 G;
     public final Drawable H;
     public MessagesController.CommonChatsList I;
@@ -58,16 +58,16 @@ public final class bb extends View implements NotificationCenter.NotificationCen
     public float s;
     public float v;
     public final RectF w;
-    public final yc x;
+    public final zc x;
     public final RectF y;
 
     public bb(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.h = new ArrayList();
         this.w = new RectF();
-        this.x = new yc(this);
+        this.x = new zc(this);
         this.y = new RectF();
-        this.F = new yc(this);
+        this.F = new zc(this);
         org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9(this, false);
         this.G = j9Var;
         this.a = i10;
@@ -388,19 +388,19 @@ public final class bb extends View implements NotificationCenter.NotificationCen
         boolean z11 = !z10 && this.w.contains(motionEvent.getX(), motionEvent.getY());
         int action = motionEvent.getAction();
         z zVar = this.E;
-        yc ycVar = this.F;
-        yc ycVar2 = this.x;
+        zc zcVar = this.F;
+        zc zcVar2 = this.x;
         if (action == 0) {
-            ycVar2.c(z11);
-            ycVar.c(z10);
+            zcVar2.c(z11);
+            zcVar.c(z10);
             zVar.setState(z10 ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[0]);
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar2.h) {
+            if (zcVar2.h) {
                 org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if ((U instanceof wn) && (mjVar = ((wn) U).a1) != null) {
                     mjVar.e(true, false);
                 }
-            } else if (ycVar.h) {
+            } else if (zcVar.h) {
                 org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
                 if (U2 != null) {
                     Bundle bundle = new Bundle();
@@ -415,15 +415,15 @@ public final class bb extends View implements NotificationCenter.NotificationCen
                 }
                 invalidate();
             }
-            ycVar.c(false);
-            ycVar2.c(false);
+            zcVar.c(false);
+            zcVar2.c(false);
             zVar.setState(new int[0]);
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
-            ycVar2.c(false);
+            zcVar.c(false);
+            zcVar2.c(false);
             zVar.setState(new int[0]);
         }
-        return ycVar.h || ycVar2.h;
+        return zcVar.h || zcVar2.h;
     }
 
     public void setAnimating(boolean z10) {

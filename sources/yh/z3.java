@@ -32,11 +32,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class z3 {
     public float A;
@@ -46,8 +46,8 @@ public final class z3 {
     public final Path E;
     public final Paint F;
     public final i8 G;
-    public final yc H;
-    public final yc I;
+    public final zc H;
+    public final zc I;
     public boolean J;
     public boolean K;
     public int L;
@@ -96,8 +96,8 @@ public final class z3 {
         this.b = view;
         this.c = d6Var;
         this.j = new xh.m1(view);
-        this.H = new yc(view);
-        this.I = new yc(view);
+        this.H = new zc(view);
+        this.I = new zc(view);
         this.d = new ImageReceiver(view);
         this.e = new org.telegram.ui.Components.o5(AndroidUtilities.dp(28.0f), view);
         k0Var.r = view;
@@ -259,19 +259,19 @@ public final class z3 {
         boolean contains = this.D.contains(motionEvent.getX() - f7, motionEvent.getY() - f10);
         boolean contains2 = this.n.contains(motionEvent.getX() - f7, motionEvent.getY() - f10);
         int action = motionEvent.getAction();
-        yc ycVar = this.H;
-        yc ycVar2 = this.I;
+        zc zcVar = this.H;
+        zc zcVar2 = this.I;
         if (action == 0) {
-            ycVar2.c(contains2 && !contains);
-            ycVar.c(contains);
+            zcVar2.c(contains2 && !contains);
+            zcVar.c(contains);
         } else if (motionEvent.getAction() == 2) {
-            if (ycVar.h && !contains) {
-                ycVar.c(false);
-            } else if (ycVar2.h && !contains2) {
-                ycVar2.c(false);
+            if (zcVar.h && !contains) {
+                zcVar.c(false);
+            } else if (zcVar2.h && !contains2) {
+                zcVar2.c(false);
             }
         } else {
-            if (motionEvent.getAction() == 1 && ((z10 = ycVar.h) || ycVar2.h)) {
+            if (motionEvent.getAction() == 1 && ((z10 = zcVar.h) || zcVar2.h)) {
                 xh.d0 d0Var = this.R;
                 if (d0Var != null) {
                     if (z10) {
@@ -280,24 +280,24 @@ public final class z3 {
                 } else if (this.J) {
                     org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                     if (U != null) {
-                        org.telegram.messenger.f0.p(R.string.UniqueGiftNotFoundBurned, xc.a0(U), R.raw.fire_on, 36);
+                        org.telegram.messenger.f0.p(R.string.UniqueGiftNotFoundBurned, yc.a0(U), R.raw.fire_on, 36);
                     }
                 } else {
                     x3 x3Var = new x3(this.b.getContext(), this.a, this.O.getDialogId(), this.c, null);
                     x3Var.i2(this.O, null);
                     x3Var.show();
                 }
-                ycVar.c(false);
-                ycVar2.c(false);
+                zcVar.c(false);
+                zcVar2.c(false);
                 return true;
             }
-            if (motionEvent.getAction() == 3 && (ycVar.h || ycVar2.h)) {
-                ycVar.c(false);
-                ycVar2.c(false);
+            if (motionEvent.getAction() == 3 && (zcVar.h || zcVar2.h)) {
+                zcVar.c(false);
+                zcVar2.c(false);
                 return true;
             }
         }
-        return ycVar.h || ycVar2.h;
+        return zcVar.h || zcVar2.h;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:26:0x0050  */
@@ -334,10 +334,10 @@ public final class z3 {
                     return;
                 }
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) tL_messageActionStarGiftUnique.gift;
-                this.k = (TL_stars.starGiftAttributeBackdrop) s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-                this.l = (TL_stars.starGiftAttributePattern) s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+                this.k = (TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                this.l = (TL_stars.starGiftAttributePattern) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
                 TL_stars.starGiftAttributeModel stargiftattributemodel = this.m;
-                this.m = (TL_stars.starGiftAttributeModel) s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+                this.m = (TL_stars.starGiftAttributeModel) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
                 this.h = null;
                 this.f.setShader(null);
                 TL_stars.starGiftAttributePattern stargiftattributepattern = this.l;

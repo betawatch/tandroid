@@ -9,15 +9,15 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ok;
 import org.telegram.ui.Components.ey;
 import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.uv;
+import org.telegram.ui.Components.vv;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.yx;
-import org.telegram.ui.kj0;
+import org.telegram.ui.lj0;
 import org.telegram.ui.np0;
 import org.telegram.ui.zh0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class r1 extends s4.n0 {
     public final /* synthetic */ int a;
@@ -57,8 +57,8 @@ public final class r1 extends s4.n0 {
                     break;
                 }
             case 2:
-                v vVar = ((uv) this.b).h;
-                if (!(view instanceof tv)) {
+                v vVar = ((vv) this.b).h;
+                if (!(view instanceof uv)) {
                     vVar.getClass();
                     if (RecyclerView.R(view) == 1) {
                         rect.top = AndroidUtilities.dp(14.0f);
@@ -115,9 +115,9 @@ public final class r1 extends s4.n0 {
                 super.a(rect, view, recyclerView, z0Var);
                 recyclerView.getClass();
                 int R = RecyclerView.R(view);
-                kj0 kj0Var = (kj0) this.b;
-                if (R == kj0Var.c0.size()) {
-                    rect.bottom = kj0Var.l0;
+                lj0 lj0Var = (lj0) this.b;
+                if (R == lj0Var.c0.size()) {
+                    rect.bottom = lj0Var.l0;
                     break;
                 }
                 break;

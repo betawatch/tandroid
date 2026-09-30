@@ -25,7 +25,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class w31 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public static boolean s;
@@ -68,7 +68,7 @@ public final class w31 extends org.telegram.ui.ActionBar.m2 implements Notificat
         LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
         String str = language.code;
         if (w31Var.r.contains(str)) {
-            Collection.-EL.removeIf(w31Var.r, new m80(str, 2));
+            Collection.-EL.removeIf(w31Var.r, new n80(str, 2));
         } else {
             w31Var.r.add(str);
         }

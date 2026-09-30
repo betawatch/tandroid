@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class ok {
     public static int A(float f7, int i10, int i11) {
@@ -109,12 +109,12 @@ public abstract /* synthetic */ class ok {
         textView.setTextSize(i11, f7);
     }
 
-    public static void o(int i10, org.telegram.ui.Components.xc xcVar) {
-        xcVar.i(LocaleController.getString(i10)).j();
+    public static void o(int i10, org.telegram.ui.Components.yc ycVar) {
+        ycVar.i(LocaleController.getString(i10)).j();
     }
 
-    public static void p(int i10, org.telegram.ui.Components.xc xcVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        xcVar.t(LocaleController.getString(i10), d6Var).j();
+    public static void p(int i10, org.telegram.ui.Components.yc ycVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        ycVar.t(LocaleController.getString(i10), d6Var).j();
     }
 
     public static void q(int i10, Object[] objArr, TextView textView) {

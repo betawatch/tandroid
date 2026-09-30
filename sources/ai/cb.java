@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.aj;
 import org.telegram.ui.al0;
 import org.telegram.ui.bt;
@@ -47,7 +47,7 @@ import org.telegram.ui.ms;
 import org.telegram.ui.p60;
 import org.telegram.ui.p70;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class cb implements Runnable {
     public final /* synthetic */ int a;
@@ -301,7 +301,7 @@ public final /* synthetic */ class cb implements Runnable {
                         UserConfig.getInstance(i15).setCurrentUser(user2);
                         UserConfig.getInstance(i15).saveConfig(true);
                         ajVar.run();
-                        xc.a0(b5Var.getLastFragment()).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new qg.v(i15, b5Var)), null).j();
+                        yc.a0(b5Var.getLastFragment()).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new qg.v(i15, b5Var)), null).j();
                         break;
                     }
                 }
@@ -317,12 +317,12 @@ public final /* synthetic */ class cb implements Runnable {
                     TLRPC.ChatInvite chatInvite = (TLRPC.ChatInvite) tLObject5;
                     TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
                     if (tL_starsSubscriptionPricing == null) {
-                        new xc(e3VarArr[0].topBulletinContainer, d6Var2).t(LocaleController.getString(R.string.UnknownError), null).k(false);
+                        new yc(e3VarArr[0].topBulletinContainer, d6Var2).t(LocaleController.getString(R.string.UnknownError), null).k(false);
                         break;
                     } else {
                         final long j3 = tL_starsSubscriptionPricing.amount;
                         final int i16 = this.b;
-                        yh.s5.y(i16, false).j0(tL_messages_checkChatInvite.hash, chatInvite, new Utilities.Callback2() { // from class: yh.q6
+                        yh.t5.y(i16, false).j0(tL_messages_checkChatInvite.hash, chatInvite, new Utilities.Callback2() { // from class: yh.q6
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj2, Object obj3) {
                                 Long l4 = (Long) obj3;
@@ -335,7 +335,7 @@ public final /* synthetic */ class cb implements Runnable {
                         break;
                     }
                 } else {
-                    new xc(e3VarArr[0].topBulletinContainer, d6Var2).t(LocaleController.getString(R.string.LinkHashExpired), null).k(false);
+                    new yc(e3VarArr[0].topBulletinContainer, d6Var2).t(LocaleController.getString(R.string.LinkHashExpired), null).k(false);
                     break;
                 }
         }

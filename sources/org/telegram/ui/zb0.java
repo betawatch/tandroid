@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class zb0 {
     public final LaunchActivity a;
@@ -46,9 +46,9 @@ public final class zb0 {
         this.d = z10;
     }
 
-    public static org.telegram.ui.Components.xc b() {
+    public static org.telegram.ui.Components.yc b() {
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-        return U == null ? org.telegram.ui.Components.xc.X() : org.telegram.ui.Components.xc.a0(U);
+        return U == null ? org.telegram.ui.Components.yc.X() : org.telegram.ui.Components.yc.a0(U);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:102:0x0144, code lost:
@@ -549,7 +549,7 @@ public final class zb0 {
             FiltersSetupActivity filtersSetupActivity = new FiltersSetupActivity();
             m(new FiltersSetupActivity());
             if ("create".equalsIgnoreCase(str2)) {
-                AndroidUtilities.runOnUIThread(new n80(12, this, filtersSetupActivity), 300L);
+                AndroidUtilities.runOnUIThread(new m80(13, this, filtersSetupActivity), 300L);
             }
             if ("show-tags".equalsIgnoreCase(str2)) {
                 o("showTagsRow");
@@ -1179,7 +1179,7 @@ public final class zb0 {
                                         return true;
                                     }
                                     if ("gift".equalsIgnoreCase(str2)) {
-                                        yh.s5.w(i13).u();
+                                        yh.t5.w(i13).u();
                                         tg.m1.e0(1, BirthdayController.getInstance(i13).getState());
                                         return true;
                                     }

@@ -22,7 +22,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class kn0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -84,7 +84,7 @@ public final class kn0 extends FrameLayout implements NotificationCenter.Notific
         jVar.m = false;
         w0Var.setItemAnimator(jVar);
         w0Var.setOnItemClickListener(new dn0(this, i10, 0));
-        w0Var.setOnItemLongClickListener(new nv(this, 17));
+        w0Var.setOnItemLongClickListener(new ov(this, 17));
         this.N = new dl0(w0Var, true);
         v00 v00Var = new v00(getContext(), null);
         addView(v00Var);
@@ -160,7 +160,7 @@ public final class kn0 extends FrameLayout implements NotificationCenter.Notific
         if (m2Var.hasStoryViewer()) {
             return;
         }
-        qc M = xc.a0(m2Var).M(LocaleController.getString(z10 ? R.string.UploadSpeedLimited : R.string.DownloadSpeedLimited), AndroidUtilities.replaceCharSequence("%d", AndroidUtilities.premiumText(LocaleController.getString(z10 ? R.string.UploadSpeedLimitedMessage : R.string.DownloadSpeedLimitedMessage), new bi.f(28, this, z10)), spannableString), R.raw.speed_limit);
+        qc M = yc.a0(m2Var).M(LocaleController.getString(z10 ? R.string.UploadSpeedLimited : R.string.DownloadSpeedLimited), AndroidUtilities.replaceCharSequence("%d", AndroidUtilities.premiumText(LocaleController.getString(z10 ? R.string.UploadSpeedLimitedMessage : R.string.DownloadSpeedLimitedMessage), new bi.f(28, this, z10)), spannableString), R.raw.speed_limit);
         M.j = 8000;
         M.k(false);
     }

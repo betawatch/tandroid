@@ -1,33 +1,347 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.os.SystemClock;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qv implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rv b;
+public final class qv extends FrameLayout {
+    public final p90 a;
+    public final TextView b;
+    public final TextView c;
+    public final TextView d;
+    public final rg.p0 e;
+    public final org.telegram.ui.ActionBar.u0 f;
+    public final boolean h;
+    public final ai.y3 n;
+    public TLRPC.TL_messages_stickerSet r;
+    public boolean s;
+    public float v;
+    public ValueAnimator w;
+    public final /* synthetic */ vv x;
 
-    public /* synthetic */ qv(rv rvVar, int i10) {
-        this.a = i10;
-        this.b = rvVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qv(vv vvVar, Context context, boolean z10) {
+        super(context);
+        float f7;
+        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.d6 d6Var2;
+        org.telegram.ui.ActionBar.d6 d6Var3;
+        int i10;
+        int i11;
+        float f10;
+        float f11;
+        org.telegram.ui.ActionBar.d6 d6Var4;
+        this.x = vvVar;
+        this.n = new ai.y3(this, 5);
+        final int i12 = 0;
+        this.s = false;
+        this.v = 0.0f;
+        this.h = z10;
+        final int i13 = 2;
+        final int i14 = 1;
+        if (z10) {
+            f7 = 32.0f;
+        } else {
+            i11 = ((org.telegram.ui.ActionBar.e3) vvVar).currentAccount;
+            float f12 = 8.0f;
+            if (UserConfig.getInstance(i11).isPremium()) {
+                f10 = 28.0f;
+                f11 = 16.0f;
+            } else {
+                f11 = 16.0f;
+                int dp = AndroidUtilities.dp(4.0f);
+                f10 = 28.0f;
+                d6Var4 = ((org.telegram.ui.ActionBar.e3) vvVar).resourcesProvider;
+                rg.p0 p0Var = new rg.p0(dp, context, d6Var4, false);
+                this.e = p0Var;
+                p0Var.a(LocaleController.getString(R.string.Unlock), new View.OnClickListener(this) { // from class: org.telegram.ui.Components.nv
+                    public final /* synthetic */ qv b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        int i15 = i12;
+                        qv qvVar = this.b;
+                        switch (i15) {
+                            case 0:
+                                vv vvVar2 = qvVar.x;
+                                vvVar2.Q = SystemClock.elapsedRealtime();
+                                vvVar2.Z();
+                                break;
+                            case 1:
+                                vv.W(qvVar.n, qvVar.r, true, null, null);
+                                qvVar.a(true, true);
+                                break;
+                            case 2:
+                                ai.y3 y3Var = qvVar.n;
+                                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = qvVar.r;
+                                zp zpVar = new zp(qvVar, 12);
+                                Pattern pattern = vv.V;
+                                if (y3Var != null && tL_messages_stickerSet != null && y3Var.getFragmentView() != null) {
+                                    MediaDataController.getInstance(y3Var.getCurrentAccount()).toggleStickerSet(y3Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, y3Var, true, true, zpVar, true);
+                                }
+                                qvVar.a(false, true);
+                                break;
+                            default:
+                                qvVar.f.M(null, null);
+                                break;
+                        }
+                    }
+                }, false);
+                p0Var.setIcon(R.raw.unlock_icon);
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) p0Var.getIconView().getLayoutParams();
+                marginLayoutParams.leftMargin = AndroidUtilities.dp(1.0f);
+                marginLayoutParams.topMargin = AndroidUtilities.dp(1.0f);
+                int dp2 = AndroidUtilities.dp(20.0f);
+                marginLayoutParams.height = dp2;
+                marginLayoutParams.width = dp2;
+                ((ViewGroup.MarginLayoutParams) p0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
+                p0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+                addView(p0Var, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+                p0Var.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
+                f12 = (AndroidUtilities.dp(16.0f) + p0Var.getMeasuredWidth()) / AndroidUtilities.density;
+            }
+            TextView textView = new TextView(context);
+            this.c = textView;
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setTextColor(vvVar.getThemedColor(org.telegram.ui.ActionBar.h6.Sh));
+            int i15 = org.telegram.ui.ActionBar.h6.Oh;
+            textView.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{14.0f}, vvVar.getThemedColor(i15)));
+            textView.setPadding(org.telegram.ui.Cells.c1.c(18.0f, R.string.Add, textView), 0, AndroidUtilities.dp(18.0f), 0);
+            textView.setGravity(17);
+            textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.nv
+                public final /* synthetic */ qv b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    int i152 = i14;
+                    qv qvVar = this.b;
+                    switch (i152) {
+                        case 0:
+                            vv vvVar2 = qvVar.x;
+                            vvVar2.Q = SystemClock.elapsedRealtime();
+                            vvVar2.Z();
+                            break;
+                        case 1:
+                            vv.W(qvVar.n, qvVar.r, true, null, null);
+                            qvVar.a(true, true);
+                            break;
+                        case 2:
+                            ai.y3 y3Var = qvVar.n;
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = qvVar.r;
+                            zp zpVar = new zp(qvVar, 12);
+                            Pattern pattern = vv.V;
+                            if (y3Var != null && tL_messages_stickerSet != null && y3Var.getFragmentView() != null) {
+                                MediaDataController.getInstance(y3Var.getCurrentAccount()).toggleStickerSet(y3Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, y3Var, true, true, zpVar, true);
+                            }
+                            qvVar.a(false, true);
+                            break;
+                        default:
+                            qvVar.f.M(null, null);
+                            break;
+                    }
+                }
+            });
+            addView(textView, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+            textView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f10), TLObject.FLAG_30));
+            float max = Math.max(f12, (AndroidUtilities.dp(f11) + textView.getMeasuredWidth()) / AndroidUtilities.density);
+            TextView textView2 = new TextView(context);
+            this.d = textView2;
+            textView2.setTypeface(AndroidUtilities.bold());
+            textView2.setTextColor(vvVar.getThemedColor(i15));
+            textView2.setBackground(org.telegram.ui.ActionBar.h6.Y(vvVar.getThemedColor(i15) & 268435455, 4, 4));
+            textView2.setPadding(org.telegram.ui.Cells.c1.c(12.0f, R.string.StickersRemove, textView2), 0, AndroidUtilities.dp(12.0f), 0);
+            textView2.setGravity(17);
+            textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.nv
+                public final /* synthetic */ qv b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    int i152 = i13;
+                    qv qvVar = this.b;
+                    switch (i152) {
+                        case 0:
+                            vv vvVar2 = qvVar.x;
+                            vvVar2.Q = SystemClock.elapsedRealtime();
+                            vvVar2.Z();
+                            break;
+                        case 1:
+                            vv.W(qvVar.n, qvVar.r, true, null, null);
+                            qvVar.a(true, true);
+                            break;
+                        case 2:
+                            ai.y3 y3Var = qvVar.n;
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = qvVar.r;
+                            zp zpVar = new zp(qvVar, 12);
+                            Pattern pattern = vv.V;
+                            if (y3Var != null && tL_messages_stickerSet != null && y3Var.getFragmentView() != null) {
+                                MediaDataController.getInstance(y3Var.getCurrentAccount()).toggleStickerSet(y3Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, y3Var, true, true, zpVar, true);
+                            }
+                            qvVar.a(false, true);
+                            break;
+                        default:
+                            qvVar.f.M(null, null);
+                            break;
+                    }
+                }
+            });
+            textView2.setClickable(false);
+            addView(textView2, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+            textView2.setScaleX(0.0f);
+            textView2.setScaleY(0.0f);
+            textView2.setAlpha(0.0f);
+            textView2.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f10), TLObject.FLAG_30));
+            f7 = Math.max(max, (AndroidUtilities.dp(f11) + textView2.getMeasuredWidth()) / AndroidUtilities.density);
+        }
+        d6Var = ((org.telegram.ui.ActionBar.e3) vvVar).resourcesProvider;
+        p90 p90Var = new p90(context, d6Var);
+        this.a = p90Var;
+        p90Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
+        p90Var.setTypeface(AndroidUtilities.bold());
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        p90Var.setEllipsize(truncateAt);
+        p90Var.setSingleLine(true);
+        p90Var.setLines(1);
+        int i16 = org.telegram.ui.ActionBar.h6.J6;
+        d6Var2 = ((org.telegram.ui.ActionBar.e3) vvVar).resourcesProvider;
+        p90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(i16, d6Var2));
+        p90Var.setTextColor(vvVar.getThemedColor(org.telegram.ui.ActionBar.h6.j5));
+        if (z10) {
+            p90Var.setTextSize(1, 20.0f);
+            addView(p90Var, w7.y5.i(-1.0f, -2.0f, 8388659, 12.0f, 11.0f, f7, 0.0f));
+        } else {
+            p90Var.setTextSize(1, 17.0f);
+            addView(p90Var, w7.y5.i(-1.0f, -2.0f, 8388659, 6.0f, 10.0f, f7, 0.0f));
+        }
+        if (!z10) {
+            TextView textView3 = new TextView(context);
+            this.b = textView3;
+            textView3.setTextSize(1, 13.0f);
+            textView3.setTextColor(vvVar.getThemedColor(org.telegram.ui.ActionBar.h6.q5));
+            textView3.setEllipsize(truncateAt);
+            textView3.setSingleLine(true);
+            textView3.setLines(1);
+            addView(textView3, w7.y5.i(-1.0f, -2.0f, 8388659, 8.0f, 31.66f, f7, 0.0f));
+        }
+        if (z10) {
+            int themedColor = vvVar.getThemedColor(org.telegram.ui.ActionBar.h6.Ji);
+            d6Var3 = ((org.telegram.ui.ActionBar.e3) vvVar).resourcesProvider;
+            org.telegram.ui.ActionBar.u0 u0Var = new org.telegram.ui.ActionBar.u0(context, null, 0, themedColor, false, d6Var3);
+            this.f = u0Var;
+            u0Var.setLongClickEnabled(false);
+            u0Var.setSubMenuOpenSide(2);
+            u0Var.setIcon(R.drawable.ic_ab_other);
+            u0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(vvVar.getThemedColor(org.telegram.ui.ActionBar.h6.Ni), 1, -1));
+            i10 = ((org.telegram.ui.ActionBar.e3) vvVar).backgroundPaddingLeft;
+            addView(u0Var, w7.y5.d(40, 40.0f, 53, 0.0f, 5.0f, 5.0f - (i10 / AndroidUtilities.density), 0.0f));
+            u0Var.e(1, R.drawable.msg_share, LocaleController.getString(R.string.StickersShare));
+            u0Var.e(2, R.drawable.msg_link, LocaleController.getString(R.string.CopyLink));
+            final int i17 = 3;
+            u0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.nv
+                public final /* synthetic */ qv b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    int i152 = i17;
+                    qv qvVar = this.b;
+                    switch (i152) {
+                        case 0:
+                            vv vvVar2 = qvVar.x;
+                            vvVar2.Q = SystemClock.elapsedRealtime();
+                            vvVar2.Z();
+                            break;
+                        case 1:
+                            vv.W(qvVar.n, qvVar.r, true, null, null);
+                            qvVar.a(true, true);
+                            break;
+                        case 2:
+                            ai.y3 y3Var = qvVar.n;
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = qvVar.r;
+                            zp zpVar = new zp(qvVar, 12);
+                            Pattern pattern = vv.V;
+                            if (y3Var != null && tL_messages_stickerSet != null && y3Var.getFragmentView() != null) {
+                                MediaDataController.getInstance(y3Var.getCurrentAccount()).toggleStickerSet(y3Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, y3Var, true, true, zpVar, true);
+                            }
+                            qvVar.a(false, true);
+                            break;
+                        default:
+                            qvVar.f.M(null, null);
+                            break;
+                    }
+                }
+            });
+            u0Var.setDelegate(new ov(vvVar, 0));
+            u0Var.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.f.dismiss();
-                break;
-            default:
-                uv uvVar = this.b.f;
-                uvVar.dismiss();
-                org.telegram.ui.ActionBar.m2 m2Var = uvVar.c;
-                if (m2Var != null && m2Var.getParentActivity() != null) {
-                    org.telegram.messenger.ok.p(R.string.AddEmojiNotFound, xc.a0(m2Var), null);
-                    break;
-                }
-                break;
+    public final void a(boolean z10, boolean z11) {
+        TextView textView;
+        if (this.s == z10) {
+            return;
         }
+        this.s = z10;
+        ValueAnimator valueAnimator = this.w;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.w = null;
+        }
+        TextView textView2 = this.c;
+        if (textView2 == null || (textView = this.d) == null) {
+            return;
+        }
+        textView2.setClickable(!z10);
+        textView.setClickable(z10);
+        if (z11) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.v, z10 ? 1.0f : 0.0f);
+            this.w = ofFloat;
+            ofFloat.addUpdateListener(new k6(this, 18));
+            this.w.setInterpolator(sr.h);
+            this.w.setDuration(250L);
+            this.w.start();
+            return;
+        }
+        this.v = z10 ? 1.0f : 0.0f;
+        textView2.setScaleX(z10 ? 0.0f : 1.0f);
+        textView2.setScaleY(z10 ? 0.0f : 1.0f);
+        textView2.setAlpha(z10 ? 0.0f : 1.0f);
+        textView.setScaleX(z10 ? 1.0f : 0.0f);
+        textView.setScaleY(z10 ? 1.0f : 0.0f);
+        textView.setAlpha(z10 ? 1.0f : 0.0f);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.h ? 42.0f : 56.0f), TLObject.FLAG_30));
     }
 }

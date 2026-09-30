@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ty0 {
     public final int a;
@@ -23,7 +23,7 @@ public final class ty0 {
     public v01 j;
     public final RectF k = new RectF();
     public final Paint l = new Paint(1);
-    public final yc m;
+    public final zc m;
 
     public ty0(int i10, org.telegram.ui.Cells.w0 w0Var, org.telegram.ui.ActionBar.d6 d6Var) {
         this.a = i10;
@@ -32,7 +32,7 @@ public final class ty0 {
         kj0 kj0Var = new kj0(R.raw.cake, AndroidUtilities.dp(66.0f), AndroidUtilities.dp(66.0f), true, null);
         this.d = kj0Var;
         kj0Var.H(false);
-        this.m = new yc(w0Var);
+        this.m = new zc(w0Var);
     }
 
     public final void a(Canvas canvas) {

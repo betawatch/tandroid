@@ -17,7 +17,7 @@ import org.telegram.ui.Components.wj;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -245,14 +245,14 @@ public final /* synthetic */ class i0 implements Runnable {
                 if (!wiVar.F || wiVar.G) {
                     i11 = i14;
                 } else {
-                    PhotoViewer.t1().J2(null, m2Var, null);
+                    PhotoViewer.t1().K2(null, m2Var, null);
                     PhotoViewer t12 = PhotoViewer.t1();
                     t12.h = 0;
                     t12.n = false;
                     i11 = 3;
                 }
-                PhotoViewer.t1().f2(arrayList6, this.c, wiVar.H ? 13 : i11, false, chatAttachAlertPhotoLayout.h1, wiVar.H ? null : wnVar);
-                PhotoViewer.t1().w2(wiVar.Q);
+                PhotoViewer.t1().g2(arrayList6, this.c, wiVar.H ? 13 : i11, false, chatAttachAlertPhotoLayout.h1, wiVar.H ? null : wnVar);
+                PhotoViewer.t1().x2(wiVar.Q);
                 if (wiVar.F && !wiVar.G) {
                     PhotoViewer.t1().O = false;
                 } else if (wiVar.Q0 != 0) {
@@ -267,8 +267,8 @@ public final /* synthetic */ class i0 implements Runnable {
                     Editable text = wiVar.m1().getText();
                     t13.p7 = true;
                     t13.q7 = text;
-                    t13.z2(null, text, false, false);
-                    t13.s3(null);
+                    t13.A2(null, text, false, false);
+                    t13.t3(null);
                     break;
                 }
                 break;

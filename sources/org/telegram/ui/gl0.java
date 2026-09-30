@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class gl0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.e1 a;
@@ -22,7 +22,7 @@ public final class gl0 extends org.telegram.ui.ActionBar.j {
         }
         if (i10 == 1) {
             passcodeActivity.y = passcodeActivity.y != 0 ? 0 : 1;
-            AndroidUtilities.runOnUIThread(new sj0(5, this, this.a), 150L);
+            AndroidUtilities.runOnUIThread(new xi0(6, this, this.a), 150L);
             passcodeActivity.h.setText("");
             for (as asVar : passcodeActivity.n.f) {
                 asVar.setText("");

@@ -8,11 +8,11 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.QuickAckDelegate;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.mj0;
+import org.telegram.ui.nj0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, RequestTimeDelegate, MessagesController.ErrorDelegate, mj0, QuickAckDelegate {
+public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, RequestTimeDelegate, MessagesController.ErrorDelegate, nj0, QuickAckDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -23,7 +23,7 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, Re
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.mj0
+    @Override // org.telegram.ui.nj0
     public void b(Canvas canvas) {
         ((RichMessageLayout.RichThinkingBlock) this.b).lambda$onDrawFaded$0((View) this.c, canvas);
     }
@@ -47,7 +47,7 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, Re
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j3) {
-        AndroidUtilities.lambda$showProxyAlert$18((boolean[]) this.b, (org.telegram.ui.Components.zc[]) this.c, j3);
+        AndroidUtilities.lambda$showProxyAlert$18((boolean[]) this.b, (org.telegram.ui.Components.ad[]) this.c, j3);
     }
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate

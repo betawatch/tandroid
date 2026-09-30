@@ -95,10 +95,10 @@ import org.telegram.ui.Components.ty0;
 import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.x40;
-import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.yt;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ak;
@@ -109,7 +109,7 @@ import org.telegram.ui.qo;
 import org.telegram.ui.ub;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class w0 extends a0 implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate, o4 {
     public static final HashMap k2;
@@ -222,7 +222,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
     public int l1;
     public boolean m0;
     public int m1;
-    public final yc n;
+    public final zc n;
     public q21 n0;
     public int n1;
     public final RectF o0;
@@ -637,7 +637,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                 if (U == null) {
                     return;
                 }
-                org.telegram.messenger.f0.p(R.string.UniqueGiftNotFoundBurned, xc.a0(U), R.raw.fire_on, 36);
+                org.telegram.messenger.f0.p(R.string.UniqueGiftNotFoundBurned, yc.a0(U), R.raw.fire_on, 36);
                 return;
             }
         }
@@ -960,8 +960,8 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                                 if (this.K0 == null) {
                                     this.K0 = new xh.f1(this, this.Y0, false);
                                 }
-                                this.K0.d((TL_stars.starGiftAttributeBackdrop) yh.s5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                                this.K0.e((TL_stars.starGiftAttributePattern) yh.s5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
+                                this.K0.d((TL_stars.starGiftAttributeBackdrop) yh.t5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                                this.K0.e((TL_stars.starGiftAttributePattern) yh.t5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
                             } else {
                                 document5 = null;
                             }
@@ -979,8 +979,8 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                                 if (this.K0 == null) {
                                     this.K0 = new xh.f1(this, this.Y0, false);
                                 }
-                                this.K0.d((TL_stars.starGiftAttributeBackdrop) yh.s5.l(starGift2.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                                this.K0.e((TL_stars.starGiftAttributePattern) yh.s5.l(starGift2.attributes, TL_stars.starGiftAttributePattern.class));
+                                this.K0.d((TL_stars.starGiftAttributeBackdrop) yh.t5.l(starGift2.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                                this.K0.e((TL_stars.starGiftAttributePattern) yh.t5.l(starGift2.attributes, TL_stars.starGiftAttributePattern.class));
                             } else {
                                 document4 = null;
                             }
@@ -1343,7 +1343,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                             this.I.setImageBitmap(this.L);
                         }
                     }
-                    this.I.setVisible(!PhotoViewer.M1(messageObject3), false);
+                    this.I.setVisible(!PhotoViewer.N1(messageObject3), false);
                 } else {
                     this.I.setAllowStartLottieAnimation(true);
                     this.I.setDelegate(null);
@@ -3035,21 +3035,21 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
         }
         ty0 ty0Var = this.G0;
         if (ty0Var != null) {
-            yc ycVar = ty0Var.m;
+            zc zcVar = ty0Var.m;
             boolean contains = ty0Var.k.contains(motionEvent.getX(), motionEvent.getY());
             if (motionEvent.getAction() == 0) {
-                ycVar.c(contains);
+                zcVar.c(contains);
             } else if (motionEvent.getAction() != 2) {
                 if (motionEvent.getAction() == 1) {
-                    if (ycVar.h) {
+                    if (zcVar.h) {
                         ty0Var.b();
                     }
-                    ycVar.c(false);
+                    zcVar.c(false);
                 } else if (motionEvent.getAction() == 3) {
-                    ycVar.c(false);
+                    zcVar.c(false);
                 }
             }
-            if (ycVar.h) {
+            if (zcVar.h) {
                 return true;
             }
         }
@@ -3063,7 +3063,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
         ImageReceiver imageReceiver = this.I;
         int i13 = this.H;
         View view = this.L1;
-        yc ycVar2 = this.n;
+        zc zcVar2 = this.n;
         if (action == 0) {
             if (this.X0 != null) {
                 if ((messageObject3.type == 11 || L(messageObject3)) && imageReceiver.isInsideImage(x10, y3)) {
@@ -3093,7 +3093,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                             z16 = true;
                             this.a0 = true;
                             view.setPressed(true);
-                            ycVar2.c(true);
+                            zcVar2.c(true);
                             z15 = true;
                         }
                         if (!z15 && M()) {
@@ -3154,7 +3154,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                     if (action2 == 1) {
                         this.E = false;
                         view.setPressed(false);
-                        ycVar2.c(false);
+                        zcVar2.c(false);
                         if (this.X0 == null || messageObject3.replyMessageObject == null || (message = messageObject3.messageOwner) == null || !zf.d.g(message.action, TLRPC.TL_messageActionTodoAppendTasks.class, TLRPC.TL_messageActionTodoCompletions.class, TLRPC.TL_messageActionSuggestedPostApproval.class, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class)) {
                             if (this.g1 && !this.f1 && (u0Var2 = this.k1) != null) {
                                 int height = ((StaticLayout) u0Var2.f).getHeight() - this.h1;
@@ -3192,7 +3192,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                         z10 = true;
                     } else if (action2 == 3) {
                         this.E = false;
-                        ycVar2.c(false);
+                        zcVar2.c(false);
                     }
                 } else if (this.a0) {
                     int action3 = motionEvent.getAction();
@@ -3200,7 +3200,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                         this.W = false;
                         this.a0 = false;
                         view.setPressed(false);
-                        ycVar2.c(false);
+                        zcVar2.c(false);
                         if (this.X0 != null) {
                             int i14 = messageObject3.type;
                             if (i14 == 37) {
@@ -3250,12 +3250,12 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                             this.W = false;
                             this.a0 = false;
                             view.setPressed(false);
-                            ycVar2.c(false);
+                            zcVar2.c(false);
                         }
                     } else if (!L(messageObject3) || (!rectF.contains(x10, y3) && !this.E1.contains(x10, y3))) {
                         this.a0 = false;
                         view.setPressed(false);
-                        ycVar2.c(false);
+                        zcVar2.c(false);
                     }
                 } else if (this.W) {
                     int action4 = motionEvent.getAction();
@@ -3472,9 +3472,9 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                                         frameLayout.setClipToPadding(false);
                                         b01 b01Var = new b01(context, d6Var);
                                         frameLayout.addView(b01Var, w7.y5.e(-1, -1, 119));
-                                        yh.x3.q1(b01Var, yh.s5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class));
-                                        yh.x3.q1(b01Var, yh.s5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                                        yh.x3.q1(b01Var, yh.s5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
+                                        yh.x3.q1(b01Var, yh.t5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class));
+                                        yh.x3.q1(b01Var, yh.t5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                                        yh.x3.q1(b01Var, yh.t5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
                                         f16.addView(frameLayout, w7.y5.t(-1, -2, 48, 23, 16, 23, 4));
                                         zf.a j10 = zf.a.j(starGift.value_usd_amount / Math.pow(10.0d, BillingController.getInstance().getCurrencyExp("USD")), bVar2);
                                         if (j10.c() > 0.0d && starGift.value_usd_amount > j3) {
@@ -4970,7 +4970,7 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
 
     public w0(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
         super(context);
-        this.n = new yc(this);
+        this.n = new zc(this);
         int i10 = UserConfig.selectedAccount;
         this.H = i10;
         ai.ca caVar = new ai.ca(null, false);

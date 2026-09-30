@@ -55,10 +55,10 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h5 implements Runnable {
     public final /* synthetic */ int a;
@@ -666,7 +666,7 @@ public final /* synthetic */ class h5 implements Runnable {
                     c10 = 0;
                 } else {
                     c10 = 0;
-                    xc.a0(U).d0(tL_error, false);
+                    yc.a0(U).d0(tL_error, false);
                 }
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(x8Var.a);
                 int i14 = NotificationCenter.storyAlbumsCollectionsUpdate;
@@ -1079,7 +1079,7 @@ public final /* synthetic */ class h5 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
                 AndroidUtilities.addToClipboard(connectedbotstarref.url);
-                new xc(e3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
+                new yc(e3Var2.topBulletinContainer, d6Var2).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, ei.l.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
                 return;
             case 9:
                 ei.e4.x0((ei.e4) this.b, (Context) this.c, (TLRPC.User) this.d, (TL_payments.connectedBotStarRef) this.e);

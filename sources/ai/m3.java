@@ -42,8 +42,8 @@ import org.telegram.ui.Components.hy0;
 import org.telegram.ui.Components.m31;
 import org.telegram.ui.Components.or;
 import org.telegram.ui.Components.ty0;
-import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y81;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -59,7 +59,7 @@ import org.telegram.ui.qy;
 import org.telegram.ui.ro;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a;
@@ -186,9 +186,9 @@ public final /* synthetic */ class m3 implements Runnable {
                     MessagesController.getInstance(e6Var2.C2).getStoriesController().p0(storyItem.dialogId, storyItem, true);
                     e6Var2.b4 = true;
                     if (i17 == 4) {
-                        new xc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.getString("StorySharedToEveryone")).j();
+                        new yc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.getString("StorySharedToEveryone")).j();
                     } else if (i17 == 1) {
-                        new xc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.getString("StorySharedToCloseFriends")).j();
+                        new yc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.getString("StorySharedToCloseFriends")).j();
                     } else if (i17 != 2) {
                         if (i17 == 3) {
                             HashSet hashSet = new HashSet();
@@ -198,17 +198,17 @@ public final /* synthetic */ class m3 implements Runnable {
                                 hashSet.addAll((ArrayList) it.next());
                             }
                             z10 = false;
-                            new xc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.formatPluralString("StorySharedToContacts", hashSet.size(), new Object[0])).j();
+                            new yc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.formatPluralString("StorySharedToContacts", hashSet.size(), new Object[0])).j();
                             e6Var2.f1(z10);
                             break;
                         }
                     } else if (arrayList3.isEmpty()) {
-                        new xc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.getString("StorySharedToAllContacts")).j();
+                        new yc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.getString("StorySharedToAllContacts")).j();
                     } else {
-                        new xc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.formatPluralString("StorySharedToAllContactsExcluded", arrayList3.size(), new Object[0])).j();
+                        new yc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.formatPluralString("StorySharedToAllContactsExcluded", arrayList3.size(), new Object[0])).j();
                     }
                 } else {
-                    org.telegram.messenger.f0.p(R.string.UnknownError, new xc(a5Var, d6Var2), R.raw.error, 36);
+                    org.telegram.messenger.f0.p(R.string.UnknownError, new yc(a5Var, d6Var2), R.raw.error, 36);
                 }
                 z10 = false;
                 e6Var2.f1(z10);
@@ -285,7 +285,7 @@ public final /* synthetic */ class m3 implements Runnable {
                 arrayList5.add(user);
                 k7 k7Var = s6Var.b;
                 ContactsController.getInstance(k7Var.v).deleteContact(arrayList5, false);
-                hg.c.q(R.string.DeletedFromYourContacts, new Object[]{str2}, new xc(k7Var, k7Var.s), R.raw.ic_ban, 36);
+                hg.c.q(R.string.DeletedFromYourContacts, new Object[]{str2}, new yc(k7Var, k7Var.s), R.raw.ic_ban, 36);
                 o6Var.a(k7Var.d(storyView) ? 1.0f : 0.5f, true);
                 break;
             case 4:
@@ -307,7 +307,7 @@ public final /* synthetic */ class m3 implements Runnable {
                 } else if (tL_error2 != null) {
                     org.telegram.ui.ActionBar.c3 c3Var = faVar.container;
                     d6Var = ((org.telegram.ui.ActionBar.e3) faVar).resourcesProvider;
-                    new xc(c3Var, d6Var).d0(tL_error2, true);
+                    new yc(c3Var, d6Var).d0(tL_error2, true);
                     break;
                 }
                 break;
@@ -517,7 +517,7 @@ public final /* synthetic */ class m3 implements Runnable {
                         org.telegram.ui.ub.A0(ubVar, tL_messages_exportedChatInvite, ubVar.z0);
                         break;
                     } else {
-                        org.telegram.messenger.f0.p(R.string.LinkHashExpired, xc.a0(ubVar), R.raw.linkbroken, 36);
+                        org.telegram.messenger.f0.p(R.string.LinkHashExpired, yc.a0(ubVar), R.raw.linkbroken, 36);
                         break;
                     }
                 }
@@ -536,7 +536,7 @@ public final /* synthetic */ class m3 implements Runnable {
                             break;
                         } else {
                             adVar.P.setLoading(false);
-                            hg.c.q(R.string.UnknownErrorCode, new Object[]{tL_error5.text}, xc.a0(adVar), R.raw.error, 36);
+                            hg.c.q(R.string.UnknownErrorCode, new Object[]{tL_error5.text}, yc.a0(adVar), R.raw.error, 36);
                             break;
                         }
                     } else {
@@ -549,7 +549,7 @@ public final /* synthetic */ class m3 implements Runnable {
                                 if (m2Var instanceof ro) {
                                     ((ro) m2Var).o0();
                                 }
-                                org.telegram.messenger.f0.p(adVar.d ? R.string.GroupAppearanceUpdated : R.string.ChannelAppearanceUpdated, xc.a0(adVar.l0), R.raw.contact_check, 36);
+                                org.telegram.messenger.f0.p(adVar.d ? R.string.GroupAppearanceUpdated : R.string.ChannelAppearanceUpdated, yc.a0(adVar.l0), R.raw.contact_check, 36);
                                 adVar.l0 = null;
                             }
                             adVar.P.setLoading(false);
@@ -750,7 +750,7 @@ public final /* synthetic */ class m3 implements Runnable {
                 org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null) {
                     if (tLObject8 instanceof TLRPC.TL_boolTrue) {
-                        org.telegram.ui.Components.qc M = xc.a0(U).M(LocaleController.getString(R.string.PrivacyBirthdaySetDone), LocaleController.getString(R.string.PrivacyBirthdaySetDoneInfo), R.raw.gift);
+                        org.telegram.ui.Components.qc M = yc.a0(U).M(LocaleController.getString(R.string.PrivacyBirthdaySetDone), LocaleController.getString(R.string.PrivacyBirthdaySetDoneInfo), R.raw.gift);
                         M.j = 5000;
                         M.j();
                         break;
@@ -771,7 +771,7 @@ public final /* synthetic */ class m3 implements Runnable {
                             org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
                             break;
                         } else {
-                            org.telegram.messenger.f0.p(R.string.UnknownError, xc.a0(U), R.raw.error, 36);
+                            org.telegram.messenger.f0.p(R.string.UnknownError, yc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }
@@ -787,8 +787,8 @@ public final /* synthetic */ class m3 implements Runnable {
                 if (messagesController.isDialogMuted(m31Var.c, tL_forumTopic.id)) {
                     a80Var.u();
                     NotificationsController.getInstance(m31Var.b).muteDialog(m31Var.c, tL_forumTopic.id, false);
-                    if (xc.a(wnVar3)) {
-                        xc.z(wnVar3, 4, 0, m31Var.d).j();
+                    if (yc.a(wnVar3)) {
+                        yc.z(wnVar3, 4, 0, m31Var.d).j();
                         break;
                     }
                 } else {

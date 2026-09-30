@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class z51 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ a71 c;
@@ -503,7 +503,7 @@ public final class z51 extends org.telegram.ui.Components.xl0 {
                 j61Var3.e = new org.telegram.ui.Components.z5(document3, (Paint.FontMetricsInt) null);
                 j61Var3.d = document3;
                 j61Var3.v = tL_starGiftUnique;
-                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) yh.s5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) yh.t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
                 if (stargiftattributebackdrop != null) {
                     j61Var3.w = Integer.valueOf(stargiftattributebackdrop.pattern_color | (-1879048192));
                 }

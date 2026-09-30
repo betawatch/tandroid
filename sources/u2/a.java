@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public abstract class a {
     public final ArrayList a = new ArrayList(1);
@@ -119,13 +119,13 @@ public abstract class a {
         }
     }
 
-    public final void s(j0 j0Var) {
+    public final void s(k0 k0Var) {
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.c.d;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
-            i0 i0Var = (i0) it.next();
-            if (i0Var.b == j0Var) {
-                copyOnWriteArrayList.remove(i0Var);
+            j0 j0Var = (j0) it.next();
+            if (j0Var.b == k0Var) {
+                copyOnWriteArrayList.remove(j0Var);
             }
         }
     }

@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lv implements Runnable {
     public final /* synthetic */ int a;
@@ -154,7 +154,7 @@ public final /* synthetic */ class lv implements Runnable {
                                 int i13 = iArr[1];
                                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), null, null, null, Boolean.TRUE);
                             }
-                            org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(qyVar10);
+                            org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(qyVar10);
                             lv lvVar = new lv(qyVar10, 26);
                             i10 = org.telegram.ui.ActionBar.h6.o;
                             if (i10 == 0) {
@@ -181,7 +181,7 @@ public final /* synthetic */ class lv implements Runnable {
                     u0Var = qyVar10.k0;
                     if (u0Var != null) {
                     }
-                    org.telegram.ui.Components.xc a022 = org.telegram.ui.Components.xc.a0(qyVar10);
+                    org.telegram.ui.Components.yc a022 = org.telegram.ui.Components.yc.a0(qyVar10);
                     lv lvVar2 = new lv(qyVar10, 26);
                     i10 = org.telegram.ui.ActionBar.h6.o;
                     if (i10 == 0) {

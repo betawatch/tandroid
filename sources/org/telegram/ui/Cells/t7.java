@@ -43,7 +43,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.fd;
+import org.telegram.ui.Components.gd;
 import org.telegram.ui.Components.np0;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.rq;
@@ -52,7 +52,7 @@ import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.v01;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class t7 extends FrameLayout {
     public static long E0;
@@ -112,7 +112,7 @@ public class t7 extends FrameLayout {
     public final Paint t0;
     public final org.telegram.ui.Components.e6 u0;
     public t7 v;
-    public fd v0;
+    public gd v0;
     public float w;
     public boolean w0;
     public float x;
@@ -384,7 +384,7 @@ public class t7 extends FrameLayout {
         }
         CheckBoxBase checkBoxBase = this.P;
         s7 s7Var = this.Q;
-        if (((checkBoxBase == null || !checkBoxBase.q) && !PhotoViewer.M1(this.n)) || this.w0) {
+        if (((checkBoxBase == null || !checkBoxBase.q) && !PhotoViewer.N1(this.n)) || this.w0) {
             canvas2 = canvas;
             f14 = f21;
         } else {
@@ -451,7 +451,7 @@ public class t7 extends FrameLayout {
                 canvas2.translate(-imageReceiver3.getCenterX(), -imageReceiver3.getCenterY());
             }
         }
-        if (PhotoViewer.M1(this.n)) {
+        if (PhotoViewer.N1(this.n)) {
             f15 = e;
             f16 = measuredWidth;
             imageReceiver = imageReceiver3;
@@ -650,10 +650,10 @@ public class t7 extends FrameLayout {
             if (t7Var.v0 != null) {
                 RectF rectF4 = AndroidUtilities.rectTmp;
                 rectF4.set(dp, f18, t7Var.P.b.width() + dp, t7Var.P.b.height() + f18);
-                fd fdVar = t7Var.v0;
-                fdVar.i = false;
-                fdVar.c = 0;
-                fdVar.a(rectF4);
+                gd gdVar = t7Var.v0;
+                gdVar.i = false;
+                gdVar.c = 0;
+                gdVar.a(rectF4);
             }
             canvas2.restore();
         }
@@ -1252,8 +1252,8 @@ public class t7 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        fd fdVar = this.v0;
-        if (fdVar == null || !fdVar.b(motionEvent)) {
+        gd gdVar = this.v0;
+        if (gdVar == null || !gdVar.b(motionEvent)) {
             return super.onTouchEvent(motionEvent);
         }
         return true;
@@ -1326,9 +1326,9 @@ public class t7 extends FrameLayout {
             if (this.R) {
                 this.P.l = true;
             }
-            fd fdVar = new fd(this);
-            this.v0 = fdVar;
-            fdVar.h = new g(this, 6);
+            gd gdVar = new gd(this);
+            this.v0 = gdVar;
+            gdVar.h = new g(this, 6);
         }
     }
 

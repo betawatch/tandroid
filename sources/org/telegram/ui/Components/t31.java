@@ -31,7 +31,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class t31 {
     public static final int[] N = {R.attr.state_enabled, R.attr.state_pressed};
@@ -437,7 +437,7 @@ public abstract class t31 {
                     if ((tL_messages_transcribedAudio.flags & 2) != 0) {
                         MessagesController.getInstance(i14).updateTranscribeAudioTrialCurrentNumber(tL_messages_transcribedAudio.trial_remains_num);
                         MessagesController.getInstance(i14).updateTranscribeAudioTrialCooldownUntil(tL_messages_transcribedAudio.trial_remains_until_date);
-                        AndroidUtilities.runOnUIThread(new yn0(14, l1Var2, tL_messages_transcribedAudio));
+                        AndroidUtilities.runOnUIThread(new yn0(15, l1Var2, tL_messages_transcribedAudio));
                     }
                     if (t31.O == null) {
                         t31.O = new HashMap();

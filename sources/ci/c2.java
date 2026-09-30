@@ -2,11 +2,11 @@ package ci;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ew;
+import org.telegram.ui.Components.fw;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
-public final class c2 extends ew {
+public final class c2 extends fw {
     public final /* synthetic */ e2 g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class c2 extends ew {
         this.g0 = e2Var;
     }
 
-    @Override // org.telegram.ui.Components.ew
+    @Override // org.telegram.ui.Components.fw
     public final boolean h(int i10) {
         int i11;
         int paddingTop;

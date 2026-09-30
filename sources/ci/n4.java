@@ -39,7 +39,7 @@ import org.telegram.ui.fm0;
 import org.telegram.ui.gn0;
 import org.telegram.ui.gq0;
 import org.telegram.ui.i80;
-import org.telegram.ui.jx0;
+import org.telegram.ui.ix0;
 import org.telegram.ui.k80;
 import org.telegram.ui.sa1;
 import org.telegram.ui.sh1;
@@ -49,7 +49,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.xg0;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -254,31 +254,31 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                     gn0Var.i0 = gn0Var.d0;
                 }
                 SecureDocument secureDocument = (SecureDocument) view.getTag();
-                PhotoViewer.t1().J2(null, gn0Var, null);
+                PhotoViewer.t1().K2(null, gn0Var, null);
                 if (i14 == 1) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(gn0Var.j1);
-                    PhotoViewer.t1().b2(arrayList, 0, fm0Var);
+                    PhotoViewer.t1().c2(arrayList, 0, fm0Var);
                     break;
                 } else if (i14 == 2) {
                     ArrayList arrayList2 = new ArrayList();
                     arrayList2.add(gn0Var.l1);
-                    PhotoViewer.t1().b2(arrayList2, 0, fm0Var);
+                    PhotoViewer.t1().c2(arrayList2, 0, fm0Var);
                     break;
                 } else if (i14 == 3) {
                     ArrayList arrayList3 = new ArrayList();
                     arrayList3.add(gn0Var.m1);
-                    PhotoViewer.t1().b2(arrayList3, 0, fm0Var);
+                    PhotoViewer.t1().c2(arrayList3, 0, fm0Var);
                     break;
                 } else if (i14 == 0) {
                     PhotoViewer t12 = PhotoViewer.t1();
                     ArrayList arrayList4 = gn0Var.i1;
-                    t12.b2(arrayList4, arrayList4.indexOf(secureDocument), fm0Var);
+                    t12.c2(arrayList4, arrayList4.indexOf(secureDocument), fm0Var);
                     break;
                 } else {
                     PhotoViewer t13 = PhotoViewer.t1();
                     ArrayList arrayList5 = gn0Var.k1;
-                    t13.b2(arrayList5, arrayList5.indexOf(secureDocument), fm0Var);
+                    t13.c2(arrayList5, arrayList5.indexOf(secureDocument), fm0Var);
                     break;
                 }
             case 21:
@@ -379,7 +379,7 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                         boolean z13 = z12;
                         profileActivity.x5 = new org.telegram.messenger.o8(profileActivity, clientUserId, arrayList6, z12, 9);
                         org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(profileActivity, zArr3, arrayList6, zArr2, clientUserId, 7);
-                        (z13 ? org.telegram.ui.Components.xc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), fVar).j() : org.telegram.ui.Components.xc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, fVar).j()).v = new jx0(11, profileActivity, zArr3);
+                        (z13 ? org.telegram.ui.Components.yc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), fVar).j() : org.telegram.ui.Components.yc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, fVar).j()).v = new ix0(12, profileActivity, zArr3);
                         break;
                     }
                 } else {
@@ -407,7 +407,7 @@ public final /* synthetic */ class n4 implements View.OnClickListener {
                     if (!arrayList7.isEmpty()) {
                         org.telegram.messenger.g7 g7Var = new org.telegram.messenger.g7(profileActivity, a2, h12, arrayList7, 14);
                         profileActivity.getMessagesController().getStoriesController().c0(h12, a2, arrayList7);
-                        org.telegram.ui.Components.xc.a0(profileActivity).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", arrayList7.size(), w10)), LocaleController.getString(R.string.UndoNoCaps), g7Var).j();
+                        org.telegram.ui.Components.yc.a0(profileActivity).J(R.raw.chats_archived, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StoryRemovedFromAlbumTitle", arrayList7.size(), w10)), LocaleController.getString(R.string.UndoNoCaps), g7Var).j();
                         break;
                     }
                 }

@@ -21,7 +21,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class g81 extends View {
     public static final Object f0 = new Object();
@@ -541,7 +541,7 @@ public abstract class g81 extends View {
                             vVar3.h(f18);
                             photoViewer3.q3.h(0.0f, false);
                             photoViewer3.S7.setProgress(f18);
-                            photoViewer3.A3();
+                            photoViewer3.B3();
                         }
                     }
                     invalidate();

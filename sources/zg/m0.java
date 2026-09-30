@@ -40,10 +40,10 @@ import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.un0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 import yh.i8;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class m0 {
     public int A;
@@ -70,7 +70,7 @@ public abstract class m0 {
     public final int V;
     public final View W;
     public final d6 X;
-    public final yc Y;
+    public final zc Y;
     public final i8 Z;
     public final TLRPC.ReactionCount a;
     public final kj0 a0;
@@ -112,7 +112,7 @@ public abstract class m0 {
         i.f fVar = new i.f(this, 10);
         this.V = i10;
         this.W = view;
-        this.Y = new yc(view);
+        this.Y = new zc(view);
         this.X = d6Var;
         this.S = z11;
         if (m0Var != null) {

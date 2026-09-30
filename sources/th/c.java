@@ -11,9 +11,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.i20;
 import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.p30;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class c implements ml0 {
     public final /* synthetic */ d6 a;
@@ -42,7 +42,7 @@ public final class c implements ml0 {
             int size = hashMap.size();
             int i11 = fVar.m0;
             if (size >= i11) {
-                new xc(fVar.n0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
+                new yc(fVar.n0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
                 return;
             }
             p30 p30Var = new p30(this.b, tL_help_country);

@@ -102,14 +102,14 @@ import org.telegram.ui.Components.tp;
 import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.vc0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yw0;
 import org.telegram.ui.Components.z10;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.dd1;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class h6 {
     public static int A;
@@ -5131,7 +5131,7 @@ public abstract class h6 {
         if (o != 0) {
             if (m2Var != null) {
                 try {
-                    xc.a0(m2Var).I(R.raw.auto_night_off, o == 3 ? LocaleController.getString("AutoNightSystemModeOff", R.string.AutoNightSystemModeOff) : LocaleController.getString("AutoNightModeOff", R.string.AutoNightModeOff), LocaleController.getString("Settings", R.string.Settings), 5000, false, new p(m2Var, 17)).j();
+                    yc.a0(m2Var).I(R.raw.auto_night_off, o == 3 ? LocaleController.getString("AutoNightSystemModeOff", R.string.AutoNightSystemModeOff) : LocaleController.getString("AutoNightModeOff", R.string.AutoNightModeOff), LocaleController.getString("Settings", R.string.Settings), 5000, false, new p(m2Var, 17)).j();
                 } catch (Exception e10) {
                     FileLog.e(e10);
                 }

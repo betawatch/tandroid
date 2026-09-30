@@ -38,7 +38,7 @@ import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public abstract class w3 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final MediaController.AlbumEntry j0 = new MediaController.AlbumEntry(-1, null, null);

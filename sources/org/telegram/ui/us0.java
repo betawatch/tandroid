@@ -8,7 +8,7 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class us0 extends org.telegram.ui.Components.md {
     public final Path t1;
@@ -46,7 +46,7 @@ public final class us0 extends org.telegram.ui.Components.md {
         PhotoViewer photoViewer = this.u1;
         org.telegram.ui.Components.qc qcVar = photoViewer.n7;
         if (qcVar == null || org.telegram.ui.Components.qc.w != qcVar) {
-            return photoViewer.S2(photoViewer.e0);
+            return photoViewer.T2(photoViewer.e0);
         }
         return false;
     }
@@ -131,12 +131,12 @@ public final class us0 extends org.telegram.ui.Components.md {
                         us0 us0Var2 = photoViewer.V1;
                         if (f13 != us0Var2 || !us0Var2.L.c()) {
                             z10 = true;
-                            photoViewer.n3(z10);
+                            photoViewer.o3(z10);
                             return;
                         }
                     }
                     z10 = false;
-                    photoViewer.n3(z10);
+                    photoViewer.o3(z10);
                     return;
                 }
                 return;

@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class sa {
     public static CharSequence[] y;
@@ -38,7 +38,7 @@ public final class sa {
     public int x;
     public boolean f = true;
     public final org.telegram.ui.Components.e6 h = new org.telegram.ui.Components.e6(0, 350, sr.h);
-    public final yc i = new yc((View) null);
+    public final zc i = new zc((View) null);
     public final org.telegram.ui.Cells.z j = org.telegram.ui.ActionBar.h6.Y(553648127, 0, 0);
     public final Paint t = new Paint(1);
     public final Paint u = new Paint(1);

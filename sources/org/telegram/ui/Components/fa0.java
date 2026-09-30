@@ -17,10 +17,10 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class fa0 extends Drawable {
-    public nv A;
+    public ov A;
     public org.telegram.ui.ActionBar.d5 B;
     public LinearGradient C;
     public Matrix D;
@@ -1671,9 +1671,9 @@ public final class fa0 extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public final void invalidateSelf() {
         super.invalidateSelf();
-        nv nvVar = this.A;
-        if (nvVar != null) {
-            ((View) nvVar.b).invalidate();
+        ov ovVar = this.A;
+        if (ovVar != null) {
+            ((View) ovVar.b).invalidate();
         }
     }
 

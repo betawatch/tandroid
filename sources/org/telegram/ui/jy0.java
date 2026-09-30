@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jy0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class jy0 implements Utilities.Callback {
                 profileActivity2.getClass();
                 ArrayList arrayList = new ArrayList(1);
                 arrayList.add((TLRPC.InputStickerSet) obj);
-                profileActivity2.showDialog(new org.telegram.ui.Components.uv(profileActivity2, profileActivity2.getParentActivity(), profileActivity2.z0, arrayList));
+                profileActivity2.showDialog(new org.telegram.ui.Components.vv(profileActivity2, profileActivity2.getParentActivity(), profileActivity2.z0, arrayList));
                 break;
             case 2:
                 View view2 = (View) obj;

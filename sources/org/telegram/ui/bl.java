@@ -10,7 +10,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class bl implements org.telegram.ui.Components.rk0 {
     public final /* synthetic */ wn a;
@@ -146,7 +146,7 @@ public final class bl implements org.telegram.ui.Components.rk0 {
             if (f7 == null) {
                 return;
             }
-            org.telegram.ui.Components.xc.a0(wnVar).y(i13, f7, null).k(true);
+            org.telegram.ui.Components.yc.a0(wnVar).y(i13, f7, null).k(true);
         }
     }
 

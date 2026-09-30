@@ -12,13 +12,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.dz;
-import org.telegram.ui.Components.ed;
+import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.qf;
 import org.telegram.ui.Components.sx;
 import r0.m0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class a implements m0, sx {
     public boolean a;
@@ -85,7 +85,7 @@ public final class a implements m0, sx {
             chatActivityEnterView.U0.setLayerType(2, null);
             cw0Var.requestLayout();
             if (chatActivityEnterView.y4) {
-                cw0Var.setForeground(new ed(chatActivityEnterView));
+                cw0Var.setForeground(new fd(chatActivityEnterView));
             }
             this.b = (int) chatActivityEnterView.getTranslationY();
             og ogVar = chatActivityEnterView.Z2;

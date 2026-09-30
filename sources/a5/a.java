@@ -67,7 +67,6 @@ import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.u50;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.da;
-import org.telegram.ui.web.o1;
 import org.xmlpull.v1.XmlPullParserException;
 import rg.q1;
 import u2.f0;
@@ -94,7 +93,7 @@ import z7.x;
 import z7.y;
 import z7.zf;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public class a implements i, r {
     public final /* synthetic */ int a;
@@ -601,8 +600,8 @@ public class a implements i, r {
     public void j(e2.h hVar) {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
-            i0 i0Var = (i0) it.next();
-            e2.d0.U(i0Var.a, new o1(29, hVar, i0Var.b));
+            u2.j0 j0Var = (u2.j0) it.next();
+            e2.d0.U(j0Var.a, new i0(0, hVar, j0Var.b));
         }
     }
 

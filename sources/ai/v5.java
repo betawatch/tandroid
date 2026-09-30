@@ -33,13 +33,13 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.hh0;
 import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zr;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.qr;
 import org.telegram.ui.vr;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class v5 extends zr {
     public boolean c;
@@ -396,7 +396,7 @@ public final class v5 extends zr {
                                     e6 e6Var2 = v5Var2.l;
                                     MessagesController.getNotificationsSettings(e6Var2.C2).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY + str3, false).apply();
                                     NotificationsController.getInstance(e6Var2.C2).updateServerNotificationsSettings(e6Var2.B1, 0L);
-                                    org.telegram.ui.Components.qc V = new xc(e6Var2.c1, d6Var5).V(Arrays.asList(tLObject), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, str2)), null, null);
+                                    org.telegram.ui.Components.qc V = new yc(e6Var2.c1, d6Var5).V(Arrays.asList(tLObject), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, str2)), null, null);
                                     V.a = 2;
                                     V.j();
                                     v5 v5Var3 = e6Var2.t1;
@@ -409,7 +409,7 @@ public final class v5 extends zr {
                                     e6 e6Var3 = v5Var2.l;
                                     MessagesController.getNotificationsSettings(e6Var3.C2).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY + str3, true).apply();
                                     NotificationsController.getInstance(e6Var3.C2).updateServerNotificationsSettings(e6Var3.B1, 0L);
-                                    org.telegram.ui.Components.qc V2 = new xc(e6Var3.c1, d6Var5).V(Arrays.asList(tLObject), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, str2)), null, null);
+                                    org.telegram.ui.Components.qc V2 = new yc(e6Var3.c1, d6Var5).V(Arrays.asList(tLObject), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, str2)), null, null);
                                     V2.a = 2;
                                     V2.j();
                                     v5 v5Var4 = e6Var3.t1;
@@ -452,7 +452,7 @@ public final class v5 extends zr {
                                     e6 e6Var2 = v5Var2.l;
                                     MessagesController.getNotificationsSettings(e6Var2.C2).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY + str3, false).apply();
                                     NotificationsController.getInstance(e6Var2.C2).updateServerNotificationsSettings(e6Var2.B1, 0L);
-                                    org.telegram.ui.Components.qc V = new xc(e6Var2.c1, d6Var52).V(Arrays.asList(tLObject), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, str2)), null, null);
+                                    org.telegram.ui.Components.qc V = new yc(e6Var2.c1, d6Var52).V(Arrays.asList(tLObject), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryMutedHint", R.string.NotificationsStoryMutedHint, str2)), null, null);
                                     V.a = 2;
                                     V.j();
                                     v5 v5Var3 = e6Var2.t1;
@@ -465,7 +465,7 @@ public final class v5 extends zr {
                                     e6 e6Var3 = v5Var2.l;
                                     MessagesController.getNotificationsSettings(e6Var3.C2).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY + str3, true).apply();
                                     NotificationsController.getInstance(e6Var3.C2).updateServerNotificationsSettings(e6Var3.B1, 0L);
-                                    org.telegram.ui.Components.qc V2 = new xc(e6Var3.c1, d6Var52).V(Arrays.asList(tLObject), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, str2)), null, null);
+                                    org.telegram.ui.Components.qc V2 = new yc(e6Var3.c1, d6Var52).V(Arrays.asList(tLObject), AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsStoryUnmutedHint", R.string.NotificationsStoryUnmutedHint, str2)), null, null);
                                     V2.a = 2;
                                     V2.j();
                                     v5 v5Var4 = e6Var3.t1;

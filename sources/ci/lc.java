@@ -97,7 +97,7 @@ import org.telegram.ui.Components.vp;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.eb0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class lc implements NotificationCenter.NotificationCenterDelegate {
     public static lc F2;
@@ -2284,7 +2284,7 @@ public final class lc implements NotificationCenter.NotificationCenterDelegate {
             if (text instanceof Spannable) {
                 Spannable spannable = (Spannable) text;
                 if (((e11[]) spannable.getSpans(0, text.length(), e11.class)).length > 0 || ((URLSpan[]) spannable.getSpans(0, text.length(), URLSpan.class)).length > 0) {
-                    new org.telegram.ui.Components.xc(this.n, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.h6.gc, 0, new ha(this, 27), dVar)).k(true);
+                    new org.telegram.ui.Components.yc(this.n, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.h6.gc, 0, new ha(this, 27), dVar)).k(true);
                     int i14 = -this.U1;
                     this.U1 = i14;
                     AndroidUtilities.shakeViewSpring(bcVar, i14);

@@ -60,7 +60,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
             k2Var2.a = true;
             org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
             if (U2 != null) {
-                U2.showAsSheet(new org.telegram.ui.web.g1(v3Var != null ? new org.telegram.ui.b0(i4Var, 6) : null, new org.telegram.ui.s(i4Var, 3)), k2Var2);
+                U2.showAsSheet(new org.telegram.ui.web.h1(v3Var != null ? new org.telegram.ui.b0(i4Var, 6) : null, new org.telegram.ui.s(i4Var, 3)), k2Var2);
                 return;
             }
             return;
@@ -929,7 +929,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                         if ((uRLSpanArr.length <= 0 || length != 0 || i22 <= 0) && (uriParseSafe == null || uriParseSafe.getScheme() == null)) {
                             org.telegram.ui.web.k.b(activity, str8);
                             org.telegram.ui.web.y0 webView = m3Var2.getWebView();
-                            String str9 = org.telegram.ui.web.n1.a().b;
+                            String str9 = org.telegram.ui.web.o1.a().b;
                             if (str9 != null) {
                                 StringBuilder v = a4.a.v(str9);
                                 v.append(URLEncoder.encode(str8));

@@ -24,7 +24,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.aw;
+import org.telegram.ui.Components.bw;
 import org.telegram.ui.Components.kc0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.qw0;
@@ -39,10 +39,10 @@ import org.telegram.ui.wn;
 import org.telegram.ui.x51;
 import w7.y5;
 import yh.r2;
+import yh.r5;
 import yh.t3;
-import yh.z5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final int[] A;
@@ -94,7 +94,6 @@ public final class b0 {
         t3 t3Var = new t3(this, context);
         this.c = t3Var;
         t3Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 28));
-        int i12 = 5;
         boolean z11 = i10 == 2 || i10 == 4 || i10 == 5 || z10;
         this.d = z11;
         a0 a0Var = new a0(this, context);
@@ -125,14 +124,14 @@ public final class b0 {
         xVar.setDrawBackground(false);
         xVar.s(null);
         a0Var.addView(xVar, y5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        int i13 = i10 == 5 ? 2 : 16;
+        int i12 = i10 == 5 ? 2 : 16;
         if (i10 == 5) {
             a0Var.setClipChildren(false);
             a0Var.setClipToPadding(false);
             t3Var.setClipChildren(false);
             t3Var.setClipToPadding(false);
         }
-        float f7 = i13;
+        float f7 = i12;
         t3Var.addView(a0Var, y5.d(-1, -1.0f, i10 == 5 ? 85 : 48, f7, f7, f7, 16.0f));
         t3Var.setClipChildren(false);
         if (i10 == 1 || (sk0Var.getDelegate() != null && sk0Var.getDelegate().p())) {
@@ -151,7 +150,7 @@ public final class b0 {
         sk0Var.setOnSwitchedToLoopView(new u(this, i11));
         sk0Var.b1 = true;
         sk0Var.invalidate();
-        AndroidUtilities.runOnUIThread(new z5(i12, this, sk0Var), 50L);
+        AndroidUtilities.runOnUIThread(new r5(6, this, sk0Var), 50L);
         if (i10 != 5) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 7);
         }
@@ -250,7 +249,7 @@ public final class b0 {
     public static void g(View view, float f7) {
         if (view instanceof j61) {
             ((j61) view).setAnimatedScale(f7);
-        } else if (view instanceof aw) {
+        } else if (view instanceof bw) {
             view.setScaleX(f7);
             view.setScaleY(f7);
         }

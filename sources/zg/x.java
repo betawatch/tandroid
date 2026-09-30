@@ -12,14 +12,14 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.a71;
 import org.telegram.ui.j61;
 import org.telegram.ui.wn;
 import yh.r2;
 import yh.t3;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class x extends a71 {
     public final /* synthetic */ sk0 d2;
@@ -49,7 +49,7 @@ public final class x extends a71 {
                 t3Var.performHapticFeedback(3);
             } catch (Exception unused) {
             }
-            new xc(t3Var, null).q(document, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiReaction)), LocaleController.getString(R.string.PremiumMore), new r2(this, 11)).j();
+            new yc(t3Var, null).q(document, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiReaction)), LocaleController.getString(R.string.PremiumMore), new r2(this, 11)).j();
             return;
         }
         if (l4 == null && document == null) {

@@ -20,10 +20,10 @@ import org.telegram.messenger.ok;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 import v7.a7;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -46,7 +46,7 @@ public abstract class j extends FrameLayout {
     public final e U;
     public int V;
     public int W;
-    public final yc a;
+    public final zc a;
     public ValueAnimator a0;
     public float b;
     public ValueAnimator b0;
@@ -81,7 +81,7 @@ public abstract class j extends FrameLayout {
     /* JADX WARN: Type inference failed for: r0v4, types: [qg.e] */
     public j(Context context, PointF pointF) {
         super(context);
-        this.a = new yc(this);
+        this.a = new zc(this);
         this.n = false;
         this.r = false;
         this.s = false;
@@ -794,7 +794,7 @@ public abstract class j extends FrameLayout {
                     float f7 = fArr3[0];
                     float f10 = fArr3[1];
                     actionMasked = motionEvent.getActionMasked();
-                    yc ycVar = this.a;
+                    zc zcVar = this.a;
                     if (actionMasked == 0) {
                         if (actionMasked != 1) {
                             if (actionMasked == 2) {
@@ -811,7 +811,7 @@ public abstract class j extends FrameLayout {
                         }
                         jVar = this;
                         d(actionMasked == 3);
-                        ycVar.c(false);
+                        zcVar.c(false);
                         i iVar2 = jVar.H;
                         if (iVar2 != null) {
                             iVar2.f = true;
@@ -828,7 +828,7 @@ public abstract class j extends FrameLayout {
                         if ((getParent() instanceof d) && (jVar.R != 0 || jVar.S != 0)) {
                             ((d) getParent()).invalidate();
                         }
-                        ycVar.c(true);
+                        zcVar.c(true);
                         e eVar = jVar.I;
                         AndroidUtilities.cancelRunOnUIThread(eVar);
                         if (!z10) {
@@ -853,7 +853,7 @@ public abstract class j extends FrameLayout {
             float f72 = fArr32[0];
             float f102 = fArr32[1];
             actionMasked = motionEvent.getActionMasked();
-            yc ycVar2 = this.a;
+            zc zcVar2 = this.a;
             if (actionMasked == 0) {
             }
             z11 = true;

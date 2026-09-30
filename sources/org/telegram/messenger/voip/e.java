@@ -23,13 +23,13 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.e70;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.ke;
 import org.telegram.ui.l31;
 import org.telegram.ui.t31;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -124,7 +124,7 @@ public final /* synthetic */ class e implements Runnable {
                     TLRPC.UserFull userFull = messagesController.getUserFull(j3);
                     userFull.profile_photo = tL_photos_photo.photo;
                     wnVar2.getMessagesStorage().updateUserInfo(userFull, false);
-                    xc.a0(wnVar2).V(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new ke(j3, wnVar2)), null).j();
+                    yc.a0(wnVar2).V(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new ke(j3, wnVar2)), null).j();
                     break;
                 }
                 break;

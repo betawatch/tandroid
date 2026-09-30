@@ -38,7 +38,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class je extends org.telegram.ui.Components.cw0 implements r0.m {
     public static je x1;
@@ -669,7 +669,7 @@ public final class je extends org.telegram.ui.Components.cw0 implements r0.m {
             long j3 = this.z0;
             TLRPC.TL_payments_starsRevenueStats h = g10.h(j3, z10);
             if (h != null) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(24, this, h));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(25, this, h));
                 return;
             }
             TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();

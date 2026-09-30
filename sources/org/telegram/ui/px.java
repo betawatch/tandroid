@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class px implements f70 {
     public final /* synthetic */ org.telegram.ui.ActionBar.a2 a;
@@ -53,7 +53,7 @@ public final class px implements f70 {
                     default:
                         px pxVar = this.b;
                         qy qyVar2 = pxVar.b;
-                        qyVar2.Q4(qyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new tt(10, pxVar, m2VarArr));
+                        qyVar2.Q4(qyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new tt(11, pxVar, m2VarArr));
                         break;
                 }
             }
@@ -90,7 +90,7 @@ public final class px implements f70 {
                     default:
                         px pxVar = this.b;
                         qy qyVar2 = pxVar.b;
-                        qyVar2.Q4(qyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new tt(10, pxVar, m2VarArr));
+                        qyVar2.Q4(qyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new tt(11, pxVar, m2VarArr));
                         break;
                 }
             }

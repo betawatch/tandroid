@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class v3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.ActionBar.s3 {
     public ValueAnimator E;
@@ -186,13 +186,13 @@ public final class v3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.A
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final org.telegram.ui.Components.xc getBulletinFactory() {
+    public final org.telegram.ui.Components.yc getBulletinFactory() {
         FrameLayout frameLayout;
         i4 i4Var = this.K;
         if (i4Var.u0[0].f()) {
             if (i4Var.u0[0].getWebView() != null) {
                 frameLayout = i4Var.u0[0].f;
-                return new org.telegram.ui.Components.xc(frameLayout, null);
+                return new org.telegram.ui.Components.yc(frameLayout, null);
             }
             return null;
         }

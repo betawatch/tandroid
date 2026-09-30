@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class hs extends bb {
     public static final /* synthetic */ int G0 = 0;
@@ -644,9 +644,9 @@ public final class hs extends bb {
         boolean isEmpty = TextUtils.isEmpty(str2);
         org.telegram.ui.ActionBar.m2 m2Var = this.n;
         if (isEmpty) {
-            org.telegram.messenger.f0.p(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted, xc.a0(m2Var), i16, 36);
+            org.telegram.messenger.f0.p(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted, yc.a0(m2Var), i16, 36);
         } else {
-            xc.a0(m2Var).M(LocaleController.getString(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted), str2, i16).j();
+            yc.a0(m2Var).M(LocaleController.getString(z14 ? R.string.ReactionsDeleted : R.string.MessagesDeleted), str2, i16).j();
         }
         long j14 = 0;
         if (j13 != 0 && this.p0) {

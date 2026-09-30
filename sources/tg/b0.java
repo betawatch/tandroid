@@ -10,10 +10,10 @@ import org.telegram.ui.ActionBar.c3;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class b0 extends ug.e {
     public final /* synthetic */ c0 r;
@@ -32,7 +32,7 @@ public final class b0 extends ug.e {
         String string = ((str == null || str.isEmpty()) && c0Var.X.to_id == -1) ? LocaleController.getString(R.string.BoostingOnlyGiveawayCreatorSeeLink) : LocaleController.getString(R.string.BoostingOnlyRecipientCode);
         c3 c3Var = c0Var.container;
         d6Var = ((e3) c0Var).resourcesProvider;
-        new xc(c3Var, d6Var).Q(R.raw.chats_infotip, 36, string).k(true);
+        new yc(c3Var, d6Var).Q(R.raw.chats_infotip, 36, string).k(true);
     }
 
     @Override // ug.e

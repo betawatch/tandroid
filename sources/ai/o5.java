@@ -31,8 +31,8 @@ import org.telegram.ui.Components.e90;
 import org.telegram.ui.Components.gc0;
 import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xn0;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.db1;
 import org.telegram.ui.i11;
 import org.telegram.ui.n11;
@@ -41,7 +41,7 @@ import org.telegram.ui.wn;
 import org.telegram.ui.z31;
 import org.telegram.ui.zf0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -312,7 +312,7 @@ public final /* synthetic */ class o5 implements View.OnClickListener {
                     NotificationCenter.getInstance(k5Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(k5Var.b), k5Var);
                     k5Var.l();
                     r2Var.dismiss();
-                    ((xc) callback0Return.run()).M(LocaleController.formatString(R.string.Gift2ReplacedPinTitle, yh.x3.D1(savedStarGift2.gift)), LocaleController.formatString(R.string.Gift2ReplacedPinSubtitle, yh.x3.D1(savedStarGift.gift)), R.raw.ic_pin).j();
+                    ((yc) callback0Return.run()).M(LocaleController.formatString(R.string.Gift2ReplacedPinTitle, yh.x3.D1(savedStarGift2.gift)), LocaleController.formatString(R.string.Gift2ReplacedPinSubtitle, yh.x3.D1(savedStarGift.gift)), R.raw.ic_pin).j();
                     break;
                 }
                 break;

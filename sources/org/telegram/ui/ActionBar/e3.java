@@ -45,11 +45,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.eb0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class e3 extends Dialog implements i2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -492,8 +492,8 @@ public class e3 extends Dialog implements i2 {
     }
 
     @Override // org.telegram.ui.ActionBar.i2
-    public xc getBulletinFactory() {
-        return new xc(this.topBulletinContainer, this.resourcesProvider);
+    public yc getBulletinFactory() {
+        return new yc(this.topBulletinContainer, this.resourcesProvider);
     }
 
     public c3 getContainer() {

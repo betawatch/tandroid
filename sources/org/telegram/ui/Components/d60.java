@@ -37,7 +37,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class d60 extends j60 {
     public boolean A0;
@@ -691,7 +691,7 @@ public final class d60 extends j60 {
         j0Var.j = dVar;
         q01 q01Var = this.T;
         j0Var.k = q01Var;
-        j0Var.l = new nv(this, 6);
+        j0Var.l = new ov(this, 6);
         if (j0Var.d == null) {
             throw new IllegalStateException("Initial camera is required");
         }

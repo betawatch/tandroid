@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class qw extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ qy a;
@@ -71,7 +71,7 @@ public final class qw extends org.telegram.ui.ActionBar.j {
             } else {
                 if (i10 == 201) {
                     qy qyVar3 = new qy(org.telegram.messenger.ok.e(3, "onlySelect", "dialogsType", true));
-                    qyVar3.C2 = new org.telegram.ui.Components.nv(zxVar, 18);
+                    qyVar3.C2 = new org.telegram.ui.Components.ov(zxVar, 18);
                     qyVar2.presentFragment(qyVar3);
                     return;
                 }

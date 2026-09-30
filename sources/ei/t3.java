@@ -26,10 +26,10 @@ import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.qk;
 import org.telegram.ui.Components.v00;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -165,7 +165,7 @@ public final /* synthetic */ class t3 implements Runnable {
                                 }
                             }
                         }
-                        new xc(e4.H0(context, i12, connectedbotstarref, j10, d6Var).topBulletinContainer, d6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
+                        new yc(e4.H0(context, i12, connectedbotstarref, j10, d6Var).topBulletinContainer, d6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
                         break;
                     }
                 }

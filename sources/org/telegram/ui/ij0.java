@@ -1,27 +1,37 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
-public final class ij0 extends ci.d {
-    public final /* synthetic */ kj0 h0;
+public final class ij0 extends xg.i {
+    public boolean J;
+    public final /* synthetic */ lj0 K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ij0(kj0 kj0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var, true);
-        this.h0 = kj0Var;
+    public ij0(lj0 lj0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.K = lj0Var;
     }
 
-    @Override // ci.d
-    public final float a(float f7, float f10) {
-        kj0 kj0Var = this.h0;
-        boolean z10 = kj0Var.n0 == 0.0f;
-        kj0Var.n0 = f7;
-        if (z10) {
-            kj0Var.o0 = new org.telegram.ui.Components.fb0(kj0Var, 1);
-            kj0Var.S(false);
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        int dp = AndroidUtilities.dp(64.0f) + getMeasuredHeight();
+        lj0 lj0Var = this.K;
+        lj0Var.l0 = dp;
+        lj0Var.k0.G();
+        if (this.J != lj0Var.isKeyboardVisible()) {
+            boolean isKeyboardVisible = lj0Var.isKeyboardVisible();
+            this.J = isKeyboardVisible;
+            if (isKeyboardVisible) {
+                org.telegram.ui.Components.yl0 yl0Var = lj0Var.d;
+                ji.o oVar = new ji.o(lj0Var.getContext(), 2, 0.6f);
+                oVar.a = 1;
+                oVar.p = AndroidUtilities.dp(36.0f);
+                yl0Var.getLayoutManager().w0(oVar);
+            }
         }
-        return f7;
     }
 }

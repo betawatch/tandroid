@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ir0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, ImageReceiver.ImageReceiverDelegate, r0.n {
     public final /* synthetic */ PhotoViewer a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class ir0 implements org.telegram.ui.Components.d5,
     @Override // org.telegram.ui.Components.d5
     public void J(int i10, int i11, boolean z10) {
         Drawable[] drawableArr = PhotoViewer.U8;
-        this.a.v2(z10, i10, i11, false, false, false);
+        this.a.w2(z10, i10, i11, false, false, false);
     }
 
     @Override // r0.n
@@ -89,7 +89,7 @@ public final /* synthetic */ class ir0 implements org.telegram.ui.Components.d5,
             return;
         }
         if (photoViewer.T5) {
-            photoViewer.M2();
+            photoViewer.N2();
         } else {
             photoViewer.U5 = true;
         }
@@ -103,7 +103,7 @@ public final /* synthetic */ class ir0 implements org.telegram.ui.Components.d5,
     @Override // org.telegram.ui.ActionBar.z1
     public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         Drawable[] drawableArr = PhotoViewer.U8;
-        this.a.d3(0);
+        this.a.e3(0);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate

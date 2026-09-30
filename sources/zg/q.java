@@ -43,7 +43,7 @@ import org.telegram.ui.Components.oo0;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.f81;
 import org.telegram.ui.l21;
@@ -52,9 +52,10 @@ import org.telegram.ui.xd;
 import org.telegram.ui.z51;
 import w7.y5;
 import xh.h1;
+import yh.r5;
 import yh.t3;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class q extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public final LinkedHashMap E;
@@ -185,7 +186,7 @@ public final class q extends m2 implements NotificationCenter.NotificationCenter
             return;
         }
         if (z10) {
-            xc.a0(this).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("ReactionReachLvlForReactionShort", size, Integer.valueOf(size)))).j();
+            yc.a0(this).Q(R.raw.chats_infotip, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("ReactionReachLvlForReactionShort", size, Integer.valueOf(size)))).j();
         }
         this.v.setLvlRequiredState(this.R);
     }
@@ -808,7 +809,7 @@ public final class q extends m2 implements NotificationCenter.NotificationCenter
             arrayList.remove((Object) (-1L));
             z5 z5Var = (z5) linkedHashMap.remove(-1L);
             if (z5Var != null) {
-                z5Var.setRemoved(new yh.z5(2, this, z5Var));
+                z5Var.setRemoved(new r5(3, this, z5Var));
             }
             W(z5Var);
             this.b.x(-1L, true);

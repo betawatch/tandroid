@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class xu0 extends View {
     public final Paint a;
@@ -109,7 +109,7 @@ public final class xu0 extends View {
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
             if (this.s.Y7 != this.r) {
-                this.s.o2(1);
+                this.s.p2(1);
             }
             this.s.L6 = false;
             return true;

@@ -8,7 +8,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsSettingsActivity;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qj implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -60,7 +60,7 @@ public final /* synthetic */ class qj implements Runnable {
                     f7 = org.telegram.ui.Components.q5.f(UserConfig.selectedAccount, j3);
                 }
                 if (f7 != null && R != null) {
-                    org.telegram.ui.Components.xc.a0(R).y(acVar.a.h, f7, this.d ? new gg.n(this.b, this.c, R, 7) : null).k(true);
+                    org.telegram.ui.Components.yc.a0(R).y(acVar.a.h, f7, this.d ? new gg.n(this.b, this.c, R, 7) : null).k(true);
                     break;
                 }
                 break;

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ls0 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.Components.l71, org.telegram.ui.Components.v71, org.telegram.ui.Components.ff0 {
     public final /* synthetic */ PhotoViewer a;
@@ -34,9 +34,9 @@ public final class ls0 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.
             if (photoViewer.A1() == -9223372036854775807L) {
                 photoViewer.a3 = f7;
             } else {
-                photoViewer.s2((int) (f7 * r1));
+                photoViewer.t2((int) (f7 * r1));
             }
-            photoViewer.a3(false);
+            photoViewer.b3(false);
             photoViewer.u3 = false;
         }
     }
@@ -45,7 +45,7 @@ public final class ls0 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.
     public void c() {
         PhotoViewer photoViewer = this.a;
         if (photoViewer.l3 && photoViewer.P3) {
-            photoViewer.r2();
+            photoViewer.s2();
         }
     }
 
@@ -87,7 +87,7 @@ public final class ls0 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.
         } else if (photoViewer.F2 != null && (et0Var = photoViewer.s3) != null) {
             et0Var.e(photoViewer.T4, f7, photoViewer.q3.h - org.telegram.ui.Components.w71.S);
         }
-        this.a.a3(true);
+        this.a.b3(true);
         PhotoViewer.X(this.a);
     }
 

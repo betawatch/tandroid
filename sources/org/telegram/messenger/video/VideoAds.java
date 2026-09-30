@@ -59,19 +59,19 @@ import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.t31;
 import rg.x0;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
     private int between_delay;
     private qc bulletin;
-    private xc bulletinFactory;
+    private yc bulletinFactory;
     private long bulletinShowTime;
     private final VideoAdsCache cache;
     private final int currentAccount;
@@ -95,7 +95,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 1);
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static class AdLayout extends nb {
         public final ImageView buttonView;
         public final w9 imageView;
@@ -154,7 +154,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -285,7 +285,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -299,7 +299,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -327,14 +327,14 @@ public class VideoAds {
         }
     }
 
-    private VideoAds(int i10, long j3, int i11, xc xcVar, VideoAdsCache videoAdsCache) {
+    private VideoAds(int i10, long j3, int i11, yc ycVar, VideoAdsCache videoAdsCache) {
         this.lastTime = 0L;
         this.currentAccount = i10;
         this.dialogId = j3;
         this.msg_id = i11;
         this.cache = videoAdsCache;
         this.lastTime = System.currentTimeMillis();
-        init(xcVar);
+        init(ycVar);
     }
 
     private void checkPopupShownCallback() {
@@ -351,8 +351,8 @@ public class VideoAds {
         cached.evictAll();
     }
 
-    private void init(xc xcVar) {
-        this.bulletinFactory = xcVar;
+    private void init(yc ycVar) {
+        this.bulletinFactory = ycVar;
         this.lastTime = System.currentTimeMillis();
         this.first = true;
         VideoAdsCache videoAdsCache = this.cache;
@@ -421,7 +421,7 @@ public class VideoAds {
     public void lambda$show$14(Context context, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, a80 a80Var) {
         int i10 = this.currentAccount;
         long j3 = this.dialogId;
-        xc xcVar = this.bulletinFactory;
+        yc ycVar = this.bulletinFactory;
         a1 a1Var = new a1();
         d dVar = new d(this, 0);
         Objects.requireNonNull(a80Var);
@@ -434,7 +434,7 @@ public class VideoAds {
         byte[] bArr = tL_sponsoredMessage.random_id;
         tL_messages_reportSponsoredMessage.random_id = bArr;
         tL_messages_reportSponsoredMessage.option = new byte[0];
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_reportSponsoredMessage, new b80(context, a1Var, j3, bArr, aVar, xcVar, dVar, i10));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_reportSponsoredMessage, new b80(context, a1Var, j3, bArr, aVar, ycVar, dVar, i10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -862,7 +862,7 @@ public class VideoAds {
         });
     }
 
-    public static VideoAds make(int i10, long j3, int i11, xc xcVar) {
+    public static VideoAds make(int i10, long j3, int i11, yc ycVar) {
         VideoAdsLocation videoAdsLocation = new VideoAdsLocation(i10, j3);
         LruCache<VideoAdsLocation, VideoAdsCache> lruCache = cached;
         VideoAdsCache videoAdsCache = lruCache.get(videoAdsLocation);
@@ -870,7 +870,7 @@ public class VideoAds {
             videoAdsCache = new VideoAdsCache(i11);
             lruCache.put(videoAdsLocation, videoAdsCache);
         }
-        return new VideoAds(i10, j3, i11, xcVar, videoAdsCache);
+        return new VideoAds(i10, j3, i11, ycVar, videoAdsCache);
     }
 
     private void schedule() {
@@ -1080,7 +1080,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;

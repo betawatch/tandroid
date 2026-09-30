@@ -48,7 +48,7 @@ import org.telegram.ui.VoIPPermissionActivity;
 import org.telegram.ui.mi1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -58,7 +58,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -94,7 +94,7 @@ public class VoIPPreNotificationService {
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
         public final /* synthetic */ long getCallDuration() {
-            return v0.a(this);
+            return w0.a(this);
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState

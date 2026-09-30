@@ -69,7 +69,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class oo0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public static final List g1 = Arrays.asList("http", "https");
@@ -453,7 +453,7 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         int i11 = 1;
         if (z10 && oo0Var.C0.saved_info != null && oo0Var.I0 == null) {
             oo0Var.D0(true);
-            sj0 sj0Var = new sj0(11, oo0Var, view);
+            xi0 xi0Var = new xi0(12, oo0Var, view);
             if (oo0Var.Q0) {
                 return;
             }
@@ -476,7 +476,7 @@ public final class oo0 extends org.telegram.ui.ActionBar.m2 implements Notificat
             TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo2 = oo0Var.I0;
             tL_payments_validateRequestedInfo2.save = true;
             tL_payments_validateRequestedInfo2.info = oo0Var.C0.saved_info;
-            ConnectionsManager.getInstance(oo0Var.currentAccount).sendRequest(tL_payments_validateRequestedInfo2, new aa(oo0Var, sj0Var, tL_payments_validateRequestedInfo2, 29), (oo0Var.W0 ? 8 : 0) | 2);
+            ConnectionsManager.getInstance(oo0Var.currentAccount).sendRequest(tL_payments_validateRequestedInfo2, new aa(oo0Var, xi0Var, tL_payments_validateRequestedInfo2, 29), (oo0Var.W0 ? 8 : 0) | 2);
             return;
         }
         if (z10) {

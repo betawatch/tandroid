@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class s10 extends FrameLayout {
     public final RectF a;
@@ -111,7 +111,7 @@ public final class s10 extends FrameLayout {
                             fragmentContextView.k0 = false;
                         }
                         r10Var.run();
-                        xc a02 = xc.a0(m2Var);
+                        yc a02 = yc.a0(m2Var);
                         boolean z11 = fragmentContextView.h0;
                         org.telegram.messenger.f0.p(z11 ? R.string.LiveStreamWillNotify : R.string.LiveStreamWillNotNotify, a02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
                     }
@@ -121,13 +121,13 @@ public final class s10 extends FrameLayout {
                 fragmentContextView.j0.c(false);
             }
         } else {
-            yc ycVar = fragmentContextView.j0;
-            if (ycVar != null) {
-                ycVar.c(false);
+            zc zcVar = fragmentContextView.j0;
+            if (zcVar != null) {
+                zcVar.c(false);
             }
         }
-        yc ycVar2 = fragmentContextView.j0;
-        return (ycVar2 != null && ycVar2.h) || super.dispatchTouchEvent(motionEvent);
+        zc zcVar2 = fragmentContextView.j0;
+        return (zcVar2 != null && zcVar2.h) || super.dispatchTouchEvent(motionEvent);
     }
 
     @Override // android.view.View

@@ -19,14 +19,14 @@ import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.bs0;
 import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.jr0;
 import org.telegram.ui.sx;
 import w7.y5;
 import yh.j5;
-import yh.s5;
+import yh.t5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ o2 a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                     ConnectionsManager.getInstance(i10).sendRequest(savestargift, null, 64);
                 }
                 if (o2Var.e.m(savedStarGift, z11, true)) {
-                    xc.a0(bs0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
+                    yc.a0(bs0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
                 }
                 if (z10) {
                     return;
@@ -158,7 +158,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                                 Object obj8 = arrayList.get(i14);
                                 i14++;
                                 int i15 = size2;
-                                if (s5.k((TL_stars.SavedStarGift) obj8, savedStarGift)) {
+                                if (t5.k((TL_stars.SavedStarGift) obj8, savedStarGift)) {
                                     linearLayout = linearLayout2;
                                     z12 = true;
                                     break;
@@ -264,7 +264,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                                 }
                             }, z10);
                         }
-                        I.l(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new u2.p0(12, o2Var2, str2), str2 != null);
+                        I.l(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new u2.i0(13, o2Var2, str2), str2 != null);
                         final int i18 = 1;
                         I.l(R.drawable.msg_share, LocaleController.getString(R.string.ShareFile), new Runnable() { // from class: xh.e2
                             @Override // java.lang.Runnable

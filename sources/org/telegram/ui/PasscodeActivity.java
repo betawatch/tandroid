@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class PasscodeActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -174,7 +174,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.m2 implements No
             xd0 xd0Var = this.n;
             as[] asVarArr = xd0Var.f;
             if (i10 >= asVarArr.length) {
-                xd0Var.postDelayed(new sj0(4, this, runnable), (asVarArr.length * 75) + 350);
+                xd0Var.postDelayed(new xi0(5, this, runnable), (asVarArr.length * 75) + 350);
                 return;
             } else {
                 as asVar = asVarArr[i10];

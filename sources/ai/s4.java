@@ -39,17 +39,17 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.hy0;
 import org.telegram.ui.Components.i90;
-import org.telegram.ui.Components.kd;
 import org.telegram.ui.Components.kk;
 import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.t80;
+import org.telegram.ui.Components.uc;
 import org.telegram.ui.Components.v80;
 import org.telegram.ui.Components.w80;
 import org.telegram.ui.Components.wx0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.d60;
-import org.telegram.ui.fh;
+import org.telegram.ui.dh;
 import org.telegram.ui.fp;
 import org.telegram.ui.gn0;
 import org.telegram.ui.i70;
@@ -68,7 +68,7 @@ import org.telegram.ui.w21;
 import org.telegram.ui.wn;
 import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s4 implements Runnable {
     public final /* synthetic */ int a;
@@ -196,13 +196,12 @@ public final /* synthetic */ class s4 implements Runnable {
         int i12;
         org.telegram.ui.ActionBar.d6 d6Var;
         ci.bb bbVar;
-        int i13 = 18;
+        int i13 = 20;
         int i14 = 3;
         int i15 = 16;
-        int i16 = 14;
-        int i17 = 4;
+        int i16 = 4;
         boolean z10 = true;
-        int i18 = 0;
+        int i17 = 0;
         switch (this.a) {
             case 0:
                 u4 u4Var = (u4) this.c;
@@ -306,7 +305,7 @@ public final /* synthetic */ class s4 implements Runnable {
                 if (TextUtils.isEmpty(trim)) {
                     return;
                 }
-                ii.k4.k(m2Var, z16, new ah.b(i13, u3Var, trim));
+                ii.k4.k(m2Var, z16, new ah.b(18, u3Var, trim));
                 return;
             case 6:
                 ki.s0 s0Var = (ki.s0) this.c;
@@ -405,9 +404,9 @@ public final /* synthetic */ class s4 implements Runnable {
                     e1Var.i();
                 }
                 SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-                for (int i19 : new int[]{31, 2}) {
+                for (int i18 : new int[]{31, 2}) {
                     e2.d.g(!false);
-                    sparseBooleanArray.append(i19, true);
+                    sparseBooleanArray.append(i18, true);
                 }
                 if (z20) {
                     e2.d.g(!false);
@@ -451,10 +450,10 @@ public final /* synthetic */ class s4 implements Runnable {
                             g6Var.e = parse.getQueryParameter("slug");
                             String queryParameter = parse.getQueryParameter("mode");
                             if (queryParameter != null && (split = queryParameter.toLowerCase().split(" ")) != null && split.length > 0) {
-                                for (int i20 = 0; i20 < split.length; i20++) {
-                                    if ("blur".equals(split[i20])) {
+                                for (int i19 = 0; i19 < split.length; i19++) {
+                                    if ("blur".equals(split[i19])) {
                                         g6Var.h = true;
-                                    } else if ("motion".equals(split[i20])) {
+                                    } else if ("motion".equals(split[i19])) {
                                         g6Var.n = true;
                                     }
                                 }
@@ -518,30 +517,30 @@ public final /* synthetic */ class s4 implements Runnable {
                 boolean z22 = this.b;
                 MessageObject messageObject = (MessageObject) this.e;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                int i21 = R.string.SuggestedMessageAcceptInfo;
+                int i20 = R.string.SuggestedMessageAcceptInfo;
                 wn wnVar = inVar.a;
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i21, wnVar.getMessagesController().getPeerName(DialogObject.getPeerDialogId(message.from_id)))));
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i20, wnVar.getMessagesController().getPeerName(DialogObject.getPeerDialogId(message.from_id)))));
                 spannableStringBuilder.append((CharSequence) "\n\n");
                 zf.a m10 = zf.a.m(message.suggested_post.price);
-                int i22 = m10.a == zf.b.b ? wnVar.getMessagesController().config.tonSuggestedPostCommissionPermille.get() : wnVar.getMessagesController().config.starsSuggestedPostCommissionPermille.get();
+                int i21 = m10.a == zf.b.b ? wnVar.getMessagesController().config.tonSuggestedPostCommissionPermille.get() : wnVar.getMessagesController().config.starsSuggestedPostCommissionPermille.get();
                 if (z22) {
-                    m10 = zf.a.i((m10.b / 1000) * i22, m10.a);
+                    m10 = zf.a.i((m10.b / 1000) * i21, m10.a);
                 }
                 if (message.suggested_post.schedule_date == 0) {
                     if (z22) {
-                        spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAnytimeAdmin2, m10.f(), ei.l.G0(i22))));
+                        spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAnytimeAdmin2, m10.f(), ei.l.G0(i21))));
                     } else {
                         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAnytimeUser2, m10.f())));
                     }
                 } else if (z22) {
-                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAdmin2, m10.f(), yh.e0.o(message.suggested_post.schedule_date), ei.l.G0(i22))));
+                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAdmin2, m10.f(), yh.e0.o(message.suggested_post.schedule_date), ei.l.G0(i21))));
                 } else {
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoUser2, m10.f(), yh.e0.o(message.suggested_post.schedule_date))));
                 }
                 spannableStringBuilder.append(' ');
-                int i23 = R.string.SuggestedMessageAcceptInfo3;
+                int i22 = R.string.SuggestedMessageAcceptInfo3;
                 i12 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i23, Long.valueOf(MessagesController.getInstance(i12).config.starsSuggestedPostAgeMin.get(TimeUnit.HOURS)))));
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i22, Long.valueOf(MessagesController.getInstance(i12).config.starsSuggestedPostAgeMin.get(TimeUnit.HOURS)))));
                 org.telegram.ui.Components.qc[] qcVarArr = new org.telegram.ui.Components.qc[1];
                 org.telegram.ui.r5 r5Var = new org.telegram.ui.r5(qcVarArr, 4);
                 org.telegram.ui.ActionBar.a2[] a2VarArr = new org.telegram.ui.ActionBar.a2[1];
@@ -551,7 +550,7 @@ public final /* synthetic */ class s4 implements Runnable {
                 if (z22 && m10.a == zf.b.a) {
                     org.telegram.ui.Components.kb a2 = org.telegram.ui.Components.lb.a(wnVar.getParentActivity());
                     d6Var = ((org.telegram.ui.ActionBar.m2) wnVar).resourceProvider;
-                    org.telegram.ui.Components.qc G = new xc(a2, d6Var).G(R.raw.info, 10, LocaleController.getString(R.string.SuggestedMessageAcceptStarsDisclaimer));
+                    org.telegram.ui.Components.qc G = new yc(a2, d6Var).G(R.raw.info, 10, LocaleController.getString(R.string.SuggestedMessageAcceptStarsDisclaimer));
                     G.j = 60000;
                     G.k(true);
                     qcVarArr[0] = G;
@@ -605,7 +604,7 @@ public final /* synthetic */ class s4 implements Runnable {
                 boolean z24 = this.b;
                 w80 w80Var = (w80) this.e;
                 chat.join_to_send = z24;
-                npVar.x.d.getMessagesController().toggleChatJoinToSend(chat.id, z24, new ci.y0(npVar, z24, chat, i15), new fh(19, npVar, w80Var));
+                npVar.x.d.getMessagesController().toggleChatJoinToSend(chat.id, z24, new ci.y0(npVar, z24, chat, i15), new dh(i13, npVar, w80Var));
                 return;
             case 16:
                 np npVar2 = (np) this.c;
@@ -613,7 +612,7 @@ public final /* synthetic */ class s4 implements Runnable {
                 boolean z25 = this.b;
                 v80 v80Var = (v80) this.e;
                 chat2.join_request = z25;
-                npVar2.x.d.getMessagesController().toggleChatJoinRequest(chat2.id, z25, new mp(npVar2, i18), new fh(i13, npVar2, v80Var));
+                npVar2.x.d.getMessagesController().toggleChatJoinRequest(chat2.id, z25, new mp(npVar2, i17), new dh(19, npVar2, v80Var));
                 return;
             case 17:
                 boolean z26 = this.b;
@@ -649,19 +648,20 @@ public final /* synthetic */ class s4 implements Runnable {
                 ArrayList arrayList2 = (ArrayList) this.e;
                 pkVar.getClass();
                 String lowerCase = str3.trim().toLowerCase();
+                int i23 = 15;
                 if (lowerCase.length() == 0) {
-                    AndroidUtilities.runOnUIThread(new kd(i16, pkVar, new ArrayList()));
+                    AndroidUtilities.runOnUIThread(new uc(i23, pkVar, new ArrayList()));
                     return;
                 }
                 String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
                 if (!lowerCase.equals(translitString) && translitString.length() != 0) {
-                    r11 = translitString;
+                    r10 = translitString;
                 }
-                int i24 = (r11 != null ? 1 : 0) + 1;
+                int i24 = (r10 != null ? 1 : 0) + 1;
                 String[] strArr2 = new String[i24];
                 strArr2[0] = lowerCase;
-                if (r11 != null) {
-                    strArr2[1] = r11;
+                if (r10 != null) {
+                    strArr2[1] = r10;
                 }
                 ArrayList arrayList3 = new ArrayList();
                 if (!z27) {
@@ -684,7 +684,7 @@ public final /* synthetic */ class s4 implements Runnable {
                         }
                     }
                 }
-                AndroidUtilities.runOnUIThread(new kd(i16, pkVar, arrayList3));
+                AndroidUtilities.runOnUIThread(new uc(i23, pkVar, arrayList3));
                 return;
             case 19:
                 t80.t((t80) this.c, (TLRPC.TL_error) this.d, this.b, (TLRPC.TL_messages_importChatInvite) this.e);
@@ -728,7 +728,7 @@ public final /* synthetic */ class s4 implements Runnable {
                 a2Var2.k(true);
                 editTextBoldCursor2.requestFocus();
                 if (z29) {
-                    AndroidUtilities.runOnUIThread(new mh(i17, editTextBoldCursor2));
+                    AndroidUtilities.runOnUIThread(new mh(i16, editTextBoldCursor2));
                     return;
                 }
                 return;

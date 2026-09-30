@@ -43,7 +43,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class u9 extends org.telegram.ui.ActionBar.m2 {
     public final PointF[] E;
@@ -242,7 +242,7 @@ public class u9 extends org.telegram.ui.ActionBar.m2 {
                                     if (recognize.gender != 0) {
                                         this.M = true;
                                         CameraController.getInstance().stopPreview(this.c.getCameraSession());
-                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(12, this, recognize));
+                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(13, this, recognize));
                                         return;
                                     }
                                 }
@@ -270,7 +270,7 @@ public class u9 extends org.telegram.ui.ActionBar.m2 {
                             u9Var.N = SystemClock.elapsedRealtime();
                             AndroidUtilities.runOnUIThread(new l9(this, 8));
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(13, this, g02));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(14, this, g02));
                     } else if (z10) {
                         int i11 = u9Var.O + 1;
                         u9Var.O = i11;
@@ -288,7 +288,7 @@ public class u9 extends org.telegram.ui.ActionBar.m2 {
                         if (cameraView != null && cameraView.getCameraSession() != null && i10 != 3) {
                             CameraController.getInstance().stopPreview(u9Var.c.getCameraSession());
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(11, this, u9Var.Q));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(12, this, u9Var.Q));
                         if (i10 == 3) {
                             AndroidUtilities.runOnUIThread(new l9(this, 1));
                         }

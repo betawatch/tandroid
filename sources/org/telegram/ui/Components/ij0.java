@@ -9,7 +9,7 @@ import org.telegram.messenger.DispatchQueuePoolBackground;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class ij0 extends kj0 {
     public volatile RLottieNative U0;
@@ -96,11 +96,11 @@ public class ij0 extends kj0 {
         if (rLottieNative == null && rLottieNative2 == null) {
             return;
         }
-        ww wwVar = new ww(27, rLottieNative, rLottieNative2);
+        dv dvVar = new dv(28, rLottieNative, rLottieNative2);
         if (z10) {
-            DispatchQueuePoolBackground.execute(wwVar);
+            DispatchQueuePoolBackground.execute(dvVar);
         } else {
-            Utilities.globalQueue.postRunnable(wwVar);
+            Utilities.globalQueue.postRunnable(dvVar);
         }
     }
 

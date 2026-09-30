@@ -15,7 +15,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sa implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -200,10 +200,10 @@ public final /* synthetic */ class sa implements Utilities.Callback {
                 ArrayList arrayList6 = myVar.s;
                 org.telegram.ui.Components.mz mzVar = myVar.F;
                 if (str3.equals(str4)) {
-                    org.telegram.ui.Components.lw lwVar = mzVar.V;
+                    org.telegram.ui.Components.mw mwVar = mzVar.V;
                     org.telegram.ui.Components.yx yxVar = mzVar.P;
                     int i13 = 0;
-                    lwVar.e(false);
+                    mwVar.e(false);
                     myVar.y = true;
                     s4.h0 adapter = yxVar.getAdapter();
                     org.telegram.ui.Components.my myVar2 = mzVar.S;
@@ -262,7 +262,7 @@ public final /* synthetic */ class sa implements Utilities.Callback {
                 }
                 break;
             default:
-                yh.x3.r0((yh.x3) this.b, (TL_stars.StarGift) this.c, (TL_stars.StarGiftAttribute) this.d, (org.telegram.ui.Components.zc[]) this.e, (boolean[]) this.f, (ArrayList) obj);
+                yh.x3.r0((yh.x3) this.b, (TL_stars.StarGift) this.c, (TL_stars.StarGiftAttribute) this.d, (org.telegram.ui.Components.ad[]) this.e, (boolean[]) this.f, (ArrayList) obj);
                 break;
         }
     }

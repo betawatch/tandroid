@@ -17,7 +17,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class RadialProgress2 {
     public float A;
@@ -91,8 +91,8 @@ public class RadialProgress2 {
         imageReceiver.setRoundRadius(dp);
         paint.setColor(1677721600);
         if (view != null) {
-            fa0Var.A = new nv(view, 14);
-            fa0Var2.A = new nv(view, 14);
+            fa0Var.A = new ov(view, 14);
+            fa0Var2.A = new ov(view, 14);
         }
     }
 
@@ -451,8 +451,8 @@ public class RadialProgress2 {
         this.b = view;
         this.w.setParentView(view);
         Objects.requireNonNull(view);
-        this.i.A = new nv(view, 14);
-        this.j.A = new nv(view, 14);
+        this.i.A = new ov(view, 14);
+        this.j.A = new ov(view, 14);
     }
 
     public final void n(boolean z10, boolean z11) {

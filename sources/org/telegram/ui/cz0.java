@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class cz0 implements org.telegram.ui.Components.ol0 {
     public int a = 0;
@@ -514,7 +514,7 @@ public final class cz0 implements org.telegram.ui.Components.ol0 {
             }
             try {
                 AndroidUtilities.addToClipboard(UserInfoActivity.Z(userFull.birthday));
-                org.telegram.ui.Components.xc.a0(profileActivity).i(LocaleController.getString(R.string.BirthdayCopied)).j();
+                org.telegram.ui.Components.yc.a0(profileActivity).i(LocaleController.getString(R.string.BirthdayCopied)).j();
                 return true;
             } catch (Exception e) {
                 FileLog.e(e);

@@ -36,7 +36,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements ml0 {
     public final /* synthetic */ int a;
@@ -244,15 +244,15 @@ public final /* synthetic */ class j implements ml0 {
                         r11++;
                     }
                     MediaDataController.getInstance(i22).markFeaturedStickersAsRead(true, true);
-                    uv uvVar = new uv(m2Var, mzVar.getContext(), m2Var == null ? mzVar.Z1 : m2Var.getResourceProvider(), arrayList2);
+                    vv vvVar = new vv(m2Var, mzVar.getContext(), m2Var == null ? mzVar.Z1 : m2Var.getResourceProvider(), arrayList2);
                     if (i15 >= 0) {
-                        uvVar.O = i15;
+                        vvVar.O = i15;
                     }
                     if (m2Var != null) {
-                        m2Var.showDialog(uvVar);
+                        m2Var.showDialog(vvVar);
                         break;
                     } else {
-                        uvVar.show();
+                        vvVar.show();
                         break;
                     }
                 }
@@ -346,7 +346,7 @@ public final /* synthetic */ class j implements ml0 {
                         if (e10Var.D0 != peerDialogId || System.currentTimeMillis() - e10Var.E0 > 1500) {
                             e10Var.D0 = peerDialogId;
                             e10Var.E0 = System.currentTimeMillis();
-                            qc g10 = new xc(e10Var.k0, null).g(str, arrayList7);
+                            qc g10 = new yc(e10Var.k0, null).g(str, arrayList7);
                             g10.j = 1500;
                             g10.j();
                             break;

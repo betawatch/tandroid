@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class ci implements org.telegram.ui.web.g0 {
     public ValueAnimator a;
@@ -80,7 +80,7 @@ public final class ci implements org.telegram.ui.web.g0 {
         if (z10) {
             org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(wiVar.getContext(), 3, null);
             a2Var.q(150L);
-            yh.s5.y(i10, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new c2(a2Var, 1), new org.telegram.ui.oc(18, q4Var, str));
+            yh.t5.y(i10, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new c2(a2Var, 1), new org.telegram.ui.oc(18, q4Var, str));
             AndroidUtilities.hideKeyboard(q4Var);
             return;
         }

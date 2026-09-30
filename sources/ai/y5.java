@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.aw;
+import org.telegram.ui.Components.bw;
 import org.telegram.ui.bf0;
 import org.telegram.ui.g70;
 import org.telegram.ui.ld;
@@ -19,7 +19,7 @@ import org.telegram.ui.ro;
 import org.telegram.ui.yi1;
 import org.telegram.ui.zi1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class y5 extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G;
@@ -194,7 +194,7 @@ public final class y5 extends org.telegram.ui.Components.w9 {
             case 8:
                 if (!zg.e0.b(this)) {
                     super.invalidate();
-                    ((aw) this.H).f();
+                    ((bw) this.H).f();
                     break;
                 }
                 break;

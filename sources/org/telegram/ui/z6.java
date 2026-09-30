@@ -37,7 +37,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class z6 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public static volatile boolean k0 = false;
@@ -900,7 +900,7 @@ public final class z6 extends org.telegram.ui.ActionBar.m2 implements Notificati
                 e.remove(aVar3);
             }
         }
-        org.telegram.ui.Components.qc Q = org.telegram.ui.Components.xc.a0(this).Q(R.raw.ic_delete, 36, LocaleController.formatString(R.string.CacheWasCleared, AndroidUtilities.formatFileSize(j13 - this.H)));
+        org.telegram.ui.Components.qc Q = org.telegram.ui.Components.yc.a0(this).Q(R.raw.ic_delete, 36, LocaleController.formatString(R.string.CacheWasCleared, AndroidUtilities.formatFileSize(j13 - this.H)));
         Q.r = false;
         Q.j();
         ArrayList arrayList2 = new ArrayList(hashSet5);
@@ -1177,7 +1177,7 @@ public final class z6 extends org.telegram.ui.ActionBar.m2 implements Notificati
         if (v6Var != null) {
             boolean z11 = this.L;
             if (!z11 && this.H > 0) {
-                org.telegram.ui.Components.cd[] cdVarArr = new org.telegram.ui.Components.cd[11];
+                org.telegram.ui.Components.dd[] ddVarArr = new org.telegram.ui.Components.dd[11];
                 int i10 = 0;
                 while (true) {
                     ArrayList arrayList = this.a0;
@@ -1191,17 +1191,17 @@ public final class z6 extends org.telegram.ui.ActionBar.m2 implements Notificati
                         if (i11 >= 0) {
                             long j3 = t6Var.g;
                             boolean z12 = zArr[i11];
-                            org.telegram.ui.Components.cd cdVar = new org.telegram.ui.Components.cd();
-                            cdVar.c = j3;
-                            cdVar.b = z12;
-                            cdVarArr[i11] = cdVar;
+                            org.telegram.ui.Components.dd ddVar = new org.telegram.ui.Components.dd();
+                            ddVar.c = j3;
+                            ddVar.b = z12;
+                            ddVarArr[i11] = ddVar;
                         } else if (this.M) {
                             long j10 = t6Var.g;
                             boolean z13 = zArr[10];
-                            org.telegram.ui.Components.cd cdVar2 = new org.telegram.ui.Components.cd();
-                            cdVar2.c = j10;
-                            cdVar2.b = z13;
-                            cdVarArr[10] = cdVar2;
+                            org.telegram.ui.Components.dd ddVar2 = new org.telegram.ui.Components.dd();
+                            ddVar2.c = j10;
+                            ddVar2.b = z13;
+                            ddVarArr[10] = ddVar2;
                         }
                     }
                     i10++;
@@ -1209,11 +1209,11 @@ public final class z6 extends org.telegram.ui.ActionBar.m2 implements Notificati
                 if (System.currentTimeMillis() - this.U < 80) {
                     this.Q.n.d(0.0f, true);
                 }
-                this.Q.f(this.H, true, cdVarArr);
+                this.Q.f(this.H, true, ddVarArr);
             } else if (z11) {
-                v6Var.f(-1L, true, new org.telegram.ui.Components.cd[0]);
+                v6Var.f(-1L, true, new org.telegram.ui.Components.dd[0]);
             } else {
-                v6Var.f(0L, true, new org.telegram.ui.Components.cd[0]);
+                v6Var.f(0L, true, new org.telegram.ui.Components.dd[0]);
             }
         }
         o6 o6Var = this.S;

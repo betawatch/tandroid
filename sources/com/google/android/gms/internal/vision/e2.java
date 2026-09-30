@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e2 {
     public static float A(float f7, float f10, float f11, float f12) {

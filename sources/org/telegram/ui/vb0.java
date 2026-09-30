@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                     AndroidUtilities.runOnUIThread(new nn0(oo0Var, tL_error, tLObject2, 1));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new sj0(13, oo0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
+                    AndroidUtilities.runOnUIThread(new xi0(14, oo0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
                     break;
                 }
             case 10:
@@ -122,7 +122,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                             }
                         }
                         oo0Var2.getMessagesController().processUpdates(updates, false);
-                        AndroidUtilities.runOnUIThread(new sj0(14, oo0Var2, messageArr));
+                        AndroidUtilities.runOnUIThread(new xi0(15, oo0Var2, messageArr));
                         break;
                     } else {
                         callback.run((TLRPC.TL_payments_paymentResult) tLObject);
@@ -140,7 +140,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new jr0((PrivacyControlActivity) this.b, tL_error, tLObject, (boolean[]) this.c, 4));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new jx0(2, (PrivacySettingsActivity) this.b, (org.telegram.ui.Cells.w8) this.c));
+                AndroidUtilities.runOnUIThread(new ix0(3, (PrivacySettingsActivity) this.b, (org.telegram.ui.Cells.w8) this.c));
                 break;
             case 15:
                 AndroidUtilities.runOnUIThread(new jr0((ProfileActivity) this.b, tLObject, tL_error, (int[]) this.c, 7));
@@ -167,7 +167,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new jr0((org.telegram.ui.ActionBar.m2) this.b, tL_error, tLObject, (String) this.c, 16));
                 break;
             case 23:
-                AndroidUtilities.runOnUIThread(new p81(0, (z81) this.b, (TLRPC.TL_attachMenuBot) this.c));
+                AndroidUtilities.runOnUIThread(new n81(1, (z81) this.b, (TLRPC.TL_attachMenuBot) this.c));
                 break;
             case 24:
                 ea1 ea1Var = (ea1) this.b;
@@ -226,7 +226,7 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                     AndroidUtilities.runOnUIThread(new qd1(td1Var, tL_error, updatetheme));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new p81(8, td1Var, (TLRPC.TL_theme) tLObject));
+                    AndroidUtilities.runOnUIThread(new n81(9, td1Var, (TLRPC.TL_theme) tLObject));
                     break;
                 }
             case 27:

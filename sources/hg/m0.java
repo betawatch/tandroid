@@ -28,13 +28,13 @@ import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class m0 extends bb {
     public static final int g0 = -1;
@@ -142,7 +142,7 @@ public final class m0 extends bb {
         tL_connectedBot.recipients = tL_businessBotRecipients;
         m2 U = LaunchActivity.U();
         if (U != null) {
-            c.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(m0Var.Y)}, xc.a0(U), R.raw.contact_check, 36);
+            c.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(m0Var.Y)}, yc.a0(U), R.raw.contact_check, 36);
         }
     }
 

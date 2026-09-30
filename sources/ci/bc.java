@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class bc extends r {
     public final Path R1;
@@ -49,7 +49,7 @@ public final class bc extends r {
                 replaceTags.setSpan(new ac(this, i10), indexOf, indexOf2, 33);
             }
         }
-        org.telegram.ui.Components.qc M = new org.telegram.ui.Components.xc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
+        org.telegram.ui.Components.qc M = new org.telegram.ui.Components.yc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
         M.a = 2;
         M.j = 5000;
         M.k(false);

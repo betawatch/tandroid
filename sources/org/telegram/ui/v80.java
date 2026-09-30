@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v80 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -18,24 +18,24 @@ public final /* synthetic */ class v80 implements Runnable {
     public final /* synthetic */ TLObject d;
     public final /* synthetic */ int e;
     public final /* synthetic */ String f;
-    public final /* synthetic */ n80 h;
+    public final /* synthetic */ m80 h;
 
-    public /* synthetic */ v80(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, TLRPC.TL_error tL_error, n80 n80Var) {
+    public /* synthetic */ v80(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, TLRPC.TL_error tL_error, m80 m80Var) {
         this.b = launchActivity;
         this.d = tLObject;
         this.e = i10;
         this.f = str;
         this.c = tL_error;
-        this.h = n80Var;
+        this.h = m80Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.xc a02;
+        org.telegram.ui.Components.yc a02;
         int i10;
         int i11;
         int i12 = this.a;
-        n80 n80Var = this.h;
+        m80 m80Var = this.h;
         String str = this.f;
         TLObject tLObject = this.d;
         TLRPC.TL_error tL_error = this.c;
@@ -54,10 +54,10 @@ public final /* synthetic */ class v80 implements Runnable {
                     StringBuilder w10 = a4.a.w("cant import contact token. token=", str, " err=");
                     w10.append(tL_error == null ? null : tL_error.text);
                     FileLog.e(w10.toString());
-                    org.telegram.messenger.ok.p(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.m2) hg.c.g(1, launchActivity.d0)), null);
+                    org.telegram.messenger.ok.p(R.string.NoUsernameFound, org.telegram.ui.Components.yc.a0((org.telegram.ui.ActionBar.m2) hg.c.g(1, launchActivity.d0)), null);
                 }
                 try {
-                    n80Var.run();
+                    m80Var.run();
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -69,11 +69,11 @@ public final /* synthetic */ class v80 implements Runnable {
                     org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                     if (U != null) {
                         if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
-                            a02 = org.telegram.ui.Components.xc.a0(U);
+                            a02 = org.telegram.ui.Components.yc.a0(U);
                             i10 = R.raw.fire_on;
                             i11 = R.string.UniqueGiftNotFoundBurned;
                         } else {
-                            a02 = org.telegram.ui.Components.xc.a0(U);
+                            a02 = org.telegram.ui.Components.yc.a0(U);
                             i10 = R.raw.error;
                             i11 = R.string.UniqueGiftNotFound;
                         }
@@ -99,7 +99,7 @@ public final /* synthetic */ class v80 implements Runnable {
                     }
                 }
                 try {
-                    n80Var.run();
+                    m80Var.run();
                     break;
                 } catch (Exception e7) {
                     FileLog.e(e7);
@@ -107,12 +107,12 @@ public final /* synthetic */ class v80 implements Runnable {
         }
     }
 
-    public /* synthetic */ v80(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, String str, n80 n80Var) {
+    public /* synthetic */ v80(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, String str, m80 m80Var) {
         this.b = launchActivity;
         this.c = tL_error;
         this.d = tLObject;
         this.e = i10;
         this.f = str;
-        this.h = n80Var;
+        this.h = m80Var;
     }
 }

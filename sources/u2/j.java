@@ -7,9 +7,9 @@ import org.telegram.messenger.zj;
 import org.telegram.ui.Components.u50;
 import org.telegram.ui.da;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
-public final class j implements j0, n2.l {
+public final class j implements k0, n2.l {
     public final Object a;
     public a5.a b;
     public n2.k c;
@@ -36,7 +36,7 @@ public final class j implements j0, n2.l {
         }
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void c(int i10, f0 f0Var, b0 b0Var) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -47,7 +47,7 @@ public final class j implements j0, n2.l {
         }
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void d(int i10, f0 f0Var, b0 b0Var) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -57,7 +57,7 @@ public final class j implements j0, n2.l {
         }
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void e(int i10, f0 f0Var, t tVar, b0 b0Var) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -67,7 +67,7 @@ public final class j implements j0, n2.l {
         }
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void f(int i10, f0 f0Var, t tVar, b0 b0Var, IOException iOException, boolean z10) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -84,7 +84,7 @@ public final class j implements j0, n2.l {
         }
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void h(int i10, f0 f0Var, t tVar, b0 b0Var, int i11) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -101,7 +101,7 @@ public final class j implements j0, n2.l {
         }
     }
 
-    @Override // u2.j0
+    @Override // u2.k0
     public final void j(int i10, f0 f0Var, t tVar, b0 b0Var) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;

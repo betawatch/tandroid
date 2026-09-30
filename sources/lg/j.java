@@ -47,7 +47,7 @@ import org.telegram.ui.Components.it0;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.Components.voip.e1;
 import org.telegram.ui.Components.wq0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.cz0;
 import org.telegram.ui.d60;
@@ -69,7 +69,7 @@ import pg.k1;
 import pg.m1;
 import pg.n1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -171,7 +171,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 wn wnVar = (wn) this.b;
                 String str5 = (String) this.c;
                 AndroidUtilities.addToClipboard(str5);
-                xc.a0(wnVar).i(LocaleController.formatString(R.string.ExactTextCopied, str5)).j();
+                yc.a0(wnVar).i(LocaleController.formatString(R.string.ExactTextCopied, str5)).j();
                 return;
             case 4:
                 ArrayList arrayList = (ArrayList) this.b;
@@ -183,8 +183,8 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     }
                 }
                 int i14 = i12;
-                if (xc.a(qyVar)) {
-                    xc.z(qyVar, i14, 0, null).j();
+                if (yc.a(qyVar)) {
+                    yc.z(qyVar, i14, 0, null).j();
                     return;
                 }
                 return;
@@ -316,7 +316,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
             case 12:
                 x71 x71Var = (x71) this.b;
                 ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                ok.o(R.string.TextCopied, new xc(x71Var.getContainer(), null));
+                ok.o(R.string.TextCopied, new yc(x71Var.getContainer(), null));
                 return;
             case 13:
                 yb1 yb1Var = (yb1) this.b;

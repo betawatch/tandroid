@@ -34,7 +34,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class t10 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, le.e {
     public static final SpannableStringBuilder[] s0 = new SpannableStringBuilder[3];
@@ -346,8 +346,8 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
         String str2 = null;
         org.telegram.ui.ActionBar.m2 m2Var = this.L;
         if (i12 == 0) {
-            PhotoViewer.t1().J2(null, m2Var, null);
-            PhotoViewer.t1().a2(arrayList, i10, 0L, 0L, 0L, g10Var);
+            PhotoViewer.t1().K2(null, m2Var, null);
+            PhotoViewer.t1().b2(arrayList, i10, 0L, 0L, 0L, g10Var);
             this.R = PhotoViewer.t1().c;
             return;
         }
@@ -379,17 +379,17 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
                     AndroidUtilities.openDocument(messageObject, this.K, m2Var);
                     return;
                 }
-                PhotoViewer.t1().J2(null, m2Var, null);
+                PhotoViewer.t1().K2(null, m2Var, null);
                 int indexOf = arrayList.indexOf(messageObject);
                 if (indexOf >= 0) {
-                    PhotoViewer.t1().J2(null, m2Var, null);
-                    PhotoViewer.t1().a2(arrayList, indexOf, 0L, 0L, 0L, g10Var);
+                    PhotoViewer.t1().K2(null, m2Var, null);
+                    PhotoViewer.t1().b2(arrayList, indexOf, 0L, 0L, 0L, g10Var);
                     this.R = PhotoViewer.t1().c;
                     return;
                 } else {
                     ArrayList k10 = org.telegram.messenger.f0.k(messageObject);
-                    PhotoViewer.t1().J2(null, m2Var, null);
-                    PhotoViewer.t1().a2(k10, 0, 0L, 0L, 0L, g10Var);
+                    PhotoViewer.t1().K2(null, m2Var, null);
+                    PhotoViewer.t1().b2(k10, 0, 0L, 0L, 0L, g10Var);
                     this.R = PhotoViewer.t1().c;
                     return;
                 }
@@ -807,7 +807,7 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
                                     arrayList23.add(messageObject3);
                                     arrayList19.add(messageObject3);
                                     sparseArray2.put(messageObject3.getId(), messageObject3);
-                                    if (PhotoViewer.t1().Q1()) {
+                                    if (PhotoViewer.t1().R1()) {
                                         PhotoViewer t12 = PhotoViewer.t1();
                                         int i25 = t10Var3.R;
                                         arrayList16 = arrayList17;
@@ -829,7 +829,7 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
                                                 c10 = 0;
                                             }
                                             t12.P5[c10] = arrayList24.size() == t12.J5;
-                                            t12.C2();
+                                            t12.D2();
                                         }
                                     } else {
                                         arrayList16 = arrayList17;

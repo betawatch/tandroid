@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class m20 {
     public static final int x;
@@ -128,7 +128,7 @@ public final class m20 {
                     } else if (this.l) {
                         boolean onSingleTapUp = l20Var2.onSingleTapUp(motionEvent);
                         if (this.j && (k20Var = this.h) != null) {
-                            ((PhotoViewer) k20Var).Z1(motionEvent);
+                            ((PhotoViewer) k20Var).a2(motionEvent);
                         }
                         z17 = onSingleTapUp;
                     } else {
@@ -338,7 +338,7 @@ public final class m20 {
                                                 long j12 = m71Var.o + 10000;
                                                 m71Var.o = j12;
                                                 m71Var.p = LocaleController.formatPluralString("Seconds", (int) (j12 / 1000), new Object[0]);
-                                                photoViewer2.s2(j10);
+                                                photoViewer2.t2(j10);
                                                 photoViewer2.e0.invalidate();
                                                 photoViewer2.q3.h(j10 / A1, true);
                                                 photoViewer2.r3.invalidate();
@@ -409,7 +409,7 @@ public final class m20 {
                             if (photoViewer2.a6 == 1.0f) {
                                 float b10 = org.telegram.messenger.ok.b(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2));
                                 float b11 = org.telegram.messenger.ok.b(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.i1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.i1() / 2));
-                                photoViewer2.v3(3.0f);
+                                photoViewer2.w3(3.0f);
                                 float f17 = photoViewer2.E6;
                                 if (b10 >= f17) {
                                     f17 = photoViewer2.F6;
@@ -427,7 +427,7 @@ public final class m20 {
                                 photoViewer2.j0(1.0f, 0.0f, 0.0f, true);
                             }
                             photoViewer2.O6 = z13;
-                            photoViewer2.D1();
+                            photoViewer2.E1();
                             z12 = true;
                             this.h.getClass();
                             z10 = z12;

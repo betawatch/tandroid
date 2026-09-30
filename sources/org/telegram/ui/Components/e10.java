@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class e10 extends bb {
     public boolean A0;
@@ -135,7 +135,7 @@ public final class e10 extends bb {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.FilterDelete);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.FilterDeleteAlertLinks);
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new vm(callback));
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new nv(ymVar, 4));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ov(ymVar, 4));
         org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
         m2Var.showDialog(a2Var);
         TextView textView = (TextView) a2Var.d(-1);

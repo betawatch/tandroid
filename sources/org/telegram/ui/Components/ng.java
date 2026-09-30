@@ -25,10 +25,10 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class ng extends du {
-    public fd c;
+    public gd c;
     public final /* synthetic */ ChatActivityEnterView d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -134,8 +134,8 @@ public abstract class ng extends du {
         }
         MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) arrayList.get(0);
         if (!chatActivityEnterView.z2) {
-            PhotoViewer.t1().J2(null, wnVar, chatActivityEnterView.W3);
-            PhotoViewer.t1().f2(arrayList, 0, 2, false, new mg(this, photoEntry, file), chatActivityEnterView.P2);
+            PhotoViewer.t1().K2(null, wnVar, chatActivityEnterView.W3);
+            PhotoViewer.t1().g2(arrayList, 0, 2, false, new mg(this, photoEntry, file), chatActivityEnterView.P2);
         } else {
             AndroidUtilities.hideKeyboard(this);
             AndroidUtilities.runOnUIThread(new c5.v(this, arrayList, file, false, 9), 100L);
@@ -267,10 +267,10 @@ public abstract class ng extends du {
         if (!chatActivityEnterView.E3 && chatActivityEnterView.B3 == null) {
             if (!chatActivityEnterView.z0 && !chatActivityEnterView.r0()) {
                 if (this.c == null) {
-                    fd fdVar = new fd(this);
-                    this.c = fdVar;
+                    gd gdVar = new gd(this);
+                    this.c = gdVar;
                     final int i10 = 0;
-                    fdVar.h = new Runnable(this) { // from class: org.telegram.ui.Components.lg
+                    gdVar.h = new Runnable(this) { // from class: org.telegram.ui.Components.lg
                         public final /* synthetic */ ng b;
 
                         {
@@ -296,16 +296,16 @@ public abstract class ng extends du {
                         }
                     };
                 }
-                fd fdVar2 = this.c;
+                gd gdVar2 = this.c;
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
-                fdVar2.getClass();
+                gdVar2.getClass();
                 RectF rectF = AndroidUtilities.rectTmp;
                 float f7 = 0;
                 rectF.set(f7, f7, measuredWidth, measuredHeight);
-                fdVar2.i = false;
-                fdVar2.c = 0;
-                fdVar2.a(rectF);
+                gdVar2.i = false;
+                gdVar2.c = 0;
+                gdVar2.a(rectF);
                 return this.c.b(motionEvent);
             }
             if (chatActivityEnterView.t0() && motionEvent.getAction() == 0) {

@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class a41 extends Thread {
     public final /* synthetic */ String a;
@@ -75,7 +75,7 @@ public final class a41 extends Thread {
                 if (str2.length() > 0 && str2.charAt(0) == '\n') {
                     str3 = "\n" + str3;
                 }
-                AndroidUtilities.runOnUIThread(new yn0(16, callback2, str3));
+                AndroidUtilities.runOnUIThread(new yn0(17, callback2, str3));
             } catch (Exception e) {
                 e = e;
                 try {

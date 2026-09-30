@@ -8,7 +8,7 @@ import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class bt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ float a;
@@ -28,14 +28,14 @@ public final class bt0 extends AnimatorListenerAdapter {
         photoViewer.f6 = 0.0f;
         photoViewer.b6 = 0.0f;
         photoViewer.g6 = 0.0f;
-        float q22 = photoViewer.q2(false);
-        photoViewer.e6 = q22;
-        photoViewer.a6 = q22;
+        float r22 = photoViewer.r2(false);
+        photoViewer.e6 = r22;
+        photoViewer.a6 = r22;
         photoViewer.e0.invalidate();
         CropAreaView cropAreaView = photoViewer.C1.b.a;
-        float q23 = photoViewer.q2(false);
+        float r23 = photoViewer.r2(false);
         cropAreaView.n0 = 0.0f;
-        cropAreaView.o0 = q23;
+        cropAreaView.o0 = r23;
         cropAreaView.p0 = 0.0f;
         cropAreaView.q0 = 0.0f;
         cropAreaView.invalidate();

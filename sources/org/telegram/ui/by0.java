@@ -16,7 +16,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class by0 implements org.telegram.ui.ActionBar.z1, MessagesStorage.BooleanCallback, r0.n, org.telegram.ui.Components.ph0, org.telegram.ui.Components.ol0, FlagSecureReason.FlagSecureCondition, le.e, u60, org.telegram.ui.Components.uw0 {
     public final /* synthetic */ int a;
@@ -85,8 +85,8 @@ public final /* synthetic */ class by0 implements org.telegram.ui.ActionBar.z1, 
             case 0:
                 ProfileActivity profileActivity = this.b;
                 profileActivity.getMessagesController().blockPeer(profileActivity.e1);
-                if (org.telegram.ui.Components.xc.a(profileActivity)) {
-                    org.telegram.ui.Components.xc.d(profileActivity, true).j();
+                if (org.telegram.ui.Components.yc.a(profileActivity)) {
+                    org.telegram.ui.Components.yc.d(profileActivity, true).j();
                     break;
                 }
                 break;

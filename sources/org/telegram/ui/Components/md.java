@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class md extends ci.m {
     public boolean S0;
@@ -42,7 +42,7 @@ public abstract class md extends ci.m {
     public final RectF f1;
     public final Drawable g1;
     public final o6 h1;
-    public final yc i1;
+    public final zc i1;
     public ch.d j1;
     public final e6 k1;
     public final e6 l1;
@@ -61,7 +61,7 @@ public abstract class md extends ci.m {
         this.f1 = new RectF();
         o6 o6Var = new o6(false, false, false, false);
         this.h1 = o6Var;
-        this.i1 = new yc(this);
+        this.i1 = new zc(this);
         sr srVar = sr.h;
         this.k1 = new e6(this, 0L, 350L, srVar);
         this.l1 = new e6(this, 0L, 350L, srVar);
@@ -164,7 +164,7 @@ public abstract class md extends ci.m {
         int i10 = 0;
         if (z11) {
             imageView.setVisibility(0);
-            imageView.animate().alpha(z10 ? 1.0f : 0.0f).translationX(z10 ? 0.0f : AndroidUtilities.dp(8.0f)).withEndAction(new jd(this, z10, 1)).start();
+            imageView.animate().alpha(z10 ? 1.0f : 0.0f).translationX(z10 ? 0.0f : AndroidUtilities.dp(8.0f)).withEndAction(new kd(this, z10, 1)).start();
         } else {
             imageView.setVisibility(z10 ? 0 : 8);
             imageView.setAlpha(z10 ? 1.0f : 0.0f);
@@ -189,7 +189,7 @@ public abstract class md extends ci.m {
         this.s1 = z10;
         ImageView imageView = this.Z0;
         imageView.setVisibility(0);
-        imageView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).setInterpolator(sr.h).setDuration(420L).withEndAction(new jd(this, z10, 0)).start();
+        imageView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).setInterpolator(sr.h).setDuration(420L).withEndAction(new kd(this, z10, 0)).start();
         if (!z10) {
             ci.e4 e4Var = this.a1;
             if (e4Var != null) {
@@ -215,7 +215,7 @@ public abstract class md extends ci.m {
             this.a1.m(1.0f, ((-imageView.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
             addView(this.a1, w7.y5.d(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
             ci.e4 e4Var4 = this.a1;
-            e4Var4.l0 = new kd(0, this, e4Var3);
+            e4Var4.l0 = new uc(1, this, e4Var3);
             e4Var4.d = 4000L;
             e4Var4.u();
             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) + 1).apply();
@@ -335,22 +335,22 @@ public abstract class md extends ci.m {
         int action = motionEvent.getAction();
         RectF rectF = this.f1;
         e6 e6Var = this.l1;
-        yc ycVar = this.i1;
+        zc zcVar = this.i1;
         if (action == 0) {
-            ycVar.c(e6Var.c > 0.0f && rectF.contains(motionEvent.getX(), motionEvent.getY()));
+            zcVar.c(e6Var.c > 0.0f && rectF.contains(motionEvent.getX(), motionEvent.getY()));
         } else if (motionEvent.getAction() == 2) {
-            if (ycVar.h && (e6Var.c <= 0.0f || !rectF.contains(motionEvent.getX(), motionEvent.getY()))) {
-                ycVar.c(false);
+            if (zcVar.h && (e6Var.c <= 0.0f || !rectF.contains(motionEvent.getX(), motionEvent.getY()))) {
+                zcVar.c(false);
             }
-        } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && ycVar.h) {
+        } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && zcVar.h) {
             if (motionEvent.getAction() == 1) {
                 A();
                 this.h1.q(LocaleController.getString(this instanceof org.telegram.ui.us0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
             }
-            ycVar.c(false);
+            zcVar.c(false);
             return true;
         }
-        return ycVar.h || super.dispatchTouchEvent(motionEvent);
+        return zcVar.h || super.dispatchTouchEvent(motionEvent);
     }
 
     @Override // ci.m

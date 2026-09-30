@@ -1,17 +1,17 @@
 package ki;
 
-import ai.v1;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
+import android.media.AudioDeviceInfo;
+import android.media.AudioManager;
 import android.os.Looper;
 import android.os.ResultReceiver;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import java.io.File;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -27,14 +27,10 @@ import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.d60;
 import org.telegram.ui.Components.oo0;
@@ -43,7 +39,7 @@ import org.telegram.ui.il;
 import org.telegram.ui.z31;
 import rg.x0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -192,7 +188,7 @@ public final /* synthetic */ class h0 implements Runnable {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:153:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:130:?, code lost:
     
         return;
      */
@@ -203,11 +199,8 @@ public final /* synthetic */ class h0 implements Runnable {
     public final void run() {
         k1 k1Var;
         int i10 = 4;
-        long j3 = 0;
-        ArrayList arrayList = null;
-        int i11 = 0;
-        boolean z10 = true;
-        char c10 = 1;
+        int i11 = 1;
+        int i12 = 0;
         switch (this.a) {
             case 0:
                 k2.u uVar = (k2.u) this.b;
@@ -331,23 +324,21 @@ public final /* synthetic */ class h0 implements Runnable {
                     InputStream inputStream = jVar.b.getInputStream();
                     while (true) {
                         synchronized (kVar.a) {
-                            while (!kVar.r && kVar.m.get(Integer.valueOf(jVar.a)) == jVar && (!kVar.q || !jVar.e || jVar.c == j3)) {
+                            while (!kVar.r && kVar.m.get(Integer.valueOf(jVar.a)) == jVar && (!kVar.q || !jVar.e || jVar.c == 0)) {
                                 try {
                                     kVar.a.wait();
                                 } finally {
                                 }
                             }
                             if (!kVar.r && kVar.m.get(Integer.valueOf(jVar.a)) == jVar) {
-                                int read = inputStream.read(bArr, i11, (int) Math.min(65536L, jVar.c));
+                                int read = inputStream.read(bArr, 0, (int) Math.min(65536L, jVar.c));
                                 if (read < 0) {
-                                    kVar.c(jVar, z10);
+                                    kVar.c(jVar, true);
                                     return;
                                 }
-                                if (read == 0) {
-                                    j3 = 0;
-                                } else {
+                                if (read != 0) {
                                     byte[] bArr2 = new byte[read];
-                                    System.arraycopy(bArr, i11, bArr2, i11, read);
+                                    System.arraycopy(bArr, 0, bArr2, 0, read);
                                     synchronized (kVar.a) {
                                         try {
                                             if (!kVar.r && kVar.m.get(Integer.valueOf(jVar.a)) == jVar && kVar.q) {
@@ -357,9 +348,6 @@ public final /* synthetic */ class h0 implements Runnable {
                                         } finally {
                                         }
                                     }
-                                    j3 = 0;
-                                    i11 = 0;
-                                    z10 = true;
                                 }
                             }
                         }
@@ -400,19 +388,22 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((VoIPService) this.b).lambda$createGroupInstance$71((String) this.c);
                 return;
             case 22:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$56((org.telegram.messenger.voip.l0) this.c);
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$56((org.telegram.messenger.voip.m0) this.c);
                 return;
             case 23:
                 ((VoIPService) this.b).lambda$startScreenCapture$58((TLRPC.Updates) this.c);
                 return;
             case 24:
-                ((VoipAudioManager) this.b).lambda$isBluetoothAndSpeakerOnAsync$2((Utilities.Callback2) this.c);
+                ((AudioManager) this.b).setCommunicationDevice((AudioDeviceInfo) this.c);
                 return;
             case 25:
+                ((VoipAudioManager) this.b).lambda$isBluetoothAndSpeakerOnAsync$4((Utilities.Callback2) this.c);
+                return;
+            case 26:
                 org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) this.b;
                 boolean canScrollVertically = ((oo0) this.c).canScrollVertically(-1);
-                boolean z11 = !canScrollVertically;
-                if (kVar2.q1 == z11) {
+                boolean z10 = !canScrollVertically;
+                if (kVar2.q1 == z10) {
                     return;
                 }
                 ValueAnimator valueAnimator = kVar2.s1;
@@ -420,20 +411,20 @@ public final /* synthetic */ class h0 implements Runnable {
                     valueAnimator.cancel();
                 }
                 float f11 = kVar2.r1;
-                kVar2.q1 = z11;
+                kVar2.q1 = z10;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, canScrollVertically ? 0.0f : 1.0f);
                 kVar2.s1 = ofFloat;
-                ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, i11));
-                kVar2.s1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z11, c10 == true ? 1 : 0));
+                ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, i12));
+                kVar2.s1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z10, i11));
                 kVar2.s1.setDuration(320L);
                 kVar2.s1.setInterpolator(sr.h);
                 kVar2.s1.start();
                 return;
-            case 26:
+            case 27:
                 org.telegram.ui.ActionBar.k kVar3 = (org.telegram.ui.ActionBar.k) this.b;
                 boolean canScrollVertically2 = ((RecyclerView) this.c).canScrollVertically(-1);
-                boolean z12 = !canScrollVertically2;
-                if (kVar3.q1 == z12) {
+                boolean z11 = !canScrollVertically2;
+                if (kVar3.q1 == z11) {
                     return;
                 }
                 ValueAnimator valueAnimator2 = kVar3.s1;
@@ -441,16 +432,16 @@ public final /* synthetic */ class h0 implements Runnable {
                     valueAnimator2.cancel();
                 }
                 float f12 = kVar3.r1;
-                kVar3.q1 = z12;
+                kVar3.q1 = z11;
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f12, canScrollVertically2 ? 0.0f : 1.0f);
                 kVar3.s1 = ofFloat2;
                 ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar3, i10));
-                kVar3.s1.addListener(new org.telegram.ui.ActionBar.c(kVar3, z12, i11));
+                kVar3.s1.addListener(new org.telegram.ui.ActionBar.c(kVar3, z11, i12));
                 kVar3.s1.setDuration(320L);
                 kVar3.s1.setInterpolator(sr.h);
                 kVar3.s1.start();
                 return;
-            case 27:
+            case 28:
                 ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
                 m2 m2Var = (m2) this.c;
                 Drawable drawable = ActionBarLayout.p1;
@@ -462,7 +453,7 @@ public final /* synthetic */ class h0 implements Runnable {
                     return;
                 }
                 return;
-            case 28:
+            default:
                 m2 m2Var2 = (m2) this.b;
                 m2 m2Var3 = (m2) this.c;
                 Drawable drawable2 = ActionBarLayout.p1;
@@ -471,41 +462,6 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 m2Var3.onTransitionAnimationEnd(true, false);
                 m2Var3.onBecomeFullyVisible();
-                return;
-            default:
-                c6 c6Var = (c6) this.b;
-                ArrayList arrayList2 = (ArrayList) this.c;
-                int size = arrayList2.size();
-                int i12 = 0;
-                while (i12 < size) {
-                    f6 f6Var = (f6) arrayList2.get(i12);
-                    File d = f6Var.d();
-                    if (d == null || d.length() <= 0) {
-                        if (arrayList == null) {
-                            arrayList = new ArrayList();
-                        }
-                        if (!arrayList.contains(f6Var.o)) {
-                            arrayList.add(f6Var.o);
-                        }
-                    } else {
-                        arrayList2.remove(i12);
-                        i12--;
-                        size--;
-                    }
-                    i12++;
-                }
-                if (arrayList == null) {
-                    return;
-                }
-                TL_account.getMultiWallPapers getmultiwallpapers = new TL_account.getMultiWallPapers();
-                int size2 = arrayList.size();
-                while (i11 < size2) {
-                    TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-                    tL_inputWallPaperSlug.slug = (String) arrayList.get(i11);
-                    getmultiwallpapers.wallpapers.add(tL_inputWallPaperSlug);
-                    i11++;
-                }
-                ConnectionsManager.getInstance(c6Var.a).sendRequest(getmultiwallpapers, new v1(20, c6Var, arrayList2));
                 return;
         }
     }

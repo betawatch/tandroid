@@ -41,13 +41,13 @@ import org.telegram.ui.Components.qh;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.vg;
 import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yh;
 import org.telegram.ui.jk;
 import org.telegram.ui.vi0;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class r extends oi implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] Q = {1, 2, 16, 8, 256, 4, 16384, 32768};
@@ -807,7 +807,7 @@ public final class r extends oi implements NotificationCenter.NotificationCenter
         x3 x3Var = this.r;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if ((this.b.f0 instanceof wn) && x3Var.r2() && T()) {
-                org.telegram.messenger.f0.p(R.string.RichEditorDraftSaved, new xc(this.s, this.a), R.raw.contact_check, 36);
+                org.telegram.messenger.f0.p(R.string.RichEditorDraftSaved, new yc(this.s, this.a), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!x3Var.h3(keyEvent)) {

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class pg implements Utilities.Callback2 {
                 break;
             case 1:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                n80 n80Var = (n80) obj3;
+                m80 m80Var = (m80) obj3;
                 TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 Pattern pattern = LaunchActivity.B1;
@@ -46,11 +46,11 @@ public final /* synthetic */ class pg implements Utilities.Callback2 {
                     updates = updates2;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        AndroidUtilities.runOnUIThread(new n80(2, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
+                        AndroidUtilities.runOnUIThread(new m80(3, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
                     }
                     updates = null;
                 }
-                AndroidUtilities.runOnUIThread(new ei.l3(launchActivity, n80Var, tL_error, updates, this.b, 26));
+                AndroidUtilities.runOnUIThread(new ei.l3(launchActivity, m80Var, tL_error, updates, this.b, 26));
                 break;
             default:
                 PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
@@ -61,13 +61,13 @@ public final /* synthetic */ class pg implements Utilities.Callback2 {
                 int i11 = this.b;
                 if (!z10) {
                     if (tL_error2 != null) {
-                        org.telegram.ui.Components.xc.a0(passkeysActivity).d0(tL_error2, false);
+                        org.telegram.ui.Components.yc.a0(passkeysActivity).d0(tL_error2, false);
                         arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
                         passkeysActivity.a.Y2.N(true);
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.xc.a0(passkeysActivity).c0("FALSE", false);
+                    org.telegram.ui.Components.yc.a0(passkeysActivity).c0("FALSE", false);
                     arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
                     passkeysActivity.a.Y2.N(true);
                     break;
@@ -76,10 +76,10 @@ public final /* synthetic */ class pg implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ pg(LaunchActivity launchActivity, n80 n80Var, int i10) {
+    public /* synthetic */ pg(LaunchActivity launchActivity, m80 m80Var, int i10) {
         this.a = 1;
         this.c = launchActivity;
-        this.d = n80Var;
+        this.d = m80Var;
         this.b = i10;
     }
 }

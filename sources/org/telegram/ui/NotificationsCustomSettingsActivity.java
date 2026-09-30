@@ -50,7 +50,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public final int[] E;
@@ -451,10 +451,10 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                             } else if (intValue != 4) {
                                 i22 = -1;
                             }
-                            if (i22 < 0 || !xc.a(notificationsCustomSettingsActivity4)) {
+                            if (i22 < 0 || !yc.a(notificationsCustomSettingsActivity4)) {
                                 return;
                             }
-                            xc.z(notificationsCustomSettingsActivity4, i22, 0, null).j();
+                            yc.z(notificationsCustomSettingsActivity4, i22, 0, null).j();
                         }
                     };
                     notificationsCustomSettingsActivity2 = notificationsCustomSettingsActivity3;
@@ -1345,7 +1345,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
         } else {
             arrayList = null;
         }
-        getMessagesStorage().getStorageQueue().postRunnable(new sj0(3, this, arrayList));
+        getMessagesStorage().getStorageQueue().postRunnable(new xi0(4, this, arrayList));
     }
 
     public final void k0(nk0 nk0Var, View view, boolean z10) {

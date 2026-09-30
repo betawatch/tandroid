@@ -1,12 +1,12 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.b11;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
-public final class l0 extends yc {
+public final class l0 extends zc {
     public final /* synthetic */ int j;
     public final /* synthetic */ Object k;
 
@@ -17,7 +17,7 @@ public final class l0 extends yc {
         this.k = u1Var2;
     }
 
-    @Override // org.telegram.ui.Components.yc
+    @Override // org.telegram.ui.Components.zc
     public final void b() {
         switch (this.j) {
             case 0:

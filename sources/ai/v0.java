@@ -14,12 +14,12 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.be;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.of;
 import org.telegram.ui.vi0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -182,7 +182,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 TL_account.TL_businessChatLink tL_businessChatLink = ((hg.v) this.b).f;
                 if (tL_businessChatLink != null) {
                     AndroidUtilities.addToClipboard(tL_businessChatLink.link);
-                    xc.a0(LaunchActivity.R()).k(false).j();
+                    yc.a0(LaunchActivity.R()).k(false).j();
                     break;
                 }
                 break;

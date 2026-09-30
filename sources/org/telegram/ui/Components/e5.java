@@ -81,7 +81,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.le1;
 import org.telegram.ui.uh1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class e5 {
     public static final Pattern a = Pattern.compile("^([a-zA-Z][a-zA-Z0-9+\\-.]*://)?([a-zA-Z0-9\\-]+\\.)+[a-zA-Z]{2,}(:\\d+)?(/[^\\s]*)?$");
@@ -214,8 +214,8 @@ public abstract class e5 {
                 int i11 = i10 == 0 ? 0 : i10 == 1 ? 1 : i10 == 2 ? 2 : 3;
                 NotificationsController.getInstance(UserConfig.selectedAccount).setDialogNotificationsSettings(j3, j10, i11);
                 org.telegram.ui.ActionBar.m2 m2Var2 = m2Var;
-                if (xc.a(m2Var2)) {
-                    xc.z(m2Var2, i11, 0, d6Var).j();
+                if (yc.a(m2Var2)) {
+                    yc.z(m2Var2, i11, 0, d6Var).j();
                 }
             }
         };
@@ -1582,7 +1582,7 @@ public abstract class e5 {
             sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i10).isUserContactBlocked(j3));
         }
         long j11 = i11 * sendPaidMessagesStars;
-        yh.s5.y(i10, false).P.put(Long.valueOf(j3), Integer.valueOf(i11));
+        yh.t5.y(i10, false).P.put(Long.valueOf(j3), Integer.valueOf(i11));
         if (j11 <= 0 || j10 == j11) {
             callback.run(Long.valueOf(j11));
             return false;
@@ -1595,7 +1595,7 @@ public abstract class e5 {
         }
         Activity activity = AndroidUtilities.getActivity();
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-        org.telegram.ui.ActionBar.d6 dVar = (PhotoViewer.t1().Q1() || (U != null && U.hasShownSheet())) ? new ai.d() : U != null ? U.getResourceProvider() : null;
+        org.telegram.ui.ActionBar.d6 dVar = (PhotoViewer.t1().R1() || (U != null && U.hasShownSheet())) ? new ai.d() : U != null ? U.getResourceProvider() : null;
         String shortName = DialogObject.getShortName(i10, j3);
         if (ChatObject.isMonoForum(i10, j3)) {
             shortName = ng.d.h(i10, j3);
@@ -1624,7 +1624,7 @@ public abstract class e5 {
                     SharedPreferences.Editor edit = MessagesController.getInstance(i13).getMainSettings().edit();
                     long j13 = j3;
                     edit.putLong(org.telegram.ui.Cells.c1.j(j13, "ask_paid_message_", "_price"), j12).apply();
-                    yh.s5.y(i13, false).O.put(Long.valueOf(j13), Long.valueOf(System.currentTimeMillis()));
+                    yh.t5.y(i13, false).O.put(Long.valueOf(j13), Long.valueOf(System.currentTimeMillis()));
                 }
                 AndroidUtilities.runOnUIThread(t2Var);
             }
@@ -1687,7 +1687,7 @@ public abstract class e5 {
             }
             hashMap.put(l4, Long.valueOf(sendPaidMessagesStars));
             long j11 = j10 + sendPaidMessagesStars;
-            yh.s5.y(i10, z10).P.put(l4, Integer.valueOf(i11));
+            yh.t5.y(i10, z10).P.put(l4, Integer.valueOf(i11));
             if (sendPaidMessagesStars > 0) {
                 i12++;
             }
@@ -1704,7 +1704,7 @@ public abstract class e5 {
         }
         Activity activity = AndroidUtilities.getActivity();
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-        org.telegram.ui.ActionBar.d6 dVar = (PhotoViewer.t1().Q1() || (U != null && U.hasShownSheet())) ? new ai.d() : U != null ? U.getResourceProvider() : null;
+        org.telegram.ui.ActionBar.d6 dVar = (PhotoViewer.t1().R1() || (U != null && U.hasShownSheet())) ? new ai.d() : U != null ? U.getResourceProvider() : null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("MessageLockedStarsConfirmMessageMulti1", i12)));
         spannableStringBuilder.append((CharSequence) " ");
@@ -1849,7 +1849,7 @@ public abstract class e5 {
         org.telegram.ui.ActionBar.m2 m2Var2 = m2Var;
         if (tL_error != null && tL_error.code != 406 && (str = tL_error.text) != null) {
             if ("BALANCE_TOO_LOW".equalsIgnoreCase(str)) {
-                final long o9 = yh.s5.o(tLObject);
+                final long o9 = yh.t5.o(tLObject);
                 if (tLObject instanceof TLRPC.TL_messages_sendMessage) {
                     peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_messages_sendMessage) tLObject).peer);
                 } else if (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) {
@@ -1863,12 +1863,12 @@ public abstract class e5 {
                 } else {
                     j3 = 0;
                     if (o9 > 0) {
-                        yh.s5.y(i10, false).q(true, true, new Runnable() { // from class: org.telegram.ui.Components.o2
+                        yh.t5.y(i10, false).q(true, true, new Runnable() { // from class: org.telegram.ui.Components.o2
                             @Override // java.lang.Runnable
                             public final void run() {
                                 Activity activity = AndroidUtilities.getActivity();
                                 org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                                org.telegram.ui.ActionBar.d6 dVar = (PhotoViewer.t1().Q1() || (U != null && U.hasShownSheet())) ? new ai.d() : U != null ? U.getResourceProvider() : null;
+                                org.telegram.ui.ActionBar.d6 dVar = (PhotoViewer.t1().R1() || (U != null && U.hasShownSheet())) ? new ai.d() : U != null ? U.getResourceProvider() : null;
                                 int i11 = i10;
                                 long j10 = j3;
                                 new yh.l7(activity, dVar, o9, 13, DialogObject.getShortName(i11, j10), new ai.f(21), j10).show();

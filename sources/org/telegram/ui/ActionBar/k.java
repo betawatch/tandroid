@@ -53,7 +53,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.vz0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements le.e, x5 {
     public CharSequence A0;
@@ -2287,7 +2287,7 @@ public class k extends FrameLayout implements le.e, x5 {
     public final void y(RecyclerView recyclerView, boolean z10, int i10, int i11) {
         this.o1 = i10;
         this.p1 = i11;
-        ki.h0 h0Var = new ki.h0(26, this, recyclerView);
+        ki.h0 h0Var = new ki.h0(27, this, recyclerView);
         recyclerView.j(new ai.r(h0Var, 12));
         this.n1 = z10;
         if (this.m1) {
@@ -2311,7 +2311,7 @@ public class k extends FrameLayout implements le.e, x5 {
         this.o1 = i10;
         this.p1 = i11;
         b();
-        ki.h0 h0Var = new ki.h0(25, this, oo0Var);
+        ki.h0 h0Var = new ki.h0(26, this, oo0Var);
         oo0Var.f.add(h0Var);
         if (this.m1) {
             h0Var.run();

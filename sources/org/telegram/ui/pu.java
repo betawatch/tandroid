@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class pu extends og.b {
     public final /* synthetic */ int d;
@@ -158,9 +158,9 @@ public final class pu extends og.b {
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.dd ddVar = (org.telegram.ui.Components.dd) view;
+                    org.telegram.ui.Components.ed edVar = (org.telegram.ui.Components.ed) view;
                     if (ruVar.g3 != null) {
-                        ddVar.f(ruVar.j3, ruVar.X2, ruVar.h3);
+                        edVar.f(ruVar.j3, ruVar.X2, ruVar.h3);
                     }
                     ruVar.X2 = false;
                     break;

@@ -16,9 +16,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class c {
     public static void A(n2.h hVar, n2.h hVar2) {
@@ -430,8 +430,8 @@ public abstract /* synthetic */ class c {
         alertDialog$Builder.o();
     }
 
-    public static void q(int i10, Object[] objArr, xc xcVar, int i11, int i12) {
-        xcVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
+    public static void q(int i10, Object[] objArr, yc ycVar, int i11, int i12) {
+        ycVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
     }
 
     public static /* synthetic */ void r(MediaMetadataRetriever mediaMetadataRetriever) {

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class jo implements ImageReceiver.ImageReceiverDelegate {
     public boolean a;
@@ -27,7 +27,7 @@ public final class jo implements ImageReceiver.ImageReceiverDelegate {
             boolean z10 = drawable instanceof kj0;
             hg.h hVar = this.b;
             if (z10 && (eVar = (kj0Var = (kj0) drawable).B0) != null && eVar.g()) {
-                kj0Var.A0 = new kd(19, this, hVar);
+                kj0Var.A0 = new uc(20, this, hVar);
             } else {
                 lo.a(this.c);
                 hVar.run();

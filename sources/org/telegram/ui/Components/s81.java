@@ -14,7 +14,7 @@ import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.fi1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class s81 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -285,7 +285,7 @@ public final class s81 extends AnimatorListenerAdapter {
                 }
                 break;
             case 27:
-                ((org.telegram.ui.dj0) this.b).T.setVisibility(8);
+                ((org.telegram.ui.ej0) this.b).T.setVisibility(8);
                 break;
             case 28:
                 org.telegram.ui.yj0 yj0Var = (org.telegram.ui.yj0) this.b;

@@ -14,7 +14,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class p91 extends AsyncTask {
     public final String a;
@@ -373,7 +373,7 @@ public final class p91 extends AsyncTask {
             obj = null;
             if (!TextUtils.isEmpty(str2)) {
                 try {
-                    AndroidUtilities.runOnUIThread(new yn0(24, this, str2 + str3 + "('" + this.d.substring(3) + "');"));
+                    AndroidUtilities.runOnUIThread(new yn0(25, this, str2 + str3 + "('" + this.d.substring(3) + "');"));
                     this.b.await();
                 } catch (Exception e14) {
                     FileLog.e(e14);

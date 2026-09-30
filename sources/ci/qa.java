@@ -31,7 +31,7 @@ import org.telegram.ui.Components.vf0;
 import org.telegram.ui.Components.xz;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class qa implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.z1, r91, Utilities.CallbackVoidReturn, j71, h9, j8 {
     public final /* synthetic */ int a;

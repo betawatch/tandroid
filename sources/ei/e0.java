@@ -20,14 +20,14 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.gd0;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mi1;
 import org.telegram.ui.p51;
 import org.telegram.ui.qo0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -126,11 +126,11 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                     try {
                         String str = LocaleController.getInstance().getCurrentLocaleInfo().shortName;
                         if (lastFragment != null) {
-                            qc Q = xc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
+                            qc Q = yc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q.j = 5000;
                             Q.j();
                         } else {
-                            qc Q2 = new xc(lb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
+                            qc Q2 = new yc(lb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q2.j = 5000;
                             Q2.j();
                         }

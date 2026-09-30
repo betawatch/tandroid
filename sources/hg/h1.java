@@ -32,10 +32,10 @@ import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import w7.y5;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class h1 extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public t61 a;
@@ -57,7 +57,7 @@ public final class h1 extends m2 implements NotificationCenter.NotificationCente
     public static void U(h1 h1Var, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
             h1Var.b.a(0.0f);
-            xc.b0(tL_error);
+            yc.b0(tL_error);
             return;
         }
         if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
@@ -71,7 +71,7 @@ public final class h1 extends m2 implements NotificationCenter.NotificationCente
             return;
         }
         h1Var.b.a(0.0f);
-        ok.p(R.string.UnknownError, xc.a0(h1Var), null);
+        ok.p(R.string.UnknownError, yc.a0(h1Var), null);
     }
 
     public static void V(h1 h1Var, ArrayList arrayList) {

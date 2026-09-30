@@ -10,7 +10,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class m90 {
     public View a;
@@ -230,7 +230,7 @@ public final class m90 {
         if (!t90Var.c()) {
             t90Var.a();
         }
-        AndroidUtilities.runOnUIThread(new ww(19, this, t90Var), t90Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - t90Var.c) : 0L);
+        AndroidUtilities.runOnUIThread(new dv(20, this, t90Var), t90Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - t90Var.c) : 0L);
     }
 
     public m90(View view) {

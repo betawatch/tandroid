@@ -9,7 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public abstract class ru0 {
     public final View i;
@@ -82,7 +82,7 @@ public abstract class ru0 {
             ps0 ps0Var = (ps0) this;
             PhotoViewer photoViewer = ps0Var.t;
             if (ps0Var == photoViewer.W0[0]) {
-                photoViewer.q3();
+                photoViewer.r3();
             }
         }
     }
@@ -189,7 +189,7 @@ public abstract class ru0 {
         ps0 ps0Var = (ps0) this;
         PhotoViewer photoViewer = ps0Var.t;
         if (ps0Var == photoViewer.W0[0]) {
-            photoViewer.q3();
+            photoViewer.r3();
         }
         view.invalidate();
     }

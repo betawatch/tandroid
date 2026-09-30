@@ -5,19 +5,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i31 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.messenger.video.a b;
-    public final /* synthetic */ org.telegram.ui.Components.xc c;
+    public final /* synthetic */ org.telegram.ui.Components.yc c;
     public final /* synthetic */ Context d;
     public final /* synthetic */ ai.a1 e;
 
-    public /* synthetic */ i31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, Context context, ai.a1 a1Var, int i10) {
+    public /* synthetic */ i31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.yc ycVar, Context context, ai.a1 a1Var, int i10) {
         this.a = i10;
         this.b = aVar;
-        this.c = xcVar;
+        this.c = ycVar;
         this.d = context;
         this.e = a1Var;
     }

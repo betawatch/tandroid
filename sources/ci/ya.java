@@ -4,11 +4,11 @@ import android.animation.ValueAnimator;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.ew;
+import org.telegram.ui.Components.fw;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.fi1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ya implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -47,12 +47,12 @@ public final /* synthetic */ class ya implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                ew ewVar = (ew) obj;
-                ewVar.getClass();
+                fw fwVar = (fw) obj;
+                fwVar.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ewVar.L = floatValue2;
-                ewVar.K = AndroidUtilities.lerp(f10, f7, floatValue2);
-                ewVar.b.invalidate();
+                fwVar.L = floatValue2;
+                fwVar.K = AndroidUtilities.lerp(f10, f7, floatValue2);
+                fwVar.b.invalidate();
                 break;
             case 3:
                 fi1 fi1Var = (fi1) obj;

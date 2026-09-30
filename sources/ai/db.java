@@ -26,9 +26,9 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.t90;
 import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.uv;
+import org.telegram.ui.Components.vv;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class db extends View {
     public static Object I;
@@ -290,9 +290,9 @@ public final class db extends View {
         }
     }
 
-    public uv getAlert() {
+    public vv getAlert() {
         if (this.s != null) {
-            return new uv(null, getContext(), this.a, this.s);
+            return new vv(null, getContext(), this.a, this.s);
         }
         int i10 = -this.G;
         this.G = i10;

@@ -35,9 +35,9 @@ import org.telegram.tgnet.tl.TL_fragment;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 if (rs0Var != null) {
                     rs0Var.setImage(bitmap);
                 }
-                photoViewer.d3(0);
+                photoViewer.e3(0);
                 CheckBox checkBox = photoViewer.N0;
                 if (!checkBox.x) {
                     checkBox.callOnClick();
@@ -208,7 +208,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 int[] iArr = (int[]) obj;
                 if (!(((TLObject) obj3) instanceof TLRPC.TL_boolTrue)) {
                     profileActivity.getClass();
-                    org.telegram.ui.Components.xc.a0(profileActivity).d0(tL_error, false);
+                    org.telegram.ui.Components.yc.a0(profileActivity).d0(tL_error, false);
                 }
                 if (profileActivity.o4 == iArr[0]) {
                     profileActivity.o4 = 0;
@@ -224,7 +224,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                     d20.a(profileActivity2.getParentActivity(), 0, tL_username.username, profileActivity2.e1 != 0 ? profileActivity2.getMessagesController().getUser(Long.valueOf(profileActivity2.e1)) : profileActivity2.getMessagesController().getChat(Long.valueOf(profileActivity2.f1)), (TL_fragment.TL_collectibleInfo) tLObject3, profileActivity2.z0);
                     break;
                 } else {
-                    org.telegram.ui.Components.xc.b0(tL_error2);
+                    org.telegram.ui.Components.yc.b0(tL_error2);
                     break;
                 }
             case 9:
@@ -272,7 +272,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 ProfileActivity profileActivity5 = ((j01) obj4).c.e;
                 profileActivity5.M4(null);
                 if (!(tLObject5 instanceof TL_fragment.TL_collectibleInfo)) {
-                    org.telegram.ui.Components.xc.b0(tL_error3);
+                    org.telegram.ui.Components.yc.b0(tL_error3);
                     break;
                 } else {
                     TLObject user3 = profileActivity5.e1 != 0 ? profileActivity5.getMessagesController().getUser(Long.valueOf(profileActivity5.e1)) : profileActivity5.getMessagesController().getChat(Long.valueOf(profileActivity5.f1));
@@ -446,7 +446,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 String str6 = (String) obj2;
                 TLRPC.TL_error tL_error6 = (TLRPC.TL_error) obj;
                 if (((TLObject) obj3) instanceof TLRPC.TL_boolTrue) {
-                    zg1Var.u0(new p81(17, zg1Var, str6));
+                    zg1Var.u0(new n81(18, zg1Var, str6));
                     break;
                 } else if (tL_error6 != null && !tL_error6.text.startsWith("CODE_INVALID")) {
                     if (tL_error6.text.startsWith("FLOOD_WAIT")) {
@@ -556,15 +556,15 @@ public final /* synthetic */ class jr0 implements Runnable {
                             ((j1) view).c(z11, true);
                             o2 o2Var2 = o2.this;
                             o2Var2.f.u0(0);
-                            return xc.a0(o2Var2.a.a);
+                            return yc.a0(o2Var2.a.a);
                         }
                     }).show();
                     break;
                 } else {
                     if (z10) {
-                        org.telegram.messenger.f0.p(R.string.Gift2Unpinned, org.telegram.ui.Components.xc.a0(bs0Var.a), R.raw.ic_unpin, 36);
+                        org.telegram.messenger.f0.p(R.string.Gift2Unpinned, org.telegram.ui.Components.yc.a0(bs0Var.a), R.raw.ic_unpin, 36);
                     } else {
-                        org.telegram.ui.Components.xc.a0(bs0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
+                        org.telegram.ui.Components.yc.a0(bs0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
                     }
                     ((xh.j1) view).c(z11, true);
                     o2Var.f.u0(0);
@@ -576,7 +576,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 nf.e eVar = (nf.e) obj2;
                 org.telegram.ui.ActionBar.a2 a2Var5 = (org.telegram.ui.ActionBar.a2) obj;
                 if (m2Var != null && tL_error9 != null) {
-                    org.telegram.ui.Components.xc.a0(m2Var).d0(tL_error9, false);
+                    org.telegram.ui.Components.yc.a0(m2Var).d0(tL_error9, false);
                 }
                 if ((m2Var instanceof wn) && tL_error9 == null) {
                     ((wn) m2Var).Yb();
@@ -585,7 +585,7 @@ public final /* synthetic */ class jr0 implements Runnable {
                 a2Var5.dismiss();
                 break;
             default:
-                yh.x3.Z((yh.x3) obj4, (boolean[]) obj3, (TL_stars.StarGiftAttribute) obj2, (org.telegram.ui.Components.zc[]) obj);
+                yh.x3.Z((yh.x3) obj4, (boolean[]) obj3, (TL_stars.StarGiftAttribute) obj2, (org.telegram.ui.Components.ad[]) obj);
                 break;
         }
     }

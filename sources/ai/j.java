@@ -24,7 +24,7 @@ import org.telegram.ui.Components.cg0;
 import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.ih0;
 import org.telegram.ui.Components.lh0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yf0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -36,7 +36,7 @@ import org.telegram.ui.sa1;
 import org.telegram.ui.wn;
 import org.telegram.ui.yb0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -205,7 +205,7 @@ public final /* synthetic */ class j implements Runnable {
                 }
                 break;
             case 19:
-                org.telegram.ui.Components.qc Q = xc.a0((org.telegram.ui.z6) obj).Q(R.raw.ic_delete, 36, LocaleController.formatString(R.string.CacheWasCleared, AndroidUtilities.formatFileSize(j3)));
+                org.telegram.ui.Components.qc Q = yc.a0((org.telegram.ui.z6) obj).Q(R.raw.ic_delete, 36, LocaleController.formatString(R.string.CacheWasCleared, AndroidUtilities.formatFileSize(j3)));
                 Q.r = false;
                 Q.j();
                 break;
@@ -223,7 +223,7 @@ public final /* synthetic */ class j implements Runnable {
                 lh0 lh0Var = (lh0) obj;
                 Activity activity2 = AndroidUtilities.getActivity();
                 org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
-                if (PhotoViewer.t1().Q1() || (U2 != null && U2.hasShownSheet())) {
+                if (PhotoViewer.t1().R1() || (U2 != null && U2.hasShownSheet())) {
                     d6Var2 = new d();
                 } else if (U2 != null) {
                     d6Var2 = U2.getResourceProvider();

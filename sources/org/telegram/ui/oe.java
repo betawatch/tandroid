@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oe implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -46,8 +46,8 @@ public final /* synthetic */ class oe implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
                                     try {
                                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.xc.a(wnVar2)) {
-                                            org.telegram.ui.Components.xc.a0(wnVar2).k(!wnVar2.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
+                                        if (org.telegram.ui.Components.yc.a(wnVar2)) {
+                                            org.telegram.ui.Components.yc.a0(wnVar2).k(!wnVar2.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
                                             break;
                                         }
                                     } catch (Exception e) {
@@ -98,8 +98,8 @@ public final /* synthetic */ class oe implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
                                     try {
                                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.xc.a(wnVar22)) {
-                                            org.telegram.ui.Components.xc.a0(wnVar22).k(!wnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
+                                        if (org.telegram.ui.Components.yc.a(wnVar22)) {
+                                            org.telegram.ui.Components.yc.a0(wnVar22).k(!wnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
                                             break;
                                         }
                                     } catch (Exception e) {
@@ -150,8 +150,8 @@ public final /* synthetic */ class oe implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
                                     try {
                                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.xc.a(wnVar22)) {
-                                            org.telegram.ui.Components.xc.a0(wnVar22).k(!wnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
+                                        if (org.telegram.ui.Components.yc.a(wnVar22)) {
+                                            org.telegram.ui.Components.yc.a0(wnVar22).k(!wnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
                                             break;
                                         }
                                     } catch (Exception e) {
@@ -202,8 +202,8 @@ public final /* synthetic */ class oe implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
                                     try {
                                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.xc.a(wnVar22)) {
-                                            org.telegram.ui.Components.xc.a0(wnVar22).k(!wnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
+                                        if (org.telegram.ui.Components.yc.a(wnVar22)) {
+                                            org.telegram.ui.Components.yc.a0(wnVar22).k(!wnVar22.F9() && tL_exportedMessageLink.link.contains("/c/")).j();
                                             break;
                                         }
                                     } catch (Exception e) {

@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class UsersSelectActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, View.OnClickListener {
     public org.telegram.ui.Components.g5 E;
@@ -136,7 +136,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.m2 implements
                 TLRPC.Chat chat = (TLRPC.Chat) object;
                 j3 = -chat.id;
                 if (usersSelectActivity.x == 1 && !ChatObject.canUserDoAdminAction(chat, 13)) {
-                    org.telegram.messenger.ok.p(R.string.NeedAdminRightForSetAutoDeleteTimer, org.telegram.ui.Components.xc.a0(usersSelectActivity), null);
+                    org.telegram.messenger.ok.p(R.string.NeedAdminRightForSetAutoDeleteTimer, org.telegram.ui.Components.yc.a0(usersSelectActivity), null);
                     return;
                 }
             }

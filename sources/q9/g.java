@@ -14,11 +14,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.web.o1;
+import org.telegram.ui.web.f1;
 import w7.r6;
 import w7.s6;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final class g implements b {
     public static final f n = new f(0);
@@ -253,7 +253,7 @@ public final class g implements b {
                 for (r rVar : aVar.b) {
                     HashMap hashMap = this.b;
                     if (hashMap.containsKey(rVar)) {
-                        arrayList2.add(new o1(8, (p) ((pa.b) hashMap.get(rVar)), bVar));
+                        arrayList2.add(new f1(9, (p) ((pa.b) hashMap.get(rVar)), bVar));
                     } else {
                         hashMap.put(rVar, bVar);
                     }
@@ -284,7 +284,7 @@ public final class g implements b {
                 o oVar = (o) hashMap.get(entry2.getKey());
                 Iterator it = ((Set) entry2.getValue()).iterator();
                 while (it.hasNext()) {
-                    arrayList.add(new o1(9, oVar, (pa.b) it.next()));
+                    arrayList.add(new f1(10, oVar, (pa.b) it.next()));
                 }
             } else {
                 r rVar2 = (r) entry2.getKey();

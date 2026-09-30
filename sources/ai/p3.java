@@ -27,7 +27,7 @@ import org.telegram.ui.rp;
 import org.telegram.ui.t31;
 import org.telegram.ui.wm0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -138,10 +138,10 @@ public final /* synthetic */ class p3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new z8((yh.x3) obj4, tLObject, (tg.m1[]) obj, (Long) obj3, (tg.r) obj2, tL_error, 17));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new yh.u((yh.s5) obj4, (org.telegram.ui.ActionBar.a2) obj, tLObject, (TL_stars.InputSavedStarGift) obj3, (Utilities.Callback) obj2));
+                AndroidUtilities.runOnUIThread(new yh.u((yh.t5) obj4, (org.telegram.ui.ActionBar.a2) obj, tLObject, (TL_stars.InputSavedStarGift) obj3, (Utilities.Callback) obj2));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new z8((yh.s5) obj4, tLObject, (MessageObject) obj, (TLRPC.TL_inputInvoiceMessage) obj3, (aj) obj2, tL_error, 20));
+                AndroidUtilities.runOnUIThread(new z8((yh.t5) obj4, tLObject, (MessageObject) obj, (TLRPC.TL_inputInvoiceMessage) obj3, (aj) obj2, tL_error, 20));
                 break;
             default:
                 yh.j5 j5Var = (yh.j5) obj4;

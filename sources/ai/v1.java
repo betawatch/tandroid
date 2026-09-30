@@ -26,13 +26,13 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.df;
-import org.telegram.ui.fh;
+import org.telegram.ui.dh;
 import org.telegram.ui.je;
 import org.telegram.ui.wn;
 import org.telegram.ui.yc;
 import org.telegram.ui.zl;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -231,12 +231,12 @@ public final /* synthetic */ class v1 implements RequestDelegate {
                 TLRPC.TL_messages_sendScheduledMessages tL_messages_sendScheduledMessages = (TLRPC.TL_messages_sendScheduledMessages) this.c;
                 if (tL_error != null) {
                     if (tL_error.text != null) {
-                        AndroidUtilities.runOnUIThread(new fh(4, wnVar2, tL_error));
+                        AndroidUtilities.runOnUIThread(new dh(5, wnVar2, tL_error));
                         break;
                     }
                 } else {
                     wnVar2.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(new fh(3, wnVar2, tL_messages_sendScheduledMessages));
+                    AndroidUtilities.runOnUIThread(new dh(4, wnVar2, tL_messages_sendScheduledMessages));
                     break;
                 }
                 break;

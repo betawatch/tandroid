@@ -22,11 +22,12 @@ import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.Components.ShutterButton;
 import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.d70;
+import org.telegram.ui.Components.dv;
 import org.telegram.ui.Components.e70;
 import org.telegram.ui.Components.ee0;
-import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.g00;
+import org.telegram.ui.Components.gd;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.hc0;
 import org.telegram.ui.Components.kx0;
@@ -42,7 +43,6 @@ import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.vi0;
 import org.telegram.ui.Components.w81;
 import org.telegram.ui.Components.wn;
-import org.telegram.ui.Components.ww;
 import org.telegram.ui.Components.x50;
 import org.telegram.ui.Components.x81;
 import org.telegram.ui.Components.yl0;
@@ -51,7 +51,7 @@ import org.telegram.ui.ni;
 import org.telegram.ui.pw;
 import org.telegram.ui.v30;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class t6 implements Runnable {
     public final /* synthetic */ int a;
@@ -195,10 +195,10 @@ public final class t6 implements Runnable {
                 }
                 return;
             case 6:
-                fd fdVar = (fd) this.b;
-                fdVar.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                fdVar.f.performHapticFeedback(0);
-                Runnable runnable = fdVar.j;
+                gd gdVar = (gd) this.b;
+                gdVar.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                gdVar.f.performHapticFeedback(0);
+                Runnable runnable = gdVar.j;
                 if (runnable != null) {
                     runnable.run();
                     return;
@@ -319,7 +319,7 @@ public final class t6 implements Runnable {
                 TextureView textureView = ((x50) this.b).H0.q0;
                 if (textureView != null) {
                     try {
-                        AndroidUtilities.runOnUIThread(new ww(13, this, textureView.getBitmap(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f))));
+                        AndroidUtilities.runOnUIThread(new dv(14, this, textureView.getBitmap(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f))));
                         return;
                     } catch (Exception e) {
                         FileLog.e(e);

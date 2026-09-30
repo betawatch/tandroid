@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class my extends org.telegram.ui.Components.ia implements ai.s9 {
     public static final /* synthetic */ int v3 = 0;
@@ -771,8 +771,8 @@ public final class my extends org.telegram.ui.Components.ia implements ai.s9 {
                                                 qyVar.r4(arrayList5, 104, true, false, null);
                                             } else {
                                                 NotificationsController.getInstance(UserConfig.selectedAccount).setDialogNotificationsSettings(dialogId, 0L, 3);
-                                                if (org.telegram.ui.Components.xc.a(qyVar)) {
-                                                    org.telegram.ui.Components.xc.z(qyVar, 3, 0, null).j();
+                                                if (org.telegram.ui.Components.yc.a(qyVar)) {
+                                                    org.telegram.ui.Components.yc.z(qyVar, 3, 0, null).j();
                                                 }
                                             }
                                         }

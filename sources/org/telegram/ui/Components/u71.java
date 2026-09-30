@@ -52,7 +52,7 @@ import qb.b;
 import t7.u;
 import u2.e0;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public class u71 implements b2.z0, b2.w1, j2.b, NotificationCenter.NotificationCenterDelegate {
     public static int j0;
@@ -1342,7 +1342,7 @@ public class u71 implements b2.z0, b2.w1, j2.b, NotificationCenter.NotificationC
 
     @Override // b2.z0
     public final void onPlayerError(b2.u0 u0Var) {
-        AndroidUtilities.runOnUIThread(new yn0(21, this, u0Var));
+        AndroidUtilities.runOnUIThread(new yn0(22, this, u0Var));
     }
 
     @Override // b2.z0

@@ -15,7 +15,7 @@ import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.ps;
 import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes4.dex */
 public final class a extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -32,7 +32,7 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
     public final void a() {
         zf.b bVar = this.e;
         int i10 = this.a;
-        zf.a s10 = s5.x(i10, bVar).s();
+        zf.a s10 = t5.x(i10, bVar).s();
         zf.b bVar2 = this.e;
         zf.b bVar3 = zf.b.a;
         TextView textView = this.c;

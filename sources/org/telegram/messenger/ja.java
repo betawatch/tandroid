@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ja implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class ja implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ai.ga((yh.x3) this.b, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.c, 4));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((yh.s5) this.b, tLObject, (MessageObject) this.d, this.c, (Runnable) this.e, 10));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((yh.t5) this.b, tLObject, (MessageObject) this.d, this.c, (Runnable) this.e, 10));
                 break;
         }
     }

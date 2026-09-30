@@ -6,7 +6,7 @@ import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
 import android.view.TextureView;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final class k71 extends TextureView implements TextureView.SurfaceTextureListener {
     public u71 a;
@@ -67,7 +67,7 @@ public final class k71 extends TextureView implements TextureView.SurfaceTexture
         if (this.b != null || surfaceTexture == null || this.a == null) {
             return;
         }
-        xz xzVar = new xz(surfaceTexture, new nv(this, 29), this.f, this.s, i10, i11);
+        xz xzVar = new xz(surfaceTexture, new ov(this, 29), this.f, this.s, i10, i11);
         this.b = xzVar;
         xzVar.i(this.n, this.r);
         xz xzVar2 = this.b;
@@ -134,7 +134,7 @@ public final class k71 extends TextureView implements TextureView.SurfaceTexture
         this.f = k8Var;
         xz xzVar = this.b;
         if (xzVar != null) {
-            xzVar.postRunnable(new ww(7, xzVar, k8Var));
+            xzVar.postRunnable(new dv(8, xzVar, k8Var));
         }
     }
 

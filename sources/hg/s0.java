@@ -27,7 +27,7 @@ import org.telegram.ui.nt;
 import org.telegram.ui.wn;
 import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-c7458e893fd6f3e0a6fbf27724068aa00f1caa233b10a33d542967499303009b */
+/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -74,8 +74,8 @@ public final /* synthetic */ class s0 implements Runnable {
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
                 arrayList2.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj5).getAbsolutePath(), 0, false, 0, 0, 0L));
-                PhotoViewer.t1().J2(m2Var.getParentActivity(), null, m2Var.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList2, 0, 11, false, new xx0(), (wn) obj3);
+                PhotoViewer.t1().K2(m2Var.getParentActivity(), null, m2Var.getResourceProvider());
+                PhotoViewer.t1().g2(arrayList2, 0, 11, false, new xx0(), (wn) obj3);
                 PhotoViewer.t1().X0(document, z10 ? document : null, false, null);
                 nt q6 = nt.q();
                 if (!z10) {
